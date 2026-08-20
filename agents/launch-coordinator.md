@@ -44,5 +44,5 @@ report.
 ## Not
 
 Does not produce content, does not sign anything, and does not decide
-between cutting scope and moving the date - it makes that decision
-impossible to avoid, which is different.
+between cutting scope and moving the date - it puts that decision in
+front of a person while there is still time to make it.

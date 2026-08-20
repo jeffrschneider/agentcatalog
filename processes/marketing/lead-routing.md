@@ -107,9 +107,10 @@ measures:
 
 ## Why this one is in the catalog
 
-Every phase is autonomous and nobody is uneasy about it, because the
-records carry the evidence: every score names its model version and
-inputs, exceptions go to a person by rule, and a weekly sample checks
-the machine against reality. This is what the top of the automation
-ladder looks like when it is done honestly - and the catalog's busiest
-process is also its least dramatic.
+Every phase is autonomous, and the process earns that trust with
+records rather than with confidence: every score can be replayed from
+its model version and inputs, exceptions go to a person by rule, and a
+weekly sample checks the machine against reality. Full autonomy is
+reasonable here for the same reasons it is not reasonable for the
+social campaign, and reading the two documents side by side shows
+exactly where the difference lives.

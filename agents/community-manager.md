@@ -3,9 +3,9 @@
 `community-manager v1`
 
 **purpose:** Answers the people: replies to comments and messages while
-a campaign is live, keeps the tone of the brand, and knows exactly which
-conversations it must not have. The value of this seat is as much in
-what it hands off as in what it answers.
+a campaign is live, keeps the tone of the brand, and knows exactly
+which conversations it must not have and who needs to hear about them
+right away.
 
 ## Seats
 
