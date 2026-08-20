@@ -1,15 +1,15 @@
 # Writing down an abstract agent
 
 An abstract agent is a seat that an agent can hold, described well enough
-that any vendor's agent can claim it and any organization can staff a
-process with it. It is a job description: what the role does, which
+that any vendor's agent can claim it and any organization can put it in a
+process. It is a job description: what the role does, which
 activities it takes on, what it must know how to follow, what it needs to
 be granted, what records it must leave, and what it hands to a person.
 
 An abstract agent is deliberately not an implementation. It never names a
 model, a prompt, an API, or a vendor. Two agents built entirely
 differently can both hold the copywriter seat, and the organization
-staffing the seat should not have to care which one it got, because the
+filling the seat should not have to care which one it got, because the
 seat says everything the process needs from it.
 
 ## What an abstract agent is not
@@ -108,4 +108,4 @@ because they survive any change of vendor.
 A concrete agent in the catalog claims a seat with one line:
 `implements: <slug> v<n>`. The claim is checkable - the seat says what
 records it must leave and what patterns it must follow, so a run of any
-process that staffs the seat produces the evidence.
+process that fills the seat produces the evidence.

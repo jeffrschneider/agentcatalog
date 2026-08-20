@@ -2,7 +2,7 @@
 
 The reference layer behind [agentcatalog.com](https://agentcatalog.com):
 abstract agents and reference processes, written so an organization can
-staff real work with agents instead of starting from a blank page.
+fill a roster with agents instead of starting from a blank page.
 
 Two kinds of document live here, and two format definitions explain
 them:
@@ -57,7 +57,7 @@ covers whole jobs.
 [Agent Processes](https://github.com/jeffrschneider/agentprocesses)
 covers how an organization writes down its own recurring work. This
 repository supplies the starting material: the processes ready to
-adopt, and the seats ready to staff. The dependency points one way, as
+adopt, and the seats ready to fill. The dependency points one way, as
 everywhere in the family - documents here cite the pattern libraries,
 and nothing points back.
 

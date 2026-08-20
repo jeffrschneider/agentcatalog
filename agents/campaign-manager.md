@@ -26,7 +26,9 @@ producing seats.
 - scheduler (write) - publishing fires only after the launch decision
 - analytics (read)
 - the asset store (read)
-- budget: proposes the number; a person confirms it
+
+There is deliberately no budget grant. This seat proposes the number and
+a person confirms it, which is an escalation rather than an access.
 
 ## Records
 
