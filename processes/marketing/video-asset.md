@@ -2,6 +2,7 @@
 
 `ref/mkt/video-asset v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 A creative producer takes a script or a brief, settles the words and the
 shot list, has the rights on every source checked before anyone cuts,
 gets the material recorded and assembled, sends the cut through a

@@ -2,6 +2,7 @@
 
 `ref/mkt/name-product v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 A decision coordinator takes in a request for a name, writes down what
 the name has to do and which markets it has to work in, has a long list
 of candidates written and screened, sends the survivors through the

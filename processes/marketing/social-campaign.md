@@ -2,6 +2,7 @@
 
 `ref/mkt/social-campaign v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 A social media manager takes an approved brief, gets creative made and
 signed off, launches it across the chosen channels, tends it while it is
 live, and reports how it did against what the brief asked for.

@@ -2,6 +2,7 @@
 
 `ref/mkt/analyze-customer-base v1`
 
+**value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
 An analytics seat takes a question about the customer base, or the
 arrival of a scheduled read, and works out what the answer has to
 settle. It names the systems that hold the record, gets the terms on

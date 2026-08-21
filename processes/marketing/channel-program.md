@@ -2,6 +2,7 @@
 
 `ref/mkt/channel-program v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 A partner manager takes an approved program design and turns it into a
 program that partners can join. The seat settles what each tier asks of
 a partner and what that tier gives back, puts numbers on the margins and

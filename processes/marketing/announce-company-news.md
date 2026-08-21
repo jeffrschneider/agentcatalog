@@ -2,6 +2,7 @@
 
 `ref/mkt/announce-company-news v1`
 
+**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
 A communications manager takes a confirmed piece of news, has the facts
 checked and the release written, gets it edited and signed off, offers
 the story to the reporters who cover the subject, issues it on the

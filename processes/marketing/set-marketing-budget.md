@@ -2,6 +2,7 @@
 
 `ref/mkt/set-marketing-budget v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 The planning cycle opens and the department has to come out of it with a
 budget that leadership and finance have both signed. This process
 settles the money itself. It works out how much marketing has for the

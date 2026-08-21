@@ -2,6 +2,7 @@
 
 `ref/mkt/customer-research v1`
 
+**value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
 A study manager takes a question the organization cannot answer from
 what it already holds, decides whether to put it to people in
 interviews, in a survey or through a panel, and works out with a

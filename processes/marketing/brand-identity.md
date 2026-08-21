@@ -2,6 +2,7 @@
 
 `ref/mkt/brand-identity v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 A creative producer takes the signed brand positioning and has the
 visual identity built from it. The producer reads what the positioning
 and the promise say, the content librarian and the designer take stock

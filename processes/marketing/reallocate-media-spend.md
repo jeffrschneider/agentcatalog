@@ -2,6 +2,7 @@
 
 `ref/mkt/reallocate-media-spend v1`
 
+**value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 A media plan is running and one of its lines is not doing what the plan
 assumed. One channel is spending faster than its flight can absorb.
 Another is spending too slowly to finish on its end date. A third is

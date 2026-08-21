@@ -2,6 +2,7 @@
 
 `ref/mkt/feature-release v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 A feature has shipped and the people who could use it have not heard
 about it yet. A communications manager takes in what changed, decides
 which channels this release earns, has the announcement written and

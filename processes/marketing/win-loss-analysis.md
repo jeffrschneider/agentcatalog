@@ -2,6 +2,7 @@
 
 `ref/mkt/win-loss-analysis v1`
 
+**value stream:** [Activity-to-Insight](../../streams/marketing/activity-to-insight.md)
 A study manager takes the deals that closed over a period, draws a
 sample of the ones the organization won and a sample of the ones it
 lost, and interviews the buyers in both groups about how they decided.

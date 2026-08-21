@@ -2,6 +2,7 @@
 
 `ref/mkt/website-content-update v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 Something on a page that is already live has to change. A content
 manager takes the request in, a content librarian finds every live page
 that says the thing being changed, and the two of them decide whether

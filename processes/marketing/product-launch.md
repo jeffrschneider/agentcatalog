@@ -2,6 +2,7 @@
 
 `ref/mkt/product-launch v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 A launch date is committed, and marketing has to arrive at it with the
 story settled, the content made, sales ready to sell, and every channel
 loaded - then fire everything in order on the day, watch the first week,

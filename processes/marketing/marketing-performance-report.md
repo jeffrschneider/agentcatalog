@@ -2,6 +2,7 @@
 
 `ref/mkt/marketing-performance-report v1`
 
+**value stream:** [Activity-to-Insight](../../streams/marketing/activity-to-insight.md)
 A reporting period closes, and the department has to say what happened
 during it. The reporting manager settles what the report covers, asks
 every campaign, every published piece and every channel for the same

@@ -2,6 +2,7 @@
 
 `ref/mkt/brand-audit v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 A study manager runs one audit of how the brand actually shows up. The
 manager settles which channels, which period and which markets the audit
 covers, and the standards keeper names the version of each standard

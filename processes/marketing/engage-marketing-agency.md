@@ -2,6 +2,7 @@
 
 `ref/mkt/engage-marketing-agency v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 An agency supplies both people and work from outside the organization.
 This process starts when the department finds that it cannot do
 something or cannot carry it, and it runs through deciding whether an

@@ -2,6 +2,7 @@
 
 `ref/mkt/brand-positioning v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 The company's strategy changes or the market moves, and what the company
 says it stands for has to be settled again. A decision coordinator writes
 down what the decision has to answer and commissions the evidence: what

@@ -2,6 +2,7 @@
 
 `ref/mkt/influencer-campaign v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 A campaign manager takes a target audience, has outside creators found
 and checked, gets the shortlist cleared by the people who decide who the
 organization is willing to be seen with, agrees terms with each creator,

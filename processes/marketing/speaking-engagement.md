@@ -2,6 +2,7 @@
 
 `ref/mkt/speaking-engagement v1`
 
+**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
 A submissions manager takes an open call for papers or an invitation to
 speak, gets a named person committed and a proposal written, files it
 before the organizer's deadline, and follows the decision. When the

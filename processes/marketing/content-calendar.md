@@ -2,6 +2,7 @@
 
 `ref/mkt/content-calendar v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 A planning period opens and the department has to settle what it will
 publish in that period. A coordinator takes in the goals the period was
 given, reads what the last period actually delivered, lists the work

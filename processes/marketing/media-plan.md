@@ -2,6 +2,7 @@
 
 `ref/mkt/media-plan v1`
 
+**value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 An objective arrives with an approved budget behind it, and the
 department has to come out of this process with a plan the buying seats
 can spend against. The seats here work out which launches and campaigns

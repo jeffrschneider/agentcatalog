@@ -2,6 +2,7 @@
 
 `ref/mkt/enable-channel-partner v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 A partner manager takes a partner that has just signed or renewed an
 agreement and gets that partner's people to the point where they can
 position the product and sell it. The run works out what the partner

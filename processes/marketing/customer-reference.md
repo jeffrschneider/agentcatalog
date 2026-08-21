@@ -2,6 +2,7 @@
 
 `ref/mkt/customer-reference v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 An advocacy manager takes in a request for a customer reference, works
 out what the reference has to be able to show, and draws up a list of
 customers who fit. An account monitor reads each of those accounts and

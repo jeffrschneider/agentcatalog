@@ -2,6 +2,7 @@
 
 `ref/mkt/onboarding-email-program v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 A lifecycle manager runs one customer through the onboarding program
 from the day that customer starts. An account monitor reads what the
 account has already done and where it stands, the lifecycle manager

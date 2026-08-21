@@ -2,6 +2,7 @@
 
 `ref/mkt/quarterly-business-review v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 A quarter closes, and the department has to examine what it did and say
 what it will be held to next. The report for the quarter arrives already
 published from `ref/mkt/marketing-performance-report`, and this review

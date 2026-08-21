@@ -2,6 +2,7 @@
 
 `ref/mkt/segment-the-market v1`
 
+**value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
 A decision coordinator takes a question about how the market divides,
 has leadership settle what counts as inside that market, and
 commissions three kinds of evidence: what the organization's own record

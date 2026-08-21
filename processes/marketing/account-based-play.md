@@ -2,6 +2,7 @@
 
 `ref/mkt/account-based-play v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 A campaign manager takes a list of target accounts, reads where each
 account stands, sorts the accounts into tiers, and agrees with the
 people who own those accounts who approaches which account and in what

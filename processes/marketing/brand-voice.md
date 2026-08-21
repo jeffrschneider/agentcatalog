@@ -2,6 +2,7 @@
 
 `ref/mkt/brand-voice v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 An approved positioning says what the company stands for and what it
 promises. This process turns that into the way the company sounds and
 the set of messages that carry the promise. A decision coordinator opens

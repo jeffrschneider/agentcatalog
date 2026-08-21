@@ -2,6 +2,7 @@
 
 `ref/mkt/display-retargeting v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 A campaign manager takes an audience of people who have already visited
 the site and buys display advertising back to them. Before anything is
 bought, the team works out which of those visitors the consent record

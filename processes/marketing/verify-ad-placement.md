@@ -2,6 +2,7 @@
 
 `ref/mkt/verify-ad-placement v1`
 
+**value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 Somebody raises a concern that the ads did not run where they were meant
 to, and this process finds out where they actually ran. The audit sets
 out which accounts, campaigns, channels and dates it covers, reads the

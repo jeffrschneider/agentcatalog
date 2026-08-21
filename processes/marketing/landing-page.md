@@ -2,6 +2,7 @@
 
 `ref/mkt/landing-page v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 A campaign needs somewhere to send the people it reaches. A content
 manager takes the request, settles what the page has to make a visitor
 do, gets the copy and the visuals made, has the page built and the

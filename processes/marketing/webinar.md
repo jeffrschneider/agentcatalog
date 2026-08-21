@@ -2,6 +2,7 @@
 
 `ref/mkt/webinar v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 An event manager takes a topic and a date, settles what the session
 covers and who presents it, has the broadcast set up and the
 registration page built, fills the registration list, rehearses the

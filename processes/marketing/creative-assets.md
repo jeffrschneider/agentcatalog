@@ -2,6 +2,7 @@
 
 `ref/mkt/creative-assets v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 A creative producer takes an approved brief, settles on a direction,
 gets the copy, images and video made, puts the finished set in front of
 the people who sign it, cuts every approved asset to the sizes each

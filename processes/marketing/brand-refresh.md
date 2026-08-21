@@ -2,6 +2,7 @@
 
 `ref/mkt/brand-refresh v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 An identity has been approved, and everything the organization has
 already published still carries the old one. A standards keeper issues
 the new identity as a numbered version and tells every process that

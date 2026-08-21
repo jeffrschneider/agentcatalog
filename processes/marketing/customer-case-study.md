@@ -2,6 +2,7 @@
 
 `ref/mkt/customer-case-study v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 An advocacy manager finds a customer willing to be named, agrees with
 that customer what may be used and for how long, and a content manager
 has the story researched, written, edited and signed off inside those

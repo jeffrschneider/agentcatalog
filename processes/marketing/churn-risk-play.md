@@ -2,6 +2,7 @@
 
 `ref/mkt/churn-risk-play v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 A signal fires saying that one customer may be about to leave. A
 lifecycle manager takes the signal, an account monitor reads the account
 and says whether the risk is real, and the person who owns the account

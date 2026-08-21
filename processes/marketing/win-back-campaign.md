@@ -2,6 +2,7 @@
 
 `ref/mkt/win-back-campaign v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 A campaign manager takes a segment of customers who have gone quiet and
 works out what it would take to bring them back. An account monitor
 reads the accounts behind that segment and says which of them may be

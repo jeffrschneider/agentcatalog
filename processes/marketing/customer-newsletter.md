@@ -2,6 +2,7 @@
 
 `ref/mkt/customer-newsletter v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 A content manager opens a publishing cycle, settles what the issue
 carries, gets the permission for the customer story it features, has the
 items written and the visuals made, has the issue built and proofed in

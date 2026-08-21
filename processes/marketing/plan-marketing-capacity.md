@@ -2,6 +2,7 @@
 
 `ref/mkt/plan-marketing-capacity v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 A planning cycle opens, or a manager finds that the work in front of the
 department is more than it can carry. This process takes the work the
 period already owes, measures what the department actually gets through,

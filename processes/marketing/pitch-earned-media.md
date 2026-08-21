@@ -2,6 +2,7 @@
 
 `ref/mkt/pitch-earned-media v1`
 
+**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
 A communications manager takes a story angle somebody has decided is
 worth telling, has the evidence behind it gathered, finds out which
 reporters cover the subject, gets the pitch materials written and signed

@@ -2,6 +2,7 @@
 
 `ref/mkt/brief-executive-leadership v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 A board meeting or an executive review is coming, and marketing has to
 arrive with something the people in the room can decide from. The
 decision coordinator works out what marketing is asking them to settle,

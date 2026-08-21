@@ -2,6 +2,7 @@
 
 `ref/mkt/moderate-community v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 The community is open all the time, and this process covers one duty
 period of it. A community manager takes in what members posted, sorts it
 by urgency, greets the people who just arrived, answers the questions the

@@ -2,6 +2,7 @@
 
 `ref/mkt/traffic-ad-creative v1`
 
+**value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 An ad operations team takes creative that has already been approved and a
 media plan that says which channels run when, and turns the two of them
 into the ad units that actually serve. The creative is cut to every

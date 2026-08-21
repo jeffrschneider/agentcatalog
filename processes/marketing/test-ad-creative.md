@@ -2,6 +2,7 @@
 
 `ref/mkt/test-ad-creative v1`
 
+**value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 A performance question about the running paid creative comes in, and the
 team answers it by running a comparison. They read what the creative
 delivers now, pick the one element to change, work out how the traffic

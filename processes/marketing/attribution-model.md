@@ -2,6 +2,7 @@
 
 `ref/mkt/attribution-model v1`
 
+**value stream:** [Activity-to-Insight](../../streams/marketing/activity-to-insight.md)
 The attribution model decides how credit for one conversion is divided
 across the touches that came before it. This process runs when the
 model stops predicting what actually happens, or when a new channel

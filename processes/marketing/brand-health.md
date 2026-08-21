@@ -2,6 +2,7 @@
 
 `ref/mkt/brand-health v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 A study manager runs one wave of the brand tracker. The wave asks people
 in the market what they have heard of, what they believe the brand
 stands for, and which brand they would choose, and it asks the same

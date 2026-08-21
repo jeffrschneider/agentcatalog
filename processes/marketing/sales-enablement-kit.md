@@ -2,6 +2,7 @@
 
 `ref/mkt/sales-enablement-kit v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 Sales names a gap it cannot close in a live deal, and marketing builds
 the material that closes it. A sales enablement manager takes the gap
 in, agrees with the sales leader what marketing will produce and what

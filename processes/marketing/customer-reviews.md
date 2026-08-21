@@ -2,6 +2,7 @@
 
 `ref/mkt/customer-reviews v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 An advocacy manager takes a review goal, has the rules of every target
 site read and written down, agrees with a legal reviewer what may be
 offered and what has to be disclosed, picks customers who are eligible

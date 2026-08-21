@@ -2,6 +2,7 @@
 
 `ref/mkt/product-positioning v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 Somebody asks a market question about one product, and the positioning
 for that product has to be settled. A decision coordinator writes down
 what the positioning has to answer and by when, reads the company-level

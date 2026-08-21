@@ -2,6 +2,7 @@
 
 `ref/mkt/pricing-change v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 An approved pricing decision starts this process, and it closes when the
 published prices and every existing customer are on the new terms. Two
 halves run at the same time. The published half changes the price

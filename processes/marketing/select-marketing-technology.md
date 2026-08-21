@@ -2,6 +2,7 @@
 
 `ref/mkt/select-marketing-technology v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 Somebody reports that the department cannot do something it needs to
 do, and this process ends with one tool chosen and under an agreement.
 The requirements and the scoring criteria are written down and dated

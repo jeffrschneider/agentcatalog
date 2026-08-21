@@ -2,6 +2,7 @@
 
 `ref/mkt/advisory-board v1`
 
+**value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 An event manager takes in the cycle, works out what the board has to be
 asked and when it meets, and turns that into the dates every other seat
 works to. An advocacy manager settles who sits at the table and holds

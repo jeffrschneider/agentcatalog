@@ -2,6 +2,7 @@
 
 `ref/mkt/ideal-customer-profile v1`
 
+**value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
 A decision coordinator takes a question about who the organization
 should be selling to, works out what that question has to settle and by
 when, and has three kinds of evidence gathered: what the organization's

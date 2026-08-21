@@ -2,6 +2,7 @@
 
 `ref/mkt/size-market-opportunity v1`
 
+**value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
 A decision coordinator takes a question about how large a market or a
 segment is, works out what the answer has to settle and by when, and has
 the boundary of the market drawn before anything is counted. A forecaster

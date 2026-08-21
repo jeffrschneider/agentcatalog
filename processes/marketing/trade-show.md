@@ -2,6 +2,7 @@
 
 `ref/mkt/trade-show v1`
 
+**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
 A show is booked, and the organization has to arrive at it with a stand
 that is built, a message that has been approved, a demonstration that
 works, and people who know what to say. An event manager holds the

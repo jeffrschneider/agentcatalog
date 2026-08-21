@@ -2,6 +2,7 @@
 
 `ref/mkt/award-entry v1`
 
+**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
 A submissions manager runs one entry into one outside award. The seat
 reads what the award recognizes, what it costs and when it closes, and a
 person decides whether the organization enters at all. The seat then

@@ -2,6 +2,7 @@
 
 `ref/mkt/co-marketing-campaign v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 Two organizations put one campaign in front of a shared audience. A
 signed agreement starts the run. The seat that answers for the partner
 relationship writes down what each side owes and by when, the two sides

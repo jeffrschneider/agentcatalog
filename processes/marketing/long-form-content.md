@@ -2,6 +2,7 @@
 
 `ref/mkt/long-form-content v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 A content manager takes an approved topic, has the evidence gathered and
 the piece written, sends it through an edit and a fact check, gets the
 visuals made and the whole thing signed off, has it built into a page and

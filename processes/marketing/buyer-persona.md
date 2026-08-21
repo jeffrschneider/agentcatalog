@@ -2,6 +2,7 @@
 
 `ref/mkt/buyer-persona v1`
 
+**value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
 An audience manager takes a segment the organization has already decided
 to sell to and works out who inside those accounts actually buys. The
 persona sits inside an agreed customer profile and cites that profile at

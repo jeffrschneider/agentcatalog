@@ -2,6 +2,7 @@
 
 `ref/mkt/paid-search-campaign v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 Somebody commits a budget and says what it has to return. The team works
 out what people are searching for, decides which terms to bid on, writes
 the ads, makes sure every page answers the query its ad was bought for,

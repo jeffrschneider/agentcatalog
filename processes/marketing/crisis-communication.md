@@ -2,6 +2,7 @@
 
 `ref/mkt/crisis-communication v1`
 
+**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
 A communications manager takes an incident that is going to become
 public, has the facts confirmed by the people who know them, puts out a
 short holding line while a person decides what the organization will

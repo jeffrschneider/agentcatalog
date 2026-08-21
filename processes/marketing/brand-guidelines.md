@@ -2,6 +2,7 @@
 
 `ref/mkt/brand-guidelines v1`
 
+**value stream:** [Promise-to-Perception](../../streams/marketing/promise-to-perception.md)
 A change to the identity or the voice has already been agreed somewhere
 else, and this process turns that agreement into the document and the
 asset kit everyone else works from. A standards keeper works out which

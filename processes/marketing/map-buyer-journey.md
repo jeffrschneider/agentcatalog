@@ -2,6 +2,7 @@
 
 `ref/mkt/map-buyer-journey v1`
 
+**value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
 A decision coordinator takes one agreed persona and works out how people
 of that persona buy. Analytics reads what those buyers did in the months
 before they bought, a study manager asks recent buyers what they were

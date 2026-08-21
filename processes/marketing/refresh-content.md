@@ -2,6 +2,7 @@
 
 `ref/mkt/refresh-content v1`
 
+**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
 A content librarian rebuilds the list of what the organization has
 published, has every page on it read for what it is doing now and for
 what has gone out of date in it, and decides page by page whether it

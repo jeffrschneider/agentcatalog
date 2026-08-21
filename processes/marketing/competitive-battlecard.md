@@ -2,6 +2,7 @@
 
 `ref/mkt/competitive-battlecard v1`
 
+**value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 A sales enablement manager takes a move by a competitor, has it confirmed
 against what that competitor actually published, works out which
 battlecards the move puts in doubt, gets a source under every comparison

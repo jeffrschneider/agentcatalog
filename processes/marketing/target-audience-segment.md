@@ -2,6 +2,7 @@
 
 `ref/mkt/target-audience-segment v1`
 
+**value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 An audience manager takes a targeting need, confirms which consent and
 retention rules apply to it, checks which traits the contact database
 actually holds, and writes the rule that says who is in the segment and

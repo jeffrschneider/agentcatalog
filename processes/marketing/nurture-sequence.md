@@ -2,6 +2,7 @@
 
 `ref/mkt/nurture-sequence v1`
 
+**value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 An audience manager takes a segment and a goal and works out the rule
 that admits a contact to the program, the order of the messages, the
 wait before each one, the condition on every branch, and what takes a

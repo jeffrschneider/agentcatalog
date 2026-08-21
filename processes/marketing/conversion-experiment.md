@@ -2,6 +2,7 @@
 
 `ref/mkt/conversion-experiment v1`
 
+**value stream:** [Activity-to-Insight](../../streams/marketing/activity-to-insight.md)
 A study manager takes a hypothesis, settles what the test changes and
 which measure decides it, and has a statistician say how much traffic
 the test needs and how long that will take. The versions are made,

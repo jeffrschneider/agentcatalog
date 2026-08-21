@@ -2,6 +2,7 @@
 
 `ref/mkt/develop-marketing-strategy v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 The business hands marketing a set of objectives and a market position,
 and the run has to come back with agreed choices about which markets and
 segments the organization competes in and what it will win on. A

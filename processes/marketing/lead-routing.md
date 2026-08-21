@@ -2,6 +2,7 @@
 
 `ref/mkt/lead-routing v1`
 
+**value stream:** [Inquiry-to-Owner](../../streams/marketing/inquiry-to-owner.md)
 A form is submitted, and within a minute the lead is deduplicated,
 enriched, scored, and sitting in the right person's queue with the
 evidence attached. This process runs hundreds of times a week, no run

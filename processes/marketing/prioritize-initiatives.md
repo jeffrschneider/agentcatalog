@@ -2,6 +2,7 @@
 
 `ref/mkt/prioritize-initiatives v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 More requests for marketing work arrive than the department can carry, and
 this process decides which of them get done. The seats log every request
 in one common form, read what the runs already in flight still owe, work

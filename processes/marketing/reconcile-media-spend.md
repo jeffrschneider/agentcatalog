@@ -2,6 +2,7 @@
 
 `ref/mkt/reconcile-media-spend v1`
 
+**value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 A period of paid media closes, and the department has to prove that what
 it was billed matches what it ordered and what actually ran. Three
 records go into that proof. The invoices come from the companies that

@@ -2,6 +2,7 @@
 
 `ref/mkt/annual-marketing-plan v1`
 
+**value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
 The fiscal planning cycle opens, and the department has to come out of it
 with a plan leadership has approved. The seats in this process read the
 closed periods, take stock of what the department already holds, gather

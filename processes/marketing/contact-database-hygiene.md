@@ -2,6 +2,7 @@
 
 `ref/mkt/contact-database-hygiene v1`
 
+**value stream:** [Inquiry-to-Owner](../../streams/marketing/inquiry-to-owner.md)
 An audience manager opens a hygiene cycle and says which records it
 covers and what it has to fix in them. The fields go into one format,
 the records that turn out to be the same person are merged, and the
