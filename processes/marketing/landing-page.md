@@ -1,4 +1,4 @@
-# Reference process: publish landing page
+# Reference process: Publish Landing Page
 
 `ref/mkt/landing-page v1`
 
@@ -14,47 +14,47 @@ leaving.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the request | what the page is for and who it is for | [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | set the parameters | the audience, the action asked for, the date | content-manager · campaign-manager |
-| 3 | name the search terms | what the page has to cover to be found | [search-optimizer](../../agents/search-optimizer.md) |
-| 4 | brief the makers | everyone hears the same request at once | content-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) · [web-producer](../../agents/web-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · search-optimizer |
-| 5 | produce the material | the words and the visuals, with the sources cited | researcher · copywriter · designer · video-editor |
-| 6 | edit the draft | the editor says what has to be rewritten | editor · copywriter |
-| 7 | build the page | copy and design assembled into a working page | web-producer |
-| 8 | wire the tracking | tags, conversions, the form connected to the CRM | conversion-tracker |
-| 9 | score the page | brand, claims, accessibility and search checked | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) · search-optimizer |
-| 10 | get sign-offs | brand, legal, accuracy and image rights sign | brand owner (person) · legal reviewer (person) · subject matter expert (person) · rights approver (person) |
-| 11 | publish | the owner says go and the page goes live | content-manager · web-producer |
-| 12 | hand it to the campaign | the address and the tracking go to the campaign | content-manager · conversion-tracker · campaign-manager · [media-buyer](../../agents/media-buyer.md) |
-| 13 | watch it convert | traffic and conversions against the goal | [analytics](../../agents/analytics.md) · content-manager |
-| 14 | fix what the numbers show | change the page where people are leaving | content-manager · copywriter · designer · web-producer |
-| 15 | record what was learned | what to repeat, what to avoid | content-manager |
+| 1 | Take in the Request | what the page is for and who it is for | [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Set the Parameters | the audience, the action asked for, the date | content-manager · campaign-manager |
+| 3 | Name the Search Terms | what the page has to cover to be found | [search-optimizer](../../agents/search-optimizer.md) |
+| 4 | Brief the Makers | everyone hears the same request at once | content-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) · [web-producer](../../agents/web-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · search-optimizer |
+| 5 | Produce the Material | the words and the visuals, with the sources cited | researcher · copywriter · designer · video-editor |
+| 6 | Edit the Draft | the editor says what has to be rewritten | editor · copywriter |
+| 7 | Build the Page | copy and design assembled into a working page | web-producer |
+| 8 | Wire the Tracking | tags, conversions, the form connected to the CRM | conversion-tracker |
+| 9 | Score the Page | brand, claims, accessibility and search checked | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) · search-optimizer |
+| 10 | Get Sign-Offs | brand, legal, accuracy and image rights sign | brand owner (person) · legal reviewer (person) · subject matter expert (person) · rights approver (person) |
+| 11 | Publish | the owner says go and the page goes live | content-manager · web-producer |
+| 12 | Hand It to the Campaign | the address and the tracking go to the campaign | content-manager · conversion-tracker · campaign-manager · [media-buyer](../../agents/media-buyer.md) |
+| 13 | Watch It Convert | traffic and conversions against the goal | [analytics](../../agents/analytics.md) · content-manager |
+| 14 | Fix What the Numbers Show | change the page where people are leaving | content-manager · copywriter · designer · web-producer |
+| 15 | Record What Was Learned | what to repeat, what to avoid | content-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a campaign needs a page]) --> A1[1. take in the request]
-  A1 --> A2[2. set the parameters]
-  A2 --> A3[3. name the search terms]
-  A3 --> A4[4. brief the makers]
-  A4 --> A5[5. produce the material]
-  A5 --> A6[6. edit the draft]
+  T([a campaign needs a page]) --> A1[1. Take in the Request]
+  A1 --> A2[2. Set the Parameters]
+  A2 --> A3[3. Name the Search Terms]
+  A3 --> A4[4. Brief the Makers]
+  A4 --> A5[5. Produce the Material]
+  A5 --> A6[6. Edit the Draft]
   A6 -. rewrites asked for .-> A5
-  A6 --> A7[7. build the page]
-  A7 --> A8[8. wire the tracking]
+  A6 --> A7[7. Build the Page]
+  A7 --> A8[8. Wire the Tracking]
   A8 -. the form needs another field .-> A7
-  A8 --> A9[9. score the page]
+  A8 --> A9[9. Score the Page]
   A9 -. copy or an asset failed .-> A5
   A9 -. the page itself failed .-> A7
-  A9 --> A10[10. get sign-offs]
+  A9 --> A10[10. Get Sign-Offs]
   A10 -. changes requested .-> A5
-  A10 --> A11[11. publish]
-  A11 --> A12[12. hand it to the campaign]
-  A12 --> A13[13. watch it convert]
-  A13 --> A14[14. fix what the numbers show]
+  A10 --> A11[11. Publish]
+  A11 --> A12[12. Hand It to the Campaign]
+  A12 --> A13[13. Watch It Convert]
+  A13 --> A14[14. Fix What the Numbers Show]
   A14 -. new copy or new assets .-> A5
-  A13 --> A15[15. record what was learned]
+  A13 --> A15[15. Record What Was Learned]
   A14 --> A15
   A15 --> DONE([the page is live, measured and converting])
 ```

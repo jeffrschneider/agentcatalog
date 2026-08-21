@@ -1,4 +1,4 @@
-# Reference process: prioritize marketing initiatives
+# Reference process: Prioritize Marketing Initiatives
 
 `ref/mkt/prioritize-initiatives v1`
 
@@ -28,53 +28,53 @@ after the plan was signed.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | open the round | what the round covers and the date it decides | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) |
-| 2 | take in the requests | every request logged in one common form | capacity-manager · requester (person) |
-| 3 | screen the requests | merge the repeats, return what cannot be judged | capacity-manager · requester (person) |
-| 4 | read what is already committed | the runs in flight and what each still owes | capacity-manager · [reporting-manager](../../agents/reporting-manager.md) · [budget-keeper](../../agents/budget-keeper.md) |
-| 5 | work out what is free | what each seat can take on in the period | capacity-manager · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
-| 6 | weigh the requests against the goals | how far each one moves the goals already set | decision-coordinator · [analytics](../../agents/analytics.md) |
-| 7 | put numbers on each request | the cost, the return, and the assumptions under them | [forecaster](../../agents/forecaster.md) · media-buyer |
-| 8 | check the requests against the standards | whether each fits the positioning and the audience | [standards-keeper](../../agents/standards-keeper.md) · audience-manager |
-| 9 | rank the requests | one ordered list, with a reason for each place | decision-coordinator |
-| 10 | choose what gets committed | how far down the list the department commits | leadership (person) · decision-coordinator · capacity-manager |
-| 11 | resource the commitments | the seats, the dates and the money for each one | leadership (person) · finance (person) · budget-keeper · capacity-manager · decision-coordinator |
-| 12 | settle what gets displaced | work in flight that loses its place stops or waits | leadership (person) · decision-coordinator · campaign-manager · content-manager |
-| 13 | record the declines | every request not committed, with its reason | decision-coordinator · capacity-manager |
-| 14 | tell the requesters | each requester hears the answer to their request | decision-coordinator · capacity-manager · requester (person) |
-| 15 | hand over the commitments | each committed item goes to the seat that runs it | decision-coordinator · campaign-manager · content-manager · media-buyer |
-| 16 | record what the round rests on | the assumptions, and what would reopen the ranking | decision-coordinator · forecaster · capacity-manager |
+| 1 | Open the Round | what the round covers and the date it decides | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) |
+| 2 | Take in the Requests | every request logged in one common form | capacity-manager · requester (person) |
+| 3 | Screen the Requests | merge the repeats, return what cannot be judged | capacity-manager · requester (person) |
+| 4 | Read What Is Already Committed | the runs in flight and what each still owes | capacity-manager · [reporting-manager](../../agents/reporting-manager.md) · [budget-keeper](../../agents/budget-keeper.md) |
+| 5 | Work out What Is Free | what each seat can take on in the period | capacity-manager · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
+| 6 | Weigh the Requests against the Goals | how far each one moves the goals already set | decision-coordinator · [analytics](../../agents/analytics.md) |
+| 7 | Put Numbers on Each Request | the cost, the return, and the assumptions under them | [forecaster](../../agents/forecaster.md) · media-buyer |
+| 8 | Check the Requests against the Standards | whether each fits the positioning and the audience | [standards-keeper](../../agents/standards-keeper.md) · audience-manager |
+| 9 | Rank the Requests | one ordered list, with a reason for each place | decision-coordinator |
+| 10 | Choose What Gets Committed | how far down the list the department commits | leadership (person) · decision-coordinator · capacity-manager |
+| 11 | Resource the Commitments | the seats, the dates and the money for each one | leadership (person) · finance (person) · budget-keeper · capacity-manager · decision-coordinator |
+| 12 | Settle What Gets Displaced | work in flight that loses its place stops or waits | leadership (person) · decision-coordinator · campaign-manager · content-manager |
+| 13 | Record the Declines | every request not committed, with its reason | decision-coordinator · capacity-manager |
+| 14 | Tell the Requesters | each requester hears the answer to their request | decision-coordinator · capacity-manager · requester (person) |
+| 15 | Hand over the Commitments | each committed item goes to the seat that runs it | decision-coordinator · campaign-manager · content-manager · media-buyer |
+| 16 | Record What the Round Rests On | the assumptions, and what would reopen the ranking | decision-coordinator · forecaster · capacity-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([more requests arrive than capacity allows]) --> A1[1. open the round]
-  A1 --> A2[2. take in the requests]
-  A1 --> A4[4. read what is already committed]
-  A2 --> A3[3. screen the requests]
+  T([more requests arrive than capacity allows]) --> A1[1. Open the Round]
+  A1 --> A2[2. Take in the Requests]
+  A1 --> A4[4. Read What Is Already Committed]
+  A2 --> A3[3. Screen the Requests]
   A3 -. something needed to judge it is missing .-> A2
-  A3 --> A6[6. weigh the requests against the goals]
-  A3 --> A7[7. put numbers on each request]
-  A3 --> A8[8. check the requests against the standards]
-  A4 --> A5[5. work out what is free]
-  A6 --> A9[9. rank the requests]
+  A3 --> A6[6. Weigh the Requests against the Goals]
+  A3 --> A7[7. Put Numbers on Each Request]
+  A3 --> A8[8. Check the Requests against the Standards]
+  A4 --> A5[5. Work out What Is Free]
+  A6 --> A9[9. Rank the Requests]
   A7 --> A9
   A8 --> A9
   A9 -. a request cannot be placed without a number .-> A7
-  A9 --> A10[10. choose what gets committed]
+  A9 --> A10[10. Choose What Gets Committed]
   A5 --> A10
   A10 -. nothing above the line reaches the goals .-> A9
-  A10 --> A11[11. resource the commitments]
-  A10 --> A13[13. record the declines]
+  A10 --> A11[11. Resource the Commitments]
+  A10 --> A13[13. Record the Declines]
   A11 -. the money will not cover the set .-> A10
-  A11 --> A12[12. settle what gets displaced]
+  A11 --> A12[12. Settle What Gets Displaced]
   A12 -. the displaced run is too far along to stop .-> A10
-  A12 --> A15[15. hand over the commitments]
-  A13 --> A14[14. tell the requesters]
+  A12 --> A15[15. Hand over the Commitments]
+  A13 --> A14[14. Tell the Requesters]
   A14 -. the requester escalates the decline .-> A10
   A15 -. the seat cannot take the work after all .-> A10
-  A15 --> A16[16. record what the round rests on]
+  A15 --> A16[16. Record What the Round Rests On]
   A14 --> A16
   A16 --> DONE([the commitments and the declines are recorded])
 ```

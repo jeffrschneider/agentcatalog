@@ -1,4 +1,4 @@
-# Reference process: the lead scoring model
+# Reference process: Maintain Lead Scoring Model
 
 `ref/mkt/lead-scoring-model v1`
 
@@ -20,58 +20,58 @@ current version the whole time this process is open.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the drift or the signal | work out what the model must fix and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [analytics](../../agents/analytics.md) |
-| 2 | read how the model has scored | scores set against what those leads went on to do | analytics · [forecaster](../../agents/forecaster.md) |
-| 3 | read the exception queue | the leads no rule could settle, and how they settled | [lead-scorer](../../agents/lead-scorer.md) · analytics |
-| 4 | hear from the people who work the leads | where the scores were wrong, in their own words | [researcher](../../agents/researcher.md) · sales operations (person) · sales leader (person) |
-| 5 | gather the candidate signals | facts that might predict a win, and their sources | forecaster · researcher |
-| 6 | clear the new signals | the terms on each source, and what may be scored on | researcher · [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 7 | test the signal coverage | how often each signal is filled in, and how early | lead-scorer · forecaster |
-| 8 | fit the candidate models | two or three candidates, each with its assumptions | forecaster |
-| 9 | back-test the candidates | each candidate run over the leads already closed | forecaster · analytics |
-| 10 | check what each does to routing | how the tiers and the territory queues would shift | lead-scorer · forecaster · sales operations (person) |
-| 11 | choose the model | one candidate chosen, with the reasons said out loud | decision-coordinator · sales leader (person) · leadership (person) |
-| 12 | run it beside the live model | both score live leads, only the current one routes | lead-scorer · forecaster · analytics |
-| 13 | issue the model as a version | the model numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 14 | hand over the model | each receiving seat says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
-| 15 | put it into production | the new version starts scoring every lead | lead-scorer |
-| 16 | watch the first weeks | the new scores set against what the leads did | analytics · lead-scorer |
-| 17 | set the review conditions | the review date, and what brings the model back | decision-coordinator · sales leader (person) |
-| 18 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Drift or the Signal | work out what the model must fix and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [analytics](../../agents/analytics.md) |
+| 2 | Read How the Model Has Scored | scores set against what those leads went on to do | analytics · [forecaster](../../agents/forecaster.md) |
+| 3 | Read the Exception Queue | the leads no rule could settle, and how they settled | [lead-scorer](../../agents/lead-scorer.md) · analytics |
+| 4 | Hear from the People Who Work the Leads | where the scores were wrong, in their own words | [researcher](../../agents/researcher.md) · sales operations (person) · sales leader (person) |
+| 5 | Gather the Candidate Signals | facts that might predict a win, and their sources | forecaster · researcher |
+| 6 | Clear the New Signals | the terms on each source, and what may be scored on | researcher · [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 7 | Test the Signal Coverage | how often each signal is filled in, and how early | lead-scorer · forecaster |
+| 8 | Fit the Candidate Models | two or three candidates, each with its assumptions | forecaster |
+| 9 | Back-Test the Candidates | each candidate run over the leads already closed | forecaster · analytics |
+| 10 | Check What Each Does to Routing | how the tiers and the territory queues would shift | lead-scorer · forecaster · sales operations (person) |
+| 11 | Choose the Model | one candidate chosen, with the reasons said out loud | decision-coordinator · sales leader (person) · leadership (person) |
+| 12 | Run It Beside the Live Model | both score live leads, only the current one routes | lead-scorer · forecaster · analytics |
+| 13 | Issue the Model as a Version | the model numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 14 | Hand over the Model | each receiving seat says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
+| 15 | Put It into Production | the new version starts scoring every lead | lead-scorer |
+| 16 | Watch the First Weeks | the new scores set against what the leads did | analytics · lead-scorer |
+| 17 | Set the Review Conditions | the review date, and what brings the model back | decision-coordinator · sales leader (person) |
+| 18 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([scores stop predicting, or a new signal appears]) --> A1[1. take in the drift or the signal]
-  A1 --> A2[2. read how the model has scored]
-  A1 --> A3[3. read the exception queue]
-  A1 --> A4[4. hear from the people who work the leads]
-  A2 --> A5[5. gather the candidate signals]
+  T([scores stop predicting, or a new signal appears]) --> A1[1. Take in the Drift or the Signal]
+  A1 --> A2[2. Read How the Model Has Scored]
+  A1 --> A3[3. Read the Exception Queue]
+  A1 --> A4[4. Hear from the People Who Work the Leads]
+  A2 --> A5[5. Gather the Candidate Signals]
   A3 --> A5
   A4 --> A5
-  A5 --> A6[6. clear the new signals]
-  A5 --> A7[7. test the signal coverage]
+  A5 --> A6[6. Clear the New Signals]
+  A5 --> A7[7. Test the Signal Coverage]
   A6 -. a source is ruled out .-> A5
   A7 -. the signal arrives too late .-> A5
-  A6 --> A8[8. fit the candidate models]
+  A6 --> A8[8. Fit the Candidate Models]
   A7 --> A8
-  A8 --> A9[9. back-test the candidates]
-  A8 --> A10[10. check what each does to routing]
+  A8 --> A9[9. Back-Test the Candidates]
+  A8 --> A10[10. Check What Each Does to Routing]
   A9 -. no candidate beats the model in use .-> A8
   A10 -. a territory queue would be flooded .-> A8
-  A9 --> A11[11. choose the model]
+  A9 --> A11[11. Choose the Model]
   A10 --> A11
   A11 -. the room cannot agree .-> A8
-  A11 --> A12[12. run it beside the live model]
+  A11 --> A12[12. Run It Beside the Live Model]
   A12 -. it behaves differently on live leads .-> A8
-  A12 --> A13[13. issue the model as a version]
-  A13 --> A14[14. hand over the model]
-  A14 --> A15[15. put it into production]
-  A15 --> A16[16. watch the first weeks]
+  A12 --> A13[13. Issue the Model as a Version]
+  A13 --> A14[14. Hand over the Model]
+  A14 --> A15[15. Put It into Production]
+  A15 --> A16[16. Watch the First Weeks]
   A16 -. the new version scores worse .-> A11
-  A16 --> A17[17. set the review conditions]
-  A17 --> A18[18. record what was learned]
+  A16 --> A17[17. Set the Review Conditions]
+  A17 --> A18[18. Record What Was Learned]
   A18 --> DONE([the recalibrated model is in production])
 ```
 

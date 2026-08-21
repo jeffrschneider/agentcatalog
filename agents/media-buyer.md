@@ -9,67 +9,67 @@ its grants carry caps and every move it makes carries a reason.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / set up the paid buy, start the touches
-- `ref/mkt/annual-marketing-plan` / collect the candidate initiatives,
-  put numbers on each initiative, build the calendar, brief the
-  department
-- `ref/mkt/co-marketing-campaign` / plan the joint campaign, set up each
-  side's distribution
-- `ref/mkt/develop-marketing-strategy` / hand the strategy to the work
-  that follows
-- `ref/mkt/display-retargeting` / set the exposure rules, check the buy
-  before switch-on, launch the campaigns, record what is in force
-- `ref/mkt/field-event` / promote the event
-- `ref/mkt/ideal-customer-profile` / hand over the profile
-- `ref/mkt/influencer-campaign` / set up the tracking
-- `ref/mkt/landing-page` / hand it to the campaign
-- `ref/mkt/long-form-content` / promote the piece
-- `ref/mkt/marketing-performance-report` / account for the paid spend,
-  reconcile the spend, check the account
-- `ref/mkt/media-plan` / gather the channel evidence, draft the
-  candidate mixes, set the channel audience targets, hand the plan to
-  the buying seats
-- `ref/mkt/paid-search-campaign` / research the search demand, build the
-  keyword plan, ready the landing pages, wire up conversion tracking,
-  build the campaigns and launch, watch pacing and results, tune the
-  bids and terms, reconcile the spend
-- `ref/mkt/plan-marketing-capacity` / list the committed work
-- `ref/mkt/pricing-change` / restate the price everywhere it is
-  published, change the public price
-- `ref/mkt/prioritize-initiatives` / work out what is free, put numbers
-  on each request, hand over the commitments
-- `ref/mkt/product-launch` / prep the channels
-- `ref/mkt/quarterly-business-review` / ask each area what it would
-  change, put numbers on the proposed changes, brief the department
-- `ref/mkt/reallocate-media-spend` / take in the pacing signal, read the
-  current position, name the candidate moves, check what a move would
-  cost, move the money in the platforms, correct the pacing, check the
-  change took
-- `ref/mkt/reconcile-media-spend` / set what the close covers, pull the
-  delivery record, pull the order record, clear the explained
-  differences, track the answers, record what was learned
-- `ref/mkt/segment-the-market` / test whether each segment can be
-  reached, hand over the segments
-- `ref/mkt/set-marketing-budget` / collect what each function asks for,
-  price the requests, tell every function what it has
-- `ref/mkt/social-campaign` / set up the practical side, optimize
-- `ref/mkt/target-audience-segment` / name the exclusions, brief the
-  build, hand the list to the platforms, confirm the match
-- `ref/mkt/test-ad-creative` / read the current performance, name the
-  change to test, design the comparison, set the evidence bar, wire up
-  the measurement, check the test before switch-on, launch the test,
-  watch delivery, call the winner, roll out the winner
-- `ref/mkt/traffic-ad-creative` / take in the creative and the plan,
-  read the placement specifications, build the tracking parameters,
-  build the ad units, set the flights, budgets and rotation, check the
-  buy before switch-on, switch the ads on, record what is live
-- `ref/mkt/user-conference` / promote the conference
-- `ref/mkt/verify-ad-placement` / take in the concern, set what the
-  audit covers, pull the placement record, decide what happens to each,
-  apply the exclusions, claim back the wasted spend, record what was
-  learned
-- `ref/mkt/webinar` / promote the session
-- `ref/mkt/win-back-campaign` / set up the sending, watch the response
+- `ref/mkt/account-based-play` / Set up the Paid Buy, Start the Touches
+- `ref/mkt/annual-marketing-plan` / Collect the Candidate Initiatives,
+  Put Numbers on Each Initiative, Build the Calendar, Brief the
+  Department
+- `ref/mkt/co-marketing-campaign` / Plan the Joint Campaign, Set up Each
+  Side's Distribution
+- `ref/mkt/develop-marketing-strategy` / Hand the Strategy to the Work
+  that Follows
+- `ref/mkt/display-retargeting` / Set the Exposure Rules, Check the Buy
+  Before Switch-On, Launch the Campaigns, Record What Is in Force
+- `ref/mkt/field-event` / Promote the Event
+- `ref/mkt/ideal-customer-profile` / Hand over the Profile
+- `ref/mkt/influencer-campaign` / Set up the Tracking
+- `ref/mkt/landing-page` / Hand It to the Campaign
+- `ref/mkt/long-form-content` / Promote the Piece
+- `ref/mkt/marketing-performance-report` / Account for the Paid Spend,
+  Reconcile the Spend, Check the Account
+- `ref/mkt/media-plan` / Gather the Channel Evidence, Draft the
+  Candidate Mixes, Set the Channel Audience Targets, Hand the Plan to
+  the Buying Seats
+- `ref/mkt/paid-search-campaign` / Research the Search Demand, Build the
+  Keyword Plan, Ready the Landing Pages, Wire up Conversion Tracking,
+  Build the Campaigns and Launch, Watch Pacing and Results, Tune the
+  Bids and Terms, Reconcile the Spend
+- `ref/mkt/plan-marketing-capacity` / List the Committed Work
+- `ref/mkt/pricing-change` / Restate the Price Everywhere It Is
+  Published, Change the Public Price
+- `ref/mkt/prioritize-initiatives` / Work out What Is Free, Put Numbers
+  on Each Request, Hand over the Commitments
+- `ref/mkt/product-launch` / Prep the Channels
+- `ref/mkt/quarterly-business-review` / Ask Each Area What It Would
+  Change, Put Numbers on the Proposed Changes, Brief the Department
+- `ref/mkt/reallocate-media-spend` / Take in the Pacing Signal, Read the
+  Current Position, Name the Candidate Moves, Check What a Move Would
+  Cost, Move the Money in the Platforms, Correct the Pacing, Check the
+  Change Took
+- `ref/mkt/reconcile-media-spend` / Set What the Close Covers, Pull the
+  Delivery Record, Pull the Order Record, Clear the Explained
+  Differences, Track the Answers, Record What Was Learned
+- `ref/mkt/segment-the-market` / Test Whether Each Segment Can Be
+  Reached, Hand over the Segments
+- `ref/mkt/set-marketing-budget` / Collect What Each Function Asks For,
+  Price the Requests, Tell Every Function What It Has
+- `ref/mkt/social-campaign` / Set up the Practical Side, Optimize
+- `ref/mkt/target-audience-segment` / Name the Exclusions, Brief the
+  Build, Hand the List to the Platforms, Confirm the Match
+- `ref/mkt/test-ad-creative` / Read the Current Performance, Name the
+  Change to Test, Design the Comparison, Set the Evidence Bar, Wire up
+  the Measurement, Check the Test Before Switch-On, Launch the Test,
+  Watch Delivery, Call the Winner, Roll out the Winner
+- `ref/mkt/traffic-ad-creative` / Take in the Creative and the Plan,
+  Read the Placement Specifications, Build the Tracking Parameters,
+  Build the Ad Units, Set the Flights, Budgets and Rotation, Check the
+  Buy Before Switch-On, Switch the Ads On, Record What Is Live
+- `ref/mkt/user-conference` / Promote the Conference
+- `ref/mkt/verify-ad-placement` / Take in the Concern, Set What the
+  Audit Covers, Pull the Placement Record, Decide What Happens to Each,
+  Apply the Exclusions, Claim Back the Wasted Spend, Record What Was
+  Learned
+- `ref/mkt/webinar` / Promote the Session
+- `ref/mkt/win-back-campaign` / Set up the Sending, Watch the Response
 
 ## Patterns
 

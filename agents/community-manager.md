@@ -9,37 +9,37 @@ right away.
 
 ## Seats
 
-- `ref/mkt/announce-company-news` / publish it on the owned channels
-- `ref/mkt/annual-marketing-plan` / gather the outside evidence, brief
-  the department
-- `ref/mkt/brand-positioning` / read the current numbers
-- `ref/mkt/brand-refresh` / change the profiles held elsewhere
-- `ref/mkt/co-marketing-campaign` / watch the joint campaign
-- `ref/mkt/content-calendar` / collect the topic candidates
-- `ref/mkt/crisis-communication` / take in the incident, tailor for each
-  audience, brief the speakers, issue the response, answer the
-  questions, track the coverage
-- `ref/mkt/customer-newsletter` / answer the replies
-- `ref/mkt/customer-reviews` / answer what comes back, reply to the
-  reviews
-- `ref/mkt/feature-release` / post it publicly, watch the first days
-- `ref/mkt/field-event` / promote the event
-- `ref/mkt/long-form-content` / promote the piece
-- `ref/mkt/marketing-performance-report` / account for what the audience
-  asked
-- `ref/mkt/moderate-community` / open the cycle, gather what came in,
-  sort the queue, welcome the new members, answer the questions, find
-  the missing answers, route the escalations, group the recurring
-  questions, name the members worth recognizing, measure the community,
-  report the cycle, close the cycle
-- `ref/mkt/pricing-change` / answer what comes back
-- `ref/mkt/product-launch` / watch the first week
-- `ref/mkt/social-campaign` / engage
-- `ref/mkt/speaking-engagement` / publish the material
-- `ref/mkt/trade-show` / promote the presence, run the show days
-- `ref/mkt/user-conference` / promote the conference, run the show
-- `ref/mkt/webinar` / promote the session
-- `ref/mkt/win-back-campaign` / answer what comes back
+- `ref/mkt/announce-company-news` / Publish It on the Owned Channels
+- `ref/mkt/annual-marketing-plan` / Gather the Outside Evidence, Brief
+  the Department
+- `ref/mkt/brand-positioning` / Read the Current Numbers
+- `ref/mkt/brand-refresh` / Change the Profiles Held Elsewhere
+- `ref/mkt/co-marketing-campaign` / Watch the Joint Campaign
+- `ref/mkt/content-calendar` / Collect the Topic Candidates
+- `ref/mkt/crisis-communication` / Take in the Incident, Tailor for Each
+  Audience, Brief the Speakers, Issue the Response, Answer the
+  Questions, Track the Coverage
+- `ref/mkt/customer-newsletter` / Answer the Replies
+- `ref/mkt/customer-reviews` / Answer What Comes Back, Reply to the
+  Reviews
+- `ref/mkt/feature-release` / Post It Publicly, Watch the First Days
+- `ref/mkt/field-event` / Promote the Event
+- `ref/mkt/long-form-content` / Promote the Piece
+- `ref/mkt/marketing-performance-report` / Account for What the Audience
+  Asked
+- `ref/mkt/moderate-community` / Open the Cycle, Gather What Came In,
+  Sort the Queue, Welcome the New Members, Answer the Questions, Find
+  the Missing Answers, Route the Escalations, Group the Recurring
+  Questions, Name the Members Worth Recognizing, Measure the Community,
+  Report the Cycle, Close the Cycle
+- `ref/mkt/pricing-change` / Answer What Comes Back
+- `ref/mkt/product-launch` / Watch the First Week
+- `ref/mkt/social-campaign` / Engage
+- `ref/mkt/speaking-engagement` / Publish the Material
+- `ref/mkt/trade-show` / Promote the Presence, Run the Show Days
+- `ref/mkt/user-conference` / Promote the Conference, Run the Show
+- `ref/mkt/webinar` / Promote the Session
+- `ref/mkt/win-back-campaign` / Answer What Comes Back
 
 ## Patterns
 

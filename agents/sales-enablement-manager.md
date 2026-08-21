@@ -15,23 +15,23 @@ or take it out of the reps' hands.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / brief the makers, make the sales
-  material
-- `ref/mkt/channel-program` / build the partner selling kit
-- `ref/mkt/competitive-battlecard` / take in the move, find the cards it
-  touches, hear what reps are meeting, write the card, issue the
-  version, notify sales
-- `ref/mkt/customer-case-study` / hand the story to sales
-- `ref/mkt/enable-channel-partner` / list what the partner must
-  demonstrate, brief the makers, produce the partner material, answer
-  the partner's questions
-- `ref/mkt/feature-release` / brief support and sales
-- `ref/mkt/pricing-change` / produce what customers and sellers read
-- `ref/mkt/product-positioning` / read what happens inside deals
-- `ref/mkt/sales-enablement-kit` / take in the gap, settle what each
-  side owes, settle the answers, brief the makers, try the kit on reps,
-  hand the kit to sales, watch what sales does with it, report against
-  the gap, record what was learned
+- `ref/mkt/account-based-play` / Brief the Makers, Make the Sales
+  Material
+- `ref/mkt/channel-program` / Build the Partner Selling Kit
+- `ref/mkt/competitive-battlecard` / Take in the Move, Find the Cards It
+  Touches, Hear What Reps Are Meeting, Write the Card, Issue the
+  Version, Notify Sales
+- `ref/mkt/customer-case-study` / Hand the Story to Sales
+- `ref/mkt/enable-channel-partner` / List What the Partner Must
+  Demonstrate, Brief the Makers, Produce the Partner Material, Answer
+  the Partner's Questions
+- `ref/mkt/feature-release` / Brief Support and Sales
+- `ref/mkt/pricing-change` / Produce What Customers and Sellers Read
+- `ref/mkt/product-positioning` / Read What Happens Inside Deals
+- `ref/mkt/sales-enablement-kit` / Take in the Gap, Settle What Each
+  Side Owes, Settle the Answers, Brief the Makers, Try the Kit on Reps,
+  Hand the Kit to Sales, Watch What Sales Does with It, Report against
+  the Gap, Record What Was Learned
 
 ## Patterns
 

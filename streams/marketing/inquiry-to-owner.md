@@ -2,6 +2,7 @@
 
 `vs/mkt/inquiry-to-owner v1`
 
+**position:** 8
 A raw inbound inquiry is scored and put in front of the person who should
 work it. A run of the routing process starts the moment a form is
 submitted, and within minutes the lead has been deduplicated, enriched,

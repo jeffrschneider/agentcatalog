@@ -11,115 +11,115 @@ believing.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / watch engagement by account, report
-  engagement
-- `ref/mkt/analyze-customer-base` / take in the question, set the scope
-  of the read, name the sources, pull the record, describe who bought,
-  group the base, read the base over time, size each group, compare with
-  the last read, write the findings, review the findings, issue the
-  findings as a version, hand over the findings, set the next read,
-  record what was learned
-- `ref/mkt/announce-company-news` / track the coverage, report on the
-  announcement
-- `ref/mkt/annual-marketing-plan` / read the closed periods, name what
-  will be measured
-- `ref/mkt/attribution-model` / take in the trigger, confirm the drift,
-  pull the touchpoint record, recompute the closed periods, reissue the
-  affected reports
-- `ref/mkt/award-entry` / gather the evidence
-- `ref/mkt/brand-audit` / brief the audit, read the numbers
-- `ref/mkt/brand-positioning` / read the current numbers
-- `ref/mkt/brand-refresh` / read what people recognize today, report the
-  transition
-- `ref/mkt/brand-voice` / watch how the rules score
-- `ref/mkt/brief-executive-leadership` / pull the results for the
-  period, answer what was left open
-- `ref/mkt/brief-industry-analyst` / report whether the positioning
-  landed
-- `ref/mkt/buyer-persona` / read the behavioral record, test the persona
-  against the record
-- `ref/mkt/channel-program` / watch the first partners, report the
-  program launch
-- `ref/mkt/co-marketing-campaign` / watch the joint campaign, agree the
-  joint numbers
-- `ref/mkt/contact-database-hygiene` / measure the base as it stands,
-  brief the cycle, report the cycle
-- `ref/mkt/content-calendar` / read the closed period, score the
-  candidates
-- `ref/mkt/conversion-experiment` / read the result
-- `ref/mkt/crisis-communication` / track the coverage
-- `ref/mkt/customer-case-study` / watch performance
-- `ref/mkt/customer-newsletter` / watch the results, report the results
-- `ref/mkt/customer-research` / check what is already known
-- `ref/mkt/customer-reviews` / watch the reviews land, report against
-  the goal
-- `ref/mkt/develop-marketing-strategy` / read the closed periods, put
-  numbers on each option, name what the strategy will be judged by
-- `ref/mkt/display-retargeting` / define the retargeting pools, check
-  the caps are holding
-- `ref/mkt/enable-channel-partner` / watch what the partner does, report
-  against the plan
-- `ref/mkt/engage-marketing-agency` / brief the agency
-- `ref/mkt/feature-release` / watch the first days
-- `ref/mkt/field-event` / report how the event did
-- `ref/mkt/ideal-customer-profile` / read the customer record, find the
-  traits that predict a win, test the candidates against the record
-- `ref/mkt/landing-page` / watch it convert
-- `ref/mkt/lead-scoring-model` / take in the drift or the signal, read
-  how the model has scored, read the exception queue, back-test the
-  candidates, run it beside the live model, watch the first weeks
-- `ref/mkt/long-form-content` / watch performance, report how the piece
-  did
-- `ref/mkt/map-buyer-journey` / read the behavioral record, map the
-  touchpoints, test the stages against the record
-- `ref/mkt/marketing-performance-report` / pull the numbers
-- `ref/mkt/media-plan` / gather the channel evidence, settle what counts
-  as a result
-- `ref/mkt/moderate-community` / measure the community, report the cycle
-- `ref/mkt/nurture-sequence` / define who enters, map the steps and the
-  branches, watch who moves, tune the branches
-- `ref/mkt/onboarding-email-program` / watch what the customer does
-- `ref/mkt/paid-search-campaign` / watch pacing and results, report
-  against the goal
-- `ref/mkt/pricing-change` / watch the transition, report the transition
-- `ref/mkt/prioritize-initiatives` / weigh the requests against the
-  goals
-- `ref/mkt/product-launch` / watch the first week, report the launch
-- `ref/mkt/product-positioning` / read the product's own record
-- `ref/mkt/quarterly-business-review` / set the quarter against the
-  annual goals, update what gets measured
-- `ref/mkt/reallocate-media-spend` / take in the pacing signal, confirm
-  the numbers hold, correct the pacing
-- `ref/mkt/reconcile-media-spend` / pull the delivery record
-- `ref/mkt/refresh-content` / read how the pages perform, watch what the
-  changes did, report the cycle
-- `ref/mkt/sales-enablement-kit` / watch what sales does with it, report
-  against the gap
-- `ref/mkt/segment-the-market` / read the customer record
-- `ref/mkt/select-marketing-technology` / hand it to the owner
-- `ref/mkt/set-marketing-budget` / read last year's spend, name what the
-  budget is reported against
-- `ref/mkt/size-market-opportunity` / set the rate assumptions
-- `ref/mkt/social-campaign` / watch performance, wrap up
-- `ref/mkt/speaking-engagement` / report the result
-- `ref/mkt/target-audience-segment` / check the data on hand, write the
-  membership rule, size the segment, brief the build, check the built
-  list, confirm the match
-- `ref/mkt/test-ad-creative` / take in the question, read the current
-  performance, design the comparison, set the evidence bar, watch
-  delivery, read the result, record what was learned
-- `ref/mkt/trade-show` / report the show
-- `ref/mkt/traffic-ad-creative` / check the live ads
-- `ref/mkt/user-conference` / watch the registrations, report the
-  conference
-- `ref/mkt/verify-ad-placement` / pull the placement record, pull the
-  delivery quality figures, size what it cost, confirm the exclusions
-  hold, report the audit
-- `ref/mkt/webinar` / report how the session did
-- `ref/mkt/win-back-campaign` / take in the lapsed segment, sort the
-  segment into treatments, watch the response, report the win-back
-- `ref/mkt/win-loss-analysis` / pull the closed deals, brief the study,
-  set the themes against the record
+- `ref/mkt/account-based-play` / Watch Engagement by Account, Report
+  Engagement
+- `ref/mkt/analyze-customer-base` / Take in the Question, Set the Scope
+  of the Read, Name the Sources, Pull the Record, Describe Who Bought,
+  Group the Base, Read the Base over Time, Size Each Group, Compare with
+  the Last Read, Write the Findings, Review the Findings, Issue the
+  Findings as a Version, Hand over the Findings, Set the Next Read,
+  Record What Was Learned
+- `ref/mkt/announce-company-news` / Track the Coverage, Report on the
+  Announcement
+- `ref/mkt/annual-marketing-plan` / Read the Closed Periods, Name What
+  Will Be Measured
+- `ref/mkt/attribution-model` / Take in the Trigger, Confirm the Drift,
+  Pull the Touchpoint Record, Recompute the Closed Periods, Reissue the
+  Affected Reports
+- `ref/mkt/award-entry` / Gather the Evidence
+- `ref/mkt/brand-audit` / Brief the Audit, Read the Numbers
+- `ref/mkt/brand-positioning` / Read the Current Numbers
+- `ref/mkt/brand-refresh` / Read What People Recognize Today, Report the
+  Transition
+- `ref/mkt/brand-voice` / Watch How the Rules Score
+- `ref/mkt/brief-executive-leadership` / Pull the Results for the
+  Period, Answer What Was Left Open
+- `ref/mkt/brief-industry-analyst` / Report Whether the Positioning
+  Landed
+- `ref/mkt/buyer-persona` / Read the Behavioral Record, Test the Persona
+  against the Record
+- `ref/mkt/channel-program` / Watch the First Partners, Report the
+  Program Launch
+- `ref/mkt/co-marketing-campaign` / Watch the Joint Campaign, Agree the
+  Joint Numbers
+- `ref/mkt/contact-database-hygiene` / Measure the Base as It Stands,
+  Brief the Cycle, Report the Cycle
+- `ref/mkt/content-calendar` / Read the Closed Period, Score the
+  Candidates
+- `ref/mkt/conversion-experiment` / Read the Result
+- `ref/mkt/crisis-communication` / Track the Coverage
+- `ref/mkt/customer-case-study` / Watch Performance
+- `ref/mkt/customer-newsletter` / Watch the Results, Report the Results
+- `ref/mkt/customer-research` / Check What Is Already Known
+- `ref/mkt/customer-reviews` / Watch the Reviews Land, Report against
+  the Goal
+- `ref/mkt/develop-marketing-strategy` / Read the Closed Periods, Put
+  Numbers on Each Option, Name What the Strategy Will Be Judged By
+- `ref/mkt/display-retargeting` / Define the Retargeting Pools, Check
+  the Caps Are Holding
+- `ref/mkt/enable-channel-partner` / Watch What the Partner Does, Report
+  against the Plan
+- `ref/mkt/engage-marketing-agency` / Brief the Agency
+- `ref/mkt/feature-release` / Watch the First Days
+- `ref/mkt/field-event` / Report How the Event Did
+- `ref/mkt/ideal-customer-profile` / Read the Customer Record, Find the
+  Traits that Predict a Win, Test the Candidates against the Record
+- `ref/mkt/landing-page` / Watch It Convert
+- `ref/mkt/lead-scoring-model` / Take in the Drift or the Signal, Read
+  How the Model Has Scored, Read the Exception Queue, Back-Test the
+  Candidates, Run It Beside the Live Model, Watch the First Weeks
+- `ref/mkt/long-form-content` / Watch Performance, Report How the Piece
+  Did
+- `ref/mkt/map-buyer-journey` / Read the Behavioral Record, Map the
+  Touchpoints, Test the Stages against the Record
+- `ref/mkt/marketing-performance-report` / Pull the Numbers
+- `ref/mkt/media-plan` / Gather the Channel Evidence, Settle What Counts
+  as a Result
+- `ref/mkt/moderate-community` / Measure the Community, Report the Cycle
+- `ref/mkt/nurture-sequence` / Define Who Enters, Map the Steps and the
+  Branches, Watch Who Moves, Tune the Branches
+- `ref/mkt/onboarding-email-program` / Watch What the Customer Does
+- `ref/mkt/paid-search-campaign` / Watch Pacing and Results, Report
+  against the Goal
+- `ref/mkt/pricing-change` / Watch the Transition, Report the Transition
+- `ref/mkt/prioritize-initiatives` / Weigh the Requests against the
+  Goals
+- `ref/mkt/product-launch` / Watch the First Week, Report the Launch
+- `ref/mkt/product-positioning` / Read the Product's Own Record
+- `ref/mkt/quarterly-business-review` / Set the Quarter against the
+  Annual Goals, Update What Gets Measured
+- `ref/mkt/reallocate-media-spend` / Take in the Pacing Signal, Confirm
+  the Numbers Hold, Correct the Pacing
+- `ref/mkt/reconcile-media-spend` / Pull the Delivery Record
+- `ref/mkt/refresh-content` / Read How the Pages Perform, Watch What the
+  Changes Did, Report the Cycle
+- `ref/mkt/sales-enablement-kit` / Watch What Sales Does with It, Report
+  against the Gap
+- `ref/mkt/segment-the-market` / Read the Customer Record
+- `ref/mkt/select-marketing-technology` / Hand It to the Owner
+- `ref/mkt/set-marketing-budget` / Read Last Year's Spend, Name What the
+  Budget Is Reported Against
+- `ref/mkt/size-market-opportunity` / Set the Rate Assumptions
+- `ref/mkt/social-campaign` / Watch Performance, Wrap Up
+- `ref/mkt/speaking-engagement` / Report the Result
+- `ref/mkt/target-audience-segment` / Check the Data on Hand, Write the
+  Membership Rule, Size the Segment, Brief the Build, Check the Built
+  List, Confirm the Match
+- `ref/mkt/test-ad-creative` / Take in the Question, Read the Current
+  Performance, Design the Comparison, Set the Evidence Bar, Watch
+  Delivery, Read the Result, Record What Was Learned
+- `ref/mkt/trade-show` / Report the Show
+- `ref/mkt/traffic-ad-creative` / Check the Live Ads
+- `ref/mkt/user-conference` / Watch the Registrations, Report the
+  Conference
+- `ref/mkt/verify-ad-placement` / Pull the Placement Record, Pull the
+  Delivery Quality Figures, Size What It Cost, Confirm the Exclusions
+  Hold, Report the Audit
+- `ref/mkt/webinar` / Report How the Session Did
+- `ref/mkt/win-back-campaign` / Take in the Lapsed Segment, Sort the
+  Segment into Treatments, Watch the Response, Report the Win-Back
+- `ref/mkt/win-loss-analysis` / Pull the Closed Deals, Brief the Study,
+  Set the Themes against the Record
 
 ## Patterns
 

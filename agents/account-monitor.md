@@ -13,29 +13,29 @@ when the reading was current.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / read the accounts, watch engagement by
-  account
-- `ref/mkt/advisory-board` / settle the membership
-- `ref/mkt/award-entry` / get the customer's agreement
-- `ref/mkt/churn-risk-play` / confirm the signal, watch what the account
-  does, record the outcome
-- `ref/mkt/customer-case-study` / check where the account stands, verify
-  the customer's results
-- `ref/mkt/customer-newsletter` / check where the account stands
-- `ref/mkt/customer-reference` / check each account's standing
-- `ref/mkt/customer-reviews` / choose the customers to ask
-- `ref/mkt/display-retargeting` / build the suppression list
-- `ref/mkt/enable-channel-partner` / check what the partner holds, watch
-  what the partner does
-- `ref/mkt/onboarding-email-program` / read the account, set the goal
-  for this run, brief the seats that act, watch what the customer does,
-  confirm the customer is active
-- `ref/mkt/pricing-change` / answer what comes back, watch the
-  transition
-- `ref/mkt/product-positioning` / read the product's own record
-- `ref/mkt/win-back-campaign` / read the named accounts
-- `ref/mkt/win-loss-analysis` / brief the study, check who may be
-  approached
+- `ref/mkt/account-based-play` / Read the Accounts, Watch Engagement by
+  Account
+- `ref/mkt/advisory-board` / Settle the Membership
+- `ref/mkt/award-entry` / Get the Customer's Agreement
+- `ref/mkt/churn-risk-play` / Confirm the Signal, Watch What the Account
+  Does, Record the Outcome
+- `ref/mkt/customer-case-study` / Check Where the Account Stands, Verify
+  the Customer's Results
+- `ref/mkt/customer-newsletter` / Check Where the Account Stands
+- `ref/mkt/customer-reference` / Check Each Account's Standing
+- `ref/mkt/customer-reviews` / Choose the Customers to Ask
+- `ref/mkt/display-retargeting` / Build the Suppression List
+- `ref/mkt/enable-channel-partner` / Check What the Partner Holds, Watch
+  What the Partner Does
+- `ref/mkt/onboarding-email-program` / Read the Account, Set the Goal
+  for This Run, Brief the Seats that Act, Watch What the Customer Does,
+  Confirm the Customer Is Active
+- `ref/mkt/pricing-change` / Answer What Comes Back, Watch the
+  Transition
+- `ref/mkt/product-positioning` / Read the Product's Own Record
+- `ref/mkt/win-back-campaign` / Read the Named Accounts
+- `ref/mkt/win-loss-analysis` / Brief the Study, Check Who May Be
+  Approached
 
 ## Patterns
 

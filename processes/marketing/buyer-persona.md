@@ -1,4 +1,4 @@
-# Reference process: the buyer persona
+# Reference process: Develop Buyer Persona
 
 `ref/mkt/buyer-persona v1`
 
@@ -25,62 +25,62 @@ targets them, and carrying the date it comes back up.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the segment | what the persona has to settle, and by when | [audience-manager](../../agents/audience-manager.md) · leadership (person) |
-| 2 | quote the account profile | the profile the persona sits inside, at its version | audience-manager |
-| 3 | gather what is already known | prior research, published work on this role | [researcher](../../agents/researcher.md) · [content-librarian](../../agents/content-librarian.md) |
-| 4 | read the behavioral record | what people in this role already do and read | [analytics](../../agents/analytics.md) |
-| 5 | plan the study | the method, who is sampled, what gets asked | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) |
-| 6 | clear the sample and the questions | who may be reached, and what may be asked | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 7 | field the study | interviews and a survey put to the sample | study-manager · [audience-operator](../../agents/audience-operator.md) |
-| 8 | say what the responses support | which figures hold, and how far they hold | statistician |
-| 9 | name the jobs | what this person is trying to get done | study-manager · audience-manager |
-| 10 | name the pains and what they cost | what gets in the way, and what it costs them | study-manager · audience-manager |
-| 11 | name the buying triggers | the events that start this person looking | audience-manager · study-manager |
-| 12 | name the others in the decision | who else has to agree, and what each one wants | audience-manager · researcher |
-| 13 | record the words this person uses | their own words for the problem and the answer | study-manager · [copywriter](../../agents/copywriter.md) |
-| 14 | test the persona against the record | did the buyers who bought look like this person | [forecaster](../../agents/forecaster.md) · analytics |
-| 15 | review with the people who sell | do the sellers recognize the buyer described | audience-manager · subject matter expert (person) |
-| 16 | write the persona | jobs, pains, triggers, and the evidence under each | audience-manager |
-| 17 | issue the persona as a version | numbered, with the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 18 | hand over the persona | each receiving seat says what it changes | audience-manager · copywriter · [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [lead-scorer](../../agents/lead-scorer.md) · [email-producer](../../agents/email-producer.md) |
-| 19 | set the review conditions | the review date, and what would change the answer | audience-manager · leadership (person) |
-| 20 | record what was learned | what to repeat, what to avoid | audience-manager |
+| 1 | Take in the Segment | what the persona has to settle, and by when | [audience-manager](../../agents/audience-manager.md) · leadership (person) |
+| 2 | Quote the Account Profile | the profile the persona sits inside, at its version | audience-manager |
+| 3 | Gather What Is Already Known | prior research, published work on this role | [researcher](../../agents/researcher.md) · [content-librarian](../../agents/content-librarian.md) |
+| 4 | Read the Behavioral Record | what people in this role already do and read | [analytics](../../agents/analytics.md) |
+| 5 | Plan the Study | the method, who is sampled, what gets asked | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) |
+| 6 | Clear the Sample and the Questions | who may be reached, and what may be asked | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 7 | Field the Study | interviews and a survey put to the sample | study-manager · [audience-operator](../../agents/audience-operator.md) |
+| 8 | Say What the Responses Support | which figures hold, and how far they hold | statistician |
+| 9 | Name the Jobs | what this person is trying to get done | study-manager · audience-manager |
+| 10 | Name the Pains and What They Cost | what gets in the way, and what it costs them | study-manager · audience-manager |
+| 11 | Name the Buying Triggers | the events that start this person looking | audience-manager · study-manager |
+| 12 | Name the Others in the Decision | who else has to agree, and what each one wants | audience-manager · researcher |
+| 13 | Record the Words This Person Uses | their own words for the problem and the answer | study-manager · [copywriter](../../agents/copywriter.md) |
+| 14 | Test the Persona against the Record | did the buyers who bought look like this person | [forecaster](../../agents/forecaster.md) · analytics |
+| 15 | Review with the People Who Sell | do the sellers recognize the buyer described | audience-manager · subject matter expert (person) |
+| 16 | Write the Persona | jobs, pains, triggers, and the evidence under each | audience-manager |
+| 17 | Issue the Persona as a Version | numbered, with the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 18 | Hand over the Persona | each receiving seat says what it changes | audience-manager · copywriter · [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [lead-scorer](../../agents/lead-scorer.md) · [email-producer](../../agents/email-producer.md) |
+| 19 | Set the Review Conditions | the review date, and what would change the answer | audience-manager · leadership (person) |
+| 20 | Record What Was Learned | what to repeat, what to avoid | audience-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a priority segment is named]) --> A1[1. take in the segment]
-  A1 --> A2[2. quote the account profile]
-  A1 --> A3[3. gather what is already known]
-  A1 --> A4[4. read the behavioral record]
+  T([a priority segment is named]) --> A1[1. Take in the Segment]
+  A1 --> A2[2. Quote the Account Profile]
+  A1 --> A3[3. Gather What Is Already Known]
+  A1 --> A4[4. Read the Behavioral Record]
   A2 -. no agreed profile covers this segment .-> A1
-  A2 --> A5[5. plan the study]
+  A2 --> A5[5. Plan the Study]
   A3 --> A5
   A4 --> A5
-  A5 --> A6[6. clear the sample and the questions]
+  A5 --> A6[6. Clear the Sample and the Questions]
   A6 -. a question or a contact is ruled out .-> A5
-  A6 --> A7[7. field the study]
-  A7 --> A8[8. say what the responses support]
+  A6 --> A7[7. Field the Study]
+  A7 --> A8[8. Say What the Responses Support]
   A8 -. fewer responses than the study needed .-> A7
-  A8 --> A9[9. name the jobs]
-  A9 --> A10[10. name the pains and what they cost]
-  A10 --> A11[11. name the buying triggers]
-  A8 --> A12[12. name the others in the decision]
-  A8 --> A13[13. record the words this person uses]
-  A11 --> A14[14. test the persona against the record]
+  A8 --> A9[9. Name the Jobs]
+  A9 --> A10[10. Name the Pains and What They Cost]
+  A10 --> A11[11. Name the Buying Triggers]
+  A8 --> A12[12. Name the Others in the Decision]
+  A8 --> A13[13. Record the Words This Person Uses]
+  A11 --> A14[14. Test the Persona against the Record]
   A14 -. the record does not match this persona .-> A9
-  A11 --> A15[15. review with the people who sell]
+  A11 --> A15[15. Review with the People Who Sell]
   A12 --> A15
   A13 --> A15
   A15 -. the sellers do not recognize this buyer .-> A9
   A12 -. the decision sits with a different role .-> A1
-  A14 --> A16[16. write the persona]
+  A14 --> A16[16. Write the Persona]
   A15 --> A16
-  A16 --> A17[17. issue the persona as a version]
-  A17 --> A18[18. hand over the persona]
-  A18 --> A19[19. set the review conditions]
-  A19 --> A20[20. record what was learned]
+  A16 --> A17[17. Issue the Persona as a Version]
+  A17 --> A18[18. Hand over the Persona]
+  A18 --> A19[19. Set the Review Conditions]
+  A19 --> A20[20. Record What Was Learned]
   A20 --> DONE([the persona is recorded and in use])
 ```
 

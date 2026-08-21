@@ -1,4 +1,4 @@
-# Reference process: the customer case study
+# Reference process: Produce Customer Case Study
 
 `ref/mkt/customer-case-study v1`
 
@@ -15,66 +15,66 @@ any point.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the candidate | the customer, and what their story could show | [advocacy-manager](../../agents/advocacy-manager.md) |
-| 2 | check where the account stands | usage, support history, and the renewal position | [account-monitor](../../agents/account-monitor.md) |
-| 3 | make the ask | the customer is asked and agrees to take part | advocacy-manager |
-| 4 | agree what the customer will do | what may be used, where, as whom, until when | advocacy-manager · customer (person) · legal reviewer (person) |
-| 5 | clear the rights | the logo, the footage, the appearance release | [rights-register](../../agents/rights-register.md) · rights approver (person) |
-| 6 | brief the story | every seat hears the same request at once | [content-manager](../../agents/content-manager.md) · advocacy-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
-| 7 | verify the customer's results | the numbers read from the systems that hold them | researcher · account-monitor |
-| 8 | interview the customer | the customer says what happened, in their words | researcher · customer (person) |
-| 9 | agree what the story argues | the argument, and the order the story tells it in | content-manager · editor · copywriter |
-| 10 | write the draft | the story is written to the agreed shape | copywriter |
-| 11 | edit the draft | the editor says what has to be rewritten | editor |
-| 12 | check the facts | every claim is read against the source under it | researcher |
-| 13 | make the visuals | photography, the quote card, the video cut | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 14 | get internal sign-offs | brand and legal approve the story | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
-| 15 | get the customer's approval | the customer clears their own words at a version | advocacy-manager · customer (person) |
-| 16 | build the page | the story becomes a page in the site | [web-producer](../../agents/web-producer.md) |
-| 17 | check the finished page | accessibility, load time, links, title, headings | [accessibility-check](../../agents/accessibility-check.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 18 | publish | the owner says go and the page goes live | content-manager · web-producer |
-| 19 | hand the story to sales | the slide, the one-pager, what it may be used for | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · advocacy-manager |
-| 20 | watch performance | traffic, use in deals, what readers do next | [analytics](../../agents/analytics.md) · content-manager |
-| 21 | record what was learned | what to repeat, what to avoid | content-manager · advocacy-manager |
+| 1 | Take in the Candidate | the customer, and what their story could show | [advocacy-manager](../../agents/advocacy-manager.md) |
+| 2 | Check Where the Account Stands | usage, support history, and the renewal position | [account-monitor](../../agents/account-monitor.md) |
+| 3 | Make the Ask | the customer is asked and agrees to take part | advocacy-manager |
+| 4 | Agree What the Customer Will Do | what may be used, where, as whom, until when | advocacy-manager · customer (person) · legal reviewer (person) |
+| 5 | Clear the Rights | the logo, the footage, the appearance release | [rights-register](../../agents/rights-register.md) · rights approver (person) |
+| 6 | Brief the Story | every seat hears the same request at once | [content-manager](../../agents/content-manager.md) · advocacy-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
+| 7 | Verify the Customer's Results | the numbers read from the systems that hold them | researcher · account-monitor |
+| 8 | Interview the Customer | the customer says what happened, in their words | researcher · customer (person) |
+| 9 | Agree What the Story Argues | the argument, and the order the story tells it in | content-manager · editor · copywriter |
+| 10 | Write the Draft | the story is written to the agreed shape | copywriter |
+| 11 | Edit the Draft | the editor says what has to be rewritten | editor |
+| 12 | Check the Facts | every claim is read against the source under it | researcher |
+| 13 | Make the Visuals | photography, the quote card, the video cut | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 14 | Get Internal Sign-Offs | brand and legal approve the story | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
+| 15 | Get the Customer's Approval | the customer clears their own words at a version | advocacy-manager · customer (person) |
+| 16 | Build the Page | the story becomes a page in the site | [web-producer](../../agents/web-producer.md) |
+| 17 | Check the Finished Page | accessibility, load time, links, title, headings | [accessibility-check](../../agents/accessibility-check.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 18 | Publish | the owner says go and the page goes live | content-manager · web-producer |
+| 19 | Hand the Story to Sales | the slide, the one-pager, what it may be used for | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · advocacy-manager |
+| 20 | Watch Performance | traffic, use in deals, what readers do next | [analytics](../../agents/analytics.md) · content-manager |
+| 21 | Record What Was Learned | what to repeat, what to avoid | content-manager · advocacy-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a customer is willing to be named]) --> A1[1. take in the candidate]
-  A1 --> A2[2. check where the account stands]
+  T([a customer is willing to be named]) --> A1[1. Take in the Candidate]
+  A1 --> A2[2. Check Where the Account Stands]
   A2 -. the account is not one to point at .-> A1
-  A2 --> A3[3. make the ask]
-  A3 --> A4[4. agree what the customer will do]
-  A4 --> A5[5. clear the rights]
-  A4 --> A6[6. brief the story]
-  A6 --> A7[7. verify the customer's results]
-  A6 --> A8[8. interview the customer]
+  A2 --> A3[3. Make the Ask]
+  A3 --> A4[4. Agree What the Customer Will Do]
+  A4 --> A5[5. Clear the Rights]
+  A4 --> A6[6. Brief the Story]
+  A6 --> A7[7. Verify the Customer's Results]
+  A6 --> A8[8. Interview the Customer]
   A7 -. the numbers do not hold .-> A3
-  A7 --> A9[9. agree what the story argues]
+  A7 --> A9[9. Agree What the Story Argues]
   A8 --> A9
-  A9 --> A10[10. write the draft]
-  A9 --> A13[13. make the visuals]
+  A9 --> A10[10. Write the Draft]
+  A9 --> A13[13. Make the Visuals]
   A5 --> A13
-  A10 --> A11[11. edit the draft]
+  A10 --> A11[11. Edit the Draft]
   A11 -. rewrite what the edit named .-> A10
-  A11 --> A12[12. check the facts]
+  A11 --> A12[12. Check the Facts]
   A12 -. a claim with no source .-> A10
-  A12 --> A14[14. get internal sign-offs]
+  A12 --> A14[14. Get Internal Sign-Offs]
   A13 --> A14
   A14 -. changes requested .-> A10
   A14 -. changes requested .-> A13
-  A14 --> A15[15. get the customer's approval]
+  A14 --> A15[15. Get the Customer's Approval]
   A15 -. the customer asks for changes .-> A10
   A15 -. the customer asks for changes .-> A13
-  A15 --> A16[16. build the page]
-  A16 --> A17[17. check the finished page]
+  A15 --> A16[16. Build the Page]
+  A16 --> A17[17. Check the Finished Page]
   A17 -. failures to fix .-> A16
-  A17 --> A18[18. publish]
-  A18 --> A19[19. hand the story to sales]
-  A18 --> A20[20. watch performance]
+  A17 --> A18[18. Publish]
+  A18 --> A19[19. Hand the Story to Sales]
+  A18 --> A20[20. Watch Performance]
   A20 -. the customer withdraws .-> A16
-  A19 --> A21[21. record what was learned]
+  A19 --> A21[21. Record What Was Learned]
   A20 --> A21
   A21 --> DONE([the story is live and the customer has cleared it])
 ```

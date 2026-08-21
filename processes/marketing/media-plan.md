@@ -1,4 +1,4 @@
-# Reference process: the media plan
+# Reference process: Develop Media Plan
 
 `ref/mkt/media-plan v1`
 
@@ -24,48 +24,48 @@ and moving money once the flights are running is a separate process.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the objective and the budget | what the money must achieve, and by when | leadership (person) · [media-planner](../../agents/media-planner.md) |
-| 2 | collect what the plan must carry | the launches and campaigns that need distribution | media-planner · [campaign-manager](../../agents/campaign-manager.md) · [launch-coordinator](../../agents/launch-coordinator.md) · [content-manager](../../agents/content-manager.md) |
-| 3 | settle the audience to reach | who the plan buys against, and how many of them | media-planner · [researcher](../../agents/researcher.md) · [audience-manager](../../agents/audience-manager.md) |
-| 4 | clear the targeting and the data | source terms, consent, and whether traits may be used | [consent-manager](../../agents/consent-manager.md) · researcher · legal reviewer (person) |
-| 5 | gather the channel evidence | what each channel has cost, delivered and returned | [analytics](../../agents/analytics.md) · researcher · [media-buyer](../../agents/media-buyer.md) |
-| 6 | draft the candidate mixes | two or three splits of the money across the channels | media-planner · media-buyer · [forecaster](../../agents/forecaster.md) |
-| 7 | model each mix | the reach, the cost and the result each split predicts | forecaster · media-planner |
-| 8 | choose the mix | the people who decide pick one split of the money | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) · media-planner |
-| 9 | lay out the flighting | when each channel runs, and at what weight | media-planner · campaign-manager · launch-coordinator |
-| 10 | set the channel audience targets | the audience each channel is bought against | media-planner · media-buyer · audience-manager |
-| 11 | settle what counts as a result | what the plan is judged on, and where it is counted | [conversion-tracker](../../agents/conversion-tracker.md) · analytics · media-planner |
-| 12 | get the plan approved | leadership and finance sign the mix and the money | leadership (person) · finance (person) · media-planner |
-| 13 | hand the plan to the buying seats | every seat that will spend hears the same plan | media-planner · media-buyer · campaign-manager |
-| 14 | record what the plan rests on | the assumptions, and what would reopen the plan | media-planner · forecaster |
+| 1 | Take in the Objective and the Budget | what the money must achieve, and by when | leadership (person) · [media-planner](../../agents/media-planner.md) |
+| 2 | Collect What the Plan Must Carry | the launches and campaigns that need distribution | media-planner · [campaign-manager](../../agents/campaign-manager.md) · [launch-coordinator](../../agents/launch-coordinator.md) · [content-manager](../../agents/content-manager.md) |
+| 3 | Settle the Audience to Reach | who the plan buys against, and how many of them | media-planner · [researcher](../../agents/researcher.md) · [audience-manager](../../agents/audience-manager.md) |
+| 4 | Clear the Targeting and the Data | source terms, consent, and whether traits may be used | [consent-manager](../../agents/consent-manager.md) · researcher · legal reviewer (person) |
+| 5 | Gather the Channel Evidence | what each channel has cost, delivered and returned | [analytics](../../agents/analytics.md) · researcher · [media-buyer](../../agents/media-buyer.md) |
+| 6 | Draft the Candidate Mixes | two or three splits of the money across the channels | media-planner · media-buyer · [forecaster](../../agents/forecaster.md) |
+| 7 | Model Each Mix | the reach, the cost and the result each split predicts | forecaster · media-planner |
+| 8 | Choose the Mix | the people who decide pick one split of the money | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) · media-planner |
+| 9 | Lay out the Flighting | when each channel runs, and at what weight | media-planner · campaign-manager · launch-coordinator |
+| 10 | Set the Channel Audience Targets | the audience each channel is bought against | media-planner · media-buyer · audience-manager |
+| 11 | Settle What Counts as a Result | what the plan is judged on, and where it is counted | [conversion-tracker](../../agents/conversion-tracker.md) · analytics · media-planner |
+| 12 | Get the Plan Approved | leadership and finance sign the mix and the money | leadership (person) · finance (person) · media-planner |
+| 13 | Hand the Plan to the Buying Seats | every seat that will spend hears the same plan | media-planner · media-buyer · campaign-manager |
+| 14 | Record What the Plan Rests On | the assumptions, and what would reopen the plan | media-planner · forecaster |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([an objective and a budget arrive]) --> A1[1. take in the objective and the budget]
-  A1 --> A2[2. collect what the plan must carry]
-  A1 --> A5[5. gather the channel evidence]
-  A2 --> A3[3. settle the audience to reach]
-  A3 --> A4[4. clear the targeting and the data]
+  T([an objective and a budget arrive]) --> A1[1. Take in the Objective and the Budget]
+  A1 --> A2[2. Collect What the Plan Must Carry]
+  A1 --> A5[5. Gather the Channel Evidence]
+  A2 --> A3[3. Settle the Audience to Reach]
+  A3 --> A4[4. Clear the Targeting and the Data]
   A4 -. a source or a trait is ruled out .-> A3
-  A4 --> A6[6. draft the candidate mixes]
+  A4 --> A6[6. Draft the Candidate Mixes]
   A5 --> A6
-  A6 --> A7[7. model each mix]
+  A6 --> A7[7. Model Each Mix]
   A7 -. no split reaches the objective .-> A6
-  A7 --> A8[8. choose the mix]
+  A7 --> A8[8. Choose the Mix]
   A8 -. nothing on the table is worth backing .-> A6
   A8 -. the budget cannot buy the objective .-> A1
-  A8 --> A9[9. lay out the flighting]
-  A8 --> A10[10. set the channel audience targets]
-  A9 --> A11[11. settle what counts as a result]
+  A8 --> A9[9. Lay out the Flighting]
+  A8 --> A10[10. Set the Channel Audience Targets]
+  A9 --> A11[11. Settle What Counts as a Result]
   A10 --> A11
   A11 -. a result cannot be counted .-> A8
-  A11 --> A12[12. get the plan approved]
+  A11 --> A12[12. Get the Plan Approved]
   A12 -. changes requested .-> A9
   A12 -. changes requested .-> A10
-  A12 --> A13[13. hand the plan to the buying seats]
-  A13 --> A14[14. record what the plan rests on]
+  A12 --> A13[13. Hand the Plan to the Buying Seats]
+  A13 --> A14[14. Record What the Plan Rests On]
   A14 --> DONE([the plan is committed and the buying seats have it])
 ```
 

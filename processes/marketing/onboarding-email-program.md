@@ -1,4 +1,4 @@
-# Reference process: the onboarding email program
+# Reference process: Run Onboarding Email Program
 
 `ref/mkt/onboarding-email-program v1`
 
@@ -23,20 +23,20 @@ the customer is being run through.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the new customer | who started, what they bought, and when | [lifecycle-manager](../../agents/lifecycle-manager.md) |
-| 2 | read the account | usage, support history and contract standing | [account-monitor](../../agents/account-monitor.md) |
-| 3 | set the goal for this run | the milestones this customer has to reach | lifecycle-manager · account-monitor |
-| 4 | choose the path | which messages and help this customer gets | lifecycle-manager |
-| 5 | brief the seats that act | everyone hears the same account picture at once | lifecycle-manager · account-monitor · [email-producer](../../agents/email-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
-| 6 | make what the path needs | copy and design the standing messages do not cover | copywriter · designer · [editor](../../agents/editor.md) |
-| 7 | check and sign what was made | brand, claims and rendering checked, then signed | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) · brand owner (person) · legal reviewer (person) |
-| 8 | build the send | consent, opt-outs and suppression applied, proofs out | email-producer |
-| 9 | send the step | the named owner says go and the send fires | lifecycle-manager · email-producer |
-| 10 | watch what the customer does | milestones met, messages opened, help asked for | account-monitor · [analytics](../../agents/analytics.md) |
-| 11 | change the path when they stall | steps swapped, delayed or dropped, each change dated | lifecycle-manager |
-| 12 | bring a person in | a person makes contact instead of a message | lifecycle-manager · account owner (person) |
-| 13 | confirm the customer is active | milestones checked against the evidence under them | lifecycle-manager · account-monitor |
-| 14 | close the run | what was sent, what the customer did, and the date | lifecycle-manager |
+| 1 | Take in the New Customer | who started, what they bought, and when | [lifecycle-manager](../../agents/lifecycle-manager.md) |
+| 2 | Read the Account | usage, support history and contract standing | [account-monitor](../../agents/account-monitor.md) |
+| 3 | Set the Goal for This Run | the milestones this customer has to reach | lifecycle-manager · account-monitor |
+| 4 | Choose the Path | which messages and help this customer gets | lifecycle-manager |
+| 5 | Brief the Seats that Act | everyone hears the same account picture at once | lifecycle-manager · account-monitor · [email-producer](../../agents/email-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 6 | Make What the Path Needs | copy and design the standing messages do not cover | copywriter · designer · [editor](../../agents/editor.md) |
+| 7 | Check and Sign What Was Made | brand, claims and rendering checked, then signed | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) · brand owner (person) · legal reviewer (person) |
+| 8 | Build the Send | consent, opt-outs and suppression applied, proofs out | email-producer |
+| 9 | Send the Step | the named owner says go and the send fires | lifecycle-manager · email-producer |
+| 10 | Watch What the Customer Does | milestones met, messages opened, help asked for | account-monitor · [analytics](../../agents/analytics.md) |
+| 11 | Change the Path When They Stall | steps swapped, delayed or dropped, each change dated | lifecycle-manager |
+| 12 | Bring a Person In | a person makes contact instead of a message | lifecycle-manager · account owner (person) |
+| 13 | Confirm the Customer Is Active | milestones checked against the evidence under them | lifecycle-manager · account-monitor |
+| 14 | Close the Run | what was sent, what the customer did, and the date | lifecycle-manager |
 
 Activities 8 through 12 repeat once for each step of the path. The email
 producer assembles and sends a step, the account monitor and the
@@ -54,27 +54,27 @@ something the design did not anticipate.
 
 ```mermaid
 flowchart LR
-  T([a customer starts]) --> A1[1. take in the new customer]
-  A1 --> A2[2. read the account]
-  A2 --> A3[3. set the goal for this run]
-  A3 --> A4[4. choose the path]
-  A4 --> A5[5. brief the seats that act]
-  A5 --> A6[6. make what the path needs]
+  T([a customer starts]) --> A1[1. Take in the New Customer]
+  A1 --> A2[2. Read the Account]
+  A2 --> A3[3. Set the Goal for This Run]
+  A3 --> A4[4. Choose the Path]
+  A4 --> A5[5. Brief the Seats that Act]
+  A5 --> A6[6. Make What the Path Needs]
   A5 -. the standing messages cover the path .-> A8
-  A6 --> A7[7. check and sign what was made]
+  A6 --> A7[7. Check and Sign What Was Made]
   A7 -. changes requested .-> A6
-  A7 --> A8[8. build the send]
-  A8 --> A9[9. send the step]
-  A9 --> A10[10. watch what the customer does]
-  A10 --> A11[11. change the path when they stall]
+  A7 --> A8[8. Build the Send]
+  A8 --> A9[9. Send the Step]
+  A9 --> A10[10. Watch What the Customer Does]
+  A10 --> A11[11. Change the Path When They Stall]
   A11 -. the next step needs new material .-> A6
   A11 -. the next step is ready to go .-> A8
-  A10 --> A12[12. bring a person in]
+  A10 --> A12[12. Bring a Person In]
   A11 --> A12
   A12 --> A10
-  A10 --> A13[13. confirm the customer is active]
+  A10 --> A13[13. Confirm the Customer Is Active]
   A13 -. a milestone has no evidence under it .-> A11
-  A13 --> A14[14. close the run]
+  A13 --> A14[14. Close the Run]
   A14 --> DONE([the customer is active and using the product])
 ```
 

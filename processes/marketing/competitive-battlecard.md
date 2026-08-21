@@ -1,4 +1,4 @@
-# Reference process: refresh competitive battlecard
+# Reference process: Refresh Competitive Battlecard
 
 `ref/mkt/competitive-battlecard v1`
 
@@ -19,52 +19,52 @@ every rep has been told.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the move | record what the competitor did and where it was seen | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
-| 2 | confirm the move | read what the competitor published, at the source | [researcher](../../agents/researcher.md) |
-| 3 | find the cards it touches | which cards and which claims the move puts in doubt | sales-enablement-manager |
-| 4 | hear what reps are meeting | what the competitor is saying inside live deals | sales-enablement-manager · sales leader (person) |
-| 5 | gather the proof | a source under every comparison the card makes | researcher · subject matter expert (person) |
-| 6 | settle what may be said | a person decides the position on the competitor | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) · legal reviewer (person) |
-| 7 | write the card | the claims, the objection answers and the proof | [copywriter](../../agents/copywriter.md) · sales-enablement-manager |
-| 8 | edit the card | cut what a rep cannot use inside a live call | [editor](../../agents/editor.md) |
-| 9 | lay the card out | set out so a rep finds an answer while talking | [designer](../../agents/designer.md) |
-| 10 | score the claims | every claim against the register at its version | [brand-check](../../agents/brand-check.md) |
-| 11 | check the comparisons | the rules for naming another company in a market | [disclosure-check](../../agents/disclosure-check.md) |
-| 12 | get sign-offs | legal, product and sales sign the exact wording | legal reviewer (person) · subject matter expert (person) · sales leader (person) |
-| 13 | issue the version | the new card replaces the one reps carry now | sales-enablement-manager |
-| 14 | notify sales | every rep hears which version is current, and when | sales-enablement-manager · sales leader (person) |
-| 15 | hand on the claim change | a broken claim goes back for a new version | [standards-keeper](../../agents/standards-keeper.md) |
-| 16 | say what partners may see | which partner tier is given which version | [partner-manager](../../agents/partner-manager.md) |
+| 1 | Take in the Move | record what the competitor did and where it was seen | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 2 | Confirm the Move | read what the competitor published, at the source | [researcher](../../agents/researcher.md) |
+| 3 | Find the Cards It Touches | which cards and which claims the move puts in doubt | sales-enablement-manager |
+| 4 | Hear What Reps Are Meeting | what the competitor is saying inside live deals | sales-enablement-manager · sales leader (person) |
+| 5 | Gather the Proof | a source under every comparison the card makes | researcher · subject matter expert (person) |
+| 6 | Settle What May Be Said | a person decides the position on the competitor | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) · legal reviewer (person) |
+| 7 | Write the Card | the claims, the objection answers and the proof | [copywriter](../../agents/copywriter.md) · sales-enablement-manager |
+| 8 | Edit the Card | cut what a rep cannot use inside a live call | [editor](../../agents/editor.md) |
+| 9 | Lay the Card Out | set out so a rep finds an answer while talking | [designer](../../agents/designer.md) |
+| 10 | Score the Claims | every claim against the register at its version | [brand-check](../../agents/brand-check.md) |
+| 11 | Check the Comparisons | the rules for naming another company in a market | [disclosure-check](../../agents/disclosure-check.md) |
+| 12 | Get Sign-Offs | legal, product and sales sign the exact wording | legal reviewer (person) · subject matter expert (person) · sales leader (person) |
+| 13 | Issue the Version | the new card replaces the one reps carry now | sales-enablement-manager |
+| 14 | Notify Sales | every rep hears which version is current, and when | sales-enablement-manager · sales leader (person) |
+| 15 | Hand on the Claim Change | a broken claim goes back for a new version | [standards-keeper](../../agents/standards-keeper.md) |
+| 16 | Say What Partners May See | which partner tier is given which version | [partner-manager](../../agents/partner-manager.md) |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a competitor moves]) --> A1[1. take in the move]
-  A1 --> A2[2. confirm the move]
-  A1 --> A4[4. hear what reps are meeting]
-  A2 -. the move is not real .-> A14[14. notify sales]
-  A2 --> A3[3. find the cards it touches]
-  A3 --> A5[5. gather the proof]
+  T([a competitor moves]) --> A1[1. Take in the Move]
+  A1 --> A2[2. Confirm the Move]
+  A1 --> A4[4. Hear What Reps Are Meeting]
+  A2 -. the move is not real .-> A14[14. Notify Sales]
+  A2 --> A3[3. Find the Cards It Touches]
+  A3 --> A5[5. Gather the Proof]
   A4 --> A5
-  A5 --> A6[6. settle what may be said]
-  A5 --> A15[15. hand on the claim change]
+  A5 --> A6[6. Settle What May Be Said]
+  A5 --> A15[15. Hand on the Claim Change]
   A6 -. the evidence will not carry a comparison .-> A5
-  A6 --> A7[7. write the card]
-  A7 --> A8[8. edit the card]
+  A6 --> A7[7. Write the Card]
+  A7 --> A8[8. Edit the Card]
   A8 -. rewrite what the edit named .-> A7
-  A8 --> A9[9. lay the card out]
-  A9 --> A10[10. score the claims]
+  A8 --> A9[9. Lay the Card Out]
+  A9 --> A10[10. Score the Claims]
   A15 -. the register comes back at a new version .-> A10
   A10 -. a claim with no citation .-> A7
-  A10 --> A11[11. check the comparisons]
+  A10 --> A11[11. Check the Comparisons]
   A11 -. the comparison breaks a rule .-> A7
-  A11 --> A12[12. get sign-offs]
+  A11 --> A12[12. Get Sign-Offs]
   A12 -. changes requested .-> A7
   A12 -. the position itself is in question .-> A6
-  A12 --> A13[13. issue the version]
+  A12 --> A13[13. Issue the Version]
   A13 --> A14
-  A13 --> A16[16. say what partners may see]
+  A13 --> A16[16. Say What Partners May See]
   A14 --> DONE([the card is at its new version and sales has been told])
   A16 --> DONE
 ```

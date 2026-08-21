@@ -13,25 +13,25 @@ about anything it finds.
 
 ## Seats
 
-- `ref/mkt/announce-company-news` / track the coverage, report on the
-  announcement
-- `ref/mkt/award-entry` / track the result
-- `ref/mkt/brand-audit` / brief the audit, read what outsiders published
-- `ref/mkt/brand-health` / brief the wave, read what was published
-  outside
-- `ref/mkt/brand-refresh` / sweep for what was missed
-- `ref/mkt/brief-industry-analyst` / read where the analyst stands,
-  watch what gets published, report whether the positioning landed
-- `ref/mkt/competitive-battlecard` / take in the move
-- `ref/mkt/crisis-communication` / size up the exposure, track the
-  coverage, review the response
-- `ref/mkt/customer-reviews` / watch the reviews land
-- `ref/mkt/develop-marketing-strategy` / read what the rivals are doing
-- `ref/mkt/influencer-campaign` / record the live posts
-- `ref/mkt/pitch-earned-media` / log the coverage
-- `ref/mkt/product-positioning` / gather the market evidence
-- `ref/mkt/speaking-engagement` / report the result
-- `ref/mkt/user-conference` / report the conference
+- `ref/mkt/announce-company-news` / Track the Coverage, Report on the
+  Announcement
+- `ref/mkt/award-entry` / Track the Result
+- `ref/mkt/brand-audit` / Brief the Audit, Read What Outsiders Published
+- `ref/mkt/brand-health` / Brief the Wave, Read What Was Published
+  Outside
+- `ref/mkt/brand-refresh` / Sweep for What Was Missed
+- `ref/mkt/brief-industry-analyst` / Read Where the Analyst Stands,
+  Watch What Gets Published, Report Whether the Positioning Landed
+- `ref/mkt/competitive-battlecard` / Take in the Move
+- `ref/mkt/crisis-communication` / Size up the Exposure, Track the
+  Coverage, Review the Response
+- `ref/mkt/customer-reviews` / Watch the Reviews Land
+- `ref/mkt/develop-marketing-strategy` / Read What the Rivals Are Doing
+- `ref/mkt/influencer-campaign` / Record the Live Posts
+- `ref/mkt/pitch-earned-media` / Log the Coverage
+- `ref/mkt/product-positioning` / Gather the Market Evidence
+- `ref/mkt/speaking-engagement` / Report the Result
+- `ref/mkt/user-conference` / Report the Conference
 
 ## Patterns
 

@@ -1,4 +1,4 @@
-# Reference process: engage marketing agency
+# Reference process: Engage Marketing Agency
 
 `ref/mkt/engage-marketing-agency v1`
 
@@ -18,49 +18,49 @@ agency's work afterwards belongs to the seats that own each run.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the gap | what the department cannot do or cannot carry | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) · requester (person) |
-| 2 | choose the route | weigh building inside against hiring outside | decision-coordinator · capacity-manager · [forecaster](../../agents/forecaster.md) · leadership (person) |
-| 3 | decide what is handed over | what stays inside and what the agency does | decision-coordinator · capacity-manager · leadership (person) |
-| 4 | write the scope | the work handed over, its deliverables and dates | [supplier-manager](../../agents/supplier-manager.md) · capacity-manager · [standards-keeper](../../agents/standards-keeper.md) |
-| 5 | set the budget and the term | what the engagement can cost and how long it runs | [budget-keeper](../../agents/budget-keeper.md) · forecaster · finance (person) |
-| 6 | set the selection criteria | how a proposal is scored, fixed before any arrive | decision-coordinator · supplier-manager · [supplier-check](../../agents/supplier-check.md) |
-| 7 | build the candidate list | find agencies that could do it, drop the rest | supplier-manager · [researcher](../../agents/researcher.md) |
-| 8 | issue the request | every agency gets the same scope and questions | supplier-manager |
-| 9 | hear the pitches | each agency presents against the same request | supplier-manager · supplier-check · leadership (person) |
-| 10 | score the proposals | every verdict names the criterion behind it | supplier-check · forecaster |
-| 11 | check the references | talk to their clients and check their standing | researcher · supplier-manager |
-| 12 | choose the agency | named people pick one and say why | decision-coordinator · leadership (person) |
-| 13 | settle the contract | rates, ownership of the work, notice, data terms | supplier-manager · legal reviewer (person) · finance (person) |
-| 14 | set up the access | accounts and systems, with a date they come back | supplier-manager · [consent-manager](../../agents/consent-manager.md) · systems owner (person) · security reviewer (person) |
-| 15 | brief the agency | the goal, the audience, the standards, the measures | supplier-manager · standards-keeper · [analytics](../../agents/analytics.md) · leadership (person) |
-| 16 | record what was learned | what to repeat, what to avoid | decision-coordinator · supplier-manager |
+| 1 | Take in the Gap | what the department cannot do or cannot carry | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) · requester (person) |
+| 2 | Choose the Route | weigh building inside against hiring outside | decision-coordinator · capacity-manager · [forecaster](../../agents/forecaster.md) · leadership (person) |
+| 3 | Decide What Is Handed Over | what stays inside and what the agency does | decision-coordinator · capacity-manager · leadership (person) |
+| 4 | Write the Scope | the work handed over, its deliverables and dates | [supplier-manager](../../agents/supplier-manager.md) · capacity-manager · [standards-keeper](../../agents/standards-keeper.md) |
+| 5 | Set the Budget and the Term | what the engagement can cost and how long it runs | [budget-keeper](../../agents/budget-keeper.md) · forecaster · finance (person) |
+| 6 | Set the Selection Criteria | how a proposal is scored, fixed before any arrive | decision-coordinator · supplier-manager · [supplier-check](../../agents/supplier-check.md) |
+| 7 | Build the Candidate List | find agencies that could do it, drop the rest | supplier-manager · [researcher](../../agents/researcher.md) |
+| 8 | Issue the Request | every agency gets the same scope and questions | supplier-manager |
+| 9 | Hear the Pitches | each agency presents against the same request | supplier-manager · supplier-check · leadership (person) |
+| 10 | Score the Proposals | every verdict names the criterion behind it | supplier-check · forecaster |
+| 11 | Check the References | talk to their clients and check their standing | researcher · supplier-manager |
+| 12 | Choose the Agency | named people pick one and say why | decision-coordinator · leadership (person) |
+| 13 | Settle the Contract | rates, ownership of the work, notice, data terms | supplier-manager · legal reviewer (person) · finance (person) |
+| 14 | Set up the Access | accounts and systems, with a date they come back | supplier-manager · [consent-manager](../../agents/consent-manager.md) · systems owner (person) · security reviewer (person) |
+| 15 | Brief the Agency | the goal, the audience, the standards, the measures | supplier-manager · standards-keeper · [analytics](../../agents/analytics.md) · leadership (person) |
+| 16 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator · supplier-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a capability or capacity gap is raised]) --> A1[1. take in the gap]
-  A1 --> A2[2. choose the route]
-  A2 --> A3[3. decide what is handed over]
-  A2 -. the gap is filled inside .-> A16[16. record what was learned]
-  A3 --> A4[4. write the scope]
-  A4 --> A5[5. set the budget and the term]
-  A4 --> A7[7. build the candidate list]
-  A5 --> A6[6. set the selection criteria]
-  A6 --> A8[8. issue the request]
+  T([a capability or capacity gap is raised]) --> A1[1. Take in the Gap]
+  A1 --> A2[2. Choose the Route]
+  A2 --> A3[3. Decide What Is Handed Over]
+  A2 -. the gap is filled inside .-> A16[16. Record What Was Learned]
+  A3 --> A4[4. Write the Scope]
+  A4 --> A5[5. Set the Budget and the Term]
+  A4 --> A7[7. Build the Candidate List]
+  A5 --> A6[6. Set the Selection Criteria]
+  A6 --> A8[8. Issue the Request]
   A7 --> A8
-  A8 --> A9[9. hear the pitches]
-  A9 --> A10[10. score the proposals]
+  A8 --> A9[9. Hear the Pitches]
+  A9 --> A10[10. Score the Proposals]
   A10 -. an answer the request asked for is missing .-> A8
   A10 -. no candidate clears the criteria .-> A7
-  A10 --> A11[11. check the references]
+  A10 --> A11[11. Check the References]
   A11 -. a reference contradicts the proposal .-> A10
-  A11 --> A12[12. choose the agency]
+  A11 --> A12[12. Choose the Agency]
   A12 -. no agency is worth taking .-> A7
-  A12 --> A13[13. settle the contract]
+  A12 --> A13[13. Settle the Contract]
   A13 -. terms the organization will not accept .-> A12
-  A13 --> A14[14. set up the access]
-  A14 --> A15[15. brief the agency]
+  A13 --> A14[14. Set up the Access]
+  A14 --> A15[15. Brief the Agency]
   A15 -. the scope has moved since it was priced .-> A13
   A15 --> A16
   A16 --> DONE([the agency is briefed and the engagement is recorded])

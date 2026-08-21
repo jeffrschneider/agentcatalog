@@ -1,4 +1,4 @@
-# Reference process: update website content
+# Reference process: Update Website Content
 
 `ref/mkt/website-content-update v1`
 
@@ -39,43 +39,43 @@ change that takes an afternoon does not fill one.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the request | what has to change, on which page, and by when | [content-manager](../../agents/content-manager.md) · requester (person) |
-| 2 | find every page it touches | the live pages that say the thing being changed | [content-librarian](../../agents/content-librarian.md) |
-| 3 | route the change | a small edit or a bigger process, and who signs | content-manager · content-librarian |
-| 4 | write the change | the new wording, with a source under a new claim | [copywriter](../../agents/copywriter.md) · [researcher](../../agents/researcher.md) |
-| 5 | edit the change | the editor says what still has to change | [editor](../../agents/editor.md) · copywriter |
-| 6 | refresh the stale visuals | screenshots and diagrams the change makes wrong | [designer](../../agents/designer.md) |
-| 7 | score the change | claims and voice, read at the versions in force | [brand-check](../../agents/brand-check.md) |
-| 8 | get the sign-offs | the reviewers named at intake sign the change | brand owner (person) · legal reviewer (person) · subject matter expert (person) · rights approver (person) |
-| 9 | make the change in the page | the approved wording goes in as a draft | [web-producer](../../agents/web-producer.md) |
-| 10 | check the changed page | links, headings, accessibility and the tracking | [accessibility-check](../../agents/accessibility-check.md) · [search-optimizer](../../agents/search-optimizer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
-| 11 | publish the change | the owner says go and the page changes | content-manager · web-producer |
-| 12 | close out the change | the requester agrees and the change is recorded | web-producer · content-manager · content-librarian · requester (person) |
+| 1 | Take in the Request | what has to change, on which page, and by when | [content-manager](../../agents/content-manager.md) · requester (person) |
+| 2 | Find Every Page It Touches | the live pages that say the thing being changed | [content-librarian](../../agents/content-librarian.md) |
+| 3 | Route the Change | a small edit or a bigger process, and who signs | content-manager · content-librarian |
+| 4 | Write the Change | the new wording, with a source under a new claim | [copywriter](../../agents/copywriter.md) · [researcher](../../agents/researcher.md) |
+| 5 | Edit the Change | the editor says what still has to change | [editor](../../agents/editor.md) · copywriter |
+| 6 | Refresh the Stale Visuals | screenshots and diagrams the change makes wrong | [designer](../../agents/designer.md) |
+| 7 | Score the Change | claims and voice, read at the versions in force | [brand-check](../../agents/brand-check.md) |
+| 8 | Get the Sign-Offs | the reviewers named at intake sign the change | brand owner (person) · legal reviewer (person) · subject matter expert (person) · rights approver (person) |
+| 9 | Make the Change in the Page | the approved wording goes in as a draft | [web-producer](../../agents/web-producer.md) |
+| 10 | Check the Changed Page | links, headings, accessibility and the tracking | [accessibility-check](../../agents/accessibility-check.md) · [search-optimizer](../../agents/search-optimizer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
+| 11 | Publish the Change | the owner says go and the page changes | content-manager · web-producer |
+| 12 | Close out the Change | the requester agrees and the change is recorded | web-producer · content-manager · content-librarian · requester (person) |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a content request arrives]) --> A1[1. take in the request]
-  A1 --> A2[2. find every page it touches]
-  A2 --> A3[3. route the change]
-  A3 --> A4[4. write the change]
-  A3 --> A6[6. refresh the stale visuals]
-  A4 --> A5[5. edit the change]
+  T([a content request arrives]) --> A1[1. Take in the Request]
+  A1 --> A2[2. Find Every Page It Touches]
+  A2 --> A3[3. Route the Change]
+  A3 --> A4[4. Write the Change]
+  A3 --> A6[6. Refresh the Stale Visuals]
+  A4 --> A5[5. Edit the Change]
   A5 -. rewrites asked for .-> A4
-  A5 --> A7[7. score the change]
+  A5 --> A7[7. Score the Change]
   A6 --> A7
   A7 -. a claim or the voice failed .-> A4
-  A7 --> A8[8. get the sign-offs]
+  A7 --> A8[8. Get the Sign-Offs]
   A8 -. changes to the wording .-> A4
   A8 -. a visual has to change .-> A6
-  A8 --> A9[9. make the change in the page]
-  A9 --> A10[10. check the changed page]
+  A8 --> A9[9. Make the Change in the Page]
+  A9 --> A10[10. Check the Changed Page]
   A10 -. the wording failed .-> A4
   A10 -. a visual failed .-> A6
   A10 -. the page itself failed .-> A9
-  A10 --> A11[11. publish the change]
-  A11 --> A12[12. close out the change]
+  A10 --> A11[11. Publish the Change]
+  A11 --> A12[12. Close out the Change]
   A12 -. the live page is not what was approved .-> A9
   A12 --> DONE([the page is updated and live])
 ```

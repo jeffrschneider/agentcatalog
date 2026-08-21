@@ -14,20 +14,20 @@ report can tell a real problem from somebody's preference.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / check the buy before it runs
-- `ref/mkt/display-retargeting` / check the buy before switch-on, check
-  the caps are holding
-- `ref/mkt/reallocate-media-spend` / check the move against the rules,
-  check the change took
-- `ref/mkt/test-ad-creative` / check the variant set, check the test
-  before switch-on, watch delivery
-- `ref/mkt/traffic-ad-creative` / check the buy before switch-on, check
-  the live ads
-- `ref/mkt/verify-ad-placement` / take in the concern, set what the
-  audit covers, confirm the rules in force, pull the delivery quality
-  figures, score every placement, look at the flagged placements, size
-  what it cost, decide what happens to each, confirm the exclusions
-  hold, report the audit, record what was learned
+- `ref/mkt/account-based-play` / Check the Buy Before It Runs
+- `ref/mkt/display-retargeting` / Check the Buy Before Switch-On, Check
+  the Caps Are Holding
+- `ref/mkt/reallocate-media-spend` / Check the Move against the Rules,
+  Check the Change Took
+- `ref/mkt/test-ad-creative` / Check the Variant Set, Check the Test
+  Before Switch-On, Watch Delivery
+- `ref/mkt/traffic-ad-creative` / Check the Buy Before Switch-On, Check
+  the Live Ads
+- `ref/mkt/verify-ad-placement` / Take in the Concern, Set What the
+  Audit Covers, Confirm the Rules in Force, Pull the Delivery Quality
+  Figures, Score Every Placement, Look at the Flagged Placements, Size
+  What It Cost, Decide What Happens to Each, Confirm the Exclusions
+  Hold, Report the Audit, Record What Was Learned
 
 ## Patterns
 

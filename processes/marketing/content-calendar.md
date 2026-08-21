@@ -1,4 +1,4 @@
-# Reference process: the content calendar
+# Reference process: Plan Content Calendar
 
 `ref/mkt/content-calendar v1`
 
@@ -20,48 +20,48 @@ What it produces is a set of commitments that other processes work from.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the period's goals | what the period has to deliver, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | read the closed period | what published, what slipped, and how it did | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
-| 3 | list what is already committed | pieces in flight and the dates already fixed | [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [launch-coordinator](../../agents/launch-coordinator.md) |
-| 4 | collect the topic candidates | every seat puts forward what it wants made | decision-coordinator · content-manager · campaign-manager · [community-manager](../../agents/community-manager.md) · [content-librarian](../../agents/content-librarian.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 5 | read the search demand | the questions people ask, with the numbers | search-optimizer |
-| 6 | check the library for overlap | where a live page already covers the topic | content-librarian |
-| 7 | size the production capacity | how much work the makers can carry this period | content-manager · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
-| 8 | score the candidates | each topic set against the goals and the evidence | decision-coordinator · analytics · search-optimizer · content-librarian |
-| 9 | check what needs clearing | topics needing a claim, a permission or a legal read | [standards-keeper](../../agents/standards-keeper.md) · legal reviewer (person) · rights approver (person) |
-| 10 | draft the calendar | a slate with a format, a seat and a date on each | content-manager · content-librarian · creative-producer · editor |
-| 11 | agree the calendar | the deciders cut it to what the period can carry | decision-coordinator · leadership (person) |
-| 12 | publish the calendar | the agreed schedule where every seat reads it | content-manager · content-librarian |
-| 13 | brief the department | every seat that makes or promotes hears the slate | decision-coordinator · content-manager · campaign-manager · creative-producer · editor |
-| 14 | hand over the approved topics | each topic becomes a request a run can start from | content-manager · creative-producer · campaign-manager |
-| 15 | record what the plan rests on | the assumptions, and the date the slate is re-cut | decision-coordinator |
+| 1 | Take in the Period's Goals | what the period has to deliver, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Read the Closed Period | what published, what slipped, and how it did | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
+| 3 | List What Is Already Committed | pieces in flight and the dates already fixed | [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [launch-coordinator](../../agents/launch-coordinator.md) |
+| 4 | Collect the Topic Candidates | every seat puts forward what it wants made | decision-coordinator · content-manager · campaign-manager · [community-manager](../../agents/community-manager.md) · [content-librarian](../../agents/content-librarian.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 5 | Read the Search Demand | the questions people ask, with the numbers | search-optimizer |
+| 6 | Check the Library for Overlap | where a live page already covers the topic | content-librarian |
+| 7 | Size the Production Capacity | how much work the makers can carry this period | content-manager · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
+| 8 | Score the Candidates | each topic set against the goals and the evidence | decision-coordinator · analytics · search-optimizer · content-librarian |
+| 9 | Check What Needs Clearing | topics needing a claim, a permission or a legal read | [standards-keeper](../../agents/standards-keeper.md) · legal reviewer (person) · rights approver (person) |
+| 10 | Draft the Calendar | a slate with a format, a seat and a date on each | content-manager · content-librarian · creative-producer · editor |
+| 11 | Agree the Calendar | the deciders cut it to what the period can carry | decision-coordinator · leadership (person) |
+| 12 | Publish the Calendar | the agreed schedule where every seat reads it | content-manager · content-librarian |
+| 13 | Brief the Department | every seat that makes or promotes hears the slate | decision-coordinator · content-manager · campaign-manager · creative-producer · editor |
+| 14 | Hand over the Approved Topics | each topic becomes a request a run can start from | content-manager · creative-producer · campaign-manager |
+| 15 | Record What the Plan Rests On | the assumptions, and the date the slate is re-cut | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a planning period opens]) --> A1[1. take in the period's goals]
-  A1 --> A2[2. read the closed period]
-  A1 --> A3[3. list what is already committed]
-  A2 --> A4[4. collect the topic candidates]
+  T([a planning period opens]) --> A1[1. Take in the Period's Goals]
+  A1 --> A2[2. Read the Closed Period]
+  A1 --> A3[3. List What Is Already Committed]
+  A2 --> A4[4. Collect the Topic Candidates]
   A3 --> A4
-  A3 --> A7[7. size the production capacity]
-  A4 --> A5[5. read the search demand]
-  A4 --> A6[6. check the library for overlap]
-  A5 --> A8[8. score the candidates]
+  A3 --> A7[7. Size the Production Capacity]
+  A4 --> A5[5. Read the Search Demand]
+  A4 --> A6[6. Check the Library for Overlap]
+  A5 --> A8[8. Score the Candidates]
   A6 --> A8
   A7 --> A8
   A8 -. no candidate meets a goal .-> A4
-  A8 --> A9[9. check what needs clearing]
+  A8 --> A9[9. Check What Needs Clearing]
   A9 -. a topic cannot be cleared .-> A8
-  A9 --> A10[10. draft the calendar]
-  A10 --> A11[11. agree the calendar]
+  A9 --> A10[10. Draft the Calendar]
+  A10 --> A11[11. Agree the Calendar]
   A11 -. cut past what capacity allows .-> A10
-  A11 --> A12[12. publish the calendar]
+  A11 --> A12[12. Publish the Calendar]
   A12 -. a fixed date moves .-> A10
-  A12 --> A13[13. brief the department]
-  A13 --> A14[14. hand over the approved topics]
-  A14 --> A15[15. record what the plan rests on]
+  A12 --> A13[13. Brief the Department]
+  A13 --> A14[14. Hand over the Approved Topics]
+  A14 --> A15[15. Record What the Plan Rests On]
   A15 --> DONE([the slate, its owners and its dates are agreed])
 ```
 

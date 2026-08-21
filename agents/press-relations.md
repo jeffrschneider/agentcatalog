@@ -15,25 +15,25 @@ wrote down each exchange while it was happening.
 
 ## Seats
 
-- `ref/mkt/announce-company-news` / set the announcement date, settle
-  the story, line up the reporters, issue the release, answer the press
-- `ref/mkt/award-entry` / hand the result on
-- `ref/mkt/brand-refresh` / say it in public
-- `ref/mkt/brief-industry-analyst` / take in the request, read where the
-  analyst stands, set what the briefing must do, brief the makers,
-  settle what the briefing will say, line up the customer references,
-  rehearse the briefing, hold the briefing, answer what was left open,
-  watch what gets published, check the published note, report whether
-  the positioning landed, record what was learned
-- `ref/mkt/crisis-communication` / size up the exposure, draft the
-  statement, tailor for each audience, brief the speakers, issue the
-  response, answer the questions
-- `ref/mkt/moderate-community` / route the escalations
-- `ref/mkt/pitch-earned-media` / test the angle, choose the reporters,
-  send the pitches, follow up on the pitches, prepare the spokesperson,
-  answer what reporters ask
-- `ref/mkt/user-conference` / invite the press and the analysts, run the
-  show
+- `ref/mkt/announce-company-news` / Set the Announcement Date, Settle
+  the Story, Line up the Reporters, Issue the Release, Answer the Press
+- `ref/mkt/award-entry` / Hand the Result On
+- `ref/mkt/brand-refresh` / Say It in Public
+- `ref/mkt/brief-industry-analyst` / Take in the Request, Read Where the
+  Analyst Stands, Set What the Briefing Must Do, Brief the Makers,
+  Settle What the Briefing Will Say, Line up the Customer References,
+  Rehearse the Briefing, Hold the Briefing, Answer What Was Left Open,
+  Watch What Gets Published, Check the Published Note, Report Whether
+  the Positioning Landed, Record What Was Learned
+- `ref/mkt/crisis-communication` / Size up the Exposure, Draft the
+  Statement, Tailor for Each Audience, Brief the Speakers, Issue the
+  Response, Answer the Questions
+- `ref/mkt/moderate-community` / Route the Escalations
+- `ref/mkt/pitch-earned-media` / Test the Angle, Choose the Reporters,
+  Send the Pitches, Follow up on the Pitches, Prepare the Spokesperson,
+  Answer What Reporters Ask
+- `ref/mkt/user-conference` / Invite the Press and the Analysts, Run the
+  Show
 
 ## Patterns
 

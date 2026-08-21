@@ -1,4 +1,4 @@
-# Reference process: refresh published content
+# Reference process: Refresh Published Content
 
 `ref/mkt/refresh-content v1`
 
@@ -19,68 +19,68 @@ the cycle changed, what it took down, and what those changes moved.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the signal | work out which pages the cycle covers and by when | [content-librarian](../../agents/content-librarian.md) |
-| 2 | rebuild the inventory | what is live, when it changed, what it does now | content-librarian |
-| 3 | read how the pages perform | traffic, conversions and what readers do on each page | [analytics](../../agents/analytics.md) |
-| 4 | read where the pages stand in search | the terms each page has lost and what ranks instead | [search-optimizer](../../agents/search-optimizer.md) |
-| 5 | score the pages against the current standards | claims and voice read at the versions now in force | [brand-check](../../agents/brand-check.md) · [standards-keeper](../../agents/standards-keeper.md) |
-| 6 | check whether the facts still hold | the numbers and sources under each page, read again | [researcher](../../agents/researcher.md) |
-| 7 | decide what happens to each page | update, merge, retire, or leave the page alone | content-librarian |
-| 8 | approve the merges and the retirements | a person signs before any page comes down | content-librarian · brand owner (person) · leadership (person) |
-| 9 | set the order and the dates | which pages get worked first, and when each is due | content-librarian |
-| 10 | brief the pages in the cycle | every seat hears the same account of what is wrong | content-librarian · [content-manager](../../agents/content-manager.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · search-optimizer · [creative-producer](../../agents/creative-producer.md) |
-| 11 | set what each page has to answer | the questions and terms the page has to cover now | search-optimizer |
-| 12 | rewrite what has to change | corrected claims, refreshed numbers, new sections | copywriter |
-| 13 | edit the rewrite | the editor says what still has to change | editor |
-| 14 | refresh the visuals | screenshots, diagrams and video that have aged | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 15 | get sign-offs | brand, legal and rights approve the changed pages | brand-check · legal reviewer (person) · rights approver (person) |
-| 16 | make the changes in the pages | the approved copy and visuals go into the pages | [web-producer](../../agents/web-producer.md) |
-| 17 | set the addresses and the redirects | merged and retired pages point somewhere sensible | web-producer · search-optimizer |
-| 18 | check the changed pages | accessibility, links, load, headings and tracking | [accessibility-check](../../agents/accessibility-check.md) · search-optimizer · [conversion-tracker](../../agents/conversion-tracker.md) |
-| 19 | publish the changes | the owner says go and the pages change | content-manager · web-producer |
-| 20 | watch what the changes did | traffic and rankings after, set against before | analytics · search-optimizer · content-manager |
-| 21 | report the cycle | what changed, what came down, and what it moved | content-librarian · analytics |
-| 22 | record what was learned | what to repeat, what to avoid | content-librarian |
+| 1 | Take in the Signal | work out which pages the cycle covers and by when | [content-librarian](../../agents/content-librarian.md) |
+| 2 | Rebuild the Inventory | what is live, when it changed, what it does now | content-librarian |
+| 3 | Read How the Pages Perform | traffic, conversions and what readers do on each page | [analytics](../../agents/analytics.md) |
+| 4 | Read Where the Pages Stand in Search | the terms each page has lost and what ranks instead | [search-optimizer](../../agents/search-optimizer.md) |
+| 5 | Score the Pages against the Current Standards | claims and voice read at the versions now in force | [brand-check](../../agents/brand-check.md) · [standards-keeper](../../agents/standards-keeper.md) |
+| 6 | Check Whether the Facts Still Hold | the numbers and sources under each page, read again | [researcher](../../agents/researcher.md) |
+| 7 | Decide What Happens to Each Page | update, merge, retire, or leave the page alone | content-librarian |
+| 8 | Approve the Merges and the Retirements | a person signs before any page comes down | content-librarian · brand owner (person) · leadership (person) |
+| 9 | Set the Order and the Dates | which pages get worked first, and when each is due | content-librarian |
+| 10 | Brief the Pages in the Cycle | every seat hears the same account of what is wrong | content-librarian · [content-manager](../../agents/content-manager.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · search-optimizer · [creative-producer](../../agents/creative-producer.md) |
+| 11 | Set What Each Page Has to Answer | the questions and terms the page has to cover now | search-optimizer |
+| 12 | Rewrite What Has to Change | corrected claims, refreshed numbers, new sections | copywriter |
+| 13 | Edit the Rewrite | the editor says what still has to change | editor |
+| 14 | Refresh the Visuals | screenshots, diagrams and video that have aged | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 15 | Get Sign-Offs | brand, legal and rights approve the changed pages | brand-check · legal reviewer (person) · rights approver (person) |
+| 16 | Make the Changes in the Pages | the approved copy and visuals go into the pages | [web-producer](../../agents/web-producer.md) |
+| 17 | Set the Addresses and the Redirects | merged and retired pages point somewhere sensible | web-producer · search-optimizer |
+| 18 | Check the Changed Pages | accessibility, links, load, headings and tracking | [accessibility-check](../../agents/accessibility-check.md) · search-optimizer · [conversion-tracker](../../agents/conversion-tracker.md) |
+| 19 | Publish the Changes | the owner says go and the pages change | content-manager · web-producer |
+| 20 | Watch What the Changes Did | traffic and rankings after, set against before | analytics · search-optimizer · content-manager |
+| 21 | Report the Cycle | what changed, what came down, and what it moved | content-librarian · analytics |
+| 22 | Record What Was Learned | what to repeat, what to avoid | content-librarian |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([an audit comes due or a page decays]) --> A1[1. take in the signal]
-  A1 --> A2[2. rebuild the inventory]
-  A2 --> A3[3. read how the pages perform]
-  A2 --> A4[4. read where the pages stand in search]
-  A2 --> A5[5. score the pages against the current standards]
-  A2 --> A6[6. check whether the facts still hold]
-  A3 --> A7[7. decide what happens to each page]
+  T([an audit comes due or a page decays]) --> A1[1. Take in the Signal]
+  A1 --> A2[2. Rebuild the Inventory]
+  A2 --> A3[3. Read How the Pages Perform]
+  A2 --> A4[4. Read Where the Pages Stand in Search]
+  A2 --> A5[5. Score the Pages against the Current Standards]
+  A2 --> A6[6. Check Whether the Facts Still Hold]
+  A3 --> A7[7. Decide What Happens to Each Page]
   A4 --> A7
   A5 --> A7
   A6 --> A7
-  A7 --> A8[8. approve the merges and the retirements]
+  A7 --> A8[8. Approve the Merges and the Retirements]
   A8 -. the takedown is refused .-> A7
-  A8 --> A9[9. set the order and the dates]
-  A9 --> A10[10. brief the pages in the cycle]
-  A9 -. pages to retire .-> A17[17. set the addresses and the redirects]
-  A9 -. pages left alone .-> A21[21. report the cycle]
-  A10 --> A11[11. set what each page has to answer]
-  A10 --> A14[14. refresh the visuals]
-  A11 --> A12[12. rewrite what has to change]
+  A8 --> A9[9. Set the Order and the Dates]
+  A9 --> A10[10. Brief the Pages in the Cycle]
+  A9 -. pages to retire .-> A17[17. Set the Addresses and the Redirects]
+  A9 -. pages left alone .-> A21[21. Report the Cycle]
+  A10 --> A11[11. Set What Each Page Has to Answer]
+  A10 --> A14[14. Refresh the Visuals]
+  A11 --> A12[12. Rewrite What Has to Change]
   A12 -. the rewrite needs a source .-> A6
-  A12 --> A13[13. edit the rewrite]
+  A12 --> A13[13. Edit the Rewrite]
   A13 -. rewrite what the edit named .-> A12
-  A13 --> A15[15. get sign-offs]
+  A13 --> A15[15. Get Sign-Offs]
   A14 --> A15
   A15 -. changes requested .-> A12
   A15 -. changes requested .-> A14
-  A15 --> A16[16. make the changes in the pages]
+  A15 --> A16[16. Make the Changes in the Pages]
   A16 --> A17
-  A17 --> A18[18. check the changed pages]
+  A17 --> A18[18. Check the Changed Pages]
   A18 -. failures to fix .-> A16
-  A18 --> A19[19. publish the changes]
-  A19 --> A20[20. watch what the changes did]
+  A18 --> A19[19. Publish the Changes]
+  A19 --> A20[20. Watch What the Changes Did]
   A20 -. the change made things worse .-> A7
   A20 --> A21
-  A21 --> A22[22. record what was learned]
+  A21 --> A22[22. Record What Was Learned]
   A22 --> DONE([the cycle's pages are updated, merged or retired])
 ```
 

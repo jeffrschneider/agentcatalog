@@ -1,4 +1,4 @@
-# Reference process: brief industry analyst
+# Reference process: Brief Industry Analyst
 
 `ref/mkt/brief-industry-analyst v1`
 
@@ -34,53 +34,53 @@ around it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the request | what the analyst asked for, and by when | [press-relations](../../agents/press-relations.md) · [submissions-manager](../../agents/submissions-manager.md) |
-| 2 | read where the analyst stands | what the firm has already published about us | [coverage-monitor](../../agents/coverage-monitor.md) · [researcher](../../agents/researcher.md) · press-relations |
-| 3 | set what the briefing must do | the result worth having, and who will speak | press-relations · leadership (person) |
-| 4 | brief the makers | every seat hears the same request at once | press-relations · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · researcher |
-| 5 | gather the proof | customers, numbers and product facts, each sourced | researcher · subject matter expert (person) |
-| 6 | settle what the briefing will say | what the analyst has to come away believing | press-relations · copywriter · leadership (person) |
-| 7 | build the briefing material | the deck, the written answers and the demo | copywriter · designer |
-| 8 | get sign-offs | the claims are scored, then legal and product sign | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · subject matter expert (person) |
-| 9 | file what the cycle requires | the firm's questionnaire, in the firm's own format | submissions-manager · researcher |
-| 10 | line up the customer references | the customers who agreed to speak, and when | [advocacy-manager](../../agents/advocacy-manager.md) · press-relations |
-| 11 | rehearse the briefing | the speakers run it once, hard questions included | press-relations · leadership (person) · subject matter expert (person) |
-| 12 | hold the briefing | the call happens and the analyst asks questions | leadership (person) · subject matter expert (person) · press-relations |
-| 13 | answer what was left open | the follow-ups the analyst asked for, sent | press-relations · researcher · subject matter expert (person) |
-| 14 | watch what gets published | the note, the quote and the ranking, each logged | coverage-monitor · press-relations |
-| 15 | check the published note | the errors are named and a correction is asked for | press-relations · subject matter expert (person) |
-| 16 | report whether the positioning landed | what the analyst now says, set against the goal | press-relations · [analytics](../../agents/analytics.md) · coverage-monitor |
-| 17 | record what was learned | what to repeat, what to avoid | press-relations · submissions-manager |
+| 1 | Take in the Request | what the analyst asked for, and by when | [press-relations](../../agents/press-relations.md) · [submissions-manager](../../agents/submissions-manager.md) |
+| 2 | Read Where the Analyst Stands | what the firm has already published about us | [coverage-monitor](../../agents/coverage-monitor.md) · [researcher](../../agents/researcher.md) · press-relations |
+| 3 | Set What the Briefing Must Do | the result worth having, and who will speak | press-relations · leadership (person) |
+| 4 | Brief the Makers | every seat hears the same request at once | press-relations · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · researcher |
+| 5 | Gather the Proof | customers, numbers and product facts, each sourced | researcher · subject matter expert (person) |
+| 6 | Settle What the Briefing Will Say | what the analyst has to come away believing | press-relations · copywriter · leadership (person) |
+| 7 | Build the Briefing Material | the deck, the written answers and the demo | copywriter · designer |
+| 8 | Get Sign-Offs | the claims are scored, then legal and product sign | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · subject matter expert (person) |
+| 9 | File What the Cycle Requires | the firm's questionnaire, in the firm's own format | submissions-manager · researcher |
+| 10 | Line up the Customer References | the customers who agreed to speak, and when | [advocacy-manager](../../agents/advocacy-manager.md) · press-relations |
+| 11 | Rehearse the Briefing | the speakers run it once, hard questions included | press-relations · leadership (person) · subject matter expert (person) |
+| 12 | Hold the Briefing | the call happens and the analyst asks questions | leadership (person) · subject matter expert (person) · press-relations |
+| 13 | Answer What Was Left Open | the follow-ups the analyst asked for, sent | press-relations · researcher · subject matter expert (person) |
+| 14 | Watch What Gets Published | the note, the quote and the ranking, each logged | coverage-monitor · press-relations |
+| 15 | Check the Published Note | the errors are named and a correction is asked for | press-relations · subject matter expert (person) |
+| 16 | Report Whether the Positioning Landed | what the analyst now says, set against the goal | press-relations · [analytics](../../agents/analytics.md) · coverage-monitor |
+| 17 | Record What Was Learned | what to repeat, what to avoid | press-relations · submissions-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([an analyst cycle opens or an inquiry arrives]) --> A1[1. take in the request]
-  A1 --> A2[2. read where the analyst stands]
-  A2 --> A3[3. set what the briefing must do]
-  A3 --> A4[4. brief the makers]
-  A3 --> A10[10. line up the customer references]
-  A4 --> A5[5. gather the proof]
-  A5 --> A6[6. settle what the briefing will say]
-  A6 --> A7[7. build the briefing material]
-  A7 --> A8[8. get sign-offs]
+  T([an analyst cycle opens or an inquiry arrives]) --> A1[1. Take in the Request]
+  A1 --> A2[2. Read Where the Analyst Stands]
+  A2 --> A3[3. Set What the Briefing Must Do]
+  A3 --> A4[4. Brief the Makers]
+  A3 --> A10[10. Line up the Customer References]
+  A4 --> A5[5. Gather the Proof]
+  A5 --> A6[6. Settle What the Briefing Will Say]
+  A6 --> A7[7. Build the Briefing Material]
+  A7 --> A8[8. Get Sign-Offs]
   A8 -. changes requested .-> A7
-  A8 --> A9[9. file what the cycle requires]
-  A8 --> A11[11. rehearse the briefing]
+  A8 --> A9[9. File What the Cycle Requires]
+  A8 --> A11[11. Rehearse the Briefing]
   A10 --> A11
   A11 -. a question nobody can answer .-> A5
-  A9 --> A12[12. hold the briefing]
+  A9 --> A12[12. Hold the Briefing]
   A11 --> A12
-  A12 --> A13[13. answer what was left open]
+  A12 --> A13[13. Answer What Was Left Open]
   A13 -. the answer needs new material .-> A7
-  A12 --> A14[14. watch what gets published]
+  A12 --> A14[14. Watch What Gets Published]
   A13 --> A14
-  A14 --> A15[15. check the published note]
+  A14 --> A15[15. Check the Published Note]
   A15 -. a correction is published .-> A14
-  A14 --> A16[16. report whether the positioning landed]
+  A14 --> A16[16. Report Whether the Positioning Landed]
   A15 --> A16
-  A16 --> A17[17. record what was learned]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the briefing is delivered and the positioning has landed])
 ```
 

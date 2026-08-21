@@ -1,4 +1,4 @@
-# Reference process: pitch earned media
+# Reference process: Pitch Earned Media
 
 `ref/mkt/pitch-earned-media v1`
 
@@ -17,49 +17,49 @@ the coverage has been recorded and the run has been debriefed.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the story angle | work out what the story is and who it is for | [comms-manager](../../agents/comms-manager.md) |
-| 2 | test the angle | decide whether a reporter would care about it | comms-manager · [press-relations](../../agents/press-relations.md) · media contact (person) |
-| 3 | gather the proof | the numbers, the sources and who will confirm them | [researcher](../../agents/researcher.md) · subject matter expert (person) |
-| 4 | choose the reporters | the outlets and writers this story actually fits | press-relations · comms-manager · media contact (person) |
-| 5 | decide who speaks | the spokesperson and what they may say on record | comms-manager · leadership (person) · spokesperson (person) |
-| 6 | produce the pitch materials | the pitch note, the release, the images and facts | [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [designer](../../agents/designer.md) · comms-manager |
-| 7 | get sign-offs | brand, legal and the spokesperson approve it | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · spokesperson (person) |
-| 8 | set the timing | when the story is offered and when it may run | comms-manager · media contact (person) |
-| 9 | send the pitches | each reporter gets the version written for them | press-relations · media contact (person) |
-| 10 | follow up on the pitches | ask again and record what each reporter said | press-relations · media contact (person) |
-| 11 | prepare the spokesperson | work through the questions a reporter will ask | comms-manager · press-relations · spokesperson (person) |
-| 12 | run the interviews | the reporter talks to the spokesperson | spokesperson (person) · media contact (person) |
-| 13 | answer what reporters ask | extra data, a fact check, another interview | researcher · press-relations · media contact (person) · subject matter expert (person) |
-| 14 | log the coverage | record every piece that ran and what it said | [coverage-monitor](../../agents/coverage-monitor.md) · comms-manager |
-| 15 | record what was learned | what to repeat, what to avoid | comms-manager |
+| 1 | Take in the Story Angle | work out what the story is and who it is for | [comms-manager](../../agents/comms-manager.md) |
+| 2 | Test the Angle | decide whether a reporter would care about it | comms-manager · [press-relations](../../agents/press-relations.md) · media contact (person) |
+| 3 | Gather the Proof | the numbers, the sources and who will confirm them | [researcher](../../agents/researcher.md) · subject matter expert (person) |
+| 4 | Choose the Reporters | the outlets and writers this story actually fits | press-relations · comms-manager · media contact (person) |
+| 5 | Decide Who Speaks | the spokesperson and what they may say on record | comms-manager · leadership (person) · spokesperson (person) |
+| 6 | Produce the Pitch Materials | the pitch note, the release, the images and facts | [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [designer](../../agents/designer.md) · comms-manager |
+| 7 | Get Sign-Offs | brand, legal and the spokesperson approve it | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · spokesperson (person) |
+| 8 | Set the Timing | when the story is offered and when it may run | comms-manager · media contact (person) |
+| 9 | Send the Pitches | each reporter gets the version written for them | press-relations · media contact (person) |
+| 10 | Follow up on the Pitches | ask again and record what each reporter said | press-relations · media contact (person) |
+| 11 | Prepare the Spokesperson | work through the questions a reporter will ask | comms-manager · press-relations · spokesperson (person) |
+| 12 | Run the Interviews | the reporter talks to the spokesperson | spokesperson (person) · media contact (person) |
+| 13 | Answer What Reporters Ask | extra data, a fact check, another interview | researcher · press-relations · media contact (person) · subject matter expert (person) |
+| 14 | Log the Coverage | record every piece that ran and what it said | [coverage-monitor](../../agents/coverage-monitor.md) · comms-manager |
+| 15 | Record What Was Learned | what to repeat, what to avoid | comms-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a story angle is worth telling]) --> A1[1. take in the story angle]
-  A1 --> A2[2. test the angle]
+  T([a story angle is worth telling]) --> A1[1. Take in the Story Angle]
+  A1 --> A2[2. Test the Angle]
   A2 -. the angle will not carry .-> A1
-  A2 --> A3[3. gather the proof]
-  A2 --> A4[4. choose the reporters]
-  A4 --> A5[5. decide who speaks]
-  A3 --> A6[6. produce the pitch materials]
+  A2 --> A3[3. Gather the Proof]
+  A2 --> A4[4. Choose the Reporters]
+  A4 --> A5[5. Decide Who Speaks]
+  A3 --> A6[6. Produce the Pitch Materials]
   A5 --> A6
-  A6 --> A7[7. get sign-offs]
+  A6 --> A7[7. Get Sign-Offs]
   A7 -. changes requested .-> A6
-  A7 --> A8[8. set the timing]
-  A8 --> A9[9. send the pitches]
-  A9 --> A10[10. follow up on the pitches]
+  A7 --> A8[8. Set the Timing]
+  A8 --> A9[9. Send the Pitches]
+  A9 --> A10[10. Follow up on the Pitches]
   A10 -. a reporter wants a different angle .-> A6
-  A10 --> A11[11. prepare the spokesperson]
-  A10 --> A14[14. log the coverage]
-  A11 --> A12[12. run the interviews]
-  A12 --> A13[13. answer what reporters ask]
+  A10 --> A11[11. Prepare the Spokesperson]
+  A10 --> A14[14. Log the Coverage]
+  A11 --> A12[12. Run the Interviews]
+  A12 --> A13[13. Answer What Reporters Ask]
   A13 -. a claim needs a new source .-> A3
   A13 -. an answer nobody signed off .-> A7
   A13 --> A14
   A14 -. a piece ran with a wrong fact .-> A13
-  A14 --> A15[15. record what was learned]
+  A14 --> A15[15. Record What Was Learned]
   A15 --> DONE([the placements are secured and the run is closed])
 ```
 

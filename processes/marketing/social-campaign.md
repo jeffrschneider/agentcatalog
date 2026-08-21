@@ -1,4 +1,4 @@
-# Reference process: the social campaign
+# Reference process: Run Social Media Campaign
 
 `ref/mkt/social-campaign v1`
 
@@ -11,42 +11,42 @@ live, and reports how it did against what the brief asked for.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the brief | work out what the campaign must accomplish | [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | set the parameters | platforms, audience, dates, budget | campaign-manager · leadership (person) |
-| 3 | brief the creatives | say what is needed and by when | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 4 | settle on a direction | weigh concepts until one is worth backing | campaign-manager · copywriter · designer · video-editor |
-| 5 | produce the posts | copy, images, video, sized per platform | copywriter · designer · video-editor |
-| 6 | get sign-offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
-| 7 | set up the practical side | tracking, landing pages, ad setup, schedule | [media-buyer](../../agents/media-buyer.md) · campaign-manager |
-| 8 | launch | posts go out, the ads start | campaign-manager |
-| 9 | watch performance | track results against the brief | [analytics](../../agents/analytics.md) · campaign-manager |
-| 10 | engage | answer comments and messages | [community-manager](../../agents/community-manager.md) |
-| 11 | optimize | move ad money, swap stale creative | media-buyer · campaign-manager |
-| 12 | wrap up | ads off, numbers pulled, reported | campaign-manager · analytics |
-| 13 | record what was learned | what to repeat, what to avoid | campaign-manager |
+| 1 | Take in the Brief | work out what the campaign must accomplish | [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Set the Parameters | platforms, audience, dates, budget | campaign-manager · leadership (person) |
+| 3 | Brief the Creatives | say what is needed and by when | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 4 | Settle on a Direction | weigh concepts until one is worth backing | campaign-manager · copywriter · designer · video-editor |
+| 5 | Produce the Posts | copy, images, video, sized per platform | copywriter · designer · video-editor |
+| 6 | Get Sign-Offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
+| 7 | Set up the Practical Side | tracking, landing pages, ad setup, schedule | [media-buyer](../../agents/media-buyer.md) · campaign-manager |
+| 8 | Launch | posts go out, the ads start | campaign-manager |
+| 9 | Watch Performance | track results against the brief | [analytics](../../agents/analytics.md) · campaign-manager |
+| 10 | Engage | answer comments and messages | [community-manager](../../agents/community-manager.md) |
+| 11 | Optimize | move ad money, swap stale creative | media-buyer · campaign-manager |
+| 12 | Wrap Up | ads off, numbers pulled, reported | campaign-manager · analytics |
+| 13 | Record What Was Learned | what to repeat, what to avoid | campaign-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a campaign brief arrives]) --> A1[1. take in the brief]
-  A1 --> A2[2. set the parameters]
-  A2 --> A3[3. brief the creatives]
-  A2 --> A7[7. set up the practical side]
-  A3 --> A4[4. settle on a direction]
-  A4 --> A5[5. produce the posts]
-  A5 --> A6[6. get sign-offs]
+  T([a campaign brief arrives]) --> A1[1. Take in the Brief]
+  A1 --> A2[2. Set the Parameters]
+  A2 --> A3[3. Brief the Creatives]
+  A2 --> A7[7. Set up the Practical Side]
+  A3 --> A4[4. Settle on a Direction]
+  A4 --> A5[5. Produce the Posts]
+  A5 --> A6[6. Get Sign-Offs]
   A6 -. changes requested .-> A5
-  A6 --> A8[8. launch]
+  A6 --> A8[8. Launch]
   A7 --> A8
-  A8 --> A9[9. watch performance]
-  A8 --> A10[10. engage]
-  A8 --> A11[11. optimize]
+  A8 --> A9[9. Watch Performance]
+  A8 --> A10[10. Engage]
+  A8 --> A11[11. Optimize]
   A11 -. needs new assets .-> A5
-  A9 --> A12[12. wrap up]
+  A9 --> A12[12. Wrap Up]
   A10 --> A12
   A11 --> A12
-  A12 --> A13[13. record what was learned]
+  A12 --> A13[13. Record What Was Learned]
   A13 --> DONE([the campaign is closed])
 ```
 

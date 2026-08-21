@@ -12,81 +12,81 @@ finding that source is a different job from writing the sentence.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / read the accounts
-- `ref/mkt/advisory-board` / collect the early input, capture what was
-  said, sort the feedback
-- `ref/mkt/announce-company-news` / confirm the facts
-- `ref/mkt/annual-marketing-plan` / gather the outside evidence
-- `ref/mkt/award-entry` / brief the entry, gather the evidence
-- `ref/mkt/brand-health` / set the competitor set
-- `ref/mkt/brand-identity` / brief the makers, try the directions on
-  outsiders, clear the candidate marks
-- `ref/mkt/brand-positioning` / gather the evidence, test the positions
-  against the evidence, try the positions on outsiders, record the proof
-  behind the promise
-- `ref/mkt/brand-voice` / gather how the audience talks, brief the
-  makers, put a source under every message, try the messages on buyers
-- `ref/mkt/brief-executive-leadership` / gather the outside picture,
-  answer what was left open
-- `ref/mkt/brief-industry-analyst` / read where the analyst stands,
-  brief the makers, gather the proof, file what the cycle requires,
-  answer what was left open
-- `ref/mkt/buyer-persona` / gather what is already known, name the
-  others in the decision
-- `ref/mkt/channel-program` / draw up the candidate list, assess the
-  applicants
-- `ref/mkt/competitive-battlecard` / confirm the move, gather the proof
-- `ref/mkt/crisis-communication` / confirm the facts, update the
-  response
-- `ref/mkt/customer-case-study` / brief the story, verify the customer's
-  results, interview the customer, check the facts
-- `ref/mkt/customer-reference` / verify the customer's results
-- `ref/mkt/customer-research` / check what is already known, brief the
-  study
-- `ref/mkt/customer-reviews` / read the site rules, check the ask
-  against the rules
-- `ref/mkt/develop-marketing-strategy` / map the market and its
-  segments, read what the rivals are doing, hear from buyers and the
-  field, draft the strategic options
-- `ref/mkt/engage-marketing-agency` / build the candidate list, check
-  the references
-- `ref/mkt/ideal-customer-profile` / gather the outside evidence,
-  collect the first-hand accounts, draft the candidate profiles, size
-  each candidate market, clear the data and the targeting
-- `ref/mkt/influencer-campaign` / read the disclosure rules, draw up the
-  candidate list
-- `ref/mkt/landing-page` / brief the makers, produce the material
-- `ref/mkt/lead-scoring-model` / hear from the people who work the
-  leads, gather the candidate signals, clear the new signals
-- `ref/mkt/long-form-content` / brief the piece, gather the evidence,
-  check the facts
-- `ref/mkt/map-buyer-journey` / collect the first-hand accounts, draft
-  the stages, collect the questions
-- `ref/mkt/media-plan` / settle the audience to reach, clear the
-  targeting and the data, gather the channel evidence
-- `ref/mkt/name-product` / read the naming landscape, check the name in
-  every market
-- `ref/mkt/pitch-earned-media` / gather the proof, answer what reporters
-  ask
-- `ref/mkt/product-positioning` / gather the market evidence, interview
-  the makers, name the competing choices, test the positions against the
-  evidence, try the positions on outsiders, record the proof behind each
-  claim
-- `ref/mkt/quarterly-business-review` / read the outside conditions
-- `ref/mkt/refresh-content` / check whether the facts still hold
-- `ref/mkt/sales-enablement-kit` / hear the field, gather the proof,
-  settle the answers, write the objection answers
-- `ref/mkt/segment-the-market` / set the market boundary, gather the
-  outside evidence, choose the dividing traits, size each segment, clear
-  the data and the traits
-- `ref/mkt/select-marketing-technology` / brief the selection, search
-  the market
-- `ref/mkt/size-market-opportunity` / draw the market boundary, gather
-  the outside evidence, count the buyers, check the method, clear the
-  sources
-- `ref/mkt/speaking-engagement` / take in the call, shape the talk
-- `ref/mkt/user-conference` / capture the sessions
-- `ref/mkt/website-content-update` / write the change
+- `ref/mkt/account-based-play` / Read the Accounts
+- `ref/mkt/advisory-board` / Collect the Early Input, Capture What Was
+  Said, Sort the Feedback
+- `ref/mkt/announce-company-news` / Confirm the Facts
+- `ref/mkt/annual-marketing-plan` / Gather the Outside Evidence
+- `ref/mkt/award-entry` / Brief the Entry, Gather the Evidence
+- `ref/mkt/brand-health` / Set the Competitor Set
+- `ref/mkt/brand-identity` / Brief the Makers, Try the Directions on
+  Outsiders, Clear the Candidate Marks
+- `ref/mkt/brand-positioning` / Gather the Evidence, Test the Positions
+  against the Evidence, Try the Positions on Outsiders, Record the Proof
+  Behind the Promise
+- `ref/mkt/brand-voice` / Gather How the Audience Talks, Brief the
+  Makers, Put a Source Under Every Message, Try the Messages on Buyers
+- `ref/mkt/brief-executive-leadership` / Gather the Outside Picture,
+  Answer What Was Left Open
+- `ref/mkt/brief-industry-analyst` / Read Where the Analyst Stands,
+  Brief the Makers, Gather the Proof, File What the Cycle Requires,
+  Answer What Was Left Open
+- `ref/mkt/buyer-persona` / Gather What Is Already Known, Name the
+  Others in the Decision
+- `ref/mkt/channel-program` / Draw up the Candidate List, Assess the
+  Applicants
+- `ref/mkt/competitive-battlecard` / Confirm the Move, Gather the Proof
+- `ref/mkt/crisis-communication` / Confirm the Facts, Update the
+  Response
+- `ref/mkt/customer-case-study` / Brief the Story, Verify the Customer's
+  Results, Interview the Customer, Check the Facts
+- `ref/mkt/customer-reference` / Verify the Customer's Results
+- `ref/mkt/customer-research` / Check What Is Already Known, Brief the
+  Study
+- `ref/mkt/customer-reviews` / Read the Site Rules, Check the Ask
+  against the Rules
+- `ref/mkt/develop-marketing-strategy` / Map the Market and Its
+  Segments, Read What the Rivals Are Doing, Hear from Buyers and the
+  Field, Draft the Strategic Options
+- `ref/mkt/engage-marketing-agency` / Build the Candidate List, Check
+  the References
+- `ref/mkt/ideal-customer-profile` / Gather the Outside Evidence,
+  Collect the First-Hand Accounts, Draft the Candidate Profiles, Size
+  Each Candidate Market, Clear the Data and the Targeting
+- `ref/mkt/influencer-campaign` / Read the Disclosure Rules, Draw up the
+  Candidate List
+- `ref/mkt/landing-page` / Brief the Makers, Produce the Material
+- `ref/mkt/lead-scoring-model` / Hear from the People Who Work the
+  Leads, Gather the Candidate Signals, Clear the New Signals
+- `ref/mkt/long-form-content` / Brief the Piece, Gather the Evidence,
+  Check the Facts
+- `ref/mkt/map-buyer-journey` / Collect the First-Hand Accounts, Draft
+  the Stages, Collect the Questions
+- `ref/mkt/media-plan` / Settle the Audience to Reach, Clear the
+  Targeting and the Data, Gather the Channel Evidence
+- `ref/mkt/name-product` / Read the Naming Landscape, Check the Name in
+  Every Market
+- `ref/mkt/pitch-earned-media` / Gather the Proof, Answer What Reporters
+  Ask
+- `ref/mkt/product-positioning` / Gather the Market Evidence, Interview
+  the Makers, Name the Competing Choices, Test the Positions against the
+  Evidence, Try the Positions on Outsiders, Record the Proof Behind Each
+  Claim
+- `ref/mkt/quarterly-business-review` / Read the Outside Conditions
+- `ref/mkt/refresh-content` / Check Whether the Facts Still Hold
+- `ref/mkt/sales-enablement-kit` / Hear the Field, Gather the Proof,
+  Settle the Answers, Write the Objection Answers
+- `ref/mkt/segment-the-market` / Set the Market Boundary, Gather the
+  Outside Evidence, Choose the Dividing Traits, Size Each Segment, Clear
+  the Data and the Traits
+- `ref/mkt/select-marketing-technology` / Brief the Selection, Search
+  the Market
+- `ref/mkt/size-market-opportunity` / Draw the Market Boundary, Gather
+  the Outside Evidence, Count the Buyers, Check the Method, Clear the
+  Sources
+- `ref/mkt/speaking-engagement` / Take in the Call, Shape the Talk
+- `ref/mkt/user-conference` / Capture the Sessions
+- `ref/mkt/website-content-update` / Write the Change
 
 ## Patterns
 

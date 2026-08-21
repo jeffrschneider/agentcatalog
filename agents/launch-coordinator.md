@@ -12,14 +12,14 @@ anything else in the department, and someone has to say out loud - early
 
 ## Seats
 
-- `ref/mkt/content-calendar` / list what is already committed
-- `ref/mkt/media-plan` / collect what the plan must carry, lay out the
-  flighting
-- `ref/mkt/pricing-change` / take in the pricing decision, set the terms
-  of the change, plan the transition, serve the notice, change the
-  public price, report the transition, record what was learned
-- `ref/mkt/product-launch` / take in the launch, plan the launch, launch
-  day, report the launch, record what was learned
+- `ref/mkt/content-calendar` / List What Is Already Committed
+- `ref/mkt/media-plan` / Collect What the Plan Must Carry, Lay out the
+  Flighting
+- `ref/mkt/pricing-change` / Take in the Pricing Decision, Set the Terms
+  of the Change, Plan the Transition, Serve the Notice, Change the
+  Public Price, Report the Transition, Record What Was Learned
+- `ref/mkt/product-launch` / Take in the Launch, Plan the Launch, Launch
+  Day, Report the Launch, Record What Was Learned
 
 ## Patterns
 

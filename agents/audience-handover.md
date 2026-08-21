@@ -16,14 +16,14 @@ arrives later has to reach every system the records were sent to.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / set up the paid buy
-- `ref/mkt/channel-program` / set up the partner systems
-- `ref/mkt/co-marketing-campaign` / settle the lead terms, wire up the
-  split, split and hand over the leads, agree the joint numbers
-- `ref/mkt/enable-channel-partner` / hand over the selling kit
-- `ref/mkt/target-audience-segment` / brief the build, hand the list to
-  the platforms, confirm the match, set the refresh schedule
-- `ref/mkt/traffic-ad-creative` / load the audiences the plan names
+- `ref/mkt/account-based-play` / Set up the Paid Buy
+- `ref/mkt/channel-program` / Set up the Partner Systems
+- `ref/mkt/co-marketing-campaign` / Settle the Lead Terms, Wire up the
+  Split, Split and Hand over the Leads, Agree the Joint Numbers
+- `ref/mkt/enable-channel-partner` / Hand over the Selling Kit
+- `ref/mkt/target-audience-segment` / Brief the Build, Hand the List to
+  the Platforms, Confirm the Match, Set the Refresh Schedule
+- `ref/mkt/traffic-ad-creative` / Load the Audiences the Plan Names
 
 ## Patterns
 

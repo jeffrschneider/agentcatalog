@@ -14,28 +14,28 @@ somebody's preference.
 
 ## Seats
 
-- `ref/mkt/approve-marketing-material` / score against the accessibility
-  rules
-- `ref/mkt/brand-guidelines` / check the colors and the type
-- `ref/mkt/brand-identity` / test the system in use
-- `ref/mkt/brand-refresh` / check the remade material
-- `ref/mkt/conversion-experiment` / get sign-offs
-- `ref/mkt/creative-assets` / score against the standards, check the
-  sized set
-- `ref/mkt/customer-case-study` / check the finished page
-- `ref/mkt/customer-newsletter` / proof the issue
-- `ref/mkt/landing-page` / score the page
-- `ref/mkt/long-form-content` / check the finished page
-- `ref/mkt/nurture-sequence` / score the messages
-- `ref/mkt/onboarding-email-program` / check and sign what was made
-- `ref/mkt/refresh-content` / check the changed pages
-- `ref/mkt/select-marketing-technology` / check it against the standards
-- `ref/mkt/traffic-ad-creative` / score the adapted set
-- `ref/mkt/user-conference` / open registration
-- `ref/mkt/video-asset` / score against the standards
-- `ref/mkt/webinar` / prepare the recording for reuse
-- `ref/mkt/website-content-update` / check the changed page
-- `ref/mkt/win-back-campaign` / score the messages
+- `ref/mkt/approve-marketing-material` / Score against the Accessibility
+  Rules
+- `ref/mkt/brand-guidelines` / Check the Colors and the Type
+- `ref/mkt/brand-identity` / Test the System in Use
+- `ref/mkt/brand-refresh` / Check the Remade Material
+- `ref/mkt/conversion-experiment` / Get Sign-Offs
+- `ref/mkt/creative-assets` / Score against the Standards, Check the
+  Sized Set
+- `ref/mkt/customer-case-study` / Check the Finished Page
+- `ref/mkt/customer-newsletter` / Proof the Issue
+- `ref/mkt/landing-page` / Score the Page
+- `ref/mkt/long-form-content` / Check the Finished Page
+- `ref/mkt/nurture-sequence` / Score the Messages
+- `ref/mkt/onboarding-email-program` / Check and Sign What Was Made
+- `ref/mkt/refresh-content` / Check the Changed Pages
+- `ref/mkt/select-marketing-technology` / Check It against the Standards
+- `ref/mkt/traffic-ad-creative` / Score the Adapted Set
+- `ref/mkt/user-conference` / Open Registration
+- `ref/mkt/video-asset` / Score against the Standards
+- `ref/mkt/webinar` / Prepare the Recording for Reuse
+- `ref/mkt/website-content-update` / Check the Changed Page
+- `ref/mkt/win-back-campaign` / Score the Messages
 
 ## Patterns
 

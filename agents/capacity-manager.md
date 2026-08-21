@@ -14,29 +14,29 @@ what happened rather than against what somebody remembers.
 
 ## Seats
 
-- `ref/mkt/brand-refresh` / check what the department can carry, set the
-  switch date and the order
-- `ref/mkt/brief-executive-leadership` / account for the book of work,
-  hand the decisions on
-- `ref/mkt/develop-marketing-strategy` / check what each option would
-  take
-- `ref/mkt/engage-marketing-agency` / take in the gap, choose the route,
-  decide what is handed over, write the scope
-- `ref/mkt/plan-marketing-capacity` / take in the planning trigger,
-  break the work into activities, measure what the department got
-  through, size the effort each run takes, find the shortfall, sort the
-  activities by who can hold them, check what an agent seat would need,
-  match the work to holders, name the gaps that remain, record what was
-  learned
-- `ref/mkt/prioritize-initiatives` / open the round, take in the
-  requests, screen the requests, read what is already committed, work
-  out what is free, choose what gets committed, resource the
-  commitments, record the declines, tell the requesters, record what the
-  round rests on
-- `ref/mkt/quarterly-business-review` / put numbers on the proposed
-  changes
-- `ref/mkt/select-marketing-technology` / brief the selection, size what
-  the tool has to carry, hand it to the owner
+- `ref/mkt/brand-refresh` / Check What the Department Can Carry, Set the
+  Switch Date and the Order
+- `ref/mkt/brief-executive-leadership` / Account for the Book of Work,
+  Hand the Decisions On
+- `ref/mkt/develop-marketing-strategy` / Check What Each Option Would
+  Take
+- `ref/mkt/engage-marketing-agency` / Take in the Gap, Choose the Route,
+  Decide What Is Handed Over, Write the Scope
+- `ref/mkt/plan-marketing-capacity` / Take in the Planning Trigger,
+  Break the Work into Activities, Measure What the Department Got
+  Through, Size the Effort Each Run Takes, Find the Shortfall, Sort the
+  Activities by Who Can Hold Them, Check What an Agent Seat Would Need,
+  Match the Work to Holders, Name the Gaps that Remain, Record What Was
+  Learned
+- `ref/mkt/prioritize-initiatives` / Open the Round, Take in the
+  Requests, Screen the Requests, Read What Is Already Committed, Work
+  out What Is Free, Choose What Gets Committed, Resource the
+  Commitments, Record the Declines, Tell the Requesters, Record What the
+  Round Rests On
+- `ref/mkt/quarterly-business-review` / Put Numbers on the Proposed
+  Changes
+- `ref/mkt/select-marketing-technology` / Brief the Selection, Size What
+  the Tool Has to Carry, Hand It to the Owner
 
 ## Patterns
 

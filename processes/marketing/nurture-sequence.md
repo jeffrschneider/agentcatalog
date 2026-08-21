@@ -1,4 +1,4 @@
-# Reference process: the nurture sequence
+# Reference process: Build Nurture Sequence
 
 `ref/mkt/nurture-sequence v1`
 
@@ -20,22 +20,22 @@ that, and that is the difference between this process and a campaign.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the segment and the goal | what the program must do and who it is for | [audience-manager](../../agents/audience-manager.md) |
-| 2 | define who enters | the rule that admits a contact to the program | audience-manager · [analytics](../../agents/analytics.md) |
-| 3 | check who may be contacted | consent and suppression applied to the segment | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 4 | map the steps and the branches | the message order, the waits, the branch conditions | audience-manager · analytics |
-| 5 | set the exits | what takes a contact out, and where they go next | audience-manager · consent-manager · [lead-scorer](../../agents/lead-scorer.md) |
-| 6 | brief the makers | everyone hears the same request at once | audience-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · [audience-operator](../../agents/audience-operator.md) · consent-manager |
-| 7 | produce the messages | subject lines, body copy, layout and images | copywriter · designer |
-| 8 | wire up the measurement | conversions, tracked links, and the path into the CRM | conversion-tracker |
-| 9 | score the messages | brand, claims, rendering and accessibility checked | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
-| 10 | get sign-offs | brand and legal approve the messages and the rules | brand owner (person) · legal reviewer (person) |
-| 11 | build the program | steps, waits, conditions and exits in the sending system | audience-operator |
-| 12 | run test contacts through it | a test contact is walked down every path | audience-operator · conversion-tracker · consent-manager · audience-manager |
-| 13 | turn it on | the owner says go and the segment starts entering | audience-manager · audience-operator |
-| 14 | watch who moves | entries, paths taken, conversions and exits | analytics · audience-manager |
-| 15 | hand over the ready ones | contacts that meet the ready rule go to a salesperson | lead-scorer |
-| 16 | tune the branches | the steps and rules the numbers argue against get changed | audience-manager · analytics · copywriter · audience-operator |
+| 1 | Take in the Segment and the Goal | what the program must do and who it is for | [audience-manager](../../agents/audience-manager.md) |
+| 2 | Define Who Enters | the rule that admits a contact to the program | audience-manager · [analytics](../../agents/analytics.md) |
+| 3 | Check Who May Be Contacted | consent and suppression applied to the segment | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 4 | Map the Steps and the Branches | the message order, the waits, the branch conditions | audience-manager · analytics |
+| 5 | Set the Exits | what takes a contact out, and where they go next | audience-manager · consent-manager · [lead-scorer](../../agents/lead-scorer.md) |
+| 6 | Brief the Makers | everyone hears the same request at once | audience-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · [audience-operator](../../agents/audience-operator.md) · consent-manager |
+| 7 | Produce the Messages | subject lines, body copy, layout and images | copywriter · designer |
+| 8 | Wire up the Measurement | conversions, tracked links, and the path into the CRM | conversion-tracker |
+| 9 | Score the Messages | brand, claims, rendering and accessibility checked | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
+| 10 | Get Sign-Offs | brand and legal approve the messages and the rules | brand owner (person) · legal reviewer (person) |
+| 11 | Build the Program | steps, waits, conditions and exits in the sending system | audience-operator |
+| 12 | Run Test Contacts Through It | a test contact is walked down every path | audience-operator · conversion-tracker · consent-manager · audience-manager |
+| 13 | Turn It On | the owner says go and the segment starts entering | audience-manager · audience-operator |
+| 14 | Watch Who Moves | entries, paths taken, conversions and exits | analytics · audience-manager |
+| 15 | Hand over the Ready Ones | contacts that meet the ready rule go to a salesperson | lead-scorer |
+| 16 | Tune the Branches | the steps and rules the numbers argue against get changed | audience-manager · analytics · copywriter · audience-operator |
 
 The graph below shows who does the work in one run of this process. The
 path a single contact takes through the finished program is a second
@@ -57,28 +57,28 @@ point for as long as the program keeps sending.
 
 ```mermaid
 flowchart LR
-  T([a segment and a goal arrive]) --> A1[1. take in the segment and the goal]
-  A1 --> A2[2. define who enters]
-  A2 --> A3[3. check who may be contacted]
+  T([a segment and a goal arrive]) --> A1[1. Take in the Segment and the Goal]
+  A1 --> A2[2. Define Who Enters]
+  A2 --> A3[3. Check Who May Be Contacted]
   A3 -. too few may be contacted .-> A2
-  A3 --> A4[4. map the steps and the branches]
-  A4 --> A5[5. set the exits]
-  A5 --> A6[6. brief the makers]
-  A6 --> A7[7. produce the messages]
-  A6 --> A8[8. wire up the measurement]
-  A7 --> A9[9. score the messages]
+  A3 --> A4[4. Map the Steps and the Branches]
+  A4 --> A5[5. Set the Exits]
+  A5 --> A6[6. Brief the Makers]
+  A6 --> A7[7. Produce the Messages]
+  A6 --> A8[8. Wire up the Measurement]
+  A7 --> A9[9. Score the Messages]
   A8 --> A9
   A9 -. a message failed a pass .-> A7
-  A9 --> A10[10. get sign-offs]
+  A9 --> A10[10. Get Sign-Offs]
   A10 -. changes requested .-> A7
-  A10 --> A11[11. build the program]
-  A11 --> A12[12. run test contacts through it]
+  A10 --> A11[11. Build the Program]
+  A11 --> A12[12. Run Test Contacts Through It]
   A12 -. a contact took the wrong path .-> A11
   A12 -. a conversion did not fire .-> A8
-  A12 --> A13[13. turn it on]
-  A13 --> A14[14. watch who moves]
-  A13 --> A15[15. hand over the ready ones]
-  A14 --> A16[16. tune the branches]
+  A12 --> A13[13. Turn It On]
+  A13 --> A14[14. Watch Who Moves]
+  A13 --> A15[15. Hand over the Ready Ones]
+  A14 --> A16[16. Tune the Branches]
   A16 -. a message has to change .-> A7
   A16 -. a rule has to change .-> A11
   A14 --> DONE([the program is live and being measured])

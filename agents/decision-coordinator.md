@@ -14,103 +14,103 @@ worth trusting later.
 
 ## Seats
 
-- `ref/mkt/annual-marketing-plan` / take in the company targets, set the
-  goals for the year, collect the candidate initiatives, check what the
-  department can carry, choose the initiatives, allocate the budget,
-  build the calendar, name what will be measured, publish the plan,
-  brief the department, record what the plan rests on
-- `ref/mkt/approve-marketing-material` / take in the submission, name
-  the standards and the signers, check the submission is complete,
-  gather the findings into one list, return the failures to the
-  submitter, record an accepted exception, get the signatures, release
-  the cleared version
-- `ref/mkt/attribution-model` / choose the model, decide what happens to
-  published reports, set the review conditions
-- `ref/mkt/brand-health` / settle what the wave measures, report
-  awareness, perception and preference
-- `ref/mkt/brand-identity` / choose the identity, record what was
-  learned
-- `ref/mkt/brand-positioning` / take in the change, audit what the
-  company says now, agree who the company is for, draft the candidate
-  positions, choose the position, write the positioning and the promise,
-  tell the processes that read it, record what was learned
-- `ref/mkt/brand-refresh` / decide what happens to each surface, set the
-  switch date and the order
-- `ref/mkt/brand-voice` / take in the approved positioning, brief the
-  makers, build the messaging architecture, tell the processes that read
-  it, record what was learned
-- `ref/mkt/brief-executive-leadership` / take in the cycle, read the
-  last meeting's record, work out what has to be decided, settle
-  marketing's position, send the pack ahead, deliver the briefing,
-  record the decisions, answer what was left open, hand the decisions
-  on, record what was learned
-- `ref/mkt/channel-program` / settle the tiers and the terms
-- `ref/mkt/competitive-battlecard` / settle what may be said
-- `ref/mkt/content-calendar` / take in the period's goals, collect the
-  topic candidates, score the candidates, agree the calendar, brief the
-  department, record what the plan rests on
-- `ref/mkt/customer-research` / deliver the findings
-- `ref/mkt/develop-marketing-strategy` / take in the objectives, draft
-  the strategic options, check what each option would take, check the
-  options against what is agreed, choose where to play and how to win,
-  write down the agreed strategy, name what the strategy will be judged
-  by, hand the strategy to the work that follows, set the review
-  conditions, record what was learned
-- `ref/mkt/engage-marketing-agency` / take in the gap, choose the route,
-  decide what is handed over, set the selection criteria, choose the
-  agency, record what was learned
-- `ref/mkt/ideal-customer-profile` / take in the question, draft the
-  candidate profiles, name the qualifying signals, settle on one
-  profile, write down the agreed profile, hand over the profile, set the
-  review conditions, record what was learned
-- `ref/mkt/lead-scoring-model` / take in the drift or the signal, choose
-  the model, hand over the model, set the review conditions, record what
-  was learned
-- `ref/mkt/map-buyer-journey` / take in the persona, draft the stages,
-  find the gaps, settle the map, write down the agreed map, hand over
-  the map, set the review conditions, record what was learned
-- `ref/mkt/media-plan` / choose the mix
-- `ref/mkt/name-product` / take in the naming request, set the naming
-  criteria, generate the candidate names, screen the long list, cut to a
-  shortlist, choose the name, tell the processes that read it, record
-  what was learned
-- `ref/mkt/plan-marketing-capacity` / take in the planning trigger, list
-  the committed work, put the options to the people who decide, decide
-  the mix, name the gaps that remain, record what was learned
-- `ref/mkt/prioritize-initiatives` / open the round, weigh the requests
-  against the goals, rank the requests, choose what gets committed,
-  resource the commitments, settle what gets displaced, record the
-  declines, tell the requesters, hand over the commitments, record what
-  the round rests on
-- `ref/mkt/product-positioning` / take in the question, read the
-  standards in force, name the competing choices, draft the candidate
-  positions, choose the position, write the messaging, issue the
-  positioning at a version, set the review conditions, record what was
-  learned
-- `ref/mkt/quarterly-business-review` / set what the review covers, name
-  the gaps worth acting on, ask each area what it would change, hold the
-  review, reset the commitments, move the money, publish the reset
-  commitments, brief the department, record what the review rests on
-- `ref/mkt/reallocate-media-spend` / decide the move, record why the
-  money moved
-- `ref/mkt/segment-the-market` / take in the question, set the market
-  boundary, choose the dividing traits, draw the candidate divisions,
-  settle on one division, rank the segments, write down the agreed
-  segments, hand over the segments, set the review conditions, record
-  what was learned
-- `ref/mkt/select-marketing-technology` / compare the finalists, choose
-  the tool, record what was learned
-- `ref/mkt/set-marketing-budget` / take in the planning guidance,
-  collect what each function asks for, test the asks against the goals,
-  size the reserve, settle the split across functions, set the rules for
-  moving money, phase the money across the year, tell every function
-  what it has, record what the budget rests on
-- `ref/mkt/size-market-opportunity` / take in the question, draw the
-  market boundary, choose the sizing method, reconcile the methods,
-  settle on the number, write down the sizing, set the review
-  conditions, record what was learned
-- `ref/mkt/win-loss-analysis` / write the findings, deliver the themes
-  and recommendations
+- `ref/mkt/annual-marketing-plan` / Take in the Company Targets, Set the
+  Goals for the Year, Collect the Candidate Initiatives, Check What the
+  Department Can Carry, Choose the Initiatives, Allocate the Budget,
+  Build the Calendar, Name What Will Be Measured, Publish the Plan,
+  Brief the Department, Record What the Plan Rests On
+- `ref/mkt/approve-marketing-material` / Take in the Submission, Name
+  the Standards and the Signers, Check the Submission Is Complete,
+  Gather the Findings into One List, Return the Failures to the
+  Submitter, Record an Accepted Exception, Get the Signatures, Release
+  the Cleared Version
+- `ref/mkt/attribution-model` / Choose the Model, Decide What Happens to
+  Published Reports, Set the Review Conditions
+- `ref/mkt/brand-health` / Settle What the Wave Measures, Report
+  Awareness, Perception and Preference
+- `ref/mkt/brand-identity` / Choose the Identity, Record What Was
+  Learned
+- `ref/mkt/brand-positioning` / Take in the Change, Audit What the
+  Company Says Now, Agree Who the Company Is For, Draft the Candidate
+  Positions, Choose the Position, Write the Positioning and the Promise,
+  Tell the Processes that Read It, Record What Was Learned
+- `ref/mkt/brand-refresh` / Decide What Happens to Each Surface, Set the
+  Switch Date and the Order
+- `ref/mkt/brand-voice` / Take in the Approved Positioning, Brief the
+  Makers, Build the Messaging Architecture, Tell the Processes that Read
+  It, Record What Was Learned
+- `ref/mkt/brief-executive-leadership` / Take in the Cycle, Read the
+  Last Meeting's Record, Work out What Has to Be Decided, Settle
+  Marketing's Position, Send the Pack Ahead, Deliver the Briefing,
+  Record the Decisions, Answer What Was Left Open, Hand the Decisions
+  On, Record What Was Learned
+- `ref/mkt/channel-program` / Settle the Tiers and the Terms
+- `ref/mkt/competitive-battlecard` / Settle What May Be Said
+- `ref/mkt/content-calendar` / Take in the Period's Goals, Collect the
+  Topic Candidates, Score the Candidates, Agree the Calendar, Brief the
+  Department, Record What the Plan Rests On
+- `ref/mkt/customer-research` / Deliver the Findings
+- `ref/mkt/develop-marketing-strategy` / Take in the Objectives, Draft
+  the Strategic Options, Check What Each Option Would Take, Check the
+  Options against What Is Agreed, Choose Where to Play and How to Win,
+  Write down the Agreed Strategy, Name What the Strategy Will Be Judged
+  By, Hand the Strategy to the Work that Follows, Set the Review
+  Conditions, Record What Was Learned
+- `ref/mkt/engage-marketing-agency` / Take in the Gap, Choose the Route,
+  Decide What Is Handed Over, Set the Selection Criteria, Choose the
+  Agency, Record What Was Learned
+- `ref/mkt/ideal-customer-profile` / Take in the Question, Draft the
+  Candidate Profiles, Name the Qualifying Signals, Settle on One
+  Profile, Write down the Agreed Profile, Hand over the Profile, Set the
+  Review Conditions, Record What Was Learned
+- `ref/mkt/lead-scoring-model` / Take in the Drift or the Signal, Choose
+  the Model, Hand over the Model, Set the Review Conditions, Record What
+  Was Learned
+- `ref/mkt/map-buyer-journey` / Take in the Persona, Draft the Stages,
+  Find the Gaps, Settle the Map, Write down the Agreed Map, Hand over
+  the Map, Set the Review Conditions, Record What Was Learned
+- `ref/mkt/media-plan` / Choose the Mix
+- `ref/mkt/name-product` / Take in the Naming Request, Set the Naming
+  Criteria, Generate the Candidate Names, Screen the Long List, Cut to a
+  Shortlist, Choose the Name, Tell the Processes that Read It, Record
+  What Was Learned
+- `ref/mkt/plan-marketing-capacity` / Take in the Planning Trigger, List
+  the Committed Work, Put the Options to the People Who Decide, Decide
+  the Mix, Name the Gaps that Remain, Record What Was Learned
+- `ref/mkt/prioritize-initiatives` / Open the Round, Weigh the Requests
+  against the Goals, Rank the Requests, Choose What Gets Committed,
+  Resource the Commitments, Settle What Gets Displaced, Record the
+  Declines, Tell the Requesters, Hand over the Commitments, Record What
+  the Round Rests On
+- `ref/mkt/product-positioning` / Take in the Question, Read the
+  Standards in Force, Name the Competing Choices, Draft the Candidate
+  Positions, Choose the Position, Write the Messaging, Issue the
+  Positioning at a Version, Set the Review Conditions, Record What Was
+  Learned
+- `ref/mkt/quarterly-business-review` / Set What the Review Covers, Name
+  the Gaps Worth Acting On, Ask Each Area What It Would Change, Hold the
+  Review, Reset the Commitments, Move the Money, Publish the Reset
+  Commitments, Brief the Department, Record What the Review Rests On
+- `ref/mkt/reallocate-media-spend` / Decide the Move, Record Why the
+  Money Moved
+- `ref/mkt/segment-the-market` / Take in the Question, Set the Market
+  Boundary, Choose the Dividing Traits, Draw the Candidate Divisions,
+  Settle on One Division, Rank the Segments, Write down the Agreed
+  Segments, Hand over the Segments, Set the Review Conditions, Record
+  What Was Learned
+- `ref/mkt/select-marketing-technology` / Compare the Finalists, Choose
+  the Tool, Record What Was Learned
+- `ref/mkt/set-marketing-budget` / Take in the Planning Guidance,
+  Collect What Each Function Asks For, Test the Asks against the Goals,
+  Size the Reserve, Settle the Split across Functions, Set the Rules for
+  Moving Money, Phase the Money across the Year, Tell Every Function
+  What It Has, Record What the Budget Rests On
+- `ref/mkt/size-market-opportunity` / Take in the Question, Draw the
+  Market Boundary, Choose the Sizing Method, Reconcile the Methods,
+  Settle on the Number, Write down the Sizing, Set the Review
+  Conditions, Record What Was Learned
+- `ref/mkt/win-loss-analysis` / Write the Findings, Deliver the Themes
+  and Recommendations
 
 ## Patterns
 

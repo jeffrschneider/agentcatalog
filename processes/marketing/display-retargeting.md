@@ -1,4 +1,4 @@
-# Reference process: display retargeting
+# Reference process: Run Display Retargeting Campaign
 
 `ref/mkt/display-retargeting v1`
 
@@ -18,53 +18,53 @@ the pools, the caps and the exclusions at a version.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the audience and the goal | what the retargeting has to bring back, and by when | [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | set the parameters | placements, dates, budget and what a result is worth | campaign-manager · [media-planner](../../agents/media-planner.md) · leadership (person) |
-| 3 | check who may be retargeted | the consent record says who may be advertised to | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 4 | define the retargeting pools | which visits qualify and how long a visitor stays in | [audience-manager](../../agents/audience-manager.md) · [analytics](../../agents/analytics.md) |
-| 5 | build the suppression list | who must never see these ads, with a reason each | audience-manager · consent-manager · [account-monitor](../../agents/account-monitor.md) |
-| 6 | tag the site | the tag fires only where consent covers it | [conversion-tracker](../../agents/conversion-tracker.md) · consent-manager |
-| 7 | build the audience pools | the pools are assembled and their counts checked | [audience-operator](../../agents/audience-operator.md) · audience-manager |
-| 8 | apply the suppression | everyone on the list comes out of every pool | audience-operator · consent-manager |
-| 9 | make the ad set | banners in every size, with enough versions to rotate | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
-| 10 | get sign-offs | brand and legal approve the ads and the targeting | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · brand owner (person) · legal reviewer (person) |
-| 11 | set the exposure rules | how often one person sees an ad, and for how long | [media-buyer](../../agents/media-buyer.md) · audience-manager · brand owner (person) |
-| 12 | check the buy before switch-on | the caps, pools and exclusions are as agreed | [buy-check](../../agents/buy-check.md) · media-buyer |
-| 13 | launch the campaigns | the campaigns go live with the caps already set | media-buyer · campaign-manager |
-| 14 | check the caps are holding | delivered frequency read against the cap that was set | buy-check · analytics |
-| 15 | check the suppression is holding | no impressions went to anyone the list took out | consent-manager · audience-operator |
-| 16 | record what is in force | the pools, the caps and the exclusions, at a version | campaign-manager · media-buyer |
+| 1 | Take in the Audience and the Goal | what the retargeting has to bring back, and by when | [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Set the Parameters | placements, dates, budget and what a result is worth | campaign-manager · [media-planner](../../agents/media-planner.md) · leadership (person) |
+| 3 | Check Who May Be Retargeted | the consent record says who may be advertised to | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 4 | Define the Retargeting Pools | which visits qualify and how long a visitor stays in | [audience-manager](../../agents/audience-manager.md) · [analytics](../../agents/analytics.md) |
+| 5 | Build the Suppression List | who must never see these ads, with a reason each | audience-manager · consent-manager · [account-monitor](../../agents/account-monitor.md) |
+| 6 | Tag the Site | the tag fires only where consent covers it | [conversion-tracker](../../agents/conversion-tracker.md) · consent-manager |
+| 7 | Build the Audience Pools | the pools are assembled and their counts checked | [audience-operator](../../agents/audience-operator.md) · audience-manager |
+| 8 | Apply the Suppression | everyone on the list comes out of every pool | audience-operator · consent-manager |
+| 9 | Make the Ad Set | banners in every size, with enough versions to rotate | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 10 | Get Sign-Offs | brand and legal approve the ads and the targeting | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · brand owner (person) · legal reviewer (person) |
+| 11 | Set the Exposure Rules | how often one person sees an ad, and for how long | [media-buyer](../../agents/media-buyer.md) · audience-manager · brand owner (person) |
+| 12 | Check the Buy Before Switch-On | the caps, pools and exclusions are as agreed | [buy-check](../../agents/buy-check.md) · media-buyer |
+| 13 | Launch the Campaigns | the campaigns go live with the caps already set | media-buyer · campaign-manager |
+| 14 | Check the Caps Are Holding | delivered frequency read against the cap that was set | buy-check · analytics |
+| 15 | Check the Suppression Is Holding | no impressions went to anyone the list took out | consent-manager · audience-operator |
+| 16 | Record What Is in Force | the pools, the caps and the exclusions, at a version | campaign-manager · media-buyer |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([an audience of known visitors is approved]) --> A1[1. take in the audience and the goal]
-  A1 --> A2[2. set the parameters]
-  A2 --> A3[3. check who may be retargeted]
-  A2 --> A9[9. make the ad set]
-  A2 --> A11[11. set the exposure rules]
-  A3 --> A4[4. define the retargeting pools]
-  A3 --> A5[5. build the suppression list]
-  A3 --> A6[6. tag the site]
-  A4 --> A7[7. build the audience pools]
+  T([an audience of known visitors is approved]) --> A1[1. Take in the Audience and the Goal]
+  A1 --> A2[2. Set the Parameters]
+  A2 --> A3[3. Check Who May Be Retargeted]
+  A2 --> A9[9. Make the Ad Set]
+  A2 --> A11[11. Set the Exposure Rules]
+  A3 --> A4[4. Define the Retargeting Pools]
+  A3 --> A5[5. Build the Suppression List]
+  A3 --> A6[6. Tag the Site]
+  A4 --> A7[7. Build the Audience Pools]
   A6 --> A7
   A7 -. the pool is too small to deliver .-> A4
-  A5 --> A8[8. apply the suppression]
+  A5 --> A8[8. Apply the Suppression]
   A7 --> A8
-  A9 --> A10[10. get sign-offs]
+  A9 --> A10[10. Get Sign-Offs]
   A10 -. changes requested .-> A9
-  A8 --> A12[12. check the buy before switch-on]
+  A8 --> A12[12. Check the Buy Before Switch-On]
   A10 --> A12
   A11 --> A12
   A12 -. a cap is not set as it was agreed .-> A11
   A12 -. an exclusion is missing from a pool .-> A8
-  A12 --> A13[13. launch the campaigns]
-  A13 --> A14[14. check the caps are holding]
-  A13 --> A15[15. check the suppression is holding]
+  A12 --> A13[13. Launch the Campaigns]
+  A13 --> A14[14. Check the Caps Are Holding]
+  A13 --> A15[15. Check the Suppression Is Holding]
   A14 -. the delivered count runs past the cap .-> A11
   A15 -. somebody on the list was served .-> A8
-  A14 --> A16[16. record what is in force]
+  A14 --> A16[16. Record What Is in Force]
   A15 --> A16
   A16 --> DONE([retargeting is live and frequency is capped])
 ```

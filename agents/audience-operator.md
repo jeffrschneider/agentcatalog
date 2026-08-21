@@ -14,23 +14,23 @@ earlier state that puts the change back.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / build the contact set
-- `ref/mkt/brand-health` / field the wave
-- `ref/mkt/buyer-persona` / field the study
-- `ref/mkt/contact-database-hygiene` / brief the cycle, standardize the
-  fields, propose the merges, merge the records, list what comes out,
-  remove the records, fill the gaps, apply the suppression, rebuild the
-  segments
-- `ref/mkt/customer-research` / field the study
-- `ref/mkt/display-retargeting` / build the audience pools, apply the
-  suppression, check the suppression is holding
-- `ref/mkt/nurture-sequence` / brief the makers, build the program, run
-  test contacts through it, turn it on, tune the branches
-- `ref/mkt/pricing-change` / build the notice lists
-- `ref/mkt/target-audience-segment` / brief the build, build the list,
-  apply consent and suppression
-- `ref/mkt/traffic-ad-creative` / load the audiences the plan names
-- `ref/mkt/win-loss-analysis` / invite the buyers
+- `ref/mkt/account-based-play` / Build the Contact Set
+- `ref/mkt/brand-health` / Field the Wave
+- `ref/mkt/buyer-persona` / Field the Study
+- `ref/mkt/contact-database-hygiene` / Brief the Cycle, Standardize the
+  Fields, Propose the Merges, Merge the Records, List What Comes Out,
+  Remove the Records, Fill the Gaps, Apply the Suppression, Rebuild the
+  Segments
+- `ref/mkt/customer-research` / Field the Study
+- `ref/mkt/display-retargeting` / Build the Audience Pools, Apply the
+  Suppression, Check the Suppression Is Holding
+- `ref/mkt/nurture-sequence` / Brief the Makers, Build the Program, Run
+  Test Contacts Through It, Turn It On, Tune the Branches
+- `ref/mkt/pricing-change` / Build the Notice Lists
+- `ref/mkt/target-audience-segment` / Brief the Build, Build the List,
+  Apply Consent and Suppression
+- `ref/mkt/traffic-ad-creative` / Load the Audiences the Plan Names
+- `ref/mkt/win-loss-analysis` / Invite the Buyers
 
 ## Patterns
 

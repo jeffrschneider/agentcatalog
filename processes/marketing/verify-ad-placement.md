@@ -1,4 +1,4 @@
-# Reference process: verify ad placement quality
+# Reference process: Verify Ad Placement Quality
 
 `ref/mkt/verify-ad-placement v1`
 
@@ -22,47 +22,47 @@ of the standing lists so that every future buy reads them.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the concern | what was seen, where it ran, and what raised it | [media-buyer](../../agents/media-buyer.md) · [buy-check](../../agents/buy-check.md) |
-| 2 | set what the audit covers | which accounts, campaigns, channels and dates | buy-check · media-buyer |
-| 3 | confirm the rules in force | the placement rules at the version that applies | [standards-keeper](../../agents/standards-keeper.md) · buy-check |
-| 4 | pull the placement record | every site, app and channel the ads actually ran on | [analytics](../../agents/analytics.md) · media-buyer |
-| 5 | pull the delivery quality figures | viewability, measured share, and invalid traffic | analytics · buy-check |
-| 6 | score every placement | each placement gets a verdict citing a rule | buy-check |
-| 7 | look at the flagged placements | the ad captured on the page as it appeared | buy-check |
-| 8 | size what it cost | impressions and money on the failing placements | buy-check · analytics |
-| 9 | decide what happens to each | exclude it, contest it, or accept it and say why | media-buyer · buy-check · brand owner (person) · legal reviewer (person) |
-| 10 | apply the exclusions | block lists and inventory settings are changed | media-buyer |
-| 11 | confirm the exclusions hold | a later reading shows the ads gone from those places | buy-check · analytics |
-| 12 | claim back the wasted spend | the failed impressions go back to whoever billed them | [spend-reconciler](../../agents/spend-reconciler.md) · media-buyer |
-| 13 | update the standing lists | the agreed exclusions are issued at a new version | standards-keeper · brand owner (person) |
-| 14 | report the audit | what ran where, what failed, and what it cost | buy-check · analytics |
-| 15 | record what was learned | which channels and sellers to check first next time | buy-check · media-buyer |
+| 1 | Take in the Concern | what was seen, where it ran, and what raised it | [media-buyer](../../agents/media-buyer.md) · [buy-check](../../agents/buy-check.md) |
+| 2 | Set What the Audit Covers | which accounts, campaigns, channels and dates | buy-check · media-buyer |
+| 3 | Confirm the Rules in Force | the placement rules at the version that applies | [standards-keeper](../../agents/standards-keeper.md) · buy-check |
+| 4 | Pull the Placement Record | every site, app and channel the ads actually ran on | [analytics](../../agents/analytics.md) · media-buyer |
+| 5 | Pull the Delivery Quality Figures | viewability, measured share, and invalid traffic | analytics · buy-check |
+| 6 | Score Every Placement | each placement gets a verdict citing a rule | buy-check |
+| 7 | Look at the Flagged Placements | the ad captured on the page as it appeared | buy-check |
+| 8 | Size What It Cost | impressions and money on the failing placements | buy-check · analytics |
+| 9 | Decide What Happens to Each | exclude it, contest it, or accept it and say why | media-buyer · buy-check · brand owner (person) · legal reviewer (person) |
+| 10 | Apply the Exclusions | block lists and inventory settings are changed | media-buyer |
+| 11 | Confirm the Exclusions Hold | a later reading shows the ads gone from those places | buy-check · analytics |
+| 12 | Claim Back the Wasted Spend | the failed impressions go back to whoever billed them | [spend-reconciler](../../agents/spend-reconciler.md) · media-buyer |
+| 13 | Update the Standing Lists | the agreed exclusions are issued at a new version | standards-keeper · brand owner (person) |
+| 14 | Report the Audit | what ran where, what failed, and what it cost | buy-check · analytics |
+| 15 | Record What Was Learned | which channels and sellers to check first next time | buy-check · media-buyer |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a brand safety or viewability concern]) --> A1[1. take in the concern]
-  A1 --> A2[2. set what the audit covers]
-  A2 --> A3[3. confirm the rules in force]
-  A2 --> A4[4. pull the placement record]
-  A4 --> A5[5. pull the delivery quality figures]
-  A3 --> A6[6. score every placement]
+  T([a brand safety or viewability concern]) --> A1[1. Take in the Concern]
+  A1 --> A2[2. Set What the Audit Covers]
+  A2 --> A3[3. Confirm the Rules in Force]
+  A2 --> A4[4. Pull the Placement Record]
+  A4 --> A5[5. Pull the Delivery Quality Figures]
+  A3 --> A6[6. Score Every Placement]
   A4 --> A6
   A5 --> A6
-  A6 --> A7[7. look at the flagged placements]
+  A6 --> A7[7. Look at the Flagged Placements]
   A7 -. the record does not cover the concern .-> A4
-  A7 --> A8[8. size what it cost]
-  A8 --> A9[9. decide what happens to each]
+  A7 --> A8[8. Size What It Cost]
+  A8 --> A9[9. Decide What Happens to Each]
   A9 -. a placement needs a closer look .-> A7
-  A9 --> A10[10. apply the exclusions]
-  A9 --> A12[12. claim back the wasted spend]
-  A10 --> A11[11. confirm the exclusions hold]
+  A9 --> A10[10. Apply the Exclusions]
+  A9 --> A12[12. Claim Back the Wasted Spend]
+  A10 --> A11[11. Confirm the Exclusions Hold]
   A11 -. the ads are still serving there .-> A10
-  A11 --> A13[13. update the standing lists]
-  A12 --> A14[14. report the audit]
+  A11 --> A13[13. Update the Standing Lists]
+  A12 --> A14[14. Report the Audit]
   A13 --> A14
-  A14 --> A15[15. record what was learned]
+  A14 --> A15[15. Record What Was Learned]
   A15 --> DONE([the placements are audited and the exclusions applied])
 ```
 

@@ -1,4 +1,4 @@
-# Reference process: win/loss analysis
+# Reference process: Conduct Win/Loss Analysis
 
 `ref/mkt/win-loss-analysis v1`
 
@@ -20,62 +20,62 @@ each half answered.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the period | which closed deals the run covers, and by when | [study-manager](../../agents/study-manager.md) · requester (person) |
-| 2 | pull the closed deals | every deal that closed, and the reason the record gives | [analytics](../../agents/analytics.md) · study-manager |
-| 3 | brief the study | every seat hears the period and the question at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [account-monitor](../../agents/account-monitor.md) · analytics |
-| 4 | say how many interviews it needs | how many each half needs, before any are held | statistician |
-| 5 | draw both samples | who bought and who did not, drawn to match each other | study-manager · audience-manager |
-| 6 | check who may be approached | consent applied, and each account's standing checked | consent-manager · account-monitor |
-| 7 | arrange the outside interviewer | buyers say more to somebody outside the deal | [supplier-manager](../../agents/supplier-manager.md) · [supplier-check](../../agents/supplier-check.md) |
-| 8 | cover what it costs | the interviewer and the incentives, against what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
-| 9 | write the interview guide | the questions both halves are asked, at a version | study-manager · subject matter expert (person) |
-| 10 | get sign-offs | legal and the owner sign before anybody is approached | legal reviewer (person) · leadership (person) |
-| 11 | invite the buyers | the same ask goes to both halves | [audience-operator](../../agents/audience-operator.md) · study-manager |
-| 12 | hold the interviews | what each buyer said, taken down as they said it | study-manager |
-| 13 | watch both halves fill | how many of each half have answered so far | study-manager · statistician |
-| 14 | close the interviews | asking stops and the responses are fixed | study-manager |
-| 15 | sort what was said into themes | every remark filed under a theme, at a version | study-manager |
-| 16 | work out the figures | how often each theme appears, with its range | statistician |
-| 17 | set the themes against the record | where the buyers and the record disagree | study-manager · analytics |
-| 18 | write the findings | each theme with what it asks somebody to change | study-manager · [decision-coordinator](../../agents/decision-coordinator.md) |
-| 19 | check the findings hold | every figure read against its data and its method | statistician |
-| 20 | deliver the themes and recommendations | the themes go to the people who decide and act | study-manager · decision-coordinator · leadership (person) |
-| 21 | record what was learned | what to repeat, what to avoid | study-manager |
+| 1 | Take in the Period | which closed deals the run covers, and by when | [study-manager](../../agents/study-manager.md) · requester (person) |
+| 2 | Pull the Closed Deals | every deal that closed, and the reason the record gives | [analytics](../../agents/analytics.md) · study-manager |
+| 3 | Brief the Study | every seat hears the period and the question at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [account-monitor](../../agents/account-monitor.md) · analytics |
+| 4 | Say How Many Interviews It Needs | how many each half needs, before any are held | statistician |
+| 5 | Draw Both Samples | who bought and who did not, drawn to match each other | study-manager · audience-manager |
+| 6 | Check Who May Be Approached | consent applied, and each account's standing checked | consent-manager · account-monitor |
+| 7 | Arrange the Outside Interviewer | buyers say more to somebody outside the deal | [supplier-manager](../../agents/supplier-manager.md) · [supplier-check](../../agents/supplier-check.md) |
+| 8 | Cover What It Costs | the interviewer and the incentives, against what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
+| 9 | Write the Interview Guide | the questions both halves are asked, at a version | study-manager · subject matter expert (person) |
+| 10 | Get Sign-Offs | legal and the owner sign before anybody is approached | legal reviewer (person) · leadership (person) |
+| 11 | Invite the Buyers | the same ask goes to both halves | [audience-operator](../../agents/audience-operator.md) · study-manager |
+| 12 | Hold the Interviews | what each buyer said, taken down as they said it | study-manager |
+| 13 | Watch Both Halves Fill | how many of each half have answered so far | study-manager · statistician |
+| 14 | Close the Interviews | asking stops and the responses are fixed | study-manager |
+| 15 | Sort What Was Said into Themes | every remark filed under a theme, at a version | study-manager |
+| 16 | Work out the Figures | how often each theme appears, with its range | statistician |
+| 17 | Set the Themes against the Record | where the buyers and the record disagree | study-manager · analytics |
+| 18 | Write the Findings | each theme with what it asks somebody to change | study-manager · [decision-coordinator](../../agents/decision-coordinator.md) |
+| 19 | Check the Findings Hold | every figure read against its data and its method | statistician |
+| 20 | Deliver the Themes and Recommendations | the themes go to the people who decide and act | study-manager · decision-coordinator · leadership (person) |
+| 21 | Record What Was Learned | what to repeat, what to avoid | study-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a period of deals closes]) --> A1[1. take in the period]
-  A1 --> A2[2. pull the closed deals]
-  A2 --> A3[3. brief the study]
-  A3 --> A4[4. say how many interviews it needs]
-  A3 --> A9[9. write the interview guide]
-  A4 --> A5[5. draw both samples]
-  A5 --> A6[6. check who may be approached]
-  A5 --> A7[7. arrange the outside interviewer]
+  T([a period of deals closes]) --> A1[1. Take in the Period]
+  A1 --> A2[2. Pull the Closed Deals]
+  A2 --> A3[3. Brief the Study]
+  A3 --> A4[4. Say How Many Interviews It Needs]
+  A3 --> A9[9. Write the Interview Guide]
+  A4 --> A5[5. Draw Both Samples]
+  A5 --> A6[6. Check Who May Be Approached]
+  A5 --> A7[7. Arrange the Outside Interviewer]
   A6 -. too few may be approached .-> A5
-  A7 --> A8[8. cover what it costs]
-  A6 --> A10[10. get sign-offs]
+  A7 --> A8[8. Cover What It Costs]
+  A6 --> A10[10. Get Sign-Offs]
   A8 --> A10
   A9 --> A10
   A10 -. changes requested .-> A5
   A10 -. changes requested .-> A9
-  A10 --> A11[11. invite the buyers]
-  A11 --> A12[12. hold the interviews]
-  A12 --> A13[13. watch both halves fill]
+  A10 --> A11[11. Invite the Buyers]
+  A11 --> A12[12. Hold the Interviews]
+  A12 --> A13[13. Watch Both Halves Fill]
   A13 -. one half is filling short .-> A11
-  A13 --> A14[14. close the interviews]
-  A14 --> A15[15. sort what was said into themes]
-  A15 --> A16[16. work out the figures]
+  A13 --> A14[14. Close the Interviews]
+  A14 --> A15[15. Sort What Was Said into Themes]
+  A15 --> A16[16. Work out the Figures]
   A16 -. a half fell short of its count .-> A11
-  A16 --> A17[17. set the themes against the record]
+  A16 --> A17[17. Set the Themes against the Record]
   A17 -. a deal has to be read again .-> A2
-  A17 --> A18[18. write the findings]
-  A18 --> A19[19. check the findings hold]
+  A17 --> A18[18. Write the Findings]
+  A18 --> A19[19. Check the Findings Hold]
   A19 -. a figure does not follow .-> A18
-  A19 --> A20[20. deliver the themes and recommendations]
-  A20 --> A21[21. record what was learned]
+  A19 --> A20[20. Deliver the Themes and Recommendations]
+  A20 --> A21[21. Record What Was Learned]
   A21 --> DONE([the themes and the recommendations are delivered])
 ```
 

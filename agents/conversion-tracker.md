@@ -12,39 +12,39 @@ of it fired.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / build the pages and the notice
-- `ref/mkt/attribution-model` / check the tracking
-- `ref/mkt/channel-program` / set up the partner systems
-- `ref/mkt/co-marketing-campaign` / wire up the split
-- `ref/mkt/conversion-experiment` / set the terms of the test, brief the
-  makers, wire the measurement, check the setup, watch the test run,
-  carry out the decision
-- `ref/mkt/customer-newsletter` / wire up the measurement
-- `ref/mkt/customer-reviews` / set up the practical side
-- `ref/mkt/display-retargeting` / tag the site
-- `ref/mkt/field-event` / open registration
-- `ref/mkt/influencer-campaign` / set up the tracking
-- `ref/mkt/landing-page` / brief the makers, wire the tracking, hand it
-  to the campaign
-- `ref/mkt/long-form-content` / wire up the measurement
-- `ref/mkt/marketing-performance-report` / check the tracking
-- `ref/mkt/media-plan` / settle what counts as a result
-- `ref/mkt/nurture-sequence` / brief the makers, wire up the
-  measurement, run test contacts through it
-- `ref/mkt/paid-search-campaign` / wire up conversion tracking
-- `ref/mkt/pricing-change` / restate the price everywhere it is
-  published
-- `ref/mkt/reallocate-media-spend` / confirm the numbers hold
-- `ref/mkt/refresh-content` / check the changed pages
-- `ref/mkt/test-ad-creative` / wire up the measurement
-- `ref/mkt/trade-show` / set up lead capture
-- `ref/mkt/traffic-ad-creative` / build the tracking parameters, check
-  every destination, check the live ads
-- `ref/mkt/user-conference` / open registration
-- `ref/mkt/webinar` / build the registration page, hand off the leads
-- `ref/mkt/website-content-update` / check the changed page
-- `ref/mkt/win-back-campaign` / brief the makers, wire up the
-  measurement
+- `ref/mkt/account-based-play` / Build the Pages and the Notice
+- `ref/mkt/attribution-model` / Check the Tracking
+- `ref/mkt/channel-program` / Set up the Partner Systems
+- `ref/mkt/co-marketing-campaign` / Wire up the Split
+- `ref/mkt/conversion-experiment` / Set the Terms of the Test, Brief the
+  Makers, Wire the Measurement, Check the Setup, Watch the Test Run,
+  Carry out the Decision
+- `ref/mkt/customer-newsletter` / Wire up the Measurement
+- `ref/mkt/customer-reviews` / Set up the Practical Side
+- `ref/mkt/display-retargeting` / Tag the Site
+- `ref/mkt/field-event` / Open Registration
+- `ref/mkt/influencer-campaign` / Set up the Tracking
+- `ref/mkt/landing-page` / Brief the Makers, Wire the Tracking, Hand It
+  to the Campaign
+- `ref/mkt/long-form-content` / Wire up the Measurement
+- `ref/mkt/marketing-performance-report` / Check the Tracking
+- `ref/mkt/media-plan` / Settle What Counts as a Result
+- `ref/mkt/nurture-sequence` / Brief the Makers, Wire up the
+  Measurement, Run Test Contacts Through It
+- `ref/mkt/paid-search-campaign` / Wire up Conversion Tracking
+- `ref/mkt/pricing-change` / Restate the Price Everywhere It Is
+  Published
+- `ref/mkt/reallocate-media-spend` / Confirm the Numbers Hold
+- `ref/mkt/refresh-content` / Check the Changed Pages
+- `ref/mkt/test-ad-creative` / Wire up the Measurement
+- `ref/mkt/trade-show` / Set up Lead Capture
+- `ref/mkt/traffic-ad-creative` / Build the Tracking Parameters, Check
+  Every Destination, Check the Live Ads
+- `ref/mkt/user-conference` / Open Registration
+- `ref/mkt/webinar` / Build the Registration Page, Hand off the Leads
+- `ref/mkt/website-content-update` / Check the Changed Page
+- `ref/mkt/win-back-campaign` / Brief the Makers, Wire up the
+  Measurement
 
 ## Patterns
 

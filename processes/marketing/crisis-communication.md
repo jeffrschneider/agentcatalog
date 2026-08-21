@@ -1,4 +1,4 @@
-# Reference process: crisis communication
+# Reference process: Manage Crisis Communication
 
 `ref/mkt/crisis-communication v1`
 
@@ -19,55 +19,55 @@ the work.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the incident | record what happened and who already knows | [comms-manager](../../agents/comms-manager.md) · [community-manager](../../agents/community-manager.md) |
-| 2 | confirm the facts | establish what happened from the people who know | [researcher](../../agents/researcher.md) · subject matter expert (person) · comms-manager |
-| 3 | size up the exposure | who is affected and how far the story will travel | comms-manager · [coverage-monitor](../../agents/coverage-monitor.md) · [press-relations](../../agents/press-relations.md) · legal reviewer (person) |
-| 4 | issue a holding line | a first short word out while the facts are confirmed | comms-manager · [copywriter](../../agents/copywriter.md) · legal reviewer (person) · leadership (person) |
-| 5 | decide the position | a person decides what the company will say | leadership (person) · legal reviewer (person) · comms-manager |
-| 6 | draft the statement | the words the company will say, at a version | copywriter · press-relations · comms-manager |
-| 7 | tailor for each audience | versions for press, customers, staff and partners | copywriter · press-relations · community-manager |
-| 8 | get sign-offs | legal and leadership sign the exact wording | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) |
-| 9 | brief the speakers | everyone who may be asked gets the same answers | comms-manager · spokesperson (person) · press-relations · community-manager |
-| 10 | notify the staff | staff hear it from the company before the press | comms-manager · copywriter · leadership (person) |
-| 11 | issue the response | the statement goes out on every channel named | comms-manager · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) · press-relations · community-manager |
-| 12 | answer the questions | reporters, customers and the public get replies | community-manager · press-relations · spokesperson (person) |
-| 13 | track the coverage | what is published and said, hour by hour | coverage-monitor · [analytics](../../agents/analytics.md) · community-manager |
-| 14 | update the response | new facts change the statement, at a new version | comms-manager · researcher · copywriter · legal reviewer (person) |
-| 15 | close the response | a person says the active response is over | leadership (person) · comms-manager |
-| 16 | review the response | what was known when, and what to change | comms-manager · leadership (person) · legal reviewer (person) · coverage-monitor |
+| 1 | Take in the Incident | record what happened and who already knows | [comms-manager](../../agents/comms-manager.md) · [community-manager](../../agents/community-manager.md) |
+| 2 | Confirm the Facts | establish what happened from the people who know | [researcher](../../agents/researcher.md) · subject matter expert (person) · comms-manager |
+| 3 | Size up the Exposure | who is affected and how far the story will travel | comms-manager · [coverage-monitor](../../agents/coverage-monitor.md) · [press-relations](../../agents/press-relations.md) · legal reviewer (person) |
+| 4 | Issue a Holding Line | a first short word out while the facts are confirmed | comms-manager · [copywriter](../../agents/copywriter.md) · legal reviewer (person) · leadership (person) |
+| 5 | Decide the Position | a person decides what the company will say | leadership (person) · legal reviewer (person) · comms-manager |
+| 6 | Draft the Statement | the words the company will say, at a version | copywriter · press-relations · comms-manager |
+| 7 | Tailor for Each Audience | versions for press, customers, staff and partners | copywriter · press-relations · community-manager |
+| 8 | Get Sign-Offs | legal and leadership sign the exact wording | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) |
+| 9 | Brief the Speakers | everyone who may be asked gets the same answers | comms-manager · spokesperson (person) · press-relations · community-manager |
+| 10 | Notify the Staff | staff hear it from the company before the press | comms-manager · copywriter · leadership (person) |
+| 11 | Issue the Response | the statement goes out on every channel named | comms-manager · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) · press-relations · community-manager |
+| 12 | Answer the Questions | reporters, customers and the public get replies | community-manager · press-relations · spokesperson (person) |
+| 13 | Track the Coverage | what is published and said, hour by hour | coverage-monitor · [analytics](../../agents/analytics.md) · community-manager |
+| 14 | Update the Response | new facts change the statement, at a new version | comms-manager · researcher · copywriter · legal reviewer (person) |
+| 15 | Close the Response | a person says the active response is over | leadership (person) · comms-manager |
+| 16 | Review the Response | what was known when, and what to change | comms-manager · leadership (person) · legal reviewer (person) · coverage-monitor |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([an incident that will become public is reported]) --> A1[1. take in the incident]
-  A1 --> A2[2. confirm the facts]
-  A1 --> A3[3. size up the exposure]
-  A1 --> A13[13. track the coverage]
-  A3 --> A4[4. issue a holding line]
+  T([an incident that will become public is reported]) --> A1[1. Take in the Incident]
+  A1 --> A2[2. Confirm the Facts]
+  A1 --> A3[3. Size up the Exposure]
+  A1 --> A13[13. Track the Coverage]
+  A3 --> A4[4. Issue a Holding Line]
   A13 -. the story has already broken .-> A4
-  A2 --> A5[5. decide the position]
+  A2 --> A5[5. Decide the Position]
   A4 --> A5
   A5 -. no position is agreed, the holding line stands .-> A4
-  A5 --> A6[6. draft the statement]
-  A6 --> A7[7. tailor for each audience]
-  A7 --> A8[8. get sign-offs]
+  A5 --> A6[6. Draft the Statement]
+  A6 --> A7[7. Tailor for Each Audience]
+  A7 --> A8[8. Get Sign-Offs]
   A8 -. changes requested .-> A6
   A8 -. the position itself is in question .-> A5
-  A8 --> A9[9. brief the speakers]
-  A8 --> A10[10. notify the staff]
-  A9 --> A11[11. issue the response]
+  A8 --> A9[9. Brief the Speakers]
+  A8 --> A10[10. Notify the Staff]
+  A9 --> A11[11. Issue the Response]
   A10 --> A11
-  A11 --> A12[12. answer the questions]
+  A11 --> A12[12. Answer the Questions]
   A11 --> A13
   A12 -. a question the approved wording does not answer .-> A6
-  A13 --> A14[14. update the response]
+  A13 --> A14[14. Update the Response]
   A14 -. the incident has got worse .-> A2
   A14 -. the new wording needs signing .-> A8
-  A12 --> A15[15. close the response]
+  A12 --> A15[15. Close the Response]
   A13 --> A15
   A14 --> A15
-  A15 --> A16[16. review the response]
+  A15 --> A16[16. Review the Response]
   A16 --> DONE([the response is closed and reviewed])
 ```
 

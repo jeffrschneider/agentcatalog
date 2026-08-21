@@ -1,4 +1,4 @@
-# Reference process: name product or company
+# Reference process: Name Product or Company
 
 `ref/mkt/name-product v1`
 
@@ -17,52 +17,52 @@ public belongs to the announcement and the launch processes.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the naming request | say what has to be named, why, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | set the naming criteria | markets, languages, classes, and the domains needed | decision-coordinator · brand owner (person) |
-| 3 | read the naming landscape | what rivals are called and what the category sounds like | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 4 | generate the candidate names | a long list of names built against the criteria | [copywriter](../../agents/copywriter.md) · decision-coordinator |
-| 5 | screen the long list | names that break the criteria come off the list | [brand-check](../../agents/brand-check.md) · decision-coordinator |
-| 6 | search the registers | trademarks, company registries, domains and handles | [supplier-manager](../../agents/supplier-manager.md) |
-| 7 | check the name in every market | what it means and how it sounds where it will be used | researcher · subject matter expert (person) |
-| 8 | cut to a shortlist | two or three names worth paying to clear | decision-coordinator · brand owner (person) |
-| 9 | try the names on outsiders | buyers say what each name tells them about the company | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) |
-| 10 | check the name in search | what the name already collides with in results | search-optimizer |
-| 11 | clear the shortlist | counsel says which names can be used and defended | legal reviewer (person) · supplier-manager |
-| 12 | choose the name | one name picked, with the reasons said out loud | leadership (person) · brand owner (person) · decision-coordinator |
-| 13 | secure the name | domains and handles taken, the filing authorized | supplier-manager · [budget-keeper](../../agents/budget-keeper.md) · rights approver (person) · finance (person) |
-| 14 | issue the name at a version | the name and how to write it become a standard | [standards-keeper](../../agents/standards-keeper.md) |
-| 15 | tell the processes that read it | every reader gets the version and what changed | standards-keeper · decision-coordinator |
-| 16 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Naming Request | say what has to be named, why, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Set the Naming Criteria | markets, languages, classes, and the domains needed | decision-coordinator · brand owner (person) |
+| 3 | Read the Naming Landscape | what rivals are called and what the category sounds like | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 4 | Generate the Candidate Names | a long list of names built against the criteria | [copywriter](../../agents/copywriter.md) · decision-coordinator |
+| 5 | Screen the Long List | names that break the criteria come off the list | [brand-check](../../agents/brand-check.md) · decision-coordinator |
+| 6 | Search the Registers | trademarks, company registries, domains and handles | [supplier-manager](../../agents/supplier-manager.md) |
+| 7 | Check the Name in Every Market | what it means and how it sounds where it will be used | researcher · subject matter expert (person) |
+| 8 | Cut to a Shortlist | two or three names worth paying to clear | decision-coordinator · brand owner (person) |
+| 9 | Try the Names on Outsiders | buyers say what each name tells them about the company | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) |
+| 10 | Check the Name in Search | what the name already collides with in results | search-optimizer |
+| 11 | Clear the Shortlist | counsel says which names can be used and defended | legal reviewer (person) · supplier-manager |
+| 12 | Choose the Name | one name picked, with the reasons said out loud | leadership (person) · brand owner (person) · decision-coordinator |
+| 13 | Secure the Name | domains and handles taken, the filing authorized | supplier-manager · [budget-keeper](../../agents/budget-keeper.md) · rights approver (person) · finance (person) |
+| 14 | Issue the Name at a Version | the name and how to write it become a standard | [standards-keeper](../../agents/standards-keeper.md) |
+| 15 | Tell the Processes that Read It | every reader gets the version and what changed | standards-keeper · decision-coordinator |
+| 16 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([something needs a name]) --> A1[1. take in the naming request]
-  A1 --> A2[2. set the naming criteria]
-  A2 --> A3[3. read the naming landscape]
-  A3 --> A4[4. generate the candidate names]
-  A4 --> A5[5. screen the long list]
-  A5 --> A6[6. search the registers]
-  A5 --> A7[7. check the name in every market]
+  T([something needs a name]) --> A1[1. Take in the Naming Request]
+  A1 --> A2[2. Set the Naming Criteria]
+  A2 --> A3[3. Read the Naming Landscape]
+  A3 --> A4[4. Generate the Candidate Names]
+  A4 --> A5[5. Screen the Long List]
+  A5 --> A6[6. Search the Registers]
+  A5 --> A7[7. Check the Name in Every Market]
   A6 -. nothing survives the search .-> A4
   A7 -. nothing survives the market check .-> A4
-  A6 --> A8[8. cut to a shortlist]
+  A6 --> A8[8. Cut to a Shortlist]
   A7 --> A8
-  A8 --> A9[9. try the names on outsiders]
-  A8 --> A10[10. check the name in search]
-  A8 --> A11[11. clear the shortlist]
+  A8 --> A9[9. Try the Names on Outsiders]
+  A8 --> A10[10. Check the Name in Search]
+  A8 --> A11[11. Clear the Shortlist]
   A11 -. no name can be cleared .-> A8
   A11 -. the long list is spent .-> A4
-  A9 --> A12[12. choose the name]
+  A9 --> A12[12. Choose the Name]
   A10 --> A12
   A11 --> A12
-  A12 --> A13[13. secure the name]
+  A12 --> A13[13. Secure the Name]
   A13 -. the addresses cannot be had .-> A12
   A13 -. the search has gone stale .-> A6
-  A13 --> A14[14. issue the name at a version]
-  A14 --> A15[15. tell the processes that read it]
-  A15 --> A16[16. record what was learned]
+  A13 --> A14[14. Issue the Name at a Version]
+  A14 --> A15[15. Tell the Processes that Read It]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the name is cleared, secured and issued])
 ```
 

@@ -18,24 +18,24 @@ to the seat that scores and to the people who decide.
 
 ## Seats
 
-- `ref/mkt/brand-health` / arrange the outside sample
-- `ref/mkt/brand-refresh` / find what is registered outside, register
-  the names and the marks, change the profiles held elsewhere
-- `ref/mkt/customer-research` / arrange the outside sample
-- `ref/mkt/engage-marketing-agency` / write the scope, set the selection
-  criteria, build the candidate list, issue the request, hear the
-  pitches, check the references, settle the contract, set up the access,
-  brief the agency, record what was learned
-- `ref/mkt/name-product` / search the registers, clear the shortlist,
-  secure the name
-- `ref/mkt/plan-marketing-capacity` / commission the new capacity
-- `ref/mkt/select-marketing-technology` / take in the gap, check what is
-  already owned, write down the requirements, set the scoring criteria,
-  brief the selection, search the market, cut to a shortlist, try the
-  finalists on real work, agree the terms and sign, write it into the
-  register, hand it to the owner, record what was learned
-- `ref/mkt/set-marketing-budget` / list the money already committed
-- `ref/mkt/win-loss-analysis` / arrange the outside interviewer
+- `ref/mkt/brand-health` / Arrange the Outside Sample
+- `ref/mkt/brand-refresh` / Find What Is Registered Outside, Register
+  the Names and the Marks, Change the Profiles Held Elsewhere
+- `ref/mkt/customer-research` / Arrange the Outside Sample
+- `ref/mkt/engage-marketing-agency` / Write the Scope, Set the Selection
+  Criteria, Build the Candidate List, Issue the Request, Hear the
+  Pitches, Check the References, Settle the Contract, Set up the Access,
+  Brief the Agency, Record What Was Learned
+- `ref/mkt/name-product` / Search the Registers, Clear the Shortlist,
+  Secure the Name
+- `ref/mkt/plan-marketing-capacity` / Commission the New Capacity
+- `ref/mkt/select-marketing-technology` / Take in the Gap, Check What Is
+  Already Owned, Write down the Requirements, Set the Scoring Criteria,
+  Brief the Selection, Search the Market, Cut to a Shortlist, Try the
+  Finalists on Real Work, Agree the Terms and Sign, Write It into the
+  Register, Hand It to the Owner, Record What Was Learned
+- `ref/mkt/set-marketing-budget` / List the Money Already Committed
+- `ref/mkt/win-loss-analysis` / Arrange the Outside Interviewer
 
 ## Patterns
 

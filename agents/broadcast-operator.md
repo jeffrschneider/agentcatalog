@@ -16,9 +16,9 @@ attendance record, the poll answers and every question that was asked.
 
 ## Seats
 
-- `ref/mkt/enable-channel-partner` / run the session
-- `ref/mkt/webinar` / set up the session in the platform, rehearse the
-  session, run the session, hand over what the session produced
+- `ref/mkt/enable-channel-partner` / Run the Session
+- `ref/mkt/webinar` / Set up the Session in the Platform, Rehearse the
+  Session, Run the Session, Hand over What the Session Produced
 
 ## Patterns
 

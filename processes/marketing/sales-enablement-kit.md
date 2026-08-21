@@ -1,4 +1,4 @@
-# Reference process: produce sales enablement kit
+# Reference process: Produce Sales Enablement Kit
 
 `ref/mkt/sales-enablement-kit v1`
 
@@ -21,51 +21,51 @@ here goes on the public website.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the gap | what sales cannot answer today, and in which deals | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · sales leader (person) |
-| 2 | settle what each side owes | what marketing owes and what sales owes back | sales-enablement-manager · sales leader (person) |
-| 3 | hear the field | what reps are actually asked in live deals | [researcher](../../agents/researcher.md) · account owner (person) · sales leader (person) |
-| 4 | gather the proof | the source under every answer the kit will give | researcher · subject matter expert (person) |
-| 5 | settle the answers | each objection paired with the answer it gets | sales-enablement-manager · [copywriter](../../agents/copywriter.md) · researcher |
-| 6 | brief the makers | every making seat hears the same request at once | sales-enablement-manager · [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) |
-| 7 | build the deck | the story a rep tells a buyer, slide by slide | creative-producer · copywriter · designer |
-| 8 | write the one-pager | one page a rep can leave behind after the call | creative-producer · copywriter · designer |
-| 9 | write the objection answers | every objection with its answer and its proof | copywriter · researcher |
-| 10 | score the kit | every claim and every asset against the standards | [brand-check](../../agents/brand-check.md) |
-| 11 | get sign-offs | brand, legal and product accuracy sign the kit | brand owner (person) · legal reviewer (person) · subject matter expert (person) |
-| 12 | try the kit on reps | a few reps use it in a real conversation | sales-enablement-manager · account owner (person) · sales leader (person) |
-| 13 | hand the kit to sales | sales is walked through it and told where it lives | sales-enablement-manager · sales leader (person) |
-| 14 | watch what sales does with it | who opened it, who used it, what deals it touched | [analytics](../../agents/analytics.md) · sales-enablement-manager |
-| 15 | report against the gap | what the kit did about the gap it was asked to close | sales-enablement-manager · analytics · sales leader (person) |
-| 16 | record what was learned | what to repeat, what to avoid | sales-enablement-manager |
+| 1 | Take in the Gap | what sales cannot answer today, and in which deals | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · sales leader (person) |
+| 2 | Settle What Each Side Owes | what marketing owes and what sales owes back | sales-enablement-manager · sales leader (person) |
+| 3 | Hear the Field | what reps are actually asked in live deals | [researcher](../../agents/researcher.md) · account owner (person) · sales leader (person) |
+| 4 | Gather the Proof | the source under every answer the kit will give | researcher · subject matter expert (person) |
+| 5 | Settle the Answers | each objection paired with the answer it gets | sales-enablement-manager · [copywriter](../../agents/copywriter.md) · researcher |
+| 6 | Brief the Makers | every making seat hears the same request at once | sales-enablement-manager · [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) |
+| 7 | Build the Deck | the story a rep tells a buyer, slide by slide | creative-producer · copywriter · designer |
+| 8 | Write the One-Pager | one page a rep can leave behind after the call | creative-producer · copywriter · designer |
+| 9 | Write the Objection Answers | every objection with its answer and its proof | copywriter · researcher |
+| 10 | Score the Kit | every claim and every asset against the standards | [brand-check](../../agents/brand-check.md) |
+| 11 | Get Sign-Offs | brand, legal and product accuracy sign the kit | brand owner (person) · legal reviewer (person) · subject matter expert (person) |
+| 12 | Try the Kit on Reps | a few reps use it in a real conversation | sales-enablement-manager · account owner (person) · sales leader (person) |
+| 13 | Hand the Kit to Sales | sales is walked through it and told where it lives | sales-enablement-manager · sales leader (person) |
+| 14 | Watch What Sales Does with It | who opened it, who used it, what deals it touched | [analytics](../../agents/analytics.md) · sales-enablement-manager |
+| 15 | Report against the Gap | what the kit did about the gap it was asked to close | sales-enablement-manager · analytics · sales leader (person) |
+| 16 | Record What Was Learned | what to repeat, what to avoid | sales-enablement-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([sales asks for a gap to be closed]) --> A1[1. take in the gap]
-  A1 --> A2[2. settle what each side owes]
-  A2 --> A3[3. hear the field]
-  A3 --> A4[4. gather the proof]
-  A4 --> A5[5. settle the answers]
-  A5 --> A6[6. brief the makers]
-  A6 --> A7[7. build the deck]
-  A6 --> A8[8. write the one-pager]
-  A6 --> A9[9. write the objection answers]
-  A7 --> A10[10. score the kit]
+  T([sales asks for a gap to be closed]) --> A1[1. Take in the Gap]
+  A1 --> A2[2. Settle What Each Side Owes]
+  A2 --> A3[3. Hear the Field]
+  A3 --> A4[4. Gather the Proof]
+  A4 --> A5[5. Settle the Answers]
+  A5 --> A6[6. Brief the Makers]
+  A6 --> A7[7. Build the Deck]
+  A6 --> A8[8. Write the One-Pager]
+  A6 --> A9[9. Write the Objection Answers]
+  A7 --> A10[10. Score the Kit]
   A8 --> A10
   A9 --> A10
   A10 -. failures to fix .-> A7
   A10 -. failures to fix .-> A8
   A10 -. failures to fix .-> A9
-  A10 --> A11[11. get sign-offs]
+  A10 --> A11[11. Get Sign-Offs]
   A11 -. changes requested .-> A7
   A11 -. changes requested .-> A9
-  A11 --> A12[12. try the kit on reps]
+  A11 --> A12[12. Try the Kit on Reps]
   A12 -. an answer did not hold .-> A9
-  A12 --> A13[13. hand the kit to sales]
-  A13 --> A14[14. watch what sales does with it]
-  A14 --> A15[15. report against the gap]
-  A15 --> A16[16. record what was learned]
+  A12 --> A13[13. Hand the Kit to Sales]
+  A13 --> A14[14. Watch What Sales Does with It]
+  A14 --> A15[15. Report against the Gap]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([reps hold the kit and sales has reported back])
 ```
 

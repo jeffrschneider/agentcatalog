@@ -12,9 +12,9 @@ of a person.
 
 ## Seats
 
-- `ref/mkt/moderate-community` / check the flagged posts, remove what
-  breaks the rules, hear the appeals
-- `ref/mkt/webinar` / run the session
+- `ref/mkt/moderate-community` / Check the Flagged Posts, Remove What
+  Breaks the Rules, Hear the Appeals
+- `ref/mkt/webinar` / Run the Session
 
 ## Patterns
 

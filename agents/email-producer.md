@@ -13,35 +13,35 @@ who asked to be left alone.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / brief the makers, start the touches
-- `ref/mkt/advisory-board` / send the pre-read, follow up with the
-  members
-- `ref/mkt/announce-company-news` / publish it on the owned channels
-- `ref/mkt/brand-refresh` / brief the seats that remake the material,
-  rebuild the templates, stage the changes, switch the properties
-- `ref/mkt/buyer-persona` / hand over the persona
-- `ref/mkt/channel-program` / open recruitment
-- `ref/mkt/churn-risk-play` / prepare the send, deliver the intervention
-- `ref/mkt/co-marketing-campaign` / set up each side's distribution
-- `ref/mkt/crisis-communication` / issue the response
-- `ref/mkt/customer-newsletter` / brief the makers, build the issue,
-  proof the issue, send the issue, watch the results
-- `ref/mkt/customer-reviews` / set up the practical side, send the ask,
-  send the reminder
-- `ref/mkt/enable-channel-partner` / publish the material
-- `ref/mkt/feature-release` / tell the customers who have it
-- `ref/mkt/field-event` / build the invitation list, promote the event,
-  work the registration list, follow up with the people who came
-- `ref/mkt/onboarding-email-program` / brief the seats that act, build
-  the send, send the step
-- `ref/mkt/pricing-change` / build the notice lists, serve the notice
-- `ref/mkt/trade-show` / promote the presence
-- `ref/mkt/user-conference` / promote the conference
-- `ref/mkt/webinar` / promote the session, work the registration list,
-  follow up with the registrants
-- `ref/mkt/win-back-campaign` / build the contact list, brief the
-  makers, set up the sending, send the sequence, retire the ones who
-  stayed silent
+- `ref/mkt/account-based-play` / Brief the Makers, Start the Touches
+- `ref/mkt/advisory-board` / Send the Pre-Read, Follow up with the
+  Members
+- `ref/mkt/announce-company-news` / Publish It on the Owned Channels
+- `ref/mkt/brand-refresh` / Brief the Seats that Remake the Material,
+  Rebuild the Templates, Stage the Changes, Switch the Properties
+- `ref/mkt/buyer-persona` / Hand over the Persona
+- `ref/mkt/channel-program` / Open Recruitment
+- `ref/mkt/churn-risk-play` / Prepare the Send, Deliver the Intervention
+- `ref/mkt/co-marketing-campaign` / Set up Each Side's Distribution
+- `ref/mkt/crisis-communication` / Issue the Response
+- `ref/mkt/customer-newsletter` / Brief the Makers, Build the Issue,
+  Proof the Issue, Send the Issue, Watch the Results
+- `ref/mkt/customer-reviews` / Set up the Practical Side, Send the Ask,
+  Send the Reminder
+- `ref/mkt/enable-channel-partner` / Publish the Material
+- `ref/mkt/feature-release` / Tell the Customers Who Have It
+- `ref/mkt/field-event` / Build the Invitation List, Promote the Event,
+  Work the Registration List, Follow up with the People Who Came
+- `ref/mkt/onboarding-email-program` / Brief the Seats that Act, Build
+  the Send, Send the Step
+- `ref/mkt/pricing-change` / Build the Notice Lists, Serve the Notice
+- `ref/mkt/trade-show` / Promote the Presence
+- `ref/mkt/user-conference` / Promote the Conference
+- `ref/mkt/webinar` / Promote the Session, Work the Registration List,
+  Follow up with the Registrants
+- `ref/mkt/win-back-campaign` / Build the Contact List, Brief the
+  Makers, Set up the Sending, Send the Sequence, Retire the Ones Who
+  Stayed Silent
 
 ## Patterns
 

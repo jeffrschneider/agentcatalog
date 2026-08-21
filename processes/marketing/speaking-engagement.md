@@ -1,4 +1,4 @@
-# Reference process: the speaking engagement
+# Reference process: Secure Speaking Engagement
 
 `ref/mkt/speaking-engagement v1`
 
@@ -17,50 +17,50 @@ engagement was worth.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the call | what the event is, who attends, when it closes | [submissions-manager](../../agents/submissions-manager.md) · [researcher](../../agents/researcher.md) |
-| 2 | pick the speaker | a named person agrees to speak on a named topic | submissions-manager · leadership (person) · spokesperson (person) |
-| 3 | write the proposal | the title, the abstract, the outline and the bio | [copywriter](../../agents/copywriter.md) · spokesperson (person) · submissions-manager |
-| 4 | clear the proposal | brand and legal read what the abstract promises | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
-| 5 | submit the proposal | filed before the deadline and chased to a decision | submissions-manager · outside contact (person) |
-| 6 | settle the terms | the speaker agreement and the recording rights | submissions-manager · legal reviewer (person) · rights approver (person) |
-| 7 | shape the talk | the argument, the running order and the evidence | [editor](../../agents/editor.md) · spokesperson (person) · researcher · subject matter expert (person) |
-| 8 | build the deck | slides, diagrams and the demo the talk needs | [designer](../../agents/designer.md) · copywriter · spokesperson (person) |
-| 9 | get sign-offs | brand, legal and rights approve the talk | brand-check · brand owner (person) · legal reviewer (person) · rights approver (person) |
-| 10 | rehearse the talk | run it to time and fix what falls flat | spokesperson (person) · editor · submissions-manager |
-| 11 | handle the arrangements | organizer deadlines, audio-visual, travel and room | [event-operations](../../agents/event-operations.md) · submissions-manager · outside contact (person) |
-| 12 | deliver the talk | the speaker gives the talk and it is recorded | spokesperson (person) · event staff (person) |
-| 13 | reuse the talk | clips, a written version, the slides to share | [video-editor](../../agents/video-editor.md) · copywriter · designer · editor |
-| 14 | publish the material | the recording, the slides and the write-up go out | [web-producer](../../agents/web-producer.md) · [campaign-manager](../../agents/campaign-manager.md) · [community-manager](../../agents/community-manager.md) |
-| 15 | report the result | audience, reach and what the talk brought in | [analytics](../../agents/analytics.md) · [coverage-monitor](../../agents/coverage-monitor.md) · submissions-manager |
-| 16 | record what was learned | what to repeat, what to avoid | submissions-manager |
+| 1 | Take in the Call | what the event is, who attends, when it closes | [submissions-manager](../../agents/submissions-manager.md) · [researcher](../../agents/researcher.md) |
+| 2 | Pick the Speaker | a named person agrees to speak on a named topic | submissions-manager · leadership (person) · spokesperson (person) |
+| 3 | Write the Proposal | the title, the abstract, the outline and the bio | [copywriter](../../agents/copywriter.md) · spokesperson (person) · submissions-manager |
+| 4 | Clear the Proposal | brand and legal read what the abstract promises | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
+| 5 | Submit the Proposal | filed before the deadline and chased to a decision | submissions-manager · outside contact (person) |
+| 6 | Settle the Terms | the speaker agreement and the recording rights | submissions-manager · legal reviewer (person) · rights approver (person) |
+| 7 | Shape the Talk | the argument, the running order and the evidence | [editor](../../agents/editor.md) · spokesperson (person) · researcher · subject matter expert (person) |
+| 8 | Build the Deck | slides, diagrams and the demo the talk needs | [designer](../../agents/designer.md) · copywriter · spokesperson (person) |
+| 9 | Get Sign-Offs | brand, legal and rights approve the talk | brand-check · brand owner (person) · legal reviewer (person) · rights approver (person) |
+| 10 | Rehearse the Talk | run it to time and fix what falls flat | spokesperson (person) · editor · submissions-manager |
+| 11 | Handle the Arrangements | organizer deadlines, audio-visual, travel and room | [event-operations](../../agents/event-operations.md) · submissions-manager · outside contact (person) |
+| 12 | Deliver the Talk | the speaker gives the talk and it is recorded | spokesperson (person) · event staff (person) |
+| 13 | Reuse the Talk | clips, a written version, the slides to share | [video-editor](../../agents/video-editor.md) · copywriter · designer · editor |
+| 14 | Publish the Material | the recording, the slides and the write-up go out | [web-producer](../../agents/web-producer.md) · [campaign-manager](../../agents/campaign-manager.md) · [community-manager](../../agents/community-manager.md) |
+| 15 | Report the Result | audience, reach and what the talk brought in | [analytics](../../agents/analytics.md) · [coverage-monitor](../../agents/coverage-monitor.md) · submissions-manager |
+| 16 | Record What Was Learned | what to repeat, what to avoid | submissions-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a call for papers opens or an invitation arrives]) --> A1[1. take in the call]
-  A1 --> A2[2. pick the speaker]
-  A2 --> A3[3. write the proposal]
-  A3 --> A4[4. clear the proposal]
+  T([a call for papers opens or an invitation arrives]) --> A1[1. Take in the Call]
+  A1 --> A2[2. Pick the Speaker]
+  A2 --> A3[3. Write the Proposal]
+  A3 --> A4[4. Clear the Proposal]
   A4 -. changes requested .-> A3
-  A4 --> A5[5. submit the proposal]
-  A5 -. the proposal is turned down .-> A16[16. record what was learned]
-  A5 --> A6[6. settle the terms]
+  A4 --> A5[5. Submit the Proposal]
+  A5 -. the proposal is turned down .-> A16[16. Record What Was Learned]
+  A5 --> A6[6. Settle the Terms]
   A6 -. the terms are refused .-> A16
-  A6 --> A7[7. shape the talk]
-  A6 --> A11[11. handle the arrangements]
-  A7 --> A8[8. build the deck]
-  A8 --> A9[9. get sign-offs]
+  A6 --> A7[7. Shape the Talk]
+  A6 --> A11[11. Handle the Arrangements]
+  A7 --> A8[8. Build the Deck]
+  A8 --> A9[9. Get Sign-Offs]
   A9 -. changes requested .-> A7
   A9 -. changes requested .-> A8
-  A9 --> A10[10. rehearse the talk]
+  A9 --> A10[10. Rehearse the Talk]
   A10 -. the talk does not hold up .-> A7
-  A10 --> A12[12. deliver the talk]
+  A10 --> A12[12. Deliver the Talk]
   A11 -. the speaker drops out .-> A2
   A11 --> A12
-  A12 --> A13[13. reuse the talk]
-  A13 --> A14[14. publish the material]
-  A14 --> A15[15. report the result]
+  A12 --> A13[13. Reuse the Talk]
+  A13 --> A14[14. Publish the Material]
+  A14 --> A15[15. Report the Result]
   A15 --> A16
   A16 --> DONE([the talk is delivered and the run is closed])
 ```

@@ -1,4 +1,4 @@
-# Reference process: solicit customer reviews
+# Reference process: Solicit Customer Reviews
 
 `ref/mkt/customer-reviews v1`
 
@@ -18,52 +18,52 @@ are read and recorded before a word of the ask is written.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the review goal | which sites, how many reviews, and by when | [advocacy-manager](../../agents/advocacy-manager.md) |
-| 2 | read the site rules | each site's policy on asking and on incentives | [researcher](../../agents/researcher.md) · advocacy-manager |
-| 3 | set the rules for asking | what may be offered and what must be disclosed | advocacy-manager · legal reviewer (person) |
-| 4 | choose the customers to ask | pick who may be asked, against stated criteria | advocacy-manager · [account-monitor](../../agents/account-monitor.md) |
-| 5 | clear the list with account owners | the relationship owners confirm or remove names | account owner (person) · advocacy-manager |
-| 6 | write the ask | the message, the reminder and the disclosure line | [copywriter](../../agents/copywriter.md) · advocacy-manager |
-| 7 | check the ask against the rules | the message and any incentive scored site by site | [brand-check](../../agents/brand-check.md) · researcher |
-| 8 | get sign-offs | a person approves the disclosure and the incentive | legal reviewer (person) · finance (person) |
-| 9 | set up the practical side | the send list, the schedule, and a link per site | [email-producer](../../agents/email-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · advocacy-manager |
-| 10 | send the ask | the first ask goes out to the cleared list | email-producer · advocacy-manager |
-| 11 | send the reminder | one reminder to those who have not answered | email-producer · advocacy-manager |
-| 12 | answer what comes back | questions, opt-outs and complaints from the ask | [community-manager](../../agents/community-manager.md) · advocacy-manager |
-| 13 | watch the reviews land | count what appears on each site against the goal | [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) |
-| 14 | reply to the reviews | reply on the site to what customers wrote | community-manager · advocacy-manager |
-| 15 | report against the goal | the reviews landed, set beside what was asked for | advocacy-manager · analytics |
-| 16 | record what was learned | what to repeat, what to avoid | advocacy-manager |
+| 1 | Take in the Review Goal | which sites, how many reviews, and by when | [advocacy-manager](../../agents/advocacy-manager.md) |
+| 2 | Read the Site Rules | each site's policy on asking and on incentives | [researcher](../../agents/researcher.md) · advocacy-manager |
+| 3 | Set the Rules for Asking | what may be offered and what must be disclosed | advocacy-manager · legal reviewer (person) |
+| 4 | Choose the Customers to Ask | pick who may be asked, against stated criteria | advocacy-manager · [account-monitor](../../agents/account-monitor.md) |
+| 5 | Clear the List with Account Owners | the relationship owners confirm or remove names | account owner (person) · advocacy-manager |
+| 6 | Write the Ask | the message, the reminder and the disclosure line | [copywriter](../../agents/copywriter.md) · advocacy-manager |
+| 7 | Check the Ask against the Rules | the message and any incentive scored site by site | [brand-check](../../agents/brand-check.md) · researcher |
+| 8 | Get Sign-Offs | a person approves the disclosure and the incentive | legal reviewer (person) · finance (person) |
+| 9 | Set up the Practical Side | the send list, the schedule, and a link per site | [email-producer](../../agents/email-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · advocacy-manager |
+| 10 | Send the Ask | the first ask goes out to the cleared list | email-producer · advocacy-manager |
+| 11 | Send the Reminder | one reminder to those who have not answered | email-producer · advocacy-manager |
+| 12 | Answer What Comes Back | questions, opt-outs and complaints from the ask | [community-manager](../../agents/community-manager.md) · advocacy-manager |
+| 13 | Watch the Reviews Land | count what appears on each site against the goal | [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) |
+| 14 | Reply to the Reviews | reply on the site to what customers wrote | community-manager · advocacy-manager |
+| 15 | Report against the Goal | the reviews landed, set beside what was asked for | advocacy-manager · analytics |
+| 16 | Record What Was Learned | what to repeat, what to avoid | advocacy-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a review goal is set]) --> A1[1. take in the review goal]
-  A1 --> A2[2. read the site rules]
-  A2 --> A3[3. set the rules for asking]
-  A3 --> A4[4. choose the customers to ask]
-  A3 --> A6[6. write the ask]
-  A4 --> A5[5. clear the list with account owners]
+  T([a review goal is set]) --> A1[1. Take in the Review Goal]
+  A1 --> A2[2. Read the Site Rules]
+  A2 --> A3[3. Set the Rules for Asking]
+  A3 --> A4[4. Choose the Customers to Ask]
+  A3 --> A6[6. Write the Ask]
+  A4 --> A5[5. Clear the List with Account Owners]
   A5 -. a name is taken off .-> A4
-  A6 --> A7[7. check the ask against the rules]
+  A6 --> A7[7. Check the Ask against the Rules]
   A7 -. a site rule is broken .-> A6
-  A7 --> A8[8. get sign-offs]
+  A7 --> A8[8. Get Sign-Offs]
   A8 -. changes requested .-> A6
-  A8 --> A9[9. set up the practical side]
+  A8 --> A9[9. Set up the Practical Side]
   A5 --> A9
-  A9 --> A10[10. send the ask]
-  A10 --> A11[11. send the reminder]
-  A10 --> A12[12. answer what comes back]
+  A9 --> A10[10. Send the Ask]
+  A10 --> A11[11. Send the Reminder]
+  A10 --> A12[12. Answer What Comes Back]
   A11 --> A12
-  A10 --> A13[13. watch the reviews land]
+  A10 --> A13[13. Watch the Reviews Land]
   A11 --> A13
   A13 -. a site removes what landed .-> A2
-  A13 --> A14[14. reply to the reviews]
-  A13 --> A15[15. report against the goal]
+  A13 --> A14[14. Reply to the Reviews]
+  A13 --> A15[15. Report against the Goal]
   A12 --> A15
   A14 --> A15
-  A15 --> A16[16. record what was learned]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the reviews are collected on the target sites])
 ```
 

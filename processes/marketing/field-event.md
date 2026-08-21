@@ -1,4 +1,4 @@
-# Reference process: the field event
+# Reference process: Host Field Event
 
 `ref/mkt/field-event v1`
 
@@ -17,52 +17,52 @@ follow-up and the report.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the audience and date | work out who the event is for and what it must do | [event-manager](../../agents/event-manager.md) |
-| 2 | settle the format and program | the kind of event, its length, and the agenda | event-manager · [event-program](../../agents/event-program.md) · leadership (person) |
-| 3 | book the venue and suppliers | the room, the food, the equipment and the orders | [event-operations](../../agents/event-operations.md) · event-manager · finance (person) · legal reviewer (person) |
-| 4 | line up the speakers | ask, confirm and brief the people who will speak | event-program · [advocacy-manager](../../agents/advocacy-manager.md) · subject matter expert (person) · account owner (person) |
-| 5 | build the invitation list | decide who to invite and how many need to come | event-manager · [email-producer](../../agents/email-producer.md) |
-| 6 | produce the invitation and materials | the invitation, the signage, the badges, the slides | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
-| 7 | get sign-offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
-| 8 | open registration | the registration page, with its tracking wired up | [web-producer](../../agents/web-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
-| 9 | promote the event | email, social and paid, pointed at registration | [campaign-manager](../../agents/campaign-manager.md) · email-producer · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) |
-| 10 | work the registration list | chase, confirm, remind and manage the waitlist | email-producer · event-manager |
-| 11 | prepare the run of show | the minute-by-minute plan and a speaker rehearsal | event-manager · event-operations · event-program · event staff (person) |
-| 12 | run the event | check people in, run the program, keep to time | event-manager · event staff (person) · subject matter expert (person) · outside contact (person) |
-| 13 | capture the event on record | recordings, photos and quotes people agreed to | creative-producer · [video-editor](../../agents/video-editor.md) · rights approver (person) |
-| 14 | follow up with the people who came | send the material and route the interested people | event-manager · copywriter · email-producer · [lead-scorer](../../agents/lead-scorer.md) |
-| 15 | report how the event did | attendance, cost, and what the event produced | event-manager · [analytics](../../agents/analytics.md) |
-| 16 | record what was learned | what to repeat, what to avoid | event-manager |
+| 1 | Take in the Audience and Date | work out who the event is for and what it must do | [event-manager](../../agents/event-manager.md) |
+| 2 | Settle the Format and Program | the kind of event, its length, and the agenda | event-manager · [event-program](../../agents/event-program.md) · leadership (person) |
+| 3 | Book the Venue and Suppliers | the room, the food, the equipment and the orders | [event-operations](../../agents/event-operations.md) · event-manager · finance (person) · legal reviewer (person) |
+| 4 | Line up the Speakers | ask, confirm and brief the people who will speak | event-program · [advocacy-manager](../../agents/advocacy-manager.md) · subject matter expert (person) · account owner (person) |
+| 5 | Build the Invitation List | decide who to invite and how many need to come | event-manager · [email-producer](../../agents/email-producer.md) |
+| 6 | Produce the Invitation and Materials | the invitation, the signage, the badges, the slides | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 7 | Get Sign-Offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
+| 8 | Open Registration | the registration page, with its tracking wired up | [web-producer](../../agents/web-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
+| 9 | Promote the Event | email, social and paid, pointed at registration | [campaign-manager](../../agents/campaign-manager.md) · email-producer · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) |
+| 10 | Work the Registration List | chase, confirm, remind and manage the waitlist | email-producer · event-manager |
+| 11 | Prepare the Run of Show | the minute-by-minute plan and a speaker rehearsal | event-manager · event-operations · event-program · event staff (person) |
+| 12 | Run the Event | check people in, run the program, keep to time | event-manager · event staff (person) · subject matter expert (person) · outside contact (person) |
+| 13 | Capture the Event on Record | recordings, photos and quotes people agreed to | creative-producer · [video-editor](../../agents/video-editor.md) · rights approver (person) |
+| 14 | Follow up with the People Who Came | send the material and route the interested people | event-manager · copywriter · email-producer · [lead-scorer](../../agents/lead-scorer.md) |
+| 15 | Report How the Event Did | attendance, cost, and what the event produced | event-manager · [analytics](../../agents/analytics.md) |
+| 16 | Record What Was Learned | what to repeat, what to avoid | event-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a target audience and a date are set]) --> A1[1. take in the audience and date]
-  A1 --> A2[2. settle the format and program]
-  A2 --> A3[3. book the venue and suppliers]
-  A2 --> A4[4. line up the speakers]
-  A2 --> A5[5. build the invitation list]
-  A2 --> A6[6. produce the invitation and materials]
-  A6 --> A7[7. get sign-offs]
+  T([a target audience and a date are set]) --> A1[1. Take in the Audience and Date]
+  A1 --> A2[2. Settle the Format and Program]
+  A2 --> A3[3. Book the Venue and Suppliers]
+  A2 --> A4[4. Line up the Speakers]
+  A2 --> A5[5. Build the Invitation List]
+  A2 --> A6[6. Produce the Invitation and Materials]
+  A6 --> A7[7. Get Sign-Offs]
   A7 -. changes requested .-> A6
-  A7 --> A8[8. open registration]
-  A8 --> A9[9. promote the event]
+  A7 --> A8[8. Open Registration]
+  A8 --> A9[9. Promote the Event]
   A5 --> A9
-  A9 --> A10[10. work the registration list]
+  A9 --> A10[10. Work the Registration List]
   A10 -. registration behind its number .-> A9
   A4 -. the agenda has to change .-> A2
-  A3 --> A11[11. prepare the run of show]
+  A3 --> A11[11. Prepare the Run of Show]
   A4 --> A11
   A10 --> A11
   A11 -. a speaker withdraws .-> A4
   A11 -. what the room needs has changed .-> A3
-  A11 --> A12[12. run the event]
-  A12 --> A13[13. capture the event on record]
-  A12 --> A14[14. follow up with the people who came]
+  A11 --> A12[12. Run the Event]
+  A12 --> A13[13. Capture the Event on Record]
+  A12 --> A14[14. Follow up with the People Who Came]
   A13 --> A14
-  A14 --> A15[15. report how the event did]
-  A15 --> A16[16. record what was learned]
+  A14 --> A15[15. Report How the Event Did]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the event is reported and the run is closed])
 ```
 

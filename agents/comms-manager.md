@@ -13,27 +13,27 @@ answering for that run until the report is filed.
 
 ## Seats
 
-- `ref/mkt/announce-company-news` / take in the news, set the
-  announcement date, settle the story, gather the quotes, write the
-  other versions, issue the release, report on the announcement, record
-  what was learned
-- `ref/mkt/award-entry` / hand the result on
-- `ref/mkt/brand-refresh` / say it in public
-- `ref/mkt/crisis-communication` / take in the incident, confirm the
-  facts, size up the exposure, issue a holding line, decide the
-  position, draft the statement, brief the speakers, notify the staff,
-  issue the response, update the response, close the response, review
-  the response
-- `ref/mkt/feature-release` / take in the release, size the
-  announcement, write the announcement, post it publicly
-- `ref/mkt/pitch-earned-media` / take in the story angle, test the
-  angle, choose the reporters, decide who speaks, produce the pitch
-  materials, set the timing, prepare the spokesperson, log the coverage,
-  record what was learned
-- `ref/mkt/pricing-change` / settle the explanation, change the public
-  price
-- `ref/mkt/set-marketing-budget` / collect what each function asks for,
-  tell every function what it has
+- `ref/mkt/announce-company-news` / Take in the News, Set the
+  Announcement Date, Settle the Story, Gather the Quotes, Write the
+  Other Versions, Issue the Release, Report on the Announcement, Record
+  What Was Learned
+- `ref/mkt/award-entry` / Hand the Result On
+- `ref/mkt/brand-refresh` / Say It in Public
+- `ref/mkt/crisis-communication` / Take in the Incident, Confirm the
+  Facts, Size up the Exposure, Issue a Holding Line, Decide the
+  Position, Draft the Statement, Brief the Speakers, Notify the Staff,
+  Issue the Response, Update the Response, Close the Response, Review
+  the Response
+- `ref/mkt/feature-release` / Take in the Release, Size the
+  Announcement, Write the Announcement, Post It Publicly
+- `ref/mkt/pitch-earned-media` / Take in the Story Angle, Test the
+  Angle, Choose the Reporters, Decide Who Speaks, Produce the Pitch
+  Materials, Set the Timing, Prepare the Spokesperson, Log the Coverage,
+  Record What Was Learned
+- `ref/mkt/pricing-change` / Settle the Explanation, Change the Public
+  Price
+- `ref/mkt/set-marketing-budget` / Collect What Each Function Asks For,
+  Tell Every Function What It Has
 
 ## Patterns
 

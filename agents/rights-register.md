@@ -17,14 +17,14 @@ out.
 
 ## Seats
 
-- `ref/mkt/approve-marketing-material` / confirm the rights
-- `ref/mkt/customer-case-study` / clear the rights
-- `ref/mkt/enable-channel-partner` / get sign-offs
-- `ref/mkt/influencer-campaign` / settle the terms
-- `ref/mkt/traffic-ad-creative` / clear the rights for these channels
-- `ref/mkt/video-asset` / check the sources can be used, clear the
-  rights, file it in the library
-- `ref/mkt/webinar` / prepare the recording for reuse
+- `ref/mkt/approve-marketing-material` / Confirm the Rights
+- `ref/mkt/customer-case-study` / Clear the Rights
+- `ref/mkt/enable-channel-partner` / Get Sign-Offs
+- `ref/mkt/influencer-campaign` / Settle the Terms
+- `ref/mkt/traffic-ad-creative` / Clear the Rights for These Channels
+- `ref/mkt/video-asset` / Check the Sources Can Be Used, Clear the
+  Rights, File It in the Library
+- `ref/mkt/webinar` / Prepare the Recording for Reuse
 
 ## Patterns
 

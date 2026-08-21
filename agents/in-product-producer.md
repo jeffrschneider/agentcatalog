@@ -17,9 +17,9 @@ dismissed it.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / build the pages and the notice
-- `ref/mkt/feature-release` / tell the customers who have it
-- `ref/mkt/pricing-change` / serve the notice
+- `ref/mkt/account-based-play` / Build the Pages and the Notice
+- `ref/mkt/feature-release` / Tell the Customers Who Have It
+- `ref/mkt/pricing-change` / Serve the Notice
 
 ## Patterns
 

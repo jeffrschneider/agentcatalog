@@ -13,28 +13,28 @@ that all of them are read against.
 
 ## Seats
 
-- `ref/mkt/brand-health` / cover the cost
-- `ref/mkt/brand-refresh` / check what the department can carry, report
-  the transition
-- `ref/mkt/brief-executive-leadership` / account for the money, hand the
-  decisions on
-- `ref/mkt/customer-research` / cover the cost
-- `ref/mkt/develop-marketing-strategy` / check what each option would
-  take
-- `ref/mkt/engage-marketing-agency` / set the budget and the term
-- `ref/mkt/name-product` / secure the name
-- `ref/mkt/plan-marketing-capacity` / cost each way of closing the gap,
-  commission the new capacity
-- `ref/mkt/prioritize-initiatives` / read what is already committed,
-  resource the commitments
-- `ref/mkt/quarterly-business-review` / read the budget position, move
-  the money
-- `ref/mkt/select-marketing-technology` / brief the selection, say what
-  money there is, work out the whole cost, write it into the register
-- `ref/mkt/set-marketing-budget` / list the money already committed, set
-  the rules for moving money, phase the money across the year, load the
-  allocations, record what the budget rests on
-- `ref/mkt/win-loss-analysis` / cover what it costs
+- `ref/mkt/brand-health` / Cover the Cost
+- `ref/mkt/brand-refresh` / Check What the Department Can Carry, Report
+  the Transition
+- `ref/mkt/brief-executive-leadership` / Account for the Money, Hand the
+  Decisions On
+- `ref/mkt/customer-research` / Cover the Cost
+- `ref/mkt/develop-marketing-strategy` / Check What Each Option Would
+  Take
+- `ref/mkt/engage-marketing-agency` / Set the Budget and the Term
+- `ref/mkt/name-product` / Secure the Name
+- `ref/mkt/plan-marketing-capacity` / Cost Each Way of Closing the Gap,
+  Commission the New Capacity
+- `ref/mkt/prioritize-initiatives` / Read What Is Already Committed,
+  Resource the Commitments
+- `ref/mkt/quarterly-business-review` / Read the Budget Position, Move
+  the Money
+- `ref/mkt/select-marketing-technology` / Brief the Selection, Say What
+  Money There Is, Work out the Whole Cost, Write It into the Register
+- `ref/mkt/set-marketing-budget` / List the Money Already Committed, Set
+  the Rules for Moving Money, Phase the Money across the Year, Load the
+  Allocations, Record What the Budget Rests On
+- `ref/mkt/win-loss-analysis` / Cover What It Costs
 
 ## Patterns
 

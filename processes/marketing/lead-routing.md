@@ -1,4 +1,4 @@
-# Reference process: inbound lead routing
+# Reference process: Route Inbound Lead
 
 `ref/mkt/lead-routing v1`
 
@@ -14,12 +14,12 @@ social campaign, and the reason to read the two side by side.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | capture and dedupe | the submission lands and duplicates merge into one record | [lead-scorer](../../agents/lead-scorer.md) |
-| 2 | enrich | company size, industry and geography get filled in | lead-scorer |
-| 3 | score | scored against the current model, with the inputs recorded | lead-scorer |
-| 4 | route | the lead is assigned by territory and score | lead-scorer |
-| 5 | notify | the owner is told, with the score and the evidence behind it | lead-scorer |
-| 6 | clear the exception | a person settles a lead no rule could place | sales operations (person) · lead-scorer |
+| 1 | Capture and Dedupe | the submission lands and duplicates merge into one record | [lead-scorer](../../agents/lead-scorer.md) |
+| 2 | Enrich | company size, industry and geography get filled in | lead-scorer |
+| 3 | Score | scored against the current model, with the inputs recorded | lead-scorer |
+| 4 | Route | the lead is assigned by territory and score | lead-scorer |
+| 5 | Notify | the owner is told, with the score and the evidence behind it | lead-scorer |
+| 6 | Clear the Exception | a person settles a lead no rule could place | sales operations (person) · lead-scorer |
 
 Activity 6 is the only place a person touches a run, and it happens
 only when a lead cannot be scored or cannot be placed in a territory.
@@ -33,13 +33,13 @@ first five activities are given.
 
 ```mermaid
 flowchart LR
-  T([a form is submitted]) --> A1[1. capture and dedupe]
-  A1 --> A2[2. enrich]
-  A2 --> A3[3. score]
-  A3 --> A4[4. route]
-  A4 --> A5[5. notify]
+  T([a form is submitted]) --> A1[1. Capture and Dedupe]
+  A1 --> A2[2. Enrich]
+  A2 --> A3[3. Score]
+  A3 --> A4[4. Route]
+  A4 --> A5[5. Notify]
   A5 --> DONE([the lead is with its owner])
-  A3 -. cannot be scored .-> A6[6. clear the exception]
+  A3 -. cannot be scored .-> A6[6. Clear the Exception]
   A4 -. no matching territory .-> A6
   A6 -. settled by a person .-> A4
 ```

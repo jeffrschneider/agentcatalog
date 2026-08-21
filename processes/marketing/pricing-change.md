@@ -1,4 +1,4 @@
-# Reference process: the launch pricing change
+# Reference process: Launch Pricing Change
 
 `ref/mkt/pricing-change v1`
 
@@ -21,51 +21,51 @@ the notice period sitting between them.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the pricing decision | what changes, from when, and why it is changing | [launch-coordinator](../../agents/launch-coordinator.md) · finance (person) · product (person) |
-| 2 | read the affected customers | what each customer pays now and what it becomes | [price-transition](../../agents/price-transition.md) · [forecaster](../../agents/forecaster.md) |
-| 3 | set the terms of the change | grandfathering, the notice period, and the new list | finance (person) · legal reviewer (person) · [standards-keeper](../../agents/standards-keeper.md) · price-transition · launch-coordinator |
-| 4 | plan the transition | the checklist: what each branch owes and by when | launch-coordinator |
-| 5 | settle the explanation | one reason for the change, said the same to everyone | [comms-manager](../../agents/comms-manager.md) · [copywriter](../../agents/copywriter.md) · product marketing (person) |
-| 6 | produce what customers and sellers read | the notice, the questions, and the objection answers | copywriter · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · sales leader (person) · support leader (person) |
-| 7 | restate the price everywhere it is published | every live page, ad and asset that names a price | [content-librarian](../../agents/content-librarian.md) · [web-producer](../../agents/web-producer.md) · [media-buyer](../../agents/media-buyer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 8 | get sign-offs | brand, legal, disclosure and finance approve it | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) · finance (person) · brand owner (person) |
-| 9 | build the notice lists | one list per treatment, with the rules applied | price-transition · [audience-operator](../../agents/audience-operator.md) · [consent-manager](../../agents/consent-manager.md) · [email-producer](../../agents/email-producer.md) |
-| 10 | serve the notice | every affected customer told, and the proof kept | price-transition · email-producer · [in-product-producer](../../agents/in-product-producer.md) · launch-coordinator |
-| 11 | answer what comes back | questions, objections, and accounts asking to leave | [community-manager](../../agents/community-manager.md) · [lifecycle-manager](../../agents/lifecycle-manager.md) · [account-monitor](../../agents/account-monitor.md) · account owner (person) |
-| 12 | change the public price | the new pages go live and the old ones redirect | launch-coordinator · web-producer · media-buyer · comms-manager |
-| 13 | move the served customers | each customer changes on the date they were told | price-transition · lifecycle-manager · finance (person) |
-| 14 | watch the transition | who accepted, who left, and what new sales did | [analytics](../../agents/analytics.md) · price-transition · account-monitor |
-| 15 | report the transition | results against what the change was meant to do | launch-coordinator · analytics · price-transition |
-| 16 | record what was learned | what to repeat, what to avoid | launch-coordinator |
+| 1 | Take in the Pricing Decision | what changes, from when, and why it is changing | [launch-coordinator](../../agents/launch-coordinator.md) · finance (person) · product (person) |
+| 2 | Read the Affected Customers | what each customer pays now and what it becomes | [price-transition](../../agents/price-transition.md) · [forecaster](../../agents/forecaster.md) |
+| 3 | Set the Terms of the Change | grandfathering, the notice period, and the new list | finance (person) · legal reviewer (person) · [standards-keeper](../../agents/standards-keeper.md) · price-transition · launch-coordinator |
+| 4 | Plan the Transition | the checklist: what each branch owes and by when | launch-coordinator |
+| 5 | Settle the Explanation | one reason for the change, said the same to everyone | [comms-manager](../../agents/comms-manager.md) · [copywriter](../../agents/copywriter.md) · product marketing (person) |
+| 6 | Produce What Customers and Sellers Read | the notice, the questions, and the objection answers | copywriter · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · sales leader (person) · support leader (person) |
+| 7 | Restate the Price Everywhere It Is Published | every live page, ad and asset that names a price | [content-librarian](../../agents/content-librarian.md) · [web-producer](../../agents/web-producer.md) · [media-buyer](../../agents/media-buyer.md) · [conversion-tracker](../../agents/conversion-tracker.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 8 | Get Sign-Offs | brand, legal, disclosure and finance approve it | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) · finance (person) · brand owner (person) |
+| 9 | Build the Notice Lists | one list per treatment, with the rules applied | price-transition · [audience-operator](../../agents/audience-operator.md) · [consent-manager](../../agents/consent-manager.md) · [email-producer](../../agents/email-producer.md) |
+| 10 | Serve the Notice | every affected customer told, and the proof kept | price-transition · email-producer · [in-product-producer](../../agents/in-product-producer.md) · launch-coordinator |
+| 11 | Answer What Comes Back | questions, objections, and accounts asking to leave | [community-manager](../../agents/community-manager.md) · [lifecycle-manager](../../agents/lifecycle-manager.md) · [account-monitor](../../agents/account-monitor.md) · account owner (person) |
+| 12 | Change the Public Price | the new pages go live and the old ones redirect | launch-coordinator · web-producer · media-buyer · comms-manager |
+| 13 | Move the Served Customers | each customer changes on the date they were told | price-transition · lifecycle-manager · finance (person) |
+| 14 | Watch the Transition | who accepted, who left, and what new sales did | [analytics](../../agents/analytics.md) · price-transition · account-monitor |
+| 15 | Report the Transition | results against what the change was meant to do | launch-coordinator · analytics · price-transition |
+| 16 | Record What Was Learned | what to repeat, what to avoid | launch-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a pricing decision is approved]) --> A1[1. take in the pricing decision]
-  A1 --> A2[2. read the affected customers]
-  A2 --> A3[3. set the terms of the change]
-  A3 --> A4[4. plan the transition]
-  A4 --> A5[5. settle the explanation]
-  A4 --> A7[7. restate the price everywhere it is published]
-  A5 --> A6[6. produce what customers and sellers read]
-  A6 --> A8[8. get sign-offs]
+  T([a pricing decision is approved]) --> A1[1. Take in the Pricing Decision]
+  A1 --> A2[2. Read the Affected Customers]
+  A2 --> A3[3. Set the Terms of the Change]
+  A3 --> A4[4. Plan the Transition]
+  A4 --> A5[5. Settle the Explanation]
+  A4 --> A7[7. Restate the Price Everywhere It Is Published]
+  A5 --> A6[6. Produce What Customers and Sellers Read]
+  A6 --> A8[8. Get Sign-Offs]
   A8 -. changes requested .-> A6
-  A8 --> A9[9. build the notice lists]
-  A8 --> A12[12. change the public price]
+  A8 --> A9[9. Build the Notice Lists]
+  A8 --> A12[12. Change the Public Price]
   A7 --> A12
   A9 -. a customer no rule catches .-> A3
-  A9 --> A10[10. serve the notice]
+  A9 --> A10[10. Serve the Notice]
   A10 -. the effective date moved .-> A6
-  A10 --> A11[11. answer what comes back]
-  A10 --> A13[13. move the served customers]
+  A10 --> A11[11. Answer What Comes Back]
+  A10 --> A13[13. Move the Served Customers]
   A11 -. a rule has to change .-> A3
-  A11 --> A14[14. watch the transition]
+  A11 --> A14[14. Watch the Transition]
   A13 -. the notice has not cleared .-> A10
   A12 --> A14
   A13 --> A14
-  A14 --> A15[15. report the transition]
-  A15 --> A16[16. record what was learned]
+  A14 --> A15[15. Report the Transition]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the market and the customers are on the new prices])
 ```
 

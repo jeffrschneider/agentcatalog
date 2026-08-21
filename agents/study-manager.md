@@ -16,43 +16,43 @@ read the evidence for it in the same place.
 
 ## Seats
 
-- `ref/mkt/brand-audit` / take in the request, set what the audit
-  covers, brief the audit, list where the brand appears, draw the
-  sample, read the set as a whole, ask the audience, name the gaps,
-  write the findings, decide what happens to each gap, hand the gaps to
-  the owners, record what was learned
-- `ref/mkt/brand-health` / open the cycle, read the promise the brand
-  makes, settle what the wave measures, set the competitor set, brief
-  the wave, define the sample, carry the questions forward, field the
-  wave, watch the sample fill, close the wave, compare with the earlier
-  waves, set perception against the promise, write the findings, report
-  awareness, perception and preference, record what was learned
-- `ref/mkt/brand-refresh` / read what people recognize today, read what
-  people recognize now
-- `ref/mkt/brand-voice` / try the messages on buyers
-- `ref/mkt/buyer-persona` / plan the study, field the study, name the
-  jobs, name the pains and what they cost, name the buying triggers,
-  record the words this person uses
-- `ref/mkt/conversion-experiment` / take in the hypothesis, set the
-  terms of the test, size the test, clear the traffic, brief the makers,
-  start the test, watch the test run, read the result, decide roll out
-  or revert, carry out the decision, record what was learned
-- `ref/mkt/customer-research` / take in the question, choose the method,
-  brief the study, define the sample, write the questions, try the
-  questions on a few people, field the study, watch the sample fill,
-  close the study, write the findings, deliver the findings, record what
-  was learned
-- `ref/mkt/develop-marketing-strategy` / hear from buyers and the field
-- `ref/mkt/map-buyer-journey` / design the buyer study, talk to the
-  buyers, draft the stages, collect the questions
-- `ref/mkt/name-product` / try the names on outsiders
-- `ref/mkt/segment-the-market` / collect the first-hand accounts
-- `ref/mkt/win-loss-analysis` / take in the period, pull the closed
-  deals, brief the study, draw both samples, write the interview guide,
-  invite the buyers, hold the interviews, watch both halves fill, close
-  the interviews, sort what was said into themes, set the themes against
-  the record, write the findings, deliver the themes and
-  recommendations, record what was learned
+- `ref/mkt/brand-audit` / Take in the Request, Set What the Audit
+  Covers, Brief the Audit, List Where the Brand Appears, Draw the
+  Sample, Read the Set as a Whole, Ask the Audience, Name the Gaps,
+  Write the Findings, Decide What Happens to Each Gap, Hand the Gaps to
+  the Owners, Record What Was Learned
+- `ref/mkt/brand-health` / Open the Cycle, Read the Promise the Brand
+  Makes, Settle What the Wave Measures, Set the Competitor Set, Brief
+  the Wave, Define the Sample, Carry the Questions Forward, Field the
+  Wave, Watch the Sample Fill, Close the Wave, Compare with the Earlier
+  Waves, Set Perception against the Promise, Write the Findings, Report
+  Awareness, Perception and Preference, Record What Was Learned
+- `ref/mkt/brand-refresh` / Read What People Recognize Today, Read What
+  People Recognize Now
+- `ref/mkt/brand-voice` / Try the Messages on Buyers
+- `ref/mkt/buyer-persona` / Plan the Study, Field the Study, Name the
+  Jobs, Name the Pains and What They Cost, Name the Buying Triggers,
+  Record the Words This Person Uses
+- `ref/mkt/conversion-experiment` / Take in the Hypothesis, Set the
+  Terms of the Test, Size the Test, Clear the Traffic, Brief the Makers,
+  Start the Test, Watch the Test Run, Read the Result, Decide Roll out
+  or Revert, Carry out the Decision, Record What Was Learned
+- `ref/mkt/customer-research` / Take in the Question, Choose the Method,
+  Brief the Study, Define the Sample, Write the Questions, Try the
+  Questions on a Few People, Field the Study, Watch the Sample Fill,
+  Close the Study, Write the Findings, Deliver the Findings, Record What
+  Was Learned
+- `ref/mkt/develop-marketing-strategy` / Hear from Buyers and the Field
+- `ref/mkt/map-buyer-journey` / Design the Buyer Study, Talk to the
+  Buyers, Draft the Stages, Collect the Questions
+- `ref/mkt/name-product` / Try the Names on Outsiders
+- `ref/mkt/segment-the-market` / Collect the First-Hand Accounts
+- `ref/mkt/win-loss-analysis` / Take in the Period, Pull the Closed
+  Deals, Brief the Study, Draw Both Samples, Write the Interview Guide,
+  Invite the Buyers, Hold the Interviews, Watch Both Halves Fill, Close
+  the Interviews, Sort What Was Said into Themes, Set the Themes against
+  the Record, Write the Findings, Deliver the Themes and
+  Recommendations, Record What Was Learned
 
 ## Patterns
 

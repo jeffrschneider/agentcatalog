@@ -1,4 +1,4 @@
-# Reference process: customer research
+# Reference process: Conduct Customer Research
 
 `ref/mkt/customer-research v1`
 
@@ -18,60 +18,60 @@ people. Reading what customers already did is a separate process.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the question | work out what the study must settle and by when | [study-manager](../../agents/study-manager.md) · requester (person) |
-| 2 | check what is already known | whether the record already answers the question | [researcher](../../agents/researcher.md) · [analytics](../../agents/analytics.md) |
-| 3 | choose the method | interviews, a survey or a panel, and why that one | study-manager · [statistician](../../agents/statistician.md) |
-| 4 | brief the study | every seat hears the question and the method at once | study-manager · statistician · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · researcher |
-| 5 | say how much data it needs | how many responses, settled before any are asked | statistician |
-| 6 | define the sample | who gets asked, how many, and how they are drawn | study-manager · audience-manager |
-| 7 | check who may be contacted | the consent record applied to the drawn sample | consent-manager |
-| 8 | arrange the outside sample | what the contact base cannot supply is bought | [supplier-manager](../../agents/supplier-manager.md) · [supplier-check](../../agents/supplier-check.md) |
-| 9 | cover the cost | incentives and outside costs, against what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
-| 10 | write the questions | every question and everything shown, at a version | study-manager · subject matter expert (person) |
-| 11 | try the questions on a few people | a handful answer first and the wording is fixed | study-manager |
-| 12 | get sign-offs | legal and the owner approve before anybody is asked | legal reviewer (person) · leadership (person) |
-| 13 | field the study | invitations go out and the responses come in | study-manager · [audience-operator](../../agents/audience-operator.md) |
-| 14 | watch the sample fill | how many answered against how many are needed | study-manager · statistician |
-| 15 | close the study | asking stops and the responses are fixed | study-manager |
-| 16 | work out the figures | which data holds, each figure with its range | statistician |
-| 17 | write the findings | each finding with the responses recorded under it | study-manager |
-| 18 | check the findings hold | every figure read against its data and its method | statistician |
-| 19 | deliver the findings | the report goes to whoever asked, with its evidence | study-manager · [decision-coordinator](../../agents/decision-coordinator.md) · requester (person) |
-| 20 | record what was learned | what to repeat, what to avoid | study-manager |
+| 1 | Take in the Question | work out what the study must settle and by when | [study-manager](../../agents/study-manager.md) · requester (person) |
+| 2 | Check What Is Already Known | whether the record already answers the question | [researcher](../../agents/researcher.md) · [analytics](../../agents/analytics.md) |
+| 3 | Choose the Method | interviews, a survey or a panel, and why that one | study-manager · [statistician](../../agents/statistician.md) |
+| 4 | Brief the Study | every seat hears the question and the method at once | study-manager · statistician · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · researcher |
+| 5 | Say How Much Data It Needs | how many responses, settled before any are asked | statistician |
+| 6 | Define the Sample | who gets asked, how many, and how they are drawn | study-manager · audience-manager |
+| 7 | Check Who May Be Contacted | the consent record applied to the drawn sample | consent-manager |
+| 8 | Arrange the Outside Sample | what the contact base cannot supply is bought | [supplier-manager](../../agents/supplier-manager.md) · [supplier-check](../../agents/supplier-check.md) |
+| 9 | Cover the Cost | incentives and outside costs, against what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
+| 10 | Write the Questions | every question and everything shown, at a version | study-manager · subject matter expert (person) |
+| 11 | Try the Questions on a Few People | a handful answer first and the wording is fixed | study-manager |
+| 12 | Get Sign-Offs | legal and the owner approve before anybody is asked | legal reviewer (person) · leadership (person) |
+| 13 | Field the Study | invitations go out and the responses come in | study-manager · [audience-operator](../../agents/audience-operator.md) |
+| 14 | Watch the Sample Fill | how many answered against how many are needed | study-manager · statistician |
+| 15 | Close the Study | asking stops and the responses are fixed | study-manager |
+| 16 | Work out the Figures | which data holds, each figure with its range | statistician |
+| 17 | Write the Findings | each finding with the responses recorded under it | study-manager |
+| 18 | Check the Findings Hold | every figure read against its data and its method | statistician |
+| 19 | Deliver the Findings | the report goes to whoever asked, with its evidence | study-manager · [decision-coordinator](../../agents/decision-coordinator.md) · requester (person) |
+| 20 | Record What Was Learned | what to repeat, what to avoid | study-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a knowledge gap is raised]) --> A1[1. take in the question]
-  A1 --> A2[2. check what is already known]
-  A2 --> A3[3. choose the method]
-  A3 --> A4[4. brief the study]
-  A4 --> A5[5. say how much data it needs]
-  A4 --> A10[10. write the questions]
-  A5 --> A6[6. define the sample]
-  A6 --> A7[7. check who may be contacted]
-  A6 --> A8[8. arrange the outside sample]
+  T([a knowledge gap is raised]) --> A1[1. Take in the Question]
+  A1 --> A2[2. Check What Is Already Known]
+  A2 --> A3[3. Choose the Method]
+  A3 --> A4[4. Brief the Study]
+  A4 --> A5[5. Say How Much Data It Needs]
+  A4 --> A10[10. Write the Questions]
+  A5 --> A6[6. Define the Sample]
+  A6 --> A7[7. Check Who May Be Contacted]
+  A6 --> A8[8. Arrange the Outside Sample]
   A7 -. too few may be contacted .-> A6
-  A8 --> A9[9. cover the cost]
-  A10 --> A11[11. try the questions on a few people]
+  A8 --> A9[9. Cover the Cost]
+  A10 --> A11[11. Try the Questions on a Few People]
   A11 -. a question reads two ways .-> A10
-  A7 --> A12[12. get sign-offs]
+  A7 --> A12[12. Get Sign-Offs]
   A9 --> A12
   A11 --> A12
   A12 -. changes requested .-> A6
   A12 -. changes requested .-> A10
-  A12 --> A13[13. field the study]
-  A13 --> A14[14. watch the sample fill]
+  A12 --> A13[13. Field the Study]
+  A13 --> A14[14. Watch the Sample Fill]
   A14 -. too few answers so far .-> A13
-  A14 --> A15[15. close the study]
-  A15 --> A16[16. work out the figures]
+  A14 --> A15[15. Close the Study]
+  A15 --> A16[16. Work out the Figures]
   A16 -. the sample fell short .-> A13
-  A16 --> A17[17. write the findings]
-  A17 --> A18[18. check the findings hold]
+  A16 --> A17[17. Write the Findings]
+  A17 --> A18[18. Check the Findings Hold]
   A18 -. a figure does not follow .-> A17
-  A18 --> A19[19. deliver the findings]
-  A19 --> A20[20. record what was learned]
+  A18 --> A19[19. Deliver the Findings]
+  A19 --> A20[20. Record What Was Learned]
   A20 --> DONE([the findings are delivered with their evidence])
 ```
 

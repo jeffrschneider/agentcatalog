@@ -1,4 +1,4 @@
-# Reference process: the channel program
+# Reference process: Launch Channel Program
 
 `ref/mkt/channel-program v1`
 
@@ -19,55 +19,55 @@ partners produced in their first weeks.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the program design | what the program must deliver, for whom, and by when | [partner-manager](../../agents/partner-manager.md) |
-| 2 | settle the tiers and the terms | what each tier asks of a partner and what it gives back | partner-manager · [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 3 | price the incentives | margins, rebates, and what the program will cost | [forecaster](../../agents/forecaster.md) · partner-manager · finance (person) |
-| 4 | draw up the partner agreement | the contract a partner signs, and how it ends | partner-manager · legal reviewer (person) |
-| 5 | draw up the candidate list | the profile a partner has to meet, and who meets it | [researcher](../../agents/researcher.md) · partner-manager |
-| 6 | build the recruitment material | the pitch and the numbers a candidate is shown | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
-| 7 | build the partner selling kit | the deck, the answers and the training partners get | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · copywriter · designer · [video-editor](../../agents/video-editor.md) |
-| 8 | build the partner portal | where partners get materials and register deals | [web-producer](../../agents/web-producer.md) · partner-manager |
-| 9 | set up the partner systems | partner records, tiers, deal registration, leads | partner-manager · [conversion-tracker](../../agents/conversion-tracker.md) · [lead-scorer](../../agents/lead-scorer.md) · [audience-handover](../../agents/audience-handover.md) |
-| 10 | get sign-offs | brand, disclosure, legal and finance approve it | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) · finance (person) |
-| 11 | open recruitment | the approach goes out to the candidate partners | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [consent-manager](../../agents/consent-manager.md) · partner-manager |
-| 12 | assess the applicants | each candidate read against the profile and terms | partner-manager · researcher · finance (person) |
-| 13 | sign the partners | the agreement is signed and the partner recorded | partner-manager · legal reviewer (person) |
-| 14 | hand each partner to enablement | each signed partner starts its own enablement run | partner-manager |
-| 15 | watch the first partners | which partners registered a deal and which stalled | [analytics](../../agents/analytics.md) · partner-manager |
-| 16 | report the program launch | results set against what the design promised | partner-manager · analytics |
-| 17 | record what was learned | what to repeat, what to avoid | partner-manager |
+| 1 | Take in the Program Design | what the program must deliver, for whom, and by when | [partner-manager](../../agents/partner-manager.md) |
+| 2 | Settle the Tiers and the Terms | what each tier asks of a partner and what it gives back | partner-manager · [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 3 | Price the Incentives | margins, rebates, and what the program will cost | [forecaster](../../agents/forecaster.md) · partner-manager · finance (person) |
+| 4 | Draw up the Partner Agreement | the contract a partner signs, and how it ends | partner-manager · legal reviewer (person) |
+| 5 | Draw up the Candidate List | the profile a partner has to meet, and who meets it | [researcher](../../agents/researcher.md) · partner-manager |
+| 6 | Build the Recruitment Material | the pitch and the numbers a candidate is shown | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 7 | Build the Partner Selling Kit | the deck, the answers and the training partners get | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · copywriter · designer · [video-editor](../../agents/video-editor.md) |
+| 8 | Build the Partner Portal | where partners get materials and register deals | [web-producer](../../agents/web-producer.md) · partner-manager |
+| 9 | Set up the Partner Systems | partner records, tiers, deal registration, leads | partner-manager · [conversion-tracker](../../agents/conversion-tracker.md) · [lead-scorer](../../agents/lead-scorer.md) · [audience-handover](../../agents/audience-handover.md) |
+| 10 | Get Sign-Offs | brand, disclosure, legal and finance approve it | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) · finance (person) |
+| 11 | Open Recruitment | the approach goes out to the candidate partners | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [consent-manager](../../agents/consent-manager.md) · partner-manager |
+| 12 | Assess the Applicants | each candidate read against the profile and terms | partner-manager · researcher · finance (person) |
+| 13 | Sign the Partners | the agreement is signed and the partner recorded | partner-manager · legal reviewer (person) |
+| 14 | Hand Each Partner to Enablement | each signed partner starts its own enablement run | partner-manager |
+| 15 | Watch the First Partners | which partners registered a deal and which stalled | [analytics](../../agents/analytics.md) · partner-manager |
+| 16 | Report the Program Launch | results set against what the design promised | partner-manager · analytics |
+| 17 | Record What Was Learned | what to repeat, what to avoid | partner-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a program design is approved]) --> A1[1. take in the program design]
-  A1 --> A2[2. settle the tiers and the terms]
-  A2 --> A3[3. price the incentives]
+  T([a program design is approved]) --> A1[1. Take in the Program Design]
+  A1 --> A2[2. Settle the Tiers and the Terms]
+  A2 --> A3[3. Price the Incentives]
   A3 -. the incentives cost more than the design allows .-> A2
-  A2 --> A5[5. draw up the candidate list]
-  A2 --> A9[9. set up the partner systems]
-  A3 --> A4[4. draw up the partner agreement]
-  A3 --> A6[6. build the recruitment material]
-  A3 --> A7[7. build the partner selling kit]
-  A6 --> A8[8. build the partner portal]
+  A2 --> A5[5. Draw up the Candidate List]
+  A2 --> A9[9. Set up the Partner Systems]
+  A3 --> A4[4. Draw up the Partner Agreement]
+  A3 --> A6[6. Build the Recruitment Material]
+  A3 --> A7[7. Build the Partner Selling Kit]
+  A6 --> A8[8. Build the Partner Portal]
   A7 --> A8
-  A4 --> A10[10. get sign-offs]
+  A4 --> A10[10. Get Sign-Offs]
   A8 --> A10
   A9 --> A10
   A10 -. changes requested .-> A6
   A10 -. changes requested .-> A7
-  A10 --> A11[11. open recruitment]
+  A10 --> A11[11. Open Recruitment]
   A5 --> A11
-  A11 --> A12[12. assess the applicants]
+  A11 --> A12[12. Assess the Applicants]
   A12 -. too few candidates meet the profile .-> A5
-  A12 --> A13[13. sign the partners]
+  A12 --> A13[13. Sign the Partners]
   A13 -. the terms will not close a partner .-> A2
-  A13 --> A14[14. hand each partner to enablement]
-  A14 --> A15[15. watch the first partners]
+  A13 --> A14[14. Hand Each Partner to Enablement]
+  A14 --> A15[15. Watch the First Partners]
   A15 -. a signed partner has not started .-> A14
-  A15 --> A16[16. report the program launch]
-  A16 --> A17[17. record what was learned]
+  A15 --> A16[16. Report the Program Launch]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the partners are recruited and onboarded])
 ```
 

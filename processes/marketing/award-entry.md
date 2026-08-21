@@ -1,4 +1,4 @@
-# Reference process: the award entry
+# Reference process: Submit Award Entry
 
 `ref/mkt/award-entry v1`
 
@@ -19,51 +19,51 @@ somebody still owes the debrief.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the award | what it recognizes, its deadline and its fee | [submissions-manager](../../agents/submissions-manager.md) |
-| 2 | decide whether to enter | weigh the fee and the effort against the value | submissions-manager · leadership (person) |
-| 3 | read the entry rules | eligibility, categories, word limits and format | submissions-manager · legal reviewer (person) |
-| 4 | pick the entry | the category and the work entered in it | submissions-manager · subject matter expert (person) |
-| 5 | brief the entry | everyone hears the same request and the deadline | submissions-manager · [copywriter](../../agents/copywriter.md) · [researcher](../../agents/researcher.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
-| 6 | gather the evidence | results, dates and the proof behind each claim | researcher · [analytics](../../agents/analytics.md) · subject matter expert (person) |
-| 7 | get the customer's agreement | the named customer agrees to appear in the entry | [advocacy-manager](../../agents/advocacy-manager.md) · [account-monitor](../../agents/account-monitor.md) · account owner (person) |
-| 8 | write the entry | the answers written to the judging criteria | copywriter · submissions-manager |
-| 9 | edit the entry | the answers tightened against the criteria | editor |
-| 10 | assemble the supporting material | images, video and references the entry asks for | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 11 | get sign-offs | brand, legal, rights and the customer approve it | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · rights approver (person) · advocacy-manager |
-| 12 | submit the entry | the fee is paid and the entry is filed on time | submissions-manager · finance (person) |
-| 13 | answer the judges | clarifications and interviews the judges ask for | submissions-manager · subject matter expert (person) |
-| 14 | track the result | shortlist, win or nothing, recorded against the entry | submissions-manager · [coverage-monitor](../../agents/coverage-monitor.md) |
-| 15 | hand the result on | a shortlist or a win goes to the announcement | submissions-manager · [comms-manager](../../agents/comms-manager.md) · [press-relations](../../agents/press-relations.md) |
-| 16 | record what was learned | what to repeat, what to avoid | submissions-manager |
+| 1 | Take in the Award | what it recognizes, its deadline and its fee | [submissions-manager](../../agents/submissions-manager.md) |
+| 2 | Decide Whether to Enter | weigh the fee and the effort against the value | submissions-manager · leadership (person) |
+| 3 | Read the Entry Rules | eligibility, categories, word limits and format | submissions-manager · legal reviewer (person) |
+| 4 | Pick the Entry | the category and the work entered in it | submissions-manager · subject matter expert (person) |
+| 5 | Brief the Entry | everyone hears the same request and the deadline | submissions-manager · [copywriter](../../agents/copywriter.md) · [researcher](../../agents/researcher.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
+| 6 | Gather the Evidence | results, dates and the proof behind each claim | researcher · [analytics](../../agents/analytics.md) · subject matter expert (person) |
+| 7 | Get the Customer's Agreement | the named customer agrees to appear in the entry | [advocacy-manager](../../agents/advocacy-manager.md) · [account-monitor](../../agents/account-monitor.md) · account owner (person) |
+| 8 | Write the Entry | the answers written to the judging criteria | copywriter · submissions-manager |
+| 9 | Edit the Entry | the answers tightened against the criteria | editor |
+| 10 | Assemble the Supporting Material | images, video and references the entry asks for | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 11 | Get Sign-Offs | brand, legal, rights and the customer approve it | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · rights approver (person) · advocacy-manager |
+| 12 | Submit the Entry | the fee is paid and the entry is filed on time | submissions-manager · finance (person) |
+| 13 | Answer the Judges | clarifications and interviews the judges ask for | submissions-manager · subject matter expert (person) |
+| 14 | Track the Result | shortlist, win or nothing, recorded against the entry | submissions-manager · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 15 | Hand the Result On | a shortlist or a win goes to the announcement | submissions-manager · [comms-manager](../../agents/comms-manager.md) · [press-relations](../../agents/press-relations.md) |
+| 16 | Record What Was Learned | what to repeat, what to avoid | submissions-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([an award opens for entries]) --> A1[1. take in the award]
-  A1 --> A2[2. decide whether to enter]
-  A2 --> A3[3. read the entry rules]
-  A3 --> A4[4. pick the entry]
-  A4 --> A5[5. brief the entry]
-  A5 --> A6[6. gather the evidence]
-  A5 --> A7[7. get the customer's agreement]
-  A5 --> A10[10. assemble the supporting material]
+  T([an award opens for entries]) --> A1[1. Take in the Award]
+  A1 --> A2[2. Decide Whether to Enter]
+  A2 --> A3[3. Read the Entry Rules]
+  A3 --> A4[4. Pick the Entry]
+  A4 --> A5[5. Brief the Entry]
+  A5 --> A6[6. Gather the Evidence]
+  A5 --> A7[7. Get the Customer's Agreement]
+  A5 --> A10[10. Assemble the Supporting Material]
   A6 -. the work does not qualify .-> A4
   A7 -. the customer declines .-> A4
-  A6 --> A8[8. write the entry]
-  A8 --> A9[9. edit the entry]
+  A6 --> A8[8. Write the Entry]
+  A8 --> A9[9. Edit the Entry]
   A9 -. rewrite what the edit named .-> A8
-  A9 --> A11[11. get sign-offs]
+  A9 --> A11[11. Get Sign-Offs]
   A7 --> A11
   A10 --> A11
   A11 -. changes requested .-> A8
   A11 -. changes requested .-> A10
-  A11 --> A12[12. submit the entry]
-  A12 --> A13[13. answer the judges]
+  A11 --> A12[12. Submit the Entry]
+  A12 --> A13[13. Answer the Judges]
   A13 -. the evidence does not answer it .-> A6
-  A13 --> A14[14. track the result]
-  A14 --> A15[15. hand the result on]
-  A15 --> A16[16. record what was learned]
+  A13 --> A14[14. Track the Result]
+  A14 --> A15[15. Hand the Result On]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the entry is filed and its result is recorded])
 ```
 

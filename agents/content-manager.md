@@ -12,46 +12,46 @@ keeps answering for that piece while the piece is live.
 
 ## Seats
 
-- `ref/mkt/annual-marketing-plan` / collect the candidate initiatives,
-  build the calendar, brief the department
-- `ref/mkt/brand-voice` / brief the seats that write to it
-- `ref/mkt/buyer-persona` / hand over the persona
-- `ref/mkt/content-calendar` / list what is already committed, collect
-  the topic candidates, size the production capacity, draft the
-  calendar, publish the calendar, brief the department, hand over the
-  approved topics
-- `ref/mkt/customer-case-study` / brief the story, agree what the story
-  argues, publish, watch performance, record what was learned
-- `ref/mkt/customer-newsletter` / open the issue, settle the lineup,
-  brief the makers, proof the issue, send the issue, watch the results,
-  report the results, record what was learned
-- `ref/mkt/develop-marketing-strategy` / hand the strategy to the work
-  that follows
-- `ref/mkt/landing-page` / take in the request, set the parameters,
-  brief the makers, publish, hand it to the campaign, watch it convert,
-  fix what the numbers show, record what was learned
-- `ref/mkt/long-form-content` / take in the topic, brief the piece,
-  agree the outline, publish, watch performance, report how the piece
-  did, record what was learned
-- `ref/mkt/map-buyer-journey` / inventory the content against the map,
-  hand over the map
-- `ref/mkt/marketing-performance-report` / account for the published
-  pieces, check the account
-- `ref/mkt/media-plan` / collect what the plan must carry
-- `ref/mkt/moderate-community` / group the recurring questions
-- `ref/mkt/plan-marketing-capacity` / list the committed work, break the
-  work into activities
-- `ref/mkt/prioritize-initiatives` / work out what is free, settle what
-  gets displaced, hand over the commitments
-- `ref/mkt/quarterly-business-review` / ask each area what it would
-  change, brief the department
-- `ref/mkt/refresh-content` / brief the pages in the cycle, publish the
-  changes, watch what the changes did
-- `ref/mkt/set-marketing-budget` / collect what each function asks for,
-  tell every function what it has
-- `ref/mkt/user-conference` / repurpose the content
-- `ref/mkt/website-content-update` / take in the request, route the
-  change, publish the change, close out the change
+- `ref/mkt/annual-marketing-plan` / Collect the Candidate Initiatives,
+  Build the Calendar, Brief the Department
+- `ref/mkt/brand-voice` / Brief the Seats that Write to It
+- `ref/mkt/buyer-persona` / Hand over the Persona
+- `ref/mkt/content-calendar` / List What Is Already Committed, Collect
+  the Topic Candidates, Size the Production Capacity, Draft the
+  Calendar, Publish the Calendar, Brief the Department, Hand over the
+  Approved Topics
+- `ref/mkt/customer-case-study` / Brief the Story, Agree What the Story
+  Argues, Publish, Watch Performance, Record What Was Learned
+- `ref/mkt/customer-newsletter` / Open the Issue, Settle the Lineup,
+  Brief the Makers, Proof the Issue, Send the Issue, Watch the Results,
+  Report the Results, Record What Was Learned
+- `ref/mkt/develop-marketing-strategy` / Hand the Strategy to the Work
+  that Follows
+- `ref/mkt/landing-page` / Take in the Request, Set the Parameters,
+  Brief the Makers, Publish, Hand It to the Campaign, Watch It Convert,
+  Fix What the Numbers Show, Record What Was Learned
+- `ref/mkt/long-form-content` / Take in the Topic, Brief the Piece,
+  Agree the Outline, Publish, Watch Performance, Report How the Piece
+  Did, Record What Was Learned
+- `ref/mkt/map-buyer-journey` / Inventory the Content against the Map,
+  Hand over the Map
+- `ref/mkt/marketing-performance-report` / Account for the Published
+  Pieces, Check the Account
+- `ref/mkt/media-plan` / Collect What the Plan Must Carry
+- `ref/mkt/moderate-community` / Group the Recurring Questions
+- `ref/mkt/plan-marketing-capacity` / List the Committed Work, Break the
+  Work into Activities
+- `ref/mkt/prioritize-initiatives` / Work out What Is Free, Settle What
+  Gets Displaced, Hand over the Commitments
+- `ref/mkt/quarterly-business-review` / Ask Each Area What It Would
+  Change, Brief the Department
+- `ref/mkt/refresh-content` / Brief the Pages in the Cycle, Publish the
+  Changes, Watch What the Changes Did
+- `ref/mkt/set-marketing-budget` / Collect What Each Function Asks For,
+  Tell Every Function What It Has
+- `ref/mkt/user-conference` / Repurpose the Content
+- `ref/mkt/website-content-update` / Take in the Request, Route the
+  Change, Publish the Change, Close out the Change
 
 ## Patterns
 

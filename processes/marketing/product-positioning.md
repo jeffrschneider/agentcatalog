@@ -1,4 +1,4 @@
-# Reference process: develop product positioning
+# Reference process: Develop Product Positioning
 
 `ref/mkt/product-positioning v1`
 
@@ -26,53 +26,53 @@ brand positioning process.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the question | what the positioning has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · product (person) |
-| 2 | read the standards in force | the company position and the profile, at their versions | [standards-keeper](../../agents/standards-keeper.md) · [audience-manager](../../agents/audience-manager.md) · decision-coordinator |
-| 3 | gather the market evidence | what buyers weigh, what rivals claim, what people search | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
-| 4 | read the product's own record | how the product is used, and what support hears | [account-monitor](../../agents/account-monitor.md) · [analytics](../../agents/analytics.md) · support leader (person) |
-| 5 | read what happens inside deals | what sellers run into, and the deals won and lost | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · sales leader (person) |
-| 6 | interview the makers | what the product does today, and what is coming | researcher · product (person) · subject matter expert (person) |
-| 7 | name the competing choices | what a buyer picks instead, including doing nothing | decision-coordinator · researcher |
-| 8 | draft the candidate positions | two or three positions, each with the case for it | decision-coordinator · [copywriter](../../agents/copywriter.md) |
-| 9 | test the positions against the evidence | whether the evidence carries what each one claims | [editor](../../agents/editor.md) · researcher |
-| 10 | try the positions on outsiders | buyers and sellers react to each one | researcher · sales leader (person) |
-| 11 | choose the position | one is picked and the reasons are said out loud | leadership (person) · product (person) · decision-coordinator |
-| 12 | write the messaging | the statement, the proof points, the audience versions | copywriter · editor · decision-coordinator |
-| 13 | record the proof behind each claim | a source under every claim the messaging makes | researcher |
-| 14 | get sign-offs | brand, legal and product accuracy sign at a version | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · product (person) |
-| 15 | issue the positioning at a version | a numbered version, and every reader is told | standards-keeper · decision-coordinator |
-| 16 | set the review conditions | what has to change for this to be opened again | decision-coordinator · product (person) |
-| 17 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Question | what the positioning has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · product (person) |
+| 2 | Read the Standards in Force | the company position and the profile, at their versions | [standards-keeper](../../agents/standards-keeper.md) · [audience-manager](../../agents/audience-manager.md) · decision-coordinator |
+| 3 | Gather the Market Evidence | what buyers weigh, what rivals claim, what people search | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 4 | Read the Product's Own Record | how the product is used, and what support hears | [account-monitor](../../agents/account-monitor.md) · [analytics](../../agents/analytics.md) · support leader (person) |
+| 5 | Read What Happens Inside Deals | what sellers run into, and the deals won and lost | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · sales leader (person) |
+| 6 | Interview the Makers | what the product does today, and what is coming | researcher · product (person) · subject matter expert (person) |
+| 7 | Name the Competing Choices | what a buyer picks instead, including doing nothing | decision-coordinator · researcher |
+| 8 | Draft the Candidate Positions | two or three positions, each with the case for it | decision-coordinator · [copywriter](../../agents/copywriter.md) |
+| 9 | Test the Positions against the Evidence | whether the evidence carries what each one claims | [editor](../../agents/editor.md) · researcher |
+| 10 | Try the Positions on Outsiders | buyers and sellers react to each one | researcher · sales leader (person) |
+| 11 | Choose the Position | one is picked and the reasons are said out loud | leadership (person) · product (person) · decision-coordinator |
+| 12 | Write the Messaging | the statement, the proof points, the audience versions | copywriter · editor · decision-coordinator |
+| 13 | Record the Proof Behind Each Claim | a source under every claim the messaging makes | researcher |
+| 14 | Get Sign-Offs | brand, legal and product accuracy sign at a version | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · product (person) |
+| 15 | Issue the Positioning at a Version | a numbered version, and every reader is told | standards-keeper · decision-coordinator |
+| 16 | Set the Review Conditions | what has to change for this to be opened again | decision-coordinator · product (person) |
+| 17 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a market question about one product]) --> A1[1. take in the question]
-  A1 --> A2[2. read the standards in force]
-  A2 --> A3[3. gather the market evidence]
-  A2 --> A4[4. read the product's own record]
-  A2 --> A5[5. read what happens inside deals]
-  A2 --> A6[6. interview the makers]
-  A3 --> A7[7. name the competing choices]
+  T([a market question about one product]) --> A1[1. Take in the Question]
+  A1 --> A2[2. Read the Standards in Force]
+  A2 --> A3[3. Gather the Market Evidence]
+  A2 --> A4[4. Read the Product's Own Record]
+  A2 --> A5[5. Read What Happens Inside Deals]
+  A2 --> A6[6. Interview the Makers]
+  A3 --> A7[7. Name the Competing Choices]
   A5 --> A7
-  A7 --> A8[8. draft the candidate positions]
+  A7 --> A8[8. Draft the Candidate Positions]
   A4 --> A8
   A6 --> A8
-  A8 --> A9[9. test the positions against the evidence]
+  A8 --> A9[9. Test the Positions against the Evidence]
   A9 -. the evidence will not carry it .-> A8
-  A9 --> A10[10. try the positions on outsiders]
+  A9 --> A10[10. Try the Positions on Outsiders]
   A10 -. buyers do not recognize it .-> A8
-  A10 --> A11[11. choose the position]
+  A10 --> A11[11. Choose the Position]
   A11 -. none is worth backing .-> A8
-  A11 --> A12[12. write the messaging]
-  A12 --> A13[13. record the proof behind each claim]
+  A11 --> A12[12. Write the Messaging]
+  A12 --> A13[13. Record the Proof Behind Each Claim]
   A13 -. a claim with no source .-> A12
-  A13 --> A14[14. get sign-offs]
+  A13 --> A14[14. Get Sign-Offs]
   A14 -. changes requested .-> A12
-  A14 --> A15[15. issue the positioning at a version]
-  A15 --> A16[16. set the review conditions]
-  A16 --> A17[17. record what was learned]
+  A14 --> A15[15. Issue the Positioning at a Version]
+  A15 --> A16[16. Set the Review Conditions]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the positioning is agreed and issued at a version])
 ```
 

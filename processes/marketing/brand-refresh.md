@@ -1,4 +1,4 @@
-# Reference process: roll out a brand refresh
+# Reference process: Roll Out Brand Refresh
 
 `ref/mkt/brand-refresh v1`
 
@@ -25,78 +25,78 @@ on something new six months later.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the approved identity | what the new identity changes and what it covers | [standards-keeper](../../agents/standards-keeper.md) · brand owner (person) |
-| 2 | issue the identity at a version | the guidelines become a numbered version | standards-keeper |
-| 3 | tell the processes that read it | every reader gets the version and what changed | standards-keeper |
-| 4 | read what people recognize today | the reading taken before anything moves | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) · [analytics](../../agents/analytics.md) |
-| 5 | find everything on the old identity | pages, templates, assets and sends, from what is live | [content-librarian](../../agents/content-librarian.md) · [creative-producer](../../agents/creative-producer.md) |
-| 6 | find what is registered outside | domains, handles, listings and marks held elsewhere | [supplier-manager](../../agents/supplier-manager.md) |
-| 7 | score what is live against the new version | every surface read against the version now in force | [brand-check](../../agents/brand-check.md) |
-| 8 | decide what happens to each surface | remake, replace, retire, or leave under the old one | content-librarian · [decision-coordinator](../../agents/decision-coordinator.md) · brand owner (person) |
-| 9 | check what the department can carry | what the transition needs and what it displaces | [capacity-manager](../../agents/capacity-manager.md) · [budget-keeper](../../agents/budget-keeper.md) |
-| 10 | set the switch date and the order | the day it goes public, and what changes before it | decision-coordinator · leadership (person) · capacity-manager |
-| 11 | brief the seats that remake the material | every seat hears the same account of what changes | content-librarian · creative-producer · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) |
-| 12 | rebuild the templates | page, email and document templates, remade first | creative-producer · designer · web-producer · email-producer |
-| 13 | remake the assets | logos, images and video at every size in use | creative-producer · designer · video-editor |
-| 14 | rewrite what the words say | names, boilerplate and descriptions that changed | copywriter · [editor](../../agents/editor.md) |
-| 15 | register the names and the marks | domains, handles and marks secured before the day | supplier-manager · legal reviewer (person) · rights approver (person) |
-| 16 | get sign-offs | brand, legal and rights approve the remade material | brand-check · brand owner (person) · legal reviewer (person) · rights approver (person) |
-| 17 | check the remade material | contrast, alt text, headings, links and addresses | [accessibility-check](../../agents/accessibility-check.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 18 | stage the changes | the changes built and previewed, still not serving | web-producer · email-producer |
-| 19 | switch the properties | the site and the sending system change over | web-producer · email-producer · content-librarian |
-| 20 | change the profiles held elsewhere | the profiles, listings and pages other people serve | supplier-manager · [community-manager](../../agents/community-manager.md) |
-| 21 | say it in public | the announcement goes out on the switch date | [comms-manager](../../agents/comms-manager.md) · [press-relations](../../agents/press-relations.md) |
-| 22 | sweep for what was missed | what still carries the old identity, inside and out | brand-check · content-librarian · [coverage-monitor](../../agents/coverage-monitor.md) |
-| 23 | retire the old identity | the old files leave the store and the version closes | standards-keeper · creative-producer · content-librarian |
-| 24 | read what people recognize now | the same study run again, beside the baseline | study-manager · statistician |
-| 25 | report the transition | what changed, what it cost, and what it moved | content-librarian · analytics · budget-keeper |
-| 26 | record what was learned | what to repeat, what to avoid | standards-keeper · content-librarian |
+| 1 | Take in the Approved Identity | what the new identity changes and what it covers | [standards-keeper](../../agents/standards-keeper.md) · brand owner (person) |
+| 2 | Issue the Identity at a Version | the guidelines become a numbered version | standards-keeper |
+| 3 | Tell the Processes that Read It | every reader gets the version and what changed | standards-keeper |
+| 4 | Read What People Recognize Today | the reading taken before anything moves | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) · [analytics](../../agents/analytics.md) |
+| 5 | Find Everything on the Old Identity | pages, templates, assets and sends, from what is live | [content-librarian](../../agents/content-librarian.md) · [creative-producer](../../agents/creative-producer.md) |
+| 6 | Find What Is Registered Outside | domains, handles, listings and marks held elsewhere | [supplier-manager](../../agents/supplier-manager.md) |
+| 7 | Score What Is Live against the New Version | every surface read against the version now in force | [brand-check](../../agents/brand-check.md) |
+| 8 | Decide What Happens to Each Surface | remake, replace, retire, or leave under the old one | content-librarian · [decision-coordinator](../../agents/decision-coordinator.md) · brand owner (person) |
+| 9 | Check What the Department Can Carry | what the transition needs and what it displaces | [capacity-manager](../../agents/capacity-manager.md) · [budget-keeper](../../agents/budget-keeper.md) |
+| 10 | Set the Switch Date and the Order | the day it goes public, and what changes before it | decision-coordinator · leadership (person) · capacity-manager |
+| 11 | Brief the Seats that Remake the Material | every seat hears the same account of what changes | content-librarian · creative-producer · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) |
+| 12 | Rebuild the Templates | page, email and document templates, remade first | creative-producer · designer · web-producer · email-producer |
+| 13 | Remake the Assets | logos, images and video at every size in use | creative-producer · designer · video-editor |
+| 14 | Rewrite What the Words Say | names, boilerplate and descriptions that changed | copywriter · [editor](../../agents/editor.md) |
+| 15 | Register the Names and the Marks | domains, handles and marks secured before the day | supplier-manager · legal reviewer (person) · rights approver (person) |
+| 16 | Get Sign-Offs | brand, legal and rights approve the remade material | brand-check · brand owner (person) · legal reviewer (person) · rights approver (person) |
+| 17 | Check the Remade Material | contrast, alt text, headings, links and addresses | [accessibility-check](../../agents/accessibility-check.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 18 | Stage the Changes | the changes built and previewed, still not serving | web-producer · email-producer |
+| 19 | Switch the Properties | the site and the sending system change over | web-producer · email-producer · content-librarian |
+| 20 | Change the Profiles Held Elsewhere | the profiles, listings and pages other people serve | supplier-manager · [community-manager](../../agents/community-manager.md) |
+| 21 | Say It in Public | the announcement goes out on the switch date | [comms-manager](../../agents/comms-manager.md) · [press-relations](../../agents/press-relations.md) |
+| 22 | Sweep for What Was Missed | what still carries the old identity, inside and out | brand-check · content-librarian · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 23 | Retire the Old Identity | the old files leave the store and the version closes | standards-keeper · creative-producer · content-librarian |
+| 24 | Read What People Recognize Now | the same study run again, beside the baseline | study-manager · statistician |
+| 25 | Report the Transition | what changed, what it cost, and what it moved | content-librarian · analytics · budget-keeper |
+| 26 | Record What Was Learned | what to repeat, what to avoid | standards-keeper · content-librarian |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a new identity is approved]) --> A1[1. take in the approved identity]
-  A1 --> A2[2. issue the identity at a version]
-  A1 --> A4[4. read what people recognize today]
-  A2 --> A3[3. tell the processes that read it]
-  A2 --> A5[5. find everything on the old identity]
-  A2 --> A6[6. find what is registered outside]
-  A5 --> A7[7. score what is live against the new version]
-  A7 --> A8[8. decide what happens to each surface]
+  T([a new identity is approved]) --> A1[1. Take in the Approved Identity]
+  A1 --> A2[2. Issue the Identity at a Version]
+  A1 --> A4[4. Read What People Recognize Today]
+  A2 --> A3[3. Tell the Processes that Read It]
+  A2 --> A5[5. Find Everything on the Old Identity]
+  A2 --> A6[6. Find What Is Registered Outside]
+  A5 --> A7[7. Score What Is Live against the New Version]
+  A7 --> A8[8. Decide What Happens to Each Surface]
   A6 --> A8
-  A8 --> A9[9. check what the department can carry]
+  A8 --> A9[9. Check What the Department Can Carry]
   A9 -. the plan does not fit the period .-> A8
-  A9 --> A10[10. set the switch date and the order]
-  A10 --> A11[11. brief the seats that remake the material]
-  A10 --> A15[15. register the names and the marks]
+  A9 --> A10[10. Set the Switch Date and the Order]
+  A10 --> A11[11. Brief the Seats that Remake the Material]
+  A10 --> A15[15. Register the Names and the Marks]
   A15 -. the mark is already held .-> A1
-  A11 --> A12[12. rebuild the templates]
-  A12 --> A13[13. remake the assets]
-  A12 --> A14[14. rewrite what the words say]
-  A12 --> A16[16. get sign-offs]
+  A11 --> A12[12. Rebuild the Templates]
+  A12 --> A13[13. Remake the Assets]
+  A12 --> A14[14. Rewrite What the Words Say]
+  A12 --> A16[16. Get Sign-Offs]
   A13 --> A16
   A14 --> A16
   A16 -. changes requested .-> A13
   A16 -. changes requested .-> A14
-  A16 --> A17[17. check the remade material]
+  A16 --> A17[17. Check the Remade Material]
   A17 -. the colors fail the contrast rule .-> A2
   A17 -. failures to fix .-> A13
-  A17 --> A18[18. stage the changes]
-  A18 --> A19[19. switch the properties]
+  A17 --> A18[18. Stage the Changes]
+  A18 --> A19[19. Switch the Properties]
   A15 --> A19
-  A19 --> A20[20. change the profiles held elsewhere]
-  A19 --> A21[21. say it in public]
-  A20 --> A22[22. sweep for what was missed]
+  A19 --> A20[20. Change the Profiles Held Elsewhere]
+  A19 --> A21[21. Say It in Public]
+  A20 --> A22[22. Sweep for What Was Missed]
   A21 --> A22
   A22 -. the inventory missed a surface .-> A5
   A22 -. still on the old identity .-> A13
-  A22 --> A23[23. retire the old identity]
-  A23 --> A24[24. read what people recognize now]
+  A22 --> A23[23. Retire the Old Identity]
+  A23 --> A24[24. Read What People Recognize Now]
   A4 --> A24
-  A23 --> A25[25. report the transition]
+  A23 --> A25[25. Report the Transition]
   A24 --> A25
-  A25 --> A26[26. record what was learned]
+  A25 --> A26[26. Record What Was Learned]
   A26 --> DONE([every surface is transitioned or recorded as left])
 ```
 

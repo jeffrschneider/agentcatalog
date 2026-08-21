@@ -1,4 +1,4 @@
-# Reference process: map the buyer journey
+# Reference process: Map Buyer Journey
 
 `ref/mkt/map-buyer-journey v1`
 
@@ -25,60 +25,60 @@ gaps ranked by how many buyers reach the question.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the persona | which persona, which purchase, what the map answers | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | read the behavioral record | what buyers of this persona did before they bought | [analytics](../../agents/analytics.md) |
-| 3 | read the search demand | what people search on this subject, and in what order | [search-optimizer](../../agents/search-optimizer.md) |
-| 4 | design the buyer study | the method, who gets asked, and every question asked | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) |
-| 5 | clear the sample and the questions | the rules scored, and legal signs before anyone is asked | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 6 | talk to the buyers | recent buyers say what they were trying to settle | study-manager |
-| 7 | collect the first-hand accounts | what the people who deal with buyers get asked | [researcher](../../agents/researcher.md) · subject matter expert (person) |
-| 8 | draft the stages | the steps a buyer moves through, and what marks each | decision-coordinator · study-manager · researcher |
-| 9 | map the touchpoints | every place the buyer meets the organization | [audience-manager](../../agents/audience-manager.md) · [content-librarian](../../agents/content-librarian.md) · analytics |
-| 10 | collect the questions | what the buyer needs answered at each stage | study-manager · search-optimizer · researcher |
-| 11 | test the stages against the record | whether each signal can be read, and who moved that way | statistician · analytics |
-| 12 | inventory the content against the map | which published piece answers which question | content-librarian · [content-manager](../../agents/content-manager.md) |
-| 13 | find the gaps | the questions with nothing published behind them | content-librarian · search-optimizer · decision-coordinator |
-| 14 | settle the map | the people who plan against it agree it, or send it back | decision-coordinator · leadership (person) · subject matter expert (person) |
-| 15 | write down the agreed map | stages, touchpoints, questions, gaps, and who agreed | decision-coordinator |
-| 16 | issue the map as a version | the map numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 17 | hand over the map | each receiving seat says what it changes | decision-coordinator · content-manager · [campaign-manager](../../agents/campaign-manager.md) · audience-manager · search-optimizer |
-| 18 | set the review conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
-| 19 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Persona | which persona, which purchase, what the map answers | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Read the Behavioral Record | what buyers of this persona did before they bought | [analytics](../../agents/analytics.md) |
+| 3 | Read the Search Demand | what people search on this subject, and in what order | [search-optimizer](../../agents/search-optimizer.md) |
+| 4 | Design the Buyer Study | the method, who gets asked, and every question asked | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) |
+| 5 | Clear the Sample and the Questions | the rules scored, and legal signs before anyone is asked | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 6 | Talk to the Buyers | recent buyers say what they were trying to settle | study-manager |
+| 7 | Collect the First-Hand Accounts | what the people who deal with buyers get asked | [researcher](../../agents/researcher.md) · subject matter expert (person) |
+| 8 | Draft the Stages | the steps a buyer moves through, and what marks each | decision-coordinator · study-manager · researcher |
+| 9 | Map the Touchpoints | every place the buyer meets the organization | [audience-manager](../../agents/audience-manager.md) · [content-librarian](../../agents/content-librarian.md) · analytics |
+| 10 | Collect the Questions | what the buyer needs answered at each stage | study-manager · search-optimizer · researcher |
+| 11 | Test the Stages against the Record | whether each signal can be read, and who moved that way | statistician · analytics |
+| 12 | Inventory the Content against the Map | which published piece answers which question | content-librarian · [content-manager](../../agents/content-manager.md) |
+| 13 | Find the Gaps | the questions with nothing published behind them | content-librarian · search-optimizer · decision-coordinator |
+| 14 | Settle the Map | the people who plan against it agree it, or send it back | decision-coordinator · leadership (person) · subject matter expert (person) |
+| 15 | Write down the Agreed Map | stages, touchpoints, questions, gaps, and who agreed | decision-coordinator |
+| 16 | Issue the Map as a Version | the map numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 17 | Hand over the Map | each receiving seat says what it changes | decision-coordinator · content-manager · [campaign-manager](../../agents/campaign-manager.md) · audience-manager · search-optimizer |
+| 18 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
+| 19 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a persona is agreed]) --> A1[1. take in the persona]
-  A1 --> A2[2. read the behavioral record]
-  A1 --> A3[3. read the search demand]
-  A1 --> A4[4. design the buyer study]
-  A1 --> A7[7. collect the first-hand accounts]
-  A4 --> A5[5. clear the sample and the questions]
+  T([a persona is agreed]) --> A1[1. Take in the Persona]
+  A1 --> A2[2. Read the Behavioral Record]
+  A1 --> A3[3. Read the Search Demand]
+  A1 --> A4[4. Design the Buyer Study]
+  A1 --> A7[7. Collect the First-Hand Accounts]
+  A4 --> A5[5. Clear the Sample and the Questions]
   A5 -. a question or a contact is ruled out .-> A4
-  A5 --> A6[6. talk to the buyers]
+  A5 --> A6[6. Talk to the Buyers]
   A6 -. too few buyers answer .-> A4
-  A2 --> A8[8. draft the stages]
+  A2 --> A8[8. Draft the Stages]
   A3 --> A8
   A6 --> A8
   A7 --> A8
-  A2 --> A9[9. map the touchpoints]
+  A2 --> A9[9. Map the Touchpoints]
   A8 --> A9
-  A3 --> A10[10. collect the questions]
+  A3 --> A10[10. Collect the Questions]
   A8 --> A10
-  A8 --> A11[11. test the stages against the record]
+  A8 --> A11[11. Test the Stages against the Record]
   A11 -. a stage signal cannot be read .-> A8
-  A9 --> A12[12. inventory the content against the map]
+  A9 --> A12[12. Inventory the Content against the Map]
   A10 --> A12
-  A12 --> A13[13. find the gaps]
-  A11 --> A14[14. settle the map]
+  A12 --> A13[13. Find the Gaps]
+  A11 --> A14[14. Settle the Map]
   A13 --> A14
   A14 -. the room does not agree .-> A8
-  A14 --> A15[15. write down the agreed map]
-  A15 --> A16[16. issue the map as a version]
-  A16 --> A17[17. hand over the map]
-  A17 --> A18[18. set the review conditions]
-  A18 --> A19[19. record what was learned]
+  A14 --> A15[15. Write down the Agreed Map]
+  A15 --> A16[16. Issue the Map as a Version]
+  A16 --> A17[17. Hand over the Map]
+  A17 --> A18[18. Set the Review Conditions]
+  A18 --> A19[19. Record What Was Learned]
   A19 --> DONE([the map is agreed and in use])
 ```
 

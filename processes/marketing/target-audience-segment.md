@@ -1,4 +1,4 @@
-# Reference process: build target audience segment
+# Reference process: Build Target Audience Segment
 
 `ref/mkt/target-audience-segment v1`
 
@@ -20,51 +20,51 @@ has been written down where the next campaign can find it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the targeting need | what the segment is for and when it is needed | [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | confirm the rules in force | the consent, retention and sharing rules, at their versions | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 3 | check the data on hand | which traits exist and how complete each one is | [analytics](../../agents/analytics.md) · audience-manager |
-| 4 | write the membership rule | the conditions a record must meet to be in | audience-manager · analytics |
-| 5 | name the exclusions | who is kept out, and which segments must not overlap | audience-manager · campaign-manager · [media-buyer](../../agents/media-buyer.md) |
-| 6 | size the segment | how many records match before consent is applied | analytics · audience-manager |
-| 7 | brief the build | everyone hears the same request at once | audience-manager · [audience-operator](../../agents/audience-operator.md) · consent-manager · analytics · media-buyer · [audience-handover](../../agents/audience-handover.md) |
-| 8 | build the list | the rule and the exclusions run against the database | audience-operator |
-| 9 | apply consent and suppression | everyone the consent record does not cover comes out | consent-manager · audience-operator |
-| 10 | check the built list | a sample read back against the rule it was built from | audience-manager · analytics |
-| 11 | score the finished list | every removal cited to the rule that required it | consent-manager |
-| 12 | approve the release | a person approves the list leaving the organization | audience-manager · legal reviewer (person) |
-| 13 | hand the list to the platforms | formatted for each platform, delivered and confirmed | audience-handover · media-buyer |
-| 14 | confirm the match | how much of the list each platform could match | audience-handover · media-buyer · analytics |
-| 15 | set the refresh schedule | how often the list is rebuilt and delivered again | audience-manager · audience-handover |
-| 16 | record the segment | the definition, the counts and the destinations | audience-manager |
+| 1 | Take in the Targeting Need | what the segment is for and when it is needed | [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Confirm the Rules in Force | the consent, retention and sharing rules, at their versions | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 3 | Check the Data on Hand | which traits exist and how complete each one is | [analytics](../../agents/analytics.md) · audience-manager |
+| 4 | Write the Membership Rule | the conditions a record must meet to be in | audience-manager · analytics |
+| 5 | Name the Exclusions | who is kept out, and which segments must not overlap | audience-manager · campaign-manager · [media-buyer](../../agents/media-buyer.md) |
+| 6 | Size the Segment | how many records match before consent is applied | analytics · audience-manager |
+| 7 | Brief the Build | everyone hears the same request at once | audience-manager · [audience-operator](../../agents/audience-operator.md) · consent-manager · analytics · media-buyer · [audience-handover](../../agents/audience-handover.md) |
+| 8 | Build the List | the rule and the exclusions run against the database | audience-operator |
+| 9 | Apply Consent and Suppression | everyone the consent record does not cover comes out | consent-manager · audience-operator |
+| 10 | Check the Built List | a sample read back against the rule it was built from | audience-manager · analytics |
+| 11 | Score the Finished List | every removal cited to the rule that required it | consent-manager |
+| 12 | Approve the Release | a person approves the list leaving the organization | audience-manager · legal reviewer (person) |
+| 13 | Hand the List to the Platforms | formatted for each platform, delivered and confirmed | audience-handover · media-buyer |
+| 14 | Confirm the Match | how much of the list each platform could match | audience-handover · media-buyer · analytics |
+| 15 | Set the Refresh Schedule | how often the list is rebuilt and delivered again | audience-manager · audience-handover |
+| 16 | Record the Segment | the definition, the counts and the destinations | audience-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a targeting need is raised]) --> A1[1. take in the targeting need]
-  A1 --> A2[2. confirm the rules in force]
-  A1 --> A3[3. check the data on hand]
-  A2 --> A4[4. write the membership rule]
+  T([a targeting need is raised]) --> A1[1. Take in the Targeting Need]
+  A1 --> A2[2. Confirm the Rules in Force]
+  A1 --> A3[3. Check the Data on Hand]
+  A2 --> A4[4. Write the Membership Rule]
   A3 --> A4
-  A4 --> A5[5. name the exclusions]
-  A5 --> A6[6. size the segment]
+  A4 --> A5[5. Name the Exclusions]
+  A5 --> A6[6. Size the Segment]
   A6 -. too few records match the rule .-> A4
-  A6 --> A7[7. brief the build]
-  A7 --> A8[8. build the list]
-  A8 --> A9[9. apply consent and suppression]
+  A6 --> A7[7. Brief the Build]
+  A7 --> A8[8. Build the List]
+  A8 --> A9[9. Apply Consent and Suppression]
   A9 -. too few left to be worth buying .-> A4
-  A9 --> A10[10. check the built list]
+  A9 --> A10[10. Check the Built List]
   A10 -. records the rule does not cover .-> A8
-  A10 --> A11[11. score the finished list]
+  A10 --> A11[11. Score the Finished List]
   A11 -. a removal with no rule behind it .-> A9
-  A11 --> A12[12. approve the release]
+  A11 --> A12[12. Approve the Release]
   A12 -. changes requested .-> A5
-  A12 --> A13[13. hand the list to the platforms]
+  A12 --> A13[13. Hand the List to the Platforms]
   A13 -. a destination took only part of the list .-> A8
-  A13 --> A14[14. confirm the match]
+  A13 --> A14[14. Confirm the Match]
   A14 -. too small for a platform to serve .-> A4
-  A14 --> A15[15. set the refresh schedule]
-  A15 --> A16[16. record the segment]
+  A14 --> A15[15. Set the Refresh Schedule]
+  A15 --> A16[16. Record the Segment]
   A16 --> DONE([the segment is built and synced to the ad platforms])
 ```
 

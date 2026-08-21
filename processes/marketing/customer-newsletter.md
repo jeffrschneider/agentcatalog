@@ -1,4 +1,4 @@
-# Reference process: the customer newsletter
+# Reference process: Publish Customer Newsletter
 
 `ref/mkt/customer-newsletter v1`
 
@@ -16,23 +16,23 @@ send, because a sent issue cannot be recalled.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | open the issue | settle what the issue is for and when it sends | [content-manager](../../agents/content-manager.md) |
-| 2 | settle the lineup | choose the items the issue carries | content-manager · leadership (person) |
-| 3 | check where the account stands | whether the customer can be asked at all | [account-monitor](../../agents/account-monitor.md) |
-| 4 | clear the customer story | permission for the story and what it may say | [advocacy-manager](../../agents/advocacy-manager.md) · account owner (person) · rights approver (person) |
-| 5 | brief the makers | everyone hears the same request at once | content-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) · [email-producer](../../agents/email-producer.md) |
-| 6 | write the draft | the items, the subject lines and the calls to action | copywriter |
-| 7 | make the visuals | images and diagrams sized for mail | designer |
-| 8 | edit the draft | the editor says what has to be rewritten | editor |
-| 9 | build the issue | template, links, plain text, and who receives it | email-producer |
-| 10 | wire up the measurement | link tracking and what counts as a conversion | [conversion-tracker](../../agents/conversion-tracker.md) |
-| 11 | proof the issue | test copies read the way a subscriber gets them | email-producer · [accessibility-check](../../agents/accessibility-check.md) · content-manager |
-| 12 | get sign-offs | brand, claims and legal approve the issue | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
-| 13 | send the issue | the owner says go and the issue goes out | content-manager · email-producer |
-| 14 | watch the results | delivery, opens, clicks, unsubscribes, conversions | email-producer · [analytics](../../agents/analytics.md) · content-manager |
-| 15 | answer the replies | reply to what subscribers write back | [community-manager](../../agents/community-manager.md) |
-| 16 | report the results | results set against what the issue was for | content-manager · analytics |
-| 17 | record what was learned | what to repeat, what to avoid | content-manager |
+| 1 | Open the Issue | settle what the issue is for and when it sends | [content-manager](../../agents/content-manager.md) |
+| 2 | Settle the Lineup | choose the items the issue carries | content-manager · leadership (person) |
+| 3 | Check Where the Account Stands | whether the customer can be asked at all | [account-monitor](../../agents/account-monitor.md) |
+| 4 | Clear the Customer Story | permission for the story and what it may say | [advocacy-manager](../../agents/advocacy-manager.md) · account owner (person) · rights approver (person) |
+| 5 | Brief the Makers | everyone hears the same request at once | content-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) · [email-producer](../../agents/email-producer.md) |
+| 6 | Write the Draft | the items, the subject lines and the calls to action | copywriter |
+| 7 | Make the Visuals | images and diagrams sized for mail | designer |
+| 8 | Edit the Draft | the editor says what has to be rewritten | editor |
+| 9 | Build the Issue | template, links, plain text, and who receives it | email-producer |
+| 10 | Wire up the Measurement | link tracking and what counts as a conversion | [conversion-tracker](../../agents/conversion-tracker.md) |
+| 11 | Proof the Issue | test copies read the way a subscriber gets them | email-producer · [accessibility-check](../../agents/accessibility-check.md) · content-manager |
+| 12 | Get Sign-Offs | brand, claims and legal approve the issue | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
+| 13 | Send the Issue | the owner says go and the issue goes out | content-manager · email-producer |
+| 14 | Watch the Results | delivery, opens, clicks, unsubscribes, conversions | email-producer · [analytics](../../agents/analytics.md) · content-manager |
+| 15 | Answer the Replies | reply to what subscribers write back | [community-manager](../../agents/community-manager.md) |
+| 16 | Report the Results | results set against what the issue was for | content-manager · analytics |
+| 17 | Record What Was Learned | what to repeat, what to avoid | content-manager |
 
 The customer story runs on its own branch from activity 3 to activity 4.
 It rejoins the rest of the run at the sign-offs, because the permission
@@ -45,34 +45,34 @@ each piece again.
 
 ```mermaid
 flowchart LR
-  T([a publishing cycle opens]) --> A1[1. open the issue]
-  A1 --> A2[2. settle the lineup]
-  A2 --> A3[3. check where the account stands]
-  A2 --> A5[5. brief the makers]
+  T([a publishing cycle opens]) --> A1[1. Open the Issue]
+  A1 --> A2[2. Settle the Lineup]
+  A2 --> A3[3. Check Where the Account Stands]
+  A2 --> A5[5. Brief the Makers]
   A3 -. the account cannot be asked .-> A2
-  A3 --> A4[4. clear the customer story]
+  A3 --> A4[4. Clear the Customer Story]
   A4 -. the customer declines .-> A2
   A4 -. the terms narrow what was written .-> A6
-  A4 --> A12[12. get sign-offs]
-  A5 --> A6[6. write the draft]
-  A5 --> A7[7. make the visuals]
-  A6 --> A8[8. edit the draft]
+  A4 --> A12[12. Get Sign-Offs]
+  A5 --> A6[6. Write the Draft]
+  A5 --> A7[7. Make the Visuals]
+  A6 --> A8[8. Edit the Draft]
   A8 -. rewrite what the edit named .-> A6
-  A8 --> A9[9. build the issue]
+  A8 --> A9[9. Build the Issue]
   A7 --> A9
-  A9 --> A10[10. wire up the measurement]
+  A9 --> A10[10. Wire up the Measurement]
   A10 -. the issue has to change .-> A9
-  A10 --> A11[11. proof the issue]
+  A10 --> A11[11. Proof the Issue]
   A11 -. failures to fix .-> A9
   A11 --> A12
   A12 -. changes requested .-> A6
   A12 -. changes requested .-> A7
-  A12 --> A13[13. send the issue]
-  A13 --> A14[14. watch the results]
-  A13 --> A15[15. answer the replies]
-  A14 --> A16[16. report the results]
+  A12 --> A13[13. Send the Issue]
+  A13 --> A14[14. Watch the Results]
+  A13 --> A15[15. Answer the Replies]
+  A14 --> A16[16. Report the Results]
   A15 --> A16
-  A16 --> A17[17. record what was learned]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the issue is sent and reported])
 ```
 

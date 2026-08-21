@@ -16,26 +16,26 @@ partner for as long as the agreement is in force.
 
 ## Seats
 
-- `ref/mkt/channel-program` / take in the program design, settle the
-  tiers and the terms, price the incentives, draw up the partner
-  agreement, draw up the candidate list, build the partner portal, set
-  up the partner systems, open recruitment, assess the applicants, sign
-  the partners, hand each partner to enablement, watch the first
-  partners, report the program launch, record what was learned
-- `ref/mkt/co-marketing-campaign` / take in the partner agreement,
-  settle the lead terms, plan the joint campaign, brief the makers,
-  settle the joint direction, score against both rule sets, get
-  sign-offs on both sides, build the registration page, set up each
-  side's distribution, launch the joint campaign, watch the joint
-  campaign, split and hand over the leads, agree the joint numbers,
-  record what was learned
-- `ref/mkt/competitive-battlecard` / say what partners may see
-- `ref/mkt/enable-channel-partner` / take in the partner, check what the
-  partner holds, list what the partner must demonstrate, agree the
-  partner's plan, decide what the partner may see, brief the makers,
-  publish the material, run the session, answer the partner's questions,
-  check the partner can pitch, hand over the selling kit, watch what the
-  partner does, report against the plan, record what was learned
+- `ref/mkt/channel-program` / Take in the Program Design, Settle the
+  Tiers and the Terms, Price the Incentives, Draw up the Partner
+  Agreement, Draw up the Candidate List, Build the Partner Portal, Set
+  up the Partner Systems, Open Recruitment, Assess the Applicants, Sign
+  the Partners, Hand Each Partner to Enablement, Watch the First
+  Partners, Report the Program Launch, Record What Was Learned
+- `ref/mkt/co-marketing-campaign` / Take in the Partner Agreement,
+  Settle the Lead Terms, Plan the Joint Campaign, Brief the Makers,
+  Settle the Joint Direction, Score against Both Rule Sets, Get
+  Sign-Offs on Both Sides, Build the Registration Page, Set up Each
+  Side's Distribution, Launch the Joint Campaign, Watch the Joint
+  Campaign, Split and Hand over the Leads, Agree the Joint Numbers,
+  Record What Was Learned
+- `ref/mkt/competitive-battlecard` / Say What Partners May See
+- `ref/mkt/enable-channel-partner` / Take in the Partner, Check What the
+  Partner Holds, List What the Partner Must Demonstrate, Agree the
+  Partner's Plan, Decide What the Partner May See, Brief the Makers,
+  Publish the Material, Run the Session, Answer the Partner's Questions,
+  Check the Partner Can Pitch, Hand over the Selling Kit, Watch What the
+  Partner Does, Report against the Plan, Record What Was Learned
 
 ## Patterns
 

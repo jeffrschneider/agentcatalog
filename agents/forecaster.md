@@ -13,49 +13,49 @@ instead of filled in with a figure that merely looks reasonable.
 
 ## Seats
 
-- `ref/mkt/analyze-customer-base` / group the base, find what the groups
-  share, read the base over time, review the findings
-- `ref/mkt/annual-marketing-plan` / put numbers on each initiative,
-  record what the plan rests on
-- `ref/mkt/attribution-model` / draft the candidate models, test the
-  candidates against the record, recompute the closed periods
-- `ref/mkt/brief-executive-leadership` / put numbers on the choices
-- `ref/mkt/buyer-persona` / test the persona against the record
-- `ref/mkt/channel-program` / price the incentives
-- `ref/mkt/develop-marketing-strategy` / map the market and its
-  segments, draft the strategic options, put numbers on each option
-- `ref/mkt/engage-marketing-agency` / choose the route, set the budget
-  and the term, score the proposals
-- `ref/mkt/ideal-customer-profile` / read the customer record, find the
-  traits that predict a win, draft the candidate profiles, name the
-  qualifying signals, test the signal coverage, test the candidates
-  against the record, size each candidate market
-- `ref/mkt/lead-scoring-model` / read how the model has scored, gather
-  the candidate signals, test the signal coverage, fit the candidate
-  models, back-test the candidates, check what each does to routing, run
-  it beside the live model
-- `ref/mkt/media-plan` / draft the candidate mixes, model each mix,
-  record what the plan rests on
-- `ref/mkt/plan-marketing-capacity` / size the effort each run takes,
-  find the shortfall, cost each way of closing the gap, put the options
-  to the people who decide
-- `ref/mkt/pricing-change` / read the affected customers
-- `ref/mkt/prioritize-initiatives` / put numbers on each request, record
-  what the round rests on
-- `ref/mkt/quarterly-business-review` / re-forecast the rest of the
-  year, put numbers on the proposed changes, record what the review
-  rests on
-- `ref/mkt/reallocate-media-spend` / size what each move returns
-- `ref/mkt/segment-the-market` / read the customer record, choose the
-  dividing traits, draw the candidate divisions, test whether the
-  segments hold apart, size each segment, rank the segments
-- `ref/mkt/select-marketing-technology` / size what the tool has to
-  carry, work out the whole cost
-- `ref/mkt/set-marketing-budget` / price the requests, test the asks
-  against the goals, size the reserve, record what the budget rests on
-- `ref/mkt/size-market-opportunity` / choose the sizing method, count
-  the buyers, set the rate assumptions, compute the size each way,
-  reconcile the methods, test the assumptions, write down the sizing
+- `ref/mkt/analyze-customer-base` / Group the Base, Find What the Groups
+  Share, Read the Base over Time, Review the Findings
+- `ref/mkt/annual-marketing-plan` / Put Numbers on Each Initiative,
+  Record What the Plan Rests On
+- `ref/mkt/attribution-model` / Draft the Candidate Models, Test the
+  Candidates against the Record, Recompute the Closed Periods
+- `ref/mkt/brief-executive-leadership` / Put Numbers on the Choices
+- `ref/mkt/buyer-persona` / Test the Persona against the Record
+- `ref/mkt/channel-program` / Price the Incentives
+- `ref/mkt/develop-marketing-strategy` / Map the Market and Its
+  Segments, Draft the Strategic Options, Put Numbers on Each Option
+- `ref/mkt/engage-marketing-agency` / Choose the Route, Set the Budget
+  and the Term, Score the Proposals
+- `ref/mkt/ideal-customer-profile` / Read the Customer Record, Find the
+  Traits that Predict a Win, Draft the Candidate Profiles, Name the
+  Qualifying Signals, Test the Signal Coverage, Test the Candidates
+  against the Record, Size Each Candidate Market
+- `ref/mkt/lead-scoring-model` / Read How the Model Has Scored, Gather
+  the Candidate Signals, Test the Signal Coverage, Fit the Candidate
+  Models, Back-Test the Candidates, Check What Each Does to Routing, Run
+  It Beside the Live Model
+- `ref/mkt/media-plan` / Draft the Candidate Mixes, Model Each Mix,
+  Record What the Plan Rests On
+- `ref/mkt/plan-marketing-capacity` / Size the Effort Each Run Takes,
+  Find the Shortfall, Cost Each Way of Closing the Gap, Put the Options
+  to the People Who Decide
+- `ref/mkt/pricing-change` / Read the Affected Customers
+- `ref/mkt/prioritize-initiatives` / Put Numbers on Each Request, Record
+  What the Round Rests On
+- `ref/mkt/quarterly-business-review` / Re-Forecast the Rest of the
+  Year, Put Numbers on the Proposed Changes, Record What the Review
+  Rests On
+- `ref/mkt/reallocate-media-spend` / Size What Each Move Returns
+- `ref/mkt/segment-the-market` / Read the Customer Record, Choose the
+  Dividing Traits, Draw the Candidate Divisions, Test Whether the
+  Segments Hold Apart, Size Each Segment, Rank the Segments
+- `ref/mkt/select-marketing-technology` / Size What the Tool Has to
+  Carry, Work out the Whole Cost
+- `ref/mkt/set-marketing-budget` / Price the Requests, Test the Asks
+  against the Goals, Size the Reserve, Record What the Budget Rests On
+- `ref/mkt/size-market-opportunity` / Choose the Sizing Method, Count
+  the Buyers, Set the Rate Assumptions, Compute the Size Each Way,
+  Reconcile the Methods, Test the Assumptions, Write down the Sizing
 
 ## Patterns
 

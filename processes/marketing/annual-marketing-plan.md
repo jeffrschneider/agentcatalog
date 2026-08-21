@@ -1,4 +1,4 @@
-# Reference process: the annual marketing plan
+# Reference process: Build Annual Marketing Plan
 
 `ref/mkt/annual-marketing-plan v1`
 
@@ -19,51 +19,51 @@ has heard what it owes against it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the company targets | what the business asks marketing to deliver | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
-| 2 | read the closed periods | last year's results set against last year's plan | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
-| 3 | take stock of what the department holds | the state of the content library and the contact base | [content-librarian](../../agents/content-librarian.md) · [audience-manager](../../agents/audience-manager.md) |
-| 4 | gather the outside evidence | the market, the competitors, and what people asked | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) · [community-manager](../../agents/community-manager.md) |
-| 5 | set the goals for the year | what marketing will be held to, in numbers | leadership (person) · decision-coordinator |
-| 6 | collect the candidate initiatives | each area proposes what it would run and why | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [standards-keeper](../../agents/standards-keeper.md) |
-| 7 | put numbers on each initiative | the cost, the return, and the assumptions under them | [forecaster](../../agents/forecaster.md) · media-buyer |
-| 8 | check what the department can carry | how much work the department can carry in a year | leadership (person) · decision-coordinator |
-| 9 | choose the initiatives | leadership picks the set that becomes the plan | leadership (person) · decision-coordinator |
-| 10 | allocate the budget | the money split across the chosen initiatives | leadership (person) · finance (person) · decision-coordinator |
-| 11 | build the calendar | initiatives laid across the year with their dates | decision-coordinator · campaign-manager · content-manager · media-buyer |
-| 12 | name what will be measured | the measures the plan will be reported against | reporting-manager · analytics · decision-coordinator |
-| 13 | get the plan approved | leadership and finance sign the plan and its budget | leadership (person) · finance (person) |
-| 14 | publish the plan | the approved plan goes out at a version | decision-coordinator |
-| 15 | brief the department | every seat hears the plan and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · community-manager · reporting-manager |
-| 16 | record what the plan rests on | the assumptions, and what would reopen the plan | decision-coordinator · forecaster |
+| 1 | Take in the Company Targets | what the business asks marketing to deliver | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
+| 2 | Read the Closed Periods | last year's results set against last year's plan | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
+| 3 | Take Stock of What the Department Holds | the state of the content library and the contact base | [content-librarian](../../agents/content-librarian.md) · [audience-manager](../../agents/audience-manager.md) |
+| 4 | Gather the Outside Evidence | the market, the competitors, and what people asked | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) · [community-manager](../../agents/community-manager.md) |
+| 5 | Set the Goals for the Year | what marketing will be held to, in numbers | leadership (person) · decision-coordinator |
+| 6 | Collect the Candidate Initiatives | each area proposes what it would run and why | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [standards-keeper](../../agents/standards-keeper.md) |
+| 7 | Put Numbers on Each Initiative | the cost, the return, and the assumptions under them | [forecaster](../../agents/forecaster.md) · media-buyer |
+| 8 | Check What the Department Can Carry | how much work the department can carry in a year | leadership (person) · decision-coordinator |
+| 9 | Choose the Initiatives | leadership picks the set that becomes the plan | leadership (person) · decision-coordinator |
+| 10 | Allocate the Budget | the money split across the chosen initiatives | leadership (person) · finance (person) · decision-coordinator |
+| 11 | Build the Calendar | initiatives laid across the year with their dates | decision-coordinator · campaign-manager · content-manager · media-buyer |
+| 12 | Name What Will Be Measured | the measures the plan will be reported against | reporting-manager · analytics · decision-coordinator |
+| 13 | Get the Plan Approved | leadership and finance sign the plan and its budget | leadership (person) · finance (person) |
+| 14 | Publish the Plan | the approved plan goes out at a version | decision-coordinator |
+| 15 | Brief the Department | every seat hears the plan and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · community-manager · reporting-manager |
+| 16 | Record What the Plan Rests On | the assumptions, and what would reopen the plan | decision-coordinator · forecaster |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([the fiscal planning cycle opens]) --> A1[1. take in the company targets]
-  A1 --> A2[2. read the closed periods]
-  A1 --> A3[3. take stock of what the department holds]
-  A1 --> A4[4. gather the outside evidence]
-  A2 --> A5[5. set the goals for the year]
+  T([the fiscal planning cycle opens]) --> A1[1. Take in the Company Targets]
+  A1 --> A2[2. Read the Closed Periods]
+  A1 --> A3[3. Take Stock of What the Department Holds]
+  A1 --> A4[4. Gather the Outside Evidence]
+  A2 --> A5[5. Set the Goals for the Year]
   A3 --> A5
   A4 --> A5
-  A5 --> A6[6. collect the candidate initiatives]
-  A6 --> A7[7. put numbers on each initiative]
+  A5 --> A6[6. Collect the Candidate Initiatives]
+  A6 --> A7[7. Put Numbers on Each Initiative]
   A7 -. the numbers do not reach the goals .-> A6
-  A7 --> A8[8. check what the department can carry]
-  A8 --> A9[9. choose the initiatives]
+  A7 --> A8[8. Check What the Department Can Carry]
+  A8 --> A9[9. Choose the Initiatives]
   A9 -. nothing proposed reaches the goals .-> A5
-  A9 --> A10[10. allocate the budget]
+  A9 --> A10[10. Allocate the Budget]
   A10 -. the money will not cover the set .-> A9
-  A10 --> A11[11. build the calendar]
+  A10 --> A11[11. Build the Calendar]
   A11 -. the year will not hold the set .-> A9
-  A11 --> A12[12. name what will be measured]
+  A11 --> A12[12. Name What Will Be Measured]
   A12 -. a goal cannot be measured .-> A5
-  A12 --> A13[13. get the plan approved]
+  A12 --> A13[13. Get the Plan Approved]
   A13 -. changes requested .-> A9
-  A13 --> A14[14. publish the plan]
-  A14 --> A15[15. brief the department]
-  A15 --> A16[16. record what the plan rests on]
+  A13 --> A14[14. Publish the Plan]
+  A14 --> A15[15. Brief the Department]
+  A15 --> A16[16. Record What the Plan Rests On]
   A16 --> DONE([the approved plan is published and the department is briefed])
 ```
 

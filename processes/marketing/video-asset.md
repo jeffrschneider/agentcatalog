@@ -1,4 +1,4 @@
-# Reference process: produce video asset
+# Reference process: Produce Video Asset
 
 `ref/mkt/video-asset v1`
 
@@ -19,52 +19,52 @@ that work expands into when a video is the whole job.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the script or brief | work out what the video must do and how long | [creative-producer](../../agents/creative-producer.md) |
-| 2 | settle the script | the words and the order, written or confirmed | creative-producer · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) |
-| 3 | plan the shots | every shot listed, and where it comes from | creative-producer · [video-editor](../../agents/video-editor.md) · [designer](../../agents/designer.md) |
-| 4 | check the sources can be used | clips, music and fonts checked before anyone cuts | [rights-register](../../agents/rights-register.md) · creative-producer |
-| 5 | record the material | the shoot, the screen capture, the narration | creative-producer · video-editor · subject matter expert (person) |
-| 6 | build the rough cut | the shots in order, timed to the script | video-editor |
-| 7 | make the on-screen graphics | titles, lower thirds, motion and the end card | designer · video-editor |
-| 8 | review the cut | what has to be re-cut, said item by item | creative-producer · editor · subject matter expert (person) |
-| 9 | finish the cut | sound mixed, color and pacing settled | video-editor |
-| 10 | write the captions and transcript | captions timed to the audio, transcript written | video-editor · copywriter |
-| 11 | score against the standards | brand, claims, captions and contrast, all cited | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
-| 12 | clear the rights | a person confirms every clip, track and face | rights approver (person) · creative-producer · rights-register |
-| 13 | get sign-offs | brand and legal approve the finished video | brand owner (person) · legal reviewer (person) |
-| 14 | cut the platform versions | each length and shape the brief asks for | video-editor |
-| 15 | file it in the library | the cuts filed with what each may be used for | creative-producer · rights-register |
+| 1 | Take in the Script or Brief | work out what the video must do and how long | [creative-producer](../../agents/creative-producer.md) |
+| 2 | Settle the Script | the words and the order, written or confirmed | creative-producer · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) |
+| 3 | Plan the Shots | every shot listed, and where it comes from | creative-producer · [video-editor](../../agents/video-editor.md) · [designer](../../agents/designer.md) |
+| 4 | Check the Sources Can Be Used | clips, music and fonts checked before anyone cuts | [rights-register](../../agents/rights-register.md) · creative-producer |
+| 5 | Record the Material | the shoot, the screen capture, the narration | creative-producer · video-editor · subject matter expert (person) |
+| 6 | Build the Rough Cut | the shots in order, timed to the script | video-editor |
+| 7 | Make the On-Screen Graphics | titles, lower thirds, motion and the end card | designer · video-editor |
+| 8 | Review the Cut | what has to be re-cut, said item by item | creative-producer · editor · subject matter expert (person) |
+| 9 | Finish the Cut | sound mixed, color and pacing settled | video-editor |
+| 10 | Write the Captions and Transcript | captions timed to the audio, transcript written | video-editor · copywriter |
+| 11 | Score against the Standards | brand, claims, captions and contrast, all cited | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
+| 12 | Clear the Rights | a person confirms every clip, track and face | rights approver (person) · creative-producer · rights-register |
+| 13 | Get Sign-Offs | brand and legal approve the finished video | brand owner (person) · legal reviewer (person) |
+| 14 | Cut the Platform Versions | each length and shape the brief asks for | video-editor |
+| 15 | File It in the Library | the cuts filed with what each may be used for | creative-producer · rights-register |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a script or a brief arrives]) --> A1[1. take in the script or brief]
-  A1 --> A2[2. settle the script]
-  A2 --> A3[3. plan the shots]
-  A3 --> A4[4. check the sources can be used]
-  A3 --> A7[7. make the on-screen graphics]
+  T([a script or a brief arrives]) --> A1[1. Take in the Script or Brief]
+  A1 --> A2[2. Settle the Script]
+  A2 --> A3[3. Plan the Shots]
+  A3 --> A4[4. Check the Sources Can Be Used]
+  A3 --> A7[7. Make the On-Screen Graphics]
   A4 -. a source is refused .-> A3
-  A4 --> A5[5. record the material]
-  A5 --> A6[6. build the rough cut]
-  A6 --> A8[8. review the cut]
+  A4 --> A5[5. Record the Material]
+  A5 --> A6[6. Build the Rough Cut]
+  A6 --> A8[8. Review the Cut]
   A7 --> A8
   A8 -. re-cut what the review named .-> A6
   A8 -. graphics to redo .-> A7
   A8 -. a shot was never recorded .-> A5
-  A8 --> A9[9. finish the cut]
-  A9 --> A10[10. write the captions and transcript]
-  A10 --> A11[11. score against the standards]
+  A8 --> A9[9. Finish the Cut]
+  A9 --> A10[10. Write the Captions and Transcript]
+  A10 --> A11[11. Score against the Standards]
   A11 -. failures to fix .-> A9
   A11 -. captions to redo .-> A10
   A11 -. a graphic fails contrast .-> A7
-  A11 --> A12[12. clear the rights]
+  A11 --> A12[12. Clear the Rights]
   A12 -. a source is refused .-> A5
-  A12 --> A13[13. get sign-offs]
+  A12 --> A13[13. Get Sign-Offs]
   A13 -. changes requested .-> A9
-  A13 --> A14[14. cut the platform versions]
+  A13 --> A14[14. Cut the Platform Versions]
   A14 -. a length cannot carry the message .-> A9
-  A14 --> A15[15. file it in the library]
+  A14 --> A15[15. File It in the Library]
   A15 --> DONE([the captioned video is in the library])
 ```
 

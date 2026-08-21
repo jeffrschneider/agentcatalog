@@ -1,4 +1,4 @@
-# Reference process: the co-marketing campaign
+# Reference process: Run Co-Marketing Campaign
 
 `ref/mkt/co-marketing-campaign v1`
 
@@ -20,49 +20,49 @@ leads arrive turns into an argument.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the partner agreement | what each side owes and what the campaign must do | [partner-manager](../../agents/partner-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | settle the lead terms | who gets which leads, which fields, on what basis | partner-manager · [audience-handover](../../agents/audience-handover.md) · [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 3 | plan the joint campaign | channels, dates, the cost share, and who owes what | campaign-manager · partner-manager · [media-buyer](../../agents/media-buyer.md) · leadership (person) |
-| 4 | brief the makers | both sides hear the same request at the same time | campaign-manager · partner-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 5 | settle the joint direction | one concept both brands will put their name on | campaign-manager · partner-manager · copywriter · designer · video-editor · brand owner (person) · partner approver (person) |
-| 6 | produce the joint material | copy, images and video carrying both brands | [creative-producer](../../agents/creative-producer.md) · copywriter · designer · video-editor |
-| 7 | score against both rule sets | our standards and the partner's, item by item | [brand-check](../../agents/brand-check.md) · partner-manager |
-| 8 | get sign-offs on both sides | every signer on both sides signs one version | partner-manager · brand owner (person) · legal reviewer (person) · partner approver (person) |
-| 9 | build the registration page | the page, the form, and what it tells a reader | [web-producer](../../agents/web-producer.md) · campaign-manager · partner-manager |
-| 10 | wire up the split | tracking, the form fields, and where each lead goes | [conversion-tracker](../../agents/conversion-tracker.md) · audience-handover · consent-manager |
-| 11 | set up each side's distribution | each side readies its own list, ads and posts | media-buyer · [email-producer](../../agents/email-producer.md) · consent-manager · partner-manager |
-| 12 | launch the joint campaign | both sides go live on the date they agreed | campaign-manager · partner-manager · web-producer |
-| 13 | watch the joint campaign | results, and whether each side did what it promised | [analytics](../../agents/analytics.md) · campaign-manager · partner-manager · [community-manager](../../agents/community-manager.md) |
-| 14 | split and hand over the leads | the split rule applied and each side's share delivered | audience-handover · [lead-scorer](../../agents/lead-scorer.md) · consent-manager · partner-manager |
-| 15 | agree the joint numbers | both sides' counts and costs matched into one report | partner-manager · audience-handover · analytics · [spend-reconciler](../../agents/spend-reconciler.md) · finance (person) |
-| 16 | record what was learned | what to repeat and what to avoid with this partner | campaign-manager · partner-manager |
+| 1 | Take in the Partner Agreement | what each side owes and what the campaign must do | [partner-manager](../../agents/partner-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Settle the Lead Terms | who gets which leads, which fields, on what basis | partner-manager · [audience-handover](../../agents/audience-handover.md) · [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 3 | Plan the Joint Campaign | channels, dates, the cost share, and who owes what | campaign-manager · partner-manager · [media-buyer](../../agents/media-buyer.md) · leadership (person) |
+| 4 | Brief the Makers | both sides hear the same request at the same time | campaign-manager · partner-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 5 | Settle the Joint Direction | one concept both brands will put their name on | campaign-manager · partner-manager · copywriter · designer · video-editor · brand owner (person) · partner approver (person) |
+| 6 | Produce the Joint Material | copy, images and video carrying both brands | [creative-producer](../../agents/creative-producer.md) · copywriter · designer · video-editor |
+| 7 | Score against Both Rule Sets | our standards and the partner's, item by item | [brand-check](../../agents/brand-check.md) · partner-manager |
+| 8 | Get Sign-Offs on Both Sides | every signer on both sides signs one version | partner-manager · brand owner (person) · legal reviewer (person) · partner approver (person) |
+| 9 | Build the Registration Page | the page, the form, and what it tells a reader | [web-producer](../../agents/web-producer.md) · campaign-manager · partner-manager |
+| 10 | Wire up the Split | tracking, the form fields, and where each lead goes | [conversion-tracker](../../agents/conversion-tracker.md) · audience-handover · consent-manager |
+| 11 | Set up Each Side's Distribution | each side readies its own list, ads and posts | media-buyer · [email-producer](../../agents/email-producer.md) · consent-manager · partner-manager |
+| 12 | Launch the Joint Campaign | both sides go live on the date they agreed | campaign-manager · partner-manager · web-producer |
+| 13 | Watch the Joint Campaign | results, and whether each side did what it promised | [analytics](../../agents/analytics.md) · campaign-manager · partner-manager · [community-manager](../../agents/community-manager.md) |
+| 14 | Split and Hand over the Leads | the split rule applied and each side's share delivered | audience-handover · [lead-scorer](../../agents/lead-scorer.md) · consent-manager · partner-manager |
+| 15 | Agree the Joint Numbers | both sides' counts and costs matched into one report | partner-manager · audience-handover · analytics · [spend-reconciler](../../agents/spend-reconciler.md) · finance (person) |
+| 16 | Record What Was Learned | what to repeat and what to avoid with this partner | campaign-manager · partner-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a partner agreement is signed]) --> A1[1. take in the partner agreement]
-  A1 --> A2[2. settle the lead terms]
-  A2 --> A3[3. plan the joint campaign]
-  A3 --> A4[4. brief the makers]
-  A3 --> A11[11. set up each side's distribution]
-  A4 --> A5[5. settle the joint direction]
-  A5 --> A6[6. produce the joint material]
-  A6 --> A7[7. score against both rule sets]
+  T([a partner agreement is signed]) --> A1[1. Take in the Partner Agreement]
+  A1 --> A2[2. Settle the Lead Terms]
+  A2 --> A3[3. Plan the Joint Campaign]
+  A3 --> A4[4. Brief the Makers]
+  A3 --> A11[11. Set up Each Side's Distribution]
+  A4 --> A5[5. Settle the Joint Direction]
+  A5 --> A6[6. Produce the Joint Material]
+  A6 --> A7[7. Score against Both Rule Sets]
   A7 -. failures to fix .-> A6
-  A7 --> A8[8. get sign-offs on both sides]
+  A7 --> A8[8. Get Sign-Offs on Both Sides]
   A8 -. changes requested on either side .-> A6
-  A8 --> A9[9. build the registration page]
-  A9 --> A10[10. wire up the split]
-  A10 --> A12[12. launch the joint campaign]
+  A8 --> A9[9. Build the Registration Page]
+  A9 --> A10[10. Wire up the Split]
+  A10 --> A12[12. Launch the Joint Campaign]
   A11 --> A12
-  A12 --> A13[13. watch the joint campaign]
-  A12 --> A14[14. split and hand over the leads]
+  A12 --> A13[13. Watch the Joint Campaign]
+  A12 --> A14[14. Split and Hand over the Leads]
   A13 -. creative has to be replaced .-> A6
-  A13 --> A15[15. agree the joint numbers]
+  A13 --> A15[15. Agree the Joint Numbers]
   A14 --> A15
   A15 -. a delivery that never arrived .-> A14
-  A15 --> A16[16. record what was learned]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the campaign is closed and the leads are settled])
 ```
 

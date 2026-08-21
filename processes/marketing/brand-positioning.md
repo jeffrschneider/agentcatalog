@@ -1,4 +1,4 @@
-# Reference process: define brand positioning
+# Reference process: Define Brand Positioning
 
 `ref/mkt/brand-positioning v1`
 
@@ -25,52 +25,52 @@ issued.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the change | say what changed and what the decision has to settle | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | gather the evidence | what buyers weigh, what rivals claim, what people search | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) · subject matter expert (person) |
-| 3 | read the current numbers | how today's message performs and what people ask | [analytics](../../agents/analytics.md) · [community-manager](../../agents/community-manager.md) |
-| 4 | audit what the company says now | the live material scored against today's standard | [brand-check](../../agents/brand-check.md) · decision-coordinator |
-| 5 | agree who the company is for | the buyers to win and the ground to compete on | leadership (person) · decision-coordinator |
-| 6 | draft the candidate positions | two or three positions, each with the case for it | decision-coordinator · [copywriter](../../agents/copywriter.md) |
-| 7 | test the positions against the evidence | whether the evidence carries what each one claims | [editor](../../agents/editor.md) · researcher |
-| 8 | try the positions on outsiders | buyers and sellers react to each one | researcher · sales leader (person) |
-| 9 | choose the position | one position is picked and the reasons said out loud | leadership (person) · decision-coordinator |
-| 10 | write the positioning and the promise | the statement, the promise and the points behind it | copywriter · editor · decision-coordinator |
-| 11 | record the proof behind the promise | a source under every claim the promise makes | researcher |
-| 12 | set the voice rules | how the company sounds when it says any of this | copywriter · editor · [standards-keeper](../../agents/standards-keeper.md) |
-| 13 | get sign-offs | leadership, legal and the brand owner sign it | leadership (person) · legal reviewer (person) · brand owner (person) |
-| 14 | issue the standard at a version | the brand guidelines become a numbered version | standards-keeper |
-| 15 | tell the processes that read it | every reader gets the version and what changed | standards-keeper · decision-coordinator |
-| 16 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Change | say what changed and what the decision has to settle | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Gather the Evidence | what buyers weigh, what rivals claim, what people search | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) · subject matter expert (person) |
+| 3 | Read the Current Numbers | how today's message performs and what people ask | [analytics](../../agents/analytics.md) · [community-manager](../../agents/community-manager.md) |
+| 4 | Audit What the Company Says Now | the live material scored against today's standard | [brand-check](../../agents/brand-check.md) · decision-coordinator |
+| 5 | Agree Who the Company Is For | the buyers to win and the ground to compete on | leadership (person) · decision-coordinator |
+| 6 | Draft the Candidate Positions | two or three positions, each with the case for it | decision-coordinator · [copywriter](../../agents/copywriter.md) |
+| 7 | Test the Positions against the Evidence | whether the evidence carries what each one claims | [editor](../../agents/editor.md) · researcher |
+| 8 | Try the Positions on Outsiders | buyers and sellers react to each one | researcher · sales leader (person) |
+| 9 | Choose the Position | one position is picked and the reasons said out loud | leadership (person) · decision-coordinator |
+| 10 | Write the Positioning and the Promise | the statement, the promise and the points behind it | copywriter · editor · decision-coordinator |
+| 11 | Record the Proof Behind the Promise | a source under every claim the promise makes | researcher |
+| 12 | Set the Voice Rules | how the company sounds when it says any of this | copywriter · editor · [standards-keeper](../../agents/standards-keeper.md) |
+| 13 | Get Sign-Offs | leadership, legal and the brand owner sign it | leadership (person) · legal reviewer (person) · brand owner (person) |
+| 14 | Issue the Standard at a Version | the brand guidelines become a numbered version | standards-keeper |
+| 15 | Tell the Processes that Read It | every reader gets the version and what changed | standards-keeper · decision-coordinator |
+| 16 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a strategy change or a market shift]) --> A1[1. take in the change]
-  A1 --> A2[2. gather the evidence]
-  A1 --> A3[3. read the current numbers]
-  A1 --> A4[4. audit what the company says now]
-  A2 --> A5[5. agree who the company is for]
+  T([a strategy change or a market shift]) --> A1[1. Take in the Change]
+  A1 --> A2[2. Gather the Evidence]
+  A1 --> A3[3. Read the Current Numbers]
+  A1 --> A4[4. Audit What the Company Says Now]
+  A2 --> A5[5. Agree Who the Company Is For]
   A3 --> A5
   A4 --> A5
-  A5 --> A6[6. draft the candidate positions]
-  A6 --> A7[7. test the positions against the evidence]
+  A5 --> A6[6. Draft the Candidate Positions]
+  A6 --> A7[7. Test the Positions against the Evidence]
   A7 -. the evidence will not carry it .-> A6
-  A7 --> A8[8. try the positions on outsiders]
+  A7 --> A8[8. Try the Positions on Outsiders]
   A8 -. buyers do not recognize it .-> A6
-  A8 --> A9[9. choose the position]
+  A8 --> A9[9. Choose the Position]
   A9 -. none is worth backing .-> A6
-  A9 --> A10[10. write the positioning and the promise]
-  A10 --> A11[11. record the proof behind the promise]
-  A10 --> A12[12. set the voice rules]
+  A9 --> A10[10. Write the Positioning and the Promise]
+  A10 --> A11[11. Record the Proof Behind the Promise]
+  A10 --> A12[12. Set the Voice Rules]
   A11 -. a claim with no source .-> A10
-  A11 --> A13[13. get sign-offs]
+  A11 --> A13[13. Get Sign-Offs]
   A12 --> A13
   A13 -. changes requested .-> A10
   A13 -. changes requested .-> A12
-  A13 --> A14[14. issue the standard at a version]
-  A14 --> A15[15. tell the processes that read it]
-  A15 --> A16[16. record what was learned]
+  A13 --> A14[14. Issue the Standard at a Version]
+  A14 --> A15[15. Tell the Processes that Read It]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the position is agreed and issued at a version])
 ```
 

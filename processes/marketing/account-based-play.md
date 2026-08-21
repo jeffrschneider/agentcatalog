@@ -1,4 +1,4 @@
-# Reference process: the account-based play
+# Reference process: Run Account-Based Play
 
 `ref/mkt/account-based-play v1`
 
@@ -16,63 +16,63 @@ stays open until engagement has been reported account by account.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the account list | what the play must achieve, and by when | [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | read the accounts | standing, history, and what each account cares about | [account-monitor](../../agents/account-monitor.md) · [researcher](../../agents/researcher.md) |
-| 3 | set the tiers and the weight | how much treatment and money each tier of account gets | campaign-manager · [media-planner](../../agents/media-planner.md) · leadership (person) |
-| 4 | agree the split with sales | who approaches which account, and in what order | campaign-manager · account owner (person) |
-| 5 | build the contact set | the people at each account, pulled from the database | [audience-manager](../../agents/audience-manager.md) · [audience-operator](../../agents/audience-operator.md) |
-| 6 | check who may be contacted | the consent record applied per account and channel | [consent-manager](../../agents/consent-manager.md) |
-| 7 | brief the makers | every seat hears the same play at once | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [email-producer](../../agents/email-producer.md) · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · media-planner |
-| 8 | produce the material | the ads, the emails and the copy for the pages | copywriter · designer |
-| 9 | make the sales material | what an account owner sends, says and answers | sales-enablement-manager · copywriter · account owner (person) |
-| 10 | get sign-offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
-| 11 | set up the paid buy | the lists go out and the campaigns are built | [media-buyer](../../agents/media-buyer.md) · [audience-handover](../../agents/audience-handover.md) |
-| 12 | check the buy before it runs | the buy scored against the plan and the rules | [buy-check](../../agents/buy-check.md) |
-| 13 | build the pages and the notice | account pages, the in-product notice, the tracking | [web-producer](../../agents/web-producer.md) · [in-product-producer](../../agents/in-product-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
-| 14 | start the touches | the ads, the emails and the sales outreach begin | campaign-manager · email-producer · media-buyer |
-| 15 | keep the touches in step | no account gets two approaches in the same week | campaign-manager · account owner (person) |
-| 16 | watch engagement by account | who at which account did what | [analytics](../../agents/analytics.md) · account-monitor |
-| 17 | hand over the accounts that moved | an engaged account scored and routed to its owner | [lead-scorer](../../agents/lead-scorer.md) |
-| 18 | report engagement | engagement set against what the play promised | campaign-manager · analytics |
-| 19 | record what was learned | what to repeat, what to avoid | campaign-manager |
+| 1 | Take in the Account List | what the play must achieve, and by when | [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Read the Accounts | standing, history, and what each account cares about | [account-monitor](../../agents/account-monitor.md) · [researcher](../../agents/researcher.md) |
+| 3 | Set the Tiers and the Weight | how much treatment and money each tier of account gets | campaign-manager · [media-planner](../../agents/media-planner.md) · leadership (person) |
+| 4 | Agree the Split with Sales | who approaches which account, and in what order | campaign-manager · account owner (person) |
+| 5 | Build the Contact Set | the people at each account, pulled from the database | [audience-manager](../../agents/audience-manager.md) · [audience-operator](../../agents/audience-operator.md) |
+| 6 | Check Who May Be Contacted | the consent record applied per account and channel | [consent-manager](../../agents/consent-manager.md) |
+| 7 | Brief the Makers | every seat hears the same play at once | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [email-producer](../../agents/email-producer.md) · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · media-planner |
+| 8 | Produce the Material | the ads, the emails and the copy for the pages | copywriter · designer |
+| 9 | Make the Sales Material | what an account owner sends, says and answers | sales-enablement-manager · copywriter · account owner (person) |
+| 10 | Get Sign-Offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
+| 11 | Set up the Paid Buy | the lists go out and the campaigns are built | [media-buyer](../../agents/media-buyer.md) · [audience-handover](../../agents/audience-handover.md) |
+| 12 | Check the Buy Before It Runs | the buy scored against the plan and the rules | [buy-check](../../agents/buy-check.md) |
+| 13 | Build the Pages and the Notice | account pages, the in-product notice, the tracking | [web-producer](../../agents/web-producer.md) · [in-product-producer](../../agents/in-product-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
+| 14 | Start the Touches | the ads, the emails and the sales outreach begin | campaign-manager · email-producer · media-buyer |
+| 15 | Keep the Touches in Step | no account gets two approaches in the same week | campaign-manager · account owner (person) |
+| 16 | Watch Engagement by Account | who at which account did what | [analytics](../../agents/analytics.md) · account-monitor |
+| 17 | Hand over the Accounts that Moved | an engaged account scored and routed to its owner | [lead-scorer](../../agents/lead-scorer.md) |
+| 18 | Report Engagement | engagement set against what the play promised | campaign-manager · analytics |
+| 19 | Record What Was Learned | what to repeat, what to avoid | campaign-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a list of target accounts arrives]) --> A1[1. take in the account list]
-  A1 --> A2[2. read the accounts]
+  T([a list of target accounts arrives]) --> A1[1. Take in the Account List]
+  A1 --> A2[2. Read the Accounts]
   A2 -. an account may not be approached .-> A1
-  A2 --> A3[3. set the tiers and the weight]
-  A3 --> A4[4. agree the split with sales]
-  A3 --> A5[5. build the contact set]
-  A5 --> A6[6. check who may be contacted]
+  A2 --> A3[3. Set the Tiers and the Weight]
+  A3 --> A4[4. Agree the Split with Sales]
+  A3 --> A5[5. Build the Contact Set]
+  A5 --> A6[6. Check Who May Be Contacted]
   A6 -. contacts the consent record does not cover .-> A5
-  A4 --> A7[7. brief the makers]
+  A4 --> A7[7. Brief the Makers]
   A6 --> A7
-  A7 --> A8[8. produce the material]
-  A7 --> A9[9. make the sales material]
-  A8 --> A10[10. get sign-offs]
+  A7 --> A8[8. Produce the Material]
+  A7 --> A9[9. Make the Sales Material]
+  A8 --> A10[10. Get Sign-Offs]
   A9 --> A10
   A10 -. changes requested .-> A8
   A10 -. changes requested .-> A9
-  A10 --> A11[11. set up the paid buy]
-  A10 --> A13[13. build the pages and the notice]
-  A11 --> A12[12. check the buy before it runs]
+  A10 --> A11[11. Set up the Paid Buy]
+  A10 --> A13[13. Build the Pages and the Notice]
+  A11 --> A12[12. Check the Buy Before It Runs]
   A12 -. failures to fix .-> A11
-  A12 --> A14[14. start the touches]
+  A12 --> A14[14. Start the Touches]
   A13 --> A14
-  A14 --> A15[15. keep the touches in step]
-  A14 --> A16[16. watch engagement by account]
+  A14 --> A15[15. Keep the Touches in Step]
+  A14 --> A16[16. Watch Engagement by Account]
   A15 -. an account needs different material .-> A8
   A15 -. the split has to change .-> A4
   A16 -. an account is not responding .-> A15
-  A16 --> A17[17. hand over the accounts that moved]
+  A16 --> A17[17. Hand over the Accounts that Moved]
   A17 -. the owner has taken the account .-> A15
-  A15 --> A18[18. report engagement]
+  A15 --> A18[18. Report Engagement]
   A16 --> A18
   A17 --> A18
-  A18 --> A19[19. record what was learned]
+  A18 --> A19[19. Record What Was Learned]
   A19 --> DONE([the touches are coordinated and engagement is reported])
 ```
 

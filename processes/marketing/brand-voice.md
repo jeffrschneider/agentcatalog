@@ -1,4 +1,4 @@
-# Reference process: define brand voice and messaging
+# Reference process: Define Brand Voice and Messaging
 
 `ref/mkt/brand-voice v1`
 
@@ -28,59 +28,59 @@ where it comes from. The run does not reopen the position itself.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the approved positioning | say what the standard has to cover and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [standards-keeper](../../agents/standards-keeper.md) |
-| 2 | read how the company sounds now | a sample of live material, read for how it reads | [content-librarian](../../agents/content-librarian.md) · [editor](../../agents/editor.md) |
-| 3 | gather how the audience talks | the words buyers use for the problem and the category | [researcher](../../agents/researcher.md) · [audience-manager](../../agents/audience-manager.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 4 | brief the makers | everyone hears the same request at once | decision-coordinator · [copywriter](../../agents/copywriter.md) · editor · standards-keeper · researcher |
-| 5 | draft the voice | the traits the company writes with, each one defined | copywriter · editor |
-| 6 | set the tone for each situation | how the voice changes by channel and by situation | copywriter · editor |
-| 7 | build the messaging architecture | the core message, the pillars under it, and the order | copywriter · editor · decision-coordinator |
-| 8 | put a source under every message | every pillar read against the source under it | researcher |
-| 9 | write the version each audience gets | the same pillar said in the words each audience uses | copywriter · audience-manager |
-| 10 | write the word list | words to use, words to avoid, names and spellings | copywriter · editor · standards-keeper |
-| 11 | turn the voice into scorable rules | each rule numbered, with a passing and a failing example | standards-keeper · editor · [brand-check](../../agents/brand-check.md) |
-| 12 | score old material against the draft rules | the rules tried on real material before they issue | brand-check · editor |
-| 13 | try the messages on buyers | whether people outside the company recognize it | [study-manager](../../agents/study-manager.md) · researcher |
-| 14 | get sign-offs | leadership, legal and the brand owner sign it | leadership (person) · legal reviewer (person) · brand owner (person) |
-| 15 | issue the standard at a version | voice, tone, architecture and words at one number | standards-keeper |
-| 16 | tell the processes that read it | every reader gets the version and what changed | standards-keeper · decision-coordinator |
-| 17 | brief the seats that write to it | the writing seats work through it on a real piece | standards-keeper · copywriter · editor · [content-manager](../../agents/content-manager.md) |
-| 18 | watch how the rules score | which rules keep failing and which nobody applies | brand-check · [analytics](../../agents/analytics.md) · standards-keeper |
-| 19 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Approved Positioning | say what the standard has to cover and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [standards-keeper](../../agents/standards-keeper.md) |
+| 2 | Read How the Company Sounds Now | a sample of live material, read for how it reads | [content-librarian](../../agents/content-librarian.md) · [editor](../../agents/editor.md) |
+| 3 | Gather How the Audience Talks | the words buyers use for the problem and the category | [researcher](../../agents/researcher.md) · [audience-manager](../../agents/audience-manager.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 4 | Brief the Makers | everyone hears the same request at once | decision-coordinator · [copywriter](../../agents/copywriter.md) · editor · standards-keeper · researcher |
+| 5 | Draft the Voice | the traits the company writes with, each one defined | copywriter · editor |
+| 6 | Set the Tone for Each Situation | how the voice changes by channel and by situation | copywriter · editor |
+| 7 | Build the Messaging Architecture | the core message, the pillars under it, and the order | copywriter · editor · decision-coordinator |
+| 8 | Put a Source Under Every Message | every pillar read against the source under it | researcher |
+| 9 | Write the Version Each Audience Gets | the same pillar said in the words each audience uses | copywriter · audience-manager |
+| 10 | Write the Word List | words to use, words to avoid, names and spellings | copywriter · editor · standards-keeper |
+| 11 | Turn the Voice into Scorable Rules | each rule numbered, with a passing and a failing example | standards-keeper · editor · [brand-check](../../agents/brand-check.md) |
+| 12 | Score Old Material against the Draft Rules | the rules tried on real material before they issue | brand-check · editor |
+| 13 | Try the Messages on Buyers | whether people outside the company recognize it | [study-manager](../../agents/study-manager.md) · researcher |
+| 14 | Get Sign-Offs | leadership, legal and the brand owner sign it | leadership (person) · legal reviewer (person) · brand owner (person) |
+| 15 | Issue the Standard at a Version | voice, tone, architecture and words at one number | standards-keeper |
+| 16 | Tell the Processes that Read It | every reader gets the version and what changed | standards-keeper · decision-coordinator |
+| 17 | Brief the Seats that Write to It | the writing seats work through it on a real piece | standards-keeper · copywriter · editor · [content-manager](../../agents/content-manager.md) |
+| 18 | Watch How the Rules Score | which rules keep failing and which nobody applies | brand-check · [analytics](../../agents/analytics.md) · standards-keeper |
+| 19 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a positioning is approved and issued]) --> A1[1. take in the approved positioning]
-  A1 --> A2[2. read how the company sounds now]
-  A1 --> A3[3. gather how the audience talks]
-  A2 --> A4[4. brief the makers]
+  T([a positioning is approved and issued]) --> A1[1. Take in the Approved Positioning]
+  A1 --> A2[2. Read How the Company Sounds Now]
+  A1 --> A3[3. Gather How the Audience Talks]
+  A2 --> A4[4. Brief the Makers]
   A3 --> A4
-  A4 --> A5[5. draft the voice]
-  A4 --> A7[7. build the messaging architecture]
-  A5 --> A6[6. set the tone for each situation]
-  A6 --> A10[10. write the word list]
-  A6 --> A11[11. turn the voice into scorable rules]
+  A4 --> A5[5. Draft the Voice]
+  A4 --> A7[7. Build the Messaging Architecture]
+  A5 --> A6[6. Set the Tone for Each Situation]
+  A6 --> A10[10. Write the Word List]
+  A6 --> A11[11. Turn the Voice into Scorable Rules]
   A10 --> A11
-  A7 --> A8[8. put a source under every message]
-  A7 --> A9[9. write the version each audience gets]
+  A7 --> A8[8. Put a Source Under Every Message]
+  A7 --> A9[9. Write the Version Each Audience Gets]
   A8 -. a claim with no source .-> A7
-  A11 --> A12[12. score old material against the draft rules]
+  A11 --> A12[12. Score Old Material against the Draft Rules]
   A12 -. two readers scored it differently .-> A11
-  A8 --> A13[13. try the messages on buyers]
+  A8 --> A13[13. Try the Messages on Buyers]
   A9 --> A13
   A13 -. buyers do not recognize it .-> A7
-  A12 --> A14[14. get sign-offs]
+  A12 --> A14[14. Get Sign-Offs]
   A13 --> A14
   A14 -. changes requested .-> A11
   A14 -. changes requested .-> A7
-  A14 --> A15[15. issue the standard at a version]
-  A15 --> A16[16. tell the processes that read it]
-  A16 --> A17[17. brief the seats that write to it]
-  A17 --> A18[18. watch how the rules score]
+  A14 --> A15[15. Issue the Standard at a Version]
+  A15 --> A16[16. Tell the Processes that Read It]
+  A16 --> A17[17. Brief the Seats that Write to It]
+  A17 --> A18[18. Watch How the Rules Score]
   A18 -. a rule nobody can apply .-> A11
-  A18 --> A19[19. record what was learned]
+  A18 --> A19[19. Record What Was Learned]
   A19 --> DONE([the voice and the messaging are issued at a version])
 ```
 

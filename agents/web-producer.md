@@ -11,37 +11,37 @@ live, at which version, and who said go.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / build the pages and the notice
-- `ref/mkt/announce-company-news` / issue the release
-- `ref/mkt/brand-guidelines` / publish the version
-- `ref/mkt/brand-refresh` / brief the seats that remake the material,
-  rebuild the templates, stage the changes, switch the properties
-- `ref/mkt/channel-program` / build the partner portal
-- `ref/mkt/co-marketing-campaign` / build the registration page, launch
-  the joint campaign
-- `ref/mkt/conversion-experiment` / brief the makers, build the
-  variants, check the setup, start the test, carry out the decision
-- `ref/mkt/crisis-communication` / issue the response
-- `ref/mkt/customer-case-study` / build the page, publish
-- `ref/mkt/enable-channel-partner` / publish the material
-- `ref/mkt/feature-release` / update the product pages
-- `ref/mkt/field-event` / open registration
-- `ref/mkt/landing-page` / brief the makers, build the page, publish,
-  fix what the numbers show
-- `ref/mkt/long-form-content` / build the page, publish
-- `ref/mkt/paid-search-campaign` / ready the landing pages
-- `ref/mkt/pricing-change` / restate the price everywhere it is
-  published, change the public price
-- `ref/mkt/product-launch` / prep the channels
-- `ref/mkt/refresh-content` / make the changes in the pages, set the
-  addresses and the redirects, publish the changes
-- `ref/mkt/speaking-engagement` / publish the material
-- `ref/mkt/traffic-ad-creative` / check every destination
-- `ref/mkt/user-conference` / open registration, repurpose the content
-- `ref/mkt/webinar` / build the registration page, prepare the recording
-  for reuse
-- `ref/mkt/website-content-update` / make the change in the page,
-  publish the change, close out the change
+- `ref/mkt/account-based-play` / Build the Pages and the Notice
+- `ref/mkt/announce-company-news` / Issue the Release
+- `ref/mkt/brand-guidelines` / Publish the Version
+- `ref/mkt/brand-refresh` / Brief the Seats that Remake the Material,
+  Rebuild the Templates, Stage the Changes, Switch the Properties
+- `ref/mkt/channel-program` / Build the Partner Portal
+- `ref/mkt/co-marketing-campaign` / Build the Registration Page, Launch
+  the Joint Campaign
+- `ref/mkt/conversion-experiment` / Brief the Makers, Build the
+  Variants, Check the Setup, Start the Test, Carry out the Decision
+- `ref/mkt/crisis-communication` / Issue the Response
+- `ref/mkt/customer-case-study` / Build the Page, Publish
+- `ref/mkt/enable-channel-partner` / Publish the Material
+- `ref/mkt/feature-release` / Update the Product Pages
+- `ref/mkt/field-event` / Open Registration
+- `ref/mkt/landing-page` / Brief the Makers, Build the Page, Publish,
+  Fix What the Numbers Show
+- `ref/mkt/long-form-content` / Build the Page, Publish
+- `ref/mkt/paid-search-campaign` / Ready the Landing Pages
+- `ref/mkt/pricing-change` / Restate the Price Everywhere It Is
+  Published, Change the Public Price
+- `ref/mkt/product-launch` / Prep the Channels
+- `ref/mkt/refresh-content` / Make the Changes in the Pages, Set the
+  Addresses and the Redirects, Publish the Changes
+- `ref/mkt/speaking-engagement` / Publish the Material
+- `ref/mkt/traffic-ad-creative` / Check Every Destination
+- `ref/mkt/user-conference` / Open Registration, Repurpose the Content
+- `ref/mkt/webinar` / Build the Registration Page, Prepare the Recording
+  for Reuse
+- `ref/mkt/website-content-update` / Make the Change in the Page,
+  Publish the Change, Close out the Change
 
 ## Patterns
 

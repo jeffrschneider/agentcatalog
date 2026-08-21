@@ -1,4 +1,4 @@
-# Reference process: set marketing budget
+# Reference process: Set Marketing Budget
 
 `ref/mkt/set-marketing-budget v1`
 
@@ -27,47 +27,47 @@ budget rests on and what would reopen it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the planning guidance | what finance gives marketing to work within | finance (person) · leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
-| 2 | read last year's spend | what each function spent against what it was given | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) · [spend-reconciler](../../agents/spend-reconciler.md) |
-| 3 | list the money already committed | contracts and licenses that run into the coming year | [budget-keeper](../../agents/budget-keeper.md) · [supplier-manager](../../agents/supplier-manager.md) · finance (person) |
-| 4 | collect what each function asks for | one request format and one date, from every function | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [comms-manager](../../agents/comms-manager.md) · [event-manager](../../agents/event-manager.md) · [audience-manager](../../agents/audience-manager.md) |
-| 5 | price the requests | cost and return at each level of spend, with assumptions | [forecaster](../../agents/forecaster.md) · media-buyer |
-| 6 | test the asks against the goals | whether the money asked for can reach the year's goals | forecaster · decision-coordinator · reporting-manager |
-| 7 | size the reserve | how much is held back for changes during the year | leadership (person) · finance (person) · decision-coordinator · forecaster |
-| 8 | settle the split across functions | leadership divides the money among the functions | leadership (person) · finance (person) · decision-coordinator |
-| 9 | set the rules for moving money | who may move money between functions, and when | leadership (person) · finance (person) · decision-coordinator · budget-keeper |
-| 10 | phase the money across the year | when each function's money becomes available | decision-coordinator · budget-keeper · reporting-manager |
-| 11 | name what the budget is reported against | the measures each function's money is reported on | reporting-manager · analytics |
-| 12 | get the budget approved | leadership and finance sign the budget at a version | leadership (person) · finance (person) |
-| 13 | load the allocations | each function's number recorded where spend is tracked | budget-keeper |
-| 14 | tell every function what it has | each function hears its number and the rules with it | decision-coordinator · campaign-manager · content-manager · media-buyer · comms-manager · event-manager · audience-manager · reporting-manager |
-| 15 | record what the budget rests on | the assumptions, and what would reopen the budget | decision-coordinator · forecaster · budget-keeper |
+| 1 | Take in the Planning Guidance | what finance gives marketing to work within | finance (person) · leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
+| 2 | Read Last Year's Spend | what each function spent against what it was given | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) · [spend-reconciler](../../agents/spend-reconciler.md) |
+| 3 | List the Money Already Committed | contracts and licenses that run into the coming year | [budget-keeper](../../agents/budget-keeper.md) · [supplier-manager](../../agents/supplier-manager.md) · finance (person) |
+| 4 | Collect What Each Function Asks For | one request format and one date, from every function | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [comms-manager](../../agents/comms-manager.md) · [event-manager](../../agents/event-manager.md) · [audience-manager](../../agents/audience-manager.md) |
+| 5 | Price the Requests | cost and return at each level of spend, with assumptions | [forecaster](../../agents/forecaster.md) · media-buyer |
+| 6 | Test the Asks against the Goals | whether the money asked for can reach the year's goals | forecaster · decision-coordinator · reporting-manager |
+| 7 | Size the Reserve | how much is held back for changes during the year | leadership (person) · finance (person) · decision-coordinator · forecaster |
+| 8 | Settle the Split across Functions | leadership divides the money among the functions | leadership (person) · finance (person) · decision-coordinator |
+| 9 | Set the Rules for Moving Money | who may move money between functions, and when | leadership (person) · finance (person) · decision-coordinator · budget-keeper |
+| 10 | Phase the Money across the Year | when each function's money becomes available | decision-coordinator · budget-keeper · reporting-manager |
+| 11 | Name What the Budget Is Reported Against | the measures each function's money is reported on | reporting-manager · analytics |
+| 12 | Get the Budget Approved | leadership and finance sign the budget at a version | leadership (person) · finance (person) |
+| 13 | Load the Allocations | each function's number recorded where spend is tracked | budget-keeper |
+| 14 | Tell Every Function What It Has | each function hears its number and the rules with it | decision-coordinator · campaign-manager · content-manager · media-buyer · comms-manager · event-manager · audience-manager · reporting-manager |
+| 15 | Record What the Budget Rests On | the assumptions, and what would reopen the budget | decision-coordinator · forecaster · budget-keeper |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([the planning cycle opens]) --> A1[1. take in the planning guidance]
-  A1 --> A2[2. read last year's spend]
-  A1 --> A3[3. list the money already committed]
-  A2 --> A4[4. collect what each function asks for]
+  T([the planning cycle opens]) --> A1[1. Take in the Planning Guidance]
+  A1 --> A2[2. Read Last Year's Spend]
+  A1 --> A3[3. List the Money Already Committed]
+  A2 --> A4[4. Collect What Each Function Asks For]
   A3 --> A4
-  A4 --> A5[5. price the requests]
-  A5 --> A6[6. test the asks against the goals]
+  A4 --> A5[5. Price the Requests]
+  A5 --> A6[6. Test the Asks against the Goals]
   A6 -. the asks will not reach the goals .-> A4
-  A6 --> A7[7. size the reserve]
-  A7 --> A8[8. settle the split across functions]
+  A6 --> A7[7. Size the Reserve]
+  A7 --> A8[8. Settle the Split across Functions]
   A8 -. the requests exceed what there is .-> A4
-  A8 --> A9[9. set the rules for moving money]
-  A8 --> A10[10. phase the money across the year]
-  A9 --> A12[12. get the budget approved]
-  A10 --> A11[11. name what the budget is reported against]
+  A8 --> A9[9. Set the Rules for Moving Money]
+  A8 --> A10[10. Phase the Money across the Year]
+  A9 --> A12[12. Get the Budget Approved]
+  A10 --> A11[11. Name What the Budget Is Reported Against]
   A11 --> A12
   A12 -. changes requested .-> A8
-  A12 --> A13[13. load the allocations]
+  A12 --> A13[13. Load the Allocations]
   A13 -. a commitment the record did not know about .-> A3
-  A13 --> A14[14. tell every function what it has]
-  A14 --> A15[15. record what the budget rests on]
+  A13 --> A14[14. Tell Every Function What It Has]
+  A14 --> A15[15. Record What the Budget Rests On]
   A15 --> DONE([the budget is approved and every function holds its share])
 ```
 

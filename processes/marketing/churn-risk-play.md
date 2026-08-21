@@ -1,4 +1,4 @@
-# Reference process: the churn-risk play
+# Reference process: Run Churn-Risk Play
 
 `ref/mkt/churn-risk-play v1`
 
@@ -18,18 +18,18 @@ account.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the signal | what fired, on which account, and when | [lifecycle-manager](../../agents/lifecycle-manager.md) |
-| 2 | confirm the signal | read usage, support, contract and renewal standing | [account-monitor](../../agents/account-monitor.md) |
-| 3 | decide whether to act | a person says intervene, keep watching or close | account owner (person) · lifecycle-manager |
-| 4 | choose the intervention | what this account gets, and whether a person calls | lifecycle-manager · account owner (person) |
-| 5 | set the limits on what may be offered | what may be credited, changed or promised | finance (person) · legal reviewer (person) |
-| 6 | write what will be said | the words for this account in this situation | [copywriter](../../agents/copywriter.md) |
-| 7 | get sign-off | brand and legal approve what is being offered | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
-| 8 | prepare the send | consent and suppression applied, schedule, proofs | [email-producer](../../agents/email-producer.md) |
-| 9 | deliver the intervention | the message goes out or the account owner calls | email-producer · account owner (person) · lifecycle-manager |
-| 10 | watch what the account does | usage, replies, support and renewal after contact | account-monitor |
-| 11 | record the outcome | what was offered, what happened, and the date | lifecycle-manager · account-monitor |
-| 12 | record what was learned | which signals were worth acting on | lifecycle-manager |
+| 1 | Take in the Signal | what fired, on which account, and when | [lifecycle-manager](../../agents/lifecycle-manager.md) |
+| 2 | Confirm the Signal | read usage, support, contract and renewal standing | [account-monitor](../../agents/account-monitor.md) |
+| 3 | Decide Whether to Act | a person says intervene, keep watching or close | account owner (person) · lifecycle-manager |
+| 4 | Choose the Intervention | what this account gets, and whether a person calls | lifecycle-manager · account owner (person) |
+| 5 | Set the Limits on What May Be Offered | what may be credited, changed or promised | finance (person) · legal reviewer (person) |
+| 6 | Write What Will Be Said | the words for this account in this situation | [copywriter](../../agents/copywriter.md) |
+| 7 | Get Sign-Off | brand and legal approve what is being offered | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
+| 8 | Prepare the Send | consent and suppression applied, schedule, proofs | [email-producer](../../agents/email-producer.md) |
+| 9 | Deliver the Intervention | the message goes out or the account owner calls | email-producer · account owner (person) · lifecycle-manager |
+| 10 | Watch What the Account Does | usage, replies, support and renewal after contact | account-monitor |
+| 11 | Record the Outcome | what was offered, what happened, and the date | lifecycle-manager · account-monitor |
+| 12 | Record What Was Learned | which signals were worth acting on | lifecycle-manager |
 
 Most processes in this catalog start because a person asked for
 something. This one starts because a system noticed something, and
@@ -48,23 +48,23 @@ whether the contact is a message or a call from the account owner.
 
 ```mermaid
 flowchart LR
-  T([a churn risk signal fires]) --> A1[1. take in the signal]
-  A1 --> A2[2. confirm the signal]
-  A2 --> A3[3. decide whether to act]
-  A3 -. the signal describes nothing .-> A11[11. record the outcome]
-  A3 --> A4[4. choose the intervention]
-  A4 --> A5[5. set the limits on what may be offered]
-  A5 --> A6[6. write what will be said]
-  A5 -. the account owner is making the call .-> A9[9. deliver the intervention]
-  A6 --> A7[7. get sign-off]
+  T([a churn risk signal fires]) --> A1[1. Take in the Signal]
+  A1 --> A2[2. Confirm the Signal]
+  A2 --> A3[3. Decide Whether to Act]
+  A3 -. the signal describes nothing .-> A11[11. Record the Outcome]
+  A3 --> A4[4. Choose the Intervention]
+  A4 --> A5[5. Set the Limits on What May Be Offered]
+  A5 --> A6[6. Write What Will Be Said]
+  A5 -. the account owner is making the call .-> A9[9. Deliver the Intervention]
+  A6 --> A7[7. Get Sign-Off]
   A7 -. changes requested .-> A6
   A7 -. the offer is outside the limits .-> A5
-  A7 --> A8[8. prepare the send]
+  A7 --> A8[8. Prepare the Send]
   A8 --> A9
-  A9 --> A10[10. watch what the account does]
+  A9 --> A10[10. Watch What the Account Does]
   A10 -. the account got worse .-> A4
   A10 --> A11
-  A11 --> A12[12. record what was learned]
+  A11 --> A12[12. Record What Was Learned]
   A12 --> DONE([the outcome is recorded and the run is closed])
 ```
 

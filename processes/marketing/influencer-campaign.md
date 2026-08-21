@@ -1,4 +1,4 @@
-# Reference process: run influencer campaign
+# Reference process: Run Influencer Campaign
 
 `ref/mkt/influencer-campaign v1`
 
@@ -17,49 +17,49 @@ held responsible.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the audience | work out who to reach and what the run must do | [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | set the parameters | markets, platforms, dates, budget and deliverables | campaign-manager · leadership (person) |
-| 3 | read the disclosure rules | what each market requires a paid post to say | [researcher](../../agents/researcher.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) |
-| 4 | draw up the candidate list | creators whose following matches the audience | [creator-relations](../../agents/creator-relations.md) · researcher |
-| 5 | vet the candidates | check the audience is real and the history is clean | creator-relations |
-| 6 | clear the shortlist | brand and legal accept who the organization pays | creator-relations · brand owner (person) · legal reviewer (person) |
-| 7 | approach the creators | make the offer and find out who is interested | creator-relations |
-| 8 | settle the terms | deliverables, dates, usage rights, disclosure, fee | creator-relations · [rights-register](../../agents/rights-register.md) · rights approver (person) · finance (person) |
-| 9 | set up the tracking | links and codes so each creator can be counted | [conversion-tracker](../../agents/conversion-tracker.md) · [media-buyer](../../agents/media-buyer.md) |
-| 10 | brief the creators | what the campaign is for and what must be said | campaign-manager · creator-relations · [copywriter](../../agents/copywriter.md) · disclosure-check |
-| 11 | collect the drafts | each creator sends what the deal said they owe | creator-relations |
-| 12 | review the drafts | each draft read against the rules before it runs | [brand-check](../../agents/brand-check.md) · disclosure-check · creator-relations · legal reviewer (person) |
-| 13 | publish the posts | the creators post on the dates that were agreed | creator-relations · campaign-manager |
-| 14 | record the live posts | every agreed post is found and kept as it ran | [coverage-monitor](../../agents/coverage-monitor.md) · creator-relations |
-| 15 | check the disclosure | every live post carries the disclosure required | disclosure-check · legal reviewer (person) |
-| 16 | correct what failed | the creator corrects or takes down what failed | creator-relations · legal reviewer (person) |
+| 1 | Take in the Audience | work out who to reach and what the run must do | [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Set the Parameters | markets, platforms, dates, budget and deliverables | campaign-manager · leadership (person) |
+| 3 | Read the Disclosure Rules | what each market requires a paid post to say | [researcher](../../agents/researcher.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) |
+| 4 | Draw up the Candidate List | creators whose following matches the audience | [creator-relations](../../agents/creator-relations.md) · researcher |
+| 5 | Vet the Candidates | check the audience is real and the history is clean | creator-relations |
+| 6 | Clear the Shortlist | brand and legal accept who the organization pays | creator-relations · brand owner (person) · legal reviewer (person) |
+| 7 | Approach the Creators | make the offer and find out who is interested | creator-relations |
+| 8 | Settle the Terms | deliverables, dates, usage rights, disclosure, fee | creator-relations · [rights-register](../../agents/rights-register.md) · rights approver (person) · finance (person) |
+| 9 | Set up the Tracking | links and codes so each creator can be counted | [conversion-tracker](../../agents/conversion-tracker.md) · [media-buyer](../../agents/media-buyer.md) |
+| 10 | Brief the Creators | what the campaign is for and what must be said | campaign-manager · creator-relations · [copywriter](../../agents/copywriter.md) · disclosure-check |
+| 11 | Collect the Drafts | each creator sends what the deal said they owe | creator-relations |
+| 12 | Review the Drafts | each draft read against the rules before it runs | [brand-check](../../agents/brand-check.md) · disclosure-check · creator-relations · legal reviewer (person) |
+| 13 | Publish the Posts | the creators post on the dates that were agreed | creator-relations · campaign-manager |
+| 14 | Record the Live Posts | every agreed post is found and kept as it ran | [coverage-monitor](../../agents/coverage-monitor.md) · creator-relations |
+| 15 | Check the Disclosure | every live post carries the disclosure required | disclosure-check · legal reviewer (person) |
+| 16 | Correct What Failed | the creator corrects or takes down what failed | creator-relations · legal reviewer (person) |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a target audience is handed to the campaign]) --> A1[1. take in the audience]
-  A1 --> A2[2. set the parameters]
-  A2 --> A3[3. read the disclosure rules]
-  A2 --> A4[4. draw up the candidate list]
-  A2 --> A9[9. set up the tracking]
-  A4 --> A5[5. vet the candidates]
-  A5 --> A6[6. clear the shortlist]
+  T([a target audience is handed to the campaign]) --> A1[1. Take in the Audience]
+  A1 --> A2[2. Set the Parameters]
+  A2 --> A3[3. Read the Disclosure Rules]
+  A2 --> A4[4. Draw up the Candidate List]
+  A2 --> A9[9. Set up the Tracking]
+  A4 --> A5[5. Vet the Candidates]
+  A5 --> A6[6. Clear the Shortlist]
   A6 -. too few creators cleared .-> A4
-  A6 --> A7[7. approach the creators]
+  A6 --> A7[7. Approach the Creators]
   A7 -. too few accepted .-> A4
-  A7 --> A8[8. settle the terms]
-  A8 --> A10[10. brief the creators]
+  A7 --> A8[8. Settle the Terms]
+  A8 --> A10[10. Brief the Creators]
   A3 --> A10
   A9 --> A10
-  A10 --> A11[11. collect the drafts]
-  A11 --> A12[12. review the drafts]
+  A10 --> A11[11. Collect the Drafts]
+  A11 --> A12[12. Review the Drafts]
   A12 -. changes requested .-> A11
-  A12 --> A13[13. publish the posts]
-  A13 --> A14[14. record the live posts]
+  A12 --> A13[13. Publish the Posts]
+  A13 --> A14[14. Record the Live Posts]
   A14 -. an agreed post never ran .-> A13
-  A14 --> A15[15. check the disclosure]
-  A15 -. a post missing its disclosure .-> A16[16. correct what failed]
+  A14 --> A15[15. Check the Disclosure]
+  A15 -. a post missing its disclosure .-> A16[16. Correct What Failed]
   A16 --> A15
   A15 --> DONE([every agreed post is live and disclosed])
 ```

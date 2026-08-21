@@ -1,4 +1,4 @@
-# Reference process: recruit a customer reference
+# Reference process: Recruit Customer Reference
 
 `ref/mkt/customer-reference v1`
 
@@ -21,47 +21,47 @@ producing that material is separate work that reads this list.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the reference request | work out what the reference is for and by when | [advocacy-manager](../../agents/advocacy-manager.md) |
-| 2 | set the reference profile | the segment, the use and the result it must show | advocacy-manager |
-| 3 | draw up the candidate list | pull the accounts that match the profile | advocacy-manager |
-| 4 | check each account's standing | support history, renewal position, contract terms | [account-monitor](../../agents/account-monitor.md) |
-| 5 | verify the customer's results | the numbers, and where each one came from | [researcher](../../agents/researcher.md) |
-| 6 | rank the shortlist | order the candidates by fit and by readiness | advocacy-manager |
-| 7 | clear the ask | the account owner says whether to ask now | advocacy-manager · account owner (person) |
-| 8 | write the request | what is being asked, in writing, for them to read | [copywriter](../../agents/copywriter.md) · advocacy-manager |
-| 9 | ask the customer | the person with the relationship makes the request | account owner (person) |
-| 10 | agree what the customer will do | a logo, a quote, a story, calls, stage time | account owner (person) · outside contact (person) · advocacy-manager |
-| 11 | get the customer's approvals | their own legal and communications people sign | outside contact (person) · advocacy-manager |
-| 12 | get the internal sign-offs | legal and rights confirm what the permission covers | legal reviewer (person) · rights approver (person) · advocacy-manager |
-| 13 | record the reference | the permission, its limits and the date it runs out | advocacy-manager |
-| 14 | hand the reference over | the requester gets a cleared, willing customer | advocacy-manager |
-| 15 | record what was learned | who declined, why, and when to ask again | advocacy-manager |
+| 1 | Take in the Reference Request | work out what the reference is for and by when | [advocacy-manager](../../agents/advocacy-manager.md) |
+| 2 | Set the Reference Profile | the segment, the use and the result it must show | advocacy-manager |
+| 3 | Draw up the Candidate List | pull the accounts that match the profile | advocacy-manager |
+| 4 | Check Each Account's Standing | support history, renewal position, contract terms | [account-monitor](../../agents/account-monitor.md) |
+| 5 | Verify the Customer's Results | the numbers, and where each one came from | [researcher](../../agents/researcher.md) |
+| 6 | Rank the Shortlist | order the candidates by fit and by readiness | advocacy-manager |
+| 7 | Clear the Ask | the account owner says whether to ask now | advocacy-manager · account owner (person) |
+| 8 | Write the Request | what is being asked, in writing, for them to read | [copywriter](../../agents/copywriter.md) · advocacy-manager |
+| 9 | Ask the Customer | the person with the relationship makes the request | account owner (person) |
+| 10 | Agree What the Customer Will Do | a logo, a quote, a story, calls, stage time | account owner (person) · outside contact (person) · advocacy-manager |
+| 11 | Get the Customer's Approvals | their own legal and communications people sign | outside contact (person) · advocacy-manager |
+| 12 | Get the Internal Sign-Offs | legal and rights confirm what the permission covers | legal reviewer (person) · rights approver (person) · advocacy-manager |
+| 13 | Record the Reference | the permission, its limits and the date it runs out | advocacy-manager |
+| 14 | Hand the Reference Over | the requester gets a cleared, willing customer | advocacy-manager |
+| 15 | Record What Was Learned | who declined, why, and when to ask again | advocacy-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a reference is needed]) --> A1[1. take in the reference request]
-  A1 --> A2[2. set the reference profile]
-  A2 --> A3[3. draw up the candidate list]
-  A3 --> A4[4. check each account's standing]
-  A3 --> A5[5. verify the customer's results]
-  A4 --> A6[6. rank the shortlist]
+  T([a reference is needed]) --> A1[1. Take in the Reference Request]
+  A1 --> A2[2. Set the Reference Profile]
+  A2 --> A3[3. Draw up the Candidate List]
+  A3 --> A4[4. Check Each Account's Standing]
+  A3 --> A5[5. Verify the Customer's Results]
+  A4 --> A6[6. Rank the Shortlist]
   A5 --> A6
   A6 -. nobody fits the profile .-> A2
-  A6 -. no candidate is left to ask .-> A15[15. record what was learned]
-  A6 --> A7[7. clear the ask]
+  A6 -. no candidate is left to ask .-> A15[15. Record What Was Learned]
+  A6 --> A7[7. Clear the Ask]
   A7 -. this account cannot be asked now .-> A6
-  A7 --> A8[8. write the request]
-  A8 --> A9[9. ask the customer]
+  A7 --> A8[8. Write the Request]
+  A8 --> A9[9. Ask the Customer]
   A9 -. the customer declines .-> A6
-  A9 --> A10[10. agree what the customer will do]
-  A10 --> A11[11. get the customer's approvals]
+  A9 --> A10[10. Agree What the Customer Will Do]
+  A10 --> A11[11. Get the Customer's Approvals]
   A11 -. the customer's own people cut the ask .-> A10
-  A11 --> A12[12. get the internal sign-offs]
+  A11 --> A12[12. Get the Internal Sign-Offs]
   A12 -. signed with limits .-> A10
-  A12 --> A13[13. record the reference]
-  A13 --> A14[14. hand the reference over]
+  A12 --> A13[13. Record the Reference]
+  A13 --> A14[14. Hand the Reference Over]
   A14 --> A15
   A15 --> DONE([a cleared, willing customer is on the list])
 ```

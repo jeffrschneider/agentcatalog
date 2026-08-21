@@ -13,59 +13,59 @@ from the text.
 
 ## Seats
 
-- `ref/mkt/annual-marketing-plan` / collect the candidate initiatives
-- `ref/mkt/approve-marketing-material` / name the standards and the
-  signers, settle a disputed rule
-- `ref/mkt/attribution-model` / take in the trigger, set what the review
-  covers, choose the model, issue the model at a version, tell the
-  processes that read the model, set the review conditions, record what
-  was learned
-- `ref/mkt/brand-audit` / name the standard versions, brief the audit,
-  score the sample, name the gaps, hand the gaps to the owners
-- `ref/mkt/brand-guidelines` / take in the change, read the guidelines
-  in force, plan the version, brief the makers, write the rules, issue
-  the version, publish the version, tell everyone who works to the
-  brand, record what was learned
-- `ref/mkt/brand-health` / read the promise the brand makes, set
-  perception against the promise
-- `ref/mkt/brand-identity` / take in the positioning, test the
-  directions against the positioning, write the usage rules, issue the
-  rules and release the files
-- `ref/mkt/brand-positioning` / set the voice rules, issue the standard
-  at a version, tell the processes that read it
-- `ref/mkt/brand-refresh` / take in the approved identity, issue the
-  identity at a version, tell the processes that read it, retire the old
-  identity, record what was learned
-- `ref/mkt/brand-voice` / take in the approved positioning, brief the
-  makers, write the word list, turn the voice into scorable rules, issue
-  the standard at a version, tell the processes that read it, brief the
-  seats that write to it, watch how the rules score
-- `ref/mkt/brief-executive-leadership` / hand the decisions on
-- `ref/mkt/buyer-persona` / issue the persona as a version
-- `ref/mkt/competitive-battlecard` / hand on the claim change
-- `ref/mkt/content-calendar` / check what needs clearing
-- `ref/mkt/develop-marketing-strategy` / check the options against what
-  is agreed, issue the strategy at a version
-- `ref/mkt/engage-marketing-agency` / write the scope, brief the agency
-- `ref/mkt/ideal-customer-profile` / issue the profile as a version
-- `ref/mkt/lead-scoring-model` / issue the model as a version
-- `ref/mkt/map-buyer-journey` / issue the map as a version
-- `ref/mkt/name-product` / issue the name at a version, tell the
-  processes that read it
-- `ref/mkt/plan-marketing-capacity` / check what an agent seat would
-  need
-- `ref/mkt/pricing-change` / set the terms of the change
-- `ref/mkt/prioritize-initiatives` / check the requests against the
-  standards
-- `ref/mkt/product-positioning` / read the standards in force, issue the
-  positioning at a version
-- `ref/mkt/refresh-content` / score the pages against the current
-  standards
-- `ref/mkt/segment-the-market` / issue the segments as a version
-- `ref/mkt/select-marketing-technology` / check it against the standards
-- `ref/mkt/size-market-opportunity` / issue the sizing as a version
-- `ref/mkt/verify-ad-placement` / confirm the rules in force, update the
-  standing lists
+- `ref/mkt/annual-marketing-plan` / Collect the Candidate Initiatives
+- `ref/mkt/approve-marketing-material` / Name the Standards and the
+  Signers, Settle a Disputed Rule
+- `ref/mkt/attribution-model` / Take in the Trigger, Set What the Review
+  Covers, Choose the Model, Issue the Model at a Version, Tell the
+  Processes that Read the Model, Set the Review Conditions, Record What
+  Was Learned
+- `ref/mkt/brand-audit` / Name the Standard Versions, Brief the Audit,
+  Score the Sample, Name the Gaps, Hand the Gaps to the Owners
+- `ref/mkt/brand-guidelines` / Take in the Change, Read the Guidelines
+  in Force, Plan the Version, Brief the Makers, Write the Rules, Issue
+  the Version, Publish the Version, Tell Everyone Who Works to the
+  Brand, Record What Was Learned
+- `ref/mkt/brand-health` / Read the Promise the Brand Makes, Set
+  Perception against the Promise
+- `ref/mkt/brand-identity` / Take in the Positioning, Test the
+  Directions against the Positioning, Write the Usage Rules, Issue the
+  Rules and Release the Files
+- `ref/mkt/brand-positioning` / Set the Voice Rules, Issue the Standard
+  at a Version, Tell the Processes that Read It
+- `ref/mkt/brand-refresh` / Take in the Approved Identity, Issue the
+  Identity at a Version, Tell the Processes that Read It, Retire the Old
+  Identity, Record What Was Learned
+- `ref/mkt/brand-voice` / Take in the Approved Positioning, Brief the
+  Makers, Write the Word List, Turn the Voice into Scorable Rules, Issue
+  the Standard at a Version, Tell the Processes that Read It, Brief the
+  Seats that Write to It, Watch How the Rules Score
+- `ref/mkt/brief-executive-leadership` / Hand the Decisions On
+- `ref/mkt/buyer-persona` / Issue the Persona as a Version
+- `ref/mkt/competitive-battlecard` / Hand on the Claim Change
+- `ref/mkt/content-calendar` / Check What Needs Clearing
+- `ref/mkt/develop-marketing-strategy` / Check the Options against What
+  Is Agreed, Issue the Strategy at a Version
+- `ref/mkt/engage-marketing-agency` / Write the Scope, Brief the Agency
+- `ref/mkt/ideal-customer-profile` / Issue the Profile as a Version
+- `ref/mkt/lead-scoring-model` / Issue the Model as a Version
+- `ref/mkt/map-buyer-journey` / Issue the Map as a Version
+- `ref/mkt/name-product` / Issue the Name at a Version, Tell the
+  Processes that Read It
+- `ref/mkt/plan-marketing-capacity` / Check What an Agent Seat Would
+  Need
+- `ref/mkt/pricing-change` / Set the Terms of the Change
+- `ref/mkt/prioritize-initiatives` / Check the Requests against the
+  Standards
+- `ref/mkt/product-positioning` / Read the Standards in Force, Issue the
+  Positioning at a Version
+- `ref/mkt/refresh-content` / Score the Pages against the Current
+  Standards
+- `ref/mkt/segment-the-market` / Issue the Segments as a Version
+- `ref/mkt/select-marketing-technology` / Check It against the Standards
+- `ref/mkt/size-market-opportunity` / Issue the Sizing as a Version
+- `ref/mkt/verify-ad-placement` / Confirm the Rules in Force, Update the
+  Standing Lists
 
 ## Patterns
 

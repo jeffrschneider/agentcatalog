@@ -14,14 +14,14 @@ not be tested, because a requirement nobody tested has not passed.
 
 ## Seats
 
-- `ref/mkt/brand-health` / arrange the outside sample
-- `ref/mkt/customer-research` / arrange the outside sample
-- `ref/mkt/engage-marketing-agency` / set the selection criteria, hear
-  the pitches, score the proposals
-- `ref/mkt/select-marketing-technology` / set the scoring criteria,
-  brief the selection, cut to a shortlist, score the shortlist, compare
-  the finalists
-- `ref/mkt/win-loss-analysis` / arrange the outside interviewer
+- `ref/mkt/brand-health` / Arrange the Outside Sample
+- `ref/mkt/customer-research` / Arrange the Outside Sample
+- `ref/mkt/engage-marketing-agency` / Set the Selection Criteria, Hear
+  the Pitches, Score the Proposals
+- `ref/mkt/select-marketing-technology` / Set the Scoring Criteria,
+  Brief the Selection, Cut to a Shortlist, Score the Shortlist, Compare
+  the Finalists
+- `ref/mkt/win-loss-analysis` / Arrange the Outside Interviewer
 
 ## Patterns
 

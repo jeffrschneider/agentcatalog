@@ -12,21 +12,21 @@ place. Each version records which lines moved, by how much, and why.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / set the tiers and the weight, brief the
-  makers
-- `ref/mkt/display-retargeting` / set the parameters
-- `ref/mkt/media-plan` / take in the objective and the budget, collect
-  what the plan must carry, settle the audience to reach, draft the
-  candidate mixes, model each mix, choose the mix, lay out the
-  flighting, set the channel audience targets, settle what counts as a
-  result, get the plan approved, hand the plan to the buying seats,
-  record what the plan rests on
-- `ref/mkt/reallocate-media-spend` / read the current position, name the
-  candidate moves, check what a move would cost, check the move against
-  the rules, amend the media plan, tell the seats that read the plan,
-  record why the money moved
-- `ref/mkt/test-ad-creative` / commit the test budget
-- `ref/mkt/traffic-ad-creative` / set the flights, budgets and rotation
+- `ref/mkt/account-based-play` / Set the Tiers and the Weight, Brief the
+  Makers
+- `ref/mkt/display-retargeting` / Set the Parameters
+- `ref/mkt/media-plan` / Take in the Objective and the Budget, Collect
+  What the Plan Must Carry, Settle the Audience to Reach, Draft the
+  Candidate Mixes, Model Each Mix, Choose the Mix, Lay out the
+  Flighting, Set the Channel Audience Targets, Settle What Counts as a
+  Result, Get the Plan Approved, Hand the Plan to the Buying Seats,
+  Record What the Plan Rests On
+- `ref/mkt/reallocate-media-spend` / Read the Current Position, Name the
+  Candidate Moves, Check What a Move Would Cost, Check the Move against
+  the Rules, Amend the Media Plan, Tell the Seats that Read the Plan,
+  Record Why the Money Moved
+- `ref/mkt/test-ad-creative` / Commit the Test Budget
+- `ref/mkt/traffic-ad-creative` / Set the Flights, Budgets and Rotation
 
 ## Patterns
 

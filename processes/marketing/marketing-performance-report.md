@@ -1,4 +1,4 @@
-# Reference process: the marketing performance report
+# Reference process: Report Marketing Performance
 
 `ref/mkt/marketing-performance-report v1`
 
@@ -15,46 +15,46 @@ as missing.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | set what the report covers | the period, the runs in it, and the questions | [reporting-manager](../../agents/reporting-manager.md) · leadership (person) |
-| 2 | ask every source the same things | one request, one format, one due date | reporting-manager |
-| 3 | pull the numbers | results from every channel, with their sources | [analytics](../../agents/analytics.md) |
-| 4 | account for the paid spend | spend by campaign and channel, and what it returned | [media-buyer](../../agents/media-buyer.md) |
-| 5 | account for the campaigns | what each campaign did against its brief | [campaign-manager](../../agents/campaign-manager.md) |
-| 6 | account for the published pieces | how each piece performed and where it ranked | [content-manager](../../agents/content-manager.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 7 | account for what the audience asked | the questions and the complaints of the period | [community-manager](../../agents/community-manager.md) |
-| 8 | check the tracking | where measurement was broken and for how long | [conversion-tracker](../../agents/conversion-tracker.md) |
-| 9 | set results beside what was expected | each result next to what that run committed to | reporting-manager |
-| 10 | reconcile the spend | the spend figures checked against the books | media-buyer · finance (person) |
-| 11 | write the account | why the numbers moved, in plain words | reporting-manager |
-| 12 | check the account | the seats it names confirm it is accurate | campaign-manager · content-manager · media-buyer |
-| 13 | publish the report | the report goes out on its date, at a version | reporting-manager |
+| 1 | Set What the Report Covers | the period, the runs in it, and the questions | [reporting-manager](../../agents/reporting-manager.md) · leadership (person) |
+| 2 | Ask Every Source the Same Things | one request, one format, one due date | reporting-manager |
+| 3 | Pull the Numbers | results from every channel, with their sources | [analytics](../../agents/analytics.md) |
+| 4 | Account for the Paid Spend | spend by campaign and channel, and what it returned | [media-buyer](../../agents/media-buyer.md) |
+| 5 | Account for the Campaigns | what each campaign did against its brief | [campaign-manager](../../agents/campaign-manager.md) |
+| 6 | Account for the Published Pieces | how each piece performed and where it ranked | [content-manager](../../agents/content-manager.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 7 | Account for What the Audience Asked | the questions and the complaints of the period | [community-manager](../../agents/community-manager.md) |
+| 8 | Check the Tracking | where measurement was broken and for how long | [conversion-tracker](../../agents/conversion-tracker.md) |
+| 9 | Set Results Beside What Was Expected | each result next to what that run committed to | reporting-manager |
+| 10 | Reconcile the Spend | the spend figures checked against the books | media-buyer · finance (person) |
+| 11 | Write the Account | why the numbers moved, in plain words | reporting-manager |
+| 12 | Check the Account | the seats it names confirm it is accurate | campaign-manager · content-manager · media-buyer |
+| 13 | Publish the Report | the report goes out on its date, at a version | reporting-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a reporting period closes]) --> A1[1. set what the report covers]
-  A1 --> A2[2. ask every source the same things]
-  A2 --> A3[3. pull the numbers]
-  A2 --> A4[4. account for the paid spend]
-  A2 --> A5[5. account for the campaigns]
-  A2 --> A6[6. account for the published pieces]
-  A2 --> A7[7. account for what the audience asked]
-  A2 --> A8[8. check the tracking]
-  A3 --> A9[9. set results beside what was expected]
+  T([a reporting period closes]) --> A1[1. Set What the Report Covers]
+  A1 --> A2[2. Ask Every Source the Same Things]
+  A2 --> A3[3. Pull the Numbers]
+  A2 --> A4[4. Account for the Paid Spend]
+  A2 --> A5[5. Account for the Campaigns]
+  A2 --> A6[6. Account for the Published Pieces]
+  A2 --> A7[7. Account for What the Audience Asked]
+  A2 --> A8[8. Check the Tracking]
+  A3 --> A9[9. Set Results Beside What Was Expected]
   A4 --> A9
   A5 --> A9
   A6 --> A9
   A7 --> A9
   A8 --> A9
   A9 -. the numbers do not agree .-> A3
-  A4 --> A10[10. reconcile the spend]
+  A4 --> A10[10. Reconcile the Spend]
   A10 -. figures do not match the books .-> A4
-  A9 --> A11[11. write the account]
+  A9 --> A11[11. Write the Account]
   A10 --> A11
-  A11 --> A12[12. check the account]
+  A11 --> A12[12. Check the Account]
   A12 -. the account is wrong .-> A11
-  A12 --> A13[13. publish the report]
+  A12 --> A13[13. Publish the Report]
   A13 --> DONE([the report for the period is published])
 ```
 

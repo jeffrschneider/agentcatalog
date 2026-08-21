@@ -1,4 +1,4 @@
-# Reference process: develop marketing strategy
+# Reference process: Develop Marketing Strategy
 
 `ref/mkt/develop-marketing-strategy v1`
 
@@ -39,56 +39,56 @@ hands the strategy to it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the objectives | the objectives, and what this run has to settle | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
-| 2 | read the closed periods | last period's results set against what was committed | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
-| 3 | map the market and its segments | the segments, their size, and how buyers buy in each | [researcher](../../agents/researcher.md) · [forecaster](../../agents/forecaster.md) |
-| 4 | read what the rivals are doing | what each rival sells, to whom, and on what claims | researcher · [coverage-monitor](../../agents/coverage-monitor.md) |
-| 5 | hear from buyers and the field | what buyers weigh, and what sellers see in the deals | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) · researcher · sales leader (person) · subject matter expert (person) |
-| 6 | draft the strategic options | two or three ways the organization could compete | decision-coordinator · researcher · forecaster |
-| 7 | put numbers on each option | the cost, the return, and the assumptions under them | forecaster · analytics |
-| 8 | check what each option would take | what each option would need in money and in people | [capacity-manager](../../agents/capacity-manager.md) · [budget-keeper](../../agents/budget-keeper.md) · decision-coordinator |
-| 9 | check the options against what is agreed | each option read against the positioning and the profile | [standards-keeper](../../agents/standards-keeper.md) · decision-coordinator |
-| 10 | choose where to play and how to win | leadership picks one set of choices and says why | leadership (person) · sales leader (person) · decision-coordinator |
-| 11 | write down the agreed strategy | the choices, the reasons, and who disagreed | decision-coordinator |
-| 12 | name what the strategy will be judged by | the measures the strategy will be reported against | reporting-manager · analytics · decision-coordinator |
-| 13 | get sign-offs | leadership and finance sign the strategy | leadership (person) · finance (person) |
-| 14 | issue the strategy at a version | the strategy numbered, and its readers told | standards-keeper |
-| 15 | hand the strategy to the work that follows | each receiving seat says what it changes | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
-| 16 | set the review conditions | the review date, and what would reopen the choices | decision-coordinator · leadership (person) |
-| 17 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Objectives | the objectives, and what this run has to settle | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
+| 2 | Read the Closed Periods | last period's results set against what was committed | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
+| 3 | Map the Market and Its Segments | the segments, their size, and how buyers buy in each | [researcher](../../agents/researcher.md) · [forecaster](../../agents/forecaster.md) |
+| 4 | Read What the Rivals Are Doing | what each rival sells, to whom, and on what claims | researcher · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 5 | Hear from Buyers and the Field | what buyers weigh, and what sellers see in the deals | [study-manager](../../agents/study-manager.md) · [statistician](../../agents/statistician.md) · researcher · sales leader (person) · subject matter expert (person) |
+| 6 | Draft the Strategic Options | two or three ways the organization could compete | decision-coordinator · researcher · forecaster |
+| 7 | Put Numbers on Each Option | the cost, the return, and the assumptions under them | forecaster · analytics |
+| 8 | Check What Each Option Would Take | what each option would need in money and in people | [capacity-manager](../../agents/capacity-manager.md) · [budget-keeper](../../agents/budget-keeper.md) · decision-coordinator |
+| 9 | Check the Options against What Is Agreed | each option read against the positioning and the profile | [standards-keeper](../../agents/standards-keeper.md) · decision-coordinator |
+| 10 | Choose Where to Play and How to Win | leadership picks one set of choices and says why | leadership (person) · sales leader (person) · decision-coordinator |
+| 11 | Write down the Agreed Strategy | the choices, the reasons, and who disagreed | decision-coordinator |
+| 12 | Name What the Strategy Will Be Judged By | the measures the strategy will be reported against | reporting-manager · analytics · decision-coordinator |
+| 13 | Get Sign-Offs | leadership and finance sign the strategy | leadership (person) · finance (person) |
+| 14 | Issue the Strategy at a Version | the strategy numbered, and its readers told | standards-keeper |
+| 15 | Hand the Strategy to the Work that Follows | each receiving seat says what it changes | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
+| 16 | Set the Review Conditions | the review date, and what would reopen the choices | decision-coordinator · leadership (person) |
+| 17 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([the business sets its objectives for the period]) --> A1[1. take in the objectives]
-  A1 --> A2[2. read the closed periods]
-  A1 --> A3[3. map the market and its segments]
-  A1 --> A4[4. read what the rivals are doing]
-  A1 --> A5[5. hear from buyers and the field]
-  A2 --> A6[6. draft the strategic options]
+  T([the business sets its objectives for the period]) --> A1[1. Take in the Objectives]
+  A1 --> A2[2. Read the Closed Periods]
+  A1 --> A3[3. Map the Market and Its Segments]
+  A1 --> A4[4. Read What the Rivals Are Doing]
+  A1 --> A5[5. Hear from Buyers and the Field]
+  A2 --> A6[6. Draft the Strategic Options]
   A3 --> A6
   A4 --> A6
   A5 --> A6
-  A6 --> A7[7. put numbers on each option]
+  A6 --> A7[7. Put Numbers on Each Option]
   A7 -. no option reaches the objectives .-> A6
-  A6 --> A8[8. check what each option would take]
+  A6 --> A8[8. Check What Each Option Would Take]
   A8 -. no option fits the period .-> A6
-  A6 --> A9[9. check the options against what is agreed]
+  A6 --> A9[9. Check the Options against What Is Agreed]
   A9 -. an option needs a standard changed .-> A6
-  A7 --> A10[10. choose where to play and how to win]
+  A7 --> A10[10. Choose Where to Play and How to Win]
   A8 --> A10
   A9 --> A10
   A10 -. the room cannot agree .-> A6
-  A10 --> A11[11. write down the agreed strategy]
-  A11 --> A12[12. name what the strategy will be judged by]
+  A10 --> A11[11. Write down the Agreed Strategy]
+  A11 --> A12[12. Name What the Strategy Will Be Judged By]
   A12 -. a choice cannot be measured .-> A10
-  A12 --> A13[13. get sign-offs]
+  A12 --> A13[13. Get Sign-Offs]
   A13 -. changes requested .-> A10
-  A13 --> A14[14. issue the strategy at a version]
-  A14 --> A15[15. hand the strategy to the work that follows]
-  A15 --> A16[16. set the review conditions]
-  A16 --> A17[17. record what was learned]
+  A13 --> A14[14. Issue the Strategy at a Version]
+  A14 --> A15[15. Hand the Strategy to the Work that Follows]
+  A15 --> A16[16. Set the Review Conditions]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the strategy is agreed, issued and in use])
 ```
 

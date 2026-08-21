@@ -11,62 +11,62 @@ at a time, with the amendment history to show for it.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / get sign-offs
-- `ref/mkt/advisory-board` / get sign-offs
-- `ref/mkt/announce-company-news` / get sign-offs
-- `ref/mkt/approve-marketing-material` / score against brand and claims
-- `ref/mkt/award-entry` / get sign-offs
-- `ref/mkt/brand-audit` / brief the audit, score the sample
-- `ref/mkt/brand-guidelines` / read the guidelines in force, show the
-  examples, test the rules on real work, list what the new version fails
-- `ref/mkt/brand-identity` / take stock of the marks in use, test the
-  directions against the positioning
-- `ref/mkt/brand-positioning` / audit what the company says now
-- `ref/mkt/brand-refresh` / score what is live against the new version,
-  get sign-offs, sweep for what was missed
-- `ref/mkt/brand-voice` / turn the voice into scorable rules, score old
-  material against the draft rules, watch how the rules score
-- `ref/mkt/brief-executive-leadership` / get sign-offs
-- `ref/mkt/brief-industry-analyst` / get sign-offs
-- `ref/mkt/channel-program` / get sign-offs
-- `ref/mkt/churn-risk-play` / get sign-off
-- `ref/mkt/co-marketing-campaign` / score against both rule sets
-- `ref/mkt/competitive-battlecard` / score the claims
-- `ref/mkt/conversion-experiment` / get sign-offs
-- `ref/mkt/creative-assets` / score against the standards, check the
-  sized set
-- `ref/mkt/crisis-communication` / get sign-offs
-- `ref/mkt/customer-case-study` / get internal sign-offs
-- `ref/mkt/customer-newsletter` / get sign-offs
-- `ref/mkt/customer-reviews` / check the ask against the rules
-- `ref/mkt/display-retargeting` / get sign-offs
-- `ref/mkt/enable-channel-partner` / get sign-offs
-- `ref/mkt/feature-release` / check it once
-- `ref/mkt/field-event` / get sign-offs
-- `ref/mkt/influencer-campaign` / review the drafts
-- `ref/mkt/landing-page` / score the page
-- `ref/mkt/long-form-content` / get sign-offs
-- `ref/mkt/name-product` / screen the long list
-- `ref/mkt/nurture-sequence` / score the messages
-- `ref/mkt/onboarding-email-program` / check and sign what was made
-- `ref/mkt/paid-search-campaign` / get sign-offs
-- `ref/mkt/pitch-earned-media` / get sign-offs
-- `ref/mkt/pricing-change` / get sign-offs
-- `ref/mkt/product-launch` / get sign-offs
-- `ref/mkt/product-positioning` / get sign-offs
-- `ref/mkt/refresh-content` / score the pages against the current
-  standards, get sign-offs
-- `ref/mkt/sales-enablement-kit` / score the kit
-- `ref/mkt/social-campaign` / get sign-offs
-- `ref/mkt/speaking-engagement` / clear the proposal, get sign-offs
-- `ref/mkt/test-ad-creative` / get sign-offs
-- `ref/mkt/trade-show` / get sign-offs
-- `ref/mkt/traffic-ad-creative` / score the adapted set
-- `ref/mkt/user-conference` / clear the speaker material
-- `ref/mkt/video-asset` / score against the standards
-- `ref/mkt/webinar` / get sign-offs
-- `ref/mkt/website-content-update` / score the change
-- `ref/mkt/win-back-campaign` / score the messages
+- `ref/mkt/account-based-play` / Get Sign-Offs
+- `ref/mkt/advisory-board` / Get Sign-Offs
+- `ref/mkt/announce-company-news` / Get Sign-Offs
+- `ref/mkt/approve-marketing-material` / Score against Brand and Claims
+- `ref/mkt/award-entry` / Get Sign-Offs
+- `ref/mkt/brand-audit` / Brief the Audit, Score the Sample
+- `ref/mkt/brand-guidelines` / Read the Guidelines in Force, Show the
+  Examples, Test the Rules on Real Work, List What the New Version Fails
+- `ref/mkt/brand-identity` / Take Stock of the Marks in Use, Test the
+  Directions against the Positioning
+- `ref/mkt/brand-positioning` / Audit What the Company Says Now
+- `ref/mkt/brand-refresh` / Score What Is Live against the New Version,
+  Get Sign-Offs, Sweep for What Was Missed
+- `ref/mkt/brand-voice` / Turn the Voice into Scorable Rules, Score Old
+  Material against the Draft Rules, Watch How the Rules Score
+- `ref/mkt/brief-executive-leadership` / Get Sign-Offs
+- `ref/mkt/brief-industry-analyst` / Get Sign-Offs
+- `ref/mkt/channel-program` / Get Sign-Offs
+- `ref/mkt/churn-risk-play` / Get Sign-Off
+- `ref/mkt/co-marketing-campaign` / Score against Both Rule Sets
+- `ref/mkt/competitive-battlecard` / Score the Claims
+- `ref/mkt/conversion-experiment` / Get Sign-Offs
+- `ref/mkt/creative-assets` / Score against the Standards, Check the
+  Sized Set
+- `ref/mkt/crisis-communication` / Get Sign-Offs
+- `ref/mkt/customer-case-study` / Get Internal Sign-Offs
+- `ref/mkt/customer-newsletter` / Get Sign-Offs
+- `ref/mkt/customer-reviews` / Check the Ask against the Rules
+- `ref/mkt/display-retargeting` / Get Sign-Offs
+- `ref/mkt/enable-channel-partner` / Get Sign-Offs
+- `ref/mkt/feature-release` / Check It Once
+- `ref/mkt/field-event` / Get Sign-Offs
+- `ref/mkt/influencer-campaign` / Review the Drafts
+- `ref/mkt/landing-page` / Score the Page
+- `ref/mkt/long-form-content` / Get Sign-Offs
+- `ref/mkt/name-product` / Screen the Long List
+- `ref/mkt/nurture-sequence` / Score the Messages
+- `ref/mkt/onboarding-email-program` / Check and Sign What Was Made
+- `ref/mkt/paid-search-campaign` / Get Sign-Offs
+- `ref/mkt/pitch-earned-media` / Get Sign-Offs
+- `ref/mkt/pricing-change` / Get Sign-Offs
+- `ref/mkt/product-launch` / Get Sign-Offs
+- `ref/mkt/product-positioning` / Get Sign-Offs
+- `ref/mkt/refresh-content` / Score the Pages against the Current
+  Standards, Get Sign-Offs
+- `ref/mkt/sales-enablement-kit` / Score the Kit
+- `ref/mkt/social-campaign` / Get Sign-Offs
+- `ref/mkt/speaking-engagement` / Clear the Proposal, Get Sign-Offs
+- `ref/mkt/test-ad-creative` / Get Sign-Offs
+- `ref/mkt/trade-show` / Get Sign-Offs
+- `ref/mkt/traffic-ad-creative` / Score the Adapted Set
+- `ref/mkt/user-conference` / Clear the Speaker Material
+- `ref/mkt/video-asset` / Score against the Standards
+- `ref/mkt/webinar` / Get Sign-Offs
+- `ref/mkt/website-content-update` / Score the Change
+- `ref/mkt/win-back-campaign` / Score the Messages
 
 ## Patterns
 

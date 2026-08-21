@@ -15,33 +15,33 @@ its address, and a page still doing its job is left alone.
 
 ## Seats
 
-- `ref/mkt/annual-marketing-plan` / take stock of what the department
-  holds
-- `ref/mkt/brand-audit` / list where the brand appears, draw the sample,
-  hand the gaps to the owners
-- `ref/mkt/brand-guidelines` / list what the new version fails
-- `ref/mkt/brand-identity` / take stock of the marks in use
-- `ref/mkt/brand-refresh` / find everything on the old identity, decide
-  what happens to each surface, brief the seats that remake the
-  material, switch the properties, sweep for what was missed, retire the
-  old identity, report the transition, record what was learned
-- `ref/mkt/brand-voice` / read how the company sounds now
-- `ref/mkt/buyer-persona` / gather what is already known
-- `ref/mkt/content-calendar` / collect the topic candidates, check the
-  library for overlap, score the candidates, draft the calendar, publish
-  the calendar
-- `ref/mkt/conversion-experiment` / clear the traffic
-- `ref/mkt/map-buyer-journey` / map the touchpoints, inventory the
-  content against the map, find the gaps
-- `ref/mkt/pricing-change` / restate the price everywhere it is
-  published
-- `ref/mkt/refresh-content` / take in the signal, rebuild the inventory,
-  decide what happens to each page, approve the merges and the
-  retirements, set the order and the dates, brief the pages in the
-  cycle, report the cycle, record what was learned
-- `ref/mkt/webinar` / prepare the recording for reuse
-- `ref/mkt/website-content-update` / find every page it touches, route
-  the change, close out the change
+- `ref/mkt/annual-marketing-plan` / Take Stock of What the Department
+  Holds
+- `ref/mkt/brand-audit` / List Where the Brand Appears, Draw the Sample,
+  Hand the Gaps to the Owners
+- `ref/mkt/brand-guidelines` / List What the New Version Fails
+- `ref/mkt/brand-identity` / Take Stock of the Marks in Use
+- `ref/mkt/brand-refresh` / Find Everything on the Old Identity, Decide
+  What Happens to Each Surface, Brief the Seats that Remake the
+  Material, Switch the Properties, Sweep for What Was Missed, Retire the
+  Old Identity, Report the Transition, Record What Was Learned
+- `ref/mkt/brand-voice` / Read How the Company Sounds Now
+- `ref/mkt/buyer-persona` / Gather What Is Already Known
+- `ref/mkt/content-calendar` / Collect the Topic Candidates, Check the
+  Library for Overlap, Score the Candidates, Draft the Calendar, Publish
+  the Calendar
+- `ref/mkt/conversion-experiment` / Clear the Traffic
+- `ref/mkt/map-buyer-journey` / Map the Touchpoints, Inventory the
+  Content against the Map, Find the Gaps
+- `ref/mkt/pricing-change` / Restate the Price Everywhere It Is
+  Published
+- `ref/mkt/refresh-content` / Take in the Signal, Rebuild the Inventory,
+  Decide What Happens to Each Page, Approve the Merges and the
+  Retirements, Set the Order and the Dates, Brief the Pages in the
+  Cycle, Report the Cycle, Record What Was Learned
+- `ref/mkt/webinar` / Prepare the Recording for Reuse
+- `ref/mkt/website-content-update` / Find Every Page It Touches, Route
+  the Change, Close out the Change
 
 ## Patterns
 

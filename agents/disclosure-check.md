@@ -13,18 +13,18 @@ was scored against and the market that rule applies in.
 
 ## Seats
 
-- `ref/mkt/approve-marketing-material` / score against the disclosure
-  rules
-- `ref/mkt/channel-program` / get sign-offs
-- `ref/mkt/competitive-battlecard` / check the comparisons
-- `ref/mkt/display-retargeting` / get sign-offs
-- `ref/mkt/enable-channel-partner` / get sign-offs
-- `ref/mkt/influencer-campaign` / read the disclosure rules, brief the
-  creators, review the drafts, check the disclosure
-- `ref/mkt/pricing-change` / get sign-offs
-- `ref/mkt/test-ad-creative` / get sign-offs
-- `ref/mkt/traffic-ad-creative` / add the disclosures each market
-  requires, score the adapted set
+- `ref/mkt/approve-marketing-material` / Score against the Disclosure
+  Rules
+- `ref/mkt/channel-program` / Get Sign-Offs
+- `ref/mkt/competitive-battlecard` / Check the Comparisons
+- `ref/mkt/display-retargeting` / Get Sign-Offs
+- `ref/mkt/enable-channel-partner` / Get Sign-Offs
+- `ref/mkt/influencer-campaign` / Read the Disclosure Rules, Brief the
+  Creators, Review the Drafts, Check the Disclosure
+- `ref/mkt/pricing-change` / Get Sign-Offs
+- `ref/mkt/test-ad-creative` / Get Sign-Offs
+- `ref/mkt/traffic-ad-creative` / Add the Disclosures Each Market
+  Requires, Score the Adapted Set
 
 ## Patterns
 

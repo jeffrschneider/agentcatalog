@@ -1,4 +1,4 @@
-# Reference process: traffic ad creative
+# Reference process: Traffic Ad Creative
 
 `ref/mkt/traffic-ad-creative v1`
 
@@ -20,58 +20,58 @@ down which creative is running where.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the creative and the plan | which plan lines this creative has to fill | [media-buyer](../../agents/media-buyer.md) · [campaign-manager](../../agents/campaign-manager.md) |
-| 2 | read the placement specifications | the sizes, lengths and limits each placement takes | media-buyer · [creative-producer](../../agents/creative-producer.md) |
-| 3 | clear the rights for these channels | the sources are licensed for the channels in the plan | [rights-register](../../agents/rights-register.md) · rights approver (person) |
-| 4 | cut the creative to every specification | one approved master becomes every size and length | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 5 | write the text for each placement | headlines and body inside each placement's limits | [copywriter](../../agents/copywriter.md) |
-| 6 | add the disclosures each market requires | the line a market requires appears in the ad itself | copywriter · designer · [disclosure-check](../../agents/disclosure-check.md) |
-| 7 | score the adapted set | the sized set read against the standards and the rules | [brand-check](../../agents/brand-check.md) · disclosure-check · [accessibility-check](../../agents/accessibility-check.md) |
-| 8 | get sign-offs | named people sign the versions that will run | brand owner (person) · legal reviewer (person) |
-| 9 | build the tracking parameters | every ad carries the parameters its report reads | [conversion-tracker](../../agents/conversion-tracker.md) · media-buyer |
-| 10 | check every destination | the page each ad points at loads and records the visit | conversion-tracker · [web-producer](../../agents/web-producer.md) |
-| 11 | load the audiences the plan names | the audiences reach the platforms with consent applied | [audience-handover](../../agents/audience-handover.md) · [audience-operator](../../agents/audience-operator.md) · [consent-manager](../../agents/consent-manager.md) |
-| 12 | build the ad units | campaigns, ad sets and ads, named to their plan line | media-buyer |
-| 13 | set the flights, budgets and rotation | dates, daily money, and how the versions rotate | media-buyer · [media-planner](../../agents/media-planner.md) |
-| 14 | check the buy before switch-on | every ad read against the plan line and the rules | [buy-check](../../agents/buy-check.md) · media-buyer |
-| 15 | switch the ads on | the manager says go and the ads start serving | media-buyer · campaign-manager |
-| 16 | check the live ads | the ads render and the clicks reach the destination | buy-check · conversion-tracker · [analytics](../../agents/analytics.md) |
-| 17 | record what is live | which creative runs on which line, at a version | campaign-manager · media-buyer |
+| 1 | Take in the Creative and the Plan | which plan lines this creative has to fill | [media-buyer](../../agents/media-buyer.md) · [campaign-manager](../../agents/campaign-manager.md) |
+| 2 | Read the Placement Specifications | the sizes, lengths and limits each placement takes | media-buyer · [creative-producer](../../agents/creative-producer.md) |
+| 3 | Clear the Rights for These Channels | the sources are licensed for the channels in the plan | [rights-register](../../agents/rights-register.md) · rights approver (person) |
+| 4 | Cut the Creative to Every Specification | one approved master becomes every size and length | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 5 | Write the Text for Each Placement | headlines and body inside each placement's limits | [copywriter](../../agents/copywriter.md) |
+| 6 | Add the Disclosures Each Market Requires | the line a market requires appears in the ad itself | copywriter · designer · [disclosure-check](../../agents/disclosure-check.md) |
+| 7 | Score the Adapted Set | the sized set read against the standards and the rules | [brand-check](../../agents/brand-check.md) · disclosure-check · [accessibility-check](../../agents/accessibility-check.md) |
+| 8 | Get Sign-Offs | named people sign the versions that will run | brand owner (person) · legal reviewer (person) |
+| 9 | Build the Tracking Parameters | every ad carries the parameters its report reads | [conversion-tracker](../../agents/conversion-tracker.md) · media-buyer |
+| 10 | Check Every Destination | the page each ad points at loads and records the visit | conversion-tracker · [web-producer](../../agents/web-producer.md) |
+| 11 | Load the Audiences the Plan Names | the audiences reach the platforms with consent applied | [audience-handover](../../agents/audience-handover.md) · [audience-operator](../../agents/audience-operator.md) · [consent-manager](../../agents/consent-manager.md) |
+| 12 | Build the Ad Units | campaigns, ad sets and ads, named to their plan line | media-buyer |
+| 13 | Set the Flights, Budgets and Rotation | dates, daily money, and how the versions rotate | media-buyer · [media-planner](../../agents/media-planner.md) |
+| 14 | Check the Buy Before Switch-On | every ad read against the plan line and the rules | [buy-check](../../agents/buy-check.md) · media-buyer |
+| 15 | Switch the Ads On | the manager says go and the ads start serving | media-buyer · campaign-manager |
+| 16 | Check the Live Ads | the ads render and the clicks reach the destination | buy-check · conversion-tracker · [analytics](../../agents/analytics.md) |
+| 17 | Record What Is Live | which creative runs on which line, at a version | campaign-manager · media-buyer |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([approved creative and a media plan arrive]) --> A1[1. take in the creative and the plan]
-  A1 --> A2[2. read the placement specifications]
-  A1 --> A3[3. clear the rights for these channels]
-  A1 --> A9[9. build the tracking parameters]
-  A1 --> A11[11. load the audiences the plan names]
-  A2 --> A4[4. cut the creative to every specification]
-  A2 --> A5[5. write the text for each placement]
+  T([approved creative and a media plan arrive]) --> A1[1. Take in the Creative and the Plan]
+  A1 --> A2[2. Read the Placement Specifications]
+  A1 --> A3[3. Clear the Rights for These Channels]
+  A1 --> A9[9. Build the Tracking Parameters]
+  A1 --> A11[11. Load the Audiences the Plan Names]
+  A2 --> A4[4. Cut the Creative to Every Specification]
+  A2 --> A5[5. Write the Text for Each Placement]
   A3 --> A4
   A4 -. a source is not cleared for this channel .-> A3
-  A4 --> A6[6. add the disclosures each market requires]
+  A4 --> A6[6. Add the Disclosures Each Market Requires]
   A5 --> A6
-  A6 --> A7[7. score the adapted set]
+  A6 --> A7[7. Score the Adapted Set]
   A7 -. failures in the sized files .-> A4
   A7 -. failures in the text .-> A5
-  A7 --> A8[8. get sign-offs]
+  A7 --> A8[8. Get Sign-Offs]
   A8 -. changes requested .-> A6
-  A8 --> A12[12. build the ad units]
-  A9 --> A10[10. check every destination]
+  A8 --> A12[12. Build the Ad Units]
+  A9 --> A10[10. Check Every Destination]
   A10 -. the visit is not recorded .-> A9
   A10 --> A12
   A11 --> A12
-  A12 --> A13[13. set the flights, budgets and rotation]
-  A13 --> A14[14. check the buy before switch-on]
+  A12 --> A13[13. Set the Flights, Budgets and Rotation]
+  A13 --> A14[14. Check the Buy Before Switch-On]
   A14 -. a flight or a budget misses the plan .-> A13
   A14 -. the wrong creative sits on a line .-> A12
-  A14 --> A15[15. switch the ads on]
-  A15 --> A16[16. check the live ads]
+  A14 --> A15[15. Switch the Ads On]
+  A15 --> A16[16. Check the Live Ads]
   A16 -. an ad will not render .-> A12
   A16 -. the clicks arrive nowhere .-> A10
-  A16 --> A17[17. record what is live]
+  A16 --> A17[17. Record What Is Live]
   A17 --> DONE([the ads are live and what runs is recorded])
 ```
 

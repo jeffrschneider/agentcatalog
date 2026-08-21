@@ -1,4 +1,4 @@
-# Reference process: convene customer advisory board
+# Reference process: Convene Customer Advisory Board
 
 `ref/mkt/advisory-board v1`
 
@@ -21,50 +21,50 @@ finished once each theme has reached the owner who can act on it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the cycle | work out what this cycle must answer and by when | [event-manager](../../agents/event-manager.md) |
-| 2 | set the agenda | the questions put to the board, in order | event-manager · [event-program](../../agents/event-program.md) · leadership (person) · subject matter expert (person) |
-| 3 | settle the membership | who sits at the table this cycle | [advocacy-manager](../../agents/advocacy-manager.md) · [account-monitor](../../agents/account-monitor.md) · leadership (person) · account owner (person) |
-| 4 | invite the members | the ask goes out and the replies are recorded | account owner (person) · advocacy-manager · [copywriter](../../agents/copywriter.md) · event-manager |
-| 5 | clear the paperwork | the NDA, the consent, and any honorarium | advocacy-manager · legal reviewer (person) · finance (person) |
-| 6 | make the arrangements | the room or the link, travel, catering, the day | [event-operations](../../agents/event-operations.md) · event-manager |
-| 7 | build the materials | the pre-read and the deck the session runs on | [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) · subject matter expert (person) |
-| 8 | get sign-offs | what may be shown to the board is approved | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) |
-| 9 | send the pre-read | members get the material before the session | [email-producer](../../agents/email-producer.md) · event-manager |
-| 10 | collect the early input | members answer the questions before they arrive | [researcher](../../agents/researcher.md) · account owner (person) · event-manager |
-| 11 | run the session | the board works through the agenda live | event-manager · leadership (person) · subject matter expert (person) · outside contact (person) |
-| 12 | capture what was said | notes with attribution and what may be repeated | researcher |
-| 13 | sort the feedback | what was said grouped into themes with quotes | researcher · event-manager |
-| 14 | route the feedback | each theme reaches the owner who can act on it | event-manager · leadership (person) |
-| 15 | follow up with the members | members hear the themes and what happens next | advocacy-manager · copywriter · email-producer · account owner (person) |
-| 16 | record what was learned | what to repeat and what to change next cycle | event-manager · advocacy-manager |
+| 1 | Take in the Cycle | work out what this cycle must answer and by when | [event-manager](../../agents/event-manager.md) |
+| 2 | Set the Agenda | the questions put to the board, in order | event-manager · [event-program](../../agents/event-program.md) · leadership (person) · subject matter expert (person) |
+| 3 | Settle the Membership | who sits at the table this cycle | [advocacy-manager](../../agents/advocacy-manager.md) · [account-monitor](../../agents/account-monitor.md) · leadership (person) · account owner (person) |
+| 4 | Invite the Members | the ask goes out and the replies are recorded | account owner (person) · advocacy-manager · [copywriter](../../agents/copywriter.md) · event-manager |
+| 5 | Clear the Paperwork | the NDA, the consent, and any honorarium | advocacy-manager · legal reviewer (person) · finance (person) |
+| 6 | Make the Arrangements | the room or the link, travel, catering, the day | [event-operations](../../agents/event-operations.md) · event-manager |
+| 7 | Build the Materials | the pre-read and the deck the session runs on | [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) · subject matter expert (person) |
+| 8 | Get Sign-Offs | what may be shown to the board is approved | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) |
+| 9 | Send the Pre-Read | members get the material before the session | [email-producer](../../agents/email-producer.md) · event-manager |
+| 10 | Collect the Early Input | members answer the questions before they arrive | [researcher](../../agents/researcher.md) · account owner (person) · event-manager |
+| 11 | Run the Session | the board works through the agenda live | event-manager · leadership (person) · subject matter expert (person) · outside contact (person) |
+| 12 | Capture What Was Said | notes with attribution and what may be repeated | researcher |
+| 13 | Sort the Feedback | what was said grouped into themes with quotes | researcher · event-manager |
+| 14 | Route the Feedback | each theme reaches the owner who can act on it | event-manager · leadership (person) |
+| 15 | Follow up with the Members | members hear the themes and what happens next | advocacy-manager · copywriter · email-producer · account owner (person) |
+| 16 | Record What Was Learned | what to repeat and what to change next cycle | event-manager · advocacy-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a board cycle opens]) --> A1[1. take in the cycle]
-  A1 --> A2[2. set the agenda]
-  A2 --> A3[3. settle the membership]
-  A2 --> A7[7. build the materials]
-  A3 --> A4[4. invite the members]
+  T([a board cycle opens]) --> A1[1. Take in the Cycle]
+  A1 --> A2[2. Set the Agenda]
+  A2 --> A3[3. Settle the Membership]
+  A2 --> A7[7. Build the Materials]
+  A3 --> A4[4. Invite the Members]
   A4 -. a member declines .-> A3
-  A4 --> A5[5. clear the paperwork]
-  A4 --> A6[6. make the arrangements]
+  A4 --> A5[5. Clear the Paperwork]
+  A4 --> A6[6. Make the Arrangements]
   A5 -. the agreement is not signed .-> A3
-  A5 --> A9[9. send the pre-read]
-  A7 --> A8[8. get sign-offs]
+  A5 --> A9[9. Send the Pre-Read]
+  A7 --> A8[8. Get Sign-Offs]
   A8 -. changes requested .-> A7
   A8 --> A9
-  A9 --> A10[10. collect the early input]
+  A9 --> A10[10. Collect the Early Input]
   A10 -. an answer changes the agenda .-> A2
-  A6 --> A11[11. run the session]
+  A6 --> A11[11. Run the Session]
   A10 --> A11
-  A11 --> A12[12. capture what was said]
-  A12 --> A13[13. sort the feedback]
-  A13 --> A14[14. route the feedback]
-  A13 --> A15[15. follow up with the members]
+  A11 --> A12[12. Capture What Was Said]
+  A12 --> A13[13. Sort the Feedback]
+  A13 --> A14[14. Route the Feedback]
+  A13 --> A15[15. Follow up with the Members]
   A14 -. the owner needs the quotes behind it .-> A13
-  A14 --> A16[16. record what was learned]
+  A14 --> A16[16. Record What Was Learned]
   A15 --> A16
   A16 --> DONE([the session is held and the feedback is routed])
 ```

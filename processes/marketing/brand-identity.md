@@ -1,4 +1,4 @@
-# Reference process: develop brand identity
+# Reference process: Develop Brand Identity
 
 `ref/mkt/brand-identity v1`
 
@@ -29,54 +29,54 @@ that finding to the positioning process instead of settling it here.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the positioning | what the identity has to carry, read off the standard | [creative-producer](../../agents/creative-producer.md) · [standards-keeper](../../agents/standards-keeper.md) |
-| 2 | take stock of the marks in use | the marks, colors, type and files in use today | [content-librarian](../../agents/content-librarian.md) · [designer](../../agents/designer.md) · [brand-check](../../agents/brand-check.md) |
-| 3 | set the identity brief | the surfaces to cover and what the system must do | creative-producer · designer · brand owner (person) |
-| 4 | brief the makers | everyone hears the same request and the same dates | creative-producer · designer · [copywriter](../../agents/copywriter.md) · [researcher](../../agents/researcher.md) |
-| 5 | draft the candidate directions | two or three directions, each with the case for it | designer · copywriter · creative-producer |
-| 6 | test the directions against the positioning | whether each direction carries what the promise says | brand-check · standards-keeper · creative-producer |
-| 7 | try the directions on outsiders | buyers and staff react to each direction | researcher · creative-producer |
-| 8 | clear the candidate marks | search the registers for marks already in use | researcher · legal reviewer (person) |
-| 9 | choose the identity | one direction is picked and the reasons said out loud | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) · brand owner (person) |
-| 10 | build out the system | logo, color, type, imagery and layout, drawn out | designer · copywriter · creative-producer |
-| 11 | clear the fonts and the imagery | confirm the type, images and footage are licensed | rights approver (person) · creative-producer · designer |
-| 12 | test the system in use | a page and a deck built from the system, then scored | designer · [accessibility-check](../../agents/accessibility-check.md) · creative-producer |
-| 13 | write the usage rules | clear space, sizes, color values, and what is misuse | designer · copywriter · standards-keeper |
-| 14 | get sign-offs | brand, legal and leadership approve the system | brand owner (person) · legal reviewer (person) · leadership (person) |
-| 15 | issue the rules and release the files | the rules land at a version and the files go out | standards-keeper · designer · creative-producer |
-| 16 | record what was learned | what to repeat, what to avoid | creative-producer · decision-coordinator |
+| 1 | Take in the Positioning | what the identity has to carry, read off the standard | [creative-producer](../../agents/creative-producer.md) · [standards-keeper](../../agents/standards-keeper.md) |
+| 2 | Take Stock of the Marks in Use | the marks, colors, type and files in use today | [content-librarian](../../agents/content-librarian.md) · [designer](../../agents/designer.md) · [brand-check](../../agents/brand-check.md) |
+| 3 | Set the Identity Brief | the surfaces to cover and what the system must do | creative-producer · designer · brand owner (person) |
+| 4 | Brief the Makers | everyone hears the same request and the same dates | creative-producer · designer · [copywriter](../../agents/copywriter.md) · [researcher](../../agents/researcher.md) |
+| 5 | Draft the Candidate Directions | two or three directions, each with the case for it | designer · copywriter · creative-producer |
+| 6 | Test the Directions against the Positioning | whether each direction carries what the promise says | brand-check · standards-keeper · creative-producer |
+| 7 | Try the Directions on Outsiders | buyers and staff react to each direction | researcher · creative-producer |
+| 8 | Clear the Candidate Marks | search the registers for marks already in use | researcher · legal reviewer (person) |
+| 9 | Choose the Identity | one direction is picked and the reasons said out loud | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) · brand owner (person) |
+| 10 | Build out the System | logo, color, type, imagery and layout, drawn out | designer · copywriter · creative-producer |
+| 11 | Clear the Fonts and the Imagery | confirm the type, images and footage are licensed | rights approver (person) · creative-producer · designer |
+| 12 | Test the System in Use | a page and a deck built from the system, then scored | designer · [accessibility-check](../../agents/accessibility-check.md) · creative-producer |
+| 13 | Write the Usage Rules | clear space, sizes, color values, and what is misuse | designer · copywriter · standards-keeper |
+| 14 | Get Sign-Offs | brand, legal and leadership approve the system | brand owner (person) · legal reviewer (person) · leadership (person) |
+| 15 | Issue the Rules and Release the Files | the rules land at a version and the files go out | standards-keeper · designer · creative-producer |
+| 16 | Record What Was Learned | what to repeat, what to avoid | creative-producer · decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a brand positioning is signed and issued]) --> A1[1. take in the positioning]
-  A1 --> A2[2. take stock of the marks in use]
-  A1 --> A3[3. set the identity brief]
+  T([a brand positioning is signed and issued]) --> A1[1. Take in the Positioning]
+  A1 --> A2[2. Take Stock of the Marks in Use]
+  A1 --> A3[3. Set the Identity Brief]
   A2 --> A3
-  A3 --> A4[4. brief the makers]
-  A4 --> A5[5. draft the candidate directions]
-  A5 --> A6[6. test the directions against the positioning]
+  A3 --> A4[4. Brief the Makers]
+  A4 --> A5[5. Draft the Candidate Directions]
+  A5 --> A6[6. Test the Directions against the Positioning]
   A6 -. the direction misses the promise .-> A5
-  A6 --> A7[7. try the directions on outsiders]
-  A6 --> A8[8. clear the candidate marks]
+  A6 --> A7[7. Try the Directions on Outsiders]
+  A6 --> A8[8. Clear the Candidate Marks]
   A7 -. no direction lands .-> A5
   A8 -. the mark is already in use .-> A5
-  A7 --> A9[9. choose the identity]
+  A7 --> A9[9. Choose the Identity]
   A8 --> A9
   A9 -. none is worth backing .-> A5
-  A9 --> A10[10. build out the system]
-  A10 --> A11[11. clear the fonts and the imagery]
-  A10 --> A12[12. test the system in use]
+  A9 --> A10[10. Build out the System]
+  A10 --> A11[11. Clear the Fonts and the Imagery]
+  A10 --> A12[12. Test the System in Use]
   A11 -. a license is refused .-> A10
   A12 -. the system fails on a real surface .-> A10
-  A11 --> A13[13. write the usage rules]
+  A11 --> A13[13. Write the Usage Rules]
   A12 --> A13
-  A13 --> A14[14. get sign-offs]
+  A13 --> A14[14. Get Sign-Offs]
   A14 -. changes requested .-> A10
   A14 -. changes requested .-> A13
-  A14 --> A15[15. issue the rules and release the files]
-  A15 --> A16[16. record what was learned]
+  A14 --> A15[15. Issue the Rules and Release the Files]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the identity is issued and the file set is released])
 ```
 

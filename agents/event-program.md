@@ -14,13 +14,13 @@ room and used the equipment before an audience is in front of them.
 
 ## Seats
 
-- `ref/mkt/advisory-board` / set the agenda
-- `ref/mkt/field-event` / settle the format and program, line up the
-  speakers, prepare the run of show
-- `ref/mkt/user-conference` / open the call for sessions, choose the
-  program, clear the speaker material, set up the venue
-- `ref/mkt/webinar` / settle the format and the presenters, build the
-  presentation, rehearse the session
+- `ref/mkt/advisory-board` / Set the Agenda
+- `ref/mkt/field-event` / Settle the Format and Program, Line up the
+  Speakers, Prepare the Run of Show
+- `ref/mkt/user-conference` / Open the Call for Sessions, Choose the
+  Program, Clear the Speaker Material, Set up the Venue
+- `ref/mkt/webinar` / Settle the Format and the Presenters, Build the
+  Presentation, Rehearse the Session
 
 ## Patterns
 

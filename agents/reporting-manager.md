@@ -12,31 +12,31 @@ answered.
 
 ## Seats
 
-- `ref/mkt/analyze-customer-base` / hand over the findings
-- `ref/mkt/annual-marketing-plan` / read the closed periods, name what
-  will be measured, brief the department
-- `ref/mkt/attribution-model` / set what the review covers, decide what
-  happens to published reports, reissue the affected reports
-- `ref/mkt/brand-health` / report awareness, perception and preference
-- `ref/mkt/brief-executive-leadership` / read the last meeting's record,
-  pull the results for the period
-- `ref/mkt/content-calendar` / read the closed period
-- `ref/mkt/develop-marketing-strategy` / read the closed periods, name
-  what the strategy will be judged by
-- `ref/mkt/marketing-performance-report` / set what the report covers,
-  ask every source the same things, set results beside what was
-  expected, write the account, publish the report
-- `ref/mkt/plan-marketing-capacity` / measure what the department got
-  through
-- `ref/mkt/prioritize-initiatives` / read what is already committed
-- `ref/mkt/quarterly-business-review` / take in the period report, set
-  the quarter against the annual goals, name the gaps worth acting on,
-  update what gets measured, brief the department
-- `ref/mkt/reallocate-media-spend` / tell the seats that read the plan
-- `ref/mkt/reconcile-media-spend` / release the figures
-- `ref/mkt/set-marketing-budget` / read last year's spend, test the asks
-  against the goals, phase the money across the year, name what the
-  budget is reported against, tell every function what it has
+- `ref/mkt/analyze-customer-base` / Hand over the Findings
+- `ref/mkt/annual-marketing-plan` / Read the Closed Periods, Name What
+  Will Be Measured, Brief the Department
+- `ref/mkt/attribution-model` / Set What the Review Covers, Decide What
+  Happens to Published Reports, Reissue the Affected Reports
+- `ref/mkt/brand-health` / Report Awareness, Perception and Preference
+- `ref/mkt/brief-executive-leadership` / Read the Last Meeting's Record,
+  Pull the Results for the Period
+- `ref/mkt/content-calendar` / Read the Closed Period
+- `ref/mkt/develop-marketing-strategy` / Read the Closed Periods, Name
+  What the Strategy Will Be Judged By
+- `ref/mkt/marketing-performance-report` / Set What the Report Covers,
+  Ask Every Source the Same Things, Set Results Beside What Was
+  Expected, Write the Account, Publish the Report
+- `ref/mkt/plan-marketing-capacity` / Measure What the Department Got
+  Through
+- `ref/mkt/prioritize-initiatives` / Read What Is Already Committed
+- `ref/mkt/quarterly-business-review` / Take in the Period Report, Set
+  the Quarter against the Annual Goals, Name the Gaps Worth Acting On,
+  Update What Gets Measured, Brief the Department
+- `ref/mkt/reallocate-media-spend` / Tell the Seats that Read the Plan
+- `ref/mkt/reconcile-media-spend` / Release the Figures
+- `ref/mkt/set-marketing-budget` / Read Last Year's Spend, Test the Asks
+  against the Goals, Phase the Money across the Year, Name What the
+  Budget Is Reported Against, Tell Every Function What It Has
 
 ## Patterns
 

@@ -1,4 +1,4 @@
-# Reference process: the user conference
+# Reference process: Host User Conference
 
 `ref/mkt/user-conference v1`
 
@@ -27,53 +27,53 @@ arrives on time and clears the checks it has to clear.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the conference | what this year's conference has to accomplish | [event-manager](../../agents/event-manager.md) · leadership (person) |
-| 2 | set the conference plan | the theme, the format, the target and the budget | event-manager · leadership (person) · finance (person) |
-| 3 | book the venue and the suppliers | the space, the dates and the signed contracts | [event-operations](../../agents/event-operations.md) · event-manager · finance (person) · legal reviewer (person) |
-| 4 | open the call for sessions | customers and staff are asked to propose talks | [event-program](../../agents/event-program.md) · [advocacy-manager](../../agents/advocacy-manager.md) · [copywriter](../../agents/copywriter.md) |
-| 5 | choose the program | keynotes settled, talks picked, the agenda built | event-program · event-manager · leadership (person) · subject matter expert (person) |
-| 6 | clear the speaker material | decks in on time, scored, and signed where needed | event-program · [brand-check](../../agents/brand-check.md) · legal reviewer (person) · rights approver (person) |
-| 7 | open registration | the site, the sign-up and the tracking go live | event-manager · [web-producer](../../agents/web-producer.md) · [designer](../../agents/designer.md) · copywriter · [conversion-tracker](../../agents/conversion-tracker.md) · [accessibility-check](../../agents/accessibility-check.md) |
-| 8 | promote the conference | email, social and paid work to fill the seats | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) · copywriter |
-| 9 | watch the registrations | the pace against the target, week by week | [analytics](../../agents/analytics.md) · event-manager |
-| 10 | commission the stage material | the set, the signage and the stage video | [creative-producer](../../agents/creative-producer.md) · event-operations |
-| 11 | invite the press and the analysts | reporters and analysts booked in and briefed | [press-relations](../../agents/press-relations.md) · event-manager |
-| 12 | set up the venue | load in, dress the rooms, test the tech, rehearse | event-operations · event-program · event-manager · event staff (person) |
-| 13 | run the show | the sessions run and someone fixes what breaks | event-manager · event-operations · community-manager · press-relations · event staff (person) |
-| 14 | capture the sessions | recordings, photographs, quotes and notes collected | [video-editor](../../agents/video-editor.md) · [researcher](../../agents/researcher.md) · event-operations |
-| 15 | repurpose the content | talks become pieces, clips, posts and a hub page | [content-manager](../../agents/content-manager.md) · creative-producer · campaign-manager · web-producer |
-| 16 | report the conference | attendance, coverage and pipeline against the plan | analytics · event-manager · [coverage-monitor](../../agents/coverage-monitor.md) |
-| 17 | record what was learned | what to repeat, what to avoid | event-manager |
+| 1 | Take in the Conference | what this year's conference has to accomplish | [event-manager](../../agents/event-manager.md) · leadership (person) |
+| 2 | Set the Conference Plan | the theme, the format, the target and the budget | event-manager · leadership (person) · finance (person) |
+| 3 | Book the Venue and the Suppliers | the space, the dates and the signed contracts | [event-operations](../../agents/event-operations.md) · event-manager · finance (person) · legal reviewer (person) |
+| 4 | Open the Call for Sessions | customers and staff are asked to propose talks | [event-program](../../agents/event-program.md) · [advocacy-manager](../../agents/advocacy-manager.md) · [copywriter](../../agents/copywriter.md) |
+| 5 | Choose the Program | keynotes settled, talks picked, the agenda built | event-program · event-manager · leadership (person) · subject matter expert (person) |
+| 6 | Clear the Speaker Material | decks in on time, scored, and signed where needed | event-program · [brand-check](../../agents/brand-check.md) · legal reviewer (person) · rights approver (person) |
+| 7 | Open Registration | the site, the sign-up and the tracking go live | event-manager · [web-producer](../../agents/web-producer.md) · [designer](../../agents/designer.md) · copywriter · [conversion-tracker](../../agents/conversion-tracker.md) · [accessibility-check](../../agents/accessibility-check.md) |
+| 8 | Promote the Conference | email, social and paid work to fill the seats | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) · copywriter |
+| 9 | Watch the Registrations | the pace against the target, week by week | [analytics](../../agents/analytics.md) · event-manager |
+| 10 | Commission the Stage Material | the set, the signage and the stage video | [creative-producer](../../agents/creative-producer.md) · event-operations |
+| 11 | Invite the Press and the Analysts | reporters and analysts booked in and briefed | [press-relations](../../agents/press-relations.md) · event-manager |
+| 12 | Set up the Venue | load in, dress the rooms, test the tech, rehearse | event-operations · event-program · event-manager · event staff (person) |
+| 13 | Run the Show | the sessions run and someone fixes what breaks | event-manager · event-operations · community-manager · press-relations · event staff (person) |
+| 14 | Capture the Sessions | recordings, photographs, quotes and notes collected | [video-editor](../../agents/video-editor.md) · [researcher](../../agents/researcher.md) · event-operations |
+| 15 | Repurpose the Content | talks become pieces, clips, posts and a hub page | [content-manager](../../agents/content-manager.md) · creative-producer · campaign-manager · web-producer |
+| 16 | Report the Conference | attendance, coverage and pipeline against the plan | analytics · event-manager · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 17 | Record What Was Learned | what to repeat, what to avoid | event-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([the annual date is set]) --> A1[1. take in the conference]
-  A1 --> A2[2. set the conference plan]
-  A2 --> A3[3. book the venue and the suppliers]
-  A3 --> A4[4. open the call for sessions]
-  A3 --> A7[7. open registration]
-  A3 --> A10[10. commission the stage material]
-  A3 --> A11[11. invite the press and the analysts]
-  A4 --> A5[5. choose the program]
-  A5 --> A6[6. clear the speaker material]
+  T([the annual date is set]) --> A1[1. Take in the Conference]
+  A1 --> A2[2. Set the Conference Plan]
+  A2 --> A3[3. Book the Venue and the Suppliers]
+  A3 --> A4[4. Open the Call for Sessions]
+  A3 --> A7[7. Open Registration]
+  A3 --> A10[10. Commission the Stage Material]
+  A3 --> A11[11. Invite the Press and the Analysts]
+  A4 --> A5[5. Choose the Program]
+  A5 --> A6[6. Clear the Speaker Material]
   A6 -. a speaker drops out .-> A5
-  A5 --> A8[8. promote the conference]
+  A5 --> A8[8. Promote the Conference]
   A7 --> A8
-  A8 --> A9[9. watch the registrations]
+  A8 --> A9[9. Watch the Registrations]
   A9 -. the pace is behind the target .-> A8
-  A6 --> A12[12. set up the venue]
+  A6 --> A12[12. Set up the Venue]
   A9 --> A12
   A10 --> A12
   A11 --> A12
   A12 -. a session has to move to another room or time .-> A5
-  A12 --> A13[13. run the show]
-  A13 --> A14[14. capture the sessions]
-  A14 --> A15[15. repurpose the content]
-  A13 --> A16[16. report the conference]
+  A12 --> A13[13. Run the Show]
+  A13 --> A14[14. Capture the Sessions]
+  A14 --> A15[15. Repurpose the Content]
+  A13 --> A16[16. Report the Conference]
   A15 --> A16
-  A16 --> A17[17. record what was learned]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the conference has run and its content is out])
 ```
 

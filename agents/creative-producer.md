@@ -12,50 +12,50 @@ actually signed.
 
 ## Seats
 
-- `ref/mkt/advisory-board` / build the materials
-- `ref/mkt/announce-company-news` / make the press materials
-- `ref/mkt/award-entry` / brief the entry, assemble the supporting
-  material
-- `ref/mkt/brand-guidelines` / plan the version, brief the makers,
-  produce the reference assets
-- `ref/mkt/brand-identity` / take in the positioning, set the identity
-  brief, brief the makers, draft the candidate directions, test the
-  directions against the positioning, try the directions on outsiders,
-  build out the system, clear the fonts and the imagery, test the system
-  in use, issue the rules and release the files, record what was learned
-- `ref/mkt/brand-refresh` / find everything on the old identity, brief
-  the seats that remake the material, rebuild the templates, remake the
-  assets, retire the old identity
-- `ref/mkt/channel-program` / build the recruitment material
-- `ref/mkt/co-marketing-campaign` / produce the joint material
-- `ref/mkt/content-calendar` / size the production capacity, draft the
-  calendar, brief the department, hand over the approved topics
-- `ref/mkt/creative-assets` / take in the brief, plan the production,
-  brief the makers, settle on a direction, clear the rights, check the
-  set holds together, check the sized set, hand over the set
-- `ref/mkt/customer-case-study` / brief the story, make the visuals
-- `ref/mkt/display-retargeting` / make the ad set
-- `ref/mkt/enable-channel-partner` / brief the makers, produce the
-  partner material
-- `ref/mkt/field-event` / produce the invitation and materials, capture
-  the event on record
-- `ref/mkt/long-form-content` / brief the piece, make the visuals
-- `ref/mkt/refresh-content` / brief the pages in the cycle, refresh the
-  visuals
-- `ref/mkt/sales-enablement-kit` / brief the makers, build the deck,
-  write the one-pager
-- `ref/mkt/test-ad-creative` / name the change to test, brief the
-  makers, produce the variants, check the variant set
-- `ref/mkt/trade-show` / produce the booth material, build the
-  demonstration
-- `ref/mkt/traffic-ad-creative` / read the placement specifications, cut
-  the creative to every specification
-- `ref/mkt/user-conference` / commission the stage material, repurpose
-  the content
-- `ref/mkt/video-asset` / take in the script or brief, settle the
-  script, plan the shots, check the sources can be used, record the
-  material, review the cut, clear the rights, file it in the library
-- `ref/mkt/webinar` / produce the promotion material
+- `ref/mkt/advisory-board` / Build the Materials
+- `ref/mkt/announce-company-news` / Make the Press Materials
+- `ref/mkt/award-entry` / Brief the Entry, Assemble the Supporting
+  Material
+- `ref/mkt/brand-guidelines` / Plan the Version, Brief the Makers,
+  Produce the Reference Assets
+- `ref/mkt/brand-identity` / Take in the Positioning, Set the Identity
+  Brief, Brief the Makers, Draft the Candidate Directions, Test the
+  Directions against the Positioning, Try the Directions on Outsiders,
+  Build out the System, Clear the Fonts and the Imagery, Test the System
+  in Use, Issue the Rules and Release the Files, Record What Was Learned
+- `ref/mkt/brand-refresh` / Find Everything on the Old Identity, Brief
+  the Seats that Remake the Material, Rebuild the Templates, Remake the
+  Assets, Retire the Old Identity
+- `ref/mkt/channel-program` / Build the Recruitment Material
+- `ref/mkt/co-marketing-campaign` / Produce the Joint Material
+- `ref/mkt/content-calendar` / Size the Production Capacity, Draft the
+  Calendar, Brief the Department, Hand over the Approved Topics
+- `ref/mkt/creative-assets` / Take in the Brief, Plan the Production,
+  Brief the Makers, Settle on a Direction, Clear the Rights, Check the
+  Set Holds Together, Check the Sized Set, Hand over the Set
+- `ref/mkt/customer-case-study` / Brief the Story, Make the Visuals
+- `ref/mkt/display-retargeting` / Make the Ad Set
+- `ref/mkt/enable-channel-partner` / Brief the Makers, Produce the
+  Partner Material
+- `ref/mkt/field-event` / Produce the Invitation and Materials, Capture
+  the Event on Record
+- `ref/mkt/long-form-content` / Brief the Piece, Make the Visuals
+- `ref/mkt/refresh-content` / Brief the Pages in the Cycle, Refresh the
+  Visuals
+- `ref/mkt/sales-enablement-kit` / Brief the Makers, Build the Deck,
+  Write the One-Pager
+- `ref/mkt/test-ad-creative` / Name the Change to Test, Brief the
+  Makers, Produce the Variants, Check the Variant Set
+- `ref/mkt/trade-show` / Produce the Booth Material, Build the
+  Demonstration
+- `ref/mkt/traffic-ad-creative` / Read the Placement Specifications, Cut
+  the Creative to Every Specification
+- `ref/mkt/user-conference` / Commission the Stage Material, Repurpose
+  the Content
+- `ref/mkt/video-asset` / Take in the Script or Brief, Settle the
+  Script, Plan the Shots, Check the Sources Can Be Used, Record the
+  Material, Review the Cut, Clear the Rights, File It in the Library
+- `ref/mkt/webinar` / Produce the Promotion Material
 
 ## Patterns
 

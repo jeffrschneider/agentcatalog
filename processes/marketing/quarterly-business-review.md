@@ -1,4 +1,4 @@
-# Reference process: the quarterly business review
+# Reference process: Conduct Quarterly Business Review
 
 `ref/mkt/quarterly-business-review v1`
 
@@ -23,51 +23,51 @@ has heard what it owes.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | set what the review covers | the quarter, the plan lines, and the questions | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | take in the period report | the published report, and what it could not answer | [reporting-manager](../../agents/reporting-manager.md) |
-| 3 | set the quarter against the annual goals | each result beside what the plan said the year would do | reporting-manager · [analytics](../../agents/analytics.md) |
-| 4 | read the budget position | what was allocated, what was drawn, and what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
-| 5 | read the outside conditions | the market, the competitors, and what buyers now ask | [researcher](../../agents/researcher.md) |
-| 6 | re-forecast the rest of the year | what the remaining quarters look like from here | [forecaster](../../agents/forecaster.md) |
-| 7 | name the gaps worth acting on | which misses matter and which sit inside the noise | decision-coordinator · reporting-manager · [statistician](../../agents/statistician.md) |
-| 8 | ask each area what it would change | one request, one format, one due date | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
-| 9 | put numbers on the proposed changes | what each change costs, returns, and would displace | forecaster · media-buyer · [capacity-manager](../../agents/capacity-manager.md) |
-| 10 | hold the review | leadership examines the quarter and says what stands | leadership (person) · decision-coordinator |
-| 11 | reset the commitments | what each area is held to for the coming quarter | leadership (person) · decision-coordinator |
-| 12 | move the money | budget shifted between the lines of the plan | leadership (person) · finance (person) · budget-keeper · decision-coordinator |
-| 13 | update what gets measured | the measures adjusted to the reset commitments | reporting-manager · analytics |
-| 14 | publish the reset commitments | the record goes out at a version on its date | decision-coordinator |
-| 15 | brief the department | every seat hears what changed and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · audience-manager · reporting-manager |
-| 16 | record what the review rests on | the assumptions, and what would reopen the reset | decision-coordinator · forecaster |
+| 1 | Set What the Review Covers | the quarter, the plan lines, and the questions | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Take in the Period Report | the published report, and what it could not answer | [reporting-manager](../../agents/reporting-manager.md) |
+| 3 | Set the Quarter against the Annual Goals | each result beside what the plan said the year would do | reporting-manager · [analytics](../../agents/analytics.md) |
+| 4 | Read the Budget Position | what was allocated, what was drawn, and what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
+| 5 | Read the Outside Conditions | the market, the competitors, and what buyers now ask | [researcher](../../agents/researcher.md) |
+| 6 | Re-Forecast the Rest of the Year | what the remaining quarters look like from here | [forecaster](../../agents/forecaster.md) |
+| 7 | Name the Gaps Worth Acting On | which misses matter and which sit inside the noise | decision-coordinator · reporting-manager · [statistician](../../agents/statistician.md) |
+| 8 | Ask Each Area What It Would Change | one request, one format, one due date | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
+| 9 | Put Numbers on the Proposed Changes | what each change costs, returns, and would displace | forecaster · media-buyer · [capacity-manager](../../agents/capacity-manager.md) |
+| 10 | Hold the Review | leadership examines the quarter and says what stands | leadership (person) · decision-coordinator |
+| 11 | Reset the Commitments | what each area is held to for the coming quarter | leadership (person) · decision-coordinator |
+| 12 | Move the Money | budget shifted between the lines of the plan | leadership (person) · finance (person) · budget-keeper · decision-coordinator |
+| 13 | Update What Gets Measured | the measures adjusted to the reset commitments | reporting-manager · analytics |
+| 14 | Publish the Reset Commitments | the record goes out at a version on its date | decision-coordinator |
+| 15 | Brief the Department | every seat hears what changed and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · audience-manager · reporting-manager |
+| 16 | Record What the Review Rests On | the assumptions, and what would reopen the reset | decision-coordinator · forecaster |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a quarter closes]) --> A1[1. set what the review covers]
-  A1 --> A2[2. take in the period report]
-  A1 --> A4[4. read the budget position]
-  A1 --> A5[5. read the outside conditions]
-  A2 --> A3[3. set the quarter against the annual goals]
+  T([a quarter closes]) --> A1[1. Set What the Review Covers]
+  A1 --> A2[2. Take in the Period Report]
+  A1 --> A4[4. Read the Budget Position]
+  A1 --> A5[5. Read the Outside Conditions]
+  A2 --> A3[3. Set the Quarter against the Annual Goals]
   A3 -. a figure the report does not carry .-> A2
-  A3 --> A6[6. re-forecast the rest of the year]
+  A3 --> A6[6. Re-Forecast the Rest of the Year]
   A4 --> A6
   A5 --> A6
-  A6 --> A7[7. name the gaps worth acting on]
-  A7 --> A8[8. ask each area what it would change]
-  A8 --> A9[9. put numbers on the proposed changes]
+  A6 --> A7[7. Name the Gaps Worth Acting On]
+  A7 --> A8[8. Ask Each Area What It Would Change]
+  A8 --> A9[9. Put Numbers on the Proposed Changes]
   A9 -. the numbers do not close the gaps .-> A8
-  A9 --> A10[10. hold the review]
+  A9 --> A10[10. Hold the Review]
   A10 -. more change is needed than was proposed .-> A8
-  A10 --> A11[11. reset the commitments]
-  A11 --> A12[12. move the money]
-  A11 --> A13[13. update what gets measured]
+  A10 --> A11[11. Reset the Commitments]
+  A11 --> A12[12. Move the Money]
+  A11 --> A13[13. Update What Gets Measured]
   A12 -. the money will not cover the reset .-> A11
   A13 -. a commitment cannot be measured .-> A11
-  A12 --> A14[14. publish the reset commitments]
+  A12 --> A14[14. Publish the Reset Commitments]
   A13 --> A14
-  A14 --> A15[15. brief the department]
-  A15 --> A16[16. record what the review rests on]
+  A14 --> A15[15. Brief the Department]
+  A15 --> A16[16. Record What the Review Rests On]
   A16 --> DONE([performance is examined and the commitments are reset])
 ```
 

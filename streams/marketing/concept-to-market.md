@@ -2,6 +2,7 @@
 
 `vs/mkt/concept-to-market v1`
 
+**position:** 4
 A new product, feature or price is made ready for the market, so that
 customers hear about it and the people selling it can answer for it. A run
 starts when a launch date is committed, when a feature reaches customers,

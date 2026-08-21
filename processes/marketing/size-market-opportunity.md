@@ -1,4 +1,4 @@
-# Reference process: size market opportunity
+# Reference process: Size Market Opportunity
 
 `ref/mkt/size-market-opportunity v1`
 
@@ -22,51 +22,51 @@ what this process delivers.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the question | what the sizing has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | draw the market boundary | what counts inside this market and what does not | decision-coordinator · [researcher](../../agents/researcher.md) · subject matter expert (person) |
-| 3 | choose the sizing method | top down, bottom up or from the record, and why | [forecaster](../../agents/forecaster.md) · decision-coordinator |
-| 4 | gather the outside evidence | published figures, public counts, search demand | researcher · [search-optimizer](../../agents/search-optimizer.md) |
-| 5 | count the buyers | how many buyers of that shape actually exist | researcher · forecaster |
-| 6 | set the rate assumptions | the price, the frequency, and where each came from | forecaster · [analytics](../../agents/analytics.md) · finance (person) |
-| 7 | compute the size each way | each method run through to its own number | forecaster |
-| 8 | reconcile the methods | where the numbers disagree, and what explains it | forecaster · decision-coordinator |
-| 9 | test the assumptions | each assumption moved, and the swing recorded | forecaster |
-| 10 | check the method | figures traced, arithmetic redone, method compared | [statistician](../../agents/statistician.md) · researcher |
-| 11 | clear the sources | which figures may be used outside the company | researcher · legal reviewer (person) |
-| 12 | settle on the number | one number accepted, with the reasons said out loud | decision-coordinator · leadership (person) · finance (person) |
-| 13 | write down the sizing | number, boundary, method, window, assumptions | decision-coordinator · forecaster |
-| 14 | issue the sizing as a version | the sizing numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 15 | set the review conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
-| 16 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Question | what the sizing has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Draw the Market Boundary | what counts inside this market and what does not | decision-coordinator · [researcher](../../agents/researcher.md) · subject matter expert (person) |
+| 3 | Choose the Sizing Method | top down, bottom up or from the record, and why | [forecaster](../../agents/forecaster.md) · decision-coordinator |
+| 4 | Gather the Outside Evidence | published figures, public counts, search demand | researcher · [search-optimizer](../../agents/search-optimizer.md) |
+| 5 | Count the Buyers | how many buyers of that shape actually exist | researcher · forecaster |
+| 6 | Set the Rate Assumptions | the price, the frequency, and where each came from | forecaster · [analytics](../../agents/analytics.md) · finance (person) |
+| 7 | Compute the Size Each Way | each method run through to its own number | forecaster |
+| 8 | Reconcile the Methods | where the numbers disagree, and what explains it | forecaster · decision-coordinator |
+| 9 | Test the Assumptions | each assumption moved, and the swing recorded | forecaster |
+| 10 | Check the Method | figures traced, arithmetic redone, method compared | [statistician](../../agents/statistician.md) · researcher |
+| 11 | Clear the Sources | which figures may be used outside the company | researcher · legal reviewer (person) |
+| 12 | Settle on the Number | one number accepted, with the reasons said out loud | decision-coordinator · leadership (person) · finance (person) |
+| 13 | Write down the Sizing | number, boundary, method, window, assumptions | decision-coordinator · forecaster |
+| 14 | Issue the Sizing as a Version | the sizing numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 15 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
+| 16 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a segment or category question is asked]) --> A1[1. take in the question]
-  A1 --> A2[2. draw the market boundary]
-  A2 --> A3[3. choose the sizing method]
-  A3 --> A4[4. gather the outside evidence]
-  A3 --> A6[6. set the rate assumptions]
-  A4 --> A5[5. count the buyers]
+  T([a segment or category question is asked]) --> A1[1. Take in the Question]
+  A1 --> A2[2. Draw the Market Boundary]
+  A2 --> A3[3. Choose the Sizing Method]
+  A3 --> A4[4. Gather the Outside Evidence]
+  A3 --> A6[6. Set the Rate Assumptions]
+  A4 --> A5[5. Count the Buyers]
   A5 -. no list of buyers exists .-> A3
-  A4 --> A11[11. clear the sources]
+  A4 --> A11[11. Clear the Sources]
   A6 -. a rate cannot be sourced .-> A4
-  A5 --> A7[7. compute the size each way]
+  A5 --> A7[7. Compute the Size Each Way]
   A6 --> A7
-  A7 --> A8[8. reconcile the methods]
+  A7 --> A8[8. Reconcile the Methods]
   A8 -. the methods disagree too far .-> A2
-  A8 --> A9[9. test the assumptions]
-  A9 --> A10[10. check the method]
+  A8 --> A9[9. Test the Assumptions]
+  A9 --> A10[10. Check the Method]
   A10 -. the method was not followed .-> A7
   A11 -. a figure may not be used outside .-> A4
-  A10 --> A12[12. settle on the number]
+  A10 --> A12[12. Settle on the Number]
   A11 --> A12
   A12 -. the number is not accepted .-> A3
-  A12 --> A13[13. write down the sizing]
-  A13 --> A14[14. issue the sizing as a version]
-  A14 --> A15[15. set the review conditions]
-  A15 --> A16[16. record what was learned]
+  A12 --> A13[13. Write down the Sizing]
+  A13 --> A14[14. Issue the Sizing as a Version]
+  A14 --> A15[15. Set the Review Conditions]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the sizing is recorded and in use])
 ```
 

@@ -1,4 +1,4 @@
-# Reference process: the paid search campaign
+# Reference process: Run Paid Search Campaign
 
 `ref/mkt/paid-search-campaign v1`
 
@@ -15,42 +15,42 @@ been reported against the goal the budget was given.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the budget and goal | what the money must buy and how it is judged | [campaign-manager](../../agents/campaign-manager.md) · leadership (person) |
-| 2 | research the search demand | what people search for and what a click costs | [search-optimizer](../../agents/search-optimizer.md) · [media-buyer](../../agents/media-buyer.md) |
-| 3 | build the keyword plan | the terms to bid on, grouped, with the exclusions | media-buyer |
-| 4 | write the ads | headlines and descriptions, several per group | [copywriter](../../agents/copywriter.md) |
-| 5 | ready the landing pages | each page answers the query its ad was bought for | media-buyer · copywriter · [web-producer](../../agents/web-producer.md) |
-| 6 | wire up conversion tracking | the conversions that count are wired and tested | [conversion-tracker](../../agents/conversion-tracker.md) · media-buyer |
-| 7 | get sign-offs | brand and legal approve the ads and the pages | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
-| 8 | build the campaigns and launch | the campaigns go live at their starting bids | media-buyer · campaign-manager |
-| 9 | watch pacing and results | spend, clicks and conversions against the goal | [analytics](../../agents/analytics.md) · media-buyer |
-| 10 | tune the bids and terms | bids move and wasted terms become exclusions | media-buyer |
-| 11 | reconcile the spend | the invoice matches what the run recorded | media-buyer · finance (person) · leadership (person) |
-| 12 | report against the goal | cost per result against what the budget bought | analytics · campaign-manager |
-| 13 | record what was learned | which terms and ads to keep for next time | campaign-manager |
+| 1 | Take in the Budget and Goal | what the money must buy and how it is judged | [campaign-manager](../../agents/campaign-manager.md) · leadership (person) |
+| 2 | Research the Search Demand | what people search for and what a click costs | [search-optimizer](../../agents/search-optimizer.md) · [media-buyer](../../agents/media-buyer.md) |
+| 3 | Build the Keyword Plan | the terms to bid on, grouped, with the exclusions | media-buyer |
+| 4 | Write the Ads | headlines and descriptions, several per group | [copywriter](../../agents/copywriter.md) |
+| 5 | Ready the Landing Pages | each page answers the query its ad was bought for | media-buyer · copywriter · [web-producer](../../agents/web-producer.md) |
+| 6 | Wire up Conversion Tracking | the conversions that count are wired and tested | [conversion-tracker](../../agents/conversion-tracker.md) · media-buyer |
+| 7 | Get Sign-Offs | brand and legal approve the ads and the pages | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
+| 8 | Build the Campaigns and Launch | the campaigns go live at their starting bids | media-buyer · campaign-manager |
+| 9 | Watch Pacing and Results | spend, clicks and conversions against the goal | [analytics](../../agents/analytics.md) · media-buyer |
+| 10 | Tune the Bids and Terms | bids move and wasted terms become exclusions | media-buyer |
+| 11 | Reconcile the Spend | the invoice matches what the run recorded | media-buyer · finance (person) · leadership (person) |
+| 12 | Report against the Goal | cost per result against what the budget bought | analytics · campaign-manager |
+| 13 | Record What Was Learned | which terms and ads to keep for next time | campaign-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a budget and a goal are committed]) --> A1[1. take in the budget and goal]
-  A1 --> A2[2. research the search demand]
-  A1 --> A5[5. ready the landing pages]
-  A1 --> A6[6. wire up conversion tracking]
-  A2 --> A3[3. build the keyword plan]
-  A3 --> A4[4. write the ads]
-  A4 --> A7[7. get sign-offs]
+  T([a budget and a goal are committed]) --> A1[1. Take in the Budget and Goal]
+  A1 --> A2[2. Research the Search Demand]
+  A1 --> A5[5. Ready the Landing Pages]
+  A1 --> A6[6. Wire up Conversion Tracking]
+  A2 --> A3[3. Build the Keyword Plan]
+  A3 --> A4[4. Write the Ads]
+  A4 --> A7[7. Get Sign-Offs]
   A5 --> A7
   A7 -. changes requested .-> A4
-  A7 --> A8[8. build the campaigns and launch]
+  A7 --> A8[8. Build the Campaigns and Launch]
   A6 --> A8
-  A8 --> A9[9. watch pacing and results]
-  A9 --> A10[10. tune the bids and terms]
+  A8 --> A9[9. Watch Pacing and Results]
+  A9 --> A10[10. Tune the Bids and Terms]
   A10 -. the ads are losing .-> A4
-  A9 --> A11[11. reconcile the spend]
+  A9 --> A11[11. Reconcile the Spend]
   A10 --> A11
-  A11 --> A12[12. report against the goal]
-  A12 --> A13[13. record what was learned]
+  A11 --> A12[12. Report against the Goal]
+  A12 --> A13[13. Record What Was Learned]
   A13 --> DONE([the buy is closed and the spend is accounted for])
 ```
 

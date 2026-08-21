@@ -15,9 +15,9 @@ that clears it.
 
 ## Seats
 
-- `ref/mkt/pricing-change` / read the affected customers, set the terms
-  of the change, build the notice lists, serve the notice, move the
-  served customers, watch the transition, report the transition
+- `ref/mkt/pricing-change` / Read the Affected Customers, Set the Terms
+  of the Change, Build the Notice Lists, Serve the Notice, Move the
+  Served Customers, Watch the Transition, Report the Transition
 
 ## Patterns
 

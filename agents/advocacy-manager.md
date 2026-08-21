@@ -13,28 +13,28 @@ customer to speak reads this record before it plans anything around one.
 
 ## Seats
 
-- `ref/mkt/advisory-board` / settle the membership, invite the members,
-  clear the paperwork, follow up with the members, record what was
-  learned
-- `ref/mkt/award-entry` / get the customer's agreement, get sign-offs
-- `ref/mkt/brief-industry-analyst` / line up the customer references
-- `ref/mkt/customer-case-study` / take in the candidate, make the ask,
-  agree what the customer will do, brief the story, get the customer's
-  approval, hand the story to sales, record what was learned
-- `ref/mkt/customer-newsletter` / clear the customer story
-- `ref/mkt/customer-reference` / take in the reference request, set the
-  reference profile, draw up the candidate list, rank the shortlist,
-  clear the ask, write the request, agree what the customer will do, get
-  the customer's approvals, get the internal sign-offs, record the
-  reference, hand the reference over, record what was learned
-- `ref/mkt/customer-reviews` / take in the review goal, read the site
-  rules, set the rules for asking, choose the customers to ask, clear
-  the list with account owners, write the ask, set up the practical
-  side, send the ask, send the reminder, answer what comes back, reply
-  to the reviews, report against the goal, record what was learned
-- `ref/mkt/field-event` / line up the speakers
-- `ref/mkt/moderate-community` / name the members worth recognizing
-- `ref/mkt/user-conference` / open the call for sessions
+- `ref/mkt/advisory-board` / Settle the Membership, Invite the Members,
+  Clear the Paperwork, Follow up with the Members, Record What Was
+  Learned
+- `ref/mkt/award-entry` / Get the Customer's Agreement, Get Sign-Offs
+- `ref/mkt/brief-industry-analyst` / Line up the Customer References
+- `ref/mkt/customer-case-study` / Take in the Candidate, Make the Ask,
+  Agree What the Customer Will Do, Brief the Story, Get the Customer's
+  Approval, Hand the Story to Sales, Record What Was Learned
+- `ref/mkt/customer-newsletter` / Clear the Customer Story
+- `ref/mkt/customer-reference` / Take in the Reference Request, Set the
+  Reference Profile, Draw up the Candidate List, Rank the Shortlist,
+  Clear the Ask, Write the Request, Agree What the Customer Will Do, Get
+  the Customer's Approvals, Get the Internal Sign-Offs, Record the
+  Reference, Hand the Reference Over, Record What Was Learned
+- `ref/mkt/customer-reviews` / Take in the Review Goal, Read the Site
+  Rules, Set the Rules for Asking, Choose the Customers to Ask, Clear
+  the List with Account Owners, Write the Ask, Set up the Practical
+  Side, Send the Ask, Send the Reminder, Answer What Comes Back, Reply
+  to the Reviews, Report against the Goal, Record What Was Learned
+- `ref/mkt/field-event` / Line up the Speakers
+- `ref/mkt/moderate-community` / Name the Members Worth Recognizing
+- `ref/mkt/user-conference` / Open the Call for Sessions
 
 ## Patterns
 

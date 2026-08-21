@@ -1,4 +1,4 @@
-# Reference process: contact database hygiene
+# Reference process: Cleanse Contact Database
 
 `ref/mkt/contact-database-hygiene v1`
 
@@ -20,52 +20,52 @@ those two.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | open the cycle | say what this cycle covers and has to fix | [audience-manager](../../agents/audience-manager.md) |
-| 2 | measure the base as it stands | counts, gaps, duplicates, bounces and inactivity | [analytics](../../agents/analytics.md) · audience-manager |
-| 3 | confirm the rules in force | the consent and retention rules, at their versions | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 4 | brief the cycle | everyone hears the same request at once | audience-manager · [audience-operator](../../agents/audience-operator.md) · consent-manager · analytics |
-| 5 | reconcile the consent record | opt-outs gathered from every system that holds them | consent-manager |
-| 6 | standardize the fields | names, addresses and companies put in one format | audience-operator |
-| 7 | propose the merges | candidate matches listed with what disagrees | audience-operator |
-| 8 | merge the records | one record per person, strictest consent kept | audience-operator · consent-manager |
-| 9 | list what comes out | the inactive, undeliverable and expired records | audience-manager · audience-operator |
-| 10 | sign for the removals | a person signs the list before anything is removed | leadership (person) · sales leader (person) |
-| 11 | remove the records | what was signed for comes out, and a copy is kept | audience-operator |
-| 12 | fill the gaps | missing fields filled from licensed sources | audience-operator |
-| 13 | apply the suppression | the suppression written into every list and system | consent-manager · audience-operator |
-| 14 | rebuild the segments | segments rebuilt on the data as it now stands | audience-operator |
-| 15 | score the finished change | every item scored against the approved rules | consent-manager |
-| 16 | report the cycle | what changed, and how much of the base is reachable | analytics · audience-manager |
-| 17 | record what was learned | what to fix where the records come in | audience-manager · consent-manager |
+| 1 | Open the Cycle | say what this cycle covers and has to fix | [audience-manager](../../agents/audience-manager.md) |
+| 2 | Measure the Base as It Stands | counts, gaps, duplicates, bounces and inactivity | [analytics](../../agents/analytics.md) · audience-manager |
+| 3 | Confirm the Rules in Force | the consent and retention rules, at their versions | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 4 | Brief the Cycle | everyone hears the same request at once | audience-manager · [audience-operator](../../agents/audience-operator.md) · consent-manager · analytics |
+| 5 | Reconcile the Consent Record | opt-outs gathered from every system that holds them | consent-manager |
+| 6 | Standardize the Fields | names, addresses and companies put in one format | audience-operator |
+| 7 | Propose the Merges | candidate matches listed with what disagrees | audience-operator |
+| 8 | Merge the Records | one record per person, strictest consent kept | audience-operator · consent-manager |
+| 9 | List What Comes Out | the inactive, undeliverable and expired records | audience-manager · audience-operator |
+| 10 | Sign for the Removals | a person signs the list before anything is removed | leadership (person) · sales leader (person) |
+| 11 | Remove the Records | what was signed for comes out, and a copy is kept | audience-operator |
+| 12 | Fill the Gaps | missing fields filled from licensed sources | audience-operator |
+| 13 | Apply the Suppression | the suppression written into every list and system | consent-manager · audience-operator |
+| 14 | Rebuild the Segments | segments rebuilt on the data as it now stands | audience-operator |
+| 15 | Score the Finished Change | every item scored against the approved rules | consent-manager |
+| 16 | Report the Cycle | what changed, and how much of the base is reachable | analytics · audience-manager |
+| 17 | Record What Was Learned | what to fix where the records come in | audience-manager · consent-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a hygiene cycle opens]) --> A1[1. open the cycle]
-  A1 --> A2[2. measure the base as it stands]
-  A1 --> A3[3. confirm the rules in force]
-  A2 --> A4[4. brief the cycle]
+  T([a hygiene cycle opens]) --> A1[1. Open the Cycle]
+  A1 --> A2[2. Measure the Base as It Stands]
+  A1 --> A3[3. Confirm the Rules in Force]
+  A2 --> A4[4. Brief the Cycle]
   A3 --> A4
-  A4 --> A5[5. reconcile the consent record]
-  A5 --> A6[6. standardize the fields]
+  A4 --> A5[5. Reconcile the Consent Record]
+  A5 --> A6[6. Standardize the Fields]
   A6 -. more records than one change may touch .-> A1
-  A6 --> A7[7. propose the merges]
-  A7 --> A8[8. merge the records]
+  A6 --> A7[7. Propose the Merges]
+  A7 --> A8[8. Merge the Records]
   A8 -. two records disagree on a field that matters .-> A7
-  A8 --> A9[9. list what comes out]
-  A9 --> A10[10. sign for the removals]
+  A8 --> A9[9. List What Comes Out]
+  A9 --> A10[10. Sign for the Removals]
   A10 -. records the signers struck off .-> A9
-  A10 --> A11[11. remove the records]
-  A11 --> A12[12. fill the gaps]
+  A10 --> A11[11. Remove the Records]
+  A11 --> A12[12. Fill the Gaps]
   A12 -. a source whose license does not cover the sending .-> A3
-  A12 --> A13[13. apply the suppression]
-  A13 --> A14[14. rebuild the segments]
-  A14 --> A15[15. score the finished change]
+  A12 --> A13[13. Apply the Suppression]
+  A13 --> A14[14. Rebuild the Segments]
+  A14 --> A15[15. Score the Finished Change]
   A15 -. a merge carried a consent nobody gave .-> A8
   A15 -. a contact the suppression missed .-> A13
-  A15 --> A16[16. report the cycle]
-  A16 --> A17[17. record what was learned]
+  A15 --> A16[16. Report the Cycle]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the database is deduped, enriched, suppressed and resegmented])
 ```
 

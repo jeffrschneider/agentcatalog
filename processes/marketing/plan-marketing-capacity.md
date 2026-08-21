@@ -1,4 +1,4 @@
-# Reference process: plan marketing capacity
+# Reference process: Plan Marketing Capacity
 
 `ref/mkt/plan-marketing-capacity v1`
 
@@ -25,46 +25,46 @@ middle of a year.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the planning trigger | what the cycle or the gap has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) · leadership (person) |
-| 2 | list the committed work | the runs and initiatives the period already owes | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) |
-| 3 | break the work into activities | which processes run, how often, and the seats each needs | capacity-manager · campaign-manager · content-manager |
-| 4 | measure what the department got through | runs closed, how long they took, where they waited | capacity-manager · [reporting-manager](../../agents/reporting-manager.md) |
-| 5 | size the effort each run takes | the hours and the seat time one run actually costs | capacity-manager · [forecaster](../../agents/forecaster.md) |
-| 6 | find the shortfall | where the demand passes what the department carries | capacity-manager · forecaster |
-| 7 | sort the activities by who can hold them | which need a person and which an agent could hold | capacity-manager · leadership (person) |
-| 8 | check what an agent seat would need | the grants, the standards, and what it escalates | [standards-keeper](../../agents/standards-keeper.md) · capacity-manager · legal reviewer (person) · systems owner (person) · security reviewer (person) |
-| 9 | cost each way of closing the gap | hiring, contracting, agents, cutting work, moving dates | forecaster · [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
-| 10 | put the options to the people who decide | each option with its cost and what it rules out | decision-coordinator · forecaster |
-| 11 | decide the mix | leadership says what people hold and what agents hold | leadership (person) · finance (person) · decision-coordinator |
-| 12 | match the work to holders | every seat in the period gets a person or an agent | leadership (person) · capacity-manager |
-| 13 | name the gaps that remain | work with no holder, and what happens to it | capacity-manager · decision-coordinator |
-| 14 | commission the new capacity | hiring requests, seats to fill, access to be granted | leadership (person) · finance (person) · budget-keeper · [supplier-manager](../../agents/supplier-manager.md) |
-| 15 | record what was learned | what to repeat, and what would reopen the plan | decision-coordinator · capacity-manager |
+| 1 | Take in the Planning Trigger | what the cycle or the gap has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) · leadership (person) |
+| 2 | List the Committed Work | the runs and initiatives the period already owes | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) |
+| 3 | Break the Work into Activities | which processes run, how often, and the seats each needs | capacity-manager · campaign-manager · content-manager |
+| 4 | Measure What the Department Got Through | runs closed, how long they took, where they waited | capacity-manager · [reporting-manager](../../agents/reporting-manager.md) |
+| 5 | Size the Effort Each Run Takes | the hours and the seat time one run actually costs | capacity-manager · [forecaster](../../agents/forecaster.md) |
+| 6 | Find the Shortfall | where the demand passes what the department carries | capacity-manager · forecaster |
+| 7 | Sort the Activities by Who Can Hold Them | which need a person and which an agent could hold | capacity-manager · leadership (person) |
+| 8 | Check What an Agent Seat Would Need | the grants, the standards, and what it escalates | [standards-keeper](../../agents/standards-keeper.md) · capacity-manager · legal reviewer (person) · systems owner (person) · security reviewer (person) |
+| 9 | Cost Each Way of Closing the Gap | hiring, contracting, agents, cutting work, moving dates | forecaster · [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
+| 10 | Put the Options to the People Who Decide | each option with its cost and what it rules out | decision-coordinator · forecaster |
+| 11 | Decide the Mix | leadership says what people hold and what agents hold | leadership (person) · finance (person) · decision-coordinator |
+| 12 | Match the Work to Holders | every seat in the period gets a person or an agent | leadership (person) · capacity-manager |
+| 13 | Name the Gaps that Remain | work with no holder, and what happens to it | capacity-manager · decision-coordinator |
+| 14 | Commission the New Capacity | hiring requests, seats to fill, access to be granted | leadership (person) · finance (person) · budget-keeper · [supplier-manager](../../agents/supplier-manager.md) |
+| 15 | Record What Was Learned | what to repeat, and what would reopen the plan | decision-coordinator · capacity-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a planning cycle opens or a capacity gap is raised]) --> A1[1. take in the planning trigger]
-  A1 --> A2[2. list the committed work]
-  A1 --> A4[4. measure what the department got through]
-  A2 --> A3[3. break the work into activities]
-  A4 --> A5[5. size the effort each run takes]
-  A3 --> A6[6. find the shortfall]
+  T([a planning cycle opens or a capacity gap is raised]) --> A1[1. Take in the Planning Trigger]
+  A1 --> A2[2. List the Committed Work]
+  A1 --> A4[4. Measure What the Department Got Through]
+  A2 --> A3[3. Break the Work into Activities]
+  A4 --> A5[5. Size the Effort Each Run Takes]
+  A3 --> A6[6. Find the Shortfall]
   A5 --> A6
   A6 -. too few closed runs to size the work .-> A4
-  A6 --> A7[7. sort the activities by who can hold them]
-  A7 --> A8[8. check what an agent seat would need]
+  A6 --> A7[7. Sort the Activities by Who Can Hold Them]
+  A7 --> A8[8. Check What an Agent Seat Would Need]
   A8 -. the activity cannot be delegated .-> A7
-  A8 --> A9[9. cost each way of closing the gap]
-  A9 --> A10[10. put the options to the people who decide]
-  A10 --> A11[11. decide the mix]
+  A8 --> A9[9. Cost Each Way of Closing the Gap]
+  A9 --> A10[10. Put the Options to the People Who Decide]
+  A10 --> A11[11. Decide the Mix]
   A11 -. no option fits what the money allows .-> A9
-  A11 --> A12[12. match the work to holders]
-  A12 --> A13[13. name the gaps that remain]
+  A11 --> A12[12. Match the Work to Holders]
+  A12 --> A13[13. Name the Gaps that Remain]
   A13 -. the gaps left are too large to accept .-> A11
-  A13 --> A14[14. commission the new capacity]
-  A14 --> A15[15. record what was learned]
+  A13 --> A14[14. Commission the New Capacity]
+  A14 --> A15[15. Record What Was Learned]
   A15 --> DONE([every activity has a holder or a named gap])
 ```
 

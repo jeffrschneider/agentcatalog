@@ -15,38 +15,38 @@ else can work it out again and see whether the answer still holds.
 
 ## Seats
 
-- `ref/mkt/analyze-customer-base` / set the scope of the read, say what
-  the data supports, test that the groups hold, compare with the last
-  read, review the findings
-- `ref/mkt/attribution-model` / confirm the drift, test the candidates
-  against the record
-- `ref/mkt/brand-audit` / brief the audit, work out the figures
-- `ref/mkt/brand-health` / brief the wave, say how much data it needs,
-  carry the questions forward, watch the sample fill, work out the
-  figures, compare with the earlier waves, check the findings hold
-- `ref/mkt/brand-refresh` / read what people recognize today, read what
-  people recognize now
-- `ref/mkt/brief-executive-leadership` / say what the numbers carry
-- `ref/mkt/buyer-persona` / plan the study, say what the responses
-  support
-- `ref/mkt/conversion-experiment` / size the test, brief the makers,
-  check the setup, watch the test run, read the result, record what was
-  learned
-- `ref/mkt/customer-research` / choose the method, brief the study, say
-  how much data it needs, watch the sample fill, work out the figures,
-  check the findings hold
-- `ref/mkt/develop-marketing-strategy` / hear from buyers and the field
-- `ref/mkt/map-buyer-journey` / design the buyer study, test the stages
-  against the record
-- `ref/mkt/name-product` / try the names on outsiders
-- `ref/mkt/quarterly-business-review` / name the gaps worth acting on
-- `ref/mkt/segment-the-market` / test whether the segments hold apart
-- `ref/mkt/select-marketing-technology` / try the finalists on real
-  work, compare the finalists
-- `ref/mkt/size-market-opportunity` / check the method
-- `ref/mkt/win-loss-analysis` / brief the study, say how many interviews
-  it needs, watch both halves fill, work out the figures, check the
-  findings hold
+- `ref/mkt/analyze-customer-base` / Set the Scope of the Read, Say What
+  the Data Supports, Test that the Groups Hold, Compare with the Last
+  Read, Review the Findings
+- `ref/mkt/attribution-model` / Confirm the Drift, Test the Candidates
+  against the Record
+- `ref/mkt/brand-audit` / Brief the Audit, Work out the Figures
+- `ref/mkt/brand-health` / Brief the Wave, Say How Much Data It Needs,
+  Carry the Questions Forward, Watch the Sample Fill, Work out the
+  Figures, Compare with the Earlier Waves, Check the Findings Hold
+- `ref/mkt/brand-refresh` / Read What People Recognize Today, Read What
+  People Recognize Now
+- `ref/mkt/brief-executive-leadership` / Say What the Numbers Carry
+- `ref/mkt/buyer-persona` / Plan the Study, Say What the Responses
+  Support
+- `ref/mkt/conversion-experiment` / Size the Test, Brief the Makers,
+  Check the Setup, Watch the Test Run, Read the Result, Record What Was
+  Learned
+- `ref/mkt/customer-research` / Choose the Method, Brief the Study, Say
+  How Much Data It Needs, Watch the Sample Fill, Work out the Figures,
+  Check the Findings Hold
+- `ref/mkt/develop-marketing-strategy` / Hear from Buyers and the Field
+- `ref/mkt/map-buyer-journey` / Design the Buyer Study, Test the Stages
+  against the Record
+- `ref/mkt/name-product` / Try the Names on Outsiders
+- `ref/mkt/quarterly-business-review` / Name the Gaps Worth Acting On
+- `ref/mkt/segment-the-market` / Test Whether the Segments Hold Apart
+- `ref/mkt/select-marketing-technology` / Try the Finalists on Real
+  Work, Compare the Finalists
+- `ref/mkt/size-market-opportunity` / Check the Method
+- `ref/mkt/win-loss-analysis` / Brief the Study, Say How Many Interviews
+  It Needs, Watch Both Halves Fill, Work out the Figures, Check the
+  Findings Hold
 
 ## Patterns
 

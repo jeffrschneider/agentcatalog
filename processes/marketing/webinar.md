@@ -1,4 +1,4 @@
-# Reference process: the webinar
+# Reference process: Produce Webinar
 
 `ref/mkt/webinar v1`
 
@@ -17,59 +17,59 @@ report.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the topic and date | work out what the session must do and for whom | [event-manager](../../agents/event-manager.md) |
-| 2 | settle the format and the presenters | the session shape, its length, and who presents | event-manager · [event-program](../../agents/event-program.md) · subject matter expert (person) |
-| 3 | set up the session in the platform | the broadcast session and its registration form | [broadcast-operator](../../agents/broadcast-operator.md) · event-manager |
-| 4 | build the registration page | the page and the tracking on its form | [web-producer](../../agents/web-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
-| 5 | produce the promotion material | the invitation, the ads and the social posts | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
-| 6 | get sign-offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
-| 7 | build the invitation audience | who is invited, with the consent rules applied | [audience-manager](../../agents/audience-manager.md) · [consent-manager](../../agents/consent-manager.md) |
-| 8 | promote the session | email, social and paid, pointed at registration | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) |
-| 9 | work the registration list | confirm, remind, and chase the number needed | email-producer · event-manager |
-| 10 | build the presentation | the slides and the demo, built to the agenda | event-program · designer · subject matter expert (person) |
-| 11 | rehearse the session | every presenter connects and runs their part | broadcast-operator · event-program · subject matter expert (person) |
-| 12 | run the session | the broadcast goes live and keeps to time | broadcast-operator · event-manager · [moderator](../../agents/moderator.md) · subject matter expert (person) |
-| 13 | hand over what the session produced | the recording, attendance, polls and questions | broadcast-operator |
-| 14 | prepare the recording for reuse | the cut, the captions, and the page it sits on | [video-editor](../../agents/video-editor.md) · web-producer · [accessibility-check](../../agents/accessibility-check.md) · [content-librarian](../../agents/content-librarian.md) · [rights-register](../../agents/rights-register.md) |
-| 15 | follow up with the registrants | the recording and answers to what was asked | email-producer · copywriter · [lifecycle-manager](../../agents/lifecycle-manager.md) |
-| 16 | hand off the leads | scored, routed, and passed to who takes them | [lead-scorer](../../agents/lead-scorer.md) · conversion-tracker |
-| 17 | report how the session did | registrations, attendance, and what it produced | event-manager · [analytics](../../agents/analytics.md) |
-| 18 | record what was learned | what to repeat, what to avoid | event-manager |
+| 1 | Take in the Topic and Date | work out what the session must do and for whom | [event-manager](../../agents/event-manager.md) |
+| 2 | Settle the Format and the Presenters | the session shape, its length, and who presents | event-manager · [event-program](../../agents/event-program.md) · subject matter expert (person) |
+| 3 | Set up the Session in the Platform | the broadcast session and its registration form | [broadcast-operator](../../agents/broadcast-operator.md) · event-manager |
+| 4 | Build the Registration Page | the page and the tracking on its form | [web-producer](../../agents/web-producer.md) · [conversion-tracker](../../agents/conversion-tracker.md) |
+| 5 | Produce the Promotion Material | the invitation, the ads and the social posts | [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 6 | Get Sign-Offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) |
+| 7 | Build the Invitation Audience | who is invited, with the consent rules applied | [audience-manager](../../agents/audience-manager.md) · [consent-manager](../../agents/consent-manager.md) |
+| 8 | Promote the Session | email, social and paid, pointed at registration | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) |
+| 9 | Work the Registration List | confirm, remind, and chase the number needed | email-producer · event-manager |
+| 10 | Build the Presentation | the slides and the demo, built to the agenda | event-program · designer · subject matter expert (person) |
+| 11 | Rehearse the Session | every presenter connects and runs their part | broadcast-operator · event-program · subject matter expert (person) |
+| 12 | Run the Session | the broadcast goes live and keeps to time | broadcast-operator · event-manager · [moderator](../../agents/moderator.md) · subject matter expert (person) |
+| 13 | Hand over What the Session Produced | the recording, attendance, polls and questions | broadcast-operator |
+| 14 | Prepare the Recording for Reuse | the cut, the captions, and the page it sits on | [video-editor](../../agents/video-editor.md) · web-producer · [accessibility-check](../../agents/accessibility-check.md) · [content-librarian](../../agents/content-librarian.md) · [rights-register](../../agents/rights-register.md) |
+| 15 | Follow up with the Registrants | the recording and answers to what was asked | email-producer · copywriter · [lifecycle-manager](../../agents/lifecycle-manager.md) |
+| 16 | Hand off the Leads | scored, routed, and passed to who takes them | [lead-scorer](../../agents/lead-scorer.md) · conversion-tracker |
+| 17 | Report How the Session Did | registrations, attendance, and what it produced | event-manager · [analytics](../../agents/analytics.md) |
+| 18 | Record What Was Learned | what to repeat, what to avoid | event-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a topic and a date are set]) --> A1[1. take in the topic and date]
-  A1 --> A2[2. settle the format and the presenters]
-  A2 --> A3[3. set up the session in the platform]
-  A2 --> A5[5. produce the promotion material]
-  A2 --> A7[7. build the invitation audience]
-  A2 --> A10[10. build the presentation]
-  A5 --> A6[6. get sign-offs]
+  T([a topic and a date are set]) --> A1[1. Take in the Topic and Date]
+  A1 --> A2[2. Settle the Format and the Presenters]
+  A2 --> A3[3. Set up the Session in the Platform]
+  A2 --> A5[5. Produce the Promotion Material]
+  A2 --> A7[7. Build the Invitation Audience]
+  A2 --> A10[10. Build the Presentation]
+  A5 --> A6[6. Get Sign-Offs]
   A6 -. changes requested .-> A5
-  A3 --> A4[4. build the registration page]
+  A3 --> A4[4. Build the Registration Page]
   A6 --> A4
-  A4 --> A8[8. promote the session]
+  A4 --> A8[8. Promote the Session]
   A7 --> A8
-  A8 --> A9[9. work the registration list]
+  A8 --> A9[9. Work the Registration List]
   A9 -. registration behind its number .-> A8
-  A10 --> A11[11. rehearse the session]
+  A10 --> A11[11. Rehearse the Session]
   A11 -. the session has to be rebuilt .-> A10
   A11 -. a presenter drops out .-> A2
-  A9 --> A12[12. run the session]
+  A9 --> A12[12. Run the Session]
   A11 --> A12
-  A12 --> A13[13. hand over what the session produced]
-  A13 --> A14[14. prepare the recording for reuse]
+  A12 --> A13[13. Hand over What the Session Produced]
+  A13 --> A14[14. Prepare the Recording for Reuse]
   A14 -. the handover is incomplete .-> A13
-  A13 --> A16[16. hand off the leads]
+  A13 --> A16[16. Hand off the Leads]
   A16 -. a registration never arrived .-> A4
-  A13 --> A15[15. follow up with the registrants]
+  A13 --> A15[15. Follow up with the Registrants]
   A14 --> A15
-  A14 --> A17[17. report how the session did]
+  A14 --> A17[17. Report How the Session Did]
   A15 --> A17
   A16 --> A17
-  A17 --> A18[18. record what was learned]
+  A17 --> A18[18. Record What Was Learned]
   A18 --> DONE([the recording and the leads are handed off])
 ```
 

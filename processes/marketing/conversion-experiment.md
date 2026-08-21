@@ -1,4 +1,4 @@
-# Reference process: the conversion experiment
+# Reference process: Run Conversion Experiment
 
 `ref/mkt/conversion-experiment v1`
 
@@ -17,50 +17,50 @@ recorded and the finding is filed with the numbers behind it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the hypothesis | what the change is meant to do, and to whom | [study-manager](../../agents/study-manager.md) |
-| 2 | set the terms of the test | the change, the audience, the measure that decides | study-manager · [conversion-tracker](../../agents/conversion-tracker.md) · leadership (person) |
-| 3 | size the test | the traffic it needs, how long, and the read date | [statistician](../../agents/statistician.md) · study-manager |
-| 4 | clear the traffic | other tests and changes due on the same visitors | study-manager · [content-librarian](../../agents/content-librarian.md) · [audience-manager](../../agents/audience-manager.md) |
-| 5 | brief the makers | everyone hears the same request at once | study-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [web-producer](../../agents/web-producer.md) · conversion-tracker · statistician |
-| 6 | produce the variants | the copy and the visuals for each version | copywriter · designer |
-| 7 | build the variants | each version assembled and the split set up | web-producer |
-| 8 | wire the measurement | the deciding measure and the guardrails per version | conversion-tracker |
-| 9 | get sign-offs | brand, accessibility and legal clear every version | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) · legal reviewer (person) |
-| 10 | check the setup | each version serves and its numbers arrive | conversion-tracker · statistician · web-producer |
-| 11 | start the test | the owner says go and the traffic starts splitting | study-manager · web-producer |
-| 12 | watch the test run | delivery, the split, and the guardrail measures | statistician · conversion-tracker · study-manager |
-| 13 | read the result | the numbers, the difference, and how much is noise | [analytics](../../agents/analytics.md) · statistician · study-manager |
-| 14 | decide roll out or revert | a named person says roll it out or put it back | leadership (person) · study-manager |
-| 15 | carry out the decision | one version for everyone, or the change comes out | web-producer · conversion-tracker · study-manager |
-| 16 | record what was learned | the finding is filed with the numbers behind it | study-manager · statistician |
+| 1 | Take in the Hypothesis | what the change is meant to do, and to whom | [study-manager](../../agents/study-manager.md) |
+| 2 | Set the Terms of the Test | the change, the audience, the measure that decides | study-manager · [conversion-tracker](../../agents/conversion-tracker.md) · leadership (person) |
+| 3 | Size the Test | the traffic it needs, how long, and the read date | [statistician](../../agents/statistician.md) · study-manager |
+| 4 | Clear the Traffic | other tests and changes due on the same visitors | study-manager · [content-librarian](../../agents/content-librarian.md) · [audience-manager](../../agents/audience-manager.md) |
+| 5 | Brief the Makers | everyone hears the same request at once | study-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [web-producer](../../agents/web-producer.md) · conversion-tracker · statistician |
+| 6 | Produce the Variants | the copy and the visuals for each version | copywriter · designer |
+| 7 | Build the Variants | each version assembled and the split set up | web-producer |
+| 8 | Wire the Measurement | the deciding measure and the guardrails per version | conversion-tracker |
+| 9 | Get Sign-Offs | brand, accessibility and legal clear every version | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) · legal reviewer (person) |
+| 10 | Check the Setup | each version serves and its numbers arrive | conversion-tracker · statistician · web-producer |
+| 11 | Start the Test | the owner says go and the traffic starts splitting | study-manager · web-producer |
+| 12 | Watch the Test Run | delivery, the split, and the guardrail measures | statistician · conversion-tracker · study-manager |
+| 13 | Read the Result | the numbers, the difference, and how much is noise | [analytics](../../agents/analytics.md) · statistician · study-manager |
+| 14 | Decide Roll out or Revert | a named person says roll it out or put it back | leadership (person) · study-manager |
+| 15 | Carry out the Decision | one version for everyone, or the change comes out | web-producer · conversion-tracker · study-manager |
+| 16 | Record What Was Learned | the finding is filed with the numbers behind it | study-manager · statistician |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a hypothesis is accepted for testing]) --> A1[1. take in the hypothesis]
-  A1 --> A2[2. set the terms of the test]
-  A2 --> A3[3. size the test]
-  A2 --> A4[4. clear the traffic]
-  A3 --> A5[5. brief the makers]
+  T([a hypothesis is accepted for testing]) --> A1[1. Take in the Hypothesis]
+  A1 --> A2[2. Set the Terms of the Test]
+  A2 --> A3[3. Size the Test]
+  A2 --> A4[4. Clear the Traffic]
+  A3 --> A5[5. Brief the Makers]
   A4 --> A5
-  A5 --> A6[6. produce the variants]
-  A6 --> A7[7. build the variants]
-  A7 --> A8[8. wire the measurement]
-  A8 --> A9[9. get sign-offs]
+  A5 --> A6[6. Produce the Variants]
+  A6 --> A7[7. Build the Variants]
+  A7 --> A8[8. Wire the Measurement]
+  A8 --> A9[9. Get Sign-Offs]
   A9 -. changes requested .-> A6
-  A9 --> A10[10. check the setup]
+  A9 --> A10[10. Check the Setup]
   A10 -. a version that will not serve .-> A7
   A10 -. numbers that do not arrive .-> A8
-  A10 --> A11[11. start the test]
-  A11 --> A12[12. watch the test run]
+  A10 --> A11[11. Start the Test]
+  A11 --> A12[12. Watch the Test Run]
   A12 -. a version changed mid-run .-> A9
   A12 -. a guardrail measure gets worse .-> A14
-  A12 --> A13[13. read the result]
+  A12 --> A13[13. Read the Result]
   A13 -. the traffic fell short .-> A12
-  A13 --> A14[14. decide roll out or revert]
-  A14 --> A15[15. carry out the decision]
-  A15 --> A16[16. record what was learned]
+  A13 --> A14[14. Decide Roll out or Revert]
+  A14 --> A15[15. Carry out the Decision]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the decision is recorded and the finding is filed])
 ```
 

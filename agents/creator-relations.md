@@ -16,10 +16,10 @@ work around a creator reads this record before it commits to one.
 
 ## Seats
 
-- `ref/mkt/influencer-campaign` / draw up the candidate list, vet the
-  candidates, clear the shortlist, approach the creators, settle the
-  terms, brief the creators, collect the drafts, review the drafts,
-  publish the posts, record the live posts, correct what failed
+- `ref/mkt/influencer-campaign` / Draw up the Candidate List, Vet the
+  Candidates, Clear the Shortlist, Approach the Creators, Settle the
+  Terms, Brief the Creators, Collect the Drafts, Review the Drafts,
+  Publish the Posts, Record the Live Posts, Correct What Failed
 
 ## Patterns
 

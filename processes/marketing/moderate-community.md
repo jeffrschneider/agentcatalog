@@ -1,4 +1,4 @@
-# Reference process: moderate user community
+# Reference process: Moderate User Community
 
 `ref/mkt/moderate-community v1`
 
@@ -17,51 +17,51 @@ long a cycle is, and a shift, a day and a week all work.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | open the cycle | duty starts and last cycle's open items carry in | [community-manager](../../agents/community-manager.md) |
-| 2 | gather what came in | new posts, questions and reports are collected | community-manager |
-| 3 | sort the queue | each item is typed and put in order of urgency | community-manager |
-| 4 | welcome the new members | arrivals get a greeting, the rules and the basics | community-manager |
-| 5 | answer the questions | replies drawn from what published material says | community-manager |
-| 6 | find the missing answers | questions the material cannot answer go to a person | community-manager · subject matter expert (person) |
-| 7 | check the flagged posts | each one is scored against the rule it may break | [moderator](../../agents/moderator.md) |
-| 8 | remove what breaks the rules | posts hidden or removed, accounts restricted | moderator |
-| 9 | hear the appeals | a member objects and a person decides what stands | moderator · community owner (person) |
-| 10 | route the escalations | legal, press and product items go to their owner | community-manager · legal reviewer (person) · [press-relations](../../agents/press-relations.md) · subject matter expert (person) |
-| 11 | group the recurring questions | what keeps being asked is collected in one place | community-manager · [content-manager](../../agents/content-manager.md) |
-| 12 | name the members worth recognizing | members who help other members are passed on | community-manager · [advocacy-manager](../../agents/advocacy-manager.md) |
-| 13 | measure the community | volume, sentiment, reply time, what went unanswered | [analytics](../../agents/analytics.md) · community-manager |
-| 14 | report the cycle | what came in, what was answered, what is open | community-manager · analytics |
-| 15 | close the cycle | open items are named and carried to the next run | community-manager |
+| 1 | Open the Cycle | duty starts and last cycle's open items carry in | [community-manager](../../agents/community-manager.md) |
+| 2 | Gather What Came In | new posts, questions and reports are collected | community-manager |
+| 3 | Sort the Queue | each item is typed and put in order of urgency | community-manager |
+| 4 | Welcome the New Members | arrivals get a greeting, the rules and the basics | community-manager |
+| 5 | Answer the Questions | replies drawn from what published material says | community-manager |
+| 6 | Find the Missing Answers | questions the material cannot answer go to a person | community-manager · subject matter expert (person) |
+| 7 | Check the Flagged Posts | each one is scored against the rule it may break | [moderator](../../agents/moderator.md) |
+| 8 | Remove What Breaks the Rules | posts hidden or removed, accounts restricted | moderator |
+| 9 | Hear the Appeals | a member objects and a person decides what stands | moderator · community owner (person) |
+| 10 | Route the Escalations | legal, press and product items go to their owner | community-manager · legal reviewer (person) · [press-relations](../../agents/press-relations.md) · subject matter expert (person) |
+| 11 | Group the Recurring Questions | what keeps being asked is collected in one place | community-manager · [content-manager](../../agents/content-manager.md) |
+| 12 | Name the Members Worth Recognizing | members who help other members are passed on | community-manager · [advocacy-manager](../../agents/advocacy-manager.md) |
+| 13 | Measure the Community | volume, sentiment, reply time, what went unanswered | [analytics](../../agents/analytics.md) · community-manager |
+| 14 | Report the Cycle | what came in, what was answered, what is open | community-manager · analytics |
+| 15 | Close the Cycle | open items are named and carried to the next run | community-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a moderation cycle opens]) --> A1[1. open the cycle]
-  A1 --> A2[2. gather what came in]
-  A2 --> A3[3. sort the queue]
-  A3 --> A4[4. welcome the new members]
-  A3 --> A5[5. answer the questions]
-  A3 --> A7[7. check the flagged posts]
-  A3 --> A10[10. route the escalations]
-  A5 --> A6[6. find the missing answers]
+  T([a moderation cycle opens]) --> A1[1. Open the Cycle]
+  A1 --> A2[2. Gather What Came In]
+  A2 --> A3[3. Sort the Queue]
+  A3 --> A4[4. Welcome the New Members]
+  A3 --> A5[5. Answer the Questions]
+  A3 --> A7[7. Check the Flagged Posts]
+  A3 --> A10[10. Route the Escalations]
+  A5 --> A6[6. Find the Missing Answers]
   A6 -. the answer comes back .-> A5
   A6 -. nobody here can answer it .-> A10
-  A7 --> A8[8. remove what breaks the rules]
+  A7 --> A8[8. Remove What Breaks the Rules]
   A7 -. no rule covers the post .-> A10
-  A8 --> A9[9. hear the appeals]
+  A8 --> A9[9. Hear the Appeals]
   A9 -. the action is reversed .-> A8
   A10 -. the owner sends an answer back .-> A5
-  A4 --> A11[11. group the recurring questions]
+  A4 --> A11[11. Group the Recurring Questions]
   A5 --> A11
-  A5 --> A12[12. name the members worth recognizing]
-  A8 --> A13[13. measure the community]
+  A5 --> A12[12. Name the Members Worth Recognizing]
+  A8 --> A13[13. Measure the Community]
   A10 --> A13
   A11 --> A13
   A12 --> A13
-  A13 --> A14[14. report the cycle]
+  A13 --> A14[14. Report the Cycle]
   A9 --> A14
-  A14 --> A15[15. close the cycle]
+  A14 --> A15[15. Close the Cycle]
   A15 --> DONE([the cycle is closed and its open items are carried])
 ```
 

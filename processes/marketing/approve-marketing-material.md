@@ -1,4 +1,4 @@
-# Reference process: approve marketing material
+# Reference process: Approve Marketing Material
 
 `ref/mkt/approve-marketing-material v1`
 
@@ -20,49 +20,49 @@ material and that process sends a corrected version.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the submission | record what was submitted and at which version | [decision-coordinator](../../agents/decision-coordinator.md) |
-| 2 | name the standards and the signers | which standards apply, at which versions, and who signs | decision-coordinator · [standards-keeper](../../agents/standards-keeper.md) |
-| 3 | check the submission is complete | the material, its claims and its sources are all here | decision-coordinator |
-| 4 | score against brand and claims | claims against the register, assets against the guidelines | [brand-check](../../agents/brand-check.md) |
-| 5 | score against the disclosure rules | the disclosures and disclaimers the piece must carry | [disclosure-check](../../agents/disclosure-check.md) |
-| 6 | score against the accessibility rules | alt text, contrast, captions, links and load time | [accessibility-check](../../agents/accessibility-check.md) |
-| 7 | confirm the rights | the images, footage, fonts and music are ours to use | [rights-register](../../agents/rights-register.md) · rights approver (person) |
-| 8 | settle a disputed rule | what a rule means, written down against the rule | standards-keeper · brand owner (person) · legal reviewer (person) |
-| 9 | gather the findings into one list | one list of exceptions, each citing the rule it broke | decision-coordinator |
-| 10 | return the failures to the submitter | the failures go back to the process that submitted | decision-coordinator |
-| 11 | record an accepted exception | a known failure is accepted in writing, with reasons | decision-coordinator · leadership (person) |
-| 12 | get the signatures | named people sign against one version | decision-coordinator · brand owner (person) · legal reviewer (person) |
-| 13 | release the cleared version | the signed version goes back to who asked for it | decision-coordinator |
+| 1 | Take in the Submission | record what was submitted and at which version | [decision-coordinator](../../agents/decision-coordinator.md) |
+| 2 | Name the Standards and the Signers | which standards apply, at which versions, and who signs | decision-coordinator · [standards-keeper](../../agents/standards-keeper.md) |
+| 3 | Check the Submission Is Complete | the material, its claims and its sources are all here | decision-coordinator |
+| 4 | Score against Brand and Claims | claims against the register, assets against the guidelines | [brand-check](../../agents/brand-check.md) |
+| 5 | Score against the Disclosure Rules | the disclosures and disclaimers the piece must carry | [disclosure-check](../../agents/disclosure-check.md) |
+| 6 | Score against the Accessibility Rules | alt text, contrast, captions, links and load time | [accessibility-check](../../agents/accessibility-check.md) |
+| 7 | Confirm the Rights | the images, footage, fonts and music are ours to use | [rights-register](../../agents/rights-register.md) · rights approver (person) |
+| 8 | Settle a Disputed Rule | what a rule means, written down against the rule | standards-keeper · brand owner (person) · legal reviewer (person) |
+| 9 | Gather the Findings into One List | one list of exceptions, each citing the rule it broke | decision-coordinator |
+| 10 | Return the Failures to the Submitter | the failures go back to the process that submitted | decision-coordinator |
+| 11 | Record an Accepted Exception | a known failure is accepted in writing, with reasons | decision-coordinator · leadership (person) |
+| 12 | Get the Signatures | named people sign against one version | decision-coordinator · brand owner (person) · legal reviewer (person) |
+| 13 | Release the Cleared Version | the signed version goes back to who asked for it | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([finished material is submitted]) --> A1[1. take in the submission]
-  A1 --> A2[2. name the standards and the signers]
-  A2 --> A3[3. check the submission is complete]
-  A3 -. something is missing .-> A10[10. return the failures to the submitter]
-  A3 --> A4[4. score against brand and claims]
-  A3 --> A5[5. score against the disclosure rules]
-  A3 --> A6[6. score against the accessibility rules]
-  A3 --> A7[7. confirm the rights]
-  A4 -. a rule is unclear .-> A8[8. settle a disputed rule]
+  T([finished material is submitted]) --> A1[1. Take in the Submission]
+  A1 --> A2[2. Name the Standards and the Signers]
+  A2 --> A3[3. Check the Submission Is Complete]
+  A3 -. something is missing .-> A10[10. Return the Failures to the Submitter]
+  A3 --> A4[4. Score against Brand and Claims]
+  A3 --> A5[5. Score against the Disclosure Rules]
+  A3 --> A6[6. Score against the Accessibility Rules]
+  A3 --> A7[7. Confirm the Rights]
+  A4 -. a rule is unclear .-> A8[8. Settle a Disputed Rule]
   A5 -. a rule is unclear .-> A8
   A6 -. a rule is unclear .-> A8
   A8 -. score it again .-> A4
   A8 -. score it again .-> A5
   A8 -. score it again .-> A6
-  A4 --> A9[9. gather the findings into one list]
+  A4 --> A9[9. Gather the Findings into One List]
   A5 --> A9
   A6 --> A9
   A7 --> A9
   A9 --> A10
   A10 -. a corrected version arrives .-> A3
-  A9 -. a failure nobody will fix .-> A11[11. record an accepted exception]
-  A9 --> A12[12. get the signatures]
+  A9 -. a failure nobody will fix .-> A11[11. Record an Accepted Exception]
+  A9 --> A12[12. Get the Signatures]
   A11 --> A12
   A12 -. changes requested .-> A10
-  A12 --> A13[13. release the cleared version]
+  A12 --> A13[13. Release the Cleared Version]
   A13 --> DONE([the material is cleared for release])
 ```
 

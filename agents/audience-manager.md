@@ -14,53 +14,53 @@ that built it finished.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / build the contact set
-- `ref/mkt/analyze-customer-base` / review the findings, hand over the
-  findings
-- `ref/mkt/annual-marketing-plan` / take stock of what the department
-  holds
-- `ref/mkt/brand-audit` / list where the brand appears, ask the audience
-- `ref/mkt/brand-health` / brief the wave, define the sample
-- `ref/mkt/brand-voice` / gather how the audience talks, write the
-  version each audience gets
-- `ref/mkt/buyer-persona` / take in the segment, quote the account
-  profile, name the jobs, name the pains and what they cost, name the
-  buying triggers, name the others in the decision, review with the
-  people who sell, write the persona, hand over the persona, set the
-  review conditions, record what was learned
-- `ref/mkt/contact-database-hygiene` / open the cycle, measure the base
-  as it stands, brief the cycle, list what comes out, report the cycle,
-  record what was learned
-- `ref/mkt/conversion-experiment` / clear the traffic
-- `ref/mkt/customer-research` / brief the study, define the sample
-- `ref/mkt/develop-marketing-strategy` / hand the strategy to the work
-  that follows
-- `ref/mkt/display-retargeting` / define the retargeting pools, build
-  the suppression list, build the audience pools, set the exposure rules
-- `ref/mkt/ideal-customer-profile` / hand over the profile
-- `ref/mkt/lead-scoring-model` / hand over the model
-- `ref/mkt/map-buyer-journey` / map the touchpoints, hand over the map
-- `ref/mkt/media-plan` / settle the audience to reach, set the channel
-  audience targets
-- `ref/mkt/nurture-sequence` / take in the segment and the goal, define
-  who enters, map the steps and the branches, set the exits, brief the
-  makers, run test contacts through it, turn it on, watch who moves,
-  tune the branches
-- `ref/mkt/prioritize-initiatives` / work out what is free, check the
-  requests against the standards
-- `ref/mkt/product-positioning` / read the standards in force
-- `ref/mkt/quarterly-business-review` / ask each area what it would
-  change, brief the department
-- `ref/mkt/segment-the-market` / test whether each segment can be
-  reached, hand over the segments
-- `ref/mkt/set-marketing-budget` / collect what each function asks for,
-  tell every function what it has
-- `ref/mkt/target-audience-segment` / take in the targeting need, check
-  the data on hand, write the membership rule, name the exclusions, size
-  the segment, brief the build, check the built list, approve the
-  release, set the refresh schedule, record the segment
-- `ref/mkt/webinar` / build the invitation audience
-- `ref/mkt/win-loss-analysis` / brief the study, draw both samples
+- `ref/mkt/account-based-play` / Build the Contact Set
+- `ref/mkt/analyze-customer-base` / Review the Findings, Hand over the
+  Findings
+- `ref/mkt/annual-marketing-plan` / Take Stock of What the Department
+  Holds
+- `ref/mkt/brand-audit` / List Where the Brand Appears, Ask the Audience
+- `ref/mkt/brand-health` / Brief the Wave, Define the Sample
+- `ref/mkt/brand-voice` / Gather How the Audience Talks, Write the
+  Version Each Audience Gets
+- `ref/mkt/buyer-persona` / Take in the Segment, Quote the Account
+  Profile, Name the Jobs, Name the Pains and What They Cost, Name the
+  Buying Triggers, Name the Others in the Decision, Review with the
+  People Who Sell, Write the Persona, Hand over the Persona, Set the
+  Review Conditions, Record What Was Learned
+- `ref/mkt/contact-database-hygiene` / Open the Cycle, Measure the Base
+  as It Stands, Brief the Cycle, List What Comes Out, Report the Cycle,
+  Record What Was Learned
+- `ref/mkt/conversion-experiment` / Clear the Traffic
+- `ref/mkt/customer-research` / Brief the Study, Define the Sample
+- `ref/mkt/develop-marketing-strategy` / Hand the Strategy to the Work
+  that Follows
+- `ref/mkt/display-retargeting` / Define the Retargeting Pools, Build
+  the Suppression List, Build the Audience Pools, Set the Exposure Rules
+- `ref/mkt/ideal-customer-profile` / Hand over the Profile
+- `ref/mkt/lead-scoring-model` / Hand over the Model
+- `ref/mkt/map-buyer-journey` / Map the Touchpoints, Hand over the Map
+- `ref/mkt/media-plan` / Settle the Audience to Reach, Set the Channel
+  Audience Targets
+- `ref/mkt/nurture-sequence` / Take in the Segment and the Goal, Define
+  Who Enters, Map the Steps and the Branches, Set the Exits, Brief the
+  Makers, Run Test Contacts Through It, Turn It On, Watch Who Moves,
+  Tune the Branches
+- `ref/mkt/prioritize-initiatives` / Work out What Is Free, Check the
+  Requests against the Standards
+- `ref/mkt/product-positioning` / Read the Standards in Force
+- `ref/mkt/quarterly-business-review` / Ask Each Area What It Would
+  Change, Brief the Department
+- `ref/mkt/segment-the-market` / Test Whether Each Segment Can Be
+  Reached, Hand over the Segments
+- `ref/mkt/set-marketing-budget` / Collect What Each Function Asks For,
+  Tell Every Function What It Has
+- `ref/mkt/target-audience-segment` / Take in the Targeting Need, Check
+  the Data on Hand, Write the Membership Rule, Name the Exclusions, Size
+  the Segment, Brief the Build, Check the Built List, Approve the
+  Release, Set the Refresh Schedule, Record the Segment
+- `ref/mkt/webinar` / Build the Invitation Audience
+- `ref/mkt/win-loss-analysis` / Brief the Study, Draw Both Samples
 
 ## Patterns
 

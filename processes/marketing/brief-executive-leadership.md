@@ -1,4 +1,4 @@
-# Reference process: brief executive leadership
+# Reference process: Brief Executive Leadership
 
 `ref/mkt/brief-executive-leadership v1`
 
@@ -23,63 +23,63 @@ marketing cannot take on its own.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the cycle | what the board asked for, and when it meets | [decision-coordinator](../../agents/decision-coordinator.md) |
-| 2 | read the last meeting's record | the standing questions and the commitments made | decision-coordinator · [reporting-manager](../../agents/reporting-manager.md) |
-| 3 | work out what has to be decided | the decisions marketing is asking the board for | decision-coordinator · leadership (person) |
-| 4 | pull the results for the period | what the department did, with a source on every line | reporting-manager · [analytics](../../agents/analytics.md) |
-| 5 | say what the numbers carry | which figures hold and how far they can be read | [statistician](../../agents/statistician.md) |
-| 6 | account for the money | what was allocated, what was drawn, what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
-| 7 | account for the book of work | what is committed and what room is left | [capacity-manager](../../agents/capacity-manager.md) |
-| 8 | gather the outside picture | the market, the competitors, and what buyers say | [researcher](../../agents/researcher.md) |
-| 9 | put numbers on the choices | cost and return for each option, and what they rest on | [forecaster](../../agents/forecaster.md) |
-| 10 | settle marketing's position | what marketing will say and what it will ask for | decision-coordinator · leadership (person) |
-| 11 | write the decision papers | one paper per decision, with its options | [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) |
-| 12 | build the pack | the pages the board reads, in one document | [designer](../../agents/designer.md) · editor |
-| 13 | get sign-offs | brand, legal and leadership approve the pack | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) |
-| 14 | send the pack ahead | the board gets time to read it before the room | decision-coordinator |
-| 15 | rehearse the briefing | the hard questions get asked before the board asks | editor · leadership (person) |
-| 16 | deliver the briefing | marketing presents and the board decides | leadership (person) · board member (person) · decision-coordinator |
-| 17 | record the decisions | each decision, its reasons, and who disagreed | decision-coordinator |
-| 18 | answer what was left open | the questions the room could not settle | decision-coordinator · researcher · analytics |
-| 19 | hand the decisions on | every seat that has to act hears what was decided | decision-coordinator · [standards-keeper](../../agents/standards-keeper.md) · capacity-manager · budget-keeper |
-| 20 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Cycle | what the board asked for, and when it meets | [decision-coordinator](../../agents/decision-coordinator.md) |
+| 2 | Read the Last Meeting's Record | the standing questions and the commitments made | decision-coordinator · [reporting-manager](../../agents/reporting-manager.md) |
+| 3 | Work out What Has to Be Decided | the decisions marketing is asking the board for | decision-coordinator · leadership (person) |
+| 4 | Pull the Results for the Period | what the department did, with a source on every line | reporting-manager · [analytics](../../agents/analytics.md) |
+| 5 | Say What the Numbers Carry | which figures hold and how far they can be read | [statistician](../../agents/statistician.md) |
+| 6 | Account for the Money | what was allocated, what was drawn, what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
+| 7 | Account for the Book of Work | what is committed and what room is left | [capacity-manager](../../agents/capacity-manager.md) |
+| 8 | Gather the Outside Picture | the market, the competitors, and what buyers say | [researcher](../../agents/researcher.md) |
+| 9 | Put Numbers on the Choices | cost and return for each option, and what they rest on | [forecaster](../../agents/forecaster.md) |
+| 10 | Settle Marketing's Position | what marketing will say and what it will ask for | decision-coordinator · leadership (person) |
+| 11 | Write the Decision Papers | one paper per decision, with its options | [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) |
+| 12 | Build the Pack | the pages the board reads, in one document | [designer](../../agents/designer.md) · editor |
+| 13 | Get Sign-Offs | brand, legal and leadership approve the pack | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) |
+| 14 | Send the Pack Ahead | the board gets time to read it before the room | decision-coordinator |
+| 15 | Rehearse the Briefing | the hard questions get asked before the board asks | editor · leadership (person) |
+| 16 | Deliver the Briefing | marketing presents and the board decides | leadership (person) · board member (person) · decision-coordinator |
+| 17 | Record the Decisions | each decision, its reasons, and who disagreed | decision-coordinator |
+| 18 | Answer What Was Left Open | the questions the room could not settle | decision-coordinator · researcher · analytics |
+| 19 | Hand the Decisions On | every seat that has to act hears what was decided | decision-coordinator · [standards-keeper](../../agents/standards-keeper.md) · capacity-manager · budget-keeper |
+| 20 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a board or executive cycle opens]) --> A1[1. take in the cycle]
-  A1 --> A2[2. read the last meeting's record]
-  A2 --> A3[3. work out what has to be decided]
-  A3 --> A4[4. pull the results for the period]
-  A3 --> A6[6. account for the money]
-  A3 --> A7[7. account for the book of work]
-  A3 --> A8[8. gather the outside picture]
-  A4 --> A5[5. say what the numbers carry]
+  T([a board or executive cycle opens]) --> A1[1. Take in the Cycle]
+  A1 --> A2[2. Read the Last Meeting's Record]
+  A2 --> A3[3. Work out What Has to Be Decided]
+  A3 --> A4[4. Pull the Results for the Period]
+  A3 --> A6[6. Account for the Money]
+  A3 --> A7[7. Account for the Book of Work]
+  A3 --> A8[8. Gather the Outside Picture]
+  A4 --> A5[5. Say What the Numbers Carry]
   A5 -. the data will not carry the figure .-> A4
-  A5 --> A9[9. put numbers on the choices]
+  A5 --> A9[9. Put Numbers on the Choices]
   A6 --> A9
   A7 --> A9
   A8 --> A9
   A9 -. a rate nobody can source .-> A8
-  A9 --> A10[10. settle marketing's position]
+  A9 --> A10[10. Settle Marketing's Position]
   A10 -. the evidence will not support the ask .-> A9
-  A10 --> A11[11. write the decision papers]
-  A11 --> A12[12. build the pack]
-  A12 --> A13[13. get sign-offs]
+  A10 --> A11[11. Write the Decision Papers]
+  A11 --> A12[12. Build the Pack]
+  A12 --> A13[13. Get Sign-Offs]
   A13 -. changes requested .-> A11
   A13 -. changes requested .-> A12
-  A13 --> A14[14. send the pack ahead]
+  A13 --> A14[14. Send the Pack Ahead]
   A14 -. a member asks before the room .-> A11
-  A14 --> A15[15. rehearse the briefing]
+  A14 --> A15[15. Rehearse the Briefing]
   A15 -. the answer is not in the pack .-> A11
-  A15 --> A16[16. deliver the briefing]
-  A16 --> A17[17. record the decisions]
-  A16 --> A18[18. answer what was left open]
+  A15 --> A16[16. Deliver the Briefing]
+  A16 --> A17[17. Record the Decisions]
+  A16 --> A18[18. Answer What Was Left Open]
   A18 -. the answer changes what was decided .-> A17
-  A17 --> A19[19. hand the decisions on]
+  A17 --> A19[19. Hand the Decisions On]
   A18 --> A19
-  A19 --> A20[20. record what was learned]
+  A19 --> A20[20. Record What Was Learned]
   A20 --> DONE([the position is understood and every decision is recorded])
 ```
 

@@ -2,6 +2,7 @@
 
 `vs/mkt/idea-to-asset v1`
 
+**position:** 5
 A content or creative need becomes a finished asset that somebody has
 approved and published. A run starts when a planning period opens and the
 department has to settle what it will publish, when a topic or a creative

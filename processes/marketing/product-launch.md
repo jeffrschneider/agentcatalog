@@ -1,4 +1,4 @@
-# Reference process: the product launch
+# Reference process: Launch Product
 
 `ref/mkt/product-launch v1`
 
@@ -13,36 +13,36 @@ seats, which is why it earns a coordinator of its own.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the launch | what ships, when, and why anyone should care | [launch-coordinator](../../agents/launch-coordinator.md) · product (person) |
-| 2 | settle the message | the positioning and the story, tested against personas | [copywriter](../../agents/copywriter.md) · product marketing (person) |
-| 3 | plan the launch | the checklist: what every channel owes and by when | launch-coordinator |
-| 4 | produce the content | the blog post, the page updates, the video, the social posts | copywriter · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 5 | enable sales | battlecards, the FAQ, the objection answers | copywriter · sales leader (person) |
-| 6 | prep the channels | web updates staged, emails loaded, ads built | [media-buyer](../../agents/media-buyer.md) · [web-producer](../../agents/web-producer.md) |
-| 7 | get sign-offs | brand, legal, and product accuracy | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · product (person) |
-| 8 | launch day | everything fires in order, and someone watches it fire | launch-coordinator |
-| 9 | watch the first week | adoption, coverage, and the questions coming in | [analytics](../../agents/analytics.md) · [community-manager](../../agents/community-manager.md) |
-| 10 | report the launch | results against the goals set on day one | launch-coordinator · analytics |
-| 11 | record what was learned | what to repeat, what to avoid | launch-coordinator |
+| 1 | Take in the Launch | what ships, when, and why anyone should care | [launch-coordinator](../../agents/launch-coordinator.md) · product (person) |
+| 2 | Settle the Message | the positioning and the story, tested against personas | [copywriter](../../agents/copywriter.md) · product marketing (person) |
+| 3 | Plan the Launch | the checklist: what every channel owes and by when | launch-coordinator |
+| 4 | Produce the Content | the blog post, the page updates, the video, the social posts | copywriter · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 5 | Enable Sales | battlecards, the FAQ, the objection answers | copywriter · sales leader (person) |
+| 6 | Prep the Channels | web updates staged, emails loaded, ads built | [media-buyer](../../agents/media-buyer.md) · [web-producer](../../agents/web-producer.md) |
+| 7 | Get Sign-Offs | brand, legal, and product accuracy | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · product (person) |
+| 8 | Launch Day | everything fires in order, and someone watches it fire | launch-coordinator |
+| 9 | Watch the First Week | adoption, coverage, and the questions coming in | [analytics](../../agents/analytics.md) · [community-manager](../../agents/community-manager.md) |
+| 10 | Report the Launch | results against the goals set on day one | launch-coordinator · analytics |
+| 11 | Record What Was Learned | what to repeat, what to avoid | launch-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a launch date is committed]) --> A1[1. take in the launch]
-  A1 --> A2[2. settle the message]
-  A2 --> A3[3. plan the launch]
-  A3 --> A4[4. produce the content]
-  A3 --> A5[5. enable sales]
-  A3 --> A6[6. prep the channels]
-  A4 --> A7[7. get sign-offs]
+  T([a launch date is committed]) --> A1[1. Take in the Launch]
+  A1 --> A2[2. Settle the Message]
+  A2 --> A3[3. Plan the Launch]
+  A3 --> A4[4. Produce the Content]
+  A3 --> A5[5. Enable Sales]
+  A3 --> A6[6. Prep the Channels]
+  A4 --> A7[7. Get Sign-Offs]
   A5 --> A7
   A7 -. changes requested .-> A4
-  A7 --> A8[8. launch day]
+  A7 --> A8[8. Launch Day]
   A6 --> A8
-  A8 --> A9[9. watch the first week]
-  A9 --> A10[10. report the launch]
-  A10 --> A11[11. record what was learned]
+  A8 --> A9[9. Watch the First Week]
+  A9 --> A10[10. Report the Launch]
+  A10 --> A11[11. Record What Was Learned]
   A11 --> DONE([the launch is closed])
 ```
 

@@ -15,16 +15,16 @@ through them line by line before the department says what it spent.
 
 ## Seats
 
-- `ref/mkt/co-marketing-campaign` / agree the joint numbers
-- `ref/mkt/reallocate-media-spend` / tell the seats that read the plan
-- `ref/mkt/reconcile-media-spend` / set what the close covers, collect
-  the invoices, pull the order record, match the invoice lines, check
-  the rates and fees, list the differences, clear the explained
-  differences, raise the queries, track the answers, decide the open
-  lines, approve the verified spend, release the figures, record what
-  was learned
-- `ref/mkt/set-marketing-budget` / read last year's spend
-- `ref/mkt/verify-ad-placement` / claim back the wasted spend
+- `ref/mkt/co-marketing-campaign` / Agree the Joint Numbers
+- `ref/mkt/reallocate-media-spend` / Tell the Seats that Read the Plan
+- `ref/mkt/reconcile-media-spend` / Set What the Close Covers, Collect
+  the Invoices, Pull the Order Record, Match the Invoice Lines, Check
+  the Rates and Fees, List the Differences, Clear the Explained
+  Differences, Raise the Queries, Track the Answers, Decide the Open
+  Lines, Approve the Verified Spend, Release the Figures, Record What
+  Was Learned
+- `ref/mkt/set-marketing-budget` / Read Last Year's Spend
+- `ref/mkt/verify-ad-placement` / Claim Back the Wasted Spend
 
 ## Patterns
 

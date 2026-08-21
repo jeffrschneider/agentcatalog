@@ -14,38 +14,38 @@ break the record.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / check who may be contacted
-- `ref/mkt/analyze-customer-base` / clear the data for this use
-- `ref/mkt/attribution-model` / clear the data for use
-- `ref/mkt/brand-audit` / ask the audience
-- `ref/mkt/brand-health` / brief the wave, check who may be contacted
-- `ref/mkt/buyer-persona` / clear the sample and the questions
-- `ref/mkt/channel-program` / open recruitment
-- `ref/mkt/co-marketing-campaign` / settle the lead terms, wire up the
-  split, set up each side's distribution, split and hand over the leads
-- `ref/mkt/contact-database-hygiene` / confirm the rules in force, brief
-  the cycle, reconcile the consent record, merge the records, apply the
-  suppression, score the finished change, record what was learned
-- `ref/mkt/customer-research` / brief the study, check who may be
-  contacted
-- `ref/mkt/display-retargeting` / check who may be retargeted, build the
-  suppression list, tag the site, apply the suppression, check the
-  suppression is holding
-- `ref/mkt/engage-marketing-agency` / set up the access
-- `ref/mkt/lead-scoring-model` / clear the new signals
-- `ref/mkt/map-buyer-journey` / clear the sample and the questions
-- `ref/mkt/media-plan` / clear the targeting and the data
-- `ref/mkt/nurture-sequence` / check who may be contacted, set the
-  exits, brief the makers, run test contacts through it
-- `ref/mkt/pricing-change` / build the notice lists
-- `ref/mkt/select-marketing-technology` / brief the selection, check the
-  terms and the data
-- `ref/mkt/target-audience-segment` / confirm the rules in force, brief
-  the build, apply consent and suppression, score the finished list
-- `ref/mkt/traffic-ad-creative` / load the audiences the plan names
-- `ref/mkt/webinar` / build the invitation audience
-- `ref/mkt/win-loss-analysis` / brief the study, check who may be
-  approached
+- `ref/mkt/account-based-play` / Check Who May Be Contacted
+- `ref/mkt/analyze-customer-base` / Clear the Data for This Use
+- `ref/mkt/attribution-model` / Clear the Data for Use
+- `ref/mkt/brand-audit` / Ask the Audience
+- `ref/mkt/brand-health` / Brief the Wave, Check Who May Be Contacted
+- `ref/mkt/buyer-persona` / Clear the Sample and the Questions
+- `ref/mkt/channel-program` / Open Recruitment
+- `ref/mkt/co-marketing-campaign` / Settle the Lead Terms, Wire up the
+  Split, Set up Each Side's Distribution, Split and Hand over the Leads
+- `ref/mkt/contact-database-hygiene` / Confirm the Rules in Force, Brief
+  the Cycle, Reconcile the Consent Record, Merge the Records, Apply the
+  Suppression, Score the Finished Change, Record What Was Learned
+- `ref/mkt/customer-research` / Brief the Study, Check Who May Be
+  Contacted
+- `ref/mkt/display-retargeting` / Check Who May Be Retargeted, Build the
+  Suppression List, Tag the Site, Apply the Suppression, Check the
+  Suppression Is Holding
+- `ref/mkt/engage-marketing-agency` / Set up the Access
+- `ref/mkt/lead-scoring-model` / Clear the New Signals
+- `ref/mkt/map-buyer-journey` / Clear the Sample and the Questions
+- `ref/mkt/media-plan` / Clear the Targeting and the Data
+- `ref/mkt/nurture-sequence` / Check Who May Be Contacted, Set the
+  Exits, Brief the Makers, Run Test Contacts Through It
+- `ref/mkt/pricing-change` / Build the Notice Lists
+- `ref/mkt/select-marketing-technology` / Brief the Selection, Check the
+  Terms and the Data
+- `ref/mkt/target-audience-segment` / Confirm the Rules in Force, Brief
+  the Build, Apply Consent and Suppression, Score the Finished List
+- `ref/mkt/traffic-ad-creative` / Load the Audiences the Plan Names
+- `ref/mkt/webinar` / Build the Invitation Audience
+- `ref/mkt/win-loss-analysis` / Brief the Study, Check Who May Be
+  Approached
 
 ## Patterns
 

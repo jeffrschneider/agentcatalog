@@ -1,4 +1,4 @@
-# Reference process: maintain the attribution model
+# Reference process: Maintain Attribution Model
 
 `ref/mkt/attribution-model v1`
 
@@ -24,51 +24,51 @@ figure.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the trigger | what drifted, or which channel is now sending traffic | [standards-keeper](../../agents/standards-keeper.md) · [analytics](../../agents/analytics.md) |
-| 2 | confirm the drift | test the gap against a holdout before rebuilding | [statistician](../../agents/statistician.md) · analytics |
-| 3 | set what the review covers | the channels, the conversions and the periods in scope | standards-keeper · [reporting-manager](../../agents/reporting-manager.md) |
-| 4 | pull the touchpoint record | every touch on a path to a conversion, with its date | analytics |
-| 5 | check the tracking | where touches went uncounted, and for how long | [conversion-tracker](../../agents/conversion-tracker.md) |
-| 6 | clear the data for use | whether these touches may be joined to one person | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 7 | draft the candidate models | two or three revised models, each written down | [forecaster](../../agents/forecaster.md) |
-| 8 | test the candidates against the record | would each model have picked what actually happened | forecaster · statistician |
-| 9 | recompute the closed periods | what each channel gains or loses in past periods | analytics · forecaster |
-| 10 | choose the model | one model chosen, with the reasons written down | [decision-coordinator](../../agents/decision-coordinator.md) · standards-keeper · leadership (person) |
-| 11 | decide what happens to published reports | which past reports get restated and which stand | decision-coordinator · reporting-manager · leadership (person) · finance (person) |
-| 12 | issue the model at a version | the model at a number, with the date it applies from | standards-keeper |
-| 13 | reissue the affected reports | each period restated, at a new version of its report | reporting-manager · analytics |
-| 14 | tell the processes that read the model | every process that reports numbers hears the change | standards-keeper |
-| 15 | set the review conditions | when the model is tested again, and what reopens it | standards-keeper · decision-coordinator |
-| 16 | record what was learned | what to repeat, what to avoid | standards-keeper |
+| 1 | Take in the Trigger | what drifted, or which channel is now sending traffic | [standards-keeper](../../agents/standards-keeper.md) · [analytics](../../agents/analytics.md) |
+| 2 | Confirm the Drift | test the gap against a holdout before rebuilding | [statistician](../../agents/statistician.md) · analytics |
+| 3 | Set What the Review Covers | the channels, the conversions and the periods in scope | standards-keeper · [reporting-manager](../../agents/reporting-manager.md) |
+| 4 | Pull the Touchpoint Record | every touch on a path to a conversion, with its date | analytics |
+| 5 | Check the Tracking | where touches went uncounted, and for how long | [conversion-tracker](../../agents/conversion-tracker.md) |
+| 6 | Clear the Data for Use | whether these touches may be joined to one person | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 7 | Draft the Candidate Models | two or three revised models, each written down | [forecaster](../../agents/forecaster.md) |
+| 8 | Test the Candidates against the Record | would each model have picked what actually happened | forecaster · statistician |
+| 9 | Recompute the Closed Periods | what each channel gains or loses in past periods | analytics · forecaster |
+| 10 | Choose the Model | one model chosen, with the reasons written down | [decision-coordinator](../../agents/decision-coordinator.md) · standards-keeper · leadership (person) |
+| 11 | Decide What Happens to Published Reports | which past reports get restated and which stand | decision-coordinator · reporting-manager · leadership (person) · finance (person) |
+| 12 | Issue the Model at a Version | the model at a number, with the date it applies from | standards-keeper |
+| 13 | Reissue the Affected Reports | each period restated, at a new version of its report | reporting-manager · analytics |
+| 14 | Tell the Processes that Read the Model | every process that reports numbers hears the change | standards-keeper |
+| 15 | Set the Review Conditions | when the model is tested again, and what reopens it | standards-keeper · decision-coordinator |
+| 16 | Record What Was Learned | what to repeat, what to avoid | standards-keeper |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([the model drifts, or a new channel starts sending traffic]) --> A1[1. take in the trigger]
-  A1 --> A2[2. confirm the drift]
-  A2 -. the gap is inside the noise .-> A16[16. record what was learned]
-  A2 --> A3[3. set what the review covers]
-  A3 --> A4[4. pull the touchpoint record]
-  A3 --> A5[5. check the tracking]
-  A4 --> A6[6. clear the data for use]
+  T([the model drifts, or a new channel starts sending traffic]) --> A1[1. Take in the Trigger]
+  A1 --> A2[2. Confirm the Drift]
+  A2 -. the gap is inside the noise .-> A16[16. Record What Was Learned]
+  A2 --> A3[3. Set What the Review Covers]
+  A3 --> A4[4. Pull the Touchpoint Record]
+  A3 --> A5[5. Check the Tracking]
+  A4 --> A6[6. Clear the Data for Use]
   A6 -. the joining is declined .-> A4
-  A5 --> A7[7. draft the candidate models]
+  A5 --> A7[7. Draft the Candidate Models]
   A6 --> A7
-  A7 --> A8[8. test the candidates against the record]
+  A7 --> A8[8. Test the Candidates against the Record]
   A8 -. the record is too thin to test on .-> A4
-  A8 --> A9[9. recompute the closed periods]
+  A8 --> A9[9. Recompute the Closed Periods]
   A9 -. a candidate falls apart on real periods .-> A7
-  A9 --> A10[10. choose the model]
+  A9 --> A10[10. Choose the Model]
   A10 -. no candidate beats the model in use .-> A7
-  A10 --> A11[11. decide what happens to published reports]
-  A10 --> A12[12. issue the model at a version]
-  A11 --> A13[13. reissue the affected reports]
+  A10 --> A11[11. Decide What Happens to Published Reports]
+  A10 --> A12[12. Issue the Model at a Version]
+  A11 --> A13[13. Reissue the Affected Reports]
   A12 --> A13
   A13 -. a restated figure does not reconcile .-> A9
-  A12 --> A14[14. tell the processes that read the model]
+  A12 --> A14[14. Tell the Processes that Read the Model]
   A13 --> A14
-  A14 --> A15[15. set the review conditions]
+  A14 --> A15[15. Set the Review Conditions]
   A15 --> A16
   A16 --> DONE([the model is issued and the history is restated])
 ```

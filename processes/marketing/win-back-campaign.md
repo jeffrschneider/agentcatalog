@@ -1,4 +1,4 @@
-# Reference process: the win-back campaign
+# Reference process: Run Win-Back Campaign
 
 `ref/mkt/win-back-campaign v1`
 
@@ -22,65 +22,65 @@ a quarter later.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the lapsed segment | who lapsed, when, and what the run must recover | [campaign-manager](../../agents/campaign-manager.md) · [analytics](../../agents/analytics.md) |
-| 2 | read the named accounts | whether each account may be approached at all | [account-monitor](../../agents/account-monitor.md) |
-| 3 | set the parameters | channels, contact limits, dates, and the goal | campaign-manager · leadership (person) |
-| 4 | settle the offer | what is offered to bring a lapsed customer back | campaign-manager · finance (person) · legal reviewer (person) |
-| 5 | sort the segment into treatments | who gets a message, who gets a call, who is left alone | campaign-manager · [lifecycle-manager](../../agents/lifecycle-manager.md) · analytics |
-| 6 | build the contact list | eligible contacts, with the suppressions applied | [email-producer](../../agents/email-producer.md) · legal reviewer (person) |
-| 7 | brief the makers | everyone hears the offer and the segment at once | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · email-producer · [conversion-tracker](../../agents/conversion-tracker.md) |
-| 8 | write the sequence | the messages, in the order they will be sent | copywriter · designer |
-| 9 | wire up the measurement | what counts as a return, and the path into the CRM | conversion-tracker |
-| 10 | score the messages | brand, claims, rendering and accessibility checked | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
-| 11 | get sign-offs | brand and legal approve the offer and the messages | brand owner (person) · legal reviewer (person) |
-| 12 | set up the sending | audience loaded, schedule set, paid push ready | email-producer · [media-buyer](../../agents/media-buyer.md) |
-| 13 | call the named accounts | the account owner makes the contact in person | account owner (person) · campaign-manager |
-| 14 | send the sequence | the owner says go and the messages go out | email-producer · campaign-manager |
-| 15 | answer what comes back | replies and complaints answered or passed on | [community-manager](../../agents/community-manager.md) · lifecycle-manager |
-| 16 | hand over the responders | a contact who responds gets an owner and a next step | [lead-scorer](../../agents/lead-scorer.md) · account owner (person) |
-| 17 | watch the response | returns, complaints and opt-outs against the goal | analytics · media-buyer · campaign-manager |
-| 18 | retire the ones who stayed silent | contacts that never answered are closed out | campaign-manager · email-producer · account owner (person) |
-| 19 | report the win-back | what was recovered, set against what was promised | campaign-manager · analytics |
-| 20 | record what was learned | what to repeat, what to avoid | campaign-manager |
+| 1 | Take in the Lapsed Segment | who lapsed, when, and what the run must recover | [campaign-manager](../../agents/campaign-manager.md) · [analytics](../../agents/analytics.md) |
+| 2 | Read the Named Accounts | whether each account may be approached at all | [account-monitor](../../agents/account-monitor.md) |
+| 3 | Set the Parameters | channels, contact limits, dates, and the goal | campaign-manager · leadership (person) |
+| 4 | Settle the Offer | what is offered to bring a lapsed customer back | campaign-manager · finance (person) · legal reviewer (person) |
+| 5 | Sort the Segment into Treatments | who gets a message, who gets a call, who is left alone | campaign-manager · [lifecycle-manager](../../agents/lifecycle-manager.md) · analytics |
+| 6 | Build the Contact List | eligible contacts, with the suppressions applied | [email-producer](../../agents/email-producer.md) · legal reviewer (person) |
+| 7 | Brief the Makers | everyone hears the offer and the segment at once | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · email-producer · [conversion-tracker](../../agents/conversion-tracker.md) |
+| 8 | Write the Sequence | the messages, in the order they will be sent | copywriter · designer |
+| 9 | Wire up the Measurement | what counts as a return, and the path into the CRM | conversion-tracker |
+| 10 | Score the Messages | brand, claims, rendering and accessibility checked | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
+| 11 | Get Sign-Offs | brand and legal approve the offer and the messages | brand owner (person) · legal reviewer (person) |
+| 12 | Set up the Sending | audience loaded, schedule set, paid push ready | email-producer · [media-buyer](../../agents/media-buyer.md) |
+| 13 | Call the Named Accounts | the account owner makes the contact in person | account owner (person) · campaign-manager |
+| 14 | Send the Sequence | the owner says go and the messages go out | email-producer · campaign-manager |
+| 15 | Answer What Comes Back | replies and complaints answered or passed on | [community-manager](../../agents/community-manager.md) · lifecycle-manager |
+| 16 | Hand over the Responders | a contact who responds gets an owner and a next step | [lead-scorer](../../agents/lead-scorer.md) · account owner (person) |
+| 17 | Watch the Response | returns, complaints and opt-outs against the goal | analytics · media-buyer · campaign-manager |
+| 18 | Retire the Ones Who Stayed Silent | contacts that never answered are closed out | campaign-manager · email-producer · account owner (person) |
+| 19 | Report the Win-Back | what was recovered, set against what was promised | campaign-manager · analytics |
+| 20 | Record What Was Learned | what to repeat, what to avoid | campaign-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a lapsed segment is identified]) --> A1[1. take in the lapsed segment]
-  A1 --> A2[2. read the named accounts]
-  A1 --> A3[3. set the parameters]
+  T([a lapsed segment is identified]) --> A1[1. Take in the Lapsed Segment]
+  A1 --> A2[2. Read the Named Accounts]
+  A1 --> A3[3. Set the Parameters]
   A2 --> A3
-  A3 --> A4[4. settle the offer]
-  A2 --> A5[5. sort the segment into treatments]
+  A3 --> A4[4. Settle the Offer]
+  A2 --> A5[5. Sort the Segment into Treatments]
   A3 --> A5
   A4 --> A5
-  A5 --> A6[6. build the contact list]
-  A4 --> A7[7. brief the makers]
+  A5 --> A6[6. Build the Contact List]
+  A4 --> A7[7. Brief the Makers]
   A5 --> A7
-  A7 --> A8[8. write the sequence]
-  A7 --> A9[9. wire up the measurement]
-  A8 --> A10[10. score the messages]
+  A7 --> A8[8. Write the Sequence]
+  A7 --> A9[9. Wire up the Measurement]
+  A8 --> A10[10. Score the Messages]
   A10 -. failures to fix .-> A8
-  A10 --> A11[11. get sign-offs]
+  A10 --> A11[11. Get Sign-Offs]
   A11 -. changes requested .-> A8
-  A11 --> A12[12. set up the sending]
+  A11 --> A12[12. Set up the Sending]
   A6 --> A12
   A9 --> A12
   A12 -. too few reachable contacts .-> A5
-  A11 --> A13[13. call the named accounts]
-  A12 --> A14[14. send the sequence]
+  A11 --> A13[13. Call the Named Accounts]
+  A12 --> A14[14. Send the Sequence]
   A13 --> A14
-  A14 --> A15[15. answer what comes back]
-  A14 --> A17[17. watch the response]
-  A15 --> A16[16. hand over the responders]
+  A14 --> A15[15. Answer What Comes Back]
+  A14 --> A17[17. Watch the Response]
+  A15 --> A16[16. Hand over the Responders]
   A17 -. complaints past the threshold .-> A14
-  A16 --> A18[18. retire the ones who stayed silent]
+  A16 --> A18[18. Retire the Ones Who Stayed Silent]
   A17 --> A18
   A18 -. worth one more approach .-> A13
-  A18 --> A19[19. report the win-back]
+  A18 --> A19[19. Report the Win-Back]
   A17 --> A19
-  A19 --> A20[20. record what was learned]
+  A19 --> A20[20. Record What Was Learned]
   A20 --> DONE([every contact is re-engaged or retired])
 ```
 

@@ -1,4 +1,4 @@
-# Reference process: announce company news
+# Reference process: Announce Company News
 
 `ref/mkt/announce-company-news v1`
 
@@ -18,54 +18,54 @@ afterwards and the manager still owes a report on it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the news | what happened, why it is news, when it can be said | [comms-manager](../../agents/comms-manager.md) · leadership (person) |
-| 2 | set the announcement date | the date, the embargo, and who hears it first | comms-manager · [press-relations](../../agents/press-relations.md) · leadership (person) |
-| 3 | confirm the facts | every number, name and date checked against its source | [researcher](../../agents/researcher.md) · subject matter expert (person) |
-| 4 | settle the story | what the announcement says and why it is news | comms-manager · [copywriter](../../agents/copywriter.md) · press-relations |
-| 5 | gather the quotes | who is quoted, and each of them approves the words | comms-manager · copywriter · spokesperson (person) · outside contact (person) |
-| 6 | write the release | the headline, the lead, the body, the boilerplate | copywriter |
-| 7 | edit the release | the editor says what has to be rewritten | [editor](../../agents/editor.md) |
-| 8 | write the other versions | the customer, staff and partner wording | comms-manager · copywriter |
-| 9 | make the press materials | images, fact sheet, and answers to likely questions | [creative-producer](../../agents/creative-producer.md) · [designer](../../agents/designer.md) · copywriter · subject matter expert (person) |
-| 10 | get sign-offs | brand, legal and rights approve the announcement | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) · rights approver (person) |
-| 11 | line up the reporters | who covers this, and who is offered it early | press-relations · media contact (person) |
-| 12 | issue the release | the release is sent and the page on the site goes live | comms-manager · press-relations · [web-producer](../../agents/web-producer.md) |
-| 13 | answer the press | questions from reporters get answered the same day | press-relations · media contact (person) · spokesperson (person) · subject matter expert (person) |
-| 14 | publish it on the owned channels | the email, the posts, and replies to what comes back | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [community-manager](../../agents/community-manager.md) |
-| 15 | track the coverage | every article recorded with what it actually said | [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) |
-| 16 | report on the announcement | coverage set against what the news was meant to do | comms-manager · coverage-monitor · analytics |
-| 17 | record what was learned | what to repeat, what to avoid | comms-manager |
+| 1 | Take in the News | what happened, why it is news, when it can be said | [comms-manager](../../agents/comms-manager.md) · leadership (person) |
+| 2 | Set the Announcement Date | the date, the embargo, and who hears it first | comms-manager · [press-relations](../../agents/press-relations.md) · leadership (person) |
+| 3 | Confirm the Facts | every number, name and date checked against its source | [researcher](../../agents/researcher.md) · subject matter expert (person) |
+| 4 | Settle the Story | what the announcement says and why it is news | comms-manager · [copywriter](../../agents/copywriter.md) · press-relations |
+| 5 | Gather the Quotes | who is quoted, and each of them approves the words | comms-manager · copywriter · spokesperson (person) · outside contact (person) |
+| 6 | Write the Release | the headline, the lead, the body, the boilerplate | copywriter |
+| 7 | Edit the Release | the editor says what has to be rewritten | [editor](../../agents/editor.md) |
+| 8 | Write the Other Versions | the customer, staff and partner wording | comms-manager · copywriter |
+| 9 | Make the Press Materials | images, fact sheet, and answers to likely questions | [creative-producer](../../agents/creative-producer.md) · [designer](../../agents/designer.md) · copywriter · subject matter expert (person) |
+| 10 | Get Sign-Offs | brand, legal and rights approve the announcement | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · leadership (person) · rights approver (person) |
+| 11 | Line up the Reporters | who covers this, and who is offered it early | press-relations · media contact (person) |
+| 12 | Issue the Release | the release is sent and the page on the site goes live | comms-manager · press-relations · [web-producer](../../agents/web-producer.md) |
+| 13 | Answer the Press | questions from reporters get answered the same day | press-relations · media contact (person) · spokesperson (person) · subject matter expert (person) |
+| 14 | Publish It on the Owned Channels | the email, the posts, and replies to what comes back | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [community-manager](../../agents/community-manager.md) |
+| 15 | Track the Coverage | every article recorded with what it actually said | [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) |
+| 16 | Report on the Announcement | coverage set against what the news was meant to do | comms-manager · coverage-monitor · analytics |
+| 17 | Record What Was Learned | what to repeat, what to avoid | comms-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a newsworthy event is confirmed]) --> A1[1. take in the news]
-  A1 --> A2[2. set the announcement date]
-  A2 --> A3[3. confirm the facts]
-  A2 --> A11[11. line up the reporters]
-  A3 --> A4[4. settle the story]
-  A4 --> A5[5. gather the quotes]
-  A4 --> A9[9. make the press materials]
-  A5 --> A6[6. write the release]
-  A6 --> A7[7. edit the release]
+  T([a newsworthy event is confirmed]) --> A1[1. Take in the News]
+  A1 --> A2[2. Set the Announcement Date]
+  A2 --> A3[3. Confirm the Facts]
+  A2 --> A11[11. Line up the Reporters]
+  A3 --> A4[4. Settle the Story]
+  A4 --> A5[5. Gather the Quotes]
+  A4 --> A9[9. Make the Press Materials]
+  A5 --> A6[6. Write the Release]
+  A6 --> A7[7. Edit the Release]
   A7 -. rewrite what the edit named .-> A6
-  A7 --> A8[8. write the other versions]
-  A8 --> A10[10. get sign-offs]
+  A7 --> A8[8. Write the Other Versions]
+  A8 --> A10[10. Get Sign-Offs]
   A9 --> A10
   A10 -. changes requested .-> A6
   A10 -. changes requested .-> A8
   A10 -. changes requested .-> A9
-  A10 --> A12[12. issue the release]
+  A10 --> A12[12. Issue the Release]
   A11 --> A12
-  A12 --> A13[13. answer the press]
-  A12 --> A14[14. publish it on the owned channels]
-  A12 --> A15[15. track the coverage]
+  A12 --> A13[13. Answer the Press]
+  A12 --> A14[14. Publish It on the Owned Channels]
+  A12 --> A15[15. Track the Coverage]
   A15 -. a fact in the release is wrong .-> A6
-  A13 --> A16[16. report on the announcement]
+  A13 --> A16[16. Report on the Announcement]
   A14 --> A16
   A15 --> A16
-  A16 --> A17[17. record what was learned]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the release is issued and the coverage is reported])
 ```
 

@@ -1,4 +1,4 @@
-# Reference process: reallocate media spend
+# Reference process: Reallocate Media Spend
 
 `ref/mkt/reallocate-media-spend v1`
 
@@ -25,46 +25,46 @@ where committed money sits inside that plan while the flights run.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the pacing signal | which line is off, in which direction, and by how much | [media-buyer](../../agents/media-buyer.md) · [analytics](../../agents/analytics.md) |
-| 2 | confirm the numbers hold | the figures behind the signal are real and current | analytics · [conversion-tracker](../../agents/conversion-tracker.md) |
-| 3 | read the current position | what is committed, what is spent, what is still free | [media-planner](../../agents/media-planner.md) · media-buyer |
-| 4 | name the candidate moves | which lines give money up and which lines take it | media-planner · media-buyer · [campaign-manager](../../agents/campaign-manager.md) |
-| 5 | check what a move would cost | notice, minimums, rate tiers and cancellation terms | media-buyer · media-planner |
-| 6 | size what each move returns | what each candidate move is modelled to return | [forecaster](../../agents/forecaster.md) |
-| 7 | check the move against the rules | the move scored against the plan and the terms | [buy-check](../../agents/buy-check.md) · media-planner |
-| 8 | decide the move | the person who owns the money agrees the amount | [decision-coordinator](../../agents/decision-coordinator.md) · finance (person) · leadership (person) |
-| 9 | amend the media plan | the new split lands as a version of the plan | media-planner |
-| 10 | move the money in the platforms | budgets change in the platforms the buy runs on | media-buyer |
-| 11 | correct the pacing | daily limits reset so each flight lands on its date | media-buyer · analytics |
-| 12 | check the change took | what is set is read back against what was decided | buy-check · media-buyer |
-| 13 | tell the seats that read the plan | every seat on the old split hears the new one | campaign-manager · media-planner · [spend-reconciler](../../agents/spend-reconciler.md) · [reporting-manager](../../agents/reporting-manager.md) |
-| 14 | record why the money moved | the reason and the figures behind it, at a version | media-planner · decision-coordinator |
+| 1 | Take in the Pacing Signal | which line is off, in which direction, and by how much | [media-buyer](../../agents/media-buyer.md) · [analytics](../../agents/analytics.md) |
+| 2 | Confirm the Numbers Hold | the figures behind the signal are real and current | analytics · [conversion-tracker](../../agents/conversion-tracker.md) |
+| 3 | Read the Current Position | what is committed, what is spent, what is still free | [media-planner](../../agents/media-planner.md) · media-buyer |
+| 4 | Name the Candidate Moves | which lines give money up and which lines take it | media-planner · media-buyer · [campaign-manager](../../agents/campaign-manager.md) |
+| 5 | Check What a Move Would Cost | notice, minimums, rate tiers and cancellation terms | media-buyer · media-planner |
+| 6 | Size What Each Move Returns | what each candidate move is modelled to return | [forecaster](../../agents/forecaster.md) |
+| 7 | Check the Move against the Rules | the move scored against the plan and the terms | [buy-check](../../agents/buy-check.md) · media-planner |
+| 8 | Decide the Move | the person who owns the money agrees the amount | [decision-coordinator](../../agents/decision-coordinator.md) · finance (person) · leadership (person) |
+| 9 | Amend the Media Plan | the new split lands as a version of the plan | media-planner |
+| 10 | Move the Money in the Platforms | budgets change in the platforms the buy runs on | media-buyer |
+| 11 | Correct the Pacing | daily limits reset so each flight lands on its date | media-buyer · analytics |
+| 12 | Check the Change Took | what is set is read back against what was decided | buy-check · media-buyer |
+| 13 | Tell the Seats that Read the Plan | every seat on the old split hears the new one | campaign-manager · media-planner · [spend-reconciler](../../agents/spend-reconciler.md) · [reporting-manager](../../agents/reporting-manager.md) |
+| 14 | Record Why the Money Moved | the reason and the figures behind it, at a version | media-planner · decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a live plan line is off its pacing or its cost]) --> A1[1. take in the pacing signal]
-  A1 --> A2[2. confirm the numbers hold]
-  A1 --> A3[3. read the current position]
+  T([a live plan line is off its pacing or its cost]) --> A1[1. Take in the Pacing Signal]
+  A1 --> A2[2. Confirm the Numbers Hold]
+  A1 --> A3[3. Read the Current Position]
   A2 -. the figures do not hold .-> A1
-  A2 --> A4[4. name the candidate moves]
+  A2 --> A4[4. Name the Candidate Moves]
   A3 --> A4
-  A4 --> A5[5. check what a move would cost]
-  A4 --> A6[6. size what each move returns]
-  A5 --> A7[7. check the move against the rules]
+  A4 --> A5[5. Check What a Move Would Cost]
+  A4 --> A6[6. Size What Each Move Returns]
+  A5 --> A7[7. Check the Move against the Rules]
   A6 --> A7
   A7 -. the move breaks a term or a rule .-> A4
-  A7 --> A8[8. decide the move]
+  A7 --> A8[8. Decide the Move]
   A8 -. a smaller move is wanted .-> A4
-  A8 --> A9[9. amend the media plan]
-  A9 --> A10[10. move the money in the platforms]
-  A10 --> A11[11. correct the pacing]
-  A11 --> A12[12. check the change took]
+  A8 --> A9[9. Amend the Media Plan]
+  A9 --> A10[10. Move the Money in the Platforms]
+  A10 --> A11[11. Correct the Pacing]
+  A11 --> A12[12. Check the Change Took]
   A12 -. what is running is not what was decided .-> A10
   A12 -. the rest of the flight still misses .-> A11
-  A12 --> A13[13. tell the seats that read the plan]
-  A13 --> A14[14. record why the money moved]
+  A12 --> A13[13. Tell the Seats that Read the Plan]
+  A13 --> A14[14. Record Why the Money Moved]
   A14 --> DONE([the money is moved and the reason is on the record])
 ```
 

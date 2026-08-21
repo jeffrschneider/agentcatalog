@@ -1,4 +1,4 @@
-# Reference process: publish brand guidelines
+# Reference process: Publish Brand Guidelines
 
 `ref/mkt/brand-guidelines v1`
 
@@ -25,51 +25,51 @@ belongs to the refresh process.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the change | what changed, and which rules it touches | [standards-keeper](../../agents/standards-keeper.md) · brand owner (person) |
-| 2 | read the guidelines in force | every rule the change contradicts, at its version | standards-keeper · [brand-check](../../agents/brand-check.md) |
-| 3 | plan the version | which sections change, who writes each, and by when | standards-keeper · [creative-producer](../../agents/creative-producer.md) |
-| 4 | brief the makers | everyone who writes or draws hears the change | standards-keeper · creative-producer · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [designer](../../agents/designer.md) |
-| 5 | write the rules | each rule written so a scoring seat can apply it | copywriter · editor · standards-keeper |
-| 6 | produce the reference assets | the marks, colors, type and templates, at every size | creative-producer · designer |
-| 7 | show the examples | a passing and a failing example under each rule | designer · copywriter · brand-check |
-| 8 | clear the rights | the marks and the type cleared for everyone who gets them | designer · rights approver (person) · legal reviewer (person) |
-| 9 | check the colors and the type | the palette and the type against the accessibility rules | [accessibility-check](../../agents/accessibility-check.md) · designer |
-| 10 | test the rules on real work | recent work scored against the rules as drafted | brand-check · copywriter · designer |
-| 11 | get sign-offs | the brand owner, leadership and legal sign the set | brand owner (person) · leadership (person) · legal reviewer (person) |
-| 12 | issue the version | the rules and the kit become one numbered version | standards-keeper |
-| 13 | publish the version | the page and the downloads go live at that version | [web-producer](../../agents/web-producer.md) · standards-keeper |
-| 14 | tell everyone who works to the brand | each reader gets the version and confirms they have it | standards-keeper |
-| 15 | list what the new version fails | live material the new rules now fail, handed on | [content-librarian](../../agents/content-librarian.md) · brand-check |
-| 16 | record what was learned | what to repeat, what to avoid | standards-keeper |
+| 1 | Take in the Change | what changed, and which rules it touches | [standards-keeper](../../agents/standards-keeper.md) · brand owner (person) |
+| 2 | Read the Guidelines in Force | every rule the change contradicts, at its version | standards-keeper · [brand-check](../../agents/brand-check.md) |
+| 3 | Plan the Version | which sections change, who writes each, and by when | standards-keeper · [creative-producer](../../agents/creative-producer.md) |
+| 4 | Brief the Makers | everyone who writes or draws hears the change | standards-keeper · creative-producer · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [designer](../../agents/designer.md) |
+| 5 | Write the Rules | each rule written so a scoring seat can apply it | copywriter · editor · standards-keeper |
+| 6 | Produce the Reference Assets | the marks, colors, type and templates, at every size | creative-producer · designer |
+| 7 | Show the Examples | a passing and a failing example under each rule | designer · copywriter · brand-check |
+| 8 | Clear the Rights | the marks and the type cleared for everyone who gets them | designer · rights approver (person) · legal reviewer (person) |
+| 9 | Check the Colors and the Type | the palette and the type against the accessibility rules | [accessibility-check](../../agents/accessibility-check.md) · designer |
+| 10 | Test the Rules on Real Work | recent work scored against the rules as drafted | brand-check · copywriter · designer |
+| 11 | Get Sign-Offs | the brand owner, leadership and legal sign the set | brand owner (person) · leadership (person) · legal reviewer (person) |
+| 12 | Issue the Version | the rules and the kit become one numbered version | standards-keeper |
+| 13 | Publish the Version | the page and the downloads go live at that version | [web-producer](../../agents/web-producer.md) · standards-keeper |
+| 14 | Tell Everyone Who Works to the Brand | each reader gets the version and confirms they have it | standards-keeper |
+| 15 | List What the New Version Fails | live material the new rules now fail, handed on | [content-librarian](../../agents/content-librarian.md) · brand-check |
+| 16 | Record What Was Learned | what to repeat, what to avoid | standards-keeper |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([an identity or voice change is agreed]) --> A1[1. take in the change]
-  A1 --> A2[2. read the guidelines in force]
-  A2 --> A3[3. plan the version]
-  A3 --> A4[4. brief the makers]
-  A4 --> A5[5. write the rules]
-  A4 --> A6[6. produce the reference assets]
-  A5 --> A7[7. show the examples]
+  T([an identity or voice change is agreed]) --> A1[1. Take in the Change]
+  A1 --> A2[2. Read the Guidelines in Force]
+  A2 --> A3[3. Plan the Version]
+  A3 --> A4[4. Brief the Makers]
+  A4 --> A5[5. Write the Rules]
+  A4 --> A6[6. Produce the Reference Assets]
+  A5 --> A7[7. Show the Examples]
   A6 --> A7
-  A6 --> A8[8. clear the rights]
-  A6 --> A9[9. check the colors and the type]
+  A6 --> A8[8. Clear the Rights]
+  A6 --> A9[9. Check the Colors and the Type]
   A8 -. a mark or a typeface is not cleared .-> A6
   A9 -. the palette fails the contrast rule .-> A6
-  A7 --> A10[10. test the rules on real work]
+  A7 --> A10[10. Test the Rules on Real Work]
   A10 -. the rule cannot be applied as written .-> A5
-  A10 --> A11[11. get sign-offs]
+  A10 --> A11[11. Get Sign-Offs]
   A8 --> A11
   A9 --> A11
   A11 -. changes requested .-> A5
   A11 -. changes requested .-> A6
-  A11 --> A12[12. issue the version]
-  A12 --> A13[13. publish the version]
-  A12 --> A15[15. list what the new version fails]
-  A13 --> A14[14. tell everyone who works to the brand]
-  A14 --> A16[16. record what was learned]
+  A11 --> A12[12. Issue the Version]
+  A12 --> A13[13. Publish the Version]
+  A12 --> A15[15. List What the New Version Fails]
+  A13 --> A14[14. Tell Everyone Who Works to the Brand]
+  A14 --> A16[16. Record What Was Learned]
   A15 --> A16
   A16 --> DONE([the version is published and every reader has been told])
 ```

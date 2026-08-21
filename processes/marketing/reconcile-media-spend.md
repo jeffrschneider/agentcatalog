@@ -1,4 +1,4 @@
-# Reference process: reconcile media spend
+# Reference process: Reconcile Media Spend
 
 `ref/mkt/reconcile-media-spend v1`
 
@@ -19,45 +19,45 @@ did not sign.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | set what the close covers | which accounts, campaigns and dates are being closed | [spend-reconciler](../../agents/spend-reconciler.md) · [media-buyer](../../agents/media-buyer.md) |
-| 2 | collect the invoices | every invoice and statement for the period, in one place | spend-reconciler |
-| 3 | pull the delivery record | what each platform recorded as delivered and spent | [analytics](../../agents/analytics.md) · media-buyer |
-| 4 | pull the order record | what was ordered, at the rates that were agreed | media-buyer · spend-reconciler |
-| 5 | match the invoice lines | each invoice line set against its order and delivery | spend-reconciler |
-| 6 | check the rates and fees | rates, fees, taxes and discounts against what was agreed | spend-reconciler |
-| 7 | list the differences | every line that does not match, with the amount | spend-reconciler |
-| 8 | clear the explained differences | differences the buy's own records already explain | spend-reconciler · media-buyer |
-| 9 | raise the queries | each unexplained line goes back to whoever billed it | spend-reconciler |
-| 10 | track the answers | each query gets a credit, a fix, a make-good or a no | spend-reconciler · media-buyer |
-| 11 | decide the open lines | finance decides what to pay, withhold or write off | spend-reconciler · finance (person) · leadership (person) |
-| 12 | approve the verified spend | finance signs the spend figure for the period | spend-reconciler · finance (person) |
-| 13 | release the figures | the verified spend goes to the books and the reports | spend-reconciler · [reporting-manager](../../agents/reporting-manager.md) |
-| 14 | record what was learned | which lines and which issuers to check first next time | spend-reconciler · media-buyer |
+| 1 | Set What the Close Covers | which accounts, campaigns and dates are being closed | [spend-reconciler](../../agents/spend-reconciler.md) · [media-buyer](../../agents/media-buyer.md) |
+| 2 | Collect the Invoices | every invoice and statement for the period, in one place | spend-reconciler |
+| 3 | Pull the Delivery Record | what each platform recorded as delivered and spent | [analytics](../../agents/analytics.md) · media-buyer |
+| 4 | Pull the Order Record | what was ordered, at the rates that were agreed | media-buyer · spend-reconciler |
+| 5 | Match the Invoice Lines | each invoice line set against its order and delivery | spend-reconciler |
+| 6 | Check the Rates and Fees | rates, fees, taxes and discounts against what was agreed | spend-reconciler |
+| 7 | List the Differences | every line that does not match, with the amount | spend-reconciler |
+| 8 | Clear the Explained Differences | differences the buy's own records already explain | spend-reconciler · media-buyer |
+| 9 | Raise the Queries | each unexplained line goes back to whoever billed it | spend-reconciler |
+| 10 | Track the Answers | each query gets a credit, a fix, a make-good or a no | spend-reconciler · media-buyer |
+| 11 | Decide the Open Lines | finance decides what to pay, withhold or write off | spend-reconciler · finance (person) · leadership (person) |
+| 12 | Approve the Verified Spend | finance signs the spend figure for the period | spend-reconciler · finance (person) |
+| 13 | Release the Figures | the verified spend goes to the books and the reports | spend-reconciler · [reporting-manager](../../agents/reporting-manager.md) |
+| 14 | Record What Was Learned | which lines and which issuers to check first next time | spend-reconciler · media-buyer |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a media period closes]) --> A1[1. set what the close covers]
-  A1 --> A2[2. collect the invoices]
-  A1 --> A3[3. pull the delivery record]
-  A1 --> A4[4. pull the order record]
-  A2 --> A5[5. match the invoice lines]
+  T([a media period closes]) --> A1[1. Set What the Close Covers]
+  A1 --> A2[2. Collect the Invoices]
+  A1 --> A3[3. Pull the Delivery Record]
+  A1 --> A4[4. Pull the Order Record]
+  A2 --> A5[5. Match the Invoice Lines]
   A3 --> A5
   A4 --> A5
-  A5 --> A6[6. check the rates and fees]
-  A6 --> A7[7. list the differences]
-  A7 --> A8[8. clear the explained differences]
-  A8 -. the order record does not explain it .-> A9[9. raise the queries]
-  A8 --> A12[12. approve the verified spend]
-  A9 --> A10[10. track the answers]
+  A5 --> A6[6. Check the Rates and Fees]
+  A6 --> A7[7. List the Differences]
+  A7 --> A8[8. Clear the Explained Differences]
+  A8 -. the order record does not explain it .-> A9[9. Raise the Queries]
+  A8 --> A12[12. Approve the Verified Spend]
+  A9 --> A10[10. Track the Answers]
   A10 -. the issuer reissues the invoice .-> A5
-  A10 --> A11[11. decide the open lines]
+  A10 --> A11[11. Decide the Open Lines]
   A10 --> A12
   A11 --> A12
   A12 -. finance will not sign the figure .-> A11
-  A12 --> A13[13. release the figures]
-  A13 --> A14[14. record what was learned]
+  A12 --> A13[13. Release the Figures]
+  A13 --> A14[14. Record What Was Learned]
   A14 --> DONE([the spend for the period is verified and signed])
 ```
 

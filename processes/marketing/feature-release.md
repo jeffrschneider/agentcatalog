@@ -1,4 +1,4 @@
-# Reference process: announce feature release
+# Reference process: Announce Feature Release
 
 `ref/mkt/feature-release v1`
 
@@ -21,34 +21,34 @@ instead.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the release | what shipped, who it affects, why it matters | [comms-manager](../../agents/comms-manager.md) · subject matter expert (person) |
-| 2 | size the announcement | which channels this release earns | comms-manager |
-| 3 | write the announcement | the release note and the shorter versions | [copywriter](../../agents/copywriter.md) · comms-manager · subject matter expert (person) |
-| 4 | show the feature | screenshots and a short clip of it working | [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 5 | check it once | accuracy, brand and plain reading in one pass | [editor](../../agents/editor.md) · [brand-check](../../agents/brand-check.md) |
-| 6 | update the product pages | the feature page, the docs entry, the search terms | [web-producer](../../agents/web-producer.md) · [search-optimizer](../../agents/search-optimizer.md) |
-| 7 | tell the customers who have it | the in-product notice and the email go out | [in-product-producer](../../agents/in-product-producer.md) · [email-producer](../../agents/email-producer.md) |
-| 8 | brief support and sales | what to say when a customer asks about it | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · support leader (person) |
-| 9 | post it publicly | the blog post, the social posts, the community thread | comms-manager · [community-manager](../../agents/community-manager.md) |
-| 10 | watch the first days | adoption, questions, and anything reported wrong | [analytics](../../agents/analytics.md) · community-manager |
+| 1 | Take in the Release | what shipped, who it affects, why it matters | [comms-manager](../../agents/comms-manager.md) · subject matter expert (person) |
+| 2 | Size the Announcement | which channels this release earns | comms-manager |
+| 3 | Write the Announcement | the release note and the shorter versions | [copywriter](../../agents/copywriter.md) · comms-manager · subject matter expert (person) |
+| 4 | Show the Feature | screenshots and a short clip of it working | [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 5 | Check It Once | accuracy, brand and plain reading in one pass | [editor](../../agents/editor.md) · [brand-check](../../agents/brand-check.md) |
+| 6 | Update the Product Pages | the feature page, the docs entry, the search terms | [web-producer](../../agents/web-producer.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 7 | Tell the Customers Who Have It | the in-product notice and the email go out | [in-product-producer](../../agents/in-product-producer.md) · [email-producer](../../agents/email-producer.md) |
+| 8 | Brief Support and Sales | what to say when a customer asks about it | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · support leader (person) |
+| 9 | Post It Publicly | the blog post, the social posts, the community thread | comms-manager · [community-manager](../../agents/community-manager.md) |
+| 10 | Watch the First Days | adoption, questions, and anything reported wrong | [analytics](../../agents/analytics.md) · community-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a feature ships]) --> A1[1. take in the release]
-  A1 --> A2[2. size the announcement]
-  A2 --> A3[3. write the announcement]
-  A2 --> A4[4. show the feature]
-  A3 --> A5[5. check it once]
+  T([a feature ships]) --> A1[1. Take in the Release]
+  A1 --> A2[2. Size the Announcement]
+  A2 --> A3[3. Write the Announcement]
+  A2 --> A4[4. Show the Feature]
+  A3 --> A5[5. Check It Once]
   A4 --> A5
   A5 -. corrections .-> A3
-  A5 --> A6[6. update the product pages]
-  A5 --> A7[7. tell the customers who have it]
-  A5 --> A8[8. brief support and sales]
-  A6 --> A9[9. post it publicly]
+  A5 --> A6[6. Update the Product Pages]
+  A5 --> A7[7. Tell the Customers Who Have It]
+  A5 --> A8[8. Brief Support and Sales]
+  A6 --> A9[9. Post It Publicly]
   A8 --> A9
-  A7 --> A10[10. watch the first days]
+  A7 --> A10[10. Watch the First Days]
   A9 --> A10
   A10 -. the feature does not do what was said .-> A3
   A10 --> DONE([customers and prospects are informed])

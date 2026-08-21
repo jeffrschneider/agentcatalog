@@ -1,4 +1,4 @@
-# Reference process: segment the market
+# Reference process: Segment the Market
 
 `ref/mkt/segment-the-market v1`
 
@@ -27,57 +27,57 @@ one records.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the question | work out what the segmentation must settle and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | set the market boundary | what counts as inside this market and what does not | decision-coordinator · [researcher](../../agents/researcher.md) · leadership (person) |
-| 3 | read the customer record | who bought, what they spent, and who stayed | [analytics](../../agents/analytics.md) · [forecaster](../../agents/forecaster.md) |
-| 4 | gather the outside evidence | market reports, public data, and what buyers search for | researcher · [search-optimizer](../../agents/search-optimizer.md) |
-| 5 | collect the first-hand accounts | what buyers and sellers say they choose between | [study-manager](../../agents/study-manager.md) · sales leader (person) · subject matter expert (person) |
-| 6 | choose the dividing traits | which traits the market gets divided on, and why | decision-coordinator · forecaster · researcher |
-| 7 | draw the candidate divisions | two or three ways of dividing it, each written out | forecaster · decision-coordinator |
-| 8 | test whether the segments hold apart | whether each group behaves alike and unlike the rest | forecaster · [statistician](../../agents/statistician.md) |
-| 9 | size each segment | how many buyers, and how much money sits in each | researcher · forecaster |
-| 10 | test whether each segment can be reached | whether the data finds them and the channels reach them | [lead-scorer](../../agents/lead-scorer.md) · [audience-manager](../../agents/audience-manager.md) · [media-buyer](../../agents/media-buyer.md) |
-| 11 | clear the data and the traits | the source terms, and which traits may be targeted | researcher · legal reviewer (person) |
-| 12 | settle on one division | one way of dividing the market is chosen | decision-coordinator · leadership (person) · sales leader (person) |
-| 13 | rank the segments | which segments come first, and what that rests on | decision-coordinator · forecaster · leadership (person) · sales leader (person) |
-| 14 | write down the agreed segments | name, size, priority, rationale, and who disagreed | decision-coordinator |
-| 15 | issue the segments as a version | the set numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 16 | hand over the segments | each receiving seat says what it changes | decision-coordinator · audience-manager · [campaign-manager](../../agents/campaign-manager.md) · media-buyer · lead-scorer |
-| 17 | set the review conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
-| 18 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Question | work out what the segmentation must settle and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Set the Market Boundary | what counts as inside this market and what does not | decision-coordinator · [researcher](../../agents/researcher.md) · leadership (person) |
+| 3 | Read the Customer Record | who bought, what they spent, and who stayed | [analytics](../../agents/analytics.md) · [forecaster](../../agents/forecaster.md) |
+| 4 | Gather the Outside Evidence | market reports, public data, and what buyers search for | researcher · [search-optimizer](../../agents/search-optimizer.md) |
+| 5 | Collect the First-Hand Accounts | what buyers and sellers say they choose between | [study-manager](../../agents/study-manager.md) · sales leader (person) · subject matter expert (person) |
+| 6 | Choose the Dividing Traits | which traits the market gets divided on, and why | decision-coordinator · forecaster · researcher |
+| 7 | Draw the Candidate Divisions | two or three ways of dividing it, each written out | forecaster · decision-coordinator |
+| 8 | Test Whether the Segments Hold Apart | whether each group behaves alike and unlike the rest | forecaster · [statistician](../../agents/statistician.md) |
+| 9 | Size Each Segment | how many buyers, and how much money sits in each | researcher · forecaster |
+| 10 | Test Whether Each Segment Can Be Reached | whether the data finds them and the channels reach them | [lead-scorer](../../agents/lead-scorer.md) · [audience-manager](../../agents/audience-manager.md) · [media-buyer](../../agents/media-buyer.md) |
+| 11 | Clear the Data and the Traits | the source terms, and which traits may be targeted | researcher · legal reviewer (person) |
+| 12 | Settle on One Division | one way of dividing the market is chosen | decision-coordinator · leadership (person) · sales leader (person) |
+| 13 | Rank the Segments | which segments come first, and what that rests on | decision-coordinator · forecaster · leadership (person) · sales leader (person) |
+| 14 | Write down the Agreed Segments | name, size, priority, rationale, and who disagreed | decision-coordinator |
+| 15 | Issue the Segments as a Version | the set numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 16 | Hand over the Segments | each receiving seat says what it changes | decision-coordinator · audience-manager · [campaign-manager](../../agents/campaign-manager.md) · media-buyer · lead-scorer |
+| 17 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
+| 18 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a question about how the market divides is asked]) --> A1[1. take in the question]
-  A1 --> A2[2. set the market boundary]
-  A2 --> A3[3. read the customer record]
-  A2 --> A4[4. gather the outside evidence]
-  A2 --> A5[5. collect the first-hand accounts]
-  A3 --> A6[6. choose the dividing traits]
+  T([a question about how the market divides is asked]) --> A1[1. Take in the Question]
+  A1 --> A2[2. Set the Market Boundary]
+  A2 --> A3[3. Read the Customer Record]
+  A2 --> A4[4. Gather the Outside Evidence]
+  A2 --> A5[5. Collect the First-Hand Accounts]
+  A3 --> A6[6. Choose the Dividing Traits]
   A4 --> A6
   A5 --> A6
-  A6 --> A7[7. draw the candidate divisions]
-  A7 --> A8[8. test whether the segments hold apart]
-  A7 --> A9[9. size each segment]
-  A7 --> A10[10. test whether each segment can be reached]
-  A7 --> A11[11. clear the data and the traits]
+  A6 --> A7[7. Draw the Candidate Divisions]
+  A7 --> A8[8. Test Whether the Segments Hold Apart]
+  A7 --> A9[9. Size Each Segment]
+  A7 --> A10[10. Test Whether Each Segment Can Be Reached]
+  A7 --> A11[11. Clear the Data and the Traits]
   A8 -. no division separates the groups .-> A7
   A9 -. the market is smaller than the question assumed .-> A2
   A10 -. a segment cannot be found or reached .-> A7
   A11 -. a source or a trait is ruled out .-> A7
-  A8 --> A12[12. settle on one division]
+  A8 --> A12[12. Settle on One Division]
   A9 --> A12
   A10 --> A12
   A11 --> A12
   A12 -. the room cannot agree .-> A7
-  A12 --> A13[13. rank the segments]
-  A13 --> A14[14. write down the agreed segments]
-  A14 --> A15[15. issue the segments as a version]
-  A15 --> A16[16. hand over the segments]
-  A16 --> A17[17. set the review conditions]
-  A17 --> A18[18. record what was learned]
+  A12 --> A13[13. Rank the Segments]
+  A13 --> A14[14. Write down the Agreed Segments]
+  A14 --> A15[15. Issue the Segments as a Version]
+  A15 --> A16[16. Hand over the Segments]
+  A16 --> A17[17. Set the Review Conditions]
+  A17 --> A18[18. Record What Was Learned]
   A18 --> DONE([the segments are agreed and in use])
 ```
 

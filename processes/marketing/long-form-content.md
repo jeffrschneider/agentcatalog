@@ -1,4 +1,4 @@
-# Reference process: long-form content
+# Reference process: Produce Long-Form Content
 
 `ref/mkt/long-form-content v1`
 
@@ -15,55 +15,55 @@ because the manager still owes a report on how the piece performed.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the topic | work out what the piece must do and by when | [content-manager](../../agents/content-manager.md) |
-| 2 | set the search terms | the terms and questions the piece has to cover | [search-optimizer](../../agents/search-optimizer.md) |
-| 3 | brief the piece | everyone hears the same request at once | content-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) · search-optimizer |
-| 4 | gather the evidence | sources, data, and the interview with the expert | researcher · subject matter expert (person) |
-| 5 | agree the outline | what the piece argues and the order of its sections | content-manager · editor · copywriter |
-| 6 | write the draft | the piece is written to the outline | copywriter |
-| 7 | edit the draft | the editor says what has to be rewritten | editor |
-| 8 | check the facts | every claim is read against the source under it | researcher · subject matter expert (person) |
-| 9 | make the visuals | diagrams, images and video for the piece | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 10 | get sign-offs | brand, legal and rights approve the piece | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · rights approver (person) |
-| 11 | build the page | the copy and the design become a page in the site | [web-producer](../../agents/web-producer.md) |
-| 12 | wire up the measurement | tags, conversions, and the form into the CRM | [conversion-tracker](../../agents/conversion-tracker.md) |
-| 13 | check the finished page | accessibility, load time, links, title, headings | [accessibility-check](../../agents/accessibility-check.md) · search-optimizer |
-| 14 | publish | the owner says go and the page goes live | content-manager · web-producer |
-| 15 | promote the piece | email, social and paid, and replies to readers | [campaign-manager](../../agents/campaign-manager.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) |
-| 16 | watch performance | traffic, conversions and what readers asked | [analytics](../../agents/analytics.md) · content-manager |
-| 17 | report how the piece did | results set against what the piece promised | content-manager · analytics |
-| 18 | record what was learned | what to repeat, what to avoid | content-manager |
+| 1 | Take in the Topic | work out what the piece must do and by when | [content-manager](../../agents/content-manager.md) |
+| 2 | Set the Search Terms | the terms and questions the piece has to cover | [search-optimizer](../../agents/search-optimizer.md) |
+| 3 | Brief the Piece | everyone hears the same request at once | content-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) · search-optimizer |
+| 4 | Gather the Evidence | sources, data, and the interview with the expert | researcher · subject matter expert (person) |
+| 5 | Agree the Outline | what the piece argues and the order of its sections | content-manager · editor · copywriter |
+| 6 | Write the Draft | the piece is written to the outline | copywriter |
+| 7 | Edit the Draft | the editor says what has to be rewritten | editor |
+| 8 | Check the Facts | every claim is read against the source under it | researcher · subject matter expert (person) |
+| 9 | Make the Visuals | diagrams, images and video for the piece | creative-producer · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 10 | Get Sign-Offs | brand, legal and rights approve the piece | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · rights approver (person) |
+| 11 | Build the Page | the copy and the design become a page in the site | [web-producer](../../agents/web-producer.md) |
+| 12 | Wire up the Measurement | tags, conversions, and the form into the CRM | [conversion-tracker](../../agents/conversion-tracker.md) |
+| 13 | Check the Finished Page | accessibility, load time, links, title, headings | [accessibility-check](../../agents/accessibility-check.md) · search-optimizer |
+| 14 | Publish | the owner says go and the page goes live | content-manager · web-producer |
+| 15 | Promote the Piece | email, social and paid, and replies to readers | [campaign-manager](../../agents/campaign-manager.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) |
+| 16 | Watch Performance | traffic, conversions and what readers asked | [analytics](../../agents/analytics.md) · content-manager |
+| 17 | Report How the Piece Did | results set against what the piece promised | content-manager · analytics |
+| 18 | Record What Was Learned | what to repeat, what to avoid | content-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a topic is approved]) --> A1[1. take in the topic]
-  A1 --> A2[2. set the search terms]
-  A2 --> A3[3. brief the piece]
-  A3 --> A4[4. gather the evidence]
-  A4 --> A5[5. agree the outline]
-  A5 --> A6[6. write the draft]
-  A5 --> A9[9. make the visuals]
-  A6 --> A7[7. edit the draft]
+  T([a topic is approved]) --> A1[1. Take in the Topic]
+  A1 --> A2[2. Set the Search Terms]
+  A2 --> A3[3. Brief the Piece]
+  A3 --> A4[4. Gather the Evidence]
+  A4 --> A5[5. Agree the Outline]
+  A5 --> A6[6. Write the Draft]
+  A5 --> A9[9. Make the Visuals]
+  A6 --> A7[7. Edit the Draft]
   A7 -. rewrite what the edit named .-> A6
-  A7 --> A8[8. check the facts]
+  A7 --> A8[8. Check the Facts]
   A8 -. a claim with no source .-> A6
-  A8 --> A10[10. get sign-offs]
+  A8 --> A10[10. Get Sign-Offs]
   A9 --> A10
   A10 -. changes requested .-> A6
   A10 -. changes requested .-> A9
-  A10 --> A11[11. build the page]
-  A11 --> A12[12. wire up the measurement]
+  A10 --> A11[11. Build the Page]
+  A11 --> A12[12. Wire up the Measurement]
   A12 -. the page has to change .-> A11
-  A12 --> A13[13. check the finished page]
+  A12 --> A13[13. Check the Finished Page]
   A13 -. failures to fix .-> A11
-  A13 --> A14[14. publish]
-  A14 --> A15[15. promote the piece]
-  A14 --> A16[16. watch performance]
-  A15 --> A17[17. report how the piece did]
+  A13 --> A14[14. Publish]
+  A14 --> A15[15. Promote the Piece]
+  A14 --> A16[16. Watch Performance]
+  A15 --> A17[17. Report How the Piece Did]
   A16 --> A17
-  A17 --> A18[18. record what was learned]
+  A17 --> A18[18. Record What Was Learned]
   A18 --> DONE([the piece is live and the run is closed])
 ```
 

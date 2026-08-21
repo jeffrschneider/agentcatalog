@@ -1,4 +1,4 @@
-# Reference process: test ad creative
+# Reference process: Test Ad Creative
 
 `ref/mkt/test-ad-creative v1`
 
@@ -36,54 +36,54 @@ organization's decision.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the question | what the question is and what an answer would change | [campaign-manager](../../agents/campaign-manager.md) · [analytics](../../agents/analytics.md) |
-| 2 | read the current performance | what the running creative delivers now, by placement | analytics · [media-buyer](../../agents/media-buyer.md) |
-| 3 | name the change to test | the one element to change and what it should improve | campaign-manager · [creative-producer](../../agents/creative-producer.md) · media-buyer |
-| 4 | design the comparison | how many variants, how traffic splits, where they run | media-buyer · analytics |
-| 5 | set the evidence bar | how much exposure, how long, and how big a gap counts | analytics · media-buyer · campaign-manager |
-| 6 | commit the test budget | what the exposure costs, and whether to pay for it | campaign-manager · [media-planner](../../agents/media-planner.md) · leadership (person) |
-| 7 | brief the makers | every maker hears the one element under test | creative-producer · campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 8 | produce the variants | each variant made and sized for its placement | copywriter · designer · video-editor · creative-producer |
-| 9 | check the variant set | each variant changes only the element under test | [buy-check](../../agents/buy-check.md) · creative-producer |
-| 10 | get sign-offs | brand, disclosure and legal clear every variant | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) |
-| 11 | wire up the measurement | one conversion, and a tag that separates variants | [conversion-tracker](../../agents/conversion-tracker.md) · media-buyer |
-| 12 | check the test before switch-on | the split, the tags and the variants match the design | buy-check · media-buyer |
-| 13 | launch the test | the variants go live at the agreed split | media-buyer · campaign-manager |
-| 14 | watch delivery | the split holds and every variant is still running | buy-check · analytics · media-buyer |
-| 15 | read the result | exposure, run length and the gap between variants | analytics |
-| 16 | call the winner | a winner, no difference, or the test keeps running | campaign-manager · media-buyer |
-| 17 | roll out the winner | the winner replaces the running creative, losers off | media-buyer · campaign-manager |
-| 18 | record what was learned | what the test settled and what to test next | campaign-manager · analytics |
+| 1 | Take in the Question | what the question is and what an answer would change | [campaign-manager](../../agents/campaign-manager.md) · [analytics](../../agents/analytics.md) |
+| 2 | Read the Current Performance | what the running creative delivers now, by placement | analytics · [media-buyer](../../agents/media-buyer.md) |
+| 3 | Name the Change to Test | the one element to change and what it should improve | campaign-manager · [creative-producer](../../agents/creative-producer.md) · media-buyer |
+| 4 | Design the Comparison | how many variants, how traffic splits, where they run | media-buyer · analytics |
+| 5 | Set the Evidence Bar | how much exposure, how long, and how big a gap counts | analytics · media-buyer · campaign-manager |
+| 6 | Commit the Test Budget | what the exposure costs, and whether to pay for it | campaign-manager · [media-planner](../../agents/media-planner.md) · leadership (person) |
+| 7 | Brief the Makers | every maker hears the one element under test | creative-producer · campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 8 | Produce the Variants | each variant made and sized for its placement | copywriter · designer · video-editor · creative-producer |
+| 9 | Check the Variant Set | each variant changes only the element under test | [buy-check](../../agents/buy-check.md) · creative-producer |
+| 10 | Get Sign-Offs | brand, disclosure and legal clear every variant | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · legal reviewer (person) |
+| 11 | Wire up the Measurement | one conversion, and a tag that separates variants | [conversion-tracker](../../agents/conversion-tracker.md) · media-buyer |
+| 12 | Check the Test Before Switch-On | the split, the tags and the variants match the design | buy-check · media-buyer |
+| 13 | Launch the Test | the variants go live at the agreed split | media-buyer · campaign-manager |
+| 14 | Watch Delivery | the split holds and every variant is still running | buy-check · analytics · media-buyer |
+| 15 | Read the Result | exposure, run length and the gap between variants | analytics |
+| 16 | Call the Winner | a winner, no difference, or the test keeps running | campaign-manager · media-buyer |
+| 17 | Roll out the Winner | the winner replaces the running creative, losers off | media-buyer · campaign-manager |
+| 18 | Record What Was Learned | what the test settled and what to test next | campaign-manager · analytics |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a performance question about the running creative]) --> A1[1. take in the question]
-  A1 --> A2[2. read the current performance]
-  A2 --> A3[3. name the change to test]
-  A3 --> A4[4. design the comparison]
-  A4 --> A5[5. set the evidence bar]
-  A5 --> A6[6. commit the test budget]
-  A6 --> A7[7. brief the makers]
-  A6 --> A11[11. wire up the measurement]
-  A7 --> A8[8. produce the variants]
-  A8 --> A9[9. check the variant set]
+  T([a performance question about the running creative]) --> A1[1. Take in the Question]
+  A1 --> A2[2. Read the Current Performance]
+  A2 --> A3[3. Name the Change to Test]
+  A3 --> A4[4. Design the Comparison]
+  A4 --> A5[5. Set the Evidence Bar]
+  A5 --> A6[6. Commit the Test Budget]
+  A6 --> A7[7. Brief the Makers]
+  A6 --> A11[11. Wire up the Measurement]
+  A7 --> A8[8. Produce the Variants]
+  A8 --> A9[9. Check the Variant Set]
   A9 -. a variant changes more than one element .-> A8
-  A9 --> A10[10. get sign-offs]
+  A9 --> A10[10. Get Sign-Offs]
   A10 -. changes requested .-> A8
-  A10 --> A12[12. check the test before switch-on]
+  A10 --> A12[12. Check the Test Before Switch-On]
   A11 --> A12
   A12 -. a variant carries the wrong tag .-> A11
   A12 -. a platform rejects a variant .-> A8
-  A12 --> A13[13. launch the test]
-  A13 --> A14[14. watch delivery]
+  A12 --> A13[13. Launch the Test]
+  A13 --> A14[14. Watch Delivery]
   A14 -. the platform stopped serving a variant .-> A13
-  A14 --> A15[15. read the result]
-  A15 --> A16[16. call the winner]
+  A14 --> A15[15. Read the Result]
+  A15 --> A16[16. Call the Winner]
   A16 -. the bar has not been met yet .-> A14
-  A16 -. no variant beat the running creative .-> A18[18. record what was learned]
-  A16 --> A17[17. roll out the winner]
+  A16 -. no variant beat the running creative .-> A18[18. Record What Was Learned]
+  A16 --> A17[17. Roll out the Winner]
   A17 --> A18
   A18 --> DONE([the winning variant is live])
 ```

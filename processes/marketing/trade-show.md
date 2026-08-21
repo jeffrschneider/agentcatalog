@@ -1,4 +1,4 @@
-# Reference process: the trade show
+# Reference process: Exhibit at Trade Show
 
 `ref/mkt/trade-show v1`
 
@@ -17,53 +17,53 @@ still have to reach their owners and the show still has to be reported.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the show | what this show has to deliver, and by when | [event-manager](../../agents/event-manager.md) · leadership (person) |
-| 2 | list every deadline | the exhibitor rules, the space limits, every due date | [event-operations](../../agents/event-operations.md) · event-manager |
-| 3 | plan the presence | the booth, the staffing and the show-day schedule | event-manager · event-operations · leadership (person) |
-| 4 | settle the booth message | the existing story cut down to booth size | [copywriter](../../agents/copywriter.md) · event-manager · subject matter expert (person) |
-| 5 | produce the booth material | graphics, signage, handouts and the screen loop | [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 6 | build the demonstration | what a visitor is actually shown at the booth | creative-producer · designer · video-editor · subject matter expert (person) |
-| 7 | get sign-offs | brand and legal approve the booth material | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · rights approver (person) |
-| 8 | order the build and the freight | the stand, the freight, power, internet, furniture | event-operations · finance (person) |
-| 9 | set up lead capture | the scan, the fields, and the path into the CRM | [conversion-tracker](../../agents/conversion-tracker.md) · [lead-scorer](../../agents/lead-scorer.md) |
-| 10 | promote the presence | say where the booth is and what is happening there | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [community-manager](../../agents/community-manager.md) · account owner (person) |
-| 11 | brief the booth staff | the pitch, the qualifying questions, the scan steps | event-manager · copywriter · event staff (person) |
-| 12 | run the show days | the booth is staffed and every visitor is recorded | event staff (person) · event-manager · community-manager |
-| 13 | hand over the leads | scored, routed, and the owner told the same day | lead-scorer · account owner (person) |
-| 14 | break down the booth | teardown, return freight, and what is kept | event-operations |
-| 15 | report the show | results set against what the show was meant to do | [analytics](../../agents/analytics.md) · event-manager |
-| 16 | record what was learned | what to repeat, what to avoid | event-manager |
+| 1 | Take in the Show | what this show has to deliver, and by when | [event-manager](../../agents/event-manager.md) · leadership (person) |
+| 2 | List Every Deadline | the exhibitor rules, the space limits, every due date | [event-operations](../../agents/event-operations.md) · event-manager |
+| 3 | Plan the Presence | the booth, the staffing and the show-day schedule | event-manager · event-operations · leadership (person) |
+| 4 | Settle the Booth Message | the existing story cut down to booth size | [copywriter](../../agents/copywriter.md) · event-manager · subject matter expert (person) |
+| 5 | Produce the Booth Material | graphics, signage, handouts and the screen loop | [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 6 | Build the Demonstration | what a visitor is actually shown at the booth | creative-producer · designer · video-editor · subject matter expert (person) |
+| 7 | Get Sign-Offs | brand and legal approve the booth material | [brand-check](../../agents/brand-check.md) · brand owner (person) · legal reviewer (person) · rights approver (person) |
+| 8 | Order the Build and the Freight | the stand, the freight, power, internet, furniture | event-operations · finance (person) |
+| 9 | Set up Lead Capture | the scan, the fields, and the path into the CRM | [conversion-tracker](../../agents/conversion-tracker.md) · [lead-scorer](../../agents/lead-scorer.md) |
+| 10 | Promote the Presence | say where the booth is and what is happening there | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [community-manager](../../agents/community-manager.md) · account owner (person) |
+| 11 | Brief the Booth Staff | the pitch, the qualifying questions, the scan steps | event-manager · copywriter · event staff (person) |
+| 12 | Run the Show Days | the booth is staffed and every visitor is recorded | event staff (person) · event-manager · community-manager |
+| 13 | Hand over the Leads | scored, routed, and the owner told the same day | lead-scorer · account owner (person) |
+| 14 | Break down the Booth | teardown, return freight, and what is kept | event-operations |
+| 15 | Report the Show | results set against what the show was meant to do | [analytics](../../agents/analytics.md) · event-manager |
+| 16 | Record What Was Learned | what to repeat, what to avoid | event-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a show is booked]) --> A1[1. take in the show]
-  A1 --> A2[2. list every deadline]
-  A2 --> A3[3. plan the presence]
-  A3 --> A4[4. settle the booth message]
-  A3 --> A8[8. order the build and the freight]
-  A3 --> A9[9. set up lead capture]
-  A3 --> A10[10. promote the presence]
-  A4 --> A5[5. produce the booth material]
-  A4 --> A6[6. build the demonstration]
-  A5 --> A7[7. get sign-offs]
+  T([a show is booked]) --> A1[1. Take in the Show]
+  A1 --> A2[2. List Every Deadline]
+  A2 --> A3[3. Plan the Presence]
+  A3 --> A4[4. Settle the Booth Message]
+  A3 --> A8[8. Order the Build and the Freight]
+  A3 --> A9[9. Set up Lead Capture]
+  A3 --> A10[10. Promote the Presence]
+  A4 --> A5[5. Produce the Booth Material]
+  A4 --> A6[6. Build the Demonstration]
+  A5 --> A7[7. Get Sign-Offs]
   A6 --> A7
   A7 -. changes requested .-> A5
   A7 -. changes requested .-> A6
   A7 --> A8
   A8 -. a deadline cannot be met .-> A3
-  A7 --> A11[11. brief the booth staff]
+  A7 --> A11[11. Brief the Booth Staff]
   A9 --> A11
-  A8 --> A12[12. run the show days]
+  A8 --> A12[12. Run the Show Days]
   A10 --> A12
   A11 --> A12
   A12 -. a scan never reaches the CRM .-> A9
-  A12 --> A13[13. hand over the leads]
-  A12 --> A14[14. break down the booth]
-  A13 --> A15[15. report the show]
+  A12 --> A13[13. Hand over the Leads]
+  A12 --> A14[14. Break down the Booth]
+  A13 --> A15[15. Report the Show]
   A14 --> A15
-  A15 --> A16[16. record what was learned]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the presence is delivered and the leads are captured])
 ```
 

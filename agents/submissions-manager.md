@@ -15,16 +15,16 @@ one learned.
 
 ## Seats
 
-- `ref/mkt/award-entry` / take in the award, decide whether to enter,
-  read the entry rules, pick the entry, brief the entry, write the
-  entry, submit the entry, answer the judges, track the result, hand the
-  result on, record what was learned
-- `ref/mkt/brief-industry-analyst` / take in the request, file what the
-  cycle requires, record what was learned
-- `ref/mkt/speaking-engagement` / take in the call, pick the speaker,
-  write the proposal, submit the proposal, settle the terms, rehearse
-  the talk, handle the arrangements, report the result, record what was
-  learned
+- `ref/mkt/award-entry` / Take in the Award, Decide Whether to Enter,
+  Read the Entry Rules, Pick the Entry, Brief the Entry, Write the
+  Entry, Submit the Entry, Answer the Judges, Track the Result, Hand the
+  Result On, Record What Was Learned
+- `ref/mkt/brief-industry-analyst` / Take in the Request, File What the
+  Cycle Requires, Record What Was Learned
+- `ref/mkt/speaking-engagement` / Take in the Call, Pick the Speaker,
+  Write the Proposal, Submit the Proposal, Settle the Terms, Rehearse
+  the Talk, Handle the Arrangements, Report the Result, Record What Was
+  Learned
 
 ## Patterns
 

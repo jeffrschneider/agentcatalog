@@ -15,15 +15,15 @@ with the date it must be cancelled by.
 
 ## Seats
 
-- `ref/mkt/advisory-board` / make the arrangements
-- `ref/mkt/field-event` / book the venue and suppliers, prepare the run
-  of show
-- `ref/mkt/speaking-engagement` / handle the arrangements
-- `ref/mkt/trade-show` / list every deadline, plan the presence, order
-  the build and the freight, break down the booth
-- `ref/mkt/user-conference` / book the venue and the suppliers,
-  commission the stage material, set up the venue, run the show, capture
-  the sessions
+- `ref/mkt/advisory-board` / Make the Arrangements
+- `ref/mkt/field-event` / Book the Venue and Suppliers, Prepare the Run
+  of Show
+- `ref/mkt/speaking-engagement` / Handle the Arrangements
+- `ref/mkt/trade-show` / List Every Deadline, Plan the Presence, Order
+  the Build and the Freight, Break down the Booth
+- `ref/mkt/user-conference` / Book the Venue and the Suppliers,
+  Commission the Stage Material, Set up the Venue, Run the Show, Capture
+  the Sessions
 
 ## Patterns
 

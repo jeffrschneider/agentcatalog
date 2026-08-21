@@ -10,27 +10,27 @@ by leaving the evidence behind every decision it makes.
 
 ## Seats
 
-- `ref/mkt/account-based-play` / hand over the accounts that moved
-- `ref/mkt/analyze-customer-base` / hand over the findings
-- `ref/mkt/buyer-persona` / hand over the persona
-- `ref/mkt/channel-program` / set up the partner systems
-- `ref/mkt/co-marketing-campaign` / split and hand over the leads
-- `ref/mkt/enable-channel-partner` / hand over the selling kit
-- `ref/mkt/field-event` / follow up with the people who came
-- `ref/mkt/ideal-customer-profile` / test the signal coverage, hand over
-  the profile
-- `ref/mkt/lead-routing` / capture and dedupe, enrich, score, route,
-  notify, clear the exception
-- `ref/mkt/lead-scoring-model` / read the exception queue, test the
-  signal coverage, check what each does to routing, run it beside the
-  live model, hand over the model, put it into production, watch the
-  first weeks
-- `ref/mkt/nurture-sequence` / set the exits, hand over the ready ones
-- `ref/mkt/segment-the-market` / test whether each segment can be
-  reached, hand over the segments
-- `ref/mkt/trade-show` / set up lead capture, hand over the leads
-- `ref/mkt/webinar` / hand off the leads
-- `ref/mkt/win-back-campaign` / hand over the responders
+- `ref/mkt/account-based-play` / Hand over the Accounts that Moved
+- `ref/mkt/analyze-customer-base` / Hand over the Findings
+- `ref/mkt/buyer-persona` / Hand over the Persona
+- `ref/mkt/channel-program` / Set up the Partner Systems
+- `ref/mkt/co-marketing-campaign` / Split and Hand over the Leads
+- `ref/mkt/enable-channel-partner` / Hand over the Selling Kit
+- `ref/mkt/field-event` / Follow up with the People Who Came
+- `ref/mkt/ideal-customer-profile` / Test the Signal Coverage, Hand over
+  the Profile
+- `ref/mkt/lead-routing` / Capture and Dedupe, Enrich, Score, Route,
+  Notify, Clear the Exception
+- `ref/mkt/lead-scoring-model` / Read the Exception Queue, Test the
+  Signal Coverage, Check What Each Does to Routing, Run It Beside the
+  Live Model, Hand over the Model, Put It into Production, Watch the
+  First Weeks
+- `ref/mkt/nurture-sequence` / Set the Exits, Hand over the Ready Ones
+- `ref/mkt/segment-the-market` / Test Whether Each Segment Can Be
+  Reached, Hand over the Segments
+- `ref/mkt/trade-show` / Set up Lead Capture, Hand over the Leads
+- `ref/mkt/webinar` / Hand off the Leads
+- `ref/mkt/win-back-campaign` / Hand over the Responders
 
 ## Patterns
 

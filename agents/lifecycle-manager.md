@@ -13,18 +13,18 @@ run when the goal is reached or the organization stops trying.
 
 ## Seats
 
-- `ref/mkt/churn-risk-play` / take in the signal, decide whether to act,
-  choose the intervention, deliver the intervention, record the outcome,
-  record what was learned
-- `ref/mkt/onboarding-email-program` / take in the new customer, set the
-  goal for this run, choose the path, brief the seats that act, send the
-  step, change the path when they stall, bring a person in, confirm the
-  customer is active, close the run
-- `ref/mkt/pricing-change` / answer what comes back, move the served
-  customers
-- `ref/mkt/webinar` / follow up with the registrants
-- `ref/mkt/win-back-campaign` / sort the segment into treatments, answer
-  what comes back
+- `ref/mkt/churn-risk-play` / Take in the Signal, Decide Whether to Act,
+  Choose the Intervention, Deliver the Intervention, Record the Outcome,
+  Record What Was Learned
+- `ref/mkt/onboarding-email-program` / Take in the New Customer, Set the
+  Goal for This Run, Choose the Path, Brief the Seats that Act, Send the
+  Step, Change the Path When They Stall, Bring a Person In, Confirm the
+  Customer Is Active, Close the Run
+- `ref/mkt/pricing-change` / Answer What Comes Back, Move the Served
+  Customers
+- `ref/mkt/webinar` / Follow up with the Registrants
+- `ref/mkt/win-back-campaign` / Sort the Segment into Treatments, Answer
+  What Comes Back
 
 ## Patterns
 

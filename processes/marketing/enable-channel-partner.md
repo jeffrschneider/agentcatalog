@@ -1,4 +1,4 @@
-# Reference process: enable channel partner
+# Reference process: Enable Channel Partner
 
 `ref/mkt/enable-channel-partner v1`
 
@@ -24,49 +24,49 @@ since that partner was last checked.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the partner | who the partner is, what they sell, and to whom | [partner-manager](../../agents/partner-manager.md) · leadership (person) |
-| 2 | check what the partner holds | what they were certified on, and what changed since | partner-manager · [account-monitor](../../agents/account-monitor.md) |
-| 3 | list what the partner must demonstrate | the things they have to show they can do, written down | partner-manager · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · subject matter expert (person) |
-| 4 | agree the partner's plan | who takes part, how much time, and by when | partner-manager · partner staff (person) · leadership (person) |
-| 5 | decide what the partner may see | which material this partner is entitled to | partner-manager · legal reviewer (person) · leadership (person) |
-| 6 | brief the makers | every producing seat hears the same request at once | sales-enablement-manager · partner-manager · [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
-| 7 | produce the partner material | the pitch, the objection answers, the demo script | copywriter · designer · [video-editor](../../agents/video-editor.md) · creative-producer · sales-enablement-manager |
-| 8 | get sign-offs | brand, legal and rights approve what goes outside | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · [rights-register](../../agents/rights-register.md) · brand owner (person) · legal reviewer (person) · rights approver (person) |
-| 9 | publish the material | the approved set lands where the partner can get it | partner-manager · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) |
-| 10 | run the session | a live session, recorded for whoever missed it | partner-manager · [broadcast-operator](../../agents/broadcast-operator.md) · subject matter expert (person) · partner staff (person) |
-| 11 | answer the partner's questions | what comes back after the session, answered and filed | partner-manager · sales-enablement-manager · subject matter expert (person) |
-| 12 | check the partner can pitch | they demonstrate, and are scored against the criteria | partner-manager · subject matter expert (person) · leadership (person) |
-| 13 | hand over the selling kit | the campaign kit, deal registration, and the leads | [campaign-manager](../../agents/campaign-manager.md) · [audience-handover](../../agents/audience-handover.md) · [lead-scorer](../../agents/lead-scorer.md) · partner-manager · leadership (person) |
-| 14 | watch what the partner does | material use, registered deals, and what they ask | [analytics](../../agents/analytics.md) · account-monitor · partner-manager |
-| 15 | report against the plan | what the partner can do, set against what was agreed | partner-manager · analytics |
-| 16 | record what was learned | what to repeat, what to avoid | partner-manager |
+| 1 | Take in the Partner | who the partner is, what they sell, and to whom | [partner-manager](../../agents/partner-manager.md) · leadership (person) |
+| 2 | Check What the Partner Holds | what they were certified on, and what changed since | partner-manager · [account-monitor](../../agents/account-monitor.md) |
+| 3 | List What the Partner Must Demonstrate | the things they have to show they can do, written down | partner-manager · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · subject matter expert (person) |
+| 4 | Agree the Partner's Plan | who takes part, how much time, and by when | partner-manager · partner staff (person) · leadership (person) |
+| 5 | Decide What the Partner May See | which material this partner is entitled to | partner-manager · legal reviewer (person) · leadership (person) |
+| 6 | Brief the Makers | every producing seat hears the same request at once | sales-enablement-manager · partner-manager · [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 7 | Produce the Partner Material | the pitch, the objection answers, the demo script | copywriter · designer · [video-editor](../../agents/video-editor.md) · creative-producer · sales-enablement-manager |
+| 8 | Get Sign-Offs | brand, legal and rights approve what goes outside | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · [rights-register](../../agents/rights-register.md) · brand owner (person) · legal reviewer (person) · rights approver (person) |
+| 9 | Publish the Material | the approved set lands where the partner can get it | partner-manager · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) |
+| 10 | Run the Session | a live session, recorded for whoever missed it | partner-manager · [broadcast-operator](../../agents/broadcast-operator.md) · subject matter expert (person) · partner staff (person) |
+| 11 | Answer the Partner's Questions | what comes back after the session, answered and filed | partner-manager · sales-enablement-manager · subject matter expert (person) |
+| 12 | Check the Partner Can Pitch | they demonstrate, and are scored against the criteria | partner-manager · subject matter expert (person) · leadership (person) |
+| 13 | Hand over the Selling Kit | the campaign kit, deal registration, and the leads | [campaign-manager](../../agents/campaign-manager.md) · [audience-handover](../../agents/audience-handover.md) · [lead-scorer](../../agents/lead-scorer.md) · partner-manager · leadership (person) |
+| 14 | Watch What the Partner Does | material use, registered deals, and what they ask | [analytics](../../agents/analytics.md) · account-monitor · partner-manager |
+| 15 | Report against the Plan | what the partner can do, set against what was agreed | partner-manager · analytics |
+| 16 | Record What Was Learned | what to repeat, what to avoid | partner-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a partner agreement is signed or renewed]) --> A1[1. take in the partner]
-  A1 --> A2[2. check what the partner holds]
-  A2 --> A3[3. list what the partner must demonstrate]
-  A3 --> A4[4. agree the partner's plan]
-  A3 --> A5[5. decide what the partner may see]
-  A4 --> A6[6. brief the makers]
+  T([a partner agreement is signed or renewed]) --> A1[1. Take in the Partner]
+  A1 --> A2[2. Check What the Partner Holds]
+  A2 --> A3[3. List What the Partner Must Demonstrate]
+  A3 --> A4[4. Agree the Partner's Plan]
+  A3 --> A5[5. Decide What the Partner May See]
+  A4 --> A6[6. Brief the Makers]
   A5 --> A6
-  A6 --> A7[7. produce the partner material]
-  A7 --> A8[8. get sign-offs]
+  A6 --> A7[7. Produce the Partner Material]
+  A7 --> A8[8. Get Sign-Offs]
   A8 -. changes requested .-> A7
-  A8 --> A9[9. publish the material]
+  A8 --> A9[9. Publish the Material]
   A2 -. a current certification still covers this .-> A9
-  A9 --> A10[10. run the session]
-  A10 --> A11[11. answer the partner's questions]
-  A10 --> A12[12. check the partner can pitch]
+  A9 --> A10[10. Run the Session]
+  A10 --> A11[11. Answer the Partner's Questions]
+  A10 --> A12[12. Check the Partner Can Pitch]
   A11 -. the material answers it wrongly .-> A7
   A12 -. the criteria are not met .-> A10
-  A12 --> A13[13. hand over the selling kit]
-  A13 --> A14[14. watch what the partner does]
-  A14 --> A15[15. report against the plan]
+  A12 --> A13[13. Hand over the Selling Kit]
+  A13 --> A14[14. Watch What the Partner Does]
+  A14 --> A15[15. Report against the Plan]
   A11 --> A15
-  A15 --> A16[16. record what was learned]
+  A15 --> A16[16. Record What Was Learned]
   A16 --> DONE([the partner can position and sell the product])
 ```
 

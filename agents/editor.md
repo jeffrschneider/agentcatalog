@@ -12,42 +12,42 @@ meets it.
 
 ## Seats
 
-- `ref/mkt/advisory-board` / build the materials
-- `ref/mkt/announce-company-news` / edit the release
-- `ref/mkt/award-entry` / brief the entry, edit the entry
-- `ref/mkt/brand-audit` / read the set as a whole
-- `ref/mkt/brand-guidelines` / brief the makers, write the rules
-- `ref/mkt/brand-positioning` / test the positions against the evidence,
-  write the positioning and the promise, set the voice rules
-- `ref/mkt/brand-refresh` / rewrite what the words say
-- `ref/mkt/brand-voice` / read how the company sounds now, brief the
-  makers, draft the voice, set the tone for each situation, build the
-  messaging architecture, write the word list, turn the voice into
-  scorable rules, score old material against the draft rules, brief the
-  seats that write to it
-- `ref/mkt/brief-executive-leadership` / write the decision papers,
-  build the pack, rehearse the briefing
-- `ref/mkt/competitive-battlecard` / edit the card
-- `ref/mkt/content-calendar` / size the production capacity, draft the
-  calendar, brief the department
-- `ref/mkt/customer-case-study` / brief the story, agree what the story
-  argues, edit the draft
-- `ref/mkt/customer-newsletter` / brief the makers, edit the draft
-- `ref/mkt/feature-release` / check it once
-- `ref/mkt/landing-page` / brief the makers, edit the draft
-- `ref/mkt/long-form-content` / brief the piece, agree the outline, edit
-  the draft
-- `ref/mkt/onboarding-email-program` / make what the path needs
-- `ref/mkt/pitch-earned-media` / produce the pitch materials
-- `ref/mkt/pricing-change` / produce what customers and sellers read
-- `ref/mkt/product-positioning` / test the positions against the
-  evidence, write the messaging
-- `ref/mkt/refresh-content` / brief the pages in the cycle, edit the
-  rewrite
-- `ref/mkt/speaking-engagement` / shape the talk, rehearse the talk,
-  reuse the talk
-- `ref/mkt/video-asset` / settle the script, review the cut
-- `ref/mkt/website-content-update` / edit the change
+- `ref/mkt/advisory-board` / Build the Materials
+- `ref/mkt/announce-company-news` / Edit the Release
+- `ref/mkt/award-entry` / Brief the Entry, Edit the Entry
+- `ref/mkt/brand-audit` / Read the Set as a Whole
+- `ref/mkt/brand-guidelines` / Brief the Makers, Write the Rules
+- `ref/mkt/brand-positioning` / Test the Positions against the Evidence,
+  Write the Positioning and the Promise, Set the Voice Rules
+- `ref/mkt/brand-refresh` / Rewrite What the Words Say
+- `ref/mkt/brand-voice` / Read How the Company Sounds Now, Brief the
+  Makers, Draft the Voice, Set the Tone for Each Situation, Build the
+  Messaging Architecture, Write the Word List, Turn the Voice into
+  Scorable Rules, Score Old Material against the Draft Rules, Brief the
+  Seats that Write to It
+- `ref/mkt/brief-executive-leadership` / Write the Decision Papers,
+  Build the Pack, Rehearse the Briefing
+- `ref/mkt/competitive-battlecard` / Edit the Card
+- `ref/mkt/content-calendar` / Size the Production Capacity, Draft the
+  Calendar, Brief the Department
+- `ref/mkt/customer-case-study` / Brief the Story, Agree What the Story
+  Argues, Edit the Draft
+- `ref/mkt/customer-newsletter` / Brief the Makers, Edit the Draft
+- `ref/mkt/feature-release` / Check It Once
+- `ref/mkt/landing-page` / Brief the Makers, Edit the Draft
+- `ref/mkt/long-form-content` / Brief the Piece, Agree the Outline, Edit
+  the Draft
+- `ref/mkt/onboarding-email-program` / Make What the Path Needs
+- `ref/mkt/pitch-earned-media` / Produce the Pitch Materials
+- `ref/mkt/pricing-change` / Produce What Customers and Sellers Read
+- `ref/mkt/product-positioning` / Test the Positions against the
+  Evidence, Write the Messaging
+- `ref/mkt/refresh-content` / Brief the Pages in the Cycle, Edit the
+  Rewrite
+- `ref/mkt/speaking-engagement` / Shape the Talk, Rehearse the Talk,
+  Reuse the Talk
+- `ref/mkt/video-asset` / Settle the Script, Review the Cut
+- `ref/mkt/website-content-update` / Edit the Change
 
 ## Patterns
 

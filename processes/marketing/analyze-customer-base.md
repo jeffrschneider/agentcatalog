@@ -1,4 +1,4 @@
-# Reference process: analyze the customer base
+# Reference process: Analyze Customer Base
 
 `ref/mkt/analyze-customer-base v1`
 
@@ -24,58 +24,58 @@ that asks people.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the question | work out what the read has to settle and by when | [analytics](../../agents/analytics.md) · requester (person) |
-| 2 | set the scope of the read | the period, the markets, and who counts as a customer | analytics · [statistician](../../agents/statistician.md) |
-| 3 | name the sources | which systems hold the record, and what each holds | analytics · systems owner (person) |
-| 4 | clear the data for this use | the terms on each source, and what may be read | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
-| 5 | pull the record | what they bought, what they renewed, when they left | analytics |
-| 6 | say what the data supports | coverage, duplicates, gaps, and the period covered | statistician |
-| 7 | describe who bought | counts, revenue, and how concentrated the revenue is | analytics |
-| 8 | group the base | cut the base into groups that behave differently | analytics · [forecaster](../../agents/forecaster.md) |
-| 9 | test that the groups hold | whether the differences are bigger than the noise | statistician |
-| 10 | find what the groups share | the traits that separate one group from another | forecaster |
-| 11 | read the base over time | who arrived when, who stayed, and who left | analytics · forecaster |
-| 12 | size each group | how many accounts and how much revenue in each | analytics |
-| 13 | compare with the last read | what moved since the read before this one | analytics · statistician |
-| 14 | write the findings | every finding with the figures under it | analytics |
-| 15 | review the findings | the seats that act on it read it before it issues | analytics · statistician · [audience-manager](../../agents/audience-manager.md) · forecaster |
-| 16 | issue the findings as a version | numbered, with what changed since the last read | analytics |
-| 17 | hand over the findings | each receiving seat says what it changes | analytics · audience-manager · [lead-scorer](../../agents/lead-scorer.md) · [reporting-manager](../../agents/reporting-manager.md) · leadership (person) |
-| 18 | set the next read | the date it runs again, and what brings it sooner | analytics · leadership (person) |
-| 19 | record what was learned | what to repeat, what to avoid | analytics |
+| 1 | Take in the Question | work out what the read has to settle and by when | [analytics](../../agents/analytics.md) · requester (person) |
+| 2 | Set the Scope of the Read | the period, the markets, and who counts as a customer | analytics · [statistician](../../agents/statistician.md) |
+| 3 | Name the Sources | which systems hold the record, and what each holds | analytics · systems owner (person) |
+| 4 | Clear the Data for This Use | the terms on each source, and what may be read | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
+| 5 | Pull the Record | what they bought, what they renewed, when they left | analytics |
+| 6 | Say What the Data Supports | coverage, duplicates, gaps, and the period covered | statistician |
+| 7 | Describe Who Bought | counts, revenue, and how concentrated the revenue is | analytics |
+| 8 | Group the Base | cut the base into groups that behave differently | analytics · [forecaster](../../agents/forecaster.md) |
+| 9 | Test that the Groups Hold | whether the differences are bigger than the noise | statistician |
+| 10 | Find What the Groups Share | the traits that separate one group from another | forecaster |
+| 11 | Read the Base over Time | who arrived when, who stayed, and who left | analytics · forecaster |
+| 12 | Size Each Group | how many accounts and how much revenue in each | analytics |
+| 13 | Compare with the Last Read | what moved since the read before this one | analytics · statistician |
+| 14 | Write the Findings | every finding with the figures under it | analytics |
+| 15 | Review the Findings | the seats that act on it read it before it issues | analytics · statistician · [audience-manager](../../agents/audience-manager.md) · forecaster |
+| 16 | Issue the Findings as a Version | numbered, with what changed since the last read | analytics |
+| 17 | Hand over the Findings | each receiving seat says what it changes | analytics · audience-manager · [lead-scorer](../../agents/lead-scorer.md) · [reporting-manager](../../agents/reporting-manager.md) · leadership (person) |
+| 18 | Set the Next Read | the date it runs again, and what brings it sooner | analytics · leadership (person) |
+| 19 | Record What Was Learned | what to repeat, what to avoid | analytics |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a read date arrives or a question is asked]) --> A1[1. take in the question]
-  A1 --> A2[2. set the scope of the read]
-  A2 --> A3[3. name the sources]
-  A3 --> A4[4. clear the data for this use]
+  T([a read date arrives or a question is asked]) --> A1[1. Take in the Question]
+  A1 --> A2[2. Set the Scope of the Read]
+  A2 --> A3[3. Name the Sources]
+  A3 --> A4[4. Clear the Data for This Use]
   A4 -. a source is ruled out .-> A3
-  A4 --> A5[5. pull the record]
-  A5 --> A6[6. say what the data supports]
+  A4 --> A5[5. Pull the Record]
+  A5 --> A6[6. Say What the Data Supports]
   A6 -. the record cannot answer the question .-> A2
-  A6 --> A7[7. describe who bought]
-  A6 --> A8[8. group the base]
-  A6 --> A11[11. read the base over time]
-  A8 --> A9[9. test that the groups hold]
+  A6 --> A7[7. Describe Who Bought]
+  A6 --> A8[8. Group the Base]
+  A6 --> A11[11. Read the Base over Time]
+  A8 --> A9[9. Test that the Groups Hold]
   A9 -. the groups do not separate .-> A8
-  A9 --> A10[10. find what the groups share]
-  A8 --> A12[12. size each group]
+  A9 --> A10[10. Find What the Groups Share]
+  A8 --> A12[12. Size Each Group]
   A12 -. a group is too small to report on .-> A8
-  A7 --> A13[13. compare with the last read]
+  A7 --> A13[13. Compare with the Last Read]
   A10 --> A13
   A11 --> A13
   A12 --> A13
-  A13 --> A14[14. write the findings]
-  A14 --> A15[15. review the findings]
+  A13 --> A14[14. Write the Findings]
+  A14 --> A15[15. Review the Findings]
   A15 -. a finding the figures do not support .-> A14
   A15 -. a cut nobody pulled .-> A5
-  A15 --> A16[16. issue the findings as a version]
-  A16 --> A17[17. hand over the findings]
-  A17 --> A18[18. set the next read]
-  A18 --> A19[19. record what was learned]
+  A15 --> A16[16. Issue the Findings as a Version]
+  A16 --> A17[17. Hand over the Findings]
+  A17 --> A18[18. Set the Next Read]
+  A18 --> A19[19. Record What Was Learned]
   A19 --> DONE([who buys is written down and in use])
 ```
 

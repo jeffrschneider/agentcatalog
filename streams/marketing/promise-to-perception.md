@@ -2,6 +2,7 @@
 
 `vs/mkt/promise-to-perception v1`
 
+**position:** 3
 The organization decides what its brand stands for, how it looks and how it
 sounds, and then holds the published material to that standard. A run
 starts when a change in strategy or in the market is big enough that

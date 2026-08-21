@@ -1,4 +1,4 @@
-# Reference process: select marketing technology
+# Reference process: Select Marketing Technology
 
 `ref/mkt/select-marketing-technology v1`
 
@@ -18,68 +18,68 @@ register with an owner, a cost, a term and a renewal date against it.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the gap | say what the department cannot do today | [supplier-manager](../../agents/supplier-manager.md) · requester (person) |
-| 2 | check what is already owned | look in the register for something that does it | supplier-manager |
-| 3 | write down the requirements | what the tool has to do, ranked and testable | supplier-manager · requester (person) · systems owner (person) |
-| 4 | set the scoring criteria | how a candidate is judged, fixed beforehand | [supplier-check](../../agents/supplier-check.md) · supplier-manager |
-| 5 | brief the selection | every seat hears the same requirements at once | supplier-manager · supplier-check · [budget-keeper](../../agents/budget-keeper.md) · [capacity-manager](../../agents/capacity-manager.md) · [consent-manager](../../agents/consent-manager.md) · [researcher](../../agents/researcher.md) |
-| 6 | size what the tool has to carry | the work it would take on and the seats that use it | capacity-manager · [forecaster](../../agents/forecaster.md) |
-| 7 | say what money there is | what can be spent this year and in the years after | budget-keeper · finance (person) |
-| 8 | search the market | find every candidate worth looking at | supplier-manager · researcher |
-| 9 | cut to a shortlist | drop the candidates that miss a requirement | supplier-manager · supplier-check |
-| 10 | score the shortlist | a verdict on every requirement, per candidate | supplier-check |
-| 11 | check the terms and the data | what the agreement allows and where data sits | consent-manager · legal reviewer (person) |
-| 12 | check the security and the connections | how it is secured and what it would connect to | systems owner (person) · security reviewer (person) |
-| 13 | check it against the standards | whether its output can meet the standards in force | [standards-keeper](../../agents/standards-keeper.md) · [accessibility-check](../../agents/accessibility-check.md) |
-| 14 | try the finalists on real work | a trial on work the department actually has | supplier-manager · requester (person) · [statistician](../../agents/statistician.md) |
-| 15 | work out the whole cost | licence, setup, the people, and the cost to leave | budget-keeper · forecaster · finance (person) |
-| 16 | compare the finalists | scores, trial and cost set side by side | [decision-coordinator](../../agents/decision-coordinator.md) · supplier-check · statistician |
-| 17 | choose the tool | the named decider picks one and says why | decision-coordinator · leadership (person) |
-| 18 | agree the terms and sign | price, term, exit, and what the supplier must meet | supplier-manager · legal reviewer (person) · finance (person) |
-| 19 | write it into the register | owner, cost, term and renewal date | supplier-manager · budget-keeper |
-| 20 | hand it to the owner | the owner takes it on with a date to review it | supplier-manager · systems owner (person) · capacity-manager · [analytics](../../agents/analytics.md) |
-| 21 | record what was learned | what to repeat, what to avoid | supplier-manager · decision-coordinator |
+| 1 | Take in the Gap | say what the department cannot do today | [supplier-manager](../../agents/supplier-manager.md) · requester (person) |
+| 2 | Check What Is Already Owned | look in the register for something that does it | supplier-manager |
+| 3 | Write down the Requirements | what the tool has to do, ranked and testable | supplier-manager · requester (person) · systems owner (person) |
+| 4 | Set the Scoring Criteria | how a candidate is judged, fixed beforehand | [supplier-check](../../agents/supplier-check.md) · supplier-manager |
+| 5 | Brief the Selection | every seat hears the same requirements at once | supplier-manager · supplier-check · [budget-keeper](../../agents/budget-keeper.md) · [capacity-manager](../../agents/capacity-manager.md) · [consent-manager](../../agents/consent-manager.md) · [researcher](../../agents/researcher.md) |
+| 6 | Size What the Tool Has to Carry | the work it would take on and the seats that use it | capacity-manager · [forecaster](../../agents/forecaster.md) |
+| 7 | Say What Money There Is | what can be spent this year and in the years after | budget-keeper · finance (person) |
+| 8 | Search the Market | find every candidate worth looking at | supplier-manager · researcher |
+| 9 | Cut to a Shortlist | drop the candidates that miss a requirement | supplier-manager · supplier-check |
+| 10 | Score the Shortlist | a verdict on every requirement, per candidate | supplier-check |
+| 11 | Check the Terms and the Data | what the agreement allows and where data sits | consent-manager · legal reviewer (person) |
+| 12 | Check the Security and the Connections | how it is secured and what it would connect to | systems owner (person) · security reviewer (person) |
+| 13 | Check It against the Standards | whether its output can meet the standards in force | [standards-keeper](../../agents/standards-keeper.md) · [accessibility-check](../../agents/accessibility-check.md) |
+| 14 | Try the Finalists on Real Work | a trial on work the department actually has | supplier-manager · requester (person) · [statistician](../../agents/statistician.md) |
+| 15 | Work out the Whole Cost | licence, setup, the people, and the cost to leave | budget-keeper · forecaster · finance (person) |
+| 16 | Compare the Finalists | scores, trial and cost set side by side | [decision-coordinator](../../agents/decision-coordinator.md) · supplier-check · statistician |
+| 17 | Choose the Tool | the named decider picks one and says why | decision-coordinator · leadership (person) |
+| 18 | Agree the Terms and Sign | price, term, exit, and what the supplier must meet | supplier-manager · legal reviewer (person) · finance (person) |
+| 19 | Write It into the Register | owner, cost, term and renewal date | supplier-manager · budget-keeper |
+| 20 | Hand It to the Owner | the owner takes it on with a date to review it | supplier-manager · systems owner (person) · capacity-manager · [analytics](../../agents/analytics.md) |
+| 21 | Record What Was Learned | what to repeat, what to avoid | supplier-manager · decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a capability gap is identified]) --> A1[1. take in the gap]
-  A1 --> A2[2. check what is already owned]
-  A2 --> A3[3. write down the requirements]
-  A3 --> A4[4. set the scoring criteria]
-  A4 --> A5[5. brief the selection]
-  A5 --> A6[6. size what the tool has to carry]
-  A5 --> A7[7. say what money there is]
-  A5 --> A8[8. search the market]
-  A6 --> A9[9. cut to a shortlist]
+  T([a capability gap is identified]) --> A1[1. Take in the Gap]
+  A1 --> A2[2. Check What Is Already Owned]
+  A2 --> A3[3. Write down the Requirements]
+  A3 --> A4[4. Set the Scoring Criteria]
+  A4 --> A5[5. Brief the Selection]
+  A5 --> A6[6. Size What the Tool Has to Carry]
+  A5 --> A7[7. Say What Money There Is]
+  A5 --> A8[8. Search the Market]
+  A6 --> A9[9. Cut to a Shortlist]
   A7 --> A9
   A8 --> A9
-  A9 --> A10[10. score the shortlist]
-  A10 --> A11[11. check the terms and the data]
-  A10 --> A12[12. check the security and the connections]
-  A10 --> A13[13. check it against the standards]
-  A10 --> A14[14. try the finalists on real work]
+  A9 --> A10[10. Score the Shortlist]
+  A10 --> A11[11. Check the Terms and the Data]
+  A10 --> A12[12. Check the Security and the Connections]
+  A10 --> A13[13. Check It against the Standards]
+  A10 --> A14[14. Try the Finalists on Real Work]
   A10 -. a requirement nobody could test .-> A8
   A10 -. every candidate fails a requirement .-> A3
   A11 -. terms the organization cannot accept .-> A9
   A12 -. findings the candidate has to answer .-> A10
   A13 -. the output cannot meet the standards .-> A9
   A14 -. the trial shows it cannot do the work .-> A9
-  A14 --> A15[15. work out the whole cost]
+  A14 --> A15[15. Work out the Whole Cost]
   A15 -. the cost is past what there is .-> A7
-  A11 --> A16[16. compare the finalists]
+  A11 --> A16[16. Compare the Finalists]
   A12 --> A16
   A13 --> A16
   A15 --> A16
   A16 -. no finalist is worth taking .-> A8
-  A16 --> A17[17. choose the tool]
+  A16 --> A17[17. Choose the Tool]
   A17 -. the choice needs more evidence .-> A14
-  A17 --> A18[18. agree the terms and sign]
+  A17 --> A18[18. Agree the Terms and Sign]
   A18 -. the terms will not come right .-> A17
-  A18 --> A19[19. write it into the register]
-  A19 --> A20[20. hand it to the owner]
-  A20 --> A21[21. record what was learned]
+  A18 --> A19[19. Write It into the Register]
+  A19 --> A20[20. Hand It to the Owner]
+  A20 --> A21[21. Record What Was Learned]
   A21 --> DONE([the tool is chosen, contracted and owned])
 ```
 

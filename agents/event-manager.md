@@ -14,29 +14,29 @@ a report on what the event produced.
 
 ## Seats
 
-- `ref/mkt/advisory-board` / take in the cycle, set the agenda, invite
-  the members, make the arrangements, send the pre-read, collect the
-  early input, run the session, sort the feedback, route the feedback,
-  record what was learned
-- `ref/mkt/field-event` / take in the audience and date, settle the
-  format and program, book the venue and suppliers, build the invitation
-  list, work the registration list, prepare the run of show, run the
-  event, follow up with the people who came, report how the event did,
-  record what was learned
-- `ref/mkt/set-marketing-budget` / collect what each function asks for,
-  tell every function what it has
-- `ref/mkt/trade-show` / take in the show, list every deadline, plan the
-  presence, settle the booth message, brief the booth staff, run the
-  show days, report the show, record what was learned
-- `ref/mkt/user-conference` / take in the conference, set the conference
-  plan, book the venue and the suppliers, choose the program, open
-  registration, watch the registrations, invite the press and the
-  analysts, set up the venue, run the show, report the conference,
-  record what was learned
-- `ref/mkt/webinar` / take in the topic and date, settle the format and
-  the presenters, set up the session in the platform, work the
-  registration list, run the session, report how the session did, record
-  what was learned
+- `ref/mkt/advisory-board` / Take in the Cycle, Set the Agenda, Invite
+  the Members, Make the Arrangements, Send the Pre-Read, Collect the
+  Early Input, Run the Session, Sort the Feedback, Route the Feedback,
+  Record What Was Learned
+- `ref/mkt/field-event` / Take in the Audience and Date, Settle the
+  Format and Program, Book the Venue and Suppliers, Build the Invitation
+  List, Work the Registration List, Prepare the Run of Show, Run the
+  Event, Follow up with the People Who Came, Report How the Event Did,
+  Record What Was Learned
+- `ref/mkt/set-marketing-budget` / Collect What Each Function Asks For,
+  Tell Every Function What It Has
+- `ref/mkt/trade-show` / Take in the Show, List Every Deadline, Plan the
+  Presence, Settle the Booth Message, Brief the Booth Staff, Run the
+  Show Days, Report the Show, Record What Was Learned
+- `ref/mkt/user-conference` / Take in the Conference, Set the Conference
+  Plan, Book the Venue and the Suppliers, Choose the Program, Open
+  Registration, Watch the Registrations, Invite the Press and the
+  Analysts, Set up the Venue, Run the Show, Report the Conference,
+  Record What Was Learned
+- `ref/mkt/webinar` / Take in the Topic and Date, Settle the Format and
+  the Presenters, Set up the Session in the Platform, Work the
+  Registration List, Run the Session, Report How the Session Did, Record
+  What Was Learned
 
 ## Patterns
 

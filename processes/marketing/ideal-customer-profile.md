@@ -1,4 +1,4 @@
-# Reference process: the ideal customer profile
+# Reference process: Define Ideal Customer Profile
 
 `ref/mkt/ideal-customer-profile v1`
 
@@ -23,55 +23,55 @@ set the date it comes back up.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the question | work out what the profile must settle and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
-| 2 | read the customer record | who bought, who stayed, who left, and what they share | [analytics](../../agents/analytics.md) · [forecaster](../../agents/forecaster.md) |
-| 3 | gather the outside evidence | market reports, public data, and who else sells here | [researcher](../../agents/researcher.md) |
-| 4 | collect the first-hand accounts | what sellers and customers say about which deals fit | researcher · sales leader (person) · subject matter expert (person) |
-| 5 | find the traits that predict a win | which traits separate the wins from everything else | forecaster · analytics |
-| 6 | draft the candidate profiles | two or three shapes of buyer, each with its evidence | decision-coordinator · forecaster · researcher |
-| 7 | name the qualifying signals | the facts that say an account fits, and their sources | forecaster · decision-coordinator |
-| 8 | test the signal coverage | how often each signal is filled in, and what it costs | [lead-scorer](../../agents/lead-scorer.md) · forecaster |
-| 9 | test the candidates against the record | would each profile have picked the customers that won | forecaster · analytics |
-| 10 | size each candidate market | how many accounts of that shape actually exist | researcher · forecaster |
-| 11 | clear the data and the targeting | source terms, and whether the traits may be targeted | researcher · legal reviewer (person) |
-| 12 | settle on one profile | one profile chosen, with the reasons said out loud | decision-coordinator · leadership (person) · sales leader (person) |
-| 13 | write down the agreed profile | firmographics, signals, disqualifiers, and who agreed | decision-coordinator |
-| 14 | issue the profile as a version | the profile numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 15 | hand over the profile | each receiving seat says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [media-buyer](../../agents/media-buyer.md) |
-| 16 | set the review conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
-| 17 | record what was learned | what to repeat, what to avoid | decision-coordinator |
+| 1 | Take in the Question | work out what the profile must settle and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
+| 2 | Read the Customer Record | who bought, who stayed, who left, and what they share | [analytics](../../agents/analytics.md) · [forecaster](../../agents/forecaster.md) |
+| 3 | Gather the Outside Evidence | market reports, public data, and who else sells here | [researcher](../../agents/researcher.md) |
+| 4 | Collect the First-Hand Accounts | what sellers and customers say about which deals fit | researcher · sales leader (person) · subject matter expert (person) |
+| 5 | Find the Traits that Predict a Win | which traits separate the wins from everything else | forecaster · analytics |
+| 6 | Draft the Candidate Profiles | two or three shapes of buyer, each with its evidence | decision-coordinator · forecaster · researcher |
+| 7 | Name the Qualifying Signals | the facts that say an account fits, and their sources | forecaster · decision-coordinator |
+| 8 | Test the Signal Coverage | how often each signal is filled in, and what it costs | [lead-scorer](../../agents/lead-scorer.md) · forecaster |
+| 9 | Test the Candidates against the Record | would each profile have picked the customers that won | forecaster · analytics |
+| 10 | Size Each Candidate Market | how many accounts of that shape actually exist | researcher · forecaster |
+| 11 | Clear the Data and the Targeting | source terms, and whether the traits may be targeted | researcher · legal reviewer (person) |
+| 12 | Settle on One Profile | one profile chosen, with the reasons said out loud | decision-coordinator · leadership (person) · sales leader (person) |
+| 13 | Write down the Agreed Profile | firmographics, signals, disqualifiers, and who agreed | decision-coordinator |
+| 14 | Issue the Profile as a Version | the profile numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 15 | Hand over the Profile | each receiving seat says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [media-buyer](../../agents/media-buyer.md) |
+| 16 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
+| 17 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a go-to-market question is asked]) --> A1[1. take in the question]
-  A1 --> A2[2. read the customer record]
-  A1 --> A3[3. gather the outside evidence]
-  A1 --> A4[4. collect the first-hand accounts]
-  A2 --> A5[5. find the traits that predict a win]
+  T([a go-to-market question is asked]) --> A1[1. Take in the Question]
+  A1 --> A2[2. Read the Customer Record]
+  A1 --> A3[3. Gather the Outside Evidence]
+  A1 --> A4[4. Collect the First-Hand Accounts]
+  A2 --> A5[5. Find the Traits that Predict a Win]
   A3 --> A5
   A4 --> A5
-  A5 --> A6[6. draft the candidate profiles]
-  A6 --> A7[7. name the qualifying signals]
-  A7 --> A8[8. test the signal coverage]
+  A5 --> A6[6. Draft the Candidate Profiles]
+  A6 --> A7[7. Name the Qualifying Signals]
+  A7 --> A8[8. Test the Signal Coverage]
   A8 -. no signal can be seen early enough .-> A7
-  A6 --> A9[9. test the candidates against the record]
+  A6 --> A9[9. Test the Candidates against the Record]
   A9 -. no candidate holds up .-> A6
-  A6 --> A10[10. size each candidate market]
+  A6 --> A10[10. Size Each Candidate Market]
   A10 -. the market is too small .-> A6
-  A7 --> A11[11. clear the data and the targeting]
+  A7 --> A11[11. Clear the Data and the Targeting]
   A11 -. a source or a trait is ruled out .-> A6
-  A8 --> A12[12. settle on one profile]
+  A8 --> A12[12. Settle on One Profile]
   A9 --> A12
   A10 --> A12
   A11 --> A12
   A12 -. the room cannot agree .-> A6
-  A12 --> A13[13. write down the agreed profile]
-  A13 --> A14[14. issue the profile as a version]
-  A14 --> A15[15. hand over the profile]
-  A15 --> A16[16. set the review conditions]
-  A16 --> A17[17. record what was learned]
+  A12 --> A13[13. Write down the Agreed Profile]
+  A13 --> A14[14. Issue the Profile as a Version]
+  A14 --> A15[15. Hand over the Profile]
+  A15 --> A16[16. Set the Review Conditions]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the profile is agreed and in use])
 ```
 

@@ -1,4 +1,4 @@
-# Reference process: measure brand health
+# Reference process: Measure Brand Health
 
 `ref/mkt/brand-health v1`
 
@@ -21,66 +21,66 @@ figure.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | open the cycle | the wave's dates and the waves it compares to | [study-manager](../../agents/study-manager.md) |
-| 2 | read the promise the brand makes | the brand standard at the version now in force | [standards-keeper](../../agents/standards-keeper.md) · study-manager |
-| 3 | settle what the wave measures | awareness, perception, preference and the attributes | [decision-coordinator](../../agents/decision-coordinator.md) · study-manager · brand owner (person) |
-| 4 | set the competitor set | which rivals get asked about beside the brand | study-manager · [researcher](../../agents/researcher.md) |
-| 5 | brief the wave | every seat hears the question and the dates at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
-| 6 | say how much data it needs | how many responses, per market and per segment | statistician |
-| 7 | define the sample | who gets asked, and how the market is represented | study-manager · audience-manager |
-| 8 | check who may be contacted | the consent record applied to the drawn sample | consent-manager |
-| 9 | arrange the outside sample | the people the contact base cannot supply are bought | [supplier-manager](../../agents/supplier-manager.md) · [supplier-check](../../agents/supplier-check.md) |
-| 10 | cover the cost | the panel and the incentives, against what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
-| 11 | carry the questions forward | last wave's wording kept, and any change written down | study-manager · statistician |
-| 12 | get sign-offs | legal and the brand owner approve before fielding | legal reviewer (person) · brand owner (person) |
-| 13 | field the wave | invitations go out and the responses come in | study-manager · [audience-operator](../../agents/audience-operator.md) |
-| 14 | watch the sample fill | how many answered against how many are needed | study-manager · statistician |
-| 15 | close the wave | asking stops and the responses are fixed | study-manager |
-| 16 | work out the figures | the weighting, and each figure with its range | statistician |
-| 17 | compare with the earlier waves | which movements are larger than the noise | statistician · study-manager |
-| 18 | read what was published outside | what outlets, analysts and reviewers said this cycle | coverage-monitor |
-| 19 | set perception against the promise | what people believe beside what the brand claims | study-manager · standards-keeper |
-| 20 | write the findings | each finding with the responses recorded under it | study-manager |
-| 21 | check the findings hold | every figure read against its data and its method | statistician |
-| 22 | report awareness, perception and preference | the readout, with the evidence under every line | study-manager · [reporting-manager](../../agents/reporting-manager.md) · decision-coordinator · leadership (person) · brand owner (person) |
-| 23 | record what was learned | what to repeat, what to avoid | study-manager |
+| 1 | Open the Cycle | the wave's dates and the waves it compares to | [study-manager](../../agents/study-manager.md) |
+| 2 | Read the Promise the Brand Makes | the brand standard at the version now in force | [standards-keeper](../../agents/standards-keeper.md) · study-manager |
+| 3 | Settle What the Wave Measures | awareness, perception, preference and the attributes | [decision-coordinator](../../agents/decision-coordinator.md) · study-manager · brand owner (person) |
+| 4 | Set the Competitor Set | which rivals get asked about beside the brand | study-manager · [researcher](../../agents/researcher.md) |
+| 5 | Brief the Wave | every seat hears the question and the dates at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 6 | Say How Much Data It Needs | how many responses, per market and per segment | statistician |
+| 7 | Define the Sample | who gets asked, and how the market is represented | study-manager · audience-manager |
+| 8 | Check Who May Be Contacted | the consent record applied to the drawn sample | consent-manager |
+| 9 | Arrange the Outside Sample | the people the contact base cannot supply are bought | [supplier-manager](../../agents/supplier-manager.md) · [supplier-check](../../agents/supplier-check.md) |
+| 10 | Cover the Cost | the panel and the incentives, against what is left | [budget-keeper](../../agents/budget-keeper.md) · finance (person) |
+| 11 | Carry the Questions Forward | last wave's wording kept, and any change written down | study-manager · statistician |
+| 12 | Get Sign-Offs | legal and the brand owner approve before fielding | legal reviewer (person) · brand owner (person) |
+| 13 | Field the Wave | invitations go out and the responses come in | study-manager · [audience-operator](../../agents/audience-operator.md) |
+| 14 | Watch the Sample Fill | how many answered against how many are needed | study-manager · statistician |
+| 15 | Close the Wave | asking stops and the responses are fixed | study-manager |
+| 16 | Work out the Figures | the weighting, and each figure with its range | statistician |
+| 17 | Compare with the Earlier Waves | which movements are larger than the noise | statistician · study-manager |
+| 18 | Read What Was Published Outside | what outlets, analysts and reviewers said this cycle | coverage-monitor |
+| 19 | Set Perception against the Promise | what people believe beside what the brand claims | study-manager · standards-keeper |
+| 20 | Write the Findings | each finding with the responses recorded under it | study-manager |
+| 21 | Check the Findings Hold | every figure read against its data and its method | statistician |
+| 22 | Report Awareness, Perception and Preference | the readout, with the evidence under every line | study-manager · [reporting-manager](../../agents/reporting-manager.md) · decision-coordinator · leadership (person) · brand owner (person) |
+| 23 | Record What Was Learned | what to repeat, what to avoid | study-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a tracking cycle comes round]) --> A1[1. open the cycle]
-  A1 --> A2[2. read the promise the brand makes]
-  A2 --> A3[3. settle what the wave measures]
-  A3 --> A4[4. set the competitor set]
-  A4 --> A5[5. brief the wave]
-  A5 --> A6[6. say how much data it needs]
-  A5 --> A11[11. carry the questions forward]
-  A5 --> A18[18. read what was published outside]
-  A6 --> A7[7. define the sample]
-  A7 --> A8[8. check who may be contacted]
-  A7 --> A9[9. arrange the outside sample]
+  T([a tracking cycle comes round]) --> A1[1. Open the Cycle]
+  A1 --> A2[2. Read the Promise the Brand Makes]
+  A2 --> A3[3. Settle What the Wave Measures]
+  A3 --> A4[4. Set the Competitor Set]
+  A4 --> A5[5. Brief the Wave]
+  A5 --> A6[6. Say How Much Data It Needs]
+  A5 --> A11[11. Carry the Questions Forward]
+  A5 --> A18[18. Read What Was Published Outside]
+  A6 --> A7[7. Define the Sample]
+  A7 --> A8[8. Check Who May Be Contacted]
+  A7 --> A9[9. Arrange the Outside Sample]
   A8 -. too few may be contacted .-> A7
-  A9 --> A10[10. cover the cost]
+  A9 --> A10[10. Cover the Cost]
   A11 -. the wording has to change .-> A3
-  A8 --> A12[12. get sign-offs]
+  A8 --> A12[12. Get Sign-Offs]
   A10 --> A12
   A11 --> A12
   A12 -. changes requested .-> A11
-  A12 --> A13[13. field the wave]
-  A13 --> A14[14. watch the sample fill]
+  A12 --> A13[13. Field the Wave]
+  A13 --> A14[14. Watch the Sample Fill]
   A14 -. too few answers so far .-> A13
-  A14 --> A15[15. close the wave]
-  A15 --> A16[16. work out the figures]
+  A14 --> A15[15. Close the Wave]
+  A15 --> A16[16. Work out the Figures]
   A16 -. the sample fell short .-> A13
-  A16 --> A17[17. compare with the earlier waves]
-  A17 --> A19[19. set perception against the promise]
+  A16 --> A17[17. Compare with the Earlier Waves]
+  A17 --> A19[19. Set Perception against the Promise]
   A18 --> A19
-  A19 --> A20[20. write the findings]
-  A20 --> A21[21. check the findings hold]
+  A19 --> A20[20. Write the Findings]
+  A20 --> A21[21. Check the Findings Hold]
   A21 -. a figure does not follow .-> A20
-  A21 --> A22[22. report awareness, perception and preference]
-  A22 --> A23[23. record what was learned]
+  A21 --> A22[22. Report Awareness, Perception and Preference]
+  A22 --> A23[23. Record What Was Learned]
   A23 --> DONE([awareness, perception and preference are reported])
 ```
 

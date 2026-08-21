@@ -12,35 +12,35 @@ address the page will live at.
 
 ## Seats
 
-- `ref/mkt/annual-marketing-plan` / gather the outside evidence
-- `ref/mkt/brand-positioning` / gather the evidence
-- `ref/mkt/brand-refresh` / check the remade material
-- `ref/mkt/brand-voice` / gather how the audience talks
-- `ref/mkt/content-calendar` / collect the topic candidates, read the
-  search demand, score the candidates
-- `ref/mkt/customer-case-study` / check the finished page
-- `ref/mkt/feature-release` / update the product pages
-- `ref/mkt/landing-page` / name the search terms, brief the makers,
-  score the page
-- `ref/mkt/long-form-content` / set the search terms, brief the piece,
-  check the finished page
-- `ref/mkt/map-buyer-journey` / read the search demand, collect the
-  questions, find the gaps, hand over the map
-- `ref/mkt/marketing-performance-report` / account for the published
-  pieces
-- `ref/mkt/name-product` / read the naming landscape, check the name in
-  search
-- `ref/mkt/paid-search-campaign` / research the search demand
-- `ref/mkt/pricing-change` / restate the price everywhere it is
-  published
-- `ref/mkt/product-positioning` / gather the market evidence
-- `ref/mkt/refresh-content` / read where the pages stand in search,
-  brief the pages in the cycle, set what each page has to answer, set
-  the addresses and the redirects, check the changed pages, watch what
-  the changes did
-- `ref/mkt/segment-the-market` / gather the outside evidence
-- `ref/mkt/size-market-opportunity` / gather the outside evidence
-- `ref/mkt/website-content-update` / check the changed page
+- `ref/mkt/annual-marketing-plan` / Gather the Outside Evidence
+- `ref/mkt/brand-positioning` / Gather the Evidence
+- `ref/mkt/brand-refresh` / Check the Remade Material
+- `ref/mkt/brand-voice` / Gather How the Audience Talks
+- `ref/mkt/content-calendar` / Collect the Topic Candidates, Read the
+  Search Demand, Score the Candidates
+- `ref/mkt/customer-case-study` / Check the Finished Page
+- `ref/mkt/feature-release` / Update the Product Pages
+- `ref/mkt/landing-page` / Name the Search Terms, Brief the Makers,
+  Score the Page
+- `ref/mkt/long-form-content` / Set the Search Terms, Brief the Piece,
+  Check the Finished Page
+- `ref/mkt/map-buyer-journey` / Read the Search Demand, Collect the
+  Questions, Find the Gaps, Hand over the Map
+- `ref/mkt/marketing-performance-report` / Account for the Published
+  Pieces
+- `ref/mkt/name-product` / Read the Naming Landscape, Check the Name in
+  Search
+- `ref/mkt/paid-search-campaign` / Research the Search Demand
+- `ref/mkt/pricing-change` / Restate the Price Everywhere It Is
+  Published
+- `ref/mkt/product-positioning` / Gather the Market Evidence
+- `ref/mkt/refresh-content` / Read Where the Pages Stand in Search,
+  Brief the Pages in the Cycle, Set What Each Page Has to Answer, Set
+  the Addresses and the Redirects, Check the Changed Pages, Watch What
+  the Changes Did
+- `ref/mkt/segment-the-market` / Gather the Outside Evidence
+- `ref/mkt/size-market-opportunity` / Gather the Outside Evidence
+- `ref/mkt/website-content-update` / Check the Changed Page
 
 ## Patterns
 

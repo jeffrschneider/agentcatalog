@@ -1,4 +1,4 @@
-# Reference process: conduct brand audit
+# Reference process: Conduct Brand Audit
 
 `ref/mkt/brand-audit v1`
 
@@ -28,54 +28,54 @@ away from the standard.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the request | read the cadence or the concern that called it | [study-manager](../../agents/study-manager.md) · requester (person) |
-| 2 | set what the audit covers | the channels, the period and the markets covered | study-manager · brand owner (person) |
-| 3 | name the standard versions | which version of each standard applies | [standards-keeper](../../agents/standards-keeper.md) |
-| 4 | brief the audit | every seat hears the scope and the standard at once | study-manager · standards-keeper · [brand-check](../../agents/brand-check.md) · [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) · [statistician](../../agents/statistician.md) |
-| 5 | list where the brand appears | every place an outsider meets the brand, by channel | study-manager · [content-librarian](../../agents/content-librarian.md) · [audience-manager](../../agents/audience-manager.md) |
-| 6 | draw the sample | what gets read, pulled as it is actually served | study-manager · content-librarian |
-| 7 | score the sample | every item scored against the rule it must meet | brand-check · standards-keeper |
-| 8 | read the set as a whole | whether it all looks and sounds like one company | study-manager · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) |
-| 9 | read what outsiders published | what press, analysts and reviewers said, and when | coverage-monitor |
-| 10 | ask the audience | what customers say the organization stands for | study-manager · [consent-manager](../../agents/consent-manager.md) · audience-manager |
-| 11 | read the numbers | how often people come looking for the name itself | analytics |
-| 12 | work out the figures | which figures hold and what moved since last time | statistician |
-| 13 | name the gaps | where the material and the standard do not agree | study-manager · standards-keeper |
-| 14 | write the findings | each gap with the rule and the evidence under it | study-manager |
-| 15 | decide what happens to each gap | fixed now, fixed later, or accepted in writing | brand owner (person) · leadership (person) · study-manager |
-| 16 | hand the gaps to the owners | each gap goes to the seat that can close it | study-manager · content-librarian · standards-keeper |
-| 17 | record what was learned | what to repeat, what to avoid | study-manager |
+| 1 | Take in the Request | read the cadence or the concern that called it | [study-manager](../../agents/study-manager.md) · requester (person) |
+| 2 | Set What the Audit Covers | the channels, the period and the markets covered | study-manager · brand owner (person) |
+| 3 | Name the Standard Versions | which version of each standard applies | [standards-keeper](../../agents/standards-keeper.md) |
+| 4 | Brief the Audit | every seat hears the scope and the standard at once | study-manager · standards-keeper · [brand-check](../../agents/brand-check.md) · [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) · [statistician](../../agents/statistician.md) |
+| 5 | List Where the Brand Appears | every place an outsider meets the brand, by channel | study-manager · [content-librarian](../../agents/content-librarian.md) · [audience-manager](../../agents/audience-manager.md) |
+| 6 | Draw the Sample | what gets read, pulled as it is actually served | study-manager · content-librarian |
+| 7 | Score the Sample | every item scored against the rule it must meet | brand-check · standards-keeper |
+| 8 | Read the Set as a Whole | whether it all looks and sounds like one company | study-manager · [designer](../../agents/designer.md) · [editor](../../agents/editor.md) |
+| 9 | Read What Outsiders Published | what press, analysts and reviewers said, and when | coverage-monitor |
+| 10 | Ask the Audience | what customers say the organization stands for | study-manager · [consent-manager](../../agents/consent-manager.md) · audience-manager |
+| 11 | Read the Numbers | how often people come looking for the name itself | analytics |
+| 12 | Work out the Figures | which figures hold and what moved since last time | statistician |
+| 13 | Name the Gaps | where the material and the standard do not agree | study-manager · standards-keeper |
+| 14 | Write the Findings | each gap with the rule and the evidence under it | study-manager |
+| 15 | Decide What Happens to Each Gap | fixed now, fixed later, or accepted in writing | brand owner (person) · leadership (person) · study-manager |
+| 16 | Hand the Gaps to the Owners | each gap goes to the seat that can close it | study-manager · content-librarian · standards-keeper |
+| 17 | Record What Was Learned | what to repeat, what to avoid | study-manager |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a cadence or a concern]) --> A1[1. take in the request]
-  A1 --> A2[2. set what the audit covers]
-  A2 --> A3[3. name the standard versions]
-  A3 --> A4[4. brief the audit]
-  A4 --> A5[5. list where the brand appears]
-  A4 --> A9[9. read what outsiders published]
-  A4 --> A10[10. ask the audience]
-  A4 --> A11[11. read the numbers]
-  A5 --> A6[6. draw the sample]
-  A6 --> A7[7. score the sample]
-  A6 --> A8[8. read the set as a whole]
+  T([a cadence or a concern]) --> A1[1. Take in the Request]
+  A1 --> A2[2. Set What the Audit Covers]
+  A2 --> A3[3. Name the Standard Versions]
+  A3 --> A4[4. Brief the Audit]
+  A4 --> A5[5. List Where the Brand Appears]
+  A4 --> A9[9. Read What Outsiders Published]
+  A4 --> A10[10. Ask the Audience]
+  A4 --> A11[11. Read the Numbers]
+  A5 --> A6[6. Draw the Sample]
+  A6 --> A7[7. Score the Sample]
+  A6 --> A8[8. Read the Set as a Whole]
   A7 -. a rule the text does not settle .-> A3
   A8 -. a channel nobody listed .-> A5
-  A10 --> A12[12. work out the figures]
+  A10 --> A12[12. Work out the Figures]
   A11 --> A12
   A12 -. too few answers to read .-> A10
-  A7 --> A13[13. name the gaps]
+  A7 --> A13[13. Name the Gaps]
   A8 --> A13
   A9 --> A13
   A12 --> A13
   A13 -. the sample will not carry it .-> A6
-  A13 --> A14[14. write the findings]
-  A14 --> A15[15. decide what happens to each gap]
+  A13 --> A14[14. Write the Findings]
+  A14 --> A15[15. Decide What Happens to Each Gap]
   A15 -. a finding is disputed .-> A14
-  A15 --> A16[16. hand the gaps to the owners]
-  A16 --> A17[17. record what was learned]
+  A15 --> A16[16. Hand the Gaps to the Owners]
+  A16 --> A17[17. Record What Was Learned]
   A17 --> DONE([the gaps are named and handed on])
 ```
 

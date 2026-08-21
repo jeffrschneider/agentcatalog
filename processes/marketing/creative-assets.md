@@ -1,4 +1,4 @@
-# Reference process: produce creative assets
+# Reference process: Produce Creative Assets
 
 `ref/mkt/creative-assets v1`
 
@@ -15,42 +15,42 @@ sizes the channels need.
 
 | # | Activity | What happens | Seats |
 |---|---|---|---|
-| 1 | take in the brief | work out which assets the brief actually needs | [creative-producer](../../agents/creative-producer.md) |
-| 2 | plan the production | every asset listed, with its size and its due date | creative-producer |
-| 3 | brief the makers | say what is needed, at what size, and by when | creative-producer · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 4 | settle on a direction | weigh concepts until one is worth backing | creative-producer · copywriter · designer |
-| 5 | produce the assets | copy, images and video, made to the direction | copywriter · designer · video-editor |
-| 6 | clear the rights | confirm the images, footage, fonts and music are ours | rights approver (person) · creative-producer |
-| 7 | check the set holds together | read the pieces together and fix what disagrees | creative-producer |
-| 8 | score against the standards | brand, claims and accessibility, scored with citations | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
-| 9 | get sign-offs | brand and legal approve the material | brand owner (person) · legal reviewer (person) |
-| 10 | size for every channel | each asset cut to every channel's requirements | designer · video-editor · copywriter |
-| 11 | check the sized set | score the sized versions before they go out | accessibility-check · brand-check · creative-producer |
-| 12 | hand over the set | the approved set goes back to who asked for it | creative-producer |
+| 1 | Take in the Brief | work out which assets the brief actually needs | [creative-producer](../../agents/creative-producer.md) |
+| 2 | Plan the Production | every asset listed, with its size and its due date | creative-producer |
+| 3 | Brief the Makers | say what is needed, at what size, and by when | creative-producer · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 4 | Settle on a Direction | weigh concepts until one is worth backing | creative-producer · copywriter · designer |
+| 5 | Produce the Assets | copy, images and video, made to the direction | copywriter · designer · video-editor |
+| 6 | Clear the Rights | confirm the images, footage, fonts and music are ours | rights approver (person) · creative-producer |
+| 7 | Check the Set Holds Together | read the pieces together and fix what disagrees | creative-producer |
+| 8 | Score against the Standards | brand, claims and accessibility, scored with citations | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) |
+| 9 | Get Sign-Offs | brand and legal approve the material | brand owner (person) · legal reviewer (person) |
+| 10 | Size for Every Channel | each asset cut to every channel's requirements | designer · video-editor · copywriter |
+| 11 | Check the Sized Set | score the sized versions before they go out | accessibility-check · brand-check · creative-producer |
+| 12 | Hand over the Set | the approved set goes back to who asked for it | creative-producer |
 
 ## The graph
 
 ```mermaid
 flowchart LR
-  T([a creative brief arrives]) --> A1[1. take in the brief]
-  A1 --> A2[2. plan the production]
-  A2 --> A3[3. brief the makers]
-  A3 --> A4[4. settle on a direction]
-  A4 --> A5[5. produce the assets]
-  A5 --> A6[6. clear the rights]
-  A5 --> A7[7. check the set holds together]
+  T([a creative brief arrives]) --> A1[1. Take in the Brief]
+  A1 --> A2[2. Plan the Production]
+  A2 --> A3[3. Brief the Makers]
+  A3 --> A4[4. Settle on a Direction]
+  A4 --> A5[5. Produce the Assets]
+  A5 --> A6[6. Clear the Rights]
+  A5 --> A7[7. Check the Set Holds Together]
   A6 -. rights refused .-> A5
   A7 -. the pieces disagree .-> A5
-  A6 --> A8[8. score against the standards]
+  A6 --> A8[8. Score against the Standards]
   A7 --> A8
   A8 -. failures to fix .-> A5
-  A8 --> A9[9. get sign-offs]
+  A8 --> A9[9. Get Sign-Offs]
   A9 -. changes requested .-> A5
   A9 -. the direction reopens .-> A4
-  A9 --> A10[10. size for every channel]
-  A10 --> A11[11. check the sized set]
+  A9 --> A10[10. Size for Every Channel]
+  A10 --> A11[11. Check the Sized Set]
   A11 -. a size fails .-> A10
-  A11 --> A12[12. hand over the set]
+  A11 --> A12[12. Hand over the Set]
   A12 --> DONE([the approved set is handed over])
 ```
 
