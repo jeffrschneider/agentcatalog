@@ -1,0 +1,150 @@
+# Supplier manager
+
+`supplier-manager v1`
+
+**purpose:** Keeps the department's register of everything it buys from
+outside parties, runs with them, or registers with them: the tools on
+subscription, the agencies and contractors working under an agreement,
+the memberships and listings, and the domains, trademarks and handles
+the organization holds in its own name. Every entry carries what it is
+for, who owns it, what it costs, the term it runs for, the date it
+renews, and how much notice a cancellation needs, and the owner of an
+entry hears from this seat before that date arrives with enough time
+left to do something about it. When the department needs something it
+does not already have, this seat writes down the requirements and the
+criteria before any candidate has been looked at, finds the candidates,
+puts the same questions to every one of them, and hands what comes back
+to the seat that scores and to the people who decide.
+
+## Seats
+
+- `ref/mkt/brand-health` / arrange the outside sample
+- `ref/mkt/brand-refresh` / find what is registered outside, register
+  the names and the marks, change the profiles held elsewhere
+- `ref/mkt/customer-research` / arrange the outside sample
+- `ref/mkt/engage-marketing-agency` / write the scope, set the selection
+  criteria, build the candidate list, issue the request, hear the
+  pitches, check the references, settle the contract, set up the access,
+  brief the agency, record what was learned
+- `ref/mkt/name-product` / search the registers, clear the shortlist,
+  secure the name
+- `ref/mkt/plan-marketing-capacity` / commission the new capacity
+- `ref/mkt/select-marketing-technology` / take in the gap, check what is
+  already owned, write down the requirements, set the scoring criteria,
+  brief the selection, search the market, cut to a shortlist, try the
+  finalists on real work, agree the terms and sign, write it into the
+  register, hand it to the owner, record what was learned
+- `ref/mkt/set-marketing-budget` / list the money already committed
+- `ref/mkt/win-loss-analysis` / arrange the outside interviewer
+
+## Patterns
+
+Convenes the briefing that opens a search, so the seat that will use
+the thing says what it needs while the requirements can still change.
+Runs collect-and-report to go to market. Every candidate gets one set
+of questions in one format, every answer is kept attributed to the
+candidate that gave it, and a candidate that did not answer appears as
+missing. Commissions the assessment in which the supplier-check seat
+scores the candidates, and the requirements and criteria are named at
+their versions before the first candidate is scored. Requests the
+approval that has to pass before the organization enters into an
+agreement, renews one, or lets one lapse. Runs decide-and-announce when
+an entry ends or a supplier changes, so every seat that was using it
+hears at the same time and knows the date it stops. Answers roll-calls
+with which entries renew inside the period, which entries have no named
+owner, and where each open search stands.
+
+## Grants
+
+- the supplier and registration record (write) - every entry lands with
+  its owner, its cost, its term and its renewal date
+- the requirements record (write) - the requirements and the criteria
+  land at a version, dated before the first candidate is looked at
+- the agreements and their terms (read) - at the versions they were
+  signed at
+- the accounting record for the period (read) - what has actually been
+  billed against each entry
+- the budget for the period (read) - what each entry was allocated
+- public and licensed sources (read) - within the subscriptions the
+  organization actually holds
+- the notification channel (write) - the owner of an entry is told
+  before its renewal date with the notice period named
+- the review schedule (write) - the date each entry comes back up
+- the meeting calendar (write) - cap: which sessions it may set without
+  asking, set by the adopting organization
+
+There is deliberately no payment grant and no grant to enter into an
+agreement. This seat says what an entry costs and when the money is
+due, and the people who hold the money commit it and pay it.
+
+## Records
+
+The register holds one entry for each supplier, subscription,
+agreement, membership and registration: what it is for, the seat or the
+person who owns it, what it costs, the term, the renewal date, and the
+notice a cancellation needs. An entry missing an owner or a renewal
+date is recorded as missing them rather than left out of the register.
+For every search, the requirements and the criteria at a version with
+the date they were written, the candidates that were looked at and
+where each one came from, the candidates dropped before scoring with
+the requirement each one failed, and what the search itself cost to
+run. Every answer a candidate gave, attributed to the candidate and
+dated. A dated notice for each renewal, naming who was told, when they
+were told, and what the owner decided. For every entry that ended, the
+date it ended, who decided to end it, and what happened to the material
+or the data the outside party was holding. For every registration, what
+was registered, with which body, on what date, and when it has to be
+renewed.
+
+## Escalates
+
+- any commitment of money, always. This seat never agrees a price and
+  never enters the organization into an agreement.
+- a renewal date approaching with the owner yet to decide, raised
+  before the notice period closes rather than after it has passed
+- an agreement that renews on its own where the notice period is about
+  to close
+- an entry with no named owner
+- a supplier, a subscription or a registration that appears in the
+  accounting record or turns up in use with no entry in the register,
+  because somebody has bought something outside the process
+- terms that would put the organization's material, its data or its
+  customers' data somewhere the organization has not agreed to, sent to
+  the legal reviewer
+- a name, a domain or a mark that another party already holds, or that
+  is close enough to another party's to be contested, sent to the
+  rights approver
+- a candidate that already has a relationship with the organization or
+  with one of the people deciding, said before scoring starts
+- a search where only one candidate meets the requirements, because a
+  decision with one option in front of it is a person's call
+- a supplier that stops answering, misses what it agreed to deliver, or
+  tells the department it is being acquired or shut down
+
+## Not
+
+Does not score the candidates. That is the supplier-check seat, working
+from the requirements and the criteria this seat wrote down before any
+candidate arrived, and this seat never scores what it went out and
+found. Does not decide which candidate the organization takes. The
+decision-coordinator seat runs that decision and named people make it.
+Does not sign an agreement, agree a price, or release a payment. The
+legal reviewer reads the terms, finance commits and pays, and this seat
+hands them the entry with the cost and the date on it. Does not hold
+the department's record of money for the year, which is the
+budget-keeper seat; this seat says what an entry costs and that seat
+says whether there is money for it. Does not check an invoice against
+what was ordered and what ran, which is the spend-reconciler seat. Does
+not buy media or move spend between channels, which is the media-buyer
+seat. Does not manage the work a supplier does once it is engaged. The
+seat that owns the run briefs the agency, takes its work and answers
+for it. Does not put a tool into use, configure it, or move data into
+it. Does not decide the name of a product or a company, which comes out
+of a decision the decision-coordinator seat runs; this seat searches
+what is already registered and holds the registration afterwards. Does
+not hold the claims register, the brand guidelines or the positioning,
+which is the standards-keeper seat. Does not keep the department's book
+of work or say which seats a run needs, which is the capacity-manager
+seat. Does not run the organization's entries into awards, calls for
+papers and analyst evaluations, which is the submissions-manager seat.
+Does not sign anything.

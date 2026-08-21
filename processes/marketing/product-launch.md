@@ -15,9 +15,9 @@ seats, which is why it earns a coordinator of its own.
 | 1 | take in the launch | what ships, when, and why anyone should care | [launch-coordinator](../../agents/launch-coordinator.md) · product (person) |
 | 2 | settle the message | the positioning and the story, tested against personas | [copywriter](../../agents/copywriter.md) · product marketing (person) |
 | 3 | plan the launch | the checklist: what every channel owes and by when | launch-coordinator |
-| 4 | produce the content | the blog post, the page updates, the demo video, the social posts | copywriter · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
-| 5 | enable sales | battlecards, the FAQ, the objection answers | copywriter · sales lead (person) |
-| 6 | prep the channels | web updates staged, emails loaded, ads built | [media-buyer](../../agents/media-buyer.md) · web team |
+| 4 | produce the content | the blog post, the page updates, the video, the social posts | copywriter · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 5 | enable sales | battlecards, the FAQ, the objection answers | copywriter · sales leader (person) |
+| 6 | prep the channels | web updates staged, emails loaded, ads built | [media-buyer](../../agents/media-buyer.md) · [web-producer](../../agents/web-producer.md) |
 | 7 | get sign-offs | brand, legal, and product accuracy | [brand-check](../../agents/brand-check.md) · legal reviewer (person) · product (person) |
 | 8 | launch day | everything fires in order, and someone watches it fire | launch-coordinator |
 | 9 | watch the first week | adoption, coverage, and the questions coming in | [analytics](../../agents/analytics.md) · [community-manager](../../agents/community-manager.md) |
@@ -76,7 +76,7 @@ phases:
                     by: <days>                 automation: <level>
   enable-sales    - human: battlecards, the FAQ, the objection answers,
                     reviewed by the people who will use them
-                    owner: <your sales lead>   after: plan-launch
+                    owner: <your sales leader> after: plan-launch
                     by: <days>                 automation: <level>
   prep-channels   - human: web updates staged, emails loaded, ads built
                     owner: media-buyer         after: plan-launch

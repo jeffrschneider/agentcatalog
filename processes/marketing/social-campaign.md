@@ -12,9 +12,9 @@ live, and reports how it did against what the brief asked for.
 |---|---|---|---|
 | 1 | take in the brief | work out what the campaign must accomplish | [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | set the parameters | platforms, audience, dates, budget | campaign-manager · leadership (person) |
-| 3 | brief the creatives | say what is needed and by when | campaign-manager · the creative seats |
-| 4 | settle on a direction | weigh concepts until one is worth backing | campaign-manager · the creative seats |
-| 5 | produce the posts | copy, images, video, sized per platform | [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 3 | brief the creatives | say what is needed and by when | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) |
+| 4 | settle on a direction | weigh concepts until one is worth backing | campaign-manager · copywriter · designer · video-editor |
+| 5 | produce the posts | copy, images, video, sized per platform | copywriter · designer · video-editor |
 | 6 | get sign-offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
 | 7 | set up the practical side | tracking, landing pages, ad setup, schedule | [media-buyer](../../agents/media-buyer.md) · campaign-manager |
 | 8 | launch | posts go out, the ads start | campaign-manager |

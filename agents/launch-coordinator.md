@@ -12,8 +12,14 @@ anything else in the department, and someone has to say out loud - early
 
 ## Seats
 
-- `ref/mkt/product-launch` / take in the launch, plan the launch,
-  launch day, report the launch, record what was learned
+- `ref/mkt/content-calendar` / list what is already committed
+- `ref/mkt/media-plan` / collect what the plan must carry, lay out the
+  flighting
+- `ref/mkt/pricing-change` / take in the pricing decision, set the terms
+  of the change, plan the transition, serve the notice, change the
+  public price, report the transition, record what was learned
+- `ref/mkt/product-launch` / take in the launch, plan the launch, launch
+  day, report the launch, record what was learned
 
 ## Patterns
 
