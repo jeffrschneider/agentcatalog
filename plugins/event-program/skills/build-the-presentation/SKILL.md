@@ -1,22 +1,27 @@
 ---
 name: build-the-presentation
-description: The slides and the demo, built to the agenda. Use it when running `ref/mkt/webinar`.
+description: Builds the slides and the demo for a session so that they follow the agenda that was agreed. Use it when running `ref/mkt/webinar`.
 license: CC-BY-4.0
 metadata:
   agent: event-program
   agent-version: "1"
 ---
 
-# Build the Presentation
+# Build the presentation
 
-## What happens
+## What it does
 
-The slides and the demo, built to the agenda.
+Builds the slides and the demo for a session so that they follow the
+agenda that was agreed.
 
 ## Where it happens
 
-- `ref/mkt/webinar`, activity 10 -
-  [Produce Webinar](../../../../processes/marketing/webinar.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Build the Presentation**
+  - `ref/mkt/webinar`, activity 10 -
+    [Produce Webinar](../../../../processes/marketing/webinar.md)
 
 ## What to record
 

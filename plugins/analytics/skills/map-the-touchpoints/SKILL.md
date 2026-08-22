@@ -1,22 +1,27 @@
 ---
 name: map-the-touchpoints
-description: Every place the buyer meets the organization. Use it when running `ref/mkt/map-buyer-journey`.
+description: The agent lists every place a buyer meets the organization and says what the record shows about each one. Use it when running `ref/mkt/map-buyer-journey`.
 license: CC-BY-4.0
 metadata:
   agent: analytics
   agent-version: "1"
 ---
 
-# Map the Touchpoints
+# Map the touchpoints
 
-## What happens
+## What it does
 
-Every place the buyer meets the organization.
+The agent lists every place a buyer meets the organization and says what
+the record shows about each one.
 
 ## Where it happens
 
-- `ref/mkt/map-buyer-journey`, activity 9 -
-  [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Map the Touchpoints**
+  - `ref/mkt/map-buyer-journey`, activity 9 -
+    [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)
 
 ## What to record
 

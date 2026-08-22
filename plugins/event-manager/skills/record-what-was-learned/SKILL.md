@@ -1,37 +1,35 @@
 ---
 name: record-what-was-learned
-description: What to repeat and what to change next cycle. Use it when running `ref/mkt/advisory-board` and 4 other reference processes.
+description: The agent writes down what to repeat and what to change next time, and keeps it where the next run of the same kind of event starts from it. Use it when running `ref/mkt/advisory-board` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: event-manager
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-The processes that use this activity word it differently:
-
-- in `ref/mkt/advisory-board`, what to repeat and what to change next
-  cycle
-- in `ref/mkt/field-event`, what to repeat, what to avoid
-- in `ref/mkt/trade-show`, what to repeat, what to avoid
-- in `ref/mkt/user-conference`, what to repeat, what to avoid
-- in `ref/mkt/webinar`, what to repeat, what to avoid
+The agent writes down what to repeat and what to change next time, and
+keeps it where the next run of the same kind of event starts from it.
 
 ## Where it happens
 
-- `ref/mkt/advisory-board`, activity 16 -
-  [Convene Customer Advisory Board](../../../../processes/marketing/advisory-board.md)
-- `ref/mkt/field-event`, activity 16 -
-  [Host Field Event](../../../../processes/marketing/field-event.md)
-- `ref/mkt/trade-show`, activity 16 -
-  [Exhibit at Trade Show](../../../../processes/marketing/trade-show.md)
-- `ref/mkt/user-conference`, activity 17 -
-  [Host User Conference](../../../../processes/marketing/user-conference.md)
-- `ref/mkt/webinar`, activity 18 -
-  [Produce Webinar](../../../../processes/marketing/webinar.md)
+The agent does this in one activity across five reference processes.
+Each one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/advisory-board`, activity 16 -
+    [Convene Customer Advisory Board](../../../../processes/marketing/advisory-board.md)
+  - `ref/mkt/field-event`, activity 16 -
+    [Host Field Event](../../../../processes/marketing/field-event.md)
+  - `ref/mkt/trade-show`, activity 16 -
+    [Exhibit at Trade Show](../../../../processes/marketing/trade-show.md)
+  - `ref/mkt/user-conference`, activity 17 -
+    [Host User Conference](../../../../processes/marketing/user-conference.md)
+  - `ref/mkt/webinar`, activity 18 -
+    [Produce Webinar](../../../../processes/marketing/webinar.md)
 
 ## What to record
 

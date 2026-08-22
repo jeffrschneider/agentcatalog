@@ -1,22 +1,27 @@
 ---
 name: check-every-destination
-description: The page each ad points at loads and records the visit. Use it when running `ref/mkt/traffic-ad-creative`.
+description: Opens the page behind every live link and confirms that it loads and that the visit is recorded. Use it when running `ref/mkt/traffic-ad-creative`.
 license: CC-BY-4.0
 metadata:
   agent: web-producer
   agent-version: "1"
 ---
 
-# Check Every Destination
+# Check every destination
 
-## What happens
+## What it does
 
-The page each ad points at loads and records the visit.
+Opens the page behind every live link and confirms that it loads and
+that the visit is recorded.
 
 ## Where it happens
 
-- `ref/mkt/traffic-ad-creative`, activity 10 -
-  [Traffic Ad Creative](../../../../processes/marketing/traffic-ad-creative.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Check Every Destination**
+  - `ref/mkt/traffic-ad-creative`, activity 10 -
+    [Traffic Ad Creative](../../../../processes/marketing/traffic-ad-creative.md)
 
 ## What to record
 

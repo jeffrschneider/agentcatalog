@@ -1,68 +1,55 @@
 ---
 name: record-what-was-learned
-description: What to repeat, what to avoid. Use it when running `ref/mkt/brand-identity` and 14 other reference processes.
+description: Writes down what is worth repeating next time and what to avoid, so the next run starts from it. Use it when running `ref/mkt/brand-identity` and 14 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-The processes that use this activity word it differently:
-
-- in `ref/mkt/brand-identity`, what to repeat, what to avoid
-- in `ref/mkt/brand-positioning`, what to repeat, what to avoid
-- in `ref/mkt/brand-voice`, what to repeat, what to avoid
-- in `ref/mkt/brief-executive-leadership`, what to repeat, what to avoid
-- in `ref/mkt/develop-marketing-strategy`, what to repeat, what to avoid
-- in `ref/mkt/engage-marketing-agency`, what to repeat, what to avoid
-- in `ref/mkt/ideal-customer-profile`, what to repeat, what to avoid
-- in `ref/mkt/lead-scoring-model`, what to repeat, what to avoid
-- in `ref/mkt/map-buyer-journey`, what to repeat, what to avoid
-- in `ref/mkt/name-product`, what to repeat, what to avoid
-- in `ref/mkt/plan-marketing-capacity`, what to repeat, and what would
-  reopen the plan
-- in `ref/mkt/product-positioning`, what to repeat, what to avoid
-- in `ref/mkt/segment-the-market`, what to repeat, what to avoid
-- in `ref/mkt/select-marketing-technology`, what to repeat, what to
-  avoid
-- in `ref/mkt/size-market-opportunity`, what to repeat, what to avoid
+Writes down what is worth repeating next time and what to avoid, so the
+next run starts from it.
 
 ## Where it happens
 
-- `ref/mkt/brand-identity`, activity 16 -
-  [Develop Brand Identity](../../../../processes/marketing/brand-identity.md)
-- `ref/mkt/brand-positioning`, activity 16 -
-  [Define Brand Positioning](../../../../processes/marketing/brand-positioning.md)
-- `ref/mkt/brand-voice`, activity 19 -
-  [Define Brand Voice and Messaging](../../../../processes/marketing/brand-voice.md)
-- `ref/mkt/brief-executive-leadership`, activity 20 -
-  [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
-- `ref/mkt/develop-marketing-strategy`, activity 17 -
-  [Develop Marketing Strategy](../../../../processes/marketing/develop-marketing-strategy.md)
-- `ref/mkt/engage-marketing-agency`, activity 16 -
-  [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
-- `ref/mkt/ideal-customer-profile`, activity 17 -
-  [Define Ideal Customer Profile](../../../../processes/marketing/ideal-customer-profile.md)
-- `ref/mkt/lead-scoring-model`, activity 18 -
-  [Maintain Lead Scoring Model](../../../../processes/marketing/lead-scoring-model.md)
-- `ref/mkt/map-buyer-journey`, activity 19 -
-  [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)
-- `ref/mkt/name-product`, activity 16 -
-  [Name Product or Company](../../../../processes/marketing/name-product.md)
-- `ref/mkt/plan-marketing-capacity`, activity 15 -
-  [Plan Marketing Capacity](../../../../processes/marketing/plan-marketing-capacity.md)
-- `ref/mkt/product-positioning`, activity 17 -
-  [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)
-- `ref/mkt/segment-the-market`, activity 18 -
-  [Segment the Market](../../../../processes/marketing/segment-the-market.md)
-- `ref/mkt/select-marketing-technology`, activity 21 -
-  [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
-- `ref/mkt/size-market-opportunity`, activity 16 -
-  [Size Market Opportunity](../../../../processes/marketing/size-market-opportunity.md)
+The agent does this in one activity across fifteen reference processes.
+Each one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/brand-identity`, activity 16 -
+    [Develop Brand Identity](../../../../processes/marketing/brand-identity.md)
+  - `ref/mkt/brand-positioning`, activity 16 -
+    [Define Brand Positioning](../../../../processes/marketing/brand-positioning.md)
+  - `ref/mkt/brand-voice`, activity 19 -
+    [Define Brand Voice and Messaging](../../../../processes/marketing/brand-voice.md)
+  - `ref/mkt/brief-executive-leadership`, activity 20 -
+    [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+  - `ref/mkt/develop-marketing-strategy`, activity 17 -
+    [Develop Marketing Strategy](../../../../processes/marketing/develop-marketing-strategy.md)
+  - `ref/mkt/engage-marketing-agency`, activity 16 -
+    [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+  - `ref/mkt/ideal-customer-profile`, activity 17 -
+    [Define Ideal Customer Profile](../../../../processes/marketing/ideal-customer-profile.md)
+  - `ref/mkt/lead-scoring-model`, activity 18 -
+    [Maintain Lead Scoring Model](../../../../processes/marketing/lead-scoring-model.md)
+  - `ref/mkt/map-buyer-journey`, activity 19 -
+    [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)
+  - `ref/mkt/name-product`, activity 16 -
+    [Name Product or Company](../../../../processes/marketing/name-product.md)
+  - `ref/mkt/plan-marketing-capacity`, activity 15 -
+    [Plan Marketing Capacity](../../../../processes/marketing/plan-marketing-capacity.md)
+  - `ref/mkt/product-positioning`, activity 17 -
+    [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)
+  - `ref/mkt/segment-the-market`, activity 18 -
+    [Segment the Market](../../../../processes/marketing/segment-the-market.md)
+  - `ref/mkt/select-marketing-technology`, activity 21 -
+    [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
+  - `ref/mkt/size-market-opportunity`, activity 16 -
+    [Size Market Opportunity](../../../../processes/marketing/size-market-opportunity.md)
 
 ## What to record
 

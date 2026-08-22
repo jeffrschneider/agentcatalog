@@ -1,22 +1,27 @@
 ---
 name: rebuild-the-templates
-description: Page, email and document templates, remade first. Use it when running `ref/mkt/brand-refresh`.
+description: Remakes the templates the rest of the material is built from, so that everything produced after them comes out right. Use it when running `ref/mkt/brand-refresh`.
 license: CC-BY-4.0
 metadata:
   agent: web-producer
   agent-version: "1"
 ---
 
-# Rebuild the Templates
+# Rebuild the templates
 
-## What happens
+## What it does
 
-Page, email and document templates, remade first.
+Remakes the templates the rest of the material is built from, so that
+everything produced after them comes out right.
 
 ## Where it happens
 
-- `ref/mkt/brand-refresh`, activity 12 -
-  [Roll Out Brand Refresh](../../../../processes/marketing/brand-refresh.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Rebuild the Templates**
+  - `ref/mkt/brand-refresh`, activity 12 -
+    [Roll Out Brand Refresh](../../../../processes/marketing/brand-refresh.md)
 
 ## What to record
 

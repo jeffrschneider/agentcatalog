@@ -1,22 +1,34 @@
 ---
 name: get-the-customers-approval
-description: The customer clears their own words at a version. Use it when running `ref/mkt/customer-case-study`.
+description: Goes back to the customer to have them clear the finished material at a version, including their own words and the sign-off of their own legal and communications people where the customer requires it. Use it when running `ref/mkt/award-entry`, `ref/mkt/customer-case-study` and `ref/mkt/customer-reference`.
 license: CC-BY-4.0
 metadata:
   agent: advocacy-manager
   agent-version: "1"
 ---
 
-# Get the Customer's Approval
+# Get the customers approval
 
-## What happens
+## What it does
 
-The customer clears their own words at a version.
+Goes back to the customer to have them clear the finished material at a
+version, including their own words and the sign-off of their own legal
+and communications people where the customer requires it.
 
 ## Where it happens
 
-- `ref/mkt/customer-case-study`, activity 15 -
-  [Produce Customer Case Study](../../../../processes/marketing/customer-case-study.md)
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
+
+- **Get the Customer's Agreement**
+  - `ref/mkt/award-entry`, activity 7 -
+    [Submit Award Entry](../../../../processes/marketing/award-entry.md)
+- **Get the Customer's Approval**
+  - `ref/mkt/customer-case-study`, activity 15 -
+    [Produce Customer Case Study](../../../../processes/marketing/customer-case-study.md)
+- **Get the Customer's Approvals**
+  - `ref/mkt/customer-reference`, activity 11 -
+    [Recruit Customer Reference](../../../../processes/marketing/customer-reference.md)
 
 ## What to record
 

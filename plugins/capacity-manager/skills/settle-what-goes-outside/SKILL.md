@@ -1,0 +1,48 @@
+---
+name: settle-what-goes-outside
+description: Weighs building the work inside against hiring it outside, settles what stays in the department and what an outside party does, and writes down the work handed over with its deliverables and dates. Use it when running `ref/mkt/engage-marketing-agency`.
+license: CC-BY-4.0
+metadata:
+  agent: capacity-manager
+  agent-version: "1"
+---
+
+# Settle what goes outside
+
+## What it does
+
+Weighs building the work inside against hiring it outside, settles what
+stays in the department and what an outside party does, and writes down
+the work handed over with its deliverables and dates.
+
+## Where it happens
+
+The agent does this in three activities across one reference process.
+Each one names the activity as that process words it.
+
+- **Choose the Route**
+  - `ref/mkt/engage-marketing-agency`, activity 2 -
+    [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+- **Decide What Is Handed Over**
+  - `ref/mkt/engage-marketing-agency`, activity 3 -
+    [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+- **Write the Scope**
+  - `ref/mkt/engage-marketing-agency`, activity 4 -
+    [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+
+## What to record
+
+It leaves the book of work at a version for each period, with every
+request carrying the date it arrived and its current state, and every
+committed run carrying the agents it needs and the dates it holds. Every
+commitment it makes is recorded with the date it was made and what it
+displaced, and every commitment that changes is recorded the same way.
+It records what each activity actually took against the run it came
+from, so the department's estimates come from its own history. The room
+left in the period is restated whenever a commitment lands or moves. A
+request the department could not take is recorded with the reason and
+the date, and it stays in the book.
+
+That contract covers every activity this abstract agent takes on, and it
+is repeated in `com.agentcatalog.agent/RECORDS.md`. What the abstract
+agent does not do is in `com.agentcatalog.agent/NOT.md`.

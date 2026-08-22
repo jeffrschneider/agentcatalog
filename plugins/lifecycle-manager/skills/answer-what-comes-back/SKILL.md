@@ -1,29 +1,29 @@
 ---
 name: answer-what-comes-back
-description: Questions, objections, and accounts asking to leave. Use it when running `ref/mkt/pricing-change` and `ref/mkt/win-back-campaign`.
+description: Answers what the customer sends back, which is the questions, the objections, and the accounts saying they want to leave. Use it when running `ref/mkt/pricing-change` and `ref/mkt/win-back-campaign`.
 license: CC-BY-4.0
 metadata:
   agent: lifecycle-manager
   agent-version: "1"
 ---
 
-# Answer What Comes Back
+# Answer what comes back
 
-## What happens
+## What it does
 
-The processes that use this activity word it differently:
-
-- in `ref/mkt/pricing-change`, questions, objections, and accounts
-  asking to leave
-- in `ref/mkt/win-back-campaign`, replies and complaints answered or
-  passed on
+Answers what the customer sends back, which is the questions, the
+objections, and the accounts saying they want to leave.
 
 ## Where it happens
 
-- `ref/mkt/pricing-change`, activity 11 -
-  [Launch Pricing Change](../../../../processes/marketing/pricing-change.md)
-- `ref/mkt/win-back-campaign`, activity 15 -
-  [Run Win-Back Campaign](../../../../processes/marketing/win-back-campaign.md)
+The agent does this in one activity across two reference processes. Each
+one names the activity as that process words it.
+
+- **Answer What Comes Back**
+  - `ref/mkt/pricing-change`, activity 11 -
+    [Launch Pricing Change](../../../../processes/marketing/pricing-change.md)
+  - `ref/mkt/win-back-campaign`, activity 15 -
+    [Run Win-Back Campaign](../../../../processes/marketing/win-back-campaign.md)
 
 ## What to record
 

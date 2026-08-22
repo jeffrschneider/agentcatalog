@@ -1,22 +1,33 @@
 ---
 name: record-the-material
-description: The shoot, the screen capture, the narration. Use it when running `ref/mkt/video-asset`.
+description: "The agent records what the cut will be made from: a shoot, a screen capture, a narration, or the sessions and moments of a live event. Use it when running `ref/mkt/field-event`, `ref/mkt/user-conference` and `ref/mkt/video-asset`."
 license: CC-BY-4.0
 metadata:
   agent: video-editor
   agent-version: "1"
 ---
 
-# Record the Material
+# Record the material
 
-## What happens
+## What it does
 
-The shoot, the screen capture, the narration.
+The agent records what the cut will be made from: a shoot, a screen
+capture, a narration, or the sessions and moments of a live event.
 
 ## Where it happens
 
-- `ref/mkt/video-asset`, activity 5 -
-  [Produce Video Asset](../../../../processes/marketing/video-asset.md)
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
+
+- **Capture the Event on Record**
+  - `ref/mkt/field-event`, activity 13 -
+    [Host Field Event](../../../../processes/marketing/field-event.md)
+- **Capture the Sessions**
+  - `ref/mkt/user-conference`, activity 14 -
+    [Host User Conference](../../../../processes/marketing/user-conference.md)
+- **Record the Material**
+  - `ref/mkt/video-asset`, activity 5 -
+    [Produce Video Asset](../../../../processes/marketing/video-asset.md)
 
 ## What to record
 

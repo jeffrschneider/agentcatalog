@@ -6,8 +6,8 @@ the work is, which systems it needs and at what access, what it must
 leave behind, and where it stops. Any agent that leaves the records can
 implement it.
 
-The plugin carries 42 skills, no `mcp.json`, and everything the abstract
-agent owes under `com.agentcatalog.agent/`.
+The plugin carries fifteen skills, no `mcp.json`, and everything the
+abstract agent owes under `com.agentcatalog.agent/`.
 
 ## Why there is no mcp.json
 

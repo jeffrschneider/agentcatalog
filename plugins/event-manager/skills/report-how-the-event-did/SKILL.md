@@ -1,22 +1,36 @@
 ---
 name: report-how-the-event-did
-description: Attendance, cost, and what the event produced. Use it when running `ref/mkt/field-event`.
+description: "The agent writes the account of the event: who came, what it cost, what it produced, and how that compares with what the event was asked to do. Use it when running `ref/mkt/field-event` and 3 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: event-manager
   agent-version: "1"
 ---
 
-# Report How the Event Did
+# Report how the event did
 
-## What happens
+## What it does
 
-Attendance, cost, and what the event produced.
+The agent writes the account of the event: who came, what it cost, what
+it produced, and how that compares with what the event was asked to do.
 
 ## Where it happens
 
-- `ref/mkt/field-event`, activity 15 -
-  [Host Field Event](../../../../processes/marketing/field-event.md)
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
+
+- **Report How the Event Did**
+  - `ref/mkt/field-event`, activity 15 -
+    [Host Field Event](../../../../processes/marketing/field-event.md)
+- **Report How the Session Did**
+  - `ref/mkt/webinar`, activity 17 -
+    [Produce Webinar](../../../../processes/marketing/webinar.md)
+- **Report the Conference**
+  - `ref/mkt/user-conference`, activity 16 -
+    [Host User Conference](../../../../processes/marketing/user-conference.md)
+- **Report the Show**
+  - `ref/mkt/trade-show`, activity 15 -
+    [Exhibit at Trade Show](../../../../processes/marketing/trade-show.md)
 
 ## What to record
 

@@ -1,22 +1,34 @@
 ---
 name: get-the-internal-sign-offs
-description: Legal and rights confirm what the permission covers. Use it when running `ref/mkt/customer-reference`.
+description: Runs the material past the people inside the organization who have to clear it before a customer is named, which covers brand, legal and rights, and records what each of them cleared. Use it when running `ref/mkt/award-entry`, `ref/mkt/customer-newsletter` and `ref/mkt/customer-reference`.
 license: CC-BY-4.0
 metadata:
   agent: advocacy-manager
   agent-version: "1"
 ---
 
-# Get the Internal Sign-Offs
+# Get the internal sign offs
 
-## What happens
+## What it does
 
-Legal and rights confirm what the permission covers.
+Runs the material past the people inside the organization who have to
+clear it before a customer is named, which covers brand, legal and
+rights, and records what each of them cleared.
 
 ## Where it happens
 
-- `ref/mkt/customer-reference`, activity 12 -
-  [Recruit Customer Reference](../../../../processes/marketing/customer-reference.md)
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
+
+- **Clear the Customer Story**
+  - `ref/mkt/customer-newsletter`, activity 4 -
+    [Publish Customer Newsletter](../../../../processes/marketing/customer-newsletter.md)
+- **Get Sign-Offs**
+  - `ref/mkt/award-entry`, activity 11 -
+    [Submit Award Entry](../../../../processes/marketing/award-entry.md)
+- **Get the Internal Sign-Offs**
+  - `ref/mkt/customer-reference`, activity 12 -
+    [Recruit Customer Reference](../../../../processes/marketing/customer-reference.md)
 
 ## What to record
 

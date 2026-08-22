@@ -1,22 +1,27 @@
 ---
 name: set-the-addresses-and-the-redirects
-description: Merged and retired pages point somewhere sensible. Use it when running `ref/mkt/refresh-content`.
+description: Sets the address a page lives at and points merged and retired pages somewhere sensible. Use it when running `ref/mkt/refresh-content`.
 license: CC-BY-4.0
 metadata:
   agent: web-producer
   agent-version: "1"
 ---
 
-# Set the Addresses and the Redirects
+# Set the addresses and the redirects
 
-## What happens
+## What it does
 
-Merged and retired pages point somewhere sensible.
+Sets the address a page lives at and points merged and retired pages
+somewhere sensible.
 
 ## Where it happens
 
-- `ref/mkt/refresh-content`, activity 17 -
-  [Refresh Published Content](../../../../processes/marketing/refresh-content.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Set the Addresses and the Redirects**
+  - `ref/mkt/refresh-content`, activity 17 -
+    [Refresh Published Content](../../../../processes/marketing/refresh-content.md)
 
 ## What to record
 

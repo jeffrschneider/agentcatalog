@@ -1,22 +1,27 @@
 ---
 name: set-the-refresh-schedule
-description: How often the list is rebuilt and delivered again. Use it when running `ref/mkt/target-audience-segment`.
+description: The agent sets how often the list is rebuilt and delivered again, and records the date the next transfer is due. Use it when running `ref/mkt/target-audience-segment`.
 license: CC-BY-4.0
 metadata:
   agent: audience-handover
   agent-version: "1"
 ---
 
-# Set the Refresh Schedule
+# Set the refresh schedule
 
-## What happens
+## What it does
 
-How often the list is rebuilt and delivered again.
+The agent sets how often the list is rebuilt and delivered again, and
+records the date the next transfer is due.
 
 ## Where it happens
 
-- `ref/mkt/target-audience-segment`, activity 15 -
-  [Build Target Audience Segment](../../../../processes/marketing/target-audience-segment.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Set the Refresh Schedule**
+  - `ref/mkt/target-audience-segment`, activity 15 -
+    [Build Target Audience Segment](../../../../processes/marketing/target-audience-segment.md)
 
 ## What to record
 

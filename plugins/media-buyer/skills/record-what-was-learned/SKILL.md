@@ -1,29 +1,29 @@
 ---
 name: record-what-was-learned
-description: Which lines and which issuers to check first next time. Use it when running `ref/mkt/reconcile-media-spend` and `ref/mkt/verify-ad-placement`.
+description: Closes a run with what to check first the next time, naming the lines and the issuers that caused the most work. Use it when running `ref/mkt/reconcile-media-spend` and `ref/mkt/verify-ad-placement`.
 license: CC-BY-4.0
 metadata:
   agent: media-buyer
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-The processes that use this activity word it differently:
-
-- in `ref/mkt/reconcile-media-spend`, which lines and which issuers to
-  check first next time
-- in `ref/mkt/verify-ad-placement`, which channels and sellers to check
-  first next time
+Closes a run with what to check first the next time, naming the lines
+and the issuers that caused the most work.
 
 ## Where it happens
 
-- `ref/mkt/reconcile-media-spend`, activity 14 -
-  [Reconcile Media Spend](../../../../processes/marketing/reconcile-media-spend.md)
-- `ref/mkt/verify-ad-placement`, activity 15 -
-  [Verify Ad Placement Quality](../../../../processes/marketing/verify-ad-placement.md)
+The agent does this in one activity across two reference processes. Each
+one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/reconcile-media-spend`, activity 14 -
+    [Reconcile Media Spend](../../../../processes/marketing/reconcile-media-spend.md)
+  - `ref/mkt/verify-ad-placement`, activity 15 -
+    [Verify Ad Placement Quality](../../../../processes/marketing/verify-ad-placement.md)
 
 ## What to record
 

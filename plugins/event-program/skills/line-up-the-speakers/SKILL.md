@@ -1,22 +1,27 @@
 ---
 name: line-up-the-speakers
-description: Ask, confirm and brief the people who will speak. Use it when running `ref/mkt/field-event`.
+description: Asks the people who will speak, confirms each one, and tells them what the session is for and who will be sitting in front of them. Use it when running `ref/mkt/field-event`.
 license: CC-BY-4.0
 metadata:
   agent: event-program
   agent-version: "1"
 ---
 
-# Line up the Speakers
+# Line up the speakers
 
-## What happens
+## What it does
 
-Ask, confirm and brief the people who will speak.
+Asks the people who will speak, confirms each one, and tells them what
+the session is for and who will be sitting in front of them.
 
 ## Where it happens
 
-- `ref/mkt/field-event`, activity 4 -
-  [Host Field Event](../../../../processes/marketing/field-event.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Line up the Speakers**
+  - `ref/mkt/field-event`, activity 4 -
+    [Host Field Event](../../../../processes/marketing/field-event.md)
 
 ## What to record
 

@@ -1,22 +1,27 @@
 ---
 name: brief-the-agents-that-act
-description: Everyone hears the same account picture at once. Use it when running `ref/mkt/onboarding-email-program`.
+description: Puts the same account of the customer in front of every agent that has to do something for them, at the same time. Use it when running `ref/mkt/onboarding-email-program`.
 license: CC-BY-4.0
 metadata:
   agent: lifecycle-manager
   agent-version: "1"
 ---
 
-# Brief the Agents that Act
+# Brief the agents that act
 
-## What happens
+## What it does
 
-Everyone hears the same account picture at once.
+Puts the same account of the customer in front of every agent that has
+to do something for them, at the same time.
 
 ## Where it happens
 
-- `ref/mkt/onboarding-email-program`, activity 5 -
-  [Run Onboarding Email Program](../../../../processes/marketing/onboarding-email-program.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Brief the Agents that Act**
+  - `ref/mkt/onboarding-email-program`, activity 5 -
+    [Run Onboarding Email Program](../../../../processes/marketing/onboarding-email-program.md)
 
 ## What to record
 

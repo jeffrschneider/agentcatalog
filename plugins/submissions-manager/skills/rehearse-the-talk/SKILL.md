@@ -1,22 +1,27 @@
 ---
 name: rehearse-the-talk
-description: Run it to time and fix what falls flat. Use it when running `ref/mkt/speaking-engagement`.
+description: The agent runs the talk to time before it is given, and says what falls flat and has to change. Use it when running `ref/mkt/speaking-engagement`.
 license: CC-BY-4.0
 metadata:
   agent: submissions-manager
   agent-version: "1"
 ---
 
-# Rehearse the Talk
+# Rehearse the talk
 
-## What happens
+## What it does
 
-Run it to time and fix what falls flat.
+The agent runs the talk to time before it is given, and says what falls
+flat and has to change.
 
 ## Where it happens
 
-- `ref/mkt/speaking-engagement`, activity 10 -
-  [Secure Speaking Engagement](../../../../processes/marketing/speaking-engagement.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Rehearse the Talk**
+  - `ref/mkt/speaking-engagement`, activity 10 -
+    [Secure Speaking Engagement](../../../../processes/marketing/speaking-engagement.md)
 
 ## What to record
 

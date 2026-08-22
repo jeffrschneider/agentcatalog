@@ -1,28 +1,33 @@
 ---
 name: record-what-was-learned
-description: What to repeat, what to avoid. Use it when running `ref/mkt/customer-case-study` and 3 other reference processes.
+description: Writes down what is worth repeating next time and what to avoid, so the next run starts from it. Use it when running `ref/mkt/customer-case-study` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: content-manager
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-What to repeat, what to avoid.
+Writes down what is worth repeating next time and what to avoid, so the
+next run starts from it.
 
 ## Where it happens
 
-- `ref/mkt/customer-case-study`, activity 21 -
-  [Produce Customer Case Study](../../../../processes/marketing/customer-case-study.md)
-- `ref/mkt/customer-newsletter`, activity 17 -
-  [Publish Customer Newsletter](../../../../processes/marketing/customer-newsletter.md)
-- `ref/mkt/landing-page`, activity 15 -
-  [Publish Landing Page](../../../../processes/marketing/landing-page.md)
-- `ref/mkt/long-form-content`, activity 18 -
-  [Produce Long-Form Content](../../../../processes/marketing/long-form-content.md)
+The agent does this in one activity across four reference processes.
+Each one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/customer-case-study`, activity 21 -
+    [Produce Customer Case Study](../../../../processes/marketing/customer-case-study.md)
+  - `ref/mkt/customer-newsletter`, activity 17 -
+    [Publish Customer Newsletter](../../../../processes/marketing/customer-newsletter.md)
+  - `ref/mkt/landing-page`, activity 15 -
+    [Publish Landing Page](../../../../processes/marketing/landing-page.md)
+  - `ref/mkt/long-form-content`, activity 18 -
+    [Produce Long-Form Content](../../../../processes/marketing/long-form-content.md)
 
 ## What to record
 

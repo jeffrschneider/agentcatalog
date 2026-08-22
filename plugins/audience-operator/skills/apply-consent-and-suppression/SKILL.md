@@ -1,22 +1,33 @@
 ---
 name: apply-consent-and-suppression
-description: Everyone the consent record does not cover comes out. Use it when running `ref/mkt/target-audience-segment`.
+description: The agent takes out everyone the consent record does not cover and everyone on a suppression list, and writes that exclusion into every list and system the change touches. Use it when running `ref/mkt/contact-database-hygiene`, `ref/mkt/display-retargeting` and `ref/mkt/target-audience-segment`.
 license: CC-BY-4.0
 metadata:
   agent: audience-operator
   agent-version: "1"
 ---
 
-# Apply Consent and Suppression
+# Apply consent and suppression
 
-## What happens
+## What it does
 
-Everyone the consent record does not cover comes out.
+The agent takes out everyone the consent record does not cover and
+everyone on a suppression list, and writes that exclusion into every
+list and system the change touches.
 
 ## Where it happens
 
-- `ref/mkt/target-audience-segment`, activity 9 -
-  [Build Target Audience Segment](../../../../processes/marketing/target-audience-segment.md)
+The agent does this in two activities across three reference processes.
+Each one names the activity as that process words it.
+
+- **Apply Consent and Suppression**
+  - `ref/mkt/target-audience-segment`, activity 9 -
+    [Build Target Audience Segment](../../../../processes/marketing/target-audience-segment.md)
+- **Apply the Suppression**
+  - `ref/mkt/contact-database-hygiene`, activity 13 -
+    [Cleanse Contact Database](../../../../processes/marketing/contact-database-hygiene.md)
+  - `ref/mkt/display-retargeting`, activity 8 -
+    [Run Display Retargeting Campaign](../../../../processes/marketing/display-retargeting.md)
 
 ## What to record
 

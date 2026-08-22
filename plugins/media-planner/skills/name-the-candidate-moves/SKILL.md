@@ -1,22 +1,27 @@
 ---
 name: name-the-candidate-moves
-description: Which lines give money up and which lines take it. Use it when running `ref/mkt/reallocate-media-spend`.
+description: Works out which lines of the plan could give money up and which lines could take it, and puts those moves forward as candidates. Use it when running `ref/mkt/reallocate-media-spend`.
 license: CC-BY-4.0
 metadata:
   agent: media-planner
   agent-version: "1"
 ---
 
-# Name the Candidate Moves
+# Name the candidate moves
 
-## What happens
+## What it does
 
-Which lines give money up and which lines take it.
+Works out which lines of the plan could give money up and which lines
+could take it, and puts those moves forward as candidates.
 
 ## Where it happens
 
-- `ref/mkt/reallocate-media-spend`, activity 4 -
-  [Reallocate Media Spend](../../../../processes/marketing/reallocate-media-spend.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Name the Candidate Moves**
+  - `ref/mkt/reallocate-media-spend`, activity 4 -
+    [Reallocate Media Spend](../../../../processes/marketing/reallocate-media-spend.md)
 
 ## What to record
 

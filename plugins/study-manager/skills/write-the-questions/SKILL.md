@@ -1,22 +1,38 @@
 ---
 name: write-the-questions
-description: Every question and everything shown, at a version. Use it when running `ref/mkt/customer-research`.
+description: Writes every question that gets asked and every piece of material that gets shown, and holds them at a version before anybody sees them. Use it when running `ref/mkt/brand-health`, `ref/mkt/customer-research` and `ref/mkt/win-loss-analysis`.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
   agent-version: "1"
 ---
 
-# Write the Questions
+# Write the questions
 
-## What happens
+## What it does
 
-Every question and everything shown, at a version.
+Writes every question that gets asked and every piece of material that
+gets shown, and holds them at a version before anybody sees them. It
+tries the wording on a handful of people first, and keeps a question
+that has run before word for word so the two readings stay comparable.
 
 ## Where it happens
 
-- `ref/mkt/customer-research`, activity 10 -
-  [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+The agent does this in four activities across three reference processes.
+Each one names the activity as that process words it.
+
+- **Carry the Questions Forward**
+  - `ref/mkt/brand-health`, activity 11 -
+    [Measure Brand Health](../../../../processes/marketing/brand-health.md)
+- **Try the Questions on a Few People**
+  - `ref/mkt/customer-research`, activity 11 -
+    [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+- **Write the Interview Guide**
+  - `ref/mkt/win-loss-analysis`, activity 9 -
+    [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Write the Questions**
+  - `ref/mkt/customer-research`, activity 10 -
+    [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
 
 ## What to record
 

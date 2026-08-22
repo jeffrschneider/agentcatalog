@@ -1,22 +1,27 @@
 ---
 name: confirm-the-facts
-description: Establish what happened from the people who know. Use it when running `ref/mkt/crisis-communication`.
+description: The agent establishes what actually happened from the people who know, and records who established each fact and when. Use it when running `ref/mkt/crisis-communication`.
 license: CC-BY-4.0
 metadata:
   agent: comms-manager
   agent-version: "1"
 ---
 
-# Confirm the Facts
+# Confirm the facts
 
-## What happens
+## What it does
 
-Establish what happened from the people who know.
+The agent establishes what actually happened from the people who know,
+and records who established each fact and when.
 
 ## Where it happens
 
-- `ref/mkt/crisis-communication`, activity 2 -
-  [Manage Crisis Communication](../../../../processes/marketing/crisis-communication.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Confirm the Facts**
+  - `ref/mkt/crisis-communication`, activity 2 -
+    [Manage Crisis Communication](../../../../processes/marketing/crisis-communication.md)
 
 ## What to record
 

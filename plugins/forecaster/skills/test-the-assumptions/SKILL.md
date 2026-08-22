@@ -1,22 +1,27 @@
 ---
 name: test-the-assumptions
-description: Each assumption moved, and the swing recorded. Use it when running `ref/mkt/size-market-opportunity`.
+description: Moves each assumption one at a time and records how far the answer swings, so it is clear which assumptions the number actually depends on. Use it when running `ref/mkt/size-market-opportunity`.
 license: CC-BY-4.0
 metadata:
   agent: forecaster
   agent-version: "1"
 ---
 
-# Test the Assumptions
+# Test the assumptions
 
-## What happens
+## What it does
 
-Each assumption moved, and the swing recorded.
+Moves each assumption one at a time and records how far the answer
+swings, so it is clear which assumptions the number actually depends on.
 
 ## Where it happens
 
-- `ref/mkt/size-market-opportunity`, activity 9 -
-  [Size Market Opportunity](../../../../processes/marketing/size-market-opportunity.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Test the Assumptions**
+  - `ref/mkt/size-market-opportunity`, activity 9 -
+    [Size Market Opportunity](../../../../processes/marketing/size-market-opportunity.md)
 
 ## What to record
 

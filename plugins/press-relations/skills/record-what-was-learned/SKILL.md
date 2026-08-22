@@ -1,22 +1,27 @@
 ---
 name: record-what-was-learned
-description: What to repeat, what to avoid. Use it when running `ref/mkt/brief-industry-analyst`.
+description: Writes down what is worth repeating next time and what to avoid, so the next run starts from it. Use it when running `ref/mkt/brief-industry-analyst`.
 license: CC-BY-4.0
 metadata:
   agent: press-relations
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-What to repeat, what to avoid.
+Writes down what is worth repeating next time and what to avoid, so the
+next run starts from it.
 
 ## Where it happens
 
-- `ref/mkt/brief-industry-analyst`, activity 17 -
-  [Brief Industry Analyst](../../../../processes/marketing/brief-industry-analyst.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/brief-industry-analyst`, activity 17 -
+    [Brief Industry Analyst](../../../../processes/marketing/brief-industry-analyst.md)
 
 ## What to record
 

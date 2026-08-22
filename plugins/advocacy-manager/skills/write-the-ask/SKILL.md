@@ -1,22 +1,31 @@
 ---
 name: write-the-ask
-description: The message, the reminder and the disclosure line. Use it when running `ref/mkt/customer-reviews`.
+description: Puts the ask in writing so the customer can read exactly what is being requested, together with the reminder that follows it and any line the rules require it to carry. Use it when running `ref/mkt/customer-reference` and `ref/mkt/customer-reviews`.
 license: CC-BY-4.0
 metadata:
   agent: advocacy-manager
   agent-version: "1"
 ---
 
-# Write the Ask
+# Write the ask
 
-## What happens
+## What it does
 
-The message, the reminder and the disclosure line.
+Puts the ask in writing so the customer can read exactly what is being
+requested, together with the reminder that follows it and any line the
+rules require it to carry.
 
 ## Where it happens
 
-- `ref/mkt/customer-reviews`, activity 6 -
-  [Solicit Customer Reviews](../../../../processes/marketing/customer-reviews.md)
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
+
+- **Write the Ask**
+  - `ref/mkt/customer-reviews`, activity 6 -
+    [Solicit Customer Reviews](../../../../processes/marketing/customer-reviews.md)
+- **Write the Request**
+  - `ref/mkt/customer-reference`, activity 8 -
+    [Recruit Customer Reference](../../../../processes/marketing/customer-reference.md)
 
 ## What to record
 

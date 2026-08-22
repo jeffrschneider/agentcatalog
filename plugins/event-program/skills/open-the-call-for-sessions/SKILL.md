@@ -1,22 +1,27 @@
 ---
 name: open-the-call-for-sessions
-description: Customers and staff are asked to propose talks. Use it when running `ref/mkt/user-conference`.
+description: Puts out the call for talks, states what a proposal has to contain and when it is due, and takes in what customers and staff send back. Use it when running `ref/mkt/user-conference`.
 license: CC-BY-4.0
 metadata:
   agent: event-program
   agent-version: "1"
 ---
 
-# Open the Call for Sessions
+# Open the call for sessions
 
-## What happens
+## What it does
 
-Customers and staff are asked to propose talks.
+Puts out the call for talks, states what a proposal has to contain and
+when it is due, and takes in what customers and staff send back.
 
 ## Where it happens
 
-- `ref/mkt/user-conference`, activity 4 -
-  [Host User Conference](../../../../processes/marketing/user-conference.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Open the Call for Sessions**
+  - `ref/mkt/user-conference`, activity 4 -
+    [Host User Conference](../../../../processes/marketing/user-conference.md)
 
 ## What to record
 

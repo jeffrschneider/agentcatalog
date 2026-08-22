@@ -1,22 +1,31 @@
 ---
 name: sort-what-was-said-into-themes
-description: Every remark filed under a theme, at a version. Use it when running `ref/mkt/win-loss-analysis`.
+description: Files every remark under a theme at a version and keeps the quotations under each one, including the words people used for the problem and for the answer. Use it when running `ref/mkt/buyer-persona` and `ref/mkt/win-loss-analysis`.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
   agent-version: "1"
 ---
 
-# Sort What Was Said into Themes
+# Sort what was said into themes
 
-## What happens
+## What it does
 
-Every remark filed under a theme, at a version.
+Files every remark under a theme at a version and keeps the quotations
+under each one, including the words people used for the problem and for
+the answer.
 
 ## Where it happens
 
-- `ref/mkt/win-loss-analysis`, activity 15 -
-  [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
+
+- **Record the Words This Person Uses**
+  - `ref/mkt/buyer-persona`, activity 13 -
+    [Develop Buyer Persona](../../../../processes/marketing/buyer-persona.md)
+- **Sort What Was Said into Themes**
+  - `ref/mkt/win-loss-analysis`, activity 15 -
+    [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
 
 ## What to record
 

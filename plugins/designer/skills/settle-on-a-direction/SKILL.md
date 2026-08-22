@@ -1,24 +1,37 @@
 ---
 name: settle-on-a-direction
-description: Weigh concepts until one is worth backing. Use it when running `ref/mkt/creative-assets` and `ref/mkt/social-campaign`.
+description: The agent works up two or three directions with the case for each, and weighs them until one is worth backing. Use it when running `ref/mkt/brand-identity` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: designer
   agent-version: "1"
 ---
 
-# Settle on a Direction
+# Settle on a direction
 
-## What happens
+## What it does
 
-Weigh concepts until one is worth backing.
+The agent works up two or three directions with the case for each, and
+weighs them until one is worth backing. Where two organizations are
+putting their name on the same work, it settles the one direction both
+will stand behind.
 
 ## Where it happens
 
-- `ref/mkt/creative-assets`, activity 4 -
-  [Produce Creative Assets](../../../../processes/marketing/creative-assets.md)
-- `ref/mkt/social-campaign`, activity 4 -
-  [Run Social Media Campaign](../../../../processes/marketing/social-campaign.md)
+The agent does this in three activities across four reference processes.
+Each one names the activity as that process words it.
+
+- **Draft the Candidate Directions**
+  - `ref/mkt/brand-identity`, activity 5 -
+    [Develop Brand Identity](../../../../processes/marketing/brand-identity.md)
+- **Settle on a Direction**
+  - `ref/mkt/creative-assets`, activity 4 -
+    [Produce Creative Assets](../../../../processes/marketing/creative-assets.md)
+  - `ref/mkt/social-campaign`, activity 4 -
+    [Run Social Media Campaign](../../../../processes/marketing/social-campaign.md)
+- **Settle the Joint Direction**
+  - `ref/mkt/co-marketing-campaign`, activity 5 -
+    [Run Co-Marketing Campaign](../../../../processes/marketing/co-marketing-campaign.md)
 
 ## What to record
 

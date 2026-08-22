@@ -3,9 +3,12 @@
 
 Reads every document in agents/ and every reference process in
 processes/, then writes plugins/<slug>/ for each abstract agent: a
-plugin.json manifest, a README, one skill per activity the abstract
-agent takes on, and the obligations sidecar under
+plugin.json manifest, a README, one skill per capability the abstract
+agent has, and the obligations sidecar under
 com.agentcatalog.agent/.
+
+Which activities each capability covers is read from skills/<slug>.md,
+because the activity names cannot make that grouping on their own.
 
 The build is a pure function of the source documents. Running it twice
 produces byte-identical output, so it is safe to run on every change.
@@ -24,6 +27,9 @@ ROOT = os.path.dirname(HERE)
 AGENTS_DIR = os.path.join(ROOT, "agents")
 PROCESSES_DIR = os.path.join(ROOT, "processes")
 PLUGINS_DIR = os.path.join(ROOT, "plugins")
+# Which activities each capability covers. Written by hand, because grouping
+# activities into capabilities is a judgement call the names cannot make.
+SKILLS_DIR = os.path.join(ROOT, "skills")
 
 NAMESPACE = "com.agentcatalog.agent"
 SCHEMA = "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json"
@@ -342,19 +348,66 @@ def manifest(agent, processes):
     }
 
 
-def collect_skills(agent, processes):
-    """One skill per distinct activity, however many processes use it."""
-    by_slug = {}
+def read_skill_map(path, slug):
+    """The capabilities an abstract agent has, and the activities each covers.
+
+    A skill is one thing the agent knows how to do. Activities are named per
+    process, so the same capability turns up under many names: watching the
+    first weeks of a launch and watching the registrations for a webinar are
+    the same work on a different subject. Grouping them is a judgement call,
+    so it is written down in skills/<agent>.md and read here rather than
+    guessed from the activity names.
+    """
+    text = open(path, encoding="utf-8").read()
+    first = text.strip().split("\n")[0]
+    head = re.match(r"^#\s+([a-z0-9-]+)\s*$", first)
+    if not head or head.group(1) != slug:
+        raise SystemExit("%s must start with '# %s'" % (path, slug))
+
+    caps = []
+    for block in re.split(r"^##\s+", text, flags=re.M)[1:]:
+        lines = block.split("\n")
+        cap_slug = lines[0].strip()
+        if not re.match(r"^[a-z0-9]+(-[a-z0-9]+)*$", cap_slug):
+            raise SystemExit("%s: '%s' is not a capability slug" % (path, cap_slug))
+        body = "\n".join(lines[1:])
+        prose, marker, covered = body.partition("covers:")
+        if not marker:
+            raise SystemExit("%s: capability '%s' has no covers: list" % (path, cap_slug))
+        names = [
+            line.strip()[2:].strip()
+            for line in covered.split("\n")
+            if line.strip().startswith("- ")
+        ]
+        if not names:
+            raise SystemExit("%s: capability '%s' covers nothing" % (path, cap_slug))
+        caps.append(
+            {"slug": cap_slug, "description": flatten(prose).strip(), "covers": names}
+        )
+    if not caps:
+        raise SystemExit("%s names no capabilities" % path)
+    return caps
+
+
+def collect_skills(agent, processes, skills_dir):
+    """One skill per capability, carrying every activity it covers."""
+    path = os.path.join(skills_dir, agent["slug"] + ".md")
+    if not os.path.exists(path):
+        raise SystemExit(
+            "no skill map for %s. Every abstract agent needs skills/%s.md "
+            "saying which activities each capability covers."
+            % (agent["slug"], agent["slug"])
+        )
+    caps = read_skill_map(path, agent["slug"])
+
+    uses_of = {}
     for held in agent["held"]:
         process = processes[held["process"]]
         for name in held["activities"]:
             activity = process["activities"].get(name)
             if activity is None:
                 continue
-            skill = by_slug.setdefault(
-                slugify(name), {"name": name, "slug": slugify(name), "uses": []}
-            )
-            skill["uses"].append(
+            uses_of.setdefault(name, []).append(
                 {
                     "process": process["id"],
                     "title": process["title"],
@@ -363,9 +416,45 @@ def collect_skills(agent, processes):
                     "happens": activity["happens"],
                 }
             )
-    for skill in by_slug.values():
-        skill["uses"].sort(key=lambda use: use["process"])
-    return [by_slug[key] for key in sorted(by_slug)]
+
+    claimed = {}
+    skills = []
+    for cap in caps:
+        activities = []
+        for name in cap["covers"]:
+            if name not in uses_of:
+                raise SystemExit(
+                    "%s claims '%s', which %s does not hold"
+                    % (path, name, agent["slug"])
+                )
+            if name in claimed:
+                raise SystemExit(
+                    "%s: '%s' is covered by both '%s' and '%s'"
+                    % (path, name, claimed[name], cap["slug"])
+                )
+            claimed[name] = cap["slug"]
+            activities.append(
+                {
+                    "name": name,
+                    "uses": sorted(uses_of[name], key=lambda use: use["process"]),
+                }
+            )
+        skills.append(
+            {
+                "slug": cap["slug"],
+                "title": cap["slug"].replace("-", " ").capitalize(),
+                "description": cap["description"],
+                "activities": sorted(activities, key=lambda a: a["name"]),
+            }
+        )
+
+    missing = sorted(set(uses_of) - set(claimed))
+    if missing:
+        raise SystemExit(
+            "%s leaves %d of %s's activities uncovered, starting with '%s'"
+            % (path, len(missing), agent["slug"], missing[0])
+        )
+    return sorted(skills, key=lambda skill: skill["slug"])
 
 
 # --------------------------------------------------------------------
@@ -373,23 +462,28 @@ def collect_skills(agent, processes):
 # --------------------------------------------------------------------
 
 def skill_page(agent, skill):
-    uses = skill["uses"]
-    wordings = []
-    for use in uses:
-        if use["happens"] not in wordings:
-            wordings.append(use["happens"])
+    """One capability, and every activity where the agent exercises it."""
+    procs = []
+    for activity in skill["activities"]:
+        for use in activity["uses"]:
+            if use["process"] not in procs:
+                procs.append(use["process"])
+    procs.sort()
 
-    summary = sentence_case(wordings[0])
-    names = ["`%s`" % use["process"] for use in uses]
-    if len(uses) == 1:
-        where = "Use it when running %s." % names[0]
-    elif len(uses) <= 3:
-        where = "Use it when running %s and %s." % (", ".join(names[:-1]), names[-1])
-    else:
-        where = "Use it when running %s and %d other reference processes." % (
-            names[0],
-            len(uses) - 1,
+    if len(procs) == 1:
+        where = "Use it when running `%s`." % procs[0]
+    elif len(procs) <= 3:
+        where = "Use it when running %s and `%s`." % (
+            ", ".join("`%s`" % p for p in procs[:-1]),
+            procs[-1],
         )
+    else:
+        where = "Use it when running `%s` and %d other reference processes." % (
+            procs[0],
+            len(procs) - 1,
+        )
+
+    summary = sentences(skill["description"])[0] if skill["description"] else skill["title"]
 
     out = [
         "---",
@@ -401,37 +495,39 @@ def skill_page(agent, skill):
         '  agent-version: "%d"' % agent["version"],
         "---",
         "",
-        "# " + skill["name"],
+        "# " + skill["title"],
         "",
-        "## What happens",
+        "## What it does",
+        "",
+        wrap(skill["description"]),
+        "",
+        "## Where it happens",
+        "",
+        wrap(
+            "The agent does this in %s across %s. Each one names the activity "
+            "as that process words it."
+            % (
+                "one activity" if len(skill["activities"]) == 1
+                else "%s activities" % number_word(len(skill["activities"])),
+                "one reference process" if len(procs) == 1
+                else "%s reference processes" % number_word(len(procs)),
+            )
+        ),
         "",
     ]
 
-    if len(wordings) == 1:
-        out.append(wrap(summary))
-    else:
-        out.append(wrap("The processes that use this activity word it differently:"))
-        out.append("")
-        for use in uses:
+    for activity in skill["activities"]:
+        out.append("- **%s**" % activity["name"])
+        for use in activity["uses"]:
+            link = "[%s](%s%s)" % (use["title"], "../" * 4, use["path"])
             out.append(
                 wrap(
-                    "in `%s`, %s" % (use["process"], use["happens"]),
-                    first="- ",
-                    cont="  ",
+                    "`%s`, activity %d - %s"
+                    % (use["process"], use["number"], link.replace(" ", GLUE)),
+                    first="  - ",
+                    cont="    ",
                 )
             )
-
-    out += ["", "## Where it happens", ""]
-    for use in uses:
-        link = "[%s](%s%s)" % (use["title"], "../" * 4, use["path"])
-        out.append(
-            wrap(
-                "`%s`, activity %d - %s"
-                % (use["process"], use["number"], link.replace(" ", GLUE)),
-                first="- ",
-                cont="  ",
-            )
-        )
 
     out += [
         "",
@@ -440,9 +536,9 @@ def skill_page(agent, skill):
         wrap(agent["records"]),
         "",
         wrap(
-            "That contract covers every activity this abstract agent takes "
-            "on, and it is repeated in `%s/RECORDS.md`. What the abstract "
-            "agent does not do is in `%s/NOT.md`." % (NAMESPACE, NAMESPACE)
+            "That contract covers every activity this abstract agent takes on, "
+            "and it is repeated in `%s/RECORDS.md`. What the abstract agent "
+            "does not do is in `%s/NOT.md`." % (NAMESPACE, NAMESPACE)
         ),
         "",
     ]
@@ -598,8 +694,8 @@ def not_page(agent):
     return "\n".join(out)
 
 
-def build(agent, processes):
-    skills = collect_skills(agent, processes)
+def build(agent, processes, skills_dir):
+    skills = collect_skills(agent, processes, skills_dir)
     target = os.path.join(PLUGINS_DIR, agent["slug"])
     if os.path.isdir(target):
         shutil.rmtree(target)
@@ -646,7 +742,7 @@ def main():
         agent = read_agent(path, processes)
         for problem in agent["problems"]:
             problems.append("%s: %s" % (agent["slug"], problem))
-        counts[agent["slug"]] = len(build(agent, processes))
+        counts[agent["slug"]] = len(build(agent, processes, SKILLS_DIR))
 
     total = sum(counts.values())
     smallest = min(counts.items(), key=lambda pair: (pair[1], pair[0]))

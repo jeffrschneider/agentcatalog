@@ -1,22 +1,31 @@
 ---
 name: decide-what-happens-to-each-page
-description: Update, merge, retire, or leave the page alone. Use it when running `ref/mkt/refresh-content`.
+description: The agent decides for each page or surface whether it is updated, merged into another, retired, replaced or left alone, and records the reason behind every decision. Use it when running `ref/mkt/brand-refresh` and `ref/mkt/refresh-content`.
 license: CC-BY-4.0
 metadata:
   agent: content-librarian
   agent-version: "1"
 ---
 
-# Decide What Happens to Each Page
+# Decide what happens to each page
 
-## What happens
+## What it does
 
-Update, merge, retire, or leave the page alone.
+The agent decides for each page or surface whether it is updated, merged
+into another, retired, replaced or left alone, and records the reason
+behind every decision.
 
 ## Where it happens
 
-- `ref/mkt/refresh-content`, activity 7 -
-  [Refresh Published Content](../../../../processes/marketing/refresh-content.md)
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
+
+- **Decide What Happens to Each Page**
+  - `ref/mkt/refresh-content`, activity 7 -
+    [Refresh Published Content](../../../../processes/marketing/refresh-content.md)
+- **Decide What Happens to Each Surface**
+  - `ref/mkt/brand-refresh`, activity 8 -
+    [Roll Out Brand Refresh](../../../../processes/marketing/brand-refresh.md)
 
 ## What to record
 

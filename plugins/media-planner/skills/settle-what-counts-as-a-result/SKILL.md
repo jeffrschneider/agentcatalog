@@ -1,22 +1,27 @@
 ---
 name: settle-what-counts-as-a-result
-description: What the plan is judged on, and where it is counted. Use it when running `ref/mkt/media-plan`.
+description: Says what the plan is judged on and where that result is counted, so every channel is read the same way afterwards. Use it when running `ref/mkt/media-plan`.
 license: CC-BY-4.0
 metadata:
   agent: media-planner
   agent-version: "1"
 ---
 
-# Settle What Counts as a Result
+# Settle what counts as a result
 
-## What happens
+## What it does
 
-What the plan is judged on, and where it is counted.
+Says what the plan is judged on and where that result is counted, so
+every channel is read the same way afterwards.
 
 ## Where it happens
 
-- `ref/mkt/media-plan`, activity 11 -
-  [Develop Media Plan](../../../../processes/marketing/media-plan.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Settle What Counts as a Result**
+  - `ref/mkt/media-plan`, activity 11 -
+    [Develop Media Plan](../../../../processes/marketing/media-plan.md)
 
 ## What to record
 

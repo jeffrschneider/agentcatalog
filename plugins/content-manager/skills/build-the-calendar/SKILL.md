@@ -1,22 +1,34 @@
 ---
 name: build-the-calendar
-description: Initiatives laid across the year with their dates. Use it when running `ref/mkt/annual-marketing-plan`.
+description: Lays the agreed work across the period with a format, an owning agent and a date on each item, and publishes the schedule where every agent reads it. Use it when running `ref/mkt/annual-marketing-plan` and `ref/mkt/content-calendar`.
 license: CC-BY-4.0
 metadata:
   agent: content-manager
   agent-version: "1"
 ---
 
-# Build the Calendar
+# Build the calendar
 
-## What happens
+## What it does
 
-Initiatives laid across the year with their dates.
+Lays the agreed work across the period with a format, an owning agent
+and a date on each item, and publishes the schedule where every agent
+reads it.
 
 ## Where it happens
 
-- `ref/mkt/annual-marketing-plan`, activity 11 -
-  [Build Annual Marketing Plan](../../../../processes/marketing/annual-marketing-plan.md)
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
+
+- **Build the Calendar**
+  - `ref/mkt/annual-marketing-plan`, activity 11 -
+    [Build Annual Marketing Plan](../../../../processes/marketing/annual-marketing-plan.md)
+- **Draft the Calendar**
+  - `ref/mkt/content-calendar`, activity 10 -
+    [Plan Content Calendar](../../../../processes/marketing/content-calendar.md)
+- **Publish the Calendar**
+  - `ref/mkt/content-calendar`, activity 12 -
+    [Plan Content Calendar](../../../../processes/marketing/content-calendar.md)
 
 ## What to record
 

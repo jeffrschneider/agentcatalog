@@ -1,22 +1,27 @@
 ---
 name: set-the-announcement-date
-description: The date, the embargo, and who hears it first. Use it when running `ref/mkt/announce-company-news`.
+description: Sets the date the news goes public, the embargo that holds until then, and the order in which each audience hears it. Use it when running `ref/mkt/announce-company-news`.
 license: CC-BY-4.0
 metadata:
   agent: press-relations
   agent-version: "1"
 ---
 
-# Set the Announcement Date
+# Set the announcement date
 
-## What happens
+## What it does
 
-The date, the embargo, and who hears it first.
+Sets the date the news goes public, the embargo that holds until then,
+and the order in which each audience hears it.
 
 ## Where it happens
 
-- `ref/mkt/announce-company-news`, activity 2 -
-  [Announce Company News](../../../../processes/marketing/announce-company-news.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Set the Announcement Date**
+  - `ref/mkt/announce-company-news`, activity 2 -
+    [Announce Company News](../../../../processes/marketing/announce-company-news.md)
 
 ## What to record
 

@@ -1,26 +1,32 @@
 ---
 name: record-what-was-learned
-description: What to repeat, what to avoid. Use it when running `ref/mkt/award-entry`, `ref/mkt/brief-industry-analyst` and `ref/mkt/speaking-engagement`.
+description: The agent writes down what to repeat and what to avoid next cycle, and keeps it against the body, so the next submission starts from what the last one taught. Use it when running `ref/mkt/award-entry`, `ref/mkt/brief-industry-analyst` and `ref/mkt/speaking-engagement`.
 license: CC-BY-4.0
 metadata:
   agent: submissions-manager
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-What to repeat, what to avoid.
+The agent writes down what to repeat and what to avoid next cycle, and
+keeps it against the body, so the next submission starts from what the
+last one taught.
 
 ## Where it happens
 
-- `ref/mkt/award-entry`, activity 16 -
-  [Submit Award Entry](../../../../processes/marketing/award-entry.md)
-- `ref/mkt/brief-industry-analyst`, activity 17 -
-  [Brief Industry Analyst](../../../../processes/marketing/brief-industry-analyst.md)
-- `ref/mkt/speaking-engagement`, activity 16 -
-  [Secure Speaking Engagement](../../../../processes/marketing/speaking-engagement.md)
+The agent does this in one activity across three reference processes.
+Each one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/award-entry`, activity 16 -
+    [Submit Award Entry](../../../../processes/marketing/award-entry.md)
+  - `ref/mkt/brief-industry-analyst`, activity 17 -
+    [Brief Industry Analyst](../../../../processes/marketing/brief-industry-analyst.md)
+  - `ref/mkt/speaking-engagement`, activity 16 -
+    [Secure Speaking Engagement](../../../../processes/marketing/speaking-engagement.md)
 
 ## What to record
 

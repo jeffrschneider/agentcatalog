@@ -1,22 +1,34 @@
 ---
 name: close-the-run
-description: What was sent, what the customer did, and the date. Use it when running `ref/mkt/onboarding-email-program`.
+description: Closes the run and records what was sent, what was offered, what the customer did, whether the goal was reached and the date it ended. Use it when running `ref/mkt/churn-risk-play` and `ref/mkt/onboarding-email-program`.
 license: CC-BY-4.0
 metadata:
   agent: lifecycle-manager
   agent-version: "1"
 ---
 
-# Close the Run
+# Close the run
 
-## What happens
+## What it does
 
-What was sent, what the customer did, and the date.
+Closes the run and records what was sent, what was offered, what the
+customer did, whether the goal was reached and the date it ended. It
+also records which signals turned out to be worth acting on.
 
 ## Where it happens
 
-- `ref/mkt/onboarding-email-program`, activity 14 -
-  [Run Onboarding Email Program](../../../../processes/marketing/onboarding-email-program.md)
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
+
+- **Close the Run**
+  - `ref/mkt/onboarding-email-program`, activity 14 -
+    [Run Onboarding Email Program](../../../../processes/marketing/onboarding-email-program.md)
+- **Record What Was Learned**
+  - `ref/mkt/churn-risk-play`, activity 12 -
+    [Run Churn-Risk Play](../../../../processes/marketing/churn-risk-play.md)
+- **Record the Outcome**
+  - `ref/mkt/churn-risk-play`, activity 11 -
+    [Run Churn-Risk Play](../../../../processes/marketing/churn-risk-play.md)
 
 ## What to record
 

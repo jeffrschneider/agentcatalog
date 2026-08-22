@@ -40,8 +40,12 @@ systems it needs, the records it must leave, what it escalates and to
 whom, what it never does, and the activities it holds in the reference
 processes under `processes/`.
 
-`skills/` holds one skill for each piece of work the agent does, written
-so that an agent can follow it.
+`skills/` holds one skill for each capability the agent has: one thing it
+knows how to do. A capability usually covers several activities, because
+the reference processes name the same work differently depending on what
+it is being done to. Watching the first weeks of a launch and watching the
+registrations for a webinar are one capability with two names, so they are
+one skill, and the skill lists every activity it covers.
 
 The three files under `com.agentcatalog.agent/` say the same things in
 prose, for a person who is deciding whether to deploy the agent. Read

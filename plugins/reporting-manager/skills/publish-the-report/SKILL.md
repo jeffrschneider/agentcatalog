@@ -1,22 +1,34 @@
 ---
 name: publish-the-report
-description: The report goes out on its date, at a version. Use it when running `ref/mkt/marketing-performance-report`.
+description: Puts the report out on its date at a version, whether or not every source answered, with every line attributed to where it came from and the evidence under it. Use it when running `ref/mkt/brand-health`, `ref/mkt/marketing-performance-report` and `ref/mkt/reconcile-media-spend`.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
   agent-version: "1"
 ---
 
-# Publish the Report
+# Publish the report
 
-## What happens
+## What it does
 
-The report goes out on its date, at a version.
+Puts the report out on its date at a version, whether or not every
+source answered, with every line attributed to where it came from and
+the evidence under it.
 
 ## Where it happens
 
-- `ref/mkt/marketing-performance-report`, activity 13 -
-  [Report Marketing Performance](../../../../processes/marketing/marketing-performance-report.md)
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
+
+- **Publish the Report**
+  - `ref/mkt/marketing-performance-report`, activity 13 -
+    [Report Marketing Performance](../../../../processes/marketing/marketing-performance-report.md)
+- **Release the Figures**
+  - `ref/mkt/reconcile-media-spend`, activity 13 -
+    [Reconcile Media Spend](../../../../processes/marketing/reconcile-media-spend.md)
+- **Report Awareness, Perception and Preference**
+  - `ref/mkt/brand-health`, activity 22 -
+    [Measure Brand Health](../../../../processes/marketing/brand-health.md)
 
 ## What to record
 

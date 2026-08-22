@@ -1,28 +1,30 @@
 ---
 name: work-the-registration-list
-description: Chase, confirm, remind and manage the waitlist. Use it when running `ref/mkt/field-event` and `ref/mkt/webinar`.
+description: "Keeps the registration list moving between the invitation and the day: chases the people who have not answered, confirms the ones who have, and manages the waitlist. Use it when running `ref/mkt/field-event` and `ref/mkt/webinar`."
 license: CC-BY-4.0
 metadata:
   agent: email-producer
   agent-version: "1"
 ---
 
-# Work the Registration List
+# Work the registration list
 
-## What happens
+## What it does
 
-The processes that use this activity word it differently:
-
-- in `ref/mkt/field-event`, chase, confirm, remind and manage the
-  waitlist
-- in `ref/mkt/webinar`, confirm, remind, and chase the number needed
+Keeps the registration list moving between the invitation and the day:
+chases the people who have not answered, confirms the ones who have, and
+manages the waitlist.
 
 ## Where it happens
 
-- `ref/mkt/field-event`, activity 10 -
-  [Host Field Event](../../../../processes/marketing/field-event.md)
-- `ref/mkt/webinar`, activity 9 -
-  [Produce Webinar](../../../../processes/marketing/webinar.md)
+The agent does this in one activity across two reference processes. Each
+one names the activity as that process words it.
+
+- **Work the Registration List**
+  - `ref/mkt/field-event`, activity 10 -
+    [Host Field Event](../../../../processes/marketing/field-event.md)
+  - `ref/mkt/webinar`, activity 9 -
+    [Produce Webinar](../../../../processes/marketing/webinar.md)
 
 ## What to record
 

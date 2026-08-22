@@ -1,22 +1,27 @@
 ---
 name: record-what-was-learned
-description: What to fix where the records come in. Use it when running `ref/mkt/contact-database-hygiene`.
+description: Closes a cycle with what should be fixed where the records come in, so the same problems do not arrive again. Use it when running `ref/mkt/contact-database-hygiene`.
 license: CC-BY-4.0
 metadata:
   agent: consent-manager
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-What to fix where the records come in.
+Closes a cycle with what should be fixed where the records come in, so
+the same problems do not arrive again.
 
 ## Where it happens
 
-- `ref/mkt/contact-database-hygiene`, activity 17 -
-  [Cleanse Contact Database](../../../../processes/marketing/contact-database-hygiene.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/contact-database-hygiene`, activity 17 -
+    [Cleanse Contact Database](../../../../processes/marketing/contact-database-hygiene.md)
 
 ## What to record
 

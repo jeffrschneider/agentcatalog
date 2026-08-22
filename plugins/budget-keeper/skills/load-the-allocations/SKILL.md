@@ -1,22 +1,30 @@
 ---
 name: load-the-allocations
-description: Each function's number recorded where spend is tracked. Use it when running `ref/mkt/set-marketing-budget`.
+description: The agent records each function's number where spend is tracked and says when in the year that money becomes available. Use it when running `ref/mkt/set-marketing-budget`.
 license: CC-BY-4.0
 metadata:
   agent: budget-keeper
   agent-version: "1"
 ---
 
-# Load the Allocations
+# Load the allocations
 
-## What happens
+## What it does
 
-Each function's number recorded where spend is tracked.
+The agent records each function's number where spend is tracked and says
+when in the year that money becomes available.
 
 ## Where it happens
 
-- `ref/mkt/set-marketing-budget`, activity 13 -
-  [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
+The agent does this in two activities across one reference process. Each
+one names the activity as that process words it.
+
+- **Load the Allocations**
+  - `ref/mkt/set-marketing-budget`, activity 13 -
+    [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
+- **Phase the Money across the Year**
+  - `ref/mkt/set-marketing-budget`, activity 10 -
+    [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
 
 ## What to record
 

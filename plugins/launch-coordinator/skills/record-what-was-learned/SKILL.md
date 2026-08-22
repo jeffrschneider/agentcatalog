@@ -1,24 +1,29 @@
 ---
 name: record-what-was-learned
-description: What to repeat, what to avoid. Use it when running `ref/mkt/pricing-change` and `ref/mkt/product-launch`.
+description: Closes the run with what is worth repeating and what to avoid the next time this is run. Use it when running `ref/mkt/pricing-change` and `ref/mkt/product-launch`.
 license: CC-BY-4.0
 metadata:
   agent: launch-coordinator
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-What to repeat, what to avoid.
+Closes the run with what is worth repeating and what to avoid the next
+time this is run.
 
 ## Where it happens
 
-- `ref/mkt/pricing-change`, activity 16 -
-  [Launch Pricing Change](../../../../processes/marketing/pricing-change.md)
-- `ref/mkt/product-launch`, activity 11 -
-  [Launch Product](../../../../processes/marketing/product-launch.md)
+The agent does this in one activity across two reference processes. Each
+one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/pricing-change`, activity 16 -
+    [Launch Pricing Change](../../../../processes/marketing/pricing-change.md)
+  - `ref/mkt/product-launch`, activity 11 -
+    [Launch Product](../../../../processes/marketing/product-launch.md)
 
 ## What to record
 

@@ -1,22 +1,28 @@
 ---
 name: hand-over-what-the-session-produced
-description: The recording, attendance, polls and questions. Use it when running `ref/mkt/webinar`.
+description: Passes on everything the session produced once it ends, which is the recording, the attendance record, the poll answers and every question that was asked. Use it when running `ref/mkt/webinar`.
 license: CC-BY-4.0
 metadata:
   agent: broadcast-operator
   agent-version: "1"
 ---
 
-# Hand over What the Session Produced
+# Hand over what the session produced
 
-## What happens
+## What it does
 
-The recording, attendance, polls and questions.
+Passes on everything the session produced once it ends, which is the
+recording, the attendance record, the poll answers and every question
+that was asked.
 
 ## Where it happens
 
-- `ref/mkt/webinar`, activity 13 -
-  [Produce Webinar](../../../../processes/marketing/webinar.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Hand over What the Session Produced**
+  - `ref/mkt/webinar`, activity 13 -
+    [Produce Webinar](../../../../processes/marketing/webinar.md)
 
 ## What to record
 

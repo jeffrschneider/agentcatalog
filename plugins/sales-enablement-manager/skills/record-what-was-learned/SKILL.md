@@ -1,22 +1,27 @@
 ---
 name: record-what-was-learned
-description: What to repeat, what to avoid. Use it when running `ref/mkt/sales-enablement-kit`.
+description: Writes down what is worth repeating next time and what to avoid, so the next run starts from it. Use it when running `ref/mkt/sales-enablement-kit`.
 license: CC-BY-4.0
 metadata:
   agent: sales-enablement-manager
   agent-version: "1"
 ---
 
-# Record What Was Learned
+# Record what was learned
 
-## What happens
+## What it does
 
-What to repeat, what to avoid.
+Writes down what is worth repeating next time and what to avoid, so the
+next run starts from it.
 
 ## Where it happens
 
-- `ref/mkt/sales-enablement-kit`, activity 16 -
-  [Produce Sales Enablement Kit](../../../../processes/marketing/sales-enablement-kit.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Record What Was Learned**
+  - `ref/mkt/sales-enablement-kit`, activity 16 -
+    [Produce Sales Enablement Kit](../../../../processes/marketing/sales-enablement-kit.md)
 
 ## What to record
 

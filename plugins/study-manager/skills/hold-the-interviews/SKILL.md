@@ -1,22 +1,40 @@
 ---
 name: hold-the-interviews
-description: What each buyer said, taken down as they said it. Use it when running `ref/mkt/win-loss-analysis`.
+description: Talks to buyers, customers and the people in the field, and takes down what each of them said as they said it. Use it when running `ref/mkt/develop-marketing-strategy` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
   agent-version: "1"
 ---
 
-# Hold the Interviews
+# Hold the interviews
 
-## What happens
+## What it does
 
-What each buyer said, taken down as they said it.
+Talks to buyers, customers and the people in the field, and takes down
+what each of them said as they said it. It reports what these people
+weigh when they choose and what they needed answered along the way.
 
 ## Where it happens
 
-- `ref/mkt/win-loss-analysis`, activity 12 -
-  [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+The agent does this in five activities across four reference processes.
+Each one names the activity as that process words it.
+
+- **Collect the First-Hand Accounts**
+  - `ref/mkt/segment-the-market`, activity 5 -
+    [Segment the Market](../../../../processes/marketing/segment-the-market.md)
+- **Collect the Questions**
+  - `ref/mkt/map-buyer-journey`, activity 10 -
+    [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)
+- **Hear from Buyers and the Field**
+  - `ref/mkt/develop-marketing-strategy`, activity 5 -
+    [Develop Marketing Strategy](../../../../processes/marketing/develop-marketing-strategy.md)
+- **Hold the Interviews**
+  - `ref/mkt/win-loss-analysis`, activity 12 -
+    [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Talk to the Buyers**
+  - `ref/mkt/map-buyer-journey`, activity 6 -
+    [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)
 
 ## What to record
 

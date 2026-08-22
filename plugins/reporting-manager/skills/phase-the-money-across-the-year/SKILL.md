@@ -1,22 +1,27 @@
 ---
 name: phase-the-money-across-the-year
-description: When each function's money becomes available. Use it when running `ref/mkt/set-marketing-budget`.
+description: Says when each function's money becomes available across the year, so a run knows what it can commit to and when. Use it when running `ref/mkt/set-marketing-budget`.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
   agent-version: "1"
 ---
 
-# Phase the Money across the Year
+# Phase the money across the year
 
-## What happens
+## What it does
 
-When each function's money becomes available.
+Says when each function's money becomes available across the year, so a
+run knows what it can commit to and when.
 
 ## Where it happens
 
-- `ref/mkt/set-marketing-budget`, activity 10 -
-  [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Phase the Money across the Year**
+  - `ref/mkt/set-marketing-budget`, activity 10 -
+    [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
 
 ## What to record
 

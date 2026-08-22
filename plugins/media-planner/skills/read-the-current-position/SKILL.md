@@ -1,22 +1,27 @@
 ---
 name: read-the-current-position
-description: What is committed, what is spent, what is still free. Use it when running `ref/mkt/reallocate-media-spend`.
+description: Reads the running position of the plan and answers what is committed, what has been spent and what is still free. Use it when running `ref/mkt/reallocate-media-spend`.
 license: CC-BY-4.0
 metadata:
   agent: media-planner
   agent-version: "1"
 ---
 
-# Read the Current Position
+# Read the current position
 
-## What happens
+## What it does
 
-What is committed, what is spent, what is still free.
+Reads the running position of the plan and answers what is committed,
+what has been spent and what is still free.
 
 ## Where it happens
 
-- `ref/mkt/reallocate-media-spend`, activity 3 -
-  [Reallocate Media Spend](../../../../processes/marketing/reallocate-media-spend.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Read the Current Position**
+  - `ref/mkt/reallocate-media-spend`, activity 3 -
+    [Reallocate Media Spend](../../../../processes/marketing/reallocate-media-spend.md)
 
 ## What to record
 

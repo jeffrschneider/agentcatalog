@@ -1,22 +1,27 @@
 ---
 name: follow-up-with-the-people-who-came
-description: Send the material and route the interested people. Use it when running `ref/mkt/field-event`.
+description: After the event the agent sends the promised material to the people who attended and routes the interested ones to whoever picks them up. Use it when running `ref/mkt/field-event`.
 license: CC-BY-4.0
 metadata:
   agent: event-manager
   agent-version: "1"
 ---
 
-# Follow up with the People Who Came
+# Follow up with the people who came
 
-## What happens
+## What it does
 
-Send the material and route the interested people.
+After the event the agent sends the promised material to the people who
+attended and routes the interested ones to whoever picks them up.
 
 ## Where it happens
 
-- `ref/mkt/field-event`, activity 14 -
-  [Host Field Event](../../../../processes/marketing/field-event.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Follow up with the People Who Came**
+  - `ref/mkt/field-event`, activity 14 -
+    [Host Field Event](../../../../processes/marketing/field-event.md)
 
 ## What to record
 

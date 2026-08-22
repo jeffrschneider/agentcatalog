@@ -1,28 +1,39 @@
 ---
 name: field-the-study
-description: Interviews and a survey put to the sample. Use it when running `ref/mkt/buyer-persona` and `ref/mkt/customer-research`.
+description: Puts the study to the sample, which means the invitations going out, the survey opening and the interviews being arranged. Use it when running `ref/mkt/brand-audit` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
   agent-version: "1"
 ---
 
-# Field the Study
+# Field the study
 
-## What happens
+## What it does
 
-The processes that use this activity word it differently:
-
-- in `ref/mkt/buyer-persona`, interviews and a survey put to the sample
-- in `ref/mkt/customer-research`, invitations go out and the responses
-  come in
+Puts the study to the sample, which means the invitations going out, the
+survey opening and the interviews being arranged. Every response lands
+as it was given, marked with the version of the questions it answered.
 
 ## Where it happens
 
-- `ref/mkt/buyer-persona`, activity 7 -
-  [Develop Buyer Persona](../../../../processes/marketing/buyer-persona.md)
-- `ref/mkt/customer-research`, activity 13 -
-  [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+The agent does this in four activities across five reference processes.
+Each one names the activity as that process words it.
+
+- **Ask the Audience**
+  - `ref/mkt/brand-audit`, activity 10 -
+    [Conduct Brand Audit](../../../../processes/marketing/brand-audit.md)
+- **Field the Study**
+  - `ref/mkt/buyer-persona`, activity 7 -
+    [Develop Buyer Persona](../../../../processes/marketing/buyer-persona.md)
+  - `ref/mkt/customer-research`, activity 13 -
+    [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+- **Field the Wave**
+  - `ref/mkt/brand-health`, activity 13 -
+    [Measure Brand Health](../../../../processes/marketing/brand-health.md)
+- **Invite the Buyers**
+  - `ref/mkt/win-loss-analysis`, activity 11 -
+    [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
 
 ## What to record
 

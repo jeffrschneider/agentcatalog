@@ -1,22 +1,28 @@
 ---
 name: route-the-escalations
-description: Legal, press and product items go to their owner. Use it when running `ref/mkt/moderate-community`.
+description: Sends anything it must not handle itself to the owner who has to see it, which covers legal, press and product matters, and records why each item was flagged. Use it when running `ref/mkt/moderate-community`.
 license: CC-BY-4.0
 metadata:
   agent: community-manager
   agent-version: "1"
 ---
 
-# Route the Escalations
+# Route the escalations
 
-## What happens
+## What it does
 
-Legal, press and product items go to their owner.
+Sends anything it must not handle itself to the owner who has to see it,
+which covers legal, press and product matters, and records why each item
+was flagged.
 
 ## Where it happens
 
-- `ref/mkt/moderate-community`, activity 10 -
-  [Moderate User Community](../../../../processes/marketing/moderate-community.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Route the Escalations**
+  - `ref/mkt/moderate-community`, activity 10 -
+    [Moderate User Community](../../../../processes/marketing/moderate-community.md)
 
 ## What to record
 

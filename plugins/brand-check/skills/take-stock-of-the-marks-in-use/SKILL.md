@@ -1,22 +1,27 @@
 ---
 name: take-stock-of-the-marks-in-use
-description: The marks, colors, type and files in use today. Use it when running `ref/mkt/brand-identity`.
+description: The agent lists the marks, colors, type and files the organization is using today, before anyone decides what to change. Use it when running `ref/mkt/brand-identity`.
 license: CC-BY-4.0
 metadata:
   agent: brand-check
   agent-version: "1"
 ---
 
-# Take Stock of the Marks in Use
+# Take stock of the marks in use
 
-## What happens
+## What it does
 
-The marks, colors, type and files in use today.
+The agent lists the marks, colors, type and files the organization is
+using today, before anyone decides what to change.
 
 ## Where it happens
 
-- `ref/mkt/brand-identity`, activity 2 -
-  [Develop Brand Identity](../../../../processes/marketing/brand-identity.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Take Stock of the Marks in Use**
+  - `ref/mkt/brand-identity`, activity 2 -
+    [Develop Brand Identity](../../../../processes/marketing/brand-identity.md)
 
 ## What to record
 

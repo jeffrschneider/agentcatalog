@@ -1,22 +1,28 @@
 ---
 name: name-the-gaps-worth-acting-on
-description: Which misses matter and which sit inside the noise. Use it when running `ref/mkt/quarterly-business-review`.
+description: Says which of the misses matter and which sit inside the normal movement of the numbers, so people spend their time on the ones that mean something. Use it when running `ref/mkt/quarterly-business-review`.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
   agent-version: "1"
 ---
 
-# Name the Gaps Worth Acting On
+# Name the gaps worth acting on
 
-## What happens
+## What it does
 
-Which misses matter and which sit inside the noise.
+Says which of the misses matter and which sit inside the normal movement
+of the numbers, so people spend their time on the ones that mean
+something.
 
 ## Where it happens
 
-- `ref/mkt/quarterly-business-review`, activity 7 -
-  [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)
+The agent does this in one activity across one reference process. Each
+one names the activity as that process words it.
+
+- **Name the Gaps Worth Acting On**
+  - `ref/mkt/quarterly-business-review`, activity 7 -
+    [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)
 
 ## What to record
 
