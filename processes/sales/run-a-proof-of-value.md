@@ -68,6 +68,8 @@ from: ref/sls/run-a-proof-of-value v1
 owner: <who>                          effective: <date>
 trigger: a shaping run decides that description is not enough and <who>
          approves an evaluation
+         watch: record=<opportunity> system=<your CRM>
+                change=<an evaluation is approved against a shaping run>
 concurrency: runs may overlap - <how many> proofs live at once, and one
              opportunity runs one proof at a time
 goal: an evaluation with criteria agreed in advance, a start and an
@@ -159,33 +161,52 @@ run-scoped:
            every: <cadence>
            from: run-tests   until: closing-review
 handoffs:
-  decide-proof -> agree-criteria: the question the proof has to settle,
-    and what the buyer said would settle it
-  agree-criteria -> agree-dates: the signed criteria, at a version
-  agree-criteria -> agree-data-access: the same criteria, so the data
-    request covers what the tests actually need and nothing else
-  agree-dates -> name-the-people: the start, the end, and what happens
-    on the end date
-  name-the-people -> sign-terms: the named people and their hours on
-    both sides
-  agree-data-access -> sign-terms: what data moves, where it sits, who
-    may see it, and when it is destroyed
-  sign-terms -> set-up-environment: the signed terms, and the shape the
-    environment must be built to
-  set-up-environment -> load-buyer-case: the environment as built, with
-    every difference from the agreed shape listed
-  load-buyer-case -> run-tests: the buyer's data in place, with what
-    would not load and why
-  run-tests -> watch-it-run: what was run, when, and by whom
-  watch-it-run -> midpoint-check: the daily record, including every
-    change made to the environment mid-run
-  midpoint-check -> score-criteria: the decision to continue, and any
-    criterion the two sides now read differently
-  score-criteria -> closing-review: pass or fail per criterion, with
-    the evidence behind each line
-  closing-review -> take-it-down: the score as both sides signed it
-  take-it-down -> record-result: the receipt for the returned or
-    destroyed data, and the date the environment came down
+  decide-proof -> agree-criteria [proof-question]: the question the
+    proof has to settle, and what the buyer said would settle it
+  agree-criteria -> agree-dates [signed-criteria]: the signed criteria,
+    at a version
+  agree-criteria -> agree-data-access [criteria-for-data]: the same
+    criteria, so the data request covers what the tests actually need
+    and nothing else
+  agree-dates -> name-the-people [start-and-end]: the start, the end,
+    and what happens on the end date
+  name-the-people -> sign-terms [named-people]: the named people and
+    their hours on both sides
+  agree-data-access -> sign-terms [data-terms]: what data moves, where
+    it sits, who may see it, and when it is destroyed
+  sign-terms -> set-up-environment [signed-terms]: the signed terms,
+    and the shape the environment must be built to
+  set-up-environment -> load-buyer-case [environment-as-built]: the
+    environment as built, with every difference from the agreed shape
+    listed
+  load-buyer-case -> run-tests [data-in-place]: the buyer's data in
+    place, with what would not load and why
+  run-tests -> watch-it-run [tests-as-run]: what was run, when, and by
+    whom
+  watch-it-run -> midpoint-check [run-record]: the daily record,
+    including every change made to the environment mid-run
+  midpoint-check -> score-criteria [midpoint-decision]: the decision to
+    continue, and any criterion the two sides now read differently
+  score-criteria -> closing-review [scorecard]: pass or fail per
+    criterion, with the evidence behind each line
+  closing-review -> take-it-down [signed-score]: the score as both
+    sides signed it
+  take-it-down -> record-result [data-receipt]: the receipt for the
+    returned or destroyed data, and the date the environment came down
+deviations:
+  agree-data-access -> agree-criteria [data-cannot-be-released]: the
+    buyer's rules will not let the real records leave, so the criteria
+    are agreed again against data the buyer can send
+  load-buyer-case -> set-up-environment [data-will-not-load]: the
+    buyer's records break the environment, so the environment is fixed
+    before the case is loaded again
+  midpoint-check -> agree-criteria [criteria-were-wrong]: the criteria
+    were the wrong ones, so they are agreed again at a new version
+  midpoint-check -> set-up-environment [shape-not-as-agreed]: the
+    environment is not the agreed shape, so it is built again to the
+    shape the terms name
+  closing-review -> run-tests [criterion-never-tested]: a criterion was
+    never tested, so it goes back to the tests if the end date allows
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the solution engineer, the

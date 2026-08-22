@@ -76,6 +76,8 @@ PROCESS: announce company news   id: <team>/announce-company-news   v1
 from: ref/mkt/announce-company-news v1
 owner: <who>                          effective: <date>
 trigger: <who> confirms a newsworthy event and clears it to be said
+         watch: record=<the news item> system=<where it is confirmed>
+                change=<the event is confirmed and cleared to be said>
 concurrency: runs may overlap - <how many> announcements at once
 goal: a release issued on its date to the reporters who cover the
       subject, every audience told the same thing, and the coverage
@@ -163,38 +165,53 @@ run-scoped:
              every: <cadence>
              from: issue-release   until: run close
 handoffs:
-  take-in-news -> set-date: what happened, why it is news, and the
-    earliest moment it can be said out loud
-  set-date -> confirm-facts: the date, the embargo terms, and the
-    audiences in the order they hear it
-  set-date -> line-up-press: the same date and the same embargo terms.
-    Both branches read one record
-  confirm-facts -> settle-story: every number, name and date with the
-    source it was checked against and the date it was checked
-  settle-story -> gather-quotes: what the announcement says, and who
-    the story needs to hear from
-  settle-story -> press-materials: the images, the fact sheet and the
-    questions the materials have to answer
-  gather-quotes -> write-release: each quote in the words its speaker
-    approved, with the date of that approval
-  edit-release -> write-release: the edit at a version, item by item,
-    in terms the writer can work through without coming back to ask
-  edit-release -> other-versions: the release at the version the edit
-    passed
-  other-versions -> get-sign-offs: the release and every other version
-    of the message, together, at one version
-  press-materials -> get-sign-offs: the press material set at a version
-  get-sign-offs -> issue-release: the approved wording at the signed
-    version. A later change voids the approval and sign-offs run again
-  line-up-press -> issue-release: who was approached, who took the
-    embargo, and what each of them was promised
-  issue-release -> answer-press: the release as issued, and the answers
-    the organization has already approved
-  issue-release -> owned-channels: the approved version for each
-    audience, and the address the release lives at
-  issue-release -> track-coverage: what went out, when it went out, and
-    who had it early
-  report-announce -> record-learnings: the report, as delivered
+  take-in-news -> set-date [the-news]: what happened, why it is news,
+    and the earliest moment it can be said out loud
+  set-date -> confirm-facts [date-and-embargo]: the date, the embargo
+    terms, and the audiences in the order they hear it
+  set-date -> line-up-press [embargo-for-press]: the same date and the
+    same embargo terms. Both branches read one record
+  confirm-facts -> settle-story [checked-facts]: every number, name
+    and date with the source it was checked against and the date it was
+    checked
+  settle-story -> gather-quotes [the-story]: what the announcement
+    says, and who the story needs to hear from
+  settle-story -> press-materials [material-brief]: the images, the
+    fact sheet and the questions the materials have to answer
+  gather-quotes -> write-release [approved-quotes]: each quote in the
+    words its speaker approved, with the date of that approval
+  edit-release -> write-release [the-edit]: the edit at a version,
+    item by item, in terms the writer can work through without coming
+    back to ask
+  edit-release -> other-versions [edited-release]: the release at the
+    version the edit passed
+  other-versions -> get-sign-offs [all-versions]: the release and
+    every other version of the message, together, at one version
+  press-materials -> get-sign-offs [material-set]: the press material
+    set at a version
+  get-sign-offs -> issue-release [signed-wording]: the approved
+    wording at the signed version. A later change voids the approval
+    and sign-offs run again
+  line-up-press -> issue-release [embargo-takers]: who was approached,
+    who took the embargo, and what each of them was promised
+  issue-release -> answer-press [release-and-answers]: the release as
+    issued, and the answers the organization has already approved
+  issue-release -> owned-channels [audience-versions]: the approved
+    version for each audience, and the address the release lives at
+  issue-release -> track-coverage [what-went-out]: what went out, when
+    it went out, and who had it early
+  report-announce -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> write-release [release-changes]: a signer comes back
+    with changes to the release, and only the version the signers named
+    reopens
+  get-sign-offs -> other-versions [other-version-changes]: a signer
+    comes back with changes to the customer, staff or partner wording
+  get-sign-offs -> press-materials [material-changes]: a signer comes
+    back with changes to the images, the fact sheet or the answers
+  track-coverage -> write-release [fact-is-wrong]: a fact in the issued
+    release turns out to be wrong, so a corrected version is written
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the spokesperson,

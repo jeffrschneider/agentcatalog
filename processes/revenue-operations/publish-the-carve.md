@@ -66,6 +66,8 @@ PROCESS: publish the carve            id: <team>/publish-the-carve   v1
 from: ref/rev/publish-the-carve v1
 owner: <who>                          effective: <date>
 trigger: the quota set for <period> is signed
+         watch: record=<quota set> system=<your quota record>
+                change=<a quota set is signed for a period>
 concurrency: one run per period - a change after the final carve is a
              new version of the same run, not a second publication
 goal: every seller holding their own territory and number on the same
@@ -153,36 +155,54 @@ run-scoped:
                    every: <cadence>
                    from: release-statements   until: publish-final
 handoffs:
-  take-in-carve -> check-whole: the map and the quota set at their
-    signed versions, and the date the carve takes effect
-  check-whole -> build-statements: the completeness finding, with every
-    unplaced account and every unheld patch named
-  build-statements -> check-statements: one page per seller, each naming
-    the version of the map and the quota set it was built from
-  check-statements -> load-systems: the pages, and every place a page
-    and a system disagree, named by seller
-  load-systems -> brief-managers: the carve as the systems now hold it,
-    with the date it takes effect and the version it replaced
-  brief-managers -> release-statements: what each manager heard, and
-    every objection they raised before their people saw it
-  release-statements -> open-appeals: every statement delivered, with
-    the hour each one was sent
-  open-appeals -> take-in-appeals: the closing date and what an appeal
-    has to name to be heard
-  take-in-appeals -> test-appeals: each appeal with its claim, its
-    evidence and who raised it
-  test-appeals -> decide-appeals: each claim checked against the record,
-    with the finding and the rule it was tested against
-  decide-appeals -> apply-changes: the upheld appeals, each with what
-    has to change on the map or the quota
-  decide-appeals -> publish-final: the decision on every appeal, upheld
-    or not, with the reason recorded
-  apply-changes -> publish-final: the map and the quotas at a new
-    version, and the roll-up restated against the number
-  publish-final -> report-release: the final carve, its version, and who
-    it went to
-  report-release -> record-learnings: who was told and when, and who
-    never opened their statement
+  take-in-carve -> check-whole [signed-carve]: the map and the quota
+    set at their signed versions, and the date the carve takes effect
+  check-whole -> build-statements [coverage-finding]: the completeness
+    finding, with every unplaced account and every unheld patch named
+  build-statements -> check-statements [seller-statements]: one page
+    per seller, each naming the version of the map and the quota set
+    it was built from
+  check-statements -> load-systems [checked-statements]: the pages,
+    and every place a page and a system disagree, named by seller
+  load-systems -> brief-managers [carve-in-systems]: the carve as the
+    systems now hold it, with the date it takes effect and the version
+    it replaced
+  brief-managers -> release-statements [manager-briefing]: what each
+    manager heard, and every objection they raised before their people
+    saw it
+  release-statements -> open-appeals [delivery-record]: every
+    statement delivered, with the hour each one was sent
+  open-appeals -> take-in-appeals [appeal-window]: the closing date
+    and what an appeal has to name to be heard
+  take-in-appeals -> test-appeals [raised-appeals]: each appeal with
+    its claim, its evidence and who raised it
+  test-appeals -> decide-appeals [appeal-findings]: each claim checked
+    against the record, with the finding and the rule it was tested
+    against
+  decide-appeals -> apply-changes [upheld-appeals]: the upheld
+    appeals, each with what has to change on the map or the quota
+  decide-appeals -> publish-final [appeal-decisions]: the decision
+    on every appeal, upheld or not, with the reason recorded
+  apply-changes -> publish-final [revised-carve]: the map and the
+    quotas at a new version, and the roll-up restated against the
+    number
+  publish-final -> report-release [final-carve]: the final carve, its
+    version, and who it went to
+  report-release -> record-learnings [release-record]: who was told
+    and when, and who never opened their statement
+deviations:
+  check-whole -> take-in-carve [carve-not-whole]: an account or a
+    seller is unplaced, so the hole is filled in the approved carve
+    rather than patched into a statement
+  check-statements -> build-statements [page-and-system-disagree]: a
+    page and the system that will pay on it name different accounts or
+    different numbers, so the page is built again
+  brief-managers -> take-in-carve [patch-cannot-be-staffed]: a manager
+    finds a patch they cannot staff, so the carve is taken in again
+    before anything reaches a seller
+  apply-changes -> build-statements [statement-restated]: an upheld
+    appeal changes a patch or a number, so the seller gets a new
+    statement at the new version
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the leader who decides the

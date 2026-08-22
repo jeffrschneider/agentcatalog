@@ -69,6 +69,9 @@ from: ref/rev/retire-a-tool v1
 owner: <who>                          effective: <date>
 trigger: a review or a renewal decides a tool comes out of the stack in
          <your tool administration process>
+         watch: record=<the stack entry for the tool>
+                system=<your tool administration process>
+                change=<the entry is marked to come out, with a date>
 concurrency: runs may overlap - <how many> retirements open at once,
              and one system is changed by one run at a time
 goal: the tool switched off with the process it ran already running
@@ -152,36 +155,57 @@ run-scoped:
   spend  - runs allocate-and-reconcile        owner: <your finance role>
            from: close-accounts   until: run close
 handoffs:
-  take-in-decision -> find-dependents: which tool, why, by what date,
-    and what was said would replace it
-  find-dependents -> name-new-home: every process, report, link and
-    person that touches the tool, and what each would lose
-  name-new-home -> say-what-is-kept: where each process will run
-    instead, and who agreed to take it
-  say-what-is-kept -> tell-users: what is kept, for how long, in what
-    form and where, and what is not being kept at all
-  say-what-is-kept -> take-export: the same list, as the thing the
-    export has to produce
-  tell-users -> move-process: who was told, on what date, and every
-    question they asked that is still open
-  move-process -> turn-off-links: the work running in its new home, with
-    the date it last needed the old tool
-  take-export -> check-export: the export, where it is held, and
-    everything the tool holds that the export could not take
-  check-export -> turn-off-links: the counts from the export against the
-    counts in the tool, and every difference
-  turn-off-links -> read-only: every link stopped, with what it was
-    carrying and where that now comes from
-  read-only -> review-switch-off: the date the tool stopped taking work,
-    and anything still being written to it after that date
-  review-switch-off -> close-accounts: the cleared review, the signers,
-    and every finding accepted rather than fixed
-  close-accounts -> confirm-deletion: the closed accounts, the notice
-    given, the end date and the final invoice
-  confirm-deletion -> update-stack: what the supplier destroyed, when,
-    and what it is still holding with the reason
-  update-stack -> record-learnings: the closed entry, and where the kept
-    data now sits
+  take-in-decision -> find-dependents [retirement-decision]: which
+    tool, why, by what date, and what was said would replace it
+  find-dependents -> name-new-home [dependency-list]: every process,
+    report, link and person that touches the tool, and what each would
+    lose
+  name-new-home -> say-what-is-kept [new-homes]: where each process
+    will run instead, and who agreed to take it
+  say-what-is-kept -> tell-users [retention-list]: what is kept, for
+    how long, in what form and where, and what is not being kept at all
+  say-what-is-kept -> take-export [export-scope]: the same list, as
+    the thing the export has to produce
+  tell-users -> move-process [who-was-told]: who was told, on what
+    date, and every question they asked that is still open
+  move-process -> turn-off-links [work-moved]: the work running in
+    its new home, with the date it last needed the old tool
+  take-export -> check-export [export-taken]: the export, where it
+    is held, and everything the tool holds that the export could not
+    take
+  check-export -> turn-off-links [export-counts]: the counts from the
+    export against the counts in the tool, and every difference
+  turn-off-links -> read-only [links-stopped]: every link stopped,
+    with what it was carrying and where that now comes from
+  read-only -> review-switch-off [read-only-date]: the date the tool
+    stopped taking work, and anything still being written to it after
+    that date
+  review-switch-off -> close-accounts [cleared-review]: the cleared
+    review, the signers, and every finding accepted rather than fixed
+  close-accounts -> confirm-deletion [accounts-closed]: the closed
+    accounts, the notice given, the end date and the final invoice
+  confirm-deletion -> update-stack [deletion-confirmed]: what the
+    supplier destroyed, when, and what it is still holding with the
+    reason
+  update-stack -> record-learnings [closed-entry]: the closed entry,
+    and where the kept data now sits
+deviations:
+  find-dependents -> take-in-decision [unknown-dependency]: something
+    depends on the tool that nobody knew about, so the decision is
+    taken in again with the dependency named
+  name-new-home -> take-in-decision [nowhere-to-go]: the process the
+    tool ran has nowhere to go, so the decision is taken in again and
+    the date moves
+  move-process -> name-new-home [new-home-cannot-carry]: the new home
+    cannot carry the work, so where the process goes is named again
+  check-export -> take-export [export-will-not-read]: the export does
+    not read back, so it is taken again against the counts that differed
+  review-switch-off -> take-export [findings-to-clear]: the review
+    leaves findings to clear before switch-off, so the export is taken
+    again while the tool is still readable
+  confirm-deletion -> close-accounts [supplier-will-not-confirm]: the
+    supplier will not confirm what it destroyed, so the closing is
+    worked again against the agreement
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the data owner, the security
