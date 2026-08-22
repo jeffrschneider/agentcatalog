@@ -51,6 +51,8 @@ PROCESS: inbound lead routing         id: <team>/lead-routing   v1
 from: ref/mkt/lead-routing v1
 owner: <who>                          effective: <date>
 trigger: a form is submitted on <your properties>
+         watch: record=<form submission> system=<your properties>
+                change=<a submission is received>
 concurrency: runs may overlap freely - runs never touch each other
 goal: every submission scored and in the right queue within <minutes>,
       with the evidence attached
@@ -79,12 +81,19 @@ phases:
                     after: score or route, whichever could not finish
                     by: <hours>               automation: never
 handoffs:
-  capture -> enrich: one record per real lead, duplicates merged
-  enrich -> score: the record, with every filled field naming its source
-  score -> route: the score, the model version, and the inputs
-  route -> notify: the assignment and the reason for it
-  clear-exception -> route: the lead as the person settled it, with
-    what they decided and why, so the routing can finish
+  capture -> enrich [clean-record]: one record per real lead, duplicates
+    merged
+  enrich -> score [enriched-record]: the record, with every filled field
+    naming its source
+  score -> route [scored-lead]: the score, the model version, and the
+    inputs
+  route -> notify [assigned-lead]: the assignment and the reason for it
+  clear-exception -> route [notified-owner]: the lead as the person
+    settled it, with what they decided and why, so the routing can
+    finish
+deviations:
+  clear-exception -> route [settled-by-a-person]: a person settles the
+    lead, and it is routed with what they decided
 bindings:
   roster:  <the agent claiming lead-scorer> ·
            <who clears the exception queue> ·
