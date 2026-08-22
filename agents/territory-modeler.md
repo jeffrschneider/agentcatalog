@@ -57,7 +57,7 @@ can redraw it from what is written down.
 
 - an account whose fields the carve rule cannot read - to the data
   steward by name, rather than placed by a guess
-- a patch nobody has the seat time to work - to the sales leader, named
+- a patch nobody has the capacity to work - to the sales leader, named
   as a gap, with the accounts and the ground behind the finding
 - no candidate cut that passes balance and cost - to the leaders,
   saying which constraint has to move: the segments, the headcount or

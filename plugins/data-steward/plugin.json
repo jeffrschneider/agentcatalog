@@ -1,0 +1,231 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "data-steward",
+  "version": "1.0.0",
+  "description": "The data-steward abstract agent. Owns what a record must contain before anything counts it, and the definitions everything else reports against.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/data-steward",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "revenue-operations",
+    "define-a-record",
+    "enforce-pipeline-hygiene",
+    "fix-a-data-quality-failure",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "data-steward",
+      "agentVersion": 1,
+      "department": "revenue-operations",
+      "abstract": true,
+      "works": "Runs collect-and-report to list every field an object carries and how full each one is, and assessment to trace failing values back to the system that wrote them. Convenes decide-and-announce on what an object means, on the fields a record may not be saved without, and on who fixes the records already failing and by when. Requests the approval in which the object owner signs a version, having seen the failing count and the list of what breaks downstream. Convenes the debrief that closes a definition or a failure. Takes the uniqueness key from the deduper agent, the field sources from the enrichment-operator agent, what may be held from the consent-manager agent, the rules and the failing count from the data-quality-check agent, and the usage and breakage lists from the analytics agent.",
+      "servers": [
+        {
+          "name": "the data dictionary",
+          "role": "data-dictionary",
+          "access": "write",
+          "needs": "Every definition lands at a version, dated, with the person who signed it, and the version it replaces stays readable at its own number."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "Required fields, allowed values, and the corrections to records already wrong."
+        },
+        {
+          "name": "the reporting layer",
+          "role": "reporting-layer",
+          "access": "read",
+          "needs": "What counts off the object, so a change is read against the reports before it is signed."
+        },
+        {
+          "name": "the integrations",
+          "role": "integrations",
+          "access": "read",
+          "needs": "Which systems the object is copied into."
+        },
+        {
+          "name": "the consent record",
+          "role": "consent-record",
+          "access": "read",
+          "needs": "What may be held, field by field, and for how long."
+        },
+        {
+          "name": "the import tooling",
+          "role": "import-tooling",
+          "access": "read",
+          "needs": "What an import writes, when the trail leads there."
+        },
+        {
+          "name": "the standards store",
+          "role": "standards-store",
+          "access": "read",
+          "needs": "The measure definitions in force, so a record definition does not contradict one."
+        }
+      ],
+      "records": [
+        "Per definition: the request and who made it, who reads the object today and what counts off it, the sentence saying what the object is and what it is not, every field with its fill rate and whether anything reads it, the required list with the reason each field is required, the allowed values with what each one means, the uniqueness key written as fields rather than as a feeling, and where every field's value comes from.",
+        "Then the count of records already held that would fail, the reports and integrations that read a changed field, the signed version with its signer and date, and the backfill deadline with its owner and the count still failing when the run closed.",
+        "Per correction: the old value, the new value and the reason, for every record touched.",
+        "Per failure: the source named with the evidence that it was that one, and a failure that could not be traced recorded as unexplained rather than as fixed.",
+        "Per merge: the surviving id with the reason it was chosen, the winning value per field naming the record it came from, and every value that did not survive, stored against the survivor and dated."
+      ],
+      "escalates": [
+        "the signature on a definition, always. This agent puts the version in front of the object owner with the failing count and the breakage list attached, and a person signs.",
+        "a field the consent record does not allow, back to the required list, and the person who asked is told which field was refused and why",
+        "a report that cannot survive the change, to the report's owner, who either narrows the change or accepts the break in writing before the definition is signed",
+        "whether a source keeps writing while it is being fixed, to whoever may stop the flow, with how many records a day it is still writing",
+        "nobody owning the backfill, and the failing count goes on being reported on its cadence until an owner and a date exist"
+      ],
+      "not": [
+        "Does not write the rules that enforce a definition or run them, which is the data-quality-check agent.",
+        "Does not decide what a measure counts, which is the standards-keeper agent writing the rule, with this agent naming the one system it is read from and the boundaries it is cut at.",
+        "Does not find or merge duplicates, which is the deduper agent, and this agent only settles the fields once a merge has been confirmed.",
+        "Does not fill an empty field from an outside source, which is the enrichment-operator agent.",
+        "Does not sign a definition, and does not filter a report to hide the records that fail a rule."
+      ],
+      "processes": [
+        {
+          "process": "ref/rev/answer-a-data-question",
+          "activities": [
+            "Say What Was Left Out"
+          ]
+        },
+        {
+          "process": "ref/rev/build-a-report",
+          "activities": [
+            "Check the Data Is There",
+            "Choose the Cut and the Cadence",
+            "Set Who May See It"
+          ]
+        },
+        {
+          "process": "ref/rev/build-the-roll-up",
+          "activities": [
+            "Fix the Cut-Off",
+            "Pull the Open Deals at the Cut-Off",
+            "Convert to One Currency",
+            "Reconcile the Cuts Against the Extract",
+            "Have a Second Pair of Eyes Check It"
+          ]
+        },
+        {
+          "process": "ref/rev/dedupe-and-merge",
+          "activities": [
+            "Pull What Each Record Holds",
+            "Choose the Surviving Record",
+            "Settle Every Field",
+            "Keep What the Loser Held",
+            "Undo the Merge"
+          ]
+        },
+        {
+          "process": "ref/rev/define-a-measure",
+          "activities": [
+            "Name the Source of Record",
+            "Set the Boundaries"
+          ]
+        },
+        {
+          "process": "ref/rev/define-a-record",
+          "activities": [
+            "Take in the Definition Request",
+            "Read How the Record Is Used Today",
+            "Write What the Object Means",
+            "List the Fields It Carries",
+            "Decide the Required Fields",
+            "Fix the Allowed Values",
+            "Set the Uniqueness Key",
+            "Say Where Each Field Comes From",
+            "Sign the Definition",
+            "Publish the Definition",
+            "Set the Backfill Deadline",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/rev/enforce-pipeline-hygiene",
+          "activities": [
+            "Read the Rules as Written",
+            "Pull the Open Deals",
+            "Check the Amount Against What Is Priced",
+            "Check Owner, Territory and Team",
+            "Find the Duplicates and the Splits",
+            "Fix What the Record Can Fix",
+            "Mark the Deals That Stay Wrong",
+            "Amend the Rules from What Recurred"
+          ]
+        },
+        {
+          "process": "ref/rev/enrich-a-record",
+          "activities": [
+            "Read the Field Definitions",
+            "Set Which Source Wins",
+            "Leave Typed Values Alone"
+          ]
+        },
+        {
+          "process": "ref/rev/fix-a-data-quality-failure",
+          "activities": [
+            "Trace It to Its Source",
+            "Name Who Owns the Source",
+            "Decide Whether to Stop the Flow",
+            "Fix It at the Source",
+            "Correct the Records Already Wrong",
+            "Tighten the Rule",
+            "Close the Failure",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/rev/fix-a-misroute",
+          "activities": [
+            "Find Why the Rule Sent It Wrong",
+            "Fix the Record"
+          ]
+        },
+        {
+          "process": "ref/rev/publish-the-forecast-view",
+          "activities": [
+            "Decide What Each Audience Sees",
+            "Check Every Figure Ties to the Roll-Up",
+            "Check Who May See Which Cut",
+            "Record Corrections as New Versions"
+          ]
+        },
+        {
+          "process": "ref/rev/retire-a-report",
+          "activities": [
+            "Read What Each One Costs",
+            "Find What Depends on Each One",
+            "Freeze the Report",
+            "Switch Off the Feeds"
+          ]
+        },
+        {
+          "process": "ref/rev/watch-the-response-clock",
+          "activities": [
+            "Read Where the Times Come From",
+            "Check the Timestamps Hold Up",
+            "Keep the Period"
+          ]
+        },
+        {
+          "process": "ref/rev/write-a-routing-rule",
+          "activities": [
+            "Read the Fields the Rule Will Use",
+            "Check the Data Holds Up",
+            "Implement the Rule"
+          ]
+        }
+      ]
+    }
+  }
+}

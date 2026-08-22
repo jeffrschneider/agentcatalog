@@ -47,7 +47,7 @@ upsell-planner agent in a debrief.
 - the support system (read) - an account in an open crisis is not
   worked
 - the billing system (read) - collections and anything in dispute
-- the contract record (read) - the products, seats, limits and dates on
+- the contract record (read) - the products, licences, limits and dates on
   the agreement they hold today
 - the account plan (read) - what the plan already says to sell here
 - the opening register (write) - the opening, its evidence, and the

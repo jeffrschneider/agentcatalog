@@ -1,0 +1,124 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "signature-manager",
+  "version": "1.0.0",
+  "description": "The signature-manager abstract agent. Takes an agreement from an agreed text to an executed one. Confirms who signs on each side, in what order, on which document and under what authority, sends the right version to the right people, and files the executed copy with every exhibit it names.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/signature-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "book-the-order",
+    "run-the-close-plan",
+    "hand-over-to-delivery",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "signature-manager",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Runs collect-and-report to establish who signs on each side and what each signer has to see first, and assessment on the executed document: who signed, under what authority, and whether every page and exhibit it refers to is present. Runs a second assessment on the promises the sale made, marking each one carried by the agreement, carried by a side letter, or said and not binding. Convenes the briefing where the seller, the account team, finance and delivery hear one booking, and the debrief on what had to be corrected between signature and booking. Runs roll-call over an agreement waiting to be booked. Takes the agreed text from the redline-reviewer agent, hands the executed agreement to the order-check agent, and hands the marked promise list to the handover-coordinator agent.",
+      "servers": [
+        {
+          "name": "the contract repository",
+          "role": "contract-repository",
+          "access": "read",
+          "needs": "The executed document at a version, with every exhibit and amendment it names."
+        },
+        {
+          "name": "the signature system",
+          "role": "signature-system",
+          "access": "write",
+          "needs": "The document goes to the named signers in order, and comes back out of there when a deal is lost."
+        },
+        {
+          "name": "the entity list",
+          "role": "entity-list",
+          "access": "read",
+          "needs": "The entity that buys and the one that sells, matched to what the organization holds rather than to the address block on the paper."
+        },
+        {
+          "name": "the approval record",
+          "role": "approval-record",
+          "access": "read",
+          "needs": "Which term off the standard paper is signed for, by whom, against which version."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "The people who act on a booking hear the same booking at the same time."
+        }
+      ],
+      "records": [
+        "Per agreement: the executed document at a version, with each exhibit it names marked present or missing.",
+        "The signers on both sides, the authority each signed under, and the signature date the term runs from.",
+        "The buying entity and the selling entity as matched to the entity list, with the tax and address record for each.",
+        "Every term off the standard paper, named as non-standard, with the person who accepted it and the date.",
+        "Each promise made during the sale marked binding, carried by a side letter, or not binding, with the clause behind every binding one.",
+        "The signature path as confirmed, and the date and version each document went out on.",
+        "What had to be corrected between signature and booking, and which of it belongs in the next version of the paper.",
+        "Somebody auditing a run can say which version was signed, by whom, and what it obliges."
+      ],
+      "escalates": [
+        "a signer without the authority to sign, to the legal reviewer and the seller, with the signature recorded as unconfirmed and nothing booked against the document in hand",
+        "an entity named on the paper that the entity list does not hold, to whoever owns that list, before anything is recorded against it",
+        "every term off the standard paper, to the legal reviewer and the finance approver by name, before the booking rather than after it",
+        "a promise the agreement does not carry, to the person who decides whether the organization honors it anyway, before the customer hears from anybody",
+        "a signer who has changed or become unavailable while a document is out to sign, to the deal owner, with the path confirmed again before it goes out a second time"
+      ],
+      "not": [
+        "Does not negotiate the words.",
+        "What a clause says is settled by the redline-reviewer agent with legal, and this agent takes the text that came out of that.",
+        "Does not price anything and does not book the order, which is the order-check agent's work against the terms this agent lifted out of the paper.",
+        "Does not sign and does not countersign for the organization: signature is a human gate, and an agent that could execute an agreement would make the record it keeps worthless."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/book-the-order",
+          "activities": [
+            "Take in the Executed Agreement",
+            "Confirm the Signature and the Signer",
+            "Identify the Buying Entity",
+            "Settle the Non-Standard Terms",
+            "Tell the People Who Need to Know",
+            "Record What Had to Be Fixed"
+          ]
+        },
+        {
+          "process": "ref/sls/hand-over-to-delivery",
+          "activities": [
+            "Separate the Contract from the Conversation"
+          ]
+        },
+        {
+          "process": "ref/sls/record-a-lost-deal",
+          "activities": [
+            "Stop the Open Work"
+          ]
+        },
+        {
+          "process": "ref/sls/review-the-redlines",
+          "activities": [
+            "Hand the Text to Signature"
+          ]
+        },
+        {
+          "process": "ref/sls/run-the-close-plan",
+          "activities": [
+            "Confirm the Signature Path",
+            "Execute the Signature"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "account-planner",
+  "version": "1.0.0",
+  "description": "The account-planner abstract agent. Holds the account plan itself: what to sell into an account, to whom, in what order, and what has to be true for that order to work.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/account-planner",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "write-an-account-plan",
+    "review-the-account-plans",
+    "research-an-account",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "account-planner",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Convenes decide-and-announce to settle what the plan is for and the order the team goes after, and delivers into the approval where the account owner and the sales leader sign. Runs assessment on the opportunities and the risks, and commissions collect-and-report for the reads it plans from. Takes the people map from the relationship mapper, the history and the standing from the account monitor, the sizing from the analytics agent, and the outside evidence from the researcher. Hands the chosen version to the decision coordinator to announce, and hands the plan itself to the expansion spotter and the upsell planner, who check their openings against it.",
+      "servers": [
+        {
+          "name": "the plan record",
+          "role": "plan-record",
+          "access": "write",
+          "needs": "The plan is issued at a version, and a version it replaces stays where it is."
+        },
+        {
+          "name": "the account read record",
+          "role": "account-read-record",
+          "access": "write",
+          "needs": "It assembles and issues the read."
+        },
+        {
+          "name": "the account map record",
+          "role": "account-map-record",
+          "access": "read",
+          "needs": "Every opportunity names a buyer from the map, or is marked as having none."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The history, the open deals and who owns the account."
+        },
+        {
+          "name": "the pricing record and the offer catalogue",
+          "role": "pricing-record-and-the-offer-catalogue",
+          "access": "read",
+          "needs": "To say what could be sold and roughly what it is worth."
+        },
+        {
+          "name": "public and paid research sources",
+          "role": "public-and-paid-research-sources",
+          "access": "read",
+          "needs": "Inside the run's spend cap."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Everyone who acts on the plan is told what they were given and when it applies from."
+        }
+      ],
+      "records": [
+        "The account read at a version, every line naming the system or document it came from and the date that value was current, with the questions nothing answered left standing as unknown.",
+        "The plan at a version: each opportunity with the evidence for it and against it, its buyer or the note that it has none, its size in a confidence band, the order and what each step depends on the one before it delivering, the assumptions written as testable statements, the risks and what the plan does about each, the moves with their owners and dates, and the asks naming who had to agree.",
+        "The signed version names both signers and the date.",
+        "At review, each plan is scored against what it said when it was signed, and every decision records who made it, on what evidence, and anyone who disagreed."
+      ],
+      "escalates": [
+        "signing the plan, always - to the account owner and the sales leader, with the chosen version, the reasons behind it, and anyone who disagreed with what was chosen",
+        "an ask for people, money or product time from outside the account team - to whoever has to agree to it, before the plan is chosen",
+        "an account the standing check marks as not to be worked - to whoever rules on it, before any further research spend",
+        "research spend past the cap for the run - to whoever holds it, with what the spend so far bought",
+        "an assumption that failed - into the review as a new version, never as a quiet edit over the plan that is running"
+      ],
+      "not": [
+        "Does not forecast.",
+        "No money from the plan reaches a forecast until a deal is open in the CRM under the opportunity rules, and a review round changes no forecast by itself.",
+        "Does not map the people at the account, which is the relationship mapper's job, and does not build prospect lists.",
+        "Does not price, quote or contact the customer."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/research-an-account",
+          "activities": [
+            "Take in the Account",
+            "Set the Research Questions",
+            "Work out What the Account Wants",
+            "Mark What Is Unknown",
+            "Assemble the Account Read",
+            "Review the Read with the Owner",
+            "Issue the Read at a Version",
+            "Set the Refresh Date"
+          ]
+        },
+        {
+          "process": "ref/sls/map-the-account-people",
+          "activities": [
+            "Take in the Account Read",
+            "Name the Decisions to Map",
+            "Name the Coverage Gaps",
+            "Review the Map with the Account Team"
+          ]
+        },
+        {
+          "process": "ref/sls/write-an-account-plan",
+          "activities": [
+            "Open the Plan",
+            "Read the Account Read and the Map",
+            "Set What the Plan Is For",
+            "List What Could Be Sold",
+            "Size Each Opportunity",
+            "Test Each Opportunity Against the Read",
+            "Name Who Buys Each One",
+            "Put the Opportunities in Order",
+            "Write down What Has to Be True",
+            "Name the Risks and What Would Kill It",
+            "Say What the Account Team Will Do",
+            "Ask for What the Plan Needs",
+            "Sign the Plan",
+            "Issue the Plan and Tell the Readers",
+            "Set the Review Date and the Tripwires"
+          ]
+        },
+        {
+          "process": "ref/sls/review-the-account-plans",
+          "activities": [
+            "Open the Review Round",
+            "Pull Every Plan in Scope",
+            "Test the Assumptions Again",
+            "Score Each Plan",
+            "Sort the Plans into What Happens Next",
+            "Move the Effort",
+            "Amend the Plans that Change",
+            "Retire the Plans that Stop",
+            "Tell the Readers",
+            "Record What the Round Taught"
+          ]
+        },
+        {
+          "process": "ref/sls/spot-an-expansion",
+          "activities": [
+            "Check Nobody Is Already On It",
+            "Size What It Could Be Worth",
+            "Check It Against the Account Plan"
+          ]
+        },
+        {
+          "process": "ref/sls/open-an-expansion-deal",
+          "activities": [
+            "Re-Read the Account",
+            "Set the Timing Against the Contract",
+            "Get the Internal Go-Ahead",
+            "Open the Deal"
+          ]
+        }
+      ]
+    }
+  }
+}

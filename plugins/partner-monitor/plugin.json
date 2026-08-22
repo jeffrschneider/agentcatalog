@@ -1,0 +1,182 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "partner-monitor",
+  "version": "1.0.0",
+  "description": "The partner-monitor abstract agent. Reads what a partner actually did and sets it against what the plan, the agreement or the tier rules said they would do.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/partner-monitor",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "partners",
+    "end-a-partner-relationship",
+    "run-a-first-deal-together",
+    "write-a-joint-plan",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "partner-monitor",
+      "agentVersion": 1,
+      "department": "partners",
+      "abstract": true,
+      "works": "Runs collect-and-report on what each partner delivered and what is still in flight, assessment when it checks a path, an account overlap or an entitlement as the partner actually experiences it, and roll-call on certificate expiry and on the customers a leaving partner holds. Reads the same measures as the analytics agent and says which of them belong to which partner. Feeds the joint-planner, fund-allocator and tier-assessor agents, and hands its readings to the partner-manager agent and to the reviews people run.",
+      "servers": [
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The deals a partner registered and what became of them."
+        },
+        {
+          "name": "the deal registration system",
+          "role": "deal-registration-system",
+          "access": "read",
+          "needs": "What the partner brought, and when."
+        },
+        {
+          "name": "the agreement record",
+          "role": "agreement-record",
+          "access": "read",
+          "needs": "What each side owes, at the version that was signed."
+        },
+        {
+          "name": "the training record",
+          "role": "training-record",
+          "access": "read",
+          "needs": "Who is certified, on what, and until when."
+        },
+        {
+          "name": "the finance system",
+          "role": "finance-system",
+          "access": "read",
+          "needs": "What was earned, what was claimed and what was paid."
+        },
+        {
+          "name": "analytics",
+          "role": "analytics",
+          "access": "read",
+          "needs": "Both sides read the same measures from one place."
+        },
+        {
+          "name": "the partner record",
+          "role": "partner-record",
+          "access": "write",
+          "needs": "Each reading lands against the partner, dated."
+        },
+        {
+          "name": "the commitment tracker",
+          "role": "commitment-tracker",
+          "access": "write",
+          "needs": "What each side committed to, and whether it happened."
+        }
+      ],
+      "records": [
+        "For every reading: the period it covers, the measure set at its version, the source of each number and the date it was pulled, so somebody else can recompute it.",
+        "What the partner owed and what the company owed, read in the same round and reported together.",
+        "Every difference between our count and the partner's, marked settled or open, with what is missing.",
+        "Everything it could not read, marked unread and naming the data that was not there.",
+        "A dated line for every certificate that lapsed and every certified person who left.",
+        "At an ending, the list of customers the partner holds, the work still in flight, and the confirmation that names anything that could not be closed."
+      ],
+      "escalates": [
+        "a partner behind on a target the company failed to support - to the review, with what the company owed attached, rather than marked behind",
+        "a difference between our count and the partner's - to the partner lead, recorded as open rather than resolved in the company's favour",
+        "a customer still depending on access, or work still in flight, while a relationship is being ended - to the partner lead before anything is closed",
+        "a first deal that is slipping - to the partner lead, who decides whether a stage is taken back and on what conditions",
+        "a partner it cannot read for want of data - to the partner lead, marked unread, with the missing source named"
+      ],
+      "not": [
+        "Does not set targets, tiers or fund amounts, and does not move a partner between tiers; a result that would move a tier goes to the tiering process and the published rules decide it there.",
+        "Does not decide to end a relationship, which is a person, and does not decide to take a stage of a deal back.",
+        "Does not tell the partner their numbers, which is the partner-manager agent and the partner lead.",
+        "Does not open or close access on its own; it names what is still open and who still depends on it, and the closing is done by the agents and people the exit names."
+      ],
+      "processes": [
+        {
+          "process": "ref/prt/allocate-the-fund",
+          "activities": [
+            "Read What Each Partner Delivered",
+            "Watch the Fund as It Is Committed"
+          ]
+        },
+        {
+          "process": "ref/prt/approve-a-fund-request",
+          "activities": [
+            "Read What the Partner Did Before"
+          ]
+        },
+        {
+          "process": "ref/prt/certify-a-partner",
+          "activities": [
+            "Check What They Already Know",
+            "Watch for Expiry and Drift"
+          ]
+        },
+        {
+          "process": "ref/prt/check-and-pay-a-claim",
+          "activities": [
+            "Check What the Activity Produced"
+          ]
+        },
+        {
+          "process": "ref/prt/end-a-partner-relationship",
+          "activities": [
+            "List the Customers the Partner Holds",
+            "List the Work in Flight",
+            "Close Off the Access",
+            "Confirm the Exit Is Complete"
+          ]
+        },
+        {
+          "process": "ref/prt/onboard-a-partner",
+          "activities": [
+            "Test the Path End to End",
+            "Record What the Onboarding Cost"
+          ]
+        },
+        {
+          "process": "ref/prt/review-a-joint-plan",
+          "activities": [
+            "Read the Accounts"
+          ]
+        },
+        {
+          "process": "ref/prt/review-partner-performance",
+          "activities": [
+            "Gather What the Partner Delivered",
+            "Read the Obligations Beyond Selling"
+          ]
+        },
+        {
+          "process": "ref/prt/run-a-first-deal-together",
+          "activities": [
+            "Step In When It Slips",
+            "Debrief with the Partner",
+            "Hand the Partner to Their Ongoing Manager"
+          ]
+        },
+        {
+          "process": "ref/prt/set-a-partner-tier",
+          "activities": [
+            "Pull the Same Evidence for Everybody",
+            "Check the Partner Sees the Right Thing"
+          ]
+        },
+        {
+          "process": "ref/prt/write-a-joint-plan",
+          "activities": [
+            "Read Last Year",
+            "Pick the Accounts and Segments",
+            "Check the Accounts Against Coverage"
+          ]
+        }
+      ]
+    }
+  }
+}

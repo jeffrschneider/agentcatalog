@@ -1,0 +1,110 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "usage-monitor",
+  "version": "1.0.0",
+  "description": "The usage-monitor abstract agent. Reads what a customer actually uses against what they bought, and reports the gap in both directions: the metered thing running past the limit on the agreement, and the entitlement nobody is touching.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/usage-monitor",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "spot-an-expansion",
+    "open-a-renewal",
+    "work-a-churn-risk",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "usage-monitor",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Works alone for most of its work, running collect-and-report against the usage record and keeping a standing read open while an opening or a risk is being worked, so the evidence is current when somebody decides. Sits in the assessment that scores the risk of an account leaving, alongside the risk watcher and the account monitor, because usage alone is never the whole answer. Feeds the expansion spotter and the upsell planner on the way up, and the risk watcher and the renewal manager on the way down. Takes the entitlement from the agreement and the account standing from the account monitor.",
+      "servers": [
+        {
+          "name": "the usage record",
+          "role": "usage-record",
+          "access": "read",
+          "needs": "What was actually used, period by period."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "read",
+          "needs": "What was invoiced against what was metered."
+        },
+        {
+          "name": "the agreement store and the entitlement record",
+          "role": "agreement-store-and-the-entitlement-record",
+          "access": "read",
+          "needs": "A use number means nothing without the limit it sits under."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "The reading against the account, dated."
+        }
+      ],
+      "records": [
+        "Per reading: the metered thing, the entitlement it is set against, the periods compared, the system it was read from and the date it was read.",
+        "Per account: where use sits against each limit, which teams began using what and when, which stopped and when, and the direction of travel on each line.",
+        "A reading is dated rather than reused, so a run that confirms an opening or watches a risk turn records a fresh read at today's date and keeps the earlier one beside it.",
+        "Anyone auditing a decision can put the reading next to the agreement and get the same answer."
+      ],
+      "escalates": [
+        "use past a limit that was bought - to the account owner, with the periods and the entitlement attached, before anybody prices anything",
+        "use falling away on a line the customer is paying for - to the risk watcher and the account owner, inside the hours the process sets",
+        "a usage record that does not reconcile with what was billed - to whoever owns the billing record, left unresolved rather than smoothed over",
+        "a reading it cannot take, because the meter is missing, broken or covers the wrong period - said plainly, instead of filled with an estimate"
+      ],
+      "not": [
+        "Does not decide what the gap means.",
+        "It does not open an expansion, set a renewal position, price a save, or score churn risk on its own, and the written reason a risk gets worked from comes from the people who own the account, not from a number.",
+        "Does not contact the customer, and does not change what an account is entitled to."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/spot-an-expansion",
+          "activities": [
+            "Take in the Signal",
+            "Read the Usage Against the Limit",
+            "Look for the Teams Newly Adopting"
+          ]
+        },
+        {
+          "process": "ref/sls/open-an-expansion-deal",
+          "activities": [
+            "Confirm the Opening Still Holds"
+          ]
+        },
+        {
+          "process": "ref/sls/open-a-renewal",
+          "activities": [
+            "Measure What Was Used",
+            "Score the Risk of Leaving"
+          ]
+        },
+        {
+          "process": "ref/sls/close-a-renewal",
+          "activities": [
+            "Check What They Say Against Use"
+          ]
+        },
+        {
+          "process": "ref/sls/work-a-churn-risk",
+          "activities": [
+            "Read the Usage Trend",
+            "Watch for the Signal to Turn"
+          ]
+        }
+      ]
+    }
+  }
+}

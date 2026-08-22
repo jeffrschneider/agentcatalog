@@ -1,0 +1,141 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "stack-planner",
+  "version": "1.0.0",
+  "description": "The stack-planner abstract agent. Works out what the revenue organization actually needs from a tool before anybody looks at one, and judges candidates against that rather than against a demonstration.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/stack-planner",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "revenue-operations",
+    "choose-a-tool",
+    "retire-a-tool",
+    "administer-a-tool",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "stack-planner",
+      "agentVersion": 1,
+      "department": "revenue-operations",
+      "abstract": true,
+      "works": "Convenes the briefing that opens an evaluation, so every agent hears the same requirements, the same criteria and the same due date at once. Runs assessment for the trial of the finalists and for the standing review, and convenes the decide-and-announce in which a named person chooses the tool, or says keep, change or retire. Runs roll-call on status while a search or a retirement is open, and convenes the debrief that closes one. Takes verdicts from the supplier-check agent, candidates from the researcher agent, the connection map from the integration-keeper agent and the standards verdict from the standards-keeper agent, then hands the chosen tool to the integration-keeper agent and the running tool to the tool-administrator agent.",
+      "servers": [
+        {
+          "name": "the stack record",
+          "role": "stack-record",
+          "access": "write",
+          "needs": "Every entry lands with the process it serves, its owner, its cost, its term and its renewal date."
+        },
+        {
+          "name": "the requirements record",
+          "role": "requirements-record",
+          "access": "write",
+          "needs": "The requirements and the criteria at the version they were fixed at, dated before any candidate was seen."
+        },
+        {
+          "name": "the scoring record",
+          "role": "scoring-record",
+          "access": "read",
+          "needs": "The verdicts the scoring agent returned, read rather than edited."
+        },
+        {
+          "name": "the decision record",
+          "role": "decision-record",
+          "access": "write",
+          "needs": "Who chose, on what date, for what reasons, and anyone who disagreed."
+        },
+        {
+          "name": "the process register",
+          "role": "process-register",
+          "access": "read",
+          "needs": "Whether a process exists that would run inside the tool at all."
+        },
+        {
+          "name": "a trial environment",
+          "role": "trial-environment",
+          "access": "read",
+          "needs": "The finalists doing the team's real work over the same period, measured once."
+        },
+        {
+          "name": "the budget record",
+          "role": "budget-record",
+          "access": "read",
+          "needs": "What the stack already costs, so a new entry is read against it."
+        }
+      ],
+      "records": [
+        "Per run: the need as the requester stated it, the process named as the one that would run inside the tool, and what the stack already holds that comes near, with what each of those falls short on.",
+        "The requirements and the criteria at their fixed version with the date they were fixed, and every later change carried as a new version marking the scores made against the earlier one.",
+        "The shortlist, with the requirement each dropped candidate failed.",
+        "The trial result for each finalist on the same work over the same period, with the figures and the range around each.",
+        "The whole cost, the comparison against one list, and the decision naming who chose, when and why.",
+        "The stack entry itself, and for a retirement the closed entry with what replaced it and where the kept data now sits.",
+        "Each standing review lands with its decision, its date, the evidence it was made on and the date the next one falls, and a review that did not happen is recorded as not held rather than left blank."
+      ],
+      "escalates": [
+        "the choice of tool itself, always. This agent sets the finalists against one list and a named person picks one and says why.",
+        "a need with no process behind it, back to the requester, because the thing being asked for is a way of working rather than a tool",
+        "every candidate failing a requirement, to whoever may lower the requirement, decide to build, or decide to do without, with the scores behind it",
+        "a review with nothing to review, where nobody has used the tool or nobody can name the process it serves, with retirement as the reasonable answer",
+        "a process with nowhere to go in a retirement, and the tool stays on until a home is named and somebody has agreed to take the work"
+      ],
+      "not": [
+        "Does not score the candidates, which is the supplier-check agent working from the requirements at the version they were fixed at, and does not search the market, which is the researcher agent.",
+        "Does not clear the security review or the procurement review, which are human gates.",
+        "Does not sign an agreement or commit the money.",
+        "Does not build the links either side of a tool, which is the integration-keeper agent, and does not run one once it is in: accounts, licences and configuration are the tool-administrator agent."
+      ],
+      "processes": [
+        {
+          "process": "ref/rev/administer-a-tool",
+          "activities": [
+            "Run the Standing Review",
+            "Decide Keep, Change or Retire",
+            "Record the Review"
+          ]
+        },
+        {
+          "process": "ref/rev/choose-a-tool",
+          "activities": [
+            "Take in the Need",
+            "Name the Process It Serves",
+            "Check the Stack for It",
+            "Write down the Requirements",
+            "Set the Scoring Criteria",
+            "Brief the Evaluation",
+            "Search the Market",
+            "Cut to a Shortlist",
+            "Trial the Finalists on Real Work",
+            "Work out the Whole Cost",
+            "Compare the Finalists",
+            "Choose the Tool",
+            "Write It into the Stack Record"
+          ]
+        },
+        {
+          "process": "ref/rev/integrate-a-tool",
+          "activities": [
+            "Take in the Chosen Tool"
+          ]
+        },
+        {
+          "process": "ref/rev/retire-a-tool",
+          "activities": [
+            "Take in the Decision to Retire",
+            "Name Where the Process Goes",
+            "Move the Process to Its New Home",
+            "Update the Stack Record",
+            "Record What Was Learned"
+          ]
+        }
+      ]
+    }
+  }
+}

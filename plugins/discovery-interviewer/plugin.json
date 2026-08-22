@@ -1,0 +1,107 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "discovery-interviewer",
+  "version": "1.0.0",
+  "description": "The discovery-interviewer abstract agent. Prepares and runs the conversation with the people who feel the problem, and comes away with what they actually said rather than what we hoped.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/discovery-interviewer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "run-a-discovery-call",
+    "record-the-requirements",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "discovery-interviewer",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Convenes decide-and-announce to settle who is in the room and whether another call is needed, approval for the read-back, and the debrief at the end. Runs build-by-talent for the question set and roll-call over question coverage while the call runs. Takes the account reading from the researcher agent, works alongside the account owner who holds the meeting, and hands the confirmed notes to the requirements-recorder agent, which calls it back to put the gaps and clashes to the buyer.",
+      "servers": [
+        {
+          "name": "the CRM and the support history",
+          "role": "crm-and-the-support-history",
+          "access": "read",
+          "needs": "What is already known, before the call."
+        },
+        {
+          "name": "the calendar",
+          "role": "calendar",
+          "access": "write"
+        },
+        {
+          "name": "the meeting and recording tool",
+          "role": "meeting-and-recording-tool",
+          "access": "write",
+          "needs": "Used to record only after consent is on record."
+        },
+        {
+          "name": "the notes store",
+          "role": "notes-store",
+          "access": "write"
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "The notes and the unanswered questions go on the record."
+        }
+      ],
+      "records": [
+        "What the call has to settle, for whom, and by when.",
+        "The people asked for and the people who came.",
+        "The question set at a version, with the questions that must not be left unasked marked as such, and the ones that were dropped noted.",
+        "The buyer's written consent to record and where the recording is kept, or the record that consent was refused and the call went ahead unrecorded.",
+        "The notes in the words the buyer used, with the speaker against each line and any paraphrase marked as a paraphrase.",
+        "The read-back, and the buyer's confirmation or corrections.",
+        "The questions the call did not answer, each with what it would change.",
+        "The retention date the notes and the recording are held to."
+      ],
+      "escalates": [
+        "a buyer who sends people who do not feel the problem - to the account owner, before the call, with the names that were asked for",
+        "a call that turns into a demonstration - stopped and put back to the account owner, because nothing is proposed and no price is named on a discovery call",
+        "silence on the read-back - to the account owner, and the notes do not leave the run as confirmed, because silence is not confirmation",
+        "a disagreement over whether discovery is finished - to whoever the process names to decide it"
+      ],
+      "not": [
+        "Does not write the requirement record, which is the requirements-recorder agent, and does not shape a solution, which is the solution-architect agent.",
+        "Does not propose anything, name a price or present on a discovery call.",
+        "Does not record a call the buyer has not agreed in writing to have recorded, and does not turn a declined question into an unknown."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/record-the-requirements",
+          "activities": [
+            "Ask the Follow-Up Questions"
+          ]
+        },
+        {
+          "process": "ref/sls/run-a-discovery-call",
+          "activities": [
+            "Take in the Opportunity",
+            "Read the Account First",
+            "Decide Who Should Be in the Room",
+            "Write the Question Set",
+            "Agree How the Call Is Recorded",
+            "Hold the Call",
+            "Follow the Answers",
+            "Capture What Was Said",
+            "Read the Summary Back",
+            "Write Down What Is Not Known",
+            "Decide If Another Call Is Needed",
+            "Hand the Notes On",
+            "Record What the Call Taught"
+          ]
+        }
+      ]
+    }
+  }
+}

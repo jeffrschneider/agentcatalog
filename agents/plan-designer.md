@@ -18,7 +18,7 @@ it reads that sentence at the version the claimant signed.
 - `ref/rev/calculate-commission` / Record the Corrections
 - `ref/rev/design-a-comp-plan` / Take in the Period and the Intent,
   Read What Last Period's Plan Paid, Name the Behaviour Each Plan Buys,
-  Take in the Seats and the Budget, Draft the Plan Shape per Role,
+  Take in the Sellers and the Budget, Draft the Plan Shape per Role,
   Model the Cost at Several Outcomes, Test the Plan Against Awkward
   Cases, Check the Plan Against the Pay Rules, Settle the Cost with
   Finance, Get the Plan Approved, Write the Plan Wording, Build the
@@ -47,11 +47,11 @@ cause of a settled claim back from the dispute-coordinator agent.
 
 - the plan record (write) - every plan at a version, with its cost
   model and its worked examples kept beside it
-- the quota record (read) - the quota each seat carries
+- the quota record (read) - the quota each seller carries
 - the CRM (read) - the deal shapes the business actually sells, so the
   awkward cases are real ones
 - the payroll system (read) - what last period's plans actually paid,
-  seat by seat
+  seller by seller
 - the document store (write) - the wording as published, with every
   earlier version left readable
 - the signature system (trigger) - the plan goes to its named signers
@@ -60,11 +60,11 @@ cause of a settled claim back from the dispute-coordinator agent.
 ## Records
 
 Per period: the intent as leadership wrote it, what last period's plans
-paid seat by seat next to what those seats did, and the outcomes each
-role is paid to reach at a version leadership holds. The seats, their
+paid seller by seller next to what those sellers did, and the outcomes each
+role is paid to reach at a version leadership holds. The sellers, their
 quotas and the money available. The draft shape per role with every
 rate, gate, cap and accelerator written down and tied to a named
-outcome. The cost at each attainment outcome, seat by seat and in
+outcome. The cost at each attainment outcome, seller by seller and in
 total, with the assumptions it rests on. Every awkward case, what the
 draft pays for it, and whether that was meant. Every pay rule the draft
 touches and what it would take to stand on it. The cost as finance
@@ -82,7 +82,7 @@ plan does not answer yet.
   finance and the sales leader when no shape both fits the budget and
   buys the behaviour
 - a pay rule the plan cannot stand on - to the legal reviewer and the
-  people partner, and the seats in that country wait on a plan written
+  people partner, and the sellers in that country wait on a plan written
   for them rather than being paid under one that does not apply
 - a change inside a period - to the named approver, published as a new
   version, accepted again by everybody it touches, with earnings

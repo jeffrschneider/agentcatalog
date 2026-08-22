@@ -4,8 +4,8 @@
 
 **value stream:** [Result-to-Payout](../../streams/revenue-operations/result-to-payout.md)
 A commission period closes, and the run works out what each closed deal
-earns. Every booking is matched to a seat and to the plan version that
-seat sits on, the credit is split the way the plan says, attainment is
+earns. Every booking is matched to a seller and to the plan version that
+seller sits on, the credit is split the way the plan says, attainment is
 measured, and each component is computed from the booking record rather
 than from a spreadsheet somebody keeps. Draws, clawbacks and amounts
 not yet payable are netted before anybody sees a number. The run closes
@@ -16,12 +16,12 @@ record it came from, and payroll holds a file a person has signed for.
 
 | # | Activity | What happens | Agents |
 |---|---|---|---|
-| 1 | Open the Period | the period, and the plan version each seat is on | [commission-calculator](../../agents/commission-calculator.md) |
+| 1 | Open the Period | the period, and the plan version each seller is on | [commission-calculator](../../agents/commission-calculator.md) |
 | 2 | Pull the Bookings | every booking the period covers, pulled once | commission-calculator |
-| 3 | Match Each Booking to a Seat | each booking matched to a seat and a plan | commission-calculator · sales operations (person) |
+| 3 | Match Each Booking to a Seller | each booking matched to a seller and a plan | commission-calculator · sales operations (person) |
 | 4 | Check the Booking Record Is Complete | the fields a payment depends on, checked present | commission-calculator |
 | 5 | Apply the Credit Rules | who gets credit for the booking, and how much | commission-calculator · sales manager (person) |
-| 6 | Measure Attainment | attainment measured against the seat's quota | commission-calculator |
+| 6 | Measure Attainment | attainment measured against the seller's quota | commission-calculator |
 | 7 | Compute Each Component | each component computed from the matched record | commission-calculator |
 | 8 | Apply Gates, Accelerators and Caps | gates, accelerators and caps applied in order | commission-calculator |
 | 9 | Net Draws and Clawbacks | draws, recoverables and clawbacks netted off | commission-calculator · finance partner (person) |
@@ -45,12 +45,12 @@ a line the run holds back instead of paying.
 flowchart LR
   T([a commission period closes]) --> A1[1. Open the Period]
   A1 --> A2[2. Pull the Bookings]
-  A2 --> A3[3. Match Each Booking to a Seat]
-  A3 -. a booking matches no seat .-> A2
+  A2 --> A3[3. Match Each Booking to a Seller]
+  A3 -. a booking matches no seller .-> A2
   A3 --> A4[4. Check the Booking Record Is Complete]
   A4 -. a field a payment depends on is missing .-> A3
   A4 --> A5[5. Apply the Credit Rules]
-  A5 -. two seats claim the same booking .-> A3
+  A5 -. two sellers claim the same booking .-> A3
   A5 --> A6[6. Measure Attainment]
   A6 --> A7[7. Compute Each Component]
   A7 --> A8[8. Apply Gates, Accelerators and Caps]
@@ -66,7 +66,7 @@ flowchart LR
   A14 -. the run is not signed .-> A12
   A14 --> A15[15. Publish and Pass the File to Payroll]
   A15 --> A16[16. Record the Corrections]
-  A16 --> DONE([every seat holds a traceable statement and payroll holds the file])
+  A16 --> DONE([every seller holds a traceable statement and payroll holds the file])
 ```
 
 ## The document, with the blanks marked
@@ -80,12 +80,12 @@ trigger: a commission period closes on <date>, or a corrected booking
 concurrency: one run per population per period - a period is calculated
              once, and a correction to a closed period lands in the
              next run rather than reopening this one
-goal: every seat holds a statement in which each line names the booking
+goal: every seller holds a statement in which each line names the booking
       record it was computed from, published within <days> of the
       period closing, and a payroll file signed by a person
 phases:
-  open-period         - system: the period boundaries, the seats in
-                        scope, and the plan version each seat sits on
+  open-period         - system: the period boundaries, the sellers in
+                        scope, and the plan version each seller sits on
                         owner: commission-calculator  after: trigger
                         automation: autonomous
   pull-bookings       - system: every booking the period covers, pulled
@@ -93,7 +93,7 @@ phases:
                         a snapshot with a timestamp
                         owner: commission-calculator
                         after: open-period        automation: autonomous
-  match-bookings      - system: each booking matched to a seat, a
+  match-bookings      - system: each booking matched to a seller, a
                         territory and a plan version. What matches
                         nothing goes to the exception queue
                         owner: commission-calculator
@@ -107,7 +107,7 @@ phases:
                         owner: commission-calculator
                         after: check-completeness
                         automation: supervised
-  measure-attainment  - system: attainment measured against the seat's
+  measure-attainment  - system: attainment measured against the seller's
                         quota for the period, at the plan's own
                         definition of what counts
                         owner: commission-calculator
@@ -136,7 +136,7 @@ phases:
                         after: net-draws          automation: <level>
   score-run           - runs assessment: the run set against last
                         period and against the cost model, with every
-                        seat more than <threshold> out named
+                        seller more than <threshold> out named
                         owner: statistician       after: hold-unpayable
                         by: <days>                automation: supervised
   show-working        - runs collect-and-report: each statement built
@@ -173,29 +173,29 @@ run-scoped:
   holdbacks  - runs allocate-and-reconcile  owner: <your finance role>
                from: hold-unpayable   until: run close
 handoffs:
-  open-period -> pull-bookings: the period boundaries, the seats in
-    scope, and the plan version each seat sits on
+  open-period -> pull-bookings: the period boundaries, the sellers in
+    scope, and the plan version each seller sits on
   pull-bookings -> match-bookings: the booking snapshot, timestamped,
     with the system and the query it was taken from
-  match-bookings -> check-completeness: each booking against a seat, a
+  match-bookings -> check-completeness: each booking against a seller, a
     territory and a plan version, and every unmatched booking listed
     rather than dropped
   check-completeness -> apply-credit: the bookings a payment can be
     computed from, and the ones missing a field, each naming the field
-  apply-credit -> measure-attainment: the credited amount per seat per
+  apply-credit -> measure-attainment: the credited amount per seller per
     booking, with the split rule that produced it
-  measure-attainment -> compute-components: attainment per seat, and
+  measure-attainment -> compute-components: attainment per seller, and
     the quota it was measured against
   compute-components -> apply-modifiers: each component with its rate,
     its input and its result
-  apply-modifiers -> net-draws: the gross earning per seat, with every
+  apply-modifiers -> net-draws: the gross earning per seller, with every
     gate, accelerator and cap recorded as applied or not applied
-  net-draws -> hold-unpayable: the net earning per seat, and every draw
+  net-draws -> hold-unpayable: the net earning per seller, and every draw
     or clawback with the period it came from
   hold-unpayable -> score-run: what is payable now and what is held,
     each held amount naming the condition it waits on
   score-run -> show-working: the run against last period and against
-    the cost model, with every seat outside <threshold> named
+    the cost model, with every seller outside <threshold> named
   show-working -> manager-review: the statements, each line naming its
     booking, its rate and the plan sentence behind it
   manager-review -> approve-run: what each manager accepted, and what
@@ -212,13 +212,13 @@ bindings:
            the quota record (read), the commission ledger (write),
            the statement store (write), the payroll system (write),
            the notification channel (write)
-  data:    the plan at a version per seat, the quota record at a
+  data:    the plan at a version per seller, the quota record at a
            version, the credit rules, the booking snapshot, the draw
            and clawback balances
 policy:
   every line on a statement names the booking record, the rate and the
     plan sentence it was computed from
-  a booking that matches no seat is paid to nobody until a person
+  a booking that matches no seller is paid to nobody until a person
     places it, and it never defaults to <who>
   a number that cannot be traced to a record is held back rather than
     paid, and the person is told it is held and why
@@ -241,21 +241,21 @@ measures:
 
 ## The failure edges
 
-- **A booking matches no seat.** It goes to the exception queue rather
-  than to the nearest plausible seat. A person places it, what they
+- **A booking matches no seller.** It goes to the exception queue rather
+  than to the nearest plausible seller. A person places it, what they
   decided is recorded against the booking, and the run picks it up from
   the credit rules. A booking still unplaced at the approval gate is
   paid to nobody this period and named in the record.
-- **Two seats claim the same booking.** The commission-calculator agent
+- **Two sellers claim the same booking.** The commission-calculator agent
   does not choose. It shows both claims with the credit rule each one
   relies on, the managers settle it by name before the run is approved,
   and what they settled becomes the credit record for that booking.
 - **The booking record is missing a field a payment depends on.** The
-  line is held, not guessed. The seat is told which field is missing
+  line is held, not guessed. The seller is told which field is missing
   and who owns fixing it, and the amount lands in the next run once the
   record is complete.
 - **An outlier the plan does not explain.** The statistician agent names
-  the seat and the size of the gap, and the run stops at that seat
+  the seller and the size of the gap, and the run stops at that seller
   until the number is either explained by a plan sentence or corrected.
   Paying it and sorting it out afterwards is not one of the choices.
 - **The manager finds a wrong credit split.** The run returns to the
@@ -263,7 +263,7 @@ measures:
   Everything downstream of those bookings runs again, because a split
   changes attainment and attainment changes the accelerators.
 - **The run is not signed.** Nothing publishes and nothing goes to
-  payroll. The seats are told the date has moved and why, and the run
+  payroll. The sellers are told the date has moved and why, and the run
   waits at activity 12 rather than being partly paid.
 - **A period already paid turns out to be wrong.** The correction lands
   in the next run as its own line, naming the period it belongs to. The
@@ -278,7 +278,7 @@ measures:
   arrive in the meantime are held in the snapshot for the period they
   belong to, not the one being calculated.
 - **A run is abandoned.** No statement is published, no file goes to
-  payroll, and every seat is told in writing that the period is not
+  payroll, and every seller is told in writing that the period is not
   being paid on the promised date and when it will be. The snapshot,
   the exceptions and the working are kept, because the run that
   replaces this one starts from them.

@@ -1,0 +1,125 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "deal-desk-reviewer",
+  "version": "1.0.0",
+  "description": "The deal-desk-reviewer abstract agent. Runs the desk that answers a seller asking for something the standard paper does not cover. It takes the request, checks it carries what it needs, tells the seller the time the desk will answer in, and reads the deal as it stands.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/deal-desk-reviewer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "revenue-operations",
+    "review-a-non-standard-deal",
+    "publish-the-approval-thresholds",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "deal-desk-reviewer",
+      "agentVersion": 1,
+      "department": "revenue-operations",
+      "abstract": true,
+      "works": "Runs assessment on whether a request is complete and on what each item risks, and collect-and-report to read the deal as it stands and to gather each risk owner's read in writing. Convenes decide-and-announce at the review where the items are decided one at a time, each against the read it was decided on. Runs roll-call on the clock from the hour it starts until the shape goes back to the seller, and convenes the debrief that turns an ask which keeps arriving into a standard term or a new band. Takes the priced quote and its non-standard lines from the quote-builder agent, hands each term to the terms-check agent to score, takes the precedent from the analytics agent, passes an ask that is a price rather than a term to the discount-approver agent, and hands a repeating pattern to the standards-keeper agent.",
+      "servers": [
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The account, what it already owns, and the deal the ask belongs to."
+        },
+        {
+          "name": "the quoting system",
+          "role": "quoting-system",
+          "access": "read",
+          "needs": "The configuration, the price and the term as the deal stands."
+        },
+        {
+          "name": "the deal desk queue",
+          "role": "deal-desk-queue",
+          "access": "write",
+          "needs": "The request, its level, its promised time and its state."
+        },
+        {
+          "name": "the approval record",
+          "role": "approval-record",
+          "access": "write",
+          "needs": "The decision, the reason, the signer and the deal version it was decided against."
+        },
+        {
+          "name": "the contract record",
+          "role": "contract-record",
+          "access": "read",
+          "needs": "The paper the deal sits on."
+        },
+        {
+          "name": "the standard terms store",
+          "role": "standard-terms-store",
+          "access": "read",
+          "needs": "The terms in force each item is tested against."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "The seller hears the clock, the answer, and anything that went up the line."
+        }
+      ],
+      "records": [
+        "Per request: the ask as the seller wrote it, the deal it belongs to, the level read off the published table, the time that level promises, and the hour the seller was told both.",
+        "Every non-standard item written down on its own in the words the customer used, each carrying what it risks with the number behind the risk wherever there is one, and the person or function that carries it.",
+        "Every read as it came back, dated, with the reason the owner gave, and every item nobody read.",
+        "What was decided the last time the same thing was asked, on which deal, by whom, and what happened to that deal afterwards.",
+        "The alternative the desk would approve, priced beside the ask.",
+        "Then per item: the decision, the reason, the signer, and the version of the deal it was decided against, with the approved shape or the refusal as it went back to the seller."
+      ],
+      "escalates": [
+        "an item past the time its level promised - to the named sales leader, with what it is waiting on, who it is waiting for, and what the desk recommends, and the seller is told it went up",
+        "a risk owner who never gave their read - to the sales leader with the item and the owner named, because the item is not decided without it",
+        "the decision itself, always - to the named signers at the review. This agent reads, prices, shapes and records, and people approve",
+        "a deal signed before the desk answered - to the sales leader, with every item that went out unapproved and who signed it",
+        "an ask that keeps arriving and keeps being decided the same way - to the standards-keeper agent and the threshold review, as a candidate term or a new band rather than another one-off decision"
+      ],
+      "not": [
+        "Does not approve anything and does not sign anything.",
+        "Does not price a discount against the rate card and the margin floor or route it to its band, which is the discount-approver agent.",
+        "Does not score a term against the standard paper itself, which is the terms-check agent working at a named version.",
+        "Does not build the configuration or the quote, which are the configurator agent and the quote-builder agent.",
+        "Does not write or version the standard terms and the approval table, which is the standards-keeper agent, and does not negotiate with the customer."
+      ],
+      "processes": [
+        {
+          "process": "ref/rev/publish-the-approval-thresholds",
+          "activities": [
+            "Draft the Levels",
+            "Set the Time Promised per Level",
+            "Wire the Table Into the Routing"
+          ]
+        },
+        {
+          "process": "ref/rev/review-a-non-standard-deal",
+          "activities": [
+            "Take in the Request",
+            "Check the Request Is Complete",
+            "Start the Clock",
+            "Read the Deal as It Stands",
+            "Name Every Non-Standard Item",
+            "Price What Each Item Risks",
+            "Say Who Carries Each Risk",
+            "Look Up the Precedent",
+            "Shape What the Desk Would Approve",
+            "Hold the Review",
+            "Escalate What Ran Past the Clock",
+            "Record the Decision and the Reason",
+            "Hand the Shape Back",
+            "Feed the Pattern to the Standards"
+          ]
+        }
+      ]
+    }
+  }
+}

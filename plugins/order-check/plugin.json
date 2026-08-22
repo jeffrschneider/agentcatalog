@@ -1,0 +1,127 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "order-check",
+  "version": "1.0.0",
+  "description": "The order-check abstract agent. Turns an executed agreement into a booking the rest of the company can act on, and refuses one that does not match.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/order-check",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "book-the-order",
+    "hand-over-to-delivery",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "order-check",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Runs assessment three times: on every sold line against a catalog item, a delivery date and the capacity to meet it; on the whole booking against the booking rules at a version; and on the handover package against its checklist. Runs collect-and-report over the exceptions it raises for as long as a booking is open. Requests the approval a finance approver signs, and takes the booking back through it when anything changes after. Takes the executed agreement and the settled non-standard terms from the signature-manager agent, waits on the credit reading from the account-monitor agent, and hands the booked order to the handover-coordinator agent.",
+      "servers": [
+        {
+          "name": "the contract repository",
+          "role": "contract-repository",
+          "access": "read",
+          "needs": "Every booking field names the clause it was read from."
+        },
+        {
+          "name": "the price book",
+          "role": "price-book",
+          "access": "read",
+          "needs": "Each line priced at a named version, or naming the approval that let it differ."
+        },
+        {
+          "name": "the product catalog",
+          "role": "product-catalog",
+          "access": "read",
+          "needs": "Every sold line matched to something that exists."
+        },
+        {
+          "name": "delivery capacity records",
+          "role": "delivery-capacity-records",
+          "access": "read",
+          "needs": "Whether the date the customer expects can be met."
+        },
+        {
+          "name": "the order system",
+          "role": "order-system",
+          "access": "write",
+          "needs": "The booking, at the version an approver signed and no other."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "The opportunity closed at the booked amount."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "write",
+          "needs": "The billing schedule, the payment terms and the purchase order reference."
+        },
+        {
+          "name": "the forecast",
+          "role": "forecast",
+          "access": "write",
+          "needs": "Corrected to what was actually booked rather than to what was forecast."
+        }
+      ],
+      "records": [
+        "Per booking: each field with the clause it was read from.",
+        "The start, end, notice and renewal dates with the clause that set each one, and any date the paper leaves ambiguous named as ambiguous.",
+        "Every line with its catalog item, its quantity and its price at a price book version, or the approval that let it differ.",
+        "The deliverability check line by line, naming what cannot be delivered as sold and what can be delivered instead.",
+        "The score against the booking rules at a version, with the rule behind every failure and the written acceptance carrying any failure forward.",
+        "The approver, the date, and the version they signed.",
+        "The billing schedule as finance accepted it.",
+        "The handover package scored against its checklist version, naming what is missing rather than what is present."
+      ],
+      "escalates": [
+        "a line the delivery side cannot deliver as sold, to the delivery lead and the deal desk, with the date and what can be delivered instead, before the line is booked",
+        "a booking that fails its check, back to the terms with the rule attached to each failure, rather than on to an approver",
+        "a booking changed after finance approved it, back through approval, because the approval covered a version",
+        "an order system that will not take the booking, to whoever owns that system, with the booking held at its approved version rather than half written",
+        "a handover package missing what its checklist requires, to the handover coordinator, carried forward as a named gap with a date rather than waived quietly"
+      ],
+      "not": [
+        "Does not sign the booking.",
+        "Finance approval is a human gate, and this agent prepares the booking for it and records what was signed.",
+        "Does not approve an exception or settle a term off the standard paper: those are named and routed by the signature-manager agent to the people who may sign them.",
+        "Does not build a configuration or set a price, which are the configurator and quote-builder agents' work before an agreement exists.",
+        "Does not own the customer relationship after the booking, which passes to the handover-coordinator agent."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/book-the-order",
+          "activities": [
+            "Read the Terms into a Booking",
+            "Set the Term and the Dates",
+            "Price the Booking",
+            "Check What Was Sold Against What Exists",
+            "Score the Booking",
+            "Get Finance Approval",
+            "Record the Booking",
+            "Pass the Billing Terms to Finance",
+            "Close the Opportunity"
+          ]
+        },
+        {
+          "process": "ref/sls/hand-over-to-delivery",
+          "activities": [
+            "Take in the Booked Order",
+            "Check the Package Is Complete"
+          ]
+        }
+      ]
+    }
+  }
+}

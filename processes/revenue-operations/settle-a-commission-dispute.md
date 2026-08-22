@@ -8,7 +8,7 @@ answers them with evidence inside a time the organization promised
 before the claim arrived. The claim is classified, the statement
 version is frozen, the line is recomputed independently from the same
 records, and the plan sentence that governs it is read out loud.
-Contested credit is heard from both seats. The answer is upheld, partly
+Contested credit is heard from both sellers. The answer is upheld, partly
 upheld or refused, it is approved by a person when money moves, and the
 cause goes back to the plan or the calculator so the same claim does
 not arrive again next period.
@@ -25,7 +25,7 @@ not arrive again next period.
 | 6 | Recompute the Line Independently | the line recomputed from the record, on its own | commission-calculator |
 | 7 | Read the Plan Sentence That Governs It | the plan sentence that governs the disputed line | dispute-coordinator · [plan-designer](../../agents/plan-designer.md) |
 | 8 | Hear the Claimant | the claimant says what they believe happened | dispute-coordinator · claimant (person) |
-| 9 | Hear the Other Seat | the other seat answers when credit is contested | dispute-coordinator · sales manager (person) |
+| 9 | Hear the Other Seller | the other seller answers when credit is contested | dispute-coordinator · sales manager (person) |
 | 10 | Decide the Answer | upheld, partly upheld or refused, with the reason | dispute-coordinator · sales leader (person) |
 | 11 | Approve a Decision That Moves Money | a person signs any decision that changes a payment | finance partner (person) · sales leader (person) |
 | 12 | Tell the Claimant | the answer sent with the evidence attached | dispute-coordinator · [reporting-manager](../../agents/reporting-manager.md) |
@@ -54,7 +54,7 @@ flowchart LR
   A6 -. the record cannot support any number .-> A5
   A6 --> A8[8. Hear the Claimant]
   A7 --> A8
-  A8 --> A9[9. Hear the Other Seat]
+  A8 --> A9[9. Hear the Other Seller]
   A8 -. the claim changes to a different line .-> A3
   A9 --> A10[10. Decide the Answer]
   A10 -. the answer needs evidence nobody pulled .-> A5
@@ -129,7 +129,7 @@ phases:
                         owner: dispute-coordinator
                         after: recompute-line + read-the-plan
                         by: <days>                automation: never
-  hear-other-seat     - convenes briefing: the other seat and its
+  hear-other-seller     - convenes briefing: the other seller and its
                         manager answer, whenever the claim would move
                         credit away from somebody
                         owner: dispute-coordinator
@@ -139,7 +139,7 @@ phases:
                         upheld or refused, with the plan sentence and
                         the record behind the decision
                         owner: <your sales leadership role>
-                        after: hear-other-seat
+                        after: hear-other-seller
                         by: <days>                automation: never
   approve-money       - convenes approval: <who> signs any decision
                         that changes a payment by more than <amount>,
@@ -200,9 +200,9 @@ handoffs:
     input where they differ
   read-the-plan -> hear-claimant: the sentence that governs the line,
     quoted, at the version that applies
-  hear-claimant -> hear-other-seat: what the claimant holds that the
-    record does not, and the seat the claim would take credit from
-  hear-other-seat -> decide-answer: both accounts, and what each seat
+  hear-claimant -> hear-other-seller: what the claimant holds that the
+    record does not, and the seller the claim would take credit from
+  hear-other-seller -> decide-answer: both accounts, and what each seller
     can show for its account
   decide-answer -> approve-money: the decision, the amount it moves,
     and the sentence it rests on
@@ -238,8 +238,8 @@ policy:
     it, and both answers are shown to the claimant
   the plan is read at the version the claimant signed, never at the
     current version
-  a claim that would move credit away from another seat is not decided
-    until that seat has been heard
+  a claim that would move credit away from another seller is not decided
+    until that seller has been heard
   a decision that changes a payment by more than <amount> is signed by
     a person, and the signature is never delegated to an agent
   the claimant is told the route to escalate in the same message as the
@@ -272,9 +272,9 @@ measures:
   inputs where they differ. Whichever answer wins, the disagreement
   goes to activity 15, because a calculator that can produce two
   answers from one record is the real finding.
-- **The claim would move credit off another seat.** That seat is heard
+- **The claim would move credit off another seller.** That seller is heard
   before anything is decided, and it is told the outcome whether or not
-  the credit moved. Deciding it quietly and letting the other seat find
+  the credit moved. Deciding it quietly and letting the other seller find
   out from their next statement turns one claim into two.
 - **The claimant will not accept the answer.** The escalation route is
   in the answer itself, with a window. The escalation may send the run

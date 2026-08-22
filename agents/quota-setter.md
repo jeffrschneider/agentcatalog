@@ -4,7 +4,7 @@
 
 **purpose:** Puts a number on every territory and can say what each one
 rests on. Reads what a patch carried before, drafts from the carrying
-model and the attainment curve, and tests every draft against the seat
+model and the attainment curve, and tests every draft against the seller
 time behind it and against what that patch actually closed. The quotas
 add up to more than the target on purpose, by a figure a named person
 decided rather than by a rounding habit. The set is signed as one
@@ -22,7 +22,7 @@ where the next round reads them.
   Apply What Changed, Publish the Final Carve, Record What the Appeals
   Showed
 - `ref/rev/set-the-quotas` / Take in the Map and the Number, Set the
-  Over-Assignment, Draft a Quota per Territory, Test Against Seat Time,
+  Over-Assignment, Draft a Quota per Territory, Test Against Capacity,
   Work the Ramp Cases, Roll Up and Name the Gap, Adjust and Test Again,
   Cost the Plan with Finance, Record What the Quotas Rest On
 
@@ -50,7 +50,7 @@ roll-up is believed.
 
 Per run: the over-assignment as a figure with who decided it and why, a
 draft on every patch naming the carrying figure and the curve behind
-it, and the seat-time test and the history test attached to each
+it, and the capacity test and the history test attached to each
 number. Every number further from history than the stated distance
 carries the reason for the difference beside it. The roll-up states the
 sum, the target and the distance between them as an amount, and any
@@ -64,7 +64,7 @@ decided it, with the version it replaces left where it was.
 
 - the over-assignment, always - to the sales leader and finance, as a
   figure with a reason, because a total nobody signed is not one
-- a patch whose seat cannot work its number - to the sales leader with
+- a patch whose seller cannot work its number - to the sales leader with
   the hours the finding rests on, and a decision to sign it anyway is
   written against that patch
 - a plan that pays more than the number funds - to finance and the

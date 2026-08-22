@@ -1,0 +1,198 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "deal-inspector",
+  "version": "1.0.0",
+  "description": "The deal-inspector abstract agent. Tests what a deal is really resting on, against the record rather than against the seller's confidence.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/deal-inspector",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "inspect-a-deal",
+    "record-a-lost-deal",
+    "run-the-forecast-call",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "deal-inspector",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Runs collect-and-report to pull the deal record with every change and its author, to name who won a lost deal, and to write the clause decisions other deals read. Runs assessment to mark every claim, to classify a loss against the reason list, to read a stated loss reason against what the deal looked like on the way through, and to mark what a partner brought or whether a partner introduced the customer against the standard the partner process sets. Convenes the assessment where the findings are put to the owner, and the ones where committed and best case deals are walked in the forecast call. Sits in the decide-and-announce where the loss date and the actions are agreed. Runs roll-call over the actions it left behind and over the basis a committed number rests on, and sits in the joint check-in where a partner and the account team read the same plan on a cadence. Takes the activity read from the analytics agent and the date test from the forecaster agent, and sends its findings ahead of the call so the room argues instead of catching up.",
+      "servers": [
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The stage, the amount and the close date as they stand, with every change and who made it."
+        },
+        {
+          "name": "the call record",
+          "role": "call-record",
+          "access": "read",
+          "needs": "The customer's own words, quoted rather than summarized."
+        },
+        {
+          "name": "the activity record",
+          "role": "activity-record",
+          "access": "read",
+          "needs": "Who was met, how recently, and by whom."
+        },
+        {
+          "name": "the contract system",
+          "role": "contract-system",
+          "access": "read",
+          "needs": "The steps a signature still has to pass."
+        },
+        {
+          "name": "the inspection record",
+          "role": "inspection-record",
+          "access": "write",
+          "needs": "The findings at a version, dated."
+        },
+        {
+          "name": "the clause record",
+          "role": "clause-record",
+          "access": "write",
+          "needs": "What was decided last time the same change came up."
+        },
+        {
+          "name": "the loss record",
+          "role": "loss-record",
+          "access": "write",
+          "needs": "The reason code, the buyer's words, the winner and the follow-up date."
+        },
+        {
+          "name": "the partner deal register",
+          "role": "partner-deal-register",
+          "access": "read",
+          "needs": "What a partner claimed, when, and the evidence they brought for it."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "The people who worked a deal hear the outcome from us first."
+        }
+      ],
+      "records": [
+        "Per inspection: the deal record with every change to stage, amount and date carrying its author.",
+        "The buying group, each named person marked met or unmet.",
+        "What the customer said, dated and quoted, and every place the record holds nothing.",
+        "The budget, the approver, and whether the money is committed elsewhere.",
+        "Who else is in it and what would have to be true to win.",
+        "Every remaining step with its owner and the time it takes, and whether they fit before the close date or by how much they miss.",
+        "Every claim marked evidenced, asserted or absent, with the record and the date behind each evidenced one.",
+        "The one or two things that decide the deal.",
+        "The owner's answers as given, the actions with owners and dates, and the category with who set it and their reason.",
+        "Per loss: the signal, who confirmed the decision, the loss date, the buyer's own words kept beside one reason code, the winner or the decision to do nothing, any contradiction between the stated reason and the record, and the follow-up date with what would have to change."
+      ],
+      "escalates": [
+        "a deal with no customer words anywhere in the record, into the finding and into the category that follows, marked as resting on assertion whatever the owner's confidence",
+        "a close date the remaining steps do not fit, to the sales manager, who either shortens the steps with the person who agreed named, or moves the date",
+        "a buying group with nobody who can sign, into the actions with a date, and the deal is not eligible for committed until it closes",
+        "an owner who will not attend, to the manager before the category is set, with the questions that went unanswered named",
+        "a no that came from somebody who did not take part in the decision, back to the signal, before anything is closed",
+        "a stated loss reason the deal record contradicts, to the sales leader, with both versions kept readable"
+      ],
+      "not": [
+        "Does not write stage, amount or close date.",
+        "Those belong to the deal owner, and an inspection that edited them would be inspecting itself.",
+        "Does not set a category: a named person says committed, best case or neither, and this agent records it with the reason.",
+        "Does not convert an assertion into evidence, and does not accept evidence that lives only in the conversation.",
+        "Does not recompute the roll-up it reads, which arrives published from operations.",
+        "Does not stop the open work on a lost deal or return the buyer's material: that is the close-plan-keeper agent with the signature-manager agent and the legal reviewer."
+      ],
+      "processes": [
+        {
+          "process": "ref/prt/register-a-deal",
+          "activities": [
+            "Read What the Partner Brought"
+          ]
+        },
+        {
+          "process": "ref/prt/resolve-a-channel-conflict",
+          "activities": [
+            "Test Who Brought the Customer"
+          ]
+        },
+        {
+          "process": "ref/prt/run-a-co-sell",
+          "activities": [
+            "Hold the Joint Check-In"
+          ]
+        },
+        {
+          "process": "ref/sls/commit-the-number",
+          "activities": [
+            "Test What the Gap Rests On",
+            "Watch It Through the Period"
+          ]
+        },
+        {
+          "process": "ref/sls/inspect-a-deal",
+          "activities": [
+            "Take in the Deal",
+            "Pull the Deal Record",
+            "Name the Buying Group",
+            "Test What the Customer Said",
+            "Check the Money Is Real",
+            "Read the Competitive Position",
+            "Walk the Steps to Signature",
+            "Test the Close Date",
+            "Mark Each Claim",
+            "Name What the Deal Rests On",
+            "Put the Findings to the Owner",
+            "Say Where the Deal Stands",
+            "Record the Inspection"
+          ]
+        },
+        {
+          "process": "ref/sls/record-a-lost-deal",
+          "activities": [
+            "Take in the Signal",
+            "Confirm the Decision Is Real",
+            "Set the Loss Date",
+            "Classify the Loss",
+            "Name Who Won",
+            "Check the Deal Against the Record",
+            "Set the Follow-Up Date",
+            "Tell the People Who Worked It",
+            "Close the Record",
+            "Feed the Loss into the Review"
+          ]
+        },
+        {
+          "process": "ref/sls/review-the-redlines",
+          "activities": [
+            "Check Against Prior Decisions",
+            "Log the Clause Decisions"
+          ]
+        },
+        {
+          "process": "ref/sls/run-the-close-plan",
+          "activities": [
+            "Report the Plan",
+            "Close the Plan on the Record"
+          ]
+        },
+        {
+          "process": "ref/sls/run-the-forecast-call",
+          "activities": [
+            "Flag the Deals the Call Will Walk",
+            "Send the Inspections Ahead",
+            "Walk the Committed Deals",
+            "Walk the Best Case"
+          ]
+        }
+      ]
+    }
+  }
+}

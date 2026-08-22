@@ -1,0 +1,123 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "routing-keeper",
+  "version": "1.0.0",
+  "description": "The routing-keeper abstract agent. Holds the routing rules and the systems that enforce them. Writes each rule as plain sentences a seller can read without training, sets which clause wins and the named person anything unmatched goes to, builds it into the system that delivers the work, and publishes it at the version it runs at.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/routing-keeper",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "revenue-operations",
+    "write-a-routing-rule",
+    "fix-a-misroute",
+    "watch-the-response-clock",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "routing-keeper",
+      "agentVersion": 1,
+      "department": "revenue-operations",
+      "abstract": true,
+      "works": "Convenes the briefing where the sellers and managers a rule routes to read it and say where it is wrong, and the decide-and-announce that names who gets what and that announces what changes. Requests the approval that signs a rule at a version, and takes its changes-requested back to the writing. Takes field quality from the data-steward agent, the replay against past work from the lead-scorer agent, and the clock a rule promises from the response-clock-monitor agent.",
+      "servers": [
+        {
+          "name": "the system that delivers the work",
+          "role": "system-that-delivers-the-work",
+          "access": "write",
+          "needs": "The rule runs where work is handed out."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "A misrouted record is reassigned with its reason."
+        },
+        {
+          "name": "the rule register",
+          "role": "rule-register",
+          "access": "write",
+          "needs": "Every rule at its version, with the cases filed against it."
+        },
+        {
+          "name": "the published rule page",
+          "role": "published-rule-page",
+          "access": "write",
+          "needs": "The copy people are held to."
+        },
+        {
+          "name": "the announcement channel",
+          "role": "announcement-channel",
+          "access": "write",
+          "needs": "Who is told what changed."
+        }
+      ],
+      "records": [
+        "Per rule: the rule in plain sentences at a version, the precedence between clauses, the named owner for anything unmatched, the volume each clause sends against what each receiving queue holds, every objection the receivers raised with the answer to it and the name of anyone who overruled one, the replay against past records with every record the rule would have sent elsewhere, and the signature naming the person and the version.",
+        "The configuration records the rule version it was built from, and the live check records where the first items actually landed.",
+        "Per misroute: the rule version and the clause that matched, the value the field held at the time of routing, the move with its reason, who was told and when, what the wrong receiver had already promised, the one named cause, and how many other items the same clause placed the same way."
+      ],
+      "escalates": [
+        "a field the rule would read that too few records carry - to the data steward, as work of its own, before any rule depends on it",
+        "a receiving queue that cannot hold the volume a clause sends - to whoever staffs it, with the count per queue",
+        "a case that cannot name one cause - to the revenue operations lead, rather than closed as unexplained",
+        "a rule carrying more open cases than the stated limit - to the revenue operations lead, and the rule takes no further change until those cases are read together",
+        "an emergency change to a live rule - written up afterwards as a run of its own, to the rule's owner"
+      ],
+      "not": [
+        "Does not decide who should get what.",
+        "A sales manager says that out loud in sentences first, and this agent writes it down, tests it and builds it.",
+        "Does not correct the field that sent an item wrong, because a field is corrected in the system that owns it by the data-steward agent.",
+        "Does not score or qualify the work it routes, and does not set or report the response clock."
+      ],
+      "processes": [
+        {
+          "process": "ref/rev/fix-a-misroute",
+          "activities": [
+            "Take in the Report of a Misroute",
+            "Confirm It Went to the Wrong Person",
+            "Find Who Should Have Got It",
+            "Move the Work",
+            "Tell Both People",
+            "Record What Already Happened",
+            "Find Why the Rule Sent It Wrong",
+            "Say Whether It Is the Data or the Rule",
+            "Raise the Rule Change",
+            "Move the Ones That Are Also Wrong",
+            "File the Case Against the Rule"
+          ]
+        },
+        {
+          "process": "ref/rev/watch-the-response-clock",
+          "activities": [
+            "Name What Each Clock Covers",
+            "Open the Work the Report Calls For"
+          ]
+        },
+        {
+          "process": "ref/rev/write-a-routing-rule",
+          "activities": [
+            "Take in the Routing Question",
+            "Read How Work Is Routed Now",
+            "Name Who Should Get What",
+            "Write the Rule in Plain Words",
+            "Set the Order and the Fallback",
+            "Check It Against Capacity",
+            "Show It to the People It Routes To",
+            "Get the Rule Approved",
+            "Implement the Rule",
+            "Verify It in the Live System",
+            "Publish the Rule Where People Read It",
+            "Announce What Changes"
+          ]
+        }
+      ]
+    }
+  }
+}

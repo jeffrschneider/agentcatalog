@@ -1,0 +1,127 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "expansion-spotter",
+  "version": "1.0.0",
+  "description": "The expansion-spotter abstract agent. Turns a signal that an existing customer should be buying more into a written opening, or throws it away.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/expansion-spotter",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "spot-an-expansion",
+    "open-an-expansion-deal",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "expansion-spotter",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Runs assessment on whether the account may be approached at all, and again on the opening itself, scored against the scoring model at a version with every input recorded. Runs collect-and-report on what the customer owns today, and on the finding at the end. Convenes the collect-and-report in which the people who would live with the change are asked whether the problem is theirs, and the assessment in which delivery says whether the account is served well enough to be asked for more. Sits in the decide-and-announce where a person says pursue, park or drop. Runs roll-call on the account's standing while a run is open. Takes the signal from the usage-monitor agent, the coverage check from the account-planner agent, and takes the outcome back from the upsell-planner agent in a debrief.",
+      "servers": [
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "The account, its people, and the openings against it."
+        },
+        {
+          "name": "the usage system",
+          "role": "usage-system",
+          "access": "read",
+          "needs": "How close each metered thing is to what was bought, over a window rather than on one day."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "read",
+          "needs": "An account in an open crisis is not worked."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "read",
+          "needs": "Collections and anything in dispute."
+        },
+        {
+          "name": "the contract record",
+          "role": "contract-record",
+          "access": "read",
+          "needs": "The products, licences, limits and dates on the agreement they hold today."
+        },
+        {
+          "name": "the account plan",
+          "role": "account-plan",
+          "access": "read",
+          "needs": "What the plan already says to sell here."
+        },
+        {
+          "name": "the opening register",
+          "role": "opening-register",
+          "access": "write",
+          "needs": "The opening, its evidence, and the decision on it."
+        }
+      ],
+      "records": [
+        "Per signal: the account's standing, dated, with any reason it may not be approached at all.",
+        "What they own today with the limit on every metered line.",
+        "The teams that started using what, and when.",
+        "The opening as one sentence at a version, with whatever the renewal already covers and whatever an open deal already covers taken out of it.",
+        "A range with the assumptions written next to it, marked as not a forecast.",
+        "The named people the change would land on, and what each of them said in their own words, with the date and who heard it.",
+        "What delivery said about the account.",
+        "The score with the model version, every input, and the evidence each input came from.",
+        "The decision, who made it, when, and the reason in their words.",
+        "A dropped opening keeps all of it, so the same reading does not raise the same opening next month."
+      ],
+      "escalates": [
+        "an account in collections, in dispute or in an open support crisis, to whoever may say otherwise, with the signal recorded and nothing else in the run happening",
+        "an opening that is only more of the same term, to the renewal work, with the run closing or reopening on the part the renewal does not cover",
+        "an opening whose evidence is one reading on one day, back for a longer window before it is scored",
+        "the people who would live with the change saying the problem is not theirs, to the account owner, with their words recorded and the signal marked so it does not raise the same opening again",
+        "an account owner who parks the same signal more than the policy allows, to whoever the policy names, rather than into another run"
+      ],
+      "not": [
+        "Does not decide pursue, park or drop.",
+        "A person says which, and this agent records the decision and the reason they gave.",
+        "Does not approach anybody who signs, and does not plan the approach, which is the upsell-planner agent's work with the person who owns the relationship.",
+        "Does not forecast: the size it writes is a range, marked as not a forecast, and it never enters one at this stage.",
+        "Does not open the deal."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/open-an-expansion-deal",
+          "activities": [
+            "Take in the Recorded Opening",
+            "Tell the Spotter What Happened"
+          ]
+        },
+        {
+          "process": "ref/sls/spot-an-expansion",
+          "activities": [
+            "Check the Account Is Approachable",
+            "Read What They Already Own",
+            "Look for the Teams Newly Adopting",
+            "Name the Opening in One Sentence",
+            "Check It Is Not a Renewal",
+            "Check Nobody Is Already On It",
+            "Size What It Could Be Worth",
+            "Find the People Who Would Live With It",
+            "Test It With Those People",
+            "Ask the Delivery Side What They See",
+            "Score the Opening",
+            "Decide: Pursue, Park or Drop",
+            "Record the Finding and Hand It On"
+          ]
+        }
+      ]
+    }
+  }
+}

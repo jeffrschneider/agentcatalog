@@ -10,7 +10,7 @@ components and the rates against those outcomes, and then models what
 the draft costs at several attainment outcomes rather than at one. The
 awkward deals are priced on paper before anybody sells one, the pay
 rules are read, and finance accepts a cost before a person signs the
-plan. The run closes when every seat holds a signed plan and can read
+plan. The run closes when every seller holds a signed plan and can read
 their own quota, their own rates and nobody else's.
 
 ## The activities
@@ -20,7 +20,7 @@ their own quota, their own rates and nobody else's.
 | 1 | Take in the Period and the Intent | the period, and what the plan must cause | [plan-designer](../../agents/plan-designer.md) |
 | 2 | Read What Last Period's Plan Paid | what last period paid, and what it bought | [analytics](../../agents/analytics.md) · plan-designer |
 | 3 | Name the Behaviour Each Plan Buys | the outcomes each role is paid to reach | plan-designer · sales leader (person) |
-| 4 | Take in the Seats and the Budget | the seats, their quotas, and the money available | plan-designer · finance partner (person) |
+| 4 | Take in the Sellers and the Budget | the sellers, their quotas, and the money available | plan-designer · finance partner (person) |
 | 5 | Draft the Plan Shape per Role | components, rates, gates and caps, per role | plan-designer |
 | 6 | Model the Cost at Several Outcomes | what it pays at low, plan and high attainment | [statistician](../../agents/statistician.md) · plan-designer |
 | 7 | Test the Plan Against Awkward Cases | the deals that break the wording, priced on paper | [commission-calculator](../../agents/commission-calculator.md) · plan-designer |
@@ -47,7 +47,7 @@ flowchart LR
   T([a plan period opens]) --> A1[1. Take in the Period and the Intent]
   A1 --> A2[2. Read What Last Period's Plan Paid]
   A2 --> A3[3. Name the Behaviour Each Plan Buys]
-  A3 --> A4[4. Take in the Seats and the Budget]
+  A3 --> A4[4. Take in the Sellers and the Budget]
   A4 --> A5[5. Draft the Plan Shape per Role]
   A5 --> A6[6. Model the Cost at Several Outcomes]
   A5 --> A7[7. Test the Plan Against Awkward Cases]
@@ -71,7 +71,7 @@ flowchart LR
   A15 -. the wording does not survive being explained .-> A11
   A14 --> A16[16. Record the Open Questions]
   A15 --> A16
-  A16 --> DONE([every seat holds a signed plan at an accepted cost])
+  A16 --> DONE([every seller holds a signed plan at an accepted cost])
 ```
 
 ## The document, with the blanks marked
@@ -83,9 +83,9 @@ owner: <who>                          effective: <date>
 trigger: a plan period opens, or leadership changes what the plans have
          to buy
 concurrency: one run per population per period - <how many> populations
-             are planned at once, and one seat sits on one plan at a
+             are planned at once, and one seller sits on one plan at a
              time
-goal: every seat holds a signed plan for the period, its cost modelled
+goal: every seller holds a signed plan for the period, its cost modelled
       at <how many> attainment outcomes and accepted against the
       budget, and each person able to read their own numbers
 phases:
@@ -94,7 +94,7 @@ phases:
                         owner: plan-designer      after: trigger
                         automation: assisted
   read-last-period    - runs collect-and-report: what last period's
-                        plans paid seat by seat, and what those seats
+                        plans paid seller by seller, and what those sellers
                         actually did
                         owner: analytics          after: take-in-intent
                         by: <days>                automation: <level>
@@ -103,17 +103,17 @@ phases:
                         before any rate is chosen
                         owner: plan-designer      after: read-last-period
                         automation: assisted
-  take-in-seats       - human: the seats in scope, the quota each one
+  take-in-sellers       - human: the sellers in scope, the quota each one
                         carries, and the money available to pay them
                         owner: plan-designer      after: name-behaviour
                         by: <days>                automation: assisted
   draft-shape         - human: components, rates, gates, caps and
                         accelerators drafted per role, each one tied to
                         an outcome named above
-                        owner: plan-designer      after: take-in-seats
+                        owner: plan-designer      after: take-in-sellers
                         by: <days>                automation: <level>
   model-cost          - runs assessment: what the draft pays at <how
-                        many> attainment outcomes, seat by seat and in
+                        many> attainment outcomes, seller by seller and in
                         total, with the assumptions written down
                         owner: statistician       after: draft-shape
                         by: <days>                automation: supervised
@@ -148,7 +148,7 @@ phases:
                         way the calculator will compute it
                         owner: commission-calculator
                         after: write-wording      automation: supervised
-  publish-plans       - human: each seat receives the plan, their own
+  publish-plans       - human: each seller receives the plan, their own
                         quota, their own rates and their own dates, and
                         nobody else's
                         owner: reporting-manager  after: build-examples
@@ -179,19 +179,19 @@ handoffs:
   take-in-intent -> read-last-period: the period, the number, and what
     leadership says the plans have to cause
   read-last-period -> name-behaviour: what each plan paid last period,
-    seat by seat, next to what those seats did, with the system every
+    seller by seller, next to what those sellers did, with the system every
     line was read from
-  name-behaviour -> take-in-seats: the outcomes each role is paid to
+  name-behaviour -> take-in-sellers: the outcomes each role is paid to
     reach, at a version leadership holds
-  take-in-seats -> draft-shape: the seats, the quota each one carries,
+  take-in-sellers -> draft-shape: the sellers, the quota each one carries,
     and the money available to pay them
   draft-shape -> model-cost: the shape per role, with every rate, gate,
     cap and accelerator written down
   draft-shape -> test-awkward-cases: the same draft, and the deal shapes
     the business actually sells
   draft-shape -> check-pay-rules: the same draft, and the countries and
-    contracts every seat sits under
-  model-cost -> settle-cost: the cost at each outcome, seat by seat and
+    contracts every seller sits under
+  model-cost -> settle-cost: the cost at each outcome, seller by seller and
     in total, with the assumptions it rests on
   test-awkward-cases -> settle-cost: each awkward deal, what the draft
     pays for it, and whether that was meant
@@ -221,7 +221,7 @@ bindings:
   systems: the plan record (write), the CRM (read),
            the quota record (read), the payroll system (read),
            the document store (write), the signature system (trigger)
-  data:    last period's plans and what they paid, the seat roster at a
+  data:    last period's plans and what they paid, the seller roster at a
            version, <your pay rules>, the employment contracts,
            <your budget> at a version
 policy:
@@ -238,9 +238,9 @@ policy:
   what the plan does when a deal cancels is written in the plan, not
     decided afterwards
 measures:
-  cycle time: <target> from the period opening to every seat holding a
+  cycle time: <target> from the period opening to every seller holding a
               signed plan
-  coverage: <target> share of seats that accepted before <date>
+  coverage: <target> share of sellers that accepted before <date>
   cost accuracy: the modelled cost within <target> of what the period
                  actually paid
   quality gate: no plan publishes without its cost model, its worked
@@ -261,7 +261,7 @@ measures:
   about one deal at a time for a year.
 - **A pay rule the plan cannot stand on.** The finding goes back to the
   draft with the rule attached. A plan that cannot be made lawful in a
-  country is not published to the seats in that country, and those seats
+  country is not published to the sellers in that country, and those sellers
   wait on a plan written for them rather than being paid under one that
   does not apply.
 - **Approval comes back with changes.** Only the components the signers
@@ -272,7 +272,7 @@ measures:
   published plan while the objection is worked, and the objection goes
   to activity 16 whether or not it changes anything this period.
 - **The period starts before the plans are signed.** Selling does not
-  wait. The seats are told in writing what they are provisionally
+  wait. The sellers are told in writing what they are provisionally
   working under, the date the plan will be published, and that the plan
   applies from the start of the period once signed.
 - **The plan has to change mid-period.** The change is approved by the
@@ -283,7 +283,7 @@ measures:
   before the old one closes. The open run finishes and publishes; the
   new run reads the old plans as its starting point rather than
   restarting from the intent.
-- **A run is abandoned.** The seats stay on the previous period's plan,
+- **A run is abandoned.** The sellers stay on the previous period's plan,
   and every person is told in writing that this is what they are being
   paid under and until when. The draft, the cost model and the awkward
   cases are kept with the reason the run stopped, because the next run

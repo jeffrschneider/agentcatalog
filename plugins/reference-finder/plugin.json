@@ -1,0 +1,97 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "reference-finder",
+  "version": "1.0.0",
+  "description": "The reference-finder abstract agent. Finds an existing customer who matches and has already agreed to speak, holds the cool-down clock so nobody is worn out, and sets the conversation up.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/reference-finder",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "provide-a-reference",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "reference-finder",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Convenes briefing twice, once for the reference customer and once for the prospect, and the debrief that feeds back what the prospect heard. Runs collect-and-report over the reference pool and over how much load each customer is carrying, and assessment on account health. Takes the request from the account owner, takes the health reading from the researcher agent and the customer success role, works with the legal reviewer who sets the bounds, and hands the feedback to the analytics agent.",
+      "servers": [
+        {
+          "name": "the reference register",
+          "role": "reference-register",
+          "access": "write",
+          "needs": "The agreements, the asks and the clock live there."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write"
+        },
+        {
+          "name": "the calendar and the meeting tool",
+          "role": "calendar-and-the-meeting-tool",
+          "access": "write"
+        },
+        {
+          "name": "the support history, the renewal record and the contract store",
+          "role": "support-history-the-renewal-record-and-the-contract-store",
+          "access": "read",
+          "needs": "To check an ask is welcome before it is made."
+        }
+      ],
+      "records": [
+        "What the prospect must hear, written down before the search: the industry, the size, the deployment shape and the specific worry.",
+        "The candidates found, each with the match reason and the date their written agreement was last current.",
+        "Each candidate's last ask date and count for the period.",
+        "The health check and what it ruled out.",
+        "The ranked shortlist, with a reason per name.",
+        "The ask, who made it, and the answer, with a no recorded as a no and no reason demanded.",
+        "The agreed bounds on numbers, names, terms and dates.",
+        "Both briefings.",
+        "The confirmed time and how both sides joined.",
+        "The thanks, timed, written against the customer's record.",
+        "The reset clock, naming the date the customer comes back on the available list and the count for the period."
+      ],
+      "escalates": [
+        "every matching customer inside cool-down - to the account owner, with the choice to wait or go without, and no customer asked early",
+        "an account with an open dispute, a live support crisis or renewal risk - not asked at all, and the account owner is told why",
+        "bounds so narrow that nothing useful may be discussed - to the account owner before the conversation is set up",
+        "a prospect who asks for something out of bounds during the call",
+        "an ask that was never recorded, because an unrecorded ask leaves the clock unreset and the same customer exposed again"
+      ],
+      "not": [
+        "Does not make the ask itself; the person who owns the relationship asks, and a no ends it for this opportunity.",
+        "Does not agree what may be said, which the legal reviewer and the customer settle, and does not add to it during the call.",
+        "Does not hold the conversation, answer for the reference customer, or record the call unless both customers have agreed in writing."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/provide-a-reference",
+          "activities": [
+            "Take in the Reference Request",
+            "Say What the Prospect Must Hear",
+            "Search the Reference Pool",
+            "Check When Each Was Last Asked",
+            "Shortlist the Candidates",
+            "Ask the Customer",
+            "Brief the Reference",
+            "Brief the Prospect",
+            "Set the Conversation Up",
+            "Thank the Reference",
+            "Reset the Cool-Down Clock",
+            "Feed Back What the Prospect Heard"
+          ]
+        }
+      ]
+    }
+  }
+}

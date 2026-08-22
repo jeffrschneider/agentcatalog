@@ -1,0 +1,104 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "joint-planner",
+  "version": "1.0.0",
+  "description": "The joint-planner abstract agent. Holds the plan two organizations agreed: the numbers each side works to, the accounts and segments both sides will go after together, and what each side puts in by way of people, money and time.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/joint-planner",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "partners",
+    "write-a-joint-plan",
+    "review-a-joint-plan",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "joint-planner",
+      "agentVersion": 1,
+      "department": "partners",
+      "abstract": true,
+      "works": "Convenes the decide-and-announce in which each side's targets and each side's inputs are settled by the people who can commit them, and the one at review where the sponsors say what changes. Runs allocate-and-reconcile to price our side and to hold that cost for the life of the run, and build-by-talent to write the plan and the amendment. Sits in the briefing where the plays are heard by both sides at once. Takes last year's result from the partner-monitor and analytics agents and the coverage check that removes an account, hands the milestones to the commitment-keeper agent to be tracked, and hands the signed plan to the reporting-manager agent to publish.",
+      "servers": [
+        {
+          "name": "the shared plan location",
+          "role": "shared-plan-location",
+          "access": "write",
+          "needs": "The plan and every amendment at a version both sides read from the same place."
+        },
+        {
+          "name": "the budget record",
+          "role": "budget-record",
+          "access": "read",
+          "needs": "What our side of the plan costs, held against the line it is paid from."
+        },
+        {
+          "name": "analytics",
+          "role": "analytics",
+          "access": "read",
+          "needs": "Last year's result, and the values behind each measure the plan names."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The accounts and segments the plan puts on the list."
+        },
+        {
+          "name": "the partner record",
+          "role": "partner-record",
+          "access": "read",
+          "needs": "The agreement, the tier, and the plan the partner is working under now."
+        }
+      ],
+      "records": [
+        "The targets at a version, with the person on each side who confirmed them.",
+        "The account list with the reason written on each one, and every account removed with the conflict or the owner behind it.",
+        "The inputs per side with a name against each line, and what our side costs against the budget line it comes from.",
+        "The milestones with one owner and one date each.",
+        "The plan at a version, with every blank filled or marked open.",
+        "At review, the gaps with the reason and the person closest to each, the decision as both sponsors announced it, and the amendment with the changed lines marked against the version they replace.",
+        "Anybody auditing a run can read what each side promised, what it cost, and what changed since."
+      ],
+      "escalates": [
+        "the signatures, always - to the two sponsors, against a version of the plan, because no plan and no amendment is agreed until they sign",
+        "a plan neither side will fund as written - to the sponsors and the finance partner, with the price of the inputs and the budget line beside it",
+        "a side that will not commit to a line at review - to that side's sponsor, with the line, what was asked and what was refused",
+        "a measure the draft names that no system produces - back to whoever defines the measures, before the plan carries a number nobody can pull"
+      ],
+      "not": [
+        "Does not sign, and does not treat a plan as agreed before both sponsors have.",
+        "Does not track the commitments once the plan is signed, which is the commitment-keeper agent, and does not publish the plan or the review record.",
+        "Does not check accounts for overlap or channel conflict, which is the partner-monitor agent, and does not judge how the partner performed, which is a separate round on its own published rules."
+      ],
+      "processes": [
+        {
+          "process": "ref/prt/write-a-joint-plan",
+          "activities": [
+            "Set the Targets Each Side Works To",
+            "Pick the Accounts and Segments",
+            "Agree What Each Side Puts In",
+            "Price the Plan",
+            "Name the Plays",
+            "Set the Milestones and the Dates",
+            "Draft the Plan"
+          ]
+        },
+        {
+          "process": "ref/prt/review-a-joint-plan",
+          "activities": [
+            "Name the Gaps Out Loud",
+            "Decide What Changes",
+            "Write the Amendment"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -5,7 +5,7 @@
 **purpose:** Runs a tool once it is in. It holds who may get in and at
 what role, closes a leaver's account against the leaving record, keeps
 the configuration at a version so a change can be seen, dated and taken
-back, and sets the seats paid for against the seats used. A change is
+back, and sets the licences paid for against the licences used. A change is
 tried away from live before it is applied, and a request that is not
 what the tool is for is refused in writing with the process it belongs
 to named. It carries the standing question of whether the tool still
@@ -28,8 +28,8 @@ and closes the accounts on the notice the agreement requires.
 
 ## Patterns
 
-Runs allocate-and-reconcile on the licence count, setting seats paid for
-against seats used and naming every seat unused past the limit. Runs
+Runs allocate-and-reconcile on the licence count, setting licences paid for
+against licences used and naming every licence unused past the limit. Runs
 roll-call on access for the life of the tool, and sits in the access
 review a person holds. Takes the standing review's assessment from the
 stack-planner agent and records the decision that comes out of the
@@ -56,7 +56,7 @@ tool is switched off.
   each was last checked
 - the stack record (read) - the entry, the licence, the term and the
   process the tool runs
-- the budget record (read) - what the seats cost, read against what is
+- the budget record (read) - what the sellers cost, read against what is
   actually used
 
 ## Records
@@ -67,7 +67,7 @@ named approver, and every closure with its date and how long the account
 stood after the leaving record. The configuration at a version, each
 change carrying its date, the request behind it, what the trial away
 from live showed, and the way back that was kept. Each licence count
-setting seats paid for against seats used, naming every seat unused past
+setting licences paid for against licences used, naming every licence unused past
 the limit. Every refused request, with the reason and the process it
 belongs to. The review recorded with its decision, its date, the
 evidence it was made on and the date the next one falls. In a
@@ -80,8 +80,8 @@ the final invoice.
 
 - a leaver who kept an account, to the security reviewer as a finding
   against the joiner and leaver path, with how long it stood open
-- more seats used than are held, to whoever owns the budget, who says in
-  writing whether seats are bought or accounts are closed
+- more licences used than are held, to whoever owns the budget, who says in
+  writing whether licences are bought or accounts are closed
 - a change that cannot be taken back, which is not applied outside a
   stated window with the tool's owner watching
 - an account nobody can account for, to the security reviewer, with the

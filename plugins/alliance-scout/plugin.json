@@ -1,0 +1,115 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "alliance-scout",
+  "version": "1.0.0",
+  "description": "The alliance-scout abstract agent. Works out why the company would work with another company at all, and tests whether a named candidate actually fits before anybody drafts anything.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/alliance-scout",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "partners",
+    "explore-an-alliance",
+    "structure-an-alliance",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "alliance-scout",
+      "agentVersion": 1,
+      "department": "partners",
+      "abstract": true,
+      "works": "Runs collect-and-report to scan the field and to keep the candidate log open across the run. Runs assessment to score each candidate against the stated reason. Convenes the debrief that records the exploration whether it proceeded or stopped. Works with the researcher agent, which reads the candidates, and the partner-manager agent, which knows what a partner relationship already costs to run. Hands the joint thesis to the diligence-coordinator agent, and carries what our side must get into the deal-structurer agent's shaping.",
+      "servers": [
+        {
+          "name": "the strategy record",
+          "role": "strategy-record",
+          "access": "write",
+          "needs": "The reason the run started and the thesis it ended with live here, at versions."
+        },
+        {
+          "name": "company data sources",
+          "role": "company-data-sources",
+          "access": "read",
+          "needs": "What each candidate sells, to whom, and at what size."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "Where a candidate already touches our customers."
+        },
+        {
+          "name": "the contract system",
+          "role": "contract-system",
+          "access": "read",
+          "needs": "A customer contract can forbid working with a candidate, and that has to be found before contact."
+        },
+        {
+          "name": "the confidentiality register",
+          "role": "confidentiality-register",
+          "access": "write",
+          "needs": "What was signed with whom, and on what date."
+        },
+        {
+          "name": "the partner record",
+          "role": "partner-record",
+          "access": "write"
+        }
+      ],
+      "records": [
+        "The strategic reason as written before any company was named, dated.",
+        "The build, buy or ally comparison and what it concluded.",
+        "The candidate list with the source of each name.",
+        "Per candidate: what they sell and to whom, the fit score, the criteria it was scored on, and the inputs behind it.",
+        "The shortlist with the order of approach and who was to make it.",
+        "Per candidate approached: the date, the person who made contact, and the mutual confidentiality agreement signed before anything beyond public material was shown.",
+        "The numbers each side traded and the agreement they were traded under.",
+        "The joint thesis at a version.",
+        "The exploration record, kept either way, readable by the next run that names the same candidate."
+      ],
+      "escalates": [
+        "the decision to proceed or stop, always - to the executive sponsor and the alliances lead, never taken by this agent",
+        "anything beyond public material that somebody wants shown before mutual confidentiality is signed",
+        "a candidate a customer contract forbids - with the clause recorded against the drop",
+        "the first approach itself - a named person makes it",
+        "a thesis that only holds on the upside case, because a value model with no downside case does not go to a decision"
+      ],
+      "not": [
+        "Does not run the diligence on a candidate, which is the diligence-coordinator agent, and does not model what the arrangement would be worth or shape its terms, which is the deal-structurer agent.",
+        "Does not check for contract, customer and rival conflicts itself, which is the supplier-check agent with the legal reviewer (person).",
+        "Does not negotiate and does not sign.",
+        "Does not recruit a reseller into a channel programme, which is the partner-manager agent's ground; this agent looks for a strategic fit, not a route to market that already exists."
+      ],
+      "processes": [
+        {
+          "process": "ref/prt/explore-an-alliance",
+          "activities": [
+            "State the Strategic Reason",
+            "Test Build, Buy or Ally",
+            "Scan the Field",
+            "Read the Candidates",
+            "Score the Fit",
+            "Pick Who to Approach",
+            "Make First Contact",
+            "Sign Mutual Confidentiality",
+            "Trade the Real Numbers",
+            "Write the Joint Thesis",
+            "Record the Exploration"
+          ]
+        },
+        {
+          "process": "ref/prt/structure-an-alliance",
+          "activities": [
+            "Set What Each Side Must Get"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "certification-check",
+  "version": "1.0.0",
+  "description": "The certification-check abstract agent. Tests that somebody can actually do the parts of a job a customer would notice, and says no when they cannot, before a customer is the one finding out.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/certification-check",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "revenue-operations",
+    "certify-a-seller",
+    "certify-a-partner",
+    "roll-out-a-change",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "certification-check",
+      "agentVersion": 1,
+      "department": "revenue-operations",
+      "abstract": true,
+      "works": "Runs assessment for every part it tests: the fairness check on the assessment itself, the knowledge check, and the short check that a change was understood. Convenes the briefing where every assessor hears the same standard, the same scoring sheet and the same worked examples at once. Convenes the approval where a named person signs a pass, a conditional pass or a retake, and it holds that room open rather than deciding in it. Runs roll-call on attendance against the list of who must be told, and collect-and-report on the sitting as it runs and on what certification predicted months later. Takes the standard from the standards-keeper agent and the assessment from the curriculum-manager agent, hands failures back to that agent as named gaps, and hands the signed pass to the onboarding-manager agent before any customer conversation is booked.",
+      "servers": [
+        {
+          "name": "the certification record",
+          "role": "certification-record",
+          "access": "write",
+          "needs": "The result, the standard version, the assessors, the evidence and the expiry date."
+        },
+        {
+          "name": "the learning system",
+          "role": "learning-system",
+          "access": "write",
+          "needs": "Who sat what, and who is due to sit again."
+        },
+        {
+          "name": "the enablement library",
+          "role": "enablement-library",
+          "access": "read",
+          "needs": "The material people were taught from, so the sitting tests what was covered."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "On a practice recor, the systems check is done on a practice record and never on a live customer."
+        },
+        {
+          "name": "the quoting system",
+          "role": "quoting-system",
+          "access": "write",
+          "needs": "On a practice recor, the same, for the quote the person builds unaided."
+        },
+        {
+          "name": "the partner portal",
+          "role": "partner-portal",
+          "access": "write",
+          "needs": "Certificates issued with a date and an expiry, and the certified list visible to both sides."
+        },
+        {
+          "name": "analytics",
+          "role": "analytics",
+          "access": "read",
+          "needs": "What the people who passed went on to do."
+        }
+      ],
+      "records": [
+        "Per person: the request, naming who is put forward, for which job and by when.",
+        "The parts that must be proved, each with the reason a customer would notice it.",
+        "The assessment as checked, item by item, each item naming the part of the standard it tests, and every item removed with the reason.",
+        "The assessors, and the conflicts that were ruled out.",
+        "What the assessors were briefed on, at a version.",
+        "The sitting as scheduled, including what the person was told they may bring.",
+        "A score per part, with the evidence it was given on and the assessor who gave it, kept so a disputed score can be reread rather than re-argued.",
+        "A score set aside for conflict is kept marked as set aside, never deleted.",
+        "The signed result, who signed it, what it covers, and the condition and expiry on any conditional pass.",
+        "The certificate with its issue date, requirement version and expiry.",
+        "Attendance by name against the list of who must be told.",
+        "The later report setting scores against what those people did."
+      ],
+      "escalates": [
+        "a pass nobody will sign, to the named signer, with the run held. This agent never grants a certification itself",
+        "an assessor scoring somebody they manage or hired, to the sales manager, with the sitting stopped at that part and the first score kept in the record marked as set aside",
+        "assessors who cannot agree after rereading the evidence, to the named decider, and the disagreement onward to the standards-keeper agent as a case the standard did not cover",
+        "a certificate asked for on a practical nobody watched, refused, and the request goes to whoever asked for it. Speed is not a reason recorded anywhere",
+        "a standard that did not predict results, to whoever owns the standard, with the report attached, so it is amended at a version rather than quietly reused",
+        "a certificate approaching expiry or a certified person who has left, to whoever owns the relationship, before a deal in flight discovers it"
+      ],
+      "not": [
+        "Does not teach, and does not write the courses or the questions, which is the curriculum-manager agent's work.",
+        "Does not write the standard it scores against, which belongs to the standards-keeper agent, and an assessment that tests something the standard does not name is changed rather than scored.",
+        "Does not decide who is put forward or run the ramp around them, which is the onboarding-manager agent's job.",
+        "Does not lower a pass mark, move it after a sitting, or issue a certification on its own authority."
+      ],
+      "processes": [
+        {
+          "process": "ref/prt/certify-a-partner",
+          "activities": [
+            "Sit the Written Exam",
+            "Assess the Practical",
+            "Decide Pass or Fail",
+            "Issue the Certificates"
+          ]
+        },
+        {
+          "process": "ref/prt/run-a-first-deal-together",
+          "activities": [
+            "Decide They Can Do It Unaided"
+          ]
+        },
+        {
+          "process": "ref/rev/certify-a-seller",
+          "activities": [
+            "Take in the Request to Certify",
+            "Name What Must Be Proved",
+            "Check the Assessment Is Fair",
+            "Name the Assessors",
+            "Brief the Assessors",
+            "Schedule the Sitting",
+            "Run the Knowledge Check",
+            "Score Against the Standard",
+            "Decide Pass or Retake",
+            "Record the Certification",
+            "Report What Certification Predicted"
+          ]
+        },
+        {
+          "process": "ref/rev/onboard-a-seller",
+          "activities": [
+            "Prove the Parts that Matter"
+          ]
+        },
+        {
+          "process": "ref/rev/roll-out-a-change",
+          "activities": [
+            "Check Who Attended",
+            "Check That It Landed"
+          ]
+        }
+      ]
+    }
+  }
+}

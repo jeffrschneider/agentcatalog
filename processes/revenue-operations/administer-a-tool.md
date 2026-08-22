@@ -23,7 +23,7 @@ at renewal.
 | 5 | Take in Change Requests | each request read against what the tool is for | tool-administrator · requester (person) |
 | 6 | Try the Change away from Live | the change made where nothing real breaks | tool-administrator · [integration-keeper](../../agents/integration-keeper.md) |
 | 7 | Apply the Change | applied, dated, and the version moved on | tool-administrator |
-| 8 | Keep the Licence Count Right | seats paid for set against seats used | tool-administrator · [analytics](../../agents/analytics.md) |
+| 8 | Keep the Licence Count Right | licences paid for set against licences used | tool-administrator · [analytics](../../agents/analytics.md) |
 | 9 | Watch Who Uses It and for What | usage read against the process it serves | analytics |
 | 10 | Check the Links Still Carry | the counts either side still agree | integration-keeper · analytics |
 | 11 | Take in Supplier Changes | new versions, changed terms, and notices | [supplier-check](../../agents/supplier-check.md) · tool-administrator |
@@ -47,7 +47,7 @@ flowchart LR
   A6 --> A7[7. Apply the Change]
   A7 -. the change has to be taken back .-> A6
   A7 --> A8[8. Keep the Licence Count Right]
-  A8 -. more seats are used than are held .-> A3
+  A8 -. more sellers are used than are held .-> A3
   A8 --> A9[9. Watch Who Uses It and for What]
   A9 --> A10[10. Check the Links Still Carry]
   A10 -. a link has stopped carrying .-> A7
@@ -109,8 +109,8 @@ phases:
                      version moved on, and the way back kept
                      owner: tool-administrator   after: try-change
                      automation: <level>
-  licence-count    - runs allocate-and-reconcile: seats paid for set
-                     against seats used, with every seat that has not
+  licence-count    - runs allocate-and-reconcile: licences paid for set
+                     against licences used, with every seller that has not
                      been used in <days> named
                      owner: tool-administrator   after: apply-change
                      every: <cadence>            automation: <level>
@@ -171,8 +171,8 @@ handoffs:
     everything it touched that nobody expected
   apply-change -> licence-count: the change as applied, its date, its
     version, and the way back
-  licence-count -> watch-usage: seats paid for, seats used, and every
-    seat unused for <days>
+  licence-count -> watch-usage: licences paid for, licences used, and every
+    licence unused for <days>
   watch-usage -> check-links: who used the tool, for what, and how
     often, against the process it runs
   watch-usage -> supplier-changes: the same usage, so a supplier change
@@ -209,7 +209,7 @@ policy:
     taken back
   no change is made straight to live where a non-live copy exists
   the access review is a human gate and is never delegated to an agent
-  a seat unused for <days> is taken back at the next renewal unless its
+  a licence unused for <days> is taken back at the next renewal unless its
     owner says in writing why it is held
   the standing review runs on its cadence whether or not anybody has
     complained about the tool
@@ -229,8 +229,8 @@ measures:
   records how long it was open after the leaving date, and the gap goes
   to the security reviewer as a finding against the joiner and leaver
   path rather than against the person who found it.
-- **More seats are used than are held.** The run goes back to accounts.
-  Either seats are bought or accounts are closed, and which one happens
+- **More sellers are used than are held.** The run goes back to accounts.
+  Either licences are bought or accounts are closed, and which one happens
   is decided by the person who owns the budget, in writing, before the
   next renewal.
 - **A change breaks something in live.** The change is taken back using

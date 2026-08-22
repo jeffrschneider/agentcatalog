@@ -1,0 +1,51 @@
+---
+name: test-the-opening-with-the-people-it-lands-on
+description: Finds the named people the change would land on and asks them whether the problem is theirs, keeping their answers in their own words with the date and who heard them. Use it when running `ref/sls/spot-an-expansion`.
+license: CC-BY-4.0
+metadata:
+  agent: expansion-spotter
+  agent-version: "1"
+---
+
+# Test the opening with the people it lands on
+
+## What it does
+
+Finds the named people the change would land on and asks them whether
+the problem is theirs, keeping their answers in their own words with the
+date and who heard them. Asks the delivery side whether the account is
+served well enough to be asked for more.
+
+## Where it happens
+
+The agent does this in three activities across one reference process.
+Each one names the activity as that process words it.
+
+- **Ask the Delivery Side What They See**
+  - `ref/sls/spot-an-expansion`, activity 12 -
+    [Spot an Expansion](../../../../processes/sales/spot-an-expansion.md)
+- **Find the People Who Would Live With It**
+  - `ref/sls/spot-an-expansion`, activity 10 -
+    [Spot an Expansion](../../../../processes/sales/spot-an-expansion.md)
+- **Test It With Those People**
+  - `ref/sls/spot-an-expansion`, activity 11 -
+    [Spot an Expansion](../../../../processes/sales/spot-an-expansion.md)
+
+## What to record
+
+Per signal: the account's standing, dated, with any reason it may not be
+approached at all. What they own today with the limit on every metered
+line. The teams that started using what, and when. The opening as one
+sentence at a version, with whatever the renewal already covers and
+whatever an open deal already covers taken out of it. A range with the
+assumptions written next to it, marked as not a forecast. The named
+people the change would land on, and what each of them said in their own
+words, with the date and who heard it. What delivery said about the
+account. The score with the model version, every input, and the evidence
+each input came from. The decision, who made it, when, and the reason in
+their words. A dropped opening keeps all of it, so the same reading does
+not raise the same opening next month.
+
+That contract covers every activity this abstract agent takes on, and it
+is repeated in `com.agentcatalog.agent/RECORDS.md`. What the abstract
+agent does not do is in `com.agentcatalog.agent/NOT.md`.

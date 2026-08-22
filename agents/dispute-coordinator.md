@@ -11,7 +11,7 @@ is pulled. It freezes the statement version so the argument is about
 one document, has the line recomputed independently from the same
 records, and reads out the plan sentence that governs it at the version
 the claimant signed rather than the current one. It hears the claimant,
-hears the other seat whenever credit would move away from somebody, and
+hears the other seller whenever credit would move away from somebody, and
 sends the answer with its evidence and the route to escalate in the
 same message.
 
@@ -20,7 +20,7 @@ same message.
 - `ref/rev/settle-a-commission-dispute` / Take in the Claim,
   Acknowledge and Promise a Date, Classify the Claim, Freeze the
   Statement Version, Pull the Evidence Behind the Line, Read the Plan
-  Sentence That Governs It, Hear the Claimant, Hear the Other Seat,
+  Sentence That Governs It, Hear the Claimant, Hear the Other Seller,
   Decide the Answer, Tell the Claimant, Escalate What Is Not Accepted
 
 ## Patterns
@@ -28,7 +28,7 @@ same message.
 Convenes rather than computes. Runs collect-and-report to pull the
 records the disputed number was computed from, convenes the briefing in
 which the claimant says what they believe happened and the briefing in
-which the other seat and its manager answer, and convenes
+which the other seller and its manager answer, and convenes
 decide-and-announce where the answer is upheld, partly upheld or
 refused. Requests the approval that any decision moving money has to
 pass, and runs roll-call on the promised date from the acknowledgement
@@ -61,7 +61,7 @@ class required. The statement frozen at its version with the run
 version behind it. Both computations set side by side with every input
 where they differ. The plan sentence that governs the line, quoted, at
 the version that applies. What the claimant holds that the record does
-not, and the other seat's account with what each can show for it. Then
+not, and the other seller's account with what each can show for it. Then
 the decision, upheld, partly upheld or refused, with the sentence and
 the record behind it; the signature on anything that moves money and
 the date the money moves; the answer as sent with its evidence and the
@@ -80,7 +80,7 @@ the same sentence is the one that changes the plan.
 - a promised date that is going to be missed - to the claimant before
   the date passes, with a new date and the reason, because a missed
   date nobody mentioned is what turns a claim into a grievance
-- a claim that would take credit off another seat - to that seat and
+- a claim that would take credit off another seller - to that seller and
   its manager before anything is decided, and they are told the outcome
   whether or not the credit moved
 - two computations that disagree from one record - to the debrief and

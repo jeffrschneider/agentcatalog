@@ -6,7 +6,7 @@
 The map is fixed, and every patch on it now needs a number. This
 process reads what each territory carried before, models the attainment
 the plan is built on, and drafts a quota per patch. Each draft is
-tested against the seat time behind it, against what actually closed,
+tested against the capacity behind it, against what actually closed,
 and against the ramp cases nobody remembers until payday. The quotas
 add up to more than the number on purpose, and the over-assignment is a
 decision somebody signs rather than a rounding habit. The run ends when
@@ -19,10 +19,10 @@ a named person approves the set and what it rests on is written down.
 | 1 | Take in the Map and the Number | the territories, the target, and when quotas are due | [quota-setter](../../agents/quota-setter.md) · [territory-modeler](../../agents/territory-modeler.md) |
 | 2 | Set the Over-Assignment | how much more than the number gets assigned | sales leader (person) · finance partner (person) · quota-setter |
 | 3 | Read What Each Patch Carried | what closed in each territory, period by period | [analytics](../../agents/analytics.md) · territory-modeler |
-| 4 | Read Who Is In Seat | who holds each patch, from when, and for how long | [capacity-manager](../../agents/capacity-manager.md) · sales operations (person) |
+| 4 | Read Who Is in Role | who holds each patch, from when, and for how long | [capacity-manager](../../agents/capacity-manager.md) · sales operations (person) |
 | 5 | Model the Attainment Curve | what share of sellers land at which level | [statistician](../../agents/statistician.md) · analytics |
 | 6 | Draft a Quota per Territory | a first number on every patch, from the model | quota-setter |
-| 7 | Test Against Seat Time | whether the seat behind the patch can work it | capacity-manager · quota-setter |
+| 7 | Test Against Capacity | whether the seller behind the patch can work it | capacity-manager · quota-setter |
 | 8 | Test Against History | the draft set beside what that patch actually closed | statistician · analytics |
 | 9 | Work the Ramp Cases | new hires, transfers and part periods get their own | quota-setter · compensation partner (person) |
 | 10 | Check Every Patch Has One | no patch unquoted, no patch quoted twice | [coverage-check](../../agents/coverage-check.md) |
@@ -39,11 +39,11 @@ flowchart LR
   T([the territory map is fixed for the period]) --> A1[1. Take in the Map and the Number]
   A1 --> A2[2. Set the Over-Assignment]
   A1 --> A3[3. Read What Each Patch Carried]
-  A1 --> A4[4. Read Who Is In Seat]
+  A1 --> A4[4. Read Who Is in Role]
   A3 --> A5[5. Model the Attainment Curve]
   A2 --> A6[6. Draft a Quota per Territory]
   A5 --> A6
-  A4 --> A7[7. Test Against Seat Time]
+  A4 --> A7[7. Test Against Capacity]
   A6 --> A7
   A6 --> A8[8. Test Against History]
   A7 --> A9[9. Work the Ramp Cases]
@@ -74,7 +74,7 @@ concurrency: one run per period per segment - quotas for a segment are
              set once, and a change inside the period is a new version
              of the same run
 goal: one signed quota on every territory, adding up to <over-assignment
-      target> of the number, each one tested against the seat behind it
+      target> of the number, each one tested against the seller behind it
       and against what the patch has actually closed
 phases:
   take-in-map        - human: the territories at their fixed version,
@@ -92,7 +92,7 @@ phases:
                        new boundaries rather than the old ones
                        owner: analytics           after: take-in-map
                        by: <days>                 automation: autonomous
-  read-seats         - runs collect-and-report: who holds each patch,
+  read-sellers         - runs collect-and-report: who holds each patch,
                        the date they took it, their notice and leave,
                        and how much of the period they are actually in
                        owner: capacity-manager    after: take-in-map
@@ -107,11 +107,11 @@ phases:
                        owner: quota-setter
                        after: set-over-assignment + model-attainment
                        by: <days>                 automation: supervised
-  test-seat-time     - runs assessment: whether the seat behind the
+  test-capacity     - runs assessment: whether the seller behind the
                        patch can work the number in the time it is
-                       actually in seat, at <coverage per account>
+                       actually in role, at <coverage per account>
                        owner: capacity-manager
-                       after: read-seats + draft-quotas
+                       after: read-sellers + draft-quotas
                        automation: supervised
   test-history       - runs assessment: each draft set beside what that
                        patch closed, with every number more than
@@ -122,7 +122,7 @@ phases:
                        periods each get their own number under a written
                        rule, not a share of somebody else's
                        owner: <your compensation role>
-                       after: test-seat-time + test-history
+                       after: test-capacity + test-history
                        by: <days>                 automation: assisted
   check-coverage     - runs assessment: every territory carries exactly
                        one quota, and every quota names one territory
@@ -154,28 +154,28 @@ phases:
                        owner: quota-setter        after: approve-quotas
                        automation: assisted
 run-scoped:
-  seat-watch - runs roll-call                   owner: capacity-manager
+  seller-watch - runs roll-call                   owner: capacity-manager
                every: <cadence>
-               from: read-seats   until: approve-quotas
+               from: read-sellers   until: approve-quotas
 handoffs:
   take-in-map -> set-over-assignment: the target, and what the map says
     each patch can carry
   take-in-map -> read-history: the new territory boundaries, so history
     is read on the boundaries the quotas will use
-  take-in-map -> read-seats: the same boundaries, and the date the
+  take-in-map -> read-sellers: the same boundaries, and the date the
     quotas take effect
   set-over-assignment -> draft-quotas: the assigned total, as a figure,
     with who decided it and why
   read-history -> model-attainment: what closed per patch per period,
     mapped onto the new boundaries, with every remapping marked
-  read-seats -> test-seat-time: who is in each seat, from when, and how
+  read-sellers -> test-capacity: who is in each seller, from when, and how
     much of the period they are in it for
   model-attainment -> draft-quotas: the attainment curve with its range,
     and the data it was computed from
-  draft-quotas -> test-seat-time: a number on every patch, with the
+  draft-quotas -> test-capacity: a number on every patch, with the
     carrying figure and the curve behind it
   draft-quotas -> test-history: the same drafts, at one version
-  test-seat-time -> ramp-cases: every patch whose seat cannot work its
+  test-capacity -> ramp-cases: every patch whose seller cannot work its
     number, with the hours the finding rests on
   test-history -> ramp-cases: every number more than <percent> away from
     what the patch closed, with the history beside it
@@ -205,10 +205,10 @@ bindings:
 policy:
   the quotas add up to more than the number by a figure a named person
     decided. An over-assignment nobody signed is not one
-  no quota is set on a patch whose seat time was never checked
+  no quota is set on a patch whose capacity was never checked
   a number more than <percent> away from what the patch closed carries
     the reason for the difference beside it
-  a seller in seat for part of the period gets a number built from the
+  a seller in role for part of the period gets a number built from the
     written ramp rule, never a pro-rated share applied afterwards
   the quota set is approved as one thing by one person. Approving patch
     by patch lets the total drift and is not allowed
@@ -218,7 +218,7 @@ measures:
   cycle time: <days> from the fixed map to the signed quota set
   spread: share of sellers modelled to land between <low> and <high>
   accuracy: the attainment curve against what sellers actually attained
-  quality gate: no quota published without its seat-time test and its
+  quality gate: no quota published without its capacity test and its
                 history test attached
 ```
 
@@ -229,10 +229,10 @@ measures:
   territory. The analytics agent remaps what it can and marks every
   remapped figure as remapped. Patches with no readable history are
   quoted from the carrying model alone, and the quota says so.
-- **The seat behind a patch cannot work the number.** The
+- **The seller behind a patch cannot work the number.** The
   capacity-manager agent reports the hours the patch needs against the
-  hours the seat has. The number comes down, the patch is split, or a
-  seat is added. Signing the number anyway is a decision a person makes
+  hours the seller has. The number comes down, the patch is split, or a
+  seller is added. Signing the number anyway is a decision a person makes
   in writing, and it is recorded against that patch.
 - **The drafts do not add up to the number.** The gap is named as an
   amount and the numbers move once, inside the cap on how far any one

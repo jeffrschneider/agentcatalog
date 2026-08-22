@@ -26,7 +26,7 @@ number.
 | 8 | Model What Each Patch Carries | what a territory can produce in the period | territory-modeler · [statistician](../../agents/statistician.md) |
 | 9 | Test the Model Against History | the model run backwards over what actually closed | statistician · analytics |
 | 10 | Check Coverage and Balance | no patch too big to work, none too small to live on | coverage-check |
-| 11 | Cost Each Cut | the seats and the travel each map needs | [capacity-manager](../../agents/capacity-manager.md) · finance partner (person) |
+| 11 | Cost Each Cut | the sellers and the travel each map needs | [capacity-manager](../../agents/capacity-manager.md) · finance partner (person) |
 | 12 | Weigh the Cuts and Choose | leaders pick one map and say why | sales leader (person) · finance partner (person) |
 | 13 | Fix the Territory Map | the chosen map at a version, with its rules | territory-modeler · sales leader (person) |
 | 14 | Record What the Model Rests On | the assumption behind every carrying number | territory-modeler · statistician |
@@ -126,7 +126,7 @@ phases:
                        and no account sitting in two patches
                        owner: coverage-check      after: test-history
                        automation: autonomous
-  cost-cuts          - runs allocate-and-reconcile: the seats, the
+  cost-cuts          - runs allocate-and-reconcile: the sellers, the
                        travel and the support each map needs, priced
                        against <your cost model>
                        owner: capacity-manager    after: check-balance
@@ -203,7 +203,7 @@ policy:
     unsourced, and the map carries that mark where a reader sees it
   the map is chosen by a named person. It is never the average of the
     candidates and never the one the model scored highest
-  a patch nobody has the seat time to work is named as a gap. Raising
+  a patch nobody has the capacity to work is named as a gap. Raising
     its number instead is the failure this process exists to prevent
   the maps that were not chosen are kept, each with the reason it lost
 measures:
@@ -227,8 +227,8 @@ measures:
   A model that only fits when the past is adjusted is not used.
 - **A patch nobody could work comes out of the draw.** The
   coverage-check agent names it: too many accounts, too much ground,
-  or too much money for one seat. The run returns to the draw. A patch
-  is never fixed by leaving it and hoping the seat stretches.
+  or too much money for one seller. The run returns to the draw. A patch
+  is never fixed by leaving it and hoping the seller stretches.
 - **No candidate cut is workable.** All the maps fail balance or cost.
   The run goes back to the draw with the failing rule attached, and
   the leaders are told which constraint has to move: the segments, the

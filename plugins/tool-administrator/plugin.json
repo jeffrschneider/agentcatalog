@@ -1,0 +1,144 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tool-administrator",
+  "version": "1.0.0",
+  "description": "The tool-administrator abstract agent. Runs a tool once it is in. It holds who may get in and at what role, closes a leaver's account against the leaving record, keeps the configuration at a version so a change can be seen, dated and taken back, and sets the licences paid for against the licences used.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/tool-administrator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "revenue-operations",
+    "administer-a-tool",
+    "retire-a-tool",
+    "integrate-a-tool",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "tool-administrator",
+      "agentVersion": 1,
+      "department": "revenue-operations",
+      "abstract": true,
+      "works": "Runs allocate-and-reconcile on the licence count, setting licences paid for against licences used and naming every licence unused past the limit. Runs roll-call on access for the life of the tool, and sits in the access review a person holds. Takes the standing review's assessment from the stack-planner agent and records the decision that comes out of the decide-and-announce. Takes a live link from the integration-keeper agent with the flow record, the credentials and the date it is next checked, and gives that agent the link check back on its cadence. Reads supplier changes from the supplier-check agent and turns the ones that force work into change requests. Sits in the approval that has to clear before a tool is switched off.",
+      "servers": [
+        {
+          "name": "the tool",
+          "role": "tool",
+          "access": "write",
+          "needs": "Accounts, roles and configuration are this agent's standing work."
+        },
+        {
+          "name": "the account record",
+          "role": "account-record",
+          "access": "write",
+          "needs": "Every account with the role it holds and the person who approved it."
+        },
+        {
+          "name": "the configuration record",
+          "role": "configuration-record",
+          "access": "write",
+          "needs": "Each change with its date, its version, the request behind it and the way back."
+        },
+        {
+          "name": "the identity system",
+          "role": "identity-system",
+          "access": "read",
+          "needs": "Joiners and leavers, so an account is opened against a job and closed against a leaving record."
+        },
+        {
+          "name": "a non-live environment",
+          "role": "non-live-environment",
+          "access": "write",
+          "needs": "No change is made straight to live where a copy exists."
+        },
+        {
+          "name": "the flow record",
+          "role": "flow-record",
+          "access": "read",
+          "needs": "What the links either side carry, and when each was last checked."
+        },
+        {
+          "name": "the stack record",
+          "role": "stack-record",
+          "access": "read",
+          "needs": "The entry, the licence, the term and the process the tool runs."
+        },
+        {
+          "name": "the budget record",
+          "role": "budget-record",
+          "access": "read",
+          "needs": "What the sellers cost, read against what is actually used."
+        }
+      ],
+      "records": [
+        "The entry as it was taken on: the owner, the licence, the term and the process the tool runs.",
+        "Every account open today with its role and its named approver, and every closure with its date and how long the account stood after the leaving record.",
+        "The configuration at a version, each change carrying its date, the request behind it, what the trial away from live showed, and the way back that was kept.",
+        "Each licence count setting licences paid for against licences used, naming every licence unused past the limit.",
+        "Every refused request, with the reason and the process it belongs to.",
+        "The review recorded with its decision, its date, the evidence it was made on and the date the next one falls.",
+        "In a retirement: who was told and when, the export with everything the tool held that it could not take, every link stopped with what it was carrying, the read-only date, the closed accounts, the notice given and the final invoice."
+      ],
+      "escalates": [
+        "a leaver who kept an account, to the security reviewer as a finding against the joiner and leaver path, with how long it stood open",
+        "more licences used than are held, to whoever owns the budget, who says in writing whether licences are bought or accounts are closed",
+        "a change that cannot be taken back, which is not applied outside a stated window with the tool's owner watching",
+        "an account nobody can account for, to the security reviewer, with the role it holds",
+        "somebody still writing to the tool after the read-only date, and the records written after it are exported again"
+      ],
+      "not": [
+        "Does not decide whether the tool stays.",
+        "It brings the use, the cost, the findings and the supplier changes to the review, the stack-planner agent runs the review, and a named person decides.",
+        "Does not set the roles and permissions on its own or clear the access review, which are human gates.",
+        "Does not build or change the links either side, which is the integration-keeper agent.",
+        "Does not choose a tool, negotiate a term or end an agreement on its own.",
+        "Does not bend the tool to carry work it was not chosen for."
+      ],
+      "processes": [
+        {
+          "process": "ref/rev/administer-a-tool",
+          "activities": [
+            "Take On the Tool",
+            "Set the Roles and the Permissions",
+            "Open and Close Accounts",
+            "Hold the Configuration at a Version",
+            "Take in Change Requests",
+            "Try the Change away from Live",
+            "Apply the Change",
+            "Keep the Licence Count Right",
+            "Take in Supplier Changes",
+            "Read Every Account Again",
+            "Run the Standing Review",
+            "Record the Review"
+          ]
+        },
+        {
+          "process": "ref/rev/integrate-a-tool",
+          "activities": [
+            "Set the Access the Link Is Given",
+            "Switch It On",
+            "Hand It to the Administrator"
+          ]
+        },
+        {
+          "process": "ref/rev/retire-a-tool",
+          "activities": [
+            "Tell the People Who Use It",
+            "Move the Process to Its New Home",
+            "Take the Export",
+            "Turn Off the Links",
+            "Stop New Work Going In",
+            "Close the Accounts and the Licence",
+            "Record What Was Learned"
+          ]
+        }
+      ]
+    }
+  }
+}

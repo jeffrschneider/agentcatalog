@@ -1,0 +1,130 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "negotiation-coordinator",
+  "version": "1.0.0",
+  "description": "The negotiation-coordinator abstract agent. Keeps the negotiation straight. Gathers every ask the buyer has made into one numbered list in the buyer's own words, prices each one, and holds the record of which were given, which were traded and which were refused.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/negotiation-coordinator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "negotiate-the-agreement",
+    "record-a-lost-deal",
+    "review-the-redlines",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "negotiation-coordinator",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Runs collect-and-report to build the list of asks and to confirm who signs on each side and who they need first. Runs assessment to price each ask and to rebuild the offer from what was actually agreed. Convenes decide-and-announce to sort the asks into give, trade and refuse, requests the approval that must pass before a concession is offered, and convenes the approval in which both sides confirm one list of agreed terms. Runs allocate-and-reconcile over the concession record for the life of the run. Takes the contract reconciliation from the redline-reviewer agent and hands the agreed position to the close-plan-keeper agent.",
+      "servers": [
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "The offer as sent, the buyer's reply, and the notes from the calls since."
+        },
+        {
+          "name": "the quoting system",
+          "role": "quoting-system",
+          "access": "write",
+          "needs": "The offer rebuilt from what was agreed, with every changed line traced to the ask that changed it."
+        },
+        {
+          "name": "the contract system",
+          "role": "contract-system",
+          "access": "read",
+          "needs": "The paper the agreed terms are read against."
+        },
+        {
+          "name": "the approval system",
+          "role": "approval-system",
+          "access": "read",
+          "needs": "Which concession is signed, by whom, and on what date."
+        },
+        {
+          "name": "the pricing model",
+          "role": "pricing-model",
+          "access": "read",
+          "needs": "What each ask costs and what it does to margin, within a discount cap the adopting process sets."
+        },
+        {
+          "name": "the shared workspace with the buyer",
+          "role": "shared-workspace-with-the-buyer",
+          "access": "write",
+          "needs": "The list both sides confirm, and the refusals in writing."
+        }
+      ],
+      "records": [
+        "The numbered list of asks in the buyer's own wording, each with the person who raised it.",
+        "The floor on price, term, liability and payment, and who set it.",
+        "What each ask costs, which budget carries it, and the margin after it.",
+        "Each ask marked give, trade or refuse, with what was asked for in return on every trade.",
+        "Every approval with its approver and its date, given before the concession was offered.",
+        "Every closed ask with the answer, the reason, the date and the person on each side who agreed.",
+        "Every refusal as it went to the buyer.",
+        "The rebuilt offer with each changed line traced to an ask, and the dated position both sides confirmed, with the open items nobody closed listed beside it."
+      ],
+      "escalates": [
+        "an ask below the walk-away floor, to the sales leader who set the floor, because only that person may move it and moving it is recorded as a decision",
+        "a concession found offered with no approval behind it, to the approvers, and the buyer is told the term is not confirmed",
+        "an ask neither side will move on, to the sales leader and the matching person on the buyer's side, with both positions and what each side says it cannot do",
+        "a decider who was never in the room, to the deal owner, and the asks are checked again against what the new person wants",
+        "a deadlock that runs out its clock, to whoever decides between refusing on our terms and closing the deal as lost"
+      ],
+      "not": [
+        "Does not approve a concession or set the floor.",
+        "It prices the ask, records the answer and names the approver, and named people sign.",
+        "Does not review the contract clause by clause, which is the redline-reviewer agent, and a change that moves price, term or scope is settled here rather than inside a markup.",
+        "Does not run the close plan, which is the close-plan-keeper agent.",
+        "Does not sign, and does not treat an ask as closed because a call went well."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/negotiate-the-agreement",
+          "activities": [
+            "Take in the Offer and the Reply",
+            "List What Is Asked For",
+            "Confirm Who Decides",
+            "Set the Walk-Away Terms",
+            "Price the Asks",
+            "Sort the Asks",
+            "Hold the Negotiation Session",
+            "Record What Was Agreed",
+            "Refuse in Writing",
+            "Re-Price the Deal",
+            "Confirm the Agreed Position",
+            "Hand On the Agreed Position"
+          ]
+        },
+        {
+          "process": "ref/sls/record-a-lost-deal",
+          "activities": [
+            "Make One Recovery Attempt"
+          ]
+        },
+        {
+          "process": "ref/sls/review-the-redlines",
+          "activities": [
+            "Review the Business Terms"
+          ]
+        },
+        {
+          "process": "ref/sls/run-the-close-plan",
+          "activities": [
+            "Escalate a Stalled Step"
+          ]
+        }
+      ]
+    }
+  }
+}

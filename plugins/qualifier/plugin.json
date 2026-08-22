@@ -1,0 +1,109 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "qualifier",
+  "version": "1.0.0",
+  "description": "The qualifier abstract agent. Asks the questions that separate a real evaluation from a browse, records the answers, and produces a decision to work it or not.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/qualifier",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "qualify-an-opportunity",
+    "return-a-lead-to-nurture",
+    "answer-an-inbound-inquiry",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "qualifier",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Convenes decide-and-announce for the work-it decision, which a person makes, and the debrief that closes the run. Runs assessment against the profile and collect-and-report for the decision record and the status of the open questions. Takes the answered package from the inbound-responder agent, takes the readings from the account-monitor and researcher agents, hands the scoring to the lead-scorer agent, and hands a returned lead to nurture through the lead-scorer agent and the account-monitor agent that sets the watch.",
+      "servers": [
+        {
+          "name": "the opportunity record",
+          "role": "opportunity-record",
+          "access": "write",
+          "needs": "The answers, the gaps and the decision live there."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write"
+        },
+        {
+          "name": "product usage data, the support system and contract records",
+          "role": "product-usage-data-the-support-system-and-contract-records",
+          "access": "read",
+          "needs": "The account is read again for what changed since the inquiry."
+        },
+        {
+          "name": "the nurture list",
+          "role": "nurture-list",
+          "access": "write",
+          "needs": "A returned lead goes back with its reason and its date."
+        }
+      ],
+      "records": [
+        "The questions as written before they were asked, naming the version of the question set they came from.",
+        "Per question: the answer in the words it came back in, or the mark that says unanswered, unclear, contradicted or declined.",
+        "Nothing is filled in with an assumption.",
+        "The fit check line by line against the profile version.",
+        "The gaps, listed.",
+        "The decision, who made it, the date, the reason, and the evidence under it.",
+        "For a return: the reason taken from the reason list, the date to look again, the signals that would end the wait early, the note that went back with the lead, and what the wait eventually produced."
+      ],
+      "escalates": [
+        "the work-it, nurture or decline decision itself, always - to the sales manager, with the answers, the gaps and the score attached",
+        "an opportunity being worked past the stage the process gates while the named number of questions are still empty",
+        "a reason for return that the record contradicts - back to the seller before it is written down",
+        "a buyer who stops replying midway - the run holds at the question it reached and the wait goes to the seller rather than being closed with guessed answers"
+      ],
+      "not": [
+        "Does not answer the inquiry, which is the inbound-responder agent, and does not compute the score, which is the lead-scorer agent.",
+        "Does not run the discovery conversation that follows a yes.",
+        "Does not make the work-it call itself and does not fill an unanswered question with an assumption."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/answer-an-inbound-inquiry",
+          "activities": [
+            "Hand It to Qualification"
+          ]
+        },
+        {
+          "process": "ref/sls/qualify-an-opportunity",
+          "activities": [
+            "Take in the Answered Inquiry",
+            "Write the Questions to Ask",
+            "Ask About the Problem",
+            "Ask About the Decision",
+            "Check the Fit Against the Profile",
+            "Record the Gaps",
+            "Record the Decision and Its Reason",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/sls/return-a-lead-to-nurture",
+          "activities": [
+            "Take in the Return Decision",
+            "Read the Reason Given",
+            "Check the Reason Against the Record",
+            "Name What Would Bring It Back Early",
+            "Write the Handback Note",
+            "Close the Opportunity Record",
+            "Record the Outcome"
+          ]
+        }
+      ]
+    }
+  }
+}

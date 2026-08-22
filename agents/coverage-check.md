@@ -4,7 +4,7 @@
 
 **purpose:** Says whether a carve actually covers the market. Reads the
 map against the account base and names what nobody owns, what sits in
-two patches, what is too big for the seat behind it and what is too
+two patches, what is too big for the seller behind it and what is too
 small to live on. It runs again at every point the carve is committed
 to: before quotas are drafted, before statements reach sellers, and
 before a system changes hands. It reports the hole and names it by
@@ -58,7 +58,7 @@ against, so an auditor can rerun it.
 
 - an account in no territory, or in two - to the run that drew the map,
   because the map does not publish with one open
-- a patch nobody has the seat time to work - to the sales leader, with
+- a patch nobody has the capacity to work - to the sales leader, with
   the accounts, the ground and the amount behind the finding
 - a patch with no quota, or with two - to the quota-setter agent,
   before any roll-up is stated against the number

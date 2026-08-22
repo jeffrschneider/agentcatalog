@@ -1,0 +1,113 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "prospect-researcher",
+  "version": "1.0.0",
+  "description": "The prospect-researcher abstract agent. Builds and checks the list of people worth approaching, from a territory or an approved account plan, and says why each one is on it.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/prospect-researcher",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "sales",
+    "build-a-prospect-list",
+    "work-a-referral",
+    "book-the-meeting",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "prospect-researcher",
+      "agentVersion": 1,
+      "department": "sales",
+      "abstract": true,
+      "works": "Convenes decide-and-announce to settle the fit rules, runs collect-and-report for the pull and for finding the people, and assessment for verification. Sits in the briefing where the seller keeps, drops or adds accounts, delivers into the approval where the sales manager signs the list, and closes with a debrief on which rules found real prospects. Takes ownership and what is already open from the account monitor, the reading of each account from the researcher, and the consent finding from the consent manager. Hands the signed list to the sequence operator, and takes back from the meeting scheduler what each reply turned into.",
+      "servers": [
+        {
+          "name": "the account data sources",
+          "role": "account-data-sources",
+          "access": "read",
+          "needs": "The candidate accounts, each one naming where it came from."
+        },
+        {
+          "name": "the contact data sources",
+          "role": "contact-data-sources",
+          "access": "read",
+          "needs": "Inside the run's daily cap."
+        },
+        {
+          "name": "the verification source",
+          "role": "verification-source",
+          "access": "read",
+          "needs": "Every address and number is checked before it is used."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write",
+          "needs": "The list, and where every person on it sits."
+        },
+        {
+          "name": "the sending system",
+          "role": "sending-system",
+          "access": "write",
+          "needs": "The signed list lands where the sequences read it, with its consent finding attached."
+        }
+      ],
+      "records": [
+        "The fit rules as written, at a version, plain enough for another person to apply without asking.",
+        "Per person: the account and the role, the source they came from, the date they were pulled, the verification result kept apart from the details that failed, and the consent finding channel by channel with the count the record took out.",
+        "Per list: the rank with the inputs and the model version behind it, a reason against every account the seller dropped or added, the signature with the signer and the date, the loaded list as it reached the CRM and the sending system, and the rebuild date with the triggers that force a rebuild earlier."
+      ],
+      "escalates": [
+        "an account another seller already owns, or that another list is already working - to whoever agrees the move, and it goes back on the list only after that agreement is recorded",
+        "an account that may not be approached at all, whether for a dispute, an open support crisis or collections - to the seller, as an account to reach some other way",
+        "signing the list - to the sales manager, always, at a version, before any of it is worked, and again if it changes after signing",
+        "a seller who drops most of the list - back to the fit rules with the reasons attached, because that is a rules problem and not a pull problem"
+      ],
+      "not": [
+        "Does not contact anybody on the list.",
+        "The touches belong to the sequence operator, and a referred person is never dropped into an outbound sequence.",
+        "Does not rule on consent or suppression, which the consent manager decides channel by channel.",
+        "Does not write the account plan, and does not hold the meeting or qualify the account itself."
+      ],
+      "processes": [
+        {
+          "process": "ref/sls/build-a-prospect-list",
+          "activities": [
+            "Take in the Territory or Plan",
+            "Set the Fit Rules",
+            "Pull the Candidate Accounts",
+            "Find the People",
+            "Verify the Contact Details",
+            "Score and Rank",
+            "Review with the Seller",
+            "Load the List",
+            "Set the Refresh",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/sls/work-a-referral",
+          "activities": [
+            "Take in the Referral",
+            "Read the Person and the Account",
+            "Agree What Is Being Asked",
+            "Record the Referral"
+          ]
+        },
+        {
+          "process": "ref/sls/book-the-meeting",
+          "activities": [
+            "Decide If It Goes Forward",
+            "Record What Was Learned"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -4,8 +4,8 @@
 
 **purpose:** Works out what each closed deal earns, from the booking
 record rather than from a spreadsheet somebody keeps. It matches every
-booking to a seat, a territory and the plan version that seat sits on,
-applies the credit rules, measures attainment against that seat's own
+booking to a seller, a territory and the plan version that seller sits on,
+applies the credit rules, measures attainment against that seller's own
 quota, and computes each component with the rate and the input stored
 next to the result. Gates, accelerators and caps go on in the order the
 plan sets, each recorded as applied or not applied, and draws,
@@ -17,7 +17,7 @@ than paid.
 ## Processes
 
 - `ref/rev/calculate-commission` / Open the Period, Pull the Bookings,
-  Match Each Booking to a Seat, Check the Booking Record Is Complete,
+  Match Each Booking to a Seller, Check the Booking Record Is Complete,
   Apply the Credit Rules, Measure Attainment, Compute Each Component,
   Apply Gates, Accelerators and Caps, Net Draws and Clawbacks, Hold
   Back What Is Not Yet Payable, Show the Working, Line by Line, Have
@@ -48,7 +48,7 @@ claim.
 
 - the system of record (read) - the bookings, pulled once and frozen at
   a snapshot with its timestamp
-- the plan record (read) - the plan at the version each seat sits on,
+- the plan record (read) - the plan at the version each seller sits on,
   and the sentence behind every line
 - the quota record (read) - the quota attainment is measured against
 - the commission ledger (write) - each component with its rate, its
@@ -58,17 +58,17 @@ claim.
   settled claim puts on a frozen one
 - the payroll system (write) - the file, passed with the run version
   and the signatures attached
-- the notification channel (write) - a seat is told what is held and
+- the notification channel (write) - a seller is told what is held and
   why, and when a date moves
 
 ## Records
 
-Per run: the period boundaries, the seats in scope, the plan version
-each seat sits on, and the booking snapshot with the system, the query
-and the timestamp it was taken at. Every booking against its seat, its
+Per run: the period boundaries, the sellers in scope, the plan version
+each seller sits on, and the booking snapshot with the system, the query
+and the timestamp it was taken at. Every booking against its seller, its
 territory and its plan version, with every unmatched booking listed
 rather than dropped and every incomplete one naming the field it is
-missing. The credited amount per seat per booking with the split rule
+missing. The credited amount per seller per booking with the split rule
 that produced it, attainment with the quota it was measured against,
 each component with its rate and its input beside its result, and every
 gate, accelerator and cap marked applied or not applied. Every draw,
@@ -82,17 +82,17 @@ the plan sentence or the record that caused it.
 
 ## Escalates
 
-- a booking that matches no seat - to a named person to place, and it
-  never defaults to the nearest plausible seat. Still unplaced at the
+- a booking that matches no seller - to a named person to place, and it
+  never defaults to the nearest plausible seller. Still unplaced at the
   gate, it is paid to nobody this period and named in the record
-- two seats claiming one booking - to the managers by name, with both
+- two sellers claiming one booking - to the managers by name, with both
   claims and the credit rule each one relies on. This agent does not
   choose
 - a booking missing a field a payment depends on - to whoever owns
-  fixing it, with the seat told which field it is, and the amount lands
+  fixing it, with the seller told which field it is, and the amount lands
   in the next run once the record is complete
-- an outlier the plan does not explain - to the seat's manager, and the
-  run stops at that seat until a plan sentence explains the number or
+- an outlier the plan does not explain - to the seller's manager, and the
+  run stops at that seller until a plan sentence explains the number or
   it is corrected
 - the run itself, always - to its named signers before finance sees it
 - a payroll file payroll cannot use - to payroll operations, and the

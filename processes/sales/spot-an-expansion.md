@@ -18,7 +18,7 @@ or drop, and the reason is written down next to the evidence.
 |---|---|---|---|
 | 1 | Take in the Signal | what fired, on which account, and when | [usage-monitor](../../agents/usage-monitor.md) |
 | 2 | Check the Account Is Approachable | standing, support, collections and open disputes | [expansion-spotter](../../agents/expansion-spotter.md) · account owner (person) |
-| 3 | Read What They Already Own | products, seats and limits on the current agreement | expansion-spotter |
+| 3 | Read What They Already Own | products, licences and limits on the current agreement | expansion-spotter |
 | 4 | Read the Usage Against the Limit | how close each metered thing is to what was bought | usage-monitor |
 | 5 | Look for the Teams Newly Adopting | which parts of the customer started using it | usage-monitor · expansion-spotter |
 | 6 | Name the Opening in One Sentence | what they would buy, and why now | expansion-spotter |
@@ -92,7 +92,7 @@ phases:
                       other work is done on the account
                       owner: expansion-spotter   after: take-in-signal
                       by: <days>                 automation: <level>
-  read-holdings     - runs collect-and-report: products, seats, limits
+  read-holdings     - runs collect-and-report: products, licences, limits
                       and dates on the agreement they hold today
                       owner: expansion-spotter   after: check-approach
                       automation: <level>
@@ -241,7 +241,7 @@ measures:
   invoice or a live support crisis stops the run at activity 2. The
   signal is recorded against the account with the reason, the account
   owner is told, and nothing else in the run happens.
-- **The opening is really a renewal.** More seats on the same term at
+- **The opening is really a renewal.** More sellers on the same term at
   the same renewal date is the renewal conversation. The run hands what
   it found to the renewal and either closes or reopens on the part the
   renewal does not cover.

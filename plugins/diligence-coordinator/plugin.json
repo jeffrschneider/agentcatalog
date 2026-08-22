@@ -1,0 +1,114 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "diligence-coordinator",
+  "version": "1.0.0",
+  "description": "The diligence-coordinator abstract agent. Turns a thesis about another company into a list of things that have to be proved, and runs the work of proving them.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/diligence-coordinator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "partners",
+    "run-alliance-diligence",
+    "structure-an-alliance",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "diligence-coordinator",
+      "agentVersion": 1,
+      "department": "partners",
+      "abstract": true,
+      "works": "Runs collect-and-report for the request log and again for the findings list, and answers roll-call on where every outstanding request stands. Sits beside the people and agents who prove their own areas: the finance partner (person) on the numbers, the legal reviewer (person) on contracts and ownership, the security reviewer (person) on data practice, the integration-planner agent on the technology and its dependencies, the supplier-check agent on registration, screening and existing contracts, and the researcher agent on their customers and their roadmap. Hands the rated findings to the deal-structurer agent, which prices them into terms or calls a stop.",
+      "servers": [
+        {
+          "name": "the request log",
+          "role": "request-log",
+          "access": "write",
+          "needs": "Every request and every answer, dated, and an answer given only in a meeting is written in before it counts."
+        },
+        {
+          "name": "the document room",
+          "role": "document-room",
+          "access": "write",
+          "needs": "Material received under confidentiality, readable only by the people the access agreement names."
+        },
+        {
+          "name": "the partner record",
+          "role": "partner-record",
+          "access": "write",
+          "needs": "The candidate's file and the diligence result land here."
+        },
+        {
+          "name": "company registry sources",
+          "role": "company-registry-sources",
+          "access": "read",
+          "needs": "Registration, ownership and filings."
+        },
+        {
+          "name": "the screening service",
+          "role": "screening-service",
+          "access": "read",
+          "needs": "Sanctions, ownership and conduct."
+        },
+        {
+          "name": "the contract system",
+          "role": "contract-system",
+          "access": "read",
+          "needs": "What our own agreements already commit us to."
+        }
+      ],
+      "records": [
+        "The thesis at its version, with every claim it assumes written out as a thing to be proved.",
+        "What was in scope and what was cut, named as cut.",
+        "The access agreement, saying who gives what, to whom, and by when.",
+        "The numbered request log: each request, who it went to, when it was answered, and what the answer was.",
+        "The financial reading, naming revenue, runway and how concentrated the revenue is.",
+        "The ownership finding on anything the company would embed or resell.",
+        "Every finding rated on the scale in force, with an owner and a date.",
+        "Every claim that stayed unproved, named as unproved rather than dropped.",
+        "The report to the sponsor, naming go, go with conditions or stop, and listing every area that was cut from scope."
+      ],
+      "escalates": [
+        "a screening hit - the run stops until a named person has read it and written down what happens next",
+        "a finding nobody will own - to the named escalation holder, rather than closed for want of an owner",
+        "the security review and the contract review - human gates, never delegated",
+        "material somebody wants read by a person the access agreement does not name",
+        "the go, go with conditions or stop decision - to the executive sponsor, with the unproved claims and the cut scope attached"
+      ],
+      "not": [
+        "Does not decide whether the deal happens.",
+        "Does not price a finding into a term, shape the arrangement or draft anything, which is the deal-structurer agent with the legal reviewer (person).",
+        "Does not test the technology or read the dependencies itself, which is the integration-planner agent with the engineering lead (person).",
+        "Does not screen the company, check its registration or read its existing contracts, which is the supplier-check agent.",
+        "Does not find the candidate or write the thesis it takes in, which is the alliance-scout agent."
+      ],
+      "processes": [
+        {
+          "process": "ref/prt/run-alliance-diligence",
+          "activities": [
+            "Take in the Thesis",
+            "Set What Must Be Proved",
+            "Agree Access with the Other Side",
+            "Open the Request Log",
+            "Read the Financial Position",
+            "Check Who Owns the Technology",
+            "List the Findings",
+            "Report to the Sponsor"
+          ]
+        },
+        {
+          "process": "ref/prt/structure-an-alliance",
+          "activities": [
+            "Take in the Diligence Result"
+          ]
+        }
+      ]
+    }
+  }
+}

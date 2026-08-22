@@ -1,0 +1,118 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "coverage-check",
+  "version": "1.0.0",
+  "description": "The coverage-check abstract agent. Says whether a carve actually covers the market. Reads the map against the account base and names what nobody owns, what sits in two patches, what is too big for the seller behind it and what is too small to live on.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/coverage-check",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "revenue-operations",
+    "publish-the-carve",
+    "model-the-territories",
+    "move-an-account",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "coverage-check",
+      "agentVersion": 1,
+      "department": "revenue-operations",
+      "abstract": true,
+      "works": "Runs assessment alone and unattended inside runs the territory-modeler and quota-setter agents own, which is why what it leaves behind is the only way anyone checks it. Its finding is a gate rather than an opinion: nothing publishes while a hole is open, and a failing patch goes back to whoever drew it. Takes the account base from the analytics agent and the account standing from the account-monitor agent.",
+      "servers": [
+        {
+          "name": "the territory map",
+          "role": "territory-map",
+          "access": "read",
+          "needs": "What the carve says it places."
+        },
+        {
+          "name": "the account record",
+          "role": "account-record",
+          "access": "read",
+          "needs": "What there is to place."
+        },
+        {
+          "name": "the quota record",
+          "role": "quota-record",
+          "access": "read",
+          "needs": "Whether every patch carries exactly one number."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "Who the systems say owns each account."
+        },
+        {
+          "name": "the pay plan record",
+          "role": "pay-plan-record",
+          "access": "read",
+          "needs": "Whether a statement matches what will pay on it."
+        },
+        {
+          "name": "the coverage record",
+          "role": "coverage-record",
+          "access": "write",
+          "needs": "The findings, per account and per patch."
+        }
+      ],
+      "records": [
+        "Per check: every account in no patch and every account in two, named rather than counted; every patch nobody holds and every seller holding more than one; every patch over the stated account count or amount and every patch under the floor, each failure naming the rule it failed.",
+        "Reading last period, it names which patches were worked, which were never called, and what was left with no owner at all.",
+        "Reading statements, it names every place a page and the system that will pay on it disagree, by seller.",
+        "Reading a move, it quotes the line of the carve that allows it as written, or records that no line covers it.",
+        "Every finding carries the version of the map and the quota set it was tested against, so an auditor can rerun it."
+      ],
+      "escalates": [
+        "an account in no territory, or in two - to the run that drew the map, because the map does not publish with one open",
+        "a patch nobody has the capacity to work - to the sales leader, with the accounts, the ground and the amount behind the finding",
+        "a patch with no quota, or with two - to the quota-setter agent, before any roll-up is stated against the number",
+        "a request no rule in the carve covers - to whoever amends the carve, as an amendment rather than a reasoned yes",
+        "a statement that disagrees with the system that will pay on it - to sales operations, named by seller, before that seller sees it"
+      ],
+      "not": [
+        "Does not draw territories, set numbers or move accounts, and holds no write access to the map, the quotas or the CRM on purpose.",
+        "The agent that reports a hole should not be the agent that quietly closes it.",
+        "Does not judge whether a carve is a good one either, only whether it is whole and workable against the rules written down before it was drawn."
+      ],
+      "processes": [
+        {
+          "process": "ref/rev/model-the-territories",
+          "activities": [
+            "Read How Last Year Was Covered",
+            "Check Coverage and Balance"
+          ]
+        },
+        {
+          "process": "ref/rev/move-an-account",
+          "activities": [
+            "Find the Rule That Allows It",
+            "Change the Systems Once"
+          ]
+        },
+        {
+          "process": "ref/rev/publish-the-carve",
+          "activities": [
+            "Check the Carve Is Whole",
+            "Check the Statements Against the Record",
+            "Publish the Final Carve"
+          ]
+        },
+        {
+          "process": "ref/rev/set-the-quotas",
+          "activities": [
+            "Check Every Patch Has One"
+          ]
+        }
+      ]
+    }
+  }
+}
