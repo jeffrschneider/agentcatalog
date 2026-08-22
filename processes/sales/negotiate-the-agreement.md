@@ -68,6 +68,8 @@ PROCESS: negotiate the agreement   id: <team>/negotiate-the-agreement   v1
 from: ref/sls/negotiate-the-agreement v1
 owner: <who>                          effective: <date>
 trigger: the buyer replies to an offer with asks, in <your CRM>
+         watch: record=<opportunity> system=<your CRM>
+                change=<a reply with asks is logged against a sent offer>
 concurrency: runs may overlap - <how many> negotiations live at once,
              and one opportunity is negotiated by one run at a time
 goal: every ask on the table closed as given, traded or refused, each
@@ -165,39 +167,54 @@ run-scoped:
                 every: <cadence>
                 from: hold-session  until: run close
 handoffs:
-  take-in-offer -> list-asks: the offer at its version, the buyer's
-    reply, and the notes from the calls since it was sent
-  list-asks -> confirm-deciders: the numbered asks, each in the buyer's
-    own words with the person who raised it
-  list-asks -> set-walk-away: the same list, so the floor is set against
-    what is actually being asked for
-  set-walk-away -> price-asks: the floor on each term, and who set it
-  price-asks -> sort-asks: what each ask costs, which budget carries it,
-    and the margin after it
-  sort-asks -> approve-concessions: the give and trade list, each trade
-    naming what we ask for in return
-  approve-concessions -> hold-session: the approved positions, the name
-    of every approver, and the date each approval was given
-  confirm-deciders -> hold-session: who is in the room, who they answer
-    to, and what each of them has to see before they can agree
-  hold-session -> record-agreed: what the buyer said yes to, in the
-    session, with the date
-  hold-session -> refuse-in-writing: the asks we declined and the reason
-    for each one
-  hold-session -> escalate-deadlock: the ask, both positions, and what
-    each side says it cannot do
-  escalate-deadlock -> hold-session: the decision from above, and
-    whether the floor moved
-  record-agreed -> re-price: the closed asks and what each one changes
-    about price, term or scope
-  refuse-in-writing -> re-price: the refusals, so the offer does not
-    quietly carry what we declined
-  re-price -> reconcile-draft: the rebuilt offer, with every changed
-    line traced to an ask
-  reconcile-draft -> confirm-position: the gaps between the agreed terms
-    and the contract text, clause by clause
-  confirm-position -> hand-on: one dated list of agreed terms, held by
-    both sides, and the open items nobody closed
+  take-in-offer -> list-asks [offer-and-reply]: the offer at its
+    version, the buyer's reply, and the notes from the calls since it
+    was sent
+  list-asks -> confirm-deciders [numbered-asks]: the numbered asks, each
+    in the buyer's own words with the person who raised it
+  list-asks -> set-walk-away [asks-for-floor]: the same list, so the
+    floor is set against what is actually being asked for
+  set-walk-away -> price-asks [floor]: the floor on each term, and who
+    set it
+  price-asks -> sort-asks [ask-costing]: what each ask costs, which
+    budget carries it, and the margin after it
+  sort-asks -> approve-concessions [give-and-trade-list]: the give and
+    trade list, each trade naming what we ask for in return
+  approve-concessions -> hold-session [approved-positions]: the approved
+    positions, the name of every approver, and the date each approval
+    was given
+  confirm-deciders -> hold-session [deciders]: who is in the room, who
+    they answer to, and what each of them has to see before they can
+    agree
+  hold-session -> record-agreed [session-outcome]: what the buyer said
+    yes to, in the session, with the date
+  hold-session -> refuse-in-writing [refusals]: the asks we declined and
+    the reason for each one
+  hold-session -> escalate-deadlock [deadlocked-terms]: the ask, both
+    positions, and what each side says it cannot do
+  escalate-deadlock -> hold-session [escalation-answer]: the decision
+    from above, and whether the floor moved
+  record-agreed -> re-price [closed-asks]: the closed asks and what each
+    one changes about price, term or scope
+  refuse-in-writing -> re-price [written-refusals]: the refusals, so the
+    offer does not quietly carry what we declined
+  re-price -> reconcile-draft [rebuilt-offer]: the rebuilt offer, with
+    every changed line traced to an ask
+  reconcile-draft -> confirm-position [reconciled-paper]: the gaps
+    between the agreed terms and the contract text, clause by clause
+  confirm-position -> hand-on [confirmed-position]: one dated list of
+    agreed terms, held by both sides, and the open items nobody closed
+deviations:
+  approve-concessions -> sort-asks [concession-refused]: an approver
+    refuses a concession, so the give and trade list is sorted again
+  hold-session -> escalate-deadlock [neither-side-moves]: the session
+    reaches a term neither side will move on
+  escalate-deadlock -> set-walk-away [floor-moves]: the escalation moves
+    the floor, so the walk-away is set again before anything is repriced
+  reconcile-draft -> record-agreed [paper-disagrees]: the contract text
+    and the agreed record disagree, and the agreed record governs
+  confirm-position -> hold-session [term-read-differently]: the buyer
+    reads a term differently, so it goes back to the session
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the deal owner, the sales leader
