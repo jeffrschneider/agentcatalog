@@ -7,7 +7,7 @@ The catalog holds 80 marketing processes and 56 abstract agents, written down
 over the months before this blog existed. This first post says what those
 documents are, what they cover, and why every one of them has blanks in it.
 
-## A reference process is a first draft to argue with
+## What a reference process is
 
 Most process documentation is either somebody else's process, which does not
 fit, or a blank template, which does not help. A reference process sits between
