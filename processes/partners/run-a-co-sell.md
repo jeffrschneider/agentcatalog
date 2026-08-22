@@ -83,6 +83,8 @@ from: ref/prt/run-a-co-sell v1
 owner: <who>                          effective: <date>
 trigger: a registered deal is taken joint, or a partner and an account
          owner agree to pursue one customer together
+         watch: record=<opportunity> system=<your CRM>
+                change=<a deal is marked joint against a live registration>
 concurrency: runs may overlap - <how many> joint pursuits run at once,
              and one deal is worked by one co-sell run at a time
 goal: one lead, one plan and one paper on every joint deal, with the
@@ -184,44 +186,63 @@ run-scoped:
             every: <cadence>
             from: build-plan   until: run close
 handoffs:
-  take-in-pursuit -> check-claim: the deal, the partner, and what each
-    side says the other brings
-  check-claim -> read-account: the registration, its end date, and the
-    clauses of the agreement that cover joint work
-  read-account -> name-lead: what each side holds on the customer,
-    dated, including who from either side is already in contact
-  name-lead -> name-people: which organization leads, who decided it,
-    and the rule they decided it under
-  name-people -> agree-scope: the named people on both sides, each with
-    what they are there to do
-  agree-scope -> agree-split: what each organization is carrying, which
-    is what the split is being agreed against
-  agree-scope -> build-plan: the same division of the solution, so the
-    plan has an owner for every step
-  agree-split -> build-plan: the split as signed, and anything the
-    agreement did not cover with the signature that settled it
-  build-plan -> set-contact-rule: the steps that touch the customer,
-    which are the ones the contact rule has to cover
-  build-plan -> agree-sharing: the steps that need something to cross
-    between the two organizations
-  set-contact-rule -> brief-both: who approaches the customer, on what,
-    and the waiting period before the other side may
-  agree-sharing -> brief-both: what may cross, at which version, and
-    what may not cross at all
-  brief-both -> run-selling: the plan as both sides heard it, and the
-    date of the first joint step
-  run-selling -> keep-in-step: every approach as it actually happened,
-    logged by the side that made it on the day it was made
-  run-selling -> joint-check-in: the same log, so the plan is read
-    against what happened rather than what was intended
-  keep-in-step -> settle-paper: the approaches as they ran, and the
-    ones that were held with the reason for each
-  joint-check-in -> settle-paper: the plan with every step marked done,
-    open or dropped, and the date each was last touched
-  settle-paper -> record-outcome: which side papered it, on what terms,
-    and what the other side invoices
-  record-outcome -> debrief-pursuit: the outcome and the partner's
-    contribution, as recorded
+  take-in-pursuit -> check-claim [pursuit-and-claims]: the deal, the
+    partner, and what each side says the other brings
+  check-claim -> read-account [registration-and-clauses]: the
+    registration, its end date, and the clauses of the agreement that
+    cover joint work
+  read-account -> name-lead [account-picture]: what each side holds on
+    the customer, dated, including who from either side is already in
+    contact
+  name-lead -> name-people [named-lead]: which organization leads, who
+    decided it, and the rule they decided it under
+  name-people -> agree-scope [named-people]: the named people on both
+    sides, each with what they are there to do
+  agree-scope -> agree-split [agreed-scope]: what each organization is
+    carrying, which is what the split is being agreed against
+  agree-scope -> build-plan [agreed-split]: the same division of the
+    solution, so the plan has an owner for every step
+  agree-split -> build-plan [joint-plan]: the split as signed, and
+    anything the agreement did not cover with the signature that settled
+    it
+  build-plan -> set-contact-rule [contact-rule]: the steps that touch
+    the customer, which are the ones the contact rule has to cover
+  build-plan -> agree-sharing [sharing-rule]: the steps that need
+    something to cross between the two organizations
+  set-contact-rule -> brief-both [both-sides-briefed]: who approaches
+    the customer, on what, and the waiting period before the other side
+    may
+  agree-sharing -> brief-both [selling-as-run]: what may cross, at which
+    version, and what may not cross at all
+  brief-both -> run-selling [schedule-kept]: the plan as both sides
+    heard it, and the date of the first joint step
+  run-selling -> keep-in-step [check-in-outcome]: every approach as it
+    actually happened, logged by the side that made it on the day it was
+    made
+  run-selling -> joint-check-in [settled-paper]: the same log, so the
+    plan is read against what happened rather than what was intended
+  keep-in-step -> settle-paper [recorded-outcome]: the approaches as
+    they ran, and the ones that were held with the reason for each
+  joint-check-in -> settle-paper [debrief-notes]: the plan with every
+    step marked done, open or dropped, and the date each was last
+    touched
+  settle-paper -> record-outcome [boundary-confirmations]: which side
+    papered it, on what terms, and what the other side invoices
+  record-outcome -> debrief-pursuit [partner-contribution]: the outcome
+    and the partner's contribution, as recorded
+deviations:
+  check-claim -> take-in-pursuit [no-registration]: no registration
+    covers the deal, so the pursuit is taken in again
+  agree-split -> check-claim [split-not-per-agreement]: the split is not
+    what the agreement says, so the claim is checked again
+  keep-in-step -> set-contact-rule [customer-approached-twice]: the
+    customer was approached twice, so the contact rule is set again
+  joint-check-in -> build-plan [plan-no-longer-fits]: the plan no longer
+    fits the deal, so it is built again
+  joint-check-in -> name-lead [lead-should-change]: the lead should
+    change hands, so which organization leads is named again
+  settle-paper -> agree-split [cannot-paper-as-agreed]: neither side can
+    paper it as agreed, so the split is agreed again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the partner
