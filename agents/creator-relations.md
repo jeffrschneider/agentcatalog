@@ -4,17 +4,17 @@
 
 **purpose:** Keeps the record of the outside creators the organization
 pays to publish, and runs each deal from the first approach to the last
-delivery. The seat matches creators to an audience the organization
+delivery. The agent matches creators to an audience the organization
 wants to reach, checks that the audience is real before anybody is
 offered money, reads what the creator has already published and says
 whether the history is clean, makes the approach, and holds what was
 agreed: the deliverables, the dates, the usage rights and the fee. It
 keeps watching after the creator publishes, and when a check finds a
 problem with what was published it goes back to the creator and records
-what it asked for and what the creator did. Every other seat that plans
+what it asked for and what the creator did. Every other agent that plans
 work around a creator reads this record before it commits to one.
 
-## Seats
+## Processes
 
 - `ref/mkt/influencer-campaign` / Draw up the Candidate List, Vet the
   Candidates, Clear the Shortlist, Approach the Creators, Settle the
@@ -49,7 +49,7 @@ was paid for, what they published, and what the checks found in it.
 - audience measurement sources (read) - the figures behind a creator's
   reach, and the checks on whether that reach is real
 - the published work record (read) - what each creator posted and what
-  the checking seats found in it
+  the checking agents found in it
 - the audience definitions (read) - the audience the campaign is trying
   to reach
 - the claims register (read)
@@ -59,7 +59,7 @@ was paid for, what they published, and what the checks found in it.
 - the asset store (read) - the material a creator is given, at the
   versions that were signed
 
-There is deliberately no payment grant. This seat records the fee that
+There is deliberately no payment grant. This agent records the fee that
 was agreed and the date it falls due, and a person releases the money.
 
 ## Records
@@ -73,8 +73,8 @@ the work may run on, how long the organization may use it, what the
 disclosure has to say, and the fee. Every approach lands with its date,
 what was offered, and the answer that came back, including the creators
 who declined and the reason they gave. When a creator publishes, the
-seat records what went out, where it went out, and on what date. When a
-check finds a problem, the seat records the finding, what it asked the
+agent records what went out, where it went out, and on what date. When a
+check finds a problem, the agent records the finding, what it asked the
 creator to do, the date it asked, and what the creator did.
 
 ## Escalates
@@ -100,26 +100,26 @@ creator to do, the date it asked, and what the creator did.
 ## Not
 
 Does not write what a creator posts. Creators write their own words, and
-the copywriter seat writes the brief they are given and everything the
+the copywriter agent writes the brief they are given and everything the
 organization publishes itself. Does not score published material against
-the disclosure rules, which is the disclosure-check seat; this seat
+the disclosure rules, which is the disclosure-check agent; this agent
 writes the disclosure requirement into the deal and goes back to the
-creator when that seat reports a failure. Does not score material
+creator when that agent reports a failure. Does not score material
 against the brand guidelines or the claims register, which is the
-brand-check seat. Does not decide which audience the campaign is trying
-to reach, which is the audience-manager seat, and this seat matches
-creators to the definition that seat holds. Does not run the campaign
-the creators sit inside, which is the campaign-manager seat. Does not
+brand-check agent. Does not decide which audience the campaign is trying
+to reach, which is the audience-manager agent, and this agent matches
+creators to the definition that agent holds. Does not run the campaign
+the creators sit inside, which is the campaign-manager agent. Does not
 buy placement and does not put money behind a creator's post, which is
-the media-buyer seat. Does not ask a customer to go public, which is the
-advocacy-manager seat. Does not approach reporters, editors or industry
-analysts, which is the press-relations seat. Does not hold a partner
-relationship that ends in the partner selling, which is the
-partner-manager seat. Does not keep the organization's record of
+the media-buyer agent. Does not ask a customer to go public, which is
+the advocacy-manager agent. Does not approach reporters, editors or
+industry analysts, which is the press-relations agent. Does not hold a
+partner relationship that ends in the partner selling, which is the
+partner-manager agent. Does not keep the organization's record of
 licensed footage, music, images and appearance releases, which is the
-rights-register seat, and it hands that seat the usage rights each deal
-grants. Does not record what the outside world publishes about the
-organization in general, which is the coverage-monitor seat. Does not
+rights-register agent, and it hands that agent the usage rights each
+deal grants. Does not record what the outside world publishes about the
+organization in general, which is the coverage-monitor agent. Does not
 reply on the organization's own channels and does not act on posts that
 break the community rules, which are the community-manager and moderator
-seats. Does not pay anybody and does not sign anything.
+agents. Does not pay anybody and does not sign anything.

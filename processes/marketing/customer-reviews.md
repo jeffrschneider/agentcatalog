@@ -16,7 +16,7 @@ are read and recorded before a word of the ask is written.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Review Goal | which sites, how many reviews, and by when | [advocacy-manager](../../agents/advocacy-manager.md) |
 | 2 | Read the Site Rules | each site's policy on asking and on incentives | [researcher](../../agents/researcher.md) · advocacy-manager |
@@ -91,7 +91,7 @@ phases:
                      by: <days>                automation: <level>
   set-ask-rules    - convenes decide-and-announce: what may be offered,
                      what must be disclosed, and who may be asked
-                     owner: <your legal seat>  after: read-site-rules
+                     owner: <your legal role>  after: read-site-rules
                      automation: never
   choose-customers - human: the customers eligible under those rules,
                      each with the account standing behind the choice
@@ -113,7 +113,7 @@ phases:
   get-sign-offs    - convenes approval: legal and <who> sign the
                      disclosure and anything offered, as named signers,
                      against a version of the ask
-                     owner: <your legal seat>  after: check-the-ask
+                     owner: <your legal role>  after: check-the-ask
                      by: <days>                automation: never
   practical-side   - human: the send list with consent, opt-out and
                      suppression applied, the schedule, and one link
@@ -182,7 +182,7 @@ handoffs:
     date, its author and its wording
   report-goal -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, finance and the owner of
            each customer relationship>
   systems: the review sites (read), the review site accounts (write),

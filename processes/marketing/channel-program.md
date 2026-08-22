@@ -4,7 +4,7 @@
 
 **value stream:** [Concept-to-Market](../../streams/marketing/concept-to-market.md)
 A partner manager takes an approved program design and turns it into a
-program that partners can join. The seat settles what each tier asks of
+program that partners can join. The agent settles what each tier asks of
 a partner and what that tier gives back, puts numbers on the margins and
 the rebates, has the agreement drawn up, and gets the materials, the
 portal and the partner systems working before anyone is approached. It
@@ -17,7 +17,7 @@ partners produced in their first weeks.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Program Design | what the program must deliver, for whom, and by when | [partner-manager](../../agents/partner-manager.md) |
 | 2 | Settle the Tiers and the Terms | what each tier asks of a partner and what it gives back | partner-manager · [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
@@ -91,7 +91,7 @@ phases:
                       automation: <level>
   settle-terms      - convenes decide-and-announce: what each tier asks
                       of a partner and what that tier gives back, told
-                      to every seat that builds against it at once
+                      to every agent that builds against it at once
                       owner: decision-coordinator
                       after: take-in-design    by: <days>
                       automation: <level>
@@ -102,7 +102,7 @@ phases:
                       by: <days>               automation: <level>
   draw-agreement    - human: the contract a partner signs, what each
                       side owes under it, and how it ends
-                      owner: <your legal seat> after: price-incentives
+                      owner: <your legal role> after: price-incentives
                       by: <days>               automation: never
   candidate-list    - runs collect-and-report: the profile a partner has
                       to meet, and the candidates that meet it
@@ -130,7 +130,7 @@ phases:
                       by: <days>               automation: <level>
   get-sign-offs     - convenes approval: brand, disclosure, legal and
                       finance sign, as named signers, against a version
-                      owner: <your legal seat>
+                      owner: <your legal role>
                       after: draw-agreement + build-portal +
                              partner-systems
                       by: <days>               automation: never
@@ -203,7 +203,7 @@ handoffs:
     partner, attributed to the system it was read from
   report-program -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, finance and
            whoever signs contracts>
   systems: the partner record (write), the agreement record (read),
@@ -262,8 +262,8 @@ measures:
   owed, so the run holds the signature until the record can carry it.
 - **The trigger fires while a run is in flight.** Programs for different
   markets or product lines overlap, and the concurrency line says how
-  many. The partner-manager seat takes one program at a time, so every
-  run in flight needs its own holder of that seat, and the runs read the
+  many. The partner-manager agent takes one program at a time, so every
+  run in flight needs its own holder of that role, and the runs read the
   agreement record and the standards read-only.
 - **A run is abandoned.** Every candidate already approached is told the
   program is not opening. The portal comes down and its address is

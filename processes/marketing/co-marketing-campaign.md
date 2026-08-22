@@ -4,7 +4,7 @@
 
 **value stream:** [Brief-to-Results](../../streams/marketing/brief-to-results.md)
 Two organizations put one campaign in front of a shared audience. A
-signed agreement starts the run. The seat that answers for the partner
+signed agreement starts the run. The agent that answers for the partner
 relationship writes down what each side owes and by when, the two sides
 settle how the leads will be split before anything is built, the joint
 material is made and signed on both sides, the registration page and its
@@ -18,7 +18,7 @@ leads arrive turns into an argument.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Partner Agreement | what each side owes and what the campaign must do | [partner-manager](../../agents/partner-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Settle the Lead Terms | who gets which leads, which fields, on what basis | partner-manager · [audience-handover](../../agents/audience-handover.md) · [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
@@ -189,7 +189,7 @@ handoffs:
     and every lead held back with the reason it was held
   agree-numbers -> record-learnings: the agreed figures, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, named people for legal, brand and finance, and the
            named approver at the partner>
   systems: the asset store (write), the website (write),
@@ -227,28 +227,28 @@ measures:
   stops being the version that ships as soon as the other organization
   asks for a change.
 - **The partner does not deliver its list, its assets or its share of
-  the spend.** The partner-manager seat raises it on the day it becomes
+  the spend.** The partner-manager agent raises it on the day it becomes
   clear that the plan cannot be delivered as agreed, and a person
   decides whether the campaign runs smaller, moves its date, or stops.
 - **A lead arrives that the consent record does not cover for
-  transfer.** The audience-handover seat holds the lead back and
+  transfer.** The audience-handover agent holds the lead back and
   records it as held, with the rule behind the hold, so that both sides
   work from the same count.
 - **Both organizations already had the same contact.** The lead terms
   settled in activity 2 decide who owns the record. A case those terms
   do not cover goes to a person on each side, and the answer is written
   back into the terms.
-- **The two sides' counts differ.** The run goes back to
-  hand-over-leads and the difference is traced to the delivery it
-  should have been in. A difference past the tolerance the process sets
-  goes to finance on both sides.
+- **The two sides' counts differ.** The run goes back to hand-over-leads
+  and the difference is traced to the delivery it should have been in. A
+  difference past the tolerance the process sets goes to finance on both
+  sides.
 - **Creative has to be replaced while the campaign is live.** The run
   returns to produce-material, and the replacement goes through the
   scoring and both sets of sign-offs before it runs.
 - **The trigger fires while runs are in flight.** Joint campaigns
   overlap normally, and the concurrency line says how many. The
-  partner-manager seat takes one partner at a time, so every run in
-  flight needs its own holder of that seat.
+  partner-manager agent takes one partner at a time, so every run in
+  flight needs its own holder of that role.
 - **A run is abandoned.** The registration page comes down, the ads
   stop, and every lead already captured is still delivered under the
   terms that were agreed, because the agreement outlives the campaign.

@@ -23,7 +23,7 @@ where committed money sits inside that plan while the flights run.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Pacing Signal | which line is off, in which direction, and by how much | [media-buyer](../../agents/media-buyer.md) · [analytics](../../agents/analytics.md) |
 | 2 | Confirm the Numbers Hold | the figures behind the signal are real and current | analytics · [conversion-tracker](../../agents/conversion-tracker.md) |
@@ -37,7 +37,7 @@ where committed money sits inside that plan while the flights run.
 | 10 | Move the Money in the Platforms | budgets change in the platforms the buy runs on | media-buyer |
 | 11 | Correct the Pacing | daily limits reset so each flight lands on its date | media-buyer · analytics |
 | 12 | Check the Change Took | what is set is read back against what was decided | buy-check · media-buyer |
-| 13 | Tell the Seats that Read the Plan | every seat on the old split hears the new one | campaign-manager · media-planner · [spend-reconciler](../../agents/spend-reconciler.md) · [reporting-manager](../../agents/reporting-manager.md) |
+| 13 | Tell the Agents that Read the Plan | every agent on the old split hears the new one | campaign-manager · media-planner · [spend-reconciler](../../agents/spend-reconciler.md) · [reporting-manager](../../agents/reporting-manager.md) |
 | 14 | Record Why the Money Moved | the reason and the figures behind it, at a version | media-planner · decision-coordinator |
 
 ## The graph
@@ -63,7 +63,7 @@ flowchart LR
   A11 --> A12[12. Check the Change Took]
   A12 -. what is running is not what was decided .-> A10
   A12 -. the rest of the flight still misses .-> A11
-  A12 --> A13[13. Tell the Seats that Read the Plan]
+  A12 --> A13[13. Tell the Agents that Read the Plan]
   A13 --> A14[14. Record Why the Money Moved]
   A14 --> DONE([the money is moved and the reason is on the record])
 ```
@@ -114,7 +114,7 @@ phases:
                      by: <days>                 automation: <level>
   decide-the-move  - convenes approval: <who> agrees the amount, the
                      lines it leaves and the lines it lands on
-                     owner: <your finance seat> after: check-the-move
+                     owner: <your finance role> after: check-the-move
                      by: <days>                 automation: never
   amend-the-plan   - human: the new split lands as a version of the
                      media plan, and the version it replaces is kept
@@ -132,7 +132,7 @@ phases:
                      platforms, read back against what was decided
                      owner: buy-check           after: correct-pacing
                      by: <days>                 automation: <level>
-  tell-the-readers - convenes decide-and-announce: every seat working
+  tell-the-readers - convenes decide-and-announce: every agent working
                      to the old split hears the new one at once
                      owner: campaign-manager    after: check-it-took
                      automation: <level>
@@ -174,12 +174,12 @@ handoffs:
     weights as they are now set
   check-it-took -> tell-the-readers: what is running, read back against
     what was decided, with every difference named
-  tell-the-readers -> record-the-why: the new split as every seat heard
+  tell-the-readers -> record-the-why: the new split as every agent heard
     it, and the date it applies from
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the finance and leadership
-           seats>
+           agents>
   systems: the media plan and its orders (write),
            ad platforms (write, cap: <n> per move),
            analytics platforms (read), the agreed rates and terms
@@ -215,39 +215,39 @@ measures:
 
 - **The figures behind the signal do not hold.** The delivery numbers
   sit inside an attribution window that has not closed, or the
-  conversion-tracker seat reports that a conversion stopped firing. The
+  conversion-tracker agent reports that a conversion stopped firing. The
   run goes back to take-signal and no money moves, because a move made
   on numbers that turn out to be wrong is harder to undo than the
   problem it was meant to fix.
 - **The move breaks a term the buy is already committed to.** The
-  buy-check seat reports the pairing as a failure and cites the term,
+  buy-check agent reports the pairing as a failure and cites the term,
   and the run returns to name-candidates. A move that has to break a
   signed commitment goes to <who> as a decision about the agreement
   before it goes back into the process as a pairing.
 - **The person who owns the money wants a smaller move.** The run
   returns to name-candidates with the amount the person is willing to
-  move, and the pairings are named again inside it. The larger move stays on the
-  record with the reason it was refused.
+  move, and the pairings are named again inside it. The larger move
+  stays on the record with the reason it was refused.
 - **What is running does not match what was decided.** The check reads
-  the platforms back and finds a budget that did not take, a change
-  that landed on the wrong line, or a daily limit still set to the old
+  the platforms back and finds a budget that did not take, a change that
+  landed on the wrong line, or a daily limit still set to the old
   figure. Only the lines the check named go back to move-the-money, and
   the check runs again on what comes back.
 - **The receiving line has too few days left to spend the money.** A
-  line with three days to run will not absorb what the move gives it,
-  so the run records the amount that cannot go out and hands that
-  amount back to name-candidates. If no live line can absorb it, the
-  amount is reported to <who> as money the period will not spend.
+  line with three days to run will not absorb what the move gives it, so
+  the run records the amount that cannot go out and hands that amount
+  back to name-candidates. If no live line can absorb it, the amount is
+  reported to <who> as money the period will not spend.
 - **The money moves outside the process.** Somebody changes a budget
   directly in a platform, and the plan is then behind what is running.
-  The difference shows up as a pacing signal like any other, and the
-  run records the change against the plan so the reconciliation has
+  The difference shows up as a pacing signal like any other, and the run
+  records the change against the plan so the reconciliation has
   something to match the invoice line to.
 - **A second signal fires while a run is in flight.** Reallocations
   overlap, and the concurrency line says how many. Two runs working on
   the same plan read one position record, and the second run reads the
-  position as the first run left it rather than as it was when the
-  first run started.
+  position as the first run left it rather than as it was when the first
+  run started.
 - **The move lands after the period has closed.** The amended plan
   carries the date the money moved, and a move made after the close is
   reconciled into the next period. The reconciler is told which spend

@@ -10,7 +10,7 @@ in time to build the piece around it. Checks the finished piece before
 it goes live: the title, the headings, the internal links, and the
 address the page will live at.
 
-## Seats
+## Processes
 
 - `ref/mkt/annual-marketing-plan` / Gather the Outside Evidence
 - `ref/mkt/brand-positioning` / Gather the Evidence
@@ -69,7 +69,7 @@ The search requirement at a version, with every term carrying the demand
 figure behind it and the date that figure was pulled. The pre-publish
 check as a scored list, with a verdict on each item and the rule behind
 every failure. Every recommendation names the element to change and what
-it should say, so the seat that owns the page can act on it without a
+it should say, so the agent that owns the page can act on it without a
 conversation.
 
 ## Escalates
@@ -84,12 +84,12 @@ conversation.
 ## Not
 
 Does not write the copy or the headings it asks for, which is the
-copywriter seat. Does not edit the structure or the argument of a piece,
-which belongs to the editor seat. Does not find or verify the evidence
-the piece rests on, which is the researcher's work. Does not decide
-which pieces get made or when they publish - the content-manager seat
-owns that. Does not change the page itself; it names the element and
-what it should say, and the web-producer seat makes the change. Does not
-bid on search terms or build search ads, which is the media-buyer seat.
-Does not report on traffic after publication. Does not approve its own
-work.
+copywriter agent. Does not edit the structure or the argument of a
+piece, which belongs to the editor agent. Does not find or verify the
+evidence the piece rests on, which is the researcher's work. Does not
+decide which pieces get made or when they publish - the content-manager
+agent owns that. Does not change the page itself; it names the element
+and what it should say, and the web-producer agent makes the change.
+Does not bid on search terms or build search ads, which is the
+media-buyer agent. Does not report on traffic after publication. Does
+not approve its own work.

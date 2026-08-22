@@ -9,7 +9,7 @@ live, and reports how it did against what the brief asked for.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Brief | work out what the campaign must accomplish | [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Set the Parameters | platforms, audience, dates, budget | campaign-manager · leadership (person) |
@@ -83,7 +83,7 @@ phases:
                      by: <days>                automation: <level>
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the posts
-                     owner: <your legal seat>  after: produce-posts
+                     owner: <your legal role>  after: produce-posts
                      by: <days>                automation: never
   practical-side   - human: tracking links, the landing page check, the
                      ad campaigns, the posting schedule
@@ -133,8 +133,8 @@ handoffs:
   practical-side -> launch: tracking, ads and schedule, ready to fire
   wrap-up -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
-           above, and named people for the human seats>
+  roster:  <who holds each role - agents claiming the abstract agents
+           above, and named people for the human roles>
   systems: scheduler (write), ad platforms (write, cap: <n>/day),
            CMS (write), analytics (read)
   data:    brand guidelines <version>, <your claims register>,

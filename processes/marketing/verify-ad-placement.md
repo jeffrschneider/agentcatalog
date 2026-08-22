@@ -20,7 +20,7 @@ of the standing lists so that every future buy reads them.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Concern | what was seen, where it ran, and what raised it | [media-buyer](../../agents/media-buyer.md) · [buy-check](../../agents/buy-check.md) |
 | 2 | Set What the Audit Covers | which accounts, campaigns, channels and dates | buy-check · media-buyer |
@@ -116,7 +116,7 @@ phases:
                        automation: <level>
   decide-each        - convenes approval: brand and legal decide each
                        flagged placement as named signers
-                       owner: <your brand seat>  after: size-the-waste
+                       owner: <your brand role>  after: size-the-waste
                        by: <days>                automation: never
   apply-exclusions   - human: the block lists and the inventory
                        settings in every platform the ads run on
@@ -180,8 +180,8 @@ handoffs:
     date it takes effect
   report-audit -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
-           above, and named people for the brand and legal seats>
+  roster:  <who holds each role - agents claiming the abstract agents
+           above, and named people for the brand and legal agents>
   systems: ad platforms (write: exclusion lists and inventory settings;
            read: the placement and delivery record),
            the delivery verification record (read),
@@ -198,12 +198,12 @@ bindings:
 policy:
   every placement in scope gets a verdict, and every verdict cites the
     rule and the version it was scored against
-  the seat that bought the placements does not score them
+  the agent that bought the placements does not score them
   a flagged placement is accepted only when <who> accepts it in
     writing, and the reason is recorded against the placement
   an exclusion is not closed until a later reading shows the ads have
     stopped serving there
-  a placement that raises a legal question goes to <your legal seat>
+  a placement that raises a legal question goes to <your legal role>
     before it is contested or accepted
   a placement that breaks a rule goes to <who> on the day it is found,
     whatever the audit still has left to score
@@ -222,7 +222,7 @@ measures:
 
 - **The placement record does not cover the concern.** The platform
   reports at a level too coarse to name the site or the app the ad ran
-  on. The run goes back to pull-placements, the buying seat asks the
+  on. The run goes back to pull-placements, the buying agent asks the
   platform for the detail while the money is still being spent, and the
   placements nobody can see are recorded as unverified.
 - **A flagged placement turns out to be acceptable.** The signers accept
@@ -230,7 +230,7 @@ measures:
   not flag the same placement again unless the rule has changed.
 - **The exclusions do not hold.** The later reading shows ads still
   serving in a place that was excluded. The run returns to
-  apply-exclusions, the buying seat applies the exclusion again at the
+  apply-exclusions, the buying agent applies the exclusion again at the
   level the platform actually enforces, and the reading runs a second
   time.
 - **The seller will not accept the claim.** The contested line goes to
@@ -238,7 +238,7 @@ measures:
   finance decides there whether it is withheld, written off or paid.
   This process settles no money.
 - **A new version of the lists fails a buy that is already running.**
-  The standards-keeper seat tells every live buy what changed and from
+  The standards-keeper agent tells every live buy what changed and from
   when, and <who> decides whether the running placements come off
   straight away or at the end of the flight.
 - **The trigger fires while a run is in flight.** A second concern about
@@ -248,4 +248,4 @@ measures:
 - **A run is abandoned.** The verdicts recorded so far stay at their
   version, so a later audit can start from them. Any exclusion already
   applied stays applied, and the placements that were decided but not
-  yet excluded go to the buying seat as an open list.
+  yet excluded go to the buying agent as an open list.

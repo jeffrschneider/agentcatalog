@@ -11,14 +11,14 @@ person has signed for them. The gaps the programs read are filled from
 sources the organization licenses, everybody who has opted out is
 suppressed in every system that holds a copy of the audience, and the
 segments are rebuilt on the data as it now stands. Agents can hold
-almost every seat here. The two failures worth guarding against are
+almost every agent here. The two failures worth guarding against are
 removing somebody who should have stayed and sending to somebody who
 asked not to be sent to, and most of the checking below is aimed at
 those two.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Open the Cycle | say what this cycle covers and has to fix | [audience-manager](../../agents/audience-manager.md) |
 | 2 | Measure the Base as It Stands | counts, gaps, duplicates, bounces and inactivity | [analytics](../../agents/analytics.md) · audience-manager |
@@ -95,11 +95,11 @@ phases:
                       by: <days>                automation: <level>
   confirm-rules     - human: the consent rules and the retention rules
                       that apply to this base, named at the versions in
-                      force and confirmed by <your legal seat>
-                      owner: <your legal seat>  after: open-cycle
+                      force and confirmed by <your legal role>
+                      owner: <your legal role>  after: open-cycle
                       by: <days>                automation: never
   brief-cycle       - convenes briefing: the scope and the rules, heard
-                      by every seat at once
+                      by every agent at once
                       owner: audience-manager
                       after: measure-base + confirm-rules
                       automation: <level>
@@ -177,7 +177,7 @@ handoffs:
     how many may be contacted
   confirm-rules -> brief-cycle: the consent and retention rules at the
     versions in force, and the date they were confirmed
-  brief-cycle -> reconcile-consent: the request as every seat heard it,
+  brief-cycle -> reconcile-consent: the request as every agent heard it,
     and the date the cycle is promised
   reconcile-consent -> standardize: the consent record as one list,
     naming for each contact the channels that are open to them
@@ -204,7 +204,7 @@ handoffs:
     rule and the version it was scored against
   report-cycle -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the legal confirmation and the
            removal signature>
   systems: the contact database (write, cap: <n> records per change),
@@ -246,44 +246,44 @@ measures:
   after the segments are rebuilt is suppressed before the next send.
 - **Two records look like the same person and disagree.** The operator
   does not choose. The pair goes back to propose-merges with the fields
-  that disagree named on it, and it waits there for the
-  audience-manager to say which value stands. Merging on a guess is how
-  one person's opt-out gets replaced by another person's consent.
+  that disagree named on it, and it waits there for the audience-manager
+  to say which value stands. Merging on a guess is how one person's
+  opt-out gets replaced by another person's consent.
 - **A merged record carries a consent nobody gave.** The scoring pass
   reads every merged record against the consent record, and a record
   that came out of a merge holding a permission neither original held
   sends the run back to merge-records. That merge is put back from the
   copy and made again.
 - **A withdrawal does not reach every system.** The consent-manager
-  confirms that each system took it, and a system it cannot confirm
-  goes to a person by name with the contact and the system on it. The
-  contact is treated as not contactable everywhere until that write is
+  confirms that each system took it, and a system it cannot confirm goes
+  to a person by name with the contact and the system on it. The contact
+  is treated as not contactable everywhere until that write is
   confirmed.
 - **The removal list comes back unsigned or partly struck.** Nothing
   comes out. The audience-operator removes only what a person signed
   for, and the list goes back to list-removals so that the records the
   signers kept are taken off it before it is presented again.
 - **A record was removed that should have stayed.** The copy taken
-  before the change puts the record back in the database. The sends
-  that already went out without it and the reports that already counted
+  before the change puts the record back in the database. The sends that
+  already went out without it and the reports that already counted
   without it do not go back, so the report on the cycle says which
   records were restored and when.
-- **An enriched field opens a channel nobody agreed to.** A phone
-  number or a postal address filled from an outside source is not
-  permission to use it. The field is written and marked as unusable for
-  sending, and the license question goes back to confirm-rules for
-  <your legal seat> to answer before any program reads that field.
+- **An enriched field opens a channel nobody agreed to.** A phone number
+  or a postal address filled from an outside source is not permission to
+  use it. The field is written and marked as unusable for sending, and
+  the license question goes back to confirm-rules for <your legal role>
+  to answer before any program reads that field.
 - **A change would touch more records than its cap allows.** The
   operator stops and says how many records the change would reach. The
-  audience-manager either splits the cycle into smaller changes or
-  takes the cap to <who>, and the run returns to open-cycle with the
-  scope rewritten.
+  audience-manager either splits the cycle into smaller changes or takes
+  the cap to <who>, and the run returns to open-cycle with the scope
+  rewritten.
 - **The trigger fires while a cycle is in flight.** The second cycle
   waits. Two cycles writing the same records cannot both be put back,
   because their restore copies would overwrite each other.
-- **A run is abandoned.** Each change that already went in stays in
-  with its counts and its restore copy, and the audience-manager
-  decides change by change what is put back. A base left between the
-  merge and the suppression is not sent against until the suppression
-  pass has run, because the records merged so far may be carrying a
-  consent that nothing has checked yet.
+- **A run is abandoned.** Each change that already went in stays in with
+  its counts and its restore copy, and the audience-manager decides
+  change by change what is put back. A base left between the merge and
+  the suppression is not sent against until the suppression pass has
+  run, because the records merged so far may be carrying a consent that
+  nothing has checked yet.

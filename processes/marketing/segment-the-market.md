@@ -25,7 +25,7 @@ one records.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Question | work out what the segmentation must settle and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Set the Market Boundary | what counts as inside this market and what does not | decision-coordinator · [researcher](../../agents/researcher.md) · leadership (person) |
@@ -41,8 +41,8 @@ one records.
 | 12 | Settle on One Division | one way of dividing the market is chosen | decision-coordinator · leadership (person) · sales leader (person) |
 | 13 | Rank the Segments | which segments come first, and what that rests on | decision-coordinator · forecaster · leadership (person) · sales leader (person) |
 | 14 | Write down the Agreed Segments | name, size, priority, rationale, and who disagreed | decision-coordinator |
-| 15 | Issue the Segments as a Version | the set numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 16 | Hand over the Segments | each receiving seat says what it changes | decision-coordinator · audience-manager · [campaign-manager](../../agents/campaign-manager.md) · media-buyer · lead-scorer |
+| 15 | Issue the Segments as a Version | the set numbered, and the agents that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 16 | Hand over the Segments | each receiving agent says what it changes | decision-coordinator · audience-manager · [campaign-manager](../../agents/campaign-manager.md) · media-buyer · lead-scorer |
 | 17 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
 | 18 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
@@ -95,11 +95,11 @@ concurrency: one run at a time for the same market, because two agreed
              different markets overlap
 goal: one agreed set of named segments, each carrying its size, its
       place in the order, the reasoning behind it and the disagreement
-      with it, recorded at a version and in use by every seat that
+      with it, recorded at a version and in use by every agent that
       plans, targets or qualifies against it
 phases:
   take-in-question - convenes briefing: what the segmentation has to
-                     settle, who decides it, what evidence each seat
+                     settle, who decides it, what evidence each agent
                      owes, and the date the answer is due
                      owner: decision-coordinator  after: trigger
                      automation: <level>
@@ -149,7 +149,7 @@ phases:
   clear-data       - convenes approval: legal signs that the analysis
                      may rest on this data and that these traits may be
                      used to target
-                     owner: <your legal seat>     after: draw-candidates
+                     owner: <your legal role>     after: draw-candidates
                      by: <days>                   automation: never
   settle-division  - convenes bake-off: two or three divisions, one
                      chosen, with the reasons said out loud
@@ -171,7 +171,7 @@ phases:
                      version, with the version it replaces left readable
                      owner: standards-keeper      after: write-segments
                      automation: <level>
-  hand-over        - runs decide-and-announce: every seat that plans,
+  hand-over        - runs decide-and-announce: every agent that plans,
                      targets or qualifies hears the segments at once
                      and says what it changes because of them
                      owner: decision-coordinator  after: issue-version
@@ -191,8 +191,8 @@ handoffs:
   take-in-question -> set-boundary: the question, what it has to settle,
     who decides it, and the date it is owed
   set-boundary -> read-record / outside-evidence / first-hand: the
-    market as it was drawn, and what each seat owes against it. Three
-    seats read one record
+    market as it was drawn, and what each agent owes against it. Three
+    agents read one record
   read-record -> choose-traits: the accounts, what each one bought and
     renewed, and when each one left
   outside-evidence -> choose-traits: the market evidence, with a source
@@ -227,12 +227,12 @@ handoffs:
     agreed in
   issue-version -> hand-over: the segments at their number, and what
     changed from the version they replace
-  hand-over -> set-review: what each receiving seat said it would
+  hand-over -> set-review: what each receiving agent said it would
     change, and the date it said it by
   set-review -> record-learnings: the review date and the conditions
     that bring the segments back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sales side, the
            expert and legal>
   systems: the customer and revenue record (read), the CRM (read),
@@ -267,8 +267,8 @@ policy:
     recorded
   a disagreement is recorded with the segments, naming who disagreed
     and what they disagreed with
-  the run does not close until every seat that plans, targets or
-    qualifies against the segments has said what it changes, and a seat
+  the run does not close until every agent that plans, targets or
+    qualifies against the segments has said what it changes, and an agent
     that changes nothing says why
   no list of contacts or accounts is built in any platform in this run
   a recorded set of segments is never edited in place. A change goes in
@@ -281,7 +281,7 @@ measures:
          in its own record
   quality gate: no segment set is recorded without its sizes, its
                 separation test, its disagreement, and an answer from
-                every seat that acts on it
+                every agent that acts on it
 ```
 
 ## The failure edges
@@ -318,8 +318,8 @@ measures:
   the process exists to prevent, and it leaves no trace unless somebody
   goes looking for it. The process answers it in three places: the sales
   side sits in the room where the division is settled, every receiving
-  seat says at the handover what it changes, and the coverage measure is
-  read on the review date against the revenue the organization has
+  agent says at the handover what it changes, and the coverage measure
+  is read on the review date against the revenue the organization has
   actually earned.
 - **The trigger fires while a run is in flight.** Two runs against the
   same market do not overlap, because the second one would produce a
@@ -328,6 +328,6 @@ measures:
   about the market already under way joins the run in flight.
 - **A run is abandoned.** The evidence stays where it is at its
   versions, and a later run picks it up with the dates it was gathered
-  on. No segments are recorded, the seats that plan and target keep
+  on. No segments are recorded, the agents that plan and target keep
   working to the segments they already had, and the coordinator records
   that the question went unanswered and why.

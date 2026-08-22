@@ -15,7 +15,7 @@ follow-up and the report.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Audience and Date | work out who the event is for and what it must do | [event-manager](../../agents/event-manager.md) |
 | 2 | Settle the Format and Program | the kind of event, its length, and the agenda | event-manager · [event-program](../../agents/event-program.md) · leadership (person) |
@@ -107,7 +107,7 @@ phases:
                      by: <days>                automation: <level>
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the material
-                     owner: <your legal seat>  after: produce-material
+                     owner: <your legal role>  after: produce-material
                      by: <days>                automation: never
   registration     - human: the page, its address, and the tracking on
                      the form, tested with a real submission
@@ -192,7 +192,7 @@ handoffs:
     people agreed to, at their versions
   report-event -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance, legal,
            brand, rights, the experts, the customers who speak, and the
            staff in the room on the day>
@@ -235,32 +235,32 @@ measures:
 - **A sign-off comes back with changes.** The run returns to
   produce-material, and only the piece the signers named reopens.
   Registration waits, because the page carries the approved words.
-- **Registration falls behind the number the event needs.** The run
-  goes back to promote and to work-the-list while there is still time
-  to fix it. If the number is still short at <the date>, a person
-  decides whether the event runs smaller, moves, or is cancelled.
+- **Registration falls behind the number the event needs.** The run goes
+  back to promote and to work-the-list while there is still time to fix
+  it. If the number is still short at <the date>, a person decides
+  whether the event runs smaller, moves, or is cancelled.
 - **A speaker withdraws.** The run returns to line-up-speakers for a
   replacement. When no replacement can be found in time, the agenda
   changes, the run goes back to settle-format, and everyone who
   registered is told what changed.
 - **A supplier misses a deadline or fails to deliver.** The
-  event-operations seat raises it on the day it becomes clear, and a
+  event-operations agent raises it on the day it becomes clear, and a
   person decides whether to order elsewhere, withhold payment, or run
   the event without that piece.
-- **A cancellation deadline is about to pass.** The seat holding the
+- **A cancellation deadline is about to pass.** The agent holding the
   order raises it while the money can still be saved, and a person
   decides whether the event still needs what was ordered.
 - **Somebody refuses to be recorded.** The recording or the photograph
-  comes out of the capture record and out of the follow-up material,
-  and the refusal is written down against the person who gave it.
-- **The event is cancelled or postponed.** A person makes that call.
-  The orders are cancelled as far as their deadlines allow, everyone
-  who registered is told, the promotion stops, and the orders line
+  comes out of the capture record and out of the follow-up material, and
+  the refusal is written down against the person who gave it.
+- **The event is cancelled or postponed.** A person makes that call. The
+  orders are cancelled as far as their deadlines allow, everyone who
+  registered is told, the promotion stops, and the orders line
   reconciles what was already committed.
 - **The trigger fires while runs are in flight.** Events overlap
   normally, and the concurrency line says how many. The event-manager
-  seat takes one event at a time, so every run in flight needs its own
-  holder of that seat, and the runs share their reference data
+  agent takes one event at a time, so every run in flight needs its own
+  holder of that role, and the runs share their reference data
   read-only.
 - **A run is abandoned.** The material stays where it is at its
   versions, the registration page comes down and its address is

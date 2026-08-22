@@ -7,37 +7,37 @@ Something on a page that is already live has to change. A content
 manager takes the request in, a content librarian finds every live page
 that says the thing being changed, and the two of them decide whether
 the request is a small edit this process can carry or work that belongs
-to a bigger process. That decision also names which reviewers the
-change has to reach, and it names them before any writing starts. A
-copywriter writes the new wording, an editor says what still has to
-change, and a designer replaces any screenshot or diagram the change
-has made wrong. The reviewers named at the start sign, a web producer
-makes the change in the page, and the checking seats read the changed
-page before it goes anywhere. The manager says go, the producer
-publishes, and the run closes when the person who asked agrees the page
-now says what they meant.
+to a bigger process. That decision also names which reviewers the change
+has to reach, and it names them before any writing starts. A copywriter
+writes the new wording, an editor says what still has to change, and a
+designer replaces any screenshot or diagram the change has made wrong.
+The reviewers named at the start sign, a web producer makes the change
+in the page, and the checking agents read the changed page before it
+goes anywhere. The manager says go, the producer publishes, and the run
+closes when the person who asked agrees the page now says what they
+meant.
 
 This process is deliberately smaller than publish landing page. It
 creates no page and claims no address, so a request that turns out to
 need a page nobody has built stops at the routing decision and goes to
-publish landing page or to long-form content instead. There is no
-search research here, because a page that is already live was built
-against some set of terms already, and the search seat appears only to
-say whether the change broke the title, the headings, the internal
-links or the address. Nobody is briefed in a room, and the request
-travels as a written record from the manager to the seats that act on
-it. The process produces no creative set and installs no measurement,
-so a request that needs a new form or a new conversion is also bigger
-than this one. Nothing is handed to a campaign, and the media buyer
-seat does not appear. The run closes once the change is live and
-recorded, because watching a page afterwards belongs to whoever owns
-that page and to refresh published content. This process also ends
-without the debrief that the larger processes here close with, since a
-change that takes an afternoon does not fill one.
+publish landing page or to long-form content instead. There is no search
+research here, because a page that is already live was built against
+some set of terms already, and the search agent appears only to say
+whether the change broke the title, the headings, the internal links or
+the address. Nobody is briefed in a room, and the request travels as a
+written record from the manager to the agents that act on it. The
+process produces no creative set and installs no measurement, so a
+request that needs a new form or a new conversion is also bigger than
+this one. Nothing is handed to a campaign, and the media buyer agent
+does not appear. The run closes once the change is live and recorded,
+because watching a page afterwards belongs to whoever owns that page and
+to refresh published content. This process also ends without the debrief
+that the larger processes here close with, since a change that takes an
+afternoon does not fill one.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Request | what has to change, on which page, and by when | [content-manager](../../agents/content-manager.md) · requester (person) |
 | 2 | Find Every Page It Touches | the live pages that say the thing being changed | [content-librarian](../../agents/content-librarian.md) |
@@ -128,7 +128,7 @@ phases:
   get-sign-offs    - convenes approval: the reviewers named at
                      route-change sign, as named signers, against a
                      version
-                     owner: <your legal seat>  after: score-change
+                     owner: <your legal role>  after: score-change
                      by: <days>                automation: never
   make-change      - human: the approved wording and visuals go into
                      the page as a draft, with a preview link
@@ -175,7 +175,7 @@ handoffs:
   publish-change -> close-out: the live address, the version that went
     live, and who said go
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, named people for the reviewers, and the person who
            asked for the change>
   systems: the website's content system (write), the staging site
@@ -223,20 +223,20 @@ measures:
 - **Nobody has to sign.** A run where the routing decision names no
   reviewer records that no signature was required and who decided that,
   so the skip stays visible to anyone reading the page's history later.
-- **Two requests land on the same page.** No two runs hold the same
-  page at once, because two runs changing one page produce a page
-  neither of them meant to write. A second request for a page a run
-  already holds either joins that run or waits for it.
+- **Two requests land on the same page.** No two runs hold the same page
+  at once, because two runs changing one page produce a page neither of
+  them meant to write. A second request for a page a run already holds
+  either joins that run or waits for it.
 - **The live page is not what was approved.** The close-out finds the
   page serving something other than the signed version. The run returns
   to make-change and publishes again, and what went wrong is written
   against the page.
-- **The requester says the change misses the point.** The seats in this
-  run can only confirm that the live page serves what was approved, so
-  a change that is live and still wrong is a new request, taken in at
+- **The requester says the change misses the point.** The agents in this
+  run can only confirm that the live page serves what was approved, so a
+  change that is live and still wrong is a new request, taken in at
   activity 1 with what this run already learned attached to it.
 - **A run is abandoned.** A change that never went live is left at its
-  draft version with the reason written down, and the page keeps
-  serving what it served before. A change already published stays
-  published, and the record against the page says which parts of the
-  request it covered and which parts it did not.
+  draft version with the reason written down, and the page keeps serving
+  what it served before. A change already published stays published, and
+  the record against the page says which parts of the request it covered
+  and which parts it did not.

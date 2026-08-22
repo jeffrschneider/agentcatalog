@@ -10,7 +10,7 @@ submission arrives as a record someone can follow up. It then puts a
 real submission through the whole path and reports whether every step
 of it fired.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Build the Pages and the Notice
 - `ref/mkt/attribution-model` / Check the Tracking
@@ -48,12 +48,12 @@ of it fired.
 
 ## Patterns
 
-Holds a specialist slice in build-by-talent. What this seat installs
+Holds a specialist slice in build-by-talent. What this agent installs
 depends on the page it measures, so it works from the same layout the
-web-producer assembles and asks for the form fields the CRM needs
-while the page can still be changed. Sits in the briefing to hear what
-the page is supposed to make people do, and answers the roll-call
-before launch with whether the tracking actually fires.
+web-producer assembles and asks for the form fields the CRM needs while
+the page can still be changed. Sits in the briefing to hear what the
+page is supposed to make people do, and answers the roll-call before
+launch with whether the tracking actually fires.
 
 ## Grants
 
@@ -86,10 +86,10 @@ left out.
 ## Not
 
 Does not build the page and does not put it live. The web-producer
-assembles the page and the owner says go. Does not decide what the
-page is for; the process names the action that matters and this seat
-makes it countable. The analytics seat reports the numbers afterward,
-reading what this seat wired up, and the accessibility-check seat
-scores the page against the accessibility and technical standards.
-Does not set targeting or bids, and does not decide what happens to a
-lead once the CRM has it.
+assembles the page and the owner says go. Does not decide what the page
+is for; the process names the action that matters and this agent makes
+it countable. The analytics agent reports the numbers afterward, reading
+what this agent wired up, and the accessibility-check agent scores the
+page against the accessibility and technical standards. Does not set
+targeting or bids, and does not decide what happens to a lead once the
+CRM has it.

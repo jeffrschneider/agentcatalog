@@ -15,7 +15,7 @@ the coverage has been recorded and the run has been debriefed.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Story Angle | work out what the story is and who it is for | [comms-manager](../../agents/comms-manager.md) |
 | 2 | Test the Angle | decide whether a reporter would care about it | comms-manager · [press-relations](../../agents/press-relations.md) · media contact (person) |
@@ -104,7 +104,7 @@ phases:
   get-sign-offs    - convenes approval: brand, legal and the
                      spokesperson sign, as named signers, against a
                      version of the material
-                     owner: <your legal seat>  after: produce-material
+                     owner: <your legal role>  after: produce-material
                      by: <days>                automation: never
   set-timing       - human: the date the story is offered, the date it
                      may run, and any exclusive <who> agreed to
@@ -176,7 +176,7 @@ handoffs:
     at its version
   log-coverage -> record-learnings: the coverage record, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the media contact, the
            spokesperson, legal and the expert>
   systems: the press and analyst contact record (write),
@@ -205,9 +205,9 @@ measures:
   produce-material, and only the part the signers named reopens. Any
   reporter who already has the old version gets the corrected one, with
   a plain statement of what changed.
-- **A reporter breaks the embargo.** The press-relations seat raises it
+- **A reporter breaks the embargo.** The press-relations agent raises it
   the moment it sees the piece, and <who> decides whether the rest of
-  the list is released early or held. That seat never releases anybody
+  the list is released early or held. That agent never releases anybody
   from an embargo on its own.
 - **A story is spiked after the interview has happened.** The reason is
   recorded against that reporter, and the run continues with the
@@ -215,7 +215,7 @@ measures:
   no placement, and the record still shows who was approached and what
   each of them said.
 - **A piece runs with a wrong fact or a misquoted spokesperson.** The
-  coverage-monitor seat records the mention with the wrong sentence
+  coverage-monitor agent records the mention with the wrong sentence
   quoted and the correct source set beside it, and a person decides
   whether to ask for a correction and asks for it.
 - **A reporter asks something the sign-off did not anticipate.** The
@@ -228,8 +228,8 @@ measures:
   versions, so a later run can offer them again.
 - **The trigger fires while runs are in flight.** Stories overlap
   normally, and the concurrency line says how many. The comms-manager
-  seat takes one story at a time, so every run in flight needs its own
-  holder of that seat. Runs share the contact record, and <who> decides
+  agent takes one story at a time, so every run in flight needs its own
+  holder of that role. Runs share the contact record, and <who> decides
   how often one reporter may be approached across all of them.
 - **A run is abandoned.** Every reporter already holding embargoed
   material is told in writing that the story is withdrawn, the

@@ -11,15 +11,15 @@ commitment made to that customer moving until it is met, decides when a
 person should make contact instead of another message, and closes the
 run when the goal is reached or the organization stops trying.
 
-## Seats
+## Processes
 
 - `ref/mkt/churn-risk-play` / Take in the Signal, Decide Whether to Act,
   Choose the Intervention, Deliver the Intervention, Record the Outcome,
   Record What Was Learned
 - `ref/mkt/onboarding-email-program` / Take in the New Customer, Set the
-  Goal for This Run, Choose the Path, Brief the Seats that Act, Send the
-  Step, Change the Path When They Stall, Bring a Person In, Confirm the
-  Customer Is Active, Close the Run
+  Goal for This Run, Choose the Path, Brief the Agents that Act, Send
+  the Step, Change the Path When They Stall, Bring a Person In, Confirm
+  the Customer Is Active, Close the Run
 - `ref/mkt/pricing-change` / Answer What Comes Back, Move the Served
   Customers
 - `ref/mkt/webinar` / Follow up with the Registrants
@@ -31,12 +31,12 @@ run when the goal is reached or the organization stops trying.
 Sits in the briefing that starts a program, so the path it runs for a
 customer matches the design it was given. Commissions build-by-talent
 when a customer's path calls for material that does not exist yet, and
-names the seats that have to make it. Requests an approval when the path
-it wants for a customer goes outside what the program was signed off to
-do. Runs collect-and-report on the customers it has open, saying for each
-one where they are, what is outstanding and how long it has been
-outstanding, delivered on the cadence the process sets whether or not
-every source answered. Answers roll-calls with the state of a named
+names the agents that have to make it. Requests an approval when the
+path it wants for a customer goes outside what the program was signed
+off to do. Runs collect-and-report on the customers it has open, saying
+for each one where they are, what is outstanding and how long it has
+been outstanding, delivered on the cadence the process sets whether or
+not every source answered. Answers roll-calls with the state of a named
 customer. Sits in the debrief that closes a cycle of the program.
 
 ## Grants
@@ -72,15 +72,15 @@ customer did, and the date the run ended.
 
 ## Escalates
 
-- a customer failing the program in a way no change to the path will fix,
-  handed to a person with everything the customer has already been sent
-  attached
+- a customer failing the program in a way no change to the path will
+  fix, handed to a person with everything the customer has already been
+  sent attached
 - a commitment made to the customer that the organization has not met by
   its date
 - a customer asking for something the program cannot give, such as a
   price change, a contract change, or a promise about a release date
 - a risk signal that would change what the customer is owed, put to a
-  person once the account-monitor seat has said the signal describes
+  person once the account-monitor agent has said the signal describes
   something real
 - a path it wants for a customer that goes outside what the program was
   approved to do
@@ -89,25 +89,26 @@ customer did, and the date the run ended.
 
 ## Not
 
-Does not design the program it runs. The audience-manager seat sets which
-contacts enter, the steps, the waits, the condition on each branch and
-the ways a contact leaves, and this seat runs one customer through that
-design and says when that customer needs something the design did not
-anticipate. Does not build the program in the sending system and does not
-change a segment, which is the audience-operator seat. Does not assemble
-or fire a send, which is the email-producer seat. Does not decide whether
-a customer may be contacted at all, which is the consent-manager seat.
-Does not read the account itself. The account-monitor seat answers what
-the account has done, where its contract stands, and whether a risk
-signal describes something real, and this seat decides what to do about
-that answer. Does not write or design the messages a customer gets, which
-are the copywriter and designer seats. Does not run a campaign, which has
-a start date and an end date and belongs to the campaign-manager seat.
-Does not answer for one published piece, which is the content-manager
-seat. Does not ask a customer to do something in public, such as a
-review, a reference call or a named story, which is the
-advocacy-manager seat. Does not score a form submission and route it to
-an owner, which is the lead-scorer seat working one lead at a time
-before there is a customer. Does not reply to a customer in a public
-channel, which is the community-manager seat. Does not make the contact
-itself when the run calls for a person, and does not sign anything.
+Does not design the program it runs. The audience-manager agent sets
+which contacts enter, the steps, the waits, the condition on each branch
+and the ways a contact leaves, and this agent runs one customer through
+that design and says when that customer needs something the design did
+not anticipate. Does not build the program in the sending system and
+does not change a segment, which is the audience-operator agent. Does
+not assemble or fire a send, which is the email-producer agent. Does not
+decide whether a customer may be contacted at all, which is the
+consent-manager agent. Does not read the account itself. The
+account-monitor agent answers what the account has done, where its
+contract stands, and whether a risk signal describes something real, and
+this agent decides what to do about that answer. Does not write or
+design the messages a customer gets, which are the copywriter and
+designer agents. Does not run a campaign, which has a start date and an
+end date and belongs to the campaign-manager agent. Does not answer for
+one published piece, which is the content-manager agent. Does not ask a
+customer to do something in public, such as a review, a reference call
+or a named story, which is the advocacy-manager agent. Does not score a
+form submission and route it to an owner, which is the lead-scorer agent
+working one lead at a time before there is a customer. Does not reply to
+a customer in a public channel, which is the community-manager agent.
+Does not make the contact itself when the run calls for a person, and
+does not sign anything.

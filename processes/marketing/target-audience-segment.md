@@ -9,16 +9,16 @@ actually holds, and writes the rule that says who is in the segment and
 who is held out of it. The audience operator runs that rule against the
 database, the consent manager takes out every record the consent record
 does not cover for this use, and a person signs before any contact data
-leaves the organization. The audience handover seat delivers the list to
-each platform, collects a receipt, and reports how much of the list each
-platform could match. Which segments are worth going after was settled
-before this run started, so nothing here argues about that. The run
-closes when the list has reached every destination and the definition
-has been written down where the next campaign can find it.
+leaves the organization. The audience handover agent delivers the list
+to each platform, collects a receipt, and reports how much of the list
+each platform could match. Which segments are worth going after was
+settled before this run started, so nothing here argues about that. The
+run closes when the list has reached every destination and the
+definition has been written down where the next campaign can find it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Targeting Need | what the segment is for and when it is needed | [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Confirm the Rules in Force | the consent, retention and sharing rules, at their versions | [consent-manager](../../agents/consent-manager.md) · legal reviewer (person) |
@@ -89,8 +89,8 @@ phases:
   confirm-rules     - human: the consent, retention and data sharing
                       rules that cover this segment and the platforms it
                       will be sent to, named at the versions in force
-                      and confirmed by <your legal seat>
-                      owner: <your legal seat>   after: take-in-need
+                      and confirmed by <your legal role>
+                      owner: <your legal role>   after: take-in-need
                       by: <days>                 automation: never
   check-data        - runs collect-and-report: which traits the database
                       actually holds, and how many records carry each
@@ -113,7 +113,7 @@ phases:
                       owner: analytics           after: name-exclusions
                       by: <days>                 automation: <level>
   brief-build       - convenes briefing: the rule, the exclusions, the
-                      size and the destinations, heard by every seat at
+                      size and the destinations, heard by every agent at
                       once
                       owner: audience-manager    after: size-segment
                       automation: <level>
@@ -139,7 +139,7 @@ phases:
   approve-release   - convenes approval: a named signer approves contact
                       data leaving the organization, against a version
                       of the list and the fields going with it
-                      owner: <your legal seat>   after: score-list
+                      owner: <your legal role>   after: score-list
                       by: <days>                 automation: never
   hand-to-platforms - human: the list cut to the approved fields,
                       formatted the way each destination requires, sent,
@@ -183,7 +183,7 @@ handoffs:
     because a count means nothing with only one of them applied
   size-segment -> brief-build: the count, and the date it was taken
   brief-build -> build-list: the rule, the exclusions and the
-    destinations, as every seat heard them, and what each destination
+    destinations, as every agent heard them, and what each destination
     requires before it will take a list
   build-list -> apply-consent: the built list at a version, with the
     count it started from
@@ -200,7 +200,7 @@ handoffs:
   set-refresh -> record-segment: how often the list is rebuilt, and what
     makes it be rebuilt sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and a named person for legal and for the signer who
            approves the release>
   systems: the contact database (write, cap: <n> records per change),
@@ -254,13 +254,13 @@ measures:
   a destination. The signer sees the changed version before anything
   leaves the organization.
 - **A destination accepts only part of the list.** The audience-handover
-  seat records what was accepted and what was rejected with the reason
+  agent records what was accepted and what was rejected with the reason
   the destination gave, and the run goes back to build-list so that the
   records that failed are corrected or dropped. A partly delivered list
   is recorded as partly delivered.
 - **A platform will not serve a list that small.** Every platform sets a
   floor below which it will not run against an uploaded audience. The
-  audience-handover seat says what each floor is at the briefing, and
+  audience-handover agent says what each floor is at the briefing, and
   says so again at confirm-match when a cleared list lands under one.
   The run returns to write-rule.
 - **An opt-out arrives after the list has been delivered.** The
@@ -268,10 +268,10 @@ measures:
   waits for each one to confirm. A destination that cannot be confirmed
   goes to a person by name with the contact and the destination on it.
 - **The match figure falls between deliveries.** The audience-handover
-  seat reports the drop against the earlier figure. The audience-manager
-  decides whether the segment is rebuilt early, and the media-buyer
-  hears it before the next buy is planned on a figure that no longer
-  holds.
+  agent reports the drop against the earlier figure. The
+  audience-manager decides whether the segment is rebuilt early, and the
+  media-buyer hears it before the next buy is planned on a figure that
+  no longer holds.
 - **The trigger fires while runs are in flight.** Segments overlap
   normally, and the concurrency line says how many. Two runs writing
   segments over the same records wait for each other, because a rebuild
@@ -279,6 +279,6 @@ measures:
 - **A run is abandoned.** A list built and not delivered stays in the
   database at its version and is not sent against, because nothing has
   scored it. A list already delivered to a destination stays where it
-  was sent, so the audience-handover seat asks each destination to
+  was sent, so the audience-handover agent asks each destination to
   delete it and records the date the deletion was asked for and the date
   it was confirmed.

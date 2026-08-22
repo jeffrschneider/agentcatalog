@@ -34,7 +34,7 @@ organization's decision.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Question | what the question is and what an answer would change | [campaign-manager](../../agents/campaign-manager.md) · [analytics](../../agents/analytics.md) |
 | 2 | Read the Current Performance | what the running creative delivers now, by placement | analytics · [media-buyer](../../agents/media-buyer.md) |
@@ -147,7 +147,7 @@ phases:
   get-sign-offs     - convenes approval: brand, disclosure and legal
                       sign, as named signers, against a version of every
                       variant in the set
-                      owner: <your legal seat>
+                      owner: <your legal role>
                       after: check-variant-set
                       by: <days>                 automation: never
   wire-measurement  - human: one conversion, defined once, and a tag on
@@ -235,9 +235,9 @@ handoffs:
   call-the-winner -> record-learnings: the call, its date, and the four
     parts of the bar with what each one stood at when the call was made
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the budget, brand and legal
-           seats>
+           agents>
   systems: ad platforms (write, cap: <n>/day),
            analytics (write: the conversion definition and the variant
            tags; read: reporting),
@@ -251,7 +251,7 @@ bindings:
            the test design and the evidence bar at their versions
 policy:
   the evidence bar is written down before any money is spent, and no
-    seat changes it once the test is live
+    agent changes it once the test is live
   a variant that differs from the running creative in more than the
     element under test never launches
   sign-off is a human gate and is never delegated to an agent

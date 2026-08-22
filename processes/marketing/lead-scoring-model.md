@@ -5,10 +5,10 @@
 **value stream:** [Inquiry-to-Owner](../../streams/marketing/inquiry-to-owner.md)
 The scoring model behind inbound lead routing stops matching what leads
 actually do, or a new fact about a lead becomes available that the model
-does not read. This process is how that model changes. An analytics seat
-reads how the scores of the last period compare with what those leads
-went on to do, a forecaster fits two or three candidate models on the
-organization's own record, and each candidate is run over leads that
+does not read. This process is how that model changes. An analytics
+agent reads how the scores of the last period compare with what those
+leads went on to do, a forecaster fits two or three candidate models on
+the organization's own record, and each candidate is run over leads that
 have already closed and then run on live leads beside the model in
 production. The people who work the leads sit in the room where one
 candidate is chosen. The run ends with the chosen model issued as a
@@ -18,7 +18,7 @@ current version the whole time this process is open.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Drift or the Signal | work out what the model must fix and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [analytics](../../agents/analytics.md) |
 | 2 | Read How the Model Has Scored | scores set against what those leads went on to do | analytics · [forecaster](../../agents/forecaster.md) |
@@ -32,8 +32,8 @@ current version the whole time this process is open.
 | 10 | Check What Each Does to Routing | how the tiers and the territory queues would shift | lead-scorer · forecaster · sales operations (person) |
 | 11 | Choose the Model | one candidate chosen, with the reasons said out loud | decision-coordinator · sales leader (person) · leadership (person) |
 | 12 | Run It Beside the Live Model | both score live leads, only the current one routes | lead-scorer · forecaster · analytics |
-| 13 | Issue the Model as a Version | the model numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 14 | Hand over the Model | each receiving seat says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
+| 13 | Issue the Model as a Version | the model numbered, and the agents that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 14 | Hand over the Model | each receiving agent says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
 | 15 | Put It into Production | the new version starts scoring every lead | lead-scorer |
 | 16 | Watch the First Weeks | the new scores set against what the leads did | analytics · lead-scorer |
 | 17 | Set the Review Conditions | the review date, and what brings the model back | decision-coordinator · sales leader (person) |
@@ -91,10 +91,10 @@ concurrency: one run at a time for one scoring model, because two runs
              on the current version throughout
 goal: one recalibrated model in production as a numbered version, with
       the back-test, the routing effect and the shadow run behind it,
-      and every seat that reads a score told what changed
+      and every agent that reads a score told what changed
 phases:
   take-in-trigger - convenes briefing: what the model has to fix, who
-                    decides it, what evidence each seat owes, and the
+                    decides it, what evidence each agent owes, and the
                     date the answer is due
                     owner: decision-coordinator  after: trigger
                     automation: <level>
@@ -118,7 +118,7 @@ phases:
   clear-signals   - convenes approval: legal signs that each new
                     source may be used to score a person, and the
                     consent record says which contacts it covers
-                    owner: <your legal seat>  after: gather-signals
+                    owner: <your legal role>  after: gather-signals
                     by: <days>                automation: never
   test-coverage   - system: how often each signal is already filled
                     in, what the rest cost to fill, and which ones
@@ -154,7 +154,7 @@ phases:
                     version, with the version it replaces left readable
                     owner: standards-keeper   after: shadow-run
                     automation: <level>
-  hand-over       - runs decide-and-announce: every seat that reads a
+  hand-over       - runs decide-and-announce: every agent that reads a
                     score hears the new version at once and says what
                     it changes because of it
                     owner: decision-coordinator  after: issue-version
@@ -183,8 +183,8 @@ run-scoped:
                 from: cut-over   until: run close
 handoffs:
   take-in-trigger -> read-scoring / read-exceptions / first-hand: what
-    the model has to fix, what each seat owes, and the date it is
-    owed. Three seats read one record
+    the model has to fix, what each agent owes, and the date it is
+    owed. Three agents read one record
   read-scoring -> gather-signals: the scores of the period set beside
     what each lead went on to do, each score naming the model version
     it was computed under
@@ -218,7 +218,7 @@ handoffs:
     different owners
   issue-version -> hand-over: the model at its number, and what
     changed from the version it replaces
-  hand-over -> cut-over: what each receiving seat said it would
+  hand-over -> cut-over: what each receiving agent said it would
     change, and the date it said it by
   cut-over -> watch-new-model: the date the new version started
     scoring, and the last lead the version it replaced scored
@@ -227,7 +227,7 @@ handoffs:
   set-review -> record-learnings: the review date, and the drift that
     brings the model back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales side, leadership and
            legal>
   systems: the CRM (read), enrichment sources (read),
@@ -257,8 +257,8 @@ policy:
     the choice is never delegated to an agent
   the people who work the leads sit in the room where the model is
     chosen, and a model chosen without them is not issued
-  the run does not close until every seat that reads a score has said
-    what it changes, and a seat that changes nothing says why
+  the run does not close until every agent that reads a score has said
+    what it changes, and an agent that changes nothing says why
 measures:
   cycle time: <target> from the trigger to the new version scoring
   accuracy: <share> of the leads scored in the top tier that went on
@@ -272,7 +272,7 @@ measures:
 ## The failure edges
 
 - **No candidate beats the model already in use.** The run returns to
-  fit-candidates with the back-test results attached, and the seats try
+  fit-candidates with the back-test results attached, and the agents try
   a different set of signals. If the second attempt also fails, the run
   closes with the model in production unchanged, and the reason is
   recorded against the trigger that opened it.
@@ -300,8 +300,8 @@ measures:
 - **The trigger fires while a run is in flight.** Two runs against the
   same model do not overlap, because the second one would put a second
   model into production. A new signal raised while a run is open joins
-  the run in flight if the evidence has not been gathered yet, and
-  waits for the next run if it has.
+  the run in flight if the evidence has not been gathered yet, and waits
+  for the next run if it has.
 - **A run is abandoned.** The candidates stay in the model store at
   their versions, carrying the data they were fit on, and a later run
   picks them up with the dates behind them. Nothing is issued, lead

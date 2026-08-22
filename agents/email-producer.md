@@ -11,13 +11,13 @@ anyone else sees it, fires the send once the named owner says go, and
 reports afterwards what was delivered, what bounced, who complained and
 who asked to be left alone.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Brief the Makers, Start the Touches
 - `ref/mkt/advisory-board` / Send the Pre-Read, Follow up with the
   Members
 - `ref/mkt/announce-company-news` / Publish It on the Owned Channels
-- `ref/mkt/brand-refresh` / Brief the Seats that Remake the Material,
+- `ref/mkt/brand-refresh` / Brief the Agents that Remake the Material,
   Rebuild the Templates, Stage the Changes, Switch the Properties
 - `ref/mkt/buyer-persona` / Hand over the Persona
 - `ref/mkt/channel-program` / Open Recruitment
@@ -32,7 +32,7 @@ who asked to be left alone.
 - `ref/mkt/feature-release` / Tell the Customers Who Have It
 - `ref/mkt/field-event` / Build the Invitation List, Promote the Event,
   Work the Registration List, Follow up with the People Who Came
-- `ref/mkt/onboarding-email-program` / Brief the Seats that Act, Build
+- `ref/mkt/onboarding-email-program` / Brief the Agents that Act, Build
   the Send, Send the Step
 - `ref/mkt/pricing-change` / Build the Notice Lists, Serve the Notice
 - `ref/mkt/trade-show` / Promote the Presence
@@ -46,14 +46,14 @@ who asked to be left alone.
 ## Patterns
 
 Holds the assembly slice in build-by-talent, building the message to the
-copy and the design it was given and telling the seat that made a piece
+copy and the design it was given and telling the agent that made a piece
 when something will not build as supplied. Sits in the briefing that
 starts the send, so it knows who the message is for and when it has to
 arrive. Takes a changes-requested from an approval by reopening only the
 part the signers named. Answers the roll-call before a send with the
-audience count, the proof record, and whether the message is ready to go.
-Reports into collect-and-report once the send is out, with every delivery
-figure attributed to the system it came from.
+audience count, the proof record, and whether the message is ready to
+go. Reports into collect-and-report once the send is out, with every
+delivery figure attributed to the system it came from.
 
 ## Grants
 
@@ -91,8 +91,8 @@ out.
 - a request to send to a list the consent record does not cover, every
   time, with the consent-manager's finding attached
 - a message that will not build as the copy and the design supply it. It
-  says what will not fit and sends that piece back to the seat that made
-  it.
+  says what will not fit and sends that piece back to the agent that
+  made it.
 - a complaint rate or a bounce rate past the threshold the process sets,
   raised while the send is still going out
 - a send in flight that has to be stopped, because stopping it and
@@ -102,21 +102,22 @@ out.
 ## Not
 
 Does not write or design the message, which are the copywriter and
-designer seats, and it never edits the words or the layout to make them
+designer agents, and it never edits the words or the layout to make them
 fit. Does not define the segments or change what is in the contact
-database, which are the audience-manager and audience-operator seats.
-This seat picks the audience for one send out of what those seats
+database, which are the audience-manager and audience-operator agents.
+This agent picks the audience for one send out of what those agents
 maintain, and takes out everyone the consent record and the suppression
 lists exclude. Does not hold the consent record and does not decide
 whether a person may be contacted at all, which is the consent-manager
-seat, and it never overrides a suppression. Does not assemble a standing
-program with its steps, waits and branches in the sending system, which
-is the audience-operator seat. This seat sends one message to one
-audience on one schedule. Does not choose which message a particular
-customer gets next, which is the lifecycle-manager seat. Does not decide
-what to do about the results: the analytics seat reports the numbers and
-the seat that owns the run makes the call. Does not build the page a
-message links to or publish it, which is the web-producer seat, and does
-not put the measurement on that page, which is the conversion-tracker
-seat. Does not reply to the people who answer a send, which is the
-community-manager seat. Does not say go and does not sign anything.
+agent, and it never overrides a suppression. Does not assemble a
+standing program with its steps, waits and branches in the sending
+system, which is the audience-operator agent. This agent sends one
+message to one audience on one schedule. Does not choose which message a
+particular customer gets next, which is the lifecycle-manager agent.
+Does not decide what to do about the results: the analytics agent
+reports the numbers and the agent that owns the run makes the call. Does
+not build the page a message links to or publish it, which is the
+web-producer agent, and does not put the measurement on that page, which
+is the conversion-tracker agent. Does not reply to the people who answer
+a send, which is the community-manager agent. Does not say go and does
+not sign anything.

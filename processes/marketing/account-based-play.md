@@ -14,7 +14,7 @@ stays open until engagement has been reported account by account.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Account List | what the play must achieve, and by when | [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Read the Accounts | standing, history, and what each account cares about | [account-monitor](../../agents/account-monitor.md) · [researcher](../../agents/researcher.md) |
@@ -22,7 +22,7 @@ stays open until engagement has been reported account by account.
 | 4 | Agree the Split with Sales | who approaches which account, and in what order | campaign-manager · account owner (person) |
 | 5 | Build the Contact Set | the people at each account, pulled from the database | [audience-manager](../../agents/audience-manager.md) · [audience-operator](../../agents/audience-operator.md) |
 | 6 | Check Who May Be Contacted | the consent record applied per account and channel | [consent-manager](../../agents/consent-manager.md) |
-| 7 | Brief the Makers | every seat hears the same play at once | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [email-producer](../../agents/email-producer.md) · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · media-planner |
+| 7 | Brief the Makers | every agent hears the same play at once | campaign-manager · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [email-producer](../../agents/email-producer.md) · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · media-planner |
 | 8 | Produce the Material | the ads, the emails and the copy for the pages | copywriter · designer |
 | 9 | Make the Sales Material | what an account owner sends, says and answers | sales-enablement-manager · copywriter · account owner (person) |
 | 10 | Get Sign-Offs | brand and legal approve the material | [brand-check](../../agents/brand-check.md) · legal reviewer (person) |
@@ -119,7 +119,7 @@ phases:
                      owner: consent-manager    after: build-contacts
                      automation: <level>
   brief-makers     - convenes briefing: the tiers, the accounts, the
-                     split and the dates, heard by every seat at once
+                     split and the dates, heard by every agent at once
                      owner: campaign-manager
                      after: agree-split + check-consent
                      automation: <level>
@@ -134,7 +134,7 @@ phases:
                      by: <days>                automation: <level>
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the material
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: produce-material + sales-material
                      by: <days>                automation: never
   set-up-buy       - human: the account lists go to the ad platforms
@@ -200,7 +200,7 @@ handoffs:
     owners both hold
   check-consent -> brief-makers: the contacts who may be contacted,
     channel by channel, and the count the consent record took out
-  brief-makers -> produce-material: the play as every seat heard it,
+  brief-makers -> produce-material: the play as every agent heard it,
     and the date the first touch is promised
   brief-makers -> sales-material: the questions an account owner will
     be asked once the marketing touches land
@@ -227,7 +227,7 @@ handoffs:
     the ones that were held back with the reason for each
   report-play -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owners, the legal
            signer and the leader who confirms the money>
   systems: the CRM (write), the contact database (read),
@@ -265,7 +265,7 @@ measures:
 ## The failure edges
 
 - **An account turns out not to be approachable.** The account-monitor
-  seat finds a dispute, an open support crisis or an account in
+  agent finds a dispute, an open support crisis or an account in
   collections, and the account comes off the list. The tiers and the
   money are set again without it, and the account owner is told why
   their account was dropped.
@@ -273,31 +273,31 @@ measures:
   material or to the sales material, and only the piece the signers
   named reopens. Material already loaded into an ad platform is paused
   until the changed version is signed.
-- **The consent record does not cover the contacts the play needs.**
-  The consent-manager seat reports the count it removed and the run
-  goes back to the contact set. An account left with nobody who may be
+- **The consent record does not cover the contacts the play needs.** The
+  consent-manager agent reports the count it removed and the run goes
+  back to the contact set. An account left with nobody who may be
   contacted is worked by its owner alone, and the marketing touches for
   that account are cancelled rather than sent to whoever is left.
 - **The buy fails its check.** The findings go back to the buy with the
-  plan line or the rule attached to each one, the media-buyer seat
+  plan line or the rule attached to each one, the media-buyer agent
   fixes what the findings name, and the same check runs again on the
   fixed buy before anything is switched on.
 - **A transfer to an ad platform is never confirmed.** The
-  audience-handover seat records the transfer as unconfirmed, and the
+  audience-handover agent records the transfer as unconfirmed, and the
   campaign that was to run against that list stays off until a receipt
   arrives or the buy is rebuilt against a list that did land.
 - **The account owner reaches the account first.** The owner tells
-  keep-in-step what they sent and when, and the marketing touch due
-  that week is held, moved or dropped. Sending the touch anyway and
-  counting it is not one of the choices.
+  keep-in-step what they sent and when, and the marketing touch due that
+  week is held, moved or dropped. Sending the touch anyway and counting
+  it is not one of the choices.
 - **An account engages and the owner sends it back.** The lead-scorer
-  seat records the return with the reason the owner gave, and the
+  agent records the return with the reason the owner gave, and the
   account goes back into the touch schedule at the tier that reason
   supports.
 - **The trigger fires while runs are in flight.** Plays overlap
   normally, and the concurrency line says how many. One account belongs
-  to one play at a time, so an account already being touched is held
-  out of the new list until the play holding it closes.
+  to one play at a time, so an account already being touched is held out
+  of the new list until the play holding it closes.
 - **A run is abandoned.** The ads are turned off, the scheduled emails
   are pulled, the notice inside the product comes down, and every
   account owner is told which of their accounts stopped being touched.

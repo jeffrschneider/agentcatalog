@@ -3,7 +3,7 @@
 `ref/mkt/brief-industry-analyst v1`
 
 **value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
-A press and analyst relations seat takes in what a research firm asked
+A press and analyst relations agent takes in what a research firm asked
 for, works out what the organization wants that analyst to understand,
 has the evidence gathered and the material built and signed, puts the
 right people in front of the analyst, answers what the call left open,
@@ -12,7 +12,7 @@ and reports what the analyst says afterwards.
 Two things start a run. A research firm opens an evaluation cycle on its
 own calendar, or an analyst sends in a question of their own. A cycle
 usually arrives with a questionnaire and a filing deadline, and the
-submissions-manager seat answers that questionnaire in the firm's own
+submissions-manager agent answers that questionnaire in the firm's own
 format and files it once the signers who approved the briefing material
 have signed. An inquiry that arrives on its own skips the filing and
 goes straight to the call.
@@ -21,23 +21,23 @@ The run stays open after the call. A research firm publishes on its own
 schedule, and the briefing has only landed once the firm has said
 something in public and somebody has read it against what the briefing
 set out to do. Activities 14 through 16 often run weeks after the call,
-and the seats that hold them keep the run open until they have something
-to report.
+and the agents that hold them keep the run open until they have
+something to report.
 
 The briefing itself is held by people. A research firm wants to hear
 from the executive who owns the strategy and the product person who
-answers the detail questions, so the seats in this process prepare that
+answers the detail questions, so the agents in this process prepare that
 conversation, sit in it, record what was said, and answer for everything
 around it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Request | what the analyst asked for, and by when | [press-relations](../../agents/press-relations.md) · [submissions-manager](../../agents/submissions-manager.md) |
 | 2 | Read Where the Analyst Stands | what the firm has already published about us | [coverage-monitor](../../agents/coverage-monitor.md) · [researcher](../../agents/researcher.md) · press-relations |
 | 3 | Set What the Briefing Must Do | the result worth having, and who will speak | press-relations · leadership (person) |
-| 4 | Brief the Makers | every seat hears the same request at once | press-relations · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · researcher |
+| 4 | Brief the Makers | every agent hears the same request at once | press-relations · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · researcher |
 | 5 | Gather the Proof | customers, numbers and product facts, each sourced | researcher · subject matter expert (person) |
 | 6 | Settle What the Briefing Will Say | what the analyst has to come away believing | press-relations · copywriter · leadership (person) |
 | 7 | Build the Briefing Material | the deck, the written answers and the demo | copywriter · designer |
@@ -111,7 +111,7 @@ phases:
                      owner: press-relations    after: read-position
                      automation: <level>
   brief-makers     - convenes briefing: the writing, design and
-                     evidence seats hear the same request at once
+                     evidence agents hear the same request at once
                      owner: press-relations    after: set-the-goal
                      automation: <level>
   gather-proof     - runs build-by-talent: customers, numbers and
@@ -129,7 +129,7 @@ phases:
   get-sign-offs    - convenes approval: the claims and the assets are
                      scored, then named signers sign legal and product
                      accuracy against a version
-                     owner: <your legal seat>  after: build-material
+                     owner: <your legal role>  after: build-material
                      by: <days>                automation: never
   file-submission  - human: the firm's questionnaire answered in the
                      firm's own format and filed before its deadline
@@ -190,8 +190,8 @@ handoffs:
     against
   set-the-goal -> line-up-refs: the same goal, and how many customers
     the cycle asks for. Both branches read one record
-  brief-makers -> gather-proof: the request as every seat heard it,
-    and which seat owes which piece
+  brief-makers -> gather-proof: the request as every agent heard it,
+    and which agent owes which piece
   gather-proof -> settle-message: every fact with its source under it,
     and every fact nobody could source, named as unsourced
   settle-message -> build-material: what the analyst has to come away
@@ -205,7 +205,7 @@ handoffs:
   line-up-refs -> rehearse: the customers who agreed to speak, what
     each of them agreed to, and until when
   rehearse -> hold-briefing: the questions the rehearsal could not
-    answer, each one with the seat that owes the answer
+    answer, each one with the agent that owes the answer
   hold-briefing -> send-follow-ups: what the analyst asked that nobody
     answered on the call, each with the date it was promised
   hold-briefing -> watch-coverage: what the analyst said they would do
@@ -216,7 +216,7 @@ handoffs:
     asked for, and what the firm said about them
   report-landing -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, for product accuracy,
            and for whoever speaks on the call>
   systems: the press and analyst contact record (write),
@@ -235,7 +235,7 @@ policy:
   material changed after sign-off goes back through sign-offs
   the briefing call is held by a person, and everything said on it
     comes out of the signed material
-  a question the seats cannot answer from approved material goes to
+  a question the agents cannot answer from approved material goes to
     <who>, and it is never answered from memory
   a customer is asked to speak only through the advocacy record, and
     only for a use that customer already agreed to
@@ -260,25 +260,25 @@ measures:
   back to gather-proof and the answer comes back with a source under it.
   A question still open on the day of the call is said out loud to the
   analyst as an open question and becomes a follow-up with a date on it.
-- **The filing deadline cannot be met.** The submissions-manager seat
+- **The filing deadline cannot be met.** The submissions-manager agent
   says so on the day the arithmetic stops working, while there is still
   time to decide, and <who> decides whether the organization asks the
   firm for more time or withdraws from the cycle. Withdrawing carries
-  consequences a seat does not accept on its own.
+  consequences an agent does not accept on its own.
 - **The analyst asks about something the organization has not
-  announced.** The press-relations seat answers nothing and takes the
+  announced.** The press-relations agent answers nothing and takes the
   question to <who>, who decides what may be said and when. The question
   and the decision both go in the contact log.
 - **A customer who agreed to speak drops out.** The advocacy record
   names who else agreed to that kind of ask, and the advocacy-manager
-  seat proposes a substitute for the same date. A cycle that requires a
+  agent proposes a substitute for the same date. A cycle that requires a
   named number of references and cannot reach it goes to <who> while
   there is still time to do something about it.
-- **The published note carries an error.** The press-relations seat asks
-  for a correction with the wrong sentence quoted and the correct source
-  set beside it. The firm may refuse, and <who> then decides what the
-  organization does about it. The refusal is recorded against the firm
-  so the next cycle starts from it.
+- **The published note carries an error.** The press-relations agent
+  asks for a correction with the wrong sentence quoted and the correct
+  source set beside it. The firm may refuse, and <who> then decides what
+  the organization does about it. The refusal is recorded against the
+  firm so the next cycle starts from it.
 - **The firm never publishes.** The watch line runs for <how long> after
   the call and then stops. The run reports what the analyst said on the
   call and in the follow-ups, and says plainly that nothing was
@@ -286,9 +286,9 @@ measures:
   worth knowing about before the next cycle opens.
 - **The trigger fires while runs are in flight.** Several firms run
   cycles in the same quarter and the runs overlap normally, and the
-  concurrency line says how many. The press-relations seat answers for
+  concurrency line says how many. The press-relations agent answers for
   the relationship with every firm at once, so a department briefing
-  several firms needs enough holders of that seat, and the runs share
+  several firms needs enough holders of that agent, and the runs share
   their reference data read-only.
 - **A run is abandoned.** The material stays at its versions so a later
   cycle can pick it up, the contact log keeps every exchange already

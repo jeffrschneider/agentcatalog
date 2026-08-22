@@ -18,7 +18,7 @@ that, and that is the difference between this process and a campaign.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Segment and the Goal | what the program must do and who it is for | [audience-manager](../../agents/audience-manager.md) |
 | 2 | Define Who Enters | the rule that admits a contact to the program | audience-manager · [analytics](../../agents/analytics.md) |
@@ -124,7 +124,7 @@ phases:
                      owner: audience-manager   after: map-the-steps
                      automation: <level>
   brief-makers     - convenes briefing: the program design heard by
-                     every seat at once, while it can still change
+                     every agent at once, while it can still change
                      owner: audience-manager   after: set-exits
                      automation: <level>
   produce-messages - runs build-by-talent: subject lines, body copy,
@@ -143,7 +143,7 @@ phases:
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the messages and a
                      version of the program design
-                     owner: <your legal seat>  after: score-messages
+                     owner: <your legal role>  after: score-messages
                      by: <days>                automation: never
   build-program    - human: the steps, the waits, the conditions and
                      the exits assembled in the sending system with
@@ -190,7 +190,7 @@ handoffs:
   set-exits -> brief-makers: the whole program design at a version,
     naming the entry rule, every step, every wait, every branch
     condition and every exit
-  brief-makers -> produce-messages: the request as every seat heard
+  brief-makers -> produce-messages: the request as every agent heard
     it, and what each message has to make a contact do
   brief-makers -> wire-measurement: the same design, and the action
     that counts at each step. Both branches read one record
@@ -213,7 +213,7 @@ handoffs:
   watch -> tune: the steps and the branch conditions the numbers argue
     against, each one with the number behind it
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, brand and the owner who
            says go>
   systems: the sending system (write),
@@ -283,9 +283,9 @@ measures:
   because the results before and after it are not comparable.
 - **The trigger fires while runs are in flight.** Programs overlap
   normally, and the concurrency line says how many are being built and
-  how many are sending. The audience-manager seat answers for every
+  how many are sending. The audience-manager agent answers for every
   program that is switched on, so a department running several needs
-  enough holders of that seat to keep answering for all of them.
+  enough holders of that agent to keep answering for all of them.
 - **The program is switched off.** The contacts partway through it stop
   where they are, and the audience-manager decides for each one whether
   they leave the program, wait for a replacement, or go to another

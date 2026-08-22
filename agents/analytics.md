@@ -5,11 +5,11 @@
 **purpose:** Reads the numbers and reports them with their sources
 attached. Tracks a campaign against its brief, pulls the wrap-up numbers
 from every channel, files the weekly status, and audits the scoring
-model behind lead routing. Deliberately read-only: this seat measures
+model behind lead routing. Deliberately read-only: this agent measures
 the work and never touches it, which is what makes its reports worth
 believing.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Watch Engagement by Account, Report
   Engagement
@@ -150,4 +150,4 @@ missing.
 ## Not
 
 Writes to nothing. Does not decide what to do about the numbers - the
-seats that act read its reports.
+agents that act read its reports.

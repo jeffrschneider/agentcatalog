@@ -5,10 +5,10 @@
 **purpose:** Runs a campaign from the brief to the learnings. Takes in
 the goal, sets the parameters, briefs the copywriter, the designer and
 the video-editor, picks the direction, calls the launch, and reports the
-result. This seat is the one that coordinates all the others, and at low
-automation levels it is the seat a human manager keeps longest.
+result. This agent is the one that coordinates all the others, and at
+low automation levels it is the agent a human manager keeps longest.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Take in the Account List, Set the Tiers
   and the Weight, Agree the Split with Sales, Brief the Makers, Start
@@ -43,7 +43,7 @@ automation levels it is the seat a human manager keeps longest.
 - `ref/mkt/marketing-performance-report` / Account for the Campaigns,
   Check the Account
 - `ref/mkt/media-plan` / Collect What the Plan Must Carry, Lay out the
-  Flighting, Hand the Plan to the Buying Seats
+  Flighting, Hand the Plan to the Buying Agents
 - `ref/mkt/paid-search-campaign` / Take in the Budget and Goal, Build
   the Campaigns and Launch, Report against the Goal, Record What Was
   Learned
@@ -54,7 +54,7 @@ automation levels it is the seat a human manager keeps longest.
 - `ref/mkt/quarterly-business-review` / Ask Each Area What It Would
   Change, Brief the Department
 - `ref/mkt/reallocate-media-spend` / Name the Candidate Moves, Tell the
-  Seats that Read the Plan
+  Agents that Read the Plan
 - `ref/mkt/segment-the-market` / Hand over the Segments
 - `ref/mkt/set-marketing-budget` / Collect What Each Function Asks For,
   Tell Every Function What It Has
@@ -85,7 +85,7 @@ automation levels it is the seat a human manager keeps longest.
 Convenes briefing, bake-off, and debrief. Commissions build-by-talent
 for production and collect-and-report for the wrap-up. Requests the
 approval at sign-offs and takes its changes-requested back to the
-producing seats.
+producing agents.
 
 ## Grants
 
@@ -93,8 +93,8 @@ producing seats.
 - analytics (read)
 - the asset store (read)
 
-There is deliberately no budget grant. This seat proposes the number and
-a person confirms it, which is an escalation rather than an access.
+There is deliberately no budget grant. This agent proposes the number
+and a person confirms it, which is an escalation rather than an access.
 
 ## Records
 
@@ -104,12 +104,12 @@ brief.
 
 ## Escalates
 
-- the budget, always - this seat never confirms its own number
+- the budget, always - this agent never confirms its own number
 - anything a sign-off flags as legal
-- the launch decision itself, until the adopting organization raises
-  the automation level for it
+- the launch decision itself, until the adopting organization raises the
+  automation level for it
 
 ## Not
 
 Does not write copy, design, or cut video. Does not move ad money - that
-is the media-buyer seat. Does not sign anything.
+is the media-buyer agent. Does not sign anything.

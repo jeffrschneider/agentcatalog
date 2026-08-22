@@ -15,7 +15,7 @@ still have to reach their owners and the show still has to be reported.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Show | what this show has to deliver, and by when | [event-manager](../../agents/event-manager.md) · leadership (person) |
 | 2 | List Every Deadline | the exhibitor rules, the space limits, every due date | [event-operations](../../agents/event-operations.md) · event-manager |
@@ -111,7 +111,7 @@ phases:
   get-sign-offs    - convenes approval: brand, legal and rights sign,
                      as named signers, against a version of the booth
                      material and the demonstration
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: produce-material + build-demo
                      by: <days>                 automation: never
   order-build      - human: the space, the stand, the freight, the
@@ -196,7 +196,7 @@ handoffs:
   show-days -> break-down: what leaves the floor, and where it goes
   report-show -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, brand,
            rights, finance, the account owners, and everyone standing
            in the booth>
@@ -229,36 +229,36 @@ measures:
 ## The failure edges
 
 - **A sign-off comes back with changes.** The run returns to the
-  material or to the demonstration, and only the piece the signers
-  named reopens. If the change lands after the print files went to the
-  stand builder, the reprint cost and the shipping date go to <who>
-  before anything is remade.
-- **A deadline in the exhibitor rules cannot be met.** The run goes
-  back to plan-presence, and the presence shrinks to what the remaining
-  time and the late fees allow. The missed deadline is recorded against
-  the plan, so the next show is planned from the real dates.
+  material or to the demonstration, and only the piece the signers named
+  reopens. If the change lands after the print files went to the stand
+  builder, the reprint cost and the shipping date go to <who> before
+  anything is remade.
+- **A deadline in the exhibitor rules cannot be met.** The run goes back
+  to plan-presence, and the presence shrinks to what the remaining time
+  and the late fees allow. The missed deadline is recorded against the
+  plan, so the next show is planned from the real dates.
 - **The freight does not arrive.** Event operations reports it the
   moment the tracking stops moving rather than on show morning, and
   <who> decides between a replacement stand, a smaller presence, and a
   reprint bought locally.
 - **A scan never reaches the CRM.** The run goes back to lead-capture
-  while the show is still running. Every scan taken during the outage
-  is held and loaded once the path works again, and the report says how
+  while the show is still running. Every scan taken during the outage is
+  held and loaded once the path works again, and the report says how
   many were affected.
-- **The demonstration breaks on the floor.** The booth falls back to
-  the recorded version, the people in the booth are told what they may
-  claim while it is down, and the failure goes into the report.
+- **The demonstration breaks on the floor.** The booth falls back to the
+  recorded version, the people in the booth are told what they may claim
+  while it is down, and the failure goes into the report.
 - **Nobody covers a shift.** The event manager escalates on the day the
-  schedule shows the hole, because filling it is a person's decision
-  and it should be made while travel can still be booked.
+  schedule shows the hole, because filling it is a person's decision and
+  it should be made while travel can still be booked.
 - **The show is cancelled or the organization withdraws.** Every order
   is cancelled against its own cancellation deadline, the spend line
   reconciles what cannot be recovered, and the material stays at its
   signed versions so a later show can use it.
 - **The trigger fires while runs are in flight.** Shows overlap
   normally, and the concurrency line says how many. The event-manager
-  seat takes one show at a time, so every run in flight needs its own
-  holder of that seat, and the runs share their reference data
+  agent takes one show at a time, so every run in flight needs its own
+  holder of that role, and the runs share their reference data
   read-only.
 - **A run is abandoned.** The stand and the material stay at their
   versions, the orders are cancelled or held against their deadlines,

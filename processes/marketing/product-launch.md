@@ -7,11 +7,11 @@ A launch date is committed, and marketing has to arrive at it with the
 story settled, the content made, sales ready to sell, and every channel
 loaded - then fire everything in order on the day, watch the first week,
 and report what happened. This is the process that coordinates the most
-seats, which is why it earns a coordinator of its own.
+agents, which is why it earns a coordinator of its own.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Launch | what ships, when, and why anyone should care | [launch-coordinator](../../agents/launch-coordinator.md) · product (person) |
 | 2 | Settle the Message | the positioning and the story, tested against personas | [copywriter](../../agents/copywriter.md) · product marketing (person) |
@@ -63,7 +63,7 @@ phases:
                     automation: <level>
   settle-message  - convenes bake-off: positioning candidates, one
                     chosen and written down
-                    owner: <your product marketing seat>
+                    owner: <your product marketing role>
                     after: take-in-launch      by: <days>
                     automation: <level>
   plan-launch     - convenes decide-and-announce: the checklist -
@@ -84,7 +84,7 @@ phases:
                     by: launch-day             automation: <level>
   get-sign-offs   - convenes approval: brand, legal and product
                     accuracy, as named signers, against a version
-                    owner: <your legal seat>
+                    owner: <your legal role>
                     after: produce-content + enable-sales
                     by: <days>                 automation: never
   launch-day      - human: everything fires in the planned order, and
@@ -116,7 +116,7 @@ handoffs:
     version. A later change voids the approval
   watch-week-one -> report-launch: the daily gatherings, attributed
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for product, sales and legal>
   systems: the CMS (write), email platform (write),
            ad platforms (write, cap: <n>), analytics (read),
@@ -143,7 +143,7 @@ measures:
   deliverable, or move the date. Discovering it on launch day is the
   failure this process exists to prevent.
 - **The date moves.** Every branch's deadlines are relative to launch
-  day, so the plan shifts once, in one place, and every seat hears the
+  day, so the plan shifts once, in one place, and every agent hears the
   same announcement.
 - **A run is abandoned.** Staged changes are pulled, loaded emails are
   cancelled, and whatever was already public gets a follow-up that says

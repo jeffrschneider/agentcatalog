@@ -4,8 +4,8 @@
 
 **value stream:** [Plan-to-Reconcile](../../streams/marketing/plan-to-reconcile.md)
 An objective arrives with an approved budget behind it, and the
-department has to come out of this process with a plan the buying seats
-can spend against. The seats here work out which launches and campaigns
+department has to come out of this process with a plan the buying agents
+can spend against. The agents here work out which launches and campaigns
 need distribution, settle who the plan is bought against, clear the data
 behind that targeting, read what each channel has cost and returned,
 draft two or three ways of splitting the money, and model what each
@@ -16,13 +16,14 @@ leadership, the legal reviewer clears the data sources and the traits
 that may be targeted, leadership picks the split, and leadership and
 finance sign the plan and the money. Raising the automation level moves
 none of those four. The run closes when the plan is committed at a
-version and every seat that will spend has heard it. This process places
-no orders. The channel processes place them against the plan it commits,
-and moving money once the flights are running is a separate process.
+version and every agent that will spend has heard it. This process
+places no orders. The channel processes place them against the plan it
+commits, and moving money once the flights are running is a separate
+process.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Objective and the Budget | what the money must achieve, and by when | leadership (person) · [media-planner](../../agents/media-planner.md) |
 | 2 | Collect What the Plan Must Carry | the launches and campaigns that need distribution | media-planner · [campaign-manager](../../agents/campaign-manager.md) · [launch-coordinator](../../agents/launch-coordinator.md) · [content-manager](../../agents/content-manager.md) |
@@ -36,7 +37,7 @@ and moving money once the flights are running is a separate process.
 | 10 | Set the Channel Audience Targets | the audience each channel is bought against | media-planner · media-buyer · audience-manager |
 | 11 | Settle What Counts as a Result | what the plan is judged on, and where it is counted | [conversion-tracker](../../agents/conversion-tracker.md) · analytics · media-planner |
 | 12 | Get the Plan Approved | leadership and finance sign the mix and the money | leadership (person) · finance (person) · media-planner |
-| 13 | Hand the Plan to the Buying Seats | every seat that will spend hears the same plan | media-planner · media-buyer · campaign-manager |
+| 13 | Hand the Plan to the Buying Agents | every agent that will spend hears the same plan | media-planner · media-buyer · campaign-manager |
 | 14 | Record What the Plan Rests On | the assumptions, and what would reopen the plan | media-planner · forecaster |
 
 ## The graph
@@ -64,9 +65,9 @@ flowchart LR
   A11 --> A12[12. Get the Plan Approved]
   A12 -. changes requested .-> A9
   A12 -. changes requested .-> A10
-  A12 --> A13[13. Hand the Plan to the Buying Seats]
+  A12 --> A13[13. Hand the Plan to the Buying Agents]
   A13 --> A14[14. Record What the Plan Rests On]
-  A14 --> DONE([the plan is committed and the buying seats have it])
+  A14 --> DONE([the plan is committed and the buying agents have it])
 ```
 
 ## The document, with the blanks marked
@@ -90,7 +91,7 @@ phases:
                       owner: media-planner       after: trigger
                       automation: never
   collect-demand    - runs collect-and-report: one request and one
-                      format to every seat with work that needs
+                      format to every agent with work that needs
                       distribution in the period
                       owner: media-planner       after: take-in-objective
                       by: <days>                 automation: <level>
@@ -100,7 +101,7 @@ phases:
                       by: <days>                 automation: <level>
   clear-targeting   - convenes approval: the data sources, the consent
                       behind them, and the traits that may be used for
-                      targeting, signed by <your legal seat>
+                      targeting, signed by <your legal role>
                       owner: consent-manager     after: settle-audience
                       by: <days>                 automation: never
   channel-evidence  - runs collect-and-report: what each channel has
@@ -141,9 +142,9 @@ phases:
                       automation: <level>
   approve-plan      - convenes approval: <who> and finance sign, as
                       named signers, against a version of the plan
-                      owner: <your finance seat> after: settle-results
+                      owner: <your finance role> after: settle-results
                       by: <days>                 automation: never
-  hand-over         - convenes briefing: every seat that will spend
+  hand-over         - convenes briefing: every agent that will spend
                       hears the same plan, its lines, and what each line
                       may be bought against
                       owner: media-planner       after: approve-plan
@@ -190,10 +191,10 @@ handoffs:
     each result arriving
   approve-plan -> hand-over: the plan at the signed version. A later
     change voids the approval and the signers see it again
-  hand-over -> record-basis: what each buying seat took away, and
-    anything a seat said it could not buy at the rates in the plan
+  hand-over -> record-basis: what each buying agent took away, and
+    anything an agent said it could not buy at the rates in the plan
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal and finance>
   systems: the media plan record (write), the decision record (write),
            the model store (write), analytics platforms (read),
@@ -245,10 +246,10 @@ measures:
   money on a stated assumption, and that assumption goes into the record
   of what the plan rests on.
 - **A result the plan is judged on cannot be counted.** The
-  conversion-tracker seat says so before the money is committed, and the
-  run returns to the choice. The people who decide either pick a result
-  that can be counted or accept in writing that the line will not be
-  measured.
+  conversion-tracker agent says so before the money is committed, and
+  the run returns to the choice. The people who decide either pick a
+  result that can be counted or accept in writing that the line will not
+  be measured.
 - **The signers send part of the plan back.** The run returns to the
   flighting or to the channel targets, and only the part the signers
   named reopens. The signers see the changed version before anything
@@ -263,7 +264,7 @@ measures:
   against the version it replaces stay readable at that version, so they
   can still be checked against the plan they were placed under.
 - **A run is abandoned.** The evidence, the candidate mixes and the
-  numbers stay where they are at their versions. The buying seats are
+  numbers stay where they are at their versions. The buying agents are
   told there is no committed plan for the period and which version they
   are still working to, and no money is committed against a plan that
   was never signed.

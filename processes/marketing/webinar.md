@@ -15,7 +15,7 @@ report.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Topic and Date | work out what the session must do and for whom | [event-manager](../../agents/event-manager.md) |
 | 2 | Settle the Format and the Presenters | the session shape, its length, and who presents | event-manager · [event-program](../../agents/event-program.md) · subject matter expert (person) |
@@ -104,7 +104,7 @@ phases:
                        by: <days>                automation: <level>
   get-sign-offs      - convenes approval: brand and legal sign, as
                        named signers, against a version of the material
-                       owner: <your legal seat>  after: produce-material
+                       owner: <your legal role>  after: produce-material
                        by: <days>                automation: never
   registration-page  - human: the page, its address, and the tracking
                        on the form, tested with a real submission
@@ -220,7 +220,7 @@ handoffs:
     address, and the version it was published at
   report-session -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the experts, the presenters,
            legal and brand>
   systems: the broadcast platform (write),
@@ -277,7 +277,7 @@ measures:
   run goes back to build-presentation with the problems the rehearsal
   named, and the rehearsal runs again on what comes back.
 - **The broadcast fails while the session is live.** The
-  broadcast-operator seat says what the audience is told and on which
+  broadcast-operator agent says what the audience is told and on which
   channel, and a person decides whether the session continues, restarts,
   or is rescheduled. The registration list is used to tell everyone what
   happened, whether or not they were watching at the time.
@@ -290,7 +290,7 @@ measures:
   or questions. The follow-up and the lead handoff wait, because both
   are built from that record.
 - **A registration never reached the CRM.** The run goes back to the
-  registration page, the conversion-tracker seat puts a submission
+  registration page, the conversion-tracker agent puts a submission
   through the whole path again, and the registrations that were lost are
   recovered from the platform's own record.
 - **The session is cancelled or moved.** A person makes that call.
@@ -299,8 +299,8 @@ measures:
   already committed.
 - **The trigger fires while runs are in flight.** Sessions overlap
   normally, and the concurrency line says how many. The event-manager
-  seat takes one session at a time, so every run in flight needs its own
-  holder of that seat, and the runs share their reference data
+  agent takes one session at a time, so every run in flight needs its
+  own holder of that role, and the runs share their reference data
   read-only.
 - **A run is abandoned.** The material and the presentation stay where
   they are at their versions, so a later run can pick them up. The

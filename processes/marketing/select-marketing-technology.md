@@ -16,14 +16,14 @@ register with an owner, a cost, a term and a renewal date against it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Gap | say what the department cannot do today | [supplier-manager](../../agents/supplier-manager.md) · requester (person) |
 | 2 | Check What Is Already Owned | look in the register for something that does it | supplier-manager |
 | 3 | Write down the Requirements | what the tool has to do, ranked and testable | supplier-manager · requester (person) · systems owner (person) |
 | 4 | Set the Scoring Criteria | how a candidate is judged, fixed beforehand | [supplier-check](../../agents/supplier-check.md) · supplier-manager |
-| 5 | Brief the Selection | every seat hears the same requirements at once | supplier-manager · supplier-check · [budget-keeper](../../agents/budget-keeper.md) · [capacity-manager](../../agents/capacity-manager.md) · [consent-manager](../../agents/consent-manager.md) · [researcher](../../agents/researcher.md) |
-| 6 | Size What the Tool Has to Carry | the work it would take on and the seats that use it | capacity-manager · [forecaster](../../agents/forecaster.md) |
+| 5 | Brief the Selection | every agent hears the same requirements at once | supplier-manager · supplier-check · [budget-keeper](../../agents/budget-keeper.md) · [capacity-manager](../../agents/capacity-manager.md) · [consent-manager](../../agents/consent-manager.md) · [researcher](../../agents/researcher.md) |
+| 6 | Size What the Tool Has to Carry | the work it would take on and the agents that use it | capacity-manager · [forecaster](../../agents/forecaster.md) |
 | 7 | Say What Money There Is | what can be spent this year and in the years after | budget-keeper · finance (person) |
 | 8 | Search the Market | find every candidate worth looking at | supplier-manager · researcher |
 | 9 | Cut to a Shortlist | drop the candidates that miss a requirement | supplier-manager · supplier-check |
@@ -114,12 +114,12 @@ phases:
                      takes, fixed at a version and dated
                      owner: supplier-check        after: requirements
                      by: <days>                   automation: <level>
-  brief-selection  - convenes briefing: every seat hears the same
+  brief-selection  - convenes briefing: every agent hears the same
                      requirements, the criteria and the due date at once
                      owner: supplier-manager      after: set-criteria
                      automation: <level>
   size-load        - human: the volume of work the tool would carry and
-                     the seats that would use it
+                     the agents that would use it
                      owner: capacity-manager      after: brief-selection
                      by: <days>                   automation: <level>
   confirm-money    - human: what can be spent this year and what a
@@ -145,7 +145,7 @@ phases:
   check-terms      - runs assessment: what the agreement allows, where
                      the data would sit, and what the consent record
                      covers
-                     owner: <your legal seat>     after: score-shortlist
+                     owner: <your legal role>     after: score-shortlist
                      by: <days>                   automation: never
   check-security   - human: how the candidate secures the data, what it
                      would connect to, and what it would be given
@@ -171,14 +171,14 @@ phases:
                             check-standards + whole-cost
                      by: <days>                   automation: <level>
   choose-tool      - convenes decide-and-announce: <who> picks one, says
-                     why, and every seat waiting on it hears at the
+                     why, and every agent waiting on it hears at the
                      same time
                      owner: decision-coordinator  after: compare
                      by: <days>                   automation: never
   agree-terms      - convenes approval: the price, the term, the notice
                      a cancellation needs, and what the supplier has to
                      meet. Legal and finance sign as named signers
-                     owner: <your legal seat>     after: choose-tool
+                     owner: <your legal role>     after: choose-tool
                      by: <weeks>                  automation: never
   register-entry   - human: the entry lands with what it is for, its
                      owner, its cost, its term and its renewal date
@@ -207,10 +207,10 @@ handoffs:
     so a candidate can be tested against it
   set-criteria -> brief-selection: the requirements and the criteria at
     a version, dated before any candidate was looked at
-  brief-selection -> search-market: the requirements as every seat
+  brief-selection -> search-market: the requirements as every agent
     heard them, and the date the choice is due
   size-load -> shortlist: the volume of work the tool would carry and
-    the seats that would use it
+    the agents that would use it
   confirm-money -> shortlist: what is available this year, and what a
     renewal would take in the years after
   search-market -> shortlist: every candidate found, with where it came
@@ -242,7 +242,7 @@ handoffs:
   hand-over -> record-learnings: what the owner took on, and what will
     be measured to tell whether the tool earned its place
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, the systems
            owner, the security reviewer, legal, finance and leadership>
   systems: the supplier and registration record (write),
@@ -283,18 +283,18 @@ measures:
 ## The failure edges
 
 - **The register already holds something that does the job.** The run
-  closes at check-owned. The supplier-manager seat records the entry it
+  closes at check-owned. The supplier-manager agent records the entry it
   found and tells the requester which one it is and who owns it, and no
   agreement is entered into.
 - **Every candidate fails a requirement.** The run goes back to the
   requirements. <who> decides whether the requirement comes down,
   whether the department builds what it cannot buy, or whether it does
   without, and the decision is recorded with the scores behind it.
-- **A requirement cannot be tested with what a candidate supplied.**
-  The supplier-check seat records it as not tested with the reason, and
-  the supplier-manager seat puts the question back to the candidate
-  while the selection is still open. A requirement nobody tested has
-  not passed.
+- **A requirement cannot be tested with what a candidate supplied.** The
+  supplier-check agent records it as not tested with the reason, and the
+  supplier-manager agent puts the question back to the candidate while
+  the selection is still open. A requirement nobody tested has not
+  passed.
 - **The requirements change after candidates have been seen.** The
   changed list goes in as a new version, every score made against the
   earlier version is marked, and a person decides which candidates are
@@ -310,15 +310,14 @@ measures:
   tool, or stops the search, and whichever it does is recorded with the
   figures it was decided on.
 - **Only one candidate meets the requirements.** The supplier-manager
-  seat says so before the comparison, because a decision with one
+  agent says so before the comparison, because a decision with one
   option in front of it is a person's call.
 - **The trigger fires while runs are in flight.** Searches overlap
-  normally, and the concurrency line says how many. Two searches for
-  the same capability are merged into one so the department does not
-  buy the same thing twice, and the runs share their reference data
-  read-only.
+  normally, and the concurrency line says how many. Two searches for the
+  same capability are merged into one so the department does not buy the
+  same thing twice, and the runs share their reference data read-only.
 - **A run is abandoned.** The requirements, the criteria and the scores
   stay where they are at their versions, so a later run can pick them
-  up. Any trial account is closed and the
-  data the department put into it is retrieved or destroyed, and the
-  candidates that answered are told the search has stopped.
+  up. Any trial account is closed and the data the department put into
+  it is retrieved or destroyed, and the candidates that answered are
+  told the search has stopped.

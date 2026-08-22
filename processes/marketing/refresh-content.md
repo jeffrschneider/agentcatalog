@@ -17,7 +17,7 @@ the cycle changed, what it took down, and what those changes moved.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Signal | work out which pages the cycle covers and by when | [content-librarian](../../agents/content-librarian.md) |
 | 2 | Rebuild the Inventory | what is live, when it changed, what it does now | content-librarian |
@@ -28,7 +28,7 @@ the cycle changed, what it took down, and what those changes moved.
 | 7 | Decide What Happens to Each Page | update, merge, retire, or leave the page alone | content-librarian |
 | 8 | Approve the Merges and the Retirements | a person signs before any page comes down | content-librarian · brand owner (person) · leadership (person) |
 | 9 | Set the Order and the Dates | which pages get worked first, and when each is due | content-librarian |
-| 10 | Brief the Pages in the Cycle | every seat hears the same account of what is wrong | content-librarian · [content-manager](../../agents/content-manager.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · search-optimizer · [creative-producer](../../agents/creative-producer.md) |
+| 10 | Brief the Pages in the Cycle | every agent hears the same account of what is wrong | content-librarian · [content-manager](../../agents/content-manager.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · search-optimizer · [creative-producer](../../agents/creative-producer.md) |
 | 11 | Set What Each Page Has to Answer | the questions and terms the page has to cover now | search-optimizer |
 | 12 | Rewrite What Has to Change | corrected claims, refreshed numbers, new sections | copywriter |
 | 13 | Edit the Rewrite | the editor says what still has to change | editor |
@@ -147,7 +147,7 @@ phases:
                       after: approve-removals
                       automation: <level>
   brief-cycle       - convenes briefing: what is wrong with each page,
-                      heard by every seat at once
+                      heard by every agent at once
                       owner: content-librarian
                       after: set-order
                       automation: <level>
@@ -173,7 +173,7 @@ phases:
                       by: <days>       automation: <level>
   get-sign-offs     - convenes approval: brand, legal and rights sign,
                       as named signers, against a version of the page
-                      owner: <your legal seat>
+                      owner: <your legal role>
                       after: edit-rewrite + refresh-visuals
                       by: <days>       automation: never
   change-pages      - human: the approved copy and visuals assembled
@@ -245,7 +245,7 @@ handoffs:
   set-order -> report-cycle: the pages the cycle looked at and left
     alone, with the reason each one was left
   brief-cycle -> set-page-terms: the account of what is wrong with each
-    page, as every seat heard it
+    page, as every agent heard it
   brief-cycle -> refresh-visuals: the visuals that no longer show what
     the product or the data now looks like
   set-page-terms -> rewrite: the questions and terms each page has to
@@ -271,7 +271,7 @@ handoffs:
   report-cycle -> record-learnings: the account of the cycle, as
     delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand owner, leadership,
            legal and rights>
   systems: the content inventory (write), the CMS (write),

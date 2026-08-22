@@ -19,7 +19,7 @@ the notice period sitting between them.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Pricing Decision | what changes, from when, and why it is changing | [launch-coordinator](../../agents/launch-coordinator.md) · finance (person) · product (person) |
 | 2 | Read the Affected Customers | what each customer pays now and what it becomes | [price-transition](../../agents/price-transition.md) · [forecaster](../../agents/forecaster.md) |
@@ -94,7 +94,7 @@ phases:
   set-terms        - convenes decide-and-announce: the grandfathering
                      rules, the notice each agreement requires, and the
                      new price list issued at a version
-                     owner: <your finance seat> after: read-customers
+                     owner: <your finance role> after: read-customers
                      by: <days>                 automation: never
   plan-transition  - convenes decide-and-announce: the checklist - what
                      each branch owes and by when, counted back from
@@ -118,7 +118,7 @@ phases:
   get-sign-offs    - convenes approval: brand, disclosure, legal and
                      finance sign, as named signers, against a version
                      of everything a customer will read
-                     owner: <your legal seat>   after: produce-material
+                     owner: <your legal role>   after: produce-material
                      by: <days>                 automation: never
   notice-lists     - human: one list per treatment, built from the
                      transition register with the rules applied
@@ -198,7 +198,7 @@ handoffs:
     the system it came from
   report-change -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for finance, legal, product, sales,
            support and the account owners>
   systems: the billing record (read), the contract record (read),
@@ -236,11 +236,11 @@ measures:
 ## The failure edges
 
 - **A grandfathering rule does not catch a customer everyone assumed it
-  covered.** The price-transition seat records that customer as unsorted
-  rather than guessing which rule applies, and the run goes back to
-  set-terms. Finance and the legal reviewer decide whether the rule
-  widens to cover the customer or whether that customer is handled on
-  their own. No notice goes to a customer who is still unsorted.
+  covered.** The price-transition agent records that customer as
+  unsorted rather than guessing which rule applies, and the run goes
+  back to set-terms. Finance and the legal reviewer decide whether the
+  rule widens to cover the customer or whether that customer is handled
+  on their own. No notice goes to a customer who is still unsorted.
 - **The notice period is longer than the plan allowed for.** Each
   agreement says how much warning that customer is owed and in what
   form, and the longest period in force sets the earliest date the
@@ -250,10 +250,10 @@ measures:
   whether the date moves for everyone or whether that group changes
   later than the rest.
 - **A customer cannot be reached before their change is due.** The
-  price-transition seat holds that customer's change back, records it as
-  held with the number of days it has been held, and the run goes back
-  to serve-notice with a new date for that one customer. The rest of the
-  transition carries on around them.
+  price-transition agent holds that customer's change back, records it
+  as held with the number of days it has been held, and the run goes
+  back to serve-notice with a new date for that one customer. The rest
+  of the transition carries on around them.
 - **The effective date moves after notices have gone out.** Every notice
   already served names a date that is now wrong. The run goes back to
   produce-material for the corrected wording and then to serve-notice,
@@ -272,8 +272,8 @@ measures:
 - **A marketing opt-out covers a customer who is owed a notice.** The
   notice goes anyway, because the agreement requires it and the consent
   record governs marketing rather than contractual warnings. The
-  consent-manager seat records which contacts came off the marketing
-  lists, and the price-transition seat records that the notice was
+  consent-manager agent records which contacts came off the marketing
+  lists, and the price-transition agent records that the notice was
   served and by which route.
 - **The trigger fires while a run is in flight.** A second change
   reaching the same customers before the first has finished leaves those

@@ -22,8 +22,9 @@ generic like a pattern, and it never claims to be running anywhere.
   graph. Adopting the reference process means you inherit that walk
   instead of doing it from scratch.
 - **The graph** - the `after:` lines, the branches, the backward edges.
-- **The roles**, split into seats an agent can hold (each citing an
-  [abstract agent](./abstract-agent.md)) and seats only a person holds.
+- **The roles**, split into the ones an agent can hold (each citing an
+  [abstract agent](./abstract-agent.md)) and the ones only a person
+  holds.
 - **The handoffs and the failure edges**, because they come with the
   shape of the work.
 - **The records** a run must leave.
@@ -32,7 +33,7 @@ generic like a pattern, and it never claims to be running anywhere.
 
 - The **owner** and the **effective date** - a reference process has
   neither, and that is the mark that it is not yet anyone's process.
-- The **roster** - which agent or person actually holds each seat.
+- The **roster** - which agent or person actually holds each role.
 - The **caps and thresholds** - spend limits, deadlines, escalation
   numbers. The reference process shows where a number goes; the number
   is your decision.

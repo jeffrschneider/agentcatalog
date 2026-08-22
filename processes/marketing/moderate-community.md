@@ -15,7 +15,7 @@ long a cycle is, and a shift, a day and a week all work.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Open the Cycle | duty starts and last cycle's open items carry in | [community-manager](../../agents/community-manager.md) |
 | 2 | Gather What Came In | new posts, questions and reports are collected | community-manager |
@@ -73,7 +73,7 @@ from: ref/mkt/moderate-community v1
 owner: <who>                          effective: <date>
 trigger: the clock - a cycle opens every <period>, and no one has to
          ask for it
-concurrency: cycles run one after another - <how many> seats are on
+concurrency: cycles run one after another - <how many> agents are on
              duty inside a cycle
 goal: every question answered or put in front of somebody who can
       answer it, every post that breaks a rule acted on with the rule
@@ -182,7 +182,7 @@ handoffs:
   report-cycle -> close-cycle: the report as delivered, and the list of
     items nobody closed
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the community owner, the expert
            and legal>
   systems: the community platform (write, cap: <which actions>),
@@ -230,7 +230,7 @@ measures:
   next, so the queue is the only thing carrying that state, and a reader
   of either run's records cannot see that the two runs are connected.
 - **A legal demand or a press inquiry arrives.** It goes to
-  route-escalations before anybody replies to the member, and the seat
+  route-escalations before anybody replies to the member, and the agent
   that owns it is the one that answers.
 - **The same breach shows up across many members at once.** The
   moderator escalates the pattern and leaves the individual posts alone

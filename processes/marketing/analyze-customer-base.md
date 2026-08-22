@@ -3,26 +3,25 @@
 `ref/mkt/analyze-customer-base v1`
 
 **value stream:** [Market-to-Audience](../../streams/marketing/market-to-audience.md)
-An analytics seat takes a question about the customer base, or the
+An analytics agent takes a question about the customer base, or the
 arrival of a scheduled read, and works out what the answer has to
 settle. It names the systems that hold the record, gets the terms on
-each one cleared, and pulls the accounts, the orders and the renewals.
-A statistician says how much of that data can be relied on before
-anybody draws a conclusion from it. The analytics seat then cuts the
-base into groups that behave differently from each other, and a group
-is kept only when the difference that defines it is larger than the
-noise in the measurement. A forecaster says what the accounts inside
-each group have in common. The run ends with a written answer to who
-actually buys and what those customers have in common, issued at a
-version and in the hands of the seats that qualify accounts and choose
-who gets contacted. Every figure in this process comes from a system
-the organization already has. When a finding needs a customer's
-reasons, the run writes the question down and hands it to the process
-that asks people.
+each one cleared, and pulls the accounts, the orders and the renewals. A
+statistician says how much of that data can be relied on before anybody
+draws a conclusion from it. The analytics agent then cuts the base into
+groups that behave differently from each other, and a group is kept only
+when the difference that defines it is larger than the noise in the
+measurement. A forecaster says what the accounts inside each group have
+in common. The run ends with a written answer to who actually buys and
+what those customers have in common, issued at a version and in the
+hands of the agents that qualify accounts and choose who gets contacted.
+Every figure in this process comes from a system the organization
+already has. When a finding needs a customer's reasons, the run writes
+the question down and hands it to the process that asks people.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Question | work out what the read has to settle and by when | [analytics](../../agents/analytics.md) · requester (person) |
 | 2 | Set the Scope of the Read | the period, the markets, and who counts as a customer | analytics · [statistician](../../agents/statistician.md) |
@@ -38,9 +37,9 @@ that asks people.
 | 12 | Size Each Group | how many accounts and how much revenue in each | analytics |
 | 13 | Compare with the Last Read | what moved since the read before this one | analytics · statistician |
 | 14 | Write the Findings | every finding with the figures under it | analytics |
-| 15 | Review the Findings | the seats that act on it read it before it issues | analytics · statistician · [audience-manager](../../agents/audience-manager.md) · forecaster |
+| 15 | Review the Findings | the agents that act on it read it before it issues | analytics · statistician · [audience-manager](../../agents/audience-manager.md) · forecaster |
 | 16 | Issue the Findings as a Version | numbered, with what changed since the last read | analytics |
-| 17 | Hand over the Findings | each receiving seat says what it changes | analytics · audience-manager · [lead-scorer](../../agents/lead-scorer.md) · [reporting-manager](../../agents/reporting-manager.md) · leadership (person) |
+| 17 | Hand over the Findings | each receiving agent says what it changes | analytics · audience-manager · [lead-scorer](../../agents/lead-scorer.md) · [reporting-manager](../../agents/reporting-manager.md) · leadership (person) |
 | 18 | Set the Next Read | the date it runs again, and what brings it sooner | analytics · leadership (person) |
 | 19 | Record What Was Learned | what to repeat, what to avoid | analytics |
 
@@ -93,11 +92,11 @@ concurrency: one run at a time over the same customers and the same
              answer. Reads of different markets overlap
 goal: a written answer to who buys and what those customers have in
       common, every figure carrying the system it came from and the
-      date it was read, issued at a version and in use by the seats
+      date it was read, issued at a version and in use by the agents
       that work from the customer base
 phases:
   take-in-question - convenes briefing: what the read has to settle,
-                     what each seat owes, and the date it is owed
+                     what each agent owes, and the date it is owed
                      owner: analytics          after: trigger
                      automation: <level>
   set-scope        - human: the period the read covers, the markets it
@@ -110,7 +109,7 @@ phases:
                      automation: <level>
   clear-data       - convenes approval: legal signs that the analysis
                      may rest on these sources and these fields
-                     owner: <your legal seat>  after: name-sources
+                     owner: <your legal role>  after: name-sources
                      by: <days>                automation: never
   pull-record      - system: the accounts, what they bought, what they
                      renewed, and when they left
@@ -155,14 +154,14 @@ phases:
                      owner: analytics          after: compare-last
                      by: <days>                automation: <level>
   review-findings  - runs layered-passes: the numbers pass, then the
-                     pass by the seats that will act on the findings
+                     pass by the agents that will act on the findings
                      owner: analytics          after: write-findings
                      by: <days>                automation: <level>
   issue-version    - human: the findings issued as a numbered version,
                      with the version before it left readable
                      owner: analytics          after: review-findings
                      automation: <level>
-  hand-over        - runs decide-and-announce: every seat that works
+  hand-over        - runs decide-and-announce: every agent that works
                      from the customer base hears the findings at once
                      and says what it changes because of them
                      owner: analytics          after: issue-version
@@ -216,12 +215,12 @@ handoffs:
     them, with each change and who asked for it
   issue-version -> hand-over: the findings at their number, and what
     changed from the read before them
-  hand-over -> set-next-read: what each receiving seat said it would
+  hand-over -> set-next-read: what each receiving agent said it would
     change, and the date it said it by
   set-next-read -> record-learnings: the next read date, and the
     conditions that would bring it forward
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, the person
            who asked, and the owner of each system the record is read
            from>
@@ -253,8 +252,8 @@ policy:
     comparing with the read before it
   issued findings are never edited in place. A correction goes in as a
     new version, and the version it replaces stays readable
-  the run does not close until every seat that works from the customer
-    base has said what it changes, and a seat that changes nothing says
+  the run does not close until every agent that works from the customer
+    base has said what it changes, and an agent that changes nothing says
     why
 measures:
   cycle time: <target> from the question to the issued findings
@@ -292,22 +291,22 @@ measures:
   the findings.
 - **Somebody asks the read why customers buy.** This process reads what
   the organization already recorded, so it can say which customers
-  bought and what those customers have in common, and it cannot say
-  what was going through their minds. The question is written down with
-  the finding that raised it and handed to the process that asks
-  people, and the findings say plainly which question is still open.
+  bought and what those customers have in common, and it cannot say what
+  was going through their minds. The question is written down with the
+  finding that raised it and handed to the process that asks people, and
+  the findings say plainly which question is still open.
 - **The definition of a customer changed since the last read.** Every
-  figure that no longer compares is marked, and the read reports the
-  new definition beside the old one. Restating the earlier read under
-  the new definition is a separate piece of work that <who> asks for.
+  figure that no longer compares is marked, and the read reports the new
+  definition beside the old one. Restating the earlier read under the
+  new definition is a separate piece of work that <who> asks for.
 - **The trigger fires while a run is in flight.** Two reads of the same
   customers over the same period do not overlap, because they would
   produce two answers to one question. A question about a different
-  market starts its own run, and a question about the base already
-  under way joins the run in flight.
+  market starts its own run, and a question about the base already under
+  way joins the run in flight.
 - **A run is abandoned.** The pulled record and the figures stay where
   they are with the dates they were read on, so a later run can pick
-  them up or discard them as stale. No findings are issued, the seats
+  them up or discard them as stale. No findings are issued, the agents
   that work from the customer base keep working to the findings they
-  already had, and the analytics seat records that the question went
+  already had, and the analytics agent records that the question went
   unanswered and why.

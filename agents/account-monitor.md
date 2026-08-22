@@ -11,7 +11,7 @@ good enough standing to be approached at all. Every answer arrives with
 the evidence under it: which system was read, what that system said, and
 when the reading was current.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Read the Accounts, Watch Engagement by
   Account
@@ -28,7 +28,7 @@ when the reading was current.
 - `ref/mkt/enable-channel-partner` / Check What the Partner Holds, Watch
   What the Partner Does
 - `ref/mkt/onboarding-email-program` / Read the Account, Set the Goal
-  for This Run, Brief the Seats that Act, Watch What the Customer Does,
+  for This Run, Brief the Agents that Act, Watch What the Customer Does,
   Confirm the Customer Is Active
 - `ref/mkt/pricing-change` / Answer What Comes Back, Watch the
   Transition
@@ -44,7 +44,7 @@ the account stands before anyone plans what to do about it. Contributes
 to collect-and-report when a run asks every source the same question,
 and keeps each line attributed to the system it came from. Sits in the
 briefing that starts an onboarding, a churn-risk run or a win-back, so
-every seat that acts hears the same account picture at the same time.
+every agent that acts hears the same account picture at the same time.
 The rest of the time it works alone against a queue of questions, which
 is why the record it leaves with each answer matters as much as the
 answer.
@@ -85,15 +85,15 @@ out of the answer.
 
 Does not contact the customer and does not send anything to them. Does
 not decide what to do about what it finds; it answers the question and
-the seats that act read the answer. Does not choose which messages a
+the agents that act read the answer. Does not choose which messages a
 customer receives or run a standing program for them, which is the
-lifecycle-manager seat. Does not ask a customer to do anything in
-public, which is the advocacy-manager seat, and that seat asks this one
-whether the account is in standing before it makes the ask. Does not
-score or route an inbound lead, which is the lead-scorer seat. Does not
-measure a campaign or a published piece, which is the analytics seat,
+lifecycle-manager agent. Does not ask a customer to do anything in
+public, which is the advocacy-manager agent, and that agent asks this
+one whether the account is in standing before it makes the ask. Does not
+score or route an inbound lead, which is the lead-scorer agent. Does not
+measure a campaign or a published piece, which is the analytics agent,
 and does not own the department's report for a period, which is the
-reporting-manager seat; this seat answers about one named account. Does
-not change the CRM, the contract, or anything else it reads. Does not
-negotiate a renewal or make a commercial offer, which stays with the
+reporting-manager agent; this agent answers about one named account.
+Does not change the CRM, the contract, or anything else it reads. Does
+not negotiate a renewal or make a commercial offer, which stays with the
 people who own the account.

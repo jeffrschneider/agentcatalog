@@ -17,7 +17,7 @@ that work expands into when a video is the whole job.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Script or Brief | work out what the video must do and how long | [creative-producer](../../agents/creative-producer.md) |
 | 2 | Settle the Script | the words and the order, written or confirmed | creative-producer · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) |
@@ -136,7 +136,7 @@ phases:
                      automation: never
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the video
-                     owner: <your legal seat>  after: clear-rights
+                     owner: <your legal role>  after: clear-rights
                      by: <days>                automation: never
   cut-versions     - runs build-by-talent: every length and aspect
                      ratio the brief asks for, cut from the signed
@@ -184,7 +184,7 @@ handoffs:
   cut-versions -> file-in-library: every platform version, named
     against the master it was cut from
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the expert, rights, brand and
            legal>
   systems: the asset store (write), the rights record (write),
@@ -243,7 +243,7 @@ measures:
   shortened in the master. Dropping that platform version instead is a
   person's decision.
 - **A license behind a filed video runs out.** The rights register warns
-  the seats that own the video before the date, and a person decides
+  the agents that own the video before the date, and a person decides
   whether the license is renewed, the source is replaced, or the cuts
   come down. The library entry says what each cut may be used for and
   until when, so the question gets asked before anyone reuses it.

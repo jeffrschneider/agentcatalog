@@ -6,7 +6,7 @@
 A change to the identity or the voice has already been agreed somewhere
 else, and this process turns that agreement into the document and the
 asset kit everyone else works from. A standards keeper works out which
-rules the change touches, has those rules written so a scoring seat can
+rules the change touches, has those rules written so a scoring agent can
 apply them, has the marks, the colors, the type and the templates
 produced, clears the rights on anything the organization hands out,
 checks the palette and the type against the accessibility standard, and
@@ -14,7 +14,7 @@ tries the drafted rules on work that was published recently. The brand
 owner, leadership and legal sign the set, the keeper issues it as one
 numbered version, the guidelines page and the downloads go live at that
 version, and every reader is told what changed and from when. This is
-the document the brand-check seat reads whenever it scores anything, so
+the document the brand-check agent reads whenever it scores anything, so
 the version this run issues is what every other process is held to. The
 run ends once the version is published and each reader has confirmed
 they have it. What the identity or the voice should say is settled
@@ -23,13 +23,13 @@ belongs to the refresh process.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Change | what changed, and which rules it touches | [standards-keeper](../../agents/standards-keeper.md) · brand owner (person) |
 | 2 | Read the Guidelines in Force | every rule the change contradicts, at its version | standards-keeper · [brand-check](../../agents/brand-check.md) |
 | 3 | Plan the Version | which sections change, who writes each, and by when | standards-keeper · [creative-producer](../../agents/creative-producer.md) |
 | 4 | Brief the Makers | everyone who writes or draws hears the change | standards-keeper · creative-producer · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [designer](../../agents/designer.md) |
-| 5 | Write the Rules | each rule written so a scoring seat can apply it | copywriter · editor · standards-keeper |
+| 5 | Write the Rules | each rule written so a scoring agent can apply it | copywriter · editor · standards-keeper |
 | 6 | Produce the Reference Assets | the marks, colors, type and templates, at every size | creative-producer · designer |
 | 7 | Show the Examples | a passing and a failing example under each rule | designer · copywriter · brand-check |
 | 8 | Clear the Rights | the marks and the type cleared for everyone who gets them | designer · rights approver (person) · legal reviewer (person) |
@@ -105,7 +105,7 @@ phases:
                      owner: creative-producer   after: plan-version
                      automation: <level>
   write-rules      - runs build-by-talent: each rule written so a
-                     scoring seat can apply it without asking what it
+                     scoring agent can apply it without asking what it
                      means
                      owner: standards-keeper    after: brief-makers
                      by: <days>                 automation: <level>
@@ -129,13 +129,13 @@ phases:
                      owner: accessibility-check after: produce-assets
                      by: <days>                 automation: <level>
   test-the-rules   - runs assessment: recent work scored against the
-                     rules as drafted, to find the rules a scoring seat
+                     rules as drafted, to find the rules a scoring agent
                      cannot apply
                      owner: brand-check         after: show-examples
                      by: <days>                 automation: <level>
   get-sign-offs    - convenes approval: the brand owner, leadership and
                      legal sign, as named signers, against a version
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: test-the-rules + check-contrast +
                             clear-rights
                      by: <days>                 automation: never
@@ -176,8 +176,8 @@ handoffs:
     named at the version in force
   plan-version -> brief-makers: which sections change, who owes each
     one, and the date each is due
-  brief-makers -> write-rules: the change as every seat heard it, and
-    what a rule has to say for a scoring seat to apply it
+  brief-makers -> write-rules: the change as every agent heard it, and
+    what a rule has to say for a scoring agent to apply it
   brief-makers -> produce-assets: the formats, the sizes and the
     templates the kit has to carry
   write-rules -> show-examples: the rules at a version
@@ -207,7 +207,7 @@ handoffs:
   list-failures -> record-learnings: the list of failing material, as
     handed over
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand owner, leadership,
            legal and rights>
   systems: the standards store (write), the asset store (write),
@@ -224,7 +224,7 @@ policy:
     version, and the version it replaces stays readable
   nothing in the kit is handed to anyone until a person has confirmed
     the organization holds the rights to it
-  a rule a scoring seat could not apply in the test is rewritten before
+  a rule a scoring agent could not apply in the test is rewritten before
     the version issues
   work already in production is judged against the version it started
     under, until <who> says otherwise
@@ -236,19 +236,19 @@ measures:
   reach: every reader confirms they hold the version within <days> of
          it being published
   quality gate: no version issues unsigned, and no rule issues that the
-                scoring seats could not apply in the test
+                scoring agents could not apply in the test
 ```
 
 ## The failure edges
 
-- **A rule cannot be applied to real work.** The brand-check seat
+- **A rule cannot be applied to real work.** The brand-check agent
   scores the recent work and reports the rules it could not decide from
   the text. The run returns to write-rules, the rule is rewritten in
   terms that settle the cases it failed on, and the test runs again on
   the version that comes back.
-- **The palette fails the contrast rule.** The accessibility-check seat
-  reports the failing color or type size with the rule attached, and
-  the run returns to produce-assets. The designer changes the value, or
+- **The palette fails the contrast rule.** The accessibility-check agent
+  reports the failing color or type size with the rule attached, and the
+  run returns to produce-assets. The designer changes the value, or
   <who> accepts the failure in writing and the acceptance is recorded
   against the rule. Issuing the version with the failure unrecorded is
   not one of the choices.
@@ -278,15 +278,14 @@ measures:
   piece.
 - **A question about a rule arrives after the run closes.** Questions
   keep coming for as long as the version is current, and the
-  standards-keeper seat answers them against the rule outside any run.
-  An answer that changes what passes is a change to the standard, and
-  it goes through this process again as a new version.
+  standards-keeper agent answers them against the rule outside any run.
+  An answer that changes what passes is a change to the standard, and it
+  goes through this process again as a new version.
 - **The trigger fires while a run is in flight.** Only one run is open
   at a time, because two versions issuing at once leaves the scoring
-  seats with no single answer. A second change joins the open run or
+  agents with no single answer. A second change joins the open run or
   waits for the version to issue, and <who> decides which.
 - **A run is abandoned.** The guidelines in force stay in force and
   nothing about them changes. The drafted rules and the produced assets
-  stay at their versions so a later run can pick them up, and any
-  rights already cleared are recorded so the clearance is not asked for
-  twice.
+  stay at their versions so a later run can pick them up, and any rights
+  already cleared are recorded so the clearance is not asked for twice.

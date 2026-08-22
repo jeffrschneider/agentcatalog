@@ -18,11 +18,11 @@ each half answered.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Period | which closed deals the run covers, and by when | [study-manager](../../agents/study-manager.md) · requester (person) |
 | 2 | Pull the Closed Deals | every deal that closed, and the reason the record gives | [analytics](../../agents/analytics.md) · study-manager |
-| 3 | Brief the Study | every seat hears the period and the question at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [account-monitor](../../agents/account-monitor.md) · analytics |
+| 3 | Brief the Study | every agent hears the period and the question at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [account-monitor](../../agents/account-monitor.md) · analytics |
 | 4 | Say How Many Interviews It Needs | how many each half needs, before any are held | statistician |
 | 5 | Draw Both Samples | who bought and who did not, drawn to match each other | study-manager · audience-manager |
 | 6 | Check Who May Be Approached | consent applied, and each account's standing checked | consent-manager · account-monitor |
@@ -104,7 +104,7 @@ phases:
                         owner: analytics         after: take-in-period
                         by: <days>               automation: <level>
   brief-the-study     - convenes briefing: the period, the question and
-                        the due date, heard by every seat at once
+                        the due date, heard by every agent at once
                         owner: study-manager     after: pull-the-deals
                         automation: <level>
   size-interviews     - human: how many interviews each half needs, and
@@ -138,7 +138,7 @@ phases:
   get-sign-offs       - convenes approval: legal and the named owner
                         sign, as named signers, against a version of
                         the samples and a version of the guide
-                        owner: <your legal seat>
+                        owner: <your legal role>
                         after: check-the-sample + cover-the-cost +
                                write-the-guide
                         by: <days>               automation: never
@@ -215,7 +215,7 @@ handoffs:
   brief-the-study -> size-interviews: the question, the size of the
     difference that would matter, and the confidence the study is being
     run to
-  brief-the-study -> write-the-guide: the question as every seat heard
+  brief-the-study -> write-the-guide: the question as every agent heard
     it, and the guide the last run of this study used
   size-interviews -> draw-samples: how many interviews each half needs
     and what those numbers were computed from
@@ -259,7 +259,7 @@ handoffs:
   deliver-themes -> record-learnings: the themes and the
     recommendations, as delivered, and who took each one
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, legal, finance
            and the expert>
   systems: the study record (write), the interview guide (write),
@@ -324,7 +324,7 @@ measures:
   record. The disagreement is one of the things the run exists to find,
   so it is reported as a finding and settled outside the run.
 - **The person who owned the deal wants to hold the interview.** The
-  study manager declines and the interview goes to a seat or a person
+  study manager declines and the interview goes to an agent or a person
   with nothing riding on the answer. A buyer talking to the seller they
   turned down gives the polite answer, and the polite answer is usually
   price.
@@ -332,30 +332,30 @@ measures:
   collections, or in a deal that has reopened comes out of the sample,
   the reading that removed them is recorded, and the sample is drawn
   again to make up the count.
-- **A sign-off comes back with changes.** The run returns to the
-  samples or to the guide, and only the part the signers named reopens.
-  A question changed after the interviews have started means the
+- **A sign-off comes back with changes.** The run returns to the samples
+  or to the guide, and only the part the signers named reopens. A
+  question changed after the interviews have started means the
   interviews already held answered a different guide, and the
   statistician says what that does to the reading before the run goes
   on.
 - **A half closes short of what it needed.** The statistician says so
   before any figure from that half is read as a result, and <who>
-  decides whether the run keeps asking, reports with the shortfall
-  named against every theme that half fed, or is dropped.
-- **A buyer says something that has to reach somebody outside the
-  run.** A customer about to leave, a complaint about the product, or a
-  legal or safety matter goes out the day it is heard and does not wait
-  for the report.
+  decides whether the run keeps asking, reports with the shortfall named
+  against every theme that half fed, or is dropped.
+- **A buyer says something that has to reach somebody outside the run.**
+  A customer about to leave, a complaint about the product, or a legal
+  or safety matter goes out the day it is heard and does not wait for
+  the report.
 - **A buyer withdraws after the findings are written.** Their interview
   comes out of the count, the statistician recomputes every figure that
   rested on it, and the findings are reissued at a new version to
   everybody who received the first one.
 - **The trigger fires while a run is in flight.** One run at a time
   covers the same period of deals, because two runs would put the same
-  questions to the same buyers. Runs over different periods or
-  different segments overlap, and the concurrency line says how many.
+  questions to the same buyers. Runs over different periods or different
+  segments overlap, and the concurrency line says how many.
 - **A run is abandoned.** The interviews already held stay where they
-  are at their versions, so a later run can read what was asked and
-  what came back. Anybody already invited is told the run has stopped,
-  an incentive already promised is still paid, and the spend line
+  are at their versions, so a later run can read what was asked and what
+  came back. Anybody already invited is told the run has stopped, an
+  incentive already promised is still paid, and the spend line
   reconciles anyway.

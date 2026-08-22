@@ -3,7 +3,7 @@
 `ref/mkt/approve-marketing-material v1`
 
 **value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
-A seat takes in finished marketing material, works out which standards
+An agent takes in finished marketing material, works out which standards
 apply to it and which people have to sign it, runs the scoring passes,
 puts one list of exceptions in front of the signers, and hands back the
 version that was cleared. Other processes call this one instead of
@@ -18,7 +18,7 @@ material and that process sends a corrected version.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Submission | record what was submitted and at which version | [decision-coordinator](../../agents/decision-coordinator.md) |
 | 2 | Name the Standards and the Signers | which standards apply, at which versions, and who signs | decision-coordinator · [standards-keeper](../../agents/standards-keeper.md) |
@@ -160,7 +160,7 @@ handoffs:
   score-disclosure -> gather-findings: a verdict per item and per
     market, each citing the rule behind it
   score-access -> gather-findings: a verdict per item, and what the
-    seat could not test
+    agent could not test
   confirm-rights -> gather-findings: the license behind every image,
     clip, track and font, and the date each one expires
   settle-rule -> the pass that raised it: what the rule means, written
@@ -177,7 +177,7 @@ handoffs:
   release -> the submitting process: the cleared version, the clearance
     record, and the date the clearance stops being good
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for brand, legal, rights and
            whoever may accept a known failure>
   systems: the review record (write), the approval record (write),
@@ -190,7 +190,7 @@ bindings:
 policy:
   nothing is released until every named signer has signed
   sign-off is a human gate and is never delegated to an agent
-  every failure reaches the signers, and a seat never waives its own
+  every failure reaches the signers, and an agent never waives its own
     finding
   a failure the signers are asked to live with reaches them only with
     a written acceptance attached, naming who accepted it and why
@@ -214,33 +214,32 @@ measures:
   the exception list goes back to the process that submitted the
   material. Only what the signer named reopens, and the corrected
   version comes in again at check-complete.
-- **A rule does not settle the question.** The scoring seat says what
-  the text does and does not say, and the standards-keeper seat puts
+- **A rule does not settle the question.** The scoring agent says what
+  the text does and does not say, and the standards-keeper agent puts
   the question to whoever owns the rule. The answer is written against
   the rule at its version, and the pass that raised it scores again.
 - **The submitter never sends a corrected version.** The review stays
   open with its findings recorded, and <who> decides whether the
   material is dropped or the release date moves. A review that has sat
-  longer than <how long> is closed as unfinished, and a later
-  submission of the same material starts a new run.
+  longer than <how long> is closed as unfinished, and a later submission
+  of the same material starts a new run.
 - **A license expires between the rights check and the release date.**
-  The rights-register seat reports the expiry with the finding, and the
-  material is cleared only for the window the license covers. Running
-  it past that window needs a new run.
+  The rights-register agent reports the expiry with the finding, and the
+  material is cleared only for the window the license covers. Running it
+  past that window needs a new run.
 - **A standard is reissued while the review is open.** The review
-  finishes against the version it started with, and the
-  standards-keeper seat says whether the change is large enough to
-  score again. Scoring again is a person's call and is recorded either
-  way.
+  finishes against the version it started with, and the standards-keeper
+  agent says whether the change is large enough to score again. Scoring
+  again is a person's call and is recorded either way.
 - **Material changes after it was signed.** The signature is void. The
   changed version goes back through the passes its change touches, and
   the signers see the changed version before it goes anywhere.
 - **The trigger fires while runs are in flight.** Reviews overlap
   normally, and the concurrency line says how many. Each review holds
   one submission at one version, so every run in flight needs its own
-  holder of the decision-coordinator seat, and the runs read their
+  holder of the decision-coordinator agent, and the runs read their
   standards read-only at the versions each run named.
 - **A run is abandoned.** The findings stay where they are at their
   versions, so a later submission of the same material starts from what
-  was already scored. Nothing is released, and the submitting process
-  is told the review closed without a clearance.
+  was already scored. Nothing is released, and the submitting process is
+  told the review closed without a clearance.

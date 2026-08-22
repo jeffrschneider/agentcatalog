@@ -10,14 +10,14 @@ say, drives the wording through legal and leadership, issues it to the
 press, customers, staff and partners at the same time, answers what
 comes back, corrects the record when a fact changes, and reviews
 afterwards what was known at each point. A person decides what the
-organization says, and no seat in this process issues anything while
+organization says, and no agent in this process issues anything while
 that decision is still open. The run stays open past the last statement,
 because the review of what was known and when it was known is part of
 the work.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Incident | record what happened and who already knows | [comms-manager](../../agents/comms-manager.md) · [community-manager](../../agents/community-manager.md) |
 | 2 | Confirm the Facts | establish what happened from the people who know | [researcher](../../agents/researcher.md) · subject matter expert (person) · comms-manager |
@@ -116,7 +116,7 @@ phases:
                       by: <hours>               automation: <level>
   get-sign-offs     - convenes approval: legal and <who> sign, as named
                       signers, against a version of the exact wording
-                      owner: <your legal seat>  after: tailor-audiences
+                      owner: <your legal role>  after: tailor-audiences
                       by: <hours>               automation: never
   brief-speakers    - convenes briefing: everyone who may be asked hears
                       the approved answers and where the rest goes
@@ -194,7 +194,7 @@ handoffs:
   close-response -> review-response: the timeline at its final version,
     and every version of every audience's wording
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, the expert and
            the spokesperson>
   systems: the incident record (read), the message record (write),
@@ -210,13 +210,13 @@ policy:
   nothing goes out unsigned, and the holding line counts as something
     going out
   wording changed after sign-off goes back through sign-offs
-  no seat answers a question the approved wording does not cover, and an
+  no agent answers a question the approved wording does not cover, and an
     unanswerable question goes to <who> within <how long>
   a fact that turns out to be wrong is corrected in a new version, and
     the version it corrects stays where it is
   every audience is told the same thing, and staff are told before the
     press
-  no seat asks an outside publication for a correction - <who> decides
+  no agent asks an outside publication for a correction - <who> decides
     whether to ask, and a person asks
   an incident that reaches a regulator, a customer's data or somebody's
     safety goes to <who> before anything is said in public
@@ -247,12 +247,12 @@ measures:
   itself, the run goes further back, to decide-position, and a person
   decides it again.
 - **A fact in the issued response turns out to be wrong.** The
-  coverage-monitor seat or the people handling the incident raise it,
+  coverage-monitor agent or the people handling the incident raise it,
   update-response writes the correction, and the correction goes back
   through sign-offs before it is issued. The version it corrects stays
   where it is, and the timeline records when the organization learned it
   was wrong.
-- **A reporter publishes something wrong.** The coverage-monitor seat
+- **A reporter publishes something wrong.** The coverage-monitor agent
   records the wrong sentence with the source that corrects it, and
   escalates. A person decides whether to ask for a correction, and a
   person asks.
@@ -262,7 +262,7 @@ measures:
   shortened timeline leaves the wording alone, and what goes out is
   still the version the signers approved.
 - **A question arrives that the approved wording does not answer.** The
-  seat holding the conversation escalates before replying, every time.
+  agent holding the conversation escalates before replying, every time.
   If the answer matters enough to give, the run goes back to
   draft-statement and the new wording is signed like any other.
 - **The incident gets worse while the response is live.** The run
@@ -273,8 +273,9 @@ measures:
   organization. What was known and when stays recorded, because the
   reason for keeping that record does not depend on the story running.
 - **The trigger fires while a response is live.** Two incidents at once
-  need two holders of the comms-manager seat. The two runs share one set
-  of approved wording only when a person says they are the same story.
+  need two holders of the comms-manager agent. The two runs share one
+  set of approved wording only when a person says they are the same
+  story.
 - **A run is abandoned.** Any statement already issued stays published
   at its version, the holding line is not quietly deleted, and the
   review still happens.

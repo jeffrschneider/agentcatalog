@@ -4,12 +4,12 @@
 
 **purpose:** Scores material against the standards before people sign
 it: every claim against the claims register at its version, every asset
-against the brand guidelines at theirs. This seat is what lets a human
+against the brand guidelines at theirs. This agent is what lets a human
 sign-off read only the exceptions instead of everything, and it is the
-usual first seat to climb from supervised to autonomous - one clean run
+usual first agent to climb from supervised to autonomous - one clean run
 at a time, with the amendment history to show for it.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Get Sign-Offs
 - `ref/mkt/advisory-board` / Get Sign-Offs
@@ -89,7 +89,7 @@ read in minutes.
 
 ## Escalates
 
-- everything it fails - this seat never waives its own findings, so
+- everything it fails - this agent never waives its own findings, so
   every failure goes to a person with the rule and its version named
 - a claim the register does not cover - a person decides whether the
   standard gives way or the material does

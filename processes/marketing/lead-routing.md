@@ -12,7 +12,7 @@ social campaign, and the reason to read the two side by side.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Capture and Dedupe | the submission lands and duplicates merge into one record | [lead-scorer](../../agents/lead-scorer.md) |
 | 2 | Enrich | company size, industry and geography get filled in | lead-scorer |
@@ -75,7 +75,7 @@ phases:
   clear-exception - human: a lead that score or route could not settle
                     waits in the queue until a person settles it, and
                     what they decided is recorded against the lead
-                    owner: <your sales operations seat>
+                    owner: <your sales operations role>
                     after: score or route, whichever could not finish
                     by: <hours>               automation: never
 handoffs:

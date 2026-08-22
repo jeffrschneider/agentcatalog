@@ -10,7 +10,7 @@ leadership reopens the positioning, when an agreed change to the identity
 or the voice has to be written into the guidelines, when the audit or the
 brand tracker falls due, or when something needs a name. The processes here
 settle the position and the promise, build the visual system and the logo,
-write the voice as numbered rules a scoring seat can pass or fail material
+write the voice as numbered rules a scoring agent can pass or fail material
 against, publish the guidelines and the asset kit, and carry a new identity
 across every page, template and registration the organization already
 holds. The brand audit samples what has already been published and names

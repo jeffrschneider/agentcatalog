@@ -5,10 +5,10 @@
 **purpose:** Turns a form submission into a scored, routed lead in
 minutes: deduplicates, enriches, scores against the current model,
 assigns by territory, and notifies the owner with the evidence attached.
-Every activity this seat holds can run unattended, and it earns that
-by leaving the evidence behind every decision it makes.
+Every activity this agent holds can run unattended, and it earns that by
+leaving the evidence behind every decision it makes.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Hand over the Accounts that Moved
 - `ref/mkt/analyze-customer-base` / Hand over the Findings
@@ -35,9 +35,9 @@ by leaving the evidence behind every decision it makes.
 ## Patterns
 
 Works alone, because lead routing convenes no rooms in the ordinary
-case. That is what makes the records this seat leaves the only way
+case. That is what makes the records this agent leaves the only way
 anyone can check its work. Feeds the weekly accuracy review that the
-analytics seat runs.
+analytics agent runs.
 
 ## Grants
 

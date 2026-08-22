@@ -7,7 +7,7 @@ A creative producer takes the signed brand positioning and has the
 visual identity built from it. The producer reads what the positioning
 and the promise say, the content librarian and the designer take stock
 of the marks, colors, type and files the company uses today, and the
-producer sets out what the new system has to cover and briefs the seats
+producer sets out what the new system has to cover and briefs the agents
 that make it. The designer and the copywriter draw two or three
 directions. Each direction is weighed against what the positioning
 claims and put in front of buyers, and the marks in each one are
@@ -20,14 +20,14 @@ so that its failures show up before it is signed. The usage rules are
 written, the brand owner, legal and leadership sign the system, and the
 standards keeper issues the rules as a numbered version and tells every
 process that reads them. The file set is released at that same version,
-so a seat that needs a logo the next day gets the one that was signed.
+so an agent that needs a logo the next day gets the one that was signed.
 This process quotes the positioning and never reopens it. When the
 identity cannot carry what the positioning claims, the producer sends
 that finding to the positioning process instead of settling it here.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Positioning | what the identity has to carry, read off the standard | [creative-producer](../../agents/creative-producer.md) · [standards-keeper](../../agents/standards-keeper.md) |
 | 2 | Take Stock of the Marks in Use | the marks, colors, type and files in use today | [content-librarian](../../agents/content-librarian.md) · [designer](../../agents/designer.md) · [brand-check](../../agents/brand-check.md) |
@@ -112,7 +112,7 @@ phases:
                      after: take-in-position + take-stock
                      by: <days>           automation: <level>
   brief-the-makers - convenes briefing: the request, the positioning
-                     and the dates, heard by every seat at once
+                     and the dates, heard by every agent at once
                      owner: creative-producer
                      after: set-the-brief
                      automation: <level>
@@ -135,7 +135,7 @@ phases:
   clear-the-marks  - human: every candidate mark searched against the
                      registers, and a person reads what the search
                      found before the direction goes forward
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: test-on-standard
                      by: <weeks>          automation: never
   choose-identity  - convenes decide-and-announce: one direction
@@ -152,7 +152,7 @@ phases:
   clear-the-rights - human: the typefaces, the images and the footage
                      checked against the licenses the organization
                      actually holds
-                     owner: <your rights seat>
+                     owner: <your rights role>
                      after: build-the-system
                      by: <days>           automation: never
   test-in-use      - runs assessment: a real page and a real deck built
@@ -163,13 +163,13 @@ phases:
                      by: <days>           automation: <level>
   write-the-rules  - human: clear space, minimum sizes, color values,
                      what to do on a dark background, and what counts
-                     as misuse, written as rules a seat can score
+                     as misuse, written as rules an agent can score
                      owner: standards-keeper
                      after: clear-the-rights + test-in-use
                      by: <days>           automation: <level>
   get-sign-offs    - convenes approval: the brand owner, legal and
                      leadership sign, as named signers, at a version
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: write-the-rules
                      by: <days>           automation: never
   issue-the-system - human: the usage rules become a numbered version
@@ -197,7 +197,7 @@ handoffs:
     today, each with where it is used and how far it has drifted
   set-the-brief -> brief-the-makers: the surfaces the system has to
     cover, what it has to do on each, and the date it is promised
-  brief-the-makers -> draft-directions: the request as every seat heard
+  brief-the-makers -> draft-directions: the request as every agent heard
     it, with the positioning attached at its version
   draft-directions -> test-on-standard: the directions at a version,
     each with the case for it written out
@@ -229,7 +229,7 @@ handoffs:
   issue-the-system -> record-learnings: who was told, when, and what
     each of them said they now have to change
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the brand owner,
            legal and rights>
   systems: the standards store (write), the asset store (write),
@@ -250,7 +250,7 @@ policy:
   anything changed after sign-off goes back through sign-offs
   an issued version is never edited. A change goes out as a new
     version, and the version it replaces stays readable
-  the file set is released at the version the signers read, so a seat
+  the file set is released at the version the signers read, so an agent
     that asks for a logo gets the one that was signed
   this process quotes the positioning and never amends it. A change to
     the positioning goes back to <your positioning process>

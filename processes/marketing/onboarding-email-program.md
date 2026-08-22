@@ -21,13 +21,13 @@ the customer is being run through.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the New Customer | who started, what they bought, and when | [lifecycle-manager](../../agents/lifecycle-manager.md) |
 | 2 | Read the Account | usage, support history and contract standing | [account-monitor](../../agents/account-monitor.md) |
 | 3 | Set the Goal for This Run | the milestones this customer has to reach | lifecycle-manager · account-monitor |
 | 4 | Choose the Path | which messages and help this customer gets | lifecycle-manager |
-| 5 | Brief the Seats that Act | everyone hears the same account picture at once | lifecycle-manager · account-monitor · [email-producer](../../agents/email-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 5 | Brief the Agents that Act | everyone hears the same account picture at once | lifecycle-manager · account-monitor · [email-producer](../../agents/email-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
 | 6 | Make What the Path Needs | copy and design the standing messages do not cover | copywriter · designer · [editor](../../agents/editor.md) |
 | 7 | Check and Sign What Was Made | brand, claims and rendering checked, then signed | [brand-check](../../agents/brand-check.md) · [accessibility-check](../../agents/accessibility-check.md) · brand owner (person) · legal reviewer (person) |
 | 8 | Build the Send | consent, opt-outs and suppression applied, proofs out | email-producer |
@@ -40,7 +40,7 @@ the customer is being run through.
 
 Activities 8 through 12 repeat once for each step of the path. The email
 producer assembles and sends a step, the account monitor and the
-analytics seat read what the customer did with it, and the lifecycle
+analytics agent read what the customer did with it, and the lifecycle
 manager decides what that customer gets next. The loop keeps running
 until every milestone is met, until a person takes the customer over, or
 until the organization stops trying.
@@ -58,7 +58,7 @@ flowchart LR
   A1 --> A2[2. Read the Account]
   A2 --> A3[3. Set the Goal for This Run]
   A3 --> A4[4. Choose the Path]
-  A4 --> A5[5. Brief the Seats that Act]
+  A4 --> A5[5. Brief the Agents that Act]
   A5 --> A6[6. Make What the Path Needs]
   A5 -. the standing messages cover the path .-> A8
   A6 --> A7[7. Check and Sign What Was Made]
@@ -87,7 +87,7 @@ owner: <who>                          effective: <date>
 trigger: a customer starts, as <your system of record> records it
 concurrency: runs always overlap - every customer who starts opens one,
              and <how many> stay open at once per holder of the
-             lifecycle-manager seat
+             lifecycle-manager agent
 goal: a customer who has reached the milestones that count as active,
       by the date the program promises, having been sent only signed
       messages the consent record covers
@@ -113,25 +113,25 @@ phases:
                      chosen and every step was skipped
                      owner: lifecycle-manager  after: set-the-goal
                      automation: <level>
-  brief-the-seats  - convenes briefing: the account picture and the
-                     path, heard by every seat that acts at once
+  brief-the-agents  - convenes briefing: the account picture and the
+                     path, heard by every agent that acts at once
                      owner: lifecycle-manager  after: choose-the-path
                      automation: <level>
   make-material    - runs build-by-talent: the copy and the design for
                      the steps the standing messages do not cover
-                     owner: lifecycle-manager  after: brief-the-seats
+                     owner: lifecycle-manager  after: brief-the-agents
                      by: <days>                automation: <level>
   check-and-sign   - convenes approval: the brand and claims pass and
                      the rendering and accessibility pass, then brand
                      and legal sign as named signers against a version
-                     owner: <your legal seat>  after: make-material
+                     owner: <your legal role>  after: make-material
                      by: <days>                automation: never
   build-the-send   - human: the step assembled at the signed version,
                      the audience built with the consent, opt-out and
                      suppression rules applied, the schedule and the
                      send-time window set, and the proofs sent
                      owner: email-producer
-                     after: check-and-sign + brief-the-seats
+                     after: check-and-sign + brief-the-agents
                      by: <days>                automation: <level>
   send-the-step    - human: the named owner records a go and the
                      sending system fires
@@ -182,11 +182,11 @@ handoffs:
   set-the-goal -> choose-the-path: the milestones this customer has to
     reach, the version of the milestone list they were read from, and
     the date they are meant to reach them by
-  choose-the-path -> brief-the-seats: the path at a version, naming
+  choose-the-path -> brief-the-agents: the path at a version, naming
     every step, the wait before it, and the reason it was chosen
-  brief-the-seats -> make-material: the steps the standing messages do
+  brief-the-agents -> make-material: the steps the standing messages do
     not cover, and what each one has to make the customer do
-  brief-the-seats -> build-the-send: the same path and the same account
+  brief-the-agents -> build-the-send: the same path and the same account
     picture. Both branches read one record
   make-material -> check-and-sign: the copy and the design at a version
   check-and-sign -> build-the-send: the approved material at the signed
@@ -206,7 +206,7 @@ handoffs:
   confirm-active -> close-the-run: every milestone with the evidence
     under it, and the date the last one was met
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, brand, legal
            and the owner who says go>
   systems: the sending system (write),
@@ -276,7 +276,7 @@ measures:
   in the record until it is met, whatever the rest of the path is doing.
 - **A step will not build as the copy and the design supply it.** The
   email-producer says what will not fit and sends that piece back to the
-  seat that made it. The step is never sent in a form nobody approved.
+  agent that made it. The step is never sent in a form nobody approved.
 - **Two systems disagree about the same account.** The account-monitor
   records both readings with the system behind each one and raises the
   disagreement. The lifecycle-manager does not choose between them, and
@@ -286,8 +286,9 @@ measures:
   active on a milestone nobody can show.
 - **The trigger fires while runs are in flight.** Runs always overlap,
   because every customer who starts opens one. The concurrency line says
-  how many one holder of the lifecycle-manager seat carries at once, and
-  the runs share the milestone list and the program design read-only.
+  how many one holder of the lifecycle-manager agent carries at once,
+  and the runs share the milestone list and the program design
+  read-only.
 - **A run is abandoned.** The customer stops receiving steps, any send
   already scheduled is pulled, and the closing record says the goal was
   not reached and why the organization stopped. Commitments already made

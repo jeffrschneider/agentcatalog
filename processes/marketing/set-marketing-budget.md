@@ -25,7 +25,7 @@ budget rests on and what would reopen it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Planning Guidance | what finance gives marketing to work within | finance (person) · leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
 | 2 | Read Last Year's Spend | what each function spent against what it was given | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) · [spend-reconciler](../../agents/spend-reconciler.md) |
@@ -118,17 +118,17 @@ phases:
   size-reserve      - convenes decide-and-announce: <who> says how much
                       is held back for changes during the year, and on
                       what conditions it is released
-                      owner: <your finance seat>   after: test-the-asks
+                      owner: <your finance role>   after: test-the-asks
                       by: <days>                   automation: never
   settle-split      - convenes decide-and-announce: <who> divides the
                       money among the functions, and says what each
                       function did not get and why
-                      owner: <your finance seat>   after: size-reserve
+                      owner: <your finance role>   after: size-reserve
                       by: <days>                   automation: never
   movement-rules    - human: who may move money between functions, up
                       to what amount, who approves each move, and what
                       has to be recorded when one is made
-                      owner: <your finance seat>   after: settle-split
+                      owner: <your finance role>   after: settle-split
                       automation: never
   phase-money       - human: the date each function's money becomes
                       available, and the share held until a named
@@ -142,7 +142,7 @@ phases:
                       automation: <level>
   approve-budget    - convenes approval: <who> and finance sign, as
                       named signers, against a version of the budget
-                      owner: <your finance seat>
+                      owner: <your finance role>
                       after: movement-rules + name-measures
                       by: <days>                   automation: never
   load-allocations  - system: each function's number recorded in the
@@ -203,7 +203,7 @@ handoffs:
   tell-functions -> record-basis: what each function took away, and
     anything a function said it could not do inside its number
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>
   systems: the budget record (write), the decision record (write),
            the commitments already made (read),

@@ -23,7 +23,7 @@ on something new six months later.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Approved Identity | what the new identity changes and what it covers | [standards-keeper](../../agents/standards-keeper.md) · brand owner (person) |
 | 2 | Issue the Identity at a Version | the guidelines become a numbered version | standards-keeper |
@@ -35,7 +35,7 @@ on something new six months later.
 | 8 | Decide What Happens to Each Surface | remake, replace, retire, or leave under the old one | content-librarian · [decision-coordinator](../../agents/decision-coordinator.md) · brand owner (person) |
 | 9 | Check What the Department Can Carry | what the transition needs and what it displaces | [capacity-manager](../../agents/capacity-manager.md) · [budget-keeper](../../agents/budget-keeper.md) |
 | 10 | Set the Switch Date and the Order | the day it goes public, and what changes before it | decision-coordinator · leadership (person) · capacity-manager |
-| 11 | Brief the Seats that Remake the Material | every seat hears the same account of what changes | content-librarian · creative-producer · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) |
+| 11 | Brief the Agents that Remake the Material | every agent hears the same account of what changes | content-librarian · creative-producer · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) · [video-editor](../../agents/video-editor.md) · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) |
 | 12 | Rebuild the Templates | page, email and document templates, remade first | creative-producer · designer · web-producer · email-producer |
 | 13 | Remake the Assets | logos, images and video at every size in use | creative-producer · designer · video-editor |
 | 14 | Rewrite What the Words Say | names, boilerplate and descriptions that changed | copywriter · [editor](../../agents/editor.md) |
@@ -68,7 +68,7 @@ flowchart LR
   A8 --> A9[9. Check What the Department Can Carry]
   A9 -. the plan does not fit the period .-> A8
   A9 --> A10[10. Set the Switch Date and the Order]
-  A10 --> A11[11. Brief the Seats that Remake the Material]
+  A10 --> A11[11. Brief the Agents that Remake the Material]
   A10 --> A15[15. Register the Names and the Marks]
   A15 -. the mark is already held .-> A1
   A11 --> A12[12. Rebuild the Templates]
@@ -159,7 +159,7 @@ phases:
                        owner: content-librarian
                        after: score-surfaces + find-registrations
                        automation: <level>
-  check-capacity     - human: the seats the transition needs, the
+  check-capacity     - human: the agents the transition needs, the
                        weeks it takes, the money it draws, and the
                        committed work it would displace
                        owner: capacity-manager
@@ -172,7 +172,7 @@ phases:
                        after: check-capacity
                        by: <date>        automation: never
   brief-the-work     - convenes briefing: what each surface needs and
-                       when it is due, heard by every seat at once
+                       when it is due, heard by every agent at once
                        owner: content-librarian
                        after: set-switch-date
                        automation: <level>
@@ -201,7 +201,7 @@ phases:
   get-sign-offs      - convenes approval: brand, legal and rights
                        sign, as named signers, against a version of
                        the templates and the remade material
-                       owner: <your legal seat>
+                       owner: <your legal role>
                        after: rebuild-templates + remake-assets +
                               rewrite-words
                        by: <days>        automation: never
@@ -295,7 +295,7 @@ handoffs:
   set-switch-date -> register-marks: the names, domains and handles
     the new identity needs, and the date they have to be held by
   brief-the-work -> rebuild-templates: what each template has to
-    become, as every seat heard it
+    become, as every agent heard it
   rebuild-templates -> remake-assets / rewrite-words: the templates at
     a version, with the sizes, the safe areas and the character counts
     the material has to fit
@@ -327,7 +327,7 @@ handoffs:
   report-transition -> record-learnings: the account of the
     transition, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand owner, leadership,
            legal and rights>
   systems: the standards store (write), the content inventory (write),
@@ -380,47 +380,46 @@ measures:
   manager finds that another party holds the domain, the handle or the
   mark the new identity needs, or holds one close enough to be
   contested. The run returns to take-in-identity and the people who
-  approved the identity decide whether the identity changes, whether
-  the organization does without that name, or whether it goes after
-  the name. Nothing publishes on a name the organization does not
-  hold, so the switch date moves if the answer takes longer than the
-  date allows.
-- **The department cannot carry the transition in the time it has.**
-  The capacity manager says so on the day the math stops working and
-  names the committed work that would have to move, and the budget
-  keeper says what is left to draw against. The run returns to the
-  surface decisions, and a person either cuts the list, moves the
-  date, or accepts what gets displaced.
+  approved the identity decide whether the identity changes, whether the
+  organization does without that name, or whether it goes after the
+  name. Nothing publishes on a name the organization does not hold, so
+  the switch date moves if the answer takes longer than the date allows.
+- **The department cannot carry the transition in the time it has.** The
+  capacity manager says so on the day the math stops working and names
+  the committed work that would have to move, and the budget keeper says
+  what is left to draw against. The run returns to the surface
+  decisions, and a person either cuts the list, moves the date, or
+  accepts what gets displaced.
 - **The new colors fail the contrast rule.** The accessibility check
-  reports a failure that comes from the identity itself rather than
-  from any one page, so no producing seat can fix it. The finding goes
-  to the standards keeper as a question about the standard, a person
+  reports a failure that comes from the identity itself rather than from
+  any one page, so no producing agent can fix it. The finding goes to
+  the standards keeper as a question about the standard, a person
   decides whether the identity changes or that use of the color is
   written out of it, and the answer is recorded against the rule so
   every later surface gets the same answer.
-- **A sign-off comes back with changes.** The run returns to the
-  assets or to the words, and only the piece the signers named
-  reopens. A change to a template reopens everything already made from
-  that template, which is why the templates are signed before the
-  material built on them.
-- **The switch is part done when something breaks.** Half the
-  properties show the new identity and half show the old. The order
-  set at the switch date says which surfaces have to change together,
-  and a surface that cannot change takes its whole group back with it.
-  A person decides whether the date holds with the organization
-  showing two identities for a period, or whether the surfaces that
-  already changed go back to the old one until the group is ready.
+- **A sign-off comes back with changes.** The run returns to the assets
+  or to the words, and only the piece the signers named reopens. A
+  change to a template reopens everything already made from that
+  template, which is why the templates are signed before the material
+  built on them.
+- **The switch is part done when something breaks.** Half the properties
+  show the new identity and half show the old. The order set at the
+  switch date says which surfaces have to change together, and a surface
+  that cannot change takes its whole group back with it. A person
+  decides whether the date holds with the organization showing two
+  identities for a period, or whether the surfaces that already changed
+  go back to the old one until the group is ready.
 - **The sweep finds material nobody knew about.** The inventory was
   incomplete, and on a transition this size it usually is. The run
   returns to build-inventory, the found surface is added at a new
-  version of the inventory, and it gets one of the same four answers
-  as everything else.
-- **Something on the old identity cannot be changed.** Printed
-  material is already in people's hands, a partner controls the page,
-  a video sits on somebody else's platform, or a license does not
-  allow the change. The surface is recorded as staying on the old
-  identity with the reason, and the record says what happens the next
-  time it is reprinted or renewed.
+  version of the inventory, and it gets one of the same four answers as
+  everything else.
+- **Something on the old identity cannot be changed.** Printed material
+  is already in people's hands, a partner controls the page, a video
+  sits on somebody else's platform, or a license does not allow the
+  change. The surface is recorded as staying on the old identity with
+  the reason, and the record says what happens the next time it is
+  reprinted or renewed.
 - **A page's address changes with the name.** Every old address keeps
   pointing at a page, the redirect is set before the old address stops
   serving, and the check on the remade material tests that it works.
@@ -428,29 +427,27 @@ measures:
   cost goes to the people setting the switch date before the date is
   set.
 - **Work is in production when the version issues.** A piece briefed,
-  written or signed under the old version is judged against the
-  version it started under until <who> says otherwise. The hard case
-  is a piece signed under the old version that would publish after the
-  switch, and <who> decides whether it holds, goes back through
-  sign-offs against the new version, or publishes as it was signed.
+  written or signed under the old version is judged against the version
+  it started under until <who> says otherwise. The hard case is a piece
+  signed under the old version that would publish after the switch, and
+  <who> decides whether it holds, goes back through sign-offs against
+  the new version, or publishes as it was signed.
 - **The recognition reading gets worse after the switch.** The
   statistician says whether the difference is larger than the noise in
-  the measurement, and a difference smaller than the noise says
-  nothing at all. A real drop goes to leadership with both readings
-  and the responses under them. This process does not reverse the
-  identity, and what happens next is decided where the identity was
-  decided.
+  the measurement, and a difference smaller than the noise says nothing
+  at all. A real drop goes to leadership with both readings and the
+  responses under them. This process does not reverse the identity, and
+  what happens next is decided where the identity was decided.
 - **The trigger fires while a run is in flight.** One run is open at a
-  time. A second approved identity either goes into the open run
-  before the templates are rebuilt, or waits for the run to close, and
-  <who> decides which. Two transitions at once leave every scoring
-  seat unable to say which version a surface should have been made
-  under.
+  time. A second approved identity either goes into the open run before
+  the templates are rebuilt, or waits for the run to close, and <who>
+  decides which. Two transitions at once leave every scoring agent
+  unable to say which version a surface should have been made under.
 - **A run is abandoned.** Every surface already switched stays on the
   new identity, every surface still on the old one stays where it is,
   and both states are recorded so a later run knows what it inherits.
   The domains and marks already registered stay registered and keep
   costing money until somebody decides to let them lapse, so they go
-  back to the supplier manager with their renewal dates on them. The
-  old version stays current, the new version stays issued and unused,
-  and the spend line reconciles anyway.
+  back to the supplier manager with their renewal dates on them. The old
+  version stays current, the new version stays issued and unused, and
+  the spend line reconciles anyway.

@@ -23,7 +23,7 @@ issued.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Change | say what changed and what the decision has to settle | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Gather the Evidence | what buyers weigh, what rivals claim, what people search | [researcher](../../agents/researcher.md) · [search-optimizer](../../agents/search-optimizer.md) · subject matter expert (person) |
@@ -144,13 +144,13 @@ phases:
                      after: write-position
                      by: <days>           automation: <level>
   set-voice-rules  - human: how the company sounds when it says any of
-                     this, written as rules a scoring seat can apply
+                     this, written as rules a scoring agent can apply
                      owner: standards-keeper
                      after: write-position
                      by: <days>           automation: <level>
   get-sign-offs    - convenes approval: leadership, legal and the
                      brand owner sign, as named signers, at a version
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: record-proof + set-voice-rules
                      by: <days>           automation: never
   issue-version    - human: the signed positioning, promise and voice
@@ -209,7 +209,7 @@ handoffs:
   tell-the-readers -> record-learnings: who was told, when, and what
     each of them said they now have to change
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, the brand
            owner, the sales leader and the expert>
   systems: the standards store (write), the decision record (write),

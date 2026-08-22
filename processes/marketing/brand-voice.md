@@ -8,12 +8,12 @@ promises. This process turns that into the way the company sounds and
 the set of messages that carry the promise. A decision coordinator opens
 the run and has two readings gathered first: how the live material reads
 today, and the words buyers themselves use for the problem and the
-category. The writing seats draft the voice as a short set of traits
+category. The writing agents draft the voice as a short set of traits
 with a definition under each one, set the tone each situation calls for,
 and build the messaging architecture, which is one core message, the
 pillars that carry it, the proof recorded under each pillar, and the
 version each audience hears. The standards keeper writes the voice out
-as numbered rules, and each rule is worded so that a scoring seat can
+as numbered rules, and each rule is worded so that a scoring agent can
 return a pass or a fail against it and carries an example that passes
 and an example that fails. Those rules are scored over material that
 already exists before anyone signs them, because a rule that two readers
@@ -21,12 +21,12 @@ apply differently will fail material at random once it is in force.
 Leadership, legal and the brand owner sign, and the standards keeper
 issues the voice, the tone settings, the architecture and the word list
 together as a numbered version of the brand guidelines. That version is
-what the brand-check seat scores material against, and this process is
+what the brand-check agent scores material against, and this process is
 where it comes from. The run does not reopen the position itself.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Approved Positioning | say what the standard has to cover and by when | [decision-coordinator](../../agents/decision-coordinator.md) · [standards-keeper](../../agents/standards-keeper.md) |
 | 2 | Read How the Company Sounds Now | a sample of live material, read for how it reads | [content-librarian](../../agents/content-librarian.md) · [editor](../../agents/editor.md) |
@@ -44,7 +44,7 @@ where it comes from. The run does not reopen the position itself.
 | 14 | Get Sign-Offs | leadership, legal and the brand owner sign it | leadership (person) · legal reviewer (person) · brand owner (person) |
 | 15 | Issue the Standard at a Version | voice, tone, architecture and words at one number | standards-keeper |
 | 16 | Tell the Processes that Read It | every reader gets the version and what changed | standards-keeper · decision-coordinator |
-| 17 | Brief the Seats that Write to It | the writing seats work through it on a real piece | standards-keeper · copywriter · editor · [content-manager](../../agents/content-manager.md) |
+| 17 | Brief the Agents that Write to It | the writing agents work through it on a real piece | standards-keeper · copywriter · editor · [content-manager](../../agents/content-manager.md) |
 | 18 | Watch How the Rules Score | which rules keep failing and which nobody applies | brand-check · [analytics](../../agents/analytics.md) · standards-keeper |
 | 19 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
@@ -77,7 +77,7 @@ flowchart LR
   A14 -. changes requested .-> A7
   A14 --> A15[15. Issue the Standard at a Version]
   A15 --> A16[16. Tell the Processes that Read It]
-  A16 --> A17[17. Brief the Seats that Write to It]
+  A16 --> A17[17. Brief the Agents that Write to It]
   A17 --> A18[18. Watch How the Rules Score]
   A18 -. a rule nobody can apply .-> A11
   A18 --> A19[19. Record What Was Learned]
@@ -96,7 +96,7 @@ concurrency: one run at a time - two runs would put two standards in
              front of the same signers
 goal: a voice, a tone setting for each situation, and a messaging
       architecture, sourced, signed, and issued as a numbered version
-      of the brand guidelines that a scoring seat can apply rule by
+      of the brand guidelines that a scoring agent can apply rule by
       rule
 phases:
   take-in-position   - human: read the approved positioning and say
@@ -115,7 +115,7 @@ phases:
                        after: take-in-position
                        by: <weeks>          automation: <level>
   brief-makers       - convenes briefing: the positioning, the promise
-                       and both readings, heard by every seat at once
+                       and both readings, heard by every agent at once
                        owner: decision-coordinator
                        after: sound-now + audience-words
                        automation: <level>
@@ -166,7 +166,7 @@ phases:
                        by: <weeks>          automation: <level>
   get-sign-offs      - convenes approval: leadership, legal and the
                        brand owner sign, as named signers, at a version
-                       owner: <your legal seat>
+                       owner: <your legal role>
                        after: try-the-rules + test-on-buyers
                        by: <days>           automation: never
   issue-version      - human: the signed voice, tone, architecture and
@@ -180,7 +180,7 @@ phases:
                        owner: standards-keeper
                        after: issue-version
                        by: <days>           automation: <level>
-  brief-the-writers  - convenes briefing: the writing seats work
+  brief-the-writers  - convenes briefing: the writing agents work
                        through the new version on a real piece
                        owner: standards-keeper
                        after: tell-the-readers
@@ -240,13 +240,13 @@ handoffs:
   issue-version -> tell-the-readers: the numbered version, what
     changed in it, and the date it applies from
   tell-the-readers -> brief-the-writers: the version and the rules the
-    writing seats have to work to
+    writing agents have to work to
   brief-the-writers -> watch-the-scores: the first pieces written
     under the new version, and the date each one was scored
   watch-the-scores -> record-learnings: the scores by rule, naming the
     rules material keeps failing and the rules nobody could apply
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal and the
            brand owner>
   systems: the standards store (write), the interpretation record
@@ -259,7 +259,7 @@ bindings:
            version, <your claims register>, <your style guide>
            <version>
 policy:
-  every rule is written so a scoring seat can return a verdict on it,
+  every rule is written so a scoring agent can return a verdict on it,
     and a rule that cannot be scored does not go into the standard
   every message in the architecture carries a source recorded against
     it

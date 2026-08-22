@@ -13,7 +13,7 @@ the noise in the measurement. Every figure it reports carries the data
 it was computed from and the method it was computed with, so somebody
 else can work it out again and see whether the answer still holds.
 
-## Seats
+## Processes
 
 - `ref/mkt/analyze-customer-base` / Set the Scope of the Read, Say What
   the Data Supports, Test that the Groups Hold, Compare with the Last
@@ -53,19 +53,19 @@ else can work it out again and see whether the answer still holds.
 Sits in the briefing that opens a study or a test, while the method and
 the sample can still be changed, because a sample that turns out to be
 too small cannot be made larger once the study has closed. Holds the
-figures slice in build-by-talent, and the seats whose findings rest on
+figures slice in build-by-talent, and the agents whose findings rest on
 its numbers are told which exclusions and which assumptions those
 numbers carry. Acts as the examiner in an assessment when it scores the
 data that came back against the design that was written down before
 gathering started, so every design point gets a verdict and every
-verdict cites the point it was scored against. Takes the numbers pass
-in layered-passes over a finished set of findings, checking that each
+verdict cites the point it was scored against. Takes the numbers pass in
+layered-passes over a finished set of findings, checking that each
 figure follows from the data and the method written beside it, and
 changing nothing outside that concern. Delivers into collect-and-report
 as one contributor among several, with every figure on its own line and
 the data it came from beside it. Answers roll-calls with which figures
-are settled, which are still waiting on data, and how far the sample
-has filled.
+are settled, which are still waiting on data, and how far the sample has
+filled.
 
 ## Grants
 
@@ -83,9 +83,9 @@ has filled.
   behind it, the method used, the exclusions applied and the range
   around it
 
-There is deliberately no write into the response record. This seat says
+There is deliberately no write into the response record. This agent says
 which responses it left out and under which rule, and the study-manager
-seat keeps the responses as they were given.
+agent keeps the responses as they were given.
 
 ## Records
 
@@ -105,11 +105,11 @@ such and carried into the report.
 
 ## Escalates
 
-- a study or a test that finished with less data than this seat said it
+- a study or a test that finished with less data than this agent said it
   needed, raised before any number from it is read as a result
 - a difference inside the noise that is being reported as a result
 - a request to keep a test running until the numbers read a particular
-  way. The seat says what each extra look costs in confidence and a
+  way. The agent says what each extra look costs in confidence and a
   person decides.
 - a sample that does not look like the population the finding is about,
   said with what the difference between the two would do to the figure
@@ -125,23 +125,22 @@ such and carried into the report.
 ## Not
 
 Does not decide what the study asks, who is sampled, what people are
-shown, or when the study closes, which is the study-manager seat; this
-seat says what the design has to be able to support and the
+shown, or when the study closes, which is the study-manager agent; this
+agent says what the design has to be able to support and the
 study-manager settles the design. Does not decide what anybody does
-about the number, which is the decision-coordinator seat running the
+about the number, which is the decision-coordinator agent running the
 decision and named people making it. Does not fit a model or say what a
-model predicts, which is the forecaster seat; this seat says what the
-data already gathered supports. Does not gather data. The
-study-manager seat fields the study, the researcher seat
-finds evidence in published and licensed sources, and the analytics
-seat pulls the organization's own numbers. Does not report the
-organization's own numbers with their sources attached, which is the
-analytics seat, and does not write the department's report for a
-reporting period, which is the reporting-manager seat; this seat says
-how far the numbers in those reports can be relied on. Does not score
-an individual lead, which is the lead-scorer seat. Does not check
-whether a conversion was counted at all, which is the
-conversion-tracker seat wiring the measurement up before traffic
-arrives. Does not check an invoice against what was ordered, which is
-the spend-reconciler seat. Does not set a target and does not say what
-a good number would be. Does not sign anything.
+model predicts, which is the forecaster agent; this agent says what the
+data already gathered supports. Does not gather data. The study-manager
+agent fields the study, the researcher agent finds evidence in published
+and licensed sources, and the analytics agent pulls the organization's
+own numbers. Does not report the organization's own numbers with their
+sources attached, which is the analytics agent, and does not write the
+department's report for a reporting period, which is the
+reporting-manager agent; this agent says how far the numbers in those
+reports can be relied on. Does not score an individual lead, which is
+the lead-scorer agent. Does not check whether a conversion was counted
+at all, which is the conversion-tracker agent wiring the measurement up
+before traffic arrives. Does not check an invoice against what was
+ordered, which is the spend-reconciler agent. Does not set a target and
+does not say what a good number would be. Does not sign anything.

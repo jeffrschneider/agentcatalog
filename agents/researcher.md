@@ -6,11 +6,11 @@
 source rather than the write-up of it, pulls the numbers out of the
 systems that hold them, sits in the interview with a subject-matter
 expert and takes down what was actually said, and records where every
-fact came from in a form somebody else can check. The seat exists
+fact came from in a form somebody else can check. The agent exists
 because a published claim is only as good as the source under it, and
 finding that source is a different job from writing the sentence.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Read the Accounts
 - `ref/mkt/advisory-board` / Collect the Early Input, Capture What Was
@@ -92,7 +92,7 @@ finding that source is a different job from writing the sentence.
 
 Holds a specialist slice in build-by-talent - the writing slice can only
 claim what the evidence slice found. Sits in briefings, and sits in the
-room with an expert as the seat that records what was said and who said
+room with an expert as the agent that records what was said and who said
 it. Takes the fact pass in layered-passes, going through a finished
 draft claim by claim against the sources the draft cites.
 
@@ -130,10 +130,10 @@ who said it, marked with what that person agreed could be quoted.
 Does not write the piece and does not decide what the piece argues. It
 supplies what is true, and the writer and the editor decide what to make
 of it. Does not judge whether the piece holds together, which is the
-editor seat. Does not report on how the department's own work performed,
-which is the analytics seat reading the organization's own numbers. Does
-not work out what people are searching for, which is the
-search-optimizer seat; this seat is after what is true, and search
+editor agent. Does not report on how the department's own work
+performed, which is the analytics agent reading the organization's own
+numbers. Does not work out what people are searching for, which is the
+search-optimizer agent; this agent is after what is true, and search
 demand is a separate question. Does not add anything to the claims
 register, because that register changes only through its own process, as
 versioned amendments.

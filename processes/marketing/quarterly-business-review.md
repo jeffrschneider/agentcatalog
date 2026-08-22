@@ -6,22 +6,22 @@
 A quarter closes, and the department has to examine what it did and say
 what it will be held to next. The report for the quarter arrives already
 published from `ref/mkt/marketing-performance-report`, and this review
-starts from it. The seats here set the quarter's results against what
-the annual plan said the year would do, read the budget position and
-the conditions outside the company, re-forecast the quarters that are
-left, and say what each change an area proposes would cost, return and
+starts from it. The agents here set the quarter's results against what
+the annual plan said the year would do, read the budget position and the
+conditions outside the company, re-forecast the quarters that are left,
+and say what each change an area proposes would cost, return and
 displace. Leadership then examines the quarter, says which of the plan
 stands, resets what each area is held to, and settles the money that
 moves between the lines. Four of the sixteen activities turn on a
 person: finance confirms the budget position, leadership examines the
 quarter, leadership sets the new commitments, and leadership and finance
 move the money. Raising the automation level moves none of those four.
-The run closes when the reset commitments are published and every seat
+The run closes when the reset commitments are published and every agent
 has heard what it owes.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Set What the Review Covers | the quarter, the plan lines, and the questions | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Take in the Period Report | the published report, and what it could not answer | [reporting-manager](../../agents/reporting-manager.md) |
@@ -37,7 +37,7 @@ has heard what it owes.
 | 12 | Move the Money | budget shifted between the lines of the plan | leadership (person) · finance (person) · budget-keeper · decision-coordinator |
 | 13 | Update What Gets Measured | the measures adjusted to the reset commitments | reporting-manager · analytics |
 | 14 | Publish the Reset Commitments | the record goes out at a version on its date | decision-coordinator |
-| 15 | Brief the Department | every seat hears what changed and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · audience-manager · reporting-manager |
+| 15 | Brief the Department | every agent hears what changed and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · audience-manager · reporting-manager |
 | 16 | Record What the Review Rests On | the assumptions, and what would reopen the reset | decision-coordinator · forecaster |
 
 ## The graph
@@ -141,7 +141,7 @@ phases:
   move-money        - human: the budget shifted between the lines of the
                       plan, one line for each move. <who> decides the
                       move and finance confirms it
-                      owner: <your finance seat>   after: new-commitments
+                      owner: <your finance role>   after: new-commitments
                       by: <days>                   automation: never
   update-measures   - human: the measure each reset commitment will be
                       reported against, defined so the period report can
@@ -154,7 +154,7 @@ phases:
                       owner: decision-coordinator
                       after: move-money + update-measures
                       automation: <level>
-  brief-department  - convenes briefing: every seat hears what changed,
+  brief-department  - convenes briefing: every agent hears what changed,
                       what it owes and from when, at once
                       owner: decision-coordinator  after: publish-reset
                       by: <days>                   automation: <level>
@@ -201,11 +201,11 @@ handoffs:
   update-measures -> publish-reset: the measure each commitment will be
     reported against
   publish-reset -> brief-department: the reset at a version, and what
-    each seat owes against it
-  brief-department -> record-basis: what each seat took away, and
-    anything a seat said it could not do
+    each agent owes against it
+  brief-department -> record-basis: what each agent took away, and
+    anything an agent said it could not do
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>
   systems: the decision record (write), the plan store (write),
            the budget record (write), the book of work (write),

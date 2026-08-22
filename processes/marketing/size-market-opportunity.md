@@ -20,7 +20,7 @@ what this process delivers.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Question | what the sizing has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Draw the Market Boundary | what counts inside this market and what does not | decision-coordinator · [researcher](../../agents/researcher.md) · subject matter expert (person) |
@@ -35,7 +35,7 @@ what this process delivers.
 | 11 | Clear the Sources | which figures may be used outside the company | researcher · legal reviewer (person) |
 | 12 | Settle on the Number | one number accepted, with the reasons said out loud | decision-coordinator · leadership (person) · finance (person) |
 | 13 | Write down the Sizing | number, boundary, method, window, assumptions | decision-coordinator · forecaster |
-| 14 | Issue the Sizing as a Version | the sizing numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 14 | Issue the Sizing as a Version | the sizing numbered, and the agents that read it told | [standards-keeper](../../agents/standards-keeper.md) |
 | 15 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
 | 16 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
@@ -87,13 +87,13 @@ goal: one number for the size of the named market, recorded with the
       the people who will plan against it
 phases:
   take-in-question - convenes briefing: what the sizing has to settle,
-                     who accepts the answer, what evidence each seat
+                     who accepts the answer, what evidence each agent
                      owes, and the date it is due
                      owner: decision-coordinator  after: trigger
                      automation: <level>
   draw-boundary    - convenes decide-and-announce: what counts inside
                      this market and what is excluded, heard at once by
-                     every seat that will compute against it
+                     every agent that will compute against it
                      owner: decision-coordinator  after: take-in-question
                      by: <days>                   automation: <level>
   choose-method    - human: top down from a published market figure,
@@ -140,7 +140,7 @@ phases:
   clear-sources    - convenes approval: legal signs which figures may
                      be quoted outside the company and which may be
                      used only inside it
-                     owner: <your legal seat>     after: outside-evidence
+                     owner: <your legal role>     after: outside-evidence
                      by: <days>                   automation: never
   settle-number    - convenes bake-off: the number each method
                      produced, one of them accepted, with the reasons
@@ -205,7 +205,7 @@ handoffs:
   set-review -> record-learnings: the review date, and the conditions
     that bring the sizing back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance, legal and
            the expert who knows how this market buys>
   systems: licensed market data (read, cap: <what may be bought
@@ -229,7 +229,7 @@ policy:
     estimate is put in its place
   no number leaves the run without the method that produced it, the
     boundary it was computed inside, and the period it covers
-  the seat that computed a number does not check it
+  the agent that computed a number does not check it
   a figure the organization may not quote outside is marked as
     internal, and a sizing sent outside carries cleared figures only
   the number is accepted by named people, and the acceptance is never
@@ -257,13 +257,13 @@ measures:
   the numbers are computed again inside the boundary that comes out.
 - **A rate cannot be sourced.** The forecaster reports it as unsourced
   and never supplies a figure of its own. The run goes back to the
-  evidence for a rate somebody can point at, and if none is found,
-  <who> decides whether the sizing proceeds with the gap stated in it.
+  evidence for a rate somebody can point at, and if none is found, <who>
+  decides whether the sizing proceeds with the gap stated in it.
 - **There is no list of buyers to count.** A bottom-up method needs a
   count that can actually be made, and when there is none the run goes
   back to the method and the market is sized another way. Commissioning
-  a study to produce the count is a decision <who> makes, and the
-  sizing waits for it.
+  a study to produce the count is a decision <who> makes, and the sizing
+  waits for it.
 - **The check finds the executed method departing from the chosen one.**
   The findings go back to the calculation with the rule attached to each
   one, the forecaster fixes what the findings name, and the same check
@@ -275,7 +275,7 @@ measures:
 - **The people who decide will not accept the number.** The run goes
   back to the method, and what they would not accept is recorded with
   the reasons they gave. A number accepted without those reasons cannot
-  be used by the seats that plan against it.
+  be used by the agents that plan against it.
 - **The sizing goes stale.** The review conditions say what would change
   the answer, and a market that moves in one of those ways brings the
   sizing back before its review date.

@@ -26,12 +26,12 @@ away from the standard.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Request | read the cadence or the concern that called it | [study-manager](../../agents/study-manager.md) · requester (person) |
 | 2 | Set What the Audit Covers | the channels, the period and the markets covered | study-manager · brand owner (person) |
 | 3 | Name the Standard Versions | which version of each standard applies | [standards-keeper](../../agents/standards-keeper.md) |
-| 4 | Brief the Audit | every seat hears the scope and the standard at once | study-manager · standards-keeper · [brand-check](../../agents/brand-check.md) · [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) · [statistician](../../agents/statistician.md) |
+| 4 | Brief the Audit | every agent hears the scope and the standard at once | study-manager · standards-keeper · [brand-check](../../agents/brand-check.md) · [coverage-monitor](../../agents/coverage-monitor.md) · [analytics](../../agents/analytics.md) · [statistician](../../agents/statistician.md) |
 | 5 | List Where the Brand Appears | every place an outsider meets the brand, by channel | study-manager · [content-librarian](../../agents/content-librarian.md) · [audience-manager](../../agents/audience-manager.md) |
 | 6 | Draw the Sample | what gets read, pulled as it is actually served | study-manager · content-librarian |
 | 7 | Score the Sample | every item scored against the rule it must meet | brand-check · standards-keeper |
@@ -43,7 +43,7 @@ away from the standard.
 | 13 | Name the Gaps | where the material and the standard do not agree | study-manager · standards-keeper |
 | 14 | Write the Findings | each gap with the rule and the evidence under it | study-manager |
 | 15 | Decide What Happens to Each Gap | fixed now, fixed later, or accepted in writing | brand owner (person) · leadership (person) · study-manager |
-| 16 | Hand the Gaps to the Owners | each gap goes to the seat that can close it | study-manager · content-librarian · standards-keeper |
+| 16 | Hand the Gaps to the Owners | each gap goes to the agent that can close it | study-manager · content-librarian · standards-keeper |
 | 17 | Record What Was Learned | what to repeat, what to avoid | study-manager |
 
 ## The graph
@@ -108,7 +108,7 @@ phases:
                      owner: standards-keeper   after: set-the-scope
                      automation: <level>
   brief-the-audit  - convenes briefing: the scope, the standard and the
-                     due date, heard by every seat at once
+                     due date, heard by every agent at once
                      owner: study-manager      after: name-versions
                      automation: <level>
   list-the-places  - runs collect-and-report: every place somebody
@@ -164,7 +164,7 @@ phases:
                      later, or accepted in writing, gap by gap
                      owner: study-manager      after: write-findings
                      by: <date>                automation: never
-  hand-off-gaps    - human: each gap goes to the seat that can close
+  hand-off-gaps    - human: each gap goes to the agent that can close
                      it, with the decision and the date attached
                      owner: study-manager      after: decide-each-gap
                      by: <days>                automation: <level>
@@ -186,10 +186,10 @@ handoffs:
     material will be judged against, and what changed in it since the
     last audit
   brief-the-audit -> list-the-places / read-coverage / ask-the-audience
-    / read-the-numbers: the scope and the standard as every seat heard
+    / read-the-numbers: the scope and the standard as every agent heard
     them, and the date each part is due
   list-the-places -> draw-the-sample: every place the brand appears, by
-    channel, with the seat that answers for each one
+    channel, with the agent that answers for each one
   draw-the-sample -> score-the-sample: the sampled items at the version
     each was served at, with the date each was pulled
   draw-the-sample -> read-the-set: the same items, read together
@@ -215,7 +215,7 @@ handoffs:
   hand-off-gaps -> record-learnings: who took each gap and what they
     said they would do about it
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, the brand owner
            and leadership>
   systems: the audit record (write), the study record (write),
@@ -239,7 +239,7 @@ policy:
     it is read again
   a finding is never dropped because somebody asked. <who> decides,
     and the decision is recorded with the findings
-  this run names gaps and hands them on, and no seat in it changes the
+  this run names gaps and hands them on, and no agent in it changes the
     material or the standard
   the questions put to the audience are reworded only when <who>
     agrees, because the readings before and after stop being comparable
@@ -261,19 +261,19 @@ measures:
 - **A channel nobody listed turns up in the sample.** The designer or
   the editor recognizes material from somewhere the run never listed,
   such as a partner listing, a product screen or a printed piece. The
-  run returns to list-the-places, the channel is added with the seat
-  that answers for it, and a sample is drawn from it before the gaps
-  are named.
-- **The sample will not carry a finding.** The study manager cannot
-  tell from the items in hand whether one item is wrong or the whole
-  channel is, so the run returns to draw-the-sample and pulls more from
-  that channel. The statistician says whether the larger sample changes
-  the reading.
+  run returns to list-the-places, the channel is added with the agent
+  that answers for it, and a sample is drawn from it before the gaps are
+  named.
+- **The sample will not carry a finding.** The study manager cannot tell
+  from the items in hand whether one item is wrong or the whole channel
+  is, so the run returns to draw-the-sample and pulls more from that
+  channel. The statistician says whether the larger sample changes the
+  reading.
 - **The consent record removes most of the drawn audience.** The run
   asks whoever is left and the findings say how many were asked, or the
   study manager draws a different sample. An audit that could not ask
-  anybody says so in the findings and reports only what the material
-  and the coverage show.
+  anybody says so in the findings and reports only what the material and
+  the coverage show.
 - **A finding is disputed.** The brand owner or leadership does not
   accept a gap. The run returns to write-findings, the study manager
   attaches the items the finding rests on, and the gap is restated,
@@ -289,9 +289,9 @@ measures:
   or reopens against the new one. Scoring one run under two versions
   makes the findings unreadable.
 - **The trigger fires while a run is in flight.** A concern raised
-  during an open audit goes into that run as another thing to sample,
-  or waits for the findings, and <who> decides which. Two audits never
-  read the same channels for the same period at once.
+  during an open audit goes into that run as another thing to sample, or
+  waits for the findings, and <who> decides which. Two audits never read
+  the same channels for the same period at once.
 - **A run is abandoned.** The sample stays at its version with the date
   each item was pulled, so a later audit can see what was served and
   when. Anybody already asked is told the study has stopped, the gaps

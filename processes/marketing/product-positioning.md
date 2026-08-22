@@ -24,7 +24,7 @@ brand positioning process.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Question | what the positioning has to settle, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · product (person) |
 | 2 | Read the Standards in Force | the company position and the profile, at their versions | [standards-keeper](../../agents/standards-keeper.md) · [audience-manager](../../agents/audience-manager.md) · decision-coordinator |
@@ -158,7 +158,7 @@ phases:
                       by: <days>           automation: <level>
   get-sign-offs     - convenes approval: brand, legal and product
                       accuracy sign, as named signers, at a version
-                      owner: <your legal seat>
+                      owner: <your legal role>
                       after: record-proof
                       by: <days>           automation: never
   issue-version     - runs decide-and-announce: the signed positioning
@@ -219,7 +219,7 @@ handoffs:
   review-conditions -> record-learnings: the conditions that reopen
     this answer, and the date it comes back up anyway
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the product owner, leadership,
            the sales leader, the support leader, legal, the brand
            owner and the expert>
@@ -250,7 +250,7 @@ policy:
     started under, until <who> says otherwise
 measures:
   cycle time: <target> from the question to the issued version
-  reach: every process and every seat that reads the positioning told
+  reach: every process and every agent that reads the positioning told
          within <days> of the version being issued
   quality gate: no version issues unsigned, and no claim in the
                 messaging issues without its source

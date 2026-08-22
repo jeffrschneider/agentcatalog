@@ -16,7 +16,7 @@ afterwards and the manager still owes a report on it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the News | what happened, why it is news, when it can be said | [comms-manager](../../agents/comms-manager.md) · leadership (person) |
 | 2 | Set the Announcement Date | the date, the embargo, and who hears it first | comms-manager · [press-relations](../../agents/press-relations.md) · leadership (person) |
@@ -94,7 +94,7 @@ phases:
                      owner: researcher         after: set-date
                      by: <days>                automation: <level>
   settle-story     - convenes briefing: what the announcement says,
-                     heard by every seat that writes or sends anything
+                     heard by every agent that writes or sends anything
                      owner: comms-manager      after: confirm-facts
                      automation: <level>
   gather-quotes    - convenes approval: each speaker signs the words
@@ -119,7 +119,7 @@ phases:
                      by: <days>                automation: <level>
   get-sign-offs    - convenes approval: brand, legal, rights and <who>
                      sign, as named signers, against one version
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: other-versions + press-materials
                      by: <days>                automation: never
   line-up-press    - human: who covers this subject, who is offered it
@@ -196,7 +196,7 @@ handoffs:
     who had it early
   report-announce -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the spokesperson,
            the media contact, the expert, legal and rights>
   systems: the announcement plan (write), the message record (write),
@@ -242,7 +242,7 @@ measures:
 - **The story leaks before the date.** The run jumps to issue-release
   with whatever is signed at that moment, <who> decides whether the
   release goes out early or the organization stays quiet, and the
-  press-relations seat tells every contact who took the embargo what
+  press-relations agent tells every contact who took the embargo what
   changed.
 - **A fact in the issued release turns out to be wrong.** The run goes
   back to write-release for a corrected version. That version is signed
@@ -254,18 +254,18 @@ measures:
   the release or the announcement waits for it. Publishing words the
   speaker has not approved is never one of the choices.
 - **A reporter asks something the approved material does not answer.**
-  The press-relations seat escalates the question instead of answering
+  The press-relations agent escalates the question instead of answering
   it, and the answer that goes back is one a person gave.
-- **Coverage runs against the organization.** The coverage-monitor seat
+- **Coverage runs against the organization.** The coverage-monitor agent
   escalates before anybody replies, and <who> decides what the
   organization says next. Answering hostile coverage is a new run of
   this process, and it starts from its own confirmed facts.
 - **The trigger fires while runs are in flight.** Announcements overlap
   normally, and the concurrency line says how many. The comms-manager
-  seat takes one announcement at a time, so every run in flight needs
-  its own holder of that seat, and the runs share their reference data
+  agent takes one announcement at a time, so every run in flight needs
+  its own holder of that role, and the runs share their reference data
   read-only.
 - **A run is abandoned.** Every contact who was offered the story early
   is told the announcement is off, the release and the press materials
-  stay where they are at their versions so a later run can pick them
-  up, and the scheduled email and posts are pulled.
+  stay where they are at their versions so a later run can pick them up,
+  and the scheduled email and posts are pulled.

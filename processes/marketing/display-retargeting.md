@@ -16,7 +16,7 @@ the pools, the caps and the exclusions at a version.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Audience and the Goal | what the retargeting has to bring back, and by when | [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Set the Parameters | placements, dates, budget and what a result is worth | campaign-manager · [media-planner](../../agents/media-planner.md) · leadership (person) |
@@ -130,7 +130,7 @@ phases:
   get-sign-offs     - convenes approval: brand, disclosure and legal
                       sign, as named signers, against a version of the
                       ads and of the targeting they will run against
-                      owner: <your legal seat>   after: make-the-ads
+                      owner: <your legal role>   after: make-the-ads
                       by: <days>                 automation: never
   exposure-rules    - convenes decide-and-announce: how many times one
                       person may be served an ad in a period, how long
@@ -207,9 +207,9 @@ handoffs:
   check-frequency + check-suppression -> record-in-force: the delivered
     figures beside the settings they were read against
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the budget, brand and legal
-           seats>
+           agents>
   systems: ad platforms (write, cap: <n>/day),
            the audience tools in the ad platforms (write),
            the consent record (read), the suppression lists (write),
@@ -229,7 +229,7 @@ policy:
   an ad changed after sign-off goes back through sign-offs
   no campaign switches on until the suppression list has been applied to
     every pool it targets and the removal counted
-  the frequency ceiling is set by <who>, and no seat raises it without
+  the frequency ceiling is set by <who>, and no agent raises it without
     going back to <who>
   a person served the ads more than <n> times in <period> comes out of
     every pool in the run

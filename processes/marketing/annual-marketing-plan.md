@@ -3,21 +3,21 @@
 `ref/mkt/annual-marketing-plan v1`
 
 **value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
-The fiscal planning cycle opens, and the department has to come out of it
-with a plan leadership has approved. The seats in this process read the
-closed periods, take stock of what the department already holds, gather
-the evidence from outside, put a cost and a return on every proposal,
-draft the calendar, and hold the plan at its versions. Six of the sixteen
-activities turn on a person: the targets arrive from leadership, and
-leadership then sets the goals, judges how much work the department can
-carry, chooses the initiatives, splits the money across them, and signs
-the plan with finance. Raising the automation level moves none of those
-six. The run closes when the approved plan is published and every seat
-has heard what it owes against it.
+The fiscal planning cycle opens, and the department has to come out of
+it with a plan leadership has approved. The agents in this process read
+the closed periods, take stock of what the department already holds,
+gather the evidence from outside, put a cost and a return on every
+proposal, draft the calendar, and hold the plan at its versions. Six of
+the sixteen activities turn on a person: the targets arrive from
+leadership, and leadership then sets the goals, judges how much work the
+department can carry, chooses the initiatives, splits the money across
+them, and signs the plan with finance. Raising the automation level
+moves none of those six. The run closes when the approved plan is
+published and every agent has heard what it owes against it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Company Targets | what the business asks marketing to deliver | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
 | 2 | Read the Closed Periods | last year's results set against last year's plan | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
@@ -33,7 +33,7 @@ has heard what it owes against it.
 | 12 | Name What Will Be Measured | the measures the plan will be reported against | reporting-manager · analytics · decision-coordinator |
 | 13 | Get the Plan Approved | leadership and finance sign the plan and its budget | leadership (person) · finance (person) |
 | 14 | Publish the Plan | the approved plan goes out at a version | decision-coordinator |
-| 15 | Brief the Department | every seat hears the plan and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · community-manager · reporting-manager |
+| 15 | Brief the Department | every agent hears the plan and what it owes | decision-coordinator · campaign-manager · content-manager · media-buyer · community-manager · reporting-manager |
 | 16 | Record What the Plan Rests On | the assumptions, and what would reopen the plan | decision-coordinator · forecaster |
 
 ## The graph
@@ -130,7 +130,7 @@ phases:
   allocate-budget   - human: the money split across the chosen
                       initiatives, one line for each. <who> decides the
                       split and finance confirms it
-                      owner: <your finance seat>   after: choose-work
+                      owner: <your finance role>   after: choose-work
                       by: <days>                   automation: never
   build-calendar    - human: the initiatives laid across the year with
                       their dates, every collision named, and the fixed
@@ -144,13 +144,13 @@ phases:
                       automation: <level>
   approve-plan      - convenes approval: <who> and finance sign, as
                       named signers, against a version of the plan
-                      owner: <your finance seat>   after: name-measures
+                      owner: <your finance role>   after: name-measures
                       by: <days>                   automation: never
   publish-plan      - human: the signed plan goes to the department and
                       to <who>, at a version, on its date
                       owner: decision-coordinator  after: approve-plan
                       automation: <level>
-  brief-department  - convenes briefing: every seat hears the plan, its
+  brief-department  - convenes briefing: every agent hears the plan, its
                       dates, and what it owes against it, at once
                       owner: decision-coordinator  after: publish-plan
                       by: <days>                   automation: <level>
@@ -162,7 +162,7 @@ run-scoped:
   status - runs roll-call                    owner: decision-coordinator
            every: <cadence>
            from: take-in-targets   until: approve-plan
-  spend  - runs allocate-and-reconcile       owner: <your finance seat>
+  spend  - runs allocate-and-reconcile       owner: <your finance role>
            from: allocate-budget   until: run close
 handoffs:
   take-in-targets -> read-periods / take-stock / gather-evidence: what
@@ -196,11 +196,11 @@ handoffs:
   approve-plan -> publish-plan: the plan at the signed version. A later
     change voids the approval and the signers see it again
   publish-plan -> brief-department: the published plan, and what each
-    seat owes against it
-  brief-department -> record-basis: what each seat took away, and
-    anything a seat said it could not do
+    agent owes against it
+  brief-department -> record-basis: what each agent took away, and
+    anything an agent said it could not do
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>
   systems: the plan store (write), the decision record (write),
            the model store (write), the report store (read),

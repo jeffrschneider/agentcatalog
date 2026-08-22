@@ -22,14 +22,14 @@ since that partner was last checked.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Partner | who the partner is, what they sell, and to whom | [partner-manager](../../agents/partner-manager.md) · leadership (person) |
 | 2 | Check What the Partner Holds | what they were certified on, and what changed since | partner-manager · [account-monitor](../../agents/account-monitor.md) |
 | 3 | List What the Partner Must Demonstrate | the things they have to show they can do, written down | partner-manager · [sales-enablement-manager](../../agents/sales-enablement-manager.md) · subject matter expert (person) |
 | 4 | Agree the Partner's Plan | who takes part, how much time, and by when | partner-manager · partner staff (person) · leadership (person) |
 | 5 | Decide What the Partner May See | which material this partner is entitled to | partner-manager · legal reviewer (person) · leadership (person) |
-| 6 | Brief the Makers | every producing seat hears the same request at once | sales-enablement-manager · partner-manager · [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
+| 6 | Brief the Makers | every producing agent hears the same request at once | sales-enablement-manager · partner-manager · [creative-producer](../../agents/creative-producer.md) · [copywriter](../../agents/copywriter.md) · [designer](../../agents/designer.md) |
 | 7 | Produce the Partner Material | the pitch, the objection answers, the demo script | copywriter · designer · [video-editor](../../agents/video-editor.md) · creative-producer · sales-enablement-manager |
 | 8 | Get Sign-Offs | brand, legal and rights approve what goes outside | [brand-check](../../agents/brand-check.md) · [disclosure-check](../../agents/disclosure-check.md) · [rights-register](../../agents/rights-register.md) · brand owner (person) · legal reviewer (person) · rights approver (person) |
 | 9 | Publish the Material | the approved set lands where the partner can get it | partner-manager · [web-producer](../../agents/web-producer.md) · [email-producer](../../agents/email-producer.md) |
@@ -109,7 +109,7 @@ phases:
                      owner: partner-manager    after: list-criteria
                      automation: never
   brief-makers     - convenes briefing: the criteria, the entitlement
-                     and the dates, heard by every producing seat at
+                     and the dates, heard by every producing agent at
                      once
                      owner: sales-enablement-manager
                      after: agree-plan + set-entitlement
@@ -124,7 +124,7 @@ phases:
                      rights sign, as named signers, against a version
                      of the material, and rights covers the partner's
                      own channels as well as the organization's
-                     owner: <your legal seat>  after: produce-material
+                     owner: <your legal role>  after: produce-material
                      by: <days>                automation: never
   publish-material - human: the approved set lands in the partner
                      portal at its version, and the partner is told it
@@ -212,7 +212,7 @@ handoffs:
     registration route, and the leads that were transferred
   report-partner -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner's own staff, the
            expert, legal, brand and rights>
   systems: the partner record (write), the agreement record (read),
@@ -251,21 +251,21 @@ measures:
 
 - **A sign-off comes back with changes.** The run returns to
   produce-material, and only the piece the signers named reopens. The
-  signers see the changed version before the partner does, and a
-  version already in the portal is replaced with a new one that carries
-  its own number.
+  signers see the changed version before the partner does, and a version
+  already in the portal is replaced with a new one that carries its own
+  number.
 - **The partner's people never take part.** The run closes without a
   certification. The kit, the deal registration route and the leads are
   not handed over, and the report at report-partner says which people
   were named at agree-plan and which of them turned up.
 - **The same question keeps coming back.** A question the partner asks
-  <how many> times means the material answers it badly, and the run
-  goes back to produce-material. The rewritten piece goes through
-  sign-offs and into the portal like any other version, and the partner
-  is told what changed.
+  <how many> times means the material answers it badly, and the run goes
+  back to produce-material. The rewritten piece goes through sign-offs
+  and into the portal like any other version, and the partner is told
+  what changed.
 - **The demonstration does not meet the criteria.** The verdict names
-  the criteria that failed with the evidence under each one, the
-  partner decides whether that person tries again, and the run holds at
+  the criteria that failed with the evidence under each one, the partner
+  decides whether that person tries again, and the run holds at
   check-the-pitch. Handing the leads to an uncertified partner is not
   one of the choices.
 - **The criteria change after a partner was certified.** Every
@@ -274,10 +274,10 @@ measures:
   <who> decides which changes are large enough to expire a
   certification, and the partners whose certification expires start a
   new run at check-standing.
-- **A partner asks for material their tier does not cover.** The
-  request goes to a person with the agreement attached, because showing
-  a partner more than their tier allows changes what the organization
-  owes them.
+- **A partner asks for material their tier does not cover.** The request
+  goes to a person with the agreement attached, because showing a
+  partner more than their tier allows changes what the organization owes
+  them.
 - **The organization cannot see the partner's own pipeline.** The run
   reads its own portal, its own registered deals and its own inbox, and
   everything about the partner's own pipeline arrives because the
@@ -285,9 +285,9 @@ measures:
   came from the partner and on what date.
 - **The trigger fires while runs are in flight.** Partners overlap
   normally, and the concurrency line says how many. The partner-manager
-  seat takes one partner at a time, so every run in flight needs its
-  own holder of that seat, and the runs share the criteria, the
-  material and the tier rules read-only.
+  agent takes one partner at a time, so every run in flight needs its
+  own holder of that role, and the runs share the criteria, the material
+  and the tier rules read-only.
 - **A run is abandoned.** The material stays in the enablement library
   at its version for the next partner. Anything already released into
   the portal comes down, the leads that were transferred are recalled

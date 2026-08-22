@@ -12,7 +12,7 @@ leaving.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Request | what the page is for and who it is for | [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Set the Parameters | the audience, the action asked for, the date | content-manager · campaign-manager |
@@ -84,7 +84,7 @@ phases:
                      what the page has to cover to be found at all
                      owner: search-optimizer   after: set-parameters
                      by: <days>                automation: <level>
-  brief-makers     - convenes briefing: every seat that makes or
+  brief-makers     - convenes briefing: every agent that makes or
                      measures the page hears the request at once
                      owner: content-manager    after: search-terms
                      automation: <level>
@@ -112,7 +112,7 @@ phases:
   get-sign-offs    - convenes approval: brand, legal, accuracy and
                      image rights sign, as named signers, against a
                      version
-                     owner: <your legal seat>  after: score-page
+                     owner: <your legal role>  after: score-page
                      by: <days>                automation: never
   publish          - human: the named owner says go, and the producer
                      puts the page live at its address
@@ -149,7 +149,7 @@ handoffs:
   search-terms -> brief-makers: the search requirement at a version,
     with the demand figure behind every term
   brief-makers -> produce-material: the request, the search requirement
-    and the action, heard by every seat at the same time
+    and the action, heard by every agent at the same time
   produce-material -> edit-draft: the copy at a version, and a source
     line under every claim it makes
   edit-draft -> build-page: the copy the editor holds as finished, and
@@ -171,7 +171,7 @@ handoffs:
   fix-page -> record-learnings: every change made to the live page,
     with the result it had
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for brand, legal, accuracy and
            rights>
   systems: the website's content system (write), the staging site
@@ -207,15 +207,15 @@ measures:
   produce-material, and only the piece the signers named reopens. The
   page is built again, scored again, and put back in front of the same
   signers.
-- **A score comes back failed.** The seat that made the piece fixes it
+- **A score comes back failed.** The agent that made the piece fixes it
   and the examiner scores it again. A failure in the copy or an asset
   sends the run back to produce-material, and a failure in the page
   itself goes back to build-page. Neither examiner waives its own
   findings, so the run moves on only after the failure is fixed, or
   after a person records the decision to publish with the failure
   attached.
-- **A conversion cannot be verified.** The conversion-tracker records
-  it as unverified, and <who> decides whether the page goes live with a
+- **A conversion cannot be verified.** The conversion-tracker records it
+  as unverified, and <who> decides whether the page goes live with a
   conversion nobody has watched work end to end.
 - **The page goes stale while it is live.** The offer changes, a number
   on the page gets old, or a link it depends on breaks. The standing

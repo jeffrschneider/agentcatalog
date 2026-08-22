@@ -7,9 +7,9 @@ A planning period opens and the department has to settle what it will
 publish in that period. A coordinator takes in the goals the period was
 given, reads what the last period actually delivered, lists the work
 already in flight and the dates that are already fixed, and collects the
-topics every seat wants made. Those candidates are weighed against what
+topics every agent wants made. Those candidates are weighed against what
 people are searching for, what the site already covers, and how much the
-production seats can carry. The people who decide cut the list to what
+production agents can carry. The people who decide cut the list to what
 the period will hold, the agreed schedule is published where every
 content process reads it, and each line becomes an approved request that
 a run of long-form content, a refresh cycle, a newsletter issue or a
@@ -18,21 +18,21 @@ What it produces is a set of commitments that other processes work from.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Period's Goals | what the period has to deliver, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Read the Closed Period | what published, what slipped, and how it did | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
 | 3 | List What Is Already Committed | pieces in flight and the dates already fixed | [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [launch-coordinator](../../agents/launch-coordinator.md) |
-| 4 | Collect the Topic Candidates | every seat puts forward what it wants made | decision-coordinator · content-manager · campaign-manager · [community-manager](../../agents/community-manager.md) · [content-librarian](../../agents/content-librarian.md) · [search-optimizer](../../agents/search-optimizer.md) |
+| 4 | Collect the Topic Candidates | every agent puts forward what it wants made | decision-coordinator · content-manager · campaign-manager · [community-manager](../../agents/community-manager.md) · [content-librarian](../../agents/content-librarian.md) · [search-optimizer](../../agents/search-optimizer.md) |
 | 5 | Read the Search Demand | the questions people ask, with the numbers | search-optimizer |
 | 6 | Check the Library for Overlap | where a live page already covers the topic | content-librarian |
 | 7 | Size the Production Capacity | how much work the makers can carry this period | content-manager · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
 | 8 | Score the Candidates | each topic set against the goals and the evidence | decision-coordinator · analytics · search-optimizer · content-librarian |
 | 9 | Check What Needs Clearing | topics needing a claim, a permission or a legal read | [standards-keeper](../../agents/standards-keeper.md) · legal reviewer (person) · rights approver (person) |
-| 10 | Draft the Calendar | a slate with a format, a seat and a date on each | content-manager · content-librarian · creative-producer · editor |
+| 10 | Draft the Calendar | a slate with a format, an agent and a date on each | content-manager · content-librarian · creative-producer · editor |
 | 11 | Agree the Calendar | the deciders cut it to what the period can carry | decision-coordinator · leadership (person) |
-| 12 | Publish the Calendar | the agreed schedule where every seat reads it | content-manager · content-librarian |
-| 13 | Brief the Department | every seat that makes or promotes hears the slate | decision-coordinator · content-manager · campaign-manager · creative-producer · editor |
+| 12 | Publish the Calendar | the agreed schedule where every agent reads it | content-manager · content-librarian |
+| 13 | Brief the Department | every agent that makes or promotes hears the slate | decision-coordinator · content-manager · campaign-manager · creative-producer · editor |
 | 14 | Hand over the Approved Topics | each topic becomes a request a run can start from | content-manager · creative-producer · campaign-manager |
 | 15 | Record What the Plan Rests On | the assumptions, and the date the slate is re-cut | decision-coordinator |
 
@@ -74,7 +74,7 @@ owner: <who>                          effective: <date>
 trigger: a planning period opens on <your planning cadence>
 concurrency: one slate per period - the next period may open <how long>
              before the current one closes
-goal: an agreed slate of topics, each with a format, a producing seat
+goal: an agreed slate of topics, each with a format, a producing agent
       and a publish date, published where every content process reads
       it and handed over as approved requests
 phases:
@@ -91,8 +91,8 @@ phases:
                      date is fixed
                      owner: content-manager       after: take-in-goals
                      automation: <level>
-  collect-topics   - runs collect-and-report: every seat is asked the
-                     same question, and each candidate keeps the seat
+  collect-topics   - runs collect-and-report: every agent is asked the
+                     same question, and each candidate keeps the agent
                      and the reason it came from
                      owner: decision-coordinator
                      after: read-period + list-commitments
@@ -106,7 +106,7 @@ phases:
                      already answer a candidate, and how they perform
                      owner: content-librarian     after: collect-topics
                      by: <days>                   automation: <level>
-  size-capacity    - human: how much work each production seat can
+  size-capacity    - human: how much work each production agent can
                      carry this period, after the commitments already
                      listed
                      owner: content-manager       after: list-commitments
@@ -124,7 +124,7 @@ phases:
                      owner: standards-keeper      after: score-candidates
                      by: <days>                   automation: <level>
   draft-calendar   - human: the slate, each line carrying a format, a
-                     producing seat, a publish date and its cleared
+                     producing agent, a publish date and its cleared
                      status
                      owner: content-manager       after: clearing-check
                      by: <days>                   automation: <level>
@@ -137,12 +137,12 @@ phases:
                      schedule every content process reads
                      owner: content-manager       after: agree-calendar
                      automation: <level>
-  brief-department - convenes briefing: every seat that makes or
+  brief-department - convenes briefing: every agent that makes or
                      promotes hears the same slate at once
                      owner: decision-coordinator  after: publish-calendar
                      automation: <level>
   hand-over-topics - runs decide-and-announce: each line becomes an
-                     approved request, and every seat hears which
+                     approved request, and every agent hears which
                      requests it owns and from when
                      owner: content-manager       after: brief-department
                      automation: <level>
@@ -175,7 +175,7 @@ handoffs:
     and the date it was pulled
   library-overlap -> score-candidates: the live pages that already
     answer a candidate, with the numbers those pages are earning
-  size-capacity -> score-candidates: what each production seat can
+  size-capacity -> score-candidates: what each production agent can
     carry this period, counted in pieces of work
   score-candidates -> clearing-check: the ranked candidates, each with
     the evidence its score rests on
@@ -187,11 +187,11 @@ handoffs:
     version, and anyone who disagreed with it
   publish-calendar -> brief-department: the published slate and the
     date it applies from
-  brief-department -> hand-over-topics: the slate as every seat heard it
+  brief-department -> hand-over-topics: the slate as every agent heard it
   hand-over-topics -> record-basis: the approved requests, naming the
-    seat that took each one
+    agent that took each one
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal and rights>
   systems: the content plan and its schedule (write), the content
            inventory (read), the decision record (write),
@@ -204,9 +204,9 @@ policy:
     who decide change it
   a topic flagged in the clearing check does not enter the slate until
     the person the flag names has read it
-  nothing enters the slate without a format, a producing seat and a date
+  nothing enters the slate without a format, a producing agent and a date
   a candidate that was not taken is recorded with the reason, so the
-    seat that put it forward gets an answer
+    agent that put it forward gets an answer
   the slate is published in one place, and work started from anywhere
     else is running on a commitment nobody agreed to
   a change after the slate is signed goes back through the approval and
@@ -216,7 +216,7 @@ measures:
   volume: <topics per period>
   coverage: <how much> of the period's capacity is committed at
             publication
-  quality gate: nothing sits on the slate without a producing seat, a
+  quality gate: nothing sits on the slate without a producing agent, a
                 date and a cleared status
 ```
 
@@ -227,9 +227,9 @@ measures:
   has. The run goes back to scoring, the topic is cut or held for a
   later period, and the record of what was not taken carries the reason.
 - **The people who decide cut more than the draft expected.** The run
-  returns to drafting the calendar. The seats whose topics were cut hear
-  it in the briefing, and the record says which goal now has less work
-  against it.
+  returns to drafting the calendar. The agents whose topics were cut
+  hear it in the briefing, and the record says which goal now has less
+  work against it.
 - **A fixed date moves after the calendar publishes.** A launch or a
   campaign shifts and the pieces tied to it shift with it. The run
   returns to drafting, the changed slate goes back to the people who
@@ -237,7 +237,7 @@ measures:
   stays where it was.
 - **Capacity turns out smaller than the figure the slate was built on.**
   Someone leaves, or an unplanned piece takes a week. The
-  content-manager seat says so on the day the math stops working, and
+  content-manager agent says so on the day the math stops working, and
   the people who decide cut the slate or move a date while there is
   still time to do either.
 - **A commitment slips mid-period.** The slipped piece keeps its own run
@@ -245,13 +245,13 @@ measures:
   and every process that triggers off the slate reads the new version.
 - **No candidate meets the goals the period was given.** Scoring shows
   the slate would not deliver what was asked for. The run goes back to
-  collecting candidates, and the decision-coordinator seat says which
+  collecting candidates, and the decision-coordinator agent says which
   goal has nothing standing against it.
 - **The standards change after the slate is agreed.** The
-  standards-keeper seat issues a new version, and any topic on the slate
-  that rested on a rule that changed goes back through the clearing
-  check before its run starts.
+  standards-keeper agent issues a new version, and any topic on the
+  slate that rested on a rule that changed goes back through the
+  clearing check before its run starts.
 - **A run is abandoned.** No slate is set for the period, and every
   content process is left triggering off last period's commitments. The
-  decision-coordinator seat records that the period opened without an
+  decision-coordinator agent records that the period opened without an
   agreed slate, and the pieces already in production keep their dates.

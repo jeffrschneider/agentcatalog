@@ -19,14 +19,14 @@ here goes on the public website.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Gap | what sales cannot answer today, and in which deals | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · sales leader (person) |
 | 2 | Settle What Each Side Owes | what marketing owes and what sales owes back | sales-enablement-manager · sales leader (person) |
 | 3 | Hear the Field | what reps are actually asked in live deals | [researcher](../../agents/researcher.md) · account owner (person) · sales leader (person) |
 | 4 | Gather the Proof | the source under every answer the kit will give | researcher · subject matter expert (person) |
 | 5 | Settle the Answers | each objection paired with the answer it gets | sales-enablement-manager · [copywriter](../../agents/copywriter.md) · researcher |
-| 6 | Brief the Makers | every making seat hears the same request at once | sales-enablement-manager · [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) |
+| 6 | Brief the Makers | every making agent hears the same request at once | sales-enablement-manager · [creative-producer](../../agents/creative-producer.md) · copywriter · [designer](../../agents/designer.md) |
 | 7 | Build the Deck | the story a rep tells a buyer, slide by slide | creative-producer · copywriter · designer |
 | 8 | Write the One-Pager | one page a rep can leave behind after the call | creative-producer · copywriter · designer |
 | 9 | Write the Objection Answers | every objection with its answer and its proof | copywriter · researcher |
@@ -108,7 +108,7 @@ phases:
                      after: gather-proof
                      automation: <level>
   brief-the-makers - convenes briefing: the objections and the agreed
-                     answers, heard by every making seat at once
+                     answers, heard by every making agent at once
                      owner: sales-enablement-manager
                      after: settle-answers
                      automation: <level>
@@ -135,7 +135,7 @@ phases:
                      by: <days>           automation: <level>
   get-sign-offs    - convenes approval: brand, legal and product
                      accuracy sign, as named signers, at a version
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: score-kit
                      by: <days>           automation: never
   try-on-reps      - human: <how many> reps use the signed kit in a
@@ -183,7 +183,7 @@ handoffs:
   settle-answers -> brief-the-makers: each objection with the answer
     it gets, the proof behind it, and what may not be said
   brief-the-makers -> build-deck / write-one-pager / write-objections:
-    the request as every seat heard it, and the date the kit is
+    the request as every agent heard it, and the date the kit is
     promised. Three pieces read one record
   build-deck -> score-kit: the deck at a version
   write-one-pager -> score-kit: the one-pager at a version
@@ -202,7 +202,7 @@ handoffs:
   report-the-gap -> record-learnings: the report as delivered, and
     what the sales leader said about it
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales leader, the account
            owners, the expert, legal and brand>
   systems: the enablement library (write), the asset store (write),
@@ -229,8 +229,8 @@ measures:
 
 ## The failure edges
 
-- **A sign-off comes back with changes.** The run returns to the deck
-  or to the objection answers, and only the piece the signers named
+- **A sign-off comes back with changes.** The run returns to the deck or
+  to the objection answers, and only the piece the signers named
   reopens. The signers see the changed version before it goes any
   further.
 - **An answer does not survive a real conversation.** A rep tries the
@@ -241,19 +241,19 @@ measures:
   the trial in try-on-reps have nobody to run with, and the run stalls.
   <who> decides whether to build the kit on the evidence already
   gathered or to stop, and the decision is recorded either way.
-- **The gap is a product problem.** No material closes it, because
-  what sales is being asked for is something the product does not do.
-  The sales-enablement-manager seat escalates this before anything is
-  made, and <who> takes it to the product side.
-- **A claim stops being true after reps have it.** The version comes
-  out of the enablement library the day it is found, the sales leader
-  is told the same day, and the piece goes back through the sign-offs
+- **The gap is a product problem.** No material closes it, because what
+  sales is being asked for is something the product does not do. The
+  sales-enablement-manager agent escalates this before anything is made,
+  and <who> takes it to the product side.
+- **A claim stops being true after reps have it.** The version comes out
+  of the enablement library the day it is found, the sales leader is
+  told the same day, and the piece goes back through the sign-offs
   before it returns.
-- **The trigger fires while runs are in flight.** Kits overlap
-  normally, and the concurrency line says how many. Two kits that
-  answer the same objection have to give it the same answer, so they
-  share their reference data read-only and the second run reads what
-  the first one settled.
+- **The trigger fires while runs are in flight.** Kits overlap normally,
+  and the concurrency line says how many. Two kits that answer the same
+  objection have to give it the same answer, so they share their
+  reference data read-only and the second run reads what the first one
+  settled.
 - **A run is abandoned.** The evidence, the drafts and the design stay
   where they are at their versions, so a later run can pick them up.
   Anything already in a rep's hands comes out of the library, and the

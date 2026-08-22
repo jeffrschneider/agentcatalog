@@ -4,22 +4,22 @@
 
 **value stream:** [Customer-to-Advocate](../../streams/marketing/customer-to-advocate.md)
 An event manager takes in the cycle, works out what the board has to be
-asked and when it meets, and turns that into the dates every other seat
+asked and when it meets, and turns that into the dates every other agent
 works to. An advocacy manager settles who sits at the table and holds
 what each member agreed to. The people who own those accounts make the
-invitations, and nobody is seated until the confidentiality agreement is
+invitations, and nobody joins until the confidentiality agreement is
 signed. The material is written, designed and signed off before any of
 it reaches a member. The members answer the questions in writing before
 they arrive and again in the session, and a researcher writes down what
 was said with what each member agreed could be repeated. The run closes
 when every theme has a named owner inside the organization and the
 members have heard what happens next. Acting on a theme belongs to
-whatever process owns the work it lands in, and this process is
-finished once each theme has reached the owner who can act on it.
+whatever process owns the work it lands in, and this process is finished
+once each theme has reached the owner who can act on it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Cycle | work out what this cycle must answer and by when | [event-manager](../../agents/event-manager.md) |
 | 2 | Set the Agenda | the questions put to the board, in order | event-manager · [event-program](../../agents/event-program.md) · leadership (person) · subject matter expert (person) |
@@ -77,7 +77,7 @@ from: ref/mkt/advisory-board v1
 owner: <who>                          effective: <date>
 trigger: a board cycle opens on <your advisory board calendar>
 concurrency: cycles do not overlap - <how many> boards run at once
-goal: a board seated under signed agreements, a session held on its
+goal: a board convened under signed agreements, a session held on its
       date against the questions it was convened to answer, and every
       theme from that session routed to an owner who can act on it
 phases:
@@ -99,7 +99,7 @@ phases:
                      by: <weeks>               automation: <level>
   clear-paperwork  - human: the confidentiality agreement, the consent
                      to be recorded, and any honorarium
-                     owner: <your legal seat>  after: invite-members
+                     owner: <your legal role>  after: invite-members
                      by: <weeks>               automation: never
   arrangements     - runs build-by-talent: the room or the meeting
                      link, the travel, the catering and the equipment
@@ -111,7 +111,7 @@ phases:
                      by: <weeks>               automation: <level>
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the material
-                     owner: <your legal seat>  after: build-materials
+                     owner: <your legal role>  after: build-materials
                      by: <days>                automation: never
   send-pre-read    - human: the signed material goes to the members
                      whose agreements are in place
@@ -145,7 +145,7 @@ phases:
                      owner: advocacy-manager   after: sort-feedback
                      by: <days>                automation: <level>
   record-learnings - convenes debrief: what to repeat, what to change,
-                     and who to seat next cycle
+                     and who to invite next cycle
                      owner: event-manager
                      after: route-feedback + follow-up
                      automation: <level>
@@ -195,7 +195,7 @@ handoffs:
   route-feedback -> record-learnings: every theme with the owner who
     took it and the date they took it by
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, finance, the
            expert, and the owner of each account on the board>
   systems: the event plan and its schedule (write),
@@ -211,8 +211,8 @@ bindings:
            <your disclosure rules> <version>, the board charter,
            what this cycle has to answer
 policy:
-  a customer is seated only after the confidentiality agreement <your
-    legal seat> requires is signed
+  a customer joins only after the confidentiality agreement <your
+    legal role> requires is signed
   sign-off is a human gate and is never delegated to an agent
   material changed after sign-off goes back through sign-offs
   the person who owns the account makes the ask, and no customer is
@@ -221,7 +221,7 @@ policy:
     agreed to
   every theme that leaves the session carries a named owner and a date
 measures:
-  attendance: <target> of the seated members at the session
+  attendance: <target> of the confirmed members at the session
   cycle time: <target> from the cycle opening to the session
   routing: every theme has a named owner within <days>
   quality gate: nothing reaches a member unsigned, and nothing reaches
@@ -230,41 +230,39 @@ measures:
 
 ## The failure edges
 
-- **A member declines the seat.** The run returns to the membership
+- **A member declines the place.** The run returns to the membership
   decision, and the advocacy record keeps the reason the customer gave
-  and the date they may be asked again. The seat is filled from the
-  same list or the board runs one member short, and <who> decides
-  which.
-- **The agreement is not signed in time.** That member is not seated
-  for this cycle and the material never goes to them. The run returns
-  to the membership decision, because a table that has lost two members
-  may need a different set of people in the room.
+  and the date they may be asked again. The place is filled from the
+  same list or the board runs one member short, and <who> decides which.
+- **The agreement is not signed in time.** That member does not join for
+  this cycle and the material never goes to them. The run returns to the
+  membership decision, because a table that has lost two members may
+  need a different set of people in the room.
 - **A sign-off comes back with changes.** The run returns to the
   materials, and only the part the signers named reopens. Nothing goes
   to a member until the changed version is signed.
-- **The early answers change what is worth asking.** The agenda
-  reopens, the material changes with it, and the sign-offs run again on
-  the new version. This is worth doing when the answers show that the
-  board has already settled a question the session was going to spend
-  an hour on.
+- **The early answers change what is worth asking.** The agenda reopens,
+  the material changes with it, and the sign-offs run again on the new
+  version. This is worth doing when the answers show that the board has
+  already settled a question the session was going to spend an hour on.
 - **The members do not answer before the session.** The session runs on
   the agenda as it was written and the questions are asked in the room,
   and <who> decides whether the answers given there are enough to sort
   into themes.
 - **A member says something that cannot leave the room.** The note is
   recorded with the restriction the member set, the theme it belongs to
-  is written without the quote, and the member is asked in the
-  follow-up whether the restriction still stands.
+  is written without the quote, and the member is asked in the follow-up
+  whether the restriction still stands.
 - **A theme has no owner who will take it.** It goes to leadership with
   the quotes under it, and leadership decides whether somebody takes it
-  or the organization declines it. The members hear either answer in
-  the follow-up, and a theme the organization declined is written down
-  as declined.
+  or the organization declines it. The members hear either answer in the
+  follow-up, and a theme the organization declined is written down as
+  declined.
 - **The trigger fires while a run is in flight.** Cycles are meant to
   finish before the next one opens, and the concurrency line says how
-  many boards run at once. Two boards may want the same customer, so
-  the advocacy record is read before any ask is made and the ask is
-  recorded against the customer as soon as it goes out.
+  many boards run at once. Two boards may want the same customer, so the
+  advocacy record is read before any ask is made and the ask is recorded
+  against the customer as soon as it goes out.
 - **A run is abandoned.** The members are told before anyone else, the
   orders are cancelled inside their cancellation dates, the material
   stays where it is at its versions, and the cost line reconciles

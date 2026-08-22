@@ -7,7 +7,7 @@ the sizes each platform requires, consistent with the brand's rules.
 Cuts one design into every aspect ratio a campaign needs, and replaces
 creative that has gone stale without waiting for a new direction.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Brief the Makers, Produce the Material
 - `ref/mkt/advisory-board` / Build the Materials
@@ -21,7 +21,7 @@ creative that has gone stale without waiting for a new direction.
   Identity Brief, Brief the Makers, Draft the Candidate Directions,
   Build out the System, Clear the Fonts and the Imagery, Test the System
   in Use, Write the Usage Rules, Issue the Rules and Release the Files
-- `ref/mkt/brand-refresh` / Brief the Seats that Remake the Material,
+- `ref/mkt/brand-refresh` / Brief the Agents that Remake the Material,
   Rebuild the Templates, Remake the Assets
 - `ref/mkt/brief-executive-leadership` / Build the Pack
 - `ref/mkt/brief-industry-analyst` / Brief the Makers, Build the
@@ -46,7 +46,7 @@ creative that has gone stale without waiting for a new direction.
   What the Numbers Show
 - `ref/mkt/long-form-content` / Make the Visuals
 - `ref/mkt/nurture-sequence` / Brief the Makers, Produce the Messages
-- `ref/mkt/onboarding-email-program` / Brief the Seats that Act, Make
+- `ref/mkt/onboarding-email-program` / Brief the Agents that Act, Make
   What the Path Needs
 - `ref/mkt/pitch-earned-media` / Produce the Pitch Materials
 - `ref/mkt/pricing-change` / Produce What Customers and Sellers Read

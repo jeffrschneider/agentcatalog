@@ -13,7 +13,7 @@ as missing.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Set What the Report Covers | the period, the runs in it, and the questions | [reporting-manager](../../agents/reporting-manager.md) · leadership (person) |
 | 2 | Ask Every Source the Same Things | one request, one format, one due date | reporting-manager |
@@ -26,7 +26,7 @@ as missing.
 | 9 | Set Results Beside What Was Expected | each result next to what that run committed to | reporting-manager |
 | 10 | Reconcile the Spend | the spend figures checked against the books | media-buyer · finance (person) |
 | 11 | Write the Account | why the numbers moved, in plain words | reporting-manager |
-| 12 | Check the Account | the seats it names confirm it is accurate | campaign-manager · content-manager · media-buyer |
+| 12 | Check the Account | the agents it names confirm it is accurate | campaign-manager · content-manager · media-buyer |
 | 13 | Publish the Report | the report goes out on its date, at a version | reporting-manager |
 
 ## The graph
@@ -111,14 +111,14 @@ phases:
                      automation: <level>
   reconcile-spend  - convenes approval: finance signs that the spend
                      figures in the report match the books
-                     owner: <your finance seat> after: paid-account
+                     owner: <your finance role> after: paid-account
                      by: <days>                 automation: never
   write-account    - human: why the numbers moved, in words a reader
                      outside the department can follow
                      owner: reporting-manager
                      after: set-against-plan + reconcile-spend
                      by: <days>                 automation: <level>
-  check-account    - convenes approval: every seat the account names
+  check-account    - convenes approval: every agent the account names
                      confirms what it says about their runs
                      owner: reporting-manager   after: write-account
                      by: <days>                 automation: <level>
@@ -146,9 +146,9 @@ handoffs:
     them
   write-account -> check-account: the account at a version
   check-account -> publish-report: the account, with every correction
-    the named seats asked for and every disagreement recorded
+    the named agents asked for and every disagreement recorded
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>
   systems: analytics platforms (read), ad platforms (read),
            the CRM (read), the report store (write)
@@ -170,20 +170,19 @@ measures:
 
 ## The failure edges
 
-- **The spend does not match the books.** Finance names the figures
-  that are wrong and the run returns to the paid account. Only those
-  lines reopen, and the report date does not move because one line did.
-- **A seat says the account is wrong about its run.** The run returns
-  to write-account, and only the part that seat named changes. If the
-  disagreement stands, both accounts of what happened go into the
-  report and the reader decides between them.
+- **The spend does not match the books.** Finance names the figures that
+  are wrong and the run returns to the paid account. Only those lines
+  reopen, and the report date does not move because one line did.
+- **An agent says the account is wrong about its run.** The run returns
+  to write-account, and only the part that agent named changes. If the
+  disagreement stands, both accounts of what happened go into the report
+  and the reader decides between them.
 - **A number changes after it was reported.** Platforms restate results
-  inside their attribution windows, and a source sometimes answers
-  after the report is out. Every line records the date it was pulled, a
-  line pulled before its window closed is pulled again before
-  publication, and a change after publication goes out as a new version
-  that says what moved and why. The version it corrects stays where it
-  is.
+  inside their attribution windows, and a source sometimes answers after
+  the report is out. Every line records the date it was pulled, a line
+  pulled before its window closed is pulled again before publication,
+  and a change after publication goes out as a new version that says
+  what moved and why. The version it corrects stays where it is.
 - **The trigger fires while a run is in flight.** A period closes while
   the last report is still open, and the new run starts anyway on its
   own scope and its own date. Each report names the period it covers,

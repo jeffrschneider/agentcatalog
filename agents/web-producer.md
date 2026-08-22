@@ -9,12 +9,12 @@ at it before it goes anywhere. Sets the page's address and any redirects
 it needs. Publishes when the named owner says go, and records what went
 live, at which version, and who said go.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Build the Pages and the Notice
 - `ref/mkt/announce-company-news` / Issue the Release
 - `ref/mkt/brand-guidelines` / Publish the Version
-- `ref/mkt/brand-refresh` / Brief the Seats that Remake the Material,
+- `ref/mkt/brand-refresh` / Brief the Agents that Remake the Material,
   Rebuild the Templates, Stage the Changes, Switch the Properties
 - `ref/mkt/channel-program` / Build the Partner Portal
 - `ref/mkt/co-marketing-campaign` / Build the Registration Page, Launch
@@ -78,18 +78,18 @@ its place.
 - a publish that would take an address an existing page already uses, or
   break links that point at one
 - a page it cannot build without changing the copy or the design - it
-  says what will not fit and sends that piece back to the seat that made
-  it
+  says what will not fit and sends that piece back to the agent that
+  made it
 
 ## Not
 
 Does not write the copy or make the design, and does not edit either one
 to make it fit. Does not decide what the page is for or what it has to
-say, which the content-manager seat owns. Does not put the measurement
+say, which the content-manager agent owns. Does not put the measurement
 on the page or connect its form to the CRM, which is the
-conversion-tracker seat. Does not score the page against accessibility
-and technical standards - the accessibility-check seat does that, and
-this seat fixes what its findings name. Does not choose the search terms
-the page is built to answer, which is the search-optimizer seat. Does
-not build or bid the ad campaigns that send people to the page, which is
-the media-buyer seat. Does not sign anything.
+conversion-tracker agent. Does not score the page against accessibility
+and technical standards - the accessibility-check agent does that, and
+this agent fixes what its findings name. Does not choose the search
+terms the page is built to answer, which is the search-optimizer agent.
+Does not build or bid the ad campaigns that send people to the page,
+which is the media-buyer agent. Does not sign anything.

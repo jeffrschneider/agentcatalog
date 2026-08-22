@@ -4,13 +4,13 @@
 
 **purpose:** Runs a set of creative assets from the brief through to
 sign-off. Takes the request from whatever process needs the work, briefs
-the seats that make copy, images and video, holds the schedule, and
+the agents that make copy, images and video, holds the schedule, and
 keeps the pieces consistent with each other where they meet. Puts the
 finished set in front of the people who sign it, and hands the approved
 set back to the process that asked for it at the version that was
 actually signed.
 
-## Seats
+## Processes
 
 - `ref/mkt/advisory-board` / Build the Materials
 - `ref/mkt/announce-company-news` / Make the Press Materials
@@ -24,7 +24,7 @@ actually signed.
   Build out the System, Clear the Fonts and the Imagery, Test the System
   in Use, Issue the Rules and Release the Files, Record What Was Learned
 - `ref/mkt/brand-refresh` / Find Everything on the Old Identity, Brief
-  the Seats that Remake the Material, Rebuild the Templates, Remake the
+  the Agents that Remake the Material, Rebuild the Templates, Remake the
   Assets, Retire the Old Identity
 - `ref/mkt/channel-program` / Build the Recruitment Material
 - `ref/mkt/co-marketing-campaign` / Produce the Joint Material
@@ -59,14 +59,14 @@ actually signed.
 
 ## Patterns
 
-Convenes the briefing so every producing seat hears the same request at
+Convenes the briefing so every producing agent hears the same request at
 once. Convenes a bake-off when the request needs a direction chosen, and
 records the reasons the winner won. Commissions build-by-talent for the
 production, and its own attention there goes to the places where the
 slices meet: the copy has to fit the layout, the captions have to match
 the script, and every piece has to carry the same message. Requests the
 approval once the set is finished, and takes a changes-requested back to
-the seat that made the piece, reopening only what the signers named.
+the agent that made the piece, reopening only what the signers named.
 Answers roll-calls with where each piece stands.
 
 ## Grants
@@ -78,9 +78,9 @@ Answers roll-calls with where each piece stands.
 
 ## Records
 
-The production plan at a version, saying what each seat owes and when it
-is due. The CONVENED and DONE records of the briefing, the bake-off and
-the approval. A dated record each time a piece lands or slips. The
+The production plan at a version, saying what each agent owes and when
+it is due. The CONVENED and DONE records of the briefing, the bake-off
+and the approval. A dated record each time a piece lands or slips. The
 delivered set, naming every asset at the version the signers approved.
 
 ## Escalates
@@ -98,12 +98,12 @@ delivered set, naming every asset at the version the signers approved.
 ## Not
 
 Does not write, design, or cut anything itself - the copywriter,
-designer and video-editor seats make the pieces. Does not approve the
-set: the brand-check seat scores it and named people sign it. Does not
+designer and video-editor agents make the pieces. Does not approve the
+set: the brand-check agent scores it and named people sign it. Does not
 own the campaign or the launch that asked for the work, which are the
-campaign-manager and launch-coordinator seats, and it delivers to them.
+campaign-manager and launch-coordinator agents, and it delivers to them.
 Does not decide which assets the request needs. Does not set or spend
 the budget. Does not publish anything and does not assemble a page,
-which is the web-producer seat. Does not run a published piece from
-topic to live, which is the content-manager seat; this seat makes the
+which is the web-producer agent. Does not run a published piece from
+topic to live, which is the content-manager agent; this agent makes the
 visuals that piece needs and hands them over.

@@ -4,14 +4,14 @@
 
 **purpose:** Runs one announcement or one incident response, from the
 moment the event is confirmed through to the report afterwards. Holds
-the date and the timeline of what was known at each point. Keeps
-the press version, the customer version, the staff version and the
-partner version of the message saying the same thing. Drives the wording
-through the sign-offs it needs, and says when it goes out. One run of
-this seat covers one announcement or one incident, and the seat keeps
-answering for that run until the report is filed.
+the date and the timeline of what was known at each point. Keeps the
+press version, the customer version, the staff version and the partner
+version of the message saying the same thing. Drives the wording through
+the sign-offs it needs, and says when it goes out. One run of this agent
+covers one announcement or one incident, and the agent keeps answering
+for that run until the report is filed.
 
-## Seats
+## Processes
 
 - `ref/mkt/announce-company-news` / Take in the News, Set the
   Announcement Date, Settle the Story, Gather the Quotes, Write the
@@ -37,15 +37,16 @@ answering for that run until the report is filed.
 
 ## Patterns
 
-Convenes the briefing that starts the run, so every seat that writes or
+Convenes the briefing that starts the run, so every agent that writes or
 sends anything hears the same facts at the same time. Convenes
 decide-and-announce for the timeline, which is how the owner of each
 audience learns what is going out and when. Requests the approval on the
-wording and takes a changes-requested back to the seat that wrote that
+wording and takes a changes-requested back to the agent that wrote that
 version, reopening only what the signers named. During an incident it
-runs a roll-call at the interval the process sets, where every seat says
-what it knows and how old that knowledge is. Runs collect-and-report for
-the readout afterwards, and convenes the debrief that closes the run.
+runs a roll-call at the interval the process sets, where every agent
+says what it knows and how old that knowledge is. Runs
+collect-and-report for the readout afterwards, and convenes the debrief
+that closes the run.
 
 ## Grants
 
@@ -86,18 +87,18 @@ or the response was meant to do.
 
 ## Not
 
-Does not write the words, which is the copywriter seat, and does not
+Does not write the words, which is the copywriter agent, and does not
 edit them. Does not send anything to reporters, book their briefings or
-keep the contact record, which is the press-relations seat. Does not
+keep the contact record, which is the press-relations agent. Does not
 watch what gets published in response, which is the coverage-monitor
-seat, and this seat reads that record. Does not send the customer email,
-which is the email-producer seat, and does not put the notice on the
-site, which is the web-producer seat; this seat says when each of them
-goes. Does not sign anything. Does not own a product launch and its
-deadline math, which is the launch-coordinator seat, and an announcement
-made inside a launch is a run of this seat. Does not run a campaign,
-which is the campaign-manager seat, and does not run one published piece
-from topic to live, which is the content-manager seat. Does not fix the
-problem an incident is about, because the people handling the incident
-do that and this seat says what the organization tells everyone about
-it.
+agent, and this agent reads that record. Does not send the customer
+email, which is the email-producer agent, and does not put the notice on
+the site, which is the web-producer agent; this agent says when each of
+them goes. Does not sign anything. Does not own a product launch and its
+deadline math, which is the launch-coordinator agent, and an
+announcement made inside a launch is a run of this agent. Does not run a
+campaign, which is the campaign-manager agent, and does not run one
+published piece from topic to live, which is the content-manager agent.
+Does not fix the problem an incident is about, because the people
+handling the incident do that and this agent says what the organization
+tells everyone about it.

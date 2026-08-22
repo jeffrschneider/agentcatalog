@@ -19,7 +19,7 @@ instead.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Release | what shipped, who it affects, why it matters | [comms-manager](../../agents/comms-manager.md) · subject matter expert (person) |
 | 2 | Size the Announcement | which channels this release earns | comms-manager |
@@ -86,7 +86,7 @@ phases:
   check-once       - convenes approval: one pass over everything
                      customer-facing, signed against a version by the
                      signers <who> named
-                     owner: <your standards seat>
+                     owner: <your standards role>
                      after: write-announce + show-feature
                      by: <days>                automation: never
   update-pages     - human: the feature page, the docs entry, the
@@ -131,9 +131,9 @@ handoffs:
   tell-customers + post-publicly -> watch-first-days: what was sent,
     who it reached, and where it was published
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the product, support and sales
-           seats>
+           agents>
   systems: the CMS (write), the documentation site (write),
            the product's messaging system (write, cap: <n> accounts
            per notice), email platform (write),

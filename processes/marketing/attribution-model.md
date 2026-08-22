@@ -22,7 +22,7 @@ figure.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Trigger | what drifted, or which channel is now sending traffic | [standards-keeper](../../agents/standards-keeper.md) · [analytics](../../agents/analytics.md) |
 | 2 | Confirm the Drift | test the gap against a holdout before rebuilding | [statistician](../../agents/statistician.md) · analytics |
@@ -111,7 +111,7 @@ phases:
                      by: <days>                  automation: <level>
   clear-data       - convenes approval: legal signs that these touches
                      may be joined to one person for measurement
-                     owner: <your legal seat>    after: pull-touchpoints
+                     owner: <your legal role>    after: pull-touchpoints
                      by: <days>                  automation: never
   draft-candidates - runs build-by-talent: two or three revised models,
                      each written out with the rule it changes and the
@@ -203,12 +203,12 @@ handoffs:
     from, and what changed from the version it replaces
   reissue-reports -> tell-the-readers: each reissued period at its new
     report version, saying what moved and by how much
-  tell-the-readers -> set-review: what each receiving seat says it
+  tell-the-readers -> set-review: what each receiving agent says it
     changes because of the new model
   set-review -> record-learnings: the review date and the conditions
     that bring the model back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance and legal>
   systems: analytics platforms (read), ad platforms (read),
            the CRM (read), the consent record (read),

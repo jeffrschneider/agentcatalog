@@ -15,7 +15,7 @@ held responsible.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Audience | work out who to reach and what the run must do | [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Set the Parameters | markets, platforms, dates, budget and deliverables | campaign-manager · leadership (person) |
@@ -100,7 +100,7 @@ phases:
                      by: <days>                automation: <level>
   clear-shortlist  - convenes approval: brand and legal accept, as
                      named signers, who the organization will pay
-                     owner: <your legal seat>  after: vet-candidates
+                     owner: <your legal role>  after: vet-candidates
                      by: <days>                automation: never
   approach         - human: the offer goes to each cleared creator and
                      the answer lands against their name
@@ -128,7 +128,7 @@ phases:
   review-drafts    - convenes approval: brand, disclosure and legal
                      read each draft against the rules, as named
                      signers, before it goes out
-                     owner: <your legal seat>  after: collect-drafts
+                     owner: <your legal role>  after: collect-drafts
                      by: <days>                automation: never
   publish-posts    - human: the creators post on the agreed dates, on
                      their own accounts
@@ -142,7 +142,7 @@ phases:
                      the disclosure rules of the market it ran in
                      owner: disclosure-check   after: record-posts
                      by: <days>                automation: <level>
-  correct-failed   - human: the seat holding the deal goes back to the
+  correct-failed   - human: the agent holding the deal goes back to the
                      creator, and <who> decides what is asked for
                      owner: creator-relations  after: check-disclosure
                      by: <hours>               automation: <level>
@@ -200,7 +200,7 @@ handoffs:
   correct-failed -> check-disclosure: the corrected post, scored again
     before the run closes
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, brand, rights and
            finance>
   systems: the creator record (write), the deal record (write),
@@ -236,33 +236,32 @@ measures:
 ## The failure edges
 
 - **The signers clear too few creators.** The run goes back to the
-  candidate list, and the creator-relations seat finds more candidates
+  candidate list, and the creator-relations agent finds more candidates
   against the same audience. The signers read the new candidates before
   anybody is approached.
 - **Too few creators accept the offer.** The run goes back to the
   candidate list. If the fee is the reason they declined, <who> decides
   whether the budget moves or the campaign asks for fewer deliverables.
 - **A review comes back with changes.** The run returns to the drafts,
-  the creator-relations seat takes the changes to the creator, and only
+  the creator-relations agent takes the changes to the creator, and only
   what the signers named reopens. The signers read the version that
   comes back before it goes out.
 - **A creator will not make the change the review asked for.** The deal
-  says what that creator owes, and <who> decides whether the
-  deliverable is dropped, given to another creator, or accepted as it
-  stands. Publishing a draft the signers refused is not one of the
-  choices.
+  says what that creator owes, and <who> decides whether the deliverable
+  is dropped, given to another creator, or accepted as it stands.
+  Publishing a draft the signers refused is not one of the choices.
 - **A live post carries no disclosure, or carries one a reader has to
-  expand to see.** The disclosure check reports it with the rule and
-  the market named, the creator-relations seat goes back to the creator
-  the same day, and the check runs again on the corrected post. The run
-  does not close while a post is live without the disclosure its market
+  expand to see.** The disclosure check reports it with the rule and the
+  market named, the creator-relations agent goes back to the creator the
+  same day, and the check runs again on the corrected post. The run does
+  not close while a post is live without the disclosure its market
   requires.
 - **A creator will not correct a live post.** This is a contract
   question and it goes to <who> with the deal and the failing post
-  attached. The organization can ask the platform to take the post
-  down, hold the fee under the terms of the deal, or record in writing
-  that it accepts the failure.
-- **An agreed post never appears.** The creator-relations seat records
+  attached. The organization can ask the platform to take the post down,
+  hold the fee under the terms of the deal, or record in writing that it
+  accepts the failure.
+- **An agreed post never appears.** The creator-relations agent records
   the deliverable as outstanding and goes back to the creator for a new
   date. A deliverable still outstanding at <how long> goes to <who>, who
   decides whether the fee is reduced or the deal ends.
@@ -271,11 +270,11 @@ measures:
   anyway needs <who> to accept the finding in writing, and the finding
   stays on the creator's record.
 - **A creator becomes the subject of a public argument while their post
-  is live.** The creator-relations seat raises it the day it starts,
+  is live.** The creator-relations agent raises it the day it starts,
   and <who> decides whether the post stays up, comes down, or is left
   alone with no further deliverables commissioned.
 - **A disclosure rule changes after the posts are live.** The
-  disclosure-check seat reports the published work the new rule fails,
+  disclosure-check agent reports the published work the new rule fails,
   and <who> decides whether those posts are corrected, taken down, or
   left as they are. The decision is recorded against each post.
 - **The trigger fires while runs are in flight.** Campaigns overlap
@@ -283,6 +282,6 @@ measures:
   wanted by two runs at once, so the deal record is read across every
   run in flight before a creator is approached again.
 - **A run is abandoned.** A deal already agreed is still a commitment,
-  so each creator is told in writing what the organization is
-  cancelling and what it still owes. Posts already live still go
-  through the disclosure check, and the fees line reconciles anyway.
+  so each creator is told in writing what the organization is cancelling
+  and what it still owes. Posts already live still go through the
+  disclosure check, and the fees line reconciles anyway.

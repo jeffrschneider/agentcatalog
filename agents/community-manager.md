@@ -7,7 +7,7 @@ a campaign is live, keeps the tone of the brand, and knows exactly
 which conversations it must not have and who needs to hear about them
 right away.
 
-## Seats
+## Processes
 
 - `ref/mkt/announce-company-news` / Publish It on the Owned Channels
 - `ref/mkt/annual-marketing-plan` / Gather the Outside Evidence, Brief

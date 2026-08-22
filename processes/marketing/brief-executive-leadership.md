@@ -7,21 +7,21 @@ A board meeting or an executive review is coming, and marketing has to
 arrive with something the people in the room can decide from. The
 decision coordinator works out what marketing is asking them to settle,
 commissions the results, the money, the book of work and the outside
-picture from the seats that hold each one, has the position written into
-a paper for each decision, gets the pack signed and sent ahead, and runs
-the meeting where the decisions are put. The run stays open after the
-meeting ends, because every decision still has to be written down with
-its reasons, every question the room left open still has to be answered
-in writing, and every seat that acts on a decision still has to hear it.
-This process is a different job from the department's quarterly review.
-In that review marketing examines its own quarter and resets what each
-area is held to. This process goes outside the department, to a board or
-an executive team, and it asks those people to take the decisions
-marketing cannot take on its own.
+picture from the agents that hold each one, has the position written
+into a paper for each decision, gets the pack signed and sent ahead, and
+runs the meeting where the decisions are put. The run stays open after
+the meeting ends, because every decision still has to be written down
+with its reasons, every question the room left open still has to be
+answered in writing, and every agent that acts on a decision still has
+to hear it. This process is a different job from the department's
+quarterly review. In that review marketing examines its own quarter and
+resets what each area is held to. This process goes outside the
+department, to a board or an executive team, and it asks those people to
+take the decisions marketing cannot take on its own.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Cycle | what the board asked for, and when it meets | [decision-coordinator](../../agents/decision-coordinator.md) |
 | 2 | Read the Last Meeting's Record | the standing questions and the commitments made | decision-coordinator · [reporting-manager](../../agents/reporting-manager.md) |
@@ -41,7 +41,7 @@ marketing cannot take on its own.
 | 16 | Deliver the Briefing | marketing presents and the board decides | leadership (person) · board member (person) · decision-coordinator |
 | 17 | Record the Decisions | each decision, its reasons, and who disagreed | decision-coordinator |
 | 18 | Answer What Was Left Open | the questions the room could not settle | decision-coordinator · researcher · analytics |
-| 19 | Hand the Decisions On | every seat that has to act hears what was decided | decision-coordinator · [standards-keeper](../../agents/standards-keeper.md) · capacity-manager · budget-keeper |
+| 19 | Hand the Decisions On | every agent that has to act hears what was decided | decision-coordinator · [standards-keeper](../../agents/standards-keeper.md) · capacity-manager · budget-keeper |
 | 20 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
 ## The graph
@@ -107,7 +107,7 @@ phases:
                      owner: decision-coordinator
                      after: take-in-cycle          automation: <level>
   set-decisions    - convenes briefing: what marketing is asking the
-                     board to settle, heard at once by every seat that
+                     board to settle, heard at once by every agent that
                      owes evidence toward it
                      owner: decision-coordinator
                      after: read-last-record       automation: never
@@ -158,7 +158,7 @@ phases:
                      by: <days>                    automation: <level>
   get-sign-offs    - convenes approval: brand, legal and <who> sign, as
                      named signers, against a version of the pack
-                     owner: <your legal seat>      after: build-pack
+                     owner: <your legal role>      after: build-pack
                      by: <days>                    automation: never
   send-ahead       - human: the signed pack reaches every member with
                      enough days in front of the meeting to be read
@@ -186,7 +186,7 @@ phases:
                      owner: decision-coordinator
                      after: deliver-briefing
                      by: <days>                    automation: <level>
-  hand-on          - convenes decide-and-announce: every seat that has
+  hand-on          - convenes decide-and-announce: every agent that has
                      to act hears the decision and the date it applies
                      from
                      owner: decision-coordinator
@@ -238,13 +238,13 @@ handoffs:
   deliver-briefing -> answer-open: the questions the room could not
     settle, each with the date its answer is due
   record-decisions -> hand-on: each decision at a version, naming the
-    seats that have to act on it
+    agents that have to act on it
   answer-open -> hand-on: the written answer to each open question,
     with the source under it
-  hand-on -> record-learnings: what each seat took away, and anything
-    a seat said it could not do
+  hand-on -> record-learnings: what each agent took away, and anything
+    an agent said it could not do
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the board, leadership, legal
            and finance>
   systems: the decision record (write), the report store (read),
@@ -289,22 +289,22 @@ measures:
   is not one of the choices.
 - **A choice rests on a rate nobody can source.** The rate is reported
   as unsourced and stays unsourced in the pack. The board decides
-  whether to back the option on a stated assumption, and that
-  assumption goes into the record of what the decision rests on.
+  whether to back the option on a stated assumption, and that assumption
+  goes into the record of what the decision rests on.
 - **A sign-off comes back with changes.** The run returns to the papers
   or to the pack, and only the part the signers named reopens. The
   signers see the changed version before it goes to any board member.
 - **A board member asks a question before the meeting.** The question
   goes back to the papers as a written answer, the answer reaches every
-  member rather than only the one who asked, and the pack is reissued
-  as a new version if the answer changes what it says.
+  member rather than only the one who asked, and the pack is reissued as
+  a new version if the answer changes what it says.
 - **The rehearsal finds a question the pack cannot answer.** The run
   returns to the papers. Marketing either answers the question or says
   in the room that it cannot answer it yet and gives the date it will,
   and which of the two happened is recorded.
 - **The board declines to decide.** A decision the room sends back is
   recorded as declined, with what the room said it needs before it will
-  decide and the date it comes up again. The seats waiting on that
+  decide and the date it comes up again. The agents waiting on that
   decision are told it did not come.
 - **A decision the room took contradicts a standard.** The change goes
   to the process that owns the standard, the standards-keeper issues it
@@ -312,13 +312,13 @@ measures:
   exists.
 - **An answer given after the meeting changes what was decided.** The
   original decision stays where it was, the change goes in as a new
-  version naming the answer that caused it, and every seat that already
+  version naming the answer that caused it, and every agent that already
   heard the first decision hears the new one.
 - **The trigger fires while a run is in flight.** An executive review
   can land while the board pack is still being written, and each run
   keeps its own decisions, its own pack and its own date. The runs read
   the same results and the same money record, and neither changes it.
 - **A run is abandoned.** The evidence, the papers and the pack stay
-  where they are at their versions. The board still gets a record
-  saying marketing did not bring the decisions it said it would, and
-  what it is running on in the meantime.
+  where they are at their versions. The board still gets a record saying
+  marketing did not bring the decisions it said it would, and what it is
+  running on in the meantime.

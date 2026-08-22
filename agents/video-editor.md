@@ -6,10 +6,10 @@
 platform variants of each - including captions and the versions that
 work with the sound off, which is how most of the audience will watch.
 
-## Seats
+## Processes
 
 - `ref/mkt/award-entry` / Assemble the Supporting Material
-- `ref/mkt/brand-refresh` / Brief the Seats that Remake the Material,
+- `ref/mkt/brand-refresh` / Brief the Agents that Remake the Material,
   Remake the Assets
 - `ref/mkt/channel-program` / Build the Partner Selling Kit
 - `ref/mkt/co-marketing-campaign` / Brief the Makers, Settle the Joint

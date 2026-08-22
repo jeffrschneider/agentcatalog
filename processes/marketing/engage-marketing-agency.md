@@ -12,11 +12,11 @@ questions, scoring what comes back, choosing one agency, settling the
 contract, giving that agency the access its scope needs, and briefing
 it. The run closes once the agency has been briefed and the record of
 what the engagement rests on has been written down. Directing the
-agency's work afterwards belongs to the seats that own each run.
+agency's work afterwards belongs to the agents that own each run.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Gap | what the department cannot do or cannot carry | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) · requester (person) |
 | 2 | Choose the Route | weigh building inside against hiring outside | decision-coordinator · capacity-manager · [forecaster](../../agents/forecaster.md) · leadership (person) |
@@ -138,7 +138,7 @@ phases:
   settle-contract  - convenes approval: the rates, the term, the
                      notice period, who owns the work, and how the
                      organization's data is handled
-                     owner: <your legal seat>     after: choose-agency
+                     owner: <your legal role>     after: choose-agency
                      by: <days>                   automation: never
   set-up-access    - human: each system the scope needs, granted by
                      the person who owns it, with the date the access
@@ -190,7 +190,7 @@ handoffs:
   brief-agency -> record-learnings: the briefing as the agency heard
     it, and the record of what the engagement rests on
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, finance, the
            system owners and the security reviewer>
   systems: the supplier record (write), the requirements record
@@ -205,7 +205,7 @@ policy:
     looked at
   every candidate gets the same scope, the same questions and the same
     deadline, and an answer given to one is given to all of them
-  the seat that ran the search does not score what it found
+  the agent that ran the search does not score what it found
   no agreement is entered into by an agent, and no agent releases a
     payment
   access is granted per system by the person who owns that system, and

@@ -15,7 +15,7 @@ recorded and the finding is filed with the numbers behind it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Hypothesis | what the change is meant to do, and to whom | [study-manager](../../agents/study-manager.md) |
 | 2 | Set the Terms of the Test | the change, the audience, the measure that decides | study-manager · [conversion-tracker](../../agents/conversion-tracker.md) · leadership (person) |
@@ -97,7 +97,7 @@ phases:
                        owner: study-manager      after: set-terms
                        by: <days>                automation: <level>
   brief-makers       - convenes briefing: the versions, the deciding
-                       measure and the run length, heard by every seat
+                       measure and the run length, heard by every agent
                        at once
                        owner: study-manager
                        after: size-test + clear-traffic
@@ -117,7 +117,7 @@ phases:
   get-sign-offs      - convenes approval: brand, accessibility and
                        legal sign, as named signers, against every
                        version the test will show
-                       owner: <your legal seat>  after: wire-measurement
+                       owner: <your legal role>  after: wire-measurement
                        by: <days>                automation: never
   check-setup        - runs assessment: a dry run showing each version
                        serving and each of its numbers arriving
@@ -168,7 +168,7 @@ handoffs:
     early
   clear-traffic -> brief-makers: the tests and changes already booked
     on the same visitors, and what was moved to make room
-  brief-makers -> produce-variants: the request as every seat heard it,
+  brief-makers -> produce-variants: the request as every agent heard it,
     and which version each maker is building
   produce-variants -> build-variants: the copy and the visuals for
     every version, at a version
@@ -193,7 +193,7 @@ handoffs:
   carry-out -> record-learnings: what is live now, and the numbers the
     decision rested on
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and legal>
   systems: the website's content system (write), the website (write),
            the traffic splitting system (write),
@@ -224,30 +224,30 @@ measures:
 ## The failure edges
 
 - **Somebody asks for the result before the read date.** The
-  statistician seat releases the measures that say whether the test is
+  statistician agent releases the measures that say whether the test is
   healthy and holds the deciding measure until the date the test was
   sized for. Ending a test early is a decision for a named person, who
   records the reason and accepts a weaker result than the one the test
   was sized to give. This is the failure that spoils the most tests,
-  because a difference that looks large in the first days of a run
-  often shrinks as the rest of the traffic arrives.
+  because a difference that looks large in the first days of a run often
+  shrinks as the rest of the traffic arrives.
 - **A guardrail measure gets worse while the test is live.** The
-  statistician seat reports it on the day it is seen, and it goes to a
-  person who decides whether the test carries on or stops. Stopping is
-  a decision somebody makes, and the run never does it by itself.
+  statistician agent reports it on the day it is seen, and it goes to a
+  person who decides whether the test carries on or stops. Stopping is a
+  decision somebody makes, and the run never does it by itself.
 - **The read date arrives with less traffic than the test was sized
   for.** The result is recorded as undecided, and the choice to run the
   test longer or to drop it goes to a person. The difference the test
-  happened to see is filed with the traffic it rests on, so nobody
-  reads it later as a finding.
+  happened to see is filed with the traffic it rests on, so nobody reads
+  it later as a finding.
 - **Another change lands on the same visitors mid-run.** Clearing the
   traffic is meant to prevent this. When it happens anyway the test is
   recorded as spoiled, and the run goes back to clear-traffic before it
   starts again. A spoiled test is never read as a result.
 - **A version is changed after sign-off.** The approval is void and the
-  run returns to get-sign-offs. The traffic count also starts again
-  from the moment the changed version went live, because the versions
-  before and after the change are two different tests.
+  run returns to get-sign-offs. The traffic count also starts again from
+  the moment the changed version went live, because the versions before
+  and after the change are two different tests.
 - **The trigger fires while runs are in flight.** Tests overlap
   normally, and the concurrency line says how many may run on the same
   visitors at once. Where two tests want the same visitors, the rule

@@ -6,11 +6,11 @@
 Takes in what ships and why, turns the plan into a checklist every
 branch reads, watches the branches converge on the date, fires the
 sequence on launch day, and reports the first week against the goals set
-on day one. The seat exists because a launch coordinates more seats than
-anything else in the department, and someone has to say out loud - early
-- when the math stops working.
+on day one. The agent exists because a launch coordinates more agents
+than anything else in the department, and someone has to say out loud -
+early - when the math stops working.
 
-## Seats
+## Processes
 
 - `ref/mkt/content-calendar` / List What Is Already Committed
 - `ref/mkt/media-plan` / Collect What the Plan Must Carry, Lay out the

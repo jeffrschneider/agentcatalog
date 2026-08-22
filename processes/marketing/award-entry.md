@@ -3,9 +3,9 @@
 `ref/mkt/award-entry v1`
 
 **value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
-A submissions manager runs one entry into one outside award. The seat
+A submissions manager runs one entry into one outside award. The agent
 reads what the award recognizes, what it costs and when it closes, and a
-person decides whether the organization enters at all. The seat then
+person decides whether the organization enters at all. The agent then
 reads the entry rules before anything is written, picks the category and
 the work with the expert who did that work, has the evidence gathered
 and the answers written to the judging criteria, gets the customer named
@@ -17,7 +17,7 @@ somebody still owes the debrief.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Award | what it recognizes, its deadline and its fee | [submissions-manager](../../agents/submissions-manager.md) |
 | 2 | Decide Whether to Enter | weigh the fee and the effort against the value | submissions-manager · leadership (person) |
@@ -96,7 +96,7 @@ phases:
                      owner: submissions-manager after: read-the-rules
                      by: <days>                 automation: <level>
   brief-the-entry  - convenes briefing: the judging criteria, what each
-                     seat owes, and the filing date
+                     agent owes, and the filing date
                      owner: submissions-manager after: pick-the-entry
                      automation: <level>
   gather-evidence  - runs collect-and-report: the results the entry
@@ -121,7 +121,7 @@ phases:
                      by: <days>                 automation: <level>
   get-sign-offs    - convenes approval: brand, legal, rights and the
                      customer sign, as named signers, against a version
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: edit-the-entry + customer-consent +
                             support-material
                      by: <days>                 automation: never
@@ -184,7 +184,7 @@ handoffs:
     published it, and what the body said about the entry
   hand-on-result -> record-learnings: what went out and who it went to
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, brand, rights,
            finance, the expert and the account owner>
   systems: the submissions record (write), the asset store (write),
@@ -252,7 +252,7 @@ measures:
   cycle starts from.
 - **The trigger fires while runs are in flight.** Awards overlap
   normally, and the concurrency line says how many. Several awards close
-  in the same few weeks, so the seats that write the entries and gather
+  in the same few weeks, so the agents that write the entries and gather
   the evidence run short first, and the manager takes one entry at a
   time.
 - **A run is abandoned.** The evidence, the draft and the supporting

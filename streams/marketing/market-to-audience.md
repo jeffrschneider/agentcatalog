@@ -15,5 +15,5 @@ of who bought and who stayed, and go out and ask customers the questions
 that record cannot answer. What each run produces is an agreement written
 down at a version, carrying the evidence under it and the names of everyone
 who agreed and everyone who did not. A run is finished when that version is
-in the hands of the seats that qualify accounts, plan content and target
+in the hands of the agents that qualify accounts, plan content and target
 campaigns, with the date it comes back up already set.

@@ -13,7 +13,7 @@ been reported against the goal the budget was given.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Budget and Goal | what the money must buy and how it is judged | [campaign-manager](../../agents/campaign-manager.md) · leadership (person) |
 | 2 | Research the Search Demand | what people search for and what a click costs | [search-optimizer](../../agents/search-optimizer.md) · [media-buyer](../../agents/media-buyer.md) |
@@ -93,7 +93,7 @@ phases:
                      by: launch                automation: <level>
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the ads and the pages
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: write-ads + ready-pages
                      by: <days>                automation: never
   build-and-launch - human: the campaigns are built at their starting
@@ -151,9 +151,9 @@ handoffs:
     and the reason it was made
   report-goal -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the budget, brand, legal and
-           finance seats>
+           finance agents>
   systems: ad platforms (write, cap: <n>/day),
            search demand data (read), analytics (write: tags and
            conversion definitions; read: reporting), the CMS (write),

@@ -18,7 +18,7 @@ down which creative is running where.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Creative and the Plan | which plan lines this creative has to fill | [media-buyer](../../agents/media-buyer.md) · [campaign-manager](../../agents/campaign-manager.md) |
 | 2 | Read the Placement Specifications | the sizes, lengths and limits each placement takes | media-buyer · [creative-producer](../../agents/creative-producer.md) |
@@ -124,12 +124,12 @@ phases:
   score-the-set      - runs assessment: the brand and claims pass, the
                        disclosure pass for each market, and the
                        accessibility pass on captions and contrast
-                       owner: <your review seat>  after: add-disclosures
+                       owner: <your review role>  after: add-disclosures
                        by: <days>                 automation: <level>
   get-sign-offs      - convenes approval: brand and legal sign, as named
                        signers, against the adapted versions that will
                        actually run
-                       owner: <your legal seat>   after: score-the-set
+                       owner: <your legal role>   after: score-the-set
                        by: <days>                 automation: never
   build-tracking     - human: the parameters each ad carries so that its
                        clicks arrive under the line it was bought on,
@@ -225,9 +225,9 @@ handoffs:
   check-live-ads -> record-live-set: what actually served in the first
     hours, beside what was ordered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand, legal and rights
-           seats>
+           agents>
   systems: ad platforms (write, cap: <n>/day),
            the audience tools in the ad platforms (write),
            the live campaigns (trigger),

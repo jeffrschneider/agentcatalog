@@ -15,15 +15,15 @@ and every question the buyer needs answered at each stage. A content
 librarian matches what is already published against those questions, and
 the questions with nothing behind them become the gap list. The map is
 agreed by the people who will plan against it, issued at a version, and
-handed to the seats that plan content and design campaigns. Those seats
-can rely on four things from a recorded map: the stages with the signal
-that marks each one, the touchpoints placed against a stage with the
-seat that owns each, the questions in the words buyers used, and the
-gaps ranked by how many buyers reach the question.
+handed to the agents that plan content and design campaigns. Those
+agents can rely on four things from a recorded map: the stages with the
+signal that marks each one, the touchpoints placed against a stage with
+the agent that owns each, the questions in the words buyers used, and
+the gaps ranked by how many buyers reach the question.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Persona | which persona, which purchase, what the map answers | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Read the Behavioral Record | what buyers of this persona did before they bought | [analytics](../../agents/analytics.md) |
@@ -40,8 +40,8 @@ gaps ranked by how many buyers reach the question.
 | 13 | Find the Gaps | the questions with nothing published behind them | content-librarian · search-optimizer · decision-coordinator |
 | 14 | Settle the Map | the people who plan against it agree it, or send it back | decision-coordinator · leadership (person) · subject matter expert (person) |
 | 15 | Write down the Agreed Map | stages, touchpoints, questions, gaps, and who agreed | decision-coordinator |
-| 16 | Issue the Map as a Version | the map numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 17 | Hand over the Map | each receiving seat says what it changes | decision-coordinator · content-manager · [campaign-manager](../../agents/campaign-manager.md) · audience-manager · search-optimizer |
+| 16 | Issue the Map as a Version | the map numbered, and the agents that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 17 | Hand over the Map | each receiving agent says what it changes | decision-coordinator · content-manager · [campaign-manager](../../agents/campaign-manager.md) · audience-manager · search-optimizer |
 | 18 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
 | 19 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
@@ -93,7 +93,7 @@ trigger: a persona is agreed in <your profile process>, or the review
          brings the map back sooner>
 concurrency: one run at a time for the same persona and the same
              purchase, because two maps of one journey leave the
-             planning seats with neither. Runs for different personas
+             planning agents with neither. Runs for different personas
              overlap
 goal: one agreed map of how a persona buys, carrying its stages with
       the signal that marks each one, its touchpoints, the questions
@@ -102,7 +102,7 @@ goal: one agreed map of how a persona buys, carrying its stages with
 phases:
   take-in-persona   - convenes briefing: which persona, which purchase,
                       what the map has to answer, what evidence each
-                      seat owes, and the date it is owed
+                      agent owes, and the date it is owed
                       owner: decision-coordinator after: trigger
                       automation: <level>
   read-behavior     - human: what buyers of this persona did in the
@@ -121,7 +121,7 @@ phases:
   clear-study       - convenes approval: the consent-manager scores the
                       sample and the questions against the rules in
                       force, and legal signs before anyone is asked
-                      owner: <your legal seat>   after: design-study
+                      owner: <your legal role>   after: design-study
                       by: <days>                 automation: never
   talk-to-buyers    - human: recent buyers are asked what they were
                       trying to settle at each point and where they
@@ -142,7 +142,7 @@ phases:
                       by: <days>                 automation: <level>
   map-touchpoints   - human: every place a buyer of this persona meets
                       the organization, each placed against a stage and
-                      carrying the seat that owns it
+                      carrying the agent that owns it
                       owner: audience-manager    after: draft-stages
                       by: <days>                 automation: <level>
   collect-questions - runs collect-and-report: what the buyer needs
@@ -184,7 +184,7 @@ phases:
                       readable
                       owner: standards-keeper    after: write-map
                       automation: <level>
-  hand-over         - runs decide-and-announce: every seat that plans
+  hand-over         - runs decide-and-announce: every agent that plans
                       content or designs campaigns hears the map at
                       once and says what it changes because of it
                       owner: decision-coordinator after: issue-version
@@ -203,7 +203,7 @@ run-scoped:
 handoffs:
   take-in-persona -> read-behavior / read-search / design-study /
     first-hand: the persona at its version, the purchase the map
-    covers, what each seat owes, and the date it is owed. Four
+    covers, what each agent owes, and the date it is owed. Four
     branches read one record
   read-behavior -> draft-stages: the paths those buyers took, with the
     period the paths were read over and the source under every figure
@@ -227,7 +227,7 @@ handoffs:
   draft-stages -> test-stages: the same stages, in the form the record
     will be run over
   map-touchpoints -> inventory-content: every touchpoint, its stage,
-    and the seat that owns it
+    and the agent that owns it
   collect-questions -> inventory-content: the questions per stage, in
     the words buyers used
   test-stages -> settle-map: whether each stage signal can be read from
@@ -242,12 +242,12 @@ handoffs:
   write-map -> issue-version: the map in the wording it was agreed in
   issue-version -> hand-over: the map at its number, and what changed
     from the version it replaces
-  hand-over -> set-review: what each receiving seat said it would
+  hand-over -> set-review: what each receiving agent said it would
     change, and the date it said it by
   set-review -> record-learnings: the review date and the conditions
     that bring the map back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the experts who deal
            with buyers, and legal>
   systems: analytics platforms (read), the CRM (read), the customer and
@@ -278,7 +278,7 @@ policy:
     is written
   the map is agreed by named people, and the agreement is never
     delegated to an agent
-  the seats that plan content and design campaigns sit in the room
+  the agents that plan content and design campaigns sit in the room
     where the map is agreed, and a map agreed without them is not
     recorded
   a gap is recorded whether or not anybody intends to fill it, because
@@ -294,7 +294,7 @@ measures:
   question coverage: <share> of the recorded questions with a published
                      piece answering them, read on the review date
   quality gate: no map is recorded without its evidence, its gap list,
-                and an answer from every seat that plans against it
+                and an answer from every agent that plans against it
 ```
 
 ## The failure edges
@@ -302,11 +302,11 @@ measures:
 - **A stage signal cannot be read from any system.** The run returns to
   draft-stages. Either the stage is redrawn around something the record
   can see, or it stays and is recorded as a stage nobody can count, and
-  the seats that plan against the map are told which stages those are.
+  the agents that plan against the map are told which stages those are.
 - **Too few buyers answer.** The run returns to design-study. The
   statistician says what the shortfall does to each finding, and <who>
-  decides whether to go back into the field or to report on what came
-  in with the shortfall recorded against it.
+  decides whether to go back into the field or to report on what came in
+  with the shortfall recorded against it.
 - **Consent rules out part of the sample or a question.** The study goes
   back to design-study to be redrawn without it. Better evidence does
   not overturn this check, because the question it answers is whether
@@ -317,8 +317,8 @@ measures:
   coordinator makes neither.
 - **Something already published answers a question and buyers never find
   it.** This is recorded as its own kind of gap, with the piece and its
-  address beside the question, so the seats that plan content can tell a
-  question that needs something written from one that needs something
+  address beside the question, so the agents that plan content can tell
+  a question that needs something written from one that needs something
   found.
 - **The gap list is longer than the department can fill.** The map
   records every gap and ranks them by how many buyers reach the
@@ -330,10 +330,10 @@ measures:
   version it started with or starts again.
 - **The trigger fires while a run is in flight.** Two runs against the
   same persona and purchase do not overlap, because the second one would
-  produce a second map and leave the planning seats with neither. A
+  produce a second map and leave the planning agents with neither. A
   different persona starts its own run.
 - **A run is abandoned.** The evidence stays where it is at its
   versions, and a later run picks it up with the dates it was gathered
-  on. No map is recorded, the planning seats keep working to the map
+  on. No map is recorded, the planning agents keep working to the map
   they already had, and the coordinator records that the question went
   unanswered and why.

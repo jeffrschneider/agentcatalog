@@ -15,7 +15,7 @@ engagement was worth.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Call | what the event is, who attends, when it closes | [submissions-manager](../../agents/submissions-manager.md) · [researcher](../../agents/researcher.md) |
 | 2 | Pick the Speaker | a named person agrees to speak on a named topic | submissions-manager · leadership (person) · spokesperson (person) |
@@ -95,7 +95,7 @@ phases:
   clear-proposal   - convenes approval: brand and legal read what the
                      abstract promises, because a filed abstract cannot
                      be taken back
-                     owner: <your legal seat>  after: write-proposal
+                     owner: <your legal role>  after: write-proposal
                      by: <days>                automation: never
   submit-proposal  - human: file the proposal in the organizer's system
                      before the deadline, answer what the reviewers ask,
@@ -106,7 +106,7 @@ phases:
   settle-terms     - human: the speaker agreement, the fee or the
                      expenses, and what may be recorded, kept and
                      republished afterwards
-                     owner: <your legal seat>  after: submit-proposal
+                     owner: <your legal role>  after: submit-proposal
                      by: <days>                automation: never
   shape-talk       - convenes decide-and-announce: what the talk argues,
                      the order it argues it in, and the evidence under
@@ -120,7 +120,7 @@ phases:
                      by: <days>                automation: <level>
   get-sign-offs    - convenes approval: brand, legal and rights sign, as
                      named signers, against a version of the talk
-                     owner: <your legal seat>  after: build-deck
+                     owner: <your legal role>  after: build-deck
                      by: <days>                automation: never
   rehearse         - human: the talk is run to time in front of people
                      who will say what falls flat
@@ -191,7 +191,7 @@ handoffs:
     and after what date
   report-result -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the speaker, leadership, legal,
            brand and rights>
   systems: the submissions record (write), the asset store (write),

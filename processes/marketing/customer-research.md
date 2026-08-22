@@ -16,12 +16,12 @@ people. Reading what customers already did is a separate process.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Question | work out what the study must settle and by when | [study-manager](../../agents/study-manager.md) · requester (person) |
 | 2 | Check What Is Already Known | whether the record already answers the question | [researcher](../../agents/researcher.md) · [analytics](../../agents/analytics.md) |
 | 3 | Choose the Method | interviews, a survey or a panel, and why that one | study-manager · [statistician](../../agents/statistician.md) |
-| 4 | Brief the Study | every seat hears the question and the method at once | study-manager · statistician · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · researcher |
+| 4 | Brief the Study | every agent hears the question and the method at once | study-manager · statistician · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · researcher |
 | 5 | Say How Much Data It Needs | how many responses, settled before any are asked | statistician |
 | 6 | Define the Sample | who gets asked, how many, and how they are drawn | study-manager · audience-manager |
 | 7 | Check Who May Be Contacted | the consent record applied to the drawn sample | consent-manager |
@@ -104,7 +104,7 @@ phases:
                      owner: study-manager      after: check-known
                      automation: <level>
   brief-the-study  - convenes briefing: the question, the method and
-                     the due date, heard by every seat at once
+                     the due date, heard by every agent at once
                      owner: study-manager      after: choose-method
                      automation: <level>
   size-the-sample  - human: how many responses the study needs, and
@@ -140,7 +140,7 @@ phases:
   get-sign-offs    - convenes approval: legal and the named owner sign,
                      as named signers, against a version of the sample
                      and a version of the questions
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: check-consent + cover-the-cost +
                             try-questions
                      by: <days>                automation: never
@@ -193,7 +193,7 @@ handoffs:
   brief-the-study -> size-the-sample: the question, the size of the
     difference that would matter to the decision, and the confidence
     the study is being run to
-  brief-the-study -> write-questions: the question as every seat heard
+  brief-the-study -> write-questions: the question as every agent heard
     it, and the earlier version of every question a repeated study
     reuses
   size-the-sample -> define-sample: how many responses the study needs
@@ -231,7 +231,7 @@ handoffs:
     that could not be computed marked as such
   deliver-findings -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, legal, finance
            and the expert>
   systems: the study record (write), the questions and material

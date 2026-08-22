@@ -15,7 +15,7 @@ public belongs to the announcement and the launch processes.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Naming Request | say what has to be named, why, and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Set the Naming Criteria | markets, languages, classes, and the domains needed | decision-coordinator · brand owner (person) |
@@ -127,7 +127,7 @@ phases:
   clear-shortlist  - convenes approval: counsel reads the register
                      report and says which names the organization can
                      use and defend, as a named signer
-                     owner: <your legal seat>     after: cut-shortlist
+                     owner: <your legal role>     after: cut-shortlist
                      by: <weeks>                  automation: never
   choose-name      - convenes decide-and-announce: one name chosen, with
                      the reasons and any disagreement written down
@@ -187,7 +187,7 @@ handoffs:
     numbered version, and the date the version applies from
   tell-readers -> record-learnings: the notice, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the brand owner, the
            native speakers, legal, rights and finance>
   systems: the decision record (write), the standards store (write),

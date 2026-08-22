@@ -18,5 +18,5 @@ it down. The approval process is called by all the others: it takes
 finished material at a version, runs the brand, legal and accuracy checks
 over it, and hands back either a cleared version with its record or a list
 of failures with the rule behind each one. A run finishes when the asset is
-live on its date and the seat that made it has reported how it did against
+live on its date and the agent that made it has reported how it did against
 what the request asked for.

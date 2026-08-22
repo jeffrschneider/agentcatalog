@@ -13,14 +13,14 @@ any point.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Candidate | the customer, and what their story could show | [advocacy-manager](../../agents/advocacy-manager.md) |
 | 2 | Check Where the Account Stands | usage, support history, and the renewal position | [account-monitor](../../agents/account-monitor.md) |
 | 3 | Make the Ask | the customer is asked and agrees to take part | advocacy-manager |
 | 4 | Agree What the Customer Will Do | what may be used, where, as whom, until when | advocacy-manager · customer (person) · legal reviewer (person) |
 | 5 | Clear the Rights | the logo, the footage, the appearance release | [rights-register](../../agents/rights-register.md) · rights approver (person) |
-| 6 | Brief the Story | every seat hears the same request at once | [content-manager](../../agents/content-manager.md) · advocacy-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
+| 6 | Brief the Story | every agent hears the same request at once | [content-manager](../../agents/content-manager.md) · advocacy-manager · [researcher](../../agents/researcher.md) · [copywriter](../../agents/copywriter.md) · [editor](../../agents/editor.md) · [creative-producer](../../agents/creative-producer.md) |
 | 7 | Verify the Customer's Results | the numbers read from the systems that hold them | researcher · account-monitor |
 | 8 | Interview the Customer | the customer says what happened, in their words | researcher · customer (person) |
 | 9 | Agree What the Story Argues | the argument, and the order the story tells it in | content-manager · editor · copywriter |
@@ -104,7 +104,7 @@ phases:
                        owner: advocacy-manager   after: check-standing
                        automation: <level>
   agree-terms        - convenes approval: the customer and <your legal
-                       seat> sign what may be used, in which channels,
+                       role> sign what may be used, in which channels,
                        under which name and title, and until when
                        owner: advocacy-manager   after: make-ask
                        by: <days>                automation: never
@@ -114,7 +114,7 @@ phases:
                        owner: rights-register    after: agree-terms
                        by: <days>                automation: <level>
   brief-story        - convenes briefing: the agreed terms and what the
-                       story has to show, heard by every seat at once
+                       story has to show, heard by every agent at once
                        owner: content-manager    after: agree-terms
                        automation: <level>
   verify-results     - human: every number the story will use, read
@@ -150,7 +150,7 @@ phases:
                        by: <days>                automation: <level>
   internal-sign-offs - convenes approval: brand and legal sign, as
                        named signers, against a version of the story
-                       owner: <your legal seat>
+                       owner: <your legal role>
                        after: check-facts + make-visuals
                        by: <days>                automation: never
   customer-approval  - convenes approval: the customer signs the story
@@ -201,7 +201,7 @@ handoffs:
     each reading came from and the date it was current
   make-ask -> agree-terms: what the customer agreed to in principle,
     and anything they said they will not do
-  agree-terms -> brief-story: the terms as signed, so that no seat
+  agree-terms -> brief-story: the terms as signed, so that no agent
     plans anything the customer did not agree to
   agree-terms -> clear-rights: the marks, the footage and the people
     the story will use, and the channels it will run on
@@ -232,7 +232,7 @@ handoffs:
   watch -> record-learnings: the numbers set against what the story was
     approved to do
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the customer, legal, brand and
            rights>
   systems: the advocacy record (write), the rights and permissions
@@ -274,18 +274,18 @@ measures:
   version goes back to the customer, and the internal signers see it
   again before it publishes.
 - **The customer withdraws before publication.** The run stops where it
-  is. Nothing about that customer publishes, the advocacy-manager seat
-  records the withdrawal with its date and the reason the customer
-  gave, and the drafts and the visuals stay in the asset store marked
-  as material that may not be used. A person decides whether the
-  customer may be asked again and when.
+  is. Nothing about that customer publishes, the advocacy-manager agent
+  records the withdrawal with its date and the reason the customer gave,
+  and the drafts and the visuals stay in the asset store marked as
+  material that may not be used. A person decides whether the customer
+  may be asked again and when.
 - **The customer withdraws after publication.** The page comes down
   within the time the policy sets, and the run returns to build-page so
-  that the producer records what now stands at the address. The story
-  is pulled out of the sales material as well, because the sales team
-  holds its own copy of it. The advocacy-manager seat puts this in
-  front of a person on the day it arrives.
-- **The account stops being one to point at.** The account-monitor seat
+  that the producer records what now stands at the address. The story is
+  pulled out of the sales material as well, because the sales team holds
+  its own copy of it. The advocacy-manager agent puts this in front of a
+  person on the day it arrives.
+- **The account stops being one to point at.** The account-monitor agent
   finds a support problem, a dispute or a renewal in trouble after the
   ask has already gone out. The run pauses and a person decides whether
   it continues, and the story does not publish while that question is
@@ -293,10 +293,10 @@ measures:
 - **The numbers do not hold up.** The researcher reports what the
   systems actually say, and the run goes back to the ask, because the
   story the customer agreed to tell is no longer the story the evidence
-  supports. The customer hears what changed before anything is
-  rewritten around it.
-- **The agreement runs out.** The rights-register seat warns before the
-  end date. The advocacy-manager seat asks the customer to extend it,
+  supports. The customer hears what changed before anything is rewritten
+  around it.
+- **The agreement runs out.** The rights-register agent warns before the
+  end date. The advocacy-manager agent asks the customer to extend it,
   and the story comes down on the date if there is no extension in
   writing.
 - **An internal sign-off comes back with changes.** The run returns to
@@ -304,13 +304,13 @@ measures:
   reopens. The customer never sees a version the organization has not
   signed.
 - **The check on the finished page fails.** The findings go back to
-  build-page with the rule attached to each one, the web-producer seat
+  build-page with the rule attached to each one, the web-producer agent
   fixes what the findings name, and the same check runs again on the
   fixed page.
 - **The trigger fires while runs are in flight.** Stories overlap
-  normally, and the concurrency line says how many. The
-  advocacy-manager seat holds the standing record across every run, so
-  that two runs never approach the same customer at once.
+  normally, and the concurrency line says how many. The advocacy-manager
+  agent holds the standing record across every run, so that two runs
+  never approach the same customer at once.
 - **A run is abandoned.** The draft, the evidence and the visuals stay
   where they are at their versions. The customer is told that the story
   is not going ahead, and the agreement is closed out, so that a later

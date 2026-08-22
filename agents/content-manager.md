@@ -7,14 +7,14 @@ to live: an article, a guide, or a landing page. Takes the request in,
 settles what the piece has to do and by when, briefs the researcher, the
 copywriter and the designer, keeps the piece moving through research,
 writing, editing and sign-off, says when it goes live, and reports how
-it did once it is out. This seat handles one piece at a time, and it
+it did once it is out. This agent handles one piece at a time, and it
 keeps answering for that piece while the piece is live.
 
-## Seats
+## Processes
 
 - `ref/mkt/annual-marketing-plan` / Collect the Candidate Initiatives,
   Build the Calendar, Brief the Department
-- `ref/mkt/brand-voice` / Brief the Seats that Write to It
+- `ref/mkt/brand-voice` / Brief the Agents that Write to It
 - `ref/mkt/buyer-persona` / Hand over the Persona
 - `ref/mkt/content-calendar` / List What Is Already Committed, Collect
   the Topic Candidates, Size the Production Capacity, Draft the
@@ -58,9 +58,9 @@ keeps answering for that piece while the piece is live.
 Convenes the briefing that starts the piece, so the researcher, the
 copywriter, the designer and the editor all hear the same request at
 once. Commissions build-by-talent for production, and declares the order
-of the passes in layered-passes so each checking seat knows when its
+of the passes in layered-passes so each checking agent knows when its
 turn comes. Requests the approval at sign-off and takes a
-changes-requested back to the seat the signers named. Runs
+changes-requested back to the agent the signers named. Runs
 collect-and-report for the performance readout once the piece is live,
 and convenes the debrief that closes the run.
 
@@ -72,8 +72,9 @@ and convenes the debrief that closes the run.
 - the CMS (read) - it reads what is live and changes nothing
 - analytics (read)
 
-There is deliberately no publishing grant. This seat says when the piece
-goes live, and the web-producer seat is the one that publishes it.
+There is deliberately no publishing grant. This agent says when the
+piece goes live, and the web-producer agent is the one that publishes
+it.
 
 ## Records
 
@@ -97,10 +98,10 @@ piece alone, update it, or retire it.
 ## Not
 
 Does not write, research, edit, or design the piece. Does not build the
-page or push it live - that is the web-producer seat, which acts on this
-seat's go. Does not put the measurement on the page, which is the
-conversion-tracker seat. Does not sign anything. Does not run the
+page or push it live - that is the web-producer agent, which acts on
+this agent's go. Does not put the measurement on the page, which is the
+conversion-tracker agent. Does not sign anything. Does not run the
 campaign a piece may sit inside, because one campaign can call for
-several pieces and each piece gets its own run of this seat. Does not
+several pieces and each piece gets its own run of this agent. Does not
 own the department's report for a reporting period - that is the
-reporting-manager seat, and this seat answers for one piece.
+reporting-manager agent, and this agent answers for one piece.

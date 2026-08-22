@@ -9,23 +9,23 @@ the format, the attendance target and the budget, and has the venue and
 the suppliers booked under signed contracts. An event program manager
 runs the call for sessions, picks the talks, builds the agenda and holds
 every speaker to the deadline for their material. Registration opens, a
-campaign fills the seats, and the reporters and the industry analysts
+campaign fills the agents, and the reporters and the industry analysts
 who cover the company are invited and booked into briefings. The
 conference runs for its days, the sessions are recorded, and the talks
 become articles, clips, posts and a page that holds them together. The
 run stays open well past the last day, because the manager still owes a
 report on what the conference produced and the recordings still have to
 be turned into published material. Two parts of the work around a
-conference are run by other processes. The sponsors and the
-exhibitors on the floor run through the trade show process, because a
-sponsor at this conference is an exhibitor doing exactly what that
-process describes. Preparing a keynote speaker runs through the
-speaking engagement process, and this process only makes sure the deck
-arrives on time and clears the checks it has to clear.
+conference are run by other processes. The sponsors and the exhibitors
+on the floor run through the trade show process, because a sponsor at
+this conference is an exhibitor doing exactly what that process
+describes. Preparing a keynote speaker runs through the speaking
+engagement process, and this process only makes sure the deck arrives on
+time and clears the checks it has to clear.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Conference | what this year's conference has to accomplish | [event-manager](../../agents/event-manager.md) · leadership (person) |
 | 2 | Set the Conference Plan | the theme, the format, the target and the budget | event-manager · leadership (person) · finance (person) |
@@ -34,7 +34,7 @@ arrives on time and clears the checks it has to clear.
 | 5 | Choose the Program | keynotes settled, talks picked, the agenda built | event-program · event-manager · leadership (person) · subject matter expert (person) |
 | 6 | Clear the Speaker Material | decks in on time, scored, and signed where needed | event-program · [brand-check](../../agents/brand-check.md) · legal reviewer (person) · rights approver (person) |
 | 7 | Open Registration | the site, the sign-up and the tracking go live | event-manager · [web-producer](../../agents/web-producer.md) · [designer](../../agents/designer.md) · copywriter · [conversion-tracker](../../agents/conversion-tracker.md) · [accessibility-check](../../agents/accessibility-check.md) |
-| 8 | Promote the Conference | email, social and paid work to fill the seats | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) · copywriter |
+| 8 | Promote the Conference | email, social and paid work to fill the agents | [campaign-manager](../../agents/campaign-manager.md) · [email-producer](../../agents/email-producer.md) · [media-buyer](../../agents/media-buyer.md) · [community-manager](../../agents/community-manager.md) · copywriter |
 | 9 | Watch the Registrations | the pace against the target, week by week | [analytics](../../agents/analytics.md) · event-manager |
 | 10 | Commission the Stage Material | the set, the signage and the stage video | [creative-producer](../../agents/creative-producer.md) · event-operations |
 | 11 | Invite the Press and the Analysts | reporters and analysts booked in and briefed | [press-relations](../../agents/press-relations.md) · event-manager |
@@ -86,7 +86,7 @@ owner: <who>                          effective: <date>
 trigger: the annual date is set in <your planning process>
 concurrency: one conference at a time - <what may overlap with the
              next one's planning>
-goal: a conference that runs on its dates, fills the seats it planned
+goal: a conference that runs on its dates, fills the agents it planned
       for, gives the press and the analysts something worth writing
       about, and leaves behind material that keeps working afterwards
 phases:
@@ -126,7 +126,7 @@ phases:
                       owner: web-producer        after: book-venue
                       by: <months before>        automation: <level>
   promote           - human: the invitations, the social posts and the
-                      paid distribution that fill the seats
+                      paid distribution that fill the agents
                       owner: campaign-manager
                       after: open-registration + choose-program
                       automation: <level>
@@ -216,7 +216,7 @@ handoffs:
     conference, where it went, and how it performed
   report-conference -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance, legal, the
            expert, the rights approver and the staff on site>
   systems: the event plan and its schedule (write),
@@ -261,11 +261,12 @@ measures:
 
 ## The failure edges
 
-- **Registration is behind the target.** The seats watching the
+- **Registration is behind the target.** The agents watching the
   registrations send the run back to promote the conference as soon as
-  the pace says the target is out of reach, and <who> decides whether more money goes into filling
-  seats or the plan changes. Finding it out in the last two weeks is
-  the failure this activity exists to prevent.
+  the pace says the target is out of reach, and <who> decides whether
+  more money goes into filling agents or the plan changes. Finding it
+  out in the last two weeks is the failure this activity exists to
+  prevent.
 - **A speaker drops out.** The run goes back to choose the program,
   which either replaces the speaker or cuts the session and closes the
   gap in the agenda. Every speaker whose slot moves is told on the day
@@ -278,17 +279,17 @@ measures:
   out to be the wrong size or the wrong shape sends the run back to
   choose the program, the agenda changes, and every speaker and every
   registrant hears about the change.
-- **A supplier misses its date.** The operations seat says so on the
-  day it becomes clear instead of on the day of the event, and a
-  person decides whether to reorder, replace the supplier, or run the
+- **A supplier misses its date.** The operations agent says so on the
+  day it becomes clear instead of on the day of the event, and a person
+  decides whether to reorder, replace the supplier, or run the
   conference without what was ordered.
 - **Something goes wrong during the show.** The manager makes the call
   and records what was decided and when. An injury, a security problem,
   or anything that could reach the press goes to a person immediately,
   before anybody says anything in public.
 - **A speaker will not let their session be published.** The session
-  stays out of the repurposing, the report says so, and nobody
-  publishes it on the strength of a permission that was never given.
+  stays out of the repurposing, the report says so, and nobody publishes
+  it on the strength of a permission that was never given.
 - **The conference is cancelled or postponed.** A person makes that
   call. Every order that can still be cancelled is cancelled inside its
   deadline, the registrants and the speakers are told, the press

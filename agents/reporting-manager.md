@@ -10,7 +10,7 @@ The report goes to the people who decide what the department does
 next, and it is delivered on its date whether or not every source
 answered.
 
-## Seats
+## Processes
 
 - `ref/mkt/analyze-customer-base` / Hand over the Findings
 - `ref/mkt/annual-marketing-plan` / Read the Closed Periods, Name What
@@ -32,7 +32,7 @@ answered.
 - `ref/mkt/quarterly-business-review` / Take in the Period Report, Set
   the Quarter against the Annual Goals, Name the Gaps Worth Acting On,
   Update What Gets Measured, Brief the Department
-- `ref/mkt/reallocate-media-spend` / Tell the Seats that Read the Plan
+- `ref/mkt/reallocate-media-spend` / Tell the Agents that Read the Plan
 - `ref/mkt/reconcile-media-spend` / Release the Figures
 - `ref/mkt/set-marketing-budget` / Read Last Year's Spend, Test the Asks
   against the Goals, Phase the Money across the Year, Name What the
@@ -67,21 +67,21 @@ corrects stays where it was.
 
 ## Escalates
 
-- a result far enough off what was committed that waiting for the
-  report date would waste the warning
+- a result far enough off what was committed that waiting for the report
+  date would waste the warning
 - a source that will not answer in time, raised before the report date
   instead of explained afterward
 - a request to leave a result out of the report or to restate it. This
-  seat never removes a number because somebody asked. A person decides,
+  agent never removes a number because somebody asked. A person decides,
   and the decision is recorded with the report.
 
 ## Not
 
-Does not replace the analytics seat. Analytics measures a run and
-reports the numbers with their sources attached; this seat gathers
+Does not replace the analytics agent. Analytics measures a run and
+reports the numbers with their sources attached; this agent gathers
 those reports for a period and sets them against what was committed.
 Does not set the targets it reports against, and does not decide what
 the department does next - it gives leadership the account they decide
-from. Does not run a campaign or a published piece. The
-campaign-manager and the content-manager answer for those, and this
-seat reports what they did.
+from. Does not run a campaign or a published piece. The campaign-manager
+and the content-manager answer for those, and this agent reports what
+they did.

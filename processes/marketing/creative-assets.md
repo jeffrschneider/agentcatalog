@@ -13,7 +13,7 @@ sizes the channels need.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Brief | work out which assets the brief actually needs | [creative-producer](../../agents/creative-producer.md) |
 | 2 | Plan the Production | every asset listed, with its size and its due date | creative-producer |
@@ -70,11 +70,11 @@ phases:
                      actually needs, and what each one is for
                      owner: creative-producer  after: trigger
                      automation: <level>
-  plan-production  - human: list every asset with its size, the seat
+  plan-production  - human: list every asset with its size, the agent
                      that owes it, and the date it is due
                      owner: creative-producer  after: take-in-brief
                      automation: <level>
-  brief-makers     - convenes briefing: every producing seat hears the
+  brief-makers     - convenes briefing: every producing agent hears the
                      same request at once
                      owner: creative-producer  after: plan-production
                      automation: <level>
@@ -102,7 +102,7 @@ phases:
                      automation: <level>
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the set
-                     owner: <your legal seat>  after: score-standards
+                     owner: <your legal role>  after: score-standards
                      by: <days>                automation: never
   size-per-channel - runs build-by-talent: every approved asset cut to
                      the sizes and lengths each channel requires
@@ -123,7 +123,7 @@ run-scoped:
 handoffs:
   take-in-brief -> plan-production: the list of assets the brief needs,
     and what each one has to do
-  plan-production -> brief-makers: the plan, saying what each seat owes
+  plan-production -> brief-makers: the plan, saying what each agent owes
     and when it is due
   settle-direction -> produce-assets: the chosen concept, and why it won
   produce-assets -> clear-rights: every source used, named, with where
@@ -140,7 +140,7 @@ handoffs:
   check-the-sizes -> hand-over: the set as it will actually be used,
     with the scores attached
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for rights, brand and legal>
   systems: the asset store (write), the review record (write),
            licensed image, footage and music sources (read),
@@ -170,11 +170,11 @@ measures:
   the producer says so and the run returns to settling the direction,
   which costs the schedule a round.
 - **A rights approver refuses a source.** The piece goes back to the
-  seat that made it and gets remade from something the organization
+  agent that made it and gets remade from something the organization
   holds. The refusal is recorded against the asset, and the run does not
   settle it by using the source anyway.
 - **A standard fails.** Brand-check and accessibility-check report every
-  failure with the rule attached, the seat that made the piece fixes
+  failure with the rule attached, the agent that made the piece fixes
   what was named, and the same scoring runs again. Only a person can
   waive a finding, and that decision is recorded with the failure
   attached to it.

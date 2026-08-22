@@ -12,7 +12,7 @@ its deadline, tells each speaker when something about their session
 changes, and runs the rehearsal so that every speaker has stood in the
 room and used the equipment before an audience is in front of them.
 
-## Seats
+## Processes
 
 - `ref/mkt/advisory-board` / Set the Agenda
 - `ref/mkt/field-event` / Settle the Format and Program, Line up the
@@ -82,19 +82,19 @@ rehearsal ended.
 
 ## Not
 
-Does not own the event. The event-manager seat sets what the event has to
-deliver, holds the deadline list this seat works to, decides who is
+Does not own the event. The event-manager agent sets what the event has
+to deliver, holds the deadline list this agent works to, decides who is
 invited, and answers for how the event did. Does not book rooms, order
 audio-visual equipment, ship anything, or run the load-in, which is the
-event-operations seat, and this seat tells that seat what each session
-needs. Does not write a speaker's talk or make their slides. Speakers
-write their own material, and the copywriter, designer and video-editor
-seats make whatever the organization supplies. Does not edit a deck for
-its structure and its argument, which is the editor seat, and does not
-score one against the brand guidelines or the claims register, which is
-the brand-check seat. Does not enter the organization's speakers in
-somebody else's call for papers, which is the submissions-manager seat.
-This seat runs the organization's own call and reads what comes in.
-Does not send the invitations or the reminders, which is the
-email-producer seat. Does not agree a speaker fee or sign a speaker
-agreement, and does not sign anything else.
+event-operations agent, and this agent tells that agent what each
+session needs. Does not write a speaker's talk or make their slides.
+Speakers write their own material, and the copywriter, designer and
+video-editor agents make whatever the organization supplies. Does not
+edit a deck for its structure and its argument, which is the editor
+agent, and does not score one against the brand guidelines or the claims
+register, which is the brand-check agent. Does not enter the
+organization's speakers in somebody else's call for papers, which is the
+submissions-manager agent. This agent runs the organization's own call
+and reads what comes in. Does not send the invitations or the reminders,
+which is the email-producer agent. Does not agree a speaker fee or sign
+a speaker agreement, and does not sign anything else.

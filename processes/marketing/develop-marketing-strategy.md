@@ -24,7 +24,7 @@ numbered version. The last activities hand the strategy to the processes
 that plan and run the work, and set the date and the conditions that
 bring the choices back up.
 
-What this run produces is a judgement. The seats in it assemble the
+What this run produces is a judgement. The agents in it assemble the
 evidence and write down what was decided. The choices are made by named
 people, and raising the automation level moves none of that. This run
 settles where the organization competes and what it wins on, and it
@@ -37,7 +37,7 @@ hands the strategy to it.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Objectives | the objectives, and what this run has to settle | leadership (person) · [decision-coordinator](../../agents/decision-coordinator.md) |
 | 2 | Read the Closed Periods | last period's results set against what was committed | [reporting-manager](../../agents/reporting-manager.md) · [analytics](../../agents/analytics.md) |
@@ -53,7 +53,7 @@ hands the strategy to it.
 | 12 | Name What the Strategy Will Be Judged By | the measures the strategy will be reported against | reporting-manager · analytics · decision-coordinator |
 | 13 | Get Sign-Offs | leadership and finance sign the strategy | leadership (person) · finance (person) |
 | 14 | Issue the Strategy at a Version | the strategy numbered, and its readers told | standards-keeper |
-| 15 | Hand the Strategy to the Work that Follows | each receiving seat says what it changes | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
+| 15 | Hand the Strategy to the Work that Follows | each receiving agent says what it changes | decision-coordinator · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
 | 16 | Set the Review Conditions | the review date, and what would reopen the choices | decision-coordinator · leadership (person) |
 | 17 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
@@ -110,7 +110,7 @@ goal: agreed choices about which markets and segments the organization
 phases:
   take-in-objectives - convenes briefing: the objectives as the
                        business stated them, what this run has to
-                       settle, who decides it, what evidence each seat
+                       settle, who decides it, what evidence each agent
                        owes, and the date the answer is due
                        owner: decision-coordinator
                        after: trigger
@@ -153,7 +153,7 @@ phases:
                        owner: forecaster    after: draft-options
                        by: <weeks>          automation: <level>
   check-feasible     - system: what each option would need in money
-                       and in seats, set against what is left in the
+                       and in agents, set against what is left in the
                        budget and what room the period has
                        owner: capacity-manager
                        after: draft-options
@@ -187,7 +187,7 @@ phases:
   get-sign-offs      - convenes approval: <who> and finance sign, as
                        named signers, against a version of the
                        strategy
-                       owner: <your finance seat>
+                       owner: <your finance role>
                        after: name-measures
                        by: <days>           automation: never
   issue-version      - human: the signed strategy issued as a numbered
@@ -196,7 +196,7 @@ phases:
                        owner: standards-keeper
                        after: get-sign-offs
                        automation: <level>
-  hand-over          - runs decide-and-announce: every seat that plans
+  hand-over          - runs decide-and-announce: every agent that plans
                        work hears the strategy at once and says what
                        it changes because of it
                        owner: decision-coordinator
@@ -216,8 +216,8 @@ run-scoped:
                 from: take-in-objectives   until: hand-over
 handoffs:
   take-in-objectives -> read-periods / map-market / read-rivals /
-    hear-first-hand: the objectives, what each seat owes, and the date
-    it is owed. Four seats read one record
+    hear-first-hand: the objectives, what each agent owes, and the date
+    it is owed. Four agents read one record
   read-periods -> draft-options: each result of the closed periods
     beside what that period committed to, with the source under every
     line
@@ -239,7 +239,7 @@ handoffs:
     option at each level of spend, with the assumptions beside the
     numbers and every rate that could not be sourced marked unsourced
   check-feasible -> choose-strategy: what each option would need in
-    money and in seats, what is left in the budget, what room the
+    money and in agents, what is left in the budget, what room the
     period has, and what each option would displace
   check-standards -> choose-strategy: a verdict on every option,
     naming the standard and the version it was scored against
@@ -253,12 +253,12 @@ handoffs:
     A later change voids the approval and the signers see it again
   issue-version -> hand-over: the strategy at its number, and what
     changed from the version it replaces
-  hand-over -> set-review: what each receiving seat said it would
+  hand-over -> set-review: what each receiving agent said it would
     change, and the date it said it by
   set-review -> record-learnings: the review date and the conditions
     that bring the choices back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sales side,
            finance and the expert>
   systems: the strategy store (write), the decision record (write),
@@ -292,8 +292,8 @@ policy:
   a disagreement is recorded with the strategy, naming who disagreed
     and what they disagreed with
   sign-off is a human gate and is never delegated to an agent
-  the run does not close until every seat that plans work has said
-    what it changes because of the strategy, and a seat that changes
+  the run does not close until every agent that plans work has said
+    what it changes because of the strategy, and an agent that changes
     nothing says why
   an issued strategy is never edited in place. A change goes out as a
     new version saying what moved and why, and the version it replaces
@@ -306,17 +306,17 @@ measures:
   follow-through: <share> of the plans made since the strategy issued
                   that name the choice they rest on
   quality gate: no strategy issues without its evidence, its
-                disagreement, and an answer from every seat that plans
+                disagreement, and an answer from every agent that plans
                 work against it
 ```
 
 ## The failure edges
 
-- **No option reaches the objectives.** The numbers on every option
-  fall short of what the business asked for, and the run goes back to
+- **No option reaches the objectives.** The numbers on every option fall
+  short of what the business asked for, and the run goes back to
   drafting options. Leadership widens what marketing may propose, takes
-  the shortfall back to the business, or accepts the gap in writing,
-  and whichever it does is recorded with the strategy.
+  the shortfall back to the business, or accepts the gap in writing, and
+  whichever it does is recorded with the strategy.
 - **No option fits the period.** The book of work or the budget record
   says the department cannot run any option as it is drafted. The run
   returns to drafting, and the options that come back are cut to what
@@ -333,32 +333,32 @@ measures:
   the coordinator makes neither.
 - **A choice cannot be measured.** The reporting-manager names the
   choice that no measure can produce a number for, and the run returns
-  to the choice itself. The choice is reworded so it can be reported
-  on, or it stays and is recorded as a choice that will be judged by
-  what people see rather than by a number.
-- **A sign-off comes back with changes.** The run returns to the
-  choice, and only the part the signers named reopens. The signers see
-  the changed version before it is issued.
+  to the choice itself. The choice is reworded so it can be reported on,
+  or it stays and is recorded as a choice that will be judged by what
+  people see rather than by a number.
+- **A sign-off comes back with changes.** The run returns to the choice,
+  and only the part the signers named reopens. The signers see the
+  changed version before it is issued.
 - **The business changes its objectives while the run is open.** The
-  coordinator takes the change back to the first activity and <who>
-  says whether the run is still answering the right question. If it is
-  not, the run closes and the evidence it gathered stays at its version
-  for the run that replaces it.
+  coordinator takes the change back to the first activity and <who> says
+  whether the run is still answering the right question. If it is not,
+  the run closes and the evidence it gathered stays at its version for
+  the run that replaces it.
 - **The strategy is agreed and nothing changes because of it.** This is
   the failure the process exists to prevent, and it leaves no trace
   unless somebody goes looking for it. The process answers it in three
-  places: every seat that plans work says at the handover what it
-  changes, the measures are named before the strategy is signed, and
-  the follow-through measure is read on the review date against the
-  plans made since.
+  places: every agent that plans work says at the handover what it
+  changes, the measures are named before the strategy is signed, and the
+  follow-through measure is read on the review date against the plans
+  made since.
 - **The trigger fires while a run is in flight.** Only one run is open
-  at a time, because a second one would produce a second agreed
-  strategy and leave the organization with neither. A second set of
-  objectives either goes into the open run as more evidence, or waits
-  for the version to issue, and <who> decides which.
+  at a time, because a second one would produce a second agreed strategy
+  and leave the organization with neither. A second set of objectives
+  either goes into the open run as more evidence, or waits for the
+  version to issue, and <who> decides which.
 - **A run is abandoned.** The strategy in force stays in force and
   nothing about it changes. The evidence, the options and the numbers
-  stay where they are at their versions, so a later run can pick them
-  up with the dates they were gathered on. The department gets a record
+  stay where they are at their versions, so a later run can pick them up
+  with the dates they were gathered on. The department gets a record
   saying the period opened without an agreed strategy, what it is
   working to instead, and who decided that.

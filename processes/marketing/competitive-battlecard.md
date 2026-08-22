@@ -17,7 +17,7 @@ every rep has been told.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Move | record what the competitor did and where it was seen | [sales-enablement-manager](../../agents/sales-enablement-manager.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
 | 2 | Confirm the Move | read what the competitor published, at the source | [researcher](../../agents/researcher.md) |
@@ -135,7 +135,7 @@ phases:
                       by: <days>                automation: <level>
   get-sign-offs     - convenes approval: legal, product and sales sign,
                       as named signers, against a version of the card
-                      owner: <your legal seat>  after: check-comparisons
+                      owner: <your legal role>  after: check-comparisons
                       by: <days>                automation: never
   issue-version     - human: the card lands in the enablement library at
                       a new number, and the version it replaces stops
@@ -193,7 +193,7 @@ handoffs:
   issue-version -> partner-view: the same card, and the line saying
     which of it may leave the organization
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for sales, legal, leadership and the
            expert>
   systems: the enablement library (write), the competitive record
@@ -249,4 +249,4 @@ measures:
 - **A run is abandoned.** The evidence, the draft and the layout stay
   where they are at their versions, so a later run can pick them up. The
   card reps hold stays the current one, and if the move has made that
-  card wrong, the seat that owns it withdraws it and says so.
+  card wrong, the agent that owns it withdraws it and says so.

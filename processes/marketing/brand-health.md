@@ -14,18 +14,18 @@ at the version in force, so the run says where what people believe
 misses what the organization claims. Every figure in this run comes from
 people outside the organization. The department's own traffic, pipeline
 and campaign numbers are a different source. They belong to the
-analytics seat, and this run never reports one of them as a perception
+analytics agent, and this run never reports one of them as a perception
 figure.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Open the Cycle | the wave's dates and the waves it compares to | [study-manager](../../agents/study-manager.md) |
 | 2 | Read the Promise the Brand Makes | the brand standard at the version now in force | [standards-keeper](../../agents/standards-keeper.md) · study-manager |
 | 3 | Settle What the Wave Measures | awareness, perception, preference and the attributes | [decision-coordinator](../../agents/decision-coordinator.md) · study-manager · brand owner (person) |
 | 4 | Set the Competitor Set | which rivals get asked about beside the brand | study-manager · [researcher](../../agents/researcher.md) |
-| 5 | Brief the Wave | every seat hears the question and the dates at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
+| 5 | Brief the Wave | every agent hears the question and the dates at once | study-manager · [statistician](../../agents/statistician.md) · [consent-manager](../../agents/consent-manager.md) · [audience-manager](../../agents/audience-manager.md) · [coverage-monitor](../../agents/coverage-monitor.md) |
 | 6 | Say How Much Data It Needs | how many responses, per market and per segment | statistician |
 | 7 | Define the Sample | who gets asked, and how the market is represented | study-manager · audience-manager |
 | 8 | Check Who May Be Contacted | the consent record applied to the drawn sample | consent-manager |
@@ -115,7 +115,7 @@ phases:
                      owner: study-manager      after: settle-measures
                      automation: <level>
   brief-the-wave   - convenes briefing: what the wave measures, the
-                     competitor set and the dates, heard by every seat
+                     competitor set and the dates, heard by every agent
                      at once
                      owner: study-manager      after: competitor-set
                      automation: <level>
@@ -151,7 +151,7 @@ phases:
   get-sign-offs    - convenes approval: legal and the brand owner sign,
                      as named signers, against a version of the sample
                      and a version of the questions
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: check-consent + cover-the-cost +
                             carry-questions
                      by: <days>                automation: never
@@ -224,7 +224,7 @@ handoffs:
   brief-the-wave -> size-the-sample: the measures, the size of the
     movement that would matter to a decision, and the confidence the
     wave is being run to
-  brief-the-wave -> carry-questions: the measures as every seat heard
+  brief-the-wave -> carry-questions: the measures as every agent heard
     them, and the earlier questions at the versions they ran under
   brief-the-wave -> read-published: what to watch for during the cycle
   size-the-sample -> define-sample: how many responses the wave needs
@@ -266,7 +266,7 @@ handoffs:
     that could not be computed marked as such
   report-the-wave -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, finance, the brand owner
            and leadership>
   systems: the study record (write), the questions and material

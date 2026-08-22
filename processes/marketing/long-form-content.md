@@ -13,7 +13,7 @@ because the manager still owes a report on how the piece performed.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Topic | work out what the piece must do and by when | [content-manager](../../agents/content-manager.md) |
 | 2 | Set the Search Terms | the terms and questions the piece has to cover | [search-optimizer](../../agents/search-optimizer.md) |
@@ -88,7 +88,7 @@ phases:
                      owner: search-optimizer   after: take-in-topic
                      by: <days>                automation: <level>
   brief-the-piece  - convenes briefing: the request and the search
-                     terms, heard by every seat at once
+                     terms, heard by every agent at once
                      owner: content-manager    after: search-terms
                      automation: <level>
   gather-evidence  - runs build-by-talent: the primary sources, the
@@ -117,7 +117,7 @@ phases:
                      by: <days>                automation: <level>
   get-sign-offs    - convenes approval: brand, legal and rights sign, as
                      named signers, against a version of the piece
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: check-facts + make-visuals
                      by: <days>                automation: never
   build-page       - human: the approved copy and design assembled into
@@ -165,7 +165,7 @@ handoffs:
     in one line that every later decision can be tested against
   search-terms -> brief-the-piece: the terms and the questions, each
     with the demand figure behind it and the date it was pulled
-  brief-the-piece -> gather-evidence: the request as every seat heard
+  brief-the-piece -> gather-evidence: the request as every agent heard
     it, and the date the piece is promised
   gather-evidence -> agree-outline: the evidence, with a source line
     for every fact
@@ -190,7 +190,7 @@ handoffs:
     what the piece is meant to make a reader do
   report-piece -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the expert, legal, brand and
            rights>
   systems: the content plan (write), the asset store (write),
@@ -238,8 +238,8 @@ measures:
   again before it goes live, because the numbers in it may have moved.
 - **The trigger fires while runs are in flight.** Pieces overlap
   normally, and the concurrency line says how many. The content-manager
-  seat takes one piece at a time, so every run in flight needs its own
-  holder of that seat, and the runs share their reference data
+  agent takes one piece at a time, so every run in flight needs its own
+  holder of that role, and the runs share their reference data
   read-only.
 - **A run is abandoned.** The draft, the evidence and the visuals stay
   where they are at their versions, so a later run can pick them up. An

@@ -20,7 +20,7 @@ a quarter later.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Lapsed Segment | who lapsed, when, and what the run must recover | [campaign-manager](../../agents/campaign-manager.md) · [analytics](../../agents/analytics.md) |
 | 2 | Read the Named Accounts | whether each account may be approached at all | [account-monitor](../../agents/account-monitor.md) |
@@ -127,7 +127,7 @@ phases:
                      owner: email-producer       after: sort-treatments
                      by: <days>                  automation: <level>
   brief-makers     - convenes briefing: the offer, the treatment groups
-                     and the dates, heard by every seat at once
+                     and the dates, heard by every agent at once
                      owner: campaign-manager
                      after: settle-offer + sort-treatments
                      automation: <level>
@@ -147,7 +147,7 @@ phases:
   get-sign-offs    - convenes approval: brand and legal sign, as named
                      signers, against a version of the offer and the
                      messages
-                     owner: <your legal seat>    after: score-messages
+                     owner: <your legal role>    after: score-messages
                      by: <days>                  automation: never
   set-up-sending   - human: the audience loaded at a version, the
                      schedule and send-time windows set, the proofs
@@ -239,7 +239,7 @@ handoffs:
     complained, and who asked to be left alone
   report-win-back -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owners, leadership,
            finance, legal and brand>
   systems: the sending system (write), the send record store (write),
@@ -260,7 +260,7 @@ policy:
   a message changed after sign-off goes back through sign-offs
   a named account is called by the person who owns it before it
     receives anything addressed to a list
-  an account that the account-monitor seat says should not be
+  an account that the account-monitor agent says should not be
     approached is not contacted, and only <who> may overrule that in
     writing, with the overruling recorded
   every contact in the segment ends the run recorded as re-engaged or
@@ -280,7 +280,7 @@ measures:
   sequence, and only the message the signers named reopens. The signers
   see the changed version before anything is sent.
 - **Too few contacts survive the consent and suppression rules.** The
-  audience the email-producer seat can lawfully reach is smaller than
+  audience the email-producer agent can lawfully reach is smaller than
   the goal needs, so the run goes back to the treatments and <who>
   decides whether to change the goal, widen the segment, or stop.
 - **Complaints or bounces cross the threshold while the send is going
@@ -290,20 +290,20 @@ measures:
 - **A named account asks not to be contacted again.** The account owner
   records the refusal, the account is suppressed for the rest of the
   run, and it is retired at the close whatever the numbers say.
-- **The account-monitor seat says an account should not be approached.**
-  The account comes out of every treatment group, and it goes back in
-  only when <who> overrules that in writing.
+- **The account-monitor agent says an account should not be
+  approached.** The account comes out of every treatment group, and it
+  goes back in only when <who> overrules that in writing.
 - **A contact responds after being retired.** The retirement is
   reversed, the contact gets an owner like any other responder, and the
   report says how many contacts came back after the close.
 - **The account owner wants one more approach.** An account the run was
-  about to retire goes back to the call, once, and it is retired if
-  that call goes unanswered by the date the run sets.
+  about to retire goes back to the call, once, and it is retired if that
+  call goes unanswered by the date the run sets.
 - **The trigger fires while runs are in flight.** Segments overlap
   normally, and the concurrency line says how many. A contact who
   appears in two live segments is approached by one of them, and the
   contact limit is counted across both.
-- **A run is abandoned.** Scheduled sends are pulled, the buy comes
-  off, and the spend line reconciles anyway. Every contact already
-  approached is still recorded as re-engaged or retired, because
-  leaving them undecided is what makes the next run repeat this one.
+- **A run is abandoned.** Scheduled sends are pulled, the buy comes off,
+  and the spend line reconciles anyway. Every contact already approached
+  is still recorded as re-engaged or retired, because leaving them
+  undecided is what makes the next run repeat this one.

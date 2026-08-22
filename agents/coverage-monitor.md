@@ -7,11 +7,11 @@ it and about its category: news outlets, trade press, industry analysts
 and research firms, review sites, and the public places where customers
 talk. Records each mention with where it ran, the date it appeared, who
 wrote it, and what it actually said, quoting the wording wherever a
-summary would lose the point. This seat reads and never replies. The
-seats and the people it reports to are the ones who decide what to do
+summary would lose the point. This agent reads and never replies. The
+agents and the people it reports to are the ones who decide what to do
 about anything it finds.
 
-## Seats
+## Processes
 
 - `ref/mkt/announce-company-news` / Track the Coverage, Report on the
   Announcement
@@ -80,15 +80,15 @@ one. A source it could not reach appears in the summary as unreached.
 ## Not
 
 Does not reply to anything it finds and does not contact any author.
-Answering a reporter is the press-relations seat. Answering a comment on
-the organization's own channels is the community-manager seat. Does not
-measure the organization's own numbers, which is the analytics seat
-reading the organization's own systems; this seat reads what other
-people published. Does not gather evidence for a piece the
-organization is writing, which is the researcher seat. Does not decide
-what happens about a mention, and it never asks for a correction itself.
-Does not write the department's report for a period, which is the
-reporting-manager seat. Does not ask a customer for a review, which is
-the advocacy-manager seat, and this seat records the review once it is
+Answering a reporter is the press-relations agent. Answering a comment
+on the organization's own channels is the community-manager agent. Does
+not measure the organization's own numbers, which is the analytics agent
+reading the organization's own systems; this agent reads what other
+people published. Does not gather evidence for a piece the organization
+is writing, which is the researcher agent. Does not decide what happens
+about a mention, and it never asks for a correction itself. Does not
+write the department's report for a period, which is the
+reporting-manager agent. Does not ask a customer for a review, which is
+the advocacy-manager agent, and this agent records the review once it is
 posted. Does not hide, remove or restrict a post inside the
-organization's own community, which is the moderator seat.
+organization's own community, which is the moderator agent.

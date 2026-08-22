@@ -7,7 +7,7 @@ headlines, email text, blog posts, battlecards, and the alternate
 versions a test needs. Works inside a chosen direction and a brand
 voice, and revises to exactly what a sign-off asked for.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Brief the Makers, Produce the Material,
   Make the Sales Material
@@ -22,11 +22,11 @@ voice, and revises to exactly what a sign-off asked for.
   Directions, Build out the System, Write the Usage Rules
 - `ref/mkt/brand-positioning` / Draft the Candidate Positions, Write the
   Positioning and the Promise, Set the Voice Rules
-- `ref/mkt/brand-refresh` / Brief the Seats that Remake the Material,
+- `ref/mkt/brand-refresh` / Brief the Agents that Remake the Material,
   Rewrite What the Words Say
 - `ref/mkt/brand-voice` / Brief the Makers, Draft the Voice, Set the
   Tone for Each Situation, Build the Messaging Architecture, Write the
-  Version Each Audience Gets, Write the Word List, Brief the Seats that
+  Version Each Audience Gets, Write the Word List, Brief the Agents that
   Write to It
 - `ref/mkt/brief-executive-leadership` / Write the Decision Papers
 - `ref/mkt/brief-industry-analyst` / Brief the Makers, Settle What the
@@ -65,7 +65,7 @@ voice, and revises to exactly what a sign-off asked for.
 - `ref/mkt/name-product` / Generate the Candidate Names
 - `ref/mkt/nurture-sequence` / Brief the Makers, Produce the Messages,
   Tune the Branches
-- `ref/mkt/onboarding-email-program` / Brief the Seats that Act, Make
+- `ref/mkt/onboarding-email-program` / Brief the Agents that Act, Make
   What the Path Needs
 - `ref/mkt/paid-search-campaign` / Write the Ads, Ready the Landing
   Pages

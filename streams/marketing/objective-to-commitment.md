@@ -16,4 +16,4 @@ The quarterly review examines a closed quarter against the plan and resets
 what each area is held to, and the executive briefing takes to a board or
 an executive team the decisions marketing cannot take on its own. Every run
 here ends with a named person signing, the result published at a version,
-and each seat told what it now owes against it.
+and each agent told what it now owes against it.

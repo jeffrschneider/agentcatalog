@@ -17,7 +17,7 @@ did not sign.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Set What the Close Covers | which accounts, campaigns and dates are being closed | [spend-reconciler](../../agents/spend-reconciler.md) · [media-buyer](../../agents/media-buyer.md) |
 | 2 | Collect the Invoices | every invoice and statement for the period, in one place | spend-reconciler |
@@ -118,11 +118,11 @@ phases:
                      by: <days>                 automation: <level>
   decide-open      - convenes approval: <who> decides each line that
                      did not settle - pay it, withhold it, write it off
-                     owner: <your finance seat> after: track-answers
+                     owner: <your finance role> after: track-answers
                      by: <days>                 automation: never
   approve-spend    - convenes approval: finance signs the spend figure
                      for the period, as a named signer
-                     owner: <your finance seat>
+                     owner: <your finance role>
                      after: clear-explained + track-answers +
                             decide-open
                      by: <days>                 automation: never
@@ -170,9 +170,9 @@ handoffs:
   approve-spend -> release-figures: the spend figure for the period as
     finance signed it, at a version
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the finance and leadership
-           seats>
+           agents>
   systems: the invoice record (read), the media plan and its orders
            (read), the agreed rates and terms (read),
            ad platforms (read), analytics platforms (read),
@@ -182,7 +182,7 @@ bindings:
   data:    <your rate card> <version>, <your agreed terms> <version>,
            the media plan for the period, the finance calendar
 policy:
-  the seat that spent the money does not verify the invoice for it
+  the agent that spent the money does not verify the invoice for it
   a line stays open until it is explained, credited, or decided by a
     person
   a settlement is agreed by a person and is never delegated to an agent

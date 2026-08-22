@@ -19,7 +19,7 @@ producing that material is separate work that reads this list.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Reference Request | work out what the reference is for and by when | [advocacy-manager](../../agents/advocacy-manager.md) |
 | 2 | Set the Reference Profile | the segment, the use and the result it must show | advocacy-manager |
@@ -126,7 +126,7 @@ phases:
                      by: <weeks>               automation: never
   get-sign-offs    - convenes approval: legal and rights sign, as named
                      signers, against the agreed terms at a version
-                     owner: <your legal seat>  after: customer-signs
+                     owner: <your legal role>  after: customer-signs
                      by: <days>                automation: never
   record-reference - human: the permission, its limits and the date it
                      runs out, written onto the standing reference list
@@ -179,7 +179,7 @@ handoffs:
   hand-over -> record-learnings: the entry as delivered, and every
     refusal collected along the way
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the customer
            contact, legal and rights>
   systems: the advocacy record (write), the CRM (read),
@@ -222,11 +222,11 @@ measures:
 - **The account turns bad between the shortlist and the ask.** The
   standing roll-call reports the change, clear-the-ask drops that
   customer, and the run carries on with the next candidate. Nobody
-  approaches an account the account-monitor seat has said should be
+  approaches an account the account-monitor agent has said should be
   left alone.
 - **The customer's own people cut the ask down.** The run goes back to
-  agree-terms, because what the customer will do has to be written
-  again before anyone signs it.
+  agree-terms, because what the customer will do has to be written again
+  before anyone signs it.
 - **A sign-off comes back with limits.** The run returns to agree-terms
   and the customer is asked to accept the narrower permission. Handing
   over a reference on terms the signers refused is not one of the
@@ -238,10 +238,9 @@ measures:
   with every refusal and its reason, and the requester is told early
   enough to plan around it.
 - **A permission is withdrawn after the reference is on the list.** The
-  entry is marked withdrawn the same day, everyone using it is told,
-  and a person decides what already published comes down.
+  entry is marked withdrawn the same day, everyone using it is told, and
+  a person decides what already published comes down.
 - **The trigger fires while runs are in flight.** Requests overlap
   normally, and the concurrency line says how many. Two runs may want
-  the same customer, so the reference list is read before an ask is
-  made and the ask is recorded against the customer as soon as it goes
-  out.
+  the same customer, so the reference list is read before an ask is made
+  and the ask is recorded against the customer as soon as it goes out.

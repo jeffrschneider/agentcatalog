@@ -18,12 +18,12 @@ answer, and the other people who have to agree before anything is
 bought. A forecaster checks the persona against the buyers the
 organization has already won, and the people who talk to buyers every
 day say whether they recognize it. The run ends with the persona
-recorded at a version, handed to every seat that writes to this buyer or
-targets them, and carrying the date it comes back up.
+recorded at a version, handed to every agent that writes to this buyer
+or targets them, and carrying the date it comes back up.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Segment | what the persona has to settle, and by when | [audience-manager](../../agents/audience-manager.md) · leadership (person) |
 | 2 | Quote the Account Profile | the profile the persona sits inside, at its version | audience-manager |
@@ -41,8 +41,8 @@ targets them, and carrying the date it comes back up.
 | 14 | Test the Persona against the Record | did the buyers who bought look like this person | [forecaster](../../agents/forecaster.md) · analytics |
 | 15 | Review with the People Who Sell | do the sellers recognize the buyer described | audience-manager · subject matter expert (person) |
 | 16 | Write the Persona | jobs, pains, triggers, and the evidence under each | audience-manager |
-| 17 | Issue the Persona as a Version | numbered, with the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 18 | Hand over the Persona | each receiving seat says what it changes | audience-manager · copywriter · [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [lead-scorer](../../agents/lead-scorer.md) · [email-producer](../../agents/email-producer.md) |
+| 17 | Issue the Persona as a Version | numbered, with the agents that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 18 | Hand over the Persona | each receiving agent says what it changes | audience-manager · copywriter · [content-manager](../../agents/content-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [lead-scorer](../../agents/lead-scorer.md) · [email-producer](../../agents/email-producer.md) |
 | 19 | Set the Review Conditions | the review date, and what would change the answer | audience-manager · leadership (person) |
 | 20 | Record What Was Learned | what to repeat, what to avoid | audience-manager |
 
@@ -126,8 +126,8 @@ phases:
                      by: <days>                  automation: <level>
   clear-study      - convenes approval: the consent-manager scores the
                      sample and the questions against the rules in
-                     force, and <your legal seat> signs
-                     owner: <your legal seat>    after: plan-study
+                     force, and <your legal role> signs
+                     owner: <your legal role>    after: plan-study
                      by: <days>                  automation: never
   field-study      - runs collect-and-report: the interviews are held
                      and the survey is put to the cleared sample
@@ -183,7 +183,7 @@ phases:
                      with the version it replaces left readable
                      owner: standards-keeper     after: write-persona
                      automation: <level>
-  hand-over        - runs decide-and-announce: every seat that writes
+  hand-over        - runs decide-and-announce: every agent that writes
                      to this buyer or targets them hears the persona at
                      once and says what it changes because of it
                      owner: audience-manager     after: issue-version
@@ -204,8 +204,8 @@ run-scoped:
                 from: field-study       until: read-responses
 handoffs:
   take-in-segment -> quote-profile / gather-known / read-behavior: the
-    segment, the role inside it, what each seat owes, and the date it
-    is owed. Three seats read one record
+    segment, the role inside it, what each agent owes, and the date it
+    is owed. Three agents read one record
   quote-profile -> plan-study: the profile id and its version, and the
     account traits as that profile states them
   gather-known -> plan-study: what is already known about this role,
@@ -244,12 +244,12 @@ handoffs:
     reviewed in, with its profile citation
   issue-version -> hand-over: the persona at its number, and what
     changed from the version it replaces
-  hand-over -> set-review: what each receiving seat said it would
+  hand-over -> set-review: what each receiving agent said it would
     change, and the date it said it by
   set-review -> record-learnings: the review date and the conditions
     that bring the persona back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sellers and
            legal>
   systems: the agreed customer profile (read), the study record
@@ -285,8 +285,8 @@ policy:
     no quotation is composed from more than one participant
   the people who talk to buyers read the persona before it is recorded,
     and what they said was wrong is recorded with it
-  the run does not close until every seat that writes to this buyer or
-    targets them has said what it changes, and a seat that changes
+  the run does not close until every agent that writes to this buyer or
+    targets them has said what it changes, and an agent that changes
     nothing says why
   a recorded persona is never edited in place. A change goes in as a
     new version, and the version it replaces stays readable
@@ -300,7 +300,7 @@ measures:
        that began with a trigger the persona names, read on the review
        date
   quality gate: no persona is recorded without its profile citation,
-                its evidence, and an answer from every seat that reads
+                its evidence, and an answer from every agent that reads
                 it
 ```
 
@@ -340,10 +340,10 @@ measures:
   which then continues.
 - **The trigger fires while a run is in flight.** Two runs for the same
   role inside the same segment do not overlap, because they would
-  produce two personas and leave the seats that read them with neither.
+  produce two personas and leave the agents that read them with neither.
   A different role starts its own run.
 - **A run is abandoned.** The responses stay where they are with the
   dates they were gathered on, and a later run reads them at those
-  dates. No persona is recorded, the seats that write to this buyer keep
-  working to whatever they had before, and the audience manager records
-  that the segment went undescribed and why.
+  dates. No persona is recorded, the agents that write to this buyer
+  keep working to whatever they had before, and the audience manager
+  records that the segment went undescribed and why.

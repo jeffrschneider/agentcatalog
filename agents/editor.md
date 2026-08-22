@@ -10,7 +10,7 @@ be worth its length. Tells the writer exactly what to rewrite, item by
 item, and holds the piece at the standard it was given until the piece
 meets it.
 
-## Seats
+## Processes
 
 - `ref/mkt/advisory-board` / Build the Materials
 - `ref/mkt/announce-company-news` / Edit the Release
@@ -24,7 +24,7 @@ meets it.
   Makers, Draft the Voice, Set the Tone for Each Situation, Build the
   Messaging Architecture, Write the Word List, Turn the Voice into
   Scorable Rules, Score Old Material against the Draft Rules, Brief the
-  Seats that Write to It
+  Agents that Write to It
 - `ref/mkt/brief-executive-leadership` / Write the Decision Papers,
   Build the Pack, Rehearse the Briefing
 - `ref/mkt/competitive-battlecard` / Edit the Card
@@ -53,11 +53,11 @@ meets it.
 
 Holds the structure-and-argument pass in layered-passes, changing
 nothing outside that concern and flagging what belongs to another pass
-for the seat that owns it. Can hold the owner role in draft-review-merge
-over a piece's version, answering every revision the writer sends with a
-merge, a decline with the reason, or another round. Sits in the briefing
-that starts the piece, so the edit tests the piece against what was
-asked for rather than against the editor's own taste.
+for the agent that owns it. Can hold the owner role in
+draft-review-merge over a piece's version, answering every revision the
+writer sends with a merge, a decline with the reason, or another round.
+Sits in the briefing that starts the piece, so the edit tests the piece
+against what was asked for rather than against the editor's own taste.
 
 ## Grants
 
@@ -72,7 +72,7 @@ asked for rather than against the editor's own taste.
 Every edit at a version, saying what has to change and why, item by
 item, in terms the writer can work through without coming back to ask
 what was meant. A line for anything it flagged for another pass, naming
-the seat it went to. When it holds the version, the merge, the decline
+the agent it went to. When it holds the version, the merge, the decline
 or the revision request it gave in every round, each with its reason.
 
 ## Escalates
@@ -90,11 +90,11 @@ or the revision request it gave in every round, each with its reason.
 
 Does not rewrite the piece. It says what has to change and the writer
 makes the change, which is what keeps the writer answerable for the
-words. Does not go and find the evidence - that is the researcher seat,
-and this seat's job is to notice when the evidence is missing. Does not
+words. Does not go and find the evidence - that is the researcher agent,
+and this agent's job is to notice when the evidence is missing. Does not
 score the piece against the brand guidelines or the claims register,
-because that is the brand-check seat and it runs as a separate pass.
+because that is the brand-check agent and it runs as a separate pass.
 Does not choose the title, the headings or the links for findability,
-which is the search-optimizer seat. Does not commission the piece or set
-its date, which the content-manager seat does. It is not a signer: it
-says the piece is ready, and named people sign.
+which is the search-optimizer agent. Does not commission the piece or
+set its date, which the content-manager agent does. It is not a signer:
+it says the piece is ready, and named people sign.

@@ -16,12 +16,12 @@ side sits in. The run ends with the agreed profile written down at a
 version, carrying its firmographics, its qualifying signals, its
 disqualifiers, and the names of everyone who agreed and everyone who did
 not. What this process produces is an agreement, so the last activities
-hand the profile to the seats that will qualify accounts against it and
+hand the profile to the agents that will qualify accounts against it and
 set the date it comes back up.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Question | work out what the profile must settle and by when | [decision-coordinator](../../agents/decision-coordinator.md) · leadership (person) |
 | 2 | Read the Customer Record | who bought, who stayed, who left, and what they share | [analytics](../../agents/analytics.md) · [forecaster](../../agents/forecaster.md) |
@@ -36,8 +36,8 @@ set the date it comes back up.
 | 11 | Clear the Data and the Targeting | source terms, and whether the traits may be targeted | researcher · legal reviewer (person) |
 | 12 | Settle on One Profile | one profile chosen, with the reasons said out loud | decision-coordinator · leadership (person) · sales leader (person) |
 | 13 | Write down the Agreed Profile | firmographics, signals, disqualifiers, and who agreed | decision-coordinator |
-| 14 | Issue the Profile as a Version | the profile numbered, and the seats that read it told | [standards-keeper](../../agents/standards-keeper.md) |
-| 15 | Hand over the Profile | each receiving seat says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [media-buyer](../../agents/media-buyer.md) |
+| 14 | Issue the Profile as a Version | the profile numbered, and the agents that read it told | [standards-keeper](../../agents/standards-keeper.md) |
+| 15 | Hand over the Profile | each receiving agent says what it changes | decision-coordinator · lead-scorer · [audience-manager](../../agents/audience-manager.md) · [campaign-manager](../../agents/campaign-manager.md) · [media-buyer](../../agents/media-buyer.md) |
 | 16 | Set the Review Conditions | the review date, and what would change the answer | decision-coordinator · leadership (person) |
 | 17 | Record What Was Learned | what to repeat, what to avoid | decision-coordinator |
 
@@ -88,11 +88,11 @@ concurrency: one run at a time for the same product or market, because
              Runs for different markets overlap
 goal: one agreed profile, carrying its firmographics, its qualifying
       signals and its disqualifiers, recorded with the reasons behind
-      it and the disagreement with it, and in use by every seat that
+      it and the disagreement with it, and in use by every agent that
       qualifies an account
 phases:
   take-in-question - convenes briefing: what the profile has to settle,
-                     who decides it, what evidence each seat owes, and
+                     who decides it, what evidence each agent owes, and
                      the date the answer is due
                      owner: decision-coordinator  after: trigger
                      automation: <level>
@@ -139,7 +139,7 @@ phases:
   clear-data       - convenes approval: legal signs that the analysis
                      may rest on this data and that these traits may be
                      used to target
-                     owner: <your legal seat>     after: name-signals
+                     owner: <your legal role>     after: name-signals
                      by: <days>                   automation: never
   settle-profile   - convenes bake-off: two or three candidates, one
                      chosen, with the reasons said out loud
@@ -156,7 +156,7 @@ phases:
                      version, with the version it replaces left readable
                      owner: standards-keeper      after: write-profile
                      automation: <level>
-  hand-over        - runs decide-and-announce: every seat that
+  hand-over        - runs decide-and-announce: every agent that
                      qualifies an account hears the profile at once and
                      says what it changes because of it
                      owner: decision-coordinator  after: issue-version
@@ -174,7 +174,7 @@ run-scoped:
                 from: take-in-question   until: hand-over
 handoffs:
   take-in-question -> read-record / outside-evidence / first-hand: the
-    question, what each seat owes, and the date it is owed. Three seats
+    question, what each agent owes, and the date it is owed. Three agents
     read one record
   read-record -> find-traits: the accounts, what each one bought and
     renewed, and when each one left
@@ -210,12 +210,12 @@ handoffs:
     agreed in
   issue-version -> hand-over: the profile at its number, and what
     changed from the version it replaces
-  hand-over -> set-review: what each receiving seat said it would
+  hand-over -> set-review: what each receiving agent said it would
     change, and the date it said it by
   set-review -> record-learnings: the review date and the conditions
     that bring the profile back sooner
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sales side and
            legal>
   systems: the customer and revenue record (read), the CRM (read),
@@ -243,8 +243,8 @@ policy:
     settled, and a profile settled without them is not recorded
   a disagreement is recorded with the profile, naming who disagreed and
     what they disagreed with
-  the run does not close until every seat that qualifies an account has
-    said what it changes because of the profile, and a seat that
+  the run does not close until every agent that qualifies an account has
+    said what it changes because of the profile, and an agent that
     changes nothing says why
   a recorded profile is never edited in place. A change goes in as a
     new version, and the version it replaces stays readable
@@ -255,7 +255,7 @@ measures:
   fit: <share> of the accounts won since the profile was agreed that
        the profile would have picked, read on the review date
   quality gate: no profile is recorded without its back-test, its
-                disagreement, and an answer from every seat that
+                disagreement, and an answer from every agent that
                 qualifies against it
 ```
 
@@ -288,7 +288,7 @@ measures:
   failure the process exists to prevent, and it leaves no trace unless
   somebody goes looking for it. The process answers it in three places:
   the sales side sits in the room where the profile is settled, every
-  receiving seat says at the handover what it changes, and the fit
+  receiving agent says at the handover what it changes, and the fit
   measure is read on the review date against the accounts the
   organization has won since.
 - **The trigger fires while a run is in flight.** Two runs against the
@@ -299,6 +299,6 @@ measures:
   run in flight.
 - **A run is abandoned.** The evidence stays where it is at its
   versions, and a later run picks it up with the dates it was gathered
-  on. No profile is recorded, the seats that qualify accounts keep
+  on. No profile is recorded, the agents that qualify accounts keep
   working to the profile they already had, and the coordinator records
   that the question went unanswered and why.

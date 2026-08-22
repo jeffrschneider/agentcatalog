@@ -3,20 +3,20 @@
 `ref/mkt/prioritize-initiatives v1`
 
 **value stream:** [Objective-to-Commitment](../../streams/marketing/objective-to-commitment.md)
-More requests for marketing work arrive than the department can carry, and
-this process decides which of them get done. The seats log every request
-in one common form, read what the runs already in flight still owe, work
-out what each seat has free in the period ahead, weigh each request
-against the goals the department is already held to, put a cost and a
-return on the ones that can carry a number, and rank the whole list.
-Leadership says how far down the list the department commits, what money
-and which seats go against each commitment, and what already-committed
-work stops or waits to make room. The round closes when every committed
-item has reached the seat that will run it and every requester whose
-request was not committed has been told so and given the reason. The
-declines matter as much as the commitments. A round that recorded
-only the commitments would leave everybody below the line waiting for an
-answer that never arrives.
+More requests for marketing work arrive than the department can carry,
+and this process decides which of them get done. The agents log every
+request in one common form, read what the runs already in flight still
+owe, work out what each agent has free in the period ahead, weigh each
+request against the goals the department is already held to, put a cost
+and a return on the ones that can carry a number, and rank the whole
+list. Leadership says how far down the list the department commits, what
+money and which agents go against each commitment, and what
+already-committed work stops or waits to make room. The round closes
+when every committed item has reached the agent that will run it and
+every requester whose request was not committed has been told so and
+given the reason. The declines matter as much as the commitments. A
+round that recorded only the commitments would leave everybody below the
+line waiting for an answer that never arrives.
 
 This process is separate from the annual marketing plan. That run happens
 once a fiscal cycle, sets the goals for the year and splits the year's
@@ -26,23 +26,23 @@ after the plan was signed.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Open the Round | what the round covers and the date it decides | [decision-coordinator](../../agents/decision-coordinator.md) · [capacity-manager](../../agents/capacity-manager.md) |
 | 2 | Take in the Requests | every request logged in one common form | capacity-manager · requester (person) |
 | 3 | Screen the Requests | merge the repeats, return what cannot be judged | capacity-manager · requester (person) |
 | 4 | Read What Is Already Committed | the runs in flight and what each still owes | capacity-manager · [reporting-manager](../../agents/reporting-manager.md) · [budget-keeper](../../agents/budget-keeper.md) |
-| 5 | Work out What Is Free | what each seat can take on in the period | capacity-manager · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
+| 5 | Work out What Is Free | what each agent can take on in the period | capacity-manager · [campaign-manager](../../agents/campaign-manager.md) · [content-manager](../../agents/content-manager.md) · [media-buyer](../../agents/media-buyer.md) · [audience-manager](../../agents/audience-manager.md) |
 | 6 | Weigh the Requests against the Goals | how far each one moves the goals already set | decision-coordinator · [analytics](../../agents/analytics.md) |
 | 7 | Put Numbers on Each Request | the cost, the return, and the assumptions under them | [forecaster](../../agents/forecaster.md) · media-buyer |
 | 8 | Check the Requests against the Standards | whether each fits the positioning and the audience | [standards-keeper](../../agents/standards-keeper.md) · audience-manager |
 | 9 | Rank the Requests | one ordered list, with a reason for each place | decision-coordinator |
 | 10 | Choose What Gets Committed | how far down the list the department commits | leadership (person) · decision-coordinator · capacity-manager |
-| 11 | Resource the Commitments | the seats, the dates and the money for each one | leadership (person) · finance (person) · budget-keeper · capacity-manager · decision-coordinator |
+| 11 | Resource the Commitments | the agents, the dates and the money for each one | leadership (person) · finance (person) · budget-keeper · capacity-manager · decision-coordinator |
 | 12 | Settle What Gets Displaced | work in flight that loses its place stops or waits | leadership (person) · decision-coordinator · campaign-manager · content-manager |
 | 13 | Record the Declines | every request not committed, with its reason | decision-coordinator · capacity-manager |
 | 14 | Tell the Requesters | each requester hears the answer to their request | decision-coordinator · capacity-manager · requester (person) |
-| 15 | Hand over the Commitments | each committed item goes to the seat that runs it | decision-coordinator · campaign-manager · content-manager · media-buyer |
+| 15 | Hand over the Commitments | each committed item goes to the agent that runs it | decision-coordinator · campaign-manager · content-manager · media-buyer |
 | 16 | Record What the Round Rests On | the assumptions, and what would reopen the ranking | decision-coordinator · forecaster · capacity-manager |
 
 ## The graph
@@ -73,7 +73,7 @@ flowchart LR
   A12 --> A15[15. Hand over the Commitments]
   A13 --> A14[14. Tell the Requesters]
   A14 -. the requester escalates the decline .-> A10
-  A15 -. the seat cannot take the work after all .-> A10
+  A15 -. the agent cannot take the work after all .-> A10
   A15 --> A16[16. Record What the Round Rests On]
   A14 --> A16
   A16 --> DONE([the commitments and the declines are recorded])
@@ -90,7 +90,7 @@ trigger: the prioritization round opens on <your cadence>, or the queue
 concurrency: one round at a time - a request arriving mid-round waits for
          the next one unless <who> reopens the ranking
 goal: a ranked list of requests, a commitment line drawn on it with the
-      seats and the money behind every item above the line, and a
+      agents and the money behind every item above the line, and a
       recorded decline with its reason for every item below it
 phases:
   open-round       - human: say what the round covers, which period it
@@ -109,7 +109,7 @@ phases:
                      it still owes, when it finishes, what it has drawn
                      owner: capacity-manager      after: open-round
                      by: <the cut-off date>       automation: <level>
-  read-free        - runs roll-call: each delivery seat says what it can
+  read-free        - runs roll-call: each delivery agent says what it can
                      take on and what it is already holding
                      owner: capacity-manager      after: read-committed
                      by: <days>                   automation: <level>
@@ -137,9 +137,9 @@ phases:
                      owner: decision-coordinator
                      after: rank-requests + read-free
                      automation: never
-  resource-commit  - convenes approval: the seats, the dates and the
+  resource-commit  - convenes approval: the agents, the dates and the
                      money signed against a version of the list
-                     owner: <your finance seat>   after: choose-commit
+                     owner: <your finance role>   after: choose-commit
                      by: <days>                   automation: never
   settle-displaced - convenes decide-and-announce: which work already
                      underway stops, which waits, and what that costs
@@ -153,7 +153,7 @@ phases:
                      request and the reason under it
                      owner: decision-coordinator  after: record-declines
                      by: <days>                   automation: <level>
-  hand-over        - convenes briefing: each running seat hears what it
+  hand-over        - convenes briefing: each running agent hears what it
                      has been given, with what, and by when
                      owner: decision-coordinator  after: settle-displaced
                      automation: <level>
@@ -197,7 +197,7 @@ handoffs:
   record-declines -> tell-requesters: the answer for each request, with
     its reason, ready to go to the person who asked
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance and the
            requesters>
   systems: the request queue (write), the capacity record (write),
@@ -212,7 +212,7 @@ policy:
     committed is recorded as declined with the reason it was declined
   no request is committed past the free capacity the round reported
     unless <who> records the overcommitment as a decision of their own
-  the money behind a commitment is confirmed by a person, and no seat
+  the money behind a commitment is confirmed by a person, and no agent
     confirms its own number
   stopping work already underway is a person's decision, recorded with
     what stopping it cost
@@ -226,40 +226,41 @@ measures:
 
 ## The failure edges
 
-- **A request cannot be judged.** The screen returns it to the person who
-  asked and says which part is missing. The request keeps its place in
-  the queue, comes back into the round if the answer arrives before the
-  cut-off, and waits for the next round if it does not.
+- **A request cannot be judged.** The screen returns it to the person
+  who asked and says which part is missing. The request keeps its place
+  in the queue, comes back into the round if the answer arrives before
+  the cut-off, and waits for the next round if it does not.
 - **A request arrives after the cut-off.** It waits for the next round.
   <who> can reopen the ranking for a request that will not keep, and the
   reopening is recorded with the reason, because everything already
   ranked has to be ranked again against it.
 - **Nothing above the line reaches the goals.** The run goes back to the
-  ranking with what leadership said was missing. If the ranking cannot be
-  redrawn to reach the goals, the round records that the requests on hand
-  will not get the department where it has been asked to go, and that
-  finding goes to the people who set the goals.
+  ranking with what leadership said was missing. If the ranking cannot
+  be redrawn to reach the goals, the round records that the requests on
+  hand will not get the department where it has been asked to go, and
+  that finding goes to the people who set the goals.
 - **The money will not cover the set.** The run returns to the choice of
   what gets committed and the line moves up the list. Finance says how
   much is left, and leadership decides what comes off.
 - **Leadership commits past the free capacity.** The run continues, and
-  the overcommitment is recorded as a decision naming the person who made
-  it and the capacity figure it overrode. The next round opens from the
-  capacity that is actually left once the overcommitment is counted.
-- **A displaced run is too far along to stop cheaply.** The run goes back
-  to the choice of what gets committed with the cost of stopping attached.
-  Leadership either pays that cost or drops the new commitment that
-  displaced it.
-- **A seat cannot take the work after all.** The handover finds that the
-  free capacity reported during the round was wrong, and the run returns
-  to the choice of what gets committed with the corrected figure. The
-  commitment is re-dated or withdrawn, and the requester is told either
-  way.
+  the overcommitment is recorded as a decision naming the person who
+  made it and the capacity figure it overrode. The next round opens from
+  the capacity that is actually left once the overcommitment is counted.
+- **A displaced run is too far along to stop cheaply.** The run goes
+  back to the choice of what gets committed with the cost of stopping
+  attached. Leadership either pays that cost or drops the new commitment
+  that displaced it.
+- **An agent cannot take the work after all.** The handover finds that
+  the free capacity reported during the round was wrong, and the run
+  returns to the choice of what gets committed with the corrected
+  figure. The commitment is re-dated or withdrawn, and the requester is
+  told either way.
 - **A requester escalates a decline.** The decline stands unless
-  leadership reopens the choice, and reopening it means naming what comes
-  off the list to make room. A decline that is overturned is recorded as
-  overturned, with the reason and the name of whoever overturned it.
+  leadership reopens the choice, and reopening it means naming what
+  comes off the list to make room. A decline that is overturned is
+  recorded as overturned, with the reason and the name of whoever
+  overturned it.
 - **A round is abandoned.** The queue survives it. Every request stays
   where it was with its history attached, the capacity record keeps the
-  reading it took, and the requesters are told that the round produced no
-  answer and when the next one decides.
+  reading it took, and the requesters are told that the round produced
+  no answer and when the next one decides.

@@ -16,7 +16,7 @@ account.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Signal | what fired, on which account, and when | [lifecycle-manager](../../agents/lifecycle-manager.md) |
 | 2 | Confirm the Signal | read usage, support, contract and renewal standing | [account-monitor](../../agents/account-monitor.md) |
@@ -102,7 +102,7 @@ phases:
                      automation: <level>
   set-limits       - human: what may be credited, changed or promised
                      to this account, written as numbers and terms
-                     owner: <your finance seat> after: choose-play
+                     owner: <your finance role> after: choose-play
                      by: <hours>               automation: never
   write-message    - human: the words for this account in this
                      situation, carrying only claims the register
@@ -111,7 +111,7 @@ phases:
                      by: <hours>               automation: <level>
   get-sign-off     - convenes approval: brand and legal sign, as named
                      signers, against a version of what will be said
-                     owner: <your legal seat>  after: write-message
+                     owner: <your legal role>  after: write-message
                      by: <hours>               automation: never
   prepare-send     - human: the audience for this account, the consent
                      and suppression rules applied, the schedule and
@@ -167,7 +167,7 @@ handoffs:
     contact, each attributed to the system it came from
   record-outcome -> record-learnings: the outcome, as recorded
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, finance and
            legal>
   systems: product usage data (read), the support system (read),

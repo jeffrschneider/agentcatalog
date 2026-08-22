@@ -7,7 +7,7 @@ A raw inbound inquiry is scored and put in front of the person who should
 work it. A run of the routing process starts the moment a form is
 submitted, and within minutes the lead has been deduplicated, enriched,
 scored and placed in the right queue with its evidence attached. No person
-touches the ordinary case, and agents can hold nearly every seat in all
+touches the ordinary case, and agents can hold nearly every role in all
 three of these processes. The scoring model behind the routing is rebuilt
 when the scores stop matching what leads go on to do, or when a new fact
 about a lead becomes available that the model does not read, and routing

@@ -14,7 +14,7 @@ send, because a sent issue cannot be recalled.
 
 ## The activities
 
-| # | Activity | What happens | Seats |
+| # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Open the Issue | settle what the issue is for and when it sends | [content-manager](../../agents/content-manager.md) |
 | 2 | Settle the Lineup | choose the items the issue carries | content-manager · leadership (person) |
@@ -106,7 +106,7 @@ phases:
                      owner: advocacy-manager   after: check-standing
                      by: <days>                automation: never
   brief-makers     - convenes briefing: the lineup and the send date,
-                     heard by every seat at once
+                     heard by every agent at once
                      owner: content-manager    after: settle-lineup
                      automation: <level>
   write-draft      - runs build-by-talent: the items, the subject lines
@@ -136,7 +136,7 @@ phases:
                      by: <days>                automation: <level>
   get-sign-offs    - convenes approval: brand, claims and legal sign, as
                      named signers, against a version of the issue
-                     owner: <your legal seat>
+                     owner: <your legal role>
                      after: proof-issue + clear-story
                      by: <days>                automation: never
   send-issue       - human: the named owner says go and the producer
@@ -177,7 +177,7 @@ handoffs:
     evidence under it and the date each reading was current
   clear-story -> get-sign-offs: the permission at the wording the
     customer agreed to, naming what may be used and until when
-  brief-makers -> write-draft: the request as every seat heard it, and
+  brief-makers -> write-draft: the request as every agent heard it, and
     the date the issue is promised
   edit-draft -> write-draft: the edit at a version, item by item, in
     terms the writer can work through without coming back to ask
@@ -197,7 +197,7 @@ handoffs:
     which version went out and which segment received it
   report-results -> record-learnings: the report, as delivered
 bindings:
-  roster:  <who holds each seat - agents claiming the abstract agents
+  roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, legal, brand,
            rights and leadership>
   systems: the content plan (write), the asset store (write),
@@ -229,7 +229,7 @@ measures:
 
 ## The failure edges
 
-- **The account is in no state to be asked.** The account-monitor seat
+- **The account is in no state to be asked.** The account-monitor agent
   reports a dispute, an open escalation or a renewal in trouble, and the
   run goes back to the lineup for a replacement item. Nobody asks that
   customer for this issue.
@@ -245,14 +245,13 @@ measures:
   build-issue with the rule attached to each one, the producer fixes
   what the findings name, and the same proof runs again on the fixed
   issue.
-- **A mistake is found after the send.** An issue cannot be recalled,
-  so the only remedy is a correction sent to the same segment. A person
-  decides whether the correction is worth another send and what it
-  says.
+- **A mistake is found after the send.** An issue cannot be recalled, so
+  the only remedy is a correction sent to the same segment. A person
+  decides whether the correction is worth another send and what it says.
 - **Delivery goes wrong while the send is going out.** Bounces or
   complaints past the threshold the process sets stop the send. Whether
-  to stop it, and what to tell the people who already received it, are
-  a person's calls.
+  to stop it, and what to tell the people who already received it, are a
+  person's calls.
 - **The trigger fires while a run is in flight.** Issues of one
   newsletter run one at a time, and separate newsletters overlap
   normally. Runs share their reference data read-only.

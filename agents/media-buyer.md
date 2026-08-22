@@ -4,10 +4,10 @@
 
 **purpose:** Handles the paid side: builds the ad campaigns, sets
 targeting and bids, starts and stops the buy, watches pacing, and moves
-money toward what is working. This is the seat that spends, which is why
-its grants carry caps and every move it makes carries a reason.
+money toward what is working. This is the agent that spends, which is
+why its grants carry caps and every move it makes carries a reason.
 
-## Seats
+## Processes
 
 - `ref/mkt/account-based-play` / Set up the Paid Buy, Start the Touches
 - `ref/mkt/annual-marketing-plan` / Collect the Candidate Initiatives,
@@ -28,7 +28,7 @@ its grants carry caps and every move it makes carries a reason.
   Reconcile the Spend, Check the Account
 - `ref/mkt/media-plan` / Gather the Channel Evidence, Draft the
   Candidate Mixes, Set the Channel Audience Targets, Hand the Plan to
-  the Buying Seats
+  the Buying Agents
 - `ref/mkt/paid-search-campaign` / Research the Search Demand, Build the
   Keyword Plan, Ready the Landing Pages, Wire up Conversion Tracking,
   Build the Campaigns and Launch, Watch Pacing and Results, Tune the
@@ -100,5 +100,5 @@ comes off.
 ## Not
 
 Does not change creative - it requests replacements from the producing
-seats. Does not set the budget it spends. Does not touch organic
+agents. Does not set the budget it spends. Does not touch organic
 publishing.
