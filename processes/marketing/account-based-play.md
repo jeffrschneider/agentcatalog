@@ -84,6 +84,8 @@ from: ref/mkt/account-based-play v1
 owner: <who>                          effective: <date>
 trigger: a list of target accounts is approved in <your account
          planning process>
+         watch: record=<account list> system=<your account planning process>
+                change=<the list is marked approved>
 concurrency: runs may overlap - <how many> plays live at once, and one
              account is worked by one play at a time
 goal: every account on the list touched on the channels its tier calls
@@ -186,46 +188,70 @@ run-scoped:
              every: <cadence>
              from: start-touches   until: run close
 handoffs:
-  take-in-list -> read-accounts: the accounts, each with the reason it
-    is on the list
-  read-accounts -> set-tiers: each account's standing, dated, with the
-    system every line came from, and every account that may not be
-    approached at all marked as such
-  set-tiers -> agree-split: the tier each account sits in, and the
-    money behind that tier
-  set-tiers -> build-contacts: the same tiers. Both branches read one
-    record
-  agree-split -> brief-makers: who approaches which account, on which
-    channel and in what order, at a version marketing and the account
-    owners both hold
-  check-consent -> brief-makers: the contacts who may be contacted,
-    channel by channel, and the count the consent record took out
-  brief-makers -> produce-material: the play as every agent heard it,
-    and the date the first touch is promised
-  brief-makers -> sales-material: the questions an account owner will
-    be asked once the marketing touches land
-  get-sign-offs -> set-up-buy: the approved material at the signed
-    version. A later change voids the approval and sign-offs run again
-  get-sign-offs -> build-pages: the same approved version
-  set-up-buy -> check-buy: the campaigns as configured, the plan line
-    each one was placed against, and the receipt for every list that
-    left the organization
-  check-buy -> start-touches: the scored list, with the plan line or
-    the rule behind every failure
-  build-pages -> start-touches: the pages live at their addresses, the
-    notice loaded and switched off, and a dated test showing each
-    conversion arriving
-  start-touches -> keep-in-step: the schedule of touches per account,
-    and the address every touch points at
-  start-touches -> watch-engagement: the same schedule, so engagement
-    can be read against the touch that came before it
-  watch-engagement -> hand-over: what each account did, with the date
-    and the system it was read from
-  hand-over -> keep-in-step: the accounts a person has taken, so the
-    marketing touches to them stop or change
-  keep-in-step -> report-play: the touches as they actually ran, and
-    the ones that were held back with the reason for each
-  report-play -> record-learnings: the report, as delivered
+  take-in-list -> read-accounts [accounts-and-reasons]: the accounts,
+    each with the reason it is on the list
+  read-accounts -> set-tiers [account-standing]: each account's
+    standing, dated, with the system every line came from, and every
+    account that may not be approached at all marked as such
+  set-tiers -> agree-split [tiers-and-money]: the tier each account sits
+    in, and the money behind that tier
+  set-tiers -> build-contacts [tiers-for-contacts]: the same tiers. Both
+    branches read one record
+  agree-split -> brief-makers [approach-split]: who approaches which
+    account, on which channel and in what order, at a version marketing
+    and the account owners both hold
+  check-consent -> brief-makers [contactable-people]: the contacts who
+    may be contacted, channel by channel, and the count the consent
+    record took out
+  brief-makers -> produce-material [the-play-as-heard]: the play as
+    every agent heard it, and the date the first touch is promised
+  brief-makers -> sales-material [owner-questions]: the questions an
+    account owner will be asked once the marketing touches land
+  get-sign-offs -> set-up-buy [approved-material]: the approved material
+    at the signed version. A later change voids the approval and sign-
+    offs run again
+  get-sign-offs -> build-pages [approved-version]: the same approved
+    version
+  set-up-buy -> check-buy [configured-buy]: the campaigns as configured,
+    the plan line each one was placed against, and the receipt for every
+    list that left the organization
+  check-buy -> start-touches [scored-buy]: the scored list, with the
+    plan line or the rule behind every failure
+  build-pages -> start-touches [live-pages]: the pages live at their
+    addresses, the notice loaded and switched off, and a dated test
+    showing each conversion arriving
+  start-touches -> keep-in-step [touch-schedule]: the schedule of
+    touches per account, and the address every touch points at
+  start-touches -> watch-engagement [schedule-for-reading]: the same
+    schedule, so engagement can be read against the touch that came
+    before it
+  watch-engagement -> hand-over [account-engagement]: what each account
+    did, with the date and the system it was read from
+  hand-over -> keep-in-step [taken-accounts]: the accounts a person has
+    taken, so the marketing touches to them stop or change
+  keep-in-step -> report-play [touches-as-run]: the touches as they
+    actually ran, and the ones that were held back with the reason for
+    each
+  report-play -> record-learnings [the-report]: the report, as delivered
+deviations:
+  read-accounts -> take-in-list [account-not-approachable]: an account
+    turns out not to be approachable, so it comes off the list
+  check-consent -> build-contacts [consent-short]: the consent record
+    does not cover the contacts the play needs
+  get-sign-offs -> produce-material [material-changes]: sign-off comes
+    back with changes to the material
+  get-sign-offs -> sales-material [sales-material-changes]: sign-off
+    comes back with changes to the sales material
+  check-buy -> set-up-buy [buy-fails-check]: the buy fails its check, so
+    it is fixed and checked again
+  keep-in-step -> produce-material [account-needs-different-material]:
+    an account needs material the play does not have
+  keep-in-step -> agree-split [split-has-to-change]: the split has to
+    change, so it is agreed with the account owners again
+  watch-engagement -> keep-in-step [account-not-responding]: an account
+    is not responding, so its schedule changes
+  hand-over -> keep-in-step [owner-took-account]: the owner has taken
+    the account, so the marketing touches stop or change
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owners, the legal
