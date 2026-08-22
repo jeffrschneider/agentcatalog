@@ -183,7 +183,7 @@ bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller, the manager who
            signs the list, and whoever settles a disputed account>
-  systems: the CRM (read and write), <your account data sources>
+  systems: the CRM (read), the CRM (write), <your account data sources>
            (read), <your contact data sources> (read, cap: <n>/day),
            <your verification source> (read), the consent record
            (read), the suppression list (read),

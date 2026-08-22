@@ -217,9 +217,9 @@ bindings:
            above, and named people for the partner lead, the sales
            leader, the delivery lead, the deal desk, the legal reviewer
            and the partner's sales lead and practice lead>
-  systems: deal registration (write), the CRM (read and write),
+  systems: deal registration (write), the CRM (read), the CRM (write),
            the quoting system (write, cap: <n> discount without
-           approval), the contract repository (read and write),
+           approval), the contract repository (read), the contract repository (write),
            the delivery system (write), the partner portal (write),
            the calendar (write)
   data:    <your partner price list> <version>, <your discount schedule>

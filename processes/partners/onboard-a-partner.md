@@ -226,7 +226,7 @@ bindings:
   systems: the partner portal (write), the partner record (write),
            the identity system (write, cap: <n> accounts per partner),
            deal registration (write), the support desk (write),
-           the licensing system (write), the CRM (read and write),
+           the licensing system (write), the CRM (read), the CRM (write),
            the calendar (write), the document store (read)
   data:    <your partner tier model> <version>, <your access checklist>
            <version>, the signed agreement, <your partner materials set>

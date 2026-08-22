@@ -216,7 +216,7 @@ bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the delivery
            lead, the sales leader and the legal reviewer>
-  systems: the order system (read), the CRM (read and write),
+  systems: the order system (read), the CRM (read), the CRM (write),
            the contract repository (read), the handover record (write),
            the delivery system (write), the support system (read),
            product usage data (read), the calendar (write),

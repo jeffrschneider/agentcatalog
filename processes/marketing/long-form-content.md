@@ -194,7 +194,7 @@ bindings:
            above, and named people for the expert, legal, brand and
            rights>
   systems: the content plan (write), the asset store (write),
-           the website (write and publish), analytics (write),
+           the website (write), the website (trigger), analytics (write),
            the CRM (write), ad platforms (write, cap: <n>/day),
            the source record (write)
   data:    brand guidelines <version>, <your claims register>,

@@ -229,7 +229,7 @@ bindings:
   systems: the learning system (write), the partner portal (write),
            the certification record (write), the lab environment
            (trigger, cap: <n> hours per person), the calendar (write),
-           the partner record (read and write)
+           the partner record (read), the partner record (write)
   data:    <your role requirements> <version>, <your question set>
            <version>, <your practical rubric> <version>, <your course
            materials> <version>, the partner agreement and its tier
