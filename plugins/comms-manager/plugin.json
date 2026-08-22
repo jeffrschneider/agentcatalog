@@ -1,0 +1,177 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "comms-manager",
+  "version": "1.0.0",
+  "description": "The comms-manager abstract agent. Runs one announcement or one incident response, from the moment the event is confirmed through to the report afterwards.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/comms-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "crisis-communication",
+    "pitch-earned-media",
+    "announce-company-news",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "comms-manager",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Convenes the briefing that starts the run, so every agent that writes or sends anything hears the same facts at the same time. Convenes decide-and-announce for the timeline, which is how the owner of each audience learns what is going out and when. Requests the approval on the wording and takes a changes-requested back to the agent that wrote that version, reopening only what the signers named. During an incident it runs a roll-call at the interval the process sets, where every agent says what it knows and how old that knowledge is. Runs collect-and-report for the readout afterwards, and convenes the debrief that closes the run.",
+      "servers": [
+        {
+          "name": "the announcement plan and its timeline",
+          "role": "announcement-plan-and-its-timeline",
+          "access": "write",
+          "needs": "The date, and what was known at each point."
+        },
+        {
+          "name": "the message record",
+          "role": "message-record",
+          "access": "write",
+          "needs": "Each audience's wording lands here at a version."
+        },
+        {
+          "name": "the claims register",
+          "role": "claims-register",
+          "access": "read"
+        },
+        {
+          "name": "brand guidelines",
+          "role": "brand-guidelines",
+          "access": "read"
+        },
+        {
+          "name": "the incident record",
+          "role": "incident-record",
+          "access": "read",
+          "needs": "The facts as the people handling the incident establish them."
+        },
+        {
+          "name": "the coverage record",
+          "role": "coverage-record",
+          "access": "read"
+        },
+        {
+          "name": "the staged releases",
+          "role": "staged-releases",
+          "access": "trigger",
+          "needs": "The pieces go out in the planned order, after the sign-offs."
+        }
+      ],
+      "records": [
+        "The timeline at a version, saying what was known at each point, who established it, and who was told.",
+        "Each audience's wording at the version that actually went out, with the versions it replaced left where they are.",
+        "The CONVENED and DONE records of everything it convenes.",
+        "The go record, naming the person who said go and the time they said it.",
+        "The report afterwards, setting what happened against what the announcement or the response was meant to do."
+      ],
+      "escalates": [
+        "the decision to go out at all, which stays with a person however automated the rest of the run becomes",
+        "a change to the date, and any request to hold or pull something already scheduled",
+        "a fact that changes after the wording is signed, because the approval has to run again",
+        "anything a sign-off flags as legal, and any incident that reaches a regulator, a customer's data, or somebody's safety",
+        "two audiences that have been told different things, the moment it notices"
+      ],
+      "not": [
+        "Does not write the words, which is the copywriter agent, and does not edit them.",
+        "Does not send anything to reporters, book their briefings or keep the contact record, which is the press-relations agent.",
+        "Does not watch what gets published in response, which is the coverage-monitor agent, and this agent reads that record.",
+        "Does not send the customer email, which is the email-producer agent, and does not put the notice on the site, which is the web-producer agent; this agent says when each of them goes.",
+        "Does not sign anything.",
+        "Does not own a product launch and its deadline math, which is the launch-coordinator agent, and an announcement made inside a launch is a run of this agent.",
+        "Does not run a campaign, which is the campaign-manager agent, and does not run one published piece from topic to live, which is the content-manager agent.",
+        "Does not fix the problem an incident is about, because the people handling the incident do that and this agent says what the organization tells everyone about it."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Take in the News",
+            "Set the Announcement Date",
+            "Settle the Story",
+            "Gather the Quotes",
+            "Write the Other Versions",
+            "Issue the Release",
+            "Report on the Announcement",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Hand the Result On"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Say It in Public"
+          ]
+        },
+        {
+          "process": "ref/mkt/crisis-communication",
+          "activities": [
+            "Take in the Incident",
+            "Confirm the Facts",
+            "Size up the Exposure",
+            "Issue a Holding Line",
+            "Decide the Position",
+            "Draft the Statement",
+            "Brief the Speakers",
+            "Notify the Staff",
+            "Issue the Response",
+            "Update the Response",
+            "Close the Response",
+            "Review the Response"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Take in the Release",
+            "Size the Announcement",
+            "Write the Announcement",
+            "Post It Publicly"
+          ]
+        },
+        {
+          "process": "ref/mkt/pitch-earned-media",
+          "activities": [
+            "Take in the Story Angle",
+            "Test the Angle",
+            "Choose the Reporters",
+            "Decide Who Speaks",
+            "Produce the Pitch Materials",
+            "Set the Timing",
+            "Prepare the Spokesperson",
+            "Log the Coverage",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Settle the Explanation",
+            "Change the Public Price"
+          ]
+        },
+        {
+          "process": "ref/mkt/set-marketing-budget",
+          "activities": [
+            "Collect What Each Function Asks For",
+            "Tell Every Function What It Has"
+          ]
+        }
+      ]
+    }
+  }
+}

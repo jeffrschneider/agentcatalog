@@ -1,0 +1,423 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "decision-coordinator",
+  "version": "1.0.0",
+  "description": "The decision-coordinator abstract agent. Runs one marketing decision from the open question through to the recorded answer.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/decision-coordinator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "annual-marketing-plan",
+    "brief-executive-leadership",
+    "develop-marketing-strategy",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "decision-coordinator",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Convenes the briefing that opens the decision, so every agent that owes evidence hears the same question and the same due date at once. Commissions collect-and-report for that evidence, and every line keeps the source and the agent it came from. Convenes the meeting where the decision is made, puts the candidate answers in front of the people who decide, and writes down the answer with the reasons behind it. Runs decide-and-announce afterwards, so every agent that has to act on the answer hears it at the same time and knows when it applies from. Requests the approval when the process names a signer for the decision. Answers roll-calls with which decisions are open, what each one is waiting on, and when each one is due.",
+      "servers": [
+        {
+          "name": "the decision record",
+          "role": "decision-record",
+          "access": "write",
+          "needs": "Each decision lands at a version with its answer, its reasons and its dissent."
+        },
+        {
+          "name": "the evidence store",
+          "role": "evidence-store",
+          "access": "read",
+          "needs": "What the gathering agents filed for this decision."
+        },
+        {
+          "name": "the marketing standards at their versions",
+          "role": "marketing-standards-at-their-versions",
+          "access": "read"
+        },
+        {
+          "name": "the plans and commitments the decision has to sit inside",
+          "role": "plans-and-commitments-the-decision-has-to-sit-inside",
+          "access": "read"
+        },
+        {
+          "name": "the meeting calendar",
+          "role": "meeting-calendar",
+          "access": "write",
+          "needs": "Cap: which meetings it may set without asking, set by the adopting organization."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "The answer reaches every agent that acts on it."
+        },
+        {
+          "name": "the review schedule",
+          "role": "review-schedule",
+          "access": "write",
+          "needs": "The date each recorded answer comes back up."
+        }
+      ],
+      "records": [
+        "The decision written down as a question before any evidence is gathered: what it has to settle, who decides it, what evidence it needs and from which agent, and the date it is due.",
+        "The evidence as it came in, each line attributed to the agent and the source behind it.",
+        "The candidate answers, each written out with what it would cost and what it would rule out.",
+        "The answer at a version, naming who decided it, on what date, for what reasons, and anyone who disagreed with what that person said.",
+        "A handover line for each agent that has to act on the answer, naming the agent and what it was given.",
+        "The review date, set at the moment the answer is recorded."
+      ],
+      "escalates": [
+        "a decision that cannot be made by its date, said on the day the math stops working, because moving the date or deciding on thinner evidence is a person's call",
+        "evidence that contradicts the answer the room is moving toward - this agent puts the contradiction in front of the room and never leaves it out of the record",
+        "a disagreement among the people who decide that the process's rounds will not settle",
+        "a request to change a recorded answer, or to leave a dissent out of it. This agent never edits a decision after it is recorded. A change goes in as a new version, and the version it replaces stays where it was.",
+        "a decision made outside the process it belongs to, so a person decides whether to record it or run it again"
+      ],
+      "not": [
+        "Does not decide anything.",
+        "It runs the decision and named people make it, which is what keeps the answer theirs.",
+        "Does not gather the evidence itself: the researcher agent finds what is true outside the organization, the analytics agent reads the organization's own numbers and reports them with their sources, and the forecaster agent says what a model predicts.",
+        "Does not run a campaign, a launch or a published piece, which are the campaign-manager, launch-coordinator and content-manager agents, and those agents run work that has already been decided on.",
+        "Does not hold the standards a decision changes, which is the standards-keeper agent, and it hands the agreed change to that agent to be versioned.",
+        "Does not report how the department performed over a reporting period, which is the reporting-manager agent.",
+        "Does not sign anything."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Take in the Company Targets",
+            "Set the Goals for the Year",
+            "Collect the Candidate Initiatives",
+            "Check What the Department Can Carry",
+            "Choose the Initiatives",
+            "Allocate the Budget",
+            "Build the Calendar",
+            "Name What Will Be Measured",
+            "Publish the Plan",
+            "Brief the Department",
+            "Record What the Plan Rests On"
+          ]
+        },
+        {
+          "process": "ref/mkt/approve-marketing-material",
+          "activities": [
+            "Take in the Submission",
+            "Name the Standards and the Signers",
+            "Check the Submission Is Complete",
+            "Gather the Findings into One List",
+            "Return the Failures to the Submitter",
+            "Record an Accepted Exception",
+            "Get the Signatures",
+            "Release the Cleared Version"
+          ]
+        },
+        {
+          "process": "ref/mkt/attribution-model",
+          "activities": [
+            "Choose the Model",
+            "Decide What Happens to Published Reports",
+            "Set the Review Conditions"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-health",
+          "activities": [
+            "Settle What the Wave Measures",
+            "Report Awareness, Perception and Preference"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-identity",
+          "activities": [
+            "Choose the Identity",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Take in the Change",
+            "Audit What the Company Says Now",
+            "Agree Who the Company Is For",
+            "Draft the Candidate Positions",
+            "Choose the Position",
+            "Write the Positioning and the Promise",
+            "Tell the Processes that Read It",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Decide What Happens to Each Surface",
+            "Set the Switch Date and the Order"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Take in the Approved Positioning",
+            "Brief the Makers",
+            "Build the Messaging Architecture",
+            "Tell the Processes that Read It",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Take in the Cycle",
+            "Read the Last Meeting's Record",
+            "Work out What Has to Be Decided",
+            "Settle Marketing's Position",
+            "Send the Pack Ahead",
+            "Deliver the Briefing",
+            "Record the Decisions",
+            "Answer What Was Left Open",
+            "Hand the Decisions On",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Settle the Tiers and the Terms"
+          ]
+        },
+        {
+          "process": "ref/mkt/competitive-battlecard",
+          "activities": [
+            "Settle What May Be Said"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "Take in the Period's Goals",
+            "Collect the Topic Candidates",
+            "Score the Candidates",
+            "Agree the Calendar",
+            "Brief the Department",
+            "Record What the Plan Rests On"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-research",
+          "activities": [
+            "Deliver the Findings"
+          ]
+        },
+        {
+          "process": "ref/mkt/develop-marketing-strategy",
+          "activities": [
+            "Take in the Objectives",
+            "Draft the Strategic Options",
+            "Check What Each Option Would Take",
+            "Check the Options against What Is Agreed",
+            "Choose Where to Play and How to Win",
+            "Write down the Agreed Strategy",
+            "Name What the Strategy Will Be Judged By",
+            "Hand the Strategy to the Work that Follows",
+            "Set the Review Conditions",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/engage-marketing-agency",
+          "activities": [
+            "Take in the Gap",
+            "Choose the Route",
+            "Decide What Is Handed Over",
+            "Set the Selection Criteria",
+            "Choose the Agency",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/ideal-customer-profile",
+          "activities": [
+            "Take in the Question",
+            "Draft the Candidate Profiles",
+            "Name the Qualifying Signals",
+            "Settle on One Profile",
+            "Write down the Agreed Profile",
+            "Hand over the Profile",
+            "Set the Review Conditions",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/lead-scoring-model",
+          "activities": [
+            "Take in the Drift or the Signal",
+            "Choose the Model",
+            "Hand over the Model",
+            "Set the Review Conditions",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/map-buyer-journey",
+          "activities": [
+            "Take in the Persona",
+            "Draft the Stages",
+            "Find the Gaps",
+            "Settle the Map",
+            "Write down the Agreed Map",
+            "Hand over the Map",
+            "Set the Review Conditions",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Choose the Mix"
+          ]
+        },
+        {
+          "process": "ref/mkt/name-product",
+          "activities": [
+            "Take in the Naming Request",
+            "Set the Naming Criteria",
+            "Generate the Candidate Names",
+            "Screen the Long List",
+            "Cut to a Shortlist",
+            "Choose the Name",
+            "Tell the Processes that Read It",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/plan-marketing-capacity",
+          "activities": [
+            "Take in the Planning Trigger",
+            "List the Committed Work",
+            "Put the Options to the People Who Decide",
+            "Decide the Mix",
+            "Name the Gaps that Remain",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/prioritize-initiatives",
+          "activities": [
+            "Open the Round",
+            "Weigh the Requests against the Goals",
+            "Rank the Requests",
+            "Choose What Gets Committed",
+            "Resource the Commitments",
+            "Settle What Gets Displaced",
+            "Record the Declines",
+            "Tell the Requesters",
+            "Hand over the Commitments",
+            "Record What the Round Rests On"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Take in the Question",
+            "Read the Standards in Force",
+            "Name the Competing Choices",
+            "Draft the Candidate Positions",
+            "Choose the Position",
+            "Write the Messaging",
+            "Issue the Positioning at a Version",
+            "Set the Review Conditions",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/quarterly-business-review",
+          "activities": [
+            "Set What the Review Covers",
+            "Name the Gaps Worth Acting On",
+            "Ask Each Area What It Would Change",
+            "Hold the Review",
+            "Reset the Commitments",
+            "Move the Money",
+            "Publish the Reset Commitments",
+            "Brief the Department",
+            "Record What the Review Rests On"
+          ]
+        },
+        {
+          "process": "ref/mkt/reallocate-media-spend",
+          "activities": [
+            "Decide the Move",
+            "Record Why the Money Moved"
+          ]
+        },
+        {
+          "process": "ref/mkt/segment-the-market",
+          "activities": [
+            "Take in the Question",
+            "Set the Market Boundary",
+            "Choose the Dividing Traits",
+            "Draw the Candidate Divisions",
+            "Settle on One Division",
+            "Rank the Segments",
+            "Write down the Agreed Segments",
+            "Hand over the Segments",
+            "Set the Review Conditions",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/select-marketing-technology",
+          "activities": [
+            "Compare the Finalists",
+            "Choose the Tool",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/set-marketing-budget",
+          "activities": [
+            "Take in the Planning Guidance",
+            "Collect What Each Function Asks For",
+            "Test the Asks against the Goals",
+            "Size the Reserve",
+            "Settle the Split across Functions",
+            "Set the Rules for Moving Money",
+            "Phase the Money across the Year",
+            "Tell Every Function What It Has",
+            "Record What the Budget Rests On"
+          ]
+        },
+        {
+          "process": "ref/mkt/size-market-opportunity",
+          "activities": [
+            "Take in the Question",
+            "Draw the Market Boundary",
+            "Choose the Sizing Method",
+            "Reconcile the Methods",
+            "Settle on the Number",
+            "Write down the Sizing",
+            "Set the Review Conditions",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-loss-analysis",
+          "activities": [
+            "Write the Findings",
+            "Deliver the Themes and Recommendations"
+          ]
+        }
+      ]
+    }
+  }
+}

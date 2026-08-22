@@ -1,0 +1,437 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "copywriter",
+  "version": "1.0.0",
+  "description": "The copywriter abstract agent. Writes the words: post copy inside character limits, headlines, email text, blog posts, battlecards, and the alternate versions a test needs.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/copywriter",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "brand-voice",
+    "announce-company-news",
+    "crisis-communication",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "copywriter",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Holds a specialist slice in build-by-talent, respecting the seams - the copy has to fit what the design assumes. Sits in briefings, delivers concepts into a bake-off without seeing the other entries, and takes a changes-requested from an approval by reopening only what was named.",
+      "servers": [
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "write",
+          "needs": "Drafts land at versions."
+        },
+        {
+          "name": "brand guidelines",
+          "role": "brand-guidelines",
+          "access": "read"
+        },
+        {
+          "name": "the claims register",
+          "role": "claims-register",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "Every draft at a version, and the DONE records of the patterns it works inside.",
+        "A claim it uses cites the register entry it came from."
+      ],
+      "escalates": [
+        "a claim it cannot find a citation for - it never invents one",
+        "copy the brand voice rules and the brief pull in opposite directions"
+      ],
+      "not": [
+        "Does not approve its own work, publish anything, or choose the direction it writes inside."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Material",
+            "Make the Sales Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Invite the Members",
+            "Build the Materials",
+            "Follow up with the Members"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Settle the Story",
+            "Gather the Quotes",
+            "Write the Release",
+            "Write the Other Versions",
+            "Make the Press Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Brief the Entry",
+            "Write the Entry"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-guidelines",
+          "activities": [
+            "Brief the Makers",
+            "Write the Rules",
+            "Show the Examples",
+            "Test the Rules on Real Work"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-identity",
+          "activities": [
+            "Brief the Makers",
+            "Draft the Candidate Directions",
+            "Build out the System",
+            "Write the Usage Rules"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Draft the Candidate Positions",
+            "Write the Positioning and the Promise",
+            "Set the Voice Rules"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Brief the Agents that Remake the Material",
+            "Rewrite What the Words Say"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Brief the Makers",
+            "Draft the Voice",
+            "Set the Tone for Each Situation",
+            "Build the Messaging Architecture",
+            "Write the Version Each Audience Gets",
+            "Write the Word List",
+            "Brief the Agents that Write to It"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Write the Decision Papers"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-industry-analyst",
+          "activities": [
+            "Brief the Makers",
+            "Settle What the Briefing Will Say",
+            "Build the Briefing Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Record the Words This Person Uses",
+            "Hand over the Persona"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Build the Recruitment Material",
+            "Build the Partner Selling Kit"
+          ]
+        },
+        {
+          "process": "ref/mkt/churn-risk-play",
+          "activities": [
+            "Write What Will Be Said"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Brief the Makers",
+            "Settle the Joint Direction",
+            "Produce the Joint Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/competitive-battlecard",
+          "activities": [
+            "Write the Card"
+          ]
+        },
+        {
+          "process": "ref/mkt/conversion-experiment",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Variants"
+          ]
+        },
+        {
+          "process": "ref/mkt/creative-assets",
+          "activities": [
+            "Brief the Makers",
+            "Settle on a Direction",
+            "Produce the Assets",
+            "Size for Every Channel"
+          ]
+        },
+        {
+          "process": "ref/mkt/crisis-communication",
+          "activities": [
+            "Issue a Holding Line",
+            "Draft the Statement",
+            "Tailor for Each Audience",
+            "Notify the Staff",
+            "Update the Response"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Brief the Story",
+            "Agree What the Story Argues",
+            "Write the Draft"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Brief the Makers",
+            "Write the Draft"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reference",
+          "activities": [
+            "Write the Request"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reviews",
+          "activities": [
+            "Write the Ask"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Make the Ad Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Partner Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Write the Announcement"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Produce the Invitation and Materials",
+            "Follow up with the People Who Came"
+          ]
+        },
+        {
+          "process": "ref/mkt/influencer-campaign",
+          "activities": [
+            "Brief the Creators"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Material",
+            "Edit the Draft",
+            "Fix What the Numbers Show"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Brief the Piece",
+            "Agree the Outline",
+            "Write the Draft"
+          ]
+        },
+        {
+          "process": "ref/mkt/name-product",
+          "activities": [
+            "Generate the Candidate Names"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Messages",
+            "Tune the Branches"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Brief the Agents that Act",
+            "Make What the Path Needs"
+          ]
+        },
+        {
+          "process": "ref/mkt/paid-search-campaign",
+          "activities": [
+            "Write the Ads",
+            "Ready the Landing Pages"
+          ]
+        },
+        {
+          "process": "ref/mkt/pitch-earned-media",
+          "activities": [
+            "Produce the Pitch Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Settle the Explanation",
+            "Produce What Customers and Sellers Read"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Settle the Message",
+            "Produce the Content",
+            "Enable Sales"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Draft the Candidate Positions",
+            "Write the Messaging"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Brief the Pages in the Cycle",
+            "Rewrite What Has to Change"
+          ]
+        },
+        {
+          "process": "ref/mkt/sales-enablement-kit",
+          "activities": [
+            "Settle the Answers",
+            "Brief the Makers",
+            "Build the Deck",
+            "Write the One-Pager",
+            "Write the Objection Answers"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Brief the Creatives",
+            "Settle on a Direction",
+            "Produce the Posts"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Write the Proposal",
+            "Build the Deck",
+            "Reuse the Talk"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Variants"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Settle the Booth Message",
+            "Produce the Booth Material",
+            "Brief the Booth Staff"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Write the Text for Each Placement",
+            "Add the Disclosures Each Market Requires"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Open the Call for Sessions",
+            "Open Registration",
+            "Promote the Conference"
+          ]
+        },
+        {
+          "process": "ref/mkt/video-asset",
+          "activities": [
+            "Settle the Script",
+            "Write the Captions and Transcript"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Produce the Promotion Material",
+            "Follow up with the Registrants"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Write the Change",
+            "Edit the Change"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Brief the Makers",
+            "Write the Sequence"
+          ]
+        }
+      ]
+    }
+  }
+}

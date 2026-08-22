@@ -1,0 +1,96 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "launch-coordinator",
+  "version": "1.0.0",
+  "description": "The launch-coordinator abstract agent. Keeps a product launch honest about its own deadline math. Takes in what ships and why, turns the plan into a checklist every branch reads, watches the branches converge on the date, fires the sequence on launch day, and reports the first week against the goals set on day one.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/launch-coordinator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "pricing-change",
+    "product-launch",
+    "media-plan",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "launch-coordinator",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Convenes decide-and-announce for the plan - every branch hears the same deliverables and deadlines at once. Runs collect-and-report for the first-week readout and convenes the debrief. Tracks the branches the way a work plan tracks phases: by what each one owes and when.",
+      "servers": [
+        {
+          "name": "the plan and checklist store",
+          "role": "plan-and-checklist-store",
+          "access": "write"
+        },
+        {
+          "name": "every branch's status",
+          "role": "every-branchs-status",
+          "access": "read"
+        },
+        {
+          "name": "the staged releases",
+          "role": "staged-releases",
+          "access": "trigger",
+          "needs": "Launch day fires only in the planned order, after sign-offs."
+        }
+      ],
+      "records": [
+        "The checklist at a version, a dated record each time a branch lands or slips, the launch-day sequence as it actually fired, and the first-week report."
+      ],
+      "escalates": [
+        "deadline math that fails, the day it fails - cutting a deliverable or moving the date is a person's call, made early",
+        "a request to move the launch date, always"
+      ],
+      "not": [
+        "Does not produce content, does not sign anything, and does not decide between cutting scope and moving the date - it puts that decision in front of a person while there is still time to make it."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "List What Is Already Committed"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Collect What the Plan Must Carry",
+            "Lay out the Flighting"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Take in the Pricing Decision",
+            "Set the Terms of the Change",
+            "Plan the Transition",
+            "Serve the Notice",
+            "Change the Public Price",
+            "Report the Transition",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Take in the Launch",
+            "Plan the Launch",
+            "Launch Day",
+            "Report the Launch",
+            "Record What Was Learned"
+          ]
+        }
+      ]
+    }
+  }
+}

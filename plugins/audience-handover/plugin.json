@@ -1,0 +1,145 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "audience-handover",
+  "version": "1.0.0",
+  "description": "The audience-handover abstract agent. Delivers an approved audience or lead list to a system outside the organization.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/audience-handover",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "co-marketing-campaign",
+    "target-audience-segment",
+    "account-based-play",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "audience-handover",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Answers the roll-call before a transfer with whether the list may leave, how many records it holds, and how many the consent record took out. Sits in the briefing that plans a campaign running on somebody else's system, so the fields it will be allowed to send are known while the plan can still change. Requests the approval that has to pass before a list leaves the organization, and puts the consent-manager agent's finding and the field list in front of the signers. Takes a changes-requested from an approval by reopening only the part that was named. Reports into collect-and-report with the counts and the match figures for every transfer in the period.",
+      "servers": [
+        {
+          "name": "the approved list",
+          "role": "approved-list",
+          "access": "read",
+          "needs": "At the version it was approved at."
+        },
+        {
+          "name": "the consent record",
+          "role": "consent-record",
+          "access": "read"
+        },
+        {
+          "name": "the suppression lists",
+          "role": "suppression-lists",
+          "access": "read"
+        },
+        {
+          "name": "the agreement covering the transfer",
+          "role": "agreement-covering-the-transfer",
+          "access": "read",
+          "needs": "Which fields may be sent, what they may be used for, and how long the receiving organization may hold them."
+        },
+        {
+          "name": "the destination system",
+          "role": "destination-system",
+          "access": "write",
+          "needs": "Cap: which fields may leave and how many records one transfer may carry, set by the adopting organization."
+        },
+        {
+          "name": "the transfer record",
+          "role": "transfer-record",
+          "access": "write",
+          "needs": "Every transfer lands with what was sent, what was accepted and what matched."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write"
+        }
+      ],
+      "records": [
+        "For every transfer: the list at the version it was approved at, the count it started with, the count the consent record took out, the fields that were sent, and the fields that were held back with the term that held each one back.",
+        "The date and time the transfer went, the count the receiving system accepted, the count it rejected with the reason it gave, and how much of the list matched.",
+        "The approval the transfer rests on, naming the person who signed for it.",
+        "The date the receiving organization is required to delete the records, taken from the agreement.",
+        "A dated line for every withdrawal passed on after the transfer, naming the system it went to and the day that system confirmed it.",
+        "A transfer whose receipt never arrived is recorded as unconfirmed rather than left out."
+      ],
+      "escalates": [
+        "a field the destination asks for that the agreement does not cover",
+        "a use the receiving organization intends that the consent record does not cover, sent to a person with the consent-manager agent's finding attached",
+        "a receipt it cannot get, and an accepted count that does not agree with what it sent",
+        "a withdrawal it cannot confirm reached a system the records were sent to",
+        "a destination with no agreement in force, or an agreement that has passed its end date",
+        "a request to send a list that no person has signed for, because this agent sends nothing on its own",
+        "a match rate below the level the process sets, because the campaign built on that list will not reach the audience it was planned for"
+      ],
+      "not": [
+        "Does not decide who is on the list.",
+        "The audience-manager agent sets the segment and what it is for, and the audience-operator agent builds it in the systems that hold contacts.",
+        "Does not hold the consent record and does not decide whether a contact may be contacted at all, which is the consent-manager agent; this agent applies that agent's record to one transfer and files the finding with the receipt.",
+        "Does not set targeting, bids or budget on the receiving platform, which is the media-buyer agent, and does not run the campaign the audience is bought against, which is the campaign-manager agent.",
+        "Does not score a form submission or route it to an owner, which is the lead-scorer agent, and that agent works on a lead inside the organization's own systems.",
+        "Does not send messages to the contacts, which is the email-producer agent.",
+        "Does not negotiate or sign the agreement that allows a transfer, which are the legal reviewer (person) and the people who sign contracts.",
+        "Does not answer for the partner relationship a transfer happens inside, which is the partner-manager agent, and it tells that agent what was sent.",
+        "Does not delete the records at the other end, because the receiving organization does that; this agent records the date the deletion is owed and escalates when it cannot confirm the deletion happened.",
+        "Does not sign anything."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Set up the Paid Buy"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Set up the Partner Systems"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Settle the Lead Terms",
+            "Wire up the Split",
+            "Split and Hand over the Leads",
+            "Agree the Joint Numbers"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Hand over the Selling Kit"
+          ]
+        },
+        {
+          "process": "ref/mkt/target-audience-segment",
+          "activities": [
+            "Brief the Build",
+            "Hand the List to the Platforms",
+            "Confirm the Match",
+            "Set the Refresh Schedule"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Load the Audiences the Plan Names"
+          ]
+        }
+      ]
+    }
+  }
+}

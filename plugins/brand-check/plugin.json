@@ -1,0 +1,375 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "brand-check",
+  "version": "1.0.0",
+  "description": "The brand-check abstract agent. Scores material against the standards before people sign it: every claim against the claims register at its version, every asset against the brand guidelines at theirs.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/brand-check",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "brand-guidelines",
+    "brand-refresh",
+    "brand-voice",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "brand-check",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "The examiner in an assessment: the standard is named and versioned before scoring starts, every item gets a verdict, and every verdict cites the rule it was scored against. Its output is the input to the approval that follows.",
+      "servers": [
+        {
+          "name": "brand guidelines",
+          "role": "brand-guidelines",
+          "access": "read"
+        },
+        {
+          "name": "the claims register",
+          "role": "claims-register",
+          "access": "read"
+        },
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "A score per item, each citing the standard, its version, and the rule applied.",
+        "What passed, what failed, and why, in a form the human signers read in minutes."
+      ],
+      "escalates": [
+        "everything it fails - this agent never waives its own findings, so every failure goes to a person with the rule and its version named",
+        "a claim the register does not cover - a person decides whether the standard gives way or the material does"
+      ],
+      "not": [
+        "Not a signer.",
+        "It scores; named people sign.",
+        "It also does not edit the standards it scores against - the registers and guidelines have their own processes."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/approve-marketing-material",
+          "activities": [
+            "Score against Brand and Claims"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-audit",
+          "activities": [
+            "Brief the Audit",
+            "Score the Sample"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-guidelines",
+          "activities": [
+            "Read the Guidelines in Force",
+            "Show the Examples",
+            "Test the Rules on Real Work",
+            "List What the New Version Fails"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-identity",
+          "activities": [
+            "Take Stock of the Marks in Use",
+            "Test the Directions against the Positioning"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Audit What the Company Says Now"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Score What Is Live against the New Version",
+            "Get Sign-Offs",
+            "Sweep for What Was Missed"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Turn the Voice into Scorable Rules",
+            "Score Old Material against the Draft Rules",
+            "Watch How the Rules Score"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-industry-analyst",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/churn-risk-play",
+          "activities": [
+            "Get Sign-Off"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Score against Both Rule Sets"
+          ]
+        },
+        {
+          "process": "ref/mkt/competitive-battlecard",
+          "activities": [
+            "Score the Claims"
+          ]
+        },
+        {
+          "process": "ref/mkt/conversion-experiment",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/creative-assets",
+          "activities": [
+            "Score against the Standards",
+            "Check the Sized Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/crisis-communication",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Get Internal Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reviews",
+          "activities": [
+            "Check the Ask against the Rules"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Check It Once"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/influencer-campaign",
+          "activities": [
+            "Review the Drafts"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Score the Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/name-product",
+          "activities": [
+            "Screen the Long List"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Score the Messages"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Check and Sign What Was Made"
+          ]
+        },
+        {
+          "process": "ref/mkt/paid-search-campaign",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/pitch-earned-media",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Score the Pages against the Current Standards",
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/sales-enablement-kit",
+          "activities": [
+            "Score the Kit"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Clear the Proposal",
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Score the Adapted Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Clear the Speaker Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/video-asset",
+          "activities": [
+            "Score against the Standards"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Score the Change"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Score the Messages"
+          ]
+        }
+      ]
+    }
+  }
+}

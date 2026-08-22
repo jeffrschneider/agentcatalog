@@ -1,0 +1,344 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "campaign-manager",
+  "version": "1.0.0",
+  "description": "The campaign-manager abstract agent. Runs a campaign from the brief to the learnings. Takes in the goal, sets the parameters, briefs the copywriter, the designer and the video-editor, picks the direction, calls the launch, and reports the result.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/campaign-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "win-back-campaign",
+    "social-campaign",
+    "test-ad-creative",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "campaign-manager",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Convenes briefing, bake-off, and debrief. Commissions build-by-talent for production and collect-and-report for the wrap-up. Requests the approval at sign-offs and takes its changes-requested back to the producing agents.",
+      "servers": [
+        {
+          "name": "scheduler",
+          "role": "scheduler",
+          "access": "write",
+          "needs": "Publishing fires only after the launch decision."
+        },
+        {
+          "name": "analytics",
+          "role": "analytics",
+          "access": "read"
+        },
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "The run's plan, the CONVENED and DONE records of everything it convenes, the launch record naming who said go, and the final report against the brief."
+      ],
+      "escalates": [
+        "the budget, always - this agent never confirms its own number",
+        "anything a sign-off flags as legal",
+        "the launch decision itself, until the adopting organization raises the automation level for it"
+      ],
+      "not": [
+        "Does not write copy, design, or cut video.",
+        "Does not move ad money - that is the media-buyer agent.",
+        "Does not sign anything."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Take in the Account List",
+            "Set the Tiers and the Weight",
+            "Agree the Split with Sales",
+            "Brief the Makers",
+            "Start the Touches",
+            "Keep the Touches in Step",
+            "Report Engagement",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Publish It on the Owned Channels"
+          ]
+        },
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Collect the Candidate Initiatives",
+            "Build the Calendar",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Hand over the Persona"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Open Recruitment"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Take in the Partner Agreement",
+            "Plan the Joint Campaign",
+            "Brief the Makers",
+            "Settle the Joint Direction",
+            "Build the Registration Page",
+            "Launch the Joint Campaign",
+            "Watch the Joint Campaign",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "List What Is Already Committed",
+            "Collect the Topic Candidates",
+            "Brief the Department",
+            "Hand over the Approved Topics"
+          ]
+        },
+        {
+          "process": "ref/mkt/develop-marketing-strategy",
+          "activities": [
+            "Hand the Strategy to the Work that Follows"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Take in the Audience and the Goal",
+            "Set the Parameters",
+            "Launch the Campaigns",
+            "Record What Is in Force"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Hand over the Selling Kit"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Promote the Event"
+          ]
+        },
+        {
+          "process": "ref/mkt/ideal-customer-profile",
+          "activities": [
+            "Hand over the Profile"
+          ]
+        },
+        {
+          "process": "ref/mkt/influencer-campaign",
+          "activities": [
+            "Take in the Audience",
+            "Set the Parameters",
+            "Brief the Creators",
+            "Publish the Posts"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Take in the Request",
+            "Set the Parameters",
+            "Hand It to the Campaign"
+          ]
+        },
+        {
+          "process": "ref/mkt/lead-scoring-model",
+          "activities": [
+            "Hand over the Model"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Promote the Piece"
+          ]
+        },
+        {
+          "process": "ref/mkt/map-buyer-journey",
+          "activities": [
+            "Hand over the Map"
+          ]
+        },
+        {
+          "process": "ref/mkt/marketing-performance-report",
+          "activities": [
+            "Account for the Campaigns",
+            "Check the Account"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Collect What the Plan Must Carry",
+            "Lay out the Flighting",
+            "Hand the Plan to the Buying Agents"
+          ]
+        },
+        {
+          "process": "ref/mkt/paid-search-campaign",
+          "activities": [
+            "Take in the Budget and Goal",
+            "Build the Campaigns and Launch",
+            "Report against the Goal",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/plan-marketing-capacity",
+          "activities": [
+            "List the Committed Work",
+            "Break the Work into Activities"
+          ]
+        },
+        {
+          "process": "ref/mkt/prioritize-initiatives",
+          "activities": [
+            "Work out What Is Free",
+            "Settle What Gets Displaced",
+            "Hand over the Commitments"
+          ]
+        },
+        {
+          "process": "ref/mkt/quarterly-business-review",
+          "activities": [
+            "Ask Each Area What It Would Change",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/reallocate-media-spend",
+          "activities": [
+            "Name the Candidate Moves",
+            "Tell the Agents that Read the Plan"
+          ]
+        },
+        {
+          "process": "ref/mkt/segment-the-market",
+          "activities": [
+            "Hand over the Segments"
+          ]
+        },
+        {
+          "process": "ref/mkt/set-marketing-budget",
+          "activities": [
+            "Collect What Each Function Asks For",
+            "Tell Every Function What It Has"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Take in the Brief",
+            "Set the Parameters",
+            "Brief the Creatives",
+            "Settle on a Direction",
+            "Set up the Practical Side",
+            "Launch",
+            "Watch Performance",
+            "Optimize",
+            "Wrap Up",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Publish the Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/target-audience-segment",
+          "activities": [
+            "Take in the Targeting Need",
+            "Name the Exclusions"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Take in the Question",
+            "Name the Change to Test",
+            "Set the Evidence Bar",
+            "Commit the Test Budget",
+            "Brief the Makers",
+            "Launch the Test",
+            "Call the Winner",
+            "Roll out the Winner",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Promote the Presence"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Take in the Creative and the Plan",
+            "Switch the Ads On",
+            "Record What Is Live"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Promote the Conference",
+            "Repurpose the Content"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Promote the Session"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Take in the Lapsed Segment",
+            "Set the Parameters",
+            "Settle the Offer",
+            "Sort the Segment into Treatments",
+            "Brief the Makers",
+            "Call the Named Accounts",
+            "Send the Sequence",
+            "Watch the Response",
+            "Retire the Ones Who Stayed Silent",
+            "Report the Win-Back",
+            "Record What Was Learned"
+          ]
+        }
+      ]
+    }
+  }
+}

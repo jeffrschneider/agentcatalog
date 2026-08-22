@@ -1,0 +1,184 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "account-monitor",
+  "version": "1.0.0",
+  "description": "The account-monitor abstract agent. Answers questions about one named account.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/account-monitor",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "onboarding-email-program",
+    "churn-risk-play",
+    "account-based-play",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "account-monitor",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Answers the roll-call that opens a run about a customer, saying where the account stands before anyone plans what to do about it. Contributes to collect-and-report when a run asks every source the same question, and keeps each line attributed to the system it came from. Sits in the briefing that starts an onboarding, a churn-risk run or a win-back, so every agent that acts hears the same account picture at the same time. The rest of the time it works alone against a queue of questions, which is why the record it leaves with each answer matters as much as the answer.",
+      "servers": [
+        {
+          "name": "product usage data",
+          "role": "product-usage-data",
+          "access": "read"
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "read"
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read"
+        },
+        {
+          "name": "contract and renewal records",
+          "role": "contract-and-renewal-records",
+          "access": "read"
+        },
+        {
+          "name": "the account standing record",
+          "role": "account-standing-record",
+          "access": "write",
+          "needs": "Each answer lands dated, with the evidence under it."
+        }
+      ],
+      "records": [
+        "For each question it answers, it records the account, what was asked, the answer, the date, and every system it read with the value it found and when that value was current.",
+        "A milestone answer names the milestone list at its version and says which of those milestones the account has met.",
+        "A risk signal is recorded whichever way it was judged, with the reading that settled it.",
+        "Anything it could not read is recorded as unread instead of being left out of the answer."
+      ],
+      "escalates": [
+        "a risk signal severe enough that waiting for the next scheduled check would waste the warning",
+        "two systems that disagree about the same account beyond the tolerance the process sets",
+        "a question it cannot answer because a system it needs is unavailable or its data is out of date, raised before the answer is due",
+        "a contractual or legal matter it finds while reading, such as a dispute, a breach notice or an account in collections, because whether that account may be approached at all is a person's decision"
+      ],
+      "not": [
+        "Does not contact the customer and does not send anything to them.",
+        "Does not decide what to do about what it finds; it answers the question and the agents that act read the answer.",
+        "Does not choose which messages a customer receives or run a standing program for them, which is the lifecycle-manager agent.",
+        "Does not ask a customer to do anything in public, which is the advocacy-manager agent, and that agent asks this one whether the account is in standing before it makes the ask.",
+        "Does not score or route an inbound lead, which is the lead-scorer agent.",
+        "Does not measure a campaign or a published piece, which is the analytics agent, and does not own the department's report for a period, which is the reporting-manager agent; this agent answers about one named account.",
+        "Does not change the CRM, the contract, or anything else it reads.",
+        "Does not negotiate a renewal or make a commercial offer, which stays with the people who own the account."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Read the Accounts",
+            "Watch Engagement by Account"
+          ]
+        },
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Settle the Membership"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Get the Customer's Agreement"
+          ]
+        },
+        {
+          "process": "ref/mkt/churn-risk-play",
+          "activities": [
+            "Confirm the Signal",
+            "Watch What the Account Does",
+            "Record the Outcome"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Check Where the Account Stands",
+            "Verify the Customer's Results"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Check Where the Account Stands"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reference",
+          "activities": [
+            "Check Each Account's Standing"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reviews",
+          "activities": [
+            "Choose the Customers to Ask"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Build the Suppression List"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Check What the Partner Holds",
+            "Watch What the Partner Does"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Read the Account",
+            "Set the Goal for This Run",
+            "Brief the Agents that Act",
+            "Watch What the Customer Does",
+            "Confirm the Customer Is Active"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Answer What Comes Back",
+            "Watch the Transition"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Read the Product's Own Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Read the Named Accounts"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-loss-analysis",
+          "activities": [
+            "Brief the Study",
+            "Check Who May Be Approached"
+          ]
+        }
+      ]
+    }
+  }
+}

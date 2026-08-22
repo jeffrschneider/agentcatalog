@@ -1,0 +1,343 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "designer",
+  "version": "1.0.0",
+  "description": "The designer abstract agent. Makes the visual assets: images, layouts, and graphics, at the sizes each platform requires, consistent with the brand's rules.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/designer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "brand-identity",
+    "brand-guidelines",
+    "creative-assets",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "designer",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Holds a specialist slice in build-by-talent - the design carries the character counts and safe areas the copy slice assumes. Sits in briefings, delivers into a bake-off, and takes a changes-requested from an approval.",
+      "servers": [
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "write",
+          "needs": "Assets land at versions, in every required size."
+        },
+        {
+          "name": "brand guidelines",
+          "role": "brand-guidelines",
+          "access": "read"
+        },
+        {
+          "name": "licensed image sources",
+          "role": "licensed-image-sources",
+          "access": "read",
+          "needs": "Within the licenses the organization actually holds."
+        }
+      ],
+      "records": [
+        "Every asset at a version with its sizes, and the license line for anything not made from scratch."
+      ],
+      "escalates": [
+        "an image whose usage rights it cannot establish - it never ships unlicensed work",
+        "a layout the brand rules and the platform's requirements both refuse"
+      ],
+      "not": [
+        "Does not write the copy it sets, approve its own work, or publish."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Build the Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Make the Press Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Assemble the Supporting Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-audit",
+          "activities": [
+            "Read the Set as a Whole"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-guidelines",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Reference Assets",
+            "Show the Examples",
+            "Clear the Rights",
+            "Check the Colors and the Type",
+            "Test the Rules on Real Work"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-identity",
+          "activities": [
+            "Take Stock of the Marks in Use",
+            "Set the Identity Brief",
+            "Brief the Makers",
+            "Draft the Candidate Directions",
+            "Build out the System",
+            "Clear the Fonts and the Imagery",
+            "Test the System in Use",
+            "Write the Usage Rules",
+            "Issue the Rules and Release the Files"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Brief the Agents that Remake the Material",
+            "Rebuild the Templates",
+            "Remake the Assets"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Build the Pack"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-industry-analyst",
+          "activities": [
+            "Brief the Makers",
+            "Build the Briefing Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Build the Recruitment Material",
+            "Build the Partner Selling Kit"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Brief the Makers",
+            "Settle the Joint Direction",
+            "Produce the Joint Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/competitive-battlecard",
+          "activities": [
+            "Lay the Card Out"
+          ]
+        },
+        {
+          "process": "ref/mkt/conversion-experiment",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Variants"
+          ]
+        },
+        {
+          "process": "ref/mkt/creative-assets",
+          "activities": [
+            "Brief the Makers",
+            "Settle on a Direction",
+            "Produce the Assets",
+            "Size for Every Channel"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Make the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Brief the Makers",
+            "Make the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Make the Ad Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Partner Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Show the Feature"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Produce the Invitation and Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Material",
+            "Fix What the Numbers Show"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Make the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Messages"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Brief the Agents that Act",
+            "Make What the Path Needs"
+          ]
+        },
+        {
+          "process": "ref/mkt/pitch-earned-media",
+          "activities": [
+            "Produce the Pitch Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Produce What Customers and Sellers Read"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Produce the Content"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Refresh the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/sales-enablement-kit",
+          "activities": [
+            "Brief the Makers",
+            "Build the Deck",
+            "Write the One-Pager"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Brief the Creatives",
+            "Settle on a Direction",
+            "Produce the Posts"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Build the Deck",
+            "Reuse the Talk"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Variants"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Produce the Booth Material",
+            "Build the Demonstration"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Cut the Creative to Every Specification",
+            "Add the Disclosures Each Market Requires"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Open Registration"
+          ]
+        },
+        {
+          "process": "ref/mkt/video-asset",
+          "activities": [
+            "Plan the Shots",
+            "Make the On-Screen Graphics"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Produce the Promotion Material",
+            "Build the Presentation"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Refresh the Stale Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Brief the Makers",
+            "Write the Sequence"
+          ]
+        }
+      ]
+    }
+  }
+}

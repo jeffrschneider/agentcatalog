@@ -1,0 +1,181 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "reporting-manager",
+  "version": "1.0.0",
+  "description": "The reporting-manager abstract agent. Owns the department's report for one reporting period. It says what the report will cover and when it is due, asks every channel and every run for the same things, sets each result beside what that run said it would do, and writes the account of why the numbers moved.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/reporting-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "marketing-performance-report",
+    "quarterly-business-review",
+    "set-marketing-budget",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "reporting-manager",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Runs collect-and-report for the period: every contributor is asked the same question, every line keeps the source it came from, the report ships on its date complete or not, and two sources that disagree both appear in the report. Requests an approval before the report leaves the department when the process names a signer, and convenes the meeting where the finished report is read when the department holds one.",
+      "servers": [
+        {
+          "name": "analytics platforms",
+          "role": "analytics-platforms",
+          "access": "read"
+        },
+        {
+          "name": "ad platforms",
+          "role": "ad-platforms",
+          "access": "read"
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read"
+        },
+        {
+          "name": "the plans and commitments for the period",
+          "role": "plans-and-commitments-for-the-period",
+          "access": "read",
+          "needs": "What each run said it would do."
+        },
+        {
+          "name": "the report store",
+          "role": "report-store",
+          "access": "write",
+          "needs": "Each period's report lands at a version."
+        }
+      ],
+      "records": [
+        "The report at a version for each period, with every line attributed to its source and set beside the commitment it is measured against.",
+        "A dated record of what it asked for, who answered, and who did not.",
+        "A correction goes out as a new version of the report, and the version it corrects stays where it was."
+      ],
+      "escalates": [
+        "a result far enough off what was committed that waiting for the report date would waste the warning",
+        "a source that will not answer in time, raised before the report date instead of explained afterward",
+        "a request to leave a result out of the report or to restate it. This agent never removes a number because somebody asked. A person decides, and the decision is recorded with the report."
+      ],
+      "not": [
+        "Does not replace the analytics agent.",
+        "Analytics measures a run and reports the numbers with their sources attached; this agent gathers those reports for a period and sets them against what was committed.",
+        "Does not set the targets it reports against, and does not decide what the department does next - it gives leadership the account they decide from.",
+        "Does not run a campaign or a published piece.",
+        "The campaign-manager and the content-manager answer for those, and this agent reports what they did."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/analyze-customer-base",
+          "activities": [
+            "Hand over the Findings"
+          ]
+        },
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Read the Closed Periods",
+            "Name What Will Be Measured",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/attribution-model",
+          "activities": [
+            "Set What the Review Covers",
+            "Decide What Happens to Published Reports",
+            "Reissue the Affected Reports"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-health",
+          "activities": [
+            "Report Awareness, Perception and Preference"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Read the Last Meeting's Record",
+            "Pull the Results for the Period"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "Read the Closed Period"
+          ]
+        },
+        {
+          "process": "ref/mkt/develop-marketing-strategy",
+          "activities": [
+            "Read the Closed Periods",
+            "Name What the Strategy Will Be Judged By"
+          ]
+        },
+        {
+          "process": "ref/mkt/marketing-performance-report",
+          "activities": [
+            "Set What the Report Covers",
+            "Ask Every Source the Same Things",
+            "Set Results Beside What Was Expected",
+            "Write the Account",
+            "Publish the Report"
+          ]
+        },
+        {
+          "process": "ref/mkt/plan-marketing-capacity",
+          "activities": [
+            "Measure What the Department Got Through"
+          ]
+        },
+        {
+          "process": "ref/mkt/prioritize-initiatives",
+          "activities": [
+            "Read What Is Already Committed"
+          ]
+        },
+        {
+          "process": "ref/mkt/quarterly-business-review",
+          "activities": [
+            "Take in the Period Report",
+            "Set the Quarter against the Annual Goals",
+            "Name the Gaps Worth Acting On",
+            "Update What Gets Measured",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/reallocate-media-spend",
+          "activities": [
+            "Tell the Agents that Read the Plan"
+          ]
+        },
+        {
+          "process": "ref/mkt/reconcile-media-spend",
+          "activities": [
+            "Release the Figures"
+          ]
+        },
+        {
+          "process": "ref/mkt/set-marketing-budget",
+          "activities": [
+            "Read Last Year's Spend",
+            "Test the Asks against the Goals",
+            "Phase the Money across the Year",
+            "Name What the Budget Is Reported Against",
+            "Tell Every Function What It Has"
+          ]
+        }
+      ]
+    }
+  }
+}

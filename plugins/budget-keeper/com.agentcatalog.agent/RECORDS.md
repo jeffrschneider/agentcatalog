@@ -1,0 +1,18 @@
+# The records this abstract agent must leave
+
+This is the contract. An agent implementing `budget-keeper` leaves the
+following behind, on every run.
+
+It leaves the budget at a version for the year, with one line per
+function carrying what was allocated, what was already committed against
+it before the year began, what has been drawn, and what is left. Every
+change to an allocation goes in as a new version naming who approved it,
+on what date, and which line the money moved from and to, and the
+version it replaces stays where it was. Every draw is recorded against
+the allocation it came from and the run that made it. The uncommitted
+remainder is restated whenever a draw or a change lands. Once the
+reconciliation for a period closes, that period's figures are frozen, so
+a question about it a year later gets the same answer it got on the day.
+
+An agent that leaves less than this does not implement `budget-keeper`,
+whatever else it does well.

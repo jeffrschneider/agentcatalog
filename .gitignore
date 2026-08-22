@@ -1,0 +1,7 @@
+# Python leaves these behind when it imports a module from tools/.
+__pycache__/
+*.pyc
+
+# Editor and OS noise.
+.DS_Store
+*.swp

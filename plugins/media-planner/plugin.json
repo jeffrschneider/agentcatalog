@@ -1,0 +1,162 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "media-planner",
+  "version": "1.0.0",
+  "description": "The media-planner abstract agent. Builds the media plan and holds it at its versions. The plan says how the committed money splits across channels, when each channel runs and at what weight, and which audience each channel is bought against.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/media-planner",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "media-plan",
+    "reallocate-media-spend",
+    "account-based-play",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "media-planner",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Sits in the briefing that opens a campaign or a planning period, and brings the current plan and the free money with it. Holds the allocate side of allocate-and-reconcile: this agent says what each channel was given, the media-buyer agent places the buys against those lines, and the spend-reconciler agent accounts for what came back billed. Runs decide-and-announce when it issues a version, so every agent working to a line hears what changed in it and from when. Requests the approval that has to pass before a change becomes a version, and the change goes in front of the signers beside the version it would replace. Answers roll-calls with what is committed, what is still free, and which lines are running behind the weight they were bought at.",
+      "servers": [
+        {
+          "name": "the media plan record",
+          "role": "media-plan-record",
+          "access": "write",
+          "needs": "Each version lands with the date it took effect, and an issued version is never edited."
+        },
+        {
+          "name": "the approved budget for the period",
+          "role": "approved-budget-for-the-period",
+          "access": "read",
+          "needs": "At the figure and the version it was approved at."
+        },
+        {
+          "name": "the audience definitions",
+          "role": "audience-definitions",
+          "access": "read",
+          "needs": "At their versions."
+        },
+        {
+          "name": "the agreed rates, fees and discounts",
+          "role": "agreed-rates-fees-and-discounts",
+          "access": "read"
+        },
+        {
+          "name": "ad platforms",
+          "role": "ad-platforms",
+          "access": "read",
+          "needs": "What each channel has delivered against its flight."
+        },
+        {
+          "name": "analytics platforms",
+          "role": "analytics-platforms",
+          "access": "read"
+        },
+        {
+          "name": "the order record",
+          "role": "order-record",
+          "access": "read",
+          "needs": "What has actually been placed against each line."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Every agent working to a line is told what changed and from when."
+        }
+      ],
+      "records": [
+        "The plan at a numbered version, one row per line: the channel, the dates it runs, the weight it runs at, the audience it is bought against, and the money committed to it.",
+        "Every earlier version stays readable at its own number, so a buy can be checked against the plan it was placed under.",
+        "A change record for each version, saying which lines moved, by how much, why, and who approved it.",
+        "A dated position saying what is committed, what has been placed, and what is still free, with the figures those came from.",
+        "Every request for money the plan could not cover, with the amount asked for and the answer it got."
+      ],
+      "escalates": [
+        "any change to the total the plan spends, always. This agent splits the money it was given and never adds to it.",
+        "a request to commit money that is not free",
+        "a plan that cannot be filled at the rates the market is offering, said while the flights can still be changed",
+        "a channel delivering well under or well over the weight its line was bought at",
+        "a line bought against an audience the process has not approved",
+        "a change to a line after its flight has started, because results already reported against that line stop being comparable"
+      ],
+      "not": [
+        "Does not buy anything.",
+        "The media-buyer agent builds the campaigns, sets targeting and bids, starts and stops the buy, and moves money between what is running, and this agent holds the lines that buying works to.",
+        "Does not set the budget the plan splits.",
+        "The people who decide settle that figure in the annual plan, and the process names the version in force.",
+        "Does not check an invoice against what ran, which is the spend-reconciler agent.",
+        "Does not score a buy against the plan, which is the buy-check agent reading this agent's lines.",
+        "Does not say what the money returned, which is the analytics agent reading the record of a run, and does not model what a different split would return, which is the forecaster agent.",
+        "Does not define an audience or build a segment, which are the audience-manager and audience-operator agents.",
+        "Does not commission creative or size it for a channel.",
+        "Does not sign anything."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Set the Tiers and the Weight",
+            "Brief the Makers"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Set the Parameters"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Take in the Objective and the Budget",
+            "Collect What the Plan Must Carry",
+            "Settle the Audience to Reach",
+            "Draft the Candidate Mixes",
+            "Model Each Mix",
+            "Choose the Mix",
+            "Lay out the Flighting",
+            "Set the Channel Audience Targets",
+            "Settle What Counts as a Result",
+            "Get the Plan Approved",
+            "Hand the Plan to the Buying Agents",
+            "Record What the Plan Rests On"
+          ]
+        },
+        {
+          "process": "ref/mkt/reallocate-media-spend",
+          "activities": [
+            "Read the Current Position",
+            "Name the Candidate Moves",
+            "Check What a Move Would Cost",
+            "Check the Move against the Rules",
+            "Amend the Media Plan",
+            "Tell the Agents that Read the Plan",
+            "Record Why the Money Moved"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Commit the Test Budget"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Set the Flights, Budgets and Rotation"
+          ]
+        }
+      ]
+    }
+  }
+}

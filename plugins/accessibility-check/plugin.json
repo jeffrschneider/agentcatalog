@@ -1,0 +1,196 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "accessibility-check",
+  "version": "1.0.0",
+  "description": "The accessibility-check abstract agent. Scores a finished page or asset against the accessibility and technical standards it has been handed, at the versions those standards were named at.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/accessibility-check",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "creative-assets",
+    "approve-marketing-material",
+    "brand-guidelines",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "accessibility-check",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "The examiner in an assessment: the standard is named and versioned before scoring starts, every item gets a verdict, and every verdict cites the rule it was scored against. The brand-check agent runs the same kind of assessment against the brand guidelines and the claims register, and a sign-off usually reads both reports together. The producing agents fix from this report, and this agent scores the fix.",
+      "servers": [
+        {
+          "name": "the accessibility and technical standards the organization has adopted",
+          "role": "accessibility-and-technical-standards-the-organization-has-adopted",
+          "access": "read",
+          "needs": "At their versions."
+        },
+        {
+          "name": "the staging site",
+          "role": "staging-site",
+          "access": "read",
+          "needs": "It scores the page as it will be served."
+        },
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "read"
+        },
+        {
+          "name": "the review record",
+          "role": "review-record",
+          "access": "write",
+          "needs": "The scores land where the signers and the producing agents read them."
+        }
+      ],
+      "records": [
+        "A score per item, each citing the standard, its version and the rule applied, against the page or asset version it scored.",
+        "It reports what passed, what failed, and what it could not test, in a form the signers read in minutes.",
+        "A rescore after a fix names what changed and what it ran again."
+      ],
+      "escalates": [
+        "every failure, with the rule attached. This agent does not waive its own findings.",
+        "a request to publish something with a known failure. A person decides that, and the decision is recorded with the failure attached.",
+        "two standards it was handed that contradict each other, such as a brand color that cannot meet the contrast rule"
+      ],
+      "not": [
+        "This agent is not a signer.",
+        "It produces the score and named people sign.",
+        "It does not fix what it finds: the copywriter writes the alt text, the video-editor recuts the captions, the designer changes the color, the web-producer changes the page, and this agent scores the result again.",
+        "It does not score claims or brand voice, which is the brand-check agent's work.",
+        "It does not edit the standards it scores against, and it does not decide that a failure is small enough to ship with."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/approve-marketing-material",
+          "activities": [
+            "Score against the Accessibility Rules"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-guidelines",
+          "activities": [
+            "Check the Colors and the Type"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-identity",
+          "activities": [
+            "Test the System in Use"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Check the Remade Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/conversion-experiment",
+          "activities": [
+            "Get Sign-Offs"
+          ]
+        },
+        {
+          "process": "ref/mkt/creative-assets",
+          "activities": [
+            "Score against the Standards",
+            "Check the Sized Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Check the Finished Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Proof the Issue"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Score the Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Check the Finished Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Score the Messages"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Check and Sign What Was Made"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Check the Changed Pages"
+          ]
+        },
+        {
+          "process": "ref/mkt/select-marketing-technology",
+          "activities": [
+            "Check It against the Standards"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Score the Adapted Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Open Registration"
+          ]
+        },
+        {
+          "process": "ref/mkt/video-asset",
+          "activities": [
+            "Score against the Standards"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Prepare the Recording for Reuse"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Check the Changed Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Score the Messages"
+          ]
+        }
+      ]
+    }
+  }
+}

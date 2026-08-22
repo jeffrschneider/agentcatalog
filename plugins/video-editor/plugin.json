@@ -1,0 +1,205 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "video-editor",
+  "version": "1.0.0",
+  "description": "The video-editor abstract agent. Cuts the video: short-form pieces, product demos, and the platform variants of each - including captions and the versions that work with the sound off, which is how most of the audience will watch.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/video-editor",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "video-asset",
+    "co-marketing-campaign",
+    "creative-assets",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "video-editor",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Holds a specialist slice in build-by-talent - the captions come from the copy slice, and the cut respects each platform's length limits. Sits in briefings and takes a changes-requested from an approval.",
+      "servers": [
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "write",
+          "needs": "Cuts land at versions, per platform."
+        },
+        {
+          "name": "brand guidelines",
+          "role": "brand-guidelines",
+          "access": "read"
+        },
+        {
+          "name": "licensed footage and music sources",
+          "role": "licensed-footage-and-music-sources",
+          "access": "read",
+          "needs": "Within held licenses."
+        }
+      ],
+      "records": [
+        "Every cut at a version with its platform variants, and the license line for any footage or music not original to the work."
+      ],
+      "escalates": [
+        "music or footage whose rights it cannot establish",
+        "a cut that cannot meet a platform's limits without losing the message"
+      ],
+      "not": [
+        "Does not write scripts alone - the copy slice owns the words.",
+        "Does not approve its own work or publish."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Assemble the Supporting Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Brief the Agents that Remake the Material",
+            "Remake the Assets"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Build the Partner Selling Kit"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Brief the Makers",
+            "Settle the Joint Direction",
+            "Produce the Joint Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/creative-assets",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Assets",
+            "Size for Every Channel"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Make the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Produce the Partner Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Show the Feature"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Capture the Event on Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Make the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Produce the Content"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Refresh the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Brief the Creatives",
+            "Settle on a Direction",
+            "Produce the Posts"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Reuse the Talk"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Variants"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Produce the Booth Material",
+            "Build the Demonstration"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Cut the Creative to Every Specification"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Capture the Sessions"
+          ]
+        },
+        {
+          "process": "ref/mkt/video-asset",
+          "activities": [
+            "Plan the Shots",
+            "Record the Material",
+            "Build the Rough Cut",
+            "Make the On-Screen Graphics",
+            "Finish the Cut",
+            "Write the Captions and Transcript",
+            "Cut the Platform Versions"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Prepare the Recording for Reuse"
+          ]
+        }
+      ]
+    }
+  }
+}

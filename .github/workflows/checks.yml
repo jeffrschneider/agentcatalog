@@ -1,0 +1,82 @@
+# Two checks run on every push and every pull request. The first one reads
+# the Agent Plugin packages under plugins/ and fails if any of them is
+# malformed or points at a process that does not exist. The second one reads
+# every file in the repository and fails if it finds an email address or
+# anything that looks like a credential, because this repository is public.
+#
+# Both actions are pinned to a commit, so a new release of an action cannot
+# change what runs here without someone editing this file.
+
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  plugins:
+    name: Check the plugin packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Get Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      # The validator uses only the standard library, so there is nothing
+      # to install first.
+      - name: Read every package under plugins/
+        run: python tools/validate-plugins.py
+
+  secrets:
+    name: Look for secrets in the whole repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Search every file for an email address or a credential
+        run: |
+          found=0
+
+          # grep -r reads every file under the current directory, -I skips
+          # binary files, -n reports the line, and -E takes the pattern as an
+          # extended regular expression. A pattern that matches nothing makes
+          # grep exit 1, which the "|| true" turns back into success so that
+          # the run keeps going and reports everything it found at the end.
+          scan () {
+            label="$1"
+            pattern="$2"
+            matches=$(grep -rInE --exclude-dir=.git -- "$pattern" . || true)
+            if [ -n "$matches" ]; then
+              echo "Found $label:"
+              echo "$matches"
+              echo ""
+              found=1
+            fi
+          }
+
+          scan "an email address" '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
+          scan "a private key" '-----BEGIN [A-Z ]*PRIVATE KEY-----'
+          scan "an AWS access key id" 'AKIA[0-9A-Z]{16}'
+          scan "a bearer token" '[Bb]earer [A-Za-z0-9._~+/-]{20,}'
+          scan "a GitHub token" 'gh[pousr]_[A-Za-z0-9]{20,}'
+          scan "a Slack token" 'xox[abprs]-[A-Za-z0-9-]{10,}'
+          # An API key is a long unbroken run of characters after sk-. Ordinary
+          # hyphenated prose such as "risk-based-scoring" must not trip this,
+          # which is why the second pattern allows no dashes.
+          scan "an Anthropic API key" 'sk-ant-[A-Za-z0-9_-]{20,}'
+          scan "an API key" 'sk-[A-Za-z0-9]{32,}'
+
+          if [ "$found" -eq 1 ]; then
+            echo "This repository is public. Take the lines above out before pushing."
+            exit 1
+          fi
+
+          echo "No email address and no credential was found."

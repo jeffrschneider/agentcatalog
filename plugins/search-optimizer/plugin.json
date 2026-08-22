@@ -1,0 +1,212 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "search-optimizer",
+  "version": "1.0.0",
+  "description": "The search-optimizer abstract agent. Works out what people are actually searching for on the subject of a piece, and turns that into a short list of terms and questions the piece has to cover if anyone is going to find it.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/search-optimizer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "refresh-content",
+    "map-buyer-journey",
+    "content-calendar",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "search-optimizer",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Sits in the briefing for a piece and brings the search requirement with it, so the writer and the editor hear it at the same time as everything else. Acts as the examiner in an assessment when the piece is finished - the standard is named and versioned before scoring starts, and every finding cites the rule it was scored against. The approval that follows reads its findings. Takes a changes-requested by re-checking only the items the signers named.",
+      "servers": [
+        {
+          "name": "search demand and ranking data sources",
+          "role": "search-demand-and-ranking-data-sources",
+          "access": "read"
+        },
+        {
+          "name": "the site's search performance data",
+          "role": "sites-search-performance-data",
+          "access": "read"
+        },
+        {
+          "name": "the content brief store",
+          "role": "content-brief-store",
+          "access": "write",
+          "needs": "The search requirement lands at a version."
+        },
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "read",
+          "needs": "It reads the drafts it checks and edits none of them."
+        },
+        {
+          "name": "the website's content system",
+          "role": "websites-content-system",
+          "access": "read",
+          "needs": "Titles, headings, addresses and internal links as they actually stand."
+        }
+      ],
+      "records": [
+        "The search requirement at a version, with every term carrying the demand figure behind it and the date that figure was pulled.",
+        "The pre-publish check as a scored list, with a verdict on each item and the rule behind every failure.",
+        "Every recommendation names the element to change and what it should say, so the agent that owns the page can act on it without a conversation."
+      ],
+      "escalates": [
+        "a term worth ranking for that the piece could only cover by making a claim the claims register does not support",
+        "a search requirement and an editorial argument that pull in opposite directions, because what the piece is for is a person's call",
+        "a demand figure it cannot source - it never estimates one and presents it as measured"
+      ],
+      "not": [
+        "Does not write the copy or the headings it asks for, which is the copywriter agent.",
+        "Does not edit the structure or the argument of a piece, which belongs to the editor agent.",
+        "Does not find or verify the evidence the piece rests on, which is the researcher's work.",
+        "Does not decide which pieces get made or when they publish - the content-manager agent owns that.",
+        "Does not change the page itself; it names the element and what it should say, and the web-producer agent makes the change.",
+        "Does not bid on search terms or build search ads, which is the media-buyer agent.",
+        "Does not report on traffic after publication.",
+        "Does not approve its own work."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Gather the Outside Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Gather the Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Check the Remade Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Gather How the Audience Talks"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "Collect the Topic Candidates",
+            "Read the Search Demand",
+            "Score the Candidates"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Check the Finished Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Update the Product Pages"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Name the Search Terms",
+            "Brief the Makers",
+            "Score the Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Set the Search Terms",
+            "Brief the Piece",
+            "Check the Finished Page"
+          ]
+        },
+        {
+          "process": "ref/mkt/map-buyer-journey",
+          "activities": [
+            "Read the Search Demand",
+            "Collect the Questions",
+            "Find the Gaps",
+            "Hand over the Map"
+          ]
+        },
+        {
+          "process": "ref/mkt/marketing-performance-report",
+          "activities": [
+            "Account for the Published Pieces"
+          ]
+        },
+        {
+          "process": "ref/mkt/name-product",
+          "activities": [
+            "Read the Naming Landscape",
+            "Check the Name in Search"
+          ]
+        },
+        {
+          "process": "ref/mkt/paid-search-campaign",
+          "activities": [
+            "Research the Search Demand"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Restate the Price Everywhere It Is Published"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Gather the Market Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Read Where the Pages Stand in Search",
+            "Brief the Pages in the Cycle",
+            "Set What Each Page Has to Answer",
+            "Set the Addresses and the Redirects",
+            "Check the Changed Pages",
+            "Watch What the Changes Did"
+          ]
+        },
+        {
+          "process": "ref/mkt/segment-the-market",
+          "activities": [
+            "Gather the Outside Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/size-market-opportunity",
+          "activities": [
+            "Gather the Outside Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Check the Changed Page"
+          ]
+        }
+      ]
+    }
+  }
+}

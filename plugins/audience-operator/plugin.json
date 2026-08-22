@@ -1,0 +1,190 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "audience-operator",
+  "version": "1.0.0",
+  "description": "The audience-operator abstract agent. Makes the approved changes in the systems that hold and message contacts.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/audience-operator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "contact-database-hygiene",
+    "nurture-sequence",
+    "display-retargeting",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "audience-operator",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Holds the assembly slice in build-by-talent, building to the design the audience-manager approved and telling that agent when a step will not build as designed. Sits in the briefing so it knows what the change is for before it starts. Takes a changes-requested from an approval by reopening only the part that was named. Answers roll-calls with the state of the change, the counts it will touch, and the test record that shows the program running end to end.",
+      "servers": [
+        {
+          "name": "the contact database",
+          "role": "contact-database",
+          "access": "write",
+          "needs": "Cap: how many records one change may touch without asking, set by the adopting organization."
+        },
+        {
+          "name": "the sending system",
+          "role": "sending-system",
+          "access": "write",
+          "needs": "A program is assembled and tested with sending switched off, at versions."
+        },
+        {
+          "name": "the live programs",
+          "role": "live-programs",
+          "access": "trigger",
+          "needs": "A program starts sending only after the named owner says go."
+        },
+        {
+          "name": "enrichment sources",
+          "role": "enrichment-sources",
+          "access": "read",
+          "needs": "Within the licenses the organization actually holds."
+        },
+        {
+          "name": "the change record store",
+          "role": "change-record-store",
+          "access": "write",
+          "needs": "Every change lands here with its before-and-after counts and the copy that puts it back."
+        },
+        {
+          "name": "the approved plan for the change",
+          "role": "approved-plan-for-the-change",
+          "access": "read",
+          "needs": "At the version it was approved at."
+        },
+        {
+          "name": "the consent record",
+          "role": "consent-record",
+          "access": "read"
+        },
+        {
+          "name": "the suppression lists",
+          "role": "suppression-lists",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "For every change, the counts before and after it, field by field, and where the copy that puts the change back is kept.",
+        "For every merge, which records went into which, what was kept from each, and what was dropped.",
+        "For every filled field, the source it came from and the date it was read.",
+        "For every removal, what came out and the person who signed for it.",
+        "The program as it was built, at a version, with every step, wait, condition and exit set beside the design it was built from, and a test record showing a contact going down each branch.",
+        "Anything it could not build as designed is recorded as unbuilt rather than left out."
+      ],
+      "escalates": [
+        "a change that would touch more records than its cap allows",
+        "two records that look like the same person and disagree on a field that matters, where it cannot tell which value is right",
+        "a removal that arrives without a person's signature. This agent deletes nothing on its own.",
+        "a step in the design that the sending system will not build. It says what will not fit and sends that piece back to the audience-manager agent.",
+        "a copy of the earlier state that will not restore, found before the change goes in rather than after",
+        "enrichment data whose license does not cover the sending the program plans"
+      ],
+      "not": [
+        "Does not decide what the change is.",
+        "The audience-manager agent sets the program design, the entry condition and the scope of a hygiene cycle, and this agent builds what it was given.",
+        "Does not decide whether a contact may be contacted, which is the consent-manager agent.",
+        "This agent reads the suppression lists and builds segments that respect them, and it never overrides one.",
+        "Does not score the finished change against the rules it was approved under, because the consent-manager agent scores it as its own pass.",
+        "Does not write the messages in a program or design them, which are the copywriter and designer agents.",
+        "Does not build web pages or publish them, which is the web-producer agent.",
+        "Does not decide what happens to a lead once it is in the CRM, which is the lead-scorer agent.",
+        "Does not say go, and does not sign anything."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Build the Contact Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-health",
+          "activities": [
+            "Field the Wave"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Field the Study"
+          ]
+        },
+        {
+          "process": "ref/mkt/contact-database-hygiene",
+          "activities": [
+            "Brief the Cycle",
+            "Standardize the Fields",
+            "Propose the Merges",
+            "Merge the Records",
+            "List What Comes Out",
+            "Remove the Records",
+            "Fill the Gaps",
+            "Apply the Suppression",
+            "Rebuild the Segments"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-research",
+          "activities": [
+            "Field the Study"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Build the Audience Pools",
+            "Apply the Suppression",
+            "Check the Suppression Is Holding"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Brief the Makers",
+            "Build the Program",
+            "Run Test Contacts Through It",
+            "Turn It On",
+            "Tune the Branches"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Build the Notice Lists"
+          ]
+        },
+        {
+          "process": "ref/mkt/target-audience-segment",
+          "activities": [
+            "Brief the Build",
+            "Build the List",
+            "Apply Consent and Suppression"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Load the Audiences the Plan Names"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-loss-analysis",
+          "activities": [
+            "Invite the Buyers"
+          ]
+        }
+      ]
+    }
+  }
+}

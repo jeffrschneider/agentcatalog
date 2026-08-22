@@ -1,0 +1,252 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "email-producer",
+  "version": "1.0.0",
+  "description": "The email-producer abstract agent. Assembles an approved message in the sending system and gets it sent.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/email-producer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "customer-newsletter",
+    "win-back-campaign",
+    "brand-refresh",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "email-producer",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Holds the assembly slice in build-by-talent, building the message to the copy and the design it was given and telling the agent that made a piece when something will not build as supplied. Sits in the briefing that starts the send, so it knows who the message is for and when it has to arrive. Takes a changes-requested from an approval by reopening only the part the signers named. Answers the roll-call before a send with the audience count, the proof record, and whether the message is ready to go. Reports into collect-and-report once the send is out, with every delivery figure attributed to the system it came from.",
+      "servers": [
+        {
+          "name": "the sending system",
+          "role": "sending-system",
+          "access": "write",
+          "needs": "Messages and audiences are assembled at versions, with sending switched off."
+        },
+        {
+          "name": "the live sends",
+          "role": "live-sends",
+          "access": "trigger",
+          "needs": "Cap: how many contacts one send may reach without asking, set by the adopting organization."
+        },
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "read",
+          "needs": "It reads the copy and the design at the versions that were signed."
+        },
+        {
+          "name": "the consent record",
+          "role": "consent-record",
+          "access": "read"
+        },
+        {
+          "name": "the suppression lists",
+          "role": "suppression-lists",
+          "access": "read"
+        },
+        {
+          "name": "the contact database",
+          "role": "contact-database",
+          "access": "read"
+        },
+        {
+          "name": "the send record store",
+          "role": "send-record-store",
+          "access": "write",
+          "needs": "Each send lands with its audience count, its schedule and what came back."
+        },
+        {
+          "name": "deliverability monitoring",
+          "role": "deliverability-monitoring",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "Each message at a version, with the proof record naming who was sent a proof, when it went, and what they said.",
+        "The audience at a version, with the count before the consent, opt-out and suppression rules were applied, the count after, and the rule behind every removal.",
+        "The schedule as it was set, including the send-time windows and any wait between batches.",
+        "The send record naming the version that went, the time it fired, and the person who said go.",
+        "The delivery report, with what was delivered, what bounced hard, what bounced soft, who complained, who unsubscribed, and who the sending system suppressed on its own.",
+        "Anything it could not verify before the send is recorded as unverified instead of being left out."
+      ],
+      "escalates": [
+        "the decision to send, which stays with the named owner however automated the rest of the work becomes",
+        "a request to send to a list the consent record does not cover, every time, with the consent-manager's finding attached",
+        "a message that will not build as the copy and the design supply it. It says what will not fit and sends that piece back to the agent that made it.",
+        "a complaint rate or a bounce rate past the threshold the process sets, raised while the send is still going out",
+        "a send in flight that has to be stopped, because stopping it and telling the people who already received it are a person's calls",
+        "an audience larger than its cap allows"
+      ],
+      "not": [
+        "Does not write or design the message, which are the copywriter and designer agents, and it never edits the words or the layout to make them fit.",
+        "Does not define the segments or change what is in the contact database, which are the audience-manager and audience-operator agents.",
+        "This agent picks the audience for one send out of what those agents maintain, and takes out everyone the consent record and the suppression lists exclude.",
+        "Does not hold the consent record and does not decide whether a person may be contacted at all, which is the consent-manager agent, and it never overrides a suppression.",
+        "Does not assemble a standing program with its steps, waits and branches in the sending system, which is the audience-operator agent.",
+        "This agent sends one message to one audience on one schedule.",
+        "Does not choose which message a particular customer gets next, which is the lifecycle-manager agent.",
+        "Does not decide what to do about the results: the analytics agent reports the numbers and the agent that owns the run makes the call.",
+        "Does not build the page a message links to or publish it, which is the web-producer agent, and does not put the measurement on that page, which is the conversion-tracker agent.",
+        "Does not reply to the people who answer a send, which is the community-manager agent.",
+        "Does not say go and does not sign anything."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Brief the Makers",
+            "Start the Touches"
+          ]
+        },
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Send the Pre-Read",
+            "Follow up with the Members"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Publish It on the Owned Channels"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Brief the Agents that Remake the Material",
+            "Rebuild the Templates",
+            "Stage the Changes",
+            "Switch the Properties"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Hand over the Persona"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Open Recruitment"
+          ]
+        },
+        {
+          "process": "ref/mkt/churn-risk-play",
+          "activities": [
+            "Prepare the Send",
+            "Deliver the Intervention"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Set up Each Side's Distribution"
+          ]
+        },
+        {
+          "process": "ref/mkt/crisis-communication",
+          "activities": [
+            "Issue the Response"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Brief the Makers",
+            "Build the Issue",
+            "Proof the Issue",
+            "Send the Issue",
+            "Watch the Results"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reviews",
+          "activities": [
+            "Set up the Practical Side",
+            "Send the Ask",
+            "Send the Reminder"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Publish the Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Tell the Customers Who Have It"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Build the Invitation List",
+            "Promote the Event",
+            "Work the Registration List",
+            "Follow up with the People Who Came"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Brief the Agents that Act",
+            "Build the Send",
+            "Send the Step"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Build the Notice Lists",
+            "Serve the Notice"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Promote the Presence"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Promote the Conference"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Promote the Session",
+            "Work the Registration List",
+            "Follow up with the Registrants"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Build the Contact List",
+            "Brief the Makers",
+            "Set up the Sending",
+            "Send the Sequence",
+            "Retire the Ones Who Stayed Silent"
+          ]
+        }
+      ]
+    }
+  }
+}

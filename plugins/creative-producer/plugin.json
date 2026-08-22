@@ -1,0 +1,262 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "creative-producer",
+  "version": "1.0.0",
+  "description": "The creative-producer abstract agent. Runs a set of creative assets from the brief through to sign-off. Takes the request from whatever process needs the work, briefs the agents that make copy, images and video, holds the schedule, and keeps the pieces consistent with each other where they meet.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/creative-producer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "brand-identity",
+    "creative-assets",
+    "video-asset",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "creative-producer",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Convenes the briefing so every producing agent hears the same request at once. Convenes a bake-off when the request needs a direction chosen, and records the reasons the winner won. Commissions build-by-talent for the production, and its own attention there goes to the places where the slices meet: the copy has to fit the layout, the captions have to match the script, and every piece has to carry the same message. Requests the approval once the set is finished, and takes a changes-requested back to the agent that made the piece, reopening only what the signers named. Answers roll-calls with where each piece stands.",
+      "servers": [
+        {
+          "name": "the production plan and its status",
+          "role": "production-plan-and-its-status",
+          "access": "write"
+        },
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "read",
+          "needs": "It reads every version and edits none of them."
+        },
+        {
+          "name": "brand guidelines",
+          "role": "brand-guidelines",
+          "access": "read"
+        },
+        {
+          "name": "the request queue",
+          "role": "request-queue",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "The production plan at a version, saying what each agent owes and when it is due.",
+        "The CONVENED and DONE records of the briefing, the bake-off and the approval.",
+        "A dated record each time a piece lands or slips.",
+        "The delivered set, naming every asset at the version the signers approved."
+      ],
+      "escalates": [
+        "a deadline the production cannot meet, on the day the math stops working, because cutting a piece or moving the date is a person's decision and it should be made while there is still time",
+        "a sign-off that comes back asking for changes large enough to put the direction itself back in question",
+        "an asset changed after it was signed - the approval runs again, and a person decides whether the schedule can carry it",
+        "a request it cannot brief anyone from, because what the assets are for is missing"
+      ],
+      "not": [
+        "Does not write, design, or cut anything itself - the copywriter, designer and video-editor agents make the pieces.",
+        "Does not approve the set: the brand-check agent scores it and named people sign it.",
+        "Does not own the campaign or the launch that asked for the work, which are the campaign-manager and launch-coordinator agents, and it delivers to them.",
+        "Does not decide which assets the request needs.",
+        "Does not set or spend the budget.",
+        "Does not publish anything and does not assemble a page, which is the web-producer agent.",
+        "Does not run a published piece from topic to live, which is the content-manager agent; this agent makes the visuals that piece needs and hands them over."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Build the Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Make the Press Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Brief the Entry",
+            "Assemble the Supporting Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-guidelines",
+          "activities": [
+            "Plan the Version",
+            "Brief the Makers",
+            "Produce the Reference Assets"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-identity",
+          "activities": [
+            "Take in the Positioning",
+            "Set the Identity Brief",
+            "Brief the Makers",
+            "Draft the Candidate Directions",
+            "Test the Directions against the Positioning",
+            "Try the Directions on Outsiders",
+            "Build out the System",
+            "Clear the Fonts and the Imagery",
+            "Test the System in Use",
+            "Issue the Rules and Release the Files",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Find Everything on the Old Identity",
+            "Brief the Agents that Remake the Material",
+            "Rebuild the Templates",
+            "Remake the Assets",
+            "Retire the Old Identity"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Build the Recruitment Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Produce the Joint Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "Size the Production Capacity",
+            "Draft the Calendar",
+            "Brief the Department",
+            "Hand over the Approved Topics"
+          ]
+        },
+        {
+          "process": "ref/mkt/creative-assets",
+          "activities": [
+            "Take in the Brief",
+            "Plan the Production",
+            "Brief the Makers",
+            "Settle on a Direction",
+            "Clear the Rights",
+            "Check the Set Holds Together",
+            "Check the Sized Set",
+            "Hand over the Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Brief the Story",
+            "Make the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Make the Ad Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Partner Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Produce the Invitation and Materials",
+            "Capture the Event on Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Brief the Piece",
+            "Make the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Brief the Pages in the Cycle",
+            "Refresh the Visuals"
+          ]
+        },
+        {
+          "process": "ref/mkt/sales-enablement-kit",
+          "activities": [
+            "Brief the Makers",
+            "Build the Deck",
+            "Write the One-Pager"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Name the Change to Test",
+            "Brief the Makers",
+            "Produce the Variants",
+            "Check the Variant Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Produce the Booth Material",
+            "Build the Demonstration"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Read the Placement Specifications",
+            "Cut the Creative to Every Specification"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Commission the Stage Material",
+            "Repurpose the Content"
+          ]
+        },
+        {
+          "process": "ref/mkt/video-asset",
+          "activities": [
+            "Take in the Script or Brief",
+            "Settle the Script",
+            "Plan the Shots",
+            "Check the Sources Can Be Used",
+            "Record the Material",
+            "Review the Cut",
+            "Clear the Rights",
+            "File It in the Library"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Produce the Promotion Material"
+          ]
+        }
+      ]
+    }
+  }
+}

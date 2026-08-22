@@ -1,0 +1,247 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "The editor abstract agent. Edits a piece for its structure and its argument: whether the piece answers the question it opened with, whether the sections come in the order a reader needs them, whether every claim is carried by the evidence under it, and whether the piece says enough to be worth its length.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/editor",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "brand-voice",
+    "brand-positioning",
+    "brief-executive-leadership",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "editor",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Holds the structure-and-argument pass in layered-passes, changing nothing outside that concern and flagging what belongs to another pass for the agent that owns it. Can hold the owner role in draft-review-merge over a piece's version, answering every revision the writer sends with a merge, a decline with the reason, or another round. Sits in the briefing that starts the piece, so the edit tests the piece against what was asked for rather than against the editor's own taste.",
+      "servers": [
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "write",
+          "needs": "The edit lands at a version beside the draft it edits, and never on top of it."
+        },
+        {
+          "name": "the style guide and the house standard",
+          "role": "style-guide-and-the-house-standard",
+          "access": "read"
+        },
+        {
+          "name": "the brief and the approved outline",
+          "role": "brief-and-the-approved-outline",
+          "access": "read"
+        },
+        {
+          "name": "the source list the draft cites",
+          "role": "source-list-the-draft-cites",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "Every edit at a version, saying what has to change and why, item by item, in terms the writer can work through without coming back to ask what was meant.",
+        "A line for anything it flagged for another pass, naming the agent it went to.",
+        "When it holds the version, the merge, the decline or the revision request it gave in every round, each with its reason."
+      ],
+      "escalates": [
+        "a claim the draft rests on that its sources do not support - the editor names the gap and never edits the sentence into something vaguer to cover it",
+        "a piece that no amount of rewriting will fix - killing it or starting it over is a person's call",
+        "a disagreement with the writer that another round will not settle",
+        "a rewrite that the brief and the style guide would answer in opposite ways"
+      ],
+      "not": [
+        "Does not rewrite the piece.",
+        "It says what has to change and the writer makes the change, which is what keeps the writer answerable for the words.",
+        "Does not go and find the evidence - that is the researcher agent, and this agent's job is to notice when the evidence is missing.",
+        "Does not score the piece against the brand guidelines or the claims register, because that is the brand-check agent and it runs as a separate pass.",
+        "Does not choose the title, the headings or the links for findability, which is the search-optimizer agent.",
+        "Does not commission the piece or set its date, which the content-manager agent does.",
+        "It is not a signer: it says the piece is ready, and named people sign."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Build the Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Edit the Release"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Brief the Entry",
+            "Edit the Entry"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-audit",
+          "activities": [
+            "Read the Set as a Whole"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-guidelines",
+          "activities": [
+            "Brief the Makers",
+            "Write the Rules"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Test the Positions against the Evidence",
+            "Write the Positioning and the Promise",
+            "Set the Voice Rules"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Rewrite What the Words Say"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Read How the Company Sounds Now",
+            "Brief the Makers",
+            "Draft the Voice",
+            "Set the Tone for Each Situation",
+            "Build the Messaging Architecture",
+            "Write the Word List",
+            "Turn the Voice into Scorable Rules",
+            "Score Old Material against the Draft Rules",
+            "Brief the Agents that Write to It"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Write the Decision Papers",
+            "Build the Pack",
+            "Rehearse the Briefing"
+          ]
+        },
+        {
+          "process": "ref/mkt/competitive-battlecard",
+          "activities": [
+            "Edit the Card"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "Size the Production Capacity",
+            "Draft the Calendar",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Brief the Story",
+            "Agree What the Story Argues",
+            "Edit the Draft"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Brief the Makers",
+            "Edit the Draft"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Check It Once"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Brief the Makers",
+            "Edit the Draft"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Brief the Piece",
+            "Agree the Outline",
+            "Edit the Draft"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Make What the Path Needs"
+          ]
+        },
+        {
+          "process": "ref/mkt/pitch-earned-media",
+          "activities": [
+            "Produce the Pitch Materials"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Produce What Customers and Sellers Read"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Test the Positions against the Evidence",
+            "Write the Messaging"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Brief the Pages in the Cycle",
+            "Edit the Rewrite"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Shape the Talk",
+            "Rehearse the Talk",
+            "Reuse the Talk"
+          ]
+        },
+        {
+          "process": "ref/mkt/video-asset",
+          "activities": [
+            "Settle the Script",
+            "Review the Cut"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Edit the Change"
+          ]
+        }
+      ]
+    }
+  }
+}

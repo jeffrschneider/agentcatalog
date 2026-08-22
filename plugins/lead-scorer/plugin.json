@@ -1,0 +1,167 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "lead-scorer",
+  "version": "1.0.0",
+  "description": "The lead-scorer abstract agent. Turns a form submission into a scored, routed lead in minutes: deduplicates, enriches, scores against the current model, assigns by territory, and notifies the owner with the evidence attached.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/lead-scorer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "lead-scoring-model",
+    "lead-routing",
+    "ideal-customer-profile",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "lead-scorer",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Works alone, because lead routing convenes no rooms in the ordinary case. That is what makes the records this agent leaves the only way anyone can check its work. Feeds the weekly accuracy review that the analytics agent runs.",
+      "servers": [
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "write"
+        },
+        {
+          "name": "enrichment sources",
+          "role": "enrichment-sources",
+          "access": "read"
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write"
+        }
+      ],
+      "records": [
+        "Per lead: the merged record with each filled field naming its source, the score with the model version and the inputs it was computed from, and the assignment with the reason.",
+        "Any auditor can replay any decision from what it left behind."
+      ],
+      "escalates": [
+        "a lead it cannot score or route - to the exception queue, with what it knows attached, instead of guessing",
+        "a spike in exceptions, because that usually means an upstream form or data source changed"
+      ],
+      "not": [
+        "Does not edit the scoring model or the territory map - both change only through their own review, as versioned amendments.",
+        "Does not contact the lead."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Hand over the Accounts that Moved"
+          ]
+        },
+        {
+          "process": "ref/mkt/analyze-customer-base",
+          "activities": [
+            "Hand over the Findings"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Hand over the Persona"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Set up the Partner Systems"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Split and Hand over the Leads"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Hand over the Selling Kit"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Follow up with the People Who Came"
+          ]
+        },
+        {
+          "process": "ref/mkt/ideal-customer-profile",
+          "activities": [
+            "Test the Signal Coverage",
+            "Hand over the Profile"
+          ]
+        },
+        {
+          "process": "ref/mkt/lead-routing",
+          "activities": [
+            "Capture and Dedupe",
+            "Enrich",
+            "Score",
+            "Route",
+            "Notify",
+            "Clear the Exception"
+          ]
+        },
+        {
+          "process": "ref/mkt/lead-scoring-model",
+          "activities": [
+            "Read the Exception Queue",
+            "Test the Signal Coverage",
+            "Check What Each Does to Routing",
+            "Run It Beside the Live Model",
+            "Hand over the Model",
+            "Put It into Production",
+            "Watch the First Weeks"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Set the Exits",
+            "Hand over the Ready Ones"
+          ]
+        },
+        {
+          "process": "ref/mkt/segment-the-market",
+          "activities": [
+            "Test Whether Each Segment Can Be Reached",
+            "Hand over the Segments"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Set up Lead Capture",
+            "Hand over the Leads"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Hand off the Leads"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Hand over the Responders"
+          ]
+        }
+      ]
+    }
+  }
+}

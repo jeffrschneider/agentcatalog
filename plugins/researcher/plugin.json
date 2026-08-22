@@ -1,0 +1,385 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "researcher",
+  "version": "1.0.0",
+  "description": "The researcher abstract agent. Finds the evidence a piece rests on.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/researcher",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "product-positioning",
+    "brief-industry-analyst",
+    "ideal-customer-profile",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "researcher",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Holds a specialist slice in build-by-talent - the writing slice can only claim what the evidence slice found. Sits in briefings, and sits in the room with an expert as the agent that records what was said and who said it. Takes the fact pass in layered-passes, going through a finished draft claim by claim against the sources the draft cites.",
+      "servers": [
+        {
+          "name": "public and licensed sources",
+          "role": "public-and-licensed-sources",
+          "access": "read",
+          "needs": "Within the subscriptions and licenses the organization actually holds."
+        },
+        {
+          "name": "paid reports and data",
+          "role": "paid-reports-and-data",
+          "access": "read",
+          "needs": "Cap: what it may buy without asking, set by the adopting organization."
+        },
+        {
+          "name": "internal data sources",
+          "role": "internal-data-sources",
+          "access": "read"
+        },
+        {
+          "name": "the source record",
+          "role": "source-record",
+          "access": "write",
+          "needs": "Every fact lands with where it came from."
+        },
+        {
+          "name": "the claims register",
+          "role": "claims-register",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "A source line for every fact: what was read, where it lives, the date it was read, and the part of it the fact came from.",
+        "Every number with the query or the report it came from, so somebody can pull it again and see whether the answer still holds.",
+        "Interview notes attributed to the person who said it, marked with what that person agreed could be quoted."
+      ],
+      "escalates": [
+        "a fact it cannot source - it reports the fact as unsourced and never fills the gap with a sentence that merely sounds right",
+        "two credible sources that disagree, where the piece has to stand on one of them - a person picks which one",
+        "a source whose terms do not let the organization quote or reproduce it",
+        "a finding that contradicts something the organization has already published, because somebody has to decide what happens to the older piece"
+      ],
+      "not": [
+        "Does not write the piece and does not decide what the piece argues.",
+        "It supplies what is true, and the writer and the editor decide what to make of it.",
+        "Does not judge whether the piece holds together, which is the editor agent.",
+        "Does not report on how the department's own work performed, which is the analytics agent reading the organization's own numbers.",
+        "Does not work out what people are searching for, which is the search-optimizer agent; this agent is after what is true, and search demand is a separate question.",
+        "Does not add anything to the claims register, because that register changes only through its own process, as versioned amendments."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Read the Accounts"
+          ]
+        },
+        {
+          "process": "ref/mkt/advisory-board",
+          "activities": [
+            "Collect the Early Input",
+            "Capture What Was Said",
+            "Sort the Feedback"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Confirm the Facts"
+          ]
+        },
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Gather the Outside Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Brief the Entry",
+            "Gather the Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-health",
+          "activities": [
+            "Set the Competitor Set"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-identity",
+          "activities": [
+            "Brief the Makers",
+            "Try the Directions on Outsiders",
+            "Clear the Candidate Marks"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Gather the Evidence",
+            "Test the Positions against the Evidence",
+            "Try the Positions on Outsiders",
+            "Record the Proof Behind the Promise"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Gather How the Audience Talks",
+            "Brief the Makers",
+            "Put a Source Under Every Message",
+            "Try the Messages on Buyers"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Gather the Outside Picture",
+            "Answer What Was Left Open"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-industry-analyst",
+          "activities": [
+            "Read Where the Analyst Stands",
+            "Brief the Makers",
+            "Gather the Proof",
+            "File What the Cycle Requires",
+            "Answer What Was Left Open"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Gather What Is Already Known",
+            "Name the Others in the Decision"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Draw up the Candidate List",
+            "Assess the Applicants"
+          ]
+        },
+        {
+          "process": "ref/mkt/competitive-battlecard",
+          "activities": [
+            "Confirm the Move",
+            "Gather the Proof"
+          ]
+        },
+        {
+          "process": "ref/mkt/crisis-communication",
+          "activities": [
+            "Confirm the Facts",
+            "Update the Response"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Brief the Story",
+            "Verify the Customer's Results",
+            "Interview the Customer",
+            "Check the Facts"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reference",
+          "activities": [
+            "Verify the Customer's Results"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-research",
+          "activities": [
+            "Check What Is Already Known",
+            "Brief the Study"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reviews",
+          "activities": [
+            "Read the Site Rules",
+            "Check the Ask against the Rules"
+          ]
+        },
+        {
+          "process": "ref/mkt/develop-marketing-strategy",
+          "activities": [
+            "Map the Market and Its Segments",
+            "Read What the Rivals Are Doing",
+            "Hear from Buyers and the Field",
+            "Draft the Strategic Options"
+          ]
+        },
+        {
+          "process": "ref/mkt/engage-marketing-agency",
+          "activities": [
+            "Build the Candidate List",
+            "Check the References"
+          ]
+        },
+        {
+          "process": "ref/mkt/ideal-customer-profile",
+          "activities": [
+            "Gather the Outside Evidence",
+            "Collect the First-Hand Accounts",
+            "Draft the Candidate Profiles",
+            "Size Each Candidate Market",
+            "Clear the Data and the Targeting"
+          ]
+        },
+        {
+          "process": "ref/mkt/influencer-campaign",
+          "activities": [
+            "Read the Disclosure Rules",
+            "Draw up the Candidate List"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Brief the Makers",
+            "Produce the Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/lead-scoring-model",
+          "activities": [
+            "Hear from the People Who Work the Leads",
+            "Gather the Candidate Signals",
+            "Clear the New Signals"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Brief the Piece",
+            "Gather the Evidence",
+            "Check the Facts"
+          ]
+        },
+        {
+          "process": "ref/mkt/map-buyer-journey",
+          "activities": [
+            "Collect the First-Hand Accounts",
+            "Draft the Stages",
+            "Collect the Questions"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Settle the Audience to Reach",
+            "Clear the Targeting and the Data",
+            "Gather the Channel Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/name-product",
+          "activities": [
+            "Read the Naming Landscape",
+            "Check the Name in Every Market"
+          ]
+        },
+        {
+          "process": "ref/mkt/pitch-earned-media",
+          "activities": [
+            "Gather the Proof",
+            "Answer What Reporters Ask"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Gather the Market Evidence",
+            "Interview the Makers",
+            "Name the Competing Choices",
+            "Test the Positions against the Evidence",
+            "Try the Positions on Outsiders",
+            "Record the Proof Behind Each Claim"
+          ]
+        },
+        {
+          "process": "ref/mkt/quarterly-business-review",
+          "activities": [
+            "Read the Outside Conditions"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Check Whether the Facts Still Hold"
+          ]
+        },
+        {
+          "process": "ref/mkt/sales-enablement-kit",
+          "activities": [
+            "Hear the Field",
+            "Gather the Proof",
+            "Settle the Answers",
+            "Write the Objection Answers"
+          ]
+        },
+        {
+          "process": "ref/mkt/segment-the-market",
+          "activities": [
+            "Set the Market Boundary",
+            "Gather the Outside Evidence",
+            "Choose the Dividing Traits",
+            "Size Each Segment",
+            "Clear the Data and the Traits"
+          ]
+        },
+        {
+          "process": "ref/mkt/select-marketing-technology",
+          "activities": [
+            "Brief the Selection",
+            "Search the Market"
+          ]
+        },
+        {
+          "process": "ref/mkt/size-market-opportunity",
+          "activities": [
+            "Draw the Market Boundary",
+            "Gather the Outside Evidence",
+            "Count the Buyers",
+            "Check the Method",
+            "Clear the Sources"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Take in the Call",
+            "Shape the Talk"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Capture the Sessions"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Write the Change"
+          ]
+        }
+      ]
+    }
+  }
+}

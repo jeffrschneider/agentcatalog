@@ -1,0 +1,310 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "media-buyer",
+  "version": "1.0.0",
+  "description": "The media-buyer abstract agent. Handles the paid side: builds the ad campaigns, sets targeting and bids, starts and stops the buy, watches pacing, and moves money toward what is working.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/media-buyer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "test-ad-creative",
+    "paid-search-campaign",
+    "traffic-ad-creative",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "media-buyer",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Sits in briefings, reports into roll-calls and collect-and-report on the spend, and works under an allocate-and-reconcile budget when the process runs one - its spend reports are that pattern's raw material.",
+      "servers": [
+        {
+          "name": "ad platforms",
+          "role": "ad-platforms",
+          "access": "write",
+          "needs": "Cap: an amount per day it may move without asking, set by the adopting organization."
+        },
+        {
+          "name": "analytics",
+          "role": "analytics",
+          "access": "read"
+        },
+        {
+          "name": "tracking and URL tooling",
+          "role": "tracking-and-url-tooling",
+          "access": "write"
+        }
+      ],
+      "records": [
+        "Every campaign configuration at a version, every budget move with the number, the direction, and the reason, and the stop record when the buy comes off."
+      ],
+      "escalates": [
+        "any move past its cap, before the money moves",
+        "pacing that the budget cannot survive",
+        "an ad rejected by a platform for policy - people decide whether to contest or rewrite"
+      ],
+      "not": [
+        "Does not change creative - it requests replacements from the producing agents.",
+        "Does not set the budget it spends.",
+        "Does not touch organic publishing."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Set up the Paid Buy",
+            "Start the Touches"
+          ]
+        },
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Collect the Candidate Initiatives",
+            "Put Numbers on Each Initiative",
+            "Build the Calendar",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Plan the Joint Campaign",
+            "Set up Each Side's Distribution"
+          ]
+        },
+        {
+          "process": "ref/mkt/develop-marketing-strategy",
+          "activities": [
+            "Hand the Strategy to the Work that Follows"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Set the Exposure Rules",
+            "Check the Buy Before Switch-On",
+            "Launch the Campaigns",
+            "Record What Is in Force"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Promote the Event"
+          ]
+        },
+        {
+          "process": "ref/mkt/ideal-customer-profile",
+          "activities": [
+            "Hand over the Profile"
+          ]
+        },
+        {
+          "process": "ref/mkt/influencer-campaign",
+          "activities": [
+            "Set up the Tracking"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Hand It to the Campaign"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Promote the Piece"
+          ]
+        },
+        {
+          "process": "ref/mkt/marketing-performance-report",
+          "activities": [
+            "Account for the Paid Spend",
+            "Reconcile the Spend",
+            "Check the Account"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Gather the Channel Evidence",
+            "Draft the Candidate Mixes",
+            "Set the Channel Audience Targets",
+            "Hand the Plan to the Buying Agents"
+          ]
+        },
+        {
+          "process": "ref/mkt/paid-search-campaign",
+          "activities": [
+            "Research the Search Demand",
+            "Build the Keyword Plan",
+            "Ready the Landing Pages",
+            "Wire up Conversion Tracking",
+            "Build the Campaigns and Launch",
+            "Watch Pacing and Results",
+            "Tune the Bids and Terms",
+            "Reconcile the Spend"
+          ]
+        },
+        {
+          "process": "ref/mkt/plan-marketing-capacity",
+          "activities": [
+            "List the Committed Work"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Restate the Price Everywhere It Is Published",
+            "Change the Public Price"
+          ]
+        },
+        {
+          "process": "ref/mkt/prioritize-initiatives",
+          "activities": [
+            "Work out What Is Free",
+            "Put Numbers on Each Request",
+            "Hand over the Commitments"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Prep the Channels"
+          ]
+        },
+        {
+          "process": "ref/mkt/quarterly-business-review",
+          "activities": [
+            "Ask Each Area What It Would Change",
+            "Put Numbers on the Proposed Changes",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/reallocate-media-spend",
+          "activities": [
+            "Take in the Pacing Signal",
+            "Read the Current Position",
+            "Name the Candidate Moves",
+            "Check What a Move Would Cost",
+            "Move the Money in the Platforms",
+            "Correct the Pacing",
+            "Check the Change Took"
+          ]
+        },
+        {
+          "process": "ref/mkt/reconcile-media-spend",
+          "activities": [
+            "Set What the Close Covers",
+            "Pull the Delivery Record",
+            "Pull the Order Record",
+            "Clear the Explained Differences",
+            "Track the Answers",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/segment-the-market",
+          "activities": [
+            "Test Whether Each Segment Can Be Reached",
+            "Hand over the Segments"
+          ]
+        },
+        {
+          "process": "ref/mkt/set-marketing-budget",
+          "activities": [
+            "Collect What Each Function Asks For",
+            "Price the Requests",
+            "Tell Every Function What It Has"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Set up the Practical Side",
+            "Optimize"
+          ]
+        },
+        {
+          "process": "ref/mkt/target-audience-segment",
+          "activities": [
+            "Name the Exclusions",
+            "Brief the Build",
+            "Hand the List to the Platforms",
+            "Confirm the Match"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Read the Current Performance",
+            "Name the Change to Test",
+            "Design the Comparison",
+            "Set the Evidence Bar",
+            "Wire up the Measurement",
+            "Check the Test Before Switch-On",
+            "Launch the Test",
+            "Watch Delivery",
+            "Call the Winner",
+            "Roll out the Winner"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Take in the Creative and the Plan",
+            "Read the Placement Specifications",
+            "Build the Tracking Parameters",
+            "Build the Ad Units",
+            "Set the Flights, Budgets and Rotation",
+            "Check the Buy Before Switch-On",
+            "Switch the Ads On",
+            "Record What Is Live"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Promote the Conference"
+          ]
+        },
+        {
+          "process": "ref/mkt/verify-ad-placement",
+          "activities": [
+            "Take in the Concern",
+            "Set What the Audit Covers",
+            "Pull the Placement Record",
+            "Decide What Happens to Each",
+            "Apply the Exclusions",
+            "Claim Back the Wasted Spend",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Promote the Session"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Set up the Sending",
+            "Watch the Response"
+          ]
+        }
+      ]
+    }
+  }
+}

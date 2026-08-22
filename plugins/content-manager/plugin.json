@@ -1,0 +1,241 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "content-manager",
+  "version": "1.0.0",
+  "description": "The content-manager abstract agent. Runs one published piece from the approved request through to live: an article, a guide, or a landing page.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/content-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "customer-newsletter",
+    "landing-page",
+    "content-calendar",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "content-manager",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Convenes the briefing that starts the piece, so the researcher, the copywriter, the designer and the editor all hear the same request at once. Commissions build-by-talent for production, and declares the order of the passes in layered-passes so each checking agent knows when its turn comes. Requests the approval at sign-off and takes a changes-requested back to the agent the signers named. Runs collect-and-report for the performance readout once the piece is live, and convenes the debrief that closes the run.",
+      "servers": [
+        {
+          "name": "the content plan and its schedule",
+          "role": "content-plan-and-its-schedule",
+          "access": "write",
+          "needs": "The piece's dates and its current state live here."
+        },
+        {
+          "name": "the asset store",
+          "role": "asset-store",
+          "access": "read"
+        },
+        {
+          "name": "the CMS",
+          "role": "cms",
+          "access": "read",
+          "needs": "It reads what is live and changes nothing."
+        },
+        {
+          "name": "analytics",
+          "role": "analytics",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "The request as it was accepted, with the date the piece promised and what the piece is meant to accomplish.",
+        "The CONVENED and DONE records of everything it convenes.",
+        "The publish record, naming who said go and which version went live.",
+        "The performance readout at the cadence the process sets, and the decision it made after reading that readout: leave the piece alone, update it, or retire it."
+      ],
+      "escalates": [
+        "a date the piece cannot make, on the day the math stops working - cutting the piece or moving the date is a person's call",
+        "anything a sign-off flags as legal",
+        "a correction or a takedown after the piece is live - a person decides what the notice says and where it goes",
+        "the publish decision itself, until the adopting organization raises the automation level for it"
+      ],
+      "not": [
+        "Does not write, research, edit, or design the piece.",
+        "Does not build the page or push it live - that is the web-producer agent, which acts on this agent's go.",
+        "Does not put the measurement on the page, which is the conversion-tracker agent.",
+        "Does not sign anything.",
+        "Does not run the campaign a piece may sit inside, because one campaign can call for several pieces and each piece gets its own run of this agent.",
+        "Does not own the department's report for a reporting period - that is the reporting-manager agent, and this agent answers for one piece."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Collect the Candidate Initiatives",
+            "Build the Calendar",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Brief the Agents that Write to It"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Hand over the Persona"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "List What Is Already Committed",
+            "Collect the Topic Candidates",
+            "Size the Production Capacity",
+            "Draft the Calendar",
+            "Publish the Calendar",
+            "Brief the Department",
+            "Hand over the Approved Topics"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Brief the Story",
+            "Agree What the Story Argues",
+            "Publish",
+            "Watch Performance",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Open the Issue",
+            "Settle the Lineup",
+            "Brief the Makers",
+            "Proof the Issue",
+            "Send the Issue",
+            "Watch the Results",
+            "Report the Results",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/develop-marketing-strategy",
+          "activities": [
+            "Hand the Strategy to the Work that Follows"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Take in the Request",
+            "Set the Parameters",
+            "Brief the Makers",
+            "Publish",
+            "Hand It to the Campaign",
+            "Watch It Convert",
+            "Fix What the Numbers Show",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Take in the Topic",
+            "Brief the Piece",
+            "Agree the Outline",
+            "Publish",
+            "Watch Performance",
+            "Report How the Piece Did",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/map-buyer-journey",
+          "activities": [
+            "Inventory the Content against the Map",
+            "Hand over the Map"
+          ]
+        },
+        {
+          "process": "ref/mkt/marketing-performance-report",
+          "activities": [
+            "Account for the Published Pieces",
+            "Check the Account"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Collect What the Plan Must Carry"
+          ]
+        },
+        {
+          "process": "ref/mkt/moderate-community",
+          "activities": [
+            "Group the Recurring Questions"
+          ]
+        },
+        {
+          "process": "ref/mkt/plan-marketing-capacity",
+          "activities": [
+            "List the Committed Work",
+            "Break the Work into Activities"
+          ]
+        },
+        {
+          "process": "ref/mkt/prioritize-initiatives",
+          "activities": [
+            "Work out What Is Free",
+            "Settle What Gets Displaced",
+            "Hand over the Commitments"
+          ]
+        },
+        {
+          "process": "ref/mkt/quarterly-business-review",
+          "activities": [
+            "Ask Each Area What It Would Change",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Brief the Pages in the Cycle",
+            "Publish the Changes",
+            "Watch What the Changes Did"
+          ]
+        },
+        {
+          "process": "ref/mkt/set-marketing-budget",
+          "activities": [
+            "Collect What Each Function Asks For",
+            "Tell Every Function What It Has"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Repurpose the Content"
+          ]
+        },
+        {
+          "process": "ref/mkt/website-content-update",
+          "activities": [
+            "Take in the Request",
+            "Route the Change",
+            "Publish the Change",
+            "Close out the Change"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "community-manager",
+  "version": "1.0.0",
+  "description": "The community-manager abstract agent. Answers the people: replies to comments and messages while a campaign is live, keeps the tone of the brand, and knows exactly which conversations it must not have and who needs to hear about them right away.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/community-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "moderate-community",
+    "crisis-communication",
+    "annual-marketing-plan",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "community-manager",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "Sits in the campaign briefing so its answers match what was published. Reports into collect-and-report - reply volumes, sentiment, and the questions that keep recurring, which are content ideas wearing a different hat.",
+      "servers": [
+        {
+          "name": "the social inboxes",
+          "role": "social-inboxes",
+          "access": "write"
+        },
+        {
+          "name": "the published campaign material and its FAQ",
+          "role": "published-campaign-material-and-its-faq",
+          "access": "read"
+        },
+        {
+          "name": "the escalation channel",
+          "role": "escalation-channel",
+          "access": "write"
+        }
+      ],
+      "records": [
+        "Every reply logged, every escalation with the reason it was flagged, and a recurring-questions summary at the cadence the process sets."
+      ],
+      "escalates": [
+        "legal threats, press inquiries, and anything that smells like a crisis - immediately, before replying",
+        "sentiment past the threshold the process sets",
+        "any factual dispute it cannot settle from published material"
+      ],
+      "not": [
+        "Does not argue, does not delete criticism, does not make product promises, and does not answer questions the published material cannot support."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Publish It on the Owned Channels"
+          ]
+        },
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Gather the Outside Evidence",
+            "Brief the Department"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Read the Current Numbers"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Change the Profiles Held Elsewhere"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Watch the Joint Campaign"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "Collect the Topic Candidates"
+          ]
+        },
+        {
+          "process": "ref/mkt/crisis-communication",
+          "activities": [
+            "Take in the Incident",
+            "Tailor for Each Audience",
+            "Brief the Speakers",
+            "Issue the Response",
+            "Answer the Questions",
+            "Track the Coverage"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Answer the Replies"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reviews",
+          "activities": [
+            "Answer What Comes Back",
+            "Reply to the Reviews"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Post It Publicly",
+            "Watch the First Days"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Promote the Event"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Promote the Piece"
+          ]
+        },
+        {
+          "process": "ref/mkt/marketing-performance-report",
+          "activities": [
+            "Account for What the Audience Asked"
+          ]
+        },
+        {
+          "process": "ref/mkt/moderate-community",
+          "activities": [
+            "Open the Cycle",
+            "Gather What Came In",
+            "Sort the Queue",
+            "Welcome the New Members",
+            "Answer the Questions",
+            "Find the Missing Answers",
+            "Route the Escalations",
+            "Group the Recurring Questions",
+            "Name the Members Worth Recognizing",
+            "Measure the Community",
+            "Report the Cycle",
+            "Close the Cycle"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Answer What Comes Back"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Watch the First Week"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Engage"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Publish the Material"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Promote the Presence",
+            "Run the Show Days"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Promote the Conference",
+            "Run the Show"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Promote the Session"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Answer What Comes Back"
+          ]
+        }
+      ]
+    }
+  }
+}

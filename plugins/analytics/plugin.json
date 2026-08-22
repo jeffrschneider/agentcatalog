@@ -1,0 +1,529 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "analytics",
+  "version": "1.0.0",
+  "description": "The analytics abstract agent. Reads the numbers and reports them with their sources attached. Tracks a campaign against its brief, pulls the wrap-up numbers from every channel, files the weekly status, and audits the scoring model behind lead routing.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/analytics",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "analyze-customer-base",
+    "test-ad-creative",
+    "lead-scoring-model",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "analytics",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "The reporter in collect-and-report: asks every channel the same question, keeps every line attributed, ships on schedule complete or not, and records contradictions instead of smoothing them over. Answers roll-calls.",
+      "servers": [
+        {
+          "name": "analytics platforms",
+          "role": "analytics-platforms",
+          "access": "read"
+        },
+        {
+          "name": "ad platforms",
+          "role": "ad-platforms",
+          "access": "read"
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read"
+        }
+      ],
+      "records": [
+        "Every report with every line attributed to its source, delivered on the cadence the process sets.",
+        "A missing source appears in the report as missing."
+      ],
+      "escalates": [
+        "a metric moving fast enough that waiting for the scheduled report would waste the warning",
+        "numbers from two sources that contradict each other beyond the process's tolerance"
+      ],
+      "not": [
+        "Writes to nothing.",
+        "Does not decide what to do about the numbers - the agents that act read its reports."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Watch Engagement by Account",
+            "Report Engagement"
+          ]
+        },
+        {
+          "process": "ref/mkt/analyze-customer-base",
+          "activities": [
+            "Take in the Question",
+            "Set the Scope of the Read",
+            "Name the Sources",
+            "Pull the Record",
+            "Describe Who Bought",
+            "Group the Base",
+            "Read the Base over Time",
+            "Size Each Group",
+            "Compare with the Last Read",
+            "Write the Findings",
+            "Review the Findings",
+            "Issue the Findings as a Version",
+            "Hand over the Findings",
+            "Set the Next Read",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/announce-company-news",
+          "activities": [
+            "Track the Coverage",
+            "Report on the Announcement"
+          ]
+        },
+        {
+          "process": "ref/mkt/annual-marketing-plan",
+          "activities": [
+            "Read the Closed Periods",
+            "Name What Will Be Measured"
+          ]
+        },
+        {
+          "process": "ref/mkt/attribution-model",
+          "activities": [
+            "Take in the Trigger",
+            "Confirm the Drift",
+            "Pull the Touchpoint Record",
+            "Recompute the Closed Periods",
+            "Reissue the Affected Reports"
+          ]
+        },
+        {
+          "process": "ref/mkt/award-entry",
+          "activities": [
+            "Gather the Evidence"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-audit",
+          "activities": [
+            "Brief the Audit",
+            "Read the Numbers"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-positioning",
+          "activities": [
+            "Read the Current Numbers"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-refresh",
+          "activities": [
+            "Read What People Recognize Today",
+            "Report the Transition"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-voice",
+          "activities": [
+            "Watch How the Rules Score"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-executive-leadership",
+          "activities": [
+            "Pull the Results for the Period",
+            "Answer What Was Left Open"
+          ]
+        },
+        {
+          "process": "ref/mkt/brief-industry-analyst",
+          "activities": [
+            "Report Whether the Positioning Landed"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Read the Behavioral Record",
+            "Test the Persona against the Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Watch the First Partners",
+            "Report the Program Launch"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Watch the Joint Campaign",
+            "Agree the Joint Numbers"
+          ]
+        },
+        {
+          "process": "ref/mkt/contact-database-hygiene",
+          "activities": [
+            "Measure the Base as It Stands",
+            "Brief the Cycle",
+            "Report the Cycle"
+          ]
+        },
+        {
+          "process": "ref/mkt/content-calendar",
+          "activities": [
+            "Read the Closed Period",
+            "Score the Candidates"
+          ]
+        },
+        {
+          "process": "ref/mkt/conversion-experiment",
+          "activities": [
+            "Read the Result"
+          ]
+        },
+        {
+          "process": "ref/mkt/crisis-communication",
+          "activities": [
+            "Track the Coverage"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-case-study",
+          "activities": [
+            "Watch Performance"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-newsletter",
+          "activities": [
+            "Watch the Results",
+            "Report the Results"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-research",
+          "activities": [
+            "Check What Is Already Known"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-reviews",
+          "activities": [
+            "Watch the Reviews Land",
+            "Report against the Goal"
+          ]
+        },
+        {
+          "process": "ref/mkt/develop-marketing-strategy",
+          "activities": [
+            "Read the Closed Periods",
+            "Put Numbers on Each Option",
+            "Name What the Strategy Will Be Judged By"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Define the Retargeting Pools",
+            "Check the Caps Are Holding"
+          ]
+        },
+        {
+          "process": "ref/mkt/enable-channel-partner",
+          "activities": [
+            "Watch What the Partner Does",
+            "Report against the Plan"
+          ]
+        },
+        {
+          "process": "ref/mkt/engage-marketing-agency",
+          "activities": [
+            "Brief the Agency"
+          ]
+        },
+        {
+          "process": "ref/mkt/feature-release",
+          "activities": [
+            "Watch the First Days"
+          ]
+        },
+        {
+          "process": "ref/mkt/field-event",
+          "activities": [
+            "Report How the Event Did"
+          ]
+        },
+        {
+          "process": "ref/mkt/ideal-customer-profile",
+          "activities": [
+            "Read the Customer Record",
+            "Find the Traits that Predict a Win",
+            "Test the Candidates against the Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/landing-page",
+          "activities": [
+            "Watch It Convert"
+          ]
+        },
+        {
+          "process": "ref/mkt/lead-scoring-model",
+          "activities": [
+            "Take in the Drift or the Signal",
+            "Read How the Model Has Scored",
+            "Read the Exception Queue",
+            "Back-Test the Candidates",
+            "Run It Beside the Live Model",
+            "Watch the First Weeks"
+          ]
+        },
+        {
+          "process": "ref/mkt/long-form-content",
+          "activities": [
+            "Watch Performance",
+            "Report How the Piece Did"
+          ]
+        },
+        {
+          "process": "ref/mkt/map-buyer-journey",
+          "activities": [
+            "Read the Behavioral Record",
+            "Map the Touchpoints",
+            "Test the Stages against the Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/marketing-performance-report",
+          "activities": [
+            "Pull the Numbers"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Gather the Channel Evidence",
+            "Settle What Counts as a Result"
+          ]
+        },
+        {
+          "process": "ref/mkt/moderate-community",
+          "activities": [
+            "Measure the Community",
+            "Report the Cycle"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Define Who Enters",
+            "Map the Steps and the Branches",
+            "Watch Who Moves",
+            "Tune the Branches"
+          ]
+        },
+        {
+          "process": "ref/mkt/onboarding-email-program",
+          "activities": [
+            "Watch What the Customer Does"
+          ]
+        },
+        {
+          "process": "ref/mkt/paid-search-campaign",
+          "activities": [
+            "Watch Pacing and Results",
+            "Report against the Goal"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Watch the Transition",
+            "Report the Transition"
+          ]
+        },
+        {
+          "process": "ref/mkt/prioritize-initiatives",
+          "activities": [
+            "Weigh the Requests against the Goals"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-launch",
+          "activities": [
+            "Watch the First Week",
+            "Report the Launch"
+          ]
+        },
+        {
+          "process": "ref/mkt/product-positioning",
+          "activities": [
+            "Read the Product's Own Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/quarterly-business-review",
+          "activities": [
+            "Set the Quarter against the Annual Goals",
+            "Update What Gets Measured"
+          ]
+        },
+        {
+          "process": "ref/mkt/reallocate-media-spend",
+          "activities": [
+            "Take in the Pacing Signal",
+            "Confirm the Numbers Hold",
+            "Correct the Pacing"
+          ]
+        },
+        {
+          "process": "ref/mkt/reconcile-media-spend",
+          "activities": [
+            "Pull the Delivery Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/refresh-content",
+          "activities": [
+            "Read How the Pages Perform",
+            "Watch What the Changes Did",
+            "Report the Cycle"
+          ]
+        },
+        {
+          "process": "ref/mkt/sales-enablement-kit",
+          "activities": [
+            "Watch What Sales Does with It",
+            "Report against the Gap"
+          ]
+        },
+        {
+          "process": "ref/mkt/segment-the-market",
+          "activities": [
+            "Read the Customer Record"
+          ]
+        },
+        {
+          "process": "ref/mkt/select-marketing-technology",
+          "activities": [
+            "Hand It to the Owner"
+          ]
+        },
+        {
+          "process": "ref/mkt/set-marketing-budget",
+          "activities": [
+            "Read Last Year's Spend",
+            "Name What the Budget Is Reported Against"
+          ]
+        },
+        {
+          "process": "ref/mkt/size-market-opportunity",
+          "activities": [
+            "Set the Rate Assumptions"
+          ]
+        },
+        {
+          "process": "ref/mkt/social-campaign",
+          "activities": [
+            "Watch Performance",
+            "Wrap Up"
+          ]
+        },
+        {
+          "process": "ref/mkt/speaking-engagement",
+          "activities": [
+            "Report the Result"
+          ]
+        },
+        {
+          "process": "ref/mkt/target-audience-segment",
+          "activities": [
+            "Check the Data on Hand",
+            "Write the Membership Rule",
+            "Size the Segment",
+            "Brief the Build",
+            "Check the Built List",
+            "Confirm the Match"
+          ]
+        },
+        {
+          "process": "ref/mkt/test-ad-creative",
+          "activities": [
+            "Take in the Question",
+            "Read the Current Performance",
+            "Design the Comparison",
+            "Set the Evidence Bar",
+            "Watch Delivery",
+            "Read the Result",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/trade-show",
+          "activities": [
+            "Report the Show"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Check the Live Ads"
+          ]
+        },
+        {
+          "process": "ref/mkt/user-conference",
+          "activities": [
+            "Watch the Registrations",
+            "Report the Conference"
+          ]
+        },
+        {
+          "process": "ref/mkt/verify-ad-placement",
+          "activities": [
+            "Pull the Placement Record",
+            "Pull the Delivery Quality Figures",
+            "Size What It Cost",
+            "Confirm the Exclusions Hold",
+            "Report the Audit"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Report How the Session Did"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-back-campaign",
+          "activities": [
+            "Take in the Lapsed Segment",
+            "Sort the Segment into Treatments",
+            "Watch the Response",
+            "Report the Win-Back"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-loss-analysis",
+          "activities": [
+            "Pull the Closed Deals",
+            "Brief the Study",
+            "Set the Themes against the Record"
+          ]
+        }
+      ]
+    }
+  }
+}

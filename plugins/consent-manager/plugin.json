@@ -1,0 +1,247 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "consent-manager",
+  "version": "1.0.0",
+  "description": "The consent-manager abstract agent. Holds the record of who agreed to be contacted, on which channel, when they agreed, and where the agreement came from. Before anything is sent, this agent applies that record to the list and takes out every contact the record does not cover.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/consent-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "marketing",
+    "contact-database-hygiene",
+    "display-retargeting",
+    "co-marketing-campaign",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "consent-manager",
+      "agentVersion": 1,
+      "department": "marketing",
+      "abstract": true,
+      "works": "The examiner in an assessment: the rules are named and versioned before scoring starts, every item in the change gets a verdict, and every verdict cites the rule it was scored against. Its findings are what the approval that follows reads. Sits in the briefing that starts a program or a hygiene cycle, so it hears the entry condition while the entry condition can still be changed. Answers the roll-call before a send with whether the list may be sent to, and with the count it removed.",
+      "servers": [
+        {
+          "name": "the consent record",
+          "role": "consent-record",
+          "access": "write",
+          "needs": "Every agreement and every withdrawal lands with its date and the place it came from."
+        },
+        {
+          "name": "the suppression lists",
+          "role": "suppression-lists",
+          "access": "write",
+          "needs": "A withdrawal is written into every list that holds the contact."
+        },
+        {
+          "name": "the contact database",
+          "role": "contact-database",
+          "access": "read"
+        },
+        {
+          "name": "the sending system",
+          "role": "sending-system",
+          "access": "read"
+        },
+        {
+          "name": "the approved rules for the change",
+          "role": "approved-rules-for-the-change",
+          "access": "read",
+          "needs": "At the version they were approved at."
+        },
+        {
+          "name": "the live sends",
+          "role": "live-sends",
+          "access": "trigger",
+          "needs": "It stops a send that would break the record."
+        }
+      ],
+      "records": [
+        "For every list it clears, the count it removed and the rule each removal was made under.",
+        "For every withdrawal, a dated line naming each system that keeps a copy of the audience, when the withdrawal was written into it, and when the write was confirmed.",
+        "A verdict per item for a scored change, each citing the rule and its version.",
+        "For every send it stopped, the rule the send would have broken and the contacts it would have reached."
+      ],
+      "escalates": [
+        "a contact whose permission it cannot establish either way. It treats the contact as not contactable and puts the question to a person.",
+        "a withdrawal it cannot confirm reached every system that holds a copy of the audience",
+        "a request to release a send it has stopped. Only a person overrides this agent, and the override is recorded with the reason and the name.",
+        "contacts arriving from a source whose terms do not cover the sending the program plans"
+      ],
+      "not": [
+        "Does not decide who enters a program, what its steps are, or what a hygiene cycle covers, which the audience-manager agent does.",
+        "This agent says which contacts may be reached at all, and the audience-manager chooses among them.",
+        "Does not standardize fields, merge records, enrich them, delete them or rebuild segments, which is the audience-operator agent.",
+        "The only thing this agent writes into the sending systems is a withdrawal.",
+        "Does not write or design the messages, and never starts a send.",
+        "Does not score material against the brand guidelines or the claims register, which is the brand-check agent running its own pass.",
+        "Does not write the consent rules it applies.",
+        "Those come from the legal reviewer, and the process names the version in force.",
+        "Does not sign anything."
+      ],
+      "processes": [
+        {
+          "process": "ref/mkt/account-based-play",
+          "activities": [
+            "Check Who May Be Contacted"
+          ]
+        },
+        {
+          "process": "ref/mkt/analyze-customer-base",
+          "activities": [
+            "Clear the Data for This Use"
+          ]
+        },
+        {
+          "process": "ref/mkt/attribution-model",
+          "activities": [
+            "Clear the Data for Use"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-audit",
+          "activities": [
+            "Ask the Audience"
+          ]
+        },
+        {
+          "process": "ref/mkt/brand-health",
+          "activities": [
+            "Brief the Wave",
+            "Check Who May Be Contacted"
+          ]
+        },
+        {
+          "process": "ref/mkt/buyer-persona",
+          "activities": [
+            "Clear the Sample and the Questions"
+          ]
+        },
+        {
+          "process": "ref/mkt/channel-program",
+          "activities": [
+            "Open Recruitment"
+          ]
+        },
+        {
+          "process": "ref/mkt/co-marketing-campaign",
+          "activities": [
+            "Settle the Lead Terms",
+            "Wire up the Split",
+            "Set up Each Side's Distribution",
+            "Split and Hand over the Leads"
+          ]
+        },
+        {
+          "process": "ref/mkt/contact-database-hygiene",
+          "activities": [
+            "Confirm the Rules in Force",
+            "Brief the Cycle",
+            "Reconcile the Consent Record",
+            "Merge the Records",
+            "Apply the Suppression",
+            "Score the Finished Change",
+            "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/mkt/customer-research",
+          "activities": [
+            "Brief the Study",
+            "Check Who May Be Contacted"
+          ]
+        },
+        {
+          "process": "ref/mkt/display-retargeting",
+          "activities": [
+            "Check Who May Be Retargeted",
+            "Build the Suppression List",
+            "Tag the Site",
+            "Apply the Suppression",
+            "Check the Suppression Is Holding"
+          ]
+        },
+        {
+          "process": "ref/mkt/engage-marketing-agency",
+          "activities": [
+            "Set up the Access"
+          ]
+        },
+        {
+          "process": "ref/mkt/lead-scoring-model",
+          "activities": [
+            "Clear the New Signals"
+          ]
+        },
+        {
+          "process": "ref/mkt/map-buyer-journey",
+          "activities": [
+            "Clear the Sample and the Questions"
+          ]
+        },
+        {
+          "process": "ref/mkt/media-plan",
+          "activities": [
+            "Clear the Targeting and the Data"
+          ]
+        },
+        {
+          "process": "ref/mkt/nurture-sequence",
+          "activities": [
+            "Check Who May Be Contacted",
+            "Set the Exits",
+            "Brief the Makers",
+            "Run Test Contacts Through It"
+          ]
+        },
+        {
+          "process": "ref/mkt/pricing-change",
+          "activities": [
+            "Build the Notice Lists"
+          ]
+        },
+        {
+          "process": "ref/mkt/select-marketing-technology",
+          "activities": [
+            "Brief the Selection",
+            "Check the Terms and the Data"
+          ]
+        },
+        {
+          "process": "ref/mkt/target-audience-segment",
+          "activities": [
+            "Confirm the Rules in Force",
+            "Brief the Build",
+            "Apply Consent and Suppression",
+            "Score the Finished List"
+          ]
+        },
+        {
+          "process": "ref/mkt/traffic-ad-creative",
+          "activities": [
+            "Load the Audiences the Plan Names"
+          ]
+        },
+        {
+          "process": "ref/mkt/webinar",
+          "activities": [
+            "Build the Invitation Audience"
+          ]
+        },
+        {
+          "process": "ref/mkt/win-loss-analysis",
+          "activities": [
+            "Brief the Study",
+            "Check Who May Be Approached"
+          ]
+        }
+      ]
+    }
+  }
+}
