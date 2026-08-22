@@ -1,19 +1,20 @@
-# Post: What the reference layer is, and what is in it
+# Post: Business processes, with your parts left blank
 
-`post/2026-08-21-what-the-reference-layer-is v1`
+`post/2026-08-21-what-the-reference-layer-is v2`
 
 **departments:** all
-The catalog holds 80 marketing processes and 56 abstract agents, written down
-over the months before this blog existed. This first post says what those
-documents are, what they cover, and why every one of them has blanks in it.
+Somebody has already written down how a marketing department runs. Eighty
+processes, step by step, with the backward edges drawn and the failures named.
+What is missing from each one is deliberate: the owner, the dates, the limits
+and who holds each role are blank, because those are yours.
 
 ## What a reference process is
 
 Most process documentation is either somebody else's process, which does not
 fit, or a blank template, which does not help. A reference process sits between
-the two. The activity walk is already done, the roles are named, the deviations
-are drawn, and everything that belongs to your organization is left as a blank
-for you to fill in.
+the two. Every step is written out, the roles are named, the ways a run goes
+wrong are drawn in, and everything that belongs to your organization is left
+blank for you to fill in.
 
 Open one and the shape is always the same. There is a table of activities, each
 with a plain description and the roles that hold it. There is a graph with the
@@ -26,13 +27,13 @@ including what happens when somebody abandons it halfway.
 
 The blanks are the point. The owner is blank, the effective date is blank, the
 caps and thresholds are blank, and the roster of who actually holds each role is
-blank. A document with those filled in would be a claim about how somebody else
-works. Left blank, it becomes your process at version one the moment you put
-your name on it.
+blank. A document with those filled in would be a claim about how somebody
+else works. Left blank, the arguing is about your organization rather than
+about theirs, which is the only argument worth having.
 
 ## An abstract agent is a job, not a product
 
-The other half of the layer is [127 abstract
+The steps in those processes hand work to [127 abstract
 agents](https://agentcatalog.com/abstract-agents). An abstract agent describes a
 job somebody has to do: what the work is, which systems it needs and at what
 access, what it must record, when it stops and asks a person, and what it will
