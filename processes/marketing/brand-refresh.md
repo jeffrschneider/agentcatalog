@@ -108,6 +108,8 @@ from: ref/mkt/brand-refresh v1
 owner: <who>                          effective: <date>
 trigger: a new identity is approved by <who>, at the version they
          approved
+         watch: record=<the new identity> system=<where it is approved>
+                change=<an identity is approved at a version>
 concurrency: one run at a time - two transitions at once leave nobody
              able to say which identity is current
 goal: every surface, asset, template and registration carrying the new
@@ -270,62 +272,94 @@ run-scoped:
              every: <cadence>
              from: announce   until: run close
 handoffs:
-  take-in-identity -> issue-version: the identity as it was approved,
-    and what it changes in the standard now in force
-  take-in-identity -> read-baseline: what the study has to be able to
-    say afterwards, so the questions are written before the switch
-  issue-version -> tell-the-readers: the numbered version, what
-    changed in it, and the date it applies from
-  issue-version -> build-inventory / find-registrations: the version
-    every surface is about to be read against
-  build-inventory -> score-surfaces: the inventory at a version, with
-    every surface carrying where it lives, who owns it, and the date
-    it last changed
-  find-registrations -> decide-surfaces: every domain, handle, listing
-    and mark, with its owner, its renewal date, and the notice a
-    change needs
-  score-surfaces -> decide-surfaces: a verdict per surface against the
-    new version, with the rule behind every failure
-  decide-surfaces -> check-capacity: the surfaces to remake, replace
-    and retire, each with what it will take
-  check-capacity -> set-switch-date: what the transition needs, what
-    room is left in the period, and what a date would displace
-  set-switch-date -> brief-the-work: the switch date, the surfaces
-    that have to change before it, and the order they change in
-  set-switch-date -> register-marks: the names, domains and handles
-    the new identity needs, and the date they have to be held by
-  brief-the-work -> rebuild-templates: what each template has to
-    become, as every agent heard it
-  rebuild-templates -> remake-assets / rewrite-words: the templates at
-    a version, with the sizes, the safe areas and the character counts
-    the material has to fit
-  remake-assets -> get-sign-offs: the remade set at a version, naming
-    the old asset each piece replaces
-  rewrite-words -> get-sign-offs: the changed wording at a version,
-    with the old wording beside it
-  get-sign-offs -> check-material: the approved material at the signed
-    version. A later change voids the approval and sign-offs run again
-  check-material -> stage-changes: the scored list, with the rule
-    behind every failure and what it could not test
-  stage-changes -> switch-properties: every property built and
-    previewed, with the order the switch fires in
-  register-marks -> switch-properties: the names, domains and marks
-    the organization now holds, with the date each was secured
-  switch-properties -> change-profiles / announce: what went live, at
-    which version, at what time, and who said go
-  change-profiles -> sweep: every profile and listing that changed,
-    and every one that could not be changed with the reason
-  sweep -> retire-old: what still carries the old identity, where it
-    is, and whether the organization can change it
-  retire-old -> read-again: the date the old version stopped being
-    current, so the reading afterwards knows what it is measuring
-  read-baseline -> read-again: the questions at the version they were
-    asked at, and the responses behind the baseline
-  read-again -> report-transition: the second reading beside the
-    baseline, with the statistician saying whether the difference is
-    larger than the noise in the measurement
-  report-transition -> record-learnings: the account of the
-    transition, as delivered
+  take-in-identity -> issue-version [approved-identity]: the identity
+    as it was approved, and what it changes in the standard now in
+    force
+  take-in-identity -> read-baseline [baseline-questions]: what the
+    study has to be able to say afterwards, so the questions are
+    written before the switch
+  issue-version -> tell-the-readers [issued-version]: the numbered
+    version, what changed in it, and the date it applies from
+  issue-version -> build-inventory / find-registrations [new-version]:
+    the version every surface is about to be read against
+  build-inventory -> score-surfaces [surface-inventory]: the inventory
+    at a version, with every surface carrying where it lives, who owns
+    it, and the date it last changed
+  find-registrations -> decide-surfaces [registrations]: every domain,
+    handle, listing and mark, with its owner, its renewal date, and
+    the notice a change needs
+  score-surfaces -> decide-surfaces [surface-scores]: a verdict per
+    surface against the new version, with the rule behind every
+    failure
+  decide-surfaces -> check-capacity [surface-decisions]: the surfaces
+    to remake, replace and retire, each with what it will take
+  check-capacity -> set-switch-date [transition-cost]: what the
+    transition needs, what room is left in the period, and what a date
+    would displace
+  set-switch-date -> brief-the-work [switch-date-and-order]: the
+    switch date, the surfaces that have to change before it, and the
+    order they change in
+  set-switch-date -> register-marks [names-to-register]: the names,
+    domains and handles the new identity needs, and the date they have
+    to be held by
+  brief-the-work -> rebuild-templates [template-brief]: what each
+    template has to become, as every agent heard it
+  rebuild-templates -> remake-assets / rewrite-words [templates]: the
+    templates at a version, with the sizes, the safe areas and the
+    character counts the material has to fit
+  remake-assets -> get-sign-offs [remade-assets]: the remade set at a
+    version, naming the old asset each piece replaces
+  rewrite-words -> get-sign-offs [rewritten-wording]: the changed
+    wording at a version, with the old wording beside it
+  get-sign-offs -> check-material [signed-material]: the approved
+    material at the signed version. A later change voids the approval
+    and sign-offs run again
+  check-material -> stage-changes [material-scores]: the scored list,
+    with the rule behind every failure and what it could not test
+  stage-changes -> switch-properties [staged-properties]: every
+    property built and previewed, with the order the switch fires in
+  register-marks -> switch-properties [held-names]: the names, domains
+    and marks the organization now holds, with the date each was
+    secured
+  switch-properties -> change-profiles / announce [what-went-live]:
+    what went live, at which version, at what time, and who said go
+  change-profiles -> sweep [changed-profiles]: every profile and
+    listing that changed, and every one that could not be changed with
+    the reason
+  sweep -> retire-old [old-identity-remainder]: what still carries the
+    old identity, where it is, and whether the organization can change
+    it
+  retire-old -> read-again [retirement-date]: the date the old version
+    stopped being current, so the reading afterwards knows what it is
+    measuring
+  read-baseline -> read-again [baseline-reading]: the questions at the
+    version they were asked at, and the responses behind the baseline
+  read-again -> report-transition [second-reading]: the second reading
+    beside the baseline, with the statistician saying whether the
+    difference is larger than the noise in the measurement
+  report-transition -> record-learnings [the-report]: the account of
+    the transition, as delivered
+deviations:
+  check-capacity -> decide-surfaces [plan-does-not-fit]: the
+    transition does not fit the period, so the surfaces are decided
+    again against what the department can carry
+  register-marks -> take-in-identity [mark-already-held]: somebody
+    else holds the name, the handle or the mark, so the identity goes
+    back to the people who approved it
+  get-sign-offs -> remake-assets [asset-changes]: a signer comes back
+    with changes to the remade assets
+  get-sign-offs -> rewrite-words [wording-changes]: a signer comes
+    back with changes to the rewritten wording
+  check-material -> issue-version [colors-fail-contrast]: the new
+    colors fail the contrast rule, which no producing agent can fix,
+    so the question goes back to the standard
+  check-material -> remake-assets [material-failures]: the check finds
+    failures in the remade material, so the material is made again
+  sweep -> build-inventory [inventory-missed-a-surface]: the sweep
+    finds a surface the inventory never held, so the inventory is
+    built again at a new version
+  sweep -> remake-assets [still-on-old-identity]: a surface still
+    carries the old identity, so the material for it is made again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand owner, leadership,

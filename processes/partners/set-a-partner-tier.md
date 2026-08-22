@@ -76,6 +76,11 @@ owner: <who>                          effective: <date>
 trigger: the tiering cadence comes round every <cadence>, or <your
          partner review process> refers a partner whose result moves a
          tier
+         watch: every=<cadence>
+         or watch: record=<partner review result>
+                system=<your partner record>
+                change=<a review refers a partner whose result moves a
+                tier>
 concurrency: one round at a time for a given <program or region>, and a
              partner is tiered by one round at a time
 goal: every partner in scope holding the tier the published rules give
@@ -173,42 +178,65 @@ run-scoped:
   cost       - runs allocate-and-reconcile      owner: margin-keeper
                from: price-tiers   until: run close
 handoffs:
-  open-round -> read-rules: the partners in scope, and the date the
-    result has to apply from
-  read-rules -> pull-evidence: the measures the rules name, so the
-    evidence is pulled for what the rules actually use
-  pull-evidence -> check-evidence: the measures for every partner, each
-    line naming the system and the date it was read from
-  check-evidence -> apply-rules: complete evidence, with every gap
-    marked as a gap rather than filled with a zero
-  apply-rules -> list-exceptions: the tier the rules gave each partner,
-    and the inputs that produced it
-  apply-rules -> price-tiers: how many partners land in each tier, so
-    the cost of the tier is priced against real numbers
-  list-exceptions -> approve-tiers: every departure from the rules, the
-    reason, the person asking, and the date it expires
-  price-tiers -> check-margin: the discount and the funds each tier
-    carries, at the volume assumed
-  price-tiers -> check-support: the response times and the contacts
-    each tier promises
-  check-margin -> approve-tiers: the tiers that hold the floor and the
-    ones that do not, with the shortfall on each
-  check-support -> approve-tiers: the tiers the support team can staff
-    and the ones it cannot, with the headcount behind the answer
-  approve-tiers -> set-dates: the signed tier set and the signed
-    exceptions, at a version
-  set-dates -> tell-partners: the start date, the notice, and the
-    period a dropped partner keeps their old terms
-  set-dates -> change-systems: the same dates, so what the partner is
-    told and what the systems do start on the same day
-  tell-partners -> verify-entitlement: what each partner was told they
-    hold, so the systems can be checked against it
-  change-systems -> verify-entitlement: what each system was set to,
-    and the date it took effect
-  verify-entitlement -> publish-round: the partners whose entitlement
-    matches what they were told, and the ones whose does not
-  publish-round -> record-rule-gaps: the round as published, including
-    the exception count
+  open-round -> read-rules [partners-and-date]: the partners in scope,
+    and the date the result has to apply from
+  read-rules -> pull-evidence [rules-in-force]: the measures the rules
+    name, so the evidence is pulled for what the rules actually use
+  pull-evidence -> check-evidence [measures-pulled]: the measures for
+    every partner, each line naming the system and the date it was read
+    from
+  check-evidence -> apply-rules [complete-evidence]: complete evidence,
+    with every gap marked as a gap rather than filled with a zero
+  apply-rules -> list-exceptions [rules-result]: the tier the rules gave
+    each partner, and the inputs that produced it
+  apply-rules -> price-tiers [tier-spread]: how many partners land in
+    each tier, so the cost of the tier is priced against real numbers
+  list-exceptions -> approve-tiers [departures]: every departure from
+    the rules, the reason, the person asking, and the date it expires
+  price-tiers -> check-margin [tier-cost]: the discount and the funds
+    each tier carries, at the volume assumed
+  price-tiers -> check-support [tier-promises]: the response times and
+    the contacts each tier promises
+  check-margin -> approve-tiers [margin-finding]: the tiers that hold
+    the floor and the ones that do not, with the shortfall on each
+  check-support -> approve-tiers [support-finding]: the tiers the
+    support team can staff and the ones it cannot, with the headcount
+    behind the answer
+  approve-tiers -> set-dates [signed-tiers]: the signed tier set and the
+    signed exceptions, at a version
+  set-dates -> tell-partners [dates-and-notice]: the start date, the
+    notice, and the period a dropped partner keeps their old terms
+  set-dates -> change-systems [dates-for-systems]: the same dates, so
+    what the partner is told and what the systems do start on the same
+    day
+  tell-partners -> verify-entitlement [tier-as-told]: what each partner
+    was told they hold, so the systems can be checked against it
+  change-systems -> verify-entitlement [systems-set]: what each system
+    was set to, and the date it took effect
+  verify-entitlement -> publish-round [entitlement-check]: the partners
+    whose entitlement matches what they were told, and the ones whose
+    does not
+  publish-round -> record-rule-gaps [published-round]: the round as
+    published, including the exception count
+deviations:
+  check-evidence -> pull-evidence [measure-missing]: a measure is
+    missing for a partner, so it is pulled again rather than counted as
+    a zero
+  check-margin -> price-tiers [discount-breaks-floor]: the tier's
+    discount breaks the margin floor, so the tier is priced again with
+    the shortfall attached
+  check-support -> price-tiers [support-cannot-be-staffed]: the support
+    the tier promises cannot be staffed, so the promise is priced again
+    against the people who would answer
+  approve-tiers -> list-exceptions [exception-has-no-reason]: an
+    exception has no reason behind it, so it goes back to be written
+    with a reason and a named person or dropped
+  tell-partners -> pull-evidence [evidence-round-missed]: a partner
+    shows evidence the round did not see, so it is pulled in and the
+    rules are applied again
+  verify-entitlement -> change-systems [entitlement-mismatch]: what the
+    partner can see, buy or claim does not match their tier, so the
+    systems are set again before the round closes
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, the partner leads who ask for exceptions, the finance

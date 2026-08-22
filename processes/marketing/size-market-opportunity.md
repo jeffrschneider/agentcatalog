@@ -78,6 +78,12 @@ from: ref/mkt/size-market-opportunity v1
 owner: <who>                          effective: <date>
 trigger: a segment or category question is opened in <your planning
          process>, or the review date on a recorded sizing arrives
+         watch: record=<a sizing question>
+                system=<your planning process>
+                change=<a segment or category question is opened>
+         or watch: record=<a recorded sizing>
+                system=<your review schedule>
+                change=<the review date on the sizing arrives>
 concurrency: one run at a time for the same market, because two
              accepted sizes for one market leave nobody with one. Runs
              for different markets overlap
@@ -170,40 +176,63 @@ run-scoped:
                 every: <cadence>
                 from: take-in-question   until: settle-number
 handoffs:
-  take-in-question -> draw-boundary: the question, what it has to
-    settle, who accepts the answer, and the date it is due
-  draw-boundary -> choose-method: what counts inside the market and
-    what is excluded, in wording a later number can be tested against
-  choose-method -> outside-evidence: the method, and the figures it
-    needs before it can be computed
-  choose-method -> rate-assumptions: the rates the method needs, and
-    how far each one has to be broken down
-  outside-evidence -> count-buyers: the figures, each with its source,
-    the date it was pulled, and the part of the source it came from
-  outside-evidence -> clear-sources: the same figures and the terms
-    each source came with. Two branches read one record
-  count-buyers -> compute-sizes: how many buyers of that shape exist,
-    and the count behind that figure
-  rate-assumptions -> compute-sizes: what a buyer pays and how often,
-    each carrying where it came from
-  compute-sizes -> reconcile: the number each method produced, with
-    the working behind it
-  reconcile -> test-assumptions: the differences between the methods,
-    and what explains each one
-  test-assumptions -> check-method: the sizing with every assumption
-    moved through its range and the swing recorded beside it
-  check-method -> settle-number: the scored list, with a verdict on
-    every figure and the rule behind each failure
-  clear-sources -> settle-number: the figures that may be quoted
-    outside, and the figures that may be used only inside
-  settle-number -> write-sizing: the accepted number, why it was
-    accepted over the others, and everyone who disagreed and on what
-  write-sizing -> issue-version: the sizing in the wording it was
-    accepted in
-  issue-version -> set-review: the sizing at its number, and what
-    changed from the version it replaces
-  set-review -> record-learnings: the review date, and the conditions
-    that bring the sizing back sooner
+  take-in-question -> draw-boundary [the-question]: the question, what
+    it has to settle, who accepts the answer, and the date it is due
+  draw-boundary -> choose-method [market-boundary]: what counts inside
+    the market and what is excluded, in wording a later number can be
+    tested against
+  choose-method -> outside-evidence [chosen-method]: the method, and
+    the figures it needs before it can be computed
+  choose-method -> rate-assumptions [rates-needed]: the rates the
+    method needs, and how far each one has to be broken down
+  outside-evidence -> count-buyers [sourced-figures]: the figures, each
+    with its source, the date it was pulled, and the part of the source
+    it came from
+  outside-evidence -> clear-sources [source-terms]: the same figures
+    and the terms each source came with. Two branches read one record
+  count-buyers -> compute-sizes [buyer-count]: how many buyers of that
+    shape exist, and the count behind that figure
+  rate-assumptions -> compute-sizes [price-and-frequency]: what a buyer
+    pays and how often, each carrying where it came from
+  compute-sizes -> reconcile [method-numbers]: the number each method
+    produced, with the working behind it
+  reconcile -> test-assumptions [explained-differences]: the
+    differences between the methods, and what explains each one
+  test-assumptions -> check-method [assumption-swings]: the sizing with
+    every assumption moved through its range and the swing recorded
+    beside it
+  check-method -> settle-number [method-check]: the scored list, with a
+    verdict on every figure and the rule behind each failure
+  clear-sources -> settle-number [cleared-figures]: the figures that
+    may be quoted outside, and the figures that may be used only inside
+  settle-number -> write-sizing [accepted-number]: the accepted number,
+    why it was accepted over the others, and everyone who disagreed and
+    on what
+  write-sizing -> issue-version [written-sizing]: the sizing in the
+    wording it was accepted in
+  issue-version -> set-review [issued-sizing]: the sizing at its
+    number, and what changed from the version it replaces
+  set-review -> record-learnings [review-conditions]: the review date,
+    and the conditions that bring the sizing back sooner
+deviations:
+  count-buyers -> choose-method [no-list-of-buyers]: there is no list
+    of buyers that can actually be counted, so the market is sized
+    another way
+  rate-assumptions -> outside-evidence [rate-cannot-be-sourced]: a rate
+    cannot be sourced, so the evidence is gathered again for a figure
+    somebody can point at
+  reconcile -> draw-boundary [methods-disagree]: the methods disagree
+    by more than the run allows, so the boundary is drawn again and the
+    numbers are computed inside it
+  check-method -> compute-sizes [method-not-followed]: the executed
+    method departs from the chosen one, so the sizing is computed again
+    against the findings
+  clear-sources -> outside-evidence [figure-not-cleared]: a figure may
+    not be used outside the company, so the evidence is gathered again
+    for one that may
+  settle-number -> choose-method [number-not-accepted]: the people who
+    decide will not accept the number, so the method is chosen again
+    with their reasons on the record
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance, legal and

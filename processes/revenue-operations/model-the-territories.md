@@ -67,6 +67,9 @@ PROCESS: model the territories        id: <team>/model-the-territories   v1
 from: ref/rev/model-the-territories v1
 owner: <who>                          effective: <date>
 trigger: the carve for <period> opens on <your planning calendar>
+         watch: record=<the carve for the period>
+                system=<your planning calendar>
+                change=<the carve opens for the period>
 concurrency: one run per period per market - a re-cut inside the period
              is a new version of the same run, not a new run
 goal: every account in exactly one territory, every territory modelled
@@ -153,37 +156,55 @@ run-scoped:
                  every: <cadence>
                  from: take-in-accounts   until: fix-map
 handoffs:
-  take-in-number -> fix-carve-rule: the target, the segments it covers,
-    and the date the map is due
-  take-in-number -> take-in-accounts: the same segment definitions, so
-    the account base is pulled on the boundaries the map will use
-  fix-carve-rule -> draw-candidates: what a territory is cut on, written
-    down, and the account fields that rule reads
-  take-in-accounts -> clean-accounts: every account with the fields the
-    rule needs, and the version each field was read at
-  take-in-accounts -> read-coverage: the same account base, so coverage
-    is read against the accounts actually being carved
-  clean-accounts -> size-accounts: one record per real account, with
-    every account the rule cannot read listed by name
-  size-accounts -> draw-candidates: current spend and carrying size per
-    account, each figure naming the system it came from
-  read-coverage -> draw-candidates: which patches were worked, which
-    were not, and every account nobody called
-  draw-candidates -> model-carrying: the candidate maps, each placing
-    every account exactly once
-  model-carrying -> test-history: what each patch carries, with the
-    assumption beside every number
-  test-history -> check-balance: the modelled numbers set beside what
-    closed, and every patch the model got wrong by more than <percent>
-  check-balance -> cost-cuts: the balance finding per patch, with the
-    rule behind every failure
-  cost-cuts -> choose-cut: what each map costs to staff and to work,
-    and what it would displace
-  choose-cut -> fix-map: the chosen map, who chose it, and why
-  fix-map -> record-assumptions: the map at a version, with the rule it
-    was drawn on and the date it takes effect
-  record-assumptions -> hand-over-map: the assumption under every
-    carrying number, and what would make it wrong
+  take-in-number -> fix-carve-rule [target-and-segments]: the target,
+    the segments it covers, and the date the map is due
+  take-in-number -> take-in-accounts [segment-definitions]: the same
+    segment definitions, so the account base is pulled on the boundaries
+    the map will use
+  fix-carve-rule -> draw-candidates [carve-rule]: what a territory is
+    cut on, written down, and the account fields that rule reads
+  take-in-accounts -> clean-accounts [account-base]: every account with
+    the fields the rule needs, and the version each field was read at
+  take-in-accounts -> read-coverage [accounts-for-coverage]: the same
+    account base, so coverage is read against the accounts actually
+    being carved
+  clean-accounts -> size-accounts [clean-account-base]: one record per
+    real account, with every account the rule cannot read listed by name
+  size-accounts -> draw-candidates [account-sizes]: current spend and
+    carrying size per account, each figure naming the system it came
+    from
+  read-coverage -> draw-candidates [last-period-coverage]: which patches
+    were worked, which were not, and every account nobody called
+  draw-candidates -> model-carrying [candidate-maps]: the candidate
+    maps, each placing every account exactly once
+  model-carrying -> test-history [carrying-numbers]: what each patch
+    carries, with the assumption beside every number
+  test-history -> check-balance [backtest-result]: the modelled numbers
+    set beside what closed, and every patch the model got wrong by more
+    than <percent>
+  check-balance -> cost-cuts [balance-findings]: the balance finding per
+    patch, with the rule behind every failure
+  cost-cuts -> choose-cut [cut-costs]: what each map costs to staff and
+    to work, and what it would displace
+  choose-cut -> fix-map [chosen-map]: the chosen map, who chose it, and
+    why
+  fix-map -> record-assumptions [fixed-map]: the map at a version, with
+    the rule it was drawn on and the date it takes effect
+  record-assumptions -> hand-over-map [model-assumptions]: the
+    assumption under every carrying number, and what would make it wrong
+deviations:
+  clean-accounts -> take-in-accounts [field-the-rule-reads-is-missing]:
+    accounts are missing a field the rule cuts on, so the account base
+    is taken in again and what stays unreadable is placed by hand
+  test-history -> model-carrying [model-fails-history]: the model does
+    not reproduce what those patches actually closed, so the carrying
+    model is rebuilt rather than the history adjusted
+  check-balance -> draw-candidates [patch-nobody-could-work]: a patch
+    comes out too big, too spread or too rich for one seller, so the
+    candidates are drawn again
+  choose-cut -> draw-candidates [no-cut-is-workable]: every map on the
+    table fails balance or cost, so the candidates are drawn again and
+    the leaders are told which constraint has to move
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the leader who chooses the map,

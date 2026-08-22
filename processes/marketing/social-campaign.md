@@ -57,6 +57,9 @@ PROCESS: social campaign              id: <team>/social-campaign   v1
 from: ref/mkt/social-campaign v1
 owner: <who>                          effective: <date>
 trigger: a campaign brief is approved in <your planning process>
+         watch: record=<a campaign brief>
+                system=<your planning process>
+                change=<the brief is approved>
 concurrency: runs may overlap - <how many> live at once
 goal: a campaign launched on every channel the brief names, run for its
       window, and reported against what the brief asked for
@@ -120,18 +123,28 @@ run-scoped:
            every: <cadence>
            from: launch   until: run close
 handoffs:
-  take-in-brief -> set-parameters: the goal, stated in one line that
-    every later decision can be tested against
-  set-parameters -> brief-creatives: the channels, audience, dates and
-    budget
-  set-parameters -> practical-side: the same parameters. Both branches
-    read one record
-  settle-direction -> produce-posts: the chosen concept, and why it won
-  produce-posts -> get-sign-offs: the posts at a version
-  get-sign-offs -> launch: the approved posts at the signed version. A
-    later change voids the approval and sign-offs run again
-  practical-side -> launch: tracking, ads and schedule, ready to fire
-  wrap-up -> record-learnings: the report, as delivered
+  take-in-brief -> set-parameters [campaign-goal]: the goal, stated in
+    one line that every later decision can be tested against
+  set-parameters -> brief-creatives [campaign-parameters]: the
+    channels, audience, dates and budget
+  set-parameters -> practical-side [parameters-for-setup]: the same
+    parameters. Both branches read one record
+  settle-direction -> produce-posts [chosen-concept]: the chosen
+    concept, and why it won
+  produce-posts -> get-sign-offs [posts]: the posts at a version
+  get-sign-offs -> launch [signed-posts]: the approved posts at the
+    signed version. A later change voids the approval and sign-offs run
+    again
+  practical-side -> launch [launch-setup]: tracking, ads and schedule,
+    ready to fire
+  wrap-up -> record-learnings [campaign-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> produce-posts [changes-requested]: a signer asks for
+    changes, and only the piece they named reopens
+  optimize -> produce-posts [creative-goes-stale]: the creative stops
+    working while the campaign is live, so replacements are produced at
+    a new version and signed off like any other posts
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the human roles>

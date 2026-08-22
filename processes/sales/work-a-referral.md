@@ -67,6 +67,11 @@ from: ref/sls/work-a-referral v1
 owner: <who>                           effective: <date>
 trigger: somebody offers an introduction, or <your seller role> asks a
          customer, a partner or a colleague for one
+         watch: record=<referral> system=<your referral record>
+                change=<somebody offers an introduction>
+         or watch: record=<referral> system=<your referral record>
+                change=<a seller asks a customer, a partner or a
+                colleague for an introduction>
 concurrency: runs may overlap freely - one referral is one run, and one
              introducer is asked for no more than <n> at a time
 goal: an introduction that is actually sent, answered within <hours>,
@@ -140,34 +145,54 @@ phases:
                      owner: prospect-researcher
                      after: tell-introducer      automation: <level>
 handoffs:
-  take-in-referral -> thank-introducer: who was named, by whom, and
-    what the introducer offered to do
-  take-in-referral -> check-account: the account the named person works
-    for, and the date the offer was made
-  check-account -> read-the-person: who owns the account, what is open
-    against it, and whether a sequence is already touching it
-  read-the-person -> agree-the-ask: what the person does, what the
-    account is dealing with, and what the introducer already knows
-  thank-introducer -> agree-the-ask: what the introducer said they are
-    willing to do, in their own words
-  agree-the-ask -> confirm-willing: the ask as it will be made, and the
-    person it will be made to
-  confirm-willing -> check-consent: the introducer's written agreement,
-    dated, and the person it covers
-  check-consent -> write-intro: whether this person may be contacted,
-    on which channel, and what the record took out
-  write-intro -> ask-for-intro: the note the introducer sends, ready to
-    send, and what the seller sends after it
-  ask-for-intro -> chase-once: the date the note was given and the date
-    it was meant to go
-  chase-once -> take-handover: the introduction as it was actually
-    sent, and everything the introducer said in it
-  take-handover -> book-meeting: the person's reply, and what they
-    asked for in it
-  book-meeting -> tell-introducer: whether a meeting was agreed, and
-    when it sits
-  tell-introducer -> record-referral: the outcome as the introducer was
-    told it
+  take-in-referral -> thank-introducer [the-referral]: who was named,
+    by whom, and what the introducer offered to do
+  take-in-referral -> check-account [named-account]: the account the
+    named person works for, and the date the offer was made
+  check-account -> read-the-person [account-ownership]: who owns the
+    account, what is open against it, and whether a sequence is already
+    touching it
+  read-the-person -> agree-the-ask [person-and-account]: what the
+    person does, what the account is dealing with, and what the
+    introducer already knows
+  thank-introducer -> agree-the-ask [introducer-offer]: what the
+    introducer said they are willing to do, in their own words
+  agree-the-ask -> confirm-willing [the-ask]: the ask as it will be
+    made, and the person it will be made to
+  confirm-willing -> check-consent [written-agreement]: the
+    introducer's written agreement, dated, and the person it covers
+  check-consent -> write-intro [contact-permission]: whether this
+    person may be contacted, on which channel, and what the record took
+    out
+  write-intro -> ask-for-intro [the-note]: the note the introducer
+    sends, ready to send, and what the seller sends after it
+  ask-for-intro -> chase-once [send-dates]: the date the note was given
+    and the date it was meant to go
+  chase-once -> take-handover [introduction-as-sent]: the introduction
+    as it was actually sent, and everything the introducer said in it
+  take-handover -> book-meeting [the-reply]: the person's reply, and
+    what they asked for in it
+  book-meeting -> tell-introducer [meeting-outcome]: whether a meeting
+    was agreed, and when it sits
+  tell-introducer -> record-referral [outcome-as-told]: the outcome as
+    the introducer was told it
+deviations:
+  check-account -> take-in-referral [account-owned-elsewhere]: another
+    seller already owns the account, so the referral goes to them with
+    the introducer's words attached
+  confirm-willing -> agree-the-ask [different-ask-wanted]: the
+    introducer wants a different ask, so a smaller ask, or none, is
+    agreed rather than pressing the one they refused
+  check-consent -> tell-introducer [may-not-be-contacted]: the person
+    may not be contacted, so no note is written and no introduction is
+    asked for, and the introducer hears that instead
+  chase-once -> tell-introducer [no-answer-after-reminder]: there is
+    still nothing after the one reminder, so the referral is let go
+    with no handover and no meeting, and the introducer is told it was
+  take-handover -> agree-the-ask [wrong-person]: the person named is
+    not the right one, so the ask is agreed again against whoever is
+  book-meeting -> take-handover [no-time-agreed]: no time is agreed, so
+    the handover is worked again rather than the reply going cold
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller who answers, and

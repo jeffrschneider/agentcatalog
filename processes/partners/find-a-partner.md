@@ -70,6 +70,9 @@ from: ref/prt/find-a-partner v1
 owner: <who>                          effective: <date>
 trigger: a gap the company cannot close alone is approved in <your
          planning process>
+         watch: record=<capability gap> system=<your planning process>
+                change=<a gap the company cannot close alone is
+                approved>
 concurrency: runs may overlap - <how many> searches live at once, and
              one gap is searched by one run at a time
 goal: a short list of <number> candidates, each scored against the
@@ -164,37 +167,57 @@ run-scoped:
              every: <cadence>
              from: read-candidates   until: run close
 handoffs:
-  take-in-gap -> state-gap: the approved gap, the market it sits in,
-    and the date it starts costing something
-  state-gap -> set-closing-test: the gap as one line, at the wording
-    the partner leader confirmed
-  set-closing-test -> decide-partner-kind: the test, written so a
-    candidate can be scored against it rather than admired
-  decide-partner-kind -> set-bounds: the shape of partner, and the
-    shapes the gap rules out
-  set-bounds -> look-at-known: the geography, the size band, the
-    segment, and the companies the search may not touch
-  look-at-known -> search-market: the partners and customers already
-    on the books, each marked as able, unable or untested against the
-    gap
-  search-market -> read-candidates: the candidate names, each with the
-    source it came from and the date it was read
-  read-candidates -> screen-out: what each candidate sells, to whom,
-    where, and who they already work with
-  screen-out -> score-candidates: the surviving candidates, and the
-    removed ones with the reason each was removed
-  score-candidates -> cut-short-list: every score against the closing
-    test, with the evidence line behind it
-  cut-short-list -> check-conflict: the short list at <number> names,
-    each with the reason it survived
-  check-conflict -> first-contact: the overlaps found, account by
-    account, and who owns each one today
-  first-contact -> record-replies: the approach as sent, the date, and
-    what each candidate was told
-  record-replies -> confirm-list: the replies, the refusals and the
-    silences, each dated
-  confirm-list -> hand-on: the confirmed short list, at a version, and
-    the names the confirming group struck off
+  take-in-gap -> state-gap [approved-gap]: the approved gap, the market
+    it sits in, and the date it starts costing something
+  state-gap -> set-closing-test [gap-line]: the gap as one line, at the
+    wording the partner leader confirmed
+  set-closing-test -> decide-partner-kind [closing-test]: the test,
+    written so a candidate can be scored against it rather than admired
+  decide-partner-kind -> set-bounds [partner-kind]: the shape of
+    partner, and the shapes the gap rules out
+  set-bounds -> look-at-known [search-bounds]: the geography, the size
+    band, the segment, and the companies the search may not touch
+  look-at-known -> search-market [known-companies]: the partners and
+    customers already on the books, each marked as able, unable or
+    untested against the gap
+  search-market -> read-candidates [candidate-names]: the candidate
+    names, each with the source it came from and the date it was read
+  read-candidates -> screen-out [candidate-profiles]: what each
+    candidate sells, to whom, where, and who they already work with
+  screen-out -> score-candidates [screening-result]: the surviving
+    candidates, and the removed ones with the reason each was removed
+  score-candidates -> cut-short-list [candidate-scores]: every score
+    against the closing test, with the evidence line behind it
+  cut-short-list -> check-conflict [short-list]: the short list at
+    <number> names, each with the reason it survived
+  check-conflict -> first-contact [overlaps]: the overlaps found,
+    account by account, and who owns each one today
+  first-contact -> record-replies [approaches-sent]: the approach as
+    sent, the date, and what each candidate was told
+  record-replies -> confirm-list [replies]: the replies, the refusals
+    and the silences, each dated
+  confirm-list -> hand-on [confirmed-list]: the confirmed short list,
+    at a version, and the names the confirming group struck off
+deviations:
+  set-closing-test -> state-gap [test-not-agreed]: nobody can agree
+    what closing the gap looks like, so the gap is stated again in
+    words a candidate can be scored against
+  look-at-known -> cut-short-list [known-partner-fits]: a partner
+    already on the books could close the gap, so the short list is cut
+    with that partner on it and does not wait for the market search and
+    the scoring, which still run when a comparison is wanted
+  screen-out -> set-bounds [too-few-candidates]: screening leaves too
+    few candidates to choose from, so the bounds are set again with a
+    name against the widening
+  check-conflict -> cut-short-list [overlap-too-close]: the overlap
+    with our own partners or sellers is too close, so the short list is
+    cut again before anybody is contacted
+  record-replies -> search-market [nobody-replied]: nobody on the short
+    list replied, so the market is searched again rather than the same
+    names being approached with warmer language
+  confirm-list -> score-candidates [list-misses-the-gap]: the
+    confirming group finds the list does not cover the gap, so the
+    candidates are scored against the closing test again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the sales

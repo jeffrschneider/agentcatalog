@@ -80,6 +80,10 @@ from: ref/rev/define-a-record v1
 owner: <who>                          effective: <date>
 trigger: a new object, a new field, or a change to an existing rule is
          proposed in <your change request channel>
+         watch: record=<definition request>
+                system=<your change request channel>
+                change=<a new object, a new field or a change to an
+                existing rule is proposed>
 concurrency: one run per object - <how many> definitions change at once,
              and a second request for the same object joins the run that
              is already open
@@ -177,37 +181,57 @@ run-scoped:
                   every: <cadence>
                   from: turn-rules-on   until: the backfill deadline
 handoffs:
-  take-in-request -> read-usage: the object, the change asked for, and
-    who asked for it
-  read-usage -> write-meaning: who reads the object, what counts off
-    it, and where it is copied to
-  write-meaning -> list-fields: the sentence the object is defined by,
-    at a draft version
-  list-fields -> decide-required: every field, its fill rate, and
-    whether anything reads it
-  decide-required -> fix-values: the required list, each field with the
-    reason it is required
-  fix-values -> set-key: the allowed values and what each one means
-  set-key -> name-sources: the fields that decide whether two records
-    are one thing
-  name-sources -> check-consent: every field with where its value comes
-    from, so consent is applied to a source and not to a name
-  check-consent -> write-rules: the fields that may be held, the fields
-    that may not, and how long each one may be kept
-  write-rules -> test-rules: the rules as they will run, split into
-    refuse, warn and report
-  test-rules -> show-breakage: the count of records already held that
-    would fail, and which kinds of record they are
-  show-breakage -> sign-definition: the reports and integrations that
-    read a changed field, with what happens to each
-  sign-definition -> publish-definition: the definition at the signed
-    version, with the signer and the date
-  publish-definition -> turn-rules-on: the published entry, and the
-    rules exactly as the signed version states them
-  turn-rules-on -> set-backfill: the rules live, and the list of
-    records already held that now fail
-  set-backfill -> record-learnings: the deadline, the owner, and the
-    count still failing when the run closed
+  take-in-request -> read-usage [definition-request]: the object, the
+    change asked for, and who asked for it
+  read-usage -> write-meaning [current-usage]: who reads the object,
+    what counts off it, and where it is copied to
+  write-meaning -> list-fields [object-meaning]: the sentence the
+    object is defined by, at a draft version
+  list-fields -> decide-required [field-inventory]: every field, its
+    fill rate, and whether anything reads it
+  decide-required -> fix-values [required-fields]: the required list,
+    each field with the reason it is required
+  fix-values -> set-key [allowed-values]: the allowed values and what
+    each one means
+  set-key -> name-sources [uniqueness-key]: the fields that decide
+    whether two records are one thing
+  name-sources -> check-consent [field-sources]: every field with where
+    its value comes from, so consent is applied to a source and not to
+    a name
+  check-consent -> write-rules [what-may-be-held]: the fields that may
+    be held, the fields that may not, and how long each one may be kept
+  write-rules -> test-rules [draft-rules]: the rules as they will run,
+    split into refuse, warn and report
+  test-rules -> show-breakage [failing-records]: the count of records
+    already held that would fail, and which kinds of record they are
+  show-breakage -> sign-definition [downstream-breakage]: the reports
+    and integrations that read a changed field, with what happens to
+    each
+  sign-definition -> publish-definition [signed-definition]: the
+    definition at the signed version, with the signer and the date
+  publish-definition -> turn-rules-on [published-definition]: the
+    published entry, and the rules exactly as the signed version states
+    them
+  turn-rules-on -> set-backfill [live-rules]: the rules live, and the
+    list of records already held that now fail
+  set-backfill -> record-learnings [backfill-plan]: the deadline, the
+    owner, and the count still failing when the run closed
+deviations:
+  check-consent -> decide-required [field-may-not-be-held]: the consent
+    record does not allow a field, so the required list is decided
+    again without it and the requester is told which field was refused
+  test-rules -> write-rules [rule-fails-good-records]: the rule fails
+    records that are correct, so the rules are written again rather
+    than shipped with a plan to ignore their own failures
+  show-breakage -> decide-required [report-cannot-survive]: a report
+    cannot survive the change, so the required list is decided again
+    unless the report owner agrees in writing to the break
+  sign-definition -> decide-required [owner-wants-it-narrower]: the
+    object owner wants the change narrower, so the required list is
+    decided again before anything is signed
+  turn-rules-on -> write-rules [saves-start-failing]: saves start
+    failing in numbers, so the refusing rule drops to a warning and the
+    rules are written and tested again before they go on
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the object owner, the revenue

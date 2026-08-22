@@ -82,6 +82,11 @@ from: ref/rev/design-a-comp-plan v1
 owner: <who>                          effective: <date>
 trigger: a plan period opens, or leadership changes what the plans have
          to buy
+         watch: record=<plan period> system=<your planning calendar>
+                change=<a period opens for compensation planning>
+         or watch: record=<the plan intent>
+                system=<where leadership states it>
+                change=<what the plans have to buy changes>
 concurrency: one run per population per period - <how many> populations
              are planned at once, and one seller sits on one plan at a
              time
@@ -176,44 +181,65 @@ run-scoped:
                 every: <cadence>
                 from: publish-plans   until: run close
 handoffs:
-  take-in-intent -> read-last-period: the period, the number, and what
-    leadership says the plans have to cause
-  read-last-period -> name-behaviour: what each plan paid last period,
-    seller by seller, next to what those sellers did, with the system every
-    line was read from
-  name-behaviour -> take-in-sellers: the outcomes each role is paid to
-    reach, at a version leadership holds
-  take-in-sellers -> draft-shape: the sellers, the quota each one carries,
-    and the money available to pay them
-  draft-shape -> model-cost: the shape per role, with every rate, gate,
-    cap and accelerator written down
-  draft-shape -> test-awkward-cases: the same draft, and the deal shapes
-    the business actually sells
-  draft-shape -> check-pay-rules: the same draft, and the countries and
-    contracts every seller sits under
-  model-cost -> settle-cost: the cost at each outcome, seller by seller and
-    in total, with the assumptions it rests on
-  test-awkward-cases -> settle-cost: each awkward deal, what the draft
-    pays for it, and whether that was meant
-  check-pay-rules -> settle-cost: every rule the draft touches, and what
-    it would take for the draft to stand on it
-  settle-cost -> approve-plan: the shape as finance accepted it, and the
-    cost it was accepted at
-  approve-plan -> write-wording: the approved shape at a version. A
-    later change voids the approval and the plan goes back to be signed
+  take-in-intent -> read-last-period [period-and-intent]: the period,
+    the number, and what leadership says the plans have to cause
+  read-last-period -> name-behaviour [last-period-payout]: what each
+    plan paid last period, seller by seller, next to what those sellers
+    did, with the system every line was read from
+  name-behaviour -> take-in-sellers [paid-for-outcomes]: the outcomes
+    each role is paid to reach, at a version leadership holds
+  take-in-sellers -> draft-shape [sellers-and-budget]: the sellers, the
+    quota each one carries, and the money available to pay them
+  draft-shape -> model-cost [plan-shape]: the shape per role, with every
+    rate, gate, cap and accelerator written down
+  draft-shape -> test-awkward-cases [draft-and-deal-shapes]: the same
+    draft, and the deal shapes the business actually sells
+  draft-shape -> check-pay-rules [draft-and-contracts]: the same draft,
+    and the countries and contracts every seller sits under
+  model-cost -> settle-cost [modelled-cost]: the cost at each outcome,
+    seller by seller and in total, with the assumptions it rests on
+  test-awkward-cases -> settle-cost [awkward-case-results]: each awkward
+    deal, what the draft pays for it, and whether that was meant
+  check-pay-rules -> settle-cost [pay-rule-findings]: every rule the
+    draft touches, and what it would take for the draft to stand on it
+  settle-cost -> approve-plan [accepted-shape]: the shape as finance
+    accepted it, and the cost it was accepted at
+  approve-plan -> write-wording [approved-plan]: the approved shape at a
+    version. A later change voids the approval and the plan goes back to
+    be signed again
+  write-wording -> build-examples [plan-wording]: the wording as it will
+    be published, sentence by sentence
+  build-examples -> publish-plans [worked-examples]: the worked
+    examples, computed the way the calculator will compute the real
+    thing
+  publish-plans -> collect-acceptance [plans-issued]: who received which
+    plan, on what date, at which version
+  publish-plans -> brief-managers [published-wording]: the same wording,
+    so managers explain what was published and nothing else
+  collect-acceptance -> record-questions [acceptance-record]: who
+    signed, who did not, and what the unsigned objected to
+  brief-managers -> record-questions [unanswered-questions]: the
+    questions the managers could not answer out of the wording
+deviations:
+  model-cost -> draft-shape [cost-over-budget]: the modelled cost is
+    more than the budget, so the shape is drafted again rather than the
+    budget being raised
+  test-awkward-cases -> draft-shape [unintended-payout]: the wording
+    pays a deal nobody meant to pay, so the shape is drafted again
+  check-pay-rules -> draft-shape [rule-blocks-plan]: the draft rests on
+    a pay rule it cannot stand on, so the shape is drafted again with
+    the rule attached
+  settle-cost -> name-behaviour [cost-refused]: finance refuses the
+    cost, so the outcomes each role is paid to reach are named again
+  approve-plan -> draft-shape [changes-requested]: the signers ask for
+    changes, so the components they named are drafted again
+  build-examples -> write-wording [example-cannot-be-paid]: an example
+    the wording cannot pay, so the sentences are written again
+  collect-acceptance -> publish-plans [disputed-numbers]: a person
+    disputes their quota or their rate, so their own plan is published
     again
-  write-wording -> build-examples: the wording as it will be published,
-    sentence by sentence
-  build-examples -> publish-plans: the worked examples, computed the way
-    the calculator will compute the real thing
-  publish-plans -> collect-acceptance: who received which plan, on what
-    date, at which version
-  publish-plans -> brief-managers: the same wording, so managers explain
-    what was published and nothing else
-  collect-acceptance -> record-questions: who signed, who did not, and
-    what the unsigned objected to
-  brief-managers -> record-questions: the questions the managers could
-    not answer out of the wording
+  brief-managers -> write-wording [wording-fails-explaining]: the
+    wording does not survive being explained, so it is written again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales leader, the finance

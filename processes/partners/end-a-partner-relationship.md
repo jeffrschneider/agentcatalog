@@ -78,6 +78,16 @@ owner: <who>                          effective: <date>
 trigger: <your partner review process> reports a partner still behind
          after <how many> rounds, a term of the agreement is breached,
          or either side gives notice
+         watch: record=<partner review>
+                system=<your partner review process>
+                change=<a review reports a partner still behind after
+                the set number of rounds>
+         or watch: record=<the agreement>
+                system=<where breaches are recorded>
+                change=<a term of the agreement is breached>
+         or watch: record=<notice to end>
+                system=<where notices are served>
+                change=<either side gives notice>
 concurrency: one run per partner, and a partner in this run is out of
              every review and tiering round while it is open
 goal: the relationship ended on the terms the agreement sets, with
@@ -178,44 +188,69 @@ run-scoped:
   money     - runs allocate-and-reconcile       owner: margin-keeper
               from: settle-money   until: run close
 handoffs:
-  take-in-reason -> check-exit-terms: what happened, dated, with the
-    evidence behind it and what was already tried
-  check-exit-terms -> legal-read: the clauses that apply, quoted from
-    the agreement at the version that was signed
-  legal-read -> decide-to-end: whether the grounds hold, what it costs,
-    and what survives the ending
-  decide-to-end -> list-customers: the decision and the date it applies
-    from, so the customer list is taken as of that date
-  decide-to-end -> list-in-flight: the same decision, so the last day
-    the partner may sell is known before the lists are drawn
-  decide-to-end -> settle-money: the same decision, so the money is
-    counted to a date rather than to an argument
-  list-customers -> write-plan: every customer, with the contract, the
-    renewal date and who at the customer has to be called
-  list-in-flight -> write-plan: everything still open, with what it is
-    worth and who is waiting on it
-  settle-money -> write-plan: what is owed each way, with the evidence
-    for every line and every disputed line marked as disputed
-  write-plan -> tell-partner: the plan, the dates, and the last day the
-    partner may sell
-  tell-partner -> agree-handover: the notice as served, with the date
-    and the form it was served in
-  agree-handover -> tell-customers: who tells each customer, in what
-    order, and what is said, agreed by both sides where possible
-  agree-handover -> finish-in-flight: what the partner finishes, what
-    somebody else takes over, and by when
-  tell-customers -> move-customers: the customers who have been told,
-    the date, and anything they asked for
-  move-customers -> close-access: the customers now held by a named
-    owner, so no access is closed while somebody still depends on it
-  finish-in-flight -> close-access: the work closed, transferred or
-    paid, and anything left open with the reason
-  close-access -> pay-and-recover: the access ended and the dates, so
-    the final settlement counts to a real last day
-  pay-and-recover -> confirm-exit: what was paid and recovered, and
-    anything still in dispute
-  confirm-exit -> record-learnings: the exit as confirmed, with every
-    item that could not be closed named
+  take-in-reason -> check-exit-terms [ending-reason]: what happened,
+    dated, with the evidence behind it and what was already tried
+  check-exit-terms -> legal-read [exit-clauses]: the clauses that
+    apply, quoted from the agreement at the version that was signed
+  legal-read -> decide-to-end [legal-position]: whether the grounds
+    hold, what it costs, and what survives the ending
+  decide-to-end -> list-customers [ending-decision]: the decision and
+    the date it applies from, so the customer list is taken as of that
+    date
+  decide-to-end -> list-in-flight [last-sell-date]: the same decision,
+    so the last day the partner may sell is known before the lists are
+    drawn
+  decide-to-end -> settle-money [money-cut-off]: the same decision, so
+    the money is counted to a date rather than to an argument
+  list-customers -> write-plan [customer-list]: every customer, with
+    the contract, the renewal date and who at the customer has to be
+    called
+  list-in-flight -> write-plan [open-work]: everything still open, with
+    what it is worth and who is waiting on it
+  settle-money -> write-plan [money-position]: what is owed each way,
+    with the evidence for every line and every disputed line marked as
+    disputed
+  write-plan -> tell-partner [wind-down-plan]: the plan, the dates, and
+    the last day the partner may sell
+  tell-partner -> agree-handover [served-notice]: the notice as served,
+    with the date and the form it was served in
+  agree-handover -> tell-customers [handover-order]: who tells each
+    customer, in what order, and what is said, agreed by both sides
+    where possible
+  agree-handover -> finish-in-flight [in-flight-split]: what the
+    partner finishes, what somebody else takes over, and by when
+  tell-customers -> move-customers [customers-told]: the customers who
+    have been told, the date, and anything they asked for
+  move-customers -> close-access [reassigned-customers]: the customers
+    now held by a named owner, so no access is closed while somebody
+    still depends on it
+  finish-in-flight -> close-access [closed-work]: the work closed,
+    transferred or paid, and anything left open with the reason
+  close-access -> pay-and-recover [access-ended]: the access ended and
+    the dates, so the final settlement counts to a real last day
+  pay-and-recover -> confirm-exit [final-settlement]: what was paid and
+    recovered, and anything still in dispute
+  confirm-exit -> record-learnings [exit-confirmation]: the exit as
+    confirmed, with every item that could not be closed named
+deviations:
+  decide-to-end -> legal-read [position-unclear]: the legal position is
+    not clear enough to decide on, so what would have to be true is
+    read out of the agreement again
+  tell-partner -> check-exit-terms [notice-does-not-count]: the form,
+    the address or the timing did not match what the agreement
+    requires, so the terms are read again and the notice served again
+  agree-handover -> write-plan [partner-will-not-take-part]: the
+    partner will not agree the handover, so the plan is rewritten for a
+    one-sided wind-down
+  tell-customers -> agree-handover [customer-will-not-move]: a customer
+    will not be moved, so what they asked for goes back to the handover
+    rather than the customer being moved by force
+  close-access -> finish-in-flight [access-still-needed]: work is still
+    running on an access that was closed, so the access is restored for
+    that work and the work is finished first
+  confirm-exit -> close-access [something-still-open]: the check finds
+    something still open, so the access, the customers and the work are
+    closed off again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, the partner lead who worked the relationship, the

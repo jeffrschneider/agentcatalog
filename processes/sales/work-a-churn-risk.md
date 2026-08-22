@@ -69,6 +69,11 @@ from: ref/sls/work-a-churn-risk v1
 owner: <who>                          effective: <date>
 trigger: a risk signal crosses <your threshold> on an account under
          agreement, or a person raises one
+         watch: record=<account> system=<where risk signals fire>
+                change=<a risk signal crosses the threshold on an
+                account under agreement>
+         or watch: record=<account> system=<where risks are raised>
+                change=<a person raises a risk on an account>
 concurrency: runs may overlap - one account carries one open risk run,
              and a second signal on that account joins the open run
 goal: every confirmed risk carrying a written reason, a severity, a
@@ -148,37 +153,52 @@ run-scoped:
   save-cost    - runs allocate-and-reconcile    owner: quote-builder
                  from: approve-cost     until: run close
 handoffs:
-  take-in-signal -> confirm-signal: the signal, what raised it, the
-    date, and the account it is against
-  confirm-signal -> read-usage: the confirmed signal and the period to
-    read use over
-  confirm-signal -> read-standing: the same confirmed signal, so both
-    readings cover the same period
-  read-usage -> name-reason: where use fell, by how much, since when,
-    and for which team, with the system it was read from
-  read-standing -> name-reason: the tickets, the invoices and the
-    people who left, each dated
-  name-reason -> set-severity: one reason in words, and the evidence
-    lines that support it
-  set-severity -> tell-owner: the severity, the date somebody must act
-    by, and the scale version it was set against
-  tell-owner -> agree-plan: the reason and the evidence, as the owner
-    received them, with the date they were told
-  agree-plan -> price-save: what the organization will do, who does
-    each part, and by when
-  price-save -> approve-cost: the cost of the plan, including anything
-    given away that does not appear as a discount
-  approve-cost -> do-the-work: the signed plan and the cap it was
-    signed under. Work above the cap needs a new approval
-  approve-cost -> reach-customer: the same signed plan, so the customer
-    is told only what was approved
-  do-the-work -> watch-signal: what was actually done, and on what date
-  reach-customer -> watch-signal: what the customer was promised, so
-    the signal is read against the promise
-  watch-signal -> close-or-escalate: use and standing read again, set
-    against the reason and the date
-  close-or-escalate -> record-outcome: the outcome, the reason, and
-    what the save cost
+  take-in-signal -> confirm-signal [risk-signal]: the signal, what
+    raised it, the date, and the account it is against
+  confirm-signal -> read-usage [confirmed-signal]: the confirmed signal
+    and the period to read use over
+  confirm-signal -> read-standing [confirmed-signal-for-standing]: the
+    same confirmed signal, so both readings cover the same period
+  read-usage -> name-reason [usage-fall]: where use fell, by how much,
+    since when, and for which team, with the system it was read from
+  read-standing -> name-reason [account-standing]: the tickets, the
+    invoices and the people who left, each dated
+  name-reason -> set-severity [the-reason]: one reason in words, and
+    the evidence lines that support it
+  set-severity -> tell-owner [severity-and-date]: the severity, the
+    date somebody must act by, and the scale version it was set against
+  tell-owner -> agree-plan [owner-told]: the reason and the evidence,
+    as the owner received them, with the date they were told
+  agree-plan -> price-save [save-plan]: what the organization will do,
+    who does each part, and by when
+  price-save -> approve-cost [cost-of-the-save]: the cost of the plan,
+    including anything given away that does not appear as a discount
+  approve-cost -> do-the-work [signed-plan]: the signed plan and the
+    cap it was signed under. Work above the cap needs a new approval
+  approve-cost -> reach-customer [signed-plan-for-customer]: the same
+    signed plan, so the customer is told only what was approved
+  do-the-work -> watch-signal [work-done]: what was actually done, and
+    on what date
+  reach-customer -> watch-signal [customer-promise]: what the customer
+    was promised, so the signal is read against the promise
+  watch-signal -> close-or-escalate [second-reading]: use and standing
+    read again, set against the reason and the date
+  close-or-escalate -> record-outcome [risk-outcome]: the outcome, the
+    reason, and what the save cost
+deviations:
+  confirm-signal -> take-in-signal [signal-does-not-hold]: the account
+    record contradicts what raised the signal, so the run goes back to
+    the signal and what it got wrong is recorded against its source
+  name-reason -> read-usage [no-reason-can-be-named]: use fell and
+    nobody can say why, so the readings are taken again once before a
+    reason is written
+  approve-cost -> agree-plan [cost-not-approved]: the signer will not
+    fund what the plan costs, so the plan is agreed again inside the
+    limit they named and nothing is offered to the customer meanwhile
+  watch-signal -> name-reason [wrong-reason]: use stays down after the
+    plan is delivered, so the reason is named again once
+  close-or-escalate -> agree-plan [risk-got-worse]: the risk got worse
+    rather than clearing, so the plan is agreed again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the delivery

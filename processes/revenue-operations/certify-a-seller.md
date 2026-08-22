@@ -83,6 +83,14 @@ from: ref/rev/certify-a-seller v1
 owner: <who>                          effective: <date>
 trigger: a seller is put forward for certification by <your onboarding
          process>, by a manager, or by a standard that has moved
+         watch: record=<certification request>
+                system=<your learning system>
+                change=<a seller is put forward for a job, by an
+                onboarding run or by a manager>
+         or watch: record=<certification standard>
+                system=<your learning system>
+                change=<the standard moves to a version that reopens
+                certifications>
 concurrency: runs may overlap - <how many> sittings in a period, and one
              seller is certified for one job by one run at a time
 goal: a signed pass or retake for every seller put forward, scored
@@ -172,40 +180,63 @@ run-scoped:
                 every: <cadence>
                 from: set-standard      until: run close
 handoffs:
-  take-in-request -> name-matters: who is being certified, for
-    which job, and the date the certification is needed by
-  name-matters -> set-standard: the parts of the job that matter,
-    each with the reason a customer would notice it
-  set-standard -> build-assessment: the standard at a version, with a
-    pass line for every part
-  set-standard -> name-assessors: the standard, so the assessors are
-    chosen for what they can actually judge
-  build-assessment -> check-assessment: every question and exercise,
-    each one naming the part of the standard it tests
-  check-assessment -> brief-assessors: the assessment as approved, and
-    any item removed with the reason it was removed
-  name-assessors -> brief-assessors: who scores which part, and the
-    conflicts that were ruled out
-  brief-assessors -> schedule-sitting: the scoring sheet at a version,
-    and the worked examples every assessor saw
-  schedule-sitting -> knowledge-check: the date, the order, and what the
-    seller was told they may bring
-  knowledge-check -> run-discovery: the answers as given, marked, so
-    the exercise can probe what was shaky
-  run-discovery -> run-objections: the conversation as it ran, with
-    what the seller did not ask
-  run-objections -> systems-check: the objections as answered, with the
-    words the seller used
-  systems-check -> score-result: the record and the quote as built, and
-    every step the seller needed help with
-  score-result -> decide-result: a score per part, the evidence behind
-    each score, and the assessor who gave it
-  decide-result -> give-feedback: the signed result, what it covers, and
-    any condition attached to a conditional pass
-  give-feedback -> record-result: what the seller was told, on what
-    date, and what they said back
-  record-result -> report-predicted: the result, the standard version
-    and the expiry, at the record every system reads
+  take-in-request -> name-matters [certification-request]: who is being
+    certified, for which job, and the date the certification is needed
+    by
+  name-matters -> set-standard [what-matters]: the parts of the job
+    that matter, each with the reason a customer would notice it
+  set-standard -> build-assessment [pass-standard]: the standard at a
+    version, with a pass line for every part
+  set-standard -> name-assessors [standard-for-assessors]: the
+    standard, so the assessors are chosen for what they can actually
+    judge
+  build-assessment -> check-assessment [draft-assessment]: every
+    question and exercise, each one naming the part of the standard it
+    tests
+  check-assessment -> brief-assessors [approved-assessment]: the
+    assessment as approved, and any item removed with the reason it was
+    removed
+  name-assessors -> brief-assessors [assessor-list]: who scores which
+    part, and the conflicts that were ruled out
+  brief-assessors -> schedule-sitting [scoring-sheet]: the scoring
+    sheet at a version, and the worked examples every assessor saw
+  schedule-sitting -> knowledge-check [sitting-plan]: the date, the
+    order, and what the seller was told they may bring
+  knowledge-check -> run-discovery [knowledge-answers]: the answers as
+    given, marked, so the exercise can probe what was shaky
+  run-discovery -> run-objections [discovery-record]: the conversation
+    as it ran, with what the seller did not ask
+  run-objections -> systems-check [objection-record]: the objections as
+    answered, with the words the seller used
+  systems-check -> score-result [systems-work]: the record and the
+    quote as built, and every step the seller needed help with
+  score-result -> decide-result [scores-and-evidence]: a score per
+    part, the evidence behind each score, and the assessor who gave it
+  decide-result -> give-feedback [signed-result]: the signed result,
+    what it covers, and any condition attached to a conditional pass
+  give-feedback -> record-result [feedback-given]: what the seller was
+    told, on what date, and what they said back
+  record-result -> report-predicted [certification-record]: the result,
+    the standard version and the expiry, at the record every system
+    reads
+deviations:
+  check-assessment -> build-assessment [assessment-off-standard]: items
+    have no part of the standard behind them, so the assessment is
+    built again and the removals are recorded
+  check-assessment -> set-standard [standard-cannot-be-scored]: a part
+    of the standard is one two assessors would mark differently, so the
+    standard is set again before anybody sits it
+  decide-result -> score-result [assessors-disagree]: the assessors do
+    not agree, so the scores go back with the evidence and are settled
+    against the written standard
+  decide-result -> schedule-sitting [retake-booked]: the result is a
+    retake, so a sitting is scheduled again for the parts that failed
+  give-feedback -> score-result [score-disputed]: the seller disputes a
+    score, so the dispute goes to the scoring with the evidence rather
+    than to the decision
+  report-predicted -> set-standard [standard-did-not-predict]:
+    certified sellers do no better than uncertified ones, so the
+    standard is set again as an amendment at a new version
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales manager, the assessors

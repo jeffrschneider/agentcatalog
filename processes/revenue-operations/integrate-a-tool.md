@@ -71,6 +71,9 @@ from: ref/rev/integrate-a-tool v1
 owner: <who>                          effective: <date>
 trigger: a tool is chosen and handed over in <your tool selection
          process>
+         watch: record=<the chosen tool>
+                system=<your tool selection process>
+                change=<a chosen tool is handed over to be wired in>
 concurrency: runs may overlap - <how many> integrations open at once,
              and one system is changed by one run at a time
 goal: the tool connected to the systems either side of it, the counts
@@ -154,36 +157,60 @@ run-scoped:
            every: <cadence>
            from: agree-flows   until: switch-on
 handoffs:
-  take-in-tool -> name-systems: the tool, its owner, and the process it
-    is there to run
-  name-systems -> agree-flows: the systems either side, each with the
-    person who owns it and what it already holds
-  agree-flows -> check-definitions: every field that moves, its
-    direction, its cadence and what starts the move
-  check-definitions -> decide-authority: each field against the
-    definition in force, and every field that means two things
-  decide-authority -> set-access: the system of record per field, and
-    who decided where the owners could not agree
-  set-access -> build-link: the credentials the link runs under and the
-    smallest set of data and actions they reach
-  build-link -> move-known-set: the link as built, and the flows it was
-    built against at their version
-  move-known-set -> test-failure: the counts on both sides for a set
-    with a known answer, field by field
-  test-failure -> review-link: what the link does when it breaks, with
-    the record of what it retried, duplicated, dropped and queued
-  review-link -> switch-on: the cleared review, the date it was signed,
-    and every finding that was accepted rather than fixed
-  switch-on -> watch-first-runs: the date and hour it went live, and the
-    way back as it was written down
-  watch-first-runs -> reconcile: what moved and what did not, run by
-    run, with the time each one started
-  reconcile -> write-record: the counts on both sides and every
-    difference, with the reason where one is known
-  write-record -> hand-over: the record of what flows where at a
-    version, and the fields it does not yet cover
-  hand-over -> record-learnings: what the administrator took on, and the
-    date the link is next checked
+  take-in-tool -> name-systems [chosen-tool]: the tool, its owner, and
+    the process it is there to run
+  name-systems -> agree-flows [systems-either-side]: the systems either
+    side, each with the person who owns it and what it already holds
+  agree-flows -> check-definitions [agreed-flows]: every field that
+    moves, its direction, its cadence and what starts the move
+  check-definitions -> decide-authority [definition-check]: each field
+    against the definition in force, and every field that means two
+    things
+  decide-authority -> set-access [system-of-record]: the system of
+    record per field, and who decided where the owners could not agree
+  set-access -> build-link [link-credentials]: the credentials the link
+    runs under and the smallest set of data and actions they reach
+  build-link -> move-known-set [built-link]: the link as built, and the
+    flows it was built against at their version
+  move-known-set -> test-failure [known-set-counts]: the counts on both
+    sides for a set with a known answer, field by field
+  test-failure -> review-link [break-behaviour]: what the link does when
+    it breaks, with the record of what it retried, duplicated, dropped
+    and queued
+  review-link -> switch-on [cleared-review]: the cleared review, the
+    date it was signed, and every finding that was accepted rather than
+    fixed
+  switch-on -> watch-first-runs [go-live-and-way-back]: the date and
+    hour it went live, and the way back as it was written down
+  watch-first-runs -> reconcile [first-run-results]: what moved and what
+    did not, run by run, with the time each one started
+  reconcile -> write-record [reconciled-counts]: the counts on both
+    sides and every difference, with the reason where one is known
+  write-record -> hand-over [flow-record]: the record of what flows
+    where at a version, and the fields it does not yet cover
+  hand-over -> record-learnings [what-was-taken-on]: what the
+    administrator took on, and the date the link is next checked
+deviations:
+  check-definitions -> agree-flows [field-means-two-things]: two systems
+    mean different things by one field, so what flows where is agreed
+    again and the field gets one definition or stops flowing
+  move-known-set -> build-link [counts-disagree]: the known set does not
+    come out with the same counts, so the link is built again against
+    the fields that differed
+  test-failure -> build-link [records-lost-on-break]: the link loses
+    records when it breaks, so it is built again until a break leaves a
+    backlog that can be replayed
+  review-link -> build-link [findings-to-clear]: the review leaves
+    findings to clear before the link goes live, so it is built again
+  review-link -> set-access [access-too-wide]: the link reaches more
+    than it needs, so the credentials are cut back rather than the link
+    rebuilt
+  watch-first-runs -> switch-on [switched-off-again]: the first live
+    runs go wrong, so the link is switched off by the written way back
+    and switched on again once the records it wrote are marked
+  reconcile -> watch-first-runs [sides-do-not-agree]: the two sides do
+    not reconcile, so the live runs are watched again for what moved and
+    what did not
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the systems owners, the security

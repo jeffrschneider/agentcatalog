@@ -78,6 +78,7 @@ PROCESS: quarterly business review    id: <team>/quarterly-business-review   v1
 from: ref/mkt/quarterly-business-review v1
 owner: <who>                          effective: <date>
 trigger: a quarter closes on <your fiscal calendar>
+         watch: every=<your fiscal quarter>
 concurrency: one run at a time - a quarter is reviewed once, and a
              change made after the reset goes in as a new version
 goal: the quarter examined against the plan, what each area is held to
@@ -169,41 +170,59 @@ run-scoped:
   budget - runs allocate-and-reconcile       owner: budget-keeper
            from: move-money   until: run close
 handoffs:
-  set-scope -> take-in-report / budget-position / outside-reading: the
-    quarter, the plan lines it covers and the questions, in one record
-    all three branches read
-  take-in-report -> set-against-year: the report as published, and the
-    list of what it could not answer
-  set-against-year -> re-forecast: each result of the quarter beside
-    what the plan said the year would do, with every gap left visible
-  budget-position -> re-forecast: what is left against each line of the
-    plan, at the figures the review will carry
-  outside-reading -> re-forecast: the market, the competitors and what
-    buyers are asking, each fact carrying its source and the date it
-    was read
-  re-forecast -> name-gaps: what the remaining quarters produce from
-    here, with the assumptions beside every number and every rate that
-    could not be sourced marked unsourced
-  name-gaps -> ask-areas: the gaps worth acting on, and separately the
-    differences the measurement cannot tell apart from noise
-  ask-areas -> size-changes: every proposed change in one format,
-    saying what it would do, what it would need, and by when
-  size-changes -> hold-review: what each change costs, what it returns,
-    and what it would displace in the quarter ahead
-  hold-review -> new-commitments: what <who> says still stands from the
-    plan, and what <who> says has to change
-  new-commitments -> move-money: what each area is held to for the
-    coming quarter, and the lines the money no longer matches
-  new-commitments -> update-measures: the same commitments, each one
-    stated so a measure can be defined for it
-  move-money -> publish-reset: the money against each line at the
-    figures the reset will carry
-  update-measures -> publish-reset: the measure each commitment will be
-    reported against
-  publish-reset -> brief-department: the reset at a version, and what
-    each agent owes against it
-  brief-department -> record-basis: what each agent took away, and
-    anything an agent said it could not do
+  set-scope -> take-in-report / budget-position / outside-reading
+    [review-scope]: the quarter, the plan lines it covers and the
+    questions, in one record all three branches read
+  take-in-report -> set-against-year [period-report]: the report as
+    published, and the list of what it could not answer
+  set-against-year -> re-forecast [results-against-plan]: each result
+    of the quarter beside what the plan said the year would do, with
+    every gap left visible
+  budget-position -> re-forecast [budget-left]: what is left against
+    each line of the plan, at the figures the review will carry
+  outside-reading -> re-forecast [outside-conditions]: the market, the
+    competitors and what buyers are asking, each fact carrying its
+    source and the date it was read
+  re-forecast -> name-gaps [rest-of-year-forecast]: what the remaining
+    quarters produce from here, with the assumptions beside every
+    number and every rate that could not be sourced marked unsourced
+  name-gaps -> ask-areas [gaps-worth-acting-on]: the gaps worth acting
+    on, and separately the differences the measurement cannot tell
+    apart from noise
+  ask-areas -> size-changes [proposed-changes]: every proposed change
+    in one format, saying what it would do, what it would need, and by
+    when
+  size-changes -> hold-review [change-costings]: what each change
+    costs, what it returns, and what it would displace in the quarter
+    ahead
+  hold-review -> new-commitments [review-verdict]: what <who> says
+    still stands from the plan, and what <who> says has to change
+  new-commitments -> move-money [reset-commitments]: what each area is
+    held to for the coming quarter, and the lines the money no longer
+    matches
+  new-commitments -> update-measures [measurable-commitments]: the same
+    commitments, each one stated so a measure can be defined for it
+  move-money -> publish-reset [moved-budget]: the money against each
+    line at the figures the reset will carry
+  update-measures -> publish-reset [commitment-measures]: the measure
+    each commitment will be reported against
+  publish-reset -> brief-department [published-reset]: the reset at a
+    version, and what each agent owes against it
+  brief-department -> record-basis [briefing-response]: what each agent
+    took away, and anything an agent said it could not do
+deviations:
+  set-against-year -> take-in-report [figure-missing]: the report does
+    not carry a figure the quarter has to be set against, so it is
+    taken in again with that figure
+  size-changes -> ask-areas [changes-fall-short]: the numbers on the
+    proposed changes do not close the gaps, so the areas are asked
+    again with the remaining gap named
+  hold-review -> ask-areas [more-change-needed]: the review wants more
+    change than the areas proposed, so the request goes back out
+  move-money -> new-commitments [money-short]: the money will not cover
+    the reset, so the commitments are set again against what it carries
+  update-measures -> new-commitments [commitment-unmeasurable]: a reset
+    commitment cannot be measured, so it goes back to be restated
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>

@@ -76,6 +76,9 @@ from: ref/mkt/target-audience-segment v1
 owner: <who>                          effective: <date>
 trigger: a targeting need is raised in <your campaign or program
          process>
+         watch: record=<targeting need>
+                system=<your campaign or program process>
+                change=<a targeting need is raised>
 concurrency: runs may overlap - <how many> segments in build at once
 goal: a segment built from a written rule, cleared against the consent
       record, signed for by a person, delivered to every platform that
@@ -171,34 +174,60 @@ run-scoped:
                 every: <cadence>
                 from: confirm-match   until: the segment is retired
 handoffs:
-  take-in-need -> write-rule: what the segment is for, in one line the
-    rule can be tested against
-  confirm-rules -> write-rule: the consent, retention and data sharing
-    rules at the versions in force, and which traits may be targeted on
-  check-data -> write-rule: the traits the database holds and how many
-    records carry each one, so that the rule is written on traits that
-    exist
-  write-rule -> name-exclusions: the conditions, at a version
-  name-exclusions -> size-segment: the rule and the exclusions together,
-    because a count means nothing with only one of them applied
-  size-segment -> brief-build: the count, and the date it was taken
-  brief-build -> build-list: the rule, the exclusions and the
-    destinations, as every agent heard them, and what each destination
-    requires before it will take a list
-  build-list -> apply-consent: the built list at a version, with the
-    count it started from
-  apply-consent -> check-list: the cleared list, the count the consent
-    record took out, and the rule behind each removal
-  score-list -> approve-release: a verdict per removal citing the rule
-    and its version, and the fields proposed for each destination
-  approve-release -> hand-to-platforms: the approved list at the signed
-    version, and the fields the signer approved for each destination
-  hand-to-platforms -> confirm-match: the receipt from each destination,
-    naming what was sent and what was accepted
-  confirm-match -> set-refresh: the match figure for each destination,
-    with the date it was read
-  set-refresh -> record-segment: how often the list is rebuilt, and what
-    makes it be rebuilt sooner
+  take-in-need -> write-rule [segment-purpose]: what the segment is
+    for, in one line the rule can be tested against
+  confirm-rules -> write-rule [rules-in-force]: the consent, retention
+    and data sharing rules at the versions in force, and which traits
+    may be targeted on
+  check-data -> write-rule [available-traits]: the traits the database
+    holds and how many records carry each one, so that the rule is
+    written on traits that exist
+  write-rule -> name-exclusions [membership-rule]: the conditions, at a
+    version
+  name-exclusions -> size-segment [rule-with-exclusions]: the rule and
+    the exclusions together, because a count means nothing with only
+    one of them applied
+  size-segment -> brief-build [pre-consent-count]: the count, and the
+    date it was taken
+  brief-build -> build-list [build-request]: the rule, the exclusions
+    and the destinations, as every agent heard them, and what each
+    destination requires before it will take a list
+  build-list -> apply-consent [built-list]: the built list at a
+    version, with the count it started from
+  apply-consent -> check-list [cleared-list]: the cleared list, the
+    count the consent record took out, and the rule behind each removal
+  score-list -> approve-release [removal-verdicts]: a verdict per
+    removal citing the rule and its version, and the fields proposed
+    for each destination
+  approve-release -> hand-to-platforms [approved-list]: the approved
+    list at the signed version, and the fields the signer approved for
+    each destination
+  hand-to-platforms -> confirm-match [delivery-receipts]: the receipt
+    from each destination, naming what was sent and what was accepted
+  confirm-match -> set-refresh [match-figures]: the match figure for
+    each destination, with the date it was read
+  set-refresh -> record-segment [refresh-schedule]: how often the list
+    is rebuilt, and what makes it be rebuilt sooner
+deviations:
+  size-segment -> write-rule [too-few-match]: too few records match the
+    rule, so the conditions are written again before anything is built
+  apply-consent -> write-rule [too-few-after-consent]: the consent
+    record leaves too few contacts to be worth buying against, so the
+    rule is widened and the list is built again
+  check-list -> build-list [records-off-rule]: the sample reads back
+    records the rule does not cover, so the list is built again
+  score-list -> apply-consent [removal-without-a-rule]: a removal has
+    no rule behind it, so the consent pass is run again and the record
+    is either taken out with its rule cited or put back
+  approve-release -> name-exclusions [release-changes-asked-for]: the
+    signer asks for changes, usually to the exclusions or the fields
+    going to a destination, so those are named again
+  hand-to-platforms -> build-list [part-of-the-list-refused]: a
+    destination took only part of the list, so the records it refused
+    are corrected or dropped and the list is built again
+  confirm-match -> write-rule [under-the-platform-floor]: the cleared
+    list is smaller than a platform will serve against, so the rule is
+    written again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and a named person for legal and for the signer who

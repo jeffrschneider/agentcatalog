@@ -75,6 +75,8 @@ from: ref/sls/answer-an-inbound-inquiry v1
 owner: <who>                           effective: <date>
 trigger: an inquiry lands with an owner from <your forms, trials,
          events and partner referrals>
+         watch: record=<inquiry> system=<your inbound channels>
+                change=<an inquiry arrives and is assigned an owner>
 concurrency: runs may overlap freely - one inquiry is one run, and
              <how many> open inquiries sit with one answerer at once
 goal: every inquiry answered inside <the promised clock> by somebody
@@ -151,35 +153,59 @@ run-scoped:
              every: <cadence>
              from: read-account   until: run close
 handoffs:
-  take-in-inquiry -> start-clock: what was asked, in the words it was
-    asked in, with the channel and the arrival time
-  start-clock -> match-record: the inquiry with the time its answer is
-    due, and who that time is promised to
-  match-record -> read-account: one record per real person, with the
-    account it belongs to, or a note saying no account matched
-  match-record -> read-company: the same record, so the company can be
-    read even when no account exists yet
-  read-account -> check-answerable: what the account runs, what it has
-    asked support, where its contract stands, each line naming the
-    system it was read from and when that reading was current
-  read-company -> check-answerable: size, industry and recent public
-    activity, each fact citing its source
-  check-answerable -> decide-owner: whether this person may be
-    contacted, on which channels, and the rule behind any no
-  decide-owner -> write-reply: the person who answers, and the account
-    and company readings they answer from
-  write-reply -> send-reply: the reply at a version, with the claim
-    register entry behind every claim it makes
-  send-reply -> offer-time: the reply as sent, on which channel, at
-    what time, against the time that was promised
-  offer-time -> first-conversation: the time both sides hold, and what
-    the person asked about in writing
-  first-conversation -> write-notes: what was said, by whom, and every
-    commitment the conversation made
-  write-notes -> hand-to-qualify: the inquiry, the two readings and the
-    notes as one package, with the open questions named
-  hand-to-qualify -> record-clock: the handover, dated, so the clock
-    can be closed against the promise
+  take-in-inquiry -> start-clock [inquiry-as-received]: what was
+    asked, in the words it was asked in, with the channel and the
+    arrival time
+  start-clock -> match-record [answer-due-time]: the inquiry with the
+    time its answer is due, and who that time is promised to
+  match-record -> read-account [person-and-account]: one record per
+    real person, with the account it belongs to, or a note saying no
+    account matched
+  match-record -> read-company [person-and-company]: the same record,
+    so the company can be read even when no account exists yet
+  read-account -> check-answerable [account-reading]: what the account
+    runs, what it has asked support, where its contract stands, each
+    line naming the system it was read from and when that reading was
+    current
+  read-company -> check-answerable [company-reading]: size, industry
+    and recent public activity, each fact citing its source
+  check-answerable -> decide-owner [contact-permission]: whether this
+    person may be contacted, on which channels, and the rule behind
+    any no
+  decide-owner -> write-reply [named-answerer]: the person who
+    answers, and the account and company readings they answer from
+  write-reply -> send-reply [drafted-reply]: the reply at a version,
+    with the claim register entry behind every claim it makes
+  send-reply -> offer-time [sent-reply]: the reply as sent, on which
+    channel, at what time, against the time that was promised
+  offer-time -> first-conversation [held-time]: the time both sides
+    hold, and what the person asked about in writing
+  first-conversation -> write-notes [what-was-said]: what was said, by
+    whom, and every commitment the conversation made
+  write-notes -> hand-to-qualify [qualification-package]: the inquiry,
+    the two readings and the notes as one package, with the open
+    questions named
+  hand-to-qualify -> record-clock [dated-handover]: the handover,
+    dated, so the clock can be closed against the promise
+deviations:
+  check-answerable -> record-clock [contact-refused]: the consent
+    record or the do-not-contact list stops the reply, so the run
+    passes over the reply, the conversation and the handover, and
+    closes with the rule that stopped it recorded
+  write-reply -> read-account [reply-needs-more-account]: the question
+    cannot be answered from the reading in hand, so the account is
+    read again before the reply is written
+  offer-time -> send-reply [reply-unanswered]: the reply goes
+    unanswered, so it is sent again for <how many> attempts before the
+    run stops asking
+  first-conversation -> offer-time [time-not-kept]: the time both
+    sides held was not kept, so another is proposed
+  first-conversation -> decide-owner [another-answerer-asked-for]: the
+    person asks for somebody else, so a new answerer is named and
+    reads the same package
+  write-notes -> write-reply [question-from-the-call]: the
+    conversation raised a question nobody could answer in the room, so
+    it goes back to the reply in writing
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sellers and the sales

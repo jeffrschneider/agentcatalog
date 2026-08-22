@@ -77,6 +77,13 @@ from: ref/mkt/competitive-battlecard v1
 owner: <who>                          effective: <date>
 trigger: a competitor move is reported by <your competitive watch> or by
          a rep through <your sales channel>
+         watch: record=<the competitor move>
+                system=<your competitive watch>
+                change=<a move is reported against a competitor>
+         or watch: record=<the competitor move>
+                system=<your sales channel>
+                change=<a rep reports what a competitor is saying in a
+                deal>
 concurrency: one run per move - <how many> live at once
 goal: every battlecard the move touches brought to a version that is
       true on the day it is issued, signed by the people the process
@@ -163,35 +170,68 @@ run-scoped:
            every: <cadence>
            from: take-in-move   until: run close
 handoffs:
-  take-in-move -> confirm-move: what was seen, where it was seen and on
-    what date, in the competitor's own wording wherever that exists
-  take-in-move -> hear-from-reps: the move, put to reps as a question
-    they can answer from the deals they are sitting in
-  confirm-move -> find-cards: what the competitor published, with the
-    address it was read at and the date it was read
-  find-cards -> gather-proof: the cards and the claims on them that the
-    move puts in doubt, named one by one
-  hear-from-reps -> gather-proof: what reps are being told, quoted, with
-    the deal each quote came from
-  gather-proof -> settle-position: every comparison with the source
-    under it, and every comparison the evidence will not carry
-  gather-proof -> claim-change: the register entry the evidence no
-    longer supports, and what the evidence says instead
-  settle-position -> write-card: what may be said about the competitor
-    and what may not, with the reasons and any dissent recorded
-  write-card -> edit-card: the card at a version
-  edit-card -> lay-out-card: the edit worked through item by item
-  lay-out-card -> score-claims: the card as a rep will see it
-  score-claims -> check-comparisons: the scored list, with the register
-    entry behind every failure
-  check-comparisons -> get-sign-offs: the scored list, with the rule and
-    the market behind every failure
-  get-sign-offs -> issue-version: the approved card at the signed
-    version. A later change voids the approval and sign-offs run again
-  issue-version -> notify-sales: the new number, the date it is current
-    from, and what changed since the version reps are carrying
-  issue-version -> partner-view: the same card, and the line saying
-    which of it may leave the organization
+  take-in-move -> confirm-move [the-move]: what was seen, where it was
+    seen and on what date, in the competitor's own wording wherever
+    that exists
+  take-in-move -> hear-from-reps [move-as-a-question]: the move, put
+    to reps as a question they can answer from the deals they are
+    sitting in
+  confirm-move -> find-cards [confirmed-move]: what the competitor
+    published, with the address it was read at and the date it was
+    read
+  find-cards -> gather-proof [cards-in-doubt]: the cards and the
+    claims on them that the move puts in doubt, named one by one
+  hear-from-reps -> gather-proof [what-reps-hear]: what reps are being
+    told, quoted, with the deal each quote came from
+  gather-proof -> settle-position [sourced-comparisons]: every
+    comparison with the source under it, and every comparison the
+    evidence will not carry
+  gather-proof -> claim-change [broken-claim]: the register entry the
+    evidence no longer supports, and what the evidence says instead
+  settle-position -> write-card [agreed-position]: what may be said
+    about the competitor and what may not, with the reasons and any
+    dissent recorded
+  write-card -> edit-card [draft-card]: the card at a version
+  edit-card -> lay-out-card [edited-card]: the edit worked through
+    item by item
+  lay-out-card -> score-claims [laid-out-card]: the card as a rep will
+    see it
+  score-claims -> check-comparisons [claim-scores]: the scored list,
+    with the register entry behind every failure
+  check-comparisons -> get-sign-offs [comparison-scores]: the scored
+    list, with the rule and the market behind every failure
+  get-sign-offs -> issue-version [signed-card]: the approved card at
+    the signed version. A later change voids the approval and
+    sign-offs run again
+  issue-version -> notify-sales [new-version]: the new number, the
+    date it is current from, and what changed since the version reps
+    are carrying
+  issue-version -> partner-view [card-for-partners]: the same card,
+    and the line saying which of it may leave the organization
+deviations:
+  confirm-move -> notify-sales [move-is-not-real]: the competitor's
+    own material shows nothing behind the report, so no card is
+    touched, nothing is written or signed, and reps are told the
+    answer they already hold still stands
+  settle-position -> gather-proof [comparison-not-carried]: the
+    evidence will not carry a comparison the card already makes, so
+    the proof is gathered again for it
+  edit-card -> write-card [edit-needs-rewrite]: the edit names what
+    has to be rewritten, and the card comes back at a new version
+  score-claims -> write-card [claim-with-no-citation]: a claim on the
+    card carries no citation in the register, so the card is written
+    again
+  check-comparisons -> write-card [comparison-breaks-a-rule]: a
+    comparison breaks a disclosure rule in a market the card is used
+    in, so the card is written again
+  claim-change -> score-claims [register-at-new-version]: the register
+    comes back at a new version, so the claims are scored again
+    against it
+  get-sign-offs -> write-card [card-changes]: a signer comes back with
+    changes, and only the part the signers named reopens
+  get-sign-offs -> settle-position [position-in-question]: the signers
+    put the position itself in question, so what may be said is
+    settled again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for sales, legal, leadership and the

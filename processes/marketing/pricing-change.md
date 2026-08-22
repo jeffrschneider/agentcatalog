@@ -76,6 +76,9 @@ PROCESS: launch pricing change        id: <team>/pricing-change   v1
 from: ref/mkt/pricing-change v1
 owner: <who>                          effective: <date>
 trigger: a pricing decision is approved in <your pricing process>
+         watch: record=<the pricing decision>
+                system=<your pricing process>
+                change=<a pricing decision is approved>
 concurrency: one change at a time per <plan family> - a customer is
              never inside two transitions at once
 goal: the new prices published everywhere the old ones stood, and every
@@ -167,36 +170,58 @@ run-scoped:
              every: <cadence>
              from: serve-notice   until: run close
 handoffs:
-  take-in-decision -> read-customers: what changes and from when, in
-    enough detail that a price can be recomputed for one customer
-  read-customers -> set-terms: the register at a version, saying what
-    each customer pays now, what the new prices make them pay, and how
-    much of the base each proposed rule would catch
-  set-terms -> plan-transition: the price list, the grandfathering
-    rules and the notice periods, each at the version it was approved
-    at
-  set-terms -> read-customers: the approved rules, read back over the
-    base so that every customer is sorted under a rule that exists
-  plan-transition -> settle-reason / restate-price: each branch's
-    deliverables and dates. Both branches read one checklist
-  settle-reason -> produce-material: the reason as it was chosen, and
-    the words every audience version has to use
-  produce-material -> get-sign-offs: the notice, the questions and
-    answers and the objection answers, at a version
-  get-sign-offs -> notice-lists: the approved wording at the signed
-    version. A later change voids the approval and sign-offs run again
-  get-sign-offs -> publish-prices: the same approved wording for the
-    pages and the ads
-  notice-lists -> serve-notice: one list per treatment, each naming the
-    notice that group is owed and the date it has to go by
-  serve-notice -> move-customers: for each customer, the date the
-    notice went, the version that went, the route it went by, and the
-    date its waiting time runs out
-  serve-notice -> answer-replies: what each customer was told, so that
-    whoever answers them is reading the same wording
-  watch-transition -> report-change: the numbers, each attributed to
-    the system it came from
-  report-change -> record-learnings: the report, as delivered
+  take-in-decision -> read-customers [price-decision]: what changes and
+    from when, in enough detail that a price can be recomputed for one
+    customer
+  read-customers -> set-terms [customer-register]: the register at a
+    version, saying what each customer pays now, what the new prices
+    make them pay, and how much of the base each proposed rule would
+    catch
+  set-terms -> plan-transition [change-terms]: the price list, the
+    grandfathering rules and the notice periods, each at the version it
+    was approved at
+  set-terms -> read-customers [rules-to-re-sort]: the approved rules,
+    read back over the base so that every customer is sorted under a
+    rule that exists
+  plan-transition -> settle-reason / restate-price [transition-plan]:
+    each branch's deliverables and dates. Both branches read one
+    checklist
+  settle-reason -> produce-material [agreed-reason]: the reason as it
+    was chosen, and the words every audience version has to use
+  produce-material -> get-sign-offs [customer-wording]: the notice, the
+    questions and answers and the objection answers, at a version
+  get-sign-offs -> notice-lists [signed-wording]: the approved wording
+    at the signed version. A later change voids the approval and
+    sign-offs run again
+  get-sign-offs -> publish-prices [signed-public-wording]: the same
+    approved wording for the pages and the ads
+  notice-lists -> serve-notice [treatment-lists]: one list per
+    treatment, each naming the notice that group is owed and the date
+    it has to go by
+  serve-notice -> move-customers [served-notices]: for each customer,
+    the date the notice went, the version that went, the route it went
+    by, and the date its waiting time runs out
+  serve-notice -> answer-replies [wording-served]: what each customer
+    was told, so that whoever answers them is reading the same wording
+  watch-transition -> report-change [transition-numbers]: the numbers,
+    each attributed to the system it came from
+  report-change -> record-learnings [transition-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> produce-material [changes-requested]: the signers
+    ask for a change, so only what they named is made again
+  notice-lists -> set-terms [customer-unsorted]: no rule catches a
+    customer, so that customer is recorded as unsorted and the terms
+    are set again before any notice goes to them
+  serve-notice -> produce-material [effective-date-moved]: the
+    effective date moves after notices have gone out, so corrected
+    wording is made and every waiting time starts again
+  answer-replies -> set-terms [rule-must-change]: what comes back shows
+    a rule that has to change, so the terms are set again and the base
+    is sorted under the new rule
+  move-customers -> serve-notice [notice-not-cleared]: a customer's own
+    notice has not run its waiting time, so their change is held and
+    the notice is served again with a new date
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for finance, legal, product, sales,

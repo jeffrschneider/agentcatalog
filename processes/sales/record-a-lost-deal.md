@@ -63,6 +63,10 @@ from: ref/sls/record-a-lost-deal v1
 owner: <who>                          effective: <date>
 trigger: the buyer declines, or a deal sits <days> with no movement, in
          <your CRM>
+         watch: record=<opportunity> system=<your CRM>
+                change=<the buyer declines>
+         or watch: record=<opportunity> system=<your CRM>
+                change=<the deal passes the no-movement window>
 concurrency: runs may overlap freely - one deal is closed by one run,
              and runs never touch each other
 goal: every deal that ends without a signature closed on the record
@@ -143,30 +147,40 @@ phases:
                       after: close-record
                       every: <cadence>          automation: <level>
 handoffs:
-  take-in-signal -> confirm-decision: what was said or not said, by
-    whom, and on what date
-  confirm-decision -> one-recovery: the confirmed no, and the reason as
-    first given
-  one-recovery -> set-loss-date: what we offered to change, and the
-    buyer's answer to it
-  set-loss-date -> ask-why: the loss date, so the reason is asked for
-    while people still remember the deal
-  set-loss-date -> stop-open-work: the same date, which is when the
-    open work stops costing anything
-  ask-why -> classify-loss: the buyer's own words, unedited
-  classify-loss -> name-winner: the reason code and the detail behind it
-  name-winner -> check-record: who won and on what basis
-  check-record -> set-follow-up: the stated reason, and any place the
-    deal record contradicts it
-  stop-open-work -> return-material: what the buyer gave us and where
-    each of those things now sits
-  return-material -> set-follow-up: the confirmation that nothing of
-    theirs is still held
-  set-follow-up -> tell-the-team: the date to come back and what would
-    have to change
-  tell-the-team -> close-record: the outcome as everyone was told it
-  close-record -> feed-review: the closed deal, with its code, its date
-    and its winner
+  take-in-signal -> confirm-decision [the-signal]: what was said or
+    not said, by whom, and on what date
+  confirm-decision -> one-recovery [confirmed-no]: the confirmed no,
+    and the reason as first given
+  one-recovery -> set-loss-date [recovery-answer]: what we offered to
+    change, and the buyer's answer to it
+  set-loss-date -> ask-why [loss-date]: the loss date, so the reason
+    is asked for while people still remember the deal
+  set-loss-date -> stop-open-work [stop-date]: the same date, which
+    is when the open work stops costing anything
+  ask-why -> classify-loss [buyers-words]: the buyer's own words,
+    unedited
+  classify-loss -> name-winner [reason-code]: the reason code and the
+    detail behind it
+  name-winner -> check-record [the-winner]: who won and on what basis
+  check-record -> set-follow-up [reason-checked]: the stated reason,
+    and any place the deal record contradicts it
+  stop-open-work -> return-material [buyer-material]: what the buyer
+    gave us and where each of those things now sits
+  return-material -> set-follow-up [return-confirmation]: the
+    confirmation that nothing of theirs is still held
+  set-follow-up -> tell-the-team [follow-up-date]: the date to come
+    back and what would have to change
+  tell-the-team -> close-record [outcome-told]: the outcome as
+    everyone was told it
+  close-record -> feed-review [closed-loss]: the closed deal, with
+    its code, its date and its winner
+deviations:
+  confirm-decision -> take-in-signal [no-from-wrong-person]: the no
+    came from somebody who does not decide, so the signal is read
+    again before anything is closed
+  check-record -> classify-loss [reason-contradicts-record]: the
+    stated reason and the deal record contradict each other, so the
+    loss is classified again with both versions kept readable
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the deal owner, the sales leader

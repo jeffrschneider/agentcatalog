@@ -81,6 +81,10 @@ from: ref/rev/onboard-a-seller v1
 owner: <who>                          effective: <date>
 trigger: a start date is confirmed for somebody joining <your revenue
          team>
+         watch: record=<the new joiner>
+                system=<where start dates are confirmed>
+                change=<a start date is confirmed for somebody joining
+                the revenue team>
 concurrency: runs may overlap - <how many> sellers onboard at once, and
              one seller is onboarded by one run at a time
 goal: the seller holds a real customer conversation within <weeks> of
@@ -173,49 +177,71 @@ run-scoped:
              every: <cadence>
              from: order-access     until: check-access
 handoffs:
-  take-in-start -> confirm-job: the name, the job title, the start date,
-    and the office or region
-  confirm-job -> order-access: the job as the manager states it, and the
-    system list that job carries
-  confirm-job -> take-territory: the job and the ramp, so the patch
-    handed over matches what the seller was hired to do
-  confirm-job -> build-plan: what the seller must be able to do by the
-    end of the ramp, in the manager's words
-  order-access -> check-access: every request made, with the system, the
-    date and the ticket it was raised under
-  take-territory -> build-plan: the accounts, the segment and the
-    ramped number, at the version the territory process signed
-  check-access -> meet-people: the systems that opened and the ones that
-    did not, each with the date it was tested
-  check-access -> walk-systems: the working logins, so the walkthrough
-    happens on the seller's own account and not a shared one
-  build-plan -> teach-product: the plan at a version, with the week each
-    subject sits in and the person teaching it
-  build-plan -> teach-process: the same plan. Both branches read one
-    document
-  meet-people -> teach-product: who the seller can ask about what, with
-    names rather than roles
-  teach-product -> teach-market: what the product does and costs, so the
-    competitor answers are built on it
-  teach-product -> listen-calls: the vocabulary, so the calls are worth
-    listening to rather than noise
-  teach-process -> walk-systems: the stages and the gates, so the
-    practice record is worked the way a real deal is worked
-  teach-market -> practise-pitch: the positions and the answers the
-    seller is expected to give
-  walk-systems -> practise-pitch: the record the seller built, and every
-    step they could not complete alone
-  listen-calls -> practise-pitch: what the seller heard, in their words
-  listen-calls -> prove-readiness: the calls listened to, with dates, so
-    the gate knows what exposure the seller has had
-  practise-pitch -> prove-readiness: the practice as scored, and the
-    parts still weak
-  prove-readiness -> first-call: the pass, the standard version it was
-    scored against, and anything the pass came with conditions on
-  first-call -> debrief-first: the recording or the notes, and what the
-    customer actually asked
-  debrief-first -> report-ramp: the gaps the real conversation found,
-    and the date each one is fixed by
+  take-in-start -> confirm-job [joiner-details]: the name, the job
+    title, the start date, and the office or region
+  confirm-job -> order-access [job-and-system-list]: the job as the
+    manager states it, and the system list that job carries
+  confirm-job -> take-territory [job-and-ramp]: the job and the ramp, so
+    the patch handed over matches what the seller was hired to do
+  confirm-job -> build-plan [ramp-expectations]: what the seller must be
+    able to do by the end of the ramp, in the manager's words
+  order-access -> check-access [access-requests]: every request made,
+    with the system, the date and the ticket it was raised under
+  take-territory -> build-plan [territory-and-number]: the accounts, the
+    segment and the ramped number, at the version the territory process
+    signed
+  check-access -> meet-people [access-state]: the systems that opened
+    and the ones that did not, each with the date it was tested
+  check-access -> walk-systems [working-logins]: the working logins, so
+    the walkthrough happens on the seller's own account and not a shared
+    one
+  build-plan -> teach-product [teaching-schedule]: the plan at a
+    version, with the week each subject sits in and the person teaching
+    it
+  build-plan -> teach-process [learning-plan]: the same plan. Both
+    branches read one document
+  meet-people -> teach-product [who-to-ask]: who the seller can ask
+    about what, with names rather than roles
+  teach-product -> teach-market [product-knowledge]: what the product
+    does and costs, so the competitor answers are built on it
+  teach-product -> listen-calls [product-vocabulary]: the vocabulary, so
+    the calls are worth listening to rather than noise
+  teach-process -> walk-systems [stages-and-gates]: the stages and the
+    gates, so the practice record is worked the way a real deal is
+    worked
+  teach-market -> practise-pitch [competitive-answers]: the positions
+    and the answers the seller is expected to give
+  walk-systems -> practise-pitch [practice-record]: the record the
+    seller built, and every step they could not complete alone
+  listen-calls -> practise-pitch [what-the-seller-heard]: what the
+    seller heard, in their words
+  listen-calls -> prove-readiness [calls-logged]: the calls listened to,
+    with dates, so the gate knows what exposure the seller has had
+  practise-pitch -> prove-readiness [practice-score]: the practice as
+    scored, and the parts still weak
+  prove-readiness -> first-call [readiness-pass]: the pass, the standard
+    version it was scored against, and anything the pass came with
+    conditions on
+  first-call -> debrief-first [first-call-record]: the recording or the
+    notes, and what the customer actually asked
+  debrief-first -> report-ramp [conversation-gaps]: the gaps the real
+    conversation found, and the date each one is fixed by
+deviations:
+  check-access -> order-access [system-never-opened]: a system on the
+    list never opened, so the access is ordered again and the system
+    stays on the list until it does
+  take-territory -> confirm-job [no-patch-assigned]: no patch has been
+    assigned, so the job and the ramp go back to the manager and the
+    teaching that depends on the territory waits
+  prove-readiness -> practise-pitch [not-ready-on-what-matters]: the
+    gate finds the seller not ready on the parts that matter, so the
+    pitch is practised again on those parts only
+  prove-readiness -> teach-product [product-answers-wrong]: the gate
+    finds the product answers wrong rather than the delivery, so the
+    product teaching is reopened
+  debrief-first -> practise-pitch [call-showed-a-gap]: the first
+    customer conversation shows a gap, so the answers the customer asked
+    for are practised again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales manager, sales

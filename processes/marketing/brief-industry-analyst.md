@@ -92,6 +92,13 @@ from: ref/mkt/brief-industry-analyst v1
 owner: <who>                          effective: <date>
 trigger: a research firm opens an evaluation cycle, or an analyst sends
          an inquiry
+         watch: record=<the evaluation cycle>
+                system=<where analyst requests arrive>
+                change=<a firm opens a cycle, with its questionnaire
+                and its deadline>
+         or watch: record=<the inquiry>
+                system=<where analyst requests arrive>
+                change=<an analyst sends a question of their own>
 concurrency: runs may overlap - <how many> live at once, and <how many>
              against one firm at a time
 goal: the analyst hears the organization from the people who run it,
@@ -181,40 +188,59 @@ run-scoped:
              every: <cadence>
              from: take-in-request   until: run close
 handoffs:
-  take-in-request -> read-position: what the analyst asked for, the
-    format it has to take, and the date it is due
-  read-position -> set-the-goal: what this firm has already published
-    about the organization and about the category, quoted
-  set-the-goal -> brief-makers: the result worth having from this
-    analyst, in one line that every later decision can be tested
-    against
-  set-the-goal -> line-up-refs: the same goal, and how many customers
-    the cycle asks for. Both branches read one record
-  brief-makers -> gather-proof: the request as every agent heard it,
-    and which agent owes which piece
-  gather-proof -> settle-message: every fact with its source under it,
-    and every fact nobody could source, named as unsourced
-  settle-message -> build-material: what the analyst has to come away
-    believing, and the approved positioning it sits inside
-  build-material -> get-sign-offs: the deck, the written answers and
-    the demo script at a version
-  get-sign-offs -> file-submission: the approved material at the signed
-    version. A later change voids the approval and sign-offs run again
-  get-sign-offs -> rehearse: the same signed version, and the call
-    stays inside it
-  line-up-refs -> rehearse: the customers who agreed to speak, what
-    each of them agreed to, and until when
-  rehearse -> hold-briefing: the questions the rehearsal could not
-    answer, each one with the agent that owes the answer
-  hold-briefing -> send-follow-ups: what the analyst asked that nobody
-    answered on the call, each with the date it was promised
-  hold-briefing -> watch-coverage: what the analyst said they would do
-    with the briefing, and when
-  watch-coverage -> check-the-note: what the firm published, quoted,
-    with its date and its author
-  check-the-note -> report-landing: the errors found, the corrections
-    asked for, and what the firm said about them
-  report-landing -> record-learnings: the report, as delivered
+  take-in-request -> read-position [the-request]: what the analyst
+    asked for, the format it has to take, and the date it is due
+  read-position -> set-the-goal [what-the-firm-has-said]: what this
+    firm has already published about the organization and about the
+    category, quoted
+  set-the-goal -> brief-makers [briefing-goal]: the result worth
+    having from this analyst, in one line that every later decision
+    can be tested against
+  set-the-goal -> line-up-refs [goal-and-reference-count]: the same
+    goal, and how many customers the cycle asks for. Both branches
+    read one record
+  brief-makers -> gather-proof [the-request-as-heard]: the request as
+    every agent heard it, and which agent owes which piece
+  gather-proof -> settle-message [sourced-proof]: every fact with its
+    source under it, and every fact nobody could source, named as
+    unsourced
+  settle-message -> build-material [settled-message]: what the analyst
+    has to come away believing, and the approved positioning it sits
+    inside
+  build-material -> get-sign-offs [briefing-material]: the deck, the
+    written answers and the demo script at a version
+  get-sign-offs -> file-submission [signed-material]: the approved
+    material at the signed version. A later change voids the approval
+    and sign-offs run again
+  get-sign-offs -> rehearse [signed-material-for-call]: the same
+    signed version, and the call stays inside it
+  line-up-refs -> rehearse [booked-references]: the customers who
+    agreed to speak, what each of them agreed to, and until when
+  rehearse -> hold-briefing [unanswered-questions]: the questions the
+    rehearsal could not answer, each one with the agent that owes the
+    answer
+  hold-briefing -> send-follow-ups [call-follow-ups]: what the analyst
+    asked that nobody answered on the call, each with the date it was
+    promised
+  hold-briefing -> watch-coverage [what-the-analyst-will-do]: what the
+    analyst said they would do with the briefing, and when
+  watch-coverage -> check-the-note [published-note]: what the firm
+    published, quoted, with its date and its author
+  check-the-note -> report-landing [note-errors]: the errors found,
+    the corrections asked for, and what the firm said about them
+  report-landing -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> build-material [material-changes]: a signer comes
+    back with changes, and only the piece the signers named reopens
+  rehearse -> gather-proof [question-nobody-can-answer]: the rehearsal
+    turns up a question nobody can answer, so the proof is gathered
+    again for it
+  send-follow-ups -> build-material [answer-needs-new-material]: the
+    answer the analyst asked for needs material that does not exist
+    yet, so it is built and signed before it goes
+  check-the-note -> watch-coverage [correction-published]: the firm
+    publishes a correction, so what it has published is read again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, for product accuracy,

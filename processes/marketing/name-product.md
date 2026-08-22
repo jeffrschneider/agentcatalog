@@ -74,6 +74,9 @@ from: ref/mkt/name-product v1
 owner: <who>                          effective: <date>
 trigger: something needs a name in <your product or corporate planning
          process>
+         watch: record=<the naming request>
+                system=<your product or corporate planning process>
+                change=<a request for a name is raised>
 concurrency: one name at a time - a second request waits or opens its
              own run with its own criteria
 goal: a name the organization can use in every market it sells in,
@@ -158,34 +161,58 @@ run-scoped:
   cost   - runs allocate-and-reconcile    owner: budget-keeper
            from: cut-shortlist   until: run close
 handoffs:
-  take-in-request -> set-criteria: what has to be named, what the name
-    has to do, and the date it is needed
-  set-criteria -> generate-names: the markets, the languages, the
-    trademark classes and the addresses, in one record that every later
-    screen is read against
-  read-landscape -> generate-names: what the category already sounds
-    like, so a candidate that echoes a rival is caught while dropping
-    it is still cheap
-  generate-names -> screen-long-list: the long list at a version, each
-    name carrying the criterion it was built for
-  screen-long-list -> search-registers: the surviving names, and the
-    rule each dropped name failed
-  search-registers -> cut-shortlist: a verdict for each name, naming
-    the registers searched, the classes and markets covered, the date
-    the search ran, and every conflict it found
-  check-markets -> cut-shortlist: what each name means and how it
-    sounds in each market, with the person who said so named
-  cut-shortlist -> clear-shortlist: the two or three names, with
-    everything already found against each one
-  clear-shortlist -> choose-name: which names counsel will defend, on
-    what terms, and what counsel wants avoided
-  choose-name -> secure-name: the chosen name and the next name down,
-    so the run can move on if the addresses cannot be had
-  secure-name -> issue-name: what was registered, in whose name, on
-    what date, and when each registration has to be renewed
-  issue-name -> tell-readers: the name and the writing rules at a
-    numbered version, and the date the version applies from
-  tell-readers -> record-learnings: the notice, as delivered
+  take-in-request -> set-criteria [naming-request]: what has to be
+    named, what the name has to do, and the date it is needed
+  set-criteria -> generate-names [naming-criteria]: the markets, the
+    languages, the trademark classes and the addresses, in one record
+    that every later screen is read against
+  read-landscape -> generate-names [category-landscape]: what the
+    category already sounds like, so a candidate that echoes a rival is
+    caught while dropping it is still cheap
+  generate-names -> screen-long-list [long-list]: the long list at a
+    version, each name carrying the criterion it was built for
+  screen-long-list -> search-registers [screened-names]: the surviving
+    names, and the rule each dropped name failed
+  search-registers -> cut-shortlist [register-verdicts]: a verdict for
+    each name, naming the registers searched, the classes and markets
+    covered, the date the search ran, and every conflict it found
+  check-markets -> cut-shortlist [market-readings]: what each name
+    means and how it sounds in each market, with the person who said so
+    named
+  cut-shortlist -> clear-shortlist [shortlist]: the two or three names,
+    with everything already found against each one
+  clear-shortlist -> choose-name [clearance]: which names counsel will
+    defend, on what terms, and what counsel wants avoided
+  choose-name -> secure-name [chosen-name]: the chosen name and the
+    next name down, so the run can move on if the addresses cannot be
+    had
+  secure-name -> issue-name [registrations]: what was registered, in
+    whose name, on what date, and when each registration has to be
+    renewed
+  issue-name -> tell-readers [issued-standard]: the name and the
+    writing rules at a numbered version, and the date the version
+    applies from
+  tell-readers -> record-learnings [notice-sent]: the notice, as
+    delivered
+deviations:
+  search-registers -> generate-names [registers-wipe-the-list]: the
+    registers leave nothing to shortlist, so more candidates are built
+    and the criteria go back with them
+  check-markets -> generate-names [markets-wipe-the-list]: no candidate
+    survives what it means in the markets it would be used in, so more
+    candidates are built
+  clear-shortlist -> cut-shortlist [nothing-clears]: counsel will not
+    clear any name on the shortlist, so a new shortlist is cut from the
+    survivors the long list still holds
+  clear-shortlist -> generate-names [long-list-spent]: counsel will not
+    clear any name and the long list holds no survivors, so the
+    candidates are built again
+  secure-name -> choose-name [addresses-unavailable]: the domains or
+    the handles cannot be had on terms the organization will accept, so
+    the people who decide take the next name down
+  secure-name -> search-registers [search-gone-stale]: the register
+    search is older than the run may rely on, so it is run again on the
+    chosen name alone before the filing is authorized
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the brand owner, the

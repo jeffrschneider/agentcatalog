@@ -66,6 +66,7 @@ PROCESS: forecast call                id: <team>/run-the-forecast-call   v1
 from: ref/sls/run-the-forecast-call v1
 owner: <who>                          effective: <date>
 trigger: <your forecast cadence> comes round for <segment>
+         watch: every=<your forecast cadence>
 concurrency: runs may overlap - one call per segment per cycle, and a
              deal is walked in one call at a time
 goal: every deal the call walks carrying a category the room agreed out
@@ -146,33 +147,54 @@ run-scoped:
             every: <cadence>
             from: name-actions   until: the next call
 handoffs:
-  set-scope -> take-in-rollup: the segment, the period and the deals in
-    scope, in one record
-  take-in-rollup -> read-movement: the roll-up at its version, and the
-    list of what it could not answer
-  read-movement -> flag-deals: everything that entered, left or changed
-    since the last call, each change carrying who made it and when
-  flag-deals -> send-inspections: the deals the call will walk, and the
-    reason each one is on the list
-  send-inspections -> open-the-call: the finding for every flagged
-    deal, at its version, delivered before the call opens
-  open-the-call -> walk-committed: one view, at one version, that
-    everybody in the room is reading
-  walk-committed -> walk-best-case: what each committed deal was
-    defended on, and every defence the room did not accept
-  walk-best-case -> name-neither: what would have to be true for each
-    best case deal, and who owns making it true
-  name-neither -> test-coverage: the deals nobody is claiming, taken
-    out of the count rather than left in it quietly
-  test-coverage -> agree-categories: committed and best case against
-    the target, what is still to find, and whether the pipeline holds
-    it at the ratio the segment uses
-  agree-categories -> name-actions: the category on every deal walked,
-    with the reason beside each one that changed
-  name-actions -> publish-number: the actions, their owners and their
-    dates
-  publish-number -> record-movement: the number as published, at its
-    version, and who it went to
+  set-scope -> take-in-rollup [call-scope]: the segment, the period and
+    the deals in scope, in one record
+  take-in-rollup -> read-movement [rollup-at-version]: the roll-up at
+    its version, and the list of what it could not answer
+  read-movement -> flag-deals [movement-since-last-call]: everything
+    that entered, left or changed since the last call, each change
+    carrying who made it and when
+  flag-deals -> send-inspections [deals-to-walk]: the deals the call
+    will walk, and the reason each one is on the list
+  send-inspections -> open-the-call [inspection-findings]: the finding
+    for every flagged deal, at its version, delivered before the call
+    opens
+  open-the-call -> walk-committed [one-view]: one view, at one version,
+    that everybody in the room is reading
+  walk-committed -> walk-best-case [committed-defences]: what each
+    committed deal was defended on, and every defence the room did not
+    accept
+  walk-best-case -> name-neither [best-case-conditions]: what would
+    have to be true for each best case deal, and who owns making it
+    true
+  name-neither -> test-coverage [unclaimed-deals]: the deals nobody is
+    claiming, taken out of the count rather than left in it quietly
+  test-coverage -> agree-categories [coverage-against-gap]: committed
+    and best case against the target, what is still to find, and
+    whether the pipeline holds it at the ratio the segment uses
+  agree-categories -> name-actions [deal-categories]: the category on
+    every deal walked, with the reason beside each one that changed
+  name-actions -> publish-number [actions-and-owners]: the actions,
+    their owners and their dates
+  publish-number -> record-movement [published-number]: the number as
+    published, at its version, and who it went to
+deviations:
+  read-movement -> take-in-rollup [view-missing-deals]: the view is
+    missing deals the managers hold, so the roll-up is taken in again
+    at the version that carries them
+  walk-committed -> send-inspections [no-inspection-behind-it]: a
+    committed deal has no inspection behind it, so the finding is sent
+    before the deal is defended
+  walk-best-case -> flag-deals [untested-best-case]: the best case
+    rests on a deal nobody tested, so that deal is flagged for the walk
+  test-coverage -> walk-best-case [coverage-short]: the coverage will
+    not carry the gap, so the best case is walked again
+  agree-categories -> walk-committed [categories-do-not-match]: the
+    categories do not match what was walked, so the committed deals are
+    walked again
+  publish-number -> take-in-rollup [number-will-not-reconcile]: the
+    number does not reconcile to the roll-up, so the roll-up is read
+    again at its version
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the managers who walk the deals

@@ -69,6 +69,10 @@ from: ref/sls/write-a-proposal v1
 owner: <who>                          effective: <date>
 trigger: an approved quote exists in <your quoting system> and the
          buyer has asked for it in writing
+         watch: record=<quote> system=<your quoting system>
+                change=<a quote is approved>
+         and watch: record=<opportunity> system=<your CRM>
+                change=<the buyer asks for a proposal in writing>
 concurrency: runs may overlap - <how many> proposals live at once, and
              one opportunity has one proposal in flight at a time
 goal: a signed-off document in the buyer's hands within <days>, saying
@@ -152,36 +156,58 @@ run-scoped:
              every: <cadence>
              from: take-in-quote   until: deliver
 handoffs:
-  take-in-quote -> read-decision: the quote at its version, the price,
-    and the date it stops being good
-  read-decision -> agree-shape: who signs, who can stop it, and what
-    each one has said they need to see
-  agree-shape -> pull-reusable: the section list, so only the sections
-    the document will use are pulled
-  agree-shape -> write-problem: the same section list and the promised
-    date. Both branches read one record
-  pull-reusable -> write-included: the approved sections at their
-    versions, and every section the library did not have
-  write-problem -> write-included: the customer's own words, with the
-    conversation and the date each quote came from
-  write-included -> write-excluded: the scope as written, so the
-    exclusions can be written against it rather than guessed
-  write-excluded -> write-price: what is in and what is out, so the
-    price is priced against the same scope
-  write-price -> write-next-steps: the price, the term and the date the
-    offer stops holding
-  write-next-steps -> check-claims: the complete document, at a draft
-    version, with the source named beside every claim
-  check-claims -> get-sign-offs: the scored document, with the register
-    entry or the gap behind every failure
-  get-sign-offs -> assemble-document: the approved document at the
-    signed version. A later change voids the approval and sign-offs run
-    again
-  assemble-document -> deliver: one file, one version, in the buyer's
-    format, with the recipients named
-  deliver -> watch-buyer: what was sent, to whom, and when
-  watch-buyer -> record-sent: what the buyer did with the document, and
-    when they did it
+  take-in-quote -> read-decision [approved-quote]: the quote at its
+    version, the price, and the date it stops being good
+  read-decision -> agree-shape [buyer-decision]: who signs, who can
+    stop it, and what each one has said they need to see
+  agree-shape -> pull-reusable [section-list]: the section list, so
+    only the sections the document will use are pulled
+  agree-shape -> write-problem [section-list-and-date]: the same
+    section list and the promised date. Both branches read one record
+  pull-reusable -> write-included [library-sections]: the approved
+    sections at their versions, and every section the library did not
+    have
+  write-problem -> write-included [customers-words]: the customer's own
+    words, with the conversation and the date each quote came from
+  write-included -> write-excluded [scope-as-written]: the scope as
+    written, so the exclusions can be written against it rather than
+    guessed
+  write-excluded -> write-price [in-and-out]: what is in and what is
+    out, so the price is priced against the same scope
+  write-price -> write-next-steps [price-and-term]: the price, the term
+    and the date the offer stops holding
+  write-next-steps -> check-claims [draft-document]: the complete
+    document, at a draft version, with the source named beside every
+    claim
+  check-claims -> get-sign-offs [claim-scoring]: the scored document,
+    with the register entry or the gap behind every failure
+  get-sign-offs -> assemble-document [signed-document]: the approved
+    document at the signed version. A later change voids the approval
+    and sign-offs run again
+  assemble-document -> deliver [assembled-file]: one file, one version,
+    in the buyer's format, with the recipients named
+  deliver -> watch-buyer [what-was-sent]: what was sent, to whom, and
+    when
+  watch-buyer -> record-sent [what-the-buyer-did]: what the buyer did
+    with the document, and when they did it
+deviations:
+  write-price -> take-in-quote [quote-expired]: the quote stopped
+    holding while the document was being written, so the run goes back
+    to the quote rather than sending a price nobody stands behind
+  check-claims -> write-included [claim-not-in-register]: a claim is
+    not in the register, so what is included is written again with the
+    claim cut, softened, or taken through the process that adds one
+  get-sign-offs -> write-included [changes-requested]: the signers ask
+    for changes, so only the section they named reopens and the
+    document goes back through sign-off at a new version
+  get-sign-offs -> take-in-quote [price-must-change]: sign-off says the
+    price has to change, so the run goes back to the quote and the
+    sign-off that covered the old price is void
+  watch-buyer -> deliver [nobody-opened-it]: the tracking shows nobody
+    opened it, so it is delivered again to the people it was meant for
+  watch-buyer -> agree-shape [different-shape-asked-for]: the buyer
+    asks for a shape the organization does not write, so the shape is
+    agreed again before anything else is written
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the legal

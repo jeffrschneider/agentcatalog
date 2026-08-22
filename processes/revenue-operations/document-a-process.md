@@ -73,6 +73,12 @@ from: ref/rev/document-a-process v1
 owner: <who>                          effective: <date>
 trigger: <your revenue operations lead> asks for a way of working to be
          written down, or a process already written down changes
+         watch: record=<the request> system=<where requests are raised>
+                change=<a request to write down a way of working is
+                raised>
+         or watch: record=<process document>
+                system=<your process register>
+                change=<a published process changes>
 concurrency: runs may overlap - <how many> processes are written at
              once, and one process is written by one run at a time
 goal: the way the work is actually done, written at a version, signed
@@ -192,38 +198,57 @@ run-scoped:
              every: <cadence>
              from: take-in-request   until: run close
 handoffs:
-  take-in-request -> name-boundaries: why the process is being written
-    now, and who asked
-  name-boundaries -> find-existing: the first step, the last step, and
-    the named owner, at a version all three branches read
-  name-boundaries -> watch-the-work: the same boundary, so the watching
-    stops where the process stops
-  find-existing -> draft-walk: every existing description, dated, with
-    the ones that contradict each other paired up
-  watch-the-work -> ask-what-people-do: what was observed, step by step,
-    with the steps nobody performed marked as unobserved
-  ask-what-people-do -> draft-walk: what people say they do, attributed
-    to a role rather than to a name
-  pull-system-trail -> draft-walk: what the systems recorded, per run,
-    with the steps the systems record nothing about named
-  draft-walk -> mark-variants: the steps in order, each with a doer and
-    a handoff
-  mark-variants -> mark-disputes: the variants and the thing each one
-    turns on, so a difference is not read as a dispute
-  mark-disputes -> settle-disputes: every disputed step with all three
-    accounts of it attached, and none of them chosen
-  settle-disputes -> check-standards: the settled draft, and the reason
-    recorded against each settled step
-  check-standards -> walk-it-back: the scored draft, with the rule
-    behind every failure
-  walk-it-back -> accuracy-sign-off: the draft as the doers heard it,
-    and the changes they asked for during the reading
-  accuracy-sign-off -> publish-version: the signed draft, the signers by
-    name, and the date each one signed
-  publish-version -> announce: the address, the version number, and the
-    list of documents this one replaces
-  announce -> record-what-stayed: the announcement as sent, and who it
-    reached
+  take-in-request -> name-boundaries [reason-and-asker]: why the process
+    is being written now, and who asked
+  name-boundaries -> find-existing [boundary-and-owner]: the first step,
+    the last step, and the named owner, at a version all three branches
+    read
+  name-boundaries -> watch-the-work [observation-scope]: the same
+    boundary, so the watching stops where the process stops
+  find-existing -> draft-walk [existing-descriptions]: every existing
+    description, dated, with the ones that contradict each other paired
+    up
+  watch-the-work -> ask-what-people-do [observed-steps]: what was
+    observed, step by step, with the steps nobody performed marked as
+    unobserved
+  ask-what-people-do -> draft-walk [reported-practice]: what people say
+    they do, attributed to a role rather than to a name
+  pull-system-trail -> draft-walk [system-trail]: what the systems
+    recorded, per run, with the steps the systems record nothing about
+    named
+  draft-walk -> mark-variants [activity-walk]: the steps in order, each
+    with a doer and a handoff
+  mark-variants -> mark-disputes [variants]: the variants and the thing
+    each one turns on, so a difference is not read as a dispute
+  mark-disputes -> settle-disputes [disputed-steps]: every disputed step
+    with all three accounts of it attached, and none of them chosen
+  settle-disputes -> check-standards [settled-draft]: the settled draft,
+    and the reason recorded against each settled step
+  check-standards -> walk-it-back [standards-score]: the scored draft,
+    with the rule behind every failure
+  walk-it-back -> accuracy-sign-off [read-back-draft]: the draft as the
+    doers heard it, and the changes they asked for during the reading
+  accuracy-sign-off -> publish-version [accuracy-signatures]: the signed
+    draft, the signers by name, and the date each one signed
+  publish-version -> announce [published-address]: the address, the
+    version number, and the list of documents this one replaces
+  announce -> record-what-stayed [announcement-sent]: the announcement
+    as sent, and who it reached
+deviations:
+  mark-disputes -> ask-what-people-do [accounts-contradict-trail]: the
+    accounts of the work and the system trail conflict, so what people
+    do is asked again with the trail in hand
+  mark-disputes -> pull-system-trail [trail-misses-a-step]: the trail
+    does not cover a step at all, so it is pulled again for that step
+  settle-disputes -> pull-system-trail [more-evidence-wanted]: the owner
+    will not settle without more evidence, so the trail is pulled again
+  check-standards -> draft-walk [standards-failures]: the draft fails
+    the house format or the naming rules, so the walk is drafted again
+    with the rule behind each failure
+  walk-it-back -> draft-walk [walk-is-wrong]: the people who do the work
+    say the walk is not what they do, so it is drafted again
+  accuracy-sign-off -> settle-disputes [signature-refused]: a signer
+    will not sign a step, so that step goes back to be settled again
 bindings:
   roster:  <who holds each role - the agent claiming process-librarian,
            the agent claiming analytics, the named process owner, and

@@ -88,6 +88,14 @@ owner: <who>                          effective: <date>
 trigger: <your product launch, pricing change or competitive battlecard
          process> hands over a change every seller has to act on, or
          <who> declares one
+         watch: record=<the change as handed over> system=<the
+                enablement library>
+                change=<a launch, a price change or a battlecard is
+                handed over at a signed version>
+         or watch: record=<a declared change> system=<the notification
+                channel>
+                change=<a change every seller must act on is declared
+                outside the handover>
 concurrency: runs may overlap - <how many> changes are taught at once,
              and one change is rolled out by one run at a time
 goal: every named seller taught the change once before it takes effect,
@@ -183,50 +191,71 @@ run-scoped:
               every: <cadence>
               from: tell-managers   until: run close
 handoffs:
-  take-in-change -> name-audience: what changed, from when, and which
-    parts of the business it touches
-  take-in-change -> name-behaviour: the change as marketing handed it
-    over, at the version they signed
-  name-audience -> check-attendance: the list of who must be told, by
-    name, with the manager each one reports to
-  name-behaviour -> set-live-date: what sellers will be asked to do
-    differently, so the date is set against real work
-  name-behaviour -> check-handover: the behaviour that has to change, so
-    the handover is judged against it rather than against itself
-  name-behaviour -> change-rules: the stages, fields, approvals and
-    price rules the new behaviour will not fit inside
-  set-live-date -> change-rules: the date, and what happens to deals
-    already in flight on that date
-  check-handover -> fill-gaps: what a seller needs and does not have,
-    gap by gap, with the question that exposed each one
-  fill-gaps -> sign-off: the material at a version, with every claim
-    traced to something marketing already signed
-  change-rules -> sign-off: the rule change as configured, with what it
-    does to deals in flight
-  sign-off -> build-teaching: the signed material. A later change voids
-    the sign-off and it runs again
-  sign-off -> publish: the same signed version, so the library and the
-    session never differ
-  build-teaching -> tell-managers: the session, the exercise and the
-    one-page version, at a version
-  tell-managers -> run-sessions: the questions the managers asked, and
-    the answers the session now has to carry
-  publish -> run-sessions: the address the session points at, live, with
-    the version stamped on it
-  run-sessions -> check-attendance: who sat in which session, with the
-    date
-  run-sessions -> check-landed: what was taught, so the check tests the
-    change and not general product knowledge
-  run-sessions -> watch-deals: the date each group was taught, so live
-    behaviour is read against when they heard it
-  check-attendance -> chase-missing: who is missing, by name, with their
-    manager
-  check-landed -> chase-missing: who did not pass, and which part of the
-    change they got wrong
-  chase-missing -> report-rollout: who was caught up, on what date, and
-    who never was
-  watch-deals -> report-rollout: the deals opened since the date, and
-    whether the new price, pitch or answer is in them
+  take-in-change -> name-audience [change-scope]: what changed, from
+    when, and which parts of the business it touches
+  take-in-change -> name-behaviour [handed-over-change]: the change as
+    marketing handed it over, at the version they signed
+  name-audience -> check-attendance [named-list]: the list of who must
+    be told, by name, with the manager each one reports to
+  name-behaviour -> set-live-date [new-behaviour]: what sellers will be
+    asked to do differently, so the date is set against real work
+  name-behaviour -> check-handover [behaviour-to-judge-by]: the
+    behaviour that has to change, so the handover is judged against it
+    rather than against itself
+  name-behaviour -> change-rules [rules-the-behaviour-breaks]: the
+    stages, fields, approvals and price rules the new behaviour will not
+    fit inside
+  set-live-date -> change-rules [live-date]: the date, and what happens
+    to deals already in flight on that date
+  check-handover -> fill-gaps [material-gaps]: what a seller needs and
+    does not have, gap by gap, with the question that exposed each one
+  fill-gaps -> sign-off [material-for-signing]: the material at a
+    version, with every claim traced to something marketing already
+    signed
+  change-rules -> sign-off [rule-change-for-signing]: the rule change as
+    configured, with what it does to deals in flight
+  sign-off -> build-teaching [signed-material]: the signed material. A
+    later change voids the sign-off and it runs again
+  sign-off -> publish [signed-version-to-publish]: the same signed
+    version, so the library and the session never differ
+  build-teaching -> tell-managers [teaching-materials]: the session, the
+    exercise and the one-page version, at a version
+  tell-managers -> run-sessions [manager-questions]: the questions the
+    managers asked, and the answers the session now has to carry
+  publish -> run-sessions [published-address]: the address the session
+    points at, live, with the version stamped on it
+  run-sessions -> check-attendance [session-attendance]: who sat in
+    which session, with the date
+  run-sessions -> check-landed [what-was-taught]: what was taught, so
+    the check tests the change and not general product knowledge
+  run-sessions -> watch-deals [teaching-dates]: the date each group was
+    taught, so live behaviour is read against when they heard it
+  check-attendance -> chase-missing [missing-by-name]: who is missing,
+    by name, with their manager
+  check-landed -> chase-missing [who-did-not-pass]: who did not pass,
+    and which part of the change they got wrong
+  chase-missing -> report-rollout [chase-outcome]: who was caught up, on
+    what date, and who never was
+  watch-deals -> report-rollout [live-deal-evidence]: the deals opened
+    since the date, and whether the new price, pitch or answer is in
+    them
+deviations:
+  check-handover -> take-in-change [handover-does-not-answer]: the
+    material does not answer what a buyer asks, so the questions go back
+    to whoever handed the change over
+  sign-off -> fill-gaps [material-changes-requested]: the signers come
+    back with changes to the material
+  sign-off -> change-rules [rule-change-refused]: the rule change is not
+    signed for, so it is configured again
+  tell-managers -> build-teaching [managers-cannot-answer]: the managers
+    cannot say the change back, so the teaching is built again before
+    any seller sits in a session
+  check-landed -> build-teaching [teaching-did-not-land]: most of the
+    room did not understand it, so the teaching is built again
+  chase-missing -> run-sessions [seller-still-missing]: a seller has
+    still not attended, so a session runs for them
+  watch-deals -> chase-missing [change-not-in-deals]: the change is not
+    showing up in live deals, so the chase reopens by team
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the product marketing lead, the

@@ -82,6 +82,9 @@ from: ref/rev/write-a-routing-rule v1
 owner: <who>                           effective: <date>
 trigger: somebody asks who should get a kind of work, or <your review
          cadence> reopens a rule already in force
+         watch: record=<a routing question> system=<the rule register>
+                change=<somebody asks who should get a kind of work>
+         or watch: every=<your review cadence>
 concurrency: runs may overlap - one rule is one run, and <how many>
              rules over the same queue are never changed at once
 goal: a rule the people it routes to have read, tested against past
@@ -174,40 +177,66 @@ run-scoped:
   register - runs allocate-and-reconcile      owner: routing-keeper
              from: approve-rule     until: run close
 handoffs:
-  take-in-question -> read-current: the work the rule has to place, and
-    the reason the current answer is not good enough
-  read-current -> name-who-gets-what: the rule in force, written out in
-    full, and the volume each of its branches actually moves
-  name-who-gets-what -> read-fields: who should get what, in sentences,
-    with the disagreements that were settled and by whom
-  read-fields -> check-data: every field the rule would read, its
-    system, and the person or agent that writes it
-  check-data -> write-rule: fill rate, accuracy and staleness per field,
-    and any field the rule may not depend on with the reason
-  write-rule -> set-order: the rule in plain sentences, at a draft
-    version
-  set-order -> set-clock: the precedence between clauses and the named
-    owner for anything unmatched
-  set-order -> check-capacity: the same clauses, so the volume each one
-    sends can be counted
-  set-clock -> show-to-receivers: the clock the rule promises, and who
-    it is promised to
-  check-capacity -> show-to-receivers: the volume per queue against what
-    that queue holds, and every queue that would go over
-  show-to-receivers -> replay-past-work: the rule as the receivers read
-    it, with every objection written down and answered
-  replay-past-work -> approve-rule: where the rule sends <how many> past
-    records, and every record it would have sent elsewhere
-  approve-rule -> implement-rule: the signed rule at a version, and the
-    name of the person who signed it
-  implement-rule -> verify-live: the configuration as built, and the
-    rule version it was built from
-  verify-live -> publish-rule: the live items checked, and where each
-    one landed against where the rule said
-  publish-rule -> announce-change: the address the rule is readable at,
-    and its version
-  announce-change -> watch-first-week: who was told, when, and on which
-    channel
+  take-in-question -> read-current [routing-question]: the work the rule
+    has to place, and the reason the current answer is not good enough
+  read-current -> name-who-gets-what [rule-in-force]: the rule in force,
+    written out in full, and the volume each of its branches actually
+    moves
+  name-who-gets-what -> read-fields [who-gets-what]: who should get
+    what, in sentences, with the disagreements that were settled and by
+    whom
+  read-fields -> check-data [fields-and-owners]: every field the rule
+    would read, its system, and the person or agent that writes it
+  check-data -> write-rule [field-quality]: fill rate, accuracy and
+    staleness per field, and any field the rule may not depend on with
+    the reason
+  write-rule -> set-order [draft-rule]: the rule in plain sentences, at
+    a draft version
+  set-order -> set-clock [order-and-fallback]: the precedence between
+    clauses and the named owner for anything unmatched
+  set-order -> check-capacity [clauses-to-count]: the same clauses, so
+    the volume each one sends can be counted
+  set-clock -> show-to-receivers [promised-clock]: the clock the rule
+    promises, and who it is promised to
+  check-capacity -> show-to-receivers [queue-volumes]: the volume per
+    queue against what that queue holds, and every queue that would go
+    over
+  show-to-receivers -> replay-past-work [receiver-objections]: the rule
+    as the receivers read it, with every objection written down and
+    answered
+  replay-past-work -> approve-rule [replay-result]: where the rule sends
+    <how many> past records, and every record it would have sent
+    elsewhere
+  approve-rule -> implement-rule [signed-rule]: the signed rule at a
+    version, and the name of the person who signed it
+  implement-rule -> verify-live [configuration]: the configuration as
+    built, and the rule version it was built from
+  verify-live -> publish-rule [live-verification]: the live items
+    checked, and where each one landed against where the rule said
+  publish-rule -> announce-change [published-rule]: the address the rule
+    is readable at, and its version
+  announce-change -> watch-first-week [announcement-record]: who was
+    told, when, and on which channel
+deviations:
+  check-data -> name-who-gets-what [fields-cannot-carry]: the fields
+    cannot carry the rule, so who gets what is said again against fields
+    that do hold up
+  check-capacity -> set-order [queue-over-capacity]: a receiving queue
+    cannot hold the volume a clause sends, so the order and the fallback
+    are set again
+  show-to-receivers -> write-rule [receivers-refuse]: the receivers do
+    not accept the rule, so it is written again with their objections
+    recorded
+  replay-past-work -> write-rule [replay-disagrees]: the replay sends
+    past work to a different owner than it actually went to
+  approve-rule -> write-rule [approval-requests-changes]: approval comes
+    back with changes, and the changed rule is replayed again before it
+    returns for signature
+  verify-live -> implement-rule [live-batch-misroutes]: the live batch
+    lands somewhere the rule does not say, so the configuration is built
+    again
+  watch-first-week -> write-rule [same-fault-twice]: the rule is wrong
+    in the same way twice in the first week, which is a rule problem
 bindings:
   roster:  <the agent claiming routing-keeper> ·
            <the agent claiming data-steward> ·

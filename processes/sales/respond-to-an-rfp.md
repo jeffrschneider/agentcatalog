@@ -76,6 +76,12 @@ from: ref/sls/respond-to-an-rfp v1
 owner: <who>                          effective: <date>
 trigger: a formal request for proposal, tender or information arrives
          at <your intake address> or is found in <your sourcing feed>
+         watch: record=<request for proposal>
+                system=<your intake address>
+                change=<a formal request arrives>
+         or watch: record=<request for proposal>
+                system=<your sourcing feed>
+                change=<a formal request is found>
 concurrency: runs may overlap - <how many> bids in flight at once, and
              one request is one run from intake to outcome
 goal: a submission that answers every requirement, obeys every rule the
@@ -183,43 +189,72 @@ run-scoped:
               leadership role>
               from: decide-to-bid   until: run close
 handoffs:
-  take-in-request -> read-rules: the request as received, complete,
-    with every attachment and addendum it arrived with
-  read-rules -> decide-to-bid: the deadline, the scoring, the terms the
-    request imposes, and every requirement the organization cannot meet
-  decide-to-bid -> tell-the-buyer: the decision and the reason, in the
-    words that go to the buyer
-  tell-the-buyer -> split-requirements: the confirmed intent to
-    respond, and the date the buyer expects the submission
-  split-requirements -> ask-questions: the requirements nobody can
-    answer as written, and the date the question window closes
-  split-requirements -> answer-requirements: every requirement with its
-    owner, its date and its section
-  split-requirements -> design-response: the requirements that describe
-    the work rather than the company
-  ask-questions -> answer-requirements: the buyer's answers, as the
-    buyer wrote them, and every question they refused to answer
-  design-response -> price-bid: the solution as it would be delivered,
-    so the price is priced against it
-  answer-requirements -> answer-security: the security, privacy and
-    procurement sections, with the questions already answered elsewhere
-    in the response marked
-  answer-requirements -> write-narrative: the answered requirements, so
-    the narrative says nothing the answers contradict
-  price-bid -> write-narrative: the price, the terms, and every
-    assumption the price depends on
-  write-narrative -> check-compliance: the complete response, at a
-    draft version, in the format the request demands
-  check-compliance -> approve-bid: the scored response, with the
-    requirement or the rule behind every failure
-  approve-bid -> submit: the approved response at the signed version. A
-    later change voids the approval and approval runs again
-  submit -> confirm-receipt: what was submitted, through which channel,
-    at what time
-  confirm-receipt -> handle-clarify: the receipt and the reference the
-    buyer gave it
-  handle-clarify -> record-outcome: everything said after submission,
-    and what the buyer decided
+  take-in-request -> read-rules [the-request]: the request as
+    received, complete, with every attachment and addendum it arrived
+    with
+  read-rules -> decide-to-bid [the-rules]: the deadline, the scoring,
+    the terms the request imposes, and every requirement the
+    organization cannot meet
+  decide-to-bid -> tell-the-buyer [bid-decision]: the decision and
+    the reason, in the words that go to the buyer
+  tell-the-buyer -> split-requirements [confirmed-intent]: the
+    confirmed intent to respond, and the date the buyer expects the
+    submission
+  split-requirements -> ask-questions [questions-to-ask]: the
+    requirements nobody can answer as written, and the date the
+    question window closes
+  split-requirements -> answer-requirements [owned-requirements]:
+    every requirement with its owner, its date and its section
+  split-requirements -> design-response [work-requirements]: the
+    requirements that describe the work rather than the company
+  ask-questions -> answer-requirements [buyer-answers]: the buyer's
+    answers, as the buyer wrote them, and every question they refused
+    to answer
+  design-response -> price-bid [solution-design]: the solution as it
+    would be delivered, so the price is priced against it
+  answer-requirements -> answer-security [security-sections]: the
+    security, privacy and procurement sections, with the questions
+    already answered elsewhere in the response marked
+  answer-requirements -> write-narrative [answered-requirements]:
+    the answered requirements, so the narrative says nothing the
+    answers contradict
+  price-bid -> write-narrative [the-price]: the price, the terms, and
+    every assumption the price depends on
+  write-narrative -> check-compliance [draft-response]: the complete
+    response, at a draft version, in the format the request demands
+  check-compliance -> approve-bid [compliance-result]: the scored
+    response, with the requirement or the rule behind every failure
+  approve-bid -> submit [approved-response]: the approved response at
+    the signed version. A later change voids the approval and approval
+    runs again
+  submit -> confirm-receipt [what-was-submitted]: what was submitted,
+    through which channel, at what time
+  confirm-receipt -> handle-clarify [the-receipt]: the receipt and
+    the reference the buyer gave it
+  handle-clarify -> record-outcome [post-submission]: everything said
+    after submission, and what the buyer decided
+deviations:
+  tell-the-buyer -> record-outcome [no-bid]: the decision was no bid,
+    so none of the answering, pricing or submission phases run, and
+    the run goes straight to the outcome record with the reason
+  ask-questions -> split-requirements [answer-changes-meaning]: an
+    answer from the buyer changes what a requirement means, so the
+    requirements are split again against the new reading
+  check-compliance -> answer-requirements [requirement-unanswered]:
+    the check finds a requirement nobody answered, so it goes back to
+    the owner of the fact with the requirement attached
+  check-compliance -> write-narrative [limit-broken]: a page or word
+    limit is broken, so the narrative is written again to fit rather
+    than the answers being cut
+  approve-bid -> price-bid [price-must-change]: the signers will not
+    approve the price, so the bid is priced again before it can be
+    approved
+  approve-bid -> design-response [promise-cannot-be-made]: a
+    commitment in the response is one nobody will stand behind, so the
+    solution is designed again around what can be promised
+  confirm-receipt -> submit [no-receipt]: no receipt, reference
+    number or portal confirmation arrives, so the bid is treated as
+    not submitted and the submission is made again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the sales

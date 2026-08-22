@@ -78,6 +78,9 @@ PROCESS: channel program              id: <team>/channel-program   v1
 from: ref/mkt/channel-program v1
 owner: <who>                          effective: <date>
 trigger: a channel program design is approved in <your planning process>
+         watch: record=<the program design>
+                system=<your planning process>
+                change=<a program design is marked approved>
 concurrency: one program per <market or product line> - <how many> open
              at once
 goal: a program with terms a partner can sign, materials and a portal
@@ -170,38 +173,63 @@ run-scoped:
              every: <cadence>
              from: start-enablement   until: run close
 handoffs:
-  take-in-design -> settle-terms: what the program must deliver, for
-    whom and by when, in one line that every later decision can be
-    tested against
-  settle-terms -> price-incentives: the tiers, and what each one asks
-    of a partner and gives back
-  settle-terms -> candidate-list: the kind of partner each tier is for
-  settle-terms -> partner-systems: the tiers as the systems have to
-    hold them, and what each tier entitles a partner to
-  price-incentives -> draw-agreement: the margin, the rebate and the
-    fund at each tier, with the assumption written beside each number
-  price-incentives -> recruit-material: the same numbers, cut to what a
-    candidate may be shown before signing
-  price-incentives -> selling-kit: the tiers, and what a partner is
-    allowed to say about the organization
-  recruit-material + selling-kit -> build-portal: the material at its
-    versions, and which tier may be shown each piece
-  draw-agreement + build-portal + partner-systems -> get-sign-offs: the
-    agreement, the material and the portal at a version
-  get-sign-offs -> open-recruitment: the approved program at the signed
-    version. A later change voids the approval and sign-offs run again
-  candidate-list -> open-recruitment: the candidates, each with the tier
-    it is approached for and the consent record covering the approach
-  open-recruitment -> assess-applicants: what each candidate answered
-    and what they sent
-  assess-applicants -> sign-partners: each candidate scored against the
-    profile, with the rule behind every failure, and a recommendation
-    to sign or to decline
-  sign-partners -> start-enablement: the countersigned agreement, the
-    tier, the partner contacts, and the date the tier starts from
-  watch-partners -> report-program: the standing of every signed
-    partner, attributed to the system it was read from
-  report-program -> record-learnings: the report, as delivered
+  take-in-design -> settle-terms [program-goal]: what the program must
+    deliver, for whom and by when, in one line that every later
+    decision can be tested against
+  settle-terms -> price-incentives [tiers-and-terms]: the tiers, and
+    what each one asks of a partner and gives back
+  settle-terms -> candidate-list [partner-kind]: the kind of partner
+    each tier is for
+  settle-terms -> partner-systems [tier-entitlements]: the tiers as
+    the systems have to hold them, and what each tier entitles a
+    partner to
+  price-incentives -> draw-agreement [priced-incentives]: the margin,
+    the rebate and the fund at each tier, with the assumption written
+    beside each number
+  price-incentives -> recruit-material [numbers-for-candidates]: the
+    same numbers, cut to what a candidate may be shown before signing
+  price-incentives -> selling-kit [what-a-partner-may-say]: the tiers,
+    and what a partner is allowed to say about the organization
+  recruit-material + selling-kit -> build-portal [partner-material]:
+    the material at its versions, and which tier may be shown each
+    piece
+  draw-agreement + build-portal + partner-systems -> get-sign-offs
+    [program-at-a-version]: the agreement, the material and the portal
+    at a version
+  get-sign-offs -> open-recruitment [signed-program]: the approved
+    program at the signed version. A later change voids the approval
+    and sign-offs run again
+  candidate-list -> open-recruitment [candidates]: the candidates,
+    each with the tier it is approached for and the consent record
+    covering the approach
+  open-recruitment -> assess-applicants [applications]: what each
+    candidate answered and what they sent
+  assess-applicants -> sign-partners [candidate-scores]: each
+    candidate scored against the profile, with the rule behind every
+    failure, and a recommendation to sign or to decline
+  sign-partners -> start-enablement [signed-partner]: the
+    countersigned agreement, the tier, the partner contacts, and the
+    date the tier starts from
+  watch-partners -> report-program [partner-standing]: the standing of
+    every signed partner, attributed to the system it was read from
+  report-program -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  price-incentives -> settle-terms [incentives-cost-too-much]: the
+    incentives cost more than the design allows, so the tiers and the
+    terms are settled again
+  get-sign-offs -> recruit-material [recruit-material-changes]: a
+    signer comes back with changes to the recruitment material
+  get-sign-offs -> selling-kit [selling-kit-changes]: a signer comes
+    back with changes to the selling kit
+  assess-applicants -> candidate-list [too-few-candidates]: too few
+    candidates meet the profile, so the list is drawn up again
+  sign-partners -> settle-terms [terms-will-not-close]: candidates
+    across most of the list refuse the terms, so the terms are settled
+    again
+  watch-partners -> start-enablement [partner-has-not-started]: a
+    signed partner has not started, so that one partner goes back to
+    enablement while the rest of the program carries on
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, finance and

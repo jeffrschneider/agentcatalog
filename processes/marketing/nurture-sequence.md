@@ -94,6 +94,9 @@ from: ref/mkt/nurture-sequence v1
 owner: <who>                          effective: <date>
 trigger: a segment and a goal are agreed in <your demand planning
          process>
+         watch: record=<the segment and the goal>
+                system=<your demand planning process>
+                change=<a segment and a goal are agreed for a program>
 concurrency: runs may overlap - <how many> programs being built at
              once, and <how many> sending at once
 goal: a program that admits the contacts its entry rule names, sends
@@ -179,39 +182,66 @@ phases:
                      until: the program is switched off
                      automation: <level>
 handoffs:
-  take-in-segment -> define-entry: the goal in one line that every
-    later decision can be tested against
-  define-entry -> check-consent: the entry rule and the list it
-    produces today, with the count
-  check-consent -> map-the-steps: the contacts that may be reached,
-    the count removed, and the rule behind each removal
-  map-the-steps -> set-exits: the steps, the waits and the branch
-    conditions at a version
-  set-exits -> brief-makers: the whole program design at a version,
-    naming the entry rule, every step, every wait, every branch
-    condition and every exit
-  brief-makers -> produce-messages: the request as every agent heard
-    it, and what each message has to make a contact do
-  brief-makers -> wire-measurement: the same design, and the action
-    that counts at each step. Both branches read one record
-  produce-messages -> score-messages: the messages at a version
-  wire-measurement -> score-messages: a dated test showing each
-    conversion arriving in the CRM
-  score-messages -> get-sign-offs: the scored list, with the rule
-    behind every failure
-  get-sign-offs -> build-program: the approved messages and the
-    approved design at the signed version. A later change voids the
-    approval and sign-offs run again
-  build-program -> test-contacts: the program as it was built, every
-    step, wait, condition and exit set beside the design it came from
-  test-contacts -> turn-it-on: where each test contact landed, path by
-    path, and the paths that could not be walked
-  turn-it-on -> watch: the version that started sending, the date it
-    started, and who said go
-  turn-it-on -> hand-over: the ready rule, and the salesperson or the
-    queue each contact who meets it goes to
-  watch -> tune: the steps and the branch conditions the numbers argue
-    against, each one with the number behind it
+  take-in-segment -> define-entry [program-goal]: the goal in one line
+    that every later decision can be tested against
+  define-entry -> check-consent [entry-rule]: the entry rule and the
+    list it produces today, with the count
+  check-consent -> map-the-steps [reachable-contacts]: the contacts
+    that may be reached, the count removed, and the rule behind each
+    removal
+  map-the-steps -> set-exits [steps-and-branches]: the steps, the waits
+    and the branch conditions at a version
+  set-exits -> brief-makers [program-design]: the whole program design
+    at a version, naming the entry rule, every step, every wait, every
+    branch condition and every exit
+  brief-makers -> produce-messages [message-brief]: the request as
+    every agent heard it, and what each message has to make a contact
+    do
+  brief-makers -> wire-measurement [measurement-brief]: the same
+    design, and the action that counts at each step. Both branches read
+    one record
+  produce-messages -> score-messages [messages]: the messages at a
+    version
+  wire-measurement -> score-messages [conversion-test]: a dated test
+    showing each conversion arriving in the CRM
+  score-messages -> get-sign-offs [scored-messages]: the scored list,
+    with the rule behind every failure
+  get-sign-offs -> build-program [signed-program]: the approved
+    messages and the approved design at the signed version. A later
+    change voids the approval and sign-offs run again
+  build-program -> test-contacts [built-program]: the program as it was
+    built, every step, wait, condition and exit set beside the design
+    it came from
+  test-contacts -> turn-it-on [path-walk]: where each test contact
+    landed, path by path, and the paths that could not be walked
+  turn-it-on -> watch [live-version]: the version that started sending,
+    the date it started, and who said go
+  turn-it-on -> hand-over [ready-rule]: the ready rule, and the
+    salesperson or the queue each contact who meets it goes to
+  watch -> tune [tuning-candidates]: the steps and the branch
+    conditions the numbers argue against, each one with the number
+    behind it
+deviations:
+  check-consent -> define-entry [too-few-reachable]: too few of the
+    segment may be contacted, so the entry rule is widened and the
+    segment is scored again
+  score-messages -> produce-messages [message-failed-a-pass]: a message
+    fails the brand, claims, rendering or accessibility pass, so it is
+    made again
+  get-sign-offs -> produce-messages [changes-requested]: the signers
+    ask for a change, so only the message they named is made again
+  test-contacts -> build-program [wrong-path-taken]: a test contact
+    lands on a path it should not have taken, so the condition is fixed
+    and every path is walked again
+  test-contacts -> wire-measurement [conversion-missing]: a conversion
+    does not fire, so the measurement is wired again before anything
+    sends against a step nobody can count
+  tune -> produce-messages [message-must-change]: the numbers argue
+    against a message, so it is made again and signed again while the
+    program keeps sending
+  tune -> build-program [rule-must-change]: the numbers argue against a
+    step, a wait or a branch condition, so the program is built again
+    in the sending system
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, brand and the owner who

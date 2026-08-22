@@ -74,6 +74,8 @@ from: ref/mkt/approve-marketing-material v1
 owner: <who>                          effective: <date>
 trigger: another process submits finished material at a version, or
          <who> submits it directly
+         watch: record=<submission> system=<your review record>
+                change=<finished material is submitted at a version>
 concurrency: runs overlap - <how many> reviews open at once
 goal: one version of the material cleared against the standards that
       were in force when it was submitted, with the signers, the
@@ -148,34 +150,60 @@ run-scoped:
            every: <cadence>
            from: take-in   until: run close
 handoffs:
-  take-in -> name-standards: what arrived, at which version, what it is
-    for, where it will run, and the date it is needed by
-  name-standards -> check-complete: the standards that apply, each at
-    the version it is read at, and the people who have to sign
+  take-in -> name-standards [submission]: what arrived, at which
+    version, what it is for, where it will run, and the date it is
+    needed by
+  name-standards -> check-complete [standards-and-signers]: the
+    standards that apply, each at the version it is read at, and the
+    people who have to sign
   check-complete -> score-brand + score-disclosure + score-access +
-    confirm-rights: the material at one version, its claims, the
-    sources under them, and the list of places it will run
-  score-brand -> gather-findings: a verdict per item, each citing the
-    standard, its version and the rule applied
-  score-disclosure -> gather-findings: a verdict per item and per
-    market, each citing the rule behind it
-  score-access -> gather-findings: a verdict per item, and what the
-    agent could not test
-  confirm-rights -> gather-findings: the license behind every image,
-    clip, track and font, and the date each one expires
-  settle-rule -> the pass that raised it: what the rule means, written
-    against the rule at its version, so the next reading of it comes
-    out the same way
-  gather-findings -> return-failures: one exception list, ordered by
-    what has to change first
-  gather-findings -> get-signatures: the same list with nothing taken
-    out of it, beside the version it was scored against
-  accept-exception -> get-signatures: the accepted failure, who
-    accepted it, the reason, and what the acceptance covers
-  get-signatures -> release: the signed version, the signers, the date,
-    and any condition a signer attached
-  release -> the submitting process: the cleared version, the clearance
-    record, and the date the clearance stops being good
+    confirm-rights [scorable-material]: the material at one version,
+    its claims, the sources under them, and the list of places it will
+    run
+  score-brand -> gather-findings [brand-verdicts]: a verdict per item,
+    each citing the standard, its version and the rule applied
+  score-disclosure -> gather-findings [disclosure-verdicts]: a verdict
+    per item and per market, each citing the rule behind it
+  score-access -> gather-findings [access-verdicts]: a verdict per
+    item, and what the agent could not test
+  confirm-rights -> gather-findings [rights-and-expiries]: the license
+    behind every image, clip, track and font, and the date each one
+    expires
+  settle-rule -> the pass that raised it [rule-reading]: what the rule
+    means, written against the rule at its version, so the next
+    reading of it comes out the same way
+  gather-findings -> return-failures [exception-list]: one exception
+    list, ordered by what has to change first
+  gather-findings -> get-signatures [findings-and-version]: the same
+    list with nothing taken out of it, beside the version it was
+    scored against
+  accept-exception -> get-signatures [written-acceptance]: the
+    accepted failure, who accepted it, the reason, and what the
+    acceptance covers
+  get-signatures -> release [signatures]: the signed version, the
+    signers, the date, and any condition a signer attached
+  release -> the submitting process [clearance]: the cleared version,
+    the clearance record, and the date the clearance stops being good
+deviations:
+  check-complete -> return-failures [submission-incomplete]: something
+    the submission needs is missing, so the failures go straight back
+    to the submitter and none of the scoring passes runs on this
+    version
+  settle-rule -> score-brand [brand-rule-settled]: the reading of the
+    rule is written down, so the brand and claims pass scores again
+    against it
+  settle-rule -> score-disclosure [disclosure-rule-settled]: the
+    reading of the rule is written down, so the disclosure pass scores
+    again against it
+  settle-rule -> score-access [access-rule-settled]: the reading of
+    the rule is written down, so the accessibility pass scores again
+    against it
+  return-failures -> check-complete [corrected-version]: the submitter
+    sends a corrected version, so it comes in again and is checked for
+    completeness before anything is scored
+  get-signatures -> return-failures [signer-changes]: a signer asks
+    for changes, so only what that signer named goes back to the
+    submitter
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for brand, legal, rights and

@@ -76,6 +76,11 @@ from: ref/sls/run-an-outbound-sequence v1
 owner: <who>                   effective: <date>
 trigger: a signed prospect list is loaded, or <your seller role> starts
          a sequence against an account already on plan
+         watch: record=<prospect list> system=<where lists are loaded>
+                change=<a signed prospect list is loaded>
+         or watch: record=<account> system=<your CRM>
+                change=<a seller starts a sequence against an account
+                already on plan>
 concurrency: runs may overlap - <how many> sequences live at once, and
              one person receives touches from one sequence at a time
 goal: every person on the list touched on the channels their group
@@ -174,38 +179,57 @@ run-scoped:
                    every: <cadence>
                    from: send-first   until: run close
 handoffs:
-  take-in-list -> group-the-list: the signed list, with the consent
-    finding already attached to every person on it
-  group-the-list -> write-touches: the groups, and what each group is
-    meant to hear
-  group-the-list -> set-cadence: the same groups, and the date the
-    first touch is promised
-  write-touches -> check-sendable: the wording of every touch, per
-    channel, at a version
-  check-sendable -> sign-sequence: the people who may be touched,
-    channel by channel, and the count the record took out
-  set-cadence -> sign-sequence: the number of touches, the gaps, the
-    days and the give-up point
-  sign-sequence -> prepare-sending: the signed wording and cadence at a
-    version. A later change voids the signature
-  prepare-sending -> send-first: the sending addresses, the daily
-    limit, the reply routing, and a dated test of each
-  send-first -> make-calls: which person is due a call on which day,
-    and what the mail before it said
-  send-first -> social-touches: the same schedule, so the social touch
-    does not repeat the mail word for word
-  send-first -> watch-replies: everything that was sent, so a reply can
-    be read against the touch that caused it
-  watch-replies -> stop-on-reply: the person, the reply, and how it was
-    sorted
-  watch-replies -> handle-opt-outs: the person and the words they used
-    to say stop
-  stop-on-reply -> hand-over: the person, the whole thread, and every
-    touch they received before they answered
-  keep-healthy -> close-sequence: the bounces, complaints and blocks,
-    and every send that was held back with the reason
-  close-sequence -> report-and-learn: the touches as they actually ran,
-    the replies as they were sorted, and the people never reached
+  take-in-list -> group-the-list [signed-list]: the signed list, with
+    the consent finding already attached to every person on it
+  group-the-list -> write-touches [groups]: the groups, and what each
+    group is meant to hear
+  group-the-list -> set-cadence [groups-for-cadence]: the same groups,
+    and the date the first touch is promised
+  write-touches -> check-sendable [touch-wording]: the wording of every
+    touch, per channel, at a version
+  check-sendable -> sign-sequence [sendable-list]: the people who may
+    be touched, channel by channel, and the count the record took out
+  set-cadence -> sign-sequence [cadence-plan]: the number of touches,
+    the gaps, the days and the give-up point
+  sign-sequence -> prepare-sending [signed-sequence]: the signed
+    wording and cadence at a version. A later change voids the
+    signature
+  prepare-sending -> send-first [sending-setup]: the sending addresses,
+    the daily limit, the reply routing, and a dated test of each
+  send-first -> make-calls [call-schedule]: which person is due a call
+    on which day, and what the mail before it said
+  send-first -> social-touches [social-schedule]: the same schedule, so
+    the social touch does not repeat the mail word for word
+  send-first -> watch-replies [sent-touches]: everything that was sent,
+    so a reply can be read against the touch that caused it
+  watch-replies -> stop-on-reply [sorted-reply]: the person, the reply,
+    and how it was sorted
+  watch-replies -> handle-opt-outs [opt-out]: the person and the words
+    they used to say stop
+  stop-on-reply -> hand-over [reply-thread]: the person, the whole
+    thread, and every touch they received before they answered
+  keep-healthy -> close-sequence [sending-health]: the bounces,
+    complaints and blocks, and every send that was held back with the
+    reason
+  close-sequence -> report-and-learn [sequence-outcome]: the touches as
+    they actually ran, the replies as they were sorted, and the people
+    never reached
+deviations:
+  check-sendable -> write-touches [wording-not-allowed]: a channel does
+    not allow the wording, so that touch is written again for that
+    channel only
+  sign-sequence -> write-touches [changes-requested]: the signer asks
+    for changes, so the wording goes back and the signature is taken
+    again
+  watch-replies -> make-calls [next-touch-due]: nobody replied and the
+    next touch in the cadence is due, so the calls run on
+  watch-replies -> handle-opt-outs [somebody-says-stop]: a reply says
+    stop, so the person is suppressed on every channel
+  keep-healthy -> prepare-sending [sending-unhealthy]: bounces or
+    complaints pass the threshold, so the sending is prepared again
+    before anything else goes out
+  stop-on-reply -> close-sequence [reply-is-a-no]: the reply is a no,
+    so nothing is handed over and the sequence closes for that person
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller who calls, the

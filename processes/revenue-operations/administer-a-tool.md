@@ -71,6 +71,9 @@ from: ref/rev/administer-a-tool v1
 owner: <who>                          effective: <date>
 trigger: a tool goes live under an owner, and again every <cadence>
          while it is still in the stack
+         watch: record=<tool> system=<your stack record>
+                change=<a tool is recorded as live under an owner>
+         or watch: every=<cadence>
 concurrency: one run per tool - runs for different tools overlap freely
              and never touch each other
 goal: the right people in, the wrong people out, the configuration at a
@@ -157,36 +160,63 @@ run-scoped:
            every: <cadence>
            from: licence-count   until: run close
 handoffs:
-  take-on-tool -> set-permissions: the entry as the stack record holds
-    it, and the process the tool runs
-  set-permissions -> manage-accounts: the roles, what each one reaches,
-    and the role each kind of user gets by default
-  manage-accounts -> hold-config: every account open today, with its
-    role and the person who approved it
-  hold-config -> take-requests: the settings that matter at their
-    current version, and the date of the last change to each
-  take-requests -> try-change: the request, what it would change, and
-    the reason it is what the tool is for
-  try-change -> apply-change: what the change did away from live, and
-    everything it touched that nobody expected
-  apply-change -> licence-count: the change as applied, its date, its
-    version, and the way back
-  licence-count -> watch-usage: licences paid for, licences used, and every
-    licence unused for <days>
-  watch-usage -> check-links: who used the tool, for what, and how
-    often, against the process it runs
-  watch-usage -> supplier-changes: the same usage, so a supplier change
-    can be read against who it would actually affect
-  check-links -> standing-review: whether the links still carry, with
-    every difference in the counts and how long it has been there
-  supplier-changes -> access-review: what the supplier has changed, and
-    what each change would force here
-  access-review -> standing-review: every account, its role, who
-    approved it, and every one nobody can account for
-  standing-review -> decide-future: use, cost, findings and supplier
-    changes set against what the tool was bought to do
-  decide-future -> record-review: the decision, who made it, on what
-    date, and anyone who disagreed
+  take-on-tool -> set-permissions [stack-entry]: the entry as the stack
+    record holds it, and the process the tool runs
+  set-permissions -> manage-accounts [role-map]: the roles, what each
+    one reaches, and the role each kind of user gets by default
+  manage-accounts -> hold-config [open-accounts]: every account open
+    today, with its role and the person who approved it
+  hold-config -> take-requests [config-version]: the settings that
+    matter at their current version, and the date of the last change to
+    each
+  take-requests -> try-change [accepted-request]: the request, what it
+    would change, and the reason it is what the tool is for
+  try-change -> apply-change [trial-result]: what the change did away
+    from live, and everything it touched that nobody expected
+  apply-change -> licence-count [applied-change]: the change as
+    applied, its date, its version, and the way back
+  licence-count -> watch-usage [licence-position]: licences paid for,
+    licences used, and every licence unused for <days>
+  watch-usage -> check-links [usage-record]: who used the tool, for
+    what, and how often, against the process it runs
+  watch-usage -> supplier-changes [affected-users]: the same usage, so
+    a supplier change can be read against who it would actually affect
+  check-links -> standing-review [link-health]: whether the links still
+    carry, with every difference in the counts and how long it has been
+    there
+  supplier-changes -> access-review [supplier-notices]: what the
+    supplier has changed, and what each change would force here
+  access-review -> standing-review [account-check]: every account, its
+    role, who approved it, and every one nobody can account for
+  standing-review -> decide-future [review-evidence]: use, cost,
+    findings and supplier changes set against what the tool was bought
+    to do
+  decide-future -> record-review [future-decision]: the decision, who
+    made it, on what date, and anyone who disagreed
+deviations:
+  take-requests -> hold-config [request-refused]: the request is not
+    what the tool is for, it is refused in writing, and the
+    configuration stands where it is
+  try-change -> take-requests [trial-breaks]: the change breaks
+    something away from live, so the request is worked again before
+    anything reaches the tool
+  apply-change -> try-change [change-taken-back]: the change has to be
+    taken back, so it goes to the trial again rather than being patched
+    in live
+  licence-count -> manage-accounts [more-used-than-held]: more sellers
+    are used than are held, so accounts are opened or closed before the
+    count is read again
+  check-links -> apply-change [link-stopped-carrying]: a link has
+    stopped carrying, and the fix goes in as a change the same way any
+    other change does
+  supplier-changes -> take-requests [supplier-forces-change]: a
+    supplier change forces work here, so it enters as a change request
+  access-review -> manage-accounts [account-unaccounted]: an account
+    turns up that nobody can account for, so the accounts are worked
+    again
+  decide-future -> take-requests [keep-with-changes]: the decision is
+    keep it with changes to make first, and those changes enter as
+    requests
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, the security

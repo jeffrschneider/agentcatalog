@@ -65,6 +65,9 @@ from: ref/sls/run-a-discovery-call v1
 owner: <who>                          effective: <date>
 trigger: an opportunity reaches <your qualified stage> and nothing has
          been offered against it yet
+         watch: record=<opportunity> system=<your CRM>
+                change=<the opportunity reaches the qualified stage
+                with nothing offered against it>
 concurrency: runs may overlap - <how many> discovery calls live at
              once, and one opportunity is worked by one run at a time
 goal: the buyer's problem written down in the buyer's own words,
@@ -146,34 +149,51 @@ run-scoped:
              every: <cadence>
              from: hold-call   until: write-unknowns
 handoffs:
-  take-in-opportunity -> read-account: the opportunity, and the
-    question the discovery has to answer
-  read-account -> decide-room: what is already known, dated, with the
-    system every line came from, and the gaps marked as gaps
-  read-account -> write-questions: the same record. Both branches read
-    one version
-  decide-room -> agree-meeting: the people who must attend, and the
-    ones whose absence means the call is rescheduled
-  agree-meeting -> agree-recording: the time, the attendees, and the
-    purpose as the buyer agreed it
-  write-questions -> hold-call: the ordered question set, and the
-    questions that must not be left unasked
-  agree-recording -> hold-call: the buyer's answer on recording, in
-    writing, and the setting the tools must run at
-  hold-call -> follow-answers: what was actually asked and answered,
-    against what was planned
-  follow-answers -> capture-notes: the raw record of the conversation,
-    including the ground the question set did not plan for
-  capture-notes -> read-back: the summary, short enough that the buyer
-    will read it
-  read-back -> write-unknowns: the summary as the buyer confirmed it,
-    with every correction they made kept alongside the original
-  write-unknowns -> decide-another-call: the unanswered questions, and
-    what each one would change if it were answered
-  decide-another-call -> hand-notes-on: the confirmed notes at a
-    version, and the decision that no more calls are needed
-  hand-notes-on -> record-learnings: the notes as delivered, and the
-    date the requirement record took them
+  take-in-opportunity -> read-account [discovery-question]: the
+    opportunity, and the question the discovery has to answer
+  read-account -> decide-room [account-read]: what is already known,
+    dated, with the system every line came from, and the gaps marked
+    as gaps
+  read-account -> write-questions [account-read-for-questions]: the
+    same record. Both branches read one version
+  decide-room -> agree-meeting [required-attendees]: the people who
+    must attend, and the ones whose absence means the call is
+    rescheduled
+  agree-meeting -> agree-recording [agreed-meeting]: the time, the
+    attendees, and the purpose as the buyer agreed it
+  write-questions -> hold-call [question-set]: the ordered question
+    set, and the questions that must not be left unasked
+  agree-recording -> hold-call [recording-consent]: the buyer's answer
+    on recording, in writing, and the setting the tools must run at
+  hold-call -> follow-answers [asked-and-answered]: what was actually
+    asked and answered, against what was planned
+  follow-answers -> capture-notes [raw-record]: the raw record of the
+    conversation, including the ground the question set did not plan
+    for
+  capture-notes -> read-back [call-summary]: the summary, short enough
+    that the buyer will read it
+  read-back -> write-unknowns [confirmed-summary]: the summary as the
+    buyer confirmed it, with every correction they made kept alongside
+    the original
+  write-unknowns -> decide-another-call [open-questions]: the
+    unanswered questions, and what each one would change if it were
+    answered
+  decide-another-call -> hand-notes-on [confirmed-notes]: the confirmed
+    notes at a version, and the decision that no more calls are needed
+  hand-notes-on -> record-learnings [notes-as-delivered]: the notes as
+    delivered, and the date the requirement record took them
+deviations:
+  agree-meeting -> decide-room [nobody-can-attend]: nobody who feels
+    the problem can attend, so the room is decided again before a time
+    is agreed
+  follow-answers -> decide-room [another-person-needed]: the call opens
+    ground somebody else has to answer, so the room is decided again
+  read-back -> capture-notes [summary-corrected]: the buyer corrects
+    the summary, so the notes are written again with the correction
+    kept beside the original
+  decide-another-call -> write-questions [more-ground-to-cover]: one
+    call did not cover the ground, so a question set is written for the
+    next one
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the customer

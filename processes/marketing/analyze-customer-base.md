@@ -87,6 +87,13 @@ owner: <who>                          effective: <date>
 trigger: the read date on a recorded set of findings arrives, or a
          question about the customer base is opened in <your planning
          process>
+         watch: record=<issued findings>
+                system=<your review schedule>
+                change=<the read date on the last issued findings
+                arrives>
+         or watch: record=<question>
+                system=<your planning process>
+                change=<a question about the customer base is opened>
 concurrency: one run at a time over the same customers and the same
              period, because two reads of one base leave nobody with an
              answer. Reads of different markets overlap
@@ -178,47 +185,66 @@ run-scoped:
                 every: <cadence>
                 from: take-in-question   until: issue-version
 handoffs:
-  take-in-question -> set-scope: the question, what it has to settle,
-    and the date the answer is owed
-  set-scope -> name-sources: the period, the markets, and the
-    definition of a customer this read works to
-  name-sources -> clear-data: each source, what it holds, and the terms
-    it came with
-  clear-data -> pull-record: the sources the analysis may rest on, and
-    the fields it may read from each one
-  pull-record -> say-what-holds: the record as it was pulled, with the
-    date of the pull and the query behind it
-  say-what-holds -> describe-buyers / group-base / read-over-time: what
-    the data supports, which records were left out and under which
-    rule, and the range around each figure. Three branches read one
-    record
-  group-base -> test-groups: the groups as they were cut, and the
-    measure each cut was made on
-  group-base -> size-groups: the same groups. Two branches read one
-    record
-  test-groups -> find-shared: the groups whose differences hold up, and
-    the groups whose differences do not
-  describe-buyers -> compare-last: the counts and the revenue, with the
-    date each figure was read
-  find-shared -> compare-last: the traits shared inside each group,
-    with how strongly each one separates that group
-  read-over-time -> compare-last: what became of each arrival group,
-    and how far back the record goes
-  size-groups -> compare-last: how many accounts and how much revenue
-    sit in each group
-  compare-last -> write-findings: each figure beside the same figure in
-    the read before it, and the figures that cannot be compared because
-    the scope changed
-  write-findings -> review-findings: the findings at a version, every
-    one carrying the figures under it
-  review-findings -> issue-version: the findings as the passes left
-    them, with each change and who asked for it
-  issue-version -> hand-over: the findings at their number, and what
-    changed from the read before them
-  hand-over -> set-next-read: what each receiving agent said it would
-    change, and the date it said it by
-  set-next-read -> record-learnings: the next read date, and the
-    conditions that would bring it forward
+  take-in-question -> set-scope [read-question]: the question, what
+    it has to settle, and the date the answer is owed
+  set-scope -> name-sources [read-scope]: the period, the markets,
+    and the definition of a customer this read works to
+  name-sources -> clear-data [source-list]: each source, what it
+    holds, and the terms it came with
+  clear-data -> pull-record [cleared-sources]: the sources the
+    analysis may rest on, and the fields it may read from each one
+  pull-record -> say-what-holds [pulled-record]: the record as it was
+    pulled, with the date of the pull and the query behind it
+  say-what-holds -> describe-buyers / group-base / read-over-time
+    [data-verdict]: what the data supports, which records were left
+    out and under which rule, and the range around each figure. Three
+    branches read one record
+  group-base -> test-groups [groups-and-measures]: the groups as they
+    were cut, and the measure each cut was made on
+  group-base -> size-groups [group-membership]: the same groups. Two
+    branches read one record
+  test-groups -> find-shared [groups-that-hold]: the groups whose
+    differences hold up, and the groups whose differences do not
+  describe-buyers -> compare-last [buyer-counts]: the counts and the
+    revenue, with the date each figure was read
+  find-shared -> compare-last [shared-traits]: the traits shared
+    inside each group, with how strongly each one separates that group
+  read-over-time -> compare-last [arrival-groups]: what became of each
+    arrival group, and how far back the record goes
+  size-groups -> compare-last [group-sizes]: how many accounts and how
+    much revenue sit in each group
+  compare-last -> write-findings [comparisons]: each figure beside the
+    same figure in the read before it, and the figures that cannot be
+    compared because the scope changed
+  write-findings -> review-findings [draft-findings]: the findings at
+    a version, every one carrying the figures under it
+  review-findings -> issue-version [reviewed-findings]: the findings
+    as the passes left them, with each change and who asked for it
+  issue-version -> hand-over [issued-findings]: the findings at their
+    number, and what changed from the read before them
+  hand-over -> set-next-read [change-commitments]: what each receiving
+    agent said it would change, and the date it said it by
+  set-next-read -> record-learnings [next-read-date]: the next read
+    date, and the conditions that would bring it forward
+deviations:
+  clear-data -> name-sources [source-ruled-out]: the legal reviewer
+    rules a source out, so the sources are named again and every
+    figure that rested on it is rebuilt from what is left
+  say-what-holds -> set-scope [record-cannot-answer]: the record
+    cannot answer the question, so the scope is set again over a
+    longer period or over more of the market
+  test-groups -> group-base [groups-do-not-separate]: the differences
+    that defined a cut are inside the noise, so the base is cut again
+    on a different measure
+  size-groups -> group-base [group-too-small]: a group holds too few
+    accounts to report on, so the base is cut again or that group is
+    merged into another one
+  review-findings -> write-findings [unsupported-finding]: the review
+    finds a claim the figures do not support, so the findings are
+    written again
+  review-findings -> pull-record [cut-not-pulled]: the review asks for
+    a cut nobody pulled, so the record is pulled again and the new cut
+    is scored the same way as every other figure
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, the person

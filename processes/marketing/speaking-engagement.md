@@ -72,6 +72,10 @@ PROCESS: speaking engagement          id: <team>/speaking-engagement   v1
 from: ref/mkt/speaking-engagement v1
 owner: <who>                          effective: <date>
 trigger: a call for papers opens, or an invitation to speak arrives
+         watch: record=<a call or an invitation>
+                system=<your submissions record>
+                change=<a call for papers opens, or an invitation to
+                speak arrives>
 concurrency: runs overlap - <how many> open engagements at once
 goal: a proposal filed before the organizer's deadline, a talk given on
       the day it was accepted for, and the recording, the slides and the
@@ -163,33 +167,58 @@ run-scoped:
   spend    - runs allocate-and-reconcile     owner: event-operations
              from: settle-terms   until: run close
 handoffs:
-  take-in-call -> pick-speaker: what the event is, who is in the room,
-    what the organizer requires, and the date the call closes
-  pick-speaker -> write-proposal: the named speaker, the topic they
-    agreed to, and the commitment of their time and travel
-  write-proposal -> clear-proposal: the proposal at a version, in the
-    format the organizer requires
-  clear-proposal -> submit-proposal: the approved proposal at the signed
-    version, with the record of who signed it
-  submit-proposal -> settle-terms: the acceptance as the organizer sent
-    it, with the slot, the length and the date
-  settle-terms -> shape-talk: what the talk has to cover, how long it
-    runs, and what may be said about customers and products
-  settle-terms -> arrangements: the same terms. Both branches read one
-    record
-  shape-talk -> build-deck: the argument and the running order, with the
-    source under every claim
-  get-sign-offs -> rehearse: the approved talk at the signed version. A
-    later change voids the approval and sign-offs run again
-  rehearse -> deliver: the talk as it will be given, timed, with the
-    slide file in the format the organizer asked for
-  arrangements -> deliver: the room, the equipment and the travel,
-    confirmed against the organizer's schedule
-  deliver -> reuse: the recording, the slides as they were shown, and
-    the questions the room asked
-  settle-terms -> publish: what may be republished, on which channels,
-    and after what date
-  report-result -> record-learnings: the report, as delivered
+  take-in-call -> pick-speaker [event-details]: what the event is, who
+    is in the room, what the organizer requires, and the date the call
+    closes
+  pick-speaker -> write-proposal [speaker-commitment]: the named
+    speaker, the topic they agreed to, and the commitment of their time
+    and travel
+  write-proposal -> clear-proposal [proposal-draft]: the proposal at a
+    version, in the format the organizer requires
+  clear-proposal -> submit-proposal [cleared-proposal]: the approved
+    proposal at the signed version, with the record of who signed it
+  submit-proposal -> settle-terms [acceptance]: the acceptance as the
+    organizer sent it, with the slot, the length and the date
+  settle-terms -> shape-talk [talk-terms]: what the talk has to cover,
+    how long it runs, and what may be said about customers and products
+  settle-terms -> arrangements [terms-for-arrangements]: the same
+    terms. Both branches read one record
+  shape-talk -> build-deck [talk-argument]: the argument and the
+    running order, with the source under every claim
+  get-sign-offs -> rehearse [signed-talk]: the approved talk at the
+    signed version. A later change voids the approval and sign-offs run
+    again
+  rehearse -> deliver [rehearsed-talk]: the talk as it will be given,
+    timed, with the slide file in the format the organizer asked for
+  arrangements -> deliver [room-and-travel]: the room, the equipment
+    and the travel, confirmed against the organizer's schedule
+  deliver -> reuse [recording-and-questions]: the recording, the slides
+    as they were shown, and the questions the room asked
+  settle-terms -> publish [republication-terms]: what may be
+    republished, on which channels, and after what date
+  report-result -> record-learnings [engagement-report]: the report, as
+    delivered
+deviations:
+  clear-proposal -> write-proposal [proposal-changes-requested]: brand
+    or legal will not clear what the abstract promises, so the proposal
+    is written again before it is filed
+  submit-proposal -> record-learnings [proposal-turned-down]: the
+    organizer turns the proposal down, so there is no talk to settle
+    terms for, shape, build, rehearse or give, and the run goes
+    straight to the record with what the organizer said
+  settle-terms -> record-learnings [terms-refused]: the organizer's
+    terms cannot be agreed, so the talk is not shaped, built or given,
+    and the run goes straight to the record with the reason
+  get-sign-offs -> shape-talk [talk-changes-requested]: a signer asks
+    for changes to the argument, and only the part they named reopens
+  get-sign-offs -> build-deck [deck-changes-requested]: a signer asks
+    for changes to the deck, and only the deck reopens
+  rehearse -> shape-talk [talk-does-not-hold-up]: the talk does not
+    hold up when it is run to time, so the argument is shaped again and
+    the sign-offs run on what comes out
+  arrangements -> pick-speaker [speaker-drops-out]: the named speaker
+    can no longer give the talk, so a speaker is picked again and the
+    organizer has to agree to the substitute
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the speaker, leadership, legal,

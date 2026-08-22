@@ -83,6 +83,12 @@ from: ref/mkt/customer-research v1
 owner: <who>                          effective: <date>
 trigger: a knowledge gap is raised in <your planning process>, or a
          study in a standing series comes round again
+         watch: record=<knowledge gap>
+                system=<your planning process>
+                change=<a gap is raised that the record cannot answer>
+         or watch: record=<standing study>
+                system=<your study schedule>
+                change=<a study in the series comes round again>
 concurrency: runs overlap - <how many> studies in the field at once.
              One study at a time against the same contacts, so the same
              people are not asked twice inside <what period>
@@ -183,53 +189,79 @@ run-scoped:
            every: <cadence>
            from: brief-the-study   until: deliver-findings
 handoffs:
-  take-in-question -> check-known: the gap written as a question a
-    study can answer, and the date the answer is owed
-  check-known -> choose-method: what is already known, where each part
-    of it came from, and the part of the question nothing on hand
-    answers
-  choose-method -> brief-the-study: the method and the reason it was
-    chosen over the others
-  brief-the-study -> size-the-sample: the question, the size of the
-    difference that would matter to the decision, and the confidence
-    the study is being run to
-  brief-the-study -> write-questions: the question as every agent heard
-    it, and the earlier version of every question a repeated study
-    reuses
-  size-the-sample -> define-sample: how many responses the study needs
-    and what that number was computed from
-  define-sample -> check-consent: the drawn sample, contact by contact,
-    with the source each contact came from
-  define-sample -> outside-sample: the people the contact base cannot
-    supply, and what the study needs them to be
-  check-consent -> get-sign-offs: the sample that may be contacted, the
-    count removed, and the rule behind each removal
-  outside-sample -> cover-the-cost: what each provider would charge for
-    the sample, and what it would deliver
-  cover-the-cost -> get-sign-offs: what the study will draw, and the
-    allocation it draws against
-  write-questions -> try-questions: the questions at a version, in the
-    order they are put to people
-  try-questions -> get-sign-offs: the questions at the version the
-    pilot left them at, and what the pilot changed
-  get-sign-offs -> field-the-study: the approved sample and the
-    approved questions at their signed versions. A later change voids
-    the approval and sign-offs run again
-  field-the-study -> watch-sample: the responses as they arrive, each
-    marked with the version of the questions it answered
-  watch-sample -> close-the-study: the count answered set against the
-    count the study planned for, said on the day the study closes
-  close-the-study -> work-out-figures: the responses fixed at a
-    version, with every response that was removed and the rule that
-    removed it
-  work-out-figures -> write-findings: every figure with the data behind
-    it, the method used, the exclusions applied and the range around it
-  write-findings -> check-findings: the findings at a version, each
-    with the responses recorded under it
-  check-findings -> deliver-findings: the findings with every figure
-    checked against the data and the method beside it, and every figure
-    that could not be computed marked as such
-  deliver-findings -> record-learnings: the report, as delivered
+  take-in-question -> check-known [the-question]: the gap written as a
+    question a study can answer, and the date the answer is owed
+  check-known -> choose-method [what-is-known]: what is already known,
+    where each part of it came from, and the part of the question
+    nothing on hand answers
+  choose-method -> brief-the-study [chosen-method]: the method and the
+    reason it was chosen over the others
+  brief-the-study -> size-the-sample [sizing-inputs]: the question, the
+    size of the difference that would matter to the decision, and the
+    confidence the study is being run to
+  brief-the-study -> write-questions [question-brief]: the question as
+    every agent heard it, and the earlier version of every question a
+    repeated study reuses
+  size-the-sample -> define-sample [response-count]: how many responses
+    the study needs and what that number was computed from
+  define-sample -> check-consent [drawn-sample]: the drawn sample,
+    contact by contact, with the source each contact came from
+  define-sample -> outside-sample [sample-shortfall]: the people the
+    contact base cannot supply, and what the study needs them to be
+  check-consent -> get-sign-offs [contactable-sample]: the sample that
+    may be contacted, the count removed, and the rule behind each
+    removal
+  outside-sample -> cover-the-cost [provider-quotes]: what each
+    provider would charge for the sample, and what it would deliver
+  cover-the-cost -> get-sign-offs [study-cost]: what the study will
+    draw, and the allocation it draws against
+  write-questions -> try-questions [draft-questions]: the questions at
+    a version, in the order they are put to people
+  try-questions -> get-sign-offs [piloted-questions]: the questions at
+    the version the pilot left them at, and what the pilot changed
+  get-sign-offs -> field-the-study [approved-study]: the approved
+    sample and the approved questions at their signed versions. A later
+    change voids the approval and sign-offs run again
+  field-the-study -> watch-sample [responses-arriving]: the responses
+    as they arrive, each marked with the version of the questions it
+    answered
+  watch-sample -> close-the-study [sample-fill]: the count answered set
+    against the count the study planned for, said on the day the study
+    closes
+  close-the-study -> work-out-figures [fixed-responses]: the responses
+    fixed at a version, with every response that was removed and the
+    rule that removed it
+  work-out-figures -> write-findings [the-figures]: every figure with
+    the data behind it, the method used, the exclusions applied and the
+    range around it
+  write-findings -> check-findings [draft-findings]: the findings at a
+    version, each with the responses recorded under it
+  check-findings -> deliver-findings [checked-findings]: the findings
+    with every figure checked against the data and the method beside
+    it, and every figure that could not be computed marked as such
+  deliver-findings -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  check-consent -> define-sample [too-few-may-be-contacted]: the
+    consent check removes most of the sample, so more contacts are
+    drawn or the sample is bought
+  try-questions -> write-questions [question-reads-two-ways]: the pilot
+    shows a question reading two ways, so it is reworded at a new
+    version
+  get-sign-offs -> define-sample [sign-off-changes-to-sample]: a signer
+    comes back with changes to who is asked, and only that part reopens
+  get-sign-offs -> write-questions [sign-off-changes-to-questions]: a
+    signer comes back with changes to what is asked, and only that part
+    reopens
+  watch-sample -> field-the-study [too-few-answers-so-far]: fewer have
+    answered than the study planned for, so it keeps fielding
+  work-out-figures -> field-the-study [sample-fell-short]: the study
+    closed short of what it needed, and a person decides whether it
+    keeps fielding or reports with the shortfall named
+  any -> work-out-figures [participant-withdraws]: a participant asks
+    to be withdrawn after the findings are written, so every figure
+    that rested on what they said is worked out again and the findings
+    are reissued
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, legal, finance

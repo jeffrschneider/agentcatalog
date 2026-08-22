@@ -75,6 +75,9 @@ PROCESS: produce video asset          id: <team>/video-asset   v1
 from: ref/mkt/video-asset v1
 owner: <who>                          effective: <date>
 trigger: a script or a brief is approved in <your requesting process>
+         watch: record=<script or brief>
+                system=<your requesting process>
+                change=<a script or a brief is approved>
 concurrency: runs may overlap - <how many> videos in production at once
 goal: a video that brand and legal have signed, captioned and
       transcribed, cut to every length and shape the brief asks for, and
@@ -155,34 +158,63 @@ run-scoped:
             every: <cadence>
             from: check-sources   until: file-in-library
 handoffs:
-  take-in-brief -> settle-script: what the video has to do, for whom,
-    and the length it has to come in under
-  settle-script -> plan-shots: the script at a version, which is what
-    every later cut is timed against
-  plan-shots -> check-sources: every shot, and the source the material
-    for it would come from
-  plan-shots -> make-graphics: the shots that carry a title, a lower
-    third or a caption on screen
-  check-sources -> record-material: a verdict per source, each citing
-    the license term behind it, so nobody records against a refusal
-  record-material -> rough-cut: the recorded material, with the take
-    that was chosen for each shot
-  rough-cut + make-graphics -> review-cut: the cut at a version, with
-    the graphics placed
-  review-cut -> finish-cut: the changes, item by item, in terms the
-    video-editor can work through without coming back to ask
-  finish-cut -> write-captions: the cut as it will be watched, because
-    captions timed to a cut that still moves have to be timed again
-  write-captions -> score-standards: the video, its captions and its
-    transcript, all at one version
-  score-standards -> clear-rights: the scores, so the people who sign
-    read the exceptions instead of everything
-  clear-rights -> get-sign-offs: every source in the cut, named, with
-    the rights record entry that cleared it
-  get-sign-offs -> cut-versions: the approved video at the signed
-    version. A later change voids the approval and sign-offs run again
-  cut-versions -> file-in-library: every platform version, named
-    against the master it was cut from
+  take-in-brief -> settle-script [what-the-video-must-do]: what the
+    video has to do, for whom, and the length it has to come in under
+  settle-script -> plan-shots [the-script]: the script at a version,
+    which is what every later cut is timed against
+  plan-shots -> check-sources [shots-and-sources]: every shot, and the
+    source the material for it would come from
+  plan-shots -> make-graphics [on-screen-shots]: the shots that carry a
+    title, a lower third or a caption on screen
+  check-sources -> record-material [source-verdicts]: a verdict per
+    source, each citing the license term behind it, so nobody records
+    against a refusal
+  record-material -> rough-cut [recorded-material]: the recorded
+    material, with the take that was chosen for each shot
+  rough-cut + make-graphics -> review-cut [cut-with-graphics]: the cut
+    at a version, with the graphics placed
+  review-cut -> finish-cut [changes-to-make]: the changes, item by
+    item, in terms the video-editor can work through without coming
+    back to ask
+  finish-cut -> write-captions [finished-cut]: the cut as it will be
+    watched, because captions timed to a cut that still moves have to
+    be timed again
+  write-captions -> score-standards [captioned-video]: the video, its
+    captions and its transcript, all at one version
+  score-standards -> clear-rights [standard-scores]: the scores, so the
+    people who sign read the exceptions instead of everything
+  clear-rights -> get-sign-offs [cleared-sources]: every source in the
+    cut, named, with the rights record entry that cleared it
+  get-sign-offs -> cut-versions [signed-master]: the approved video at
+    the signed version. A later change voids the approval and sign-offs
+    run again
+  cut-versions -> file-in-library [platform-versions]: every platform
+    version, named against the master it was cut from
+deviations:
+  check-sources -> plan-shots [source-refused-before-the-shoot]: a
+    source is refused before anything is recorded, so the shots are
+    planned again around material the organization holds
+  review-cut -> rough-cut [re-cut-what-the-review-named]: the review
+    names shots to re-cut, so the rough cut is built again
+  review-cut -> make-graphics [graphics-to-redo]: the review names
+    graphics to redo, so they are made again
+  review-cut -> record-material [shot-never-recorded]: the review finds
+    a shot nobody recorded, so that one shot is recorded and the rest
+    of the cut stays where it is
+  score-standards -> finish-cut [failures-to-fix]: a standard fails on
+    the cut itself, so the cut is finished again
+  score-standards -> write-captions [captions-to-redo]: a caption fails
+    its standard, so the captions are written again
+  score-standards -> make-graphics [graphic-fails-contrast]: a graphic
+    fails contrast or type size, so it is made again
+  clear-rights -> record-material [source-refused-at-clearance]: a
+    source is refused at the clearance, so what replaces it has to be
+    recorded
+  get-sign-offs -> finish-cut [sign-off-changes]: a signer asks for
+    changes, so the cut is finished again and scored and signed again
+  cut-versions -> finish-cut [length-cannot-carry-it]: a length or a
+    shape cannot carry the message, so the message is shortened in the
+    master
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the expert, rights, brand and

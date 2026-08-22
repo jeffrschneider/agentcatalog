@@ -74,6 +74,8 @@ from: ref/mkt/engage-marketing-agency v1
 owner: <who>                          effective: <date>
 trigger: a capability or capacity gap is raised in <your planning
          process>
+         watch: record=<capability gap> system=<your planning process>
+                change=<a gap the department cannot cover is raised>
 concurrency: runs may overlap - <how many> searches open at once
 goal: one agency selected against criteria fixed before any proposal
       arrived, contracted, given the access its scope needs, and
@@ -161,34 +163,58 @@ run-scoped:
   money  - runs allocate-and-reconcile        owner: budget-keeper
            from: set-budget   until: run close
 handoffs:
-  take-in-gap -> choose-route: the gap in one line, with what the
-    department already holds and what room is left in the period
-  choose-route -> split-the-work: the chosen route, and what ruled the
-    other routes out
-  split-the-work -> write-scope: the work the agency takes on, activity
-    by activity, and the work that stays inside
-  write-scope -> set-budget: the deliverables and the dates, priced
-    across a term rather than as a single job
-  write-scope -> build-list: the scope, so candidates are found against
-    the work rather than against a category
-  set-criteria -> issue-request: the criteria at a version, with the
-    date they were fixed
-  issue-request -> hear-pitches: every proposal at the version it
-    arrived in, with the date it arrived
-  hear-pitches -> score-proposals: what each agency showed, recorded
-    against the agency that showed it
-  score-proposals -> choose-agency: one sheet per candidate, every
-    criterion carrying a verdict and the evidence behind it
-  check-references -> choose-agency: what each client said, attributed
-    and dated, and anything that contradicts the proposal
-  choose-agency -> settle-contract: the chosen agency, the scope it was
-    chosen against, and the budget and term set earlier
-  settle-contract -> set-up-access: the signed terms, and the systems
-    the scope requires the agency to reach
-  set-up-access -> brief-agency: what was granted, to whom, by whom,
-    and the date it comes back
-  brief-agency -> record-learnings: the briefing as the agency heard
-    it, and the record of what the engagement rests on
+  take-in-gap -> choose-route [gap-and-capacity]: the gap in one line,
+    with what the department already holds and what room is left in the
+    period
+  choose-route -> split-the-work [chosen-route]: the chosen route, and
+    what ruled the other routes out
+  split-the-work -> write-scope [work-split]: the work the agency takes
+    on, activity by activity, and the work that stays inside
+  write-scope -> set-budget [deliverables-and-dates]: the deliverables
+    and the dates, priced across a term rather than as a single job
+  write-scope -> build-list [agreed-scope]: the scope, so candidates are
+    found against the work rather than against a category
+  set-criteria -> issue-request [selection-criteria]: the criteria at a
+    version, with the date they were fixed
+  issue-request -> hear-pitches [proposals]: every proposal at the
+    version it arrived in, with the date it arrived
+  hear-pitches -> score-proposals [pitch-record]: what each agency
+    showed, recorded against the agency that showed it
+  score-proposals -> choose-agency [score-sheets]: one sheet per
+    candidate, every criterion carrying a verdict and the evidence
+    behind it
+  check-references -> choose-agency [reference-findings]: what each
+    client said, attributed and dated, and anything that contradicts
+    the proposal
+  choose-agency -> settle-contract [chosen-agency]: the chosen agency,
+    the scope it was chosen against, and the budget and term set earlier
+  settle-contract -> set-up-access [signed-terms]: the signed terms, and
+    the systems the scope requires the agency to reach
+  set-up-access -> brief-agency [access-grants]: what was granted, to
+    whom, by whom, and the date it comes back
+  brief-agency -> record-learnings [engagement-record]: the briefing as
+    the agency heard it, and the record of what the engagement rests on
+deviations:
+  choose-route -> record-learnings [gap-filled-inside]: the gap is
+    filled inside instead, so no agency is engaged and the scope, the
+    search, the contract and the briefing do not run; what was decided
+    and why is recorded the same way
+  score-proposals -> issue-request [answer-missing]: an answer the
+    request asked for is missing, so it is asked of every candidate
+    again on the same day
+  score-proposals -> build-list [no-candidate-clears]: no candidate
+    clears the criteria, so the candidate list is built again
+  check-references -> score-proposals [reference-contradicts]: a
+    reference contradicts the proposal, so the criterion it touches is
+    scored again
+  choose-agency -> build-list [none-worth-taking]: no agency on the
+    sheet is worth taking, so the list is built again
+  settle-contract -> choose-agency [terms-refused]: the agency wants
+    terms the organization will not accept, so the choice is made again
+    from the sheet
+  brief-agency -> settle-contract [scope-moved]: the scope has moved
+    since it was priced, so the contract is settled again against the
+    work as it now stands
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, finance, the

@@ -78,6 +78,7 @@ PROCESS: set marketing budget         id: <team>/set-marketing-budget   v1
 from: ref/mkt/set-marketing-budget v1
 owner: <who>                          effective: <date>
 trigger: the planning cycle opens on <your finance calendar>
+         watch: every=<your planning cycle>
 concurrency: one run at a time - a budget cycle does not overlap
              itself, and an in-year change goes in as a new version
 goal: an approved budget for the year, divided across the functions,
@@ -166,42 +167,61 @@ run-scoped:
   allocations - runs allocate-and-reconcile    owner: budget-keeper
                 from: load-allocations   until: run close
 handoffs:
-  take-guidance -> read-last-spend / list-commitments: the figure
-    marketing has to work within, what it covers, and the date the
-    budget is due. Two branches read one record
-  read-last-spend -> collect-requests: what each function spent against
-    what it was given, at the checked figure, with any period that has
-    not closed marked as an estimate
-  list-commitments -> collect-requests: the money already committed for
-    the coming year, one line per agreement, with the date each one
-    renews and the notice a cancellation needs
-  collect-requests -> price-requests: every request in one format,
-    saying what the function would spend, on what, and what that money
-    is meant to produce
-  price-requests -> test-the-asks: what each request would cost and
-    return at each level of spend, with the assumptions beside the
-    numbers and every rate that could not be sourced marked unsourced
-  test-the-asks -> size-reserve: the gap between what the requests add
-    up to and what the goals need, written as a figure
-  size-reserve -> settle-split: the amount held back, and the
-    conditions under which it is released
-  settle-split -> movement-rules: the money against each function, at
-    the figures the budget will carry
-  settle-split -> phase-money: the same split. Both branches read one
+  take-guidance -> read-last-spend / list-commitments
+    [planning-guidance]: the figure marketing has to work within, what
+    it covers, and the date the budget is due. Two branches read one
     record
-  movement-rules -> approve-budget: who may move money between
-    functions, up to what amount, and who approves each move
-  phase-money -> name-measures: the date each function's money becomes
-    available, and the share held against a named condition
-  name-measures -> approve-budget: the budget at a version, with the
-    measure each allocation will be reported against
-  approve-budget -> load-allocations: the budget at the signed version.
-    A later change voids the approval and the signers see it again
-  load-allocations -> tell-functions: each function's allocation as the
-    record now holds it, and what was already committed against it
-    before the year began
-  tell-functions -> record-basis: what each function took away, and
-    anything a function said it could not do inside its number
+  read-last-spend -> collect-requests [last-year-spend]: what each
+    function spent against what it was given, at the checked figure,
+    with any period that has not closed marked as an estimate
+  list-commitments -> collect-requests [committed-money]: the money
+    already committed for the coming year, one line per agreement, with
+    the date each one renews and the notice a cancellation needs
+  collect-requests -> price-requests [function-requests]: every request
+    in one format, saying what the function would spend, on what, and
+    what that money is meant to produce
+  price-requests -> test-the-asks [priced-requests]: what each request
+    would cost and return at each level of spend, with the assumptions
+    beside the numbers and every rate that could not be sourced marked
+    unsourced
+  test-the-asks -> size-reserve [goal-gap]: the gap between what the
+    requests add up to and what the goals need, written as a figure
+  size-reserve -> settle-split [reserve]: the amount held back, and the
+    conditions under which it is released
+  settle-split -> movement-rules [function-split]: the money against
+    each function, at the figures the budget will carry
+  settle-split -> phase-money [split-to-phase]: the same split. Both
+    branches read one record
+  movement-rules -> approve-budget [money-movement-terms]: who may move
+    money between functions, up to what amount, and who approves each
+    move
+  phase-money -> name-measures [release-schedule]: the date each
+    function's money becomes available, and the share held against a
+    named condition
+  name-measures -> approve-budget [budget-with-measures]: the budget at
+    a version, with the measure each allocation will be reported
+    against
+  approve-budget -> load-allocations [signed-budget]: the budget at the
+    signed version. A later change voids the approval and the signers
+    see it again
+  load-allocations -> tell-functions [loaded-allocations]: each
+    function's allocation as the record now holds it, and what was
+    already committed against it before the year began
+  tell-functions -> record-basis [function-responses]: what each
+    function took away, and anything a function said it could not do
+    inside its number
+deviations:
+  test-the-asks -> collect-requests [asks-miss-the-goals]: the money
+    the functions are asking for will not reach the goals, so the
+    requests are collected again with the gap named as a figure
+  settle-split -> collect-requests [requests-exceed-the-money]: the
+    requests add up to more than there is, so each function cuts its
+    own request and both versions stay on the record
+  approve-budget -> settle-split [signers-want-changes]: a signer will
+    not sign the budget as it stands, so the money is divided again
+  load-allocations -> list-commitments [unknown-commitment]: loading
+    the allocations turns up a commitment the list missed, so the
+    commitments are listed again and a person decides what pays for it
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>

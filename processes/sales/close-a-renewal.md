@@ -70,6 +70,8 @@ from: ref/sls/close-a-renewal v1
 owner: <who>                          effective: <date>
 trigger: an approved renewal position is handed over from <your open a
          renewal process>
+         watch: record=<renewal position> system=<your CRM>
+                change=<an approved renewal position is handed over>
 concurrency: runs may overlap - one agreement is closed by one run at a
              time, and <how many> renewals are in conversation at once
 goal: the next term signed and booked before the notice date, at or
@@ -150,35 +152,60 @@ run-scoped:
            every: <cadence>
            from: open-talk      until: get-signature
 handoffs:
-  take-in-brief -> open-talk: the ask, the floor, the term, and the
-    usage and standing the position was built from
-  open-talk -> hear-customer: what the customer said when the ask
-    landed, and who said it
-  hear-customer -> check-use: the changes the customer asked for, each
-    one attributed to a person at the account
-  check-use -> settle-scope: use against entitlement for every line the
-    customer wants changed, with the period it was read over
-  settle-scope -> build-quote: the lines that carry over, the lines
-    dropped, the lines added, and the term length
-  build-quote -> approve-terms: the priced quote, and every line that
-    sits outside the standard with the amount it differs by
-  approve-terms -> send-offer: the quote at the signed version. A later
-    change to price, term or clause voids the approval
-  send-offer -> work-response: the offer as sent, and the date it
-    expires
-  work-response -> reprice-smaller: what the customer will not take,
-    line by line, and what they will
-  work-response -> agree-words: the commercial terms both sides accept
-  reprice-smaller -> agree-words: the smaller term, priced, with the
-    distance from the floor stated
-  agree-words -> get-signature: the contract at the version legal and
-    the customer both hold
-  get-signature -> book-renewal: the signed agreement, the start date,
-    the end date, and the amount to bill
-  book-renewal -> tell-account: the booked term as the billing system
-    now holds it
-  tell-account -> record-learning: what changed for delivery, and who
-    was told on what date
+  take-in-brief -> open-talk [renewal-position]: the ask, the floor,
+    the term, and the usage and standing the position was built from
+  open-talk -> hear-customer [first-response]: what the customer said
+    when the ask landed, and who said it
+  hear-customer -> check-use [requested-changes]: the changes the
+    customer asked for, each one attributed to a person at the account
+  check-use -> settle-scope [use-against-entitlement]: use against
+    entitlement for every line the customer wants changed, with the
+    period it was read over
+  settle-scope -> build-quote [settled-scope]: the lines that carry
+    over, the lines dropped, the lines added, and the term length
+  build-quote -> approve-terms [priced-quote]: the priced quote, and
+    every line that sits outside the standard with the amount it
+    differs by
+  approve-terms -> send-offer [approved-quote]: the quote at the
+    signed version. A later change to price, term or clause voids the
+    approval
+  send-offer -> work-response [sent-offer]: the offer as sent, and the
+    date it expires
+  work-response -> reprice-smaller [pushback]: what the customer will
+    not take, line by line, and what they will
+  work-response -> agree-words [accepted-terms]: the commercial terms
+    both sides accept
+  reprice-smaller -> agree-words [smaller-term]: the smaller term,
+    priced, with the distance from the floor stated
+  agree-words -> get-signature [agreed-contract]: the contract at the
+    version legal and the customer both hold
+  get-signature -> book-renewal [signed-agreement]: the signed
+    agreement, the start date, the end date, and the amount to bill
+  book-renewal -> tell-account [booked-term]: the booked term as the
+    billing system now holds it
+  tell-account -> record-learning [who-was-told]: what changed for
+    delivery, and who was told on what date
+deviations:
+  check-use -> hear-customer [use-contradicts-ask]: what the customer
+    says they need and what they actually used disagree, so the
+    customer is heard again on those lines
+  approve-terms -> build-quote [discount-refused]: the deal desk will
+    not sign a line, so the quote is built again without it or at a
+    price it will sign
+  work-response -> build-quote [price-must-change]: the customer will
+    not take the price, so the term is priced again
+  work-response -> settle-scope [scope-must-change]: the customer
+    wants different entitlements, so what carries over is settled
+    again before anything is priced
+  reprice-smaller -> approve-terms [smaller-term-below-floor]: the
+    smaller term prices below the floor, so it goes in front of the
+    signer again
+  agree-words -> build-quote [words-change-price]: a clause settled
+    with legal changes what is delivered or when it is paid for, so
+    the quote is rebuilt and approved again
+  get-signature -> agree-words [words-not-signable]: the customer will
+    not sign the language, so the words are settled again clause by
+    clause
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the deal

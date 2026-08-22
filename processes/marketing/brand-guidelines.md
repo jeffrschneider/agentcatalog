@@ -82,6 +82,14 @@ from: ref/mkt/brand-guidelines v1
 owner: <who>                          effective: <date>
 trigger: a change to the identity or the voice is agreed in <your
          positioning process>, or <your brand owner> asks for one
+         watch: record=<agreed change>
+                system=<your positioning process>
+                change=<a change to the identity or the voice is
+                agreed>
+         or watch: record=<change request>
+                system=<your standards store>
+                change=<the brand owner asks for a change to the
+                guidelines>
 concurrency: one run at a time - a second change either joins the open
              run or waits for the version to issue
 goal: one numbered version of the brand guidelines and the asset kit,
@@ -170,42 +178,67 @@ run-scoped:
   questions - runs decide-and-announce        owner: standards-keeper
               from: publish-version   until: run close
 handoffs:
-  take-in-change -> read-in-force: what was agreed, where it was agreed,
-    and the parts of the guidelines it touches
-  read-in-force -> plan-version: every rule the change contradicts, each
-    named at the version in force
-  plan-version -> brief-makers: which sections change, who owes each
-    one, and the date each is due
-  brief-makers -> write-rules: the change as every agent heard it, and
-    what a rule has to say for a scoring agent to apply it
-  brief-makers -> produce-assets: the formats, the sizes and the
-    templates the kit has to carry
-  write-rules -> show-examples: the rules at a version
-  produce-assets -> show-examples: the asset kit at a version
-  produce-assets -> clear-rights: every mark, typeface and licensed
-    element in the kit, with the source of each one
-  produce-assets -> check-contrast: the palette and the type as they
-    will be handed out
-  show-examples -> test-the-rules: the rules and their examples at a
-    version, and the recent work to score them on
-  test-the-rules -> get-sign-offs: a verdict on each rule, so the
-    signers read the rules that did not work
-  check-contrast -> get-sign-offs: the scores, each citing the rule it
-    was scored against
-  clear-rights -> get-sign-offs: the rights settled on every element in
-    the kit, with who cleared each one
-  get-sign-offs -> issue-version: the approved set at the signed
-    version. A later change voids the approval and sign-offs run again
-  issue-version -> publish-version: the numbered version, the date it
-    takes effect, and the version it replaces
-  issue-version -> list-failures: the rules that changed, so the library
-    can be read against them
-  publish-version -> tell-the-readers: the address the version lives at,
-    and the list of people and processes that read the guidelines
-  tell-the-readers -> record-learnings: who was told, who confirmed, and
-    who did not
-  list-failures -> record-learnings: the list of failing material, as
-    handed over
+  take-in-change -> read-in-force [agreed-change]: what was agreed,
+    where it was agreed, and the parts of the guidelines it touches
+  read-in-force -> plan-version [contradicted-rules]: every rule the
+    change contradicts, each named at the version in force
+  plan-version -> brief-makers [version-plan]: which sections change,
+    who owes each one, and the date each is due
+  brief-makers -> write-rules [change-brief]: the change as every
+    agent heard it, and what a rule has to say for a scoring agent to
+    apply it
+  brief-makers -> produce-assets [kit-requirements]: the formats, the
+    sizes and the templates the kit has to carry
+  write-rules -> show-examples [drafted-rules]: the rules at a version
+  produce-assets -> show-examples [asset-kit]: the asset kit at a
+    version
+  produce-assets -> clear-rights [licensed-elements]: every mark,
+    typeface and licensed element in the kit, with the source of each
+    one
+  produce-assets -> check-contrast [palette-and-type]: the palette and
+    the type as they will be handed out
+  show-examples -> test-the-rules [rules-with-examples]: the rules and
+    their examples at a version, and the recent work to score them on
+  test-the-rules -> get-sign-offs [rule-verdicts]: a verdict on each
+    rule, so the signers read the rules that did not work
+  check-contrast -> get-sign-offs [contrast-scores]: the scores, each
+    citing the rule it was scored against
+  clear-rights -> get-sign-offs [rights-clearances]: the rights
+    settled on every element in the kit, with who cleared each one
+  get-sign-offs -> issue-version [signed-set]: the approved set at the
+    signed version. A later change voids the approval and sign-offs
+    run again
+  issue-version -> publish-version [numbered-version]: the numbered
+    version, the date it takes effect, and the version it replaces
+  issue-version -> list-failures [changed-rules]: the rules that
+    changed, so the library can be read against them
+  publish-version -> tell-the-readers [published-address]: the address
+    the version lives at, and the list of people and processes that
+    read the guidelines
+  tell-the-readers -> record-learnings [confirmations]: who was told,
+    who confirmed, and who did not
+  list-failures -> record-learnings [failing-material]: the list of
+    failing material, as handed over
+deviations:
+  clear-rights -> produce-assets [element-not-cleared]: a mark or a
+    typeface is not cleared, or is cleared for fewer parties, so the
+    kit is remade from something the organization holds
+  check-contrast -> produce-assets [palette-fails-contrast]: a color
+    or a type size fails the contrast rule, so the value is changed
+    before the version can issue
+  test-the-rules -> write-rules [rule-not-applicable]: a scoring agent
+    cannot decide a case from the rule as written, so the rule is
+    written again in terms that settle the cases it failed on
+  get-sign-offs -> write-rules [sign-off-changes-rules]: a signer asks
+    for changes to the rules, so only the rules they named are written
+    again
+  get-sign-offs -> produce-assets [sign-off-changes-assets]: a signer
+    asks for changes to the kit, so only the assets they named are
+    made again
+  any -> take-in-change [identity-changes-again]: the identity or the
+    voice changes again while the run is open, so the new change is
+    taken in and <who> says whether the run still answers the right
+    question
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand owner, leadership,

@@ -79,6 +79,10 @@ from: ref/mkt/crisis-communication v1
 owner: <who>                          effective: <date>
 trigger: an incident that will become public is reported to <your
          escalation channel>
+         watch: record=<incident>
+                system=<your escalation channel>
+                change=<an incident is reported as one that will
+                become public>
 concurrency: one response per incident - <how many> live at once
 goal: a response issued on every channel the incident reaches, saying
       the same thing to every audience, corrected when the facts move,
@@ -160,39 +164,61 @@ run-scoped:
             every: <interval>
             from: issue-response   until: run close
 handoffs:
-  take-in-incident -> confirm-facts: what was reported, the time it was
-    reported, and who already knows
-  take-in-incident -> size-exposure: the same record. Both branches read
-    one incident record
-  take-in-incident -> track-coverage: what to watch for, before anything
-    has been said
-  confirm-facts -> decide-position: what is established, what is still
-    open, and the time each fact was established
-  size-exposure -> holding-line: the audiences that have to hear
-    something, and how soon each one has to hear it
-  holding-line -> decide-position: the words already said in public,
-    which the position has to hold
-  decide-position -> draft-statement: the position a named person
-    decided, and the questions that stay unanswered on purpose
-  draft-statement -> tailor-audiences: the statement at a version, every
-    fact carrying its source and the time it was established
-  tailor-audiences -> get-sign-offs: the four versions under one version
-    number, so the signers read them against each other
-  get-sign-offs -> brief-speakers: the approved wording at the signed
-    version, and the questions it does not answer
-  get-sign-offs -> notify-staff: the staff version at the signed version
-  brief-speakers -> issue-response: who may speak, on what, and where
-    every other question is sent
-  issue-response -> answer-questions: what went out, on which channel,
-    at what time
-  issue-response -> track-coverage: the same record, so a mention can be
-    traced back to what was sent
-  track-coverage -> update-response: what ran, quoted, with anything
-    wrong set beside the source that corrects it
-  update-response -> get-sign-offs: the changed wording at a new
-    version, because a change voids the approval
-  close-response -> review-response: the timeline at its final version,
-    and every version of every audience's wording
+  take-in-incident -> confirm-facts [incident-report]: what was
+    reported, the time it was reported, and who already knows
+  take-in-incident -> size-exposure [incident-record]: the same
+    record. Both branches read one incident record
+  take-in-incident -> track-coverage [what-to-watch-for]: what to
+    watch for, before anything has been said
+  confirm-facts -> decide-position [established-facts]: what is
+    established, what is still open, and the time each fact was
+    established
+  size-exposure -> holding-line [audiences-to-reach]: the audiences
+    that have to hear something, and how soon each one has to hear it
+  holding-line -> decide-position [words-already-said]: the words
+    already said in public, which the position has to hold
+  decide-position -> draft-statement [agreed-position]: the position a
+    named person decided, and the questions that stay unanswered on
+    purpose
+  draft-statement -> tailor-audiences [master-statement]: the statement
+    at a version, every fact carrying its source and the time it was
+    established
+  tailor-audiences -> get-sign-offs [audience-versions]: the four
+    versions under one version number, so the signers read them
+    against each other
+  get-sign-offs -> brief-speakers [approved-wording]: the approved
+    wording at the signed version, and the questions it does not answer
+  get-sign-offs -> notify-staff [staff-version]: the staff version at
+    the signed version
+  brief-speakers -> issue-response [speaking-rules]: who may speak, on
+    what, and where every other question is sent
+  issue-response -> answer-questions [what-went-out]: what went out, on
+    which channel, at what time
+  issue-response -> track-coverage [issued-record]: the same record, so
+    a mention can be traced back to what was sent
+  track-coverage -> update-response [coverage-found]: what ran, quoted,
+    with anything wrong set beside the source that corrects it
+  update-response -> get-sign-offs [changed-wording]: the changed
+    wording at a new version, because a change voids the approval
+  close-response -> review-response [response-timeline]: the timeline
+    at its final version, and every version of every audience's wording
+deviations:
+  track-coverage -> holding-line [story-already-broken]: the story
+    breaks before the facts are confirmed, so the holding line goes
+    out saying only what is established by then
+  decide-position -> holding-line [no-position-agreed]: no position is
+    agreed, so the holding line stands as the last thing said and
+    nothing further goes out
+  get-sign-offs -> draft-statement [sign-off-changes]: a signer comes
+    back with changes, and only the part they named reopens
+  get-sign-offs -> decide-position [position-in-question]: a signer
+    objects to the position itself, so a person decides it again
+  answer-questions -> draft-statement [question-not-covered]: a
+    question arrives that the approved wording does not answer, and
+    the answer worth giving is drafted and signed like any other
+  update-response -> confirm-facts [incident-gets-worse]: the incident
+    gets worse while the response is live, so the facts are confirmed
+    again and the run walks forward from there
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, the expert and

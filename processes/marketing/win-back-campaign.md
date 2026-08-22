@@ -91,6 +91,9 @@ PROCESS: win-back campaign            id: <team>/win-back-campaign   v1
 from: ref/mkt/win-back-campaign v1
 owner: <who>                          effective: <date>
 trigger: a lapsed segment is identified in <your reporting process>
+         watch: record=<lapsed segment>
+                system=<your reporting process>
+                change=<a lapsed segment is identified>
 concurrency: runs may overlap - <how many> segments in flight at once
 goal: every contact in the lapsed segment either re-engaged or formally
       retired, with what was recovered reported against what the run
@@ -200,44 +203,66 @@ run-scoped:
            every: <cadence>
            from: send-sequence   until: run close
 handoffs:
-  take-in-segment -> set-parameters: who lapsed, when each contact
-    lapsed, and what the run has to recover, in one line that every
-    later decision can be tested against
-  take-in-segment -> read-accounts: the named accounts inside the
-    segment, and the date the segment was drawn
-  read-accounts -> sort-treatments: for each named account, whether it
-    may be approached, with the systems that were read under the answer
-  set-parameters -> settle-offer: the goal, the dates and the contact
-    limit the offer has to work inside
-  settle-offer -> brief-makers: the approved offer, what it is worth,
-    who it applies to, and the words the law requires it to carry
-  sort-treatments -> build-list: which contacts are being messaged and
-    which are being left alone, with the reason for each group
-  sort-treatments -> brief-makers: the groups, and what the messages
-    have to do differently for each one
-  brief-makers -> write-sequence: the offer, the groups, the dates, and
-    how many messages the contact limit allows
-  score-messages -> get-sign-offs: the scored list, with the rule
-    behind every failure
-  get-sign-offs -> set-up-sending: the approved messages at the signed
-    version. A later change voids the approval and sign-offs run again
-  get-sign-offs -> call-accounts: the same approved offer, so that the
-    call and the message say the same thing
-  build-list -> set-up-sending: the audience at a version, with the
-    count before the rules were applied, the count after, and the rule
-    behind every removal
-  wire-measurement -> set-up-sending: the tracked links, and a dated
-    test showing a response arriving in the CRM
-  call-accounts -> send-sequence: which named accounts were reached,
-    what each of them said, and which of them to hold back from the
-    send
-  answer-replies -> hand-over: the contacts who answered, and what each
-    of them asked for
-  hand-over -> retire-silent: the contacts that now have an owner, so
-    that nobody who responded is retired by mistake
-  watch-response -> retire-silent: who opened, who clicked, who
-    complained, and who asked to be left alone
-  report-win-back -> record-learnings: the report, as delivered
+  take-in-segment -> set-parameters [who-lapsed]: who lapsed, when each
+    contact lapsed, and what the run has to recover, in one line that
+    every later decision can be tested against
+  take-in-segment -> read-accounts [named-accounts]: the named accounts
+    inside the segment, and the date the segment was drawn
+  read-accounts -> sort-treatments [account-standing]: for each named
+    account, whether it may be approached, with the systems that were
+    read under the answer
+  set-parameters -> settle-offer [campaign-parameters]: the goal, the
+    dates and the contact limit the offer has to work inside
+  settle-offer -> brief-makers [approved-offer]: the approved offer,
+    what it is worth, who it applies to, and the words the law requires
+    it to carry
+  sort-treatments -> build-list [treatment-groups]: which contacts are
+    being messaged and which are being left alone, with the reason for
+    each group
+  sort-treatments -> brief-makers [groups-for-the-brief]: the groups,
+    and what the messages have to do differently for each one
+  brief-makers -> write-sequence [message-brief]: the offer, the
+    groups, the dates, and how many messages the contact limit allows
+  score-messages -> get-sign-offs [message-scores]: the scored list,
+    with the rule behind every failure
+  get-sign-offs -> set-up-sending [approved-messages]: the approved
+    messages at the signed version. A later change voids the approval
+    and sign-offs run again
+  get-sign-offs -> call-accounts [offer-for-the-call]: the same
+    approved offer, so that the call and the message say the same thing
+  build-list -> set-up-sending [contact-list]: the audience at a
+    version, with the count before the rules were applied, the count
+    after, and the rule behind every removal
+  wire-measurement -> set-up-sending [tracked-links]: the tracked
+    links, and a dated test showing a response arriving in the CRM
+  call-accounts -> send-sequence [accounts-reached]: which named
+    accounts were reached, what each of them said, and which of them to
+    hold back from the send
+  answer-replies -> hand-over [contacts-who-answered]: the contacts who
+    answered, and what each of them asked for
+  hand-over -> retire-silent [contacts-with-owners]: the contacts that
+    now have an owner, so that nobody who responded is retired by
+    mistake
+  watch-response -> retire-silent [response-record]: who opened, who
+    clicked, who complained, and who asked to be left alone
+  report-win-back -> record-learnings [win-back-report]: the report, as
+    delivered
+deviations:
+  score-messages -> write-sequence [failures-to-fix]: the scoring finds
+    failures, so the messages the failures name are written again
+  get-sign-offs -> write-sequence [sign-off-changes]: a signer asks for
+    changes, so only the message they named is written again and the
+    signers see the changed version before anything is sent
+  set-up-sending -> sort-treatments [too-few-reachable]: too few
+    contacts survive the consent and suppression rules, so <who>
+    decides whether the goal changes, the segment widens, or the run
+    stops
+  watch-response -> send-sequence [complaints-past-the-threshold]:
+    complaints or bounces cross the threshold, so the remaining sends
+    stop until a person decides whether the run continues
+  retire-silent -> call-accounts [worth-one-more-approach]: the account
+    owner wants one more approach, so an account about to be retired
+    goes back to the call once
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owners, leadership,

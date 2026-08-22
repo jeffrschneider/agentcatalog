@@ -72,6 +72,8 @@ from: ref/sls/book-the-meeting v1
 owner: <who>                           effective: <date>
 trigger: a reply asks for a conversation, from a sequence, a referral
          or <your inbound routing process>
+         watch: record=<reply> system=<your sending system>
+                change=<a reply asking for a conversation arrives>
 concurrency: runs may overlap freely - one reply is one run, and one
              person holds no more than <n> open bookings at a time
 goal: a meeting that was held, not just booked, with what the person
@@ -159,36 +161,54 @@ run-scoped:
               every: <cadence>
               from: confirm-meeting   until: run close
 handoffs:
-  take-in-reply -> read-the-ask: the reply, the person, the account,
-    and the touch that caused it
-  take-in-reply -> check-account: the account the person works for
-  read-the-ask -> decide-attendees: what the person asked for, how soon
-    they want it, and how much they already know
-  check-account -> offer-times: who owns the account, and every meeting
-    already booked with the same people
-  decide-attendees -> offer-times: who is coming from here, what each
-    of them is for, and when they are free
-  offer-times -> confirm-meeting: the times that were offered, and the
-    time zone they were offered in
-  confirm-meeting -> brief-attendees: the meeting as it sits in the
-    diary, with the joining details
-  confirm-meeting -> stop-touches: the person and the account, so the
-    sending stops before the next touch is due
-  brief-attendees -> remind-before: the brief as every attendee read
-    it, and the address the reminder points at
-  remind-before -> hold-meeting: the meeting confirmed, reminded, and
-    whether both sides acknowledged
-  hold-meeting -> write-up: what was said, in the seller's own notes
-  hold-meeting -> handle-no-show: the meeting nobody attended, with the
-    time it was booked for
-  write-up -> decide-forward: what the person wants, who else is
-    involved, and what they agreed to next
-  decide-forward -> hand-over: the decision, the notes, and the next
-    step with a date on it
-  handle-no-show -> report-bookings: the meetings missed, the ones
-    rebooked, and the ones let go
-  hand-over -> report-bookings: the meetings held and what came of them
-  report-bookings -> record-learnings: the report, as delivered
+  take-in-reply -> read-the-ask [reply-and-touch]: the reply, the
+    person, the account, and the touch that caused it
+  take-in-reply -> check-account [named-account]: the account the
+    person works for
+  read-the-ask -> decide-attendees [the-ask]: what the person asked
+    for, how soon they want it, and how much they already know
+  check-account -> offer-times [owner-and-bookings]: who owns the
+    account, and every meeting already booked with the same people
+  decide-attendees -> offer-times [attendee-list]: who is coming from
+    here, what each of them is for, and when they are free
+  offer-times -> confirm-meeting [offered-times]: the times that were
+    offered, and the time zone they were offered in
+  confirm-meeting -> brief-attendees [confirmed-meeting]: the meeting
+    as it sits in the diary, with the joining details
+  confirm-meeting -> stop-touches [person-to-suppress]: the person and
+    the account, so the sending stops before the next touch is due
+  brief-attendees -> remind-before [the-brief]: the brief as every
+    attendee read it, and the address the reminder points at
+  remind-before -> hold-meeting [reminder-status]: the meeting
+    confirmed, reminded, and whether both sides acknowledged
+  hold-meeting -> write-up [meeting-notes]: what was said, in the
+    seller's own notes
+  hold-meeting -> handle-no-show [missed-meeting]: the meeting nobody
+    attended, with the time it was booked for
+  write-up -> decide-forward [what-they-want]: what the person wants,
+    who else is involved, and what they agreed to next
+  decide-forward -> hand-over [forward-decision]: the decision, the
+    notes, and the next step with a date on it
+  handle-no-show -> report-bookings [no-show-outcome]: the meetings
+    missed, the ones rebooked, and the ones let go
+  hand-over -> report-bookings [handover-outcome]: the meetings held
+    and what came of them
+  report-bookings -> record-learnings [booking-report]: the report, as
+    delivered
+deviations:
+  check-account -> decide-attendees [account-owned-elsewhere]: another
+    seller already owns the account, so that seller goes into the
+    meeting and the attendees are decided again
+  confirm-meeting -> offer-times [invite-declined]: the invite is
+    declined, so times are offered again in the person's time zone
+  brief-attendees -> offer-times [attendee-unavailable]: an attendee
+    the meeting exists for cannot make it, so the meeting is rebooked
+    rather than held short
+  handle-no-show -> confirm-meeting [rebooked-time]: a new time is
+    agreed after the no-show, so the invite is confirmed again
+  decide-forward -> stop-touches [not-now]: the account does not go
+    forward, so nothing is handed on and the touches stay stopped
+    until <who> says they may start again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller who holds the

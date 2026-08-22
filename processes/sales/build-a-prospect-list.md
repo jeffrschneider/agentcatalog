@@ -68,6 +68,10 @@ from: ref/sls/build-a-prospect-list v1
 owner: <who>                       effective: <date>
 trigger: a territory is assigned or an account plan is approved in
          <your planning process>
+         watch: record=<territory> system=<your planning system>
+                change=<a territory is assigned to a seller>
+         or watch: record=<account plan> system=<your planning system>
+                change=<an account plan is approved>
 concurrency: runs may overlap - <how many> lists are built at once, and
              one account belongs to one list at a time
 goal: a signed list of accounts and named people, every one of them
@@ -154,31 +158,62 @@ run-scoped:
                 every: <cadence>
                 from: load-list   until: run close
 handoffs:
-  take-in-scope -> set-fit-rules: the territory or the plan, and what
-    the list has to cover
-  set-fit-rules -> pull-candidates: the rules as written, at a version
-  pull-candidates -> check-ownership: the candidate accounts, each one
-    naming the source it came from and the date it was pulled
-  check-ownership -> read-accounts: who owns each account, what is open
-    against it, and every account another list is already working
-  read-accounts -> find-people: each account's standing, dated, with
-    every account that may not be approached marked as such
-  find-people -> verify-details: the roles and the names sitting in
-    them, each tied to the account it belongs to
-  verify-details -> apply-consent: the contact details that checked
-    out, and the ones that did not, kept apart
-  apply-consent -> score-and-rank: the people who may be contacted,
-    channel by channel, and the count the record took out
-  score-and-rank -> review-list: the ranked list, with the inputs and
-    the model version behind every rank
-  review-list -> sign-list: the list as the seller left it, with a
-    reason against every account they dropped or added
-  sign-list -> load-list: the signed list at its version, with the
-    signer and the date
-  load-list -> set-refresh: the list as loaded, and where every person
-    on it sits in the CRM and the sending system
-  set-refresh -> record-learnings: the rebuild date, and the triggers
-    that rebuild the list earlier than that
+  take-in-scope -> set-fit-rules [list-scope]: the territory or the
+    plan, and what the list has to cover
+  set-fit-rules -> pull-candidates [fit-rules]: the rules as written,
+    at a version
+  pull-candidates -> check-ownership [candidate-accounts]: the
+    candidate accounts, each one naming the source it came from and
+    the date it was pulled
+  check-ownership -> read-accounts [ownership-findings]: who owns each
+    account, what is open against it, and every account another list
+    is already working
+  read-accounts -> find-people [account-standing]: each account's
+    standing, dated, with every account that may not be approached
+    marked as such
+  find-people -> verify-details [named-people]: the roles and the
+    names sitting in them, each tied to the account it belongs to
+  verify-details -> apply-consent [verified-details]: the contact
+    details that checked out, and the ones that did not, kept apart
+  apply-consent -> score-and-rank [contactable-people]: the people who
+    may be contacted, channel by channel, and the count the record
+    took out
+  score-and-rank -> review-list [ranked-list]: the ranked list, with
+    the inputs and the model version behind every rank
+  review-list -> sign-list [seller-edited-list]: the list as the
+    seller left it, with a reason against every account they dropped
+    or added
+  sign-list -> load-list [signed-list]: the signed list at its
+    version, with the signer and the date
+  load-list -> set-refresh [loaded-list]: the list as loaded, and
+    where every person on it sits in the CRM and the sending system
+  set-refresh -> record-learnings [refresh-plan]: the rebuild date,
+    and the triggers that rebuild the list earlier than that
+deviations:
+  check-ownership -> pull-candidates [account-already-owned]: another
+    seller owns the account or another list is already working it, so
+    it comes off and the pull is made again without it
+  read-accounts -> pull-candidates [account-off-limits]: the account
+    may not be approached at all, so it comes off the list and the
+    seller is told which accounts were dropped and why
+  verify-details -> find-people [details-do-not-check-out]: an address
+    or a number failed verification, so a different name in the same
+    role is found rather than a guess being sent
+  apply-consent -> find-people [nobody-contactable]: nobody at the
+    account may be contacted on any channel, so the people are found
+    again or the account is handed back to the seller
+  review-list -> pull-candidates [seller-wants-others]: the seller
+    wants different accounts, so the pull is made again against the
+    same rules
+  review-list -> set-fit-rules [rules-found-wrong-shape]: the seller
+    drops most of the list, so the fit rules are written again from
+    the reasons they gave
+  sign-list -> review-list [list-not-signed]: the signer will not
+    accept the list, so it goes back to the seller before anything is
+    worked
+  set-refresh -> pull-candidates [refresh-fires]: the rebuild date
+    arrives or a refresh trigger fires, so the candidates are pulled
+    again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller, the manager who

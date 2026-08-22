@@ -80,6 +80,8 @@ PROCESS: webinar                      id: <team>/webinar   v1
 from: ref/mkt/webinar v1
 owner: <who>                          effective: <date>
 trigger: a topic and a date are set in <your planning process>
+         watch: record=<session> system=<your planning process>
+                change=<a topic and a date are set>
 concurrency: runs overlap - <how many> sessions in flight at once
 goal: a session that registers the number it was sized for, runs on its
       date, and hands off a published recording and the people who
@@ -182,43 +184,71 @@ run-scoped:
   spend         - runs allocate-and-reconcile   owner: media-buyer
                   from: promote   until: run close
 handoffs:
-  take-in-topic -> settle-format: what the session has to do and for
-    whom, in one line that every later decision can be tested against
-  settle-format -> set-up-session: the date, the start time, the length
-    and the time zones the session has to be reachable from
-  settle-format -> produce-material: what has to be written and
-    designed, and when each piece is due
-  settle-format -> build-audience: the number of people the session
-    needs to register for it to be worth running
-  settle-format -> build-presentation: the agenda, the questions the
-    session answers, and the date each presenter's material is due
-  produce-material -> get-sign-offs: the material at a version
-  get-sign-offs -> registration-page: the approved material at the
-    signed version. A later change voids the approval and sign-offs
-    run again
-  set-up-session -> registration-page: the fields the platform needs on
-    the form, and where a completed form has to arrive
-  build-audience -> promote: the audience for the invitation, with the
-    consent, opt-out and suppression rules already applied
-  registration-page -> promote: the live address and the tracking
-    parameters each channel uses
-  build-presentation -> rehearse: the slides and the demo at the
-    version that will be shown
-  work-the-list -> run-session: the confirmed number, and the joining
-    details recorded as sent to each person
-  rehearse -> run-session: the run of show, with the fixes the
-    rehearsal named already made
-  run-session -> hand-over: the session as it ran, including anything
-    that was promised to the audience while it was live
-  hand-over -> prepare-recording: the recording, at the length and the
-    quality the platform produced it
-  hand-over -> hand-off-leads: who registered, who attended, how long
-    each person stayed, and what they answered
-  hand-over -> follow-up: the questions that were asked and the ones
-    there was no time to answer
-  prepare-recording -> follow-up: the published recording at its
-    address, and the version it was published at
-  report-session -> record-learnings: the report, as delivered
+  take-in-topic -> settle-format [what-the-session-must-do]: what the
+    session has to do and for whom, in one line that every later
+    decision can be tested against
+  settle-format -> set-up-session [date-and-length]: the date, the
+    start time, the length and the time zones the session has to be
+    reachable from
+  settle-format -> produce-material [material-list]: what has to be
+    written and designed, and when each piece is due
+  settle-format -> build-audience [registration-target]: the number of
+    people the session needs to register for it to be worth running
+  settle-format -> build-presentation [agenda]: the agenda, the
+    questions the session answers, and the date each presenter's
+    material is due
+  produce-material -> get-sign-offs [promotion-material]: the material
+    at a version
+  get-sign-offs -> registration-page [approved-material]: the approved
+    material at the signed version. A later change voids the approval
+    and sign-offs run again
+  set-up-session -> registration-page [form-fields]: the fields the
+    platform needs on the form, and where a completed form has to
+    arrive
+  build-audience -> promote [invitation-audience]: the audience for the
+    invitation, with the consent, opt-out and suppression rules already
+    applied
+  registration-page -> promote [page-address]: the live address and the
+    tracking parameters each channel uses
+  build-presentation -> rehearse [presentation]: the slides and the
+    demo at the version that will be shown
+  work-the-list -> run-session [confirmed-list]: the confirmed number,
+    and the joining details recorded as sent to each person
+  rehearse -> run-session [run-of-show]: the run of show, with the
+    fixes the rehearsal named already made
+  run-session -> hand-over [session-as-it-ran]: the session as it ran,
+    including anything that was promised to the audience while it was
+    live
+  hand-over -> prepare-recording [raw-recording]: the recording, at the
+    length and the quality the platform produced it
+  hand-over -> hand-off-leads [attendance-record]: who registered, who
+    attended, how long each person stayed, and what they answered
+  hand-over -> follow-up [questions-asked]: the questions that were
+    asked and the ones there was no time to answer
+  prepare-recording -> follow-up [published-recording]: the published
+    recording at its address, and the version it was published at
+  report-session -> record-learnings [session-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> produce-material [sign-off-changes]: a signer asks
+    for changes, so the piece they named is made again and the
+    registration page waits, because it carries the approved words
+  work-the-list -> promote [registration-behind]: registration is
+    behind the number the session needs, so the promotion runs again
+    while there is still time to fix it
+  rehearse -> build-presentation [session-has-to-be-rebuilt]: the
+    rehearsal shows the session cannot run as it was built, so the
+    presentation is built again
+  rehearse -> settle-format [presenter-drops-out]: a presenter drops
+    out, so the format and the presenters are settled again and
+    everyone who registered is told what changed
+  prepare-recording -> hand-over [handover-incomplete]: the handover
+    from the platform is missing the recording, the attendance record,
+    the poll answers or the questions, so it is handed over again
+  hand-off-leads -> registration-page [registration-never-arrived]: a
+    registration never reached the CRM, so a submission is put through
+    the whole path again and what was lost is recovered from the
+    platform's own record
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the experts, the presenters,

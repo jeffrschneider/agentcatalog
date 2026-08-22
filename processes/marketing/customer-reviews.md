@@ -74,6 +74,9 @@ PROCESS: solicit customer reviews     id: <team>/customer-reviews   v1
 from: ref/mkt/customer-reviews v1
 owner: <who>                          effective: <date>
 trigger: a review goal is set in <your advocacy planning process>
+         watch: record=<review goal>
+                system=<your advocacy planning process>
+                change=<a review goal is set for a period>
 concurrency: runs may overlap - <how many> live at once, and one
       customer is asked by one run at a time
 goal: reviews collected on the sites the goal names, with every ask
@@ -158,29 +161,49 @@ run-scoped:
            from: send-the-ask   until: run close
            what was asked for, what was agreed, and what was refused
 handoffs:
-  take-in-goal -> read-site-rules: the sites the goal names, and how
-    many reviews each one has to carry
-  read-site-rules -> set-ask-rules: each site's rules, quoted, with the
-    address they were read at and the date they were read
-  set-ask-rules -> choose-customers: who may be asked, and how long it
-    has to be since that customer was last asked for anything
-  set-ask-rules -> write-the-ask: what may be offered, what must be
-    disclosed, and the wording each site requires
-  choose-customers -> clear-the-list: the candidate names, each with the
-    account standing that put it on the list
-  clear-the-list -> practical-side: the cleared names, with every
-    removal and the reason it was removed
-  write-the-ask -> check-the-ask: the ask and the reminder at a version,
-    with anything offered alongside them stated in full
-  check-the-ask -> get-sign-offs: the scored ask, every finding citing
-    the site rule it was scored against
-  get-sign-offs -> practical-side: the approved ask at the signed
-    version. A later change voids the approval and sign-offs run again
-  send-the-ask -> watch-reviews: the date the ask went out and the list
-    it went to, so a review can be traced back to it
-  watch-reviews -> reply-to-reviews: each review with its site, its
-    date, its author and its wording
-  report-goal -> record-learnings: the report, as delivered
+  take-in-goal -> read-site-rules [target-sites]: the sites the goal
+    names, and how many reviews each one has to carry
+  read-site-rules -> set-ask-rules [site-rules]: each site's rules,
+    quoted, with the address they were read at and the date they were
+    read
+  set-ask-rules -> choose-customers [who-may-be-asked]: who may be
+    asked, and how long it has to be since that customer was last
+    asked for anything
+  set-ask-rules -> write-the-ask [what-may-be-said]: what may be
+    offered, what must be disclosed, and the wording each site requires
+  choose-customers -> clear-the-list [candidate-names]: the candidate
+    names, each with the account standing that put it on the list
+  clear-the-list -> practical-side [cleared-names]: the cleared names,
+    with every removal and the reason it was removed
+  write-the-ask -> check-the-ask [draft-ask]: the ask and the reminder
+    at a version, with anything offered alongside them stated in full
+  check-the-ask -> get-sign-offs [ask-scores]: the scored ask, every
+    finding citing the site rule it was scored against
+  get-sign-offs -> practical-side [approved-ask]: the approved ask at
+    the signed version. A later change voids the approval and sign-offs
+    run again
+  send-the-ask -> watch-reviews [send-record]: the date the ask went
+    out and the list it went to, so a review can be traced back to it
+  watch-reviews -> reply-to-reviews [reviews-landed]: each review with
+    its site, its date, its author and its wording
+  report-goal -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  clear-the-list -> choose-customers [name-taken-off]: an account owner
+    takes a name off the list, so the choosing is done again without it
+  check-the-ask -> write-the-ask [site-rule-broken]: the ask breaks a
+    site's rule, so the sentence that broke it is written again
+  check-the-ask -> set-ask-rules [approach-is-forbidden]: the site
+    forbids the whole approach, so the legal reviewer decides again
+    what the ask can be
+  get-sign-offs -> write-the-ask [sign-off-changes]: a signer comes
+    back with changes, and only the part they named reopens
+  watch-reviews -> read-site-rules [site-removes-reviews]: a site
+    removes what landed or flags the profile, so sending stops and the
+    site's rules are read again
+  any -> read-site-rules [site-changes-its-rules]: a site changes its
+    rules while the run is live, so sending stops and the ask is scored
+    again against the new rules
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, finance and the owner of

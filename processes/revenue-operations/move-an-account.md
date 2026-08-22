@@ -65,6 +65,10 @@ PROCESS: move an account              id: <team>/move-an-account   v1
 from: ref/rev/move-an-account v1
 owner: <who>                          effective: <date>
 trigger: somebody asks for an account to change hands inside a period
+         watch: record=<the transfer request>
+                system=<where account transfers are asked for>
+                change=<somebody asks for an account to change hands
+                inside a period>
 concurrency: one run per account - a second request for the same
              account waits until the first closes
 goal: the account with one owner from a stated date, the credit split
@@ -146,34 +150,49 @@ phases:
                        owner: territory-modeler   after: watch-weeks
                        automation: assisted
 handoffs:
-  take-in-request -> check-standing: the account, who asked, who it goes
-    to, and the reason given
-  take-in-request -> find-rule: the same request, and the version of the
-    carve it is being tested against
-  check-standing -> read-work: the account's open deals, support state
-    and renewal date, each dated and sourced
-  find-rule -> decide-move: the rule that allows the move quoted as
-    written, or a line saying no rule covers it
-  read-work -> hear-owner: what the current owner did and when, so the
-    conversation starts from the record
-  hear-owner -> decide-move: what the owner says the record does not
-    show, and what they say is in flight
-  decide-move -> set-effective-date: the decision, who made it, when,
-    and the reason recorded
-  set-effective-date -> split-credit: the date the account changes
-    hands, and the rule that date was chosen under
-  split-credit -> quota-effect: who is credited for what, deal by deal,
-    with the rule behind each line
-  quota-effect -> change-systems: both quotas restated, the amount that
-    moved, and what it does to the roll-up
-  change-systems -> tell-people: the systems as they now stand, the
-    effective date, and the version they held before
-  tell-people -> hand-over: what both sellers were told, and the hour
-    they were told it
-  hand-over -> watch-weeks: the people at the account, the open work,
-    the promises made, and what is due next
-  watch-weeks -> record-move: what the account did in the weeks after
-    the move, and whether it went quiet
+  take-in-request -> check-standing [transfer-request]: the account, who
+    asked, who it goes to, and the reason given
+  take-in-request -> find-rule [request-and-carve-version]: the same
+    request, and the version of the carve it is being tested against
+  check-standing -> read-work [account-standing]: the account's open
+    deals, support state and renewal date, each dated and sourced
+  find-rule -> decide-move [allowing-rule]: the rule that allows the
+    move quoted as written, or a line saying no rule covers it
+  read-work -> hear-owner [work-already-done]: what the current owner
+    did and when, so the conversation starts from the record
+  hear-owner -> decide-move [unrecorded-work]: what the owner says the
+    record does not show, and what they say is in flight
+  decide-move -> set-effective-date [move-decision]: the decision, who
+    made it, when, and the reason recorded
+  set-effective-date -> split-credit [effective-date]: the date the
+    account changes hands, and the rule that date was chosen under
+  split-credit -> quota-effect [credit-split]: who is credited for what,
+    deal by deal, with the rule behind each line
+  quota-effect -> change-systems [restated-quotas]: both quotas
+    restated, the amount that moved, and what it does to the roll-up
+  change-systems -> tell-people [systems-changed]: the systems as they
+    now stand, the effective date, and the version they held before
+  tell-people -> hand-over [what-both-sellers-heard]: what both sellers
+    were told, and the hour they were told it
+  hand-over -> watch-weeks [account-context]: the people at the account,
+    the open work, the promises made, and what is due next
+  watch-weeks -> record-move [post-move-watch]: what the account did in
+    the weeks after the move, and whether it went quiet
+deviations:
+  find-rule -> take-in-request [no-rule-covers-it]: no line of the carve
+    allows the move, so the request goes back as an amendment to the
+    carve and the account stays where it is
+  decide-move -> take-in-request [move-refused]: the move is refused, so
+    the request goes back with the reason and the asker is told
+  split-credit -> hear-owner [split-contested]: the credit split is
+    contested, so the current owner is heard again on the deals in
+    dispute
+  quota-effect -> decide-move [quota-moves-too-far]: the move takes a
+    quota further than the carve allows, so the move is decided again
+    and either the move or the quota changes
+  watch-weeks -> hand-over [account-went-quiet]: the account goes quiet
+    after the move, so it is handed over again with the current owner
+    brought back for the relationship that stopped answering
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the leader who decides, the

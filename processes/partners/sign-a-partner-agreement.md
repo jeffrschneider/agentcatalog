@@ -76,6 +76,9 @@ from: ref/prt/sign-a-partner-agreement v1
 owner: <who>                          effective: <date>
 trigger: a candidate is marked qualified in <your partner record> and
          both sides agree to paper the relationship
+         watch: record=<candidate> system=<your partner record>
+                change=<a candidate is marked qualified and both sides
+                agree to paper the relationship>
 concurrency: runs may overlap - <how many> agreements live at once,
              and one partner is papered by one run at a time
 goal: an executed agreement whose terms match the agreed list line for
@@ -187,43 +190,75 @@ run-scoped:
                 every: <cadence>
                 from: send-and-take-markup   until: run close
 handoffs:
-  take-in-candidate -> set-what-it-does: the qualification decision,
-    the conditions attached to it, and the claims left unproven
-  set-what-it-does -> carry-conditions: what each side may do, must do
-    and may not do, at a version both our own people hold
-  set-what-it-does -> choose-paper: the same statement, so the template
-    is picked for the relationship rather than out of habit
-  set-what-it-does -> set-commercials: the duties each side takes on,
-    so the money is set against real obligations
-  carry-conditions -> draft: every condition as a term, with the date
-    it bites, the measure it is read against, and what happens if it
-    is missed
-  choose-paper -> draft: the template at a version, the schedules it
-    needs, and the clauses that may not be changed
-  set-commercials -> draft: margin, fees, targets, payment terms, and
-    the floor, with the person who set the floor named
-  draft -> review-inside: the full draft, every term traced to the
-    agreed list or to the template it came from
-  review-inside -> send-and-take-markup: the draft at the signed
-    internal version, and the reviewers who signed it
-  send-and-take-markup -> list-changes: the partner's markup, against
-    the version it was sent at, with the date it came back
-  list-changes -> price-and-sort: every requested change numbered, in
-    the partner's own words, clause by clause
-  price-and-sort -> approve-concessions: what each change costs, who
-    carries it, and what we ask for in return
-  approve-concessions -> negotiate-open-terms: the approved give and
-    trade positions, each with its approver and the date
-  negotiate-open-terms -> settle-schedules: every change closed as
-    given, traded or refused, with the person on each side who agreed
-  settle-schedules -> check-paper: the schedules as settled, each
-    naming the person who owns the number in it
-  check-paper -> clear-for-signature: the final text, the agreed list,
-    and every difference between the two
-  clear-for-signature -> sign: the entity that signs, its screening
-    result at a date, and the person confirmed to sign for it
-  sign -> record-and-hand-on: the executed agreement, the signatures
-    with their dates, and the version that was signed
+  take-in-candidate -> set-what-it-does [qualification-decision]: the
+    qualification decision, the conditions attached to it, and the
+    claims left unproven
+  set-what-it-does -> carry-conditions [rights-and-duties]: what each
+    side may do, must do and may not do, at a version both our own
+    people hold
+  set-what-it-does -> choose-paper [agreement-purpose]: the same
+    statement, so the template is picked for the relationship rather
+    than out of habit
+  set-what-it-does -> set-commercials [duties-taken-on]: the duties
+    each side takes on, so the money is set against real obligations
+  carry-conditions -> draft [conditions-as-terms]: every condition as a
+    term, with the date it bites, the measure it is read against, and
+    what happens if it is missed
+  choose-paper -> draft [template-and-schedules]: the template at a
+    version, the schedules it needs, and the clauses that may not be
+    changed
+  set-commercials -> draft [commercial-terms]: margin, fees, targets,
+    payment terms, and the floor, with the person who set the floor
+    named
+  draft -> review-inside [first-draft]: the full draft, every term
+    traced to the agreed list or to the template it came from
+  review-inside -> send-and-take-markup [approved-draft]: the draft at
+    the signed internal version, and the reviewers who signed it
+  send-and-take-markup -> list-changes [partner-markup]: the partner's
+    markup, against the version it was sent at, with the date it came
+    back
+  list-changes -> price-and-sort [numbered-changes]: every requested
+    change numbered, in the partner's own words, clause by clause
+  price-and-sort -> approve-concessions [change-costing]: what each
+    change costs, who carries it, and what we ask for in return
+  approve-concessions -> negotiate-open-terms [approved-positions]: the
+    approved give and trade positions, each with its approver and the
+    date
+  negotiate-open-terms -> settle-schedules [closed-changes]: every
+    change closed as given, traded or refused, with the person on each
+    side who agreed
+  settle-schedules -> check-paper [settled-schedules]: the schedules as
+    settled, each naming the person who owns the number in it
+  check-paper -> clear-for-signature [text-against-agreed]: the final
+    text, the agreed list, and every difference between the two
+  clear-for-signature -> sign [signing-entity-cleared]: the entity that
+    signs, its screening result at a date, and the person confirmed to
+    sign for it
+  sign -> record-and-hand-on [executed-agreement]: the executed
+    agreement, the signatures with their dates, and the version that
+    was signed
+deviations:
+  review-inside -> draft [condition-dropped]: the draft drops a
+    qualification condition, so it is drafted again with the condition
+    written in or with a named decision to drop it
+  list-changes -> send-and-take-markup [markup-incomplete]: the markup
+    is not the whole of what they want changed, so it goes back for a
+    complete markup against the version that was sent
+  approve-concessions -> price-and-sort [concession-refused]: an
+    approver refuses a concession, so the change is priced and sorted
+    again against the floor
+  negotiate-open-terms -> set-commercials [ask-below-floor]: an ask
+    sits below the floor, so the floor and the commercial terms are set
+    again before anything is offered
+  check-paper -> negotiate-open-terms [paper-disagrees]: the final text
+    and the agreed list differ, so the difference goes back to the
+    table rather than into the drafting
+  clear-for-signature -> negotiate-open-terms [screening-finds-new]:
+    the screening before signature finds something new, so signature is
+    held and the terms are worked again
+  sign -> negotiate-open-terms [signer-will-not-sign]: a signer will
+    not sign as drafted, so the terms behind the refusal go back to the
+    table
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the legal

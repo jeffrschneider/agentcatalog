@@ -77,6 +77,8 @@ from: ref/sls/open-an-expansion-deal v1
 owner: <who>                          effective: <date>
 trigger: an opening in <your opening register> is marked pursue by the
          account owner
+         watch: record=<opening> system=<your opening register>
+                change=<an opening is marked pursue>
 concurrency: runs may overlap - one account carries <how many> open
              expansion deals at a time, and one opening is worked by
              one run
@@ -160,37 +162,63 @@ run-scoped:
            every: <cadence>
            from: agree-approach   until: run close
 handoffs:
-  take-in-opening -> re-read-account: the opening at its version, its
-    evidence, and the date the decision to pursue was made
-  re-read-account -> confirm-opening: the account as it stands today,
-    with every change since the opening was written marked
-  confirm-opening -> draft-approach: the usage and the adoption at
-    today's date, and whether each still supports the opening
-  draft-approach -> work-out-change: what would be proposed, to whom,
-    and in what order
-  work-out-change -> set-timing: what the customer would have to do,
-    and how long that takes them
-  set-timing -> put-a-range: the window the ask lands in, and every
-    contract date that constrains it
-  put-a-range -> agree-approach: the range, its assumptions, and the
-    authority it sits inside
-  agree-approach -> agree-who-says: the approach as the owner agreed
-    it, at a version, with anything they struck out
-  agree-approach -> check-delivery: the same approach, and the window
-    it promises
-  agree-who-says -> internal-go-ahead: who says what to whom, and when
-  check-delivery -> internal-go-ahead: whether the work can be staffed,
-    and what it would take from <your delivery team>
-  internal-go-ahead -> make-approach: the signed ask, the range and the
-    timing. A change to any of them voids the sign-off
-  make-approach -> record-answer: the approach as it was actually made,
-    to whom, and on what date
-  record-answer -> open-the-deal: what the customer said in their own
-    words, and what they asked for next
-  open-the-deal -> hand-to-discovery: the opportunity, its evidence,
-    the named people, and the words the customer used
-  hand-to-discovery -> tell-the-spotter: the deal as handed over, or
-    the reason the opening closed
+  take-in-opening -> re-read-account [recorded-opening]: the opening
+    at its version, its evidence, and the date the decision to pursue
+    was made
+  re-read-account -> confirm-opening [account-today]: the account as
+    it stands today, with every change since the opening was written
+    marked
+  confirm-opening -> draft-approach [opening-still-holds]: the usage
+    and the adoption at today's date, and whether each still supports
+    the opening
+  draft-approach -> work-out-change [proposed-approach]: what would
+    be proposed, to whom, and in what order
+  work-out-change -> set-timing [cost-of-change]: what the customer
+    would have to do, and how long that takes them
+  set-timing -> put-a-range [ask-window]: the window the ask lands
+    in, and every contract date that constrains it
+  put-a-range -> agree-approach [indicative-range]: the range, its
+    assumptions, and the authority it sits inside
+  agree-approach -> agree-who-says [agreed-approach]: the approach as
+    the owner agreed it, at a version, with anything they struck out
+  agree-approach -> check-delivery [approach-for-delivery]: the same
+    approach, and the window it promises
+  agree-who-says -> internal-go-ahead [who-says-what]: who says what
+    to whom, and when
+  check-delivery -> internal-go-ahead [delivery-answer]: whether the
+    work can be staffed, and what it would take from <your delivery
+    team>
+  internal-go-ahead -> make-approach [signed-ask]: the signed ask,
+    the range and the timing. A change to any of them voids the
+    sign-off
+  make-approach -> record-answer [approach-as-made]: the approach as
+    it was actually made, to whom, and on what date
+  record-answer -> open-the-deal [customer-words]: what the customer
+    said in their own words, and what they asked for next
+  open-the-deal -> hand-to-discovery [open-opportunity]: the
+    opportunity, its evidence, the named people, and the words the
+    customer used
+  hand-to-discovery -> tell-the-spotter [opening-outcome]: the deal
+    as handed over, or the reason the opening closed
+deviations:
+  confirm-opening -> take-in-opening [opening-gone-stale]: the
+    opening no longer holds at today's usage, so it is taken in again
+    and rewritten at what is true now or closed
+  agree-approach -> draft-approach [owner-wants-another-way]: the
+    person who owns the relationship wants a different approach, so
+    the approach is drafted again to what they will carry
+  check-delivery -> set-timing [delivery-cannot-staff]: the work
+    behind the ask cannot be staffed in the window it promises, so
+    the timing is set again to a window delivery can carry
+  internal-go-ahead -> put-a-range [range-not-signed]: the range does
+    not justify the ask, so the range is put again and the approach
+    stays as it was agreed
+  record-answer -> set-timing [not-now]: the customer names a later
+    date, so the ask is timed to that date rather than made again
+    next month
+  record-answer -> draft-approach [wants-something-different]: the
+    customer asks for something other than what was proposed, so the
+    approach is drafted again against what they asked for
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the delivery

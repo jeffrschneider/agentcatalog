@@ -79,6 +79,10 @@ from: ref/rev/settle-a-commission-dispute v1
 owner: <who>                           effective: <date>
 trigger: a person disputes a line on a published statement, in writing,
          within <days> of the statement being published
+         watch: record=<the commission statement> system=<the dispute
+                register>
+                change=<a written dispute is logged against a line on a
+                published statement>
 concurrency: runs may overlap freely - one claim is one run, and two
              claims on the same booking are worked together rather than
              answered twice
@@ -184,42 +188,62 @@ run-scoped:
              every: <cadence>
              from: take-in-claim   until: run close
 handoffs:
-  take-in-claim -> promise-a-date: the statement, the line, the amount
-    claimed, and what the claimant relies on, in their own words
-  promise-a-date -> classify-claim: the promised answer date, and who
-    holds the claim
-  classify-claim -> freeze-statement: the class of the claim, and the
-    evidence that class requires
-  freeze-statement -> pull-evidence: the statement at its version, the
-    run version behind it, and the line under dispute
-  pull-evidence -> recompute-line: the booking, the credit rule, the
-    rate, the quota and the dates, each naming the system it came from
-  pull-evidence -> read-the-plan: the same records, and the plan
-    version the claimant signed
-  recompute-line -> hear-claimant: both answers side by side, and every
-    input where they differ
-  read-the-plan -> hear-claimant: the sentence that governs the line,
-    quoted, at the version that applies
-  hear-claimant -> hear-other-seller: what the claimant holds that the
-    record does not, and the seller the claim would take credit from
-  hear-other-seller -> decide-answer: both accounts, and what each seller
-    can show for its account
-  decide-answer -> approve-money: the decision, the amount it moves,
-    and the sentence it rests on
-  decide-answer -> tell-claimant: the same decision, so the claimant
-    and the approver read one text
-  approve-money -> tell-claimant: the signature, and the date the money
-    moves
-  tell-claimant -> correct-the-record: the answer as sent, and the
-    correction it commits the next run to
-  tell-claimant -> escalate-unaccepted: the answer, the evidence, and
-    the date the escalation window closes
-  correct-the-record -> feed-cause-back: what was corrected, and
-    whether the plan, the data or the calculator produced the error
-  escalate-unaccepted -> feed-cause-back: what the escalation decided,
-    and what it said about the wording
-  feed-cause-back -> report-disputes: the causes, and what changed
-    because of them
+  take-in-claim -> promise-a-date [claim-as-made]: the statement, the
+    line, the amount claimed, and what the claimant relies on, in their
+    own words
+  promise-a-date -> classify-claim [promised-date]: the promised answer
+    date, and who holds the claim
+  classify-claim -> freeze-statement [claim-class]: the class of the
+    claim, and the evidence that class requires
+  freeze-statement -> pull-evidence [frozen-statement]: the statement at
+    its version, the run version behind it, and the line under dispute
+  pull-evidence -> recompute-line [line-evidence]: the booking, the
+    credit rule, the rate, the quota and the dates, each naming the
+    system it came from
+  pull-evidence -> read-the-plan [evidence-for-the-plan]: the same
+    records, and the plan version the claimant signed
+  recompute-line -> hear-claimant [two-computations]: both answers side
+    by side, and every input where they differ
+  read-the-plan -> hear-claimant [governing-sentence]: the sentence that
+    governs the line, quoted, at the version that applies
+  hear-claimant -> hear-other-seller [claimant-account]: what the
+    claimant holds that the record does not, and the seller the claim
+    would take credit from
+  hear-other-seller -> decide-answer [both-accounts]: both accounts, and
+    what each seller can show for its account
+  decide-answer -> approve-money [decision-and-amount]: the decision,
+    the amount it moves, and the sentence it rests on
+  decide-answer -> tell-claimant [decision-text]: the same decision, so
+    the claimant and the approver read one text
+  approve-money -> tell-claimant [money-signature]: the signature, and
+    the date the money moves
+  tell-claimant -> correct-the-record [answer-sent]: the answer as sent,
+    and the correction it commits the next run to
+  tell-claimant -> escalate-unaccepted [escalation-window]: the answer,
+    the evidence, and the date the escalation window closes
+  correct-the-record -> feed-cause-back [correction-made]: what was
+    corrected, and whether the plan, the data or the calculator produced
+    the error
+  escalate-unaccepted -> feed-cause-back [escalation-outcome]: what the
+    escalation decided, and what it said about the wording
+  feed-cause-back -> report-disputes [causes-fed-back]: the causes, and
+    what changed because of them
+deviations:
+  classify-claim -> take-in-claim [claim-names-nothing]: the claim names
+    no line and no amount, so it goes back to the claimant to be
+    completed
+  recompute-line -> pull-evidence [record-supports-no-number]: the
+    record cannot support any number, so the evidence is pulled again
+    and the gap is named
+  hear-claimant -> classify-claim [claim-changes-line]: the claimant
+    turns out to be disputing a different line, which is a different
+    class of claim
+  decide-answer -> pull-evidence [evidence-missing]: the answer needs
+    evidence nobody pulled
+  approve-money -> decide-answer [approver-refuses]: the approver
+    refuses the decision, so it is decided again
+  escalate-unaccepted -> pull-evidence [new-facts-on-escalation]: the
+    escalation sends the claim back with facts the run did not have
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales leader, the finance

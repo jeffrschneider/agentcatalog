@@ -72,6 +72,7 @@ PROCESS: content calendar             id: <team>/content-calendar   v1
 from: ref/mkt/content-calendar v1
 owner: <who>                          effective: <date>
 trigger: a planning period opens on <your planning cadence>
+         watch: every=<your planning cadence>
 concurrency: one slate per period - the next period may open <how long>
              before the current one closes
 goal: an agreed slate of topics, each with a format, a producing agent
@@ -159,37 +160,59 @@ run-scoped:
              every: <cadence>
              from: size-capacity    until: agree-calendar
 handoffs:
-  take-in-goals -> list-commitments: what the period has to deliver,
-    in lines each candidate can be tested against
-  read-period -> collect-topics: last period's slate set beside what it
-    actually published, with the reason for every piece that slipped
-  list-commitments -> collect-topics: the pieces already in production
-    and the dates that cannot move
-  list-commitments -> size-capacity: the same commitments, so capacity
-    is counted against what those commitments leave free
-  collect-topics -> search-demand: the candidate subjects, so demand is
-    read against what the department actually put forward
-  collect-topics -> library-overlap: the same candidates, so overlap is
-    read against the whole library
-  search-demand -> score-candidates: the demand figure for each subject
-    and the date it was pulled
-  library-overlap -> score-candidates: the live pages that already
-    answer a candidate, with the numbers those pages are earning
-  size-capacity -> score-candidates: what each production agent can
-    carry this period, counted in pieces of work
-  score-candidates -> clearing-check: the ranked candidates, each with
-    the evidence its score rests on
-  clearing-check -> draft-calendar: the flagged topics, each naming the
-    rule that flagged it and the person who has to read it
-  draft-calendar -> agree-calendar: the slate at a version, with what
-    was left off it and why
-  agree-calendar -> publish-calendar: the cut slate at the signed
-    version, and anyone who disagreed with it
-  publish-calendar -> brief-department: the published slate and the
-    date it applies from
-  brief-department -> hand-over-topics: the slate as every agent heard it
-  hand-over-topics -> record-basis: the approved requests, naming the
-    agent that took each one
+  take-in-goals -> list-commitments [period-goals]: what the period
+    has to deliver, in lines each candidate can be tested against
+  read-period -> collect-topics [closed-period]: last period's slate
+    set beside what it actually published, with the reason for every
+    piece that slipped
+  list-commitments -> collect-topics [commitments]: the pieces already
+    in production and the dates that cannot move
+  list-commitments -> size-capacity [commitments-for-capacity]: the
+    same commitments, so capacity is counted against what those
+    commitments leave free
+  collect-topics -> search-demand [topic-candidates]: the candidate
+    subjects, so demand is read against what the department actually
+    put forward
+  collect-topics -> library-overlap [candidates-for-overlap]: the same
+    candidates, so overlap is read against the whole library
+  search-demand -> score-candidates [demand-figures]: the demand
+    figure for each subject and the date it was pulled
+  library-overlap -> score-candidates [overlapping-pages]: the live
+    pages that already answer a candidate, with the numbers those
+    pages are earning
+  size-capacity -> score-candidates [production-capacity]: what each
+    production agent can carry this period, counted in pieces of work
+  score-candidates -> clearing-check [ranked-candidates]: the ranked
+    candidates, each with the evidence its score rests on
+  clearing-check -> draft-calendar [clearing-flags]: the flagged
+    topics, each naming the rule that flagged it and the person who
+    has to read it
+  draft-calendar -> agree-calendar [draft-slate]: the slate at a
+    version, with what was left off it and why
+  agree-calendar -> publish-calendar [agreed-slate]: the cut slate at
+    the signed version, and anyone who disagreed with it
+  publish-calendar -> brief-department [published-slate]: the
+    published slate and the date it applies from
+  brief-department -> hand-over-topics [slate-as-heard]: the slate as
+    every agent heard it
+  hand-over-topics -> record-basis [approved-requests]: the approved
+    requests, naming the agent that took each one
+deviations:
+  score-candidates -> collect-topics [no-candidate-meets-a-goal]: no
+    candidate stands against one of the goals the period was given, so
+    candidates are collected again for that goal
+  clearing-check -> score-candidates [topic-cannot-be-cleared]: a
+    topic rests on a claim the register does not support or needs a
+    permission nobody has, so it is scored again and cut or held
+  agree-calendar -> draft-calendar [cut-past-capacity]: the people who
+    decide cut more than the draft expected, so the slate is drafted
+    again around what is left
+  publish-calendar -> draft-calendar [fixed-date-moves]: a fixed date
+    moves after the calendar publishes, so the slate is drafted again
+    and published as a new version
+  any -> clearing-check [standards-changed]: the standards come back
+    at a new version, and any topic that rested on a rule that changed
+    goes through the clearing check again before its run starts
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal and rights>

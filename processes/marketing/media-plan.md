@@ -78,6 +78,9 @@ from: ref/mkt/media-plan v1
 owner: <who>                          effective: <date>
 trigger: an objective and its budget are approved in <your planning
          process>
+         watch: record=<objective and budget>
+                system=<your planning process>
+                change=<an objective and its budget are approved>
 concurrency: one run at a time per budget and period - two runs cannot
              commit the same money, and a change after the plan is
              committed goes in as a new version
@@ -161,38 +164,64 @@ run-scoped:
              every: <cadence>
              from: collect-demand   until: choose-mix
 handoffs:
-  take-in-objective -> collect-demand: what the money has to achieve, by
-    when, and the figure it has to achieve it with
-  take-in-objective -> channel-evidence: the period the evidence has to
-    cover and the channels it has to cover
-  collect-demand -> settle-audience: every piece of work that needs
-    distribution, with its dates and what it is meant to reach
-  settle-audience -> clear-targeting: the audience the plan will buy
-    against, and the sources each part of it came from
-  clear-targeting -> draft-mixes: the sources and the traits that may be
-    used, and the ones that were ruled out, each with the reason
-  channel-evidence -> draft-mixes: what each channel has cost,
-    delivered and returned, with the source and the date under each line
-  draft-mixes -> model-mixes: the candidate splits, each one written in
-    the same format so the numbers can be set side by side
-  model-mixes -> choose-mix: what each split predicts, the assumptions
-    it carries, and every rate that could not be sourced marked
-    unsourced
-  choose-mix -> lay-flighting: the chosen split, the money on each
-    channel, and the record of what was left out and why
-  choose-mix -> channel-targets: the same split. Both branches read one
-    record
-  lay-flighting -> settle-results: the dates and the weight on every
-    line
-  channel-targets -> settle-results: the audience on every line, at the
-    version of the definition it was drawn from
-  settle-results -> approve-plan: the plan at a version, with the
-    measure each line will be reported against and a dated test showing
-    each result arriving
-  approve-plan -> hand-over: the plan at the signed version. A later
-    change voids the approval and the signers see it again
-  hand-over -> record-basis: what each buying agent took away, and
-    anything an agent said it could not buy at the rates in the plan
+  take-in-objective -> collect-demand [objective-and-figure]: what the
+    money has to achieve, by when, and the figure it has to achieve it
+    with
+  take-in-objective -> channel-evidence [evidence-scope]: the period the
+    evidence has to cover and the channels it has to cover
+  collect-demand -> settle-audience [work-to-distribute]: every piece of
+    work that needs distribution, with its dates and what it is meant to
+    reach
+  settle-audience -> clear-targeting [audience-and-sources]: the
+    audience the plan will buy against, and the sources each part of it
+    came from
+  clear-targeting -> draft-mixes [targeting-clearance]: the sources and
+    the traits that may be used, and the ones that were ruled out, each
+    with the reason
+  channel-evidence -> draft-mixes [channel-history]: what each channel
+    has cost, delivered and returned, with the source and the date under
+    each line
+  draft-mixes -> model-mixes [candidate-mixes]: the candidate splits,
+    each one written in the same format so the numbers can be set side
+    by side
+  model-mixes -> choose-mix [modelled-outcomes]: what each split
+    predicts, the assumptions it carries, and every rate that could not
+    be sourced marked unsourced
+  choose-mix -> lay-flighting [chosen-split]: the chosen split, the
+    money on each channel, and the record of what was left out and why
+  choose-mix -> channel-targets [split-for-targets]: the same split.
+    Both branches read one record
+  lay-flighting -> settle-results [flighting]: the dates and the weight
+    on every line
+  channel-targets -> settle-results [channel-audiences]: the audience on
+    every line, at the version of the definition it was drawn from
+  settle-results -> approve-plan [measurable-plan]: the plan at a
+    version, with the measure each line will be reported against and a
+    dated test showing each result arriving
+  approve-plan -> hand-over [signed-plan]: the plan at the signed
+    version. A later change voids the approval and the signers see it
+    again
+  hand-over -> record-basis [buying-agent-answers]: what each buying
+    agent took away, and anything an agent said it could not buy at the
+    rates in the plan
+deviations:
+  clear-targeting -> settle-audience [source-ruled-out]: a data source
+    or a trait is ruled out, so the audience is settled again from what
+    was cleared
+  model-mixes -> draft-mixes [no-split-reaches]: no split reaches the
+    objective, so the mixes are drafted again
+  choose-mix -> draft-mixes [none-worth-backing]: nothing on the table
+    is worth backing, so the mixes are drafted again
+  choose-mix -> take-in-objective [budget-too-small]: the budget cannot
+    buy the objective, so the objective is taken in again at what the
+    money can achieve
+  settle-results -> choose-mix [result-cannot-be-counted]: a result the
+    plan is judged on cannot be counted, so the split is chosen again
+    before any money is committed
+  approve-plan -> lay-flighting [flighting-changes]: the signers send
+    the flighting back, so the dates and weights are laid out again
+  approve-plan -> channel-targets [target-changes]: the signers send the
+    channel audiences back, so those targets are set again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal and finance>

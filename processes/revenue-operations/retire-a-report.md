@@ -70,6 +70,10 @@ from: ref/rev/retire-a-report v1
 owner: <who>                          effective: <date>
 trigger: the review comes round on <your reporting calendar>, or a
          report trips the retirement condition it was published with
+         watch: every=<your review cadence>
+         or watch: record=<a report> system=<the report store>
+                change=<the report trips the retirement condition it
+                was published with>
 concurrency: runs do not overlap - one review of the report store at a
              time, so two runs never retire each other's replacements
 goal: every report in scope kept, merged, rebuilt or switched off on
@@ -158,40 +162,55 @@ run-scoped:
                every: <cadence>
                from: tell-readers   until: decide-retirements
 handoffs:
-  take-in-review -> read-usage: the reports in scope and the period the
-    usage is read over
-  take-in-review -> read-cost: the same list. Three branches read one
-    record
-  take-in-review -> read-conditions: the same list, so the conditions
-    the reports were published with are read before any new judgement
-  read-usage -> find-duplicates: who opened each report, how often, and
-    the reports nobody opened at all
-  read-cost -> find-duplicates: what each report costs to keep running,
-    in refresh time and in load on the sources
-  read-conditions -> sort-reports: the condition each report carried and
-    whether it has tripped
-  find-duplicates -> sort-reports: the groups of reports answering the
-    same question, with the differences between their numbers
-  sort-reports -> find-dependents: the candidates for retirement, each
-    with the verdict and the evidence behind it
-  find-dependents -> tell-readers: everything that reads each candidate,
-    so nothing is switched off under something still using it
-  tell-readers -> hear-objections: who was told, when, and the date
-    objections close
-  hear-objections -> decide-retirements: every objection with what the
-    reader uses the report to decide, and every candidate nobody spoke
-    for
-  decide-retirements -> freeze-report: the signed list, and the date
-    each report freezes
-  freeze-report -> redirect-readers: the frozen reports at their
-    addresses, with the date of the last run on each
-  redirect-readers -> switch-off-feeds: the readers told, the
-    replacements named, and the date the feeds may stop
-  switch-off-feeds -> keep-record: what was actually switched off, and
-    anything that could not be
-  keep-record -> report-cycle: the filed record for every retired
-    report, and where it can be found
-  report-cycle -> record-learnings: the cycle report, as delivered
+  take-in-review -> read-usage [reports-in-scope]: the reports in scope
+    and the period the usage is read over
+  take-in-review -> read-cost [scope-for-cost]: the same list. Three
+    branches read one record
+  take-in-review -> read-conditions [scope-for-conditions]: the same
+    list, so the conditions the reports were published with are read
+    before any new judgement
+  read-usage -> find-duplicates [usage-record]: who opened each report,
+    how often, and the reports nobody opened at all
+  read-cost -> find-duplicates [running-cost]: what each report costs to
+    keep running, in refresh time and in load on the sources
+  read-conditions -> sort-reports [retirement-conditions]: the condition
+    each report carried and whether it has tripped
+  find-duplicates -> sort-reports [duplicate-groups]: the groups of
+    reports answering the same question, with the differences between
+    their numbers
+  sort-reports -> find-dependents [retirement-candidates]: the
+    candidates for retirement, each with the verdict and the evidence
+    behind it
+  find-dependents -> tell-readers [dependents]: everything that reads
+    each candidate, so nothing is switched off under something still
+    using it
+  tell-readers -> hear-objections [readers-told]: who was told, when,
+    and the date objections close
+  hear-objections -> decide-retirements [objections-heard]: every
+    objection with what the reader uses the report to decide, and every
+    candidate nobody spoke for
+  decide-retirements -> freeze-report [signed-list]: the signed list,
+    and the date each report freezes
+  freeze-report -> redirect-readers [frozen-reports]: the frozen reports
+    at their addresses, with the date of the last run on each
+  redirect-readers -> switch-off-feeds [replacements-named]: the readers
+    told, the replacements named, and the date the feeds may stop
+  switch-off-feeds -> keep-record [feeds-stopped]: what was actually
+    switched off, and anything that could not be
+  keep-record -> report-cycle [filed-records]: the filed record for
+    every retired report, and where it can be found
+  report-cycle -> record-learnings [cycle-report]: the cycle report, as
+    delivered
+deviations:
+  find-dependents -> sort-reports [dependency-found]: something
+    downstream still reads a candidate, so it is sorted again
+  hear-objections -> sort-reports [reader-still-needs-it]: a reader
+    argues for a report on the record, so that report is sorted again
+  decide-retirements -> sort-reports [list-not-signed]: the signer will
+    not sign the list, so the sorting is done again with the reason
+  switch-off-feeds -> freeze-report [switch-off-breaks-something]:
+    stopping the feeds breaks something nobody declared, so the report
+    goes back to its frozen state
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the report owners and the revenue

@@ -61,6 +61,8 @@ PROCESS: feature release              id: <team>/feature-release   v1
 from: ref/mkt/feature-release v1
 owner: <who>                          effective: <date>
 trigger: a feature reaches customers in <your release process>
+         watch: record=<release> system=<your release process>
+                change=<a feature is marked as reaching customers>
 concurrency: runs may overlap - <how many> live at once
 goal: every channel the sizing named carries the announcement, the
       customers who have the feature hear about it from inside the
@@ -115,21 +117,29 @@ phases:
                      every: <cadence>          until: <days> after the
                      announcement              automation: <level>
 handoffs:
-  take-in-release -> size-announce: what shipped and who it affects, in
-    the words of the people who built it
-  size-announce -> write-announce / show-feature: the channels this
-    release earns and the date. Both branches read one record
-  write-announce + show-feature -> check-once: everything
-    customer-facing, at a version
-  check-once -> update-pages / tell-customers / brief-support: the
-    approved wording and visuals at the signed version. A later change
-    voids the approval and the check runs again
-  update-pages -> post-publicly: the page the public post links to,
-    live at its address
-  brief-support -> post-publicly: support and sales hold the answers
-    before the questions arrive
-  tell-customers + post-publicly -> watch-first-days: what was sent,
-    who it reached, and where it was published
+  take-in-release -> size-announce [what-shipped]: what shipped and who
+    it affects, in the words of the people who built it
+  size-announce -> write-announce / show-feature [channels-and-date]:
+    the channels this release earns and the date. Both branches read
+    one record
+  write-announce + show-feature -> check-once [customer-facing-draft]:
+    everything customer-facing, at a version
+  check-once -> update-pages / tell-customers / brief-support
+    [signed-material]: the approved wording and visuals at the signed
+    version. A later change voids the approval and the check runs again
+  update-pages -> post-publicly [live-pages]: the page the public post
+    links to, live at its address
+  brief-support -> post-publicly [support-answers]: support and sales
+    hold the answers before the questions arrive
+  tell-customers + post-publicly -> watch-first-days [what-went-out]:
+    what was sent, who it reached, and where it was published
+deviations:
+  check-once -> write-announce [check-corrections]: the check comes
+    back with corrections, so the wording is written again and only the
+    piece the signers named reopens
+  watch-first-days -> write-announce [claim-is-wrong]: the feature does
+    not do what the announcement said, so the wording is written again
+    and anything already published is corrected in place
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the product, support and sales

@@ -72,6 +72,9 @@ from: ref/rev/review-a-non-standard-deal v1
 owner: <who>                           effective: <date>
 trigger: a deal in <your quoting process> asks for a term, a structure
          or an exception the standard paper does not cover
+         watch: record=<the deal> system=<the quoting system>
+                change=<a request is raised for a term, a structure or
+                an exception the standard paper does not cover>
 concurrency: runs may overlap - <how many> requests are live at the
              desk at once, and one deal has one open request at a time
 goal: every non-standard item decided, with the risk priced, the person
@@ -169,38 +172,53 @@ run-scoped:
              every: <cadence>
              from: price-risk   until: run close
 handoffs:
-  take-in-request -> check-complete: the ask as the seller wrote it,
-    and the deal record it belongs to
-  check-complete -> start-clock: the complete request, with anything
-    that was missing and has since arrived
-  start-clock -> read-deal: the level, the time promised, and the date
-    and hour the seller was told
-  read-deal -> name-items: the deal as it stands, dated, with the
-    system every line was read from
-  name-items -> test-terms: each non-standard item on its own, in the
-    words the customer used
-  name-items -> price-risk: the same list of items. Both branches read
-    one list
-  test-terms -> assign-risk: each term scored, with the clause it
-    departs from named
-  price-risk -> assign-risk: what each item risks, with the number
-    behind the risk wherever there is one
-  assign-risk -> get-reads: the item, the risk it creates, and the
-    person who carries it
-  get-reads -> find-precedent: the reads as written, dated, with the
-    reason each one gave and the items nobody read
-  find-precedent -> shape-alternative: what was decided before, and
-    what happened to the deals it was decided on
-  shape-alternative -> hold-review: the ask and the alternative, priced
-    side by side, item by item
-  hold-review -> record-decision: the decision per item, the reason,
-    and the signer, against a version of the deal
-  escalate-clock -> hold-review: the item, what it waited on, and what
-    was decided above the desk
-  record-decision -> hand-back: the decided shape at its version, with
-    every approval attached
-  hand-back -> feed-standards: what was asked, what was decided, and
-    how long the answer took
+  take-in-request -> check-complete [seller-ask]: the ask as the seller
+    wrote it, and the deal record it belongs to
+  check-complete -> start-clock [complete-request]: the complete
+    request, with anything that was missing and has since arrived
+  start-clock -> read-deal [promised-time]: the level, the time
+    promised, and the date and hour the seller was told
+  read-deal -> name-items [deal-as-it-stands]: the deal as it stands,
+    dated, with the system every line was read from
+  name-items -> test-terms [non-standard-items]: each non-standard item
+    on its own, in the words the customer used
+  name-items -> price-risk [items-to-price]: the same list of items.
+    Both branches read one list
+  test-terms -> assign-risk [term-scores]: each term scored, with the
+    clause it departs from named
+  price-risk -> assign-risk [risk-pricing]: what each item risks, with
+    the number behind the risk wherever there is one
+  assign-risk -> get-reads [risk-owners]: the item, the risk it
+    creates, and the person who carries it
+  get-reads -> find-precedent [written-reads]: the reads as written,
+    dated, with the reason each one gave and the items nobody read
+  find-precedent -> shape-alternative [precedent]: what was decided
+    before, and what happened to the deals it was decided on
+  shape-alternative -> hold-review [ask-and-alternative]: the ask and
+    the alternative, priced side by side, item by item
+  hold-review -> record-decision [item-decisions]: the decision per
+    item, the reason, and the signer, against a version of the deal
+  escalate-clock -> hold-review [escalation-answer]: the item, what it
+    waited on, and what was decided above the desk
+  record-decision -> hand-back [decided-shape]: the decided shape at its
+    version, with every approval attached
+  hand-back -> feed-standards [ask-and-outcome]: what was asked, what
+    was decided, and how long the answer took
+deviations:
+  check-complete -> take-in-request [request-incomplete]: the request is
+    missing the deal, the paper, the ask or the date it is needed
+  test-terms -> name-items [term-never-scored]: a term turns up that the
+    standard paper has no clause to score, so it is restated
+  get-reads -> name-items [item-restated]: a risk owner's read shows the
+    item has to be restated before anybody can answer it
+  hold-review -> shape-alternative [item-needs-new-shape]: an item needs
+    a different shape before the desk will decide it
+  hold-review -> get-reads [read-missing]: an item reaches the review
+    with a read nobody gave
+  escalate-clock -> hold-review [settled-above-the-desk]: the escalation
+    settles the item above the desk, so the review takes it up again
+  hand-back -> take-in-request [ask-changed]: the seller comes back with
+    a changed ask, which is a new ask rather than an edit
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller, the finance

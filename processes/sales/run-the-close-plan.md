@@ -73,6 +73,10 @@ from: ref/sls/run-the-close-plan v1
 owner: <who>                          effective: <date>
 trigger: a deal reaches an agreed position and <who> asks for a close
          plan, in <your CRM>
+         watch: record=<opportunity> system=<your CRM>
+                change=<the deal reaches an agreed position>
+         and watch: record=<close plan request> system=<your CRM>
+                change=<a close plan is asked for on that deal>
 concurrency: runs may overlap - <how many> close plans live at once, and
              one opportunity has one close plan at a time
 goal: every step both sides still owe named, owned, dated and worked
@@ -172,45 +176,60 @@ run-scoped:
              every: <cadence>
              from: agree-plan   until: run close
 handoffs:
-  open-plan -> name-steps: the agreed position, the signature date, and
-    the people on both sides who own the deal
-  name-steps -> confirm-buyer-process: the steps we know about, so the
-    buyer can say what is missing
-  confirm-buyer-process -> assign-owners: the buyer's approval path,
-    with the committee dates and the person who takes it to each one
-  assign-owners -> date-steps: one named owner per step, on the side
-    that does the work
-  date-steps -> agree-plan: the dated plan, counted back from signature,
-    with the steps that block others marked
-  agree-plan -> work-security: the security review as a dated step with
-    the buyer's questionnaire attached
-  agree-plan -> work-procurement: the forms the buyer needs from us, and
-    who on their side receives each one
-  agree-plan -> confirm-signers: the signature date and the document
-    that will be signed
-  agree-plan -> chase-steps: the confirmed plan, which is the thing
-    chasing is measured against
-  chase-steps -> re-plan: the steps past their date, with the reason the
-    owner gave
-  chase-steps -> report-plan: the plan as it actually stands, not as it
-    was agreed
-  chase-steps -> escalate-stall: the step, its owner, how long it has
-    been late, and what is blocking it
-  re-plan -> agree-plan: the moved dates, taken back to the buyer for
-    confirmation
-  escalate-stall -> chase-steps: the decision, and the new date it
-    produced
-  work-security -> confirm-conditions: the completed review and any
-    condition the buyer attached to it
-  work-procurement -> confirm-conditions: the vendor record, the order
-    number, and anything still outstanding
-  confirm-signers -> confirm-conditions: the signers in order, and what
-    each one has to see first
-  confirm-conditions -> execute-signature: every pre-signature step
-    marked done with its evidence
-  execute-signature -> close-plan: the executed agreement, its date, and
-    the signers
-  report-plan -> close-plan: the dates as they moved through the run
+  open-plan -> name-steps [agreed-position]: the agreed position, the
+    signature date, and the people on both sides who own the deal
+  name-steps -> confirm-buyer-process [steps-we-know]: the steps we
+    know about, so the buyer can say what is missing
+  confirm-buyer-process -> assign-owners [buyer-approval-path]: the
+    buyer's approval path, with the committee dates and the person who
+    takes it to each one
+  assign-owners -> date-steps [owned-steps]: one named owner per step,
+    on the side that does the work
+  date-steps -> agree-plan [dated-plan]: the dated plan, counted back
+    from signature, with the steps that block others marked
+  agree-plan -> work-security [security-questionnaire]: the security
+    review as a dated step with the buyer's questionnaire attached
+  agree-plan -> work-procurement [procurement-forms]: the forms the
+    buyer needs from us, and who on their side receives each one
+  agree-plan -> confirm-signers [signature-date]: the signature date
+    and the document that will be signed
+  agree-plan -> chase-steps [confirmed-plan]: the confirmed plan, which
+    is the thing chasing is measured against
+  chase-steps -> re-plan [late-steps]: the steps past their date, with
+    the reason the owner gave
+  chase-steps -> report-plan [plan-as-it-stands]: the plan as it
+    actually stands, not as it was agreed
+  chase-steps -> escalate-stall [stalled-step]: the step, its owner,
+    how long it has been late, and what is blocking it
+  re-plan -> agree-plan [re-dated-plan]: the moved dates, taken back to
+    the buyer for confirmation
+  escalate-stall -> chase-steps [escalation-decision]: the decision,
+    and the new date it produced
+  work-security -> confirm-conditions [security-clearance]: the
+    completed review and any condition the buyer attached to it
+  work-procurement -> confirm-conditions [vendor-record]: the vendor
+    record, the order number, and anything still outstanding
+  confirm-signers -> confirm-conditions [signers-in-order]: the signers
+    in order, and what each one has to see first
+  confirm-conditions -> execute-signature [conditions-met]: every
+    pre-signature step marked done with its evidence
+  execute-signature -> close-plan [executed-agreement]: the executed
+    agreement, its date, and the signers
+  report-plan -> close-plan [date-movement]: the dates as they moved
+    through the run
+deviations:
+  confirm-buyer-process -> name-steps [unknown-step]: the buyer names a
+    step nobody on our side knew about, so the steps are named again
+    before anyone is assigned to them
+  chase-steps -> escalate-stall [step-will-not-move]: a step nobody
+    will move goes up on both sides
+  escalate-stall -> name-steps [term-reopens]: the escalation reopens a
+    term, so the steps both sides owe are named again against it
+  re-plan -> agree-plan [dates-move]: the dates change on both sides,
+    so the plan is agreed with the buyer again
+  confirm-conditions -> chase-steps [condition-not-met]: a step owed
+    before signature is not done, so it goes back to be chased and the
+    document does not go out
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the deal owner, the sales leader

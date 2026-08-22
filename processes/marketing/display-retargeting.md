@@ -77,6 +77,10 @@ from: ref/mkt/display-retargeting v1
 owner: <who>                          effective: <date>
 trigger: an audience of known visitors is approved for advertising in
          <your audience process>
+         watch: record=<audience>
+                system=<your audience process>
+                change=<an audience of known visitors is approved for
+                advertising>
 concurrency: runs may overlap - <how many> live at once
 goal: display advertising running against the approved pools, with
       everyone on the suppression list kept out of every pool and the
@@ -177,35 +181,61 @@ run-scoped:
               every: <cadence>
               from: launch   until: run close
 handoffs:
-  take-in-audience -> set-parameters: what the retargeting has to bring
-    back, in one line that every later decision can be tested against
-  set-parameters -> check-consent: the placements and the markets the
-    ads will run in, because the rules differ by market
-  set-parameters -> make-the-ads / exposure-rules: the same parameters.
-    Both branches read one record
-  check-consent -> define-pools: which visitors may be advertised to at
-    all, with the rule behind every exclusion and the version it was
-    read at
-  check-consent -> tag-the-site: which consent states the tag may fire
-    under
-  define-pools -> build-pools: each pool's entry condition, how long
-    membership lasts, and the count the definition expects
-  suppression-list -> apply-suppression: the list at a version, with a
-    reason on every entry
-  build-pools -> apply-suppression: the assembled pools and their
-    counts, before any of them is attached to a campaign
-  get-sign-offs -> check-the-buy: the approved ads at the signed
-    version. A banner changed afterward voids the approval and sign-offs
-    run again
-  exposure-rules -> check-the-buy: the frequency ceiling, the period it
-    is counted over, and the membership window, as the buyer has to
-    configure them
-  apply-suppression -> check-the-buy: the counts removed, pool by pool,
-    so the check has a figure to test each pool against
-  check-the-buy -> launch: the scored list, with the plan line or the
-    rule behind every failure
-  check-frequency + check-suppression -> record-in-force: the delivered
-    figures beside the settings they were read against
+  take-in-audience -> set-parameters [the-goal]: what the retargeting
+    has to bring back, in one line that every later decision can be
+    tested against
+  set-parameters -> check-consent [placements-and-markets]: the
+    placements and the markets the ads will run in, because the rules
+    differ by market
+  set-parameters -> make-the-ads / exposure-rules [parameters]: the
+    same parameters. Both branches read one record
+  check-consent -> define-pools [who-may-be-advertised-to]: which
+    visitors may be advertised to at all, with the rule behind every
+    exclusion and the version it was read at
+  check-consent -> tag-the-site [tag-consent-states]: which consent
+    states the tag may fire under
+  define-pools -> build-pools [pool-definitions]: each pool's entry
+    condition, how long membership lasts, and the count the definition
+    expects
+  suppression-list -> apply-suppression [the-suppression-list]: the
+    list at a version, with a reason on every entry
+  build-pools -> apply-suppression [assembled-pools]: the assembled
+    pools and their counts, before any of them is attached to a
+    campaign
+  get-sign-offs -> check-the-buy [approved-ads]: the approved ads at
+    the signed version. A banner changed afterward voids the approval
+    and sign-offs run again
+  exposure-rules -> check-the-buy [frequency-ceiling]: the frequency
+    ceiling, the period it is counted over, and the membership window,
+    as the buyer has to configure them
+  apply-suppression -> check-the-buy [removal-counts]: the counts
+    removed, pool by pool, so the check has a figure to test each pool
+    against
+  check-the-buy -> launch [buy-check-scores]: the scored list, with the
+    plan line or the rule behind every failure
+  check-frequency + check-suppression -> record-in-force
+    [delivered-figures]: the delivered figures beside the settings they
+    were read against
+deviations:
+  build-pools -> define-pools [pool-too-small]: a pool is too small to
+    deliver, so the definition is widened and read again by the
+    consent-manager before it is built
+  get-sign-offs -> make-the-ads [sign-off-changes]: a signer comes back
+    with changes, and only the banners they named reopen
+  check-the-buy -> exposure-rules [cap-not-as-agreed]: a cap is not set
+    as it was agreed, so the exposure rules are configured again
+  check-the-buy -> apply-suppression [exclusion-missing]: an exclusion
+    is missing from a pool, so the suppression is applied again
+  check-frequency -> exposure-rules [delivered-past-the-cap]: the
+    delivered count runs past the cap, so the buyer lowers it in every
+    campaign in the run at once
+  check-suppression -> apply-suppression [suppressed-person-served]:
+    somebody on the list was served an ad, so they come out of every
+    pool again and the consent-manager says whether the campaigns stay
+    on
+  any -> suppression-list [consent-withdrawn]: consent is withdrawn
+    while the campaigns are live, so the withdrawal reaches the
+    suppression list and then every pool
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the budget, brand and legal

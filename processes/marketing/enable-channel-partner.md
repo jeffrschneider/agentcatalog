@@ -78,6 +78,9 @@ from: ref/mkt/enable-channel-partner v1
 owner: <who>                          effective: <date>
 trigger: a partner agreement is signed or renewed in <your partner
          process>
+         watch: record=<partner agreement>
+                system=<your partner process>
+                change=<an agreement is signed or renewed>
 concurrency: runs overlap - <how many> partners in enablement at once
 goal: a partner whose named people can position the product, answer the
       objections it draws and sell it, certified against a version of
@@ -177,40 +180,57 @@ run-scoped:
               every: <cadence>
               from: hand-over-kit   until: run close
 handoffs:
-  take-in-partner -> check-standing: what the partner sells, to whom,
-    in which markets, and the tier the agreement puts them in
-  check-standing -> list-criteria: the certification this partner
-    already holds, the version it was earned on, and the list of what
-    has changed since that version
-  check-standing -> publish-material: for a renewing partner whose
-    certification still stands, the same list of changes, which is all
-    the run has to cover
-  list-criteria -> agree-plan: the criteria at a version, so the
-    partner knows what they are agreeing to be checked against
-  list-criteria -> set-entitlement: the criteria, so the entitlement
-    decision covers everything a partner needs to meet them
-  agree-plan -> brief-makers: the named people from the partner, the
-    time they have committed, and the dates both sides accepted
-  set-entitlement -> brief-makers: what this tier may be shown, and
-    what has to be cut or rewritten before it leaves the organization
-  produce-material -> get-sign-offs: the material at a version, every
-    claim carrying the register entry it rests on, and every source
-    carrying what it is licensed for
-  get-sign-offs -> publish-material: the approved material at the
-    signed version. A later change voids the approval and sign-offs
-    run again
-  publish-material -> run-session: the address the partner reads from,
-    and the version that sits there on the day of the session
-  run-session -> check-the-pitch: the recording, who attended, and the
-    questions asked in the room
-  answer-questions -> produce-material: a question the material
-    answers wrongly, or the same question asked <how many> times
-  check-the-pitch -> hand-over-kit: the scored list for each person,
-    the certification, the version of the criteria it was earned on,
-    and the date it expires
-  hand-over-kit -> watch: the kit at its version, the deal
-    registration route, and the leads that were transferred
-  report-partner -> record-learnings: the report, as delivered
+  take-in-partner -> check-standing [partner-profile]: what the partner
+    sells, to whom, in which markets, and the tier the agreement puts
+    them in
+  check-standing -> list-criteria [held-certification]: the
+    certification this partner already holds, the version it was earned
+    on, and the list of what has changed since that version
+  check-standing -> publish-material [changes-since-last-check]: for a
+    renewing partner whose certification still stands, the same list of
+    changes, which is all the run has to cover
+  list-criteria -> agree-plan [the-criteria]: the criteria at a
+    version, so the partner knows what they are agreeing to be checked
+    against
+  list-criteria -> set-entitlement [criteria-for-entitlement]: the
+    criteria, so the entitlement decision covers everything a partner
+    needs to meet them
+  agree-plan -> brief-makers [partner-commitment]: the named people
+    from the partner, the time they have committed, and the dates both
+    sides accepted
+  set-entitlement -> brief-makers [entitlement]: what this tier may be
+    shown, and what has to be cut or rewritten before it leaves the
+    organization
+  produce-material -> get-sign-offs [draft-material]: the material at a
+    version, every claim carrying the register entry it rests on, and
+    every source carrying what it is licensed for
+  get-sign-offs -> publish-material [approved-material]: the approved
+    material at the signed version. A later change voids the approval
+    and sign-offs run again
+  publish-material -> run-session [published-address]: the address the
+    partner reads from, and the version that sits there on the day of
+    the session
+  run-session -> check-the-pitch [session-record]: the recording, who
+    attended, and the questions asked in the room
+  answer-questions -> produce-material [question-material-fails]: a
+    question the material answers wrongly, or the same question asked
+    <how many> times
+  check-the-pitch -> hand-over-kit [certification]: the scored list for
+    each person, the certification, the version of the criteria it was
+    earned on, and the date it expires
+  hand-over-kit -> watch [selling-kit]: the kit at its version, the
+    deal registration route, and the leads that were transferred
+  report-partner -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> produce-material [sign-off-changes]: a signer comes
+    back with changes, and only the piece they named reopens
+  check-the-pitch -> run-session [criteria-not-met]: the demonstration
+    does not meet the criteria, so the partner's people are taught
+    again on what failed before anything is handed over
+  any -> set-entitlement [partner-asks-beyond-tier]: a partner asks for
+    material their tier does not cover, so a person decides the
+    entitlement again against the agreement
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner's own staff, the

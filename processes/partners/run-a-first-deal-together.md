@@ -79,6 +79,10 @@ from: ref/prt/run-a-first-deal-together v1
 owner: <who>                          effective: <date>
 trigger: a certified partner brings its first opportunity or its first
          delivery into <your deal registration system>
+         watch: record=<deal registration>
+                system=<your deal registration system>
+                change=<a certified partner registers its first
+                opportunity or its first delivery>
 concurrency: runs may overlap - <how many> first deals open at once, and
              one partner walks one first deal at a time
 goal: the partner leads a real deal or a real delivery end to end with a
@@ -178,40 +182,66 @@ run-scoped:
                 every: <cadence>
                 from: plan-together   until: decide-unaided
 handoffs:
-  take-in-deal -> agree-the-one: the opportunity as the partner
-    described it, with what we can already see about the customer
-  agree-the-one -> name-the-escort: the decision to walk this one, and
-    what makes it the right size to learn on
-  agree-the-one -> register-deal: the customer, the partner and the
-    scope, so the registration covers what was agreed
-  name-the-escort -> agree-front: who from our side covers which stage,
-    and what they will not do
-  register-deal -> agree-front: the registration, its date and the day
-    protection runs out
-  agree-front -> plan-together: who leads each conversation, so the plan
-    puts the right name against each step
-  plan-together -> rehearse: the questions this customer will ask, and
-    the decisions they have to make
-  rehearse -> joint-meetings: what the partner could answer alone and
-    what they could not, written down before the first meeting
-  joint-meetings -> price-and-quote: what the customer said they need,
-    at the version the customer agreed to
-  price-and-quote -> review-output: the quote, the discount and the
-    approval behind any discount outside the standard schedule
-  review-output -> do-the-work: the signed-off proposal at a version. A
-    later change voids the sign-off and the review runs again
-  do-the-work -> confirm-customer: the work as delivered or the deal as
-    closed, and every point the escort had to take over
-  do-the-work -> step-in: what is slipping, since when, and what the
-    customer has already been told
-  step-in -> do-the-work: the stage we took back, what we did with it,
-    and the conditions under which the partner gets it back
-  confirm-customer -> debrief-partner: the customer's dated
-    confirmation, and who they say they dealt with
-  debrief-partner -> decide-unaided: the list of what the partner did
-    alone and what we did for them, agreed by both sides
-  decide-unaided -> hand-to-manager: the signed decision per role, with
-    the reason and anything the partner still needs
+  take-in-deal -> agree-the-one [opportunity-as-described]: the
+    opportunity as the partner described it, with what we can already
+    see about the customer
+  agree-the-one -> name-the-escort [deal-chosen]: the decision to walk
+    this one, and what makes it the right size to learn on
+  agree-the-one -> register-deal [customer-and-scope]: the customer,
+    the partner and the scope, so the registration covers what was
+    agreed
+  name-the-escort -> agree-front [escort-by-stage]: who from our side
+    covers which stage, and what they will not do
+  register-deal -> agree-front [registration]: the registration, its
+    date and the day protection runs out
+  agree-front -> plan-together [customer-facing-roles]: who leads each
+    conversation, so the plan puts the right name against each step
+  plan-together -> rehearse [questions-and-decisions]: the questions
+    this customer will ask, and the decisions they have to make
+  rehearse -> joint-meetings [rehearsal-result]: what the partner could
+    answer alone and what they could not, written down before the first
+    meeting
+  joint-meetings -> price-and-quote [customer-need]: what the customer
+    said they need, at the version the customer agreed to
+  price-and-quote -> review-output [quote-and-discount]: the quote, the
+    discount and the approval behind any discount outside the standard
+    schedule
+  review-output -> do-the-work [signed-off-proposal]: the signed-off
+    proposal at a version. A later change voids the sign-off and the
+    review runs again
+  do-the-work -> confirm-customer [work-as-done]: the work as delivered
+    or the deal as closed, and every point the escort had to take over
+  do-the-work -> step-in [what-is-slipping]: what is slipping, since
+    when, and what the customer has already been told
+  step-in -> do-the-work [handback-terms]: the stage we took back, what
+    we did with it, and the conditions under which the partner gets it
+    back
+  confirm-customer -> debrief-partner [customer-confirmation]: the
+    customer's dated confirmation, and who they say they dealt with
+  debrief-partner -> decide-unaided [what-partner-did-alone]: the list
+    of what the partner did alone and what we did for them, agreed by
+    both sides
+  decide-unaided -> hand-to-manager [unaided-decision]: the signed
+    decision per role, with the reason and anything the partner still
+    needs
+deviations:
+  agree-the-one -> take-in-deal [wrong-deal-to-learn-on]: the deal is
+    too big or too risky to learn on, so the run goes back to intake
+    and waits for one that fits
+  register-deal -> agree-the-one [already-registered]: the deal is
+    already registered to somebody else, so which deal to walk is
+    decided again
+  joint-meetings -> rehearse [not-ready-to-lead]: the partner is not
+    ready to lead the room, so the rehearsal runs again before the next
+    customer meeting
+  review-output -> price-and-quote [quote-must-change]: the quote or
+    the wording has to change, so it is priced and written again before
+    anything is sent
+  confirm-customer -> do-the-work [customer-says-not-landed]: the
+    customer says they did not get what was sold, so the work goes back
+    to be put right before the debrief
+  decide-unaided -> take-in-deal [not-yet-unaided]: the signer says not
+    yet, so the partner walks another deal from intake
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the sales

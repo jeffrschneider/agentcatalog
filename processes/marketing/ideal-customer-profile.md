@@ -83,6 +83,12 @@ from: ref/mkt/ideal-customer-profile v1
 owner: <who>                          effective: <date>
 trigger: a go-to-market question is opened in <your planning process>,
          or the review date on a recorded profile arrives
+         watch: record=<go-to-market question>
+                system=<your planning process>
+                change=<a question about who to sell to is opened>
+         or watch: record=<recorded profile>
+                system=<your review schedule>
+                change=<the review date on the profile arrives>
 concurrency: one run at a time for the same product or market, because
              two agreed profiles for one product leave nobody with one.
              Runs for different markets overlap
@@ -173,47 +179,62 @@ run-scoped:
                 every: <cadence>
                 from: take-in-question   until: hand-over
 handoffs:
-  take-in-question -> read-record / outside-evidence / first-hand: the
-    question, what each agent owes, and the date it is owed. Three agents
-    read one record
-  read-record -> find-traits: the accounts, what each one bought and
-    renewed, and when each one left
-  outside-evidence -> find-traits: the market evidence, with a source
-    line under every fact and the date it was read
-  first-hand -> find-traits: what the sellers and the customers said,
-    attributed to the person who said it
-  find-traits -> draft-candidates: the traits that separate the
-    customers who stayed, each with how strongly it does that and the
-    assumptions the number rests on
-  draft-candidates -> name-signals: the candidate profiles, each with
-    the evidence behind it
-  draft-candidates -> back-test: the candidates in the form they will
-    be tested in
-  draft-candidates -> size-market: the same candidates. Three branches
-    read one record
-  name-signals -> test-coverage: each signal, with the source it would
-    be read from
-  name-signals -> clear-data: the signals, the data sets under them,
-    and the terms each set came with
-  test-coverage -> settle-profile: how often each signal is present,
-    what the rest cost to fill, and which ones arrive too late to
-    qualify on
-  back-test -> settle-profile: what each candidate would have selected,
-    and what actually happened to those accounts
-  size-market -> settle-profile: how many accounts of each shape exist,
-    and where the count came from
-  clear-data -> settle-profile: the data the analysis may rest on, and
-    the traits that may be used to target
-  settle-profile -> write-profile: the chosen profile, why it won over
-    the others, and everyone who disagreed and on what
-  write-profile -> issue-version: the profile in the wording it was
-    agreed in
-  issue-version -> hand-over: the profile at its number, and what
-    changed from the version it replaces
-  hand-over -> set-review: what each receiving agent said it would
-    change, and the date it said it by
-  set-review -> record-learnings: the review date and the conditions
-    that bring the profile back sooner
+  take-in-question -> read-record / outside-evidence / first-hand
+    [question-and-owings]: the question, what each agent owes, and the
+    date it is owed. Three agents read one record
+  read-record -> find-traits [customer-record]: the accounts, what each
+    one bought and renewed, and when each one left
+  outside-evidence -> find-traits [market-evidence]: the market
+    evidence, with a source line under every fact and the date it was
+    read
+  first-hand -> find-traits [first-hand-accounts]: what the sellers and
+    the customers said, attributed to the person who said it
+  find-traits -> draft-candidates [predictive-traits]: the traits that
+    separate the customers who stayed, each with how strongly it does
+    that and the assumptions the number rests on
+  draft-candidates -> name-signals [candidate-profiles]: the candidate
+    profiles, each with the evidence behind it
+  draft-candidates -> back-test [candidates-to-test]: the candidates in
+    the form they will be tested in
+  draft-candidates -> size-market [candidates-to-size]: the same
+    candidates. Three branches read one record
+  name-signals -> test-coverage [qualifying-signals]: each signal, with
+    the source it would be read from
+  name-signals -> clear-data [signal-data-sources]: the signals, the
+    data sets under them, and the terms each set came with
+  test-coverage -> settle-profile [coverage-findings]: how often each
+    signal is present, what the rest cost to fill, and which ones arrive
+    too late to qualify on
+  back-test -> settle-profile [back-test-results]: what each candidate
+    would have selected, and what actually happened to those accounts
+  size-market -> settle-profile [market-sizes]: how many accounts of
+    each shape exist, and where the count came from
+  clear-data -> settle-profile [data-clearance]: the data the analysis
+    may rest on, and the traits that may be used to target
+  settle-profile -> write-profile [chosen-profile]: the chosen profile,
+    why it won over the others, and everyone who disagreed and on what
+  write-profile -> issue-version [agreed-wording]: the profile in the
+    wording it was agreed in
+  issue-version -> hand-over [versioned-profile]: the profile at its
+    number, and what changed from the version it replaces
+  hand-over -> set-review [adoption-answers]: what each receiving agent
+    said it would change, and the date it said it by
+  set-review -> record-learnings [review-conditions]: the review date
+    and the conditions that bring the profile back sooner
+deviations:
+  test-coverage -> name-signals [signals-too-late]: no signal can be
+    seen early enough to qualify on, so the signals are named again
+  back-test -> draft-candidates [no-candidate-holds]: no candidate holds
+    up against the record, so the candidates are drafted again on the
+    traits the record supports
+  size-market -> draft-candidates [market-too-small]: the market for the
+    chosen shape is too small, so the candidates are drafted again
+  clear-data -> draft-candidates [source-ruled-out]: legal rules out a
+    source or a trait, so every candidate resting on it is rebuilt
+    without it or dropped
+  settle-profile -> draft-candidates [room-cannot-agree]: the room
+    cannot agree on one profile, so the candidates are drafted again
+    against what the disagreement showed
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sales side and

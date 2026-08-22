@@ -71,6 +71,9 @@ from: ref/mkt/pitch-earned-media v1
 owner: <who>                          effective: <date>
 trigger: a story angle is judged worth telling in <your planning
          process>
+         watch: record=<the story angle>
+                system=<your planning process>
+                change=<an angle is judged worth telling>
 concurrency: runs may overlap - <how many> stories in flight at once
 goal: coverage from the reporters this story fits, offered out of
       material a named signer approved, with every contact logged and
@@ -145,36 +148,58 @@ run-scoped:
              every: <cadence>
              from: send-pitches   until: run close
 handoffs:
-  take-in-angle -> test-angle: what the story is, who it is for and why
-    it matters now, in one line that every later decision can be tested
-    against
-  test-angle -> gather-proof: the claims the story rests on, each one
-    marked as needing a source
-  test-angle -> choose-reporters: the story as it will be offered, and
-    the readers it is meant to reach
-  gather-proof -> produce-material: the evidence, with a source line
-    for every fact and the name of whoever will confirm it
-  choose-reporters -> decide-speaker: the reporters, each with the
-    reason they are on the list and how they want to be approached
-  decide-speaker -> produce-material: the spokesperson's name and the
-    subjects that person may speak on
-  produce-material -> get-sign-offs: the pitch note, the release, the
-    fact sheet and the images at a version
-  get-sign-offs -> set-timing: the approved material at the signed
-    version. A later change voids the approval and sign-offs run again
-  set-timing -> send-pitches: the date the story is offered, the date
-    it may run, and any exclusive that was agreed
-  send-pitches -> follow-up: who was sent what, at which version, on
-    which date
-  follow-up -> prepare-speaker: which reporters agreed to talk, what
-    each of them asked for, and the date each interview is booked for
-  prepare-speaker -> run-interviews: the questions to expect and the
-    answers the sign-off allows
-  run-interviews -> answer-questions: what each reporter asked for
-    afterwards, and the date it was promised
-  answer-questions -> log-coverage: what was sent after each interview,
-    at its version
-  log-coverage -> record-learnings: the coverage record, as delivered
+  take-in-angle -> test-angle [story-line]: what the story is, who it
+    is for and why it matters now, in one line that every later
+    decision can be tested against
+  test-angle -> gather-proof [claims-to-source]: the claims the story
+    rests on, each one marked as needing a source
+  test-angle -> choose-reporters [story-as-offered]: the story as it
+    will be offered, and the readers it is meant to reach
+  gather-proof -> produce-material [evidence]: the evidence, with a
+    source line for every fact and the name of whoever will confirm it
+  choose-reporters -> decide-speaker [reporter-list]: the reporters,
+    each with the reason they are on the list and how they want to be
+    approached
+  decide-speaker -> produce-material [speaker-remit]: the
+    spokesperson's name and the subjects that person may speak on
+  produce-material -> get-sign-offs [pitch-material]: the pitch note,
+    the release, the fact sheet and the images at a version
+  get-sign-offs -> set-timing [signed-material]: the approved material
+    at the signed version. A later change voids the approval and
+    sign-offs run again
+  set-timing -> send-pitches [offer-dates]: the date the story is
+    offered, the date it may run, and any exclusive that was agreed
+  send-pitches -> follow-up [pitch-log]: who was sent what, at which
+    version, on which date
+  follow-up -> prepare-speaker [booked-interviews]: which reporters
+    agreed to talk, what each of them asked for, and the date each
+    interview is booked for
+  prepare-speaker -> run-interviews [question-prep]: the questions to
+    expect and the answers the sign-off allows
+  run-interviews -> answer-questions [reporter-asks]: what each
+    reporter asked for afterwards, and the date it was promised
+  answer-questions -> log-coverage [follow-up-material]: what was sent
+    after each interview, at its version
+  log-coverage -> record-learnings [coverage-record]: the coverage
+    record, as delivered
+deviations:
+  test-angle -> take-in-angle [angle-will-not-carry]: no reporter would
+    run this, so the angle is taken in again and written down
+    differently before anything else is spent on it
+  get-sign-offs -> produce-material [changes-requested]: the signers
+    ask for a change, so only the part they named is made again
+  follow-up -> produce-material [different-angle-wanted]: a reporter
+    wants the story from a different angle, so the material for that
+    angle is made and signed before it is offered
+  answer-questions -> gather-proof [claim-needs-a-source]: a reporter's
+    question turns on a claim with no source behind it, so the proof is
+    gathered again
+  answer-questions -> get-sign-offs [unsigned-answer]: the answer a
+    reporter asked for is material nobody signed, so it goes through
+    sign-offs before it is sent
+  log-coverage -> answer-questions [wrong-fact-published]: a piece runs
+    with a wrong fact or a misquoted spokesperson, so the correct
+    source goes back to that reporter
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the media contact, the

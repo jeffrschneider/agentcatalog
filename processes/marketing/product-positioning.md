@@ -84,6 +84,10 @@ from: ref/mkt/product-positioning v1
 owner: <who>                          effective: <date>
 trigger: a market question about one product that <who> decides is
          worth settling
+         watch: record=<the market question>
+                system=<your decision record>
+                change=<a question about one product is judged worth
+                settling>
 concurrency: one run per product - two runs would put two answers to
              the same question in front of the same people
 goal: an agreed product-level positioning and messaging, sourced,
@@ -183,41 +187,68 @@ run-scoped:
   spend  - runs allocate-and-reconcile    owner: researcher
            from: market-evidence   until: test-on-outsiders
 handoffs:
-  take-in-question -> read-standards: the question the positioning has
-    to settle, the product it is about, and the date it is due
+  take-in-question -> read-standards [the-question]: the question the
+    positioning has to settle, the product it is about, and the date it
+    is due
   read-standards -> market-evidence / product-record / deal-record /
-    interview-makers: the company position and the customer profile,
-    each at its version. Four sources read one record
-  market-evidence -> competing-choices: what buyers weigh, what rival
-    products claim, and the category's search demand, each line with
-    its source and the date it was pulled
-  product-record -> draft-candidates: which capabilities customers use
-    and which they leave alone, and what support keeps hearing, each
-    line naming the system it came from and the date of the reading
-  deal-record -> competing-choices: what sellers run into in a live
-    deal, and the reasons written on the deals won and lost
-  interview-makers -> draft-candidates: what the product does today,
-    attributed to the person who said it, and what is committed next
-  competing-choices -> draft-candidates: what a buyer picks instead of
-    this product, including doing nothing
-  draft-candidates -> test-on-evidence: the candidate positions at a
-    version, each with the case for it and what it would rule out
-  test-on-evidence -> test-on-outsiders: the positions the evidence
-    carries, and the claims it will not support in the others
-  test-on-outsiders -> choose-position: what each buyer and seller
-    said, attributed, beside the position it was said about
-  choose-position -> write-messaging: the chosen position, the reasons
-    for it, and anyone who disagreed and what they said
-  write-messaging -> record-proof: the messaging at a version, claim
-    by claim
-  record-proof -> get-sign-offs: the messaging with a source under
-    every claim, and any claim still unsourced marked as unsourced
-  get-sign-offs -> issue-version: the signed positioning and messaging
-    at the version the signers read
-  issue-version -> review-conditions: the numbered version, what it
-    says, and the date it applies from
-  review-conditions -> record-learnings: the conditions that reopen
-    this answer, and the date it comes back up anyway
+    interview-makers [standards-in-force]: the company position and the
+    customer profile, each at its version. Four sources read one record
+  market-evidence -> competing-choices [market-findings]: what buyers
+    weigh, what rival products claim, and the category's search demand,
+    each line with its source and the date it was pulled
+  product-record -> draft-candidates [usage-and-support]: which
+    capabilities customers use and which they leave alone, and what
+    support keeps hearing, each line naming the system it came from and
+    the date of the reading
+  deal-record -> competing-choices [deal-findings]: what sellers run
+    into in a live deal, and the reasons written on the deals won and
+    lost
+  interview-makers -> draft-candidates [product-truth]: what the
+    product does today, attributed to the person who said it, and what
+    is committed next
+  competing-choices -> draft-candidates [alternatives]: what a buyer
+    picks instead of this product, including doing nothing
+  draft-candidates -> test-on-evidence [candidate-positions]: the
+    candidate positions at a version, each with the case for it and
+    what it would rule out
+  test-on-evidence -> test-on-outsiders [evidence-verdicts]: the
+    positions the evidence carries, and the claims it will not support
+    in the others
+  test-on-outsiders -> choose-position [outsider-reactions]: what each
+    buyer and seller said, attributed, beside the position it was said
+    about
+  choose-position -> write-messaging [chosen-position]: the chosen
+    position, the reasons for it, and anyone who disagreed and what
+    they said
+  write-messaging -> record-proof [messaging-draft]: the messaging at a
+    version, claim by claim
+  record-proof -> get-sign-offs [sourced-messaging]: the messaging with
+    a source under every claim, and any claim still unsourced marked as
+    unsourced
+  get-sign-offs -> issue-version [signed-positioning]: the signed
+    positioning and messaging at the version the signers read
+  issue-version -> review-conditions [issued-version]: the numbered
+    version, what it says, and the date it applies from
+  review-conditions -> record-learnings [reopen-conditions]: the
+    conditions that reopen this answer, and the date it comes back up
+    anyway
+deviations:
+  test-on-evidence -> draft-candidates [evidence-will-not-carry]: the
+    evidence does not support what a position claims, so the position
+    is narrowed or the evidence is commissioned and the candidates are
+    drafted again
+  test-on-outsiders -> draft-candidates [buyers-do-not-see-it]: buyers
+    cannot recognize the product in any position, or cannot tell it
+    apart from what they already use, so the candidates are drafted
+    again
+  choose-position -> draft-candidates [none-worth-backing]: the people
+    who decide back none of the candidates, and what was turned down is
+    recorded so the next set leaves it out
+  record-proof -> write-messaging [claim-without-a-source]: a claim in
+    the messaging has no source, so the messaging drops the claim or
+    waits for the source
+  get-sign-offs -> write-messaging [changes-requested]: the signers ask
+    for a change, so only the part they named is written again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the product owner, leadership,

@@ -71,6 +71,10 @@ from: ref/sls/inspect-a-deal v1
 owner: <who>                          effective: <date>
 trigger: a deal crosses <your inspection threshold>, or a forecast call
          asks for it
+         watch: record=<deal> system=<your CRM>
+                change=<a deal crosses the inspection threshold>
+         or watch: record=<deal> system=<your CRM>
+                change=<a forecast call asks for an inspection>
 concurrency: runs may overlap - <how many> inspections run at once, and
              one deal is inspected once per <cycle>
 goal: every inspected deal leaves with a category, with each claim it
@@ -158,39 +162,59 @@ run-scoped:
             every: <cadence>
             from: agree-actions   until: run close
 handoffs:
-  take-in-deal -> pull-record: the deal, and the question the
-    inspection has to settle
-  pull-record -> read-activity: the deal as the system holds it, with
-    every change to stage, amount and date carrying its author
-  pull-record -> name-buyers: the same record, plus the contacts
-    already attached to the deal
-  pull-record -> check-money: the amount and the terms as recorded
-  read-activity -> test-the-words: who was met and when, with what was
-    written down after each meeting
-  name-buyers -> test-the-words: the people who would have to say yes,
-    so their words can be looked for rather than the champion's
-  name-buyers -> read-competition: the same people, and which of them
-    have a relationship with somebody else
-  test-the-words -> walk-steps: what the customer said, dated and
-    quoted, and every place the record holds nothing
-  check-money -> walk-steps: whether the money exists, whose it is, and
-    which approval it still has to pass
-  read-competition -> walk-steps: who else is in it and what would have
-    to be true to win
-  walk-steps -> test-date: the remaining steps, each with an owner and
-    the time it takes
-  test-date -> mark-claims: whether the steps fit before the date, and
-    by how much they miss when they do not
-  mark-claims -> name-dependency: every claim marked evidenced,
-    asserted or absent, with the record behind each evidenced one
-  name-dependency -> put-to-owner: what the deal rests on, and the gaps
-    the owner is being asked to answer
-  put-to-owner -> agree-actions: the owner's answers as given, and the
-    gaps that are still open after them
-  agree-actions -> set-category: the actions, their owners and their
-    dates, and what is left unaddressed
-  set-category -> record-inspection: the category, who set it, and the
-    reason they gave
+  take-in-deal -> pull-record [inspection-question]: the deal, and the
+    question the inspection has to settle
+  pull-record -> read-activity [deal-record]: the deal as the system
+    holds it, with every change to stage, amount and date carrying its
+    author
+  pull-record -> name-buyers [deal-contacts]: the same record, plus
+    the contacts already attached to the deal
+  pull-record -> check-money [amount-and-terms]: the amount and the
+    terms as recorded
+  read-activity -> test-the-words [meeting-history]: who was met and
+    when, with what was written down after each meeting
+  name-buyers -> test-the-words [people-who-decide]: the people who
+    would have to say yes, so their words can be looked for rather
+    than the champion's
+  name-buyers -> read-competition [buyer-relationships]: the same
+    people, and which of them have a relationship with somebody else
+  test-the-words -> walk-steps [customer-words]: what the customer
+    said, dated and quoted, and every place the record holds nothing
+  check-money -> walk-steps [budget-finding]: whether the money
+    exists, whose it is, and which approval it still has to pass
+  read-competition -> walk-steps [competitive-position]: who else is
+    in it and what would have to be true to win
+  walk-steps -> test-date [remaining-steps]: the remaining steps, each
+    with an owner and the time it takes
+  test-date -> mark-claims [date-test]: whether the steps fit before
+    the date, and by how much they miss when they do not
+  mark-claims -> name-dependency [marked-claims]: every claim marked
+    evidenced, asserted or absent, with the record behind each
+    evidenced one
+  name-dependency -> put-to-owner [dependencies-and-gaps]: what the
+    deal rests on, and the gaps the owner is being asked to answer
+  put-to-owner -> agree-actions [owner-answers]: the owner's answers
+    as given, and the gaps that are still open after them
+  agree-actions -> set-category [dated-actions]: the actions, their
+    owners and their dates, and what is left unaddressed
+  set-category -> record-inspection [deal-category]: the category, who
+    set it, and the reason they gave
+deviations:
+  test-the-words -> read-activity [no-customer-words]: the record
+    holds nothing the customer said, so the activity is read again
+    before the deal is marked as resting on assertion
+  test-date -> walk-steps [steps-do-not-fit]: the remaining steps do
+    not fit before the close date, so the steps are walked again or
+    the date moves
+  mark-claims -> test-the-words [claim-unsupported]: a claim has
+    nothing behind it, so the customer's own words are looked for
+    again before it is marked
+  put-to-owner -> mark-claims [new-evidence]: the owner brings
+    evidence the record never held, so the claims are marked again
+    with it and the evidence is written into the record
+  set-category -> agree-actions [gaps-too-large]: the gaps are too
+    large for a category, so the actions are agreed again rather than
+    the category being guessed
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the deal owner and the manager

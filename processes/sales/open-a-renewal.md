@@ -63,6 +63,8 @@ PROCESS: open a renewal               id: <team>/open-a-renewal   v1
 from: ref/sls/open-a-renewal v1
 owner: <who>                          effective: <date>
 trigger: an agreement reaches <your notice window> before its end date
+         watch: record=<agreement> system=<your agreement store>
+                change=<the end date comes within the notice window>
 concurrency: runs may overlap - one agreement is worked by one run at a
              time, and <how many> positions are open at once
 goal: one written position per agreement - the term, the ask, the floor
@@ -136,32 +138,48 @@ run-scoped:
                 every: <cadence>
                 from: open-clock      until: run close
 handoffs:
-  open-clock -> read-agreement: the agreement, its end date, and the
-    date the position is due
-  open-clock -> read-standing: the account and the period to read
-  read-agreement -> list-bought: the signed term, every amendment, and
-    the clause that says what happens if nobody acts
-  read-agreement -> check-promises: what the agreement says the
-    organization would deliver
-  list-bought -> read-usage: the entitlement at the signed level, so
-    use has something to be measured against
-  read-usage -> score-risk: use against entitlement, period by
-    period, with the system every number came from
-  read-standing -> score-risk: the support and invoice history, dated,
-    and every named contact who has left
-  check-promises -> score-risk: the commitments still open, each with
-    who owes it and since when
-  score-risk -> decide-shape: the score, the model version, and the
-    reason behind the score in words
-  decide-shape -> set-ask: the term, the entitlement and the changes
-    the organization intends to ask for
-  set-ask -> approve-position: the ask, the floor, and what the floor
-    costs compared with the current term
-  approve-position -> agree-owner: the position at the signed version.
-    A later change to the ask or the floor voids the approval
-  agree-owner -> write-brief: the owner, the date and the first message
-  write-brief -> hand-over: the brief, at a version, with the usage and
-    the standing attached rather than summarized
+  open-clock -> read-agreement [agreement-and-dates]: the agreement,
+    its end date, and the date the position is due
+  open-clock -> read-standing [account-and-period]: the account and the
+    period to read
+  read-agreement -> list-bought [signed-term]: the signed term, every
+    amendment, and the clause that says what happens if nobody acts
+  read-agreement -> check-promises [promised-delivery]: what the
+    agreement says the organization would deliver
+  list-bought -> read-usage [entitlement]: the entitlement at the
+    signed level, so use has something to be measured against
+  read-usage -> score-risk [usage-reading]: use against entitlement,
+    period by period, with the system every number came from
+  read-standing -> score-risk [account-standing]: the support and
+    invoice history, dated, and every named contact who has left
+  check-promises -> score-risk [open-commitments]: the commitments
+    still open, each with who owes it and since when
+  score-risk -> decide-shape [risk-score]: the score, the model
+    version, and the reason behind the score in words
+  decide-shape -> set-ask [next-term-shape]: the term, the entitlement
+    and the changes the organization intends to ask for
+  set-ask -> approve-position [ask-and-floor]: the ask, the floor, and
+    what the floor costs compared with the current term
+  approve-position -> agree-owner [approved-position]: the position at
+    the signed version. A later change to the ask or the floor voids
+    the approval
+  agree-owner -> write-brief [opening-plan]: the owner, the date and
+    the first message
+  write-brief -> hand-over [renewal-brief]: the brief, at a version,
+    with the usage and the standing attached rather than summarized
+deviations:
+  read-usage -> list-bought [usage-gaps]: the usage record has periods
+    nobody can read, so the entitlement list is worked again and the
+    gap is closed or left visible in the brief
+  decide-shape -> check-promises [commitments-still-open]: a
+    commitment made at signature is still open, so it goes back to the
+    delivery side before the next term is decided
+  approve-position -> decide-shape [ask-not-approved]: the approver
+    will not sign, so the shape of the next term is decided again
+    rather than the price alone
+  write-brief -> read-usage [evidence-too-thin]: the evidence does not
+    carry the ask, so the usage is read again before the brief is
+    written
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the contracts

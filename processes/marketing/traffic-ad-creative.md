@@ -83,6 +83,9 @@ from: ref/mkt/traffic-ad-creative v1
 owner: <who>                          effective: <date>
 trigger: creative is approved against a media plan line in <your
          creative process>
+         watch: record=<approved creative>
+                system=<your creative process>
+                change=<creative is approved against a media plan line>
 concurrency: runs may overlap - <how many> live at once
 goal: every plan line carrying ads that are sized to their placement,
       signed at the version that runs, pointed at a destination that
@@ -185,45 +188,68 @@ run-scoped:
            cap: <n>/day
            from: switch-on   until: run close
 handoffs:
-  take-in-creative -> placement-specs: the plan lines this creative
-    fills, each with the channel, the dates and the audience it was
-    bought against
-  take-in-creative -> build-tracking: the same lines, so that the
-    parameters are built against the plan while the ads are still being
-    made
-  take-in-creative -> load-audiences: the audience each line is bought
-    against, at the version the plan named
-  placement-specs -> cut-the-set: every placement's file size, aspect
-    ratio, duration and safe area, in one list
-  placement-specs -> write-the-text: every placement's character limits,
-    field by field
-  clear-rights -> cut-the-set: the verdict on each source, naming the
-    channels and territories it is cleared for
-  cut-the-set -> add-disclosures: the sized files at a version, with
-    the space each required line will occupy
-  write-the-text -> add-disclosures: the text at a version, field by
-    field, inside the limits it was written to
-  add-disclosures -> score-the-set: the adapted set at a version, with
-    the market list each piece will run in
-  score-the-set -> get-sign-offs: the scored list, with the rule and the
-    market behind every failure
-  get-sign-offs -> build-ad-units: the approved versions at the signed
-    version. A piece changed afterward voids the approval and sign-offs
-    run again
-  build-tracking -> check-destinations: the parameters and the
-    destinations they hang on, while the pages can still be changed
-  check-destinations -> build-ad-units: a dated record showing a real
-    visit arriving through each destination
-  load-audiences -> build-ad-units: the audiences as loaded, with the
-    count sent, the count accepted and the match rate
-  build-ad-units -> set-flights: the units as built, each carrying the
-    plan line it belongs to
-  set-flights -> check-the-buy: the buy as configured, against the plan
-    version it was placed under
-  check-the-buy -> switch-on: the scored list, with the plan line or the
-    rule behind every failure
-  check-live-ads -> record-live-set: what actually served in the first
-    hours, beside what was ordered
+  take-in-creative -> placement-specs [plan-lines]: the plan lines this
+    creative fills, each with the channel, the dates and the audience
+    it was bought against
+  take-in-creative -> build-tracking [lines-for-tracking]: the same
+    lines, so that the parameters are built against the plan while the
+    ads are still being made
+  take-in-creative -> load-audiences [lines-for-audiences]: the
+    audience each line is bought against, at the version the plan named
+  placement-specs -> cut-the-set [file-specs]: every placement's file
+    size, aspect ratio, duration and safe area, in one list
+  placement-specs -> write-the-text [character-limits]: every
+    placement's character limits, field by field
+  clear-rights -> cut-the-set [source-clearances]: the verdict on each
+    source, naming the channels and territories it is cleared for
+  cut-the-set -> add-disclosures [sized-files]: the sized files at a
+    version, with the space each required line will occupy
+  write-the-text -> add-disclosures [placement-text]: the text at a
+    version, field by field, inside the limits it was written to
+  add-disclosures -> score-the-set [adapted-set]: the adapted set at a
+    version, with the market list each piece will run in
+  score-the-set -> get-sign-offs [set-scores]: the scored list, with
+    the rule and the market behind every failure
+  get-sign-offs -> build-ad-units [approved-versions]: the approved
+    versions at the signed version. A piece changed afterward voids the
+    approval and sign-offs run again
+  build-tracking -> check-destinations [tracking-parameters]: the
+    parameters and the destinations they hang on, while the pages can
+    still be changed
+  check-destinations -> build-ad-units [destination-proof]: a dated
+    record showing a real visit arriving through each destination
+  load-audiences -> build-ad-units [loaded-audiences]: the audiences as
+    loaded, with the count sent, the count accepted and the match rate
+  build-ad-units -> set-flights [ad-units]: the units as built, each
+    carrying the plan line it belongs to
+  set-flights -> check-the-buy [configured-buy]: the buy as configured,
+    against the plan version it was placed under
+  check-the-buy -> switch-on [buy-scores]: the scored list, with the
+    plan line or the rule behind every failure
+  check-live-ads -> record-live-set [what-actually-served]: what
+    actually served in the first hours, beside what was ordered
+deviations:
+  cut-the-set -> clear-rights [source-not-cleared]: a source turns out
+    not to be cleared for a channel the plan names, so the rights are
+    read again before that size is cut
+  score-the-set -> cut-the-set [failures-in-the-files]: the score finds
+    failures in the sized files, so they are cut again
+  score-the-set -> write-the-text [failures-in-the-text]: the score
+    finds failures in the text, so it is written again
+  get-sign-offs -> add-disclosures [sign-off-changes]: a signer asks
+    for changes, so the disclosures and whatever else they named are
+    done again
+  check-destinations -> build-tracking [visit-not-recorded]: a
+    destination does not record the test visit, so the parameters are
+    built again before any ad points at it
+  check-the-buy -> set-flights [flight-misses-the-plan]: a flight or a
+    budget does not match the plan line, so the flights are set again
+  check-the-buy -> build-ad-units [wrong-creative-on-a-line]: the wrong
+    creative sits on a line, so the ad units are built again
+  check-live-ads -> build-ad-units [ad-will-not-render]: an ad will not
+    render, so it is paused and the unit is built again
+  check-live-ads -> check-destinations [clicks-arrive-nowhere]: the
+    clicks arrive nowhere, so the destinations are checked again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand, legal and rights

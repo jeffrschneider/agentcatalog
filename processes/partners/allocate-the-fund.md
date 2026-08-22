@@ -80,6 +80,10 @@ from: ref/prt/allocate-the-fund v1
 owner: <who>                          effective: <date>
 trigger: a partner marketing budget is approved for a period in <your
          marketing budget process>
+         watch: record=<marketing budget>
+                system=<your marketing budget process>
+                change=<a partner marketing budget is approved for a
+                period>
 concurrency: one fund period is allocated by one run at a time, and
              <how many> periods are open at once
 goal: every eligible partner told what they have, what it may buy, and
@@ -182,35 +186,57 @@ run-scoped:
                every: <cadence>
                from: tell-partners  until: run close
 handoffs:
-  take-in-budget -> read-last-period: the approved amount, the period,
-    and the list of partners it covers
-  read-last-period -> choose-rule: last period's allocation, claims and
-    unspent money, per partner, with the system each figure came from
-  read-delivered -> choose-rule: what each partner delivered over the
-    look-back period, dated, with the source of every count
-  choose-rule -> set-eligible: the rule at a version, and the inputs it
-    reads
-  set-eligible -> set-caps: the activities the fund may buy, and the
-    ones it may not, each with the reason
-  set-caps -> run-rule: the caps, the match, and the size of the pool
-  run-rule -> check-money: one amount per partner, each with the inputs
-    and the rule version behind it
-  check-money -> check-entitlement: the amounts, the total, and the
-    distance from the approved budget
-  check-entitlement -> approve-fund: the amounts, with every partner
-    who may not be funded named and the reason attached
-  approve-fund -> open-fund: the signed amounts. A later change to any
-    amount voids the approval and it runs again
-  open-fund -> publish-rules: the balance each partner now has, and the
-    account it is paid from
-  publish-rules -> tell-partners: the published rules at a version, and
-    the address a partner reads them at
-  tell-partners -> watch-fund: what each partner was told, on what date
-  watch-fund -> move-money: what is committed, claimed and free, per
-    partner, with the days left in the period
-  move-money -> report-fund: every amount moved, from whom, to what,
-    and who agreed it
-  report-fund -> record-learnings: the report, as delivered
+  take-in-budget -> read-last-period [approved-budget]: the approved
+    amount, the period, and the list of partners it covers
+  read-last-period -> choose-rule [last-period-fund]: last period's
+    allocation, claims and unspent money, per partner, with the system
+    each figure came from
+  read-delivered -> choose-rule [partner-delivery]: what each partner
+    delivered over the look-back period, dated, with the source of
+    every count
+  choose-rule -> set-eligible [allocation-rule]: the rule at a version,
+    and the inputs it reads
+  set-eligible -> set-caps [eligible-activities]: the activities the
+    fund may buy, and the ones it may not, each with the reason
+  set-caps -> run-rule [caps-and-pool]: the caps, the match, and the
+    size of the pool
+  run-rule -> check-money [partner-amounts]: one amount per partner,
+    each with the inputs and the rule version behind it
+  check-money -> check-entitlement [budget-fit]: the amounts, the
+    total, and the distance from the approved budget
+  check-entitlement -> approve-fund [entitlement-checks]: the amounts,
+    with every partner who may not be funded named and the reason
+    attached
+  approve-fund -> open-fund [signed-allocation]: the signed amounts. A
+    later change to any amount voids the approval and it runs again
+  open-fund -> publish-rules [opened-balances]: the balance each
+    partner now has, and the account it is paid from
+  publish-rules -> tell-partners [published-rules]: the published rules
+    at a version, and the address a partner reads them at
+  tell-partners -> watch-fund [partner-notices]: what each partner was
+    told, on what date
+  watch-fund -> move-money [fund-position]: what is committed, claimed
+    and free, per partner, with the days left in the period
+  move-money -> report-fund [reallocations]: every amount moved, from
+    whom, to what, and who agreed it
+  report-fund -> record-learnings [fund-report]: the report, as
+    delivered
+deviations:
+  check-money -> set-caps [amounts-exceed-budget]: the amounts do not
+    fit the approved budget, so the caps, the match and the pool are
+    set again before the rule is run
+  check-entitlement -> run-rule [partner-not-entitled]: a partner is
+    not entitled, so their amount comes out and the rule is run again
+    on the partners who remain
+  approve-fund -> choose-rule [allocation-not-signed]: the signer will
+    not sign the amounts, so the rule is chosen again rather than one
+    partner's number changed by hand
+  watch-fund -> choose-rule [rule-disputed]: a partner disputes the
+    rule behind their amount, and the rule turns out to be wrong, so it
+    is chosen again and every partner it touched is recalculated
+  move-money -> tell-partners [amounts-moved]: money is moved to a
+    partner or a purpose that will use it, so every partner whose
+    amount changed is told before it moves
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the marketing

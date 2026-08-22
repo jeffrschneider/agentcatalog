@@ -65,6 +65,7 @@ PROCESS: marketing performance report id: <team>/marketing-performance-report   
 from: ref/mkt/marketing-performance-report v1
 owner: <who>                          effective: <date>
 trigger: a reporting period closes on <your reporting calendar>
+         watch: every=<reporting period>
 concurrency: runs may overlap - a period can close while the last
              report is still open
 goal: every run of the period represented, each result set beside what
@@ -131,22 +132,36 @@ run-scoped:
                 every: <cadence>
                 from: ask-sources   until: publish-report
 handoffs:
-  set-scope -> ask-sources: the period, the runs it covers and the
-    questions, in one record every source is asked from
+  set-scope -> ask-sources [report-scope]: the period, the runs it
+    covers and the questions, in one record every source is asked from
   ask-sources -> pull-numbers / paid-account / campaign-account /
-    content-account / audience-account / check-tracking: the same
-    request and the same due date. Six sources read one record
-  pull-numbers -> set-against-plan: the results, each line naming its
-    source and the date it was pulled
-  paid-account -> reconcile-spend: the spend by campaign and by
-    channel, at the figures the report will carry
-  set-against-plan -> write-account: each result beside the commitment
-    it is measured against, with every gap left visible
-  reconcile-spend -> write-account: the spend figures as finance signed
-    them
-  write-account -> check-account: the account at a version
-  check-account -> publish-report: the account, with every correction
-    the named agents asked for and every disagreement recorded
+    content-account / audience-account / check-tracking
+    [source-request]: the same request and the same due date. Six
+    sources read one record
+  pull-numbers -> set-against-plan [channel-results]: the results, each
+    line naming its source and the date it was pulled
+  paid-account -> reconcile-spend [spend-figures]: the spend by campaign
+    and by channel, at the figures the report will carry
+  set-against-plan -> write-account [results-versus-plan]: each result
+    beside the commitment it is measured against, with every gap left
+    visible
+  reconcile-spend -> write-account [signed-spend]: the spend figures as
+    finance signed them
+  write-account -> check-account [draft-account]: the account at a
+    version
+  check-account -> publish-report [checked-account]: the account, with
+    every correction the named agents asked for and every disagreement
+    recorded
+deviations:
+  set-against-plan -> pull-numbers [numbers-disagree]: two sources give
+    figures that do not agree, so the numbers are pulled again and both
+    figures stay in the record
+  reconcile-spend -> paid-account [spend-mismatch]: the spend figures do
+    not match the books, so only the lines finance named are accounted
+    for again and the report date does not move
+  check-account -> write-account [account-is-wrong]: an agent says the
+    account is wrong about its run, so only the part that agent named is
+    written again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>

@@ -76,6 +76,10 @@ from: ref/rev/watch-the-response-clock v1
 owner: <who>                           effective: <date>
 trigger: the <period> reporting window closes, or <who> asks for the
          clock outside the cadence
+         watch: every=<period>
+         or watch: record=<a request for the clock> system=<the
+                reporting store>
+                change=<somebody asks for the clock outside the cadence>
 concurrency: one run per window per clock set - a window is reported
              once, and a correction is a new run against the same window
 goal: every clock in force reported against what actually happened,
@@ -156,38 +160,54 @@ run-scoped:
              every: <cadence>
              from: measure-runs   until: publish-report
 handoffs:
-  take-in-promise -> name-coverage: the clocks in force at their
-    published versions, the window, and who each promise was made to
-  name-coverage -> read-sources: per clock, the start event, the stop
-    event and the pause states, written so two people read them the same
-  read-sources -> check-stamps: the system behind every stamp, and
-    the last time that system was known to be recording
-  check-stamps -> pull-runs: which stamps may be counted, and every
-    clock that cannot be measured this window with the reason
-  pull-runs -> measure-runs: one row per run, with its start, its stop,
-    its queue and its owner
-  measure-runs -> set-aside: every run marked met, missed or open, with
-    the elapsed time and the clock it was measured against
-  set-aside -> break-down: the runs that count, and the set-aside list
-    with a reason and an agreeing person against each one
-  set-aside -> compare-period: the same counting rule, so this window
-    and the ones before it are compared on the same basis
-  break-down -> find-pattern: the misses cut by queue, owner, source and
-    arrival hour, with the count in every cut
-  find-pattern -> write-report: what the misses share, and what the
-    evidence does not support saying
-  compare-period -> write-report: the movement against <how many> prior
-    windows, and whether it is inside normal variation
-  write-report -> check-numbers: the report at a version, every figure
-    naming the query it came from
-  check-numbers -> publish-report: the reviewed report, with the name of
-    the person who checked it
-  publish-report -> queue-by-queue: the address the report is readable
-    at, and the slice belonging to each queue
-  queue-by-queue -> open-the-work: what each manager said they would
-    change, and what they said they could not
-  open-the-work -> keep-period: the work that was opened, its owner and
-    its date
+  take-in-promise -> name-coverage [clocks-and-window]: the clocks in
+    force at their published versions, the window, and who each promise
+    was made to
+  name-coverage -> read-sources [clock-definitions]: per clock, the
+    start event, the stop event and the pause states, written so two
+    people read them the same
+  read-sources -> check-stamps [stamp-sources]: the system behind every
+    stamp, and the last time that system was known to be recording
+  check-stamps -> pull-runs [trusted-stamps]: which stamps may be
+    counted, and every clock that cannot be measured this window with
+    the reason
+  pull-runs -> measure-runs [runs-in-window]: one row per run, with its
+    start, its stop, its queue and its owner
+  measure-runs -> set-aside [measured-runs]: every run marked met,
+    missed or open, with the elapsed time and the clock it was measured
+    against
+  set-aside -> break-down [counted-runs]: the runs that count, and the
+    set-aside list with a reason and an agreeing person against each one
+  set-aside -> compare-period [counting-rule]: the same counting rule,
+    so this window and the ones before it are compared on the same basis
+  break-down -> find-pattern [miss-cuts]: the misses cut by queue,
+    owner, source and arrival hour, with the count in every cut
+  find-pattern -> write-report [miss-pattern]: what the misses share,
+    and what the evidence does not support saying
+  compare-period -> write-report [period-movement]: the movement against
+    <how many> prior windows, and whether it is inside normal variation
+  write-report -> check-numbers [draft-report]: the report at a version,
+    every figure naming the query it came from
+  check-numbers -> publish-report [checked-report]: the reviewed report,
+    with the name of the person who checked it
+  publish-report -> queue-by-queue [published-report]: the address the
+    report is readable at, and the slice belonging to each queue
+  queue-by-queue -> open-the-work [manager-commitments]: what each
+    manager said they would change, and what they said they could not
+  open-the-work -> keep-period [opened-work]: the work that was opened,
+    its owner and its date
+deviations:
+  check-stamps -> name-coverage [no-reliable-stamp]: nothing records a
+    clock's stop event, so what that clock covers is named again
+  measure-runs -> check-stamps [no-stop-stamp]: runs arrive with no stop
+    stamp, so the stamps are checked again
+  find-pattern -> check-stamps [pattern-is-measurement]: the pattern
+    behind the misses turns out to be a measurement problem
+  check-numbers -> write-report [figures-do-not-hold]: a figure does not
+    hold against its source, so only the report reopens
+  queue-by-queue -> set-aside [clock-never-fit]: a queue shows the clock
+    never fitted its work, so those runs go back to be set aside with a
+    reason and an agreeing person
 bindings:
   roster:  <the agent claiming response-clock-monitor> ·
            <the agent claiming analytics> ·

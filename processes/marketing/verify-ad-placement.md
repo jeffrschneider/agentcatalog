@@ -74,6 +74,9 @@ from: ref/mkt/verify-ad-placement v1
 owner: <who>                          effective: <date>
 trigger: a brand safety or viewability concern is raised about ads that
          are running or have already run
+         watch: record=<placement concern> system=<your intake channel>
+                change=<a brand safety or viewability concern is
+                raised about ads that ran>
 concurrency: <how many> audits at once, one per <account or market>
 goal: every placement in scope carries a verdict against a rule, the
       failing placements are excluded and the exclusions confirmed, the
@@ -150,35 +153,51 @@ run-scoped:
            every: <cadence>
            from: set-the-scope   until: run close
 handoffs:
-  take-in-concern -> set-the-scope: what was seen and where, in enough
-    detail that somebody else can look for the same thing
-  set-the-scope -> confirm-rules: the accounts, campaigns, channels and
-    dates, and the dates the rules have to be read at
-  set-the-scope -> pull-placements: the same scope. Both branches read
-    one record
-  confirm-rules -> score-placements: the placement rules and the
-    exclusion lists at their versions
-  pull-placements -> score-placements: every placement the ads served
-    on, with the impressions and the spend against each one
-  pull-quality -> score-placements: viewability, measured share and
-    invalid traffic, each attributed to the source it came from
-  score-placements -> view-flagged: the verdicts, each naming the rule
-    and the version it was scored against
-  view-flagged -> size-the-waste: the flagged placements, each with the
-    capture of the ad as it appeared
-  size-the-waste -> decide-each: the flagged placements with the
-    impressions and the money on each one
-  decide-each -> apply-exclusions: the placements to exclude, and which
-    platform each one has to be excluded in
-  decide-each -> claim-the-spend: the placements the buy will contest,
-    with the amount at stake on each
-  apply-exclusions -> confirm-exclusions: what was changed in each
-    platform, and when the change took effect
-  confirm-exclusions -> update-lists: the exclusions that hold, ready
-    to be issued to every future buy
-  update-lists -> report-audit: the new version of the lists and the
-    date it takes effect
-  report-audit -> record-learnings: the report, as delivered
+  take-in-concern -> set-the-scope [the-concern]: what was seen and
+    where, in enough detail that somebody else can look for the same
+    thing
+  set-the-scope -> confirm-rules [scope-for-rules]: the accounts,
+    campaigns, channels and dates, and the dates the rules have to be
+    read at
+  set-the-scope -> pull-placements [scope-for-pulling]: the same scope.
+    Both branches read one record
+  confirm-rules -> score-placements [rules-in-force]: the placement
+    rules and the exclusion lists at their versions
+  pull-placements -> score-placements [placement-record]: every
+    placement the ads served on, with the impressions and the spend
+    against each one
+  pull-quality -> score-placements [quality-figures]: viewability,
+    measured share and invalid traffic, each attributed to the source
+    it came from
+  score-placements -> view-flagged [placement-verdicts]: the verdicts,
+    each naming the rule and the version it was scored against
+  view-flagged -> size-the-waste [flagged-with-captures]: the flagged
+    placements, each with the capture of the ad as it appeared
+  size-the-waste -> decide-each [what-it-cost]: the flagged placements
+    with the impressions and the money on each one
+  decide-each -> apply-exclusions [placements-to-exclude]: the
+    placements to exclude, and which platform each one has to be
+    excluded in
+  decide-each -> claim-the-spend [placements-to-contest]: the
+    placements the buy will contest, with the amount at stake on each
+  apply-exclusions -> confirm-exclusions [exclusions-applied]: what was
+    changed in each platform, and when the change took effect
+  confirm-exclusions -> update-lists [exclusions-that-hold]: the
+    exclusions that hold, ready to be issued to every future buy
+  update-lists -> report-audit [new-list-version]: the new version of
+    the lists and the date it takes effect
+  report-audit -> record-learnings [audit-report]: the report, as
+    delivered
+deviations:
+  view-flagged -> pull-placements [record-too-coarse]: the placement
+    record does not name the site or the app the ad ran on, so it is
+    pulled again at the detail the concern needs
+  decide-each -> view-flagged [needs-a-closer-look]: a placement needs
+    a closer look before it can be decided, so it is captured and read
+    again
+  confirm-exclusions -> apply-exclusions [ads-still-serving]: the ads
+    are still serving in a place that was excluded, so the exclusion is
+    applied again at the level the platform actually enforces
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand and legal agents>

@@ -61,6 +61,9 @@ PROCESS: paid search campaign         id: <team>/paid-search-campaign   v1
 from: ref/mkt/paid-search-campaign v1
 owner: <who>                          effective: <date>
 trigger: a budget and a goal are committed by <your planning process>
+         watch: record=<the budget commitment>
+                system=<your planning process>
+                change=<a budget and a goal are committed>
 concurrency: runs may overlap - <how many> live at once
 goal: ads live on the terms the plan named, bids tuned toward what
       converts, and the spend reconciled and reported against the goal
@@ -130,26 +133,35 @@ run-scoped:
            every: <cadence>
            from: build-and-launch   until: run close
 handoffs:
-  take-in-budget -> research-demand: the goal in one line, and the
-    number that has to buy it
-  take-in-budget -> ready-pages / wire-tracking: the same goal, and the
-    action that counts as a result. Both branches read one record
-  research-demand -> keyword-plan: the terms people actually use, each
-    with its demand figure and the date that figure was pulled
-  keyword-plan -> write-ads: the groups, so that every ad answers the
-    terms in its own group
-  write-ads + ready-pages -> get-sign-offs: the ads and the pages at a
-    version
-  get-sign-offs -> build-and-launch: the approved ads at the signed
-    version. A headline rewritten afterward voids the approval and
-    sign-offs run again
-  wire-tracking -> build-and-launch: the conversion definitions and the
-    tracking parameters each campaign has to carry
-  watch -> tune: the search terms report and the cost per result, by
-    group
-  tune -> reconcile-spend: every bid and budget move with its number
-    and the reason it was made
-  report-goal -> record-learnings: the report, as delivered
+  take-in-budget -> research-demand [goal-and-budget]: the goal in one
+    line, and the number that has to buy it
+  take-in-budget -> ready-pages / wire-tracking [result-definition]:
+    the same goal, and the action that counts as a result. Both
+    branches read one record
+  research-demand -> keyword-plan [demand-figures]: the terms people
+    actually use, each with its demand figure and the date that figure
+    was pulled
+  keyword-plan -> write-ads [keyword-groups]: the groups, so that every
+    ad answers the terms in its own group
+  write-ads + ready-pages -> get-sign-offs [ads-and-pages]: the ads and
+    the pages at a version
+  get-sign-offs -> build-and-launch [signed-ads]: the approved ads at
+    the signed version. A headline rewritten afterward voids the
+    approval and sign-offs run again
+  wire-tracking -> build-and-launch [conversion-setup]: the conversion
+    definitions and the tracking parameters each campaign has to carry
+  watch -> tune [terms-report]: the search terms report and the cost
+    per result, by group
+  tune -> reconcile-spend [bid-moves]: every bid and budget move with
+    its number and the reason it was made
+  report-goal -> record-learnings [goal-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> write-ads [changes-requested]: the signers ask for a
+    change, so only the piece they named is written again
+  tune -> write-ads [ads-stop-working]: the ads stop producing results
+    while the campaign is live, so replacements are written and go
+    through sign-offs like any other ads
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the budget, brand, legal and

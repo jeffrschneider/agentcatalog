@@ -69,6 +69,9 @@ from: ref/rev/approve-a-discount v1
 owner: <who>                           effective: <date>
 trigger: a quote in <your quoting process> asks for a discount past
          <threshold>, or past the level the seller may give
+         watch: record=<quote> system=<your quoting system>
+                change=<a discount is asked for past the threshold or
+                past the level the seller may give>
 concurrency: runs may overlap freely - <how many> asks are live at the
              desk at once, and one quote has one open ask at a time
 goal: every discount past the threshold approved, cut back or refused
@@ -159,34 +162,57 @@ run-scoped:
   giveaway  - runs allocate-and-reconcile        owner: analytics
               from: record-decision   until: run close
 handoffs:
-  take-in-ask -> check-complete: the ask as the seller wrote it, with
-    the quote version it is asked against
-  check-complete -> start-clock: the complete ask, with anything that
-    was missing and has since arrived
-  start-clock -> find-level: the ask, its size on each line and in
-    total, and the hour the clock started
-  find-level -> check-price: the band, the signer it names, the
-    delegate, and the time that band promises
-  check-price -> check-margin: every line at its list price, the card
-    version it was read from, and the discount as a number
-  check-margin -> read-evidence: the margin at the asked price, and
-    every line that sits below the floor
-  read-evidence -> test-precedent: the reason behind the ask, and the
-    evidence the seller supplied for it
-  test-precedent -> cost-it-later: what was already given to this
-    customer and this segment, dated, with the deals it was given on
-  cost-it-later -> route-to-signer: what the discount costs at renewal
-    and on the next deal, as a number where there is one
-  route-to-signer -> decide: the ask, the price, the margin, the
-    evidence, the precedent and the later cost, in one packet
-  decide -> record-decision: the decision, the number approved, the
-    reason in the signer's words, and the signer
-  escalate-clock -> decide: the ask as it stood when the clock ran out,
-    and what was decided above the band
-  record-decision -> tell-the-seller: the approved number at a version,
-    with the approval attached to the quote
-  tell-the-seller -> report-discounts: what was asked, what was given,
-    and how long the answer took
+  take-in-ask -> check-complete [discount-ask]: the ask as the seller
+    wrote it, with the quote version it is asked against
+  check-complete -> start-clock [complete-ask]: the complete ask, with
+    anything that was missing and has since arrived
+  start-clock -> find-level [ask-size-and-clock]: the ask, its size on
+    each line and in total, and the hour the clock started
+  find-level -> check-price [band-and-signer]: the band, the signer it
+    names, the delegate, and the time that band promises
+  check-price -> check-margin [list-prices]: every line at its list
+    price, the card version it was read from, and the discount as a
+    number
+  check-margin -> read-evidence [margin-position]: the margin at the
+    asked price, and every line that sits below the floor
+  read-evidence -> test-precedent [ask-evidence]: the reason behind the
+    ask, and the evidence the seller supplied for it
+  test-precedent -> cost-it-later [precedent]: what was already given
+    to this customer and this segment, dated, with the deals it was
+    given on
+  cost-it-later -> route-to-signer [later-cost]: what the discount
+    costs at renewal and on the next deal, as a number where there is
+    one
+  route-to-signer -> decide [signer-packet]: the ask, the price, the
+    margin, the evidence, the precedent and the later cost, in one
+    packet
+  decide -> record-decision [signed-decision]: the decision, the number
+    approved, the reason in the signer's words, and the signer
+  escalate-clock -> decide [escalation-outcome]: the ask as it stood
+    when the clock ran out, and what was decided above the band
+  record-decision -> tell-the-seller [approved-number]: the approved
+    number at a version, with the approval attached to the quote
+  tell-the-seller -> report-discounts [ask-outcome]: what was asked,
+    what was given, and how long the answer took
+deviations:
+  check-complete -> take-in-ask [ask-carries-no-evidence]: the ask
+    arrives with a number and nothing else, so it goes back to the
+    seller with what is missing listed
+  check-price -> take-in-ask [priced-at-old-card]: the quote was priced
+    against an old rate card, so the seller gets the current list price
+    and says whether the ask still stands
+  route-to-signer -> find-level [signer-away-no-delegate]: the signer
+    is away and the band names no delegate, so the table is read again
+    at the version in force
+  decide -> read-evidence [smaller-ask-worth-testing]: the signer would
+    approve a smaller number, and a different shape of ask is worth
+    testing against the evidence
+  escalate-clock -> decide [signed-above-the-level]: the escalation is
+    settled above the band, and the decision comes back to be recorded
+    as the decision on the ask
+  tell-the-seller -> take-in-ask [new-ask-from-seller]: the seller
+    comes back with a new ask, which is taken in as its own ask rather
+    than edited into this one
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller, the finance

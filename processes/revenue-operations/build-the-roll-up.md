@@ -76,6 +76,7 @@ PROCESS: pipeline roll-up             id: <team>/build-the-roll-up   v1
 from: ref/rev/build-the-roll-up v1
 owner: <who>                          effective: <date>
 trigger: <your reporting cadence> reaches its cut-off for <period>
+         watch: every=<your reporting cadence>
 concurrency: runs may overlap - one roll-up per pipeline per cycle, and
              a cycle has exactly one frozen version
 goal: every open deal in scope counted once, summed along every
@@ -173,38 +174,59 @@ run-scoped:
                    every: <cadence>
                    from: pull-extract   until: freeze-version
 handoffs:
-  take-in-questions -> fix-cut-off: the questions this roll-up has to
-    answer, and who will ask each one
-  fix-cut-off -> name-dimensions: the cut-off moment, its time zone,
-    and the cut-off the last cycle used
-  name-dimensions -> pull-extract: the dimensions to sum along, and the
-    field in the CRM each one reads from
-  pull-extract -> take-in-marks: one extract at one moment, stored,
-    with the row count and the total it carries
-  take-in-marks -> convert-currency: the hygiene mark on every deal
-    that has one, and the rule it failed
-  convert-currency -> apply-categories: every deal in one currency,
-    with its original amount, its currency and the rate beside it
-  apply-categories -> build-cuts: each deal's category as the
-    definition produces it, and the category the record claimed
-  build-cuts -> reconcile-cuts: every cut, each total carrying the
-    count of deals behind it
-  reconcile-cuts -> compare-history: the cuts that tie to the extract,
-    and every difference named deal by deal
-  compare-history -> compute-coverage: this cycle beside the last ones,
-    with every definition or rule change marked where it happened
-  compute-coverage -> compute-movement: coverage by segment, and the
-    amount still to find at the ratio in use
-  compute-movement -> test-thin-cuts: what entered, left, grew, shrank
-    or slipped, each change carrying who made it and when
-  test-thin-cuts -> mark-gaps: the cuts that cannot carry a number, and
-    why each one cannot
-  mark-gaps -> second-check: the roll-up with its gaps written into it,
-    ready to be rebuilt from the extract
-  second-check -> freeze-version: the rebuilt figures, and any
-    difference from the first build with its cause
-  freeze-version -> hand-over: the roll-up at a named version, pinned
-    to its extract, its rate table and its definitions
+  take-in-questions -> fix-cut-off [leadership-questions]: the
+    questions this roll-up has to answer, and who will ask each one
+  fix-cut-off -> name-dimensions [cut-off-moment]: the cut-off moment,
+    its time zone, and the cut-off the last cycle used
+  name-dimensions -> pull-extract [dimensions]: the dimensions to sum
+    along, and the field in the CRM each one reads from
+  pull-extract -> take-in-marks [deal-extract]: one extract at one
+    moment, stored, with the row count and the total it carries
+  take-in-marks -> convert-currency [hygiene-marks]: the hygiene mark
+    on every deal that has one, and the rule it failed
+  convert-currency -> apply-categories [converted-amounts]: every deal
+    in one currency, with its original amount, its currency and the
+    rate beside it
+  apply-categories -> build-cuts [deal-categories]: each deal's
+    category as the definition produces it, and the category the record
+    claimed
+  build-cuts -> reconcile-cuts [summed-cuts]: every cut, each total
+    carrying the count of deals behind it
+  reconcile-cuts -> compare-history [reconciled-cuts]: the cuts that
+    tie to the extract, and every difference named deal by deal
+  compare-history -> compute-coverage [cycle-comparison]: this cycle
+    beside the last ones, with every definition or rule change marked
+    where it happened
+  compute-coverage -> compute-movement [coverage-position]: coverage by
+    segment, and the amount still to find at the ratio in use
+  compute-movement -> test-thin-cuts [movement]: what entered, left,
+    grew, shrank or slipped, each change carrying who made it and when
+  test-thin-cuts -> mark-gaps [thin-cuts]: the cuts that cannot carry a
+    number, and why each one cannot
+  mark-gaps -> second-check [roll-up-with-gaps]: the roll-up with its
+    gaps written into it, ready to be rebuilt from the extract
+  second-check -> freeze-version [rebuilt-figures]: the rebuilt
+    figures, and any difference from the first build with its cause
+  freeze-version -> hand-over [frozen-roll-up]: the roll-up at a named
+    version, pinned to its extract, its rate table and its definitions
+deviations:
+  name-dimensions -> take-in-questions [dimension-not-carried]: a
+    dimension leadership asked for is not in the record, so the
+    question is answered another way or written down as unanswerable
+  take-in-marks -> pull-extract [hygiene-unfinished]: the hygiene run
+    has not finished at the cut-off, so the extract is read again for
+    the marks that existed at the cut-off
+  reconcile-cuts -> build-cuts [cut-will-not-tie]: a cut does not sum
+    back to the extract, so the cuts are built again and the difference
+    is chased deal by deal
+  compare-history -> apply-categories [definitions-changed]: the
+    definitions changed since the last cycle, so the categories are
+    applied again on one set of definitions for both cycles
+  test-thin-cuts -> name-dimensions [cut-too-thin]: a cut is too thin
+    to report at all, so the dimensions are named again without it
+  second-check -> build-cuts [figure-not-reproduced]: the second check
+    cannot reproduce a headline figure, so the cuts are built again
+    until both runs produce the same number
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the leader who names the

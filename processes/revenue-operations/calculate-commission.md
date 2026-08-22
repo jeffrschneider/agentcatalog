@@ -77,6 +77,10 @@ from: ref/rev/calculate-commission v1
 owner: <who>                           effective: <date>
 trigger: a commission period closes on <date>, or a corrected booking
          reopens a period already paid
+         watch: every=<commission period>
+         or watch: record=<booking> system=<your system of record>
+                change=<a correction lands against a booking in a
+                period already paid>
 concurrency: one run per population per period - a period is calculated
              once, and a correction to a closed period lands in the
              next run rather than reopening this one
@@ -173,37 +177,64 @@ run-scoped:
   holdbacks  - runs allocate-and-reconcile  owner: <your finance role>
                from: hold-unpayable   until: run close
 handoffs:
-  open-period -> pull-bookings: the period boundaries, the sellers in
-    scope, and the plan version each seller sits on
-  pull-bookings -> match-bookings: the booking snapshot, timestamped,
-    with the system and the query it was taken from
-  match-bookings -> check-completeness: each booking against a seller, a
-    territory and a plan version, and every unmatched booking listed
-    rather than dropped
-  check-completeness -> apply-credit: the bookings a payment can be
-    computed from, and the ones missing a field, each naming the field
-  apply-credit -> measure-attainment: the credited amount per seller per
-    booking, with the split rule that produced it
-  measure-attainment -> compute-components: attainment per seller, and
-    the quota it was measured against
-  compute-components -> apply-modifiers: each component with its rate,
-    its input and its result
-  apply-modifiers -> net-draws: the gross earning per seller, with every
-    gate, accelerator and cap recorded as applied or not applied
-  net-draws -> hold-unpayable: the net earning per seller, and every draw
-    or clawback with the period it came from
-  hold-unpayable -> score-run: what is payable now and what is held,
-    each held amount naming the condition it waits on
-  score-run -> show-working: the run against last period and against
-    the cost model, with every seller outside <threshold> named
-  show-working -> manager-review: the statements, each line naming its
-    booking, its rate and the plan sentence behind it
-  manager-review -> approve-run: what each manager accepted, and what
-    they said was wrong, unresolved items listed by name
-  approve-run -> publish-and-pay: the run at a version, its total, and
-    the signatures. A change after this makes a new run
-  publish-and-pay -> record-corrections: what was published, to whom,
-    on what date, and what payroll received
+  open-period -> pull-bookings [period-scope]: the period boundaries,
+    the sellers in scope, and the plan version each seller sits on
+  pull-bookings -> match-bookings [booking-snapshot]: the booking
+    snapshot, timestamped, with the system and the query it was taken
+    from
+  match-bookings -> check-completeness [matched-bookings]: each booking
+    against a seller, a territory and a plan version, and every
+    unmatched booking listed rather than dropped
+  check-completeness -> apply-credit [complete-bookings]: the bookings
+    a payment can be computed from, and the ones missing a field, each
+    naming the field
+  apply-credit -> measure-attainment [credited-amounts]: the credited
+    amount per seller per booking, with the split rule that produced it
+  measure-attainment -> compute-components [attainment]: attainment per
+    seller, and the quota it was measured against
+  compute-components -> apply-modifiers [components]: each component
+    with its rate, its input and its result
+  apply-modifiers -> net-draws [gross-earning]: the gross earning per
+    seller, with every gate, accelerator and cap recorded as applied or
+    not applied
+  net-draws -> hold-unpayable [net-earning]: the net earning per
+    seller, and every draw or clawback with the period it came from
+  hold-unpayable -> score-run [payable-and-held]: what is payable now
+    and what is held, each held amount naming the condition it waits on
+  score-run -> show-working [run-score]: the run against last period
+    and against the cost model, with every seller outside <threshold>
+    named
+  show-working -> manager-review [traceable-statements]: the
+    statements, each line naming its booking, its rate and the plan
+    sentence behind it
+  manager-review -> approve-run [manager-findings]: what each manager
+    accepted, and what they said was wrong, unresolved items listed by
+    name
+  approve-run -> publish-and-pay [signed-run]: the run at a version,
+    its total, and the signatures. A change after this makes a new run
+  publish-and-pay -> record-corrections [publication-record]: what was
+    published, to whom, on what date, and what payroll received
+deviations:
+  match-bookings -> pull-bookings [booking-matches-no-seller]: a
+    booking matches no seller, so it goes to the exception queue and
+    the bookings are read again once a person has placed it
+  check-completeness -> match-bookings [field-missing]: a field a
+    payment depends on is missing, so the line is held and the booking
+    is matched again once the record is complete
+  apply-credit -> match-bookings [two-sellers-claim]: two sellers claim
+    the same booking, so the managers settle it by name and the booking
+    is matched again on what they settled
+  score-run -> apply-credit [unexplained-outlier]: an outlier the plan
+    does not explain, so the credit is applied again at that seller
+    until the number is explained or corrected
+  show-working -> compute-components [line-unsupported]: a line nothing
+    in the record supports, so the components are computed again rather
+    than paid on a number nobody can trace
+  manager-review -> apply-credit [wrong-credit-split]: a manager names
+    a wrong credit split, so the credit rules run again on the bookings
+    they named and everything downstream of those bookings runs again
+  approve-run -> show-working [run-not-signed]: the run is not signed,
+    so nothing publishes and the working is rebuilt for the signers
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales managers, the finance

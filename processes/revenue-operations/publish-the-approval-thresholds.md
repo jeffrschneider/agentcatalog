@@ -75,6 +75,12 @@ owner: <who>                              effective: <date>
 trigger: the discount schedule or the standard terms change, the review
          date on the table arrives, or sellers report that they cannot
          tell who approves what
+         watch: record=<the discount schedule> system=<your terms store>
+                change=<either document takes a new version>
+         or watch: record=<the approval table> system=<the desk page>
+                change=<the review date on the table arrives>
+         or watch: record=<a seller report> system=<the deal desk queue>
+                change=<a seller cannot tell who approves what>
 concurrency: one run at a time - there is one approval table, and two
              runs drafting it at once produce two tables
 goal: one table that says who may approve what, at what size, in what
@@ -174,41 +180,58 @@ run-scoped:
              every: <cadence>
              from: draft-levels   until: approve-table
 handoffs:
-  take-in-reason -> read-the-asks: why the table is open, what has to
-    change, and the date the new table is needed
-  read-the-asks -> find-the-holes: every ask in the period, with its
-    size, band, signer and elapsed time, and the system each line came
-    from
-  find-the-holes -> draft-levels: the asks the table could not place,
-    the ones it placed twice, and the ones that sat
-  draft-levels -> set-the-times: the bands and their signers, at a
-    draft version
-  draft-levels -> name-delegates: the same bands and signers. Both
-    branches read one draft
-  set-the-times -> check-policy: the time promised at each band, and
-    how long that band actually took last period
-  name-delegates -> check-policy: the delegate for each signer, and the
-    date each delegate was told
-  check-policy -> replay-the-asks: the bands that passed, with the rule
-    behind every failure
-  replay-the-asks -> signers-accept: which past asks the draft would
-    have routed differently, to whom, and how many
-  signers-accept -> approve-table: every signer on the record accepting
-    their band and its promised time
-  approve-table -> version-table: the signed table, with who signed and
-    when, against a draft at a version
-  version-table -> publish-table: the table at its version, its
-    effective date, and what changed since the last one
-  publish-table -> tell-the-sellers: the published table and where it
-    now lives, so the briefing points at one address
-  publish-table -> wire-the-routing: the same version, so the routing
-    and the published page cannot drift apart
-  tell-the-sellers -> watch-in-use: the date the sellers were told, and
-    what the table says about asks already in flight
-  wire-the-routing -> watch-in-use: the routing as configured, and the
-    table version it reads
-  watch-in-use -> review-on-a-date: the asks as they landed against the
-    bands, and every ask that matched no band
+  take-in-reason -> read-the-asks [reason-to-publish]: why the table is
+    open, what has to change, and the date the new table is needed
+  read-the-asks -> find-the-holes [asks-in-period]: every ask in the
+    period, with its size, band, signer and elapsed time, and the system
+    each line came from
+  find-the-holes -> draft-levels [table-failures]: the asks the table
+    could not place, the ones it placed twice, and the ones that sat
+  draft-levels -> set-the-times [draft-bands]: the bands and their
+    signers, at a draft version
+  draft-levels -> name-delegates [bands-for-delegates]: the same bands
+    and signers. Both branches read one draft
+  set-the-times -> check-policy [promised-times]: the time promised at
+    each band, and how long that band actually took last period
+  name-delegates -> check-policy [named-delegates]: the delegate for
+    each signer, and the date each delegate was told
+  check-policy -> replay-the-asks [policy-verdict]: the bands that
+    passed, with the rule behind every failure
+  replay-the-asks -> signers-accept [replay-differences]: which past
+    asks the draft would have routed differently, to whom, and how many
+  signers-accept -> approve-table [signer-acceptances]: every signer on
+    the record accepting their band and its promised time
+  approve-table -> version-table [signed-table]: the signed table, with
+    who signed and when, against a draft at a version
+  version-table -> publish-table [versioned-table]: the table at its
+    version, its effective date, and what changed since the last one
+  publish-table -> tell-the-sellers [published-address]: the published
+    table and where it now lives, so the briefing points at one address
+  publish-table -> wire-the-routing [table-version]: the same version,
+    so the routing and the published page cannot drift apart
+  tell-the-sellers -> watch-in-use [sellers-told]: the date the sellers
+    were told, and what the table says about asks already in flight
+  wire-the-routing -> watch-in-use [routing-as-built]: the routing as
+    configured, and the table version it reads
+  watch-in-use -> review-on-a-date [asks-against-bands]: the asks as
+    they landed against the bands, and every ask that matched no band
+deviations:
+  check-policy -> draft-levels [band-not-allowed]: policy does not allow
+    a band as it was drafted, so the levels are drawn again
+  replay-the-asks -> draft-levels [bands-do-not-fit]: the replay shows
+    the bands do not fit what actually gets asked
+  signers-accept -> draft-levels [signer-will-not-hold]: a named signer
+    will not hold their band, so the levels are drawn again
+  signers-accept -> name-delegates [no-delegate-named]: a band reaches
+    acceptance with no delegate behind its signer
+  approve-table -> draft-levels [table-sent-back]: the approvers send
+    the table back rather than sign it
+  watch-in-use -> draft-levels [asks-match-no-band]: asks keep matching
+    no band, so the table meets a shape it never anticipated
+  watch-in-use -> set-the-times [times-being-missed]: the promised times
+    are being missed, so the promise per band is set again
+  review-on-a-date -> draft-levels [review-reopens-table]: the review on
+    the date finds the table has to change
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the finance signer, the sales

@@ -70,6 +70,10 @@ PROCESS: map the account people       id: <team>/map-the-account-people  v1
 from: ref/sls/map-the-account-people v1
 owner: <who>                          effective: <date>
 trigger: an account read is issued and a plan is due for that account
+         watch: record=<account read> system=<your CRM>
+                change=<an account read is issued at a version>
+         and watch: record=<account plan> system=<your planning system>
+                change=<a plan falls due for that account>
 concurrency: runs may overlap - <how many> accounts mapped at once, and
              one account is mapped by one run at a time
 goal: every decision named in scope has its deciders, influencers and
@@ -156,43 +160,65 @@ run-scoped:
              every: <cadence>
              from: place-roles   until: review-map
 handoffs:
-  take-in-read -> name-decisions: the account read at its version, and
-    what the plan needs the map to settle
-  name-decisions -> pull-known: the decisions in scope, each one named
-    the way the account itself would name it
-  name-decisions -> find-unknown: the same decisions, so searching is
-    bounded rather than open-ended
-  pull-known -> place-roles: everyone already held, with the last
-    contact date and the person who made it
-  find-unknown -> place-roles: the people not held, each with the
-    source they were found in and the date it was published
-  find-unknown -> read-lines: titles, units and reporting language as
-    published, so the lines are drawn from evidence
-  read-lines -> place-roles: who reports to whom, so a title is not
-    mistaken for authority
-  pull-known -> score-strength: the contact history each score is
-    computed from
-  score-strength -> find-paths: how well we know each person, so the
-    strongest path is chosen rather than the nearest
-  place-roles -> find-paths: who has to be reached, and for which
-    decision
-  place-roles -> read-stance: the people whose stance matters, and the
-    decision their stance applies to
-  find-paths -> read-stance: who can be asked what a person thinks
-  read-stance -> name-gaps: every person whose stance is unknown, and
-    every decision where the decider opposes us
-  place-roles -> name-gaps: the decisions with no decider found at all
-  find-unknown -> check-privacy: every person added, and the source
-    each one came from
-  check-privacy -> review-map: what may be held, what must come out,
-    and the rule behind each removal
-  name-gaps -> review-map: the map with the gaps marked as gaps
-  review-map -> issue-map: the map as the account team corrected it,
-    naming who corrected what and when they signed
-  issue-map -> watch-moves: the issued version, so a move is read
-    against a map somebody committed to
-  watch-moves -> place-roles: the joiner, leaver or title change, and
-    the decision it puts at risk
+  take-in-read -> name-decisions [account-read]: the account read at
+    its version, and what the plan needs the map to settle
+  name-decisions -> pull-known [decisions-in-scope]: the decisions in
+    scope, each one named the way the account itself would name it
+  name-decisions -> find-unknown [decisions-to-search]: the same
+    decisions, so searching is bounded rather than open-ended
+  pull-known -> place-roles [people-held]: everyone already held, with
+    the last contact date and the person who made it
+  find-unknown -> place-roles [people-found]: the people not held,
+    each with the source they were found in and the date it was
+    published
+  find-unknown -> read-lines [published-titles]: titles, units and
+    reporting language as published, so the lines are drawn from
+    evidence
+  read-lines -> place-roles [reporting-lines]: who reports to whom, so
+    a title is not mistaken for authority
+  pull-known -> score-strength [contact-history]: the contact history
+    each score is computed from
+  score-strength -> find-paths [strength-scores]: how well we know
+    each person, so the strongest path is chosen rather than the
+    nearest
+  place-roles -> find-paths [people-to-reach]: who has to be reached,
+    and for which decision
+  place-roles -> read-stance [stance-subjects]: the people whose
+    stance matters, and the decision their stance applies to
+  find-paths -> read-stance [paths-in]: who can be asked what a person
+    thinks
+  read-stance -> name-gaps [stances]: every person whose stance is
+    unknown, and every decision where the decider opposes us
+  place-roles -> name-gaps [decisions-without-a-decider]: the
+    decisions with no decider found at all
+  find-unknown -> check-privacy [people-added]: every person added,
+    and the source each one came from
+  check-privacy -> review-map [privacy-ruling]: what may be held, what
+    must come out, and the rule behind each removal
+  name-gaps -> review-map [map-with-gaps]: the map with the gaps
+    marked as gaps
+  review-map -> issue-map [corrected-map]: the map as the account team
+    corrected it, naming who corrected what and when they signed
+  issue-map -> watch-moves [issued-map]: the issued version, so a move
+    is read against a map somebody committed to
+  watch-moves -> place-roles [people-moves]: the joiner, leaver or
+    title change, and the decision it puts at risk
+deviations:
+  read-stance -> find-unknown [stance-unknowable]: nobody has ever
+    spoken to the person whose stance is needed, so somebody who has
+    is looked for before the stance is guessed at
+  check-privacy -> pull-known [person-may-not-be-held]: the privacy
+    rule says a person may not be held at all, so they come out of the
+    map and out of everything downstream that copied it
+  review-map -> find-unknown [person-nobody-found]: the account team
+    names a person nobody found, so that person alone is searched for
+    and arrives with a source like everybody else
+  review-map -> name-decisions [decisions-named-wrongly]: the map was
+    built against purchases the account does not make that way, so the
+    decisions are named again and the placements redone
+  watch-moves -> place-roles [buyer-left]: a person in the map leaves,
+    joins or changes title, so the decision they sat on is placed
+    again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, the account owner and the sellers who correct the

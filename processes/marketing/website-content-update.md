@@ -88,6 +88,8 @@ from: ref/mkt/website-content-update v1
 owner: <who>                          effective: <date>
 trigger: someone asks for a change to a live page in <your intake
          channel>
+         watch: record=<content request> system=<your intake channel>
+                change=<a change to a live page is asked for>
 concurrency: runs may overlap - <how many> at once, and no two runs
              hold the same page
 goal: a live page changed to say what the request asked it to say,
@@ -150,30 +152,53 @@ phases:
                      owner: content-manager    after: publish-change
                      automation: never
 handoffs:
-  take-in-request -> find-pages: what has to change, said plainly
-    enough that a search of the live site can find it
-  find-pages -> route-change: every live page that says the thing being
-    changed, with its address and the date it last changed
-  route-change -> write-change: the pages in scope, what each one has
-    to say instead, and the reviewers the change has to reach
-  route-change -> refresh-visuals: the same decision. Both branches
-    read one record
-  write-change -> edit-change: the new wording at a version, with a
-    source line under any claim it adds
-  edit-change -> score-change: the wording the editor holds as finished
-  refresh-visuals -> score-change: the replaced screenshots and
-    diagrams at their versions
-  score-change -> get-sign-offs: the scores, each citing the standard,
-    its version and the rule applied
-  get-sign-offs -> make-change: the approved wording and visuals at the
-    signed version. A later change voids the approval and sign-offs run
-    again
-  make-change -> check-page: the page as it is actually built, on
-    staging, with the change in it
-  check-page -> publish-change: the checks, each citing the standard it
-    was scored against
-  publish-change -> close-out: the live address, the version that went
-    live, and who said go
+  take-in-request -> find-pages [what-has-to-change]: what has to
+    change, said plainly enough that a search of the live site can find
+    it
+  find-pages -> route-change [pages-that-say-it]: every live page that
+    says the thing being changed, with its address and the date it last
+    changed
+  route-change -> write-change [routing-decision]: the pages in scope,
+    what each one has to say instead, and the reviewers the change has
+    to reach
+  route-change -> refresh-visuals [visuals-in-scope]: the same
+    decision. Both branches read one record
+  write-change -> edit-change [new-wording]: the new wording at a
+    version, with a source line under any claim it adds
+  edit-change -> score-change [edited-wording]: the wording the editor
+    holds as finished
+  refresh-visuals -> score-change [replaced-visuals]: the replaced
+    screenshots and diagrams at their versions
+  score-change -> get-sign-offs [change-scores]: the scores, each
+    citing the standard, its version and the rule applied
+  get-sign-offs -> make-change [approved-change]: the approved wording
+    and visuals at the signed version. A later change voids the
+    approval and sign-offs run again
+  make-change -> check-page [staged-page]: the page as it is actually
+    built, on staging, with the change in it
+  check-page -> publish-change [page-checks]: the checks, each citing
+    the standard it was scored against
+  publish-change -> close-out [what-went-live]: the live address, the
+    version that went live, and who said go
+deviations:
+  edit-change -> write-change [rewrite-asked-for]: the editor asks for
+    a rewrite, so only the wording they named is written again
+  score-change -> write-change [claim-or-voice-failed]: a claim or the
+    voice failed its standard, so the wording is written again
+  get-sign-offs -> write-change [wording-changes-asked-for]: a signer
+    asks for a change to the wording, so it is written again and scored
+    again before the same signers see it
+  get-sign-offs -> refresh-visuals [visual-changes-asked-for]: a signer
+    names a screenshot or a diagram, so it is replaced again
+  check-page -> write-change [wording-failed-a-check]: a check fails on
+    the wording, so it is written again
+  check-page -> refresh-visuals [visual-failed-a-check]: a check fails
+    on a visual, so it is replaced again
+  check-page -> make-change [page-failed-a-check]: a check fails on the
+    page itself, so the change is made in the page again
+  close-out -> make-change [live-page-is-not-approved]: the live page
+    is serving something other than the signed version, so the change
+    is made and published again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, named people for the reviewers, and the person who

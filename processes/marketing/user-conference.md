@@ -84,6 +84,9 @@ PROCESS: user conference              id: <team>/user-conference   v1
 from: ref/mkt/user-conference v1
 owner: <who>                          effective: <date>
 trigger: the annual date is set in <your planning process>
+         watch: record=<conference date>
+                system=<your planning process>
+                change=<the annual date is set>
 concurrency: one conference at a time - <what may overlap with the
              next one's planning>
 goal: a conference that runs on its dates, fills the agents it planned
@@ -183,38 +186,55 @@ run-scoped:
              every: <cadence>
              from: invite-press   until: run close
 handoffs:
-  take-in-date -> set-plan: what the conference has to accomplish and
-    for whom, in one line every later decision can be tested against
-  set-plan -> book-venue: the dates, the format, the attendance target
-    and the budget a person confirmed
+  take-in-date -> set-plan [what-the-conference-must-do]: what the
+    conference has to accomplish and for whom, in one line every later
+    decision can be tested against
+  set-plan -> book-venue [conference-plan]: the dates, the format, the
+    attendance target and the budget a person confirmed
   book-venue -> call-sessions / open-registration / stage-material /
-    invite-press: the venue, the dates and the deadline list. Four
-    branches read one record
-  book-venue -> set-up-venue: the load-in window, the room list, and
-    every deadline the venue's own rules impose
-  call-sessions -> choose-program: every proposal that arrived, with
-    the verdict it was given and the criterion behind that verdict
-  choose-program -> clear-material: the chosen sessions, each with its
-    speaker, its room, its time slot and what that speaker owes
-  choose-program -> promote: the agenda at a version, and what the
-    campaign may say about it
-  clear-material -> set-up-venue: each deck at the version that was
-    scored and signed, and the signed permission to record the session
-  promote -> watch-signups: what went out, on which channel, and when
-  watch-signups -> set-up-venue: the headcount the catering, the badges
-    and the room sets are built from
-  invite-press -> run-show: who is coming, what each of them was told,
-    and what each of them asked for
-  run-show -> capture-sessions: the sessions as they were actually
-    given, with what was recorded and what was not
-  capture-sessions -> repurpose: the recordings, the photographs, the
-    quotes and the notes, each attributed to its session, and the
-    permission that covers each one
-  run-show -> report-conference: attendance against the target, and
-    every call that was made on the day
-  repurpose -> report-conference: what was published out of the
-    conference, where it went, and how it performed
-  report-conference -> record-learnings: the report, as delivered
+    invite-press [venue-and-dates]: the venue, the dates and the
+    deadline list. Four branches read one record
+  book-venue -> set-up-venue [venue-rules]: the load-in window, the
+    room list, and every deadline the venue's own rules impose
+  call-sessions -> choose-program [proposals]: every proposal that
+    arrived, with the verdict it was given and the criterion behind
+    that verdict
+  choose-program -> clear-material [chosen-sessions]: the chosen
+    sessions, each with its speaker, its room, its time slot and what
+    that speaker owes
+  choose-program -> promote [agenda]: the agenda at a version, and what
+    the campaign may say about it
+  clear-material -> set-up-venue [cleared-decks]: each deck at the
+    version that was scored and signed, and the signed permission to
+    record the session
+  promote -> watch-signups [what-went-out]: what went out, on which
+    channel, and when
+  watch-signups -> set-up-venue [headcount]: the headcount the
+    catering, the badges and the room sets are built from
+  invite-press -> run-show [press-list]: who is coming, what each of
+    them was told, and what each of them asked for
+  run-show -> capture-sessions [sessions-as-given]: the sessions as
+    they were actually given, with what was recorded and what was not
+  capture-sessions -> repurpose [session-material]: the recordings, the
+    photographs, the quotes and the notes, each attributed to its
+    session, and the permission that covers each one
+  run-show -> report-conference [attendance-and-calls]: attendance
+    against the target, and every call that was made on the day
+  repurpose -> report-conference [published-material]: what was
+    published out of the conference, where it went, and how it
+    performed
+  report-conference -> record-learnings [conference-report]: the
+    report, as delivered
+deviations:
+  clear-material -> choose-program [speaker-drops-out]: a speaker drops
+    out, so the program either replaces them or cuts the session and
+    closes the gap in the agenda
+  watch-signups -> promote [pace-behind-the-target]: registration is
+    behind the pace the target needs, so the promotion runs again while
+    there is still time to fill the room
+  set-up-venue -> choose-program [session-has-to-move]: a session has
+    to move to another room or another time, so the program is settled
+    again and every speaker and every registrant hears about it
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance, legal, the

@@ -61,6 +61,9 @@ PROCESS: produce creative assets      id: <team>/creative-assets   v1
 from: ref/mkt/creative-assets v1
 owner: <who>                          effective: <date>
 trigger: a creative brief is approved in <your requesting process>
+         watch: record=<creative brief>
+                system=<your requesting process>
+                change=<a creative brief is approved>
 concurrency: runs may overlap - <how many> sets in production at once
 goal: copy, images and video that brand and legal have signed, cut to
       the sizes every channel in the brief requires, handed back to the
@@ -121,24 +124,44 @@ run-scoped:
            every: <cadence>
            from: brief-makers   until: hand-over
 handoffs:
-  take-in-brief -> plan-production: the list of assets the brief needs,
-    and what each one has to do
-  plan-production -> brief-makers: the plan, saying what each agent owes
-    and when it is due
-  settle-direction -> produce-assets: the chosen concept, and why it won
-  produce-assets -> clear-rights: every source used, named, with where
-    it came from and the license it was used under
-  produce-assets -> check-the-set: the pieces at a version
-  clear-rights + check-the-set -> score-standards: the set at a version,
-    with the rights settled
-  score-standards -> get-sign-offs: the scores, so the signers read the
-    exceptions instead of everything
-  get-sign-offs -> size-per-channel: the approved set at the signed
-    version. A later change voids the approval and sign-offs run again
-  size-per-channel -> check-the-sizes: every channel version, named
-    against the master it was cut from
-  check-the-sizes -> hand-over: the set as it will actually be used,
-    with the scores attached
+  take-in-brief -> plan-production [asset-list]: the list of assets
+    the brief needs, and what each one has to do
+  plan-production -> brief-makers [production-plan]: the plan, saying
+    what each agent owes and when it is due
+  settle-direction -> produce-assets [chosen-direction]: the chosen
+    concept, and why it won
+  produce-assets -> clear-rights [sources-used]: every source used,
+    named, with where it came from and the license it was used under
+  produce-assets -> check-the-set [draft-pieces]: the pieces at a
+    version
+  clear-rights + check-the-set -> score-standards [settled-set]: the
+    set at a version, with the rights settled
+  score-standards -> get-sign-offs [standards-scores]: the scores, so
+    the signers read the exceptions instead of everything
+  get-sign-offs -> size-per-channel [approved-set]: the approved set at
+    the signed version. A later change voids the approval and sign-offs
+    run again
+  size-per-channel -> check-the-sizes [channel-versions]: every channel
+    version, named against the master it was cut from
+  check-the-sizes -> hand-over [final-set]: the set as it will actually
+    be used, with the scores attached
+deviations:
+  clear-rights -> produce-assets [rights-refused]: a rights approver
+    refuses a source, so the piece is remade from something the
+    organization holds
+  check-the-set -> produce-assets [pieces-disagree]: the pieces
+    disagree where they meet, so the ones that clash are made again
+  score-standards -> produce-assets [standard-fails]: a standard fails,
+    so the agent that made the piece fixes what the finding named
+  get-sign-offs -> produce-assets [sign-off-changes]: a signer comes
+    back with changes, and only the piece they named reopens
+  get-sign-offs -> settle-direction [direction-reopens]: the changes
+    put the direction itself back in question, so it is settled again
+  check-the-sizes -> size-per-channel [size-fails]: a sized version
+    fails its check, so that size is cut again
+  any -> score-standards [signed-set-goes-stale]: the brief, the brand
+    guidelines or the claims register is re-versioned before the set
+    ships, so the set is scored again and signed again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for rights, brand and legal>

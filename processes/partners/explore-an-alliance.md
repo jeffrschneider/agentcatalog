@@ -72,6 +72,10 @@ from: ref/prt/explore-an-alliance v1
 owner: <who>                          effective: <date>
 trigger: <who> writes down a capability the company cannot offer on its
          own, in <your strategy record>
+         watch: record=<capability gap>
+                system=<your strategy record>
+                change=<a capability the company cannot offer on its
+                own is written down>
 concurrency: runs may overlap - <how many> explorations live at once,
              and one candidate company is explored by one run at a time
 goal: one written thesis both companies would recognize, tested with
@@ -170,36 +174,66 @@ run-scoped:
                   every: <cadence>
                   from: first-contact until: run close
 handoffs:
-  state-reason -> test-build-buy-ally: the gap in one paragraph, the
-    offer it blocks, and the date it starts to hurt
-  test-build-buy-ally -> scan-field: the decision that a partner is the
-    answer, with the cost and the time of building and of buying beside
-    it
-  scan-field -> read-candidates: the long list, each company with the
-    part of the gap it could close
-  read-candidates -> score-fit: what each company sells, its size, its
-    owners, its existing partners, each line dated and sourced
-  score-fit -> pick-approach-list: the scores, the weights behind them,
-    and every candidate that scored badly with the reason why
-  pick-approach-list -> check-conflicts: the shortlist in approach order
-  check-conflicts -> first-contact: the conflicts found per candidate,
-    and whether each one blocks an approach or only shapes it
-  first-contact -> exploratory-meeting: who was approached, by whom, on
-    what date, and what they said back
-  exploratory-meeting -> sign-nda: what each side said it wants, what it
-    said it will not do, and the open questions
-  sign-nda -> trade-numbers: the signed agreement, what it covers, how
-    long it runs, and what may be shown under it
-  trade-numbers -> model-value: the numbers each side actually showed,
-    dated, with the source named for every figure
-  model-value -> write-thesis: the value to each side over <years>, the
-    assumptions behind it, and what breaks it
-  write-thesis -> test-with-customers: the thesis at a version, and the
-    claims in it that a customer can confirm or deny
-  test-with-customers -> decide-proceed: what the customers said, in
-    their own words, with the count that said no
-  decide-proceed -> record-exploration: the decision, the person who
-    made it, the date, and the conditions attached to a go
+  state-reason -> test-build-buy-ally [stated-gap]: the gap in one
+    paragraph, the offer it blocks, and the date it starts to hurt
+  test-build-buy-ally -> scan-field [ally-decision]: the decision that
+    a partner is the answer, with the cost and the time of building and
+    of buying beside it
+  scan-field -> read-candidates [candidate-long-list]: the long list,
+    each company with the part of the gap it could close
+  read-candidates -> score-fit [candidate-profiles]: what each company
+    sells, its size, its owners, its existing partners, each line dated
+    and sourced
+  score-fit -> pick-approach-list [fit-scores]: the scores, the weights
+    behind them, and every candidate that scored badly with the reason
+    why
+  pick-approach-list -> check-conflicts [approach-list]: the shortlist
+    in approach order
+  check-conflicts -> first-contact [conflict-findings]: the conflicts
+    found per candidate, and whether each one blocks an approach or
+    only shapes it
+  first-contact -> exploratory-meeting [approach-record]: who was
+    approached, by whom, on what date, and what they said back
+  exploratory-meeting -> sign-nda [stated-wants]: what each side said
+    it wants, what it said it will not do, and the open questions
+  sign-nda -> trade-numbers [signed-nda]: the signed agreement, what it
+    covers, how long it runs, and what may be shown under it
+  trade-numbers -> model-value [shared-numbers]: the numbers each side
+    actually showed, dated, with the source named for every figure
+  model-value -> write-thesis [value-model]: the value to each side
+    over <years>, the assumptions behind it, and what breaks it
+  write-thesis -> test-with-customers [joint-thesis]: the thesis at a
+    version, and the claims in it that a customer can confirm or deny
+  test-with-customers -> decide-proceed [customer-verdict]: what the
+    customers said, in their own words, with the count that said no
+  decide-proceed -> record-exploration [proceed-decision]: the
+    decision, the person who made it, the date, and the conditions
+    attached to a go
+deviations:
+  read-candidates -> test-build-buy-ally [no-candidate-fits]: no
+    company on the field can close the gap, so build, buy or ally is
+    decided again rather than the bar being lowered until one fits
+  check-conflicts -> score-fit [every-candidate-blocked]: an existing
+    contract blocks every candidate, so the field is scored again with
+    those candidates removed
+  first-contact -> pick-approach-list [candidate-will-not-meet]: the
+    candidate refuses to meet, so the run moves to the next name on the
+    approach list
+  exploratory-meeting -> pick-approach-list [wants-do-not-match]: the
+    two sides want different things, so the run returns to the
+    shortlist rather than writing a thesis one side would not recognize
+  trade-numbers -> score-fit [numbers-contradict-pitch]: the numbers
+    shown under confidentiality do not match what was said in the
+    meeting, so the candidate is scored again on the real ones
+  model-value -> exploratory-meeting [worth-too-little]: the
+    arrangement is worth too little to one side or both, so the two
+    sides say again what would have to be true for it to be worth doing
+  test-with-customers -> write-thesis [customers-would-not-buy]:
+    customers would not buy the joint offer, so the thesis is written
+    again against what they said
+  decide-proceed -> write-thesis [thesis-needs-rework]: the sponsor
+    sends the thesis back for rework, naming what has to change before
+    it is decided again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the strategy lead, the alliances

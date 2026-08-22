@@ -88,6 +88,10 @@ from: ref/mkt/brand-identity v1
 owner: <who>                          effective: <date>
 trigger: a brand positioning is signed and issued in <your positioning
          process>
+         watch: record=<brand positioning>
+                system=<your positioning process>
+                change=<a positioning is signed and issued at a
+                version>
 concurrency: one run at a time - two runs would put two identities
              against one positioning
 goal: a visual system, a logo and usage rules, signed and issued as a
@@ -189,45 +193,83 @@ run-scoped:
   spend  - runs allocate-and-reconcile    owner: creative-producer
            from: draft-directions   until: run close
 handoffs:
-  take-in-position -> take-stock: the positioning and the promise at
-    the version they were issued at
-  take-in-position -> set-the-brief: what the identity has to carry,
-    written so a later direction can be tested against it
-  take-stock -> set-the-brief: the marks, colors, type and files in use
-    today, each with where it is used and how far it has drifted
-  set-the-brief -> brief-the-makers: the surfaces the system has to
-    cover, what it has to do on each, and the date it is promised
-  brief-the-makers -> draft-directions: the request as every agent heard
-    it, with the positioning attached at its version
-  draft-directions -> test-on-standard: the directions at a version,
-    each with the case for it written out
-  draft-directions -> clear-the-marks: every mark a direction rests on,
-    drawn, named, and with the goods and services it would cover
-  test-on-standard -> try-on-outsiders: the directions the positioning
-    carries, and the claims it will not support in the others
-  try-on-outsiders -> choose-identity: what each person said,
-    attributed, beside the direction it was said about
-  clear-the-marks -> choose-identity: the search result for every mark,
-    and the reviewer's reading of anything close to it
-  choose-identity -> build-the-system: the chosen direction, the
-    reasons for it, and anyone who disagreed and what they said
-  build-the-system -> clear-the-rights: every typeface, image and piece
-    of footage the system uses, named, with the license claimed for it
-  build-the-system -> test-in-use: the system at a version, and a page
-    and a deck built from nothing but it
-  clear-the-rights -> write-the-rules: the sources cleared, and the
-    terms each one was cleared under
-  test-in-use -> write-the-rules: the scores, with the rule behind
-    every failure
-  write-the-rules -> get-sign-offs: the system and the usage rules at
-    one version, with the scores and the rights attached
-  get-sign-offs -> issue-the-system: the signed system at the version
-    the signers read. A later change voids the approval and sign-offs
-    run again
-  get-sign-offs -> <your trademark filing process>: the signed artwork
-    and the goods and services it will be registered for
-  issue-the-system -> record-learnings: who was told, when, and what
-    each of them said they now have to change
+  take-in-position -> take-stock [issued-positioning]: the positioning
+    and the promise at the version they were issued at
+  take-in-position -> set-the-brief [identity-requirements]: what the
+    identity has to carry, written so a later direction can be tested
+    against it
+  take-stock -> set-the-brief [marks-in-use]: the marks, colors, type
+    and files in use today, each with where it is used and how far it
+    has drifted
+  set-the-brief -> brief-the-makers [identity-brief]: the surfaces the
+    system has to cover, what it has to do on each, and the date it is
+    promised
+  brief-the-makers -> draft-directions [makers-brief]: the request as
+    every agent heard it, with the positioning attached at its version
+  draft-directions -> test-on-standard [candidate-directions]: the
+    directions at a version, each with the case for it written out
+  draft-directions -> clear-the-marks [candidate-marks]: every mark a
+    direction rests on, drawn, named, and with the goods and services
+    it would cover
+  test-on-standard -> try-on-outsiders [carried-directions]: the
+    directions the positioning carries, and the claims it will not
+    support in the others
+  try-on-outsiders -> choose-identity [outsider-reactions]: what each
+    person said, attributed, beside the direction it was said about
+  clear-the-marks -> choose-identity [register-searches]: the search
+    result for every mark, and the reviewer's reading of anything
+    close to it
+  choose-identity -> build-the-system [chosen-direction]: the chosen
+    direction, the reasons for it, and anyone who disagreed and what
+    they said
+  build-the-system -> clear-the-rights [licensed-sources]: every
+    typeface, image and piece of footage the system uses, named, with
+    the license claimed for it
+  build-the-system -> test-in-use [built-system]: the system at a
+    version, and a page and a deck built from nothing but it
+  clear-the-rights -> write-the-rules [cleared-sources]: the sources
+    cleared, and the terms each one was cleared under
+  test-in-use -> write-the-rules [surface-scores]: the scores, with
+    the rule behind every failure
+  write-the-rules -> get-sign-offs [usage-rules]: the system and the
+    usage rules at one version, with the scores and the rights
+    attached
+  get-sign-offs -> issue-the-system [signed-system]: the signed system
+    at the version the signers read. A later change voids the approval
+    and sign-offs run again
+  get-sign-offs -> <your trademark filing process> [filing-package]:
+    the signed artwork and the goods and services it will be
+    registered for
+  issue-the-system -> record-learnings [reader-confirmations]: who was
+    told, when, and what each of them said they now have to change
+deviations:
+  test-on-standard -> draft-directions [direction-misses-promise]: a
+    direction does not carry what the positioning claims, so it is
+    redrawn or dropped and scored again
+  try-on-outsiders -> draft-directions [no-direction-lands]: outsiders
+    do not see the company in any direction, or read two of them the
+    same way, so the directions are drawn again
+  clear-the-marks -> draft-directions [mark-already-in-use]: a
+    candidate mark is already in use, so the direction that rested on
+    it is dropped or redrawn and searched again
+  choose-identity -> draft-directions [none-worth-backing]: none of
+    the directions is worth backing, so another set is drawn leaving
+    out what was already turned down
+  clear-the-rights -> build-the-system [license-refused]: a typeface,
+    an image or a piece of footage is refused, so that part of the
+    system is rebuilt from something the organization holds
+  test-in-use -> build-the-system [fails-on-surface]: the system fails
+    on a real page or a real deck, so what the report named is changed
+    and scored again
+  get-sign-offs -> build-the-system [sign-off-changes-system]: a
+    signer asks for changes to the system, so only the part they named
+    is built again
+  get-sign-offs -> write-the-rules [sign-off-changes-rules]: a signer
+    asks for changes to the usage rules, so only the rules they named
+    are written again
+  any -> take-in-position [positioning-changes]: the positioning is
+    issued again while the run is open, so the new version is taken in
+    and <who> says whether the work in flight still answers it
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the brand owner,

@@ -75,6 +75,8 @@ PROCESS: register a deal              id: <team>/register-a-deal   v1
 from: ref/prt/register-a-deal v1
 owner: <who>                          effective: <date>
 trigger: a partner submits a registration in <your partner portal>
+         watch: record=<deal registration> system=<your partner portal>
+                change=<a partner submits a registration>
 concurrency: runs may overlap - <how many> registrations are worked at
              once, and one customer opportunity carries one live claim
 goal: every registration answered within <days> with a written reason,
@@ -173,42 +175,63 @@ run-scoped:
              every: <cadence>
              from: check-partner   until: run close
 handoffs:
-  take-in-registration -> match-customer: the customer as the partner
-    named it, the products, the amount and the date they expect
-  match-customer -> check-partner: the account record the claim now
-    points at, with the parent and the sites it covers
-  match-customer -> check-claims: the same account, so claims are
-    looked for against a record rather than against a spelling
-  match-customer -> check-pipeline: the same account, so the direct
-    deals found are deals on this customer and not on its namesake
-  check-partner -> test-rules: the agreement at its signed version, the
-    tier, and anything overdue that the rules take into account
-  check-claims -> test-rules: every live claim on this customer, with
-    its owner, its products and its end date
-  check-pipeline -> test-rules: the direct deals open on this customer,
-    each with its creation date and its owner
-  test-rules -> read-evidence: every rule with a pass or a fail against
-    it, and the rule set at the version that was applied
-  read-evidence -> ask-partner: the claims marked asserted or absent,
-    which is what the partner is being asked about
-  read-evidence -> decide-registration: every claim marked, with the
-    record and the date behind each evidenced one
-  ask-partner -> read-evidence: what the partner sent back, dated, and
-    whether it arrived before the date it was due
-  decide-registration -> set-protection: the answer, the person who
-    gave it, and the rule or gap they gave as the reason
-  set-protection -> set-period: what the approval covers, written so
-    that a deal outside it can be recognized as outside it
-  set-period -> tell-both-sides: the start and end dates, and the
-    clause in the agreement they came from
-  tell-both-sides -> record-claim: the answer as both sides received
-    it, and the date each side was told
-  record-claim -> watch-deal: the live claim, its end date, and the
-    deal in the CRM it is attached to
-  watch-deal -> warn-before-lapse: what has moved and what has not,
-    dated, with the system each line was read from
-  warn-before-lapse -> close-registration: the warning as sent, the
-    date it was sent, and anything the partner said in reply
+  take-in-registration -> match-customer [submitted-registration]: the
+    customer as the partner named it, the products, the amount and the
+    date they expect
+  match-customer -> check-partner [matched-account]: the account record
+    the claim now points at, with the parent and the sites it covers
+  match-customer -> check-claims [account-for-claims]: the same
+    account, so claims are looked for against a record rather than
+    against a spelling
+  match-customer -> check-pipeline [account-for-pipeline]: the same
+    account, so the direct deals found are deals on this customer and
+    not on its namesake
+  check-partner -> test-rules [partner-standing]: the agreement at its
+    signed version, the tier, and anything overdue that the rules take
+    into account
+  check-claims -> test-rules [existing-claims]: every live claim on
+    this customer, with its owner, its products and its end date
+  check-pipeline -> test-rules [direct-deals]: the direct deals open on
+    this customer, each with its creation date and its owner
+  test-rules -> read-evidence [rule-results]: every rule with a pass or
+    a fail against it, and the rule set at the version that was applied
+  read-evidence -> ask-partner [evidence-gaps]: the claims marked
+    asserted or absent, which is what the partner is being asked about
+  read-evidence -> decide-registration [marked-evidence]: every claim
+    marked, with the record and the date behind each evidenced one
+  ask-partner -> read-evidence [partner-answer]: what the partner sent
+    back, dated, and whether it arrived before the date it was due
+  decide-registration -> set-protection [registration-answer]: the
+    answer, the person who gave it, and the rule or gap they gave as
+    the reason
+  set-protection -> set-period [protected-scope]: what the approval
+    covers, written so that a deal outside it can be recognized as
+    outside it
+  set-period -> tell-both-sides [protection-dates]: the start and end
+    dates, and the clause in the agreement they came from
+  tell-both-sides -> record-claim [answer-delivered]: the answer as
+    both sides received it, and the date each side was told
+  record-claim -> watch-deal [live-claim]: the live claim, its end
+    date, and the deal in the CRM it is attached to
+  watch-deal -> warn-before-lapse [deal-movement]: what has moved and
+    what has not, dated, with the system each line was read from
+  warn-before-lapse -> close-registration [lapse-warning]: the warning
+    as sent, the date it was sent, and anything the partner said in
+    reply
+deviations:
+  match-customer -> take-in-registration [name-does-not-match]: the
+    submitted name matches no account, or several, so the partner is
+    asked which customer they mean and the claim carries no protection
+    until one account is named
+  read-evidence -> ask-partner [claim-rests-on-nothing]: the claim
+    rests on nothing that is on the record, so the partner gets one
+    round of questions with a date on it
+  decide-registration -> ask-partner [more-needed-to-decide]: the
+    decider needs more before an answer, so the same one round of
+    questions carries what they asked for
+  warn-before-lapse -> decide-registration [more-time-asked]: the
+    partner asks for more time, so the extension is decided again under
+    the same rules and gets its own signer and end date
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the account

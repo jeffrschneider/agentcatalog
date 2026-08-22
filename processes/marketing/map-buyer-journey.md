@@ -91,6 +91,15 @@ owner: <who>                          effective: <date>
 trigger: a persona is agreed in <your profile process>, or the review
          date on a recorded map arrives, or <what change in the market
          brings the map back sooner>
+         watch: record=<persona> system=<your profile process>
+                change=<a persona is agreed at a version>
+         or watch: record=<recorded map>
+                system=<your review schedule>
+                change=<the review date on the map arrives>
+         or watch: record=<market signal>
+                system=<where the market change is seen>
+                change=<what change in the market brings the map back
+                sooner>
 concurrency: one run at a time for the same persona and the same
              purchase, because two maps of one journey leave the
              planning agents with neither. Runs for different personas
@@ -202,50 +211,69 @@ run-scoped:
                 from: take-in-persona   until: hand-over
 handoffs:
   take-in-persona -> read-behavior / read-search / design-study /
-    first-hand: the persona at its version, the purchase the map
-    covers, what each agent owes, and the date it is owed. Four
-    branches read one record
-  read-behavior -> draft-stages: the paths those buyers took, with the
-    period the paths were read over and the source under every figure
-  read-search -> draft-stages: what people search on the subject, each
-    term with its demand figure and the date that figure was pulled
-  read-search -> collect-questions: the same list, so a question people
-    type and a question a buyer says out loud land in one place
-  design-study -> clear-study: who is sampled, how the sample is drawn,
-    and every question at the version it will be asked in
-  clear-study -> talk-to-buyers: the sample and the questions as they
-    were approved. A question changed afterwards goes back through the
-    check before anyone is asked it
-  talk-to-buyers -> draft-stages: what buyers said, attributed to the
-    person who said it, with what each said about when it happened
-  first-hand -> draft-stages: what the people who deal with buyers say
-    they get asked, attributed the same way
-  draft-stages -> map-touchpoints: the stages in order, each with the
-    signal that says a buyer entered it
-  draft-stages -> collect-questions: the same stages, so every question
-    lands against one of them
-  draft-stages -> test-stages: the same stages, in the form the record
-    will be run over
-  map-touchpoints -> inventory-content: every touchpoint, its stage,
-    and the agent that owns it
-  collect-questions -> inventory-content: the questions per stage, in
-    the words buyers used
-  test-stages -> settle-map: whether each stage signal can be read from
-    a system in use, how many buyers each stage holds, and which stages
-    the record cannot see at all
-  inventory-content -> find-gaps: which published piece answers which
-    question, each at its address and its version
-  find-gaps -> settle-map: the questions nothing answers and the
-    questions answered by something buyers cannot find, ranked
-  settle-map -> write-map: the agreed map, the reasons behind it, and
-    anyone who disagreed and on what
-  write-map -> issue-version: the map in the wording it was agreed in
-  issue-version -> hand-over: the map at its number, and what changed
-    from the version it replaces
-  hand-over -> set-review: what each receiving agent said it would
-    change, and the date it said it by
-  set-review -> record-learnings: the review date and the conditions
-    that bring the map back sooner
+    first-hand [persona-and-owings]: the persona at its version, the
+    purchase the map covers, what each agent owes, and the date it is
+    owed. Four branches read one record
+  read-behavior -> draft-stages [buyer-paths]: the paths those buyers
+    took, with the period the paths were read over and the source under
+    every figure
+  read-search -> draft-stages [search-demand]: what people search on the
+    subject, each term with its demand figure and the date that figure
+    was pulled
+  read-search -> collect-questions [search-terms-for-questions]: the
+    same list, so a question people type and a question a buyer says out
+    loud land in one place
+  design-study -> clear-study [study-design]: who is sampled, how the
+    sample is drawn, and every question at the version it will be asked
+    in
+  clear-study -> talk-to-buyers [cleared-study]: the sample and the
+    questions as they were approved. A question changed afterwards goes
+    back through the check before anyone is asked it
+  talk-to-buyers -> draft-stages [buyer-answers]: what buyers said,
+    attributed to the person who said it, with what each said about when
+    it happened
+  first-hand -> draft-stages [first-hand-accounts]: what the people who
+    deal with buyers say they get asked, attributed the same way
+  draft-stages -> map-touchpoints [drafted-stages]: the stages in order,
+    each with the signal that says a buyer entered it
+  draft-stages -> collect-questions [stages-for-questions]: the same
+    stages, so every question lands against one of them
+  draft-stages -> test-stages [stages-to-test]: the same stages, in the
+    form the record will be run over
+  map-touchpoints -> inventory-content [touchpoints]: every touchpoint,
+    its stage, and the agent that owns it
+  collect-questions -> inventory-content [buyer-questions]: the
+    questions per stage, in the words buyers used
+  test-stages -> settle-map [signal-readability]: whether each stage
+    signal can be read from a system in use, how many buyers each stage
+    holds, and which stages the record cannot see at all
+  inventory-content -> find-gaps [content-inventory]: which published
+    piece answers which question, each at its address and its version
+  find-gaps -> settle-map [gap-list]: the questions nothing answers and
+    the questions answered by something buyers cannot find, ranked
+  settle-map -> write-map [agreed-map]: the agreed map, the reasons
+    behind it, and anyone who disagreed and on what
+  write-map -> issue-version [written-map]: the map in the wording it
+    was agreed in
+  issue-version -> hand-over [versioned-map]: the map at its number, and
+    what changed from the version it replaces
+  hand-over -> set-review [adoption-answers]: what each receiving agent
+    said it would change, and the date it said it by
+  set-review -> record-learnings [review-conditions]: the review date
+    and the conditions that bring the map back sooner
+deviations:
+  clear-study -> design-study [study-item-ruled-out]: consent rules out
+    part of the sample or a question, so the study is designed again
+    without it
+  talk-to-buyers -> design-study [too-few-answers]: too few buyers
+    answer, so the study is designed again or what came in is reported
+    with the shortfall recorded against it
+  test-stages -> draft-stages [signal-cannot-be-read]: a stage signal
+    cannot be read from any system, so the stages are drafted again
+    around something the record can see
+  settle-map -> draft-stages [room-does-not-agree]: the room does not
+    agree on the stages, so they are drafted again with what each side
+    said
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the experts who deal

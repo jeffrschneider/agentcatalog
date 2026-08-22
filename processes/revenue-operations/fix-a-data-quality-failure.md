@@ -77,6 +77,11 @@ from: ref/rev/fix-a-data-quality-failure v1
 owner: <who>                           effective: <date>
 trigger: a data quality rule crosses <threshold>, or a person reports a
          number that looks wrong in <your reporting layer>
+         watch: record=<the rule> system=<where the rules are run>
+                change=<a rule crosses its threshold>
+         or watch: record=<the report of a wrong number>
+                system=<your reporting layer>
+                change=<a person reports a number that looks wrong>
 concurrency: one run per rule - <how many> failures open at once, and a
              second report on the same rule joins the run that is
              already open
@@ -171,36 +176,53 @@ run-scoped:
                   every: <cadence>
                   from: take-in-failure   until: run close
 handoffs:
-  take-in-failure -> confirm-failure: the rule, what it measures, and
-    how far past its threshold it sits
-  confirm-failure -> measure-spread: the rule re-run, and whether the
-    query itself was the thing that broke
-  measure-spread -> find-start: the failing records, by object, owner
-    and date
-  find-start -> trace-source: the day it started, and what shipped,
-    changed or was imported that week
-  trace-source -> name-owner: the system, form or person that wrote the
-    failing values, with the evidence that it was that one
-  name-owner -> decide-stop-flow: the owner, told, with how many
-    records a day the source is still writing
-  decide-stop-flow -> fix-source: the decision on whether the source
-    keeps writing, and who made it
-  fix-source -> check-consent: the change as made at the source, and
-    the first record written after it
-  check-consent -> correct-records: the fields the backfill may touch,
-    and any value it may not restore
-  correct-records -> tell-readers: the count corrected, the old and new
-    values, and the dates the wrong figures covered
-  tell-readers -> rerun-rule: who was told, when, and which reports
-    were reissued
-  rerun-rule -> watch-fix: the rule's result on corrected records and
-    on records written since the fix
-  watch-fix -> tighten-rule: the rule read over <how long>, and whether
-    anything failed again
-  tighten-rule -> close-failure: the rule at its new version, or the
-    reason it was left alone
-  close-failure -> record-learnings: the failure as closed, with the
-    cause and the count corrected
+  take-in-failure -> confirm-failure [failing-rule]: the rule, what it
+    measures, and how far past its threshold it sits
+  confirm-failure -> measure-spread [confirmed-failure]: the rule
+    re-run, and whether the query itself was the thing that broke
+  measure-spread -> find-start [failing-records]: the failing records,
+    by object, owner and date
+  find-start -> trace-source [start-date]: the day it started, and what
+    shipped, changed or was imported that week
+  trace-source -> name-owner [named-source]: the system, form or person
+    that wrote the failing values, with the evidence that it was that
+    one
+  name-owner -> decide-stop-flow [source-owner]: the owner, told, with
+    how many records a day the source is still writing
+  decide-stop-flow -> fix-source [flow-decision]: the decision on
+    whether the source keeps writing, and who made it
+  fix-source -> check-consent [source-fix]: the change as made at the
+    source, and the first record written after it
+  check-consent -> correct-records [backfill-permissions]: the fields
+    the backfill may touch, and any value it may not restore
+  correct-records -> tell-readers [corrections-made]: the count
+    corrected, the old and new values, and the dates the wrong figures
+    covered
+  tell-readers -> rerun-rule [readers-told]: who was told, when, and
+    which reports were reissued
+  rerun-rule -> watch-fix [rule-result]: the rule's result on corrected
+    records and on records written since the fix
+  watch-fix -> tighten-rule [watch-result]: the rule read over <how
+    long>, and whether anything failed again
+  tighten-rule -> close-failure [rule-version]: the rule at its new
+    version, or the reason it was left alone
+  close-failure -> record-learnings [closed-failure]: the failure as
+    closed, with the cause and the count corrected
+deviations:
+  confirm-failure -> tighten-rule [rule-was-wrong]: the re-run shows the
+    query counting something it was never meant to count, so the run
+    goes straight to the rule and no record is traced, corrected or
+    reported on the way
+  trace-source -> measure-spread [trail-runs-cold]: nothing explains the
+    failing values, so the spread is measured again and the failing
+    records are read for what they have in common
+  fix-source -> decide-stop-flow [source-cannot-be-changed]: the source
+    is a system nobody here controls, so whether it keeps writing is
+    decided again
+  rerun-rule -> trace-source [still-failing]: records are still failing
+    after the fix, so the source is traced again for the second one
+  watch-fix -> trace-source [failure-came-back]: the failure returns
+    during the watch period, so the source is traced again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the system owner, the revenue

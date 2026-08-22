@@ -70,6 +70,9 @@ PROCESS: set the quotas               id: <team>/set-the-quotas   v1
 from: ref/rev/set-the-quotas v1
 owner: <who>                          effective: <date>
 trigger: the territory map for <period> is fixed at a version
+         watch: record=<the territory map> system=<your territory map
+                store>
+                change=<the map for the period is fixed at a version>
 concurrency: one run per period per segment - quotas for a segment are
              set once, and a change inside the period is a new version
              of the same run
@@ -158,40 +161,57 @@ run-scoped:
                every: <cadence>
                from: read-sellers   until: approve-quotas
 handoffs:
-  take-in-map -> set-over-assignment: the target, and what the map says
-    each patch can carry
-  take-in-map -> read-history: the new territory boundaries, so history
-    is read on the boundaries the quotas will use
-  take-in-map -> read-sellers: the same boundaries, and the date the
-    quotas take effect
-  set-over-assignment -> draft-quotas: the assigned total, as a figure,
-    with who decided it and why
-  read-history -> model-attainment: what closed per patch per period,
-    mapped onto the new boundaries, with every remapping marked
-  read-sellers -> test-capacity: who is in each seller, from when, and how
-    much of the period they are in it for
-  model-attainment -> draft-quotas: the attainment curve with its range,
-    and the data it was computed from
-  draft-quotas -> test-capacity: a number on every patch, with the
-    carrying figure and the curve behind it
-  draft-quotas -> test-history: the same drafts, at one version
-  test-capacity -> ramp-cases: every patch whose seller cannot work its
-    number, with the hours the finding rests on
-  test-history -> ramp-cases: every number more than <percent> away from
-    what the patch closed, with the history beside it
-  ramp-cases -> check-coverage: the ramped numbers, each naming the rule
-    that produced it and the dates it covers
-  check-coverage -> roll-up: every territory with its one quota, and any
-    patch that has none named
-  roll-up -> adjust-retest: the sum, the number, and the distance
-    between them
-  roll-up -> cost-plan: the same sum, at the version it was rolled up at
-  adjust-retest -> cost-plan: what moved, on which patch, and by how
-    much, with the tests rerun on the changed set
-  cost-plan -> approve-quotas: what the plan pays at each attainment
-    case, and what it costs if everybody hits
-  approve-quotas -> record-basis: the signed set, who signed it, and
-    when
+  take-in-map -> set-over-assignment [target-and-map]: the target, and
+    what the map says each patch can carry
+  take-in-map -> read-history [boundaries-for-history]: the new
+    territory boundaries, so history is read on the boundaries the
+    quotas will use
+  take-in-map -> read-sellers [boundaries-for-sellers]: the same
+    boundaries, and the date the quotas take effect
+  set-over-assignment -> draft-quotas [assigned-total]: the assigned
+    total, as a figure, with who decided it and why
+  read-history -> model-attainment [patch-history]: what closed per
+    patch per period, mapped onto the new boundaries, with every
+    remapping marked
+  read-sellers -> test-capacity [time-in-role]: who is in each seller,
+    from when, and how much of the period they are in it for
+  model-attainment -> draft-quotas [attainment-curve]: the attainment
+    curve with its range, and the data it was computed from
+  draft-quotas -> test-capacity [draft-numbers]: a number on every
+    patch, with the carrying figure and the curve behind it
+  draft-quotas -> test-history [drafts-for-history-test]: the same
+    drafts, at one version
+  test-capacity -> ramp-cases [capacity-findings]: every patch whose
+    seller cannot work its number, with the hours the finding rests on
+  test-history -> ramp-cases [history-findings]: every number more than
+    <percent> away from what the patch closed, with the history beside
+    it
+  ramp-cases -> check-coverage [ramped-numbers]: the ramped numbers,
+    each naming the rule that produced it and the dates it covers
+  check-coverage -> roll-up [coverage-verdict]: every territory with its
+    one quota, and any patch that has none named
+  roll-up -> adjust-retest [sum-and-gap]: the sum, the number, and the
+    distance between them
+  roll-up -> cost-plan [rolled-up-set]: the same sum, at the version it
+    was rolled up at
+  adjust-retest -> cost-plan [adjusted-set]: what moved, on which patch,
+    and by how much, with the tests rerun on the changed set
+  cost-plan -> approve-quotas [plan-cost]: what the plan pays at each
+    attainment case, and what it costs if everybody hits
+  approve-quotas -> record-basis [signed-quota-set]: the signed set, who
+    signed it, and when
+deviations:
+  test-history -> draft-quotas [draft-far-from-history]: a draft is
+    nowhere near what the patch actually closed, so it is drafted again
+  check-coverage -> draft-quotas [patch-uncovered]: a patch carries no
+    quota, or carries two, so the drafts are worked again
+  adjust-retest -> test-capacity [drafts-changed]: the numbers moved, so
+    every test the change touches runs again on the changed set
+  cost-plan -> adjust-retest [plan-costs-too-much]: the plan pays more
+    than the number funds, so the numbers move again with the cost
+    attached
+  approve-quotas -> adjust-retest [set-not-signed]: the signer will not
+    sign the set, so it is adjusted with what they objected to
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the leader who signs, the finance

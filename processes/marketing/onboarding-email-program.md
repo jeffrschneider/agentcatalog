@@ -85,6 +85,9 @@ PROCESS: onboarding email program     id: <team>/onboarding-email-program   v1
 from: ref/mkt/onboarding-email-program v1
 owner: <who>                          effective: <date>
 trigger: a customer starts, as <your system of record> records it
+         watch: record=<the customer account>
+                system=<your system of record>
+                change=<a customer's start is recorded>
 concurrency: runs always overlap - every customer who starts opens one,
              and <how many> stay open at once per holder of the
              lifecycle-manager agent
@@ -174,37 +177,58 @@ run-scoped:
              every: <cadence>
              from: read-account   until: run close
 handoffs:
-  take-in-customer -> read-account: who started, what they bought, and
-    the date they started
-  read-account -> set-the-goal: what the account has done and where it
-    stands, with the system behind every line and the date that line
-    was current
-  set-the-goal -> choose-the-path: the milestones this customer has to
-    reach, the version of the milestone list they were read from, and
-    the date they are meant to reach them by
-  choose-the-path -> brief-the-agents: the path at a version, naming
-    every step, the wait before it, and the reason it was chosen
-  brief-the-agents -> make-material: the steps the standing messages do
-    not cover, and what each one has to make the customer do
-  brief-the-agents -> build-the-send: the same path and the same account
-    picture. Both branches read one record
-  make-material -> check-and-sign: the copy and the design at a version
-  check-and-sign -> build-the-send: the approved material at the signed
-    version. A later change voids the approval and the sign-off runs
-    again
-  build-the-send -> send-the-step: the audience count before and after
-    the consent, opt-out and suppression rules were applied, the rule
-    behind every removal, the schedule, and the proof record
-  send-the-step -> watch: the version that went, the time it fired, and
-    who said go
-  watch -> change-the-path: what the customer did and did not do, set
-    against what the path expected of them by now
-  change-the-path -> build-the-send: the changed path at a new version,
-    with the date it changed and what the customer did that changed it
-  watch -> bring-in-person: everything the customer has already been
-    sent, and what the person is being asked to do
-  confirm-active -> close-the-run: every milestone with the evidence
-    under it, and the date the last one was met
+  take-in-customer -> read-account [new-customer]: who started, what
+    they bought, and the date they started
+  read-account -> set-the-goal [account-picture]: what the account has
+    done and where it stands, with the system behind every line and the
+    date that line was current
+  set-the-goal -> choose-the-path [milestones]: the milestones this
+    customer has to reach, the version of the milestone list they were
+    read from, and the date they are meant to reach them by
+  choose-the-path -> brief-the-agents [chosen-path]: the path at a
+    version, naming every step, the wait before it, and the reason it
+    was chosen
+  brief-the-agents -> make-material [material-brief]: the steps the
+    standing messages do not cover, and what each one has to make the
+    customer do
+  brief-the-agents -> build-the-send [path-and-account]: the same path
+    and the same account picture. Both branches read one record
+  make-material -> check-and-sign [new-material]: the copy and the
+    design at a version
+  check-and-sign -> build-the-send [signed-material]: the approved
+    material at the signed version. A later change voids the approval
+    and the sign-off runs again
+  build-the-send -> send-the-step [built-send]: the audience count
+    before and after the consent, opt-out and suppression rules were
+    applied, the rule behind every removal, the schedule, and the proof
+    record
+  send-the-step -> watch [sent-step]: the version that went, the time
+    it fired, and who said go
+  watch -> change-the-path [customer-behaviour]: what the customer did
+    and did not do, set against what the path expected of them by now
+  change-the-path -> build-the-send [changed-path]: the changed path at
+    a new version, with the date it changed and what the customer did
+    that changed it
+  watch -> bring-in-person [handover-pack]: everything the customer has
+    already been sent, and what the person is being asked to do
+  confirm-active -> close-the-run [milestone-evidence]: every milestone
+    with the evidence under it, and the date the last one was met
+deviations:
+  brief-the-agents -> build-the-send [nothing-new-to-make]: the
+    standing messages already cover every step of this path, so nothing
+    is made and nothing is signed for this run, and the send is built
+    from material a signer approved before the run opened
+  check-and-sign -> make-material [changes-requested]: the signers ask
+    for a change, so only the piece they named is made again
+  change-the-path -> make-material [next-step-needs-material]: the next
+    step the customer is given needs copy or design the standing
+    messages do not cover
+  change-the-path -> build-the-send [next-step-ready]: the next step is
+    covered by material already signed, so the send is built without
+    anything being made
+  confirm-active -> change-the-path [milestone-unevidenced]: a
+    milestone has no evidence under it, so the path changes rather than
+    the customer being recorded as active
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, brand, legal

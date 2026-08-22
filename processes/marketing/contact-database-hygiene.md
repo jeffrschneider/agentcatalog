@@ -76,6 +76,10 @@ PROCESS: contact database hygiene     id: <team>/contact-database-hygiene   v1
 from: ref/mkt/contact-database-hygiene v1
 owner: <who>                          effective: <date>
 trigger: a hygiene cycle opens on <your schedule>, or <who> calls one
+         watch: every=<your schedule>
+         or watch: record=<the cycle request>
+                system=<where a cycle is called for>
+                change=<a cycle is called for outside the schedule>
 concurrency: cycles do not overlap - one at a time, because two changes
              writing the same records cannot both be put back
 goal: a contact base where one record stands for one person, the fields
@@ -168,41 +172,69 @@ run-scoped:
                 every: <cadence>
                 from: open-cycle   until: run close
 handoffs:
-  open-cycle -> measure-base: what this cycle covers, written so that
-    any record can be tested for whether it is in scope
-  open-cycle -> confirm-rules: the sending each cleaned segment is
-    meant to feed, so the rules can be read against it
-  measure-base -> brief-cycle: a dated count of the base, saying how
-    many records there are, how many are complete enough to use, and
-    how many may be contacted
-  confirm-rules -> brief-cycle: the consent and retention rules at the
-    versions in force, and the date they were confirmed
-  brief-cycle -> reconcile-consent: the request as every agent heard it,
-    and the date the cycle is promised
-  reconcile-consent -> standardize: the consent record as one list,
-    naming for each contact the channels that are open to them
-  standardize -> propose-merges: the records with their fields in one
-    format, and the counts before and after
-  propose-merges -> merge-records: the candidate pairs, each with what
-    matched and what disagrees
-  merge-records -> list-removals: one record per person, each merged
-    record naming what went into it, what was kept and what was dropped
-  list-removals -> sign-removals: the records proposed for removal,
-    with the rule behind each one and the count
-  sign-removals -> remove-records: the signed list, with anything the
-    signers struck taken off it
-  remove-records -> fill-gaps: the surviving records, and where the
-    copy that puts the removals back is kept
-  fill-gaps -> apply-suppression: every filled field naming the source
-    it came from, the date it was read, and the sending its license
-    covers
-  apply-suppression -> rebuild-segments: the contacts that may be
-    reached, channel by channel
-  rebuild-segments -> score-change: the rebuilt segments with their
-    counts, set beside the counts the cycle started from
-  score-change -> report-cycle: a verdict per item, each citing the
-    rule and the version it was scored against
-  report-cycle -> record-learnings: the report, as delivered
+  open-cycle -> measure-base [cycle-scope]: what this cycle covers,
+    written so that any record can be tested for whether it is in
+    scope
+  open-cycle -> confirm-rules [intended-sending]: the sending each
+    cleaned segment is meant to feed, so the rules can be read against
+    it
+  measure-base -> brief-cycle [base-count]: a dated count of the base,
+    saying how many records there are, how many are complete enough to
+    use, and how many may be contacted
+  confirm-rules -> brief-cycle [rules-in-force]: the consent and
+    retention rules at the versions in force, and the date they were
+    confirmed
+  brief-cycle -> reconcile-consent [cycle-as-briefed]: the request as
+    every agent heard it, and the date the cycle is promised
+  reconcile-consent -> standardize [one-consent-record]: the consent
+    record as one list, naming for each contact the channels that are
+    open to them
+  standardize -> propose-merges [standardized-fields]: the records
+    with their fields in one format, and the counts before and after
+  propose-merges -> merge-records [merge-candidates]: the candidate
+    pairs, each with what matched and what disagrees
+  merge-records -> list-removals [merged-records]: one record per
+    person, each merged record naming what went into it, what was kept
+    and what was dropped
+  list-removals -> sign-removals [proposed-removals]: the records
+    proposed for removal, with the rule behind each one and the count
+  sign-removals -> remove-records [signed-removals]: the signed list,
+    with anything the signers struck taken off it
+  remove-records -> fill-gaps [surviving-records]: the surviving
+    records, and where the copy that puts the removals back is kept
+  fill-gaps -> apply-suppression [filled-fields]: every filled field
+    naming the source it came from, the date it was read, and the
+    sending its license covers
+  apply-suppression -> rebuild-segments [reachable-contacts]: the
+    contacts that may be reached, channel by channel
+  rebuild-segments -> score-change [rebuilt-segments]: the rebuilt
+    segments with their counts, set beside the counts the cycle
+    started from
+  score-change -> report-cycle [change-scores]: a verdict per item,
+    each citing the rule and the version it was scored against
+  report-cycle -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  standardize -> open-cycle [change-over-the-cap]: the change would
+    touch more records than its cap allows, so the cycle is opened
+    again with the scope rewritten or split
+  merge-records -> propose-merges [records-disagree]: two records look
+    like the same person and disagree on a field that matters, so the
+    pair goes back with the disagreement named and waits for a person
+    to say which value stands
+  sign-removals -> list-removals [signers-struck-records]: the signers
+    strike records off the removal list, so the list is drawn up again
+    without them
+  fill-gaps -> confirm-rules [license-does-not-cover-the-sending]:
+    a filled field comes from a source whose license does not cover
+    the sending it would feed, so the rules are confirmed again before
+    any program reads that field
+  score-change -> merge-records [merge-carried-wrong-consent]: a
+    merged record holds a permission neither original held, so that
+    merge is put back from the copy and made again
+  score-change -> apply-suppression [suppression-missed-a-contact]: a
+    contact the suppression should have caught is still reachable, so
+    the suppression is applied again and each write confirmed
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the legal confirmation and the

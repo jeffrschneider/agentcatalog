@@ -73,6 +73,9 @@ PROCESS: customer reference           id: <team>/customer-reference  v1
 from: ref/mkt/customer-reference v1
 owner: <who>                          effective: <date>
 trigger: a reference is needed by <your sales or marketing process>
+         watch: record=<reference request>
+                system=<your sales or marketing process>
+                change=<a request for a customer reference is raised>
 concurrency: runs may overlap - <how many> requests open at once
 goal: a customer who has agreed in writing to act as a reference, with
       the permission recorded, its limits stated, and the date it runs
@@ -148,36 +151,61 @@ run-scoped:
              every: <cadence>
              from: take-in-request   until: run close
 handoffs:
-  take-in-request -> set-profile: what the reference is for and who
-    will use it, in one line every later decision can be tested against
-  set-profile -> list-candidates: the segment, the product use and the
-    result, written so that a candidate can be judged against them
-  list-candidates -> check-standing: the candidate accounts by name
-  list-candidates -> verify-results: the same accounts, and the result
-    each one is being put forward to show
-  check-standing -> rank-shortlist: each account's standing, with the
-    system that was read and the date the reading was current
-  verify-results -> rank-shortlist: the numbers, each with the source
-    recorded under it
-  rank-shortlist -> clear-the-ask: the ordered candidates, and the
-    reason each one sits where it does
-  clear-the-ask -> write-request: the customer to approach, and
-    anything the account owner said to keep out of the request
-  write-request -> ask-customer: the request in writing, ready for the
-    customer to pass around inside their own company
-  ask-customer -> agree-terms: the customer's answer, and the name of
-    the person at the customer who gave it
-  agree-terms -> customer-signs: what the customer said they would do,
-    in the customer's own words
-  customer-signs -> get-sign-offs: the agreed terms at a version, with
-    the customer's approval attached
-  get-sign-offs -> record-reference: the signed permission at the
-    version the signers saw. A later change voids the approval and
-    sign-offs run again
-  record-reference -> hand-over: the entry on the reference list, with
-    its limits and the date it runs out
-  hand-over -> record-learnings: the entry as delivered, and every
-    refusal collected along the way
+  take-in-request -> set-profile [the-request]: what the reference is
+    for and who will use it, in one line every later decision can be
+    tested against
+  set-profile -> list-candidates [reference-profile]: the segment, the
+    product use and the result, written so that a candidate can be
+    judged against them
+  list-candidates -> check-standing [candidate-accounts]: the candidate
+    accounts by name
+  list-candidates -> verify-results [claims-to-verify]: the same
+    accounts, and the result each one is being put forward to show
+  check-standing -> rank-shortlist [account-standings]: each account's
+    standing, with the system that was read and the date the reading
+    was current
+  verify-results -> rank-shortlist [verified-numbers]: the numbers,
+    each with the source recorded under it
+  rank-shortlist -> clear-the-ask [ranked-candidates]: the ordered
+    candidates, and the reason each one sits where it does
+  clear-the-ask -> write-request [cleared-candidate]: the customer to
+    approach, and anything the account owner said to keep out of the
+    request
+  write-request -> ask-customer [written-request]: the request in
+    writing, ready for the customer to pass around inside their own
+    company
+  ask-customer -> agree-terms [customer-answer]: the customer's
+    answer, and the name of the person at the customer who gave it
+  agree-terms -> customer-signs [agreed-terms]: what the customer said
+    they would do, in the customer's own words
+  customer-signs -> get-sign-offs [customer-approval]: the agreed terms
+    at a version, with the customer's approval attached
+  get-sign-offs -> record-reference [signed-permission]: the signed
+    permission at the version the signers saw. A later change voids the
+    approval and sign-offs run again
+  record-reference -> hand-over [list-entry]: the entry on the
+    reference list, with its limits and the date it runs out
+  hand-over -> record-learnings [refusals-collected]: the entry as
+    delivered, and every refusal collected along the way
+deviations:
+  rank-shortlist -> set-profile [nobody-fits-the-profile]: no candidate
+    matches, so the profile is widened or a weaker match is accepted,
+    and that decision is recorded
+  rank-shortlist -> record-learnings [no-candidate-left]: nobody is
+    left to ask, so the run closes on the refusals and their reasons,
+    and no customer is approached, cleared or signed
+  clear-the-ask -> rank-shortlist [account-cannot-be-asked]: the
+    account owner says this customer cannot be asked now, so the next
+    candidate is taken
+  ask-customer -> rank-shortlist [customer-declines]: the customer
+    refuses, so the next candidate is approached and the refusal is
+    kept with the date they may be asked again
+  customer-signs -> agree-terms [customer-side-cuts-the-ask]: the
+    customer's own legal or communications people cut the ask down, so
+    what the customer will do is written again
+  get-sign-offs -> agree-terms [signed-with-limits]: legal or rights
+    sign only a narrower permission, so the customer is asked to accept
+    the narrower terms
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the customer

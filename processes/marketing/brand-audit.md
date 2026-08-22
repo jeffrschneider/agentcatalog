@@ -87,6 +87,10 @@ from: ref/mkt/brand-audit v1
 owner: <who>                          effective: <date>
 trigger: the audit falls due on <your cadence>, or <who> raises a
          concern about how the organization is coming across
+         watch: every=<your cadence>
+         or watch: record=<concern> system=<your brand concern record>
+                change=<a concern about how the organization is coming
+                across is raised>
 concurrency: one run at a time over the same channels and the same
              period. Audits of different markets may overlap -
              <how many> at once
@@ -178,42 +182,65 @@ run-scoped:
   spend  - runs allocate-and-reconcile        owner: study-manager
            from: ask-the-audience   until: run close
 handoffs:
-  take-in-request -> set-the-scope: what the audit has to settle, and
-    the date the findings are owed
-  set-the-scope -> name-versions: the channels, the period and the
-    markets the audit covers, and what it leaves out
-  name-versions -> brief-the-audit: each standard at the version the
-    material will be judged against, and what changed in it since the
-    last audit
+  take-in-request -> set-the-scope [audit-question]: what the audit
+    has to settle, and the date the findings are owed
+  set-the-scope -> name-versions [audit-scope]: the channels, the
+    period and the markets the audit covers, and what it leaves out
+  name-versions -> brief-the-audit [standard-versions]: each standard
+    at the version the material will be judged against, and what
+    changed in it since the last audit
   brief-the-audit -> list-the-places / read-coverage / ask-the-audience
-    / read-the-numbers: the scope and the standard as every agent heard
-    them, and the date each part is due
-  list-the-places -> draw-the-sample: every place the brand appears, by
-    channel, with the agent that answers for each one
-  draw-the-sample -> score-the-sample: the sampled items at the version
-    each was served at, with the date each was pulled
-  draw-the-sample -> read-the-set: the same items, read together
-  score-the-sample -> name-the-gaps: a verdict per item, each citing
-    the standard, its version and the rule applied
-  read-the-set -> name-the-gaps: what the sample looks and sounds like
-    taken together, with the items that show it named
-  read-coverage -> name-the-gaps: what outsiders said, attributed and
-    dated, quoted where a summary would lose the point
-  ask-the-audience -> work-out-figures: the answers as they were given,
-    each marked with the version of the question it answered
-  read-the-numbers -> work-out-figures: the organization's own figures,
-    each naming where it came from and when it was pulled
-  work-out-figures -> name-the-gaps: what people say the organization
-    stands for, with the range around every figure and what moved since
-    the last audit
-  name-the-gaps -> write-findings: each gap with the rule it fails, the
-    version of that rule, and the items that show it
-  write-findings -> decide-each-gap: the findings at a version, with
-    everything the audit could not read marked as unread
-  decide-each-gap -> hand-off-gaps: a decision per gap, the person who
-    made it, and the date an accepted gap is read again
-  hand-off-gaps -> record-learnings: who took each gap and what they
-    said they would do about it
+    / read-the-numbers [audit-brief]: the scope and the standard as
+    every agent heard them, and the date each part is due
+  list-the-places -> draw-the-sample [appearance-list]: every place the
+    brand appears, by channel, with the agent that answers for each one
+  draw-the-sample -> score-the-sample [sampled-items]: the sampled
+    items at the version each was served at, with the date each was
+    pulled
+  draw-the-sample -> read-the-set [whole-sample]: the same items, read
+    together
+  score-the-sample -> name-the-gaps [item-verdicts]: a verdict per
+    item, each citing the standard, its version and the rule applied
+  read-the-set -> name-the-gaps [set-reading]: what the sample looks
+    and sounds like taken together, with the items that show it named
+  read-coverage -> name-the-gaps [outside-coverage]: what outsiders
+    said, attributed and dated, quoted where a summary would lose the
+    point
+  ask-the-audience -> work-out-figures [audience-answers]: the answers
+    as they were given, each marked with the version of the question
+    it answered
+  read-the-numbers -> work-out-figures [own-figures]: the
+    organization's own figures, each naming where it came from and
+    when it was pulled
+  work-out-figures -> name-the-gaps [perception-figures]: what people
+    say the organization stands for, with the range around every
+    figure and what moved since the last audit
+  name-the-gaps -> write-findings [named-gaps]: each gap with the rule
+    it fails, the version of that rule, and the items that show it
+  write-findings -> decide-each-gap [audit-findings]: the findings at
+    a version, with everything the audit could not read marked as
+    unread
+  decide-each-gap -> hand-off-gaps [gap-decisions]: a decision per
+    gap, the person who made it, and the date an accepted gap is read
+    again
+  hand-off-gaps -> record-learnings [gap-owners]: who took each gap
+    and what they said they would do about it
+deviations:
+  score-the-sample -> name-versions [rule-does-not-settle]: a rule
+    does not settle the case in front of it, so the item is held
+    unscored and what the rule means is written down at its version
+  read-the-set -> list-the-places [unlisted-channel]: material turns
+    up from a channel nobody listed, so the places are listed again
+    and a sample is drawn from the new one
+  work-out-figures -> ask-the-audience [too-few-answers]: too few
+    answers came back to read, so the audience is asked again or a
+    different sample is drawn
+  name-the-gaps -> draw-the-sample [sample-too-thin]: the sample will
+    not carry a finding, so more is pulled from that channel before
+    the gap is named
+  decide-each-gap -> write-findings [finding-disputed]: a finding is
+    disputed, so it is restated, narrowed or withdrawn with the reason
+    recorded beside it
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, the brand owner

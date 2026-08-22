@@ -96,6 +96,9 @@ from: ref/mkt/test-ad-creative v1
 owner: <who>                          effective: <date>
 trigger: a performance question is raised against creative that is
          already running in <your paid channels>
+         watch: record=<running creative> system=<your paid channels>
+                change=<a performance question is raised against
+                creative that is already running>
 concurrency: runs may overlap - <how many> live at once, and
              <how many> against one audience
 goal: one element of the running creative tested against variants of
@@ -197,43 +200,74 @@ run-scoped:
              every: <cadence>
              from: launch-test   until: run close
 handoffs:
-  take-in-question -> read-current: the question, written so that a
-    number can answer it
-  read-current -> name-the-change: what the running creative delivers
-    now and how much it moves week to week, which is the figure the gap
-    in the bar is set against
-  name-the-change -> design-comparison: the one element under test and
-    what it is meant to improve
-  design-comparison -> set-evidence-bar: the number of variants, the
-    split and the placements, because how much exposure the test needs
-    depends on all three
-  set-evidence-bar -> commit-budget: the minimum exposure, the minimum
-    run length, the size of the gap and the conversion, at a version
-  commit-budget -> brief-makers / wire-measurement: the same committed
-    test. Both branches read one record
-  brief-makers -> produce-variants: the element that changes, and
-    everything that has to stay identical to the running creative
-  produce-variants -> check-variant-set: every variant at a version,
-    beside the running creative it is being compared with
-  check-variant-set -> get-sign-offs: the scored set, with the design
-    line behind every failure
-  get-sign-offs -> check-before-on: the approved variants at the signed
-    version. A variant changed afterward voids the approval and
-    sign-offs run again
-  wire-measurement -> check-before-on: the conversion definition and the
-    tag each variant carries
-  check-before-on -> launch-test: the scored configuration, with the
-    design line or the rule behind every failure
-  launch-test -> watch-delivery: the date and hour the count starts
-    from, and the split as configured
-  watch-delivery -> read-the-result: what each variant was served, so
-    the result is read only over the period the split actually held
-  read-the-result -> call-the-winner: exposure per variant, run length
-    and conversion rate, each line attributed to its source
-  call-the-winner -> roll-out-winner: the winning variant at its signed
-    version, and the placements it replaces the running creative in
-  call-the-winner -> record-learnings: the call, its date, and the four
-    parts of the bar with what each one stood at when the call was made
+  take-in-question -> read-current [performance-question]: the
+    question, written so that a number can answer it
+  read-current -> name-the-change [current-performance]: what the
+    running creative delivers now and how much it moves week to week,
+    which is the figure the gap in the bar is set against
+  name-the-change -> design-comparison [element-under-test]: the one
+    element under test and what it is meant to improve
+  design-comparison -> set-evidence-bar [comparison-design]: the number
+    of variants, the split and the placements, because how much
+    exposure the test needs depends on all three
+  set-evidence-bar -> commit-budget [evidence-bar]: the minimum
+    exposure, the minimum run length, the size of the gap and the
+    conversion, at a version
+  commit-budget -> brief-makers / wire-measurement [committed-test]:
+    the same committed test. Both branches read one record
+  brief-makers -> produce-variants [variant-brief]: the element that
+    changes, and everything that has to stay identical to the running
+    creative
+  produce-variants -> check-variant-set [variant-set]: every variant at
+    a version, beside the running creative it is being compared with
+  check-variant-set -> get-sign-offs [variant-scores]: the scored set,
+    with the design line behind every failure
+  get-sign-offs -> check-before-on [approved-variants]: the approved
+    variants at the signed version. A variant changed afterward voids
+    the approval and sign-offs run again
+  wire-measurement -> check-before-on [measurement-setup]: the
+    conversion definition and the tag each variant carries
+  check-before-on -> launch-test [checked-configuration]: the scored
+    configuration, with the design line or the rule behind every
+    failure
+  launch-test -> watch-delivery [switch-on-record]: the date and hour
+    the count starts from, and the split as configured
+  watch-delivery -> read-the-result [served-split]: what each variant
+    was served, so the result is read only over the period the split
+    actually held
+  read-the-result -> call-the-winner [result-reading]: exposure per
+    variant, run length and conversion rate, each line attributed to
+    its source
+  call-the-winner -> roll-out-winner [winning-variant]: the winning
+    variant at its signed version, and the placements it replaces the
+    running creative in
+  call-the-winner -> record-learnings [the-call-and-the-bar]: the call,
+    its date, and the four parts of the bar with what each one stood at
+    when the call was made
+deviations:
+  check-variant-set -> produce-variants [more-than-one-difference]: a
+    variant differs from the running creative in more than the element
+    under test, so it is made again
+  get-sign-offs -> produce-variants [sign-off-changes]: a signer asks
+    for changes, so the variants they named are made again and go back
+    through the check on the set
+  check-before-on -> wire-measurement [wrong-tag]: a variant carries
+    the wrong tag, so the measurement is wired again before anything
+    switches on
+  check-before-on -> produce-variants [variant-rejected]: a platform
+    rejects a variant on policy, so it is rewritten or that arm of the
+    test is dropped
+  watch-delivery -> launch-test [split-does-not-hold]: the platform
+    stopped serving the variants at the agreed split, so the buyer
+    resets it and the exposure count starts again from the moment the
+    split holds
+  call-the-winner -> watch-delivery [bar-not-met-yet]: not every part
+    of the bar has been met, so the test keeps running and the numbers
+    are read again
+  call-the-winner -> record-learnings [no-variant-won]: the bar is met
+    and no variant beat the running creative, so the run records a no
+    difference and passes over the roll-out, leaving the running
+    creative in every placement it already had
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the budget, brand and legal

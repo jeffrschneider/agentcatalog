@@ -81,6 +81,9 @@ from: ref/prt/check-and-pay-a-claim v1
 owner: <who>                          effective: <date>
 trigger: a partner submits a claim against an approved activity in
          <your partner portal>
+         watch: record=<fund claim> system=<your partner portal>
+                change=<a partner submits a claim against an approved
+                activity>
 concurrency: runs may overlap freely - one claim is one run, and one
              approval is claimed against once
 goal: every claim settled within <days> of arriving, paid within <days>
@@ -171,38 +174,55 @@ run-scoped:
   balance - runs allocate-and-reconcile        owner: fund-allocator
             from: score-claim     until: run close
 handoffs:
-  take-in-claim -> check-complete: the claim, the approval it rests on,
-    the evidence list agreed at approval, and the date it arrived
-  check-complete -> match-approval: the documents present, and every
-    one the approval asked for that is not here
-  match-approval -> check-evidence: the claimed activity set against
-    the approved one, with every difference named
-  check-evidence -> check-costs: each item of the evidence list marked
-    met or not met, with what was supplied against it
-  check-costs -> check-invoices: every line marked eligible or not,
-    with the rule behind each refusal
-  check-invoices -> check-produced: the invoices as read, the total
-    claimed, and the currency and tax treatment of each line
-  check-produced -> check-duplicate: what the activity produced,
-    dated, from the system it was counted in
-  check-duplicate -> score-claim: any cost seen twice, with both claims
-    named
-  ask-missing -> check-complete: the partner's answer and the date it
-    arrived, so the checks resume from the one that stopped
-  score-claim -> settle-line: the lines the rules could not reach, each
-    with what is known about it
-  score-claim -> approve-payment: the scored claim, the amount to pay,
-    and every cut line with its reason
-  settle-line -> approve-payment: the person's decision on each line,
-    with the reason they gave
-  approve-payment -> pay-partner: the signed amount, the payee, and the
-    fund line it is paid from
-  pay-partner -> release-fund: the payment reference and the date paid
-  release-fund -> tell-partner: the partner's balance after the claim,
-    and what went back to the fund
-  tell-partner -> report-claim: what the partner was told, on what date
-  report-claim -> record-learning: the claim as it entered the period's
-    numbers
+  take-in-claim -> check-complete [claim-and-approval]: the claim, the
+    approval it rests on, the evidence list agreed at approval, and the
+    date it arrived
+  check-complete -> match-approval [claim-documents]: the documents
+    present, and every one the approval asked for that is not here
+  match-approval -> check-evidence [approval-match]: the claimed
+    activity set against the approved one, with every difference named
+  check-evidence -> check-costs [evidence-check]: each item of the
+    evidence list marked met or not met, with what was supplied against
+    it
+  check-costs -> check-invoices [cost-eligibility]: every line marked
+    eligible or not, with the rule behind each refusal
+  check-invoices -> check-produced [invoice-check]: the invoices as
+    read, the total claimed, and the currency and tax treatment of each
+    line
+  check-produced -> check-duplicate [activity-results]: what the
+    activity produced, dated, from the system it was counted in
+  check-duplicate -> score-claim [duplicate-costs]: any cost seen
+    twice, with both claims named
+  ask-missing -> check-complete [partner-answer]: the partner's answer
+    and the date it arrived, so the checks resume from the one that
+    stopped
+  score-claim -> settle-line [unsettled-lines]: the lines the rules
+    could not reach, each with what is known about it
+  score-claim -> approve-payment [scored-claim]: the scored claim, the
+    amount to pay, and every cut line with its reason
+  settle-line -> approve-payment [settled-lines]: the person's decision
+    on each line, with the reason they gave
+  approve-payment -> pay-partner [signed-payment]: the signed amount,
+    the payee, and the fund line it is paid from
+  pay-partner -> release-fund [payment-reference]: the payment
+    reference and the date paid
+  release-fund -> tell-partner [released-balance]: the partner's
+    balance after the claim, and what went back to the fund
+  tell-partner -> report-claim [partner-told]: what the partner was
+    told, on what date
+  report-claim -> record-learning [period-entry]: the claim as it
+    entered the period's numbers
+deviations:
+  match-approval -> settle-line [activity-not-approved]: the activity
+    claimed is not the one that was approved, so a person decides
+    whether what happened is what the money was approved for, and the
+    checks between here and the scoring do not run on the claim
+  approve-payment -> score-claim [amount-not-signed]: the signer will
+    not sign the amount, so the claim is scored again on the lines the
+    signer named
+  tell-partner -> settle-line [line-challenged]: the partner challenges
+    a line that was cut, so the person who settles lines takes it and
+    the checks are not run again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the finance

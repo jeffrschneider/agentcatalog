@@ -71,6 +71,9 @@ from: ref/sls/return-a-lead-to-nurture v1
 owner: <who>                           effective: <date>
 trigger: a qualification decides to return a lead to nurture in <your
          qualification process>
+         watch: record=<lead>
+                system=<your qualification process>
+                change=<a qualification returns a lead to nurture>
 concurrency: one run per lead - a run stays open until its date
              arrives, so <how many> dated leads sit open at once
 goal: every returned lead handed back with the reason a person gave, a
@@ -141,31 +144,47 @@ run-scoped:
            every: <cadence>
            from: close-record  until: run close
 handoffs:
-  take-in-return -> read-reason: the lead, the decision, the person who
-    made it, and everything qualification recorded
-  read-reason -> check-reason: the reason in one line, chosen from the
-    reason list, with what the seller said behind it
-  check-reason -> set-date: whether the record supports the reason, and
-    every answer that contradicts it
-  set-date -> name-triggers: the date, and what has to be true about
-    this buyer by then
-  name-triggers -> write-note: the events that end the wait early, each
-    written so a system can see it happen
-  write-note -> tell-buyer: what the buyer is to be told, and what was
-    already promised to them
-  write-note -> hand-to-nurture: the reason, the date, the events, and
-    everything learned in qualification
-  hand-to-nurture -> set-watch: the account the events are watched on,
-    and the date the watch expires
-  tell-buyer -> close-record: what the buyer was told and when
-  set-watch -> close-record: the watch as armed, naming each event and
-    the system it is read from
-  close-record -> look-again: the closed record, the date, and the
-    reading the account stood at when it closed
-  look-again -> decide-return: what changed since the return, each line
-    naming the system it came from and when it was read
-  decide-return -> record-outcome: the decision in one line, the person
-    who made it, and the date
+  take-in-return -> read-reason [return-decision]: the lead, the
+    decision, the person who made it, and everything qualification
+    recorded
+  read-reason -> check-reason [the-reason]: the reason in one line,
+    chosen from the reason list, with what the seller said behind it
+  check-reason -> set-date [reason-checked]: whether the record
+    supports the reason, and every answer that contradicts it
+  set-date -> name-triggers [look-again-date]: the date, and what has
+    to be true about this buyer by then
+  name-triggers -> write-note [early-signals]: the events that end
+    the wait early, each written so a system can see it happen
+  write-note -> tell-buyer [what-to-tell-buyer]: what the buyer is to
+    be told, and what was already promised to them
+  write-note -> hand-to-nurture [handback-note]: the reason, the
+    date, the events, and everything learned in qualification
+  hand-to-nurture -> set-watch [watch-scope]: the account the events
+    are watched on, and the date the watch expires
+  tell-buyer -> close-record [buyer-told]: what the buyer was told
+    and when
+  set-watch -> close-record [armed-watch]: the watch as armed,
+    naming each event and the system it is read from
+  close-record -> look-again [closed-record]: the closed record, the
+    date, and the reading the account stood at when it closed
+  look-again -> decide-return [what-changed]: what changed since the
+    return, each line naming the system it came from and when it was
+    read
+  decide-return -> record-outcome [requalify-or-close]: the decision
+    in one line, the person who made it, and the date
+deviations:
+  check-reason -> read-reason [reason-contradicts-record]: the
+    record does not support the reason given, so the reason is read
+    again against the answers that contradict it
+  tell-buyer -> decide-return [buyer-asks-to-resume]: the buyer asks
+    to be picked up again straight away, so the handback, the watch
+    and the wait are all passed over and a person decides now
+  set-watch -> look-again [signal-fires-early]: a named event fires
+    before the date, so the account is read again at once, and the
+    record still closes with its reason and its date
+  decide-return -> set-date [still-not-ready]: the lead is still not
+    ready, so a new date is set rather than the old one being rolled
+    forward
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the seller, the sales manager

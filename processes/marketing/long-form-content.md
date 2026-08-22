@@ -74,6 +74,8 @@ PROCESS: long-form content            id: <team>/long-form-content   v1
 from: ref/mkt/long-form-content v1
 owner: <who>                          effective: <date>
 trigger: a topic is approved in <your content planning process>
+         watch: record=<topic> system=<your content planning process>
+                change=<a topic is approved for a long-form piece>
 concurrency: runs overlap - <how many> pieces in production at once
 goal: an article or guide that is sourced, signed, published on its
       date, promoted, and reported against what the topic was approved
@@ -161,34 +163,57 @@ run-scoped:
   spend       - runs allocate-and-reconcile    owner: media-buyer
                 from: promote   until: run close
 handoffs:
-  take-in-topic -> search-terms: what the piece has to do and for whom,
-    in one line that every later decision can be tested against
-  search-terms -> brief-the-piece: the terms and the questions, each
-    with the demand figure behind it and the date it was pulled
-  brief-the-piece -> gather-evidence: the request as every agent heard
-    it, and the date the piece is promised
-  gather-evidence -> agree-outline: the evidence, with a source line
-    for every fact
-  agree-outline -> write-draft: the argument and the sections, and the
-    search terms each section has to answer
-  agree-outline -> make-visuals: the sections that need a diagram, an
-    image or a video
-  edit-draft -> write-draft: the edit at a version, item by item, in
-    terms the writer can work through without coming back to ask
-  check-facts -> get-sign-offs: the draft at a version, with every
-    claim carrying the source it rests on
-  make-visuals -> get-sign-offs: the visual set at a version
-  get-sign-offs -> build-page: the approved piece at the signed
-    version. A later change voids the approval and sign-offs run again
-  build-page -> wire-measurement: the page and its form fields, while
-    the page can still be changed
-  wire-measurement -> check-page: the page as it will be served, and a
-    dated test showing each conversion arriving
-  check-page -> publish: the scored list, with the rule behind every
-    failure
-  publish -> promote: the live address, the tracking parameters, and
-    what the piece is meant to make a reader do
-  report-piece -> record-learnings: the report, as delivered
+  take-in-topic -> search-terms [topic-in-one-line]: what the piece has
+    to do and for whom, in one line that every later decision can be
+    tested against
+  search-terms -> brief-the-piece [search-terms-and-demand]: the terms
+    and the questions, each with the demand figure behind it and the
+    date it was pulled
+  brief-the-piece -> gather-evidence [piece-brief]: the request as every
+    agent heard it, and the date the piece is promised
+  gather-evidence -> agree-outline [sourced-evidence]: the evidence,
+    with a source line for every fact
+  agree-outline -> write-draft [outline]: the argument and the sections,
+    and the search terms each section has to answer
+  agree-outline -> make-visuals [visual-requirements]: the sections that
+    need a diagram, an image or a video
+  edit-draft -> write-draft [edit-notes]: the edit at a version, item by
+    item, in terms the writer can work through without coming back to
+    ask
+  check-facts -> get-sign-offs [sourced-draft]: the draft at a version,
+    with every claim carrying the source it rests on
+  make-visuals -> get-sign-offs [visual-set]: the visual set at a
+    version
+  get-sign-offs -> build-page [signed-piece]: the approved piece at the
+    signed version. A later change voids the approval and sign-offs run
+    again
+  build-page -> wire-measurement [built-page]: the page and its form
+    fields, while the page can still be changed
+  wire-measurement -> check-page [measured-page]: the page as it will be
+    served, and a dated test showing each conversion arriving
+  check-page -> publish [page-check-results]: the scored list, with the
+    rule behind every failure
+  publish -> promote [live-piece]: the live address, the tracking
+    parameters, and what the piece is meant to make a reader do
+  report-piece -> record-learnings [piece-report]: the report, as
+    delivered
+deviations:
+  edit-draft -> write-draft [rewrites-named]: the edit names what has to
+    be rewritten, so the draft is written again at a new version
+  check-facts -> write-draft [claim-unsourced]: a claim turns out to
+    have no source, so the draft goes back and the sentence is cut or
+    the source is found
+  get-sign-offs -> write-draft [copy-changes-requested]: a signer asks
+    for changes to the words, so the draft is written again and only the
+    piece they named reopens
+  get-sign-offs -> make-visuals [visual-changes-requested]: a signer
+    asks for changes to a visual, so that visual is made again
+  wire-measurement -> build-page [page-must-change]: the measurement
+    needs the page changed, so the page is built again while it can
+    still be changed
+  check-page -> build-page [page-check-failures]: the check on the
+    finished page fails, so the page is built again against the rule
+    behind each failure
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the expert, legal, brand and

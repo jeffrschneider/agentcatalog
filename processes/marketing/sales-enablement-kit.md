@@ -77,6 +77,10 @@ from: ref/mkt/sales-enablement-kit v1
 owner: <who>                          effective: <date>
 trigger: sales names a gap it cannot close in a live deal, or <your
          launch process> asks for a kit
+         watch: record=<an enablement request>
+                system=<your enablement library>
+                change=<sales names a gap it cannot close in a live
+                deal, or a launch asks for a kit>
 concurrency: runs may overlap - <how many> kits in production at once
 goal: a deck, a one-pager and objection answers, signed, tried on reps,
       in the hands of the sales team at a version everyone can name,
@@ -170,37 +174,57 @@ run-scoped:
            every: <cadence>
            from: hand-to-sales   until: run close
 handoffs:
-  take-in-gap -> set-obligations: the gap in one line, the deals it
-    came up in, and what a rep has to be able to say
-  set-obligations -> hear-the-field: the reps sales has committed to
-    the interviews, and the dates they are available
-  set-obligations -> report-the-gap: what sales agreed to send back
-    and by when, written down before any of the material is made
-  hear-the-field -> gather-proof: what buyers actually pushed back on,
-    attributed to the rep who heard it and the deal it was said in
-  gather-proof -> settle-answers: a source line under every answer,
-    and any answer still unsourced marked as unsourced
-  settle-answers -> brief-the-makers: each objection with the answer
-    it gets, the proof behind it, and what may not be said
-  brief-the-makers -> build-deck / write-one-pager / write-objections:
-    the request as every agent heard it, and the date the kit is
-    promised. Three pieces read one record
-  build-deck -> score-kit: the deck at a version
-  write-one-pager -> score-kit: the one-pager at a version
-  write-objections -> score-kit: the objection answers at a version,
-    every answer carrying the source it rests on
-  score-kit -> get-sign-offs: the scored list, with the rule and its
-    version behind every failure
-  get-sign-offs -> try-on-reps: the approved kit at the signed
-    version. A later change voids the approval and sign-offs run again
-  try-on-reps -> hand-to-sales: what happened in each conversation,
-    attributed to the rep, beside the piece it was said about
-  hand-to-sales -> watch-usage: the version reps hold, the date they
-    got it, and where it lives
-  watch-usage -> report-the-gap: which pieces reps opened, in which
-    deals, and what reps reported as wrong
-  report-the-gap -> record-learnings: the report as delivered, and
-    what the sales leader said about it
+  take-in-gap -> set-obligations [the-gap]: the gap in one line, the
+    deals it came up in, and what a rep has to be able to say
+  set-obligations -> hear-the-field [committed-reps]: the reps sales
+    has committed to the interviews, and the dates they are available
+  set-obligations -> report-the-gap [sales-obligations]: what sales
+    agreed to send back and by when, written down before any of the
+    material is made
+  hear-the-field -> gather-proof [field-objections]: what buyers
+    actually pushed back on, attributed to the rep who heard it and the
+    deal it was said in
+  gather-proof -> settle-answers [answer-sources]: a source line under
+    every answer, and any answer still unsourced marked as unsourced
+  settle-answers -> brief-the-makers [agreed-answers]: each objection
+    with the answer it gets, the proof behind it, and what may not be
+    said
+  brief-the-makers -> build-deck / write-one-pager / write-objections
+    [kit-brief]: the request as every agent heard it, and the date the
+    kit is promised. Three pieces read one record
+  build-deck -> score-kit [deck]: the deck at a version
+  write-one-pager -> score-kit [one-pager]: the one-pager at a version
+  write-objections -> score-kit [objection-answers]: the objection
+    answers at a version, every answer carrying the source it rests on
+  score-kit -> get-sign-offs [kit-score]: the scored list, with the
+    rule and its version behind every failure
+  get-sign-offs -> try-on-reps [signed-kit]: the approved kit at the
+    signed version. A later change voids the approval and sign-offs run
+    again
+  try-on-reps -> hand-to-sales [trial-results]: what happened in each
+    conversation, attributed to the rep, beside the piece it was said
+    about
+  hand-to-sales -> watch-usage [kit-handover]: the version reps hold,
+    the date they got it, and where it lives
+  watch-usage -> report-the-gap [usage-record]: which pieces reps
+    opened, in which deals, and what reps reported as wrong
+  report-the-gap -> record-learnings [gap-report]: the report as
+    delivered, and what the sales leader said about it
+deviations:
+  score-kit -> build-deck [deck-fails-the-score]: the deck fails a
+    claim or a guideline, so it is built again against what the score
+    named
+  score-kit -> write-one-pager [one-pager-fails-the-score]: the
+    one-pager fails a claim or a guideline, so it is written again
+  score-kit -> write-objections [answers-fail-the-score]: an answer
+    fails the claims register, so the answers are written again
+  get-sign-offs -> build-deck [deck-changes-requested]: a signer asks
+    for changes to the deck, and only the deck reopens
+  get-sign-offs -> write-objections [answer-changes-requested]: a
+    signer asks for changes to an answer, and only the answers reopen
+  try-on-reps -> write-objections [answer-did-not-hold]: an answer did
+    not hold in front of a buyer, so it is written again and signed off
+    again before any other rep sees it
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales leader, the account

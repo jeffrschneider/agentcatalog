@@ -71,6 +71,9 @@ PROCESS: influencer campaign          id: <team>/influencer-campaign v1
 from: ref/mkt/influencer-campaign v1
 owner: <who>                          effective: <date>
 trigger: an audience is handed to a campaign in <your planning process>
+         watch: record=<campaign brief>
+                system=<your planning process>
+                change=<an audience is handed to a campaign>
 concurrency: runs may overlap - <how many> live at once
 goal: every creator the campaign agreed terms with has published what
       the deal named, on the date it named, carrying the disclosure the
@@ -158,47 +161,63 @@ run-scoped:
   fees    - runs allocate-and-reconcile        owner: spend-reconciler
             from: settle-terms   until: run close
 handoffs:
-  take-in-audience -> set-parameters: who the campaign is for, in one
-    line that every later decision can be tested against
-  set-parameters -> disclosure-rules: the markets and the platforms the
-    work will run in
-  set-parameters -> candidate-list: the audience, the markets, the
-    deliverables and what there is to spend
-  set-parameters -> set-up-tracking: the same parameters. Both branches
-    read one record
-  disclosure-rules -> brief-creators: what each market requires a paid
-    post to say, quoted, at the version in force, with the date it was
-    read
-  candidate-list -> vet-candidates: each candidate with the audience
-    figures, the source they came from and the date they were read
-  vet-candidates -> clear-shortlist: the scored list, with the
-    criterion behind every verdict
-  clear-shortlist -> approach: the creators the signers accepted, and
-    the ones they refused with the reason
-  approach -> settle-terms: who accepted, and the terms each of them
-    asked for
-  settle-terms -> brief-creators: the deal at the version it was
-    agreed, naming every deliverable, the date each one is due, the
-    channels the work may run on, how long the organization may use it,
-    what the disclosure has to say, and the fee
-  set-up-tracking -> brief-creators: the link and the code each creator
-    puts in their post, one set per creator
-  brief-creators -> collect-drafts: the request as every creator heard
-    it, the date each deliverable is due, and the disclosure wording
-    that has to appear
-  collect-drafts -> review-drafts: each draft at the version the
-    creator sent it
-  review-drafts -> publish-posts: the approved drafts at the signed
-    version. A later change voids the approval and the review runs
-    again
-  publish-posts -> record-posts: what each creator says they posted,
-    where they posted it, and on what date
-  record-posts -> check-disclosure: every live post as it ran, with its
-    address, the date it appeared and the market it ran in
-  check-disclosure -> correct-failed: the failures, each with the rule
-    and the market named
-  correct-failed -> check-disclosure: the corrected post, scored again
-    before the run closes
+  take-in-audience -> set-parameters [audience-in-one-line]: who the
+    campaign is for, in one line that every later decision can be tested
+    against
+  set-parameters -> disclosure-rules [markets-and-platforms]: the
+    markets and the platforms the work will run in
+  set-parameters -> candidate-list [campaign-parameters]: the audience,
+    the markets, the deliverables and what there is to spend
+  set-parameters -> set-up-tracking [parameters-for-tracking]: the same
+    parameters. Both branches read one record
+  disclosure-rules -> brief-creators [disclosure-requirements]: what
+    each market requires a paid post to say, quoted, at the version in
+    force, with the date it was read
+  candidate-list -> vet-candidates [candidates-and-figures]: each
+    candidate with the audience figures, the source they came from and
+    the date they were read
+  vet-candidates -> clear-shortlist [vetting-scores]: the scored list,
+    with the criterion behind every verdict
+  clear-shortlist -> approach [cleared-creators]: the creators the
+    signers accepted, and the ones they refused with the reason
+  approach -> settle-terms [acceptances-and-asks]: who accepted, and the
+    terms each of them asked for
+  settle-terms -> brief-creators [signed-deals]: the deal at the version
+    it was agreed, naming every deliverable, the date each one is due,
+    the channels the work may run on, how long the organization may use
+    it, what the disclosure has to say, and the fee
+  set-up-tracking -> brief-creators [creator-links]: the link and the
+    code each creator puts in their post, one set per creator
+  brief-creators -> collect-drafts [creator-brief]: the request as every
+    creator heard it, the date each deliverable is due, and the
+    disclosure wording that has to appear
+  collect-drafts -> review-drafts [creator-drafts]: each draft at the
+    version the creator sent it
+  review-drafts -> publish-posts [approved-drafts]: the approved drafts
+    at the signed version. A later change voids the approval and the
+    review runs again
+  publish-posts -> record-posts [posting-claims]: what each creator says
+    they posted, where they posted it, and on what date
+  record-posts -> check-disclosure [live-posts]: every live post as it
+    ran, with its address, the date it appeared and the market it ran in
+  check-disclosure -> correct-failed [disclosure-failures]: the
+    failures, each with the rule and the market named
+  correct-failed -> check-disclosure [corrected-posts]: the corrected
+    post, scored again before the run closes
+deviations:
+  clear-shortlist -> candidate-list [too-few-cleared]: the signers clear
+    too few creators, so more candidates are drawn up against the same
+    audience
+  approach -> candidate-list [too-few-accepted]: too few creators accept
+    the offer, so more candidates are drawn up
+  review-drafts -> collect-drafts [review-changes]: the review asks for
+    changes, so the creator sends a new draft and only what the signers
+    named reopens
+  record-posts -> publish-posts [post-never-ran]: an agreed post never
+    appeared, so the creator is gone back to for a new date
+  check-disclosure -> correct-failed [disclosure-missing]: a live post
+    carries no disclosure, or one a reader has to expand to see, so the
+    creator is asked to correct it or take it down
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, brand, rights and

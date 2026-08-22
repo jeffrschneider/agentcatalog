@@ -75,6 +75,8 @@ PROCESS: forecast view                id: <team>/publish-the-forecast-view   v1
 from: ref/rev/publish-the-forecast-view v1
 owner: <who>                          effective: <date>
 trigger: <your roll-up process> freezes a version for <period>
+         watch: record=<the roll-up> system=<your roll-up process>
+                change=<a version is frozen for the period>
 concurrency: runs may overlap - one view per cycle, and one published
              version at a time per audience
 goal: one view, published at one version at <the publish time>, whose
@@ -166,36 +168,53 @@ run-scoped:
               every: <cadence>
               from: publish-view   until: run close
 handoffs:
-  take-in-rollup -> agree-audience: the frozen roll-up at its version,
-    and the list of what it could not answer
-  agree-audience -> scope-the-cuts: who reads the view, when, and on
-    which channel
-  scope-the-cuts -> build-headlines: the cuts each audience sees, and
-    the reason behind every exclusion
-  build-headlines -> show-arithmetic: the headline figures, each naming
-    the cut of the roll-up it came from
-  show-arithmetic -> attach-movement: every figure with its deals, its
-    definition version and its extract underneath it
-  attach-movement -> attach-coverage: what changed since the last
-    published view, with a reason beside each change
-  attach-coverage -> mark-limits: coverage by segment, and the amount
-    still to find at the ratio in use
-  mark-limits -> tie-to-rollup: the figures the data cannot carry, and
-    the words that will appear next to each of them
-  tie-to-rollup -> check-access: the view with every figure reconciled
-    to the frozen version, and the reconciliation kept
-  check-access -> cold-read: the view per audience, with the cuts each
-    one may not see already removed
-  cold-read -> publish-view: what the cold reader understood, and every
-    label that gets changed because of it
-  publish-view -> answer-questions: the view at its version, its
-    publication time, and the list of who received it
-  answer-questions -> hand-to-commitment: the questions asked, the
-    answers given from the view, and the ones logged for next cycle
-  hand-to-commitment -> record-corrections: the view as the leadership
-    process received it, with the version they are arguing against
-  record-corrections -> report-accuracy: every correction, its version,
-    and what moved between versions
+  take-in-rollup -> agree-audience [frozen-rollup]: the frozen roll-up
+    at its version, and the list of what it could not answer
+  agree-audience -> scope-the-cuts [audience-and-time]: who reads the
+    view, when, and on which channel
+  scope-the-cuts -> build-headlines [audience-cuts]: the cuts each
+    audience sees, and the reason behind every exclusion
+  build-headlines -> show-arithmetic [headline-figures]: the headline
+    figures, each naming the cut of the roll-up it came from
+  show-arithmetic -> attach-movement [figure-arithmetic]: every figure
+    with its deals, its definition version and its extract underneath it
+  attach-movement -> attach-coverage [movement]: what changed since the
+    last published view, with a reason beside each change
+  attach-coverage -> mark-limits [coverage-and-gap]: coverage by
+    segment, and the amount still to find at the ratio in use
+  mark-limits -> tie-to-rollup [marked-limits]: the figures the data
+    cannot carry, and the words that will appear next to each of them
+  tie-to-rollup -> check-access [reconciled-view]: the view with every
+    figure reconciled to the frozen version, and the reconciliation kept
+  check-access -> cold-read [view-per-audience]: the view per audience,
+    with the cuts each one may not see already removed
+  cold-read -> publish-view [cold-read-findings]: what the cold reader
+    understood, and every label that gets changed because of it
+  publish-view -> answer-questions [published-view]: the view at its
+    version, its publication time, and the list of who received it
+  answer-questions -> hand-to-commitment [questions-and-answers]: the
+    questions asked, the answers given from the view, and the ones
+    logged for next cycle
+  hand-to-commitment -> record-corrections [view-as-handed-on]: the view
+    as the leadership process received it, with the version they are
+    arguing against
+  record-corrections -> report-accuracy [corrections]: every correction,
+    its version, and what moved between versions
+deviations:
+  show-arithmetic -> build-headlines [figure-will-not-trace]: a figure
+    cannot be traced to the deals under it, so it is built again
+  tie-to-rollup -> take-in-rollup [view-will-not-reconcile]: the view
+    does not reconcile to the frozen version, so the difference is
+    chased from the roll-up down
+  check-access -> scope-the-cuts [cut-reaches-wrong-audience]: a cut
+    reaches an audience that may not see it, so the cuts are scoped
+    again
+  cold-read -> build-headlines [figure-read-wrong]: the cold reader
+    reads a figure the wrong way, which is a labelling fault
+  answer-questions -> mark-limits [question-needs-new-figure]: an answer
+    needs a figure the view does not carry
+  record-corrections -> publish-view [published-figure-wrong]: a
+    published figure was wrong, so a new version publishes
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the cold reader and the leader

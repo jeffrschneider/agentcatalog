@@ -91,6 +91,9 @@ id: <team>/select-marketing-technology   v1
 from: ref/mkt/select-marketing-technology v1
 owner: <who>                          effective: <date>
 trigger: a capability gap is raised in <your planning process>
+         watch: record=<a capability gap>
+                system=<your planning process>
+                change=<a capability gap is raised>
 concurrency: runs may overlap - <how many> searches open at once, and
              two searches for the same capability are merged into one
 goal: one tool chosen against requirements written down before any
@@ -199,48 +202,83 @@ run-scoped:
   money  - runs allocate-and-reconcile        owner: budget-keeper
            from: confirm-money   until: run close
 handoffs:
-  take-in-gap -> check-owned: what the department cannot do today, in
-    one line the requirements are written from
-  check-owned -> requirements: what the register already holds that
-    comes near, and what each of those falls short on
-  requirements -> set-criteria: the requirements ranked, each written
-    so a candidate can be tested against it
-  set-criteria -> brief-selection: the requirements and the criteria at
-    a version, dated before any candidate was looked at
-  brief-selection -> search-market: the requirements as every agent
-    heard them, and the date the choice is due
-  size-load -> shortlist: the volume of work the tool would carry and
-    the agents that would use it
-  confirm-money -> shortlist: what is available this year, and what a
-    renewal would take in the years after
-  search-market -> shortlist: every candidate found, with where it came
-    from and what it answered, and a candidate that did not answer
-    recorded as missing
-  shortlist -> score-shortlist: the candidates left, and the
-    requirement each dropped candidate failed
-  score-shortlist -> trial-finalists: a verdict per requirement per
-    candidate with the evidence behind it, and every requirement that
-    could not be tested marked as not tested
-  check-terms -> compare: what the agreement allows, where the data
-    would sit, and what the consent record covers
-  check-security -> compare: how the candidate secures the data, what
-    it would connect to, and what it would be given
-  check-standards -> compare: whether the work the tool produces can
-    meet the standards in force, with the rule behind every failure
-  trial-finalists -> whole-cost: what each finalist did on the same
-    work, with the figures and the range around each one
-  whole-cost -> compare: the licence, the setup, the people it takes to
-    run, and what leaving would cost
-  compare -> choose-tool: the finalists set side by side against one
-    list, and what taking each one would rule out
-  choose-tool -> agree-terms: the chosen tool, who decided, on what
-    date, for what reasons, and anyone who disagreed
-  agree-terms -> register-entry: the signed agreement, the price, the
-    term, and the notice a cancellation needs
-  register-entry -> hand-over: the entry with its owner, its cost, its
-    term and its renewal date
-  hand-over -> record-learnings: what the owner took on, and what will
-    be measured to tell whether the tool earned its place
+  take-in-gap -> check-owned [the-gap]: what the department cannot do
+    today, in one line the requirements are written from
+  check-owned -> requirements [near-misses]: what the register already
+    holds that comes near, and what each of those falls short on
+  requirements -> set-criteria [ranked-requirements]: the requirements
+    ranked, each written so a candidate can be tested against it
+  set-criteria -> brief-selection [fixed-criteria]: the requirements
+    and the criteria at a version, dated before any candidate was
+    looked at
+  brief-selection -> search-market [selection-brief]: the requirements
+    as every agent heard them, and the date the choice is due
+  size-load -> shortlist [expected-load]: the volume of work the tool
+    would carry and the agents that would use it
+  confirm-money -> shortlist [money-available]: what is available this
+    year, and what a renewal would take in the years after
+  search-market -> shortlist [candidates-found]: every candidate found,
+    with where it came from and what it answered, and a candidate that
+    did not answer recorded as missing
+  shortlist -> score-shortlist [surviving-candidates]: the candidates
+    left, and the requirement each dropped candidate failed
+  score-shortlist -> trial-finalists [candidate-scores]: a verdict per
+    requirement per candidate with the evidence behind it, and every
+    requirement that could not be tested marked as not tested
+  check-terms -> compare [terms-and-data]: what the agreement allows,
+    where the data would sit, and what the consent record covers
+  check-security -> compare [security-findings]: how the candidate
+    secures the data, what it would connect to, and what it would be
+    given
+  check-standards -> compare [standards-verdict]: whether the work the
+    tool produces can meet the standards in force, with the rule behind
+    every failure
+  trial-finalists -> whole-cost [trial-results]: what each finalist did
+    on the same work, with the figures and the range around each one
+  whole-cost -> compare [total-cost]: the licence, the setup, the
+    people it takes to run, and what leaving would cost
+  compare -> choose-tool [comparison]: the finalists set side by side
+    against one list, and what taking each one would rule out
+  choose-tool -> agree-terms [chosen-tool]: the chosen tool, who
+    decided, on what date, for what reasons, and anyone who disagreed
+  agree-terms -> register-entry [signed-agreement]: the signed
+    agreement, the price, the term, and the notice a cancellation needs
+  register-entry -> hand-over [register-record]: the entry with its
+    owner, its cost, its term and its renewal date
+  hand-over -> record-learnings [ownership-handover]: what the owner
+    took on, and what will be measured to tell whether the tool earned
+    its place
+deviations:
+  score-shortlist -> search-market [requirement-not-tested]: a
+    requirement could not be tested on what a candidate supplied, so
+    the question goes back to the market while the search is open
+  score-shortlist -> requirements [all-candidates-fail]: every
+    candidate fails a requirement, so the requirements are written
+    again or the search is stopped
+  check-terms -> shortlist [terms-unacceptable]: the agreement holds
+    terms the organization cannot accept, so that candidate leaves the
+    shortlist
+  check-security -> score-shortlist [security-findings-open]: the
+    security review raises findings the candidate has to answer, so the
+    scoring runs again on what comes back
+  check-standards -> shortlist [standards-not-met]: the tool's output
+    cannot meet the standards in force, so that candidate leaves the
+    shortlist
+  trial-finalists -> shortlist [trial-fails]: the trial shows a
+    finalist cannot do the work, so it drops out and the run carries on
+    with the candidates left
+  whole-cost -> confirm-money [cost-past-the-money]: the whole cost is
+    past what there is, so the money is confirmed again before anything
+    is compared
+  compare -> search-market [no-finalist-worth-taking]: no finalist is
+    worth taking, so the market is searched again against the same
+    requirements
+  choose-tool -> trial-finalists [choice-needs-more-evidence]: the
+    people who decide want more evidence, so the finalists are tried
+    again on the point they named
+  agree-terms -> choose-tool [terms-will-not-come-right]: the terms
+    cannot be agreed, so the choice is made again on the candidates
+    that are left
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, the systems

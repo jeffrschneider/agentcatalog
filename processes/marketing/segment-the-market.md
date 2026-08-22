@@ -90,6 +90,13 @@ owner: <who>                          effective: <date>
 trigger: a question about how the market divides is opened in <your
          planning process>, or the review date on a recorded set of
          segments arrives
+         watch: record=<a segmentation question>
+                system=<your planning process>
+                change=<a question about how the market divides is
+                opened>
+         or watch: record=<a recorded set of segments>
+                system=<your review schedule>
+                change=<the review date on the set arrives>
 concurrency: one run at a time for the same market, because two agreed
              divisions of one market leave nobody with one. Runs for
              different markets overlap
@@ -188,49 +195,71 @@ run-scoped:
                 every: <cadence>
                 from: take-in-question   until: hand-over
 handoffs:
-  take-in-question -> set-boundary: the question, what it has to settle,
-    who decides it, and the date it is owed
-  set-boundary -> read-record / outside-evidence / first-hand: the
-    market as it was drawn, and what each agent owes against it. Three
-    agents read one record
-  read-record -> choose-traits: the accounts, what each one bought and
-    renewed, and when each one left
-  outside-evidence -> choose-traits: the market evidence, with a source
-    line under every fact and the date it was read
-  first-hand -> choose-traits: what the buyers and the sellers said,
-    attributed to the person who said it, with the responses kept under
-    each finding
-  choose-traits -> draw-candidates: the traits the division rests on,
-    and the reason each one was kept
-  draw-candidates -> test-separation: the candidate divisions in the
-    form they will be tested in
-  draw-candidates -> size-segments: the same candidates
-  draw-candidates -> test-reach: the same candidates, with the traits
-    that would identify a member of each segment
-  draw-candidates -> clear-data: the traits, the data sets under them,
-    and the terms each set came with. Four branches read one record
-  test-separation -> settle-division: for each candidate, how alike the
-    accounts inside a segment are, how far apart the segments sit, and
-    whether that distance is larger than the noise
-  size-segments -> settle-division: how many buyers and how much money
-    sit in each segment, and where the count came from
-  test-reach -> settle-division: how much of each segment the record
-    already identifies, what the rest costs to identify, and which
-    channels can reach it
-  clear-data -> settle-division: the data the analysis may rest on, and
-    the traits that may be used to target
-  settle-division -> rank-segments: the chosen division, why it won over
-    the others, and everyone who disagreed and on what
-  rank-segments -> write-segments: the order, what it rests on, and what
-    each segment is expected to return
-  write-segments -> issue-version: the segments in the wording they were
-    agreed in
-  issue-version -> hand-over: the segments at their number, and what
-    changed from the version they replace
-  hand-over -> set-review: what each receiving agent said it would
-    change, and the date it said it by
-  set-review -> record-learnings: the review date and the conditions
-    that bring the segments back sooner
+  take-in-question -> set-boundary [the-question]: the question, what
+    it has to settle, who decides it, and the date it is owed
+  set-boundary -> read-record / outside-evidence / first-hand
+    [market-boundary]: the market as it was drawn, and what each agent
+    owes against it. Three agents read one record
+  read-record -> choose-traits [customer-record]: the accounts, what
+    each one bought and renewed, and when each one left
+  outside-evidence -> choose-traits [market-evidence]: the market
+    evidence, with a source line under every fact and the date it was
+    read
+  first-hand -> choose-traits [first-hand-accounts]: what the buyers
+    and the sellers said, attributed to the person who said it, with
+    the responses kept under each finding
+  choose-traits -> draw-candidates [dividing-traits]: the traits the
+    division rests on, and the reason each one was kept
+  draw-candidates -> test-separation [candidate-divisions]: the
+    candidate divisions in the form they will be tested in
+  draw-candidates -> size-segments [candidates-to-size]: the same
+    candidates
+  draw-candidates -> test-reach [identifying-traits]: the same
+    candidates, with the traits that would identify a member of each
+    segment
+  draw-candidates -> clear-data [data-and-terms]: the traits, the data
+    sets under them, and the terms each set came with. Four branches
+    read one record
+  test-separation -> settle-division [separation-test]: for each
+    candidate, how alike the accounts inside a segment are, how far
+    apart the segments sit, and whether that distance is larger than
+    the noise
+  size-segments -> settle-division [segment-sizes]: how many buyers and
+    how much money sit in each segment, and where the count came from
+  test-reach -> settle-division [reach-test]: how much of each segment
+    the record already identifies, what the rest costs to identify, and
+    which channels can reach it
+  clear-data -> settle-division [cleared-data]: the data the analysis
+    may rest on, and the traits that may be used to target
+  settle-division -> rank-segments [chosen-division]: the chosen
+    division, why it won over the others, and everyone who disagreed
+    and on what
+  rank-segments -> write-segments [segment-order]: the order, what it
+    rests on, and what each segment is expected to return
+  write-segments -> issue-version [written-segments]: the segments in
+    the wording they were agreed in
+  issue-version -> hand-over [issued-segments]: the segments at their
+    number, and what changed from the version they replace
+  hand-over -> set-review [adoption-answers]: what each receiving agent
+    said it would change, and the date it said it by
+  set-review -> record-learnings [review-conditions]: the review date
+    and the conditions that bring the segments back sooner
+deviations:
+  test-separation -> draw-candidates [no-separation]: the segments
+    differ by less than the noise in the measurement, so the divisions
+    are drawn again on other traits
+  size-segments -> set-boundary [market-is-smaller]: the market turns
+    out to be smaller than the question assumed, so the boundary is set
+    again before anything is divided
+  test-reach -> draw-candidates [segment-cannot-be-reached]: the record
+    cannot find a segment or the channels cannot reach it, so it is
+    drawn again on traits the record already carries
+  clear-data -> draw-candidates [source-or-trait-ruled-out]: legal
+    rules out a source or a trait, so every division resting on it is
+    rebuilt without it or dropped
+  settle-division -> draw-candidates [room-cannot-agree]: the room
+    cannot settle on one division, so the candidates are drawn again on
+    what the disagreement named
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sales side, the

@@ -80,6 +80,8 @@ PROCESS: hand over to delivery        id: <team>/hand-over-to-delivery   v1
 from: ref/sls/hand-over-to-delivery v1
 owner: <who>                          effective: <date>
 trigger: an order is booked in <your order system>
+         watch: record=<order> system=<your order system>
+                change=<an order is recorded as booked>
 concurrency: runs may overlap - <how many> handovers open at once, and
              one account is handed over by one run at a time
 goal: the customer deals with a named person other than the seller
@@ -174,44 +176,62 @@ run-scoped:
                   every: <cadence>
                   from: take-in-order   until: confirm-accepted
 handoffs:
-  take-in-order -> name-new-owner: what was sold and when it starts, so
-    the person named can actually deliver it
-  take-in-order -> collect-the-sale: the order, its identifier, and the
-    opportunity every note hangs off
-  take-in-order -> standing: the account and the entity, so standing is
-    read for the party that bought
-  collect-the-sale -> picture: everything the sale produced, in one
-    place, with the date on each item
-  collect-the-sale -> record-promises: the notes and the call records
-    the promises are read out of
-  collect-the-sale -> map-people: the names that appeared during the
-    sale, and what each one did
-  record-promises -> mark-binding: the promises as the seller remembers
-    them, one per line
-  mark-binding -> check-package: each promise marked binding or not
-    binding, with the clause behind every binding one
-  picture -> check-package: the picture as written, with the source
-    behind every claim in it
-  map-people -> check-package: the people, their roles, and how each
-    one is reached
-  standing -> check-package: the account's standing, dated, with the
-    system every line came from
-  check-package -> internal-brief: the scored package, with what is
-    missing named and the checklist version it was scored against
-  name-new-owner -> internal-brief: the new owner, and the date they
-    take the relationship
-  internal-brief -> agree-message: the questions the package did not
-    answer, and the answers the seller gave in the room
-  agree-message -> introduce-owner: who says what, on what date, through
-    which channel
-  introduce-owner -> schedule-start: the customer's answer, and whoever
-    at the customer replied
-  schedule-start -> confirm-accepted: the session in diaries on both
-    sides, with the people invited to it
-  confirm-accepted -> close-seller: the customer's confirmation, dated,
-    with what they were told
-  close-seller -> record-gaps: what the seller still owes, and what the
-    new owner now holds
+  take-in-order -> name-new-owner [what-was-sold]: what was sold and
+    when it starts, so the person named can actually deliver it
+  take-in-order -> collect-the-sale [order-and-opportunity]: the
+    order, its identifier, and the opportunity every note hangs off
+  take-in-order -> standing [account-and-entity]: the account and the
+    entity, so standing is read for the party that bought
+  collect-the-sale -> picture [sale-material]: everything the sale
+    produced, in one place, with the date on each item
+  collect-the-sale -> record-promises [notes-and-calls]: the notes and
+    the call records the promises are read out of
+  collect-the-sale -> map-people [names-from-the-sale]: the names that
+    appeared during the sale, and what each one did
+  record-promises -> mark-binding [promise-list]: the promises as the
+    seller remembers them, one per line
+  mark-binding -> check-package [marked-promises]: each promise marked
+    binding or not binding, with the clause behind every binding one
+  picture -> check-package [account-picture]: the picture as written,
+    with the source behind every claim in it
+  map-people -> check-package [people-map]: the people, their roles,
+    and how each one is reached
+  standing -> check-package [account-standing]: the account's
+    standing, dated, with the system every line came from
+  check-package -> internal-brief [package-score]: the scored package,
+    with what is missing named and the checklist version it was scored
+    against
+  name-new-owner -> internal-brief [new-owner]: the new owner, and the
+    date they take the relationship
+  internal-brief -> agree-message [open-questions]: the questions the
+    package did not answer, and the answers the seller gave in the
+    room
+  agree-message -> introduce-owner [the-message-plan]: who says what,
+    on what date, through which channel
+  introduce-owner -> schedule-start [customer-reply]: the customer's
+    answer, and whoever at the customer replied
+  schedule-start -> confirm-accepted [session-in-diaries]: the session
+    in diaries on both sides, with the people invited to it
+  confirm-accepted -> close-seller [customer-confirmation]: the
+    customer's confirmation, dated, with what they were told
+  close-seller -> record-gaps [seller-open-items]: what the seller
+    still owes, and what the new owner now holds
+deviations:
+  mark-binding -> record-promises [promise-not-in-contract]: a promise
+    the agreement does not carry is marked said and not binding, so
+    the promise list goes back for a person to decide on it
+  check-package -> collect-the-sale [package-incomplete]: the package
+    is missing what the checklist says it must carry, so the sale is
+    collected again for the missing item
+  internal-brief -> name-new-owner [owner-refuses]: the new owner will
+    not take the account, so the gaps are filled or a different person
+    is named before the customer hears anything
+  introduce-owner -> map-people [sponsor-has-changed]: the person who
+    signed has left or handed the project on, so the people are mapped
+    again and the introduction goes to whoever holds it now
+  confirm-accepted -> introduce-owner [no-confirmation]: the customer
+    never confirms, so the introduction is made again through a
+    channel they use
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the delivery

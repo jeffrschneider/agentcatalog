@@ -78,6 +78,15 @@ owner: <who>                          effective: <date>
 trigger: a signal fires on an existing customer in <your usage system>,
          <your support system> or <your account review>, or a person
          raises one
+         watch: record=<account> system=<your usage system>
+                change=<a usage signal fires on an existing customer>
+         or watch: record=<account> system=<your support system>
+                change=<a support signal fires on an existing customer>
+         or watch: record=<account> system=<your account review>
+                change=<an account review raises a signal>
+         or watch: record=<account> system=<where signals are raised>
+                change=<a person raises a signal on an existing
+                customer>
 concurrency: runs may overlap - one account carries <how many> open
              openings at a time, and one signal is worked by one run
 goal: every signal either written down as an opening that a person has
@@ -164,39 +173,64 @@ run-scoped:
              every: <cadence>
              from: check-approach   until: run close
 handoffs:
-  take-in-signal -> check-approach: the account, the signal, its date
-    and the system it was read from
-  check-approach -> read-holdings: the account's standing, dated, and
-    any reason it may not be approached at all
-  read-holdings -> read-usage: what they own today, with the limit on
-    every metered line
-  read-holdings -> read-adoption: the same holdings, so new use can be
-    told apart from use that was always there
-  read-usage -> name-opening: usage against limit per line, over the
-    window, with the date of every reading
-  read-adoption -> name-opening: the teams that started, when they
-    started, and how far they have got
-  name-opening -> check-not-renewal: the one sentence, at a version
-  check-not-renewal -> check-not-covered: the opening, with anything
-    the renewal already covers taken out of it
-  check-not-covered -> size-opening: the opening, narrowed to what no
-    open deal or live play is already working
-  size-opening -> find-the-users: the range and the assumptions behind
-    it, so the right people can be asked about the right change
-  find-the-users -> test-with-users: the named people, and who at
-    <your organization> already has a relationship with each one
-  find-the-users -> ask-delivery: the same list, so delivery can say
-    which of them are unhappy today
-  test-with-users -> check-plan: what those people said, in their own
-    words, with the date and who heard it
-  ask-delivery -> check-plan: the open issues on the account and
-    whether they block an ask
-  check-plan -> score-opening: what the plan says about this account,
-    and where this opening sits against it
-  score-opening -> decide-opening: the score, the model version, the
-    inputs, and the evidence each input came from
-  decide-opening -> record-finding: the decision, who made it, when,
-    and the reason in their words
+  take-in-signal -> check-approach [the-signal]: the account, the
+    signal, its date and the system it was read from
+  check-approach -> read-holdings [account-standing]: the account's
+    standing, dated, and any reason it may not be approached at all
+  read-holdings -> read-usage [holdings]: what they own today, with the
+    limit on every metered line
+  read-holdings -> read-adoption [holdings-for-adoption]: the same
+    holdings, so new use can be told apart from use that was always
+    there
+  read-usage -> name-opening [usage-against-limit]: usage against limit
+    per line, over the window, with the date of every reading
+  read-adoption -> name-opening [new-adoption]: the teams that started,
+    when they started, and how far they have got
+  name-opening -> check-not-renewal [the-opening]: the one sentence, at
+    a version
+  check-not-renewal -> check-not-covered [opening-less-renewal]: the
+    opening, with anything the renewal already covers taken out of it
+  check-not-covered -> size-opening [uncovered-opening]: the opening,
+    narrowed to what no open deal or live play is already working
+  size-opening -> find-the-users [size-range]: the range and the
+    assumptions behind it, so the right people can be asked about the
+    right change
+  find-the-users -> test-with-users [named-users]: the named people,
+    and who at <your organization> already has a relationship with each
+    one
+  find-the-users -> ask-delivery [named-users-for-delivery]: the same
+    list, so delivery can say which of them are unhappy today
+  test-with-users -> check-plan [what-the-users-said]: what those
+    people said, in their own words, with the date and who heard it
+  ask-delivery -> check-plan [delivery-view]: the open issues on the
+    account and whether they block an ask
+  check-plan -> score-opening [plan-position]: what the plan says about
+    this account, and where this opening sits against it
+  score-opening -> decide-opening [opening-score]: the score, the model
+    version, the inputs, and the evidence each input came from
+  decide-opening -> record-finding [the-decision]: the decision, who
+    made it, when, and the reason in their words
+deviations:
+  check-approach -> take-in-signal [may-not-approach]: the account may
+    not be approached at all, so the signal goes back on the record
+    with the reason and nothing else in the run happens
+  check-not-renewal -> name-opening [really-a-renewal]: the opening is
+    only more of the same term, so it is named again on whatever the
+    renewal does not cover
+  check-not-covered -> name-opening [already-covered]: an open deal or
+    a live play covers part of it, so the opening is named again on
+    what is genuinely uncovered
+  test-with-users -> name-opening [problem-not-theirs]: the people who
+    would live with the change say the problem is not theirs, so the
+    opening is named again or dropped
+  ask-delivery -> check-approach [not-served-well-enough]: delivery
+    says the account is not served well enough to be asked for more, so
+    the approachability check is run again with the open issues on it
+  score-opening -> read-usage [evidence-too-thin]: the evidence is too
+    thin to score, so the usage is read again over a longer window
+  decide-opening -> take-in-signal [parked]: the opening is parked
+    until the signal fires again, and it carries the date it is looked
+    at on
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the delivery

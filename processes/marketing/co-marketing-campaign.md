@@ -73,6 +73,9 @@ PROCESS: co-marketing campaign        id: <team>/co-marketing-campaign  v1
 from: ref/mkt/co-marketing-campaign v1
 owner: <who>                          effective: <date>
 trigger: a partner agreement is signed in <your partnership process>
+         watch: record=<the partner agreement>
+                system=<your partnership process>
+                change=<an agreement is signed by both sides>
 concurrency: runs may overlap - <how many> partners live at once
 goal: one campaign that both organizations signed, run on the date they
       agreed, with each side's leads delivered under the agreed split
@@ -157,37 +160,59 @@ run-scoped:
                 every: <cadence>
                 from: launch   until: run close
 handoffs:
-  take-in-agreement -> settle-lead-terms: what each side owes and by
-    when, in one record both organizations can be held to
-  settle-lead-terms -> plan-campaign: the split rule, the fields that
-    may cross, and the basis each transfer rests on
-  settle-lead-terms -> wire-the-split: the same rule and the same
-    fields, so that the form is built from the record the terms were
-    written in
-  plan-campaign -> brief-makers: the channels, the dates, the cost
-    share, and what each side owes the run
-  plan-campaign -> ready-each-side: the same plan. Both branches read
-    one record
-  settle-direction -> produce-material: the chosen concept, and why it
-    won on both sides
-  produce-material -> score-both-rules: the material at a version, with
-    the partner's guidelines named at the version the agreement supplies
-  score-both-rules -> get-sign-offs: the scored list, with the rule and
-    the side it came from written against every failure
-  get-sign-offs -> build-page: the approved material at the version
-    both sides signed. A later change voids both signatures and the
-    sign-offs run again
-  build-page -> wire-the-split: the page and its form fields, while the
-    page can still be changed
-  wire-the-split -> launch: the tracking, the routing, and a dated test
-    showing a lead arriving on each side
-  ready-each-side -> launch: each side's list, ads and posts, ready to
-    fire on the agreed date
-  watch -> agree-numbers: the results, with every line attributed to
-    the source it came from
-  hand-over-leads -> agree-numbers: every delivery with its receipt,
-    and every lead held back with the reason it was held
-  agree-numbers -> record-learnings: the agreed figures, as delivered
+  take-in-agreement -> settle-lead-terms [what-each-side-owes]: what
+    each side owes and by when, in one record both organizations can
+    be held to
+  settle-lead-terms -> plan-campaign [lead-terms]: the split rule, the
+    fields that may cross, and the basis each transfer rests on
+  settle-lead-terms -> wire-the-split [terms-for-the-form]: the same
+    rule and the same fields, so that the form is built from the
+    record the terms were written in
+  plan-campaign -> brief-makers [campaign-plan]: the channels, the
+    dates, the cost share, and what each side owes the run
+  plan-campaign -> ready-each-side [plan-for-distribution]: the same
+    plan. Both branches read one record
+  settle-direction -> produce-material [chosen-concept]: the chosen
+    concept, and why it won on both sides
+  produce-material -> score-both-rules [joint-material]: the material
+    at a version, with the partner's guidelines named at the version
+    the agreement supplies
+  score-both-rules -> get-sign-offs [both-rule-scores]: the scored
+    list, with the rule and the side it came from written against
+    every failure
+  get-sign-offs -> build-page [both-sides-signed]: the approved
+    material at the version both sides signed. A later change voids
+    both signatures and the sign-offs run again
+  build-page -> wire-the-split [registration-page]: the page and its
+    form fields, while the page can still be changed
+  wire-the-split -> launch [wired-split]: the tracking, the routing,
+    and a dated test showing a lead arriving on each side
+  ready-each-side -> launch [each-sides-distribution]: each side's
+    list, ads and posts, ready to fire on the agreed date
+  watch -> agree-numbers [campaign-results]: the results, with every
+    line attributed to the source it came from
+  hand-over-leads -> agree-numbers [lead-deliveries]: every delivery
+    with its receipt, and every lead held back with the reason it was
+    held
+  agree-numbers -> record-learnings [agreed-figures]: the agreed
+    figures, as delivered
+deviations:
+  score-both-rules -> produce-material [scoring-failures]: the
+    material fails one side's rules, so the failing items are made
+    again
+  get-sign-offs -> produce-material [changes-from-either-side]: a
+    signer on either side comes back with changes, and only the item
+    the signers named reopens
+  hand-over-leads -> settle-lead-terms [terms-do-not-cover-the-case]:
+    both organizations already held the same contact and the terms do
+    not say who owns the record, so the answer is written back into
+    the terms
+  watch -> produce-material [creative-replaced]: creative has to be
+    replaced while the campaign is live, and the replacement goes
+    through the scoring and both sign-offs before it runs
+  agree-numbers -> hand-over-leads [counts-differ]: the two sides'
+    counts differ, so the difference is traced to the delivery it
+    should have been in
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, named people for legal, brand and finance, and the

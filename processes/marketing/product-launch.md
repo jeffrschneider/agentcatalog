@@ -53,6 +53,8 @@ PROCESS: product launch               id: <team>/product-launch   v1
 from: ref/mkt/product-launch v1
 owner: <who>                          effective: <date>
 trigger: a launch date is committed by <your product process>
+         watch: record=<the launch> system=<your product process>
+                change=<a launch date is committed>
 concurrency: <one at a time | overlapping, and what they share>
 goal: the launch arrives with the story settled, sales ready, every
       channel loaded, and a first-week report against the day-one goals
@@ -104,17 +106,23 @@ phases:
                     owner: launch-coordinator  after: report-launch
                     automation: <level>
 handoffs:
-  take-in-launch -> settle-message: what ships and for whom, in the
-    builders' own words
-  settle-message -> plan-launch: the positioning, written down, with
-    the words sales and content will both use
-  plan-launch -> produce-content / enable-sales / prep-channels: each
-    branch's deliverables and deadlines. Three branches read one plan
-  produce-content + enable-sales -> get-sign-offs: everything
-    customer-facing, at a version
-  get-sign-offs -> launch-day: the approved material at the signed
-    version. A later change voids the approval
-  watch-week-one -> report-launch: the daily gatherings, attributed
+  take-in-launch -> settle-message [what-ships]: what ships and for
+    whom, in the builders' own words
+  settle-message -> plan-launch [positioning]: the positioning, written
+    down, with the words sales and content will both use
+  plan-launch -> produce-content / enable-sales / prep-channels
+    [launch-checklist]: each branch's deliverables and deadlines. Three
+    branches read one plan
+  produce-content + enable-sales -> get-sign-offs [customer-facing]:
+    everything customer-facing, at a version
+  get-sign-offs -> launch-day [signed-material]: the approved material
+    at the signed version. A later change voids the approval
+  watch-week-one -> report-launch [week-one-readings]: the daily
+    gatherings, attributed
+deviations:
+  get-sign-offs -> produce-content [changes-requested]: the signers ask
+    for a change, so only what they named is produced again and the
+    launch date does not move because a paragraph did
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for product, sales and legal>

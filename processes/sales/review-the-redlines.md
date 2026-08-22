@@ -69,6 +69,8 @@ from: ref/sls/review-the-redlines v1
 owner: <who>                          effective: <date>
 trigger: a marked-up contract arrives from the buyer in <your contract
          system>
+         watch: record=<contract> system=<your contract system>
+                change=<a marked-up contract arrives from the buyer>
 concurrency: runs may overlap - <how many> reviews live at once, and one
              agreement is reviewed by one run at a time
 goal: every change the buyer made answered as accepted, countered or
@@ -151,35 +153,54 @@ phases:
                          owner: signature-manager
                          after: confirm-clean-copy automation: <level>
 handoffs:
-  take-in-markup -> confirm-terms: the markup, its version, and the copy
-    it was made from
-  confirm-terms -> split-clauses: the template version in force and the
-    fallbacks already approved
-  split-clauses -> classify-changes: one item per changed clause, with
-    both texts side by side
-  classify-changes -> check-prior: each change with its class, and the
-    clause number it sits at
-  check-prior -> review-business: the commercial changes, with what was
-    decided last time the same change came up
-  check-prior -> review-risk: the risk changes, with the same history
-  review-risk -> route-legal: the clauses the deal team may not answer,
-    named as such
-  review-business -> decide-clauses: the commercial answers, with the
-    approval behind any that move the number
-  route-legal -> decide-clauses: legal's answer per clause, in words the
-    buyer can be shown
-  decide-clauses -> draft-counter: every clause closed, with its reason
-  draft-counter -> approve-non-standard: the counter-markup, with every
-    off-template term listed separately
-  approve-non-standard -> send-counter: the approved document and the
-    name of each approver
-  send-counter -> work-round-trips: the version we sent, and the date
-  work-round-trips -> confirm-clean-copy: the last markup read against
-    the copy we sent, with every difference named
-  confirm-clean-copy -> log-decisions: the agreed text, and what we
-    accepted that is not our standard language
-  confirm-clean-copy -> hand-to-signature: the same text, plus the
-    approvals behind every non-standard term
+  take-in-markup -> confirm-terms [the-markup]: the markup, its
+    version, and the copy it was made from
+  confirm-terms -> split-clauses [terms-in-force]: the template
+    version in force and the fallbacks already approved
+  split-clauses -> classify-changes [clause-items]: one item per
+    changed clause, with both texts side by side
+  classify-changes -> check-prior [classified-changes]: each change
+    with its class, and the clause number it sits at
+  check-prior -> review-business [commercial-changes]: the commercial
+    changes, with what was decided last time the same change came up
+  check-prior -> review-risk [risk-changes]: the risk changes, with
+    the same history
+  review-risk -> route-legal [lawyer-only-clauses]: the clauses the
+    deal team may not answer, named as such
+  review-business -> decide-clauses [commercial-answers]: the
+    commercial answers, with the approval behind any that move the
+    number
+  route-legal -> decide-clauses [legal-answers]: legal's answer per
+    clause, in words the buyer can be shown
+  decide-clauses -> draft-counter [clause-decisions]: every clause
+    closed, with its reason
+  draft-counter -> approve-non-standard [counter-markup]: the
+    counter-markup, with every off-template term listed separately
+  approve-non-standard -> send-counter [approved-counter]: the
+    approved document and the name of each approver
+  send-counter -> work-round-trips [sent-version]: the version we
+    sent, and the date
+  work-round-trips -> confirm-clean-copy [differences-named]: the
+    last markup read against the copy we sent, with every difference
+    named
+  confirm-clean-copy -> log-decisions [agreed-text]: the agreed text,
+    and what we accepted that is not our standard language
+  confirm-clean-copy -> hand-to-signature [text-for-signature]: the
+    same text, plus the approvals behind every non-standard term
+deviations:
+  decide-clauses -> classify-changes [new-commercial-ask]: the
+    change turns out to be a new commercial ask rather than legal
+    wording, so it is classified again and goes back to the
+    negotiation
+  approve-non-standard -> decide-clauses [approval-refused]: an
+    off-template term is refused inside, so the clause is decided
+    again as a counter or a rejection before anything is sent
+  work-round-trips -> split-clauses [buyer-marks-up-again]: the buyer
+    returns another markup, so it is split clause by clause and read
+    against the copy we sent
+  confirm-clean-copy -> work-round-trips [copies-do-not-match]: the
+    two clean copies differ, so the round trips run again until one
+    text stands
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the legal reviewer, the deal

@@ -65,6 +65,13 @@ from: ref/rev/build-a-report v1
 owner: <who>                          effective: <date>
 trigger: the same question is asked <how many> times in <period>, or
          <who> asks for a standing report
+         watch: record=<question> system=<where answered questions are
+                filed>
+                change=<one question passes the number of askings the
+                policy names>
+         or watch: record=<report request> system=<where requests
+                arrive>
+                change=<a standing report is asked for>
 concurrency: runs may overlap - <how many> reports are under
              construction at once, and two runs never build the same
              report
@@ -143,32 +150,53 @@ run-scoped:
               every: <cadence>
               from: publish-report   until: run close
 handoffs:
-  take-in-question -> search-store: the question in the asker's own
-    words, and how often they need it answered
-  search-store -> name-the-reader: every report that already touches the
-    question, with its readers and its last opening
-  name-the-reader -> settle-measures: the named reader, the decision,
-    and every word the question rests on
-  settle-measures -> check-data: the measures at their versions, and any
-    word that has to be defined before this report can compute
-  check-data -> choose-cut: what the record holds, how far back, and the
-    gaps the report will have to show as gaps
-  choose-cut -> draft-report: the grain, the filters, the timezone, the
-    comparison and the refresh cadence, written down before building
-  draft-report -> hand-count: the report at a draft version, with the
-    query behind every number
-  hand-count -> read-as-reader: the two counts side by side, with every
-    difference explained rather than averaged
-  read-as-reader -> set-access: the report as the reader accepted it,
-    and anything they said they still cannot see
-  set-access -> publish-report: who may open it, at what grain, and the
-    rows each role is kept out of
-  publish-report -> watch-cycles: the address, the version, the cadence
-    and the date of the first scheduled run
-  watch-cycles -> set-retirement: failed refreshes, unexplained moves,
-    and how many people opened it in the first cycles
-  set-retirement -> record-learnings: the condition that would switch
-    this report off, and the date it is next reviewed against it
+  take-in-question -> search-store [the-question]: the question in the
+    asker's own words, and how often they need it answered
+  search-store -> name-the-reader [existing-reports]: every report that
+    already touches the question, with its readers and its last opening
+  name-the-reader -> settle-measures [reader-and-decision]: the named
+    reader, the decision, and every word the question rests on
+  settle-measures -> check-data [measures-at-versions]: the measures at
+    their versions, and any word that has to be defined before this
+    report can compute
+  check-data -> choose-cut [data-coverage]: what the record holds, how
+    far back, and the gaps the report will have to show as gaps
+  choose-cut -> draft-report [cut-and-cadence]: the grain, the filters,
+    the timezone, the comparison and the refresh cadence, written down
+    before building
+  draft-report -> hand-count [report-draft]: the report at a draft
+    version, with the query behind every number
+  hand-count -> read-as-reader [two-counts]: the two counts side by
+    side, with every difference explained rather than averaged
+  read-as-reader -> set-access [reader-acceptance]: the report as the
+    reader accepted it, and anything they said they still cannot see
+  set-access -> publish-report [access-rules]: who may open it, at what
+    grain, and the rows each role is kept out of
+  publish-report -> watch-cycles [published-report]: the address, the
+    version, the cadence and the date of the first scheduled run
+  watch-cycles -> set-retirement [first-cycles]: failed refreshes,
+    unexplained moves, and how many people opened it in the first
+    cycles
+  set-retirement -> record-learnings [retirement-condition]: the
+    condition that would switch this report off, and the date it is
+    next reviewed against it
+deviations:
+  search-store -> take-in-question [already-answered]: a report already
+    answers the question, so the run returns to the request and the
+    usual outcome is that the existing report is changed, moved or
+    opened up
+  check-data -> name-the-reader [data-will-not-support]: the record
+    cannot carry the question, so the reader either accepts a narrower
+    question or takes the gap away as work to fix the record
+  hand-count -> draft-report [counts-disagree]: the hand count and the
+    report disagree, so the draft is corrected before anything
+    publishes
+  read-as-reader -> choose-cut [reader-cannot-decide]: the reader
+    cannot make the decision from it, so the grain, the comparison and
+    the cadence are chosen again
+  watch-cycles -> draft-report [breaks-or-unopened]: it fails to
+    refresh or nobody opens it, so the report is drafted again rather
+    than left running
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the reader, the revenue

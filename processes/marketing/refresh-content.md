@@ -92,6 +92,10 @@ from: ref/mkt/refresh-content v1
 owner: <who>                          effective: <date>
 trigger: a content audit comes due on <your audit calendar>, or a page
          falls past <your decay threshold>
+         watch: every=<your audit cycle>
+         or watch: record=<a published page>
+                system=<your content inventory>
+                change=<the page falls past your decay threshold>
 concurrency: cycles may overlap - <how many> at once, and no two
              cycles hold the same page
 goal: every page the cycle covers updated, merged into another page,
@@ -218,58 +222,86 @@ run-scoped:
                 every: <cadence>
                 from: publish-changes   until: run close
 handoffs:
-  take-in-signal -> rebuild-inventory: the signal that started the
-    cycle, and the part of the library it points at
+  take-in-signal -> rebuild-inventory [cycle-signal]: the signal that
+    started the cycle, and the part of the library it points at
   rebuild-inventory -> read-performance / read-search /
-    score-standards / check-facts: the inventory at a version. Four
-    passes read one list and add to one record
-  read-performance -> triage-pages: what each page is doing now, with
-    the source of every figure and the date it was pulled. A page that
-    could not be measured is named as unmeasured
-  read-search -> triage-pages: the terms each page was built to answer,
-    which of them it has lost, and what ranks in its place
-  score-standards -> triage-pages: a verdict per page against the
-    standards at the versions now in force, with the rule behind every
-    failure
-  check-facts -> triage-pages: every number and source a page rests on,
-    marked as still good, as changed, or as gone
-  triage-pages -> approve-removals: the pages proposed for merging and
-    for takedown, each with its reason and what would stand at its
-    address
-  approve-removals -> set-order: the merges and the takedowns as the
-    named signer signed them
-  set-order -> brief-cycle: the pages the cycle works on, in the order
-    they get worked, each with the date it is due
-  set-order -> set-redirects: the pages coming down, their addresses,
-    and what each address has to point at once the page is gone
-  set-order -> report-cycle: the pages the cycle looked at and left
-    alone, with the reason each one was left
-  brief-cycle -> set-page-terms: the account of what is wrong with each
-    page, as every agent heard it
-  brief-cycle -> refresh-visuals: the visuals that no longer show what
-    the product or the data now looks like
-  set-page-terms -> rewrite: the questions and terms each page has to
-    cover now, and the sections that have to answer them
-  rewrite -> edit-rewrite: the changed page at a version, with the
-    published version beside it, so the edit can see what moved
-  edit-rewrite -> rewrite: the edit at a version, item by item, in
-    terms the writer can work through without coming back to ask
-  edit-rewrite -> get-sign-offs: the changed page at a version, every
-    claim carrying the source it now rests on and the date it was read
-  refresh-visuals -> get-sign-offs: the replaced visuals at a version
-  get-sign-offs -> change-pages: the approved changes at the signed
-    version. A later change voids the approval and sign-offs run again
-  change-pages -> set-redirects: the pages as they will be served
-  set-redirects -> check-pages: every address the cycle touches, with
-    what it points at now
-  check-pages -> publish-changes: the scored list, with the rule behind
-    every failure
-  publish-changes -> watch-changes: what went live, at which version,
-    and what each page was changed to do
-  watch-changes -> report-cycle: the numbers after the change, beside
-    the same numbers before it
-  report-cycle -> record-learnings: the account of the cycle, as
-    delivered
+    score-standards / check-facts [page-inventory]: the inventory at a
+    version. Four passes read one list and add to one record
+  read-performance -> triage-pages [page-performance]: what each page
+    is doing now, with the source of every figure and the date it was
+    pulled. A page that could not be measured is named as unmeasured
+  read-search -> triage-pages [search-standing]: the terms each page
+    was built to answer, which of them it has lost, and what ranks in
+    its place
+  score-standards -> triage-pages [standards-verdicts]: a verdict per
+    page against the standards at the versions now in force, with the
+    rule behind every failure
+  check-facts -> triage-pages [fact-check]: every number and source a
+    page rests on, marked as still good, as changed, or as gone
+  triage-pages -> approve-removals [proposed-removals]: the pages
+    proposed for merging and for takedown, each with its reason and
+    what would stand at its address
+  approve-removals -> set-order [signed-removals]: the merges and the
+    takedowns as the named signer signed them
+  set-order -> brief-cycle [work-order]: the pages the cycle works on,
+    in the order they get worked, each with the date it is due
+  set-order -> set-redirects [addresses-to-repoint]: the pages coming
+    down, their addresses, and what each address has to point at once
+    the page is gone
+  set-order -> report-cycle [pages-left-alone]: the pages the cycle
+    looked at and left alone, with the reason each one was left
+  brief-cycle -> set-page-terms [page-faults]: the account of what is
+    wrong with each page, as every agent heard it
+  brief-cycle -> refresh-visuals [aged-visuals]: the visuals that no
+    longer show what the product or the data now looks like
+  set-page-terms -> rewrite [page-terms]: the questions and terms each
+    page has to cover now, and the sections that have to answer them
+  rewrite -> edit-rewrite [rewritten-page]: the changed page at a
+    version, with the published version beside it, so the edit can see
+    what moved
+  edit-rewrite -> rewrite [edit-notes]: the edit at a version, item by
+    item, in terms the writer can work through without coming back to
+    ask
+  edit-rewrite -> get-sign-offs [edited-page]: the changed page at a
+    version, every claim carrying the source it now rests on and the
+    date it was read
+  refresh-visuals -> get-sign-offs [new-visuals]: the replaced visuals
+    at a version
+  get-sign-offs -> change-pages [approved-changes]: the approved
+    changes at the signed version. A later change voids the approval
+    and sign-offs run again
+  change-pages -> set-redirects [staged-pages]: the pages as they will
+    be served
+  set-redirects -> check-pages [address-map]: every address the cycle
+    touches, with what it points at now
+  check-pages -> publish-changes [page-check-results]: the scored list,
+    with the rule behind every failure
+  publish-changes -> watch-changes [what-went-live]: what went live, at
+    which version, and what each page was changed to do
+  watch-changes -> report-cycle [before-and-after]: the numbers after
+    the change, beside the same numbers before it
+  report-cycle -> record-learnings [cycle-report]: the account of the
+    cycle, as delivered
+deviations:
+  approve-removals -> triage-pages [takedown-refused]: the named signer
+    says the page stays, so the page is triaged again and either goes
+    on the update list or is recorded as left alone
+  rewrite -> check-facts [rewrite-needs-a-source]: the writer cannot
+    correct a number without a source for the new one, so the fact pass
+    runs again on that page
+  edit-rewrite -> rewrite [edit-names-changes]: the edit names changes
+    the page still needs, so the writer works through them
+  get-sign-offs -> rewrite [copy-changes-requested]: a signer asks for
+    changes to the words, and only the page they named reopens
+  get-sign-offs -> refresh-visuals [visual-changes-requested]: a signer
+    asks for changes to the visuals, and only the visuals they named
+    reopen
+  check-pages -> change-pages [check-failures]: the accessibility,
+    link, load or tracking check fails, so the pages are assembled
+    again against what the check named
+  watch-changes -> triage-pages [refresh-made-it-worse]: traffic or
+    rankings sit below where they stood before the change, so the page
+    is triaged again on the new numbers
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the brand owner, leadership,

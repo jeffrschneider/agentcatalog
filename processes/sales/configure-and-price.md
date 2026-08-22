@@ -67,6 +67,9 @@ from: ref/sls/configure-and-price v1
 owner: <who>                          effective: <date>
 trigger: a solution shape is agreed in <your discovery process> and
          somebody asks what it costs
+         watch: record=<agreed solution> system=<your CRM>
+                change=<a solution shape is agreed and a price is
+                asked for>
 concurrency: runs may overlap - <how many> quotes may be live on one
              opportunity, and one configuration is priced at a time
 goal: a quote the customer can be shown, every line priced against the
@@ -150,34 +153,57 @@ run-scoped:
                  every: <cadence>
                  from: route-exceptions   until: approve-exceptions
 handoffs:
-  take-in-solution -> read-entitlements: what is being sold and to
-    which customer record, so the right contracts are read
-  read-entitlements -> build-config: what the customer already owns,
-    dated, with the contract every line came from and the end date of
-    each one
-  build-config -> check-config: the configuration at a version, with
-    the reason behind every option that is not the default
-  check-config -> price-lines: the configuration that passed, and the
-    rule behind every failure that was accepted anyway
-  price-lines -> net-off-owned: the priced lines and the card version
-    each price was read from
-  net-off-owned -> set-discount-ask: the net price, and what was taken
-    out with the contract it came from
-  set-discount-ask -> check-margin: the discount asked for, line by
-    line, with the evidence behind it
-  check-margin -> route-exceptions: the margin on the deal as asked,
-    and every line that sits below the floor
-  route-exceptions -> approve-exceptions: the exceptions, each with the
-    person who may sign it and the reason it is being asked for
-  approve-exceptions -> assemble-quote: the approved price and terms at
-    the signed version. A later change voids the approval and the
-    exceptions go back through approval
-  assemble-quote -> check-quote: the quote as it would be sent, and the
-    configuration version it claims to price
-  check-quote -> hand-over-quote: the scored quote, with the config
-    line or the card entry behind every failure
-  hand-over-quote -> record-pricing: the quote as it left, at its
-    version, with the date it stops being good
+  take-in-solution -> read-entitlements [what-is-being-sold]: what is
+    being sold and to which customer record, so the right contracts
+    are read
+  read-entitlements -> build-config [existing-entitlements]: what the
+    customer already owns, dated, with the contract every line came
+    from and the end date of each one
+  build-config -> check-config [the-configuration]: the configuration
+    at a version, with the reason behind every option that is not the
+    default
+  check-config -> price-lines [checked-configuration]: the
+    configuration that passed, and the rule behind every failure that
+    was accepted anyway
+  price-lines -> net-off-owned [priced-lines]: the priced lines and
+    the card version each price was read from
+  net-off-owned -> set-discount-ask [net-price]: the net price, and
+    what was taken out with the contract it came from
+  set-discount-ask -> check-margin [discount-ask]: the discount asked
+    for, line by line, with the evidence behind it
+  check-margin -> route-exceptions [margin-finding]: the margin on the
+    deal as asked, and every line that sits below the floor
+  route-exceptions -> approve-exceptions [routed-exceptions]: the
+    exceptions, each with the person who may sign it and the reason it
+    is being asked for
+  approve-exceptions -> assemble-quote [approved-exceptions]: the
+    approved price and terms at the signed version. A later change
+    voids the approval and the exceptions go back through approval
+  assemble-quote -> check-quote [assembled-quote]: the quote as it
+    would be sent, and the configuration version it claims to price
+  check-quote -> hand-over-quote [quote-score]: the scored quote, with
+    the config line or the card entry behind every failure
+  hand-over-quote -> record-pricing [quote-as-sent]: the quote as it
+    left, at its version, with the date it stops being good
+deviations:
+  check-config -> build-config [config-does-not-hold]: a dependency is
+    missing, a quantity sits under a minimum, or two options cannot
+    sit together, so the configuration is built again
+  net-off-owned -> read-entitlements [entitlements-out-of-date]: the
+    netting finds a contract the read missed or an end date that has
+    moved, so the entitlements are read again
+  check-margin -> set-discount-ask [below-the-floor]: the deal prices
+    below the floor, so the discount ask is worked again
+  approve-exceptions -> set-discount-ask [exception-refused]: the
+    approvers say no, so the ask goes back with the reason attached
+  approve-exceptions -> build-config [solution-must-change]: the
+    refusal makes the shape unsellable, so the configuration is built
+    again and the account owner takes the change to the customer
+  check-quote -> assemble-quote [quote-failures]: the quote does not
+    match the configuration it came from, so it is assembled again
+  check-quote -> price-lines [card-moved]: the rate card moved while
+    the quote was being built, so the lines are priced again at the
+    version now in force
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the deal desk

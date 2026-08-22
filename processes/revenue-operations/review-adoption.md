@@ -71,6 +71,10 @@ from: ref/rev/review-adoption v1
 owner: <who>                          effective: <date>
 trigger: an adoption period closes on <your cadence>, or a signal
          crosses the threshold <your instrumentation> was given
+         watch: every=<your cadence>
+         or watch: record=<a watched signal> system=<your
+                instrumentation>
+                change=<the signal crosses the threshold it was given>
 concurrency: runs never overlap for one process - a period is reviewed
              once, and <how many> processes may be reviewed in the same
              sitting
@@ -188,40 +192,63 @@ run-scoped:
                    every: <cadence>
                    from: take-in-numbers   until: decide-departures
 handoffs:
-  take-in-numbers -> check-the-measure: the period's numbers, and the
-    process version each one measures
-  check-the-measure -> rank-departures: the numbers with every gap,
-    outage and renamed field marked, so a hole is not read as compliance
-  rank-departures -> separate-noise: the ordered departures, each with
-    the count behind its rate
-  separate-noise -> ask-why: the departures that are real changes in
-    behavior, and the ones that were changes in counting, kept apart
-  ask-why -> sort-reasons: what people said, attributed to a role rather
-    than to a name, with the ones who would not answer counted
-  sort-reasons -> cost-departure: each departure with its sort, so a
-    wrong process is not costed as disobedience
-  sort-reasons -> read-exceptions: the same sort, so an exception that
-    covers a departure is found before it is costed as one
-  cost-departure -> draft-options: what each departure cost over the
-    period, and what it would cost if it kept going
-  read-exceptions -> draft-options: the standing exceptions, who granted
-    each one, and the ones that have outlived their reason
-  draft-options -> convene-review: for each departure, the two options
-    costed, and the recommendation with the reason for it
-  convene-review -> decide-departures: the evidence as the room heard
-    it, and the questions the room could not answer
-  decide-departures -> record-decisions: one decision per departure,
-    each with an owner, a date and the option it chose
-  record-decisions -> open-amendments: the decisions that change the
-    process, and the step of the process each one touches
-  record-decisions -> open-enforcement: the decisions that change the
-    gate, the block, the training or the threshold
-  open-amendments -> tell-the-people: the amendments as raised, with the
-    date each one is expected to publish
-  open-enforcement -> tell-the-people: what will start being blocked,
-    and from when
-  tell-the-people -> set-next-review: the announcement as sent, and the
-    questions it came back with
+  take-in-numbers -> check-the-measure [period-numbers]: the period's
+    numbers, and the process version each one measures
+  check-the-measure -> rank-departures [checked-numbers]: the numbers
+    with every gap, outage and renamed field marked, so a hole is not
+    read as compliance
+  rank-departures -> separate-noise [ranked-departures]: the ordered
+    departures, each with the count behind its rate
+  separate-noise -> ask-why [real-departures]: the departures that are
+    real changes in behavior, and the ones that were changes in
+    counting, kept apart
+  ask-why -> sort-reasons [stated-reasons]: what people said, attributed
+    to a role rather than to a name, with the ones who would not answer
+    counted
+  sort-reasons -> cost-departure [sorted-departures]: each departure
+    with its sort, so a wrong process is not costed as disobedience
+  sort-reasons -> read-exceptions [sorts-for-exceptions]: the same sort,
+    so an exception that covers a departure is found before it is costed
+    as one
+  cost-departure -> draft-options [departure-costs]: what each departure
+    cost over the period, and what it would cost if it kept going
+  read-exceptions -> draft-options [standing-exceptions]: the standing
+    exceptions, who granted each one, and the ones that have outlived
+    their reason
+  draft-options -> convene-review [costed-options]: for each departure,
+    the two options costed, and the recommendation with the reason for
+    it
+  convene-review -> decide-departures [evidence-heard]: the evidence as
+    the room heard it, and the questions the room could not answer
+  decide-departures -> record-decisions [departure-decisions]: one
+    decision per departure, each with an owner, a date and the option it
+    chose
+  record-decisions -> open-amendments [process-changes]: the decisions
+    that change the process, and the step of the process each one
+    touches
+  record-decisions -> open-enforcement [enforcement-changes]: the
+    decisions that change the gate, the block, the training or the
+    threshold
+  open-amendments -> tell-the-people [amendments-raised]: the amendments
+    as raised, with the date each one is expected to publish
+  open-enforcement -> tell-the-people [enforcement-raised]: what will
+    start being blocked, and from when
+  tell-the-people -> set-next-review [announcement-sent]: the
+    announcement as sent, and the questions it came back with
+deviations:
+  check-the-measure -> take-in-numbers [measure-was-broken]: the
+    instrumentation was broken for part of the period, so the numbers
+    are taken in again with the outage named
+  separate-noise -> check-the-measure [counting-changed]: the number
+    moved because the counting changed, not the behavior
+  sort-reasons -> ask-why [nobody-will-say-why]: the reasons cannot be
+    sorted because nobody will say why they departed
+  convene-review -> cost-departure [evidence-not-enough]: the review
+    cannot decide on the evidence in front of it, so the cost is worked
+    again
+  decide-departures -> draft-options [no-decision-reached]: the review
+    reaches no decision, so the options are drafted again with the
+    question it could not answer
 bindings:
   roster:  <who holds each role - the agent claiming adoption-monitor,
            the agent claiming analytics, the named process owner, and

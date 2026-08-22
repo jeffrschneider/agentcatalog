@@ -72,6 +72,9 @@ from: ref/sls/research-an-account v1
 owner: <who>                          effective: <date>
 trigger: an account is named as one worth a plan in <your territory or
          account selection process>
+         watch: record=<account>
+                system=<your territory or account selection process>
+                change=<an account is named as one worth a plan>
 concurrency: runs may overlap - <how many> reads run at once, and one
              account is read by one run at a time
 goal: one dated read of the account, every line carrying its source,
@@ -154,40 +157,60 @@ run-scoped:
               every: <cadence>
               from: issue-read   until: run close
 handoffs:
-  take-in-account -> set-questions: the reason the account was named,
-    and who is waiting on the read
-  set-questions -> read-own-record: the questions, each marked
-    must-answer or not, and the date each one is due
-  set-questions -> read-published: the same question list
-  set-questions -> read-outside: the same question list
-  read-published -> read-intent: what the account said, quoted, with
-    the document and the date behind each quote
-  read-outside -> read-intent: what outsiders said, each source named,
-    and whether that source is paid by the account
-  read-own-record -> map-holdings: what we already know the account
-    runs, and what we sold it
-  read-published -> map-holdings: what the account says it runs
-  read-own-record -> map-the-spend: what this account has spent with
-    us, by line and by year
-  read-outside -> map-the-spend: spend visible in public filings
-  read-own-record -> read-our-history: the record every history line is
-    read from, so nothing is counted twice
-  read-our-history -> check-standing: the open tickets, the unpaid
-    invoices, and anything still unresolved
-  read-intent -> mark-unknowns: what is settled about intent, and what
-    the questions still do not settle
-  map-holdings -> mark-unknowns: the same, for what the account owns
-  map-the-spend -> mark-unknowns: the same, for where the money goes
-  check-standing -> assemble-read: whether the account may be worked,
-    and the finding behind that answer
-  mark-unknowns -> assemble-read: the unknowns, each naming the
-    question, what was tried, and what would answer it
-  assemble-read -> review-read: the draft read, every line sourced and
-    dated
-  review-read -> issue-read: the read as the owner corrected it, naming
-    the owner and the date they signed
-  issue-read -> set-refresh: the issued version, so the refresh date
-    hangs off a version and not a document
+  take-in-account -> set-questions [naming-reason]: the reason the
+    account was named, and who is waiting on the read
+  set-questions -> read-own-record [question-list]: the questions,
+    each marked must-answer or not, and the date each one is due
+  set-questions -> read-published [questions-for-published]: the same
+    question list
+  set-questions -> read-outside [questions-for-outside]: the same
+    question list
+  read-published -> read-intent [what-they-said]: what the account
+    said, quoted, with the document and the date behind each quote
+  read-outside -> read-intent [what-others-said]: what outsiders
+    said, each source named, and whether that source is paid by the
+    account
+  read-own-record -> map-holdings [what-we-sold]: what we already
+    know the account runs, and what we sold it
+  read-published -> map-holdings [stated-holdings]: what the account
+    says it runs
+  read-own-record -> map-the-spend [spend-with-us]: what this account
+    has spent with us, by line and by year
+  read-outside -> map-the-spend [public-spend]: spend visible in
+    public filings
+  read-own-record -> read-our-history [history-source]: the record
+    every history line is read from, so nothing is counted twice
+  read-our-history -> check-standing [unresolved-items]: the open
+    tickets, the unpaid invoices, and anything still unresolved
+  read-intent -> mark-unknowns [intent-findings]: what is settled
+    about intent, and what the questions still do not settle
+  map-holdings -> mark-unknowns [holdings-findings]: the same, for
+    what the account owns
+  map-the-spend -> mark-unknowns [spend-findings]: the same, for
+    where the money goes
+  check-standing -> assemble-read [standing-finding]: whether the
+    account may be worked, and the finding behind that answer
+  mark-unknowns -> assemble-read [the-unknowns]: the unknowns, each
+    naming the question, what was tried, and what would answer it
+  assemble-read -> review-read [draft-read]: the draft read, every
+    line sourced and dated
+  review-read -> issue-read [corrected-read]: the read as the owner
+    corrected it, naming the owner and the date they signed
+  issue-read -> set-refresh [issued-read]: the issued version, so the
+    refresh date hangs off a version and not a document
+deviations:
+  check-standing -> take-in-account [account-not-workable]: the
+    standing check finds a dispute, a collection or a legal hold, so
+    the naming goes back to whoever asked for the read
+  read-intent -> set-questions [question-has-no-source]: no source
+    answers a must-answer question, so the question goes back to the
+    people who set it to be dropped, accepted as unknown, or funded
+  review-read -> assemble-read [owner-corrects-a-line]: the account
+    owner corrects a line, so the read is assembled again with the
+    correction recorded as a correction
+  review-read -> set-questions [owner-asks-more]: the account owner
+    asks a question the read does not answer, so it joins the
+    question list and the reading runs again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, the account owner who signs the read, and the legal

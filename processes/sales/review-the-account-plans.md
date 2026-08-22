@@ -67,6 +67,9 @@ from: ref/sls/review-the-account-plans v1
 owner: <who>                          effective: <date>
 trigger: the review cadence comes round every <cadence>, or a tripwire
          named in a plan fires and pulls that plan in early
+         watch: every=<cadence>
+         or watch: record=<plan> system=<your plan record>
+                change=<a tripwire named in the plan fires>
 concurrency: one round at a time for a given <territory or segment>,
              and a plan belongs to one round at a time
 goal: every plan in scope read against what actually happened and
@@ -155,39 +158,53 @@ run-scoped:
   effort     - runs allocate-and-reconcile    owner: account-planner
                from: move-effort   until: run close
 handoffs:
-  open-round -> pull-plans: the accounts in scope, and why each one is
-    in this round rather than the next
-  pull-plans -> read-outcomes: each plan at its running version, with
-    the moves it named and the dates they were due
-  pull-plans -> test-assumptions: the assumptions as they were written
-    when the plan was signed, not as anyone remembers them
-  pull-plans -> check-people: the buyers each plan named, so a move is
-    read against a commitment
-  read-outcomes -> score-plans: what was done and what happened, each
-    line naming the system it was read from
-  test-assumptions -> score-plans: every assumption marked held, broken
-    or untestable, with the evidence
-  check-people -> score-plans: the buyers who left, moved or arrived,
-    and the plans that depended on them
-  score-plans -> sort-plans: the score for each plan and the reasons
-    under it
-  sort-plans -> hold-review: a proposal per plan, so the review argues
-    with a recommendation rather than a blank page
-  hold-review -> decide-plans: what the account team said, what the
-    evidence said, and where the two did not agree
-  decide-plans -> move-effort: the plans paused and retired, and what
-    each one was holding
-  decide-plans -> amend-plans: the plans that change, and what the
-    decision said has to change in each
-  decide-plans -> retire-plans: the plans that stop, and the reason
-    recorded for each
-  move-effort -> tell-readers: where the effort went, so the teams
-    losing it and gaining it hear the same thing
-  amend-plans -> tell-readers: the new versions and the dates they
-    apply from
-  retire-plans -> tell-readers: the closed plans, and the work that
-    stops because of them
-  tell-readers -> record-learnings: what was announced, and to whom
+  open-round -> pull-plans [accounts-in-scope]: the accounts in
+    scope, and why each one is in this round rather than the next
+  pull-plans -> read-outcomes [running-plans]: each plan at its
+    running version, with the moves it named and the dates they were
+    due
+  pull-plans -> test-assumptions [written-assumptions]: the
+    assumptions as they were written when the plan was signed, not as
+    anyone remembers them
+  pull-plans -> check-people [named-buyers]: the buyers each plan
+    named, so a move is read against a commitment
+  read-outcomes -> score-plans [what-happened]: what was done and
+    what happened, each line naming the system it was read from
+  test-assumptions -> score-plans [assumption-results]: every
+    assumption marked held, broken or untestable, with the evidence
+  check-people -> score-plans [people-changes]: the buyers who left,
+    moved or arrived, and the plans that depended on them
+  score-plans -> sort-plans [plan-scores]: the score for each plan
+    and the reasons under it
+  sort-plans -> hold-review [proposal-per-plan]: a proposal per plan,
+    so the review argues with a recommendation rather than a blank
+    page
+  hold-review -> decide-plans [review-record]: what the account team
+    said, what the evidence said, and where the two did not agree
+  decide-plans -> move-effort [released-effort]: the plans paused and
+    retired, and what each one was holding
+  decide-plans -> amend-plans [plans-to-change]: the plans that
+    change, and what the decision said has to change in each
+  decide-plans -> retire-plans [plans-to-retire]: the plans that
+    stop, and the reason recorded for each
+  move-effort -> tell-readers [effort-placements]: where the effort
+    went, so the teams losing it and gaining it hear the same thing
+  amend-plans -> tell-readers [new-versions]: the new versions and
+    the dates they apply from
+  retire-plans -> tell-readers [closed-plans]: the closed plans, and
+    the work that stops because of them
+  tell-readers -> record-learnings [announcements]: what was
+    announced, and to whom
+deviations:
+  test-assumptions -> read-outcomes [assumption-untestable]: an
+    assumption cannot be settled from what was read, so the outcomes
+    are read again for the evidence that would settle it
+  hold-review -> sort-plans [plan-not-ready]: the account team cannot
+    answer for a plan, so that plan is sorted again before the room
+    decides it
+  decide-plans -> read-outcomes [evidence-does-not-settle]: the
+    evidence in front of the room does not settle a plan, so what
+    actually happened is read again before the call is made
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, the account owners who answer for their plans, and

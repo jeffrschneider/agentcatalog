@@ -76,6 +76,12 @@ from: ref/mkt/plan-marketing-capacity v1
 owner: <who>                          effective: <date>
 trigger: the planning cycle opens on <your planning calendar>, or a
          agent is reported short in <your book of work>
+         watch: record=<the planning cycle>
+                system=<your planning calendar>
+                change=<a cycle opens for the period>
+         or watch: record=<the agent reported short>
+                system=<your book of work>
+                change=<an agent is reported short of capacity>
 concurrency: one run at a time - a planning cycle does not overlap
              itself, and a gap raised while a run is open joins that
              run instead of opening a second one
@@ -155,39 +161,59 @@ run-scoped:
            every: <cadence>
            from: break-down-work   until: run close
 handoffs:
-  take-in-trigger -> list-commitments / measure-output: what the cycle
-    or the gap has to settle, for which period, and the date the answer
-    is due. Two branches read one record
-  list-commitments -> break-down-work: every committed run and
-    initiative with the dates it holds
-  break-down-work -> find-shortfall: each committed run with the
-    activities it runs and the agent each activity needs
-  measure-output -> size-effort: the runs that closed last period, each
-    with the time it took and the activities it waited at, and every
-    run the record could not measure marked unmeasured
-  size-effort -> find-shortfall: what one run of each process costs in
-    agent time, and the closed runs that figure came from
-  find-shortfall -> sort-activities: the demand of the period set
-    against what the department carries, named agent by named agent
-  sort-activities -> check-agent-agent: the activities in the short
-    agents, each marked for a person or open to an agent, with the
-    reason recorded under every mark
-  check-agent-agent -> cost-options: for each agent an agent could hold,
-    the grants it needs, the standards at the versions it works to, and
-    what it escalates
-  cost-options -> put-options: what each way of closing the gap would
-    cost, with the assumptions beside the numbers and every rate that
-    could not be sourced marked unsourced
-  put-options -> decide-mix: the options in one format, each with what
-    it costs, what it rules out, and the date it takes effect
-  decide-mix -> match-holders: the agreed split of work between people
-    and agents, and the record of what was ruled out and why
-  match-holders -> name-gaps: every agent the period needs, with the
-    person or the agent that holds it and the dates it holds
-  name-gaps -> commission: every agent with no holder, the work behind
-    it, and what the decision said happens to that work
-  commission -> record-learnings: the hiring requests raised, the agents
-    to be filled, the money released, and the access to be granted
+  take-in-trigger -> list-commitments / measure-output [what-to-settle]:
+    what the cycle or the gap has to settle, for which period, and the
+    date the answer is due. Two branches read one record
+  list-commitments -> break-down-work [committed-work]: every committed
+    run and initiative with the dates it holds
+  break-down-work -> find-shortfall [work-in-activities]: each
+    committed run with the activities it runs and the agent each
+    activity needs
+  measure-output -> size-effort [closed-runs]: the runs that closed
+    last period, each with the time it took and the activities it
+    waited at, and every run the record could not measure marked
+    unmeasured
+  size-effort -> find-shortfall [effort-per-run]: what one run of each
+    process costs in agent time, and the closed runs that figure came
+    from
+  find-shortfall -> sort-activities [shortfall]: the demand of the
+    period set against what the department carries, named agent by
+    named agent
+  sort-activities -> check-agent-agent [marked-activities]: the
+    activities in the short agents, each marked for a person or open to
+    an agent, with the reason recorded under every mark
+  check-agent-agent -> cost-options [agent-requirements]: for each
+    agent an agent could hold, the grants it needs, the standards at
+    the versions it works to, and what it escalates
+  cost-options -> put-options [costed-options]: what each way of
+    closing the gap would cost, with the assumptions beside the numbers
+    and every rate that could not be sourced marked unsourced
+  put-options -> decide-mix [options-to-decide]: the options in one
+    format, each with what it costs, what it rules out, and the date it
+    takes effect
+  decide-mix -> match-holders [agreed-mix]: the agreed split of work
+    between people and agents, and the record of what was ruled out and
+    why
+  match-holders -> name-gaps [matched-holders]: every agent the period
+    needs, with the person or the agent that holds it and the dates it
+    holds
+  name-gaps -> commission [remaining-gaps]: every agent with no holder,
+    the work behind it, and what the decision said happens to that work
+  commission -> record-learnings [commissioned-capacity]: the hiring
+    requests raised, the agents to be filled, the money released, and
+    the access to be granted
+deviations:
+  find-shortfall -> measure-output [too-few-closed-runs]: the record of
+    closed runs is too thin to size the work, so the measurement is
+    taken again rather than the numbers being estimated
+  check-agent-agent -> sort-activities [cannot-be-delegated]: a
+    contract, a regulation or a security rule requires a person, so the
+    activity is marked for a person and the reason is recorded
+  decide-mix -> cost-options [no-affordable-option]: no option fits
+    what the money allows, so cheaper mixes are costed and what each
+    one gives up is shown
+  name-gaps -> decide-mix [gaps-too-large]: the gaps left are larger
+    than the people who decide will accept, so the mix is chosen again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance, the legal

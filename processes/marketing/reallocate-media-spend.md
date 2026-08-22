@@ -76,6 +76,10 @@ from: ref/mkt/reallocate-media-spend v1
 owner: <who>                          effective: <date>
 trigger: in-flight performance crosses <your pacing threshold> or
          <your cost threshold> on a live line of the media plan
+         watch: record=<a live line of the media plan>
+                system=<your media plan and its orders>
+                change=<in-flight pacing or result cost crosses the
+                threshold set for that line>
 concurrency: runs may overlap - <how many> reallocations open at once
              against one plan
 goal: committed money moved between live lines of the plan, the rest of
@@ -147,35 +151,61 @@ run-scoped:
   spend  - runs allocate-and-reconcile        owner: media-buyer
            from: move-the-money   until: run close
 handoffs:
-  take-signal -> confirm-numbers: the line, the direction and the size
-    of the gap, and how much of the flight is left to run
-  take-signal -> read-position: the same signal. Both branches read one
-    record
-  confirm-numbers -> name-candidates: the delivery and result figures
-    behind the signal, each with its source and the date it was pulled
-  read-position -> name-candidates: what is committed, what is spent
-    and what is still free on every line of the plan
-  name-candidates -> cost-the-move: each pairing of a line that gives
-    money up and a line that takes it, with an amount written on it
-  name-candidates -> size-the-return: the same pairings, to be modelled
-  cost-the-move -> check-the-move: the notice, the minimums and the
-    terms each pairing runs into, at the versions they were agreed at
-  size-the-return -> check-the-move: what each pairing is modelled to
-    return, with the assumptions it rests on
-  check-the-move -> decide-the-move: a verdict on every pairing, each
-    verdict citing the plan line or the term behind it
-  decide-the-move -> amend-the-plan: the amount, the lines it leaves,
-    the lines it lands on, who agreed it and on what date
-  amend-the-plan -> move-the-money: the new split at a version, with
-    the version it replaces kept where it was
-  move-the-money -> correct-pacing: what changed on each platform, and
-    how many days each flight has left to spend it
-  correct-pacing -> check-it-took: the daily limits and the flight
-    weights as they are now set
-  check-it-took -> tell-the-readers: what is running, read back against
-    what was decided, with every difference named
-  tell-the-readers -> record-the-why: the new split as every agent heard
-    it, and the date it applies from
+  take-signal -> confirm-numbers [pacing-signal]: the line, the
+    direction and the size of the gap, and how much of the flight is
+    left to run
+  take-signal -> read-position [signal-for-position]: the same signal.
+    Both branches read one record
+  confirm-numbers -> name-candidates [confirmed-figures]: the delivery
+    and result figures behind the signal, each with its source and the
+    date it was pulled
+  read-position -> name-candidates [plan-position]: what is committed,
+    what is spent and what is still free on every line of the plan
+  name-candidates -> cost-the-move [candidate-pairings]: each pairing
+    of a line that gives money up and a line that takes it, with an
+    amount written on it
+  name-candidates -> size-the-return [pairings-to-model]: the same
+    pairings, to be modelled
+  cost-the-move -> check-the-move [move-costs]: the notice, the
+    minimums and the terms each pairing runs into, at the versions they
+    were agreed at
+  size-the-return -> check-the-move [modelled-return]: what each
+    pairing is modelled to return, with the assumptions it rests on
+  check-the-move -> decide-the-move [pairing-verdicts]: a verdict on
+    every pairing, each verdict citing the plan line or the term behind
+    it
+  decide-the-move -> amend-the-plan [agreed-move]: the amount, the
+    lines it leaves, the lines it lands on, who agreed it and on what
+    date
+  amend-the-plan -> move-the-money [new-split]: the new split at a
+    version, with the version it replaces kept where it was
+  move-the-money -> correct-pacing [platform-changes]: what changed on
+    each platform, and how many days each flight has left to spend it
+  correct-pacing -> check-it-took [pacing-settings]: the daily limits
+    and the flight weights as they are now set
+  check-it-took -> tell-the-readers [read-back]: what is running, read
+    back against what was decided, with every difference named
+  tell-the-readers -> record-the-why [announced-split]: the new split
+    as every agent heard it, and the date it applies from
+deviations:
+  confirm-numbers -> take-signal [figures-do-not-hold]: the figures
+    behind the signal do not hold, so the signal is taken in again and
+    no money moves on them
+  check-the-move -> name-candidates [move-breaks-a-term]: a pairing
+    breaks a term or a rule the buy is committed to, so the candidates
+    are named again without it
+  decide-the-move -> name-candidates [smaller-move-wanted]: the person
+    who owns the money will move less than was put in front of them, so
+    the pairings are named again inside the smaller amount
+  correct-pacing -> name-candidates [line-cannot-absorb]: a receiving
+    line has too few days left to spend what it was given, so that
+    amount goes back to be paired with a line that can
+  check-it-took -> move-the-money [change-did-not-take]: what is
+    running is not what was decided, so only the lines the check named
+    are set again
+  check-it-took -> correct-pacing [flight-still-misses]: the settings
+    took but the rest of the flight still misses its end date, so the
+    limits and the weights are reset
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the finance and leadership

@@ -75,6 +75,11 @@ from: ref/mkt/award-entry v1
 owner: <who>                          effective: <date>
 trigger: an award opens for entries, or <your awards calendar> says the
          date is close
+         watch: record=<award> system=<your awards calendar>
+                change=<the award opens for entries>
+         or watch: record=<award> system=<your awards calendar>
+                change=<the closing date comes within the notice the
+                calendar sets>
 concurrency: runs overlap - <how many> entries open at once
 goal: an entry that meets the award's rules, carries the customer's
       agreement, is signed off, is paid for and filed before the
@@ -155,34 +160,59 @@ run-scoped:
              every: <cadence>
              from: submit-the-entry   until: run close
 handoffs:
-  take-in-award -> decide-to-enter: what the award recognizes, the fee,
-    the work it will take, and the date it closes
-  decide-to-enter -> read-the-rules: the decision to enter, and who
-    agreed to pay for it
-  read-the-rules -> pick-the-entry: the eligibility rules, the
-    categories and the format, with the date they were read
-  pick-the-entry -> brief-the-entry: the category, the work entered in
-    it, and the customer the entry will name
-  brief-the-entry -> gather-evidence: the criteria the judges score, and
-    the date the entry has to be filed
-  brief-the-entry -> customer-consent: what the entry will say about the
-    customer, in the words it will say it
-  gather-evidence -> write-the-entry: the evidence, with a source line
-    for every number the entry uses
-  customer-consent -> get-sign-offs: the customer's agreement in their
-    own words, saying what may be said about them and until when
-  edit-the-entry -> get-sign-offs: the entry at a version, inside the
-    word limits the rules set
-  support-material -> get-sign-offs: the images, the video and the
-    references at their versions
-  get-sign-offs -> submit-the-entry: the approved entry at the signed
-    version. A later change voids the approval, and it voids the
-    customer's agreement with it
-  submit-the-entry -> answer-judges: the filed entry at the version that
-    went in, the date it was filed, and what the body sent back
-  track-result -> hand-on-result: the decision, the date the body
-    published it, and what the body said about the entry
-  hand-on-result -> record-learnings: what went out and who it went to
+  take-in-award -> decide-to-enter [award-terms]: what the award
+    recognizes, the fee, the work it will take, and the date it closes
+  decide-to-enter -> read-the-rules [entry-decision]: the decision to
+    enter, and who agreed to pay for it
+  read-the-rules -> pick-the-entry [entry-rules]: the eligibility
+    rules, the categories and the format, with the date they were read
+  pick-the-entry -> brief-the-entry [category-and-work]: the category,
+    the work entered in it, and the customer the entry will name
+  brief-the-entry -> gather-evidence [judging-criteria]: the criteria
+    the judges score, and the date the entry has to be filed
+  brief-the-entry -> customer-consent [customer-wording]: what the
+    entry will say about the customer, in the words it will say it
+  gather-evidence -> write-the-entry [sourced-evidence]: the evidence,
+    with a source line for every number the entry uses
+  customer-consent -> get-sign-offs [customer-agreement]: the
+    customer's agreement in their own words, saying what may be said
+    about them and until when
+  edit-the-entry -> get-sign-offs [edited-entry]: the entry at a
+    version, inside the word limits the rules set
+  support-material -> get-sign-offs [supporting-material]: the images,
+    the video and the references at their versions
+  get-sign-offs -> submit-the-entry [signed-entry]: the approved entry
+    at the signed version. A later change voids the approval, and it
+    voids the customer's agreement with it
+  submit-the-entry -> answer-judges [filed-entry]: the filed entry at
+    the version that went in, the date it was filed, and what the body
+    sent back
+  track-result -> hand-on-result [award-result]: the decision, the
+    date the body published it, and what the body said about the entry
+  hand-on-result -> record-learnings [announcement-record]: what went
+    out and who it went to
+deviations:
+  read-the-rules -> decide-to-enter [terms-too-costly]: the terms of
+    entry ask for more than the organization will give, so the choice
+    to enter is taken again against what those terms cost
+  gather-evidence -> pick-the-entry [work-does-not-qualify]: the
+    evidence shows the work falls outside what the award covers, so
+    different work is picked or the award is dropped for this cycle
+  customer-consent -> pick-the-entry [customer-declines]: the named
+    customer will not agree to appear, so the entry is rebuilt around
+    work that names nobody outside the organization, or it is dropped
+  edit-the-entry -> write-the-entry [edit-asks-rewrite]: the edit
+    names answers that do not read against what the judges score, so
+    those answers are written again
+  get-sign-offs -> write-the-entry [sign-off-changes-entry]: a signer
+    asks for changes to what the entry says, so only what they named
+    is written again
+  get-sign-offs -> support-material [sign-off-changes-material]: a
+    signer asks for changes to the images, the video or the
+    references, so only what they named is made again
+  answer-judges -> gather-evidence [judge-question-unanswered]: a
+    judge asks something the evidence does not answer, so the evidence
+    is gathered again and the answer goes back with a source under it
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, brand, rights,

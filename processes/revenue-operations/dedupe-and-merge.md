@@ -79,6 +79,13 @@ owner: <who>                          effective: <date>
 trigger: a match rule fires, a person reports a duplicate, or a new
          record collides with an existing one at create time in <your
          CRM>
+         watch: record=<duplicate set> system=<your CRM>
+                change=<a match rule fires on two records>
+         or watch: record=<duplicate set> system=<your CRM>
+                change=<a person reports two records as one thing>
+         or watch: record=<record> system=<your CRM>
+                change=<a new record collides with an existing one at
+                create time>
 concurrency: runs may overlap - one record belongs to one merge at a
              time, and a record already inside an open run is held out
              of any new set until that run closes
@@ -173,37 +180,56 @@ run-scoped:
                 every: <cadence>
                 from: route-unsure   until: run close
 handoffs:
-  take-in-set -> read-rule: the records proposed as one thing, and what
-    proposed them
-  read-rule -> pull-records: the rule, the fields it matched on, and
-    the strength it matched at
-  pull-records -> score-match: every field on each record, with what is
-    attached to each one
-  score-match -> route-unsure: the score, the model version, and the
-    inputs it was computed from
-  route-unsure -> confirm-one: the two records side by side, the score,
-    and the fields the rule matched on
-  confirm-one -> choose-survivor: a person's answer, with their name
-    and the date, and which record they called the real one
-  choose-survivor -> settle-fields: the surviving id, and the reason it
-    was chosen over the other
-  settle-fields -> keep-loser: the winning value for every field, each
-    one naming the record it came from
-  keep-loser -> move-related: the losing values as stored, so the merge
-    can be reversed from them
-  move-related -> check-consent: everything now pointing at the
-    survivor, and anything that could not be repointed
-  check-consent -> tell-owners: the consent position carried onto the
-    survivor, channel by channel, and what it took away
-  tell-owners -> merge: both owners told, with the date they were told
-  merge -> check-merge: the merge as written, the surviving id, and the
-    closed record pointing at it
-  check-merge -> report-merge: the before and after counts, and
-    anything that does not reconcile
-  check-merge -> undo-merge: what the check found missing, so the
-    reversal knows what it is putting back
-  report-merge -> record-learnings: the merges of the period, by rule,
-    with the ones a person overturned
+  take-in-set -> read-rule [duplicate-set]: the records proposed as one
+    thing, and what proposed them
+  read-rule -> pull-records [match-rule]: the rule, the fields it
+    matched on, and the strength it matched at
+  pull-records -> score-match [record-contents]: every field on each
+    record, with what is attached to each one
+  score-match -> route-unsure [match-score]: the score, the model
+    version, and the inputs it was computed from
+  route-unsure -> confirm-one [records-for-review]: the two records
+    side by side, the score, and the fields the rule matched on
+  confirm-one -> choose-survivor [merge-confirmation]: a person's
+    answer, with their name and the date, and which record they called
+    the real one
+  choose-survivor -> settle-fields [surviving-id]: the surviving id,
+    and the reason it was chosen over the other
+  settle-fields -> keep-loser [settled-fields]: the winning value for
+    every field, each one naming the record it came from
+  keep-loser -> move-related [kept-losing-values]: the losing values as
+    stored, so the merge can be reversed from them
+  move-related -> check-consent [repointed-records]: everything now
+    pointing at the survivor, and anything that could not be repointed
+  check-consent -> tell-owners [consent-position]: the consent position
+    carried onto the survivor, channel by channel, and what it took
+    away
+  tell-owners -> merge [owners-told]: both owners told, with the date
+    they were told
+  merge -> check-merge [merge-result]: the merge as written, the
+    surviving id, and the closed record pointing at it
+  check-merge -> report-merge [merge-check]: the before and after
+    counts, and anything that does not reconcile
+  check-merge -> undo-merge [what-is-missing]: what the check found
+    missing, so the reversal knows what it is putting back
+  report-merge -> record-learnings [merge-report]: the merges of the
+    period, by rule, with the ones a person overturned
+deviations:
+  confirm-one -> record-learnings [not-one-thing]: the person says the
+    two records are two real things, so nothing is merged and the
+    survivor, the fields, the moves and the report are all passed over,
+    with both records marked as compared
+  check-consent -> settle-fields [consent-records-disagree]: the two
+    consent records disagree, so the fields are settled again with the
+    stricter position carried
+  tell-owners -> confirm-one [owner-objects]: an owner objects after
+    being told, so the merge holds and the confirmation is taken again
+    with what the owner knows written down
+  check-merge -> move-related [something-did-not-move]: something is
+    still pointing at the closed record, so the move runs again rather
+    than the closed record being reopened
+  check-merge -> undo-merge [merge-lost-a-value]: the merge lost a
+    value, so the reversal runs from what keep-loser stored
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the record owners and whoever

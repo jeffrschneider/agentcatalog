@@ -73,6 +73,13 @@ from: ref/prt/structure-an-alliance v1
 owner: <who>                          effective: <date>
 trigger: diligence reports go, or go with conditions, and <who> tells
          the run to structure the arrangement
+         watch: record=<diligence report>
+                system=<your partner record>
+                change=<a diligence report says go, or go with
+                conditions>
+         and watch: record=<candidate company>
+                system=<your partner record>
+                change=<the arrangement is sent to be structured>
 concurrency: runs may overlap - <how many> structurings live at once,
              and one candidate company is structured by one run at a
              time
@@ -174,36 +181,63 @@ run-scoped:
                  every: <cadence>
                  from: draft-term-sheet       until: run close
 handoffs:
-  take-in-diligence -> set-outcomes: what diligence proved, what it
-    conditioned, and the price it put on each finding
-  set-outcomes -> choose-shape: the outcomes each side must get, and the
-    ones either side called non-negotiable
-  choose-shape -> set-money-model: the chosen shape, and the shapes that
-    were refused with the reason for each refusal
-  set-money-model -> model-economics: who charges whom, what the split
-    is, who carries which cost, and when money moves
-  set-exclusivity -> model-economics: what each side may do elsewhere,
-    where, for how long, and which existing contract limits it
-  set-term-exit -> model-economics: the term, the renewal, the ways it
-    ends, and what each side keeps afterwards
-  set-governance -> model-economics: who decides what, the meeting
-    schedule, and the escalation path with names on it
-  model-economics -> get-mandate: the modelled result for both sides,
-    the low case, and the assumptions that carry the number
-  get-mandate -> draft-term-sheet: the walk-away terms, the person who
-    set them, and the date they expire
-  draft-term-sheet -> negotiate-term-sheet: the shape on one document,
-    at a version, with every number inside the mandate
-  negotiate-term-sheet -> sign-term-sheet: every ask closed as given,
-    traded or refused, with the person on each side who agreed
-  sign-term-sheet -> draft-agreement: the signed shape, dated, and the
-    diligence conditions that must appear as terms
-  draft-agreement -> review-redlines: the draft at a version, with each
-    clause traced to the term sheet line it comes from
-  review-redlines -> approve-and-sign: the clauses that moved, each read
-    against the term sheet, and the ones that changed a term
-  approve-and-sign -> hand-on: the executed agreement, its date, its
-    signers, and the obligations it creates
+  take-in-diligence -> set-outcomes [diligence-result]: what diligence
+    proved, what it conditioned, and the price it put on each finding
+  set-outcomes -> choose-shape [required-outcomes]: the outcomes each
+    side must get, and the ones either side called non-negotiable
+  choose-shape -> set-money-model [chosen-shape]: the chosen shape, and
+    the shapes that were refused with the reason for each refusal
+  set-money-model -> model-economics [money-model]: who charges whom,
+    what the split is, who carries which cost, and when money moves
+  set-exclusivity -> model-economics [exclusivity-terms]: what each
+    side may do elsewhere, where, for how long, and which existing
+    contract limits it
+  set-term-exit -> model-economics [term-and-exit]: the term, the
+    renewal, the ways it ends, and what each side keeps afterwards
+  set-governance -> model-economics [governance-terms]: who decides
+    what, the meeting schedule, and the escalation path with names on
+    it
+  model-economics -> get-mandate [modelled-economics]: the modelled
+    result for both sides, the low case, and the assumptions that carry
+    the number
+  get-mandate -> draft-term-sheet [walk-away-terms]: the walk-away
+    terms, the person who set them, and the date they expire
+  draft-term-sheet -> negotiate-term-sheet [term-sheet-draft]: the
+    shape on one document, at a version, with every number inside the
+    mandate
+  negotiate-term-sheet -> sign-term-sheet [closed-asks]: every ask
+    closed as given, traded or refused, with the person on each side
+    who agreed
+  sign-term-sheet -> draft-agreement [signed-term-sheet]: the signed
+    shape, dated, and the diligence conditions that must appear as
+    terms
+  draft-agreement -> review-redlines [agreement-draft]: the draft at a
+    version, with each clause traced to the term sheet line it comes
+    from
+  review-redlines -> approve-and-sign [redline-findings]: the clauses
+    that moved, each read against the term sheet, and the ones that
+    changed a term
+  approve-and-sign -> hand-on [executed-agreement]: the executed
+    agreement, its date, its signers, and the obligations it creates
+deviations:
+  model-economics -> choose-shape [no-shape-works]: no shape makes the
+    number work, so the shape is chosen again rather than the model
+    shaved
+  get-mandate -> set-money-model [mandate-will-not-cover]: the mandate
+    will not cover the deal, so the money model is reworked before
+    anything crosses the table
+  negotiate-term-sheet -> get-mandate [ask-past-mandate]: they ask past
+    the mandate, so the ask is refused at the table and taken back to
+    the people who set the mandate
+  review-redlines -> draft-agreement [paper-does-not-match]: the paper
+    does not say what the term sheet said, so the clause is drafted
+    again against the line it should match
+  review-redlines -> negotiate-term-sheet [settled-term-reopened]: they
+    reopen a settled term inside the redlines, so it goes back to the
+    table rather than being settled in the margin of a draft
+  approve-and-sign -> negotiate-term-sheet [signer-will-not-sign]: a
+    signer will not sign, so the terms that caused the refusal go back
+    to the table
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the executive sponsor, the

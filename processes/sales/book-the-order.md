@@ -79,6 +79,8 @@ PROCESS: book the order               id: <team>/book-the-order   v1
 from: ref/sls/book-the-order v1
 owner: <who>                          effective: <date>
 trigger: an executed agreement lands in <your contract repository>
+         watch: record=<agreement> system=<your contract repository>
+                change=<an agreement is filed as executed>
 concurrency: runs may overlap - <how many> bookings in flight at once,
              and one agreement is booked by one run at a time
 goal: every executed agreement recorded against the right entity, at
@@ -175,47 +177,71 @@ run-scoped:
                every: <cadence>
                from: take-in-agreement   until: record-booking
 handoffs:
-  take-in-agreement -> confirm-signature: the executed document at a
-    version, with every exhibit it names
-  confirm-signature -> identify-entity: who signed for each side, the
-    authority each signed under, and the signature date the term runs
+  take-in-agreement -> confirm-signature [executed-document]: the
+    executed document at a version, with every exhibit it names
+  confirm-signature -> identify-entity [signature-facts]: who signed
+    for each side, the authority each signed under, and the signature
+    date the term runs from
+  identify-entity -> read-terms [matched-entities]: the buying entity
+    and the selling entity, matched to the entity list, with the tax
+    and address record for each
+  identify-entity -> check-credit [buying-entity]: the same buying
+    entity, so credit is checked against the party that is actually
+    obliged
+  read-terms -> set-dates [date-clauses]: the clauses that set start,
+    end, notice and renewal
+  read-terms -> price-booking [sold-lines]: the sold lines as the
+    paper describes them, each naming the clause or exhibit it came
     from
-  identify-entity -> read-terms: the buying entity and the selling
-    entity, matched to the entity list, with the tax and address record
-    for each
-  identify-entity -> check-credit: the same buying entity, so credit is
-    checked against the party that is actually obliged
-  read-terms -> set-dates: the clauses that set start, end, notice and
-    renewal
-  read-terms -> price-booking: the sold lines as the paper describes
-    them, each naming the clause or exhibit it came from
-  price-booking -> check-deliverable: the priced lines, with quantities
-    and the dates the customer expects them
-  set-dates -> settle-terms: the dates as computed, and any date the
-    paper leaves ambiguous
-  check-credit -> settle-terms: the buyer's standing, dated, with the
-    system every line was read from
-  check-deliverable -> settle-terms: every line that cannot be
-    delivered as sold, with what can be delivered instead
-  settle-terms -> score-booking: the booking with each non-standard
-    term marked, and the person who accepted it named
-  score-booking -> finance-approval: the scored booking, with the rule
-    behind every failure and the acceptance for any failure being
-    carried forward
-  finance-approval -> record-booking: the approved booking at a
-    version, the approver, and the date. A later change voids the
-    approval and approval runs again
-  record-booking -> billing-terms: the booked order, its identifier,
-    and the billing schedule finance will invoice against
-  record-booking -> close-opportunity: the booked amount, so the
-    opportunity closes at what was booked rather than at what was
-    forecast
-  billing-terms -> tell-everyone: the billing schedule as finance
-    accepted it
-  close-opportunity -> tell-everyone: the closed opportunity, so the
-    seller and the account team read one number
-  tell-everyone -> record-fixes: the booking as announced, and every
-    correction made along the way
+  price-booking -> check-deliverable [priced-lines]: the priced lines,
+    with quantities and the dates the customer expects them
+  set-dates -> settle-terms [computed-dates]: the dates as computed,
+    and any date the paper leaves ambiguous
+  check-credit -> settle-terms [credit-standing]: the buyer's
+    standing, dated, with the system every line was read from
+  check-deliverable -> settle-terms [undeliverable-lines]: every line
+    that cannot be delivered as sold, with what can be delivered
+    instead
+  settle-terms -> score-booking [settled-booking]: the booking with
+    each non-standard term marked, and the person who accepted it
+    named
+  score-booking -> finance-approval [booking-score]: the scored
+    booking, with the rule behind every failure and the acceptance for
+    any failure being carried forward
+  finance-approval -> record-booking [approved-booking]: the approved
+    booking at a version, the approver, and the date. A later change
+    voids the approval and approval runs again
+  record-booking -> billing-terms [booked-order]: the booked order,
+    its identifier, and the billing schedule finance will invoice
+    against
+  record-booking -> close-opportunity [booked-amount]: the booked
+    amount, so the opportunity closes at what was booked rather than
+    at what was forecast
+  billing-terms -> tell-everyone [billing-schedule]: the billing
+    schedule as finance accepted it
+  close-opportunity -> tell-everyone [closed-opportunity]: the closed
+    opportunity, so the seller and the account team read one number
+  tell-everyone -> record-fixes [announced-booking]: the booking as
+    announced, and every correction made along the way
+deviations:
+  confirm-signature -> take-in-agreement [no-signing-authority]: the
+    person who signed could not bind their side, so the run waits for
+    a countersigned or corrected document
+  identify-entity -> take-in-agreement [entity-not-held]: the paper
+    names a legal entity the entity list does not hold, so the entity
+    is added or the agreement is amended before the run goes on
+  check-deliverable -> price-booking [line-not-deliverable]: a sold
+    line cannot be delivered as it was sold, so it is priced again at
+    what can be delivered
+  score-booking -> read-terms [booking-fails-check]: the booking fails
+    the booking rules, so the fields are read out of the paper again
+    with the rule behind each failure attached
+  finance-approval -> settle-terms [approval-refused]: finance sends
+    the booking back, so only the terms the approver named are settled
+    again and the approval given against the old version is void
+  record-booking -> score-booking [record-will-not-accept]: the order
+    system refuses the write, so the booking is checked again once the
+    blocker is cleared, at the same approved version
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the deal desk, the legal

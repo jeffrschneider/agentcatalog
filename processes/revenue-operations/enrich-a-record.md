@@ -77,6 +77,10 @@ from: ref/rev/enrich-a-record v1
 owner: <who>                          effective: <date>
 trigger: records fall below <your fill bar> on a field their definition
          requires, on <your enrichment cadence> or at create time
+         watch: record=<the record> system=<your system of record>
+                change=<a field the definition requires falls below the
+                fill bar>
+         or watch: every=<your enrichment cadence>
 concurrency: runs may overlap - <how many> batches in flight, and a
              record already inside an open batch is not enriched twice
 goal: every field the definition requires either filled from a named
@@ -167,36 +171,54 @@ run-scoped:
                every: <cadence>
                from: hold-weak   until: settle-held
 handoffs:
-  take-in-thin -> read-definitions: the records, and the required
-    fields that are empty on each one
-  read-definitions -> check-consent: each empty field with what it
-    means and what values it accepts
-  check-consent -> choose-sources: the fields that may be filled from
-    outside, and the ones that may not, with the reason for each
-  choose-sources -> test-sample: the sources, the fields each one is
-    to answer, and what each one costs per record
-  test-sample -> score-sources: the sample filled from every source,
-    beside the values already known to be right
-  score-sources -> set-precedence: per source and per field, the
-    agreement rate, the empty rate and the confidently wrong rate
-  set-precedence -> fill-fields: which source wins per field, and the
-    confidence below which nothing is written
-  fill-fields -> stamp-fields: the values as written, and the source
-    that returned each one
-  stamp-fields -> protect-typed: every filled field with its source,
-    date and confidence
-  protect-typed -> hold-weak: the fields a person typed, and the
-    source answers stored beside them as disagreements
-  hold-weak -> run-rules: what was actually written, and what is
-    waiting in the review queue
-  run-rules -> settle-held: the rule failures, and the held fills, in
-    one queue for the person clearing it
-  settle-held -> report-fill: what a person accepted, edited or
-    rejected, per source
-  report-fill -> rescore-sources: the fill as it ran, with the cost and
-    the rejection rate per source
-  rescore-sources -> record-learnings: the sources scored again, beside
-    the scores they had when they were chosen
+  take-in-thin -> read-definitions [thin-records]: the records, and the
+    required fields that are empty on each one
+  read-definitions -> check-consent [field-definitions]: each empty
+    field with what it means and what values it accepts
+  check-consent -> choose-sources [fillable-fields]: the fields that may
+    be filled from outside, and the ones that may not, with the reason
+    for each
+  choose-sources -> test-sample [source-plan]: the sources, the fields
+    each one is to answer, and what each one costs per record
+  test-sample -> score-sources [sample-fills]: the sample filled from
+    every source, beside the values already known to be right
+  score-sources -> set-precedence [source-scores]: per source and per
+    field, the agreement rate, the empty rate and the confidently wrong
+    rate
+  set-precedence -> fill-fields [precedence-and-bar]: which source wins
+    per field, and the confidence below which nothing is written
+  fill-fields -> stamp-fields [filled-values]: the values as written,
+    and the source that returned each one
+  stamp-fields -> protect-typed [stamped-fields]: every filled field
+    with its source, date and confidence
+  protect-typed -> hold-weak [typed-disagreements]: the fields a person
+    typed, and the source answers stored beside them as disagreements
+  hold-weak -> run-rules [written-and-held]: what was actually written,
+    and what is waiting in the review queue
+  run-rules -> settle-held [rule-failures-and-held-fills]: the rule
+    failures, and the held fills, in one queue for the person clearing
+    it
+  settle-held -> report-fill [settled-fills]: what a person accepted,
+    edited or rejected, per source
+  report-fill -> rescore-sources [fill-report]: the fill as it ran, with
+    the cost and the rejection rate per source
+  rescore-sources -> record-learnings [fresh-source-scores]: the sources
+    scored again, beside the scores they had when they were chosen
+deviations:
+  check-consent -> take-in-thin [field-may-not-be-filled]: a field may
+    not be filled from outside at all, so the batch is taken in again
+    without it and the field is reported as staying empty
+  score-sources -> choose-sources [no-source-clears-the-bar]: no source
+    is accurate enough on the sample, so the sources are chosen again
+  run-rules -> fill-fields [fill-breaks-the-rules]: what was written
+    breaks the definition's rules, so the fields are filled again rather
+    than the rules being widened
+  settle-held -> choose-sources [source-wrong-across-the-batch]: the
+    people clearing the queue find one source wrong across the batch, so
+    the sources are chosen again
+  rescore-sources -> choose-sources [source-drifted]: a source has
+    drifted since it was chosen, so the sources are chosen again and the
+    fields filled from it since the last good score are listed
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the record owners and whoever

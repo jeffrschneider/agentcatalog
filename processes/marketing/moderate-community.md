@@ -73,6 +73,7 @@ from: ref/mkt/moderate-community v1
 owner: <who>                          effective: <date>
 trigger: the clock - a cycle opens every <period>, and no one has to
          ask for it
+         watch: every=<period>
 concurrency: cycles run one after another - <how many> agents are on
              duty inside a cycle
 goal: every question answered or put in front of somebody who can
@@ -151,36 +152,58 @@ run-scoped:
               every: <cadence>
               from: open-cycle   until: close-cycle
 handoffs:
-  open-cycle -> sort-queue: the items the last cycle left open, each
-    with what is still owed on it and who owes it
-  gather-items -> sort-queue: everything that arrived this cycle, in
-    one queue, with the time each item arrived
-  sort-queue -> answer-questions: the questions in the order they will
-    be answered, the oldest ones first
-  sort-queue -> check-flagged: the reported posts as they stood when
-    they were reported, with who reported each one and why
-  sort-queue -> route-escalations: the items marked legal, press,
-    product or safety, with what the member actually said
-  answer-questions -> missing-answers: the question, the published
-    material already checked against it, and who is being asked
-  missing-answers -> answer-questions: the answer, and where it can be
-    published so the next member finds it without asking
-  check-flagged -> act-on-breaches: the verdict on each post, naming
-    the rule and the version of the rules it was scored against
-  act-on-breaches -> hear-appeals: the post as it stood, the rule, the
-    action taken, how long it lasts, and what the member was told
-  hear-appeals -> act-on-breaches: the decision, and whether the action
-    stands, is shortened, or is undone
-  answer-questions -> group-questions: every reply with the question
-    behind it, so what keeps being asked can be counted
-  answer-questions -> name-members: the replies members wrote to other
-    members, with what each of those members did
-  group-questions -> report-cycle: the recurring questions with their
-    counts, handed to whoever owns the published material
-  measure -> report-cycle: the numbers, each attributed to the source
-    it came from
-  report-cycle -> close-cycle: the report as delivered, and the list of
-    items nobody closed
+  open-cycle -> sort-queue [carried-items]: the items the last cycle
+    left open, each with what is still owed on it and who owes it
+  gather-items -> sort-queue [incoming-queue]: everything that arrived
+    this cycle, in one queue, with the time each item arrived
+  sort-queue -> answer-questions [sorted-questions]: the questions in
+    the order they will be answered, the oldest ones first
+  sort-queue -> check-flagged [reported-posts]: the reported posts as
+    they stood when they were reported, with who reported each one and
+    why
+  sort-queue -> route-escalations [escalation-items]: the items marked
+    legal, press, product or safety, with what the member actually said
+  answer-questions -> missing-answers [unanswered-question]: the
+    question, the published material already checked against it, and
+    who is being asked
+  missing-answers -> answer-questions [expert-answer]: the answer, and
+    where it can be published so the next member finds it without
+    asking
+  check-flagged -> act-on-breaches [rule-verdicts]: the verdict on each
+    post, naming the rule and the version of the rules it was scored
+    against
+  act-on-breaches -> hear-appeals [action-record]: the post as it
+    stood, the rule, the action taken, how long it lasts, and what the
+    member was told
+  hear-appeals -> act-on-breaches [appeal-decision]: the decision, and
+    whether the action stands, is shortened, or is undone
+  answer-questions -> group-questions [replies-and-questions]: every
+    reply with the question behind it, so what keeps being asked can be
+    counted
+  answer-questions -> name-members [member-replies]: the replies
+    members wrote to other members, with what each of those members did
+  group-questions -> report-cycle [recurring-questions]: the recurring
+    questions with their counts, handed to whoever owns the published
+    material
+  measure -> report-cycle [cycle-numbers]: the numbers, each attributed
+    to the source it came from
+  report-cycle -> close-cycle [cycle-report]: the report as delivered,
+    and the list of items nobody closed
+deviations:
+  missing-answers -> answer-questions [answer-returned]: the person the
+    question was put to answers it, so the reply to the member is
+    written from what came back
+  missing-answers -> route-escalations [no-one-can-answer]: nobody the
+    question was put to can answer it, so it goes to the owner your
+    organization names for that subject
+  check-flagged -> route-escalations [no-rule-covers-it]: the post
+    breaks no rule that exists, so a person decides what the rules
+    should say before the post is acted on
+  hear-appeals -> act-on-breaches [action-reversed]: the appeal is
+    upheld, so the moderator carries out what the person hearing it
+    decided
+  route-escalations -> answer-questions [owner-answered]: the owner the
+    item went to sends an answer back, and the member is replied to
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the community owner, the expert

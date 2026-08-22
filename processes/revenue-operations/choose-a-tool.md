@@ -80,6 +80,9 @@ from: ref/rev/choose-a-tool v1
 owner: <who>                          effective: <date>
 trigger: a need the current tools cannot meet is raised in <your
          planning process>
+         watch: record=<need> system=<your planning process>
+                change=<a need the current tools cannot meet is
+                raised>
 concurrency: runs may overlap - <how many> searches open at once, and
              two searches for the same need are merged into one
 goal: one tool chosen against requirements fixed before any candidate
@@ -177,44 +180,79 @@ run-scoped:
   money  - runs allocate-and-reconcile        owner: <your finance role>
            from: whole-cost   until: run close
 handoffs:
-  take-in-need -> name-process: what the revenue organization cannot do
-    today, in one line the requirements are written from
-  name-process -> check-stack: the process that would run inside the
-    tool, and the activities in it the tool would carry
-  check-stack -> requirements: what the stack already holds that comes
-    near, and what each of those falls short on
-  requirements -> set-criteria: the requirements ranked, each written so
-    a candidate can be tested against it
-  set-criteria -> brief-evaluation: the requirements and the criteria at
-    a version, dated before any candidate was looked at
-  brief-evaluation -> map-connections: the process the tool serves and
-    the systems that process already reads and writes
-  brief-evaluation -> search-market: the requirements as every agent
-    heard them, and the date the choice is due
-  map-connections -> shortlist: what would have to flow in and out, and
-    the connections a candidate would have to support
-  search-market -> shortlist: every candidate found, with where it came
-    from and what it answered, and a candidate that did not answer
-    recorded as missing
-  shortlist -> score-shortlist: the candidates left, and the requirement
-    each dropped candidate failed
-  score-shortlist -> trial-finalists: a verdict per requirement per
-    candidate with the evidence behind it, and every requirement that
-    could not be tested marked as not tested
-  review-security -> compare: how the candidate holds the data, what it
-    would be given, and every finding it has to answer
-  check-standards -> compare: whether the tool can hold the definitions
-    and the retention rules, with the rule behind every failure
-  trial-finalists -> whole-cost: what each finalist did on the same
-    work, with the figures and the range around each one
-  whole-cost -> procurement-review: the licence, the setup, the people
-    it takes to run, and what leaving would cost
-  procurement-review -> compare: the terms as the supplier will grant
-    them, and every term the organization will not accept
-  compare -> choose-tool: the finalists set side by side against one
-    list, and what taking each one would rule out
-  choose-tool -> record-entry: the chosen tool, who decided, on what
-    date, for what reasons, and anyone who disagreed
+  take-in-need -> name-process [the-need]: what the revenue
+    organization cannot do today, in one line the requirements are
+    written from
+  name-process -> check-stack [process-served]: the process that would
+    run inside the tool, and the activities in it the tool would carry
+  check-stack -> requirements [near-misses-in-stack]: what the stack
+    already holds that comes near, and what each of those falls short
+    on
+  requirements -> set-criteria [ranked-requirements]: the requirements
+    ranked, each written so a candidate can be tested against it
+  set-criteria -> brief-evaluation [fixed-criteria]: the requirements
+    and the criteria at a version, dated before any candidate was
+    looked at
+  brief-evaluation -> map-connections [process-systems]: the process
+    the tool serves and the systems that process already reads and
+    writes
+  brief-evaluation -> search-market [evaluation-brief]: the
+    requirements as every agent heard them, and the date the choice is
+    due
+  map-connections -> shortlist [required-connections]: what would have
+    to flow in and out, and the connections a candidate would have to
+    support
+  search-market -> shortlist [candidates-found]: every candidate found,
+    with where it came from and what it answered, and a candidate that
+    did not answer recorded as missing
+  shortlist -> score-shortlist [shortlisted-candidates]: the candidates
+    left, and the requirement each dropped candidate failed
+  score-shortlist -> trial-finalists [requirement-verdicts]: a verdict
+    per requirement per candidate with the evidence behind it, and
+    every requirement that could not be tested marked as not tested
+  review-security -> compare [security-findings]: how the candidate
+    holds the data, what it would be given, and every finding it has to
+    answer
+  check-standards -> compare [standards-verdict]: whether the tool can
+    hold the definitions and the retention rules, with the rule behind
+    every failure
+  trial-finalists -> whole-cost [trial-results]: what each finalist did
+    on the same work, with the figures and the range around each one
+  whole-cost -> procurement-review [cost-of-ownership]: the licence,
+    the setup, the people it takes to run, and what leaving would cost
+  procurement-review -> compare [granted-terms]: the terms as the
+    supplier will grant them, and every term the organization will not
+    accept
+  compare -> choose-tool [side-by-side]: the finalists set side by side
+    against one list, and what taking each one would rule out
+  choose-tool -> record-entry [the-choice]: the chosen tool, who
+    decided, on what date, for what reasons, and anyone who disagreed
+deviations:
+  name-process -> take-in-need [no-process-behind-it]: no process would
+    run inside the tool, so the need goes back to the requester as a
+    way of working rather than as a thing to buy
+  score-shortlist -> requirements [all-candidates-fail]: every
+    candidate fails a requirement, so the requirements are written
+    again with the decision and the scores behind it recorded
+  review-security -> score-shortlist [findings-to-answer]: the security
+    review raises findings the candidate has to answer, so the scoring
+    is worked again while the evaluation is still open
+  check-standards -> shortlist [cannot-hold-definitions]: the tool
+    cannot hold the definitions in force, so the candidate drops off
+    and the shortlist is cut again
+  trial-finalists -> shortlist [trial-fails]: the trial shows a
+    finalist cannot do the work, so the shortlist is cut again
+  whole-cost -> search-market [cost-rules-all-out]: the whole cost
+    rules every finalist out, so the market is searched again
+  procurement-review -> shortlist [terms-refused]: the organization
+    cannot accept the terms, so the shortlist is cut again and the next
+    candidate is taken
+  compare -> search-market [no-finalist-worth-taking]: no finalist is
+    worth taking, so the search reopens rather than the least bad one
+    being chosen
+  choose-tool -> trial-finalists [more-evidence-needed]: the choice
+    needs more evidence, so the finalists are trialled again on the
+    same work
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, the systems owner,

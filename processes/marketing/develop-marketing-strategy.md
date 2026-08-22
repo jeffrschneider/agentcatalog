@@ -100,6 +100,12 @@ from: ref/mkt/develop-marketing-strategy v1
 owner: <who>                          effective: <date>
 trigger: the business issues its objectives for the period, or the
          review date on the recorded strategy arrives
+         watch: record=<the objectives for the period>
+                system=<where the business issues them>
+                change=<the objectives for the period are issued>
+         or watch: record=<the recorded strategy>
+                system=<your review schedule>
+                change=<the review date on the strategy arrives>
 concurrency: one run at a time, because two agreed strategies for one
              business leave nobody with one. A change inside the
              period goes in as a new version of the same strategy
@@ -216,47 +222,74 @@ run-scoped:
                 from: take-in-objectives   until: hand-over
 handoffs:
   take-in-objectives -> read-periods / map-market / read-rivals /
-    hear-first-hand: the objectives, what each agent owes, and the date
-    it is owed. Four agents read one record
-  read-periods -> draft-options: each result of the closed periods
-    beside what that period committed to, with the source under every
-    line
-  map-market -> draft-options: the segments, the size of each one and
-    where that count came from, and how buyers in each one buy
-  read-rivals -> draft-options: what each rival sells and claims, with
-    the material it was read from and the date it was read, and every
-    rival nobody could read marked as unread
-  hear-first-hand -> draft-options: what buyers and sellers said,
-    attributed to the person who said it, with the sample the study
-    drew and what its findings will and will not carry
-  draft-options -> size-options: the options in the form they will be
-    costed in
-  draft-options -> check-feasible: the same options, with what each
-    one would ask the department to run
-  draft-options -> check-standards: the same options again. Three
-    branches read one record
-  size-options -> choose-strategy: the cost and the return of each
-    option at each level of spend, with the assumptions beside the
-    numbers and every rate that could not be sourced marked unsourced
-  check-feasible -> choose-strategy: what each option would need in
-    money and in agents, what is left in the budget, what room the
-    period has, and what each option would displace
-  check-standards -> choose-strategy: a verdict on every option,
-    naming the standard and the version it was scored against
-  choose-strategy -> write-strategy: the chosen set of choices, why it
-    won over the others, and everyone who disagreed and on what
-  write-strategy -> name-measures: the choices in the wording they
-    were agreed in
-  name-measures -> get-sign-offs: the strategy at a version, with the
-    measure each choice will be reported against
-  get-sign-offs -> issue-version: the strategy at the signed version.
-    A later change voids the approval and the signers see it again
-  issue-version -> hand-over: the strategy at its number, and what
-    changed from the version it replaces
-  hand-over -> set-review: what each receiving agent said it would
-    change, and the date it said it by
-  set-review -> record-learnings: the review date and the conditions
-    that bring the choices back sooner
+    hear-first-hand [the-objectives]: the objectives, what each agent
+    owes, and the date it is owed. Four agents read one record
+  read-periods -> draft-options [closed-period-results]: each result of
+    the closed periods beside what that period committed to, with the
+    source under every line
+  map-market -> draft-options [market-map]: the segments, the size of
+    each one and where that count came from, and how buyers in each one
+    buy
+  read-rivals -> draft-options [rival-reading]: what each rival sells
+    and claims, with the material it was read from and the date it was
+    read, and every rival nobody could read marked as unread
+  hear-first-hand -> draft-options [first-hand-accounts]: what buyers
+    and sellers said, attributed to the person who said it, with the
+    sample the study drew and what its findings will and will not carry
+  draft-options -> size-options [options-to-cost]: the options in the
+    form they will be costed in
+  draft-options -> check-feasible [options-to-resource]: the same
+    options, with what each one would ask the department to run
+  draft-options -> check-standards [options-to-score]: the same options
+    again. Three branches read one record
+  size-options -> choose-strategy [option-numbers]: the cost and the
+    return of each option at each level of spend, with the assumptions
+    beside the numbers and every rate that could not be sourced marked
+    unsourced
+  check-feasible -> choose-strategy [option-demands]: what each option
+    would need in money and in agents, what is left in the budget, what
+    room the period has, and what each option would displace
+  check-standards -> choose-strategy [standards-verdicts]: a verdict on
+    every option, naming the standard and the version it was scored
+    against
+  choose-strategy -> write-strategy [the-choices]: the chosen set of
+    choices, why it won over the others, and everyone who disagreed and
+    on what
+  write-strategy -> name-measures [agreed-wording]: the choices in the
+    wording they were agreed in
+  name-measures -> get-sign-offs [strategy-with-measures]: the strategy
+    at a version, with the measure each choice will be reported against
+  get-sign-offs -> issue-version [signed-strategy]: the strategy at the
+    signed version. A later change voids the approval and the signers
+    see it again
+  issue-version -> hand-over [issued-version]: the strategy at its
+    number, and what changed from the version it replaces
+  hand-over -> set-review [what-changes]: what each receiving agent
+    said it would change, and the date it said it by
+  set-review -> record-learnings [review-conditions]: the review date
+    and the conditions that bring the choices back sooner
+deviations:
+  size-options -> draft-options [no-option-reaches-objectives]: the
+    numbers on every option fall short of what the business asked for,
+    so the options are drafted again
+  check-feasible -> draft-options [no-option-fits-the-period]: the
+    department cannot run any option as drafted, so the options come
+    back cut to what it can carry
+  check-standards -> draft-options [standard-needs-changing]: an option
+    rests on a standard this run cannot settle, so it goes back marked
+    unsettled until the owning process issues a version
+  choose-strategy -> draft-options [room-cannot-agree]: the room does
+    not agree, and a person decides whether a narrower set of choices
+    is drafted or the run waits for more evidence
+  name-measures -> choose-strategy [choice-cannot-be-measured]: no
+    measure can produce a number for a choice, so the choice itself is
+    taken up again
+  get-sign-offs -> choose-strategy [sign-off-changes]: a signer comes
+    back with changes, and only the part they named reopens
+  any -> take-in-objectives [objectives-change]: the business changes
+    its objectives while the run is open, so what the run has to settle
+    is taken in again and a person says whether it is still the right
+    question
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sales side,

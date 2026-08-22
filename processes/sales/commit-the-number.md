@@ -73,6 +73,7 @@ from: ref/sls/commit-the-number v1
 owner: <who>                          effective: <date>
 trigger: the commitment for <period> falls due on <your fiscal
          calendar>
+         watch: every=<period>
 concurrency: one run per period per leader - a restatement inside the
              period is a new version of the same run, not a new run
 goal: one number committed by a named person on its date, with what it
@@ -171,40 +172,61 @@ run-scoped:
                 every: <cadence>
                 from: tell-managers   until: account-after
 handoffs:
-  set-scope -> take-in-segments: the period, the segments and the hour
-    the number is due
-  set-scope -> read-history: the same period definition, so history is
-    read on the same boundaries
-  take-in-segments -> reconcile-rollup: each segment's committed and
-    best case number at the version its call published
-  reconcile-rollup -> model-range: the segments added up, the roll-up
-    beside them, and every difference named by deal
-  read-history -> model-range: what was committed and what closed for
-    the last <periods>, with the gap between them per segment
-  model-range -> name-gap: the low, likely and high case, with the
-    assumption beside every number and every unsourced rate marked
-  name-gap -> test-gap: the distance to the target, and the deals that
-    would have to cover it
-  test-gap -> weigh-moves: each of those deals with its finding, its
-    date, and what it is waiting on
-  weigh-moves -> decide-number: what each available move would do to
-    the number and what it would cost in the next period
-  decide-number -> state-basis: the figure, who said it, and when
-  state-basis -> record-dissent: the deals, the assumptions and the
-    breaking conditions, written down
-  record-dissent -> publish-commitment: every objection with its
-    author, or a line saying there were none
-  publish-commitment -> tell-managers: the number and its basis at a
-    version, and who it went to
-  tell-managers -> watch-period: what each manager is held to, and the
-    deals in their patch the number rests on
-  watch-period -> call-change: what has moved against the basis, with
-    the deal and the date behind each movement
-  watch-period -> account-after: the same record, carried to the close
-  call-change -> publish-commitment: the restated number, what moved,
-    and the version it replaces
-  account-after -> record-learnings: what closed against what was
-    committed, by segment and by deal
+  set-scope -> take-in-segments [commitment-scope]: the period, the
+    segments and the hour the number is due
+  set-scope -> read-history [period-definition]: the same period
+    definition, so history is read on the same boundaries
+  take-in-segments -> reconcile-rollup [segment-numbers]: each
+    segment's committed and best case number at the version its call
+    published
+  reconcile-rollup -> model-range [reconciled-pipeline]: the segments
+    added up, the roll-up beside them, and every difference named by
+    deal
+  read-history -> model-range [commitment-history]: what was committed
+    and what closed for the last <periods>, with the gap between them
+    per segment
+  model-range -> name-gap [modelled-range]: the low, likely and high
+    case, with the assumption beside every number and every unsourced
+    rate marked
+  name-gap -> test-gap [the-gap]: the distance to the target, and the
+    deals that would have to cover it
+  test-gap -> weigh-moves [gap-deals]: each of those deals with its
+    finding, its date, and what it is waiting on
+  weigh-moves -> decide-number [available-moves]: what each available
+    move would do to the number and what it would cost in the next
+    period
+  decide-number -> state-basis [the-figure]: the figure, who said it,
+    and when
+  state-basis -> record-dissent [the-basis]: the deals, the
+    assumptions and the breaking conditions, written down
+  record-dissent -> publish-commitment [dissent]: every objection with
+    its author, or a line saying there were none
+  publish-commitment -> tell-managers [published-commitment]: the
+    number and its basis at a version, and who it went to
+  tell-managers -> watch-period [what-each-is-held-to]: what each
+    manager is held to, and the deals in their patch the number rests
+    on
+  watch-period -> call-change [movement-against-basis]: what has moved
+    against the basis, with the deal and the date behind each movement
+  watch-period -> account-after [period-record]: the same record,
+    carried to the close
+  call-change -> publish-commitment [restated-number]: the restated
+    number, what moved, and the version it replaces
+  account-after -> record-learnings [close-account]: what closed
+    against what was committed, by segment and by deal
+deviations:
+  reconcile-rollup -> take-in-segments [segment-missing]: a segment's
+    number is missing or stale, so it is asked for again before
+    anything is modelled
+  weigh-moves -> test-gap [no-move-closes-gap]: nothing on offer
+    covers the distance, so the deals the gap rests on are tested
+    again before the leader decides
+  state-basis -> decide-number [basis-will-not-carry]: the deals named
+    do not add up to the figure, or rest on assumptions the record
+    contradicts, so the number is decided again
+  call-change -> publish-commitment [commitment-restated]: the basis
+    no longer supports the number, so a new version is published
+    saying what moved, and the version it replaces stays where it was
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the leader who commits, the

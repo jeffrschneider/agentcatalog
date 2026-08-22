@@ -74,6 +74,9 @@ PROCESS: trade show                   id: <team>/trade-show   v1
 from: ref/mkt/trade-show v1
 owner: <who>                          effective: <date>
 trigger: a show is booked in <your event planning process>
+         watch: record=<show booking>
+                system=<your event planning process>
+                change=<a show is booked>
 concurrency: runs overlap - <how many> shows in preparation at once
 goal: a stand that opens on time with signed material on it, a
       demonstration that works, briefed people in the booth, every
@@ -169,32 +172,48 @@ run-scoped:
            every: <cadence>
            from: show-days   until: run close
 handoffs:
-  take-in-show -> list-deadlines: what the show has to deliver, in one
-    line that every later decision can be tested against
-  list-deadlines -> plan-presence: every due date, space limit and
-    shipping window, each naming the rule it comes from
+  take-in-show -> list-deadlines [what-the-show-must-deliver]: what the
+    show has to deliver, in one line that every later decision can be
+    tested against
+  list-deadlines -> plan-presence [deadline-list]: every due date,
+    space limit and shipping window, each naming the rule it comes from
   plan-presence -> settle-message / order-build / lead-capture /
-    promote-presence: the booth, the staffing and the schedule. Four
-    branches read one plan
-  settle-message -> produce-material: what the stand says, at the sizes
-    the rules allow
-  settle-message -> build-demo: what a visitor is shown, and the claims
-    it is allowed to make
-  produce-material + build-demo -> get-sign-offs: the material and the
-    demonstration at a version
-  get-sign-offs -> order-build: the approved graphics at the signed
-    version, in time for the printing date, because print ships with
-    the stand
-  get-sign-offs -> brief-staff: the approved message, in the words the
-    people in the booth will actually use
-  lead-capture -> brief-staff: the scan steps, and what the person
-    scanning has to say about consent
-  brief-staff -> show-days: the pitch, the qualifying questions and the
-    shift schedule, confirmed by each person who took a shift
-  show-days -> hand-over-leads: every scan, with the note the person
-    who took it wrote
-  show-days -> break-down: what leaves the floor, and where it goes
-  report-show -> record-learnings: the report, as delivered
+    promote-presence [presence-plan]: the booth, the staffing and the
+    schedule. Four branches read one plan
+  settle-message -> produce-material [booth-message]: what the stand
+    says, at the sizes the rules allow
+  settle-message -> build-demo [demo-message]: what a visitor is shown,
+    and the claims it is allowed to make
+  produce-material + build-demo -> get-sign-offs [material-and-demo]:
+    the material and the demonstration at a version
+  get-sign-offs -> order-build [approved-graphics]: the approved
+    graphics at the signed version, in time for the printing date,
+    because print ships with the stand
+  get-sign-offs -> brief-staff [approved-message]: the approved
+    message, in the words the people in the booth will actually use
+  lead-capture -> brief-staff [scan-steps]: the scan steps, and what
+    the person scanning has to say about consent
+  brief-staff -> show-days [shift-confirmations]: the pitch, the
+    qualifying questions and the shift schedule, confirmed by each
+    person who took a shift
+  show-days -> hand-over-leads [visitor-scans]: every scan, with the
+    note the person who took it wrote
+  show-days -> break-down [what-leaves-the-floor]: what leaves the
+    floor, and where it goes
+  report-show -> record-learnings [show-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> produce-material [material-changes-asked-for]: a
+    signer asks for changes to the booth material, so the piece they
+    named is made again
+  get-sign-offs -> build-demo [demo-changes-asked-for]: a signer asks
+    for changes to the demonstration, so it is built again
+  order-build -> plan-presence [deadline-cannot-be-met]: a deadline in
+    the exhibitor rules cannot be met, so the presence is planned again
+    against the time and the late fees that are left
+  show-days -> lead-capture [scan-never-arrives]: a scan never reaches
+    the CRM, so the path is set up again while the show is still
+    running and the held scans are loaded once it works
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, brand,

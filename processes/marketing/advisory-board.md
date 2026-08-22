@@ -76,6 +76,9 @@ PROCESS: customer advisory board      id: <team>/advisory-board   v1
 from: ref/mkt/advisory-board v1
 owner: <who>                          effective: <date>
 trigger: a board cycle opens on <your advisory board calendar>
+         watch: record=<board cycle>
+                system=<your advisory board calendar>
+                change=<a cycle opens>
 concurrency: cycles do not overlap - <how many> boards run at once
 goal: a board convened under signed agreements, a session held on its
       date against the questions it was convened to answer, and every
@@ -162,38 +165,59 @@ run-scoped:
                 every: <cadence>
                 from: route-feedback   until: run close
 handoffs:
-  take-in-cycle -> set-agenda: what this cycle has to answer, in one
-    line that every question on the agenda can be tested against
-  set-agenda -> settle-members: the questions, so that the table is
-    filled with customers who can answer them
-  set-agenda -> build-materials: the questions and their order, and
-    the date the material has to be signed by
-  settle-members -> invite-members: the named customers, each with the
-    standing that was read on the account and the date it was read
-  invite-members -> clear-paperwork: who accepted, and what each of
-    them was told the session covers
-  invite-members -> arrangements: the headcount, the dates, and what
-    each member needs in order to get there
-  clear-paperwork -> send-pre-read: the members whose agreements are
-    signed, which is the list the material may go to
-  get-sign-offs -> send-pre-read: the approved material at the signed
-    version. A later change voids the approval and sign-offs run again
-  send-pre-read -> early-input: the questions in the form the members
-    answer them, and the date the answers are due
-  early-input -> run-session: the answers already given, so the
-    session starts from what is still open
-  arrangements -> run-session: the room, the equipment and the plan
-    for the day
-  run-session -> capture-notes: what happened in the session, while
-    the members are still there to confirm what they meant
-  capture-notes -> sort-feedback: the notes, every line attributed and
-    marked with what may be repeated outside the room
-  sort-feedback -> route-feedback: the themes, each carrying the
-    quotes and the members behind it
-  sort-feedback -> follow-up: the same themes, in the form the members
-    are allowed to see
-  route-feedback -> record-learnings: every theme with the owner who
-    took it and the date they took it by
+  take-in-cycle -> set-agenda [cycle-question]: what this cycle has
+    to answer, in one line that every question on the agenda can be
+    tested against
+  set-agenda -> settle-members [agenda-questions]: the questions, so
+    that the table is filled with customers who can answer them
+  set-agenda -> build-materials [agenda-and-dates]: the questions and
+    their order, and the date the material has to be signed by
+  settle-members -> invite-members [member-list]: the named customers,
+    each with the standing that was read on the account and the date
+    it was read
+  invite-members -> clear-paperwork [acceptances]: who accepted, and
+    what each of them was told the session covers
+  invite-members -> arrangements [headcount-and-needs]: the headcount,
+    the dates, and what each member needs in order to get there
+  clear-paperwork -> send-pre-read [signed-members]: the members whose
+    agreements are signed, which is the list the material may go to
+  get-sign-offs -> send-pre-read [approved-material]: the approved
+    material at the signed version. A later change voids the approval
+    and sign-offs run again
+  send-pre-read -> early-input [question-forms]: the questions in the
+    form the members answer them, and the date the answers are due
+  early-input -> run-session [early-answers]: the answers already
+    given, so the session starts from what is still open
+  arrangements -> run-session [room-and-plan]: the room, the equipment
+    and the plan for the day
+  run-session -> capture-notes [session-record]: what happened in the
+    session, while the members are still there to confirm what they
+    meant
+  capture-notes -> sort-feedback [attributed-notes]: the notes, every
+    line attributed and marked with what may be repeated outside the
+    room
+  sort-feedback -> route-feedback [themes-with-quotes]: the themes,
+    each carrying the quotes and the members behind it
+  sort-feedback -> follow-up [themes-for-members]: the same themes, in
+    the form the members are allowed to see
+  route-feedback -> record-learnings [theme-owners]: every theme with
+    the owner who took it and the date they took it by
+deviations:
+  invite-members -> settle-members [member-declines]: a member
+    declines the place, so the table is settled again from the same
+    list or the board runs one member short
+  clear-paperwork -> settle-members [agreement-unsigned]: the
+    confidentiality agreement is not signed in time, so that member
+    does not join and the membership is settled again
+  get-sign-offs -> build-materials [sign-off-changes]: a signer asks
+    for changes, so only the part they named is built again and
+    signed again before anything reaches a member
+  early-input -> set-agenda [answers-change-agenda]: an early answer
+    settles a question the session was going to spend an hour on, so
+    the agenda is set again and the material changes with it
+  route-feedback -> sort-feedback [owner-needs-quotes]: the owner
+    taking a theme needs the quotes behind it, so the feedback is
+    sorted again with them attached
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, finance, the

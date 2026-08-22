@@ -79,6 +79,9 @@ from: ref/sls/qualify-an-opportunity v1
 owner: <who>                           effective: <date>
 trigger: an answered inquiry is handed to qualification by <your
          inbound answering process>
+         watch: record=<answered inquiry>
+                system=<your inbound answering process>
+                change=<an inquiry is handed to qualification>
 concurrency: one run per opportunity - <how many> open at once per
              seller, and a second inquiry from the same buyer joins the
              run that is already open
@@ -163,37 +166,54 @@ run-scoped:
              every: <cadence>
              from: write-questions   until: decide
 handoffs:
-  take-in-package -> read-account: the account the inquiry names, and
-    the date its last reading was taken
-  take-in-package -> read-company: the company, and what is already
-    known about it, so the same ground is not read twice
-  read-account -> write-questions: what changed since the inquiry, each
-    line naming the system it was read from and when
-  read-company -> write-questions: how the company is put together and
-    what it has just done, each fact citing its source
-  write-questions -> ask-problem: the questions, in the order they will
-    be asked, and what an adequate answer looks like
-  ask-problem -> ask-money: the problem in the buyer's own words, and
-    who inside the company owns it
-  ask-money -> ask-decision: whether money exists, where it sits, and
-    who releases it, or a plain no answer
-  ask-decision -> ask-date: the people who decide, sign and can stop
-    it, named, with the order they move in
-  ask-date -> ask-alternatives: the date, and what makes that date real
-  ask-alternatives -> check-fit: what else is being weighed, including
-    doing nothing, and how far along each one is
-  check-fit -> score: the profile applied line by line, with every line
-    the answers did not reach
-  score -> record-gaps: the score, the model version, and the inputs
-    it was computed from
-  record-gaps -> decide: the answers, the score, and the questions that
-    came back empty, all in one place
-  decide -> tell-buyer: the decision in one line, the person who made
-    it, the date, and what the buyer is to be told
-  tell-buyer -> record-decision: what the buyer was told, when, and
-    anything they were promised
-  record-decision -> record-learnings: the decision as recorded, with
-    the answers behind it
+  take-in-package -> read-account [account-to-read]: the account the
+    inquiry names, and the date its last reading was taken
+  take-in-package -> read-company [company-to-read]: the company, and
+    what is already known about it, so the same ground is not read
+    twice
+  read-account -> write-questions [account-changes]: what changed
+    since the inquiry, each line naming the system it was read from
+    and when
+  read-company -> write-questions [company-reading]: how the company
+    is put together and what it has just done, each fact citing its
+    source
+  write-questions -> ask-problem [question-list]: the questions, in
+    the order they will be asked, and what an adequate answer looks
+    like
+  ask-problem -> ask-money [the-problem]: the problem in the buyer's
+    own words, and who inside the company owns it
+  ask-money -> ask-decision [the-money]: whether money exists, where
+    it sits, and who releases it, or a plain no answer
+  ask-decision -> ask-date [the-deciders]: the people who decide,
+    sign and can stop it, named, with the order they move in
+  ask-date -> ask-alternatives [the-date]: the date, and what makes
+    that date real
+  ask-alternatives -> check-fit [the-alternatives]: what else is
+    being weighed, including doing nothing, and how far along each one
+    is
+  check-fit -> score [fit-reading]: the profile applied line by line,
+    with every line the answers did not reach
+  score -> record-gaps [the-score]: the score, the model version, and
+    the inputs it was computed from
+  record-gaps -> decide [answers-and-gaps]: the answers, the score,
+    and the questions that came back empty, all in one place
+  decide -> tell-buyer [the-decision]: the decision in one line, the
+    person who made it, the date, and what the buyer is to be told
+  tell-buyer -> record-decision [what-buyer-was-told]: what the buyer
+    was told, when, and anything they were promised
+  record-decision -> record-learnings [decision-record]: the decision
+    as recorded, with the answers behind it
+deviations:
+  ask-problem -> record-gaps [no-problem-owned]: nobody owns the
+    problem, so there is nothing left to qualify. The money, decision,
+    date and alternatives questions are not asked, and each is
+    recorded as empty on the gap record
+  check-fit -> write-questions [answers-miss-profile]: the answers do
+    not reach the profile, so the questions are written again and the
+    lines nothing answered are asked directly
+  decide -> write-questions [one-more-question]: one more question
+    would settle the decision, so it is written and asked before the
+    decision is taken again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sellers and the sales

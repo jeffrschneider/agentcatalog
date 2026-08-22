@@ -73,6 +73,8 @@ PROCESS: field event                  id: <team>/field-event   v1
 from: ref/mkt/field-event v1
 owner: <who>                          effective: <date>
 trigger: an audience and a date are set in <your planning process>
+         watch: record=<event request> system=<your planning process>
+                change=<an audience and a date are set for an event>
 concurrency: runs overlap - <how many> events in flight at once
 goal: an event that fills the room it was sized for, runs on its date,
       follows up everyone who came, and is reported against what it was
@@ -164,33 +166,54 @@ run-scoped:
   orders        - runs allocate-and-reconcile   owner: event-operations
                   from: book-suppliers   until: run close
 handoffs:
-  take-in-audience -> settle-format: who the event is for and what it
-    has to deliver, in one line that every later decision can be tested
-    against
-  settle-format -> book-suppliers: what the room has to hold, what the
-    program needs in it, and the date each order has to be placed by
-  settle-format -> line-up-speakers: the sessions the program needs,
-    and the date each speaker's material is due
-  settle-format -> build-list: the number of people the event needs in
-    the room
-  settle-format -> produce-material: what has to be written, designed
-    and printed, and when each piece is due
-  produce-material -> get-sign-offs: the material at a version
-  get-sign-offs -> registration: the approved material at the signed
-    version. A later change voids the approval and sign-offs run again
-  build-list -> promote: the audience for the invitation, with the
-    consent, opt-out and suppression rules already applied
-  book-suppliers -> run-of-show: what was ordered, what arrived, and
-    what is still missing
-  line-up-speakers -> run-of-show: the agenda at a version, with every
-    speaker's material at the version that will be shown
-  work-the-list -> run-of-show: the confirmed headcount, on the date
-    the catering and the badge orders need it
-  run-the-event -> follow-up: who came, what they asked about, and what
-    they were promised in the room
-  capture-record -> follow-up: the recordings and the photographs
-    people agreed to, at their versions
-  report-event -> record-learnings: the report, as delivered
+  take-in-audience -> settle-format [audience-and-purpose]: who the
+    event is for and what it has to deliver, in one line that every
+    later decision can be tested against
+  settle-format -> book-suppliers [room-requirements]: what the room has
+    to hold, what the program needs in it, and the date each order has
+    to be placed by
+  settle-format -> line-up-speakers [session-slots]: the sessions the
+    program needs, and the date each speaker's material is due
+  settle-format -> build-list [headcount-target]: the number of people
+    the event needs in the room
+  settle-format -> produce-material [material-list]: what has to be
+    written, designed and printed, and when each piece is due
+  produce-material -> get-sign-offs [material-draft]: the material at a
+    version
+  get-sign-offs -> registration [signed-material]: the approved material
+    at the signed version. A later change voids the approval and
+    sign-offs run again
+  build-list -> promote [invitation-audience]: the audience for the
+    invitation, with the consent, opt-out and suppression rules already
+    applied
+  book-suppliers -> run-of-show [order-status]: what was ordered, what
+    arrived, and what is still missing
+  line-up-speakers -> run-of-show [agenda-and-decks]: the agenda at a
+    version, with every speaker's material at the version that will be
+    shown
+  work-the-list -> run-of-show [confirmed-headcount]: the confirmed
+    headcount, on the date the catering and the badge orders need it
+  run-the-event -> follow-up [attendance-and-asks]: who came, what they
+    asked about, and what they were promised in the room
+  capture-record -> follow-up [cleared-capture]: the recordings and the
+    photographs people agreed to, at their versions
+  report-event -> record-learnings [event-report]: the report, as
+    delivered
+deviations:
+  get-sign-offs -> produce-material [sign-off-changes]: a signer asks
+    for changes, so the material is produced again and only the piece
+    they named reopens
+  work-the-list -> promote [registration-behind]: registration is behind
+    the number the event needs, so the event is promoted again while
+    there is still time
+  line-up-speakers -> settle-format [agenda-must-change]: no speaker can
+    be found for a session, so the program is settled again and everyone
+    who registered is told what changed
+  run-of-show -> line-up-speakers [speaker-withdraws]: a speaker
+    withdraws, so a replacement is lined up for that session
+  run-of-show -> book-suppliers [room-needs-change]: what the room needs
+    has changed, so the orders are placed again against the plan as it
+    now stands
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance, legal,

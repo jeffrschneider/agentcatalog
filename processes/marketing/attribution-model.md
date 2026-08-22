@@ -81,6 +81,14 @@ from: ref/mkt/attribution-model v1
 owner: <who>                          effective: <date>
 trigger: the model misses by more than <how far>, or a new channel
          starts sending traffic, raised in <your measurement review>
+         watch: record=<attribution model>
+                system=<your measurement review>
+                change=<the model misses by more than the agreed
+                distance>
+         or watch: record=<channel>
+                system=<your measurement review>
+                change=<a channel the model has no rule for starts
+                sending traffic>
 concurrency: one run at a time - the department has one current model
 goal: an attribution model issued at a numbered version with the date
       it applies from, and every closed period either reissued at a new
@@ -168,45 +176,70 @@ run-scoped:
                 every: <cadence>
                 from: set-scope   until: tell-the-readers
 handoffs:
-  take-in-trigger -> confirm-drift: what drifted or which channel
-    arrived, and what the current model predicted for it
-  confirm-drift -> set-scope: the size of the gap, the data it was
-    measured on, and the verdict on whether it is larger than the noise
-  set-scope -> pull-touchpoints: the channels, the conversions and the
-    closed periods the review covers
-  set-scope -> check-tracking: the same scope. Both branches read one
-    record
-  pull-touchpoints -> clear-data: the touchpoint record, the data sets
-    under it, and the terms each set came with
-  check-tracking -> draft-candidates: where measurement was broken, on
-    which channel, and over which dates, so that no candidate is fit on
-    a period the tracking was down in
-  clear-data -> draft-candidates: the touches that may be joined to one
-    person, and the count of the touches that may not
-  draft-candidates -> back-test: the candidates in the form they will
-    be tested in
-  back-test -> recompute: what each candidate would have picked, what
-    actually happened, and whether the difference is larger than the
-    noise in the measurement
-  recompute -> choose-model: every closed period in scope under every
-    candidate, channel by channel, beside the figures that were
-    published for that period
-  choose-model -> decide-restate: the chosen model, why it won, and
-    what it moves in each closed period
-  choose-model -> issue-version: the model in the wording it was agreed
-    in, and the date it applies from
-  decide-restate -> reissue-reports: the periods approved for reissue,
-    the periods left standing, and the reason recorded for each
-  issue-version -> reissue-reports: the model at its number, runnable
-    over the periods being recomputed
-  issue-version -> tell-the-readers: the version, the date it applies
-    from, and what changed from the version it replaces
-  reissue-reports -> tell-the-readers: each reissued period at its new
-    report version, saying what moved and by how much
-  tell-the-readers -> set-review: what each receiving agent says it
-    changes because of the new model
-  set-review -> record-learnings: the review date and the conditions
-    that bring the model back sooner
+  take-in-trigger -> confirm-drift [drift-report]: what drifted or
+    which channel arrived, and what the current model predicted for it
+  confirm-drift -> set-scope [drift-verdict]: the size of the gap, the
+    data it was measured on, and the verdict on whether it is larger
+    than the noise
+  set-scope -> pull-touchpoints [review-scope]: the channels, the
+    conversions and the closed periods the review covers
+  set-scope -> check-tracking [channels-and-periods]: the same scope.
+    Both branches read one record
+  pull-touchpoints -> clear-data [touchpoint-record]: the touchpoint
+    record, the data sets under it, and the terms each set came with
+  check-tracking -> draft-candidates [tracking-gaps]: where
+    measurement was broken, on which channel, and over which dates, so
+    that no candidate is fit on a period the tracking was down in
+  clear-data -> draft-candidates [joinable-touches]: the touches that
+    may be joined to one person, and the count of the touches that may
+    not
+  draft-candidates -> back-test [candidate-models]: the candidates in
+    the form they will be tested in
+  back-test -> recompute [back-test-results]: what each candidate
+    would have picked, what actually happened, and whether the
+    difference is larger than the noise in the measurement
+  recompute -> choose-model [recomputed-periods]: every closed period
+    in scope under every candidate, channel by channel, beside the
+    figures that were published for that period
+  choose-model -> decide-restate [chosen-model]: the chosen model, why
+    it won, and what it moves in each closed period
+  choose-model -> issue-version [model-wording]: the model in the
+    wording it was agreed in, and the date it applies from
+  decide-restate -> reissue-reports [restatement-decision]: the
+    periods approved for reissue, the periods left standing, and the
+    reason recorded for each
+  issue-version -> reissue-reports [numbered-model]: the model at its
+    number, runnable over the periods being recomputed
+  issue-version -> tell-the-readers [version-notice]: the version, the
+    date it applies from, and what changed from the version it
+    replaces
+  reissue-reports -> tell-the-readers [reissued-reports]: each
+    reissued period at its new report version, saying what moved and
+    by how much
+  tell-the-readers -> set-review [reader-responses]: what each
+    receiving agent says it changes because of the new model
+  set-review -> record-learnings [review-conditions]: the review date
+    and the conditions that bring the model back sooner
+deviations:
+  confirm-drift -> record-learnings [drift-inside-noise]: the gap is
+    inside the noise of the measurement, so no model is rebuilt, the
+    phases between here and the debrief never run, and the record says
+    the model was tested and left as it was
+  clear-data -> pull-touchpoints [joining-declined]: legal will not
+    clear the joining, so the record is pulled again limited to the
+    touches that may be joined to one person
+  back-test -> pull-touchpoints [record-too-thin]: the record is too
+    thin to test a candidate on, so it is pulled again with the
+    missing period or the missing channel named
+  recompute -> draft-candidates [candidate-fails-on-periods]: a
+    candidate falls apart once real closed periods are run through it,
+    so the candidates are drafted again
+  choose-model -> draft-candidates [no-candidate-wins]: no candidate
+    beats the model already in use, so the room asks for another round
+    of candidates before the current version is left as it is
+  reissue-reports -> recompute [restated-figure-disagrees]: a restated
+    figure does not reconcile with the figures finance already signed,
+    so the period is recomputed with the line that moved named
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance and legal>

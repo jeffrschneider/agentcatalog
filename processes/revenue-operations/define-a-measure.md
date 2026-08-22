@@ -72,6 +72,12 @@ from: ref/rev/define-a-measure v1
 owner: <who>                          effective: <date>
 trigger: two reports disagree about the same word, or <who> asks for a
          measure that does not exist yet
+         watch: record=<measure> system=<your report store>
+                change=<two reports compute the same word differently>
+         or watch: record=<definition request>
+                system=<your standards store>
+                change=<a measure that does not exist yet is asked
+                for>
 concurrency: runs may overlap - one word is defined by one run at a
              time, and a word another run is changing waits
 goal: one written rule per measure, at a version, saying what counts,
@@ -165,40 +171,63 @@ run-scoped:
                 every: <cadence>
                 from: find-current-use   until: agree-the-measure
 handoffs:
-  take-in-request -> find-current-use: the word, the two numbers that
-    disagreed, and the reports each one came from
-  take-in-request -> read-definitions: the same word, so the standards
-    store is read before anything new is written
-  find-current-use -> name-the-decision: every place the word is used
-    today, with the rule each place computes and how many readers it has
-  read-definitions -> name-the-decision: the definitions already in
-    force that touch this word, at their versions
-  name-the-decision -> write-the-rule: the decision the number informs,
-    in the words of the person who makes it
-  write-the-rule -> name-the-source: the rule as drafted, with the edge
-    cases listed rather than left implied
-  write-the-rule -> set-boundaries: the same draft. Both branches read
-    one record
-  name-the-source -> check-support: the system, the field, and the tie
-    break when two systems disagree
-  set-boundaries -> check-support: the period, the currency, the
-    timezone and the cut, written as a person could apply them by hand
-  check-support -> compute-both-ways: what the record can carry, how far
-    back, and every field the rule needs that the record does not hold
-  compute-both-ways -> account-for-gap: the two sets of numbers for the
-    same periods, each carrying the query it was computed from
-  account-for-gap -> agree-the-measure: the difference explained line by
-    line, so the signers know what their own reports will do
-  agree-the-measure -> issue-version: the rule as signed, with every
-    signer named and dated
-  issue-version -> tell-the-reports: the version number, the date it
-    takes effect, and the list of reports that must change
-  issue-version -> settle-published: the same version, and the periods
-    already published under the old rule
-  tell-the-reports -> set-review: who was told, when, and which reports
-    said they cannot compute the new rule
-  settle-published -> set-review: what was restated and what was left
-    alone, with the reason recorded
+  take-in-request -> find-current-use [disputed-word]: the word, the
+    two numbers that disagreed, and the reports each one came from
+  take-in-request -> read-definitions [word-to-look-up]: the same word,
+    so the standards store is read before anything new is written
+  find-current-use -> name-the-decision [current-uses]: every place the
+    word is used today, with the rule each place computes and how many
+    readers it has
+  read-definitions -> name-the-decision [definitions-in-force]: the
+    definitions already in force that touch this word, at their
+    versions
+  name-the-decision -> write-the-rule [decision-informed]: the decision
+    the number informs, in the words of the person who makes it
+  write-the-rule -> name-the-source [drafted-rule]: the rule as
+    drafted, with the edge cases listed rather than left implied
+  write-the-rule -> set-boundaries [rule-for-boundaries]: the same
+    draft. Both branches read one record
+  name-the-source -> check-support [source-of-record]: the system, the
+    field, and the tie break when two systems disagree
+  set-boundaries -> check-support [boundaries]: the period, the
+    currency, the timezone and the cut, written as a person could apply
+    them by hand
+  check-support -> compute-both-ways [record-support]: what the record
+    can carry, how far back, and every field the rule needs that the
+    record does not hold
+  compute-both-ways -> account-for-gap [both-computations]: the two
+    sets of numbers for the same periods, each carrying the query it
+    was computed from
+  account-for-gap -> agree-the-measure [explained-gap]: the difference
+    explained line by line, so the signers know what their own reports
+    will do
+  agree-the-measure -> issue-version [signed-rule]: the rule as signed,
+    with every signer named and dated
+  issue-version -> tell-the-reports [issued-version]: the version
+    number, the date it takes effect, and the list of reports that must
+    change
+  issue-version -> settle-published [version-for-published]: the same
+    version, and the periods already published under the old rule
+  tell-the-reports -> set-review [who-was-told]: who was told, when,
+    and which reports said they cannot compute the new rule
+  settle-published -> set-review [restatement-decision]: what was
+    restated and what was left alone, with the reason recorded
+deviations:
+  read-definitions -> take-in-request [already-defined]: the word
+    already has a definition nobody knew about, so the run reopens as a
+    question about why two reports ignored it
+  check-support -> write-the-rule [record-cannot-carry]: the record
+    cannot carry the rule as written, so the rule is written again or
+    the measure is marked as not yet computable
+  account-for-gap -> set-boundaries [gap-unexplained]: the gap between
+    the old rule and the new one has no explanation, so the period cut,
+    the timezone and the rate are set again
+  agree-the-measure -> write-the-rule [party-will-not-sign]: one party
+    will not sign, so the rule is written again with the objection
+    attached
+  tell-the-reports -> set-boundaries [report-cannot-compute]: a report
+    cannot compute the new rule, so the boundaries are read again
+    against what that report can actually carry
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the revenue operations lead, the

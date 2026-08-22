@@ -85,6 +85,15 @@ trigger: the accuracy report on <your lead routing process> shows the
          scores have drifted, or a new signal about a lead becomes
          available, or the review date on the model in production
          arrives
+         watch: record=<accuracy report>
+                system=<your lead routing process>
+                change=<the report shows the scores have drifted>
+         or watch: record=<candidate signal>
+                system=<the source the signal is read from>
+                change=<a new fact about a lead becomes available>
+         or watch: record=<model in production>
+                system=<your model store>
+                change=<the review date on the model arrives>
 concurrency: one run at a time for one scoring model, because two runs
              would put two models into production. Runs against
              different models overlap, and lead routing keeps scoring
@@ -182,50 +191,75 @@ run-scoped:
                 every: <cadence>
                 from: cut-over   until: run close
 handoffs:
-  take-in-trigger -> read-scoring / read-exceptions / first-hand: what
-    the model has to fix, what each agent owes, and the date it is
-    owed. Three agents read one record
-  read-scoring -> gather-signals: the scores of the period set beside
-    what each lead went on to do, each score naming the model version
-    it was computed under
-  read-exceptions -> gather-signals: the leads no rule could settle,
-    what the person decided about each one, and the field that was
-    missing
-  first-hand -> gather-signals: what the people who work the leads
-    said, attributed to the person who said it
-  gather-signals -> clear-signals: each candidate signal, the source it
-    would be read from, and the terms that source came with
-  gather-signals -> test-coverage: the same signals, in the form they
-    would be read in. Two branches read one record
-  clear-signals -> fit-candidates: the signals the model may be fit on,
-    and which contacts the consent record covers for each one
-  test-coverage -> fit-candidates: how often each signal is present,
-    what the rest cost to fill, and which ones arrive after the lead
-    has been routed
-  fit-candidates -> back-test: each candidate at a version, with the
-    data it was fit on and the assumptions it rests on
-  fit-candidates -> routing-effect: the same candidates. Two branches
-    read one record
-  back-test -> choose-model: what each candidate would have scored the
-    closed leads, and what those leads actually did
-  routing-effect -> choose-model: how many leads land in each tier and
-    each territory queue under each candidate, set beside what the
-    model in production does now
-  choose-model -> shadow-run: the chosen candidate, why it won over
-    the others, and everyone who disagreed and on what
-  shadow-run -> issue-version: both scores for every lead of the
-    shadow period, and every lead the two models would have routed to
-    different owners
-  issue-version -> hand-over: the model at its number, and what
-    changed from the version it replaces
-  hand-over -> cut-over: what each receiving agent said it would
-    change, and the date it said it by
-  cut-over -> watch-new-model: the date the new version started
-    scoring, and the last lead the version it replaced scored
-  watch-new-model -> set-review: the first weeks of scores set against
-    what those leads did
-  set-review -> record-learnings: the review date, and the drift that
-    brings the model back sooner
+  take-in-trigger -> read-scoring / read-exceptions / first-hand
+    [what-to-fix]: what the model has to fix, what each agent owes, and
+    the date it is owed. Three agents read one record
+  read-scoring -> gather-signals [scores-versus-outcomes]: the scores of
+    the period set beside what each lead went on to do, each score
+    naming the model version it was computed under
+  read-exceptions -> gather-signals [exception-decisions]: the leads no
+    rule could settle, what the person decided about each one, and the
+    field that was missing
+  first-hand -> gather-signals [first-hand-accounts]: what the people
+    who work the leads said, attributed to the person who said it
+  gather-signals -> clear-signals [candidate-signals]: each candidate
+    signal, the source it would be read from, and the terms that source
+    came with
+  gather-signals -> test-coverage [signals-to-test]: the same signals,
+    in the form they would be read in. Two branches read one record
+  clear-signals -> fit-candidates [cleared-signals]: the signals the
+    model may be fit on, and which contacts the consent record covers
+    for each one
+  test-coverage -> fit-candidates [coverage-findings]: how often each
+    signal is present, what the rest cost to fill, and which ones arrive
+    after the lead has been routed
+  fit-candidates -> back-test [candidate-models]: each candidate at a
+    version, with the data it was fit on and the assumptions it rests on
+  fit-candidates -> routing-effect [candidates-to-route]: the same
+    candidates. Two branches read one record
+  back-test -> choose-model [back-test-results]: what each candidate
+    would have scored the closed leads, and what those leads actually
+    did
+  routing-effect -> choose-model [routing-shift]: how many leads land in
+    each tier and each territory queue under each candidate, set beside
+    what the model in production does now
+  choose-model -> shadow-run [chosen-model]: the chosen candidate, why
+    it won over the others, and everyone who disagreed and on what
+  shadow-run -> issue-version [shadow-scores]: both scores for every
+    lead of the shadow period, and every lead the two models would have
+    routed to different owners
+  issue-version -> hand-over [versioned-model]: the model at its number,
+    and what changed from the version it replaces
+  hand-over -> cut-over [adoption-answers]: what each receiving agent
+    said it would change, and the date it said it by
+  cut-over -> watch-new-model [cut-over-record]: the date the new
+    version started scoring, and the last lead the version it replaced
+    scored
+  watch-new-model -> set-review [first-weeks-scores]: the first weeks of
+    scores set against what those leads did
+  set-review -> record-learnings [review-conditions]: the review date,
+    and the drift that brings the model back sooner
+deviations:
+  clear-signals -> gather-signals [source-ruled-out]: legal rules out a
+    source, so the signals are gathered again without it
+  test-coverage -> gather-signals [signal-too-late]: a signal arrives
+    after the lead has been routed, so the signals are gathered again
+  back-test -> fit-candidates [no-candidate-beats]: no candidate beats
+    the model already in use, so the candidates are fit again on a
+    different set of signals
+  routing-effect -> fit-candidates [queue-flooded]: a candidate would
+    flood a territory queue, so the candidates are fit again or their
+    thresholds are changed
+  choose-model -> fit-candidates [room-cannot-agree]: the room cannot
+    agree on one candidate, so the candidates are fit again against what
+    the disagreement showed
+  shadow-run -> fit-candidates [shadow-disagrees]: the chosen candidate
+    behaves differently on live leads than it did on the closed ones, so
+    the candidates are fit again with the disputed leads attached
+  watch-new-model -> choose-model [scores-worse]: the new version scores
+    worse than the one it replaced, so the choice is made again and
+    whichever way it goes runs through the shadow, the version and the
+    handover
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the sales side, leadership and

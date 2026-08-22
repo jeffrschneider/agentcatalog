@@ -79,6 +79,11 @@ from: ref/rev/enforce-pipeline-hygiene v1
 owner: <who>                          effective: <date>
 trigger: <your hygiene cadence> comes round, or a roll-up run asks for
          the pipeline before <your reporting cut-off>
+         watch: every=<your hygiene cadence>
+         or watch: record=<the roll-up run>
+                system=<where roll-up runs are recorded>
+                change=<a roll-up asks for the pipeline before the
+                reporting cut-off>
 concurrency: runs may overlap - one run per pipeline per cycle, and a
              deal carries findings from one run at a time
 goal: every open deal in scope tested against the rules as written,
@@ -175,38 +180,61 @@ run-scoped:
                   every: <cadence>
                   from: send-findings   until: run close
 handoffs:
-  set-scope -> read-rules: the pipeline, the period and the segments in
-    scope, in one record the roll-up can read the same way
-  read-rules -> set-staleness: the field rules and stage definitions at
-    a version, with the date each one last changed
-  set-staleness -> pull-deals: the staleness number per stage and
-    segment, and who agreed it
-  pull-deals -> check-fields: one extract at one moment, kept so every
-    finding can be replayed against the deals it was computed from
-  check-fields -> check-dates: the deals missing a required field, and
-    the field each one is missing
-  check-dates -> check-stage: every date finding, with the date it
-    holds now and the date it held before
-  check-stage -> check-amount: each deal's stage marked evidenced,
-    asserted or absent, with what the evidence was
-  check-amount -> check-ownership: the deals whose amount its line
-    items do not support, and the difference on each
-  check-ownership -> find-duplicates: the deals with no live owner or
-    no live territory, and who they were last assigned to
-  find-duplicates -> rank-findings: the duplicate and split records,
-    grouped, with the record that should survive named
-  rank-findings -> send-findings: every finding, ordered by the amount
-    it moves, with the rule behind it
-  send-findings -> fix-at-record: the finding on the deal, and the
-    person it was sent to, with the date it was sent
-  fix-at-record -> escalate-unfixed: the findings that are still open,
-    and what the owner said about each one
-  escalate-unfixed -> mark-failures: the findings nobody settled, and
-    the manager they were escalated to
-  mark-failures -> report-hygiene: the deals that still fail, each
-    carrying its rule, its amount and its date
-  report-hygiene -> amend-rules: the failures by rule, by segment and
-    by owner, across the last cycles
+  set-scope -> read-rules [run-scope]: the pipeline, the period and the
+    segments in scope, in one record the roll-up can read the same way
+  read-rules -> set-staleness [rules-as-written]: the field rules and
+    stage definitions at a version, with the date each one last changed
+  set-staleness -> pull-deals [staleness-numbers]: the staleness number
+    per stage and segment, and who agreed it
+  pull-deals -> check-fields [deal-extract]: one extract at one moment,
+    kept so every finding can be replayed against the deals it was
+    computed from
+  check-fields -> check-dates [field-findings]: the deals missing a
+    required field, and the field each one is missing
+  check-dates -> check-stage [date-findings]: every date finding, with
+    the date it holds now and the date it held before
+  check-stage -> check-amount [stage-findings]: each deal's stage marked
+    evidenced, asserted or absent, with what the evidence was
+  check-amount -> check-ownership [amount-findings]: the deals whose
+    amount its line items do not support, and the difference on each
+  check-ownership -> find-duplicates [ownership-findings]: the deals
+    with no live owner or no live territory, and who they were last
+    assigned to
+  find-duplicates -> rank-findings [duplicate-findings]: the duplicate
+    and split records, grouped, with the record that should survive
+    named
+  rank-findings -> send-findings [ranked-findings]: every finding,
+    ordered by the amount it moves, with the rule behind it
+  send-findings -> fix-at-record [findings-delivered]: the finding on
+    the deal, and the person it was sent to, with the date it was sent
+  fix-at-record -> escalate-unfixed [unfixed-findings]: the findings
+    that are still open, and what the owner said about each one
+  escalate-unfixed -> mark-failures [unsettled-findings]: the findings
+    nobody settled, and the manager they were escalated to
+  mark-failures -> report-hygiene [marked-deals]: the deals that still
+    fail, each carrying its rule, its amount and its date
+  report-hygiene -> amend-rules [failure-pattern]: the failures by rule,
+    by segment and by owner, across the last cycles
+deviations:
+  set-staleness -> read-rules [rule-not-written]: the rule being agreed
+    to is nowhere written down, so the rules are read at a version
+    before anything is checked against them
+  check-fields -> pull-deals [segment-missed]: the extract missed a
+    segment, so the open deals are pulled again
+  check-stage -> read-rules [stage-definition-does-not-fit]: the stage
+    definition fails every deal in a segment, which is a fact about the
+    definition, so the rules are read again and amended
+  find-duplicates -> pull-deals [duplicate-from-another-system]: the
+    duplicate arrived from another system, so the pull is made again
+    across both
+  fix-at-record -> send-findings [finding-disputed]: the owner disputes
+    the finding, so it goes back to be withdrawn or sent again with the
+    rule behind it
+  escalate-unfixed -> fix-at-record [fixed-after-escalation]: the owner
+    fixes the deal once it is escalated, so the correction is made at
+    the record after all
+  report-hygiene -> rank-findings [finding-counted-twice]: one finding
+    was counted twice in the report, so the findings are ranked again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the deal owners, the managers

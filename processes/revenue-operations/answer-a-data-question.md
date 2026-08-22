@@ -65,6 +65,9 @@ from: ref/rev/answer-a-data-question v1
 owner: <who>                          effective: <date>
 trigger: somebody asks the revenue organization a question about the
          numbers that no published report answers
+         watch: record=<question> system=<where questions arrive>
+                change=<a question about the numbers is asked and no
+                published report answers it>
 concurrency: runs may overlap freely - <how many> questions are open at
              once, and a question that needs more than <days> of work
              stops being a question and goes to <your report building
@@ -147,32 +150,56 @@ run-scoped:
           every: <cadence>
           from: take-in-question   until: deliver-answer
 handoffs:
-  take-in-question -> name-the-decision: the ask as it was written, and
-    the date the asker gave
-  name-the-decision -> check-published: what the asker will do with the
-    number, which is what makes the question worth the work
-  check-published -> restate-countable: the reports that already touch
-    the question, and how far short of it each one falls
-  restate-countable -> name-measures: the question as measures, filters,
-    a period and a grain, confirmed by the asker in writing
-  name-measures -> size-and-agree: the measures at their versions, and
-    every word the question needs that nobody has defined
-  size-and-agree -> pull-record: the agreed date, and what was pushed
-    back to make room for it
-  pull-record -> name-exclusions: the query as run, the result, and the
-    date and time the record was pulled
-  name-exclusions -> say-what-it-holds: the rows removed, the rule that
-    removed them, and the figure with them left in
-  say-what-it-holds -> write-answer: each figure with its range, and a
-    list of the figures that could not be computed
-  write-answer -> check-definitions: the answer at a version, citing the
-    measures it used
-  check-definitions -> deliver-answer: the scored answer, with any place
-    the wording drifts from the definition it cites
-  deliver-answer -> judge-standing: the answer as delivered, and the
-    date it went
-  judge-standing -> file-the-answer: whether this becomes a report, and
-    if so the request that opens that run
+  take-in-question -> name-the-decision [the-ask]: the ask as it was
+    written, and the date the asker gave
+  name-the-decision -> check-published [decision-waiting]: what the
+    asker will do with the number, which is what makes the question
+    worth the work
+  check-published -> restate-countable [published-near-misses]: the
+    reports that already touch the question, and how far short of it
+    each one falls
+  restate-countable -> name-measures [countable-question]: the question
+    as measures, filters, a period and a grain, confirmed by the asker
+    in writing
+  name-measures -> size-and-agree [measures-and-versions]: the measures
+    at their versions, and every word the question needs that nobody
+    has defined
+  size-and-agree -> pull-record [agreed-date]: the agreed date, and
+    what was pushed back to make room for it
+  pull-record -> name-exclusions [query-and-result]: the query as run,
+    the result, and the date and time the record was pulled
+  name-exclusions -> say-what-it-holds [exclusions]: the rows removed,
+    the rule that removed them, and the figure with them left in
+  say-what-it-holds -> write-answer [figures-with-ranges]: each figure
+    with its range, and a list of the figures that could not be
+    computed
+  write-answer -> check-definitions [drafted-answer]: the answer at a
+    version, citing the measures it used
+  check-definitions -> deliver-answer [scored-answer]: the scored
+    answer, with any place the wording drifts from the definition it
+    cites
+  deliver-answer -> judge-standing [delivered-answer]: the answer as
+    delivered, and the date it went
+  judge-standing -> file-the-answer [standing-verdict]: whether this
+    becomes a report, and if so the request that opens that run
+deviations:
+  name-the-decision -> take-in-question [no-decision-behind-it]: the
+    asker cannot say what they will do differently, so the question is
+    taken again or it goes in the queue behind the ones that feed
+    decisions
+  check-published -> deliver-answer [already-published]: a published
+    report already answers the question, so nothing is restated, sized,
+    pulled or written, and the asker gets the report and the access
+    they were missing
+  name-measures -> restate-countable [undefined-word]: the question
+    needs a word nobody has defined, so it is asked again in words that
+    are already defined
+  name-exclusions -> restate-countable [too-much-missing]: so much of
+    the record is left out that the answer would be about the gaps, so
+    the question is restated rather than answered with a footnote
+  check-definitions -> write-answer [answer-drifts]: the answer does
+    not match the definition it cites, so it is written again against
+    the definition
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the asker and the revenue

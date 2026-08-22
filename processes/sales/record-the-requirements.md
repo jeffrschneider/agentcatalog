@@ -64,6 +64,9 @@ from: ref/sls/record-the-requirements v1
 owner: <who>                          effective: <date>
 trigger: a discovery summary is confirmed by the buyer in <your
          discovery process>
+         watch: record=<discovery summary>
+                system=<your discovery process>
+                change=<a discovery summary is confirmed by the buyer>
 concurrency: runs may overlap - one requirement record per
              opportunity, and <how many> records open at once
 goal: every requirement written in the buyer's words, attributed,
@@ -141,29 +144,48 @@ run-scoped:
             every: <cadence>
             from: hand-to-shaping   until: run close
 handoffs:
-  take-in-notes -> split-needs-wants: the confirmed notes, and the
-    questions discovery could not answer
-  split-needs-wants -> write-each-one: the line between need and want,
-    as the buyer drew it, with the buyer's wording for the line
-  write-each-one -> name-who-asked: one line per requirement, quoted
-  name-who-asked -> find-clashes: the list, with a person and a date
-    against every line
-  find-clashes -> ask-follow-ups: the pairs that cannot both be met,
-    and the lines nobody can be found to have asked for
-  ask-follow-ups -> check-constraints: the buyer's answers, in writing,
-    and the clashes the buyer chose not to settle
-  check-constraints -> rank-the-list: the rules, the dates and the
-    systems that cannot move, each with its source
-  rank-the-list -> mark-unmeetable: the list in the buyer's order
-  mark-unmeetable -> read-record-back: the same list, with every
-    requirement that will not be met marked and reasoned
-  read-record-back -> version-record: the record as the buyer confirmed
-    it, with their corrections kept alongside the original
-  version-record -> hand-to-shaping: the record at a number and a date
-  hand-to-shaping -> watch-for-drift: the version the architect is
-    shaping against, so a later change can be seen as a change
-  watch-for-drift -> record-learnings: every requirement that arrived
-    late, with who asked and when
+  take-in-notes -> split-needs-wants [discovery-notes]: the confirmed
+    notes, and the questions discovery could not answer
+  split-needs-wants -> write-each-one [need-want-line]: the line
+    between need and want, as the buyer drew it, with the buyer's
+    wording for the line
+  write-each-one -> name-who-asked [quoted-lines]: one line per
+    requirement, quoted
+  name-who-asked -> find-clashes [attributed-list]: the list, with a
+    person and a date against every line
+  find-clashes -> ask-follow-ups [clashes]: the pairs that cannot
+    both be met, and the lines nobody can be found to have asked for
+  ask-follow-ups -> check-constraints [buyer-answers]: the buyer's
+    answers, in writing, and the clashes the buyer chose not to settle
+  check-constraints -> rank-the-list [hard-constraints]: the rules,
+    the dates and the systems that cannot move, each with its source
+  rank-the-list -> mark-unmeetable [buyers-ranking]: the list in the
+    buyer's order
+  mark-unmeetable -> read-record-back [marked-list]: the same list,
+    with every requirement that will not be met marked and reasoned
+  read-record-back -> version-record [confirmed-record]: the record
+    as the buyer confirmed it, with their corrections kept alongside
+    the original
+  version-record -> hand-to-shaping [versioned-record]: the record at
+    a number and a date
+  hand-to-shaping -> watch-for-drift [shaping-baseline]: the version
+    the architect is shaping against, so a later change can be seen as
+    a change
+  watch-for-drift -> record-learnings [late-requirements]: every
+    requirement that arrived late, with who asked and when
+deviations:
+  ask-follow-ups -> write-each-one [answer-changes-a-line]: the
+    buyer's answer changes a requirement, so that line is written
+    again in the words the buyer just used
+  check-constraints -> split-needs-wants [constraint-kills-a-line]: a
+    rule the buyer works under makes a requirement impossible, so the
+    need and want split is drawn again with the constraint quoted
+  read-record-back -> write-each-one [record-not-recognized]: the
+    buyer does not recognize the record, so the lines they disowned
+    are written again or struck
+  watch-for-drift -> write-each-one [requirement-arrives-late]: a
+    requirement arrives after the record was confirmed, so it is
+    written, attributed and versioned in rather than absorbed quietly
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the customer sponsor, the

@@ -82,6 +82,14 @@ from: ref/mkt/brand-positioning v1
 owner: <who>                          effective: <date>
 trigger: a strategy change or a market shift that <who> decides is big
          enough to reopen the positioning
+         watch: record=<strategy change>
+                system=<your strategy of record>
+                change=<a change is recorded and judged big enough to
+                reopen the positioning>
+         or watch: record=<market shift>
+                system=<your evidence store>
+                change=<a shift is recorded and judged big enough to
+                reopen the positioning>
 concurrency: one run at a time - two runs would put two answers to the
              same question in front of the same people
 goal: an agreed company-level positioning and promise, sourced, signed,
@@ -174,40 +182,69 @@ run-scoped:
   spend  - runs allocate-and-reconcile    owner: researcher
            from: gather-evidence   until: test-on-buyers
 handoffs:
-  take-in-change -> gather-evidence / read-the-numbers / audit-current:
-    what changed, what the decision has to settle, and the date it is
-    due. Three sources read one record
-  gather-evidence -> agree-the-buyer: what buyers weigh, what rivals
-    claim, and the category's search demand, each line with its source
-    and the date it was pulled
-  read-the-numbers -> agree-the-buyer: how the current message
-    performs, each line naming where the number came from
-  audit-current -> agree-the-buyer: the live material scored against
-    the standard in force, with the rule behind every failure
-  agree-the-buyer -> draft-candidates: the buyers the company means to
-    win and the ground it means to compete on
-  draft-candidates -> test-on-evidence: the candidate positions at a
-    version, each with the case for it written out and what it would
-    rule out
-  test-on-evidence -> test-on-buyers: the positions the evidence
-    carries, and the claims it will not support in the others
-  test-on-buyers -> choose-position: what each buyer and seller said,
-    attributed, beside the position it was said about
-  choose-position -> write-position: the chosen position, the reasons
-    for it, and anyone who disagreed and what they said
-  write-position -> record-proof: the promise at a version, claim by
-    claim
-  write-position -> set-voice-rules: the statement and the promise the
-    voice rules have to fit
-  record-proof -> get-sign-offs: the promise with a source under every
-    claim, and any claim still unsourced marked as unsourced
-  set-voice-rules -> get-sign-offs: the voice rules at a version
-  get-sign-offs -> issue-version: the signed positioning, promise,
-    proof and voice rules, at the version the signers read
-  issue-version -> tell-the-readers: the numbered version, what
-    changed in it, and the date it applies from
-  tell-the-readers -> record-learnings: who was told, when, and what
-    each of them said they now have to change
+  take-in-change -> gather-evidence / read-the-numbers / audit-current
+    [decision-question]: what changed, what the decision has to
+    settle, and the date it is due. Three sources read one record
+  gather-evidence -> agree-the-buyer [market-evidence]: what buyers
+    weigh, what rivals claim, and the category's search demand, each
+    line with its source and the date it was pulled
+  read-the-numbers -> agree-the-buyer [message-performance]: how the
+    current message performs, each line naming where the number came
+    from
+  audit-current -> agree-the-buyer [current-material-scores]: the live
+    material scored against the standard in force, with the rule
+    behind every failure
+  agree-the-buyer -> draft-candidates [target-buyers]: the buyers the
+    company means to win and the ground it means to compete on
+  draft-candidates -> test-on-evidence [candidate-positions]: the
+    candidate positions at a version, each with the case for it
+    written out and what it would rule out
+  test-on-evidence -> test-on-buyers [supported-positions]: the
+    positions the evidence carries, and the claims it will not support
+    in the others
+  test-on-buyers -> choose-position [buyer-reactions]: what each buyer
+    and seller said, attributed, beside the position it was said about
+  choose-position -> write-position [chosen-position]: the chosen
+    position, the reasons for it, and anyone who disagreed and what
+    they said
+  write-position -> record-proof [promise-claims]: the promise at a
+    version, claim by claim
+  write-position -> set-voice-rules [statement-and-promise]: the
+    statement and the promise the voice rules have to fit
+  record-proof -> get-sign-offs [sourced-promise]: the promise with a
+    source under every claim, and any claim still unsourced marked as
+    unsourced
+  set-voice-rules -> get-sign-offs [voice-rules]: the voice rules at a
+    version
+  get-sign-offs -> issue-version [signed-standard]: the signed
+    positioning, promise, proof and voice rules, at the version the
+    signers read
+  issue-version -> tell-the-readers [numbered-standard]: the numbered
+    version, what changed in it, and the date it applies from
+  tell-the-readers -> record-learnings [reader-responses]: who was
+    told, when, and what each of them said they now have to change
+deviations:
+  test-on-evidence -> draft-candidates [evidence-will-not-carry]: the
+    evidence does not support what a position claims, so the position
+    is narrowed to what the evidence carries or drafted again
+  test-on-buyers -> draft-candidates [buyers-do-not-recognize]: buyers
+    do not see the company in any position, or cannot tell two of them
+    apart, so the positions are drafted again
+  choose-position -> draft-candidates [none-worth-backing]: none of
+    the candidates is worth backing, so another set is drafted leaving
+    out what was already turned down
+  record-proof -> write-position [claim-without-source]: a claim in
+    the promise has no source, so the promise is written again without
+    it or the source is found first
+  get-sign-offs -> write-position [sign-off-changes-position]: a
+    signer asks for changes to the positioning, so only the part they
+    named is written again
+  get-sign-offs -> set-voice-rules [sign-off-changes-voice]: a signer
+    asks for changes to the voice rules, so only the rules they named
+    are set again
+  any -> take-in-change [strategy-moves]: the strategy moves while the
+    run is open, so the change is taken in and <who> says whether the
+    run is still answering the right question
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal, the brand

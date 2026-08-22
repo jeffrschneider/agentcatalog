@@ -68,6 +68,12 @@ from: ref/sls/provide-a-reference v1
 owner: <who>                          effective: <date>
 trigger: a prospect asks to speak to an existing customer, or a shaping
          run decides a reference would settle a question
+         watch: record=<reference request>
+                system=<where reference requests arrive>
+                change=<a prospect asks to speak to a customer>
+         or watch: record=<opportunity> system=<your shaping process>
+                change=<a shaping run decides a reference would settle
+                a question>
 concurrency: runs may overlap - <how many> reference requests live at
              once, and one customer takes at most <how many> reference
              calls per <period>
@@ -150,36 +156,52 @@ run-scoped:
          every: <cadence>
          from: trigger   until: run close
 handoffs:
-  take-in-request -> say-what-is-needed: who is asking and what the
-    conversation has to settle for them
-  say-what-is-needed -> search-pool: the match the prospect needs,
-    written as criteria rather than as a name somebody thought of
-  search-pool -> check-cool-down: the candidates, and the written
-    agreement each one gave to be asked
-  check-cool-down -> check-health: the candidates still inside the
-    cool-down rule, with the date each was last asked
-  check-health -> shortlist: the accounts that may be asked, and the
-    ones that may not, each with the reason
-  shortlist -> ask-the-customer: the ranked names, and the reason each
-    one fits this prospect
-  ask-the-customer -> agree-the-bounds: the customer's yes, in writing,
-    and anything they said they will not discuss
-  agree-the-bounds -> brief-reference: what may be said and what stays
-    out, at a version both the customer and <your legal role> hold
-  agree-the-bounds -> brief-prospect: the same bounds, phrased as what
-    not to ask for
-  brief-reference -> set-it-up: the customer's availability and the
-    length they agreed to
-  brief-prospect -> set-it-up: the prospect's availability and who will
-    join from their side
-  set-it-up -> hold-conversation: the time, the joining details, and
-    the names on both sides
-  hold-conversation -> thank-reference: whether it happened, how long
-    it ran, and anything the customer flagged afterwards
-  thank-reference -> reset-clock: the ask, dated, against the
-    customer's record
-  reset-clock -> feed-back: the updated cool-down state, and the
-    candidates who were not used
+  take-in-request -> say-what-is-needed [reference-request]: who is
+    asking and what the conversation has to settle for them
+  say-what-is-needed -> search-pool [match-criteria]: the match the
+    prospect needs, written as criteria rather than as a name somebody
+    thought of
+  search-pool -> check-cool-down [candidates]: the candidates, and
+    the written agreement each one gave to be asked
+  check-cool-down -> check-health [cool-down-state]: the candidates
+    still inside the cool-down rule, with the date each was last asked
+  check-health -> shortlist [account-standing]: the accounts that may
+    be asked, and the ones that may not, each with the reason
+  shortlist -> ask-the-customer [ranked-names]: the ranked names, and
+    the reason each one fits this prospect
+  ask-the-customer -> agree-the-bounds [customer-yes]: the customer's
+    yes, in writing, and anything they said they will not discuss
+  agree-the-bounds -> brief-reference [agreed-bounds]: what may be
+    said and what stays out, at a version both the customer and <your
+    legal role> hold
+  agree-the-bounds -> brief-prospect [bounds-for-prospect]: the same
+    bounds, phrased as what not to ask for
+  brief-reference -> set-it-up [reference-availability]: the
+    customer's availability and the length they agreed to
+  brief-prospect -> set-it-up [prospect-availability]: the prospect's
+    availability and who will join from their side
+  set-it-up -> hold-conversation [joining-details]: the time, the
+    joining details, and the names on both sides
+  hold-conversation -> thank-reference [what-happened]: whether it
+    happened, how long it ran, and anything the customer flagged
+    afterwards
+  thank-reference -> reset-clock [recorded-ask]: the ask, dated,
+    against the customer's record
+  reset-clock -> feed-back [updated-clock]: the updated cool-down
+    state, and the candidates who were not used
+deviations:
+  check-cool-down -> say-what-is-needed [all-asked-too-recently]:
+    every matching customer was asked too recently, so what the
+    prospect needs to hear is written again against a different match
+  check-health -> search-pool [account-not-askable]: the account is
+    in no state to be asked, so the pool is searched again without it
+  ask-the-customer -> shortlist [customer-says-no]: the customer
+    says no, so the next name on the shortlist is asked
+  agree-the-bounds -> shortlist [bounds-too-narrow]: nothing useful
+    may be discussed, so the shortlist is worked again rather than a
+    call being held that tells the prospect nothing
+  hold-conversation -> set-it-up [nobody-joined]: nobody joined the
+    call, so it is set up again once before the run gives up on it
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the customer

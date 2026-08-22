@@ -87,6 +87,11 @@ from: ref/mkt/prioritize-initiatives v1
 owner: <who>                          effective: <date>
 trigger: the prioritization round opens on <your cadence>, or the queue
          passes <how many> waiting requests
+         watch: every=<your cadence>
+         or watch: record=<the request queue>
+                system=<your request queue>
+                change=<the number of waiting requests passes the
+                threshold the trigger names>
 concurrency: one round at a time - a request arriving mid-round waits for
          the next one unless <who> reopens the ranking
 goal: a ranked list of requests, a commitment line drawn on it with the
@@ -169,33 +174,60 @@ run-scoped:
   budget - runs allocate-and-reconcile          owner: budget-keeper
            from: resource-commit   until: run close
 handoffs:
-  open-round -> take-requests: the period the round commits, and the
-    date requests stop being taken in for it
-  take-requests -> screen-requests: every request in the same form, so
-    two requests can be compared without rewriting either one
-  screen-requests -> weigh-goals: the requests that can be judged, with
-    the repeats merged and the returned ones marked as returned
-  read-committed -> read-free: what every run in flight still owes and
-    when it finishes, in the units the requests are written in
-  weigh-goals -> rank-requests: the goal each request moves and by how
-    much, with the source under the number
-  number-requests -> rank-requests: the cost and the return on each
-    request, with every assumption written beside the number it drives
-  check-standards -> rank-requests: the requests that sit outside the
-    positioning, or reach an audience the profile does not cover
-  rank-requests -> choose-commit: the ordered list, with the reason for
-    each place and the capacity each item would take
-  read-free -> choose-commit: what the department has room for in the
-    period, in the units the list is written in
-  choose-commit -> resource-commit: the line drawn on the list, naming
-    who drew it and on what date
-  choose-commit -> record-declines: everything that sits below the line
-  resource-commit -> settle-displaced: the commitments that do not fit
-    beside the work already underway
-  settle-displaced -> hand-over: what stopped, what waits, and the new
-    date on anything that moved
-  record-declines -> tell-requesters: the answer for each request, with
-    its reason, ready to go to the person who asked
+  open-round -> take-requests [round-scope]: the period the round
+    commits, and the date requests stop being taken in for it
+  take-requests -> screen-requests [logged-requests]: every request in
+    the same form, so two requests can be compared without rewriting
+    either one
+  screen-requests -> weigh-goals [judgeable-requests]: the requests
+    that can be judged, with the repeats merged and the returned ones
+    marked as returned
+  read-committed -> read-free [work-in-flight]: what every run in
+    flight still owes and when it finishes, in the units the requests
+    are written in
+  weigh-goals -> rank-requests [goal-movement]: the goal each request
+    moves and by how much, with the source under the number
+  number-requests -> rank-requests [cost-and-return]: the cost and the
+    return on each request, with every assumption written beside the
+    number it drives
+  check-standards -> rank-requests [standards-findings]: the requests
+    that sit outside the positioning, or reach an audience the profile
+    does not cover
+  rank-requests -> choose-commit [ranked-list]: the ordered list, with
+    the reason for each place and the capacity each item would take
+  read-free -> choose-commit [free-capacity]: what the department has
+    room for in the period, in the units the list is written in
+  choose-commit -> resource-commit [commitment-line]: the line drawn on
+    the list, naming who drew it and on what date
+  choose-commit -> record-declines [below-the-line]: everything that
+    sits below the line
+  resource-commit -> settle-displaced [resourced-commitments]: the
+    commitments that do not fit beside the work already underway
+  settle-displaced -> hand-over [displacement-decisions]: what stopped,
+    what waits, and the new date on anything that moved
+  record-declines -> tell-requesters [decline-reasons]: the answer for
+    each request, with its reason, ready to go to the person who asked
+deviations:
+  screen-requests -> take-requests [request-incomplete]: something the
+    round needs to judge the request is missing, so it goes back to the
+    person who asked and keeps its place in the queue
+  rank-requests -> number-requests [missing-number]: a request cannot
+    be placed without a number, so it is costed again before the list
+    is ordered
+  choose-commit -> rank-requests [line-misses-the-goals]: nothing above
+    the line reaches the goals, so the list is ranked again against
+    what was said to be missing
+  resource-commit -> choose-commit [money-falls-short]: the money will
+    not cover the set, so the line moves up the list
+  settle-displaced -> choose-commit [too-far-along-to-stop]: the
+    displaced run is too far along to stop cheaply, so the choice is
+    made again with the cost of stopping attached
+  tell-requesters -> choose-commit [decline-escalated]: a requester
+    escalates a decline, and reopening the choice means naming what
+    comes off the list to make room
+  hand-over -> choose-commit [capacity-was-wrong]: the agent cannot
+    take the work after all, so the choice is made again with the
+    corrected capacity figure
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, finance and the

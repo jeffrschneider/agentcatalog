@@ -72,6 +72,12 @@ from: ref/sls/write-an-account-plan v1
 owner: <who>                          effective: <date>
 trigger: an account read and a people map are issued for an account
          that <your account selection> says is worth a plan
+         watch: record=<account read> system=<your account read record>
+                change=<a read is issued for an account the selection
+                says is worth a plan>
+         and watch: record=<people map>
+                system=<your account map record>
+                change=<a map is issued for the same account>
 concurrency: runs may overlap - <how many> plans written at once, and
              one account has one plan in force at a time
 goal: one signed plan naming what to sell at this account, to whom, in
@@ -161,40 +167,62 @@ run-scoped:
              every: <cadence>
              from: list-offers   until: sign-plan
 handoffs:
-  open-plan -> read-inputs: the account, the period, and the versions
-    of the read and the map the plan is to be built on
-  read-inputs -> set-the-aim: what is known, and the unknowns and
-    coverage gaps as the read and the map left them
-  set-the-aim -> list-offers: the outcome the plan is for, and the date
-    it is wanted by
-  list-offers -> size-offers: every candidate opportunity, none ruled
-    out yet
-  list-offers -> test-offers: the same list, so sizing and testing see
-    the same candidates
-  size-offers -> name-buyers: the money, the timing and the confidence
-    band behind each number
-  test-offers -> name-buyers: the evidence for and against each one,
-    each line citing the read
-  name-buyers -> order-the-work: the buyer, the decision and the path
-    in for each opportunity, and every one with no buyer marked
-  order-the-work -> name-assumptions: the order, and what each step
-    depends on the one before it delivering
-  order-the-work -> name-risks: the same order, so risks are named
-    against a sequence rather than in general
-  name-assumptions -> name-the-moves: the assumptions, each written as
-    a statement a review can test
-  name-risks -> name-the-moves: the risks, each with what would happen
-    and what the plan does about it
-  name-the-moves -> ask-for-support: the moves, their owners and their
-    dates, and which of them cannot be done by the account team alone
-  ask-for-support -> choose-plan: the asks, each naming who has to
-    agree, and which have been agreed already
-  choose-plan -> sign-plan: the chosen version, the reasons behind it,
-    and anyone who disagreed with what was chosen
-  sign-plan -> issue-plan: the signed version, naming both signers and
-    the date they signed
-  issue-plan -> set-review: the issued version, so the review date and
-    the tripwires attach to a version and not to a document
+  open-plan -> read-inputs [plan-scope]: the account, the period, and
+    the versions of the read and the map the plan is to be built on
+  read-inputs -> set-the-aim [what-is-known]: what is known, and the
+    unknowns and coverage gaps as the read and the map left them
+  set-the-aim -> list-offers [the-aim]: the outcome the plan is for,
+    and the date it is wanted by
+  list-offers -> size-offers [candidate-offers]: every candidate
+    opportunity, none ruled out yet
+  list-offers -> test-offers [candidate-offers-for-testing]: the same
+    list, so sizing and testing see the same candidates
+  size-offers -> name-buyers [offer-sizing]: the money, the timing and
+    the confidence band behind each number
+  test-offers -> name-buyers [offer-evidence]: the evidence for and
+    against each one, each line citing the read
+  name-buyers -> order-the-work [buyers-and-paths]: the buyer, the
+    decision and the path in for each opportunity, and every one with
+    no buyer marked
+  order-the-work -> name-assumptions [the-order]: the order, and what
+    each step depends on the one before it delivering
+  order-the-work -> name-risks [the-order-for-risks]: the same order,
+    so risks are named against a sequence rather than in general
+  name-assumptions -> name-the-moves [the-assumptions]: the
+    assumptions, each written as a statement a review can test
+  name-risks -> name-the-moves [the-risks]: the risks, each with what
+    would happen and what the plan does about it
+  name-the-moves -> ask-for-support [the-moves]: the moves, their
+    owners and their dates, and which of them cannot be done by the
+    account team alone
+  ask-for-support -> choose-plan [support-asks]: the asks, each naming
+    who has to agree, and which have been agreed already
+  choose-plan -> sign-plan [chosen-version]: the chosen version, the
+    reasons behind it, and anyone who disagreed with what was chosen
+  sign-plan -> issue-plan [signed-plan]: the signed version, naming
+    both signers and the date they signed
+  issue-plan -> set-review [issued-plan]: the issued version, so the
+    review date and the tripwires attach to a version and not to a
+    document
+deviations:
+  read-inputs -> open-plan [read-too-old]: the read is too old to plan
+    from, so the plan waits on a refreshed read rather than quoting one
+    nobody rechecked
+  test-offers -> list-offers [no-evidence-behind-it]: nothing in the
+    read supports an opportunity, so it goes back to the list marked
+    unsupported rather than being dropped quietly
+  name-buyers -> list-offers [no-buyer-known]: the map has nobody
+    behind the decision, so the opportunity goes back to the list with
+    the gap named
+  name-risks -> order-the-work [risk-breaks-the-order]: a risk breaks
+    the order, so the order is set again while the sizing and the
+    testing stand
+  ask-for-support -> name-the-moves [support-refused]: the ask for
+    people or money is refused, so the moves that depended on it are
+    written again to what the account team can do alone
+  choose-plan -> order-the-work [plan-sent-back]: the plan is sent back
+    at the decision, so the order is set again and the version that was
+    sent back stays in the record
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, the account owner and the sales leader who sign, and

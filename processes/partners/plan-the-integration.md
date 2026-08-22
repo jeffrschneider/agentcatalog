@@ -73,6 +73,10 @@ from: ref/prt/plan-the-integration v1
 owner: <who>                          effective: <date>
 trigger: an alliance agreement is signed and its obligations are handed
          on, in <your partner record>
+         watch: record=<alliance agreement>
+                system=<your partner record>
+                change=<a signed agreement is handed on with the
+                obligations it creates>
 concurrency: runs may overlap - <how many> integrations live at once,
              and one alliance is integrated by one run at a time
 goal: a joint offer a customer can buy, proved on one real customer,
@@ -170,38 +174,69 @@ run-scoped:
                  every: <cadence>
                  from: name-owners    until: run close
 handoffs:
-  take-in-terms -> name-owners: every obligation the agreement creates,
-    with what it requires and the date it is owed by
-  name-owners -> define-offer: the named owner on each side, what each
-    may commit, and how the two of them meet
-  define-offer -> set-technical-scope: what the customer buys, at what
-    price, from whom, and what is deliberately not in it
-  define-offer -> set-commercials: the same offer, so the price and the
-    ordering path are built for what is actually sold
-  set-technical-scope -> design-integration: what connects, how deep,
-    what stays separate, and which side builds each piece
-  design-integration -> plan-environments: the interfaces, the data that
-    crosses, and the identity each call carries
-  plan-environments -> build-and-test: the test systems, the test
-    accounts, and the written finding on which data may cross
-  build-and-test -> run-pilot: the connection working end to end, the
-    cases it was run against, and every failure still open
-  run-pilot -> set-support: what the customer hit, how long each problem
-    took, and which company fixed it
-  set-commercials -> build-material: the price, the ordering path, the
-    invoicing side and the split, as they will actually run
-  build-material -> train-sellers: the material both companies approved,
-    and the claims each side may make
-  train-sellers -> agree-launch: which sellers were trained, on what
-    date, and what they still get wrong
-  set-support -> agree-launch: who a customer calls, who answers, and
-    how a problem crosses between the companies
-  agree-launch -> check-readiness: the announcement, the date, and who
-    says what
-  check-readiness -> launch-and-watch: the readiness list with every
-    item signed or waived, and the person who signed
-  launch-and-watch -> hand-on: the first orders, how each one went from
-    order to payment, and everything still broken
+  take-in-terms -> name-owners [signed-obligations]: every obligation
+    the agreement creates, with what it requires and the date it is
+    owed by
+  name-owners -> define-offer [named-owners]: the named owner on each
+    side, what each may commit, and how the two of them meet
+  define-offer -> set-technical-scope [joint-offer]: what the customer
+    buys, at what price, from whom, and what is deliberately not in it
+  define-offer -> set-commercials [offer-for-pricing]: the same offer,
+    so the price and the ordering path are built for what is actually
+    sold
+  set-technical-scope -> design-integration [technical-scope]: what
+    connects, how deep, what stays separate, and which side builds each
+    piece
+  design-integration -> plan-environments [integration-design]: the
+    interfaces, the data that crosses, and the identity each call
+    carries
+  plan-environments -> build-and-test [test-environments]: the test
+    systems, the test accounts, and the written finding on which data
+    may cross
+  build-and-test -> run-pilot [working-connection]: the connection
+    working end to end, the cases it was run against, and every failure
+    still open
+  run-pilot -> set-support [pilot-findings]: what the customer hit, how
+    long each problem took, and which company fixed it
+  set-commercials -> build-material [commercial-terms]: the price, the
+    ordering path, the invoicing side and the split, as they will
+    actually run
+  build-material -> train-sellers [sales-material]: the material both
+    companies approved, and the claims each side may make
+  train-sellers -> agree-launch [trained-sellers]: which sellers were
+    trained, on what date, and what they still get wrong
+  set-support -> agree-launch [support-path]: who a customer calls, who
+    answers, and how a problem crosses between the companies
+  agree-launch -> check-readiness [launch-plan]: the announcement, the
+    date, and who says what
+  check-readiness -> launch-and-watch [signed-readiness]: the readiness
+    list with every item signed or waived, and the person who signed
+  launch-and-watch -> hand-on [first-orders]: the first orders, how
+    each one went from order to payment, and everything still broken
+deviations:
+  design-integration -> take-in-terms [term-not-signed]: the design
+    needs an interface, a right or a piece of data the agreement does
+    not grant, so the signed terms are read again and either amended or
+    the scope shrinks
+  plan-environments -> design-integration [data-may-not-cross]: the
+    transfer finding comes back no, or yes only under conditions, so
+    the design is worked again to keep the data on our side
+  build-and-test -> design-integration [fails-at-volume]: the
+    connection passes on test cases and fails at real load, so the
+    design is worked again against what actually broke
+  run-pilot -> define-offer [pilot-customer-refuses]: the pilot
+    customer will not use the joint offer, so the offer is defined
+    again rather than a friendlier pilot being found
+  check-readiness -> build-and-test [item-not-ready]: an item on the
+    readiness list is not ready, so the connection is built and tested
+    again before the gate is put a second time
+  check-readiness -> train-sellers [sellers-cannot-explain]: the
+    sellers cannot explain the offer, so the parts they get wrong are
+    trained again
+  launch-and-watch -> set-commercials [orders-will-not-process]:
+    ordering, invoicing or the split breaks on a real order, so the
+    commercial machinery is set again while the affected orders are
+    handled by hand and recorded as such
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the alliances lead, the product

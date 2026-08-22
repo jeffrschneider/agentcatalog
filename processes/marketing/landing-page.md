@@ -67,6 +67,8 @@ from: ref/mkt/landing-page v1
 owner: <who>                          effective: <date>
 trigger: a campaign or a content plan asks for a page in <your planning
          process>
+         watch: record=<page request> system=<your planning process>
+                change=<a campaign or a content plan asks for a page>
 concurrency: runs may overlap - <how many> pages in build at once, and
              no two runs claim the same address
 goal: a page live at a known address, measured end to end, and
@@ -142,34 +144,53 @@ run-scoped:
                 every: <cadence>
                 from: publish   until: run close
 handoffs:
-  take-in-request -> set-parameters: what the page is for, in one line
-    that every later decision can be tested against
-  set-parameters -> search-terms: the subject, the audience, and the
-    action the page asks a visitor to take
-  search-terms -> brief-makers: the search requirement at a version,
-    with the demand figure behind every term
-  brief-makers -> produce-material: the request, the search requirement
-    and the action, heard by every agent at the same time
-  produce-material -> edit-draft: the copy at a version, and a source
-    line under every claim it makes
-  edit-draft -> build-page: the copy the editor holds as finished, and
-    the assets at their versions
-  build-page -> wire-tracking: the page as it is actually built, on
-    staging, with the form fields it currently has
-  wire-tracking -> score-page: the page with its measurement on it, and
-    a test record showing a real submission arriving in the CRM
-  score-page -> get-sign-offs: the scores, each citing the standard,
-    its version and the rule applied
-  get-sign-offs -> publish: the approved page at the signed version. A
-    later change voids the approval and sign-offs run again
-  publish -> hand-over: the live address, and the version that went
-    live
-  hand-over -> watch-page: the tracking parameters, and the list of
-    what counts as a conversion on this page
-  watch-page -> fix-page: where people leave the page, with the numbers
-    and their sources attached
-  fix-page -> record-learnings: every change made to the live page,
-    with the result it had
+  take-in-request -> set-parameters [page-purpose]: what the page is
+    for, in one line that every later decision can be tested against
+  set-parameters -> search-terms [audience-and-action]: the subject, the
+    audience, and the action the page asks a visitor to take
+  search-terms -> brief-makers [search-requirement]: the search
+    requirement at a version, with the demand figure behind every term
+  brief-makers -> produce-material [makers-brief]: the request, the
+    search requirement and the action, heard by every agent at the same
+    time
+  produce-material -> edit-draft [sourced-copy]: the copy at a version,
+    and a source line under every claim it makes
+  edit-draft -> build-page [finished-copy-and-assets]: the copy the
+    editor holds as finished, and the assets at their versions
+  build-page -> wire-tracking [staged-page]: the page as it is actually
+    built, on staging, with the form fields it currently has
+  wire-tracking -> score-page [measured-page]: the page with its
+    measurement on it, and a test record showing a real submission
+    arriving in the CRM
+  score-page -> get-sign-offs [page-scores]: the scores, each citing the
+    standard, its version and the rule applied
+  get-sign-offs -> publish [signed-page]: the approved page at the
+    signed version. A later change voids the approval and sign-offs run
+    again
+  publish -> hand-over [live-address]: the live address, and the version
+    that went live
+  hand-over -> watch-page [conversion-definitions]: the tracking
+    parameters, and the list of what counts as a conversion on this page
+  watch-page -> fix-page [drop-off-findings]: where people leave the
+    page, with the numbers and their sources attached
+  fix-page -> record-learnings [page-changes]: every change made to the
+    live page, with the result it had
+deviations:
+  edit-draft -> produce-material [rewrites-asked]: the editor asks for
+    rewrites, so the copy is produced again at a new version
+  wire-tracking -> build-page [form-field-missing]: the form needs
+    another field before the tracking works, so the page is built again
+  score-page -> produce-material [copy-or-asset-failed]: a score fails
+    on the copy or on an asset, so the piece that failed is produced
+    again and scored again
+  score-page -> build-page [page-failed]: a score fails on the page
+    itself, so the page is built again and scored again
+  get-sign-offs -> produce-material [sign-off-changes]: a signer asks
+    for changes, so the material is produced again and only the piece
+    they named reopens
+  fix-page -> produce-material [new-material-needed]: the fix needs new
+    copy or new assets, so it goes back through production and the
+    sign-offs like any other change
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for brand, legal, accuracy and

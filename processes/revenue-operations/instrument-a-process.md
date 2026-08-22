@@ -72,6 +72,13 @@ from: ref/rev/instrument-a-process v1
 owner: <who>                          effective: <date>
 trigger: a process publishes or amends at a version in <your process
          register>, or <who> asks for an existing process to be measured
+         watch: record=<process document>
+                system=<your process register>
+                change=<a process publishes or amends at a version>
+         or watch: record=<the request to measure>
+                system=<where requests are raised>
+                change=<somebody asks for an existing process to be
+                measured>
 concurrency: runs may overlap - <how many> processes are being
              instrumented at once, and one process is instrumented by
              one run at a time
@@ -192,38 +199,66 @@ run-scoped:
                  every: <cadence>
                  from: pick-steps   until: turn-on-signal
 handoffs:
-  take-in-process -> pick-steps: the process at its version, with every
-    step it calls a gate marked as a gate
-  pick-steps -> define-departure: the watched steps, and the unwatched
-    ones with the reason each was left out
-  define-departure -> find-evidence: for each watched step, the
-    observable difference between a followed run and a departed one
-  find-evidence -> name-gaps: the fields and logs that already carry the
-    behavior, each naming its system and how far back it goes
-  find-evidence -> build-baseline: the same fields, so the baseline is
-    built from the evidence that existed before the change
-  name-gaps -> design-changes: the departures nothing would show, and
-    what each one would cost to see
-  design-changes -> check-policy: the change request, field by field,
-    saying what each new field records about a person
-  check-policy -> approve-change: the scored request, with the policy
-    line behind every refusal
-  approve-change -> build-instruments: the approved change at the signed
-    version, and the fields the privacy reviewer struck out
-  build-instruments -> test-detection: the fields and events live, with
-    a dated test showing each one arriving
-  build-baseline -> test-detection: what compliance looked like before,
-    so a change in the number is not read as a change in behavior
-  test-detection -> set-thresholds: the score against the known runs,
-    with every miss and every false alarm listed
-  set-thresholds -> turn-on-signal: the numbers, who is raised to, and
-    how fast
-  set-thresholds -> tell-the-measured: the same numbers, in the words
-    the people doing the work will hear them in
-  turn-on-signal -> watch-first-weeks: the report and the alert path
-    live, each naming the process version it measures
-  watch-first-weeks -> hand-to-review: the tuned detection, its false
-    alarm rate, and the steps it still cannot see
+  take-in-process -> pick-steps [published-process]: the process at its
+    version, with every step it calls a gate marked as a gate
+  pick-steps -> define-departure [watched-steps]: the watched steps, and
+    the unwatched ones with the reason each was left out
+  define-departure -> find-evidence [departure-signs]: for each watched
+    step, the observable difference between a followed run and a
+    departed one
+  find-evidence -> name-gaps [existing-evidence]: the fields and logs
+    that already carry the behavior, each naming its system and how far
+    back it goes
+  find-evidence -> build-baseline [baseline-fields]: the same fields, so
+    the baseline is built from the evidence that existed before the
+    change
+  name-gaps -> design-changes [evidence-gaps]: the departures nothing
+    would show, and what each one would cost to see
+  design-changes -> check-policy [change-request]: the change request,
+    field by field, saying what each new field records about a person
+  check-policy -> approve-change [policy-score]: the scored request,
+    with the policy line behind every refusal
+  approve-change -> build-instruments [approved-change]: the approved
+    change at the signed version, and the fields the privacy reviewer
+    struck out
+  build-instruments -> test-detection [live-instruments]: the fields and
+    events live, with a dated test showing each one arriving
+  build-baseline -> test-detection [baseline]: what compliance looked
+    like before, so a change in the number is not read as a change in
+    behavior
+  test-detection -> set-thresholds [detection-score]: the score against
+    the known runs, with every miss and every false alarm listed
+  set-thresholds -> turn-on-signal [thresholds]: the numbers, who is
+    raised to, and how fast
+  set-thresholds -> tell-the-measured [what-is-measured]: the same
+    numbers, in the words the people doing the work will hear them in
+  turn-on-signal -> watch-first-weeks [live-signal]: the report and the
+    alert path live, each naming the process version it measures
+  watch-first-weeks -> hand-to-review [tuned-measure]: the tuned
+    detection, its false alarm rate, and the steps it still cannot see
+deviations:
+  name-gaps -> define-departure [no-system-shows-departure]: departure
+    cannot be seen in any system, so what departure looks like is
+    written again or the step moves to the unwatched list
+  check-policy -> pick-steps [watching-refused]: the policy check
+    refuses the watching, so the steps worth watching are picked again
+    from what is left
+  approve-change -> design-changes [change-cut-back]: the systems owner
+    refuses or cuts back the change, so the fields and events are
+    designed again
+  test-detection -> design-changes [detection-misses-departures]: the
+    detection misses departures it was shown, so it is designed again
+    and the same known runs are put through it
+  watch-first-weeks -> set-thresholds [signal-fires-wrongly]: the signal
+    fires on runs that followed the process, so the thresholds are set
+    again and the runs that fired wrongly are named
+  watch-first-weeks -> define-departure [step-never-observable]: the
+    first weeks show a watched step nothing can see, so what departure
+    looks like for that step is written again
+  watch-first-weeks -> build-instruments [instrument-broke]: a field is
+    renamed or a screen retired and the evidence stops arriving, so the
+    instruments are built again rather than the drop being read as
+    perfect compliance
 bindings:
   roster:  <who holds each role - the agent claiming adoption-monitor,
            the agent claiming analytics, the named systems owner, the

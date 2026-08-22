@@ -76,6 +76,14 @@ from: ref/rev/fix-a-misroute v1
 owner: <who>                           effective: <date>
 trigger: somebody reports that work reached the wrong person, or a
          routing check finds an item outside <your rule register>
+         watch: record=<the routed item>
+                system=<where the work is delivered>
+                change=<somebody reports that work reached the wrong
+                person>
+         or watch: record=<the routed item>
+                system=<your rule register>
+                change=<a routing check finds an item the rules do not
+                place where it landed>
 concurrency: runs may overlap freely - one misrouted item is one run,
              and <how many> open runs against one rule pause that rule's
              next change
@@ -158,36 +166,55 @@ run-scoped:
   sweep  - runs allocate-and-reconcile        owner: lead-scorer
            from: find-others  until: run close
 handoffs:
-  take-in-report -> confirm-misroute: what was reported, by whom, and
-    the item it was reported about
-  confirm-misroute -> hold-clock: the rule version, the clause that
-    matched, and where the item actually went
-  hold-clock -> find-right-owner: the item with the time it first
-    arrived, and how much of its clock is already spent
-  find-right-owner -> move-work: the owner the rule names, or the
-    fallback owner with the reason no clause matched
-  move-work -> tell-both: the reassignment as made, the reason, and the
-    rule version behind it
-  tell-both -> record-happened: who was told, when, and what the
-    customer has already heard
-  record-happened -> find-cause: everything already said or promised, so
-    the new owner is not the second person to answer the same question
-  find-cause -> name-cause: the clause, the field, the value at the time
-    of routing, and which of the two is inconsistent
-  name-cause -> fix-record: the field to correct, its owning system, and
-    the value it should hold
-  name-cause -> raise-change: the clause to change and why the
-    current wording sends this case wrong
-  fix-record -> find-others: the corrected field, so the replay reads
-    the data as it now stands
-  raise-change -> find-others: the clause under change, so the
-    replay tests the wording that is actually in force
-  find-others -> move-others: every item the same clause placed the same
-    way, with the owner each one should have
-  move-others -> file-the-case: how many items moved, and every one that
-    was left where it was with the reason
-  file-the-case -> report-pattern: the case against its rule version,
-    with the cause and the counts
+  take-in-report -> confirm-misroute [misroute-report]: what was
+    reported, by whom, and the item it was reported about
+  confirm-misroute -> hold-clock [matched-clause]: the rule version, the
+    clause that matched, and where the item actually went
+  hold-clock -> find-right-owner [clock-position]: the item with the
+    time it first arrived, and how much of its clock is already spent
+  find-right-owner -> move-work [right-owner]: the owner the rule names,
+    or the fallback owner with the reason no clause matched
+  move-work -> tell-both [reassignment]: the reassignment as made, the
+    reason, and the rule version behind it
+  tell-both -> record-happened [both-receivers-told]: who was told,
+    when, and what the customer has already heard
+  record-happened -> find-cause [what-was-promised]: everything already
+    said or promised, so the new owner is not the second person to
+    answer the same question
+  find-cause -> name-cause [clause-and-value]: the clause, the field,
+    the value at the time of routing, and which of the two is
+    inconsistent
+  name-cause -> fix-record [field-to-correct]: the field to correct, its
+    owning system, and the value it should hold
+  name-cause -> raise-change [clause-to-change]: the clause to change
+    and why the current wording sends this case wrong
+  fix-record -> find-others [corrected-field]: the corrected field, so
+    the replay reads the data as it now stands
+  raise-change -> find-others [clause-under-change]: the clause under
+    change, so the replay tests the wording that is actually in force
+  find-others -> move-others [other-items-like-it]: every item the same
+    clause placed the same way, with the owner each one should have
+  move-others -> file-the-case [items-moved]: how many items moved, and
+    every one that was left where it was with the reason
+  file-the-case -> report-pattern [filed-case]: the case against its
+    rule version, with the cause and the counts
+deviations:
+  confirm-misroute -> file-the-case [routing-was-right]: the item is
+    where the rule says it belongs, so nothing is moved and no cause is
+    named. The case is filed against the rule anyway, because a rule
+    people keep reporting is a rule about to be argued with
+  tell-both -> find-right-owner [named-owner-refuses]: the owner the
+    rule names will not take it, so the owner is found again and the
+    refusal goes into the case
+  record-happened -> tell-both [promise-already-made]: the wrong
+    receiver already promised the customer something, so both sides are
+    told again with what was promised
+  find-others -> raise-change [clause-wrong-across-the-period]: the same
+    clause got a large share of the period wrong, so the rule change is
+    raised first and the items are moved once against the new wording
+  move-others -> hold-clock [item-past-its-clock]: a moved item is
+    already past its clock, so the clock is read again from that item's
+    first arrival and the miss is recorded against it
 bindings:
   roster:  <the agent claiming routing-keeper> ·
            <the agent claiming data-steward> ·

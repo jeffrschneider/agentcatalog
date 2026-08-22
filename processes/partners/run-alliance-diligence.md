@@ -78,6 +78,8 @@ from: ref/prt/run-alliance-diligence v1
 owner: <who>                          effective: <date>
 trigger: a joint thesis is sent to diligence by <who>, in <your partner
          record>
+         watch: record=<joint thesis> system=<your partner record>
+                change=<a joint thesis is sent to diligence>
 concurrency: runs may overlap - <how many> diligence runs live at once,
              and one candidate company is in one run at a time
 goal: every claim the thesis rests on either proved with evidence or
@@ -179,38 +181,60 @@ run-scoped:
                    owner: <your finance role>
                    from: agree-access until: run close
 handoffs:
-  take-in-thesis -> set-scope: the numbered claims the thesis rests on,
-    each marked as provable or as opinion
-  set-scope -> agree-access: the areas in scope, how deep each goes, and
-    what evidence would settle each claim
-  agree-access -> open-log: what the other side agreed to give, to whom,
-    by when, and under which agreement
-  open-log -> check-company: the request list, and the person on each
-    side who owns every open request
-  check-company -> list-findings: the entity, its owners, its filings
-    and its litigation, each with the source and the date read
-  read-financials -> list-findings: the financial position, the runway,
-    and the customers they cannot afford to lose
-  ask-customers -> list-findings: what their customers said, in their
-    own words, with the count that would not speak to us
-  test-technology -> read-dependencies: the product as it ran on our
-    cases, with every failure recorded rather than retried quietly
-  read-dependencies -> list-findings: the licenses and third parties
-    their product needs, and which of them we would inherit
-  check-security -> list-findings: how they hold data, who can reach it,
-    what is certified and what is only claimed
-  read-contracts -> check-ownership: the clauses that limit what they
-    may sign with us, quoted
-  check-ownership -> list-findings: who owns each piece we would embed,
-    and what survives a change of control
-  check-people -> list-findings: the team behind the product, its size
-    and turnover, and what the roadmap puts after our work
-  screen-conduct -> list-findings: the screens run, the date, the source
-    and every hit with what was done about it
-  list-findings -> price-findings: every finding once, rated, with its
-    evidence, its owner and the claim it settles or leaves open
-  price-findings -> report-sponsor: each finding priced, covered,
-    accepted or called a stop, with the person who decided
+  take-in-thesis -> set-scope [claims-to-prove]: the numbered claims the
+    thesis rests on, each marked as provable or as opinion
+  set-scope -> agree-access [scope-and-evidence]: the areas in scope,
+    how deep each goes, and what evidence would settle each claim
+  agree-access -> open-log [access-agreed]: what the other side agreed
+    to give, to whom, by when, and under which agreement
+  open-log -> check-company [request-list]: the request list, and the
+    person on each side who owns every open request
+  check-company -> list-findings [company-record]: the entity, its
+    owners, its filings and its litigation, each with the source and the
+    date read
+  read-financials -> list-findings [financial-position]: the financial
+    position, the runway, and the customers they cannot afford to lose
+  ask-customers -> list-findings [customer-accounts]: what their
+    customers said, in their own words, with the count that would not
+    speak to us
+  test-technology -> read-dependencies [test-results]: the product as it
+    ran on our cases, with every failure recorded rather than retried
+    quietly
+  read-dependencies -> list-findings [inherited-dependencies]: the
+    licenses and third parties their product needs, and which of them we
+    would inherit
+  check-security -> list-findings [security-practice]: how they hold
+    data, who can reach it, what is certified and what is only claimed
+  read-contracts -> check-ownership [binding-clauses]: the clauses that
+    limit what they may sign with us, quoted
+  check-ownership -> list-findings [ownership-position]: who owns each
+    piece we would embed, and what survives a change of control
+  check-people -> list-findings [team-and-roadmap]: the team behind the
+    product, its size and turnover, and what the roadmap puts after our
+    work
+  screen-conduct -> list-findings [screening-results]: the screens run,
+    the date, the source and every hit with what was done about it
+  list-findings -> price-findings [rated-findings]: every finding once,
+    rated, with its evidence, its owner and the claim it settles or
+    leaves open
+  price-findings -> report-sponsor [priced-findings]: each finding
+    priced, covered, accepted or called a stop, with the person who
+    decided
+deviations:
+  agree-access -> set-scope [access-refused]: the other side will not
+    give access, so the areas that cannot be proved are cut from scope
+    in writing and reported as cut rather than clean
+  test-technology -> agree-access [testing-refused]: they will not let
+    us run the product on our own cases, so the access agreement is
+    worked again before anything is called a test
+  list-findings -> open-log [answers-contradict]: one answer contradicts
+    another, so the request is reopened and both answers stay in the log
+    with their dates
+  price-findings -> open-log [fact-nobody-has]: pricing a finding needs
+    a fact nobody has, so it goes back to the log as a new request
+  report-sponsor -> set-scope [area-reopened]: the sponsor sends an area
+    back, so the scope reopens for that area only and the earlier report
+    is superseded rather than edited
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the alliances lead, the finance

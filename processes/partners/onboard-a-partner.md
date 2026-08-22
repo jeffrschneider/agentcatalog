@@ -78,6 +78,9 @@ from: ref/prt/onboard-a-partner v1
 owner: <who>                          effective: <date>
 trigger: a partner agreement is countersigned in <your agreement
          system>
+         watch: record=<partner agreement>
+                system=<your agreement system>
+                change=<a partner agreement is countersigned>
 concurrency: runs may overlap - <how many> onboardings open at once, and
              one partner is onboarded by one run at a time
 goal: the partner's named people hold working access to the portal, the
@@ -182,42 +185,64 @@ run-scoped:
            every: <cadence>
            from: agree-plan   until: confirm-access
 handoffs:
-  take-in-agreement -> name-both-sides: what the partner may sell and
-    deliver, so the people named can actually cover it
-  take-in-agreement -> collect-details: the tier and the entity, so the
-    right details are asked for once
-  name-both-sides -> agree-plan: the named person on each side, with
-    their deputy and the date they took it
-  agree-plan -> create-accounts: who needs which account, in what order,
-    against the dates the partner was given
-  collect-details -> check-record: the details as the partner supplied
-    them, each with the date and who supplied it
-  check-record -> create-accounts: the scored record, with what is
-    missing named and the checklist version behind the score
-  create-accounts -> set-visibility: the accounts as created, each tied
-    to a named person and their role at the partner
-  create-accounts -> grant-systems: the same accounts, so system access
-    is granted to identities that already exist
-  set-visibility -> publish-materials: what the tier allows the partner
-    to see, so nothing is published the partner cannot open
-  grant-systems -> kick-off: every system opened, at what access level,
-    with the date and who granted it
-  publish-materials -> kick-off: the materials at a version, with the
-    address of each one
-  kick-off -> portal-walkthrough: the plan as both sides heard it, and
-    the questions asked in the room
-  kick-off -> set-registration: the people who will register deals, and
-    the territories they cover
-  portal-walkthrough -> test-the-path: every question the partner had to
-    ask, and what they could not find alone
-  set-registration -> test-the-path: how a registration is meant to
-    travel, so the test can be checked against it
-  test-the-path -> confirm-access: the test deal and the test ticket
-    with the time each one took to arrive
-  confirm-access -> set-cadence: the partner's dated confirmation, per
-    named person, and anything they said was still missing
-  set-cadence -> record-onboarding: the standing call in diaries, with
-    its agenda and its attendees
+  take-in-agreement -> name-both-sides [selling-rights]: what the
+    partner may sell and deliver, so the people named can actually
+    cover it
+  take-in-agreement -> collect-details [tier-and-entity]: the tier and
+    the entity, so the right details are asked for once
+  name-both-sides -> agree-plan [named-contacts]: the named person on
+    each side, with their deputy and the date they took it
+  agree-plan -> create-accounts [account-order]: who needs which
+    account, in what order, against the dates the partner was given
+  collect-details -> check-record [partner-details]: the details as the
+    partner supplied them, each with the date and who supplied it
+  check-record -> create-accounts [record-score]: the scored record,
+    with what is missing named and the checklist version behind the
+    score
+  create-accounts -> set-visibility [portal-accounts]: the accounts as
+    created, each tied to a named person and their role at the partner
+  create-accounts -> grant-systems [account-identities]: the same
+    accounts, so system access is granted to identities that already
+    exist
+  set-visibility -> publish-materials [tier-visibility]: what the tier
+    allows the partner to see, so nothing is published the partner
+    cannot open
+  grant-systems -> kick-off [system-grants]: every system opened, at
+    what access level, with the date and who granted it
+  publish-materials -> kick-off [materials-set]: the materials at a
+    version, with the address of each one
+  kick-off -> portal-walkthrough [kick-off-record]: the plan as both
+    sides heard it, and the questions asked in the room
+  kick-off -> set-registration [registering-people]: the people who
+    will register deals, and the territories they cover
+  portal-walkthrough -> test-the-path [walkthrough-questions]: every
+    question the partner had to ask, and what they could not find alone
+  set-registration -> test-the-path [registration-route]: how a
+    registration is meant to travel, so the test can be checked against
+    it
+  test-the-path -> confirm-access [test-results]: the test deal and the
+    test ticket with the time each one took to arrive
+  confirm-access -> set-cadence [access-confirmation]: the partner's
+    dated confirmation, per named person, and anything they said was
+    still missing
+  set-cadence -> record-onboarding [standing-call]: the standing call
+    in diaries, with its agenda and its attendees
+deviations:
+  check-record -> collect-details [record-rejected]: the record is
+    missing something a system will not accept, so the field is
+    collected again while access that does not need it is still granted
+  kick-off -> name-both-sides [different-people]: the partner sends
+    people the agreement never named, so both sides are named again and
+    the accounts follow whoever actually turned up
+  portal-walkthrough -> publish-materials [material-missing]: the
+    material is not at the address the partner was given, so the set is
+    published again at a new version
+  test-the-path -> grant-systems [test-deal-lost]: the test
+    registration or the test ticket never arrives, so the systems are
+    granted again and the same test is run on the fixed access
+  confirm-access -> create-accounts [partner-cannot-get-in]: a named
+    person cannot get in, so the account for that person is created
+    again and their confirmation is asked for a second time
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the systems

@@ -69,6 +69,9 @@ from: ref/sls/answer-a-security-questionnaire v1
 owner: <who>                          effective: <date>
 trigger: a buyer sends a security, privacy or procurement questionnaire
          against an open opportunity in <your CRM>
+         watch: record=<questionnaire> system=<your CRM>
+                change=<a questionnaire is logged against an open
+                opportunity>
 concurrency: runs may overlap freely - <how many> questionnaires are in
              flight at once, and one buyer's form is one run
 goal: every question on the buyer's form answered from a maintained
@@ -165,36 +168,55 @@ run-scoped:
               every: <cadence>
               from: read-rules   until: send-response
 handoffs:
-  take-in-questionnaire -> read-rules: the form as received, and where
-    it has to be filed
-  read-rules -> sort-questions: the deadline, the format, and any rule
-    about who may answer
-  sort-questions -> match-library: the questions, deduplicated, each
-    with the area it belongs to
-  match-library -> check-matches: each match, the answer version, and
-    how close the match actually is
-  check-matches -> route-unanswered: every answer that no longer holds,
-    with the source that contradicts it
-  check-matches -> fill-form: the matched answers that still hold, each
-    naming its version and its source
-  route-unanswered -> draft-answers: the open questions, each with the
-    person who owns the fact and the date it is needed
-  draft-answers -> check-disclosure: the drafted answers, each naming
-    the control, report or policy behind it
-  check-disclosure -> approve-answers: the scored answers, with the
-    rule behind every failure
-  approve-answers -> fill-form: the approved answers at the signed
-    version. A later edit voids the approval and approval runs again
-  fill-form -> attach-evidence: the filled form, and every answer that
-    points at a document
-  attach-evidence -> check-form: the form and its attachments, as they
-    would be sent
-  check-form -> send-response: the scored form, with the question or
-    the rule behind every failure
-  send-response -> answer-follow-ups: what was sent, when, to whom, and
-    the receipt
-  answer-follow-ups -> feed-library: every answer written in this run,
-    with its source and the questions it was written for
+  take-in-questionnaire -> read-rules [received-form]: the form as
+    received, and where it has to be filed
+  read-rules -> sort-questions [form-rules]: the deadline, the format,
+    and any rule about who may answer
+  sort-questions -> match-library [sorted-questions]: the questions,
+    deduplicated, each with the area it belongs to
+  match-library -> check-matches [library-matches]: each match, the
+    answer version, and how close the match actually is
+  check-matches -> route-unanswered [stale-answers]: every answer that
+    no longer holds, with the source that contradicts it
+  check-matches -> fill-form [standing-answers]: the matched answers
+    that still hold, each naming its version and its source
+  route-unanswered -> draft-answers [open-questions]: the open
+    questions, each with the person who owns the fact and the date it
+    is needed
+  draft-answers -> check-disclosure [drafted-answers]: the drafted
+    answers, each naming the control, report or policy behind it
+  check-disclosure -> approve-answers [disclosure-findings]: the
+    scored answers, with the rule behind every failure
+  approve-answers -> fill-form [approved-answers]: the approved
+    answers at the signed version. A later edit voids the approval and
+    approval runs again
+  fill-form -> attach-evidence [filled-form]: the filled form, and
+    every answer that points at a document
+  attach-evidence -> check-form [form-with-evidence]: the form and its
+    attachments, as they would be sent
+  check-form -> send-response [form-check-findings]: the scored form,
+    with the question or the rule behind every failure
+  send-response -> answer-follow-ups [sent-response]: what was sent,
+    when, to whom, and the receipt
+  answer-follow-ups -> feed-library [new-answers]: every answer
+    written in this run, with its source and the questions it was
+    written for
+deviations:
+  match-library -> route-unanswered [no-library-match]: the library
+    holds no answer for the question at all, so it goes to the owner
+    of the fact and check-matches has nothing to check for it
+  check-disclosure -> draft-answers [answer-cannot-be-said]: the
+    answer names something confidential, claims what the register does
+    not carry, or commits to a date, so it is drafted again
+  approve-answers -> draft-answers [approver-wants-changes]: a signer
+    will not approve the answer as written, so it goes back to the
+    person who owns the fact
+  check-form -> route-unanswered [questions-left-blank]: the form
+    check finds questions still unanswered, so they go back to the
+    owner of the fact before the response leaves
+  answer-follow-ups -> route-unanswered [follow-up-unanswered]: the
+    buyer's second round asks something the library cannot answer, so
+    it goes to whoever owns that fact
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the security reviewer, the legal

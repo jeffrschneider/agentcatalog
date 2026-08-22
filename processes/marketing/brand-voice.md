@@ -92,6 +92,10 @@ from: ref/mkt/brand-voice v1
 owner: <who>                          effective: <date>
 trigger: a brand positioning is approved and issued at a version in
          <your positioning process>
+         watch: record=<the positioning>
+                system=<your positioning process>
+                change=<a positioning is approved and issued at a
+                version>
 concurrency: one run at a time - two runs would put two standards in
              front of the same signers
 goal: a voice, a tone setting for each situation, and a messaging
@@ -204,47 +208,77 @@ run-scoped:
            every: <cadence>
            from: tell-the-readers   until: run close
 handoffs:
-  take-in-position -> sound-now / audience-words: the approved
-    positioning at its version, what the standard has to cover, and
-    the date it is due. Both readings work from one record
-  sound-now -> brief-makers: the sample of live material, each piece
-    with what it was made to do and how it reads today
-  audience-words -> brief-makers: the words buyers use for the problem
-    and the category, each with its source and the date it was pulled
-  brief-makers -> draft-voice: the positioning and the promise the
-    voice has to fit, and what the standard will have to score
-  brief-makers -> build-architecture: the promise and the proof
-    already recorded under it
-  draft-voice -> set-tone: the traits at a version, each with the
-    sentence that defines it
-  set-tone -> word-list: the voice and the tone settings at a version
-  set-tone -> scorable-rules: the same version, as the text the rules
-    are written from
-  build-architecture -> source-messages: the pillars at a version,
-    claim by claim
-  build-architecture -> audience-versions: the pillars and the order
-    they are meant to be said in
-  word-list -> scorable-rules: the words to use and the words to
-    avoid, each with the reason it is on the list
-  scorable-rules -> try-the-rules: the numbered rules at a version,
-    each with an example that passes and an example that fails
-  source-messages -> test-on-buyers: the pillars with a source under
-    every claim, and any claim still unsourced marked as unsourced
-  audience-versions -> test-on-buyers: the version each audience gets
-  try-the-rules -> get-sign-offs: the sample scored rule by rule, and
-    the rules the two readers scored differently
-  test-on-buyers -> get-sign-offs: what each buyer said, attributed,
-    beside the message it was said about
-  get-sign-offs -> issue-version: the signed voice, tone settings,
-    architecture and word list, at the version the signers read
-  issue-version -> tell-the-readers: the numbered version, what
-    changed in it, and the date it applies from
-  tell-the-readers -> brief-the-writers: the version and the rules the
-    writing agents have to work to
-  brief-the-writers -> watch-the-scores: the first pieces written
-    under the new version, and the date each one was scored
-  watch-the-scores -> record-learnings: the scores by rule, naming the
-    rules material keeps failing and the rules nobody could apply
+  take-in-position -> sound-now / audience-words [the-positioning]:
+    the approved positioning at its version, what the standard has to
+    cover, and the date it is due. Both readings work from one record
+  sound-now -> brief-makers [how-it-reads-now]: the sample of live
+    material, each piece with what it was made to do and how it reads
+    today
+  audience-words -> brief-makers [buyer-words]: the words buyers use
+    for the problem and the category, each with its source and the
+    date it was pulled
+  brief-makers -> draft-voice [voice-brief]: the positioning and the
+    promise the voice has to fit, and what the standard will have to
+    score
+  brief-makers -> build-architecture [promise-and-proof]: the promise
+    and the proof already recorded under it
+  draft-voice -> set-tone [voice-traits]: the traits at a version,
+    each with the sentence that defines it
+  set-tone -> word-list [voice-and-tone]: the voice and the tone
+    settings at a version
+  set-tone -> scorable-rules [text-for-rules]: the same version, as
+    the text the rules are written from
+  build-architecture -> source-messages [pillar-claims]: the pillars
+    at a version, claim by claim
+  build-architecture -> audience-versions [pillars-and-order]: the
+    pillars and the order they are meant to be said in
+  word-list -> scorable-rules [the-word-list]: the words to use and
+    the words to avoid, each with the reason it is on the list
+  scorable-rules -> try-the-rules [numbered-rules]: the numbered rules
+    at a version, each with an example that passes and an example that
+    fails
+  source-messages -> test-on-buyers [sourced-pillars]: the pillars
+    with a source under every claim, and any claim still unsourced
+    marked as unsourced
+  audience-versions -> test-on-buyers [audience-wording]: the version
+    each audience gets
+  try-the-rules -> get-sign-offs [rule-scores]: the sample scored rule
+    by rule, and the rules the two readers scored differently
+  test-on-buyers -> get-sign-offs [what-buyers-said]: what each buyer
+    said, attributed, beside the message it was said about
+  get-sign-offs -> issue-version [signed-standard]: the signed voice,
+    tone settings, architecture and word list, at the version the
+    signers read
+  issue-version -> tell-the-readers [issued-version]: the numbered
+    version, what changed in it, and the date it applies from
+  tell-the-readers -> brief-the-writers [version-for-writers]: the
+    version and the rules the writing agents have to work to
+  brief-the-writers -> watch-the-scores [first-pieces]: the first
+    pieces written under the new version, and the date each one was
+    scored
+  watch-the-scores -> record-learnings [scores-by-rule]: the scores by
+    rule, naming the rules material keeps failing and the rules nobody
+    could apply
+deviations:
+  source-messages -> build-architecture [claim-with-no-source]: a
+    claim in a pillar has no source, so the pillar is built again
+    without it or with the source found
+  try-the-rules -> scorable-rules [readers-disagree]: two readers
+    score the same piece differently, so the rule they disagreed on is
+    written again
+  test-on-buyers -> build-architecture [buyers-do-not-recognize-it]:
+    buyers cannot say what the company does, or cannot tell two
+    pillars apart, so the architecture is built again
+  get-sign-offs -> scorable-rules [rule-changes]: a signer comes back
+    with changes to the rules
+  get-sign-offs -> build-architecture [architecture-changes]: a signer
+    comes back with changes to the architecture
+  watch-the-scores -> scorable-rules [rule-nobody-can-apply]: a rule
+    nobody can apply turns up after the version is issued, so the rule
+    is written again and goes out as a new version
+  any -> take-in-position [positioning-changed]: the positioning
+    changes while the run is open, and <who> says whether the run is
+    still answering the right question
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, legal and the

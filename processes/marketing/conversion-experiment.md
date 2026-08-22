@@ -71,6 +71,9 @@ PROCESS: conversion experiment        id: <team>/conversion-experiment   v1
 from: ref/mkt/conversion-experiment v1
 owner: <who>                          effective: <date>
 trigger: a hypothesis is accepted for testing in <your planning process>
+         watch: record=<hypothesis>
+                system=<your planning process>
+                change=<a hypothesis is accepted for testing>
 concurrency: runs may overlap - <how many> tests live on the same
              visitors at once
 goal: a change tested against the version it replaces, read on the date
@@ -157,41 +160,66 @@ run-scoped:
            every: <cadence>
            from: brief-makers   until: carry-out
 handoffs:
-  take-in-hypothesis -> set-terms: the hypothesis in one line the test
-    can settle, and who it is about
-  set-terms -> size-test: the deciding measure, the rate it runs at
-    now, and the smallest improvement worth acting on
-  set-terms -> clear-traffic: the audience the test runs on, and the
-    dates it needs those visitors for
-  size-test -> brief-makers: the traffic the test needs, the run
-    length, the read date, and the rule saying what would end the test
-    early
-  clear-traffic -> brief-makers: the tests and changes already booked
-    on the same visitors, and what was moved to make room
-  brief-makers -> produce-variants: the request as every agent heard it,
-    and which version each maker is building
-  produce-variants -> build-variants: the copy and the visuals for
-    every version, at a version
-  build-variants -> wire-measurement: each version as it will be
-    served, and the rule that decides which visitor sees which one
-  wire-measurement -> get-sign-offs: every version at a version, with
-    the deciding measure and the guardrail measures named against it
-  get-sign-offs -> check-setup: the approved versions at the signed
-    version. A later change voids the approval and sign-offs run again
-  check-setup -> start-test: a dated record showing every version
-    serving and every measure arriving
-  start-test -> watch-test: the time the split started, and the date
-    the result may be read
-  watch-test -> read-result: the traffic each version got, set against
-    the traffic the test was sized for
-  read-result -> decide-outcome: the number on each version with the
-    range around it, the size of the difference, whether that
-    difference is larger than the noise, and what the guardrail
-    measures did
-  decide-outcome -> carry-out: the decision, the person who made it,
-    and the version that stands
-  carry-out -> record-learnings: what is live now, and the numbers the
-    decision rested on
+  take-in-hypothesis -> set-terms [the-hypothesis]: the hypothesis in
+    one line the test can settle, and who it is about
+  set-terms -> size-test [deciding-measure]: the deciding measure, the
+    rate it runs at now, and the smallest improvement worth acting on
+  set-terms -> clear-traffic [audience-and-dates]: the audience the
+    test runs on, and the dates it needs those visitors for
+  size-test -> brief-makers [test-size]: the traffic the test needs,
+    the run length, the read date, and the rule saying what would end
+    the test early
+  clear-traffic -> brief-makers [booked-traffic]: the tests and changes
+    already booked on the same visitors, and what was moved to make
+    room
+  brief-makers -> produce-variants [variant-brief]: the request as
+    every agent heard it, and which version each maker is building
+  produce-variants -> build-variants [variant-content]: the copy and
+    the visuals for every version, at a version
+  build-variants -> wire-measurement [served-variants]: each version as
+    it will be served, and the rule that decides which visitor sees
+    which one
+  wire-measurement -> get-sign-offs [measured-variants]: every version
+    at a version, with the deciding measure and the guardrail measures
+    named against it
+  get-sign-offs -> check-setup [approved-variants]: the approved
+    versions at the signed version. A later change voids the approval
+    and sign-offs run again
+  check-setup -> start-test [setup-proof]: a dated record showing every
+    version serving and every measure arriving
+  start-test -> watch-test [split-start]: the time the split started,
+    and the date the result may be read
+  watch-test -> read-result [traffic-delivered]: the traffic each
+    version got, set against the traffic the test was sized for
+  read-result -> decide-outcome [result-reading]: the number on each
+    version with the range around it, the size of the difference,
+    whether that difference is larger than the noise, and what the
+    guardrail measures did
+  decide-outcome -> carry-out [outcome-decision]: the decision, the
+    person who made it, and the version that stands
+  carry-out -> record-learnings [live-version]: what is live now, and
+    the numbers the decision rested on
+deviations:
+  get-sign-offs -> produce-variants [sign-off-changes]: a signer comes
+    back with changes, so the version they named is made again
+  check-setup -> build-variants [version-will-not-serve]: a version
+    does not serve in the dry run, so it is built again
+  check-setup -> wire-measurement [numbers-do-not-arrive]: a version's
+    numbers do not arrive in the dry run, so the measurement is wired
+    again
+  watch-test -> get-sign-offs [changed-mid-run]: a version is changed
+    while the test is live, which voids the approval and starts the
+    traffic count again
+  watch-test -> clear-traffic [visitors-taken]: another change lands on
+    the same visitors mid-run, so the test is recorded as spoiled and
+    the traffic is cleared again before it starts over
+  watch-test -> decide-outcome [guardrail-gets-worse]: a guardrail
+    measure gets worse while the test is live, so the decision is put
+    to a person on the partial numbers and nothing is read at
+    read-result
+  read-result -> watch-test [traffic-fell-short]: the read date arrives
+    with less traffic than the test was sized for, so the result is
+    recorded as undecided and a person says whether the test runs on
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and legal>

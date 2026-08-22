@@ -73,6 +73,10 @@ from: ref/prt/review-partner-performance v1
 owner: <who>                          effective: <date>
 trigger: the review cadence comes round every <cadence>, or a tripwire
          named in a partner's plan fires and pulls that partner in early
+         watch: every=<cadence>
+         or watch: record=<partner plan>
+                system=<your partner record>
+                change=<a tripwire named in the plan fires>
 concurrency: one round at a time for a given <region or partner type>,
              and a partner belongs to one round at a time
 goal: every partner in scope measured against the plan they agreed to,
@@ -166,42 +170,62 @@ run-scoped:
                 every: <cadence>
                 from: open-round   until: hold-review
 handoffs:
-  open-round -> pull-plans: the partners in scope, and why each one is
-    in this round rather than the next
-  pull-plans -> gather-delivered: each plan at its agreed version, with
-    the targets and the dates they fell due
-  pull-plans -> read-obligations: the obligations the plan named, so a
-    certification is read against a commitment
-  pull-plans -> check-our-side: what the company owed this partner, so
-    both sides of the plan are read in the same round
-  gather-delivered -> reconcile-numbers: the company's count, each line
-    naming the system and the date it was read from
-  reconcile-numbers -> score-partners: the agreed count, with every
-    difference the two sides could not settle carried as open and
-    marked as open
-  read-obligations -> score-partners: every obligation marked met,
-    missed or not yet due, with the evidence behind each
-  check-our-side -> score-partners: what the company delivered and what
-    it missed, dated, so a miss on our side is visible in the score
-  score-partners -> explain-gaps: the score for each partner and the
-    inputs under it
-  explain-gaps -> draft-findings: a reason for every miss, marked as
-    the partner's, the company's, or the market's
-  draft-findings -> hold-review: one finding per partner, so the review
-    argues with a recommendation rather than a blank page
-  hold-review -> decide-partners: what the partner lead said, what the
-    evidence said, and where the two did not agree
-  decide-partners -> agree-actions: the call on each partner, and what
-    the decision says has to change
-  decide-partners -> refer-tiers: the partners whose result moves a
-    tier, with the score and the date behind it
-  agree-actions -> tell-partner: the actions as the partner agreed
-    them, with an owner and a date on both sides
-  tell-partner -> report-round: the partners who were told, when, and
-    anybody who disputed what they were told
-  refer-tiers -> report-round: the referrals made, so the program
-    report and the tiering round start from one list
-  report-round -> record-learnings: the report, as delivered
+  open-round -> pull-plans [partners-in-scope]: the partners in scope,
+    and why each one is in this round rather than the next
+  pull-plans -> gather-delivered [agreed-plans]: each plan at its
+    agreed version, with the targets and the dates they fell due
+  pull-plans -> read-obligations [plan-obligations]: the obligations
+    the plan named, so a certification is read against a commitment
+  pull-plans -> check-our-side [what-we-owed]: what the company owed
+    this partner, so both sides of the plan are read in the same round
+  gather-delivered -> reconcile-numbers [our-count]: the company's
+    count, each line naming the system and the date it was read from
+  reconcile-numbers -> score-partners [agreed-count]: the agreed count,
+    with every difference the two sides could not settle carried as
+    open and marked as open
+  read-obligations -> score-partners [obligation-states]: every
+    obligation marked met, missed or not yet due, with the evidence
+    behind each
+  check-our-side -> score-partners [our-delivery]: what the company
+    delivered and what it missed, dated, so a miss on our side is
+    visible in the score
+  score-partners -> explain-gaps [scores-and-inputs]: the score for
+    each partner and the inputs under it
+  explain-gaps -> draft-findings [gap-reasons]: a reason for every
+    miss, marked as the partner's, the company's, or the market's
+  draft-findings -> hold-review [partner-findings]: one finding per
+    partner, so the review argues with a recommendation rather than a
+    blank page
+  hold-review -> decide-partners [review-answers]: what the partner
+    lead said, what the evidence said, and where the two did not agree
+  decide-partners -> agree-actions [partner-calls]: the call on each
+    partner, and what the decision says has to change
+  decide-partners -> refer-tiers [tier-movers]: the partners whose
+    result moves a tier, with the score and the date behind it
+  agree-actions -> tell-partner [agreed-actions]: the actions as the
+    partner agreed them, with an owner and a date on both sides
+  tell-partner -> report-round [partners-told]: the partners who were
+    told, when, and anybody who disputed what they were told
+  refer-tiers -> report-round [referrals-made]: the referrals made, so
+    the program report and the tiering round start from one list
+  report-round -> record-learnings [round-report]: the report, as
+    delivered
+deviations:
+  reconcile-numbers -> gather-delivered [count-does-not-match]: the
+    partner's count does not match ours, so the company's lines are
+    gathered again with the partner's lines beside them
+  explain-gaps -> gather-delivered [miss-has-no-reason]: no reason can
+    be found for a miss, so what was delivered is gathered again before
+    the gap is recorded as unexplained
+  hold-review -> draft-findings [finding-not-ready]: the finding is not
+    ready to be answered for, so it is drafted again against the
+    evidence before the review takes it
+  decide-partners -> explain-gaps [evidence-does-not-settle]: the
+    evidence does not settle what happens to a partner, so the gaps are
+    explained again by both sides
+  tell-partner -> reconcile-numbers [numbers-disputed]: the partner
+    disputes the numbers they were told, so the counts are reconciled
+    again with their evidence attached
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, the partner leads who answer for their partners, the

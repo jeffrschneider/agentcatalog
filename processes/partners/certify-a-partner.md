@@ -79,6 +79,9 @@ from: ref/prt/certify-a-partner v1
 owner: <who>                          effective: <date>
 trigger: an onboarded partner names the people who will sell or deliver
          in <your partner portal>
+         watch: record=<partner record> system=<your partner portal>
+                change=<an onboarded partner names the people who will
+                sell or deliver>
 concurrency: runs may overlap - <how many> certification runs open at
              once, and one partner is certified by one run at a time
 goal: every named person passes the exam and the practical for their
@@ -183,44 +186,63 @@ run-scoped:
   cost       - runs allocate-and-reconcile    owner: <your enablement role>
                from: book-sessions   until: run close
 handoffs:
-  take-in-people -> set-requirements: the roles the partner intends to
-    cover, and how many people they are putting behind each one
-  take-in-people -> read-prior-skill: the named people, with what each
-    one claims to have done before
-  set-requirements -> build-curriculum: what each role has to prove, one
-    testable line at a time, at a version
-  read-prior-skill -> build-curriculum: what each person can be excused,
-    with the evidence behind every exemption
-  build-curriculum -> book-sessions: the courses, their length, and who
-    has to be in each one
-  build-curriculum -> publish-courseware: the material each course needs
-    and the version it is taught at
-  book-sessions -> sales-training: the dates, the room and the people
-    expected, confirmed by the partner
-  book-sessions -> delivery-training: the same schedule, so nobody is
-    booked into two sessions at once
-  publish-courseware -> sales-training: the material at a version, at an
-    address the partner's people can reach
-  delivery-training -> hands-on-lab: the build as it was taught, and the
-    environment each person will do it in
-  hands-on-lab -> written-exam: what each person got working alone, and
-    where the trainer had to step in
-  sales-training -> written-exam: the pitch and the pricing as taught,
-    so the exam tests what was actually covered
-  written-exam -> practical: the score per person, the question set
-    version, and which requirement each wrong answer sits under
-  practical -> decide-pass: the assessor's score against the rubric,
-    with a note on anything the score does not carry
-  decide-pass -> issue-certificates: the signed passes, per person and
-    per role, with the date of the signature
-  decide-pass -> retrain: the fails, each naming the requirement that
-    was not met rather than a grade
-  retrain -> written-exam: the gap taught again, and the date it was
-    taught, so the retake is scored against the same requirements
-  issue-certificates -> publish-certified: the certificates as issued,
-    each with its expiry
-  publish-certified -> watch-expiry: the certified list as published,
-    and who at the partner it covers
+  take-in-people -> set-requirements [intended-roles]: the roles the
+    partner intends to cover, and how many people they are putting
+    behind each one
+  take-in-people -> read-prior-skill [named-people]: the named people,
+    with what each one claims to have done before
+  set-requirements -> build-curriculum [role-requirements]: what each
+    role has to prove, one testable line at a time, at a version
+  read-prior-skill -> build-curriculum [exemptions]: what each person
+    can be excused, with the evidence behind every exemption
+  build-curriculum -> book-sessions [course-plan]: the courses, their
+    length, and who has to be in each one
+  build-curriculum -> publish-courseware [material-list]: the material
+    each course needs and the version it is taught at
+  book-sessions -> sales-training [sales-schedule]: the dates, the room
+    and the people expected, confirmed by the partner
+  book-sessions -> delivery-training [delivery-schedule]: the same
+    schedule, so nobody is booked into two sessions at once
+  publish-courseware -> sales-training [published-material]: the
+    material at a version, at an address the partner's people can reach
+  delivery-training -> hands-on-lab [taught-build]: the build as it was
+    taught, and the environment each person will do it in
+  hands-on-lab -> written-exam [lab-result]: what each person got
+    working alone, and where the trainer had to step in
+  sales-training -> written-exam [pitch-as-taught]: the pitch and the
+    pricing as taught, so the exam tests what was actually covered
+  written-exam -> practical [exam-scores]: the score per person, the
+    question set version, and which requirement each wrong answer sits
+    under
+  practical -> decide-pass [practical-scores]: the assessor's score
+    against the rubric, with a note on anything the score does not
+    carry
+  decide-pass -> issue-certificates [signed-passes]: the signed passes,
+    per person and per role, with the date of the signature
+  decide-pass -> retrain [named-fails]: the fails, each naming the
+    requirement that was not met rather than a grade
+  retrain -> written-exam [closed-gaps]: the gap taught again, and the
+    date it was taught, so the retake is scored against the same
+    requirements
+  issue-certificates -> publish-certified [certificates]: the
+    certificates as issued, each with its expiry
+  publish-certified -> watch-expiry [certified-list]: the certified
+    list as published, and who at the partner it covers
+deviations:
+  read-prior-skill -> take-in-people [no-base-skill]: nobody the
+    partner named holds the base skill, so the partner names other
+    people rather than the requirement being lowered for them
+  hands-on-lab -> delivery-training [training-did-not-land]: people
+    cannot build the thing they watched being built, so the part they
+    could not do is taught again before the lab runs a second time
+  decide-pass -> retrain [a-person-fails]: a person fails, so the
+    requirement that was not met is taught again to them alone
+  decide-pass -> build-curriculum [question-is-wrong]: everybody fails
+    the same question, so the curriculum and the question set are
+    worked again against the requirement each of them claims to test
+  watch-expiry -> book-sessions [coverage-lapses]: a certificate lapses
+    or a certified person leaves, so sessions are booked for the
+    replacements and the partner is told which role is uncovered
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the enablement lead, the

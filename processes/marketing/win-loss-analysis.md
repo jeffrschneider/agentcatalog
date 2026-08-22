@@ -87,6 +87,11 @@ from: ref/mkt/win-loss-analysis v1
 owner: <who>                          effective: <date>
 trigger: a period closes in <your revenue reporting>, or a run of
          losses in one segment is raised
+         watch: record=<closed deals> system=<your revenue reporting>
+                change=<a period of deals closes>
+         or watch: record=<lost deals in one segment>
+                system=<your revenue reporting>
+                change=<a run of losses in one segment is raised>
 concurrency: one run at a time over the same period of deals. Runs for
              different periods or different segments overlap - <how
              many> at once
@@ -207,57 +212,86 @@ run-scoped:
            every: <cadence>
            from: brief-the-study   until: deliver-themes
 handoffs:
-  take-in-period -> pull-the-deals: which deals the run covers, said as
-    a period and a segment somebody can select on
-  pull-the-deals -> brief-the-study: every closed deal in the period
-    with its value, its segment, its stage at close and the reason
-    recorded on it, and every deal whose reason was left empty
-  brief-the-study -> size-interviews: the question, the size of the
-    difference that would matter, and the confidence the study is being
-    run to
-  brief-the-study -> write-the-guide: the question as every agent heard
-    it, and the guide the last run of this study used
-  size-interviews -> draw-samples: how many interviews each half needs
-    and what those numbers were computed from
-  draw-samples -> check-the-sample: both samples, buyer by buyer, with
-    the deal each buyer came from
-  draw-samples -> outside-interviewer: what the interviews need
-    somebody outside the organization to do, written as requirements
-    before any candidate is looked at
-  check-the-sample -> get-sign-offs: the buyers who may be approached,
-    the count removed from each half, and the rule behind each removal
-  outside-interviewer -> cover-the-cost: what each candidate would
-    charge and what it would do
-  cover-the-cost -> get-sign-offs: what the run will draw, and the
-    allocation it draws against
-  write-the-guide -> get-sign-offs: the guide at a version, in the
-    order the questions are put
-  get-sign-offs -> invite-the-buyers: the approved samples and the
-    approved guide at their signed versions. A later change voids the
-    approval and sign-offs run again
-  invite-the-buyers -> hold-interviews: who accepted, from which half,
-    and what each of them was told the interview is for
-  hold-interviews -> watch-both-halves: what each buyer said, as they
-    said it, marked with the version of the guide it answered
-  watch-both-halves -> close-interviews: the count held in each half
-    set against the count that half planned for, said on the day asking
-    stops
-  close-interviews -> sort-into-themes: the interviews fixed at a
-    version, with every one that was left out and the rule that left it
-    out
-  sort-into-themes -> work-out-figures: the theme list at a version,
-    and every remark under the theme it was filed under
-  work-out-figures -> set-against-record: how often each theme appears
-    in each half, with the method, the exclusions and the range
-  set-against-record -> write-findings: each theme beside the reason
-    the record gives, and every deal where the two disagree
-  write-findings -> check-findings: the findings at a version, each
-    theme carrying the interviews it rests on
-  check-findings -> deliver-themes: the findings with every figure
-    checked against the data and the method beside it, and every figure
-    that could not be computed marked as such
-  deliver-themes -> record-learnings: the themes and the
-    recommendations, as delivered, and who took each one
+  take-in-period -> pull-the-deals [period-in-scope]: which deals the
+    run covers, said as a period and a segment somebody can select on
+  pull-the-deals -> brief-the-study [closed-deals]: every closed deal
+    in the period with its value, its segment, its stage at close and
+    the reason recorded on it, and every deal whose reason was left
+    empty
+  brief-the-study -> size-interviews [study-question]: the question,
+    the size of the difference that would matter, and the confidence
+    the study is being run to
+  brief-the-study -> write-the-guide [question-for-the-guide]: the
+    question as every agent heard it, and the guide the last run of
+    this study used
+  size-interviews -> draw-samples [counts-each-half-needs]: how many
+    interviews each half needs and what those numbers were computed
+    from
+  draw-samples -> check-the-sample [both-samples]: both samples, buyer
+    by buyer, with the deal each buyer came from
+  draw-samples -> outside-interviewer [interviewer-requirements]: what
+    the interviews need somebody outside the organization to do,
+    written as requirements before any candidate is looked at
+  check-the-sample -> get-sign-offs [approachable-buyers]: the buyers
+    who may be approached, the count removed from each half, and the
+    rule behind each removal
+  outside-interviewer -> cover-the-cost [candidate-quotes]: what each
+    candidate would charge and what it would do
+  cover-the-cost -> get-sign-offs [what-the-run-draws]: what the run
+    will draw, and the allocation it draws against
+  write-the-guide -> get-sign-offs [interview-guide]: the guide at a
+    version, in the order the questions are put
+  get-sign-offs -> invite-the-buyers [signed-samples-and-guide]: the
+    approved samples and the approved guide at their signed versions. A
+    later change voids the approval and sign-offs run again
+  invite-the-buyers -> hold-interviews [who-accepted]: who accepted,
+    from which half, and what each of them was told the interview is
+    for
+  hold-interviews -> watch-both-halves [what-was-said]: what each buyer
+    said, as they said it, marked with the version of the guide it
+    answered
+  watch-both-halves -> close-interviews [counts-so-far]: the count held
+    in each half set against the count that half planned for, said on
+    the day asking stops
+  close-interviews -> sort-into-themes [fixed-interviews]: the
+    interviews fixed at a version, with every one that was left out and
+    the rule that left it out
+  sort-into-themes -> work-out-figures [theme-list]: the theme list at
+    a version, and every remark under the theme it was filed under
+  work-out-figures -> set-against-record [theme-figures]: how often
+    each theme appears in each half, with the method, the exclusions
+    and the range
+  set-against-record -> write-findings [themes-beside-the-record]: each
+    theme beside the reason the record gives, and every deal where the
+    two disagree
+  write-findings -> check-findings [draft-findings]: the findings at a
+    version, each theme carrying the interviews it rests on
+  check-findings -> deliver-themes [checked-findings]: the findings
+    with every figure checked against the data and the method beside
+    it, and every figure that could not be computed marked as such
+  deliver-themes -> record-learnings [delivered-themes]: the themes and
+    the recommendations, as delivered, and who took each one
+deviations:
+  check-the-sample -> draw-samples [too-few-approachable]: too few of
+    the drawn buyers may be approached, so the samples are drawn again
+    to make up the count
+  get-sign-offs -> draw-samples [sample-changes-asked-for]: a signer
+    asks for changes to the samples, so they are drawn again
+  get-sign-offs -> write-the-guide [guide-changes-asked-for]: a signer
+    asks for changes to the guide, so it is written again
+  watch-both-halves -> invite-the-buyers [one-half-filling-short]: one
+    half is filling short of the count it needs, so more buyers in that
+    half are invited
+  work-out-figures -> invite-the-buyers [half-fell-short]: a half
+    closed short of its count, so the run either asks again or <who>
+    decides to report with the shortfall named against every theme that
+    half fed
+  set-against-record -> pull-the-deals [deal-read-again]: a deal has to
+    be read again from the record before the themes can be set beside
+    it
+  check-findings -> write-findings [figure-does-not-follow]: a figure
+    does not follow from the data or the method, so the findings are
+    written again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the requester, legal, finance

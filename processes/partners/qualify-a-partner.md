@@ -74,6 +74,9 @@ from: ref/prt/qualify-a-partner v1
 owner: <who>                          effective: <date>
 trigger: a short-listed candidate agrees to be qualified, recorded in
          <your partner record>
+         watch: record=<candidate> system=<your partner record>
+                change=<a short-listed candidate agrees to be
+                qualified>
 concurrency: runs may overlap - <how many> qualifications live at
              once, and one candidate is qualified by one run at a time
 goal: every claim that decides the answer marked proven, unproven or
@@ -178,44 +181,68 @@ run-scoped:
              every: <cadence>
              from: collect-claims   until: run close
 handoffs:
-  take-in-candidate -> set-what-to-prove: the candidate, the gap it was
-    short-listed against, and the score it was short-listed on
-  set-what-to-prove -> collect-claims: the claims that decide the
-    answer, separated from the ones that do not
-  collect-claims -> write-checks: every claim as the candidate made it,
-    quoted, with where and when it was made
-  write-checks -> check-company: the claims about who the company is,
-    each naming the register or filing that would settle it
-  write-checks -> check-delivery: the claims about work delivered, each
-    naming the customer or the artifact that would settle it
-  write-checks -> check-people: the claims about staff and skills, each
-    naming the certificate or the person that would settle it
-  check-company -> check-money: the legal entity we would contract
-    with, its group, and its owners
-  check-company -> check-legal: the same entity and ownership, so the
-    screening runs against the company that would sign
-  check-delivery -> reference-calls: the customers worth calling, ours
-    as well as theirs, and the questions each call must ask
-  check-people -> check-security: who would hold our data and our
-    customers' data, and where they sit
-  check-money -> claim-vs-finding: the financial standing, dated, with
-    the accounts it was read from
-  check-legal -> claim-vs-finding: the screening result, the disputes
-    found, and the competing agreements declared
-  reference-calls -> do-real-work: what the references said, including
-    the parts they would not say on the record
-  check-security -> do-real-work: the conditions the real work runs
-    under, and the data it may not touch
-  do-real-work -> claim-vs-finding: what was delivered, when, against
-    what was asked for, written before it was discussed
-  claim-vs-finding -> price-the-risk: every claim with its mark and its
-    evidence, and the claims nothing settled
-  price-the-risk -> decide: what the unproven claims would cost, and
-    what conditions would cover them
-  decide -> tell-candidate: the decision, the conditions, and the
-    person who made it
-  tell-candidate -> hand-on: the answer as the candidate received it,
-    and anything they disputed in reply
+  take-in-candidate -> set-what-to-prove [candidate-and-gap]: the
+    candidate, the gap it was short-listed against, and the score it
+    was short-listed on
+  set-what-to-prove -> collect-claims [deciding-claims]: the claims
+    that decide the answer, separated from the ones that do not
+  collect-claims -> write-checks [claims-as-made]: every claim as the
+    candidate made it, quoted, with where and when it was made
+  write-checks -> check-company [company-checks]: the claims about who
+    the company is, each naming the register or filing that would
+    settle it
+  write-checks -> check-delivery [delivery-checks]: the claims about
+    work delivered, each naming the customer or the artifact that would
+    settle it
+  write-checks -> check-people [people-checks]: the claims about staff
+    and skills, each naming the certificate or the person that would
+    settle it
+  check-company -> check-money [legal-entity]: the legal entity we
+    would contract with, its group, and its owners
+  check-company -> check-legal [entity-for-screening]: the same entity
+    and ownership, so the screening runs against the company that would
+    sign
+  check-delivery -> reference-calls [reference-list]: the customers
+    worth calling, ours as well as theirs, and the questions each call
+    must ask
+  check-people -> check-security [data-handlers]: who would hold our
+    data and our customers' data, and where they sit
+  check-money -> claim-vs-finding [financial-standing]: the financial
+    standing, dated, with the accounts it was read from
+  check-legal -> claim-vs-finding [screening-result]: the screening
+    result, the disputes found, and the competing agreements declared
+  reference-calls -> do-real-work [reference-findings]: what the
+    references said, including the parts they would not say on the
+    record
+  check-security -> do-real-work [work-conditions]: the conditions the
+    real work runs under, and the data it may not touch
+  do-real-work -> claim-vs-finding [work-result]: what was delivered,
+    when, against what was asked for, written before it was discussed
+  claim-vs-finding -> price-the-risk [marked-claims]: every claim with
+    its mark and its evidence, and the claims nothing settled
+  price-the-risk -> decide [priced-risk]: what the unproven claims
+    would cost, and what conditions would cover them
+  decide -> tell-candidate [qualification-decision]: the decision, the
+    conditions, and the person who made it
+  tell-candidate -> hand-on [candidate-reply]: the answer as the
+    candidate received it, and anything they disputed in reply
+deviations:
+  write-checks -> collect-claims [claim-too-vague]: a claim is too
+    vague for anything to settle it, so it is collected again in the
+    words the candidate will stand behind
+  reference-calls -> check-delivery [references-unreachable]: the
+    references cannot be reached, so the delivery record is read again
+    for another customer to call
+  do-real-work -> decide [work-goes-badly]: the real work goes badly
+    enough to stop on, so the run goes straight to the decision with
+    the written result attached, and the claims are neither set against
+    the findings nor priced
+  claim-vs-finding -> do-real-work [claim-unsettled]: a claim is
+    neither proven nor disproven, so more real work is run to settle it
+    rather than the mark being rounded up
+  decide -> claim-vs-finding [evidence-gap]: the decider finds a gap in
+    the evidence that has to be closed first, so the claims are set
+    against the findings again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the finance

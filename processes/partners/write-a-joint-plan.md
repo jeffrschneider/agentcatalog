@@ -75,6 +75,10 @@ from: ref/prt/write-a-joint-plan v1
 owner: <who>                          effective: <date>
 trigger: a partner at <your planning tier> enters the planning window
          in <your partner planning calendar>
+         watch: record=<partner record>
+                system=<your partner planning calendar>
+                change=<a partner at the planning tier enters the
+                planning window>
 concurrency: runs may overlap - <how many> plans are written at once,
              and one partner has one plan at a time
 goal: one plan both sides have signed, naming the numbers each side
@@ -169,44 +173,67 @@ run-scoped:
   cost      - runs allocate-and-reconcile     owner: joint-planner
               from: price-inputs   until: run close
 handoffs:
-  take-in-ask -> read-last-year: the partner, the year, and what the
-    plan is being asked to change
-  take-in-ask -> name-the-room: the same ask, so both sides know what
-    they are being asked into
-  read-last-year -> set-targets: what the partnership produced last
-    year, dated, with the system behind every line, and the commitments
-    from last year's plan that were never met
-  name-the-room -> set-targets: the named people who can commit each
-    side, and what each of them may commit to
-  set-targets -> pick-accounts: the numbers each side works to, at a
-    version both sides hold
-  set-targets -> define-measures: the same numbers, so the measures are
-    defined against the targets and not around them
-  pick-accounts -> check-coverage: the named accounts and segments,
-    each with the reason it is on the list
-  check-coverage -> agree-inputs: the accounts that survived, and every
-    account removed with the conflict or the owner behind it
-  agree-inputs -> price-inputs: the people, the money and the time each
-    side put in, per side, with a name on each line
-  agree-inputs -> name-plays: the same inputs, so no play is named that
-    nobody staffed
-  price-inputs -> draft-plan: what our side costs, held against the
-    budget line it will be paid from
-  name-plays -> set-milestones: the plays as both sides heard them
-  set-milestones -> draft-plan: what is true by when, with an owner and
-    a date on every line
-  define-measures -> draft-plan: each measure, its definition, its
-    system, and who publishes it
-  draft-plan -> review-both: the plan at a version, with every blank
-    filled or marked as still open
-  review-both -> get-signatures: the plan at the version both sides
-    said yes to, and the changes each side asked for
-  get-signatures -> record-commits: the signed version, the signers,
-    and the date each one signed. A later change voids the signatures
-  record-commits -> publish-plan: every commitment as a tracked item
-    with an owner, a date and a state
-  publish-plan -> set-cadence: the address the plan lives at, and who
-    on each side has been given it
+  take-in-ask -> read-last-year [partner-and-year]: the partner, the
+    year, and what the plan is being asked to change
+  take-in-ask -> name-the-room [planning-ask]: the same ask, so both
+    sides know what they are being asked into
+  read-last-year -> set-targets [last-year-result]: what the
+    partnership produced last year, dated, with the system behind every
+    line, and the commitments from last year's plan that were never met
+  name-the-room -> set-targets [people-who-can-commit]: the named
+    people who can commit each side, and what each of them may commit
+    to
+  set-targets -> pick-accounts [agreed-targets]: the numbers each side
+    works to, at a version both sides hold
+  set-targets -> define-measures [target-numbers]: the same numbers, so
+    the measures are defined against the targets and not around them
+  pick-accounts -> check-coverage [account-list]: the named accounts
+    and segments, each with the reason it is on the list
+  check-coverage -> agree-inputs [cleared-accounts]: the accounts that
+    survived, and every account removed with the conflict or the owner
+    behind it
+  agree-inputs -> price-inputs [side-inputs]: the people, the money and
+    the time each side put in, per side, with a name on each line
+  agree-inputs -> name-plays [staffing-in-hand]: the same inputs, so no
+    play is named that nobody staffed
+  price-inputs -> draft-plan [plan-cost]: what our side costs, held
+    against the budget line it will be paid from
+  name-plays -> set-milestones [named-plays]: the plays as both sides
+    heard them
+  set-milestones -> draft-plan [milestones]: what is true by when, with
+    an owner and a date on every line
+  define-measures -> draft-plan [measure-definitions]: each measure,
+    its definition, its system, and who publishes it
+  draft-plan -> review-both [plan-draft]: the plan at a version, with
+    every blank filled or marked as still open
+  review-both -> get-signatures [reviewed-plan]: the plan at the
+    version both sides said yes to, and the changes each side asked for
+  get-signatures -> record-commits [signed-plan]: the signed version,
+    the signers, and the date each one signed. A later change voids the
+    signatures
+  record-commits -> publish-plan [tracked-commitments]: every
+    commitment as a tracked item with an owner, a date and a state
+  publish-plan -> set-cadence [published-plan]: the address the plan
+    lives at, and who on each side has been given it
+deviations:
+  check-coverage -> pick-accounts [account-spoken-for]: an account is
+    already contracted to another partner or promised to an owner, so
+    the account list is picked again with the conflict recorded
+  price-inputs -> agree-inputs [plan-not-funded]: neither side will
+    fund the plan as written, so the inputs are agreed again against
+    what the budgets carry
+  draft-plan -> define-measures [measure-cannot-be-produced]: the draft
+    names a number no system computes, so the measure is defined again
+    against a system that exists or comes out of the plan
+  review-both -> agree-inputs [line-not-committed]: a side will not
+    commit to a line, so that line alone goes back to the inputs and
+    the rest of the plan holds at its version
+  review-both -> set-targets [targets-out-of-reach]: the targets are
+    out of reach of what either side put in, so the numbers each side
+    works to are set again
+  get-signatures -> review-both [sponsor-will-not-sign]: a sponsor will
+    not sign, so what they objected to goes back to the line-by-line
+    review
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the sales

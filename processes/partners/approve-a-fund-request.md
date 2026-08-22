@@ -81,6 +81,9 @@ from: ref/prt/approve-a-fund-request v1
 owner: <who>                          effective: <date>
 trigger: a partner submits a request to spend fund money, through <your
          partner portal>
+         watch: record=<fund request> system=<your partner portal>
+                change=<a partner submits a request to spend fund
+                money>
 concurrency: runs may overlap freely - one request is one run, and a
              partner may have <how many> requests open at once
 goal: every request answered within <days> of arriving and never later
@@ -177,40 +180,60 @@ run-scoped:
   budget - runs allocate-and-reconcile          owner: fund-allocator
            from: commit-money     until: run close
 handoffs:
-  take-in-request -> check-complete: the request as the partner wrote
-    it, with the date it arrived and the date the activity must be
-    booked by
-  check-complete -> check-entitlement: the complete request, with every
-    quoted cost and its supplier
-  check-entitlement -> check-eligible: the agreement, the tier and any
-    open claim, each read at a date
-  check-eligible -> check-balance: the activity matched to a line on
-    the eligible list, or the line it fails against
-  check-balance -> read-history: what the partner has left, what is
-    already committed, and the distance from the caps
-  read-history -> ask-marketing: what this partner's last activities
-    cost and what they produced, against what they promised
-  ask-marketing -> agree-proof: whether the activity fits the plan,
-    what marketing wants changed, and which marketing process will run
-    it
-  agree-proof -> agree-targets: the evidence list the claim will be
-    checked against, at a version
-  agree-targets -> price-share: the numbers the activity owes back and
-    the date they are due
-  price-share -> decide-request: the organization's share, the
-    partner's share, and the caps each one was tested against
-  ask-missing -> check-entitlement: the partner's answer, and the date
-    it arrived, so the checks resume where they stopped
-  decide-request -> approve-amount: the decision, the amount, and every
-    condition attached to it
-  approve-amount -> commit-money: the signed amount. A change to the
-    activity, the date or the amount voids the signature
-  commit-money -> answer-partner: the hold on the fund, its reference
-    and the date it expires
-  answer-partner -> hand-to-marketing: the approved activity, the
-    money, the evidence required, and what the partner owes back
-  hand-to-marketing -> record-decision: the marketing run the activity
-    now belongs to, and its identifier
+  take-in-request -> check-complete [fund-request]: the request as the
+    partner wrote it, with the date it arrived and the date the
+    activity must be booked by
+  check-complete -> check-entitlement [completed-request]: the complete
+    request, with every quoted cost and its supplier
+  check-entitlement -> check-eligible [entitlement-check]: the
+    agreement, the tier and any open claim, each read at a date
+  check-eligible -> check-balance [eligibility-check]: the activity
+    matched to a line on the eligible list, or the line it fails
+    against
+  check-balance -> read-history [fund-balance]: what the partner has
+    left, what is already committed, and the distance from the caps
+  read-history -> ask-marketing [partner-history]: what this partner's
+    last activities cost and what they produced, against what they
+    promised
+  ask-marketing -> agree-proof [marketing-fit]: whether the activity
+    fits the plan, what marketing wants changed, and which marketing
+    process will run it
+  agree-proof -> agree-targets [evidence-list]: the evidence list the
+    claim will be checked against, at a version
+  agree-targets -> price-share [return-targets]: the numbers the
+    activity owes back and the date they are due
+  price-share -> decide-request [cost-split]: the organization's share,
+    the partner's share, and the caps each one was tested against
+  ask-missing -> check-entitlement [partner-answer]: the partner's
+    answer, and the date it arrived, so the checks resume where they
+    stopped
+  decide-request -> approve-amount [request-decision]: the decision,
+    the amount, and every condition attached to it
+  approve-amount -> commit-money [signed-amount]: the signed amount. A
+    change to the activity, the date or the amount voids the signature
+  commit-money -> answer-partner [fund-hold]: the hold on the fund, its
+    reference and the date it expires
+  answer-partner -> hand-to-marketing [approved-activity]: the approved
+    activity, the money, the evidence required, and what the partner
+    owes back
+  hand-to-marketing -> record-decision [marketing-run]: the marketing
+    run the activity now belongs to, and its identifier
+deviations:
+  check-entitlement -> decide-request [agreement-lapsed]: the agreement
+    has lapsed or an earlier claim is still open, so the request goes
+    straight to the decision as a decline and the eligibility check,
+    the balance check, the marketing view and the pricing are not run
+  check-eligible -> decide-request [activity-not-eligible]: the
+    activity is not on the published list, so the request goes straight
+    to the decision and the balance check, the marketing view and the
+    pricing are not run
+  check-balance -> decide-request [fund-will-not-cover]: the fund will
+    not cover the amount, so the request goes straight to the decision
+    to be declined or approved smaller, and the marketing view and the
+    pricing are not run
+  approve-amount -> decide-request [signer-refuses]: the signer will
+    not sign the amount, so the request is decided again against the
+    lines the signer named
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the marketing

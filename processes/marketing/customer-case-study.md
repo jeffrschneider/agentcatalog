@@ -86,6 +86,9 @@ PROCESS: customer case study          id: <team>/customer-case-study v1
 from: ref/mkt/customer-case-study v1
 owner: <who>                          effective: <date>
 trigger: a customer is willing to be named in a story
+         watch: record=<customer>
+                system=<where the willingness is recorded>
+                change=<a customer agrees to be named in a story>
 concurrency: runs overlap - <how many> stories in production at once
 goal: a published story about one named customer, cleared by that
       customer at the version that published, used inside the terms
@@ -195,42 +198,72 @@ run-scoped:
                 every: <cadence>
                 from: publish   until: run close
 handoffs:
-  take-in-candidate -> check-standing: the account, and the question
-    the standing check has to answer about it
-  check-standing -> make-ask: where the account stands, with the system
-    each reading came from and the date it was current
-  make-ask -> agree-terms: what the customer agreed to in principle,
-    and anything they said they will not do
-  agree-terms -> brief-story: the terms as signed, so that no agent
-    plans anything the customer did not agree to
-  agree-terms -> clear-rights: the marks, the footage and the people
-    the story will use, and the channels it will run on
-  brief-story -> verify-results: the numbers the story will rest on,
-    and where each one is expected to be found
-  verify-results -> agree-story: each number with its source and the
-    date it was read
-  interview-customer -> agree-story: what the customer said,
-    attributed, and marked with what may be quoted
-  agree-story -> write-draft: the argument and the sections
-  agree-story -> make-visuals: the visuals the story needs
-  clear-rights -> make-visuals: what may be used, on which channels,
-    and what may not be used at all
-  edit-draft -> write-draft: the edit at a version, item by item, in
-    terms the writer can work through without coming back to ask
-  check-facts -> internal-sign-offs: the story at a version, with every
-    claim carrying the source it rests on
-  make-visuals -> internal-sign-offs: the visual set at a version
-  internal-sign-offs -> customer-approval: the story the organization
-    has signed, at that version and no later one
-  customer-approval -> build-page: the story at the version the
-    customer cleared. A later change voids the clearance and the story
-    goes back to the customer
-  check-page -> publish: the scored list, with the rule behind every
-    failure
-  publish -> hand-to-sales: the live address, the version that
-    published, and the date the agreement runs out
-  watch -> record-learnings: the numbers set against what the story was
-    approved to do
+  take-in-candidate -> check-standing [the-candidate]: the account,
+    and the question the standing check has to answer about it
+  check-standing -> make-ask [account-standing]: where the account
+    stands, with the system each reading came from and the date it was
+    current
+  make-ask -> agree-terms [agreement-in-principle]: what the customer
+    agreed to in principle, and anything they said they will not do
+  agree-terms -> brief-story [signed-terms]: the terms as signed, so
+    that no agent plans anything the customer did not agree to
+  agree-terms -> clear-rights [marks-and-footage]: the marks, the
+    footage and the people the story will use, and the channels it
+    will run on
+  brief-story -> verify-results [numbers-to-verify]: the numbers the
+    story will rest on, and where each one is expected to be found
+  verify-results -> agree-story [verified-numbers]: each number with
+    its source and the date it was read
+  interview-customer -> agree-story [interview-record]: what the
+    customer said, attributed, and marked with what may be quoted
+  agree-story -> write-draft [story-shape]: the argument and the
+    sections
+  agree-story -> make-visuals [visual-list]: the visuals the story
+    needs
+  clear-rights -> make-visuals [cleared-rights]: what may be used, on
+    which channels, and what may not be used at all
+  edit-draft -> write-draft [the-edit]: the edit at a version, item by
+    item, in terms the writer can work through without coming back to
+    ask
+  check-facts -> internal-sign-offs [sourced-story]: the story at a
+    version, with every claim carrying the source it rests on
+  make-visuals -> internal-sign-offs [visual-set]: the visual set at a
+    version
+  internal-sign-offs -> customer-approval [internally-signed-story]:
+    the story the organization has signed, at that version and no
+    later one
+  customer-approval -> build-page [cleared-story]: the story at the
+    version the customer cleared. A later change voids the clearance
+    and the story goes back to the customer
+  check-page -> publish [page-scores]: the scored list, with the rule
+    behind every failure
+  publish -> hand-to-sales [published-story]: the live address, the
+    version that published, and the date the agreement runs out
+  watch -> record-learnings [performance-numbers]: the numbers set
+    against what the story was approved to do
+deviations:
+  check-standing -> take-in-candidate [account-not-one-to-point-at]:
+    the account is not in a state to be shown off, so another candidate
+    is taken in
+  verify-results -> make-ask [numbers-do-not-hold]: the systems do not
+    say what the story was going to say, so the customer hears what
+    changed before the ask is made again
+  check-facts -> write-draft [claim-with-no-source]: a claim has no
+    source under it, so it is rewritten or dropped
+  internal-sign-offs -> write-draft [sign-off-changes-to-text]: a
+    signer comes back with changes to the writing, and only the part
+    they named reopens
+  internal-sign-offs -> make-visuals [sign-off-changes-to-visuals]: a
+    signer comes back with changes to a picture or a video
+  customer-approval -> write-draft [customer-changes-to-text]: the
+    customer asks for a change to their own words
+  customer-approval -> make-visuals [customer-changes-to-visuals]: the
+    customer asks for a change to a picture or a video of them
+  check-page -> build-page [page-check-fails]: the page fails a check,
+    so the producer fixes what the finding named
+  watch -> build-page [customer-withdraws]: the customer withdraws
+    after publication, so the page comes down and the producer records
+    what stands at the address
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the customer, legal, brand and

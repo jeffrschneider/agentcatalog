@@ -90,6 +90,9 @@ PROCESS: brief executive leadership   id: <team>/brief-executive-leadership   v1
 from: ref/mkt/brief-executive-leadership v1
 owner: <who>                          effective: <date>
 trigger: a board or executive cycle opens on <your board calendar>
+         watch: record=<the meeting> system=<your board calendar>
+                change=<a cycle opens with a meeting date and what
+                marketing is asked to bring>
 concurrency: one run per meeting - a board cycle and an executive
              review are separate runs and may overlap
 goal: a board or an executive team that understands where marketing
@@ -200,49 +203,78 @@ run-scoped:
            every: <cadence>
            from: set-decisions   until: get-sign-offs
 handoffs:
-  take-in-cycle -> read-last-record: the date the board meets, the
-    date the pack is due, and what the board asked marketing to bring
-  read-last-record -> set-decisions: the questions the board left open
-    last time, and the commitments marketing made in front of it
+  take-in-cycle -> read-last-record [dates-and-ask]: the date the
+    board meets, the date the pack is due, and what the board asked
+    marketing to bring
+  read-last-record -> set-decisions [last-meeting-record]: the
+    questions the board left open last time, and the commitments
+    marketing made in front of it
   set-decisions -> pull-results / account-money / account-work /
-    outside-picture: the decisions being asked for and the date the
-    evidence is due. Four branches read one record
-  pull-results -> qualify-numbers: the results, each line naming its
-    source and the date it was pulled
-  qualify-numbers -> size-choices: the figures that hold, the range
-    around each one, every exclusion and the rule behind it, and every
-    figure marked uncomputed
-  account-money -> size-choices: what each function was allocated,
-    what has been drawn against it, and what is left
-  account-work -> size-choices: what the department has committed for
-    the period ahead, and what a new commitment would displace
-  outside-picture -> size-choices: the market and the competitors,
-    each fact carrying its source and the date it was read
-  size-choices -> settle-position: what each option would cost and
-    return, with the assumptions beside the numbers and every rate
-    that could not be sourced marked unsourced
-  settle-position -> write-papers: what marketing will say, and the
-    decision it wants against each option
-  write-papers -> build-pack: the papers at a version, one for each
-    decision
-  build-pack -> get-sign-offs: the pack at a version, as the board
-    will read it
-  get-sign-offs -> send-ahead: the pack at the signed version. A later
-    change voids the approval and the signers see it again
-  send-ahead -> rehearse: the pack as the board received it, and the
-    date each member received it
-  rehearse -> deliver-briefing: the questions the rehearsal asked, and
-    the answer given to each one
-  deliver-briefing -> record-decisions: what the room decided, on what
-    reasons, and what it declined to decide
-  deliver-briefing -> answer-open: the questions the room could not
-    settle, each with the date its answer is due
-  record-decisions -> hand-on: each decision at a version, naming the
-    agents that have to act on it
-  answer-open -> hand-on: the written answer to each open question,
-    with the source under it
-  hand-on -> record-learnings: what each agent took away, and anything
-    an agent said it could not do
+    outside-picture [decisions-asked-for]: the decisions being asked
+    for and the date the evidence is due. Four branches read one
+    record
+  pull-results -> qualify-numbers [period-results]: the results, each
+    line naming its source and the date it was pulled
+  qualify-numbers -> size-choices [qualified-figures]: the figures
+    that hold, the range around each one, every exclusion and the rule
+    behind it, and every figure marked uncomputed
+  account-money -> size-choices [money-account]: what each function
+    was allocated, what has been drawn against it, and what is left
+  account-work -> size-choices [work-account]: what the department has
+    committed for the period ahead, and what a new commitment would
+    displace
+  outside-picture -> size-choices [market-picture]: the market and the
+    competitors, each fact carrying its source and the date it was
+    read
+  size-choices -> settle-position [costed-options]: what each option
+    would cost and return, with the assumptions beside the numbers and
+    every rate that could not be sourced marked unsourced
+  settle-position -> write-papers [marketing-position]: what marketing
+    will say, and the decision it wants against each option
+  write-papers -> build-pack [decision-papers]: the papers at a
+    version, one for each decision
+  build-pack -> get-sign-offs [the-pack]: the pack at a version, as
+    the board will read it
+  get-sign-offs -> send-ahead [signed-pack]: the pack at the signed
+    version. A later change voids the approval and the signers see it
+    again
+  send-ahead -> rehearse [pack-as-sent]: the pack as the board
+    received it, and the date each member received it
+  rehearse -> deliver-briefing [rehearsal-answers]: the questions the
+    rehearsal asked, and the answer given to each one
+  deliver-briefing -> record-decisions [what-the-room-decided]: what
+    the room decided, on what reasons, and what it declined to decide
+  deliver-briefing -> answer-open [open-questions]: the questions the
+    room could not settle, each with the date its answer is due
+  record-decisions -> hand-on [recorded-decisions]: each decision at a
+    version, naming the agents that have to act on it
+  answer-open -> hand-on [written-answers]: the written answer to each
+    open question, with the source under it
+  hand-on -> record-learnings [what-agents-took-away]: what each agent
+    took away, and anything an agent said it could not do
+deviations:
+  qualify-numbers -> pull-results [figure-will-not-carry]: the data
+    will not carry a figure the pack wants to claim, so the results
+    are pulled again for what will carry it
+  size-choices -> outside-picture [rate-with-no-source]: a choice
+    rests on a rate nobody can source, so the outside picture is
+    gathered again for it
+  settle-position -> size-choices [evidence-will-not-support-the-ask]:
+    the evidence will not support the ask, so the choices are sized
+    again
+  get-sign-offs -> write-papers [paper-changes]: a signer comes back
+    with changes to a decision paper
+  get-sign-offs -> build-pack [pack-changes]: a signer comes back with
+    changes to the pack
+  send-ahead -> write-papers [question-before-the-room]: a board
+    member asks a question before the meeting, and the answer goes
+    into the papers so every member gets it
+  rehearse -> write-papers [pack-cannot-answer]: the rehearsal finds a
+    question the pack cannot answer, so the papers either answer it or
+    say when they will
+  answer-open -> record-decisions [answer-changes-the-decision]: an
+    answer given after the meeting changes what was decided, so the
+    decision is recorded again at a new version
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the board, leadership, legal

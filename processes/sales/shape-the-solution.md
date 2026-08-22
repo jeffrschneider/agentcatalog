@@ -68,6 +68,9 @@ from: ref/sls/shape-the-solution v1
 owner: <who>                          effective: <date>
 trigger: a requirement record is confirmed and versioned in <your
          requirement process>
+         watch: record=<requirement record>
+                system=<your requirement process>
+                change=<the record is confirmed and given a version>
 concurrency: runs may overlap - <how many> shapes live at once, and
              one opportunity carries one shape at a time
 goal: a shape both sides hold at the same version, every ranked
@@ -154,34 +157,56 @@ run-scoped:
              every: <cadence>
              from: draft-shape   until: agree-shape
 handoffs:
-  take-in-record -> read-prior-shapes: the requirement record at its
-    version, and the buyer's ranking
-  read-prior-shapes -> draft-shape: the shapes already drawn for this
-    kind of problem, with what happened to each after it shipped
-  draft-shape -> check-product: the shape, with every part named
-  draft-shape -> test-with-experts: the same shape, at the same
-    version. Both branches read one draft
-  check-product -> name-the-build: what ships today, what is committed,
-    and what is only planned, each marked as such
-  test-with-experts -> name-the-build: what the specialists refused,
-    with the reason, and what they would accept instead
-  name-the-build -> check-operability: the work the shape implies, and
-    who it lands on
-  check-operability -> check-security: the running cost, the operator,
-    and what breaks at volume
-  check-security -> cut-to-buildable: which of the buyer's rules apply,
-    what data moves, and what has to change to satisfy them
-  cut-to-buildable -> map-to-record: the shape as cut, and the list of
-    what was cut out of it
-  map-to-record -> show-the-buyer: every requirement marked met,
-    deferred or refused, and the reason for every refusal
-  show-the-buyer -> take-corrections: the shape as the buyer saw it,
-    and what they asked about
-  take-corrections -> decide-proof: what the buyer disputed, and what
-    they said would settle it
-  decide-proof -> agree-shape: the decision on an evaluation, with its
-    reason, so the offer stream knows why
-  agree-shape -> record-learnings: the signed shape at its version
+  take-in-record -> read-prior-shapes [requirement-record]: the
+    requirement record at its version, and the buyer's ranking
+  read-prior-shapes -> draft-shape [prior-shapes]: the shapes already
+    drawn for this kind of problem, with what happened to each after it
+    shipped
+  draft-shape -> check-product [first-shape]: the shape, with every
+    part named
+  draft-shape -> test-with-experts [first-shape-for-experts]: the same
+    shape, at the same version. Both branches read one draft
+  check-product -> name-the-build [what-ships-today]: what ships today,
+    what is committed, and what is only planned, each marked as such
+  test-with-experts -> name-the-build [specialist-verdict]: what the
+    specialists refused, with the reason, and what they would accept
+    instead
+  name-the-build -> check-operability [build-work]: the work the shape
+    implies, and who it lands on
+  check-operability -> check-security [operating-picture]: the running
+    cost, the operator, and what breaks at volume
+  check-security -> cut-to-buildable [security-findings]: which of the
+    buyer's rules apply, what data moves, and what has to change to
+    satisfy them
+  cut-to-buildable -> map-to-record [cut-shape]: the shape as cut, and
+    the list of what was cut out of it
+  map-to-record -> show-the-buyer [requirement-mapping]: every
+    requirement marked met, deferred or refused, and the reason for
+    every refusal
+  show-the-buyer -> take-corrections [shape-as-shown]: the shape as the
+    buyer saw it, and what they asked about
+  take-corrections -> decide-proof [buyer-corrections]: what the buyer
+    disputed, and what they said would settle it
+  decide-proof -> agree-shape [proof-decision]: the decision on an
+    evaluation, with its reason, so the offer stream knows why
+  agree-shape -> record-learnings [agreed-shape]: the signed shape at
+    its version
+deviations:
+  test-with-experts -> draft-shape [specialists-refuse]: the people who
+    would build or run it say the shape will not hold, so it is drafted
+    again with their reasons attached
+  check-operability -> draft-shape [nobody-can-run-it]: nobody can run
+    it, or the running cost is one the buyer will not accept, so the
+    shape is drafted again
+  check-security -> draft-shape [rules-forbid-it]: the buyer's rules
+    forbid where the data would sit or who would see it, so the shape
+    is drafted again rather than waived
+  map-to-record -> draft-shape [ranked-requirement-unmet]: the cut
+    leaves a ranked requirement unmet, so the shape is drafted again
+    before the buyer sees it
+  take-corrections -> draft-shape [wrong-problem]: the buyer says the
+    shape answers the wrong problem, so it is drafted again against
+    what they described
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the solution engineer, the

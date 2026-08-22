@@ -91,6 +91,9 @@ PROCESS: measure brand health         id: <team>/brand-health   v1
 from: ref/mkt/brand-health v1
 owner: <who>                          effective: <date>
 trigger: a tracking cycle comes round on <your tracker's schedule>
+         watch: record=<tracking cycle>
+                system=<your tracker's schedule>
+                change=<a cycle comes round>
 concurrency: one wave at a time in the same market. Waves in different
              markets overlap - <how many> in the field at once
 goal: awareness, perception and preference read among people outside
@@ -213,58 +216,85 @@ run-scoped:
            every: <cadence>
            from: brief-the-wave   until: report-the-wave
 handoffs:
-  open-the-cycle -> read-the-promise: the dates of the wave and the
-    earlier waves this one has to stay comparable to
-  read-the-promise -> settle-measures: the brand standard at the
-    version in force, and the claims the promise makes
-  settle-measures -> competitor-set: what the wave measures, and the
-    attributes it puts to people
-  competitor-set -> brief-the-wave: the rivals asked about beside the
-    brand, and the reason each one is in the set
-  brief-the-wave -> size-the-sample: the measures, the size of the
-    movement that would matter to a decision, and the confidence the
-    wave is being run to
-  brief-the-wave -> carry-questions: the measures as every agent heard
-    them, and the earlier questions at the versions they ran under
-  brief-the-wave -> read-published: what to watch for during the cycle
-  size-the-sample -> define-sample: how many responses the wave needs
-    in each market and each segment, and what that was computed from
-  define-sample -> check-consent: the drawn sample, contact by contact,
-    with the source each contact came from
-  define-sample -> outside-sample: the people the contact base cannot
-    supply, and what the wave needs them to be
-  check-consent -> get-sign-offs: the sample that may be contacted, the
-    count removed, and the rule behind each removal
-  outside-sample -> cover-the-cost: what each provider would charge for
-    the sample, and what it would deliver
-  cover-the-cost -> get-sign-offs: what the wave will draw, and the
-    allocation it draws against
-  carry-questions -> get-sign-offs: the questions at a version, every
-    change from the last wave marked, and the reason for each change
-  get-sign-offs -> field-the-wave: the approved sample and the approved
-    questions at their signed versions. A later change voids the
-    approval and sign-offs run again
-  field-the-wave -> watch-sample: the responses as they arrive, each
-    marked with the version of the questions it answered
-  watch-sample -> close-the-wave: the count answered set against the
-    count the wave planned for, market by market
-  close-the-wave -> work-out-figures: the responses fixed at a version,
-    with every response that was removed and the rule that removed it
-  work-out-figures -> compare-waves: every figure with its method, its
-    weighting, its exclusions and the range around it
-  compare-waves -> perception-gap: each measure beside its earlier
-    readings, with a verdict on every movement
-  read-published -> perception-gap: what was published during the
-    cycle, each mention with its outlet, its date and what it said
-  perception-gap -> write-findings: each attribute set beside the claim
-    the promise makes about it, and the version of the promise it was
-    read against
-  write-findings -> check-findings: the findings at a version, each
-    with the responses recorded under it
-  check-findings -> report-the-wave: the findings with every figure
-    checked against the data and the method beside it, and every figure
-    that could not be computed marked as such
-  report-the-wave -> record-learnings: the report, as delivered
+  open-the-cycle -> read-the-promise [wave-dates]: the dates of the
+    wave and the earlier waves this one has to stay comparable to
+  read-the-promise -> settle-measures [brand-promise]: the brand
+    standard at the version in force, and the claims the promise makes
+  settle-measures -> competitor-set [wave-measures]: what the wave
+    measures, and the attributes it puts to people
+  competitor-set -> brief-the-wave [rivals]: the rivals asked about
+    beside the brand, and the reason each one is in the set
+  brief-the-wave -> size-the-sample [movement-threshold]: the
+    measures, the size of the movement that would matter to a
+    decision, and the confidence the wave is being run to
+  brief-the-wave -> carry-questions [earlier-questions]: the measures
+    as every agent heard them, and the earlier questions at the
+    versions they ran under
+  brief-the-wave -> read-published [watch-list]: what to watch for
+    during the cycle
+  size-the-sample -> define-sample [response-counts]: how many
+    responses the wave needs in each market and each segment, and what
+    that was computed from
+  define-sample -> check-consent [drawn-sample]: the drawn sample,
+    contact by contact, with the source each contact came from
+  define-sample -> outside-sample [sample-shortfall]: the people the
+    contact base cannot supply, and what the wave needs them to be
+  check-consent -> get-sign-offs [contactable-sample]: the sample that
+    may be contacted, the count removed, and the rule behind each
+    removal
+  outside-sample -> cover-the-cost [provider-quotes]: what each
+    provider would charge for the sample, and what it would deliver
+  cover-the-cost -> get-sign-offs [wave-cost]: what the wave will
+    draw, and the allocation it draws against
+  carry-questions -> get-sign-offs [wave-questions]: the questions at
+    a version, every change from the last wave marked, and the reason
+    for each change
+  get-sign-offs -> field-the-wave [signed-wave]: the approved sample
+    and the approved questions at their signed versions. A later
+    change voids the approval and sign-offs run again
+  field-the-wave -> watch-sample [responses]: the responses as they
+    arrive, each marked with the version of the questions it answered
+  watch-sample -> close-the-wave [fill-counts]: the count answered set
+    against the count the wave planned for, market by market
+  close-the-wave -> work-out-figures [fixed-responses]: the responses
+    fixed at a version, with every response that was removed and the
+    rule that removed it
+  work-out-figures -> compare-waves [wave-figures]: every figure with
+    its method, its weighting, its exclusions and the range around it
+  compare-waves -> perception-gap [movement-verdicts]: each measure
+    beside its earlier readings, with a verdict on every movement
+  read-published -> perception-gap [published-mentions]: what was
+    published during the cycle, each mention with its outlet, its date
+    and what it said
+  perception-gap -> write-findings [promise-gaps]: each attribute set
+    beside the claim the promise makes about it, and the version of
+    the promise it was read against
+  write-findings -> check-findings [draft-findings]: the findings at a
+    version, each with the responses recorded under it
+  check-findings -> report-the-wave [checked-findings]: the findings
+    with every figure checked against the data and the method beside
+    it, and every figure that could not be computed marked as such
+  report-the-wave -> record-learnings [wave-report]: the report, as
+    delivered
+deviations:
+  check-consent -> define-sample [too-few-contactable]: the consent
+    check removes most of the drawn sample, so the sample is drawn
+    again or the wave buys the people it cannot reach
+  carry-questions -> settle-measures [wording-must-change]: a tracked
+    question has to be reworded, so what the wave measures is settled
+    again and <who> agrees the change before it is made
+  get-sign-offs -> carry-questions [sign-off-changes-questions]: a
+    signer asks for changes to the questions, so only what they named
+    is carried forward again
+  watch-sample -> field-the-wave [sample-filling-slowly]: fewer have
+    answered than the wave allowed for, so fielding continues in the
+    markets that are short
+  work-out-figures -> field-the-wave [sample-fell-short]: the wave
+    closed short of what it needed, so it fields again, reports with
+    the shortfall named against every finding, or is dropped
+  check-findings -> write-findings [figure-does-not-follow]: a figure
+    does not follow from the data and the method beside it, so the
+    finding is written again
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for legal, finance, the brand owner

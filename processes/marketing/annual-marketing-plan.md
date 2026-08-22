@@ -74,6 +74,8 @@ PROCESS: annual marketing plan        id: <team>/annual-marketing-plan   v1
 from: ref/mkt/annual-marketing-plan v1
 owner: <who>                          effective: <date>
 trigger: the fiscal planning cycle opens on <your finance calendar>
+         watch: record=<planning cycle> system=<your finance calendar>
+                change=<the cycle opens>
 concurrency: one run at a time - a planning cycle does not overlap
              itself, and an in-year change goes in as a new version
 goal: an approved plan carrying the goals for the year, the initiatives
@@ -165,40 +167,66 @@ run-scoped:
   spend  - runs allocate-and-reconcile       owner: <your finance role>
            from: allocate-budget   until: run close
 handoffs:
-  take-in-targets -> read-periods / take-stock / gather-evidence: what
-    the business is asking for, and the date the plan is due. Three
-    branches read one record
-  read-periods -> set-goals: each result of the closed periods beside
-    what that period committed to, with the source under every line
-  take-stock -> collect-proposals: what is live in the library and what
-    state the contact base is in, so every proposal starts from the
-    position the systems actually show
-  gather-evidence -> set-goals: the market, the competitors and the
-    questions, each fact carrying its source and the date it was read
-  set-goals -> collect-proposals: the goals in numbers, and the
-    positioning, the promise and the claims register at the versions
-    every proposal has to sit inside
-  collect-proposals -> size-proposals: every proposal in one format,
-    saying what it would do, what it would need, and by when
-  size-proposals -> capacity-check: the cost and the return of each
-    proposal at each level of spend, with the assumptions beside the
-    numbers and every rate that could not be sourced marked unsourced
-  capacity-check -> choose-work: what the department delivered last
-    year, and what it is judged able to carry next year
-  choose-work -> allocate-budget: the chosen set, and the record of
-    what was left out and why
-  allocate-budget -> build-calendar: the money against each chosen
-    initiative, at the figures the plan will carry
-  build-calendar -> name-measures: the initiatives across the year with
-    their dates, and every collision that had to be settled
-  name-measures -> approve-plan: the plan at a version, with the
-    measure each goal will be reported against
-  approve-plan -> publish-plan: the plan at the signed version. A later
-    change voids the approval and the signers see it again
-  publish-plan -> brief-department: the published plan, and what each
-    agent owes against it
-  brief-department -> record-basis: what each agent took away, and
-    anything an agent said it could not do
+  take-in-targets -> read-periods / take-stock / gather-evidence
+    [company-targets]: what the business is asking for, and the date
+    the plan is due. Three branches read one record
+  read-periods -> set-goals [closed-period-results]: each result of
+    the closed periods beside what that period committed to, with the
+    source under every line
+  take-stock -> collect-proposals [department-holdings]: what is live
+    in the library and what state the contact base is in, so every
+    proposal starts from the position the systems actually show
+  gather-evidence -> set-goals [outside-evidence]: the market, the
+    competitors and the questions, each fact carrying its source and
+    the date it was read
+  set-goals -> collect-proposals [year-goals]: the goals in numbers,
+    and the positioning, the promise and the claims register at the
+    versions every proposal has to sit inside
+  collect-proposals -> size-proposals [proposals]: every proposal in
+    one format, saying what it would do, what it would need, and by
+    when
+  size-proposals -> capacity-check [proposal-numbers]: the cost and
+    the return of each proposal at each level of spend, with the
+    assumptions beside the numbers and every rate that could not be
+    sourced marked unsourced
+  capacity-check -> choose-work [carrying-capacity]: what the
+    department delivered last year, and what it is judged able to
+    carry next year
+  choose-work -> allocate-budget [chosen-set]: the chosen set, and the
+    record of what was left out and why
+  allocate-budget -> build-calendar [budget-split]: the money against
+    each chosen initiative, at the figures the plan will carry
+  build-calendar -> name-measures [year-calendar]: the initiatives
+    across the year with their dates, and every collision that had to
+    be settled
+  name-measures -> approve-plan [plan-with-measures]: the plan at a
+    version, with the measure each goal will be reported against
+  approve-plan -> publish-plan [signed-plan]: the plan at the signed
+    version. A later change voids the approval and the signers see it
+    again
+  publish-plan -> brief-department [published-plan]: the published
+    plan, and what each agent owes against it
+  brief-department -> record-basis [agent-commitments]: what each
+    agent took away, and anything an agent said it could not do
+deviations:
+  size-proposals -> collect-proposals [numbers-fall-short]: the costed
+    proposals do not reach the goals, so the areas are asked again for
+    work that would
+  choose-work -> set-goals [nothing-reaches-goals]: nothing proposed
+    reaches the goals, so the goals are set again, something outside
+    the proposals is funded, or the gap is accepted in writing
+  allocate-budget -> choose-work [budget-too-small]: the money will
+    not cover the chosen set, so the set is chosen again until it fits
+    the money
+  build-calendar -> choose-work [year-too-full]: the year will not
+    hold the chosen set, so the set is chosen again or an initiative
+    gives way to another
+  name-measures -> set-goals [goal-not-measurable]: a goal cannot be
+    measured as written, so it is set again in terms the period report
+    can produce without argument
+  approve-plan -> choose-work [approval-changes]: a signer asks for
+    changes, so the chosen set is decided again and everything after
+    it is rebuilt from there
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership and finance>

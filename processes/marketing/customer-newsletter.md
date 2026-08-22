@@ -83,6 +83,9 @@ PROCESS: customer newsletter          id: <team>/customer-newsletter  v1
 from: ref/mkt/customer-newsletter v1
 owner: <who>                          effective: <date>
 trigger: a publishing cycle opens in <your newsletter schedule>
+         watch: record=<publishing cycle>
+                system=<your newsletter schedule>
+                change=<a cycle opens for the next issue>
 concurrency: one issue at a time per newsletter - <how many> issues in
              production at once across <how many> newsletters
 goal: an issue that carries what the lineup promised, sends on its date
@@ -167,35 +170,59 @@ run-scoped:
             every: <cadence>
             from: send-issue   until: run close
 handoffs:
-  open-issue -> settle-lineup: what this issue is for, who receives it,
-    and the date it sends
-  settle-lineup -> check-standing: the customer the issue means to
-    feature, and what the issue wants to say about them
-  settle-lineup -> brief-makers: the items in order, with what each one
-    is for and what it links to
-  check-standing -> clear-story: where the account stands, with the
-    evidence under it and the date each reading was current
-  clear-story -> get-sign-offs: the permission at the wording the
-    customer agreed to, naming what may be used and until when
-  brief-makers -> write-draft: the request as every agent heard it, and
-    the date the issue is promised
-  edit-draft -> write-draft: the edit at a version, item by item, in
-    terms the writer can work through without coming back to ask
-  edit-draft -> build-issue: the copy at a version, with the subject
-    lines and the call to action in each item
-  make-visuals -> build-issue: the images at a version, at the widths
-    and file sizes mail will carry
-  build-issue -> wire-measurement: the issue as it will be sent, while
-    it can still be changed
-  wire-measurement -> proof-issue: the issue with its tracking on, and
-    a dated test showing each conversion arriving
-  proof-issue -> get-sign-offs: the scored proof, with the rule behind
-    every failure, and the audience count for this send
-  get-sign-offs -> send-issue: the approved issue at the signed
-    version. A later change voids the approval and sign-offs run again
-  send-issue -> watch-results: the send record, naming who said go,
-    which version went out and which segment received it
-  report-results -> record-learnings: the report, as delivered
+  open-issue -> settle-lineup [issue-purpose]: what this issue is for,
+    who receives it, and the date it sends
+  settle-lineup -> check-standing [featured-customer]: the customer the
+    issue means to feature, and what the issue wants to say about them
+  settle-lineup -> brief-makers [the-lineup]: the items in order, with
+    what each one is for and what it links to
+  check-standing -> clear-story [account-standing]: where the account
+    stands, with the evidence under it and the date each reading was
+    current
+  clear-story -> get-sign-offs [story-permission]: the permission at
+    the wording the customer agreed to, naming what may be used and
+    until when
+  brief-makers -> write-draft [maker-brief]: the request as every agent
+    heard it, and the date the issue is promised
+  edit-draft -> write-draft [the-edit]: the edit at a version, item by
+    item, in terms the writer can work through without coming back to
+    ask
+  edit-draft -> build-issue [edited-copy]: the copy at a version, with
+    the subject lines and the call to action in each item
+  make-visuals -> build-issue [issue-visuals]: the images at a version,
+    at the widths and file sizes mail will carry
+  build-issue -> wire-measurement [built-issue]: the issue as it will
+    be sent, while it can still be changed
+  wire-measurement -> proof-issue [tracked-issue]: the issue with its
+    tracking on, and a dated test showing each conversion arriving
+  proof-issue -> get-sign-offs [proof-scores]: the scored proof, with
+    the rule behind every failure, and the audience count for this send
+  get-sign-offs -> send-issue [approved-issue]: the approved issue at
+    the signed version. A later change voids the approval and sign-offs
+    run again
+  send-issue -> watch-results [send-record]: the send record, naming
+    who said go, which version went out and which segment received it
+  report-results -> record-learnings [the-report]: the report, as
+    delivered
+deviations:
+  check-standing -> settle-lineup [account-cannot-be-asked]: the
+    account is in no state to be asked, so the lineup takes a
+    replacement item
+  clear-story -> settle-lineup [customer-declines]: the customer
+    refuses, so the lineup takes a replacement item and the date they
+    may be asked again is recorded
+  clear-story -> write-draft [terms-narrow-the-item]: the customer
+    agrees to less than the issue wanted, so the item is rewritten to
+    what they agreed to or dropped from the issue
+  wire-measurement -> build-issue [issue-has-to-change]: wiring the
+    measurement shows the issue itself has to change, so it is built
+    again
+  proof-issue -> build-issue [proof-fails]: a proof renders badly or a
+    link is wrong, so the producer fixes what the finding named
+  get-sign-offs -> write-draft [sign-off-changes-to-copy]: a signer
+    comes back with changes to an item, and only that item reopens
+  get-sign-offs -> make-visuals [sign-off-changes-to-visuals]: a signer
+    comes back with changes to an image or a diagram
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, legal, brand,

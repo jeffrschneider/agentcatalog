@@ -92,6 +92,11 @@ from: ref/mkt/buyer-persona v1
 owner: <who>                          effective: <date>
 trigger: a priority segment is named in <your planning process>, or the
          review date on a recorded persona arrives
+         watch: record=<the segment> system=<your planning process>
+                change=<a segment is named as a priority>
+         or watch: record=<the recorded persona>
+                system=<where the review dates are kept>
+                change=<the review date on a persona arrives>
 concurrency: one run at a time for the same role inside the same
              segment. Runs for different roles overlap
 goal: one persona for one role inside one segment, carrying the jobs
@@ -203,51 +208,78 @@ run-scoped:
                 every: <cadence>
                 from: field-study       until: read-responses
 handoffs:
-  take-in-segment -> quote-profile / gather-known / read-behavior: the
-    segment, the role inside it, what each agent owes, and the date it
-    is owed. Three agents read one record
-  quote-profile -> plan-study: the profile id and its version, and the
-    account traits as that profile states them
-  gather-known -> plan-study: what is already known about this role,
-    with a source line under every fact and the date it was read
-  read-behavior -> plan-study: what people in this role already do,
-    with the systems the numbers came from
-  plan-study -> clear-study: the sample, every question at its version,
-    and every piece of material anybody will be shown
-  clear-study -> field-study: the sample the consent record covers and
-    the questions that were signed, at the version they were signed at
-  field-study -> read-responses: every response as it was given, with
-    its date and the question version it answered
-  read-responses -> name-jobs: which figures the data supports, the
-    range around each one, and every response left out with the rule
-    that removed it
-  read-responses -> name-committee: the same reading. Three branches
-    read one record
-  read-responses -> record-language: the responses in the words they
-    were given in
-  name-jobs -> name-pains: the jobs, ordered by how much the responses
-    say each one matters
-  name-pains -> name-triggers: each pain, how often it happens, and
-    what it costs
-  name-triggers -> back-test: the persona in the form it will be
-    tested in
-  name-triggers -> seller-review: the jobs, the pains and the triggers
-  name-committee -> seller-review: the other people in the decision,
-    what each of them wants, and who can stop the purchase alone
-  record-language -> seller-review: the buyer's own words, attributed
-    to the kind of participant who said them
-  back-test -> write-persona: which buyers the persona would have
-    matched, and what actually happened to those deals
-  seller-review -> write-persona: what the sellers recognized, and
-    everything they said was wrong
-  write-persona -> issue-version: the persona in the wording it was
-    reviewed in, with its profile citation
-  issue-version -> hand-over: the persona at its number, and what
-    changed from the version it replaces
-  hand-over -> set-review: what each receiving agent said it would
-    change, and the date it said it by
-  set-review -> record-learnings: the review date and the conditions
-    that bring the persona back sooner
+  take-in-segment -> quote-profile / gather-known / read-behavior
+    [segment-and-role]: the segment, the role inside it, what each
+    agent owes, and the date it is owed. Three agents read one record
+  quote-profile -> plan-study [account-profile]: the profile id and
+    its version, and the account traits as that profile states them
+  gather-known -> plan-study [what-is-known]: what is already known
+    about this role, with a source line under every fact and the date
+    it was read
+  read-behavior -> plan-study [behavioral-record]: what people in this
+    role already do, with the systems the numbers came from
+  plan-study -> clear-study [study-plan]: the sample, every question
+    at its version, and every piece of material anybody will be shown
+  clear-study -> field-study [cleared-sample]: the sample the consent
+    record covers and the questions that were signed, at the version
+    they were signed at
+  field-study -> read-responses [responses]: every response as it was
+    given, with its date and the question version it answered
+  read-responses -> name-jobs [qualified-responses]: which figures the
+    data supports, the range around each one, and every response left
+    out with the rule that removed it
+  read-responses -> name-committee [reading-for-committee]: the same
+    reading. Three branches read one record
+  read-responses -> record-language [verbatim-responses]: the
+    responses in the words they were given in
+  name-jobs -> name-pains [the-jobs]: the jobs, ordered by how much
+    the responses say each one matters
+  name-pains -> name-triggers [the-pains]: each pain, how often it
+    happens, and what it costs
+  name-triggers -> back-test [persona-to-test]: the persona in the
+    form it will be tested in
+  name-triggers -> seller-review [jobs-pains-triggers]: the jobs, the
+    pains and the triggers
+  name-committee -> seller-review [the-committee]: the other people in
+    the decision, what each of them wants, and who can stop the
+    purchase alone
+  record-language -> seller-review [buyer-language]: the buyer's own
+    words, attributed to the kind of participant who said them
+  back-test -> write-persona [back-test-result]: which buyers the
+    persona would have matched, and what actually happened to those
+    deals
+  seller-review -> write-persona [seller-verdict]: what the sellers
+    recognized, and everything they said was wrong
+  write-persona -> issue-version [drafted-persona]: the persona in the
+    wording it was reviewed in, with its profile citation
+  issue-version -> hand-over [issued-persona]: the persona at its
+    number, and what changed from the version it replaces
+  hand-over -> set-review [agent-answers]: what each receiving agent
+    said it would change, and the date it said it by
+  set-review -> record-learnings [review-conditions]: the review date
+    and the conditions that bring the persona back sooner
+deviations:
+  quote-profile -> take-in-segment [no-agreed-profile]: no agreed
+    customer profile covers this segment, so the run waits there until
+    one exists
+  clear-study -> plan-study [sample-or-question-ruled-out]: legal or
+    the consent record rules out part of the sample or one of the
+    questions, so the study is planned again
+  read-responses -> field-study [too-few-responses]: the study closed
+    with fewer responses than the statistician asked for, so more are
+    gathered while there is still time
+  name-committee -> take-in-segment [wrong-role]: the decision sits
+    with a role the persona does not describe, and a different role
+    needs its own run
+  back-test -> name-jobs [record-does-not-match]: the buyers who
+    actually bought do not look like this persona, so the jobs are
+    named again
+  seller-review -> name-jobs [sellers-do-not-recognize]: the sellers
+    do not recognize this buyer, so the jobs are named again from what
+    each of them said was wrong
+  any -> plan-study [profile-changed]: the customer profile changes
+    while the run is open, and a change to the account traits the
+    study was sampled against sends the run back to the plan
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for leadership, the sellers and

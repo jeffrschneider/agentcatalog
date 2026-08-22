@@ -75,6 +75,9 @@ PROCESS: churn-risk play              id: <team>/churn-risk-play   v1
 from: ref/mkt/churn-risk-play v1
 owner: <who>                          effective: <date>
 trigger: a churn risk signal fires in <your account health monitoring>
+         watch: record=<the account>
+                system=<your account health monitoring>
+                change=<a churn risk signal fires against an account>
 concurrency: one run per account - <how many> accounts open at once
 goal: every churn risk signal answered, and every confirmed one
       answered with an intervention a person approved and an outcome
@@ -143,29 +146,54 @@ run-scoped:
              every: <cadence>
              from: decide-to-act    until: run close
 handoffs:
-  take-in-signal -> confirm-signal: the account the signal names, what
-    fired it, and the date and time it fired
-  confirm-signal -> decide-to-act: whether the risk is real, with every
-    system that was read, what it said, and when that reading was
-    current. Anything that could not be read is named as unread
-  decide-to-act -> choose-play: the decision in one line, the person
-    who made it, the date, and what the intervention has to achieve
-  choose-play -> set-limits: what is being proposed to this account,
-    and whether a person is making the contact
-  set-limits -> write-message: the numbers and terms the message may
-    contain, and the ones it may not
-  set-limits -> deliver: the same limits, when the account owner is
-    making the contact instead of sending a message
-  write-message -> get-sign-off: what will be said, at a version
-  get-sign-off -> prepare-send: the approved wording at the signed
-    version. A later change voids the approval and sign-off runs again
-  prepare-send -> deliver: the audience count after consent and
-    suppression, the proof record, and the schedule as it was set
-  deliver -> watch-account: what was sent or said, to whom, on what
-    date, and everything the account was promised
-  watch-account -> record-outcome: the readings taken after the
-    contact, each attributed to the system it came from
-  record-outcome -> record-learnings: the outcome, as recorded
+  take-in-signal -> confirm-signal [the-signal]: the account the
+    signal names, what fired it, and the date and time it fired
+  confirm-signal -> decide-to-act [confirmed-picture]: whether the
+    risk is real, with every system that was read, what it said, and
+    when that reading was current. Anything that could not be read is
+    named as unread
+  decide-to-act -> choose-play [decision-to-act]: the decision in one
+    line, the person who made it, the date, and what the intervention
+    has to achieve
+  choose-play -> set-limits [proposed-play]: what is being proposed to
+    this account, and whether a person is making the contact
+  set-limits -> write-message [offer-limits]: the numbers and terms
+    the message may contain, and the ones it may not
+  set-limits -> deliver [limits-for-the-call]: the same limits, when
+    the account owner is making the contact instead of sending a
+    message
+  write-message -> get-sign-off [draft-message]: what will be said, at
+    a version
+  get-sign-off -> prepare-send [signed-wording]: the approved wording
+    at the signed version. A later change voids the approval and
+    sign-off runs again
+  prepare-send -> deliver [send-ready]: the audience count after
+    consent and suppression, the proof record, and the schedule as it
+    was set
+  deliver -> watch-account [what-was-said]: what was sent or said, to
+    whom, on what date, and everything the account was promised
+  watch-account -> record-outcome [readings-after-contact]: the
+    readings taken after the contact, each attributed to the system it
+    came from
+  record-outcome -> record-learnings [the-outcome]: the outcome, as
+    recorded
+deviations:
+  decide-to-act -> record-outcome [signal-describes-nothing]: the
+    account owner reads the confirmed picture and closes the run, so
+    nothing is chosen, written, signed or sent, and the run still
+    records which signal fired and that the reading did not support it
+  set-limits -> deliver [owner-makes-the-call]: the account owner is
+    making the contact rather than sending a message, so no message is
+    written, signed or prepared and the limits go straight to the
+    contact
+  get-sign-off -> write-message [message-changes]: a signer comes back
+    with changes, and only the part the signers named reopens
+  get-sign-off -> set-limits [offer-outside-limits]: what the message
+    offers sits outside the limits, so finance and legal decide
+    whether the limit moves for this account
+  watch-account -> choose-play [account-got-worse]: the account got
+    worse after the contact, so a second intervention is chosen and
+    gets its own limits and its own sign-off
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, finance and

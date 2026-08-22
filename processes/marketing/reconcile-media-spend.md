@@ -68,6 +68,7 @@ PROCESS: reconcile media spend        id: <team>/reconcile-media-spend   v1
 from: ref/mkt/reconcile-media-spend v1
 owner: <who>                          effective: <date>
 trigger: a media period closes on <your finance calendar>
+         watch: every=<your media period>
 concurrency: runs may overlap - a period can close while the last one
              is still open
 goal: every invoice line for the period matched against what was
@@ -142,33 +143,41 @@ run-scoped:
                every: <cadence>
                from: set-scope   until: run close
 handoffs:
-  set-scope -> collect-invoices / pull-delivery / pull-orders: the
-    accounts, the campaigns and the dates this close covers. Three
-    branches read one record
-  collect-invoices -> match-lines: every invoice and statement for the
-    period, each with the date it arrived
-  pull-delivery -> match-lines: what each platform recorded as
-    delivered and spent, with the date the figures were pulled
-  pull-orders -> match-lines: what was ordered and at what rate, at the
-    version it was ordered at
-  match-lines -> check-rates: each invoice line with its order and its
-    delivery beside it
-  check-rates -> list-differences: a verdict on every line, each
-    verdict citing the term it was scored against
-  list-differences -> clear-explained: every line that does not match,
-    with the amount at stake written on it
-  clear-explained -> raise-queries: the lines the buy's own record does
-    not explain
-  raise-queries -> track-answers: the question that went to each issuer
-    and the date it went
-  track-answers -> decide-open: the lines the issuer refused or would
-    not answer, each with its amount and how long it has been open
-  track-answers -> approve-spend: the lines a credit or a correction
-    settled, and what settled them
-  decide-open -> approve-spend: what <who> decided for each open line,
-    with the reason recorded against it
-  approve-spend -> release-figures: the spend figure for the period as
-    finance signed it, at a version
+  set-scope -> collect-invoices / pull-delivery / pull-orders
+    [close-scope]: the accounts, the campaigns and the dates this close
+    covers. Three branches read one record
+  collect-invoices -> match-lines [invoices]: every invoice and
+    statement for the period, each with the date it arrived
+  pull-delivery -> match-lines [delivery-record]: what each platform
+    recorded as delivered and spent, with the date the figures were
+    pulled
+  pull-orders -> match-lines [order-record]: what was ordered and at
+    what rate, at the version it was ordered at
+  match-lines -> check-rates [matched-lines]: each invoice line with
+    its order and its delivery beside it
+  check-rates -> list-differences [rate-verdicts]: a verdict on every
+    line, each verdict citing the term it was scored against
+  list-differences -> clear-explained [differences]: every line that
+    does not match, with the amount at stake written on it
+  clear-explained -> raise-queries [unexplained-lines]: the lines the
+    buy's own record does not explain
+  raise-queries -> track-answers [queries-sent]: the question that went
+    to each issuer and the date it went
+  track-answers -> decide-open [unsettled-lines]: the lines the issuer
+    refused or would not answer, each with its amount and how long it
+    has been open
+  track-answers -> approve-spend [settled-lines]: the lines a credit or
+    a correction settled, and what settled them
+  decide-open -> approve-spend [open-line-decisions]: what <who>
+    decided for each open line, with the reason recorded against it
+  approve-spend -> release-figures [signed-figure]: the spend figure
+    for the period as finance signed it, at a version
+deviations:
+  track-answers -> match-lines [invoice-reissued]: the issuer sends a
+    corrected invoice, which is a new document, so it is matched and
+    rate-checked from the start
+  approve-spend -> decide-open [figure-not-signed]: finance will not
+    sign the figure, so only the lines finance named reopen
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the finance and leadership

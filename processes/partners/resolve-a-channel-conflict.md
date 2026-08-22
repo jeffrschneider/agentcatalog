@@ -76,6 +76,10 @@ from: ref/prt/resolve-a-channel-conflict v1
 owner: <who>                          effective: <date>
 trigger: a partner or an account owner says the same customer deal is
          being worked by both sides
+         watch: record=<conflict claim>
+                system=<where conflicts are raised>
+                change=<a claim is raised that one customer deal is
+                being worked by both sides>
 concurrency: runs may overlap - <how many> conflicts are open at once,
              and one deal is settled by one run
 goal: every conflict decided within <days> by the rule that was
@@ -159,40 +163,62 @@ phases:
                       owner: partner-manager    after: record-precedent
                       every: <cadence>          automation: <level>
 handoffs:
-  take-in-claim -> stop-approaches: who raised it, on which deal, and
-    which customer contacts are now off limits to both sides
-  stop-approaches -> match-records: the confirmation from each side
-    that they have stopped, with the time each one confirmed
-  match-records -> pull-records: the one account record both deals now
-    point at, or the finding that they are two customers
-  pull-records -> read-rule: the claim date, which is the date that
-    decides which version of the rule applies
-  pull-records -> establish-first: every dated line from both sides,
-    with the system it was read from
-  pull-records -> test-origin: the contacts and the activity behind the
-    partner's claim to have introduced the customer
-  read-rule -> hear-both: the rule at its version, and the clauses this
-    conflict actually turns on
-  establish-first -> hear-both: who was first on the record, and by how
-    much, so both sides are asked about the same dates
-  test-origin -> hear-both: the introduction marked evidenced, asserted
-    or absent, with the record behind an evidenced one
-  hear-both -> apply-rule: each side's account as given, and every
-    place their accounts disagree with the record
-  apply-rule -> check-precedent: the decision, the clause behind it,
-    and the facts it turns on
-  check-precedent -> sign-decision: earlier decisions under the same
-    clause, and where this one departs from them
-  sign-decision -> announce: the signed decision and reason, as one
-    text, with the signer named
-  announce -> restart-deal: the decision as both sides received it, and
-    the date the stop lifts
-  announce -> record-precedent: the same text, so the record and what
-    the sides were told cannot differ
-  restart-deal -> record-precedent: which side picked the deal up, on
-    what date, and what the customer was told
-  record-precedent -> rule-feedback: the decision as recorded, counted
-    with the other conflicts under the same clause
+  take-in-claim -> stop-approaches [claim-and-contacts]: who raised it,
+    on which deal, and which customer contacts are now off limits to
+    both sides
+  stop-approaches -> match-records [stop-confirmations]: the
+    confirmation from each side that they have stopped, with the time
+    each one confirmed
+  match-records -> pull-records [matched-account]: the one account
+    record both deals now point at, or the finding that they are two
+    customers
+  pull-records -> read-rule [claim-date]: the claim date, which is the
+    date that decides which version of the rule applies
+  pull-records -> establish-first [dated-record]: every dated line from
+    both sides, with the system it was read from
+  pull-records -> test-origin [introduction-evidence]: the contacts and
+    the activity behind the partner's claim to have introduced the
+    customer
+  read-rule -> hear-both [rule-in-force]: the rule at its version, and
+    the clauses this conflict actually turns on
+  establish-first -> hear-both [who-was-first]: who was first on the
+    record, and by how much, so both sides are asked about the same
+    dates
+  test-origin -> hear-both [origin-finding]: the introduction marked
+    evidenced, asserted or absent, with the record behind an evidenced
+    one
+  hear-both -> apply-rule [both-accounts]: each side's account as
+    given, and every place their accounts disagree with the record
+  apply-rule -> check-precedent [draft-decision]: the decision, the
+    clause behind it, and the facts it turns on
+  check-precedent -> sign-decision [precedent-check]: earlier decisions
+    under the same clause, and where this one departs from them
+  sign-decision -> announce [signed-decision]: the signed decision and
+    reason, as one text, with the signer named
+  announce -> restart-deal [decision-and-lift-date]: the decision as
+    both sides received it, and the date the stop lifts
+  announce -> record-precedent [announced-text]: the same text, so the
+    record and what the sides were told cannot differ
+  restart-deal -> record-precedent [deal-restart]: which side picked
+    the deal up, on what date, and what the customer was told
+  record-precedent -> rule-feedback [recorded-precedent]: the decision
+    as recorded, counted with the other conflicts under the same clause
+deviations:
+  match-records -> take-in-claim [not-the-same-customer]: the two
+    records resolve to two different customers, so there is no conflict
+    on the deal as claimed and the claim goes back to whoever raised it
+  test-origin -> pull-records [no-introduction-on-record]: the record
+    shows no introduction at all, so the records are pulled again
+    before the origin is settled
+  apply-rule -> pull-records [new-record-appears]: a side brings a
+    record nobody had, so it goes onto the record and the rule is
+    applied again to the facts as they now stand
+  check-precedent -> apply-rule [precedent-differs]: the same clause
+    was decided differently before, so the decision is made again
+    against the earlier one
+  sign-decision -> apply-rule [signer-will-not-sign]: the signer will
+    not sign the reason as written, so the reason is rewritten by the
+    referee and goes back through the check against precedent
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the account owner, the partner

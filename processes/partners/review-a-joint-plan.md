@@ -75,6 +75,13 @@ from: ref/prt/review-a-joint-plan v1
 owner: <who>                          effective: <date>
 trigger: a review date recorded in a signed joint plan arrives, or
          <who> calls a review out of cadence
+         watch: record=<joint plan>
+                system=<your shared plan location>
+                change=<the review date recorded in the signed plan
+                arrives>
+         or watch: record=<joint plan>
+                system=<your shared plan location>
+                change=<a review is called out of cadence>
 concurrency: runs may overlap - <how many> reviews run at once, and one
              plan is reviewed by one run at a time
 goal: every measure in the plan settled to one number both sides
@@ -171,44 +178,65 @@ run-scoped:
                every: <cadence>
                from: record-decisions   until: the next review opens
 handoffs:
-  open-review -> pull-numbers: the signed plan at its version, and the
-    measures it defined
-  open-review -> read-commitments: the same plan, and every commitment
-    recorded when it was signed
-  open-review -> read-accounts: the accounts and segments the plan
-    named
-  pull-numbers -> compare-numbers: each measure at its value, with the
-    system and the date it was read
-  compare-numbers -> settle-difference: the gap between the two sides
-    per measure, with the definition each side was computing to
-  settle-difference -> build-pack: one number per measure, and the
-    measures the two sides could not settle, marked as unsettled rather
-    than dropped
-  read-commitments -> build-pack: every commitment, its owner, its date
-    and its state, with the late ones counted
-  read-accounts -> build-pack: what moved on each named account, dated
-  build-pack -> send-pack: the pack at a version, with every number
-    naming where it came from
-  send-pack -> hold-review: the pack, and who on each side received it
-    and when
-  hold-review -> name-gaps: what both sides said about each measure,
-    including the numbers nobody defended
-  name-gaps -> decide-changes: every measure behind target, its reason,
-    and the person closest to it
-  decide-changes -> close-dead: what changes, and which commitments the
-    change makes pointless
-  decide-changes -> write-amendment: the decisions as both sponsors
-    announced them
-  close-dead -> write-amendment: the commitments closed, each with its
-    reason, so the amendment does not carry them forward
-  write-amendment -> re-sign: the new version, with the changed lines
-    marked against the version they replace
-  re-sign -> record-decisions: the signed amendment, the signers, and
-    the date. An unsigned change is not recorded as agreed
-  record-decisions -> publish-record: the decisions, the owners and the
-    new dates as they now stand in the tracker
-  publish-record -> set-next-review: the record at its address, and who
-    on each side has been given it
+  open-review -> pull-numbers [plan-and-measures]: the signed plan at
+    its version, and the measures it defined
+  open-review -> read-commitments [recorded-commitments]: the same
+    plan, and every commitment recorded when it was signed
+  open-review -> read-accounts [named-accounts]: the accounts and
+    segments the plan named
+  pull-numbers -> compare-numbers [our-figures]: each measure at its
+    value, with the system and the date it was read
+  compare-numbers -> settle-difference [measure-differences]: the gap
+    between the two sides per measure, with the definition each side
+    was computing to
+  settle-difference -> build-pack [settled-numbers]: one number per
+    measure, and the measures the two sides could not settle, marked as
+    unsettled rather than dropped
+  read-commitments -> build-pack [commitment-states]: every commitment,
+    its owner, its date and its state, with the late ones counted
+  read-accounts -> build-pack [account-movement]: what moved on each
+    named account, dated
+  build-pack -> send-pack [review-pack]: the pack at a version, with
+    every number naming where it came from
+  send-pack -> hold-review [pack-receipts]: the pack, and who on each
+    side received it and when
+  hold-review -> name-gaps [what-was-said]: what both sides said about
+    each measure, including the numbers nobody defended
+  name-gaps -> decide-changes [gaps-and-reasons]: every measure behind
+    target, its reason, and the person closest to it
+  decide-changes -> close-dead [changes-decided]: what changes, and
+    which commitments the change makes pointless
+  decide-changes -> write-amendment [sponsor-decisions]: the decisions
+    as both sponsors announced them
+  close-dead -> write-amendment [dead-commitments]: the commitments
+    closed, each with its reason, so the amendment does not carry them
+    forward
+  write-amendment -> re-sign [amended-plan]: the new version, with the
+    changed lines marked against the version they replace
+  re-sign -> record-decisions [signed-amendment]: the signed amendment,
+    the signers, and the date. An unsigned change is not recorded as
+    agreed
+  record-decisions -> publish-record [tracked-decisions]: the
+    decisions, the owners and the new dates as they now stand in the
+    tracker
+  publish-record -> set-next-review [published-record]: the record at
+    its address, and who on each side has been given it
+deviations:
+  compare-numbers -> pull-numbers [counted-differently]: the two sides
+    count a measure differently, so the measure is pulled again with
+    the definition each side computed to
+  settle-difference -> pull-numbers [number-cannot-be-sourced]: a
+    number nobody can source, so the measure goes back to be pulled
+    from a system that produces it or is marked unsettled
+  hold-review -> send-pack [pack-not-read]: a side has not read the
+    pack, so the pack goes out again and the meeting waits for it
+  name-gaps -> build-pack [gap-not-in-pack]: the pack does not show a
+    gap the room can see, so the pack is built again around it
+  decide-changes -> pull-numbers [number-not-brought]: the decision
+    needs a number nobody brought, so that measure is pulled before the
+    change is decided
+  re-sign -> decide-changes [sponsor-will-not-sign]: a sponsor will not
+    sign the change, so what they objected to goes back to the decision
 bindings:
   roster:  <who holds each role - agents claiming the abstract agents
            above, and named people for the partner lead, the sales
