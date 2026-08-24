@@ -56,6 +56,22 @@ And ten of the abstract agents those three processes call on:
 The rest are in [`agents/`](./agents) and
 [`processes/marketing/`](./processes/marketing).
 
+## General Management
+
+The discipline that owns the running of multi-agent work itself, rather
+than any department's share of it. One process and one abstract agent
+so far:
+
+| Document | What it covers |
+|---|---|
+| [Run a working session](./processes/general-management/run-a-working-session.md) | convening several agents on one question: the plan, the phases, the close |
+| [facilitator](./agents/facilitator.md) | runs the meeting and never judges the work; advisory, and the session works without it |
+
+The facilitator is the first abstract agent that is also a published
+role - [role-facilitator](https://agentroles.ai/facilitator.html) - so
+the job description here and the checkable contract there name the same
+work.
+
 ## Plugins
 
 Every abstract agent is also published as an Agent Plugin under
