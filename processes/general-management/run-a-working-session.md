@@ -19,17 +19,17 @@ minutes, because every message in it is already signed and ordered.
 
 | # | Activity | What happens | Agents |
 |---|---|---|---|
-| 1 | Take in the Ask | what the session is for, and what done looks like | convener (person or `<your convener role>`) |
-| 2 | Choose the Plan | the opening pattern, the agenda, and who facilitates | convener · [facilitator](../../agents/facilitator.md) |
-| 3 | Convene the Members | the conversation opens with the plan in it, and the members are invited with their roles | convener |
-| 4 | Brief on Arrival | every member is told the current phase, its own role, and what remains planned | facilitator |
+| 1 | Take in the Ask | what the session is for, and what done looks like | convener (person) |
+| 2 | Choose the Plan | the opening pattern, the agenda, and who facilitates | convener (person) · [facilitator](../../agents/facilitator.md) |
+| 3 | Convene the Members | the room opens with the plan, and members are invited | convener (person) |
+| 4 | Brief on Arrival | each member is told the phase, its role, what remains | facilitator |
 | 5 | Open the Session | the opening phase is called and the session is in it | facilitator |
-| 6 | Work the Agenda | each phase runs until it is done, and the session moves to the next with a reason attached | all members · facilitator |
-| 7 | Name the Turns | where the pattern in force has turns, whose turn it is is said out loud | facilitator |
+| 6 | Work the Agenda | each phase runs to done; moved on with a reason | members (person) · facilitator |
+| 7 | Name the Turns | whose turn it is, where the pattern has turns | facilitator |
 | 8 | Note Departures | work that leaves the declared pattern is noted, not blocked | facilitator |
 | 9 | Close the Agenda | the agenda is exhausted and the facilitator says so | facilitator |
-| 10 | Hand Over What Was Made | the artifacts and decisions go to whoever asked | convener |
-| 11 | Record What Was Learned | which patterns fit the work, and which phases dragged | convener · facilitator |
+| 10 | Hand Over What Was Made | the artifacts and decisions go to whoever asked | convener (person) |
+| 11 | Record What Was Learned | which patterns fit the work, and which phases dragged | convener (person) · facilitator |
 
 ## The graph
 
@@ -86,16 +86,17 @@ phases:
                      and on every phase change
                      owner: facilitator            after: convene
                      automation: autonomous
-  open-session     - runs <the opening pattern the plan names>: the
-                     opening phase is called and the session is in it
+  open-session     - system: the opening phase is called and the
+                     session is in it - which pattern that is comes from
+                     the plan, not from this document
                      owner: facilitator            after: brief-arrivals
                      automation: <level>
-  work-agenda      - runs <the pattern the agenda names, phase by
-                     phase>: each phase runs until it is done, and the
-                     facilitator moves the session to the next with a
-                     reason attached; only the facilitator's calls move
-                     it, and its calls are advisory - the members
-                     proceed whether or not it speaks
+  work-agenda      - human: each phase runs the pattern the agenda
+                     names until it is done, and the facilitator moves
+                     the session to the next with a reason attached;
+                     only the facilitator's calls move it, and its
+                     calls are advisory - the members proceed whether
+                     or not it speaks
                      owner: all members            after: open-session
                      by: <hours per phase>         automation: <level>
   name-turns       - system: where the pattern in force has turns,
