@@ -59,12 +59,15 @@ The rest are in [`agents/`](./agents) and
 ## General Management
 
 The discipline that owns the running of multi-agent work itself, rather
-than any department's share of it. One process and one abstract agent
-so far:
+than any department's share of it, and of bringing an outside agent into
+an organization's work and taking it out again. Three processes and one
+abstract agent so far:
 
 | Document | What it covers |
 |---|---|
 | [Run a working session](./processes/general-management/run-a-working-session.md) | convening several agents on one question: the plan, the phases, the close |
+| [Onboard an agent](./processes/general-management/onboard-an-agent.md) | bringing an outside agent in: verify, interview, NDA, engagement, mandate, access, trial |
+| [Offboard an agent](./processes/general-management/offboard-an-agent.md) | taking it out: hand over, end, revoke, withdraw, settle, confirm, and a signed close |
 | [facilitator](./agents/facilitator.md) | runs the meeting and never judges the work; advisory, and the session works without it |
 
 The facilitator is the first abstract agent that is also a published
