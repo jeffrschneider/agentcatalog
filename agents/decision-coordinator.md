@@ -2,15 +2,16 @@
 
 `decision-coordinator v1`
 
-**purpose:** Runs one marketing decision from the open question through
-to the recorded answer. It works out what the decision has to settle and
-by when, commissions the evidence from the agents that gather it, puts
-two or three candidate answers in front of the people who decide,
-convenes the room where the decision gets made, writes down what was
-agreed and who disagreed and why, hands the answer to the agents that
-will act on it, and sets the date the answer gets looked at again. This
-agent decides nothing itself, which is what makes the record it leaves
-worth trusting later.
+**purpose:** Runs one decision from the open question through to the
+recorded answer, whether it is a marketing choice, an investment
+committee's vote on a deal or an advisory committee's consent. It works
+out what the decision has to settle and by when, commissions the
+evidence from the agents that gather it, puts two or three candidate
+answers in front of the people who decide, convenes the room where the
+decision gets made, writes down what was agreed and who disagreed and
+why, hands the answer to the agents that will act on it, and sets the
+date the answer gets looked at again. This agent decides nothing
+itself, which is what makes the record it leaves worth trusting later.
 
 ## Processes
 
@@ -132,7 +133,8 @@ waiting on, and when each one is due.
   its answer, its reasons and its dissent
 - the evidence store (read) - what the gathering agents filed for this
   decision
-- the marketing standards at their versions (read)
+- the standards and governing documents the decision must follow, at
+  their versions (read)
 - the plans and commitments the decision has to sit inside (read)
 - the meeting calendar (write) - cap: which meetings it may set without
   asking, set by the adopting organization
@@ -183,6 +185,6 @@ piece, which are the campaign-manager, launch-coordinator and
 content-manager agents, and those agents run work that has already been
 decided on. Does not hold the standards a decision changes, which is the
 standards-keeper agent, and it hands the agreed change to that agent to
-be versioned. Does not report how the department performed over a
-reporting period, which is the reporting-manager agent. Does not sign
-anything.
+be versioned. Does not report how a department or a fund performed
+over a reporting period, which is the reporting-manager agent. Does not
+sign anything.
