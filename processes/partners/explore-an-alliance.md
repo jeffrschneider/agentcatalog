@@ -12,6 +12,8 @@ sides say what they want, sign confidentiality, trade real numbers, and
 write one joint thesis. A named person then sends the thesis to
 diligence or stops it, and what was learned is kept either way.
 
+**delivers:** document
+
 ## The goals
 
 - Decide go or stop within [8 weeks]

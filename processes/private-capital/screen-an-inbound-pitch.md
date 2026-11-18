@@ -15,6 +15,8 @@ the answer inside the promised time, with a reason when it is a pass.
 The run closes when the pitch has a recorded decision and a pitch worth
 pursuing has become an opportunity with a named owner.
 
+**delivers:** verdict
+
 ## The goals
 
 - Answer every founder within [5 days]

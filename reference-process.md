@@ -37,6 +37,15 @@ generic like a pattern, and it never claims to be running anywhere.
   is a suggestion for you to change. These are business goals across
   runs. The document's `goal:` line says something else: what is true
   when one run closes.
+- **What it delivers**, on a `**delivers:**` line of its own between the
+  summary and the goals: the kind of thing a run leaves in somebody's
+  hands, in one of fifteen words: document, verdict, status board,
+  sheet, report, page, agreement, campaign, shortlist, statement, deal,
+  creative set, sequence, notes or event. It is read from the `goal:`
+  line, and a gallery uses it to picture the process as the thing it
+  produces. A proposal is a document and a calendar is a sheet. A
+  process whose run leaves a system changed, such as merging duplicate
+  records, delivers a status board.
 
 ## What stays blank
 

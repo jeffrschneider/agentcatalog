@@ -12,6 +12,8 @@ of the person who agreed. What the two sides settled leaves the run as
 one written position, and the redlines and the close plan both work
 from that one document rather than from anybody's memory.
 
+**delivers:** agreement
+
 ## The goals
 
 - Confirm the agreed position within [3 weeks]

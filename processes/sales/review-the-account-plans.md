@@ -12,6 +12,8 @@ stopped working and onto the ones that did. The round ends by writing
 down what it taught about how plans get written, which is the only way
 the next round starts from a better draft.
 
+**delivers:** verdict
+
 ## The goals
 
 - Decide every plan in scope within [3 weeks]

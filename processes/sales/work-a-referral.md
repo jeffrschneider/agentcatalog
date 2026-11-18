@@ -12,6 +12,8 @@ The introducer gets a note they can send as it stands, and a date. One
 reminder follows, then the referral is let go. The introducer hears how
 it went either way.
 
+**delivers:** sequence
+
 ## The goals
 
 - Answer every introducer within [4 hours]

@@ -22,6 +22,8 @@ issues it as a numbered version. This process quotes the company-level
 position at its version and stops there. Changing that position is the
 brand positioning process.
 
+**delivers:** document
+
 ## The goals
 
 - Issue the positioning within [6 weeks]

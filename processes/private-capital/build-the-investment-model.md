@@ -17,6 +17,8 @@ carries its source and its owner. Someone who did not build the model
 checks it, the deal lead partner agrees the cases, and it is issued at a
 version for the mandate check, the memo and the term sheet.
 
+**delivers:** sheet
+
 ## The goals
 
 - Issue the model within [5 days] of the numbers

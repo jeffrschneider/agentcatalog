@@ -17,6 +17,8 @@ were told. That date can be different for every customer, which is why
 serving the notice and moving the customer are separate activities with
 the notice period sitting between them.
 
+**delivers:** page
+
 ## The goals
 
 - Restate [100%] of published prices on the same day

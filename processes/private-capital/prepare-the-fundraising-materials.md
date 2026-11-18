@@ -19,6 +19,8 @@ signed confidentiality agreement. The run closes when the approved
 materials are released at their version and the records the rules
 require are kept.
 
+**delivers:** creative set
+
 ## The goals
 
 - Release approved materials by [the launch date]

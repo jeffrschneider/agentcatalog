@@ -12,6 +12,8 @@ with the amounts. The run stays open through the period, money that will
 not be used is moved before the period closes, and the run ends when
 where the money went has been reported.
 
+**delivers:** sheet
+
 ## The goals
 
 - Publish allocations [10 days] before the period opens

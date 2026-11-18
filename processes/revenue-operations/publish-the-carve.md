@@ -12,6 +12,8 @@ record and decided in one sitting, the changes are applied as a new
 version, and the final carve is published. The run ends when the window
 is closed and every seller has seen their own.
 
+**delivers:** sheet
+
 ## The goals
 
 - Release every statement on [the release date]

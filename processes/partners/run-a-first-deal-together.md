@@ -12,6 +12,8 @@ catch it. At the end a person decides, in writing, whether they can do
 it again without an escort, and the run closes by handing the partner to
 whoever owns the relationship from then on.
 
+**delivers:** deal
+
 ## The goals
 
 - Reach the customer's sign-off within [90 days]

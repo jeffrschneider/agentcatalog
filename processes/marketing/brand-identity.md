@@ -25,6 +25,8 @@ This process quotes the positioning and never reopens it. When the
 identity cannot carry what the positioning claims, the producer sends
 that finding to the positioning process instead of settling it here.
 
+**delivers:** creative set
+
 ## The goals
 
 - Issue the signed identity within [12 weeks]

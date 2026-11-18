@@ -12,6 +12,8 @@ watched, and the people being measured are told by a person rather than
 by a report. The thresholds are set, the detection is tested against
 runs whose answer is already known, and the numbers go to the review.
 
+**delivers:** status board
+
 ## The goals
 
 - Send the first report within [4 weeks]

@@ -16,6 +16,8 @@ buyers who did not buy are the harder half to reach, and that is the
 half most organizations end up skipping, so the report says how many of
 each half answered.
 
+**delivers:** report
+
 ## The goals
 
 - Deliver the themes within [6 weeks] of period close

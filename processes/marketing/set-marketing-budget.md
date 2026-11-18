@@ -23,6 +23,8 @@ those six. The run closes when every function has been told its number
 and the rules that come with it, and somebody has written down what the
 budget rests on and what would reopen it.
 
+**delivers:** sheet
+
 ## The goals
 
 - Sign the budget within [4 weeks] of the cycle opening

@@ -16,6 +16,8 @@ a broken link, a missing disclosure or the wrong creative on the wrong
 line. The run closes once the ads are serving and somebody has written
 down which creative is running where.
 
+**delivers:** campaign
+
 ## The goals
 
 - Get ads live within [2 days] of approval

@@ -16,6 +16,8 @@ a partner with no part in the deal argues against it, and the deal lead
 partner signs it. The run closes when the signed memo is with the
 committee, or when the deal team records a pass with its reason.
 
+**delivers:** document
+
 ## The goals
 
 - Send the memo [5 days] before the committee

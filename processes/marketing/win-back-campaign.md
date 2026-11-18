@@ -18,6 +18,8 @@ the segment has either re-engaged or been formally retired, because a
 win-back that leaves people undecided gets run again on the same names
 a quarter later.
 
+**delivers:** sequence
+
 ## The goals
 
 - Win back [15%] of lapsed customers

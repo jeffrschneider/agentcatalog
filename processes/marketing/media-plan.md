@@ -21,6 +21,8 @@ places no orders. The channel processes place them against the plan it
 commits, and moving money once the flights are running is a separate
 process.
 
+**delivers:** sheet
+
 ## The goals
 
 - Commit the plan within [3 weeks] of the budget

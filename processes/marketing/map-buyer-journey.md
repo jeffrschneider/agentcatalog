@@ -21,6 +21,8 @@ signal that marks each one, the touchpoints placed against a stage with
 the agent that owns each, the questions in the words buyers used, and
 the gaps ranked by how many buyers reach the question.
 
+**delivers:** document
+
 ## The goals
 
 - Issue an agreed journey map within [6 weeks]

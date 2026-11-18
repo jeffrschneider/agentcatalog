@@ -24,6 +24,8 @@ together as a numbered version of the brand guidelines. That version is
 what the brand-check agent scores material against, and this process is
 where it comes from. The run does not reopen the position itself.
 
+**delivers:** document
+
 ## The goals
 
 - Issue the signed voice guide within [8 weeks]

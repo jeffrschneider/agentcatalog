@@ -15,6 +15,8 @@ deadline with the range, the basis and the conditions, or the firm
 withdraws in writing. The run closes when the bank has the firm's
 indication or its withdrawal.
 
+**delivers:** document
+
 ## The goals
 
 - Decide to engage or decline within [3 days]

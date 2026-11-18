@@ -12,6 +12,8 @@ marketing agree to the same sentence, the rule is issued at a version,
 every report that reads it is told what changed, and what happens to
 reports already published is decided rather than left to whoever notices.
 
+**delivers:** document
+
 ## The goals
 
 - Issue each definition within [3 weeks] of the ask

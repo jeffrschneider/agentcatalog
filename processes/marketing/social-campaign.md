@@ -7,6 +7,8 @@ A social media manager takes an approved brief, gets creative made and
 signed off, launches it across the chosen channels, tends it while it is
 live, and reports how it did against what the brief asked for.
 
+**delivers:** campaign
+
 ## The goals
 
 - Launch on every channel by [the brief's date]

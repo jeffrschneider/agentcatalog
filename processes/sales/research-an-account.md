@@ -12,6 +12,8 @@ and the date it was current. A question nothing answered is written
 down as unknown rather than guessed. The account owner corrects the
 read before it is issued at a version.
 
+**delivers:** report
+
 ## The goals
 
 - Issue each account read within [2 days]

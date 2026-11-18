@@ -12,6 +12,8 @@ tested for coverage against the target. Cuts too thin to carry a number
 are said to be thin. The result is frozen at a version with its gaps
 named. It is arithmetic, and it decides nothing.
 
+**delivers:** sheet
+
 ## The goals
 
 - Freeze the roll-up within [1 day] of cut-off

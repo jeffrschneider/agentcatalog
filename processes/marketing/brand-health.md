@@ -17,6 +17,8 @@ and campaign numbers are a different source. They belong to the
 analytics agent, and this run never reports one of them as a perception
 figure.
 
+**delivers:** report
+
 ## The goals
 
 - Report [100%] of tracker waves on time

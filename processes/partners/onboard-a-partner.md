@@ -12,6 +12,8 @@ rather than declared open. The run does not close until the partner has
 confirmed in writing that they can reach what they were given, and a
 standing call is in diaries on both sides.
 
+**delivers:** status board
+
 ## The goals
 
 - Confirm working access within [10 days] of signing

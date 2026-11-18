@@ -21,6 +21,8 @@ settles the company-level position and stops there. Positioning an
 individual product is a separate process that quotes the version this run
 issued.
 
+**delivers:** document
+
 ## The goals
 
 - Agree the new positioning within [8 weeks]

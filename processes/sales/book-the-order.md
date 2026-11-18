@@ -13,6 +13,8 @@ deliver. Every term off the standard paper is settled by name before
 finance approves. The run closes when the order is recorded and the
 people who act on it have been told what they are acting on.
 
+**delivers:** statement
+
 ## The goals
 
 - Book every signed order within [2 days]

@@ -21,6 +21,8 @@ they have it. What the identity or the voice should say is settled
 elsewhere, and correcting the published material the new version fails
 belongs to the refresh process.
 
+**delivers:** creative set
+
 ## The goals
 
 - Publish approved guideline changes within [2 weeks]

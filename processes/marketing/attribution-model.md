@@ -20,6 +20,8 @@ approved periods are reissued as new versions of their reports, and
 every process that reports numbers is told which version produced which
 figure.
 
+**delivers:** sheet
+
 ## The goals
 
 - Keep model forecast error under [10%]

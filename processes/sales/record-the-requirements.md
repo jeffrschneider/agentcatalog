@@ -12,6 +12,8 @@ by the seller. The buyer ranks the list, confirms it, and the record
 gets a version and a date. What cannot be met is marked before anything
 is shaped, so the shape is never built on a promise nobody made.
 
+**delivers:** document
+
 ## The goals
 
 - Version the confirmed record within [5 days]

@@ -17,6 +17,8 @@ and its lessons are written where the next memo can find them. The run
 closes when the holding is at zero on the fund's books and closed in the
 cap table record, with its tax file complete and its lessons recorded.
 
+**delivers:** statement
+
 ## The goals
 
 - Approve the zero mark within [30 days]

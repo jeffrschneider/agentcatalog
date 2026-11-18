@@ -13,6 +13,8 @@ selling itself runs through the ordinary sales processes. What this
 process holds is the seam between the two organizations, so the customer
 meets one deal rather than two.
 
+**delivers:** deal
+
 ## The goals
 
 - Win [35%] of co-sold deals

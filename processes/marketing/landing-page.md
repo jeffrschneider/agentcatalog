@@ -10,6 +10,8 @@ measurement put on it, gets it signed and published, and then watches
 what the page converts and changes it where the numbers say people are
 leaving.
 
+**delivers:** page
+
 ## The goals
 
 - Put the page live within [5 days] of the request

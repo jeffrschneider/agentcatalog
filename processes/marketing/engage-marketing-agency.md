@@ -14,6 +14,8 @@ it. The run closes once the agency has been briefed and the record of
 what the engagement rests on has been written down. Directing the
 agency's work afterwards belongs to the agents that own each run.
 
+**delivers:** shortlist
+
 ## The goals
 
 - Have the agency working within [8 weeks]

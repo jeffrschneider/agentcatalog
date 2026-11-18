@@ -12,6 +12,8 @@ closed last year. Leaders pick one map and say why. The run ends with a
 map at a version and the assumption written beside every carrying
 number.
 
+**delivers:** sheet
+
 ## The goals
 
 - Set the territory map within [6 weeks] of the target

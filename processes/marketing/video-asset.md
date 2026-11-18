@@ -15,6 +15,8 @@ signed. A brief that asks for copy, images and video together runs
 `ref/mkt/creative-assets`, and this process is what the video part of
 that work expands into when a video is the whole job.
 
+**delivers:** creative set
+
 ## The goals
 
 - File the signed video within [3 weeks]

@@ -11,6 +11,8 @@ it. A campaign or a launch asks for the assets once, and what comes back
 has already been scored against the standards, signed, and cut to the
 sizes the channels need.
 
+**delivers:** creative set
+
 ## The goals
 
 - Deliver approved assets within [5 days]

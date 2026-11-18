@@ -13,6 +13,8 @@ named as such. Coverage is tested against what is still to find. The
 call ends with a category on every deal walked, actions with owners,
 and one number published at a version.
 
+**delivers:** notes
+
 ## The goals
 
 - Publish the call's number within [2 hours]

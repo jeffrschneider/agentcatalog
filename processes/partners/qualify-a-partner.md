@@ -12,6 +12,8 @@ that cannot be proven stay marked unproven rather than being rounded up
 to yes. What leaves the run is a decision, the evidence behind it, and
 the risks the company is knowingly taking on.
 
+**delivers:** verdict
+
 ## The goals
 
 - Decide on each candidate within [3 weeks]

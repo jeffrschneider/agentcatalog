@@ -12,6 +12,8 @@ phone and social. Every reply is read the same day. A reply stops the
 touches for that person, an opt-out suppresses them everywhere, and a
 reply that wants a conversation is handed on.
 
+**delivers:** sequence
+
 ## The goals
 
 - Answer every reply within [2 hours]

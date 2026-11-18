@@ -13,6 +13,8 @@ the addresses that go with it, and has issued the name and the rules for
 writing it as a numbered version of the standard. Saying the name in
 public belongs to the announcement and the launch processes.
 
+**delivers:** creative set
+
 ## The goals
 
 - Issue a cleared name within [10 weeks]

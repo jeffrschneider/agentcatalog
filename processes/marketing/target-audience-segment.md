@@ -16,6 +16,8 @@ settled before this run started, so nothing here argues about that. The
 run closes when the list has reached every destination and the
 definition has been written down where the next campaign can find it.
 
+**delivers:** sheet
+
 ## The goals
 
 - Deliver a cleared segment within [3 days]

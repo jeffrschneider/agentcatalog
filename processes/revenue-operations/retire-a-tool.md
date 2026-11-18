@@ -12,6 +12,8 @@ still runs and is read back before anything is switched off. The run
 closes when the accounts are shut, the supplier has confirmed deletion
 in writing, and the stack record says the tool is gone.
 
+**delivers:** status board
+
 ## The goals
 
 - Stop paying for the tool by [the renewal date]

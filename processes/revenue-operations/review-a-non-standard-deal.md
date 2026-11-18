@@ -11,6 +11,8 @@ who carry each risk give their read in writing. The desk decides item
 by item and hands back an approved shape, or a refusal that says what
 would change it. An item that outruns the promised time escalates.
 
+**delivers:** verdict
+
 ## The goals
 
 - Answer every complete request within [2 days]

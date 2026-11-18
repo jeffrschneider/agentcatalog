@@ -16,6 +16,8 @@ run closes when the decision is recorded with its conditions and any
 dissent, confirmed by the chair, and either handed to the term sheet or
 recorded as a decline with its reason.
 
+**delivers:** verdict
+
 ## The goals
 
 - Decide every deal within [7 days] of its memo
