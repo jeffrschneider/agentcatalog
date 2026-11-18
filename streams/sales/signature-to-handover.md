@@ -3,6 +3,7 @@
 `vs/sls/signature-to-handover v1`
 
 **position:** 7
+**friendly name:** Handover after the sale
 A run starts at signature and ends when somebody other than the seller owns
 the relationship. The processes here book the order against the right entity
 and terms, check that what was sold is what can be delivered, introduce the

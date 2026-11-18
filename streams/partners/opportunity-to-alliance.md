@@ -3,6 +3,7 @@
 `vs/prt/opportunity-to-alliance v1`
 
 **position:** 7
+**friendly name:** Strategic alliances
 A run starts when there is a strategic reason to work with another company
 rather than to sell to them or through them: a technology to embed, a
 product to offer jointly, a market neither can enter alone, a capability

@@ -3,6 +3,7 @@
 `vs/pc/lead-to-opportunity v1`
 
 **position:** 2
+**friendly name:** Finding deals
 A run starts when a company comes to the firm's attention, whether a
 founder pitched it, a contact referred it, a banker offered it in a sale
 or the firm found it while mapping a sector. The processes here write

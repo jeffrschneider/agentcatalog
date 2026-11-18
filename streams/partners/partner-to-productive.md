@@ -3,6 +3,7 @@
 `vs/prt/partner-to-productive v1`
 
 **position:** 2
+**friendly name:** Partner onboarding
 A run starts at a signed agreement and ends when the partner can sell or
 deliver without being carried. The processes here grant access to the
 portal, the materials and the systems, train and certify the people who will

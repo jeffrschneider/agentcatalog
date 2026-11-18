@@ -3,6 +3,7 @@
 `vs/rev/activity-to-insight v1`
 
 **position:** 8
+**friendly name:** Revenue reporting
 A run starts when somebody needs to know what the revenue organization did
 and what came back. The processes here define each measure once, build the
 reports and dashboards that show them, answer the questions that arrive

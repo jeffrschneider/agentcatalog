@@ -3,6 +3,7 @@
 `vs/sls/inquiry-to-qualified v1`
 
 **position:** 3
+**friendly name:** Qualifying inbound interest
 A run starts when an inquiry lands with an owner: a form somebody filled in,
 a trial they started, an event they came to, a referral from a partner. The
 processes here answer it inside the clock the organization has promised, ask

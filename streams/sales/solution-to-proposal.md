@@ -3,6 +3,7 @@
 `vs/sls/solution-to-proposal v1`
 
 **position:** 5
+**friendly name:** Quotes and proposals
 A run starts when the shape of a solution is agreed and somebody has to turn
 it into an offer. The processes here configure what will actually be sold,
 price it against the rate card and whatever the customer already bought,

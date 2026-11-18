@@ -3,6 +3,7 @@
 `vs/sls/discovery-to-solution v1`
 
 **position:** 4
+**friendly name:** Discovery and solution design
 A run starts when a qualified opportunity has to be understood before
 anything can be offered. The processes here interview the people who feel
 the problem, record what they need in their own words, test what would have

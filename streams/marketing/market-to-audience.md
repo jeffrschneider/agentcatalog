@@ -3,6 +3,7 @@
 `vs/mkt/market-to-audience v1`
 
 **position:** 2
+**friendly name:** Audiences and personas
 The organization works out who it sells to and writes that down where every
 other process can read it. A run starts when a go-to-market question is
 opened in planning, when the review date on a recorded profile, set of

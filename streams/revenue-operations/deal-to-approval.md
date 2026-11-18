@@ -3,6 +3,7 @@
 `vs/rev/deal-to-approval v1`
 
 **position:** 5
+**friendly name:** Discount and deal approvals
 A run starts when a deal wants terms the standard ones do not cover: a
 discount past the threshold, a non-standard term, an unusual structure, an
 exception to policy. The processes here review what is being asked, price

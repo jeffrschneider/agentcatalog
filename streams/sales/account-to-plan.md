@@ -3,6 +3,7 @@
 `vs/sls/account-to-plan v1`
 
 **position:** 1
+**friendly name:** Account plans
 A run starts when an account is named as one worth a plan of its own: a
 target account from a territory carve, an existing customer the company
 wants more of, or an account leadership has decided to pursue. The processes

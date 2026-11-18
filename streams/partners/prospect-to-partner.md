@@ -3,6 +3,7 @@
 `vs/prt/prospect-to-partner v1`
 
 **position:** 1
+**friendly name:** Recruiting partners
 A run starts when the company wants to reach a market, a customer set or a
 capability it cannot reach alone. The processes here work out what kind of
 partner would close that gap, find the candidates, qualify them on what they

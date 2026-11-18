@@ -3,6 +3,7 @@
 `vs/pc/recommendation-to-close v1`
 
 **position:** 4
+**friendly name:** Committee approval and closing
 A run starts when a deal team brings a finished investment memo to the
 investment committee. The processes here put the memo to the committee and
 record its vote with the conditions and any dissent, write the approved terms
