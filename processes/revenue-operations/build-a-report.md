@@ -12,6 +12,13 @@ trusts the automatic version. The report publishes at an address with a
 version, and it is born with the condition that would switch it off
 already written down.
 
+## The goals
+
+- Publish a checked report within [2 weeks]
+- Match the hand count on [100%] of checked figures
+- Have [80%] of named readers use it each cycle
+- Save [5 hours] of manual work each week
+
 ## The activities
 
 | # | Activity | What happens | Agents |

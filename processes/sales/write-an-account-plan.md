@@ -12,6 +12,13 @@ check them. The plan commits the account team and asks for whatever it
 needs from elsewhere, but it commits nobody outside the account team and
 puts no money in a forecast.
 
+## The goals
+
+- Sign the account plan within [2 weeks]
+- Plan pipeline worth [3x] the account target
+- Win [30%] of the opportunities planned
+- Keep team time per plan under [2 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

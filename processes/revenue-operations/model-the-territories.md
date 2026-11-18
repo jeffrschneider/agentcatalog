@@ -12,6 +12,13 @@ closed last year. Leaders pick one map and say why. The run ends with a
 map at a version and the assumption written beside every carrying
 number.
 
+## The goals
+
+- Set the territory map within [6 weeks] of the target
+- Keep territory potential within [10%] of each other
+- Keep [80%] of accounts with their current owner
+- Land each territory within [15%] of its modelled number
+
 ## The activities
 
 | # | Activity | What happens | Agents |

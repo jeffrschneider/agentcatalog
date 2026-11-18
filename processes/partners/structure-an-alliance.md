@@ -12,6 +12,13 @@ table. The shape is written on a term sheet, negotiated, signed, and
 only then turned into a definitive agreement by legal. What leaves the
 run is a signed agreement and a list of what it obliges each side to do.
 
+## The goals
+
+- Sign the alliance within [12 weeks] of diligence
+- Sign [100%] of terms inside the mandate
+- Keep alliance economics within [10%] of the model
+- Hold legal fees within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

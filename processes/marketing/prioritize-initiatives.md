@@ -24,6 +24,13 @@ budget. This run happens on a repeating cadence inside the year, takes
 those goals as already set, and answers the requests that keep arriving
 after the plan was signed.
 
+## The goals
+
+- Answer every requester within [10 days]
+- Deliver [90%] of committed initiatives on time
+- Put [80%] of the round's money on top-ranked work
+- Displace under [10%] of work already in flight
+
 ## The activities
 
 | # | Activity | What happens | Agents |

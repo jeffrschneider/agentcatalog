@@ -12,6 +12,13 @@ tracked item rather than a sentence in a slide. The run does not close
 until the plan is published where both sides read it and the first
 review is on both calendars.
 
+## The goals
+
+- Sign the joint plan within [30 days]
+- Grow joint pipeline in named accounts by [25%]
+- Hit [90%] of the plan's joint revenue target
+- Hold our side's plan cost within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ send, because subscribers reply for days afterwards and the manager
 still owes a report. Every check in this process happens before the
 send, because a sent issue cannot be recalled.
 
+## The goals
+
+- Send [100%] of issues on their scheduled date
+- Reach a [35%] open rate per issue
+- Keep unsubscribes per issue under [0.3%]
+- Keep errors found after sending at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

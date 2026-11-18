@@ -25,6 +25,13 @@ is specified. The process is written from the side of the organization
 bringing the agent in. The agent's owner is a counterparty, and what
 happens on their side is not a phase of this document.
 
+## The goals
+
+- Put each approved agent to work within [10 days]
+- Pass [80%] of agents on their first trial
+- Keep access with no end date at [zero]
+- Hit agreed service levels on [90%] of engagements
+
 ## The activities
 
 | # | Activity | What happens | Agents |

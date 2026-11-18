@@ -13,6 +13,13 @@ ends with a report and a list of the items still open, and the next cycle
 starts by picking those items up. The adopting organization decides how
 long a cycle is, and a shift, a day and a week all work.
 
+## The goals
+
+- Reply to every question within [4 hours]
+- Answer [70%] of questions from published material
+- Overturn under [10%] of removals on appeal
+- Hold member satisfaction at [85%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

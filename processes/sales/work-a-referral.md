@@ -12,6 +12,13 @@ The introducer gets a note they can send as it stands, and a date. One
 reminder follows, then the referral is let go. The introducer hears how
 it went either way.
 
+## The goals
+
+- Answer every introducer within [4 hours]
+- Get [70%] of offered introductions sent
+- Turn [50%] of introductions into meetings
+- Get a second referral from [30%] of introducers
+
 ## The activities
 
 | # | Activity | What happens | Agents |

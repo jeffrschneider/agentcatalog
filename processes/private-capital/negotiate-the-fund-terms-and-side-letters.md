@@ -19,6 +19,12 @@ letter keeper turns every promise into an obligation with an owner. The
 run closes when the agreement and the side letter are agreed and ready to
 sign at the investor's close.
 
+## The goals
+
+- Settle every side letter [5 days] before its close
+- Win commitments from [90%] of negotiating investors
+- Keep fee discounts under [10%] of fee income
+
 ## The activities
 
 | # | Activity | What happens | Agents |

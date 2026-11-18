@@ -13,6 +13,13 @@ able to explain the offer. A readiness gate stands in front of launch,
 and what leaves the run is an offer being sold and an alliance somebody
 manages.
 
+## The goals
+
+- Take the first order within [6 months] of signing
+- Sign off [90%] of readiness items without a waiver
+- Win [10] joint customers in the first year
+- Hold integration cost within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

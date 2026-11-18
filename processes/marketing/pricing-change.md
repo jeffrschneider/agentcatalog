@@ -17,6 +17,13 @@ were told. That date can be different for every customer, which is why
 serving the notice and moving the customer are separate activities with
 the notice period sitting between them.
 
+## The goals
+
+- Restate [100%] of published prices on the same day
+- Serve [100%] of notices by each agreement's deadline
+- Keep customers lost to the change under [3%]
+- Hold grandfathered revenue under [10%] of the total
+
 ## The activities
 
 | # | Activity | What happens | Agents |

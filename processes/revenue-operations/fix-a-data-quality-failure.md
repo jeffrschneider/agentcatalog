@@ -13,6 +13,13 @@ already wrong corrected, and only after that is the rule run again. The
 run does not close until the rule has passed for a period and whoever
 read the wrong numbers has been told.
 
+## The goals
+
+- Fix the source within [5 days] of a rule failing
+- Catch each failure before [100] records are wrong
+- Keep failures that come back under [5%]
+- Keep work stopped by a fix under [1 day]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

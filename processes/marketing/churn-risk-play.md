@@ -14,6 +14,13 @@ owner. The run stays open long enough to see what the account did
 afterwards, and it ends when that outcome is recorded against the
 account.
 
+## The goals
+
+- Respond to every risk signal within [2 days]
+- Save [40%] of accounts confirmed at risk
+- Keep intervention cost under [10%] of saved revenue
+- Keep false alarms under [20%] of signals
+
 ## The activities
 
 | # | Activity | What happens | Agents |

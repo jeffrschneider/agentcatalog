@@ -23,6 +23,13 @@ those six. The run closes when every function has been told its number
 and the rules that come with it, and somebody has written down what the
 budget rests on and what would reopen it.
 
+## The goals
+
+- Sign the budget within [4 weeks] of the cycle opening
+- Hold [5%] of the budget back as a reserve
+- Keep each function's spend within [3%] of its share
+- Put [100%] of committed spend under a named owner
+
 ## The activities
 
 | # | Activity | What happens | Agents |

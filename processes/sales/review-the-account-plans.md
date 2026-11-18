@@ -12,6 +12,13 @@ stopped working and onto the ones that did. The round ends by writing
 down what it taught about how plans get written, which is the only way
 the next round starts from a better draft.
 
+## The goals
+
+- Decide every plan in scope within [3 weeks]
+- Move effort off stopped plans within [2 weeks]
+- Grow revenue in planned accounts by [15%]
+- Keep review time under [2 hours] per plan
+
 ## The activities
 
 | # | Activity | What happens | Agents |

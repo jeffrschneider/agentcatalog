@@ -12,6 +12,13 @@ meant to win costs more than a clean no. A yes splits the requirements
 to owners, uses the question window, prices the bid, and checks the
 response against the rules. The run closes at a receipt or a no bid.
 
+## The goals
+
+- Decide to bid or decline within [3 days]
+- Win [30%] of the bids submitted
+- Keep each bid under [80] hours of team time
+- Keep bids rejected on the buyer's rules at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

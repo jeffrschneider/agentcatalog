@@ -10,6 +10,13 @@ lasts longer than a few minutes, and no person touches the ordinary
 case - which makes it the opposite end of the automation range from the
 social campaign, and the reason to read the two side by side.
 
+## The goals
+
+- Put every lead in an owner's queue within [2 minutes]
+- Route [95%] of leads correctly the first time
+- Keep leads needing a person under [5%]
+- Turn [30%] of routed leads into meetings
+
 ## The activities
 
 | # | Activity | What happens | Agents |

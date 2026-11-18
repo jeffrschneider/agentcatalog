@@ -18,6 +18,13 @@ it covers, and the assumptions it rests on. A number that arrives without
 its method cannot be used by anyone downstream, so the method is part of
 what this process delivers.
 
+## The goals
+
+- Deliver an accepted size within [4 weeks]
+- Trace [100%] of figures to a dated source
+- Land within [15%] of actuals at the review date
+- Hold research costs within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

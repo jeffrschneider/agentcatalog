@@ -12,6 +12,13 @@ and the date it was current. A question nothing answered is written
 down as unknown rather than guessed. The account owner corrects the
 read before it is issued at a version.
 
+## The goals
+
+- Issue each account read within [2 days]
+- Answer [80%] of must-answer questions from a source
+- Keep facts the owner corrects under [10%]
+- Win a first meeting at [30%] of researched accounts
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ left to be assumed. The view is then handed to the people who commit a
 number, and the argument about what is committed happens there. This
 process publishes arithmetic and never makes the call.
 
+## The goals
+
+- Publish the view within [2 hours] of the freeze
+- Keep figures corrected after publishing at [zero]
+- Let readers rebuild [95%] of figures unaided
+- Keep the view within [5%] of what actually closes
+
 ## The activities
 
 | # | Activity | What happens | Agents |

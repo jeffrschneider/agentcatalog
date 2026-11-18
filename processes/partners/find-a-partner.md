@@ -12,6 +12,13 @@ company. Candidates nobody may work with are removed before anyone
 speaks to them. What leaves the run is a short list where every name
 carries the reason it is on the list and the evidence behind it.
 
+## The goals
+
+- Deliver a scored shortlist within [4 weeks]
+- Get [70%] of the shortlist to agree to qualify
+- See [60%] of shortlisted candidates pass qualification
+- Keep conflicted candidates on the list at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

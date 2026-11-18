@@ -13,6 +13,13 @@ loud, is proved on the parts that matter, and then talks to a customer
 with their manager listening. The run closes when that conversation has
 been debriefed and the ramp has been reported.
 
+## The goals
+
+- Hold a first customer call within [3 weeks]
+- Pass [90%] of sellers at the first readiness check
+- Reach full quota within [6 months]
+- Keep manager time per new seller under [10 hours]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

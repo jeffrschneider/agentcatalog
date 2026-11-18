@@ -16,6 +16,12 @@ capital the fund can still call. The run closes when the watch list is
 current, every reserve is set with its reason, and every action has one
 owner and one date.
 
+## The goals
+
+- Review every company within [15 days] of the marks
+- Hold reserves under [15%] of the fund
+- Flag [90%] of later write-downs a quarter ahead
+
 ## The activities
 
 | # | Activity | What happens | Agents |

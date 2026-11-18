@@ -10,6 +10,13 @@ measurement put on it, gets it signed and published, and then watches
 what the page converts and changes it where the numbers say people are
 leaving.
 
+## The goals
+
+- Put the page live within [5 days] of the request
+- Convert [15%] of visitors on the page's one action
+- Verify [100%] of conversions before the page goes live
+- Publish [zero] pages with an open accessibility failure
+
 ## The activities
 
 | # | Activity | What happens | Agents |

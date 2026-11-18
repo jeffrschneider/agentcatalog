@@ -16,6 +16,13 @@ removing somebody who should have stayed and sending to somebody who
 asked not to be sent to, and most of the checking below is aimed at
 those two.
 
+## The goals
+
+- Keep duplicate contact records under [2%]
+- Fill [95%] of the fields programs rely on
+- Keep contacts removed in error at [zero]
+- Apply every opt-out in all systems within [2 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

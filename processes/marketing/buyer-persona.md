@@ -21,6 +21,13 @@ day say whether they recognize it. The run ends with the persona
 recorded at a version, handed to every agent that writes to this buyer
 or targets them, and carrying the date it comes back up.
 
+## The goals
+
+- Deliver a validated persona within [6 weeks]
+- Back [80%] of jobs, pains and triggers with evidence
+- Have [80%] of sellers recognize the persona
+- Start [50%] of new deals from a named trigger
+
 ## The activities
 
 | # | Activity | What happens | Agents |

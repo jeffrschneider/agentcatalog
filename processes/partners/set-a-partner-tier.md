@@ -14,6 +14,13 @@ promise is confirmed to have people. Each partner is told their tier,
 the reason, and what would move it, and the systems are changed to match
 before the round closes.
 
+## The goals
+
+- Tell every partner their tier within [5 days]
+- Keep tier exceptions under [5%] of partners
+- Hold every tier's discount above [the margin floor]
+- Keep [90%] of partners moved down in the program
+
 ## The activities
 
 | # | Activity | What happens | Agents |

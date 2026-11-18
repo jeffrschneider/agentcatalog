@@ -12,6 +12,13 @@ holds that conversation, and what was said goes down in writing. The run
 ends when the inquiry and everything learned reach qualification, and
 the answer time is recorded against the time that was promised.
 
+## The goals
+
+- Answer every inquiry within [15 minutes]
+- Turn [40%] of inquiries into first conversations
+- Keep replies that miss the question under [5%]
+- Have [50%] of handovers pass qualification
+
 ## The activities
 
 | # | Activity | What happens | Agents |

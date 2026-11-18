@@ -23,6 +23,13 @@ describes. Preparing a keynote speaker runs through the speaking
 engagement process, and this process only makes sure the deck arrives on
 time and clears the checks it has to clear.
 
+## The goals
+
+- Reach [100%] of the attendance target
+- Hold attendee satisfaction at [90%]
+- Earn coverage in [10] priority outlets
+- Hold conference costs within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

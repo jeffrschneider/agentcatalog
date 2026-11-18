@@ -13,6 +13,13 @@ selling itself runs through the ordinary sales processes. What this
 process holds is the seam between the two organizations, so the customer
 meets one deal rather than two.
 
+## The goals
+
+- Win [35%] of co-sold deals
+- Cut joint deal cycle time by [15%]
+- Keep duplicate customer approaches at [zero]
+- Keep splits the agreement does not cover under [5%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

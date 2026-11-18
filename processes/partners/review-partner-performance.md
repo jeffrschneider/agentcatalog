@@ -13,6 +13,13 @@ warned, or referred to tiering, and hears the result in numbers they can
 check for themselves. No tier changes here. The rules decide that
 elsewhere, and this round hands them the evidence.
 
+## The goals
+
+- Review [100%] of partners on the set cadence
+- Keep partner disputes over figures under [5%]
+- Meet [95%] of what the company owes partners
+- Lift partner plan attainment to [85%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -13,6 +13,13 @@ afterwards under the terms that were agreed. The run stays open past
 the talk, because the manager still owes a report on what the
 engagement was worth.
 
+## The goals
+
+- File [100%] of proposals before the deadline
+- Get [40%] of proposals accepted
+- Turn [5%] of each audience into leads
+- Keep speaker preparation under [20 hours] a talk
+
 ## The activities
 
 | # | Activity | What happens | Agents |

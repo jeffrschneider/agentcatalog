@@ -15,6 +15,13 @@ answers. Finance decides the lines that never settle and signs the spend
 figure for the period, and no report carries a spend number that finance
 did not sign.
 
+## The goals
+
+- Sign the period's spend within [10 days]
+- Match [90%] of invoice lines without a query
+- Recover [100%] of overbilled spend
+- Settle every query within [30 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

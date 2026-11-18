@@ -12,6 +12,13 @@ add up to more than the number on purpose, and the over-assignment is a
 decision somebody signs rather than a rounding habit. The run ends when
 a named person approves the set and what it rests on is written down.
 
+## The goals
+
+- Sign every quota before [the period start]
+- Assign quotas totaling [110%] of the target
+- Have [60%] of sellers reach quota
+- Keep the modelled pay cost within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

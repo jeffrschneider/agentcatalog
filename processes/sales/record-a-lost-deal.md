@@ -12,6 +12,13 @@ looked like on the way through. The open work stops, the buyer's
 material goes back, and the deal closes on the record with a follow-up
 date and a reason the next deal can read.
 
+## The goals
+
+- Close every lost deal within [10 days] of the loss
+- Save [10%] of losing deals with one recovery try
+- Get the buyer's own words on [70%] of losses
+- Reopen [10%] of lost deals at their follow-up date
+
 ## The activities
 
 | # | Activity | What happens | Agents |

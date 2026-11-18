@@ -17,6 +17,13 @@ out. The run closes when the requester has a cleared, willing customer
 to use. It stops before any story, quote or case study is made, because
 producing that material is separate work that reads this list.
 
+## The goals
+
+- Fill reference requests within [10 days]
+- Grow the active reference pool by [25%]
+- Ask no customer more than [4] times a year
+- Renew [80%] of references when they expire
+
 ## The activities
 
 | # | Activity | What happens | Agents |

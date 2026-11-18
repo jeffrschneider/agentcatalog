@@ -21,6 +21,13 @@ settles the company-level position and stops there. Positioning an
 individual product is a separate process that quotes the version this run
 issued.
 
+## The goals
+
+- Agree the new positioning within [8 weeks]
+- Have [60%] of test buyers prefer the new position
+- Use the positioning in [100%] of new campaigns
+- Keep the position in place for [3 years]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

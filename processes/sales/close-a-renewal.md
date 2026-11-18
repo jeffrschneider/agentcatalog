@@ -12,6 +12,13 @@ repriced and approved again rather than argued about, and it is still a
 completed run. The run closes when the signature is booked and the
 people who run the account have been told what changed.
 
+## The goals
+
+- Sign [90%] of renewals before the notice date
+- Renew [95%] at or above the floor price
+- Grow renewed contract value by [5%]
+- Keep renewals on off-standard terms under [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

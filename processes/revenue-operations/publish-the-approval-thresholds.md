@@ -12,6 +12,13 @@ gets a version and an effective date, is published where sellers work,
 and is wired into the routing the desk uses. The run closes when the
 table is in use and a date is set to read it against what got asked.
 
+## The goals
+
+- Route [95%] of requests by the table alone
+- Answer [90%] of requests inside the promised time
+- Keep requests sent above their level under [10%]
+- Hold the average discount under [15%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

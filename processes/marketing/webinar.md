@@ -13,6 +13,13 @@ are the same for all of them. The run stays open past the session,
 because the manager still owes the follow-up, the recording and the
 report.
 
+## The goals
+
+- Reach [100%] of the registration target
+- Turn [40%] of registrants into attendees
+- Create pipeline from [10%] of attendees
+- Hold cost per attendee at [the target cost]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

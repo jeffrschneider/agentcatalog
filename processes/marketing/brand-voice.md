@@ -24,6 +24,13 @@ together as a numbered version of the brand guidelines. That version is
 what the brand-check agent scores material against, and this process is
 where it comes from. The run does not reopen the position itself.
 
+## The goals
+
+- Issue the signed voice guide within [8 weeks]
+- Get two reviewers to agree on [90%] of samples
+- Pass voice checks on [90%] of new copy
+- Get [70%] of test buyers to recall the core message
+
 ## The activities
 
 | # | Activity | What happens | Agents |

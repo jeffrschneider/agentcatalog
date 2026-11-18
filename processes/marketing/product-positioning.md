@@ -22,6 +22,13 @@ issues it as a numbered version. This process quotes the company-level
 position at its version and stops there. Changing that position is the
 brand positioning process.
 
+## The goals
+
+- Issue the positioning within [6 weeks]
+- Back [100%] of claims with a recorded source
+- Raise the product's win rate by [10%]
+- Hold the position for at least [12 months]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ consent record and the suppression list decide who may be contacted on
 which channel. The seller keeps, drops or adds accounts, a person signs
 the list, and the list is loaded where the sequences read it.
 
+## The goals
+
+- Load the signed list within [3 days]
+- Read and decide [90%] of the territory's accounts
+- Keep invalid contact details under [3%]
+- Keep people listed without consent at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

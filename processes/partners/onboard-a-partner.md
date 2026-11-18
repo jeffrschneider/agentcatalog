@@ -12,6 +12,13 @@ rather than declared open. The run does not close until the partner has
 confirmed in writing that they can reach what they were given, and a
 standing call is in diaries on both sides.
 
+## The goals
+
+- Confirm working access within [10 days] of signing
+- Get [90%] of named people in on the first try
+- Keep access beyond a partner's tier at [zero]
+- See [80%] of new partners register a deal
+
 ## The activities
 
 | # | Activity | What happens | Agents |

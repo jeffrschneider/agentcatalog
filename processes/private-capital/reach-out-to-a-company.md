@@ -15,6 +15,12 @@ the first meeting and briefs the partner. The run closes when the
 meeting has been held and written up and the partner has opened an
 opportunity, chosen to keep watching, or stopped.
 
+## The goals
+
+- Approach each ready company within [5 days]
+- Get a first meeting from [40%] of approaches
+- Keep cold approaches under [20%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

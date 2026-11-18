@@ -12,6 +12,13 @@ with the seller listening rather than steering, and the customer is
 thanked and put back on a cool-down clock. The clock is what keeps a
 reference customer willing to be asked the next time.
 
+## The goals
+
+- Hold the reference call within [5 days] of the ask
+- Win [60%] of deals that used a reference
+- Ask each reference customer at most [4] times a year
+- Keep [90%] of references willing to be asked again
+
 ## The activities
 
 | # | Activity | What happens | Agents |

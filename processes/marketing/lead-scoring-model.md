@@ -16,6 +16,13 @@ numbered version, scoring every lead, and watched through its first
 weeks against what those leads do. Lead routing keeps running on the
 current version the whole time this process is open.
 
+## The goals
+
+- Have the new version scoring within [30 days]
+- Convert top-tier leads at [3x] the average rate
+- Have sales accept [80%] of top-tier leads
+- Have [90%] of scoring data filled in before routing
+
 ## The activities
 
 | # | Activity | What happens | Agents |

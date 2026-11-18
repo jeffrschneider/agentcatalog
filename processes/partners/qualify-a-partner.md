@@ -12,6 +12,13 @@ that cannot be proven stay marked unproven rather than being rounded up
 to yes. What leaves the run is a decision, the evidence behind it, and
 the risks the company is knowingly taking on.
 
+## The goals
+
+- Decide on each candidate within [3 weeks]
+- Settle [80%] of deciding claims as proven or false
+- Spend under [40 hours] qualifying each candidate
+- Keep [90%] of qualified partners past year one
+
 ## The activities
 
 | # | Activity | What happens | Agents |

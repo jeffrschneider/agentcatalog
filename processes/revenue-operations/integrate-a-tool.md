@@ -12,6 +12,13 @@ data, moved a known set to prove the counts agree, and switched on with
 a way back. The run closes when the two sides reconcile and the
 administrator has taken the tool on.
 
+## The goals
+
+- Put the link live within [6 weeks] of handover
+- Match record counts on both sides to [99.5%]
+- Hold the build cost within [the budget]
+- Give the link [zero] access beyond the agreed fields
+
 ## The activities
 
 | # | Activity | What happens | Agents |

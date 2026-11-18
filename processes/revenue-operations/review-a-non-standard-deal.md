@@ -11,6 +11,13 @@ who carry each risk give their read in writing. The desk decides item
 by item and hands back an approved shape, or a refusal that says what
 would change it. An item that outruns the promised time escalates.
 
+## The goals
+
+- Answer every complete request within [2 days]
+- Keep exception losses under [1%] of revenue
+- Win [50%] of deals given an approved exception
+- Cut repeat non-standard requests by [25%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

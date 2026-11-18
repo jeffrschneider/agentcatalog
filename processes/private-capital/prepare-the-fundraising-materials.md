@@ -19,6 +19,13 @@ signed confidentiality agreement. The run closes when the approved
 materials are released at their version and the records the rules
 require are kept.
 
+## The goals
+
+- Release approved materials by [the launch date]
+- Trace [100%] of figures to their source
+- Clear compliance in [2] review rounds or fewer
+- Turn [25%] of deck readers into meetings
+
 ## The activities
 
 | # | Activity | What happens | Agents |

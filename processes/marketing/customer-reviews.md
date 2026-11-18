@@ -14,6 +14,13 @@ about who may be asked and about what may be offered in return, and
 those rules decide most of what this process is allowed to do, so they
 are read and recorded before a word of the ask is written.
 
+## The goals
+
+- Turn [20%] of review asks into published reviews
+- Hold average rating at [4.5] stars or above
+- Ask no customer more than [2] times a year
+- Keep site rule violations at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

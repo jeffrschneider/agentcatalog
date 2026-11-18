@@ -13,6 +13,13 @@ and reports what the show produced against what it was asked to
 produce. The run stays open past the last show day, because the leads
 still have to reach their owners and the show still has to be reported.
 
+## The goals
+
+- Open the stand on time at [100%] of shows
+- Turn [20%] of booth leads into pipeline
+- Get every lead to its owner within [24 hours]
+- Hold cost per qualified lead at [the target cost]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

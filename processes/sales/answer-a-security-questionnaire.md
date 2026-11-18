@@ -12,6 +12,13 @@ who can commit the organization have signed it. What the answers must not
 say is checked before the form is filled. Every new answer goes back into
 the library, so the next buyer gets the same answer faster.
 
+## The goals
+
+- Return every questionnaire within [5 days]
+- Answer [80%] of questions from the library
+- Pass the buyer's security review on [90%] of deals
+- Keep answers corrected after sending at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

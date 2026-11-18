@@ -32,6 +32,13 @@ leaves the numbers behind the bar blank, because the minimum exposure,
 the minimum run length and the size of the gap are the adopting
 organization's decision.
 
+## The goals
+
+- Call each test within [3 weeks]
+- End [70%] of tests with a clear answer
+- Lift results on winning creative by [15%]
+- Keep test spend under [10%] of the line's budget
+
 ## The activities
 
 | # | Activity | What happens | Agents |

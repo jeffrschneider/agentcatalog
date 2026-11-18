@@ -19,6 +19,13 @@ not. What this process produces is an agreement, so the last activities
 hand the profile to the agents that will qualify accounts against it and
 set the date it comes back up.
 
+## The goals
+
+- Agree the profile within [6 weeks]
+- Cover [80%] of recent wins with the profile
+- Lift win rate on in-profile accounts by [20%]
+- Score [100%] of new accounts against the profile
+
 ## The activities
 
 | # | Activity | What happens | Agents |

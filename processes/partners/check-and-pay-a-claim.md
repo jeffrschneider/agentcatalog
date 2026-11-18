@@ -12,6 +12,12 @@ being waved through, and a person signs the amount before it leaves.
 The run closes when the partner has been paid or told which lines were
 cut and why, and the money that was not used is back in the fund.
 
+## The goals
+
+- Pay every valid claim within [10 days]
+- Pay [zero] costs that are ineligible or claimed twice
+- Keep partner disputes over cut lines under [5%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

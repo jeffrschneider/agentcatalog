@@ -12,6 +12,13 @@ a meeting nobody attends is chased once and rebooked. What was said is
 written up the same day, the seller decides whether it goes forward,
 and the outbound touches to that account stop.
 
+## The goals
+
+- Offer meeting times within [1 hour] of the reply
+- Book a meeting from [70%] of interested replies
+- Hold [85%] of the meetings booked
+- Turn [50%] of held meetings into opportunities
+
 ## The activities
 
 | # | Activity | What happens | Agents |

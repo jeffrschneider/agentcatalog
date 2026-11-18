@@ -9,6 +9,13 @@ loaded - then fire everything in order on the day, watch the first week,
 and report what happened. This is the process that coordinates the most
 agents, which is why it earns a coordinator of its own.
 
+## The goals
+
+- Launch on [the committed date]
+- Have [90%] of sellers ready by launch day
+- Meet [90%] of the first-week launch goals
+- Hold launch spend within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

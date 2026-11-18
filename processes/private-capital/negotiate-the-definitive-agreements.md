@@ -17,6 +17,13 @@ past the committee's approval goes back to the committee. Nothing is
 signed here. The run closes when both sides confirm one clean text and the
 conditions to closing are handed to the closing.
 
+## The goals
+
+- Agree the final text within [6 weeks]
+- Hold the return within [1 point] of the approval
+- Hold legal fees under [1%] of the deal value
+- Keep surprise claims after closing at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

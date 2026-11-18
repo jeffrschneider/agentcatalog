@@ -12,6 +12,12 @@ that slips is chased, re-dated and re-agreed with the buyer rather than
 quietly missed. The run closes when the agreement is signed and the
 plan is closed on the record with what slipped and why.
 
+## The goals
+
+- Sign [80%] of deals by the first agreed date
+- Lose under [5%] of agreed deals before signature
+- Keep new concessions after agreement at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

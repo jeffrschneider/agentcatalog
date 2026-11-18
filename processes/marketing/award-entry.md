@@ -15,6 +15,13 @@ judges come back with, and records the result. The run stays open long
 past the filing, because the decision arrives weeks or months later and
 somebody still owes the debrief.
 
+## The goals
+
+- File [100%] of entries before the deadline
+- Win an award with [20%] of entries
+- Hold entry fees and costs within [the budget]
+- Keep entry disqualifications at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -17,6 +17,13 @@ package before management hears anything. The run closes when the first
 month's report has arrived on the template and management has confirmed
 who it works with at the firm.
 
+## The goals
+
+- Hand over every deal within [10 days] of closing
+- Give [100%] of deal promises an owner
+- Receive the first monthly report within [45 days]
+- Keep deal team time on a handover under [2 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

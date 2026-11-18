@@ -12,6 +12,13 @@ sides say what they want, sign confidentiality, trade real numbers, and
 write one joint thesis. A named person then sends the thesis to
 diligence or stops it, and what was learned is kept either way.
 
+## The goals
+
+- Decide go or stop within [8 weeks]
+- Turn [30%] of approaches into a joint thesis
+- Back [100%] of go decisions with customer evidence
+- See [80%] of go decisions pass diligence
+
 ## The activities
 
 | # | Activity | What happens | Agents |

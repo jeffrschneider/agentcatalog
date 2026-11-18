@@ -16,6 +16,13 @@ every change as an item with a state and reads progress on the cadence
 the plan sets. The run closes when the plan is agreed, loaded in the
 tracker, and its first progress review has been held.
 
+## The goals
+
+- Agree the plan within [100 days] of closing
+- Carry no more than [5] changes
+- Grow earnings [50%] by the planned exit
+- Keep plan work under [10%] of management's time
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -31,6 +31,13 @@ happens on their side is not a phase of this document.
 It is the counterpart of [onboard an agent](./onboard-an-agent.md), and
 it reads that run's access list.
 
+## The goals
+
+- Withdraw all access within [1 day] of the end date
+- Reassign [100%] of open work before access goes
+- Close each offboarding within [10 days]
+- Keep security incidents after exit at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

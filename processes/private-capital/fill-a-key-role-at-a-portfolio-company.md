@@ -18,6 +18,13 @@ candidate's consent. The run closes when the chosen candidate has
 accepted, the board has approved the equity grant, a start date is set,
 and the search is recorded for the next one.
 
+## The goals
+
+- Fill each key role within [12 weeks]
+- Keep [90%] of hires in the role after a year
+- Stay inside the agreed pay range on [100%] of offers
+- Use an outside search on under [50%] of roles
+
 ## The activities
 
 | # | Activity | What happens | Agents |

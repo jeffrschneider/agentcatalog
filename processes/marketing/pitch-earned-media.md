@@ -13,6 +13,13 @@ this process is a sequence of offers and follow-ups, and each one waits
 on an answer the organization does not control. The run stays open until
 the coverage has been recorded and the run has been debriefed.
 
+## The goals
+
+- Place the first story within [4 weeks] of the angle
+- Earn coverage from [20%] of pitched reporters
+- Answer reporter questions within [4 hours]
+- Keep corrections to our facts at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

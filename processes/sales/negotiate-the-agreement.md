@@ -12,6 +12,13 @@ of the person who agreed. What the two sides settled leaves the run as
 one written position, and the redlines and the close plan both work
 from that one document rather than from anybody's memory.
 
+## The goals
+
+- Confirm the agreed position within [3 weeks]
+- Win [70%] of deals that reach negotiation
+- Hold the discount given under [10%] of the offer
+- Trade [80%] of concessions for something in return
+
 ## The activities
 
 | # | Activity | What happens | Agents |

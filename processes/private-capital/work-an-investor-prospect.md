@@ -19,6 +19,13 @@ closes when the investor has stated a commitment amount and the close it
 will join, or has declined, and the answer is recorded with the date to
 ask again.
 
+## The goals
+
+- Approach every approved name within [4 weeks]
+- Turn [25%] of first meetings into commitments
+- Raise [the target amount] by the final close
+- Keep approaches the rules bar at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

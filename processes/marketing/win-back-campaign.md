@@ -18,6 +18,13 @@ the segment has either re-engaged or been formally retired, because a
 win-back that leaves people undecided gets run again on the same names
 a quarter later.
 
+## The goals
+
+- Win back [15%] of lapsed customers
+- Earn [3x] the campaign cost in recovered revenue
+- Keep offer discounts under [20%] of list price
+- Keep complaints under [0.2%] of every send
+
 ## The activities
 
 | # | Activity | What happens | Agents |

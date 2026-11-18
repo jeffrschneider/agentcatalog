@@ -16,6 +16,13 @@ a run of long-form content, a refresh cycle, a newsletter issue or a
 landing page starts from. This process publishes nothing of its own.
 What it produces is a set of commitments that other processes work from.
 
+## The goals
+
+- Agree the content plan within [2 weeks]
+- Publish [90%] of planned pieces on their date
+- Match [80%] of topics to proven search demand
+- Commit no more than [85%] of production capacity
+
 ## The activities
 
 | # | Activity | What happens | Agents |

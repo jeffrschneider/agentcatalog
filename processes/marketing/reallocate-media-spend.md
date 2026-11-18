@@ -21,6 +21,13 @@ total the department has to spend was set somewhere else, and the plan
 this process amends was built somewhere else too. What changes here is
 where committed money sits inside that plan while the flights run.
 
+## The goals
+
+- Move the money within [5 days] of the signal
+- Keep [90%] of live channels on pace to their end date
+- Lift return on moved money by [15%]
+- Keep penalties on moved money under [2%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

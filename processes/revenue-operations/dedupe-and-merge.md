@@ -13,6 +13,13 @@ losing record held is kept rather than dropped. The activities, deals
 and files move, the owners are told, and a merge that turns out to be
 wrong can be reversed from what was kept.
 
+## The goals
+
+- Merge confirmed duplicates within [2 days]
+- Keep duplicate records under [1%]
+- Keep merges later undone under [0.5%]
+- Send under [10%] of matches to a person to check
+
 ## The activities
 
 | # | Activity | What happens | Agents |

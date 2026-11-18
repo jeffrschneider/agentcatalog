@@ -12,6 +12,13 @@ still runs and is read back before anything is switched off. The run
 closes when the accounts are shut, the supplier has confirmed deletion
 in writing, and the stack record says the tool is gone.
 
+## The goals
+
+- Stop paying for the tool by [the renewal date]
+- Keep work interrupted by the switch-off at [zero]
+- Keep [100%] of records the retention rules require
+- Get written proof of deletion from [100%] of suppliers
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -18,6 +18,13 @@ decision. The run closes when one strategy and one fund model, at the
 same version, are handed to the lawyers who form the fund and to the team
 that raises it.
 
+## The goals
+
+- Decide the strategy by [the launch date]
+- Target a net return of [20%] in the base case
+- Size the fund to [the amount investors back]
+- Hold the management fee at [2%] or less
+
 ## The activities
 
 | # | Activity | What happens | Agents |

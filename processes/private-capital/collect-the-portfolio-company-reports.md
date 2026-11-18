@@ -17,6 +17,13 @@ that does not tie goes to the deal lead the day it is found. The run
 closes when every company's reports are on the record, read, confirmed
 by the deal lead and handed to the quarter's valuation.
 
+## The goals
+
+- Receive every company package within [20 days]
+- Tie [100%] of packages to the accounts
+- Flag every covenant risk within [1 day]
+- Keep each company's reporting to [1 day] of work
+
 ## The activities
 
 | # | Activity | What happens | Agents |

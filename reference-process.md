@@ -28,6 +28,15 @@ generic like a pattern, and it never claims to be running anywhere.
 - **The handoffs and the failure edges**, because they come with the
   shape of the work.
 - **The records** a run must leave.
+- **The goals**, in a section of their own between the summary and the
+  activities: three or four things a company wants from running the
+  process again and again, chosen so they pull against each other, so
+  that pushing one too hard shows what it costs the others. A process
+  never has a single goal. Each goal carries one suggested target in
+  square brackets, such as "Win [35%] of proposals sent", and the target
+  is a suggestion for you to change. These are business goals across
+  runs. The document's `goal:` line says something else: what is true
+  when one run closes.
 
 ## What stays blank
 

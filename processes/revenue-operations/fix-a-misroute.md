@@ -13,6 +13,13 @@ waiting for each of them to be reported. The case is filed against the
 rule version, so a rule that keeps producing misroutes is visible
 without anybody having to remember.
 
+## The goals
+
+- Move misrouted work within [2 hours]
+- Find and move [100%] of related misroutes
+- Fix the cause of each misroute within [10 days]
+- Keep fixes that cause new misroutes at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

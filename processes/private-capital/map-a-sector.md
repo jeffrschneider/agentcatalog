@@ -16,6 +16,12 @@ to the partner who owns it and on to the outreach process. The run
 closes when the map reaches its review date and the partners keep it,
 refresh it or retire it.
 
+## The goals
+
+- Map a new sector within [6 weeks]
+- Reach [50%] of fitting companies before a banker
+- Turn [10%] of mapped companies into opportunities
+
 ## The activities
 
 | # | Activity | What happens | Agents |

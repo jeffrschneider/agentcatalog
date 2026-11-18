@@ -14,6 +14,13 @@ name and understanding is checked separately, because a full room is not
 evidence. The run closes when the change has been seen in live deals and
 the roll-out has been reported.
 
+## The goals
+
+- Teach [100%] of named sellers before it takes effect
+- Have [90%] of those taught pass the check
+- See the change in live deals within [14 days]
+- Keep selling time lost to teaching under [2 hours]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

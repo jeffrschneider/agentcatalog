@@ -13,6 +13,13 @@ and the new owner meet before the customer hears anything, the customer
 is introduced to the new owner once rather than three times, and the
 first working session is in diaries before the run closes.
 
+## The goals
+
+- Introduce the new owner within [5 days] of booking
+- Re-ask the customer fewer than [3] questions
+- Keep sales promises delivery cannot keep at [zero]
+- Keep seller time per handover under [4 hours]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -20,6 +20,12 @@ approved periods are reissued as new versions of their reports, and
 every process that reports numbers is told which version produced which
 figure.
 
+## The goals
+
+- Keep model forecast error under [10%]
+- Issue a revised model within [6 weeks] of drift
+- Reissue no more than [2] closed periods per change
+
 ## The activities
 
 | # | Activity | What happens | Agents |

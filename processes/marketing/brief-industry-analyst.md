@@ -30,6 +30,13 @@ answers the detail questions, so the agents in this process prepare that
 conversation, sit in it, record what was said, and answer for everything
 around it.
 
+## The goals
+
+- File [100%] of cycle submissions by the deadline
+- Get included in [80%] of relevant analyst reports
+- Land [3] key points in each published note
+- Keep executive prep per briefing under [4 hours]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

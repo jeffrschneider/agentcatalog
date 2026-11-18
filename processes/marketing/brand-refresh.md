@@ -21,6 +21,13 @@ sweeps for what the inventory missed. The old logo files and templates
 are taken out of the asset store at the end, so nobody puts the old logo
 on something new six months later.
 
+## The goals
+
+- Move [95%] of surfaces to the new identity
+- Finish the rollout within [90 days]
+- Keep the rollout within [5%] of budget
+- Hold brand recognition within [5 points] of before
+
 ## The activities
 
 | # | Activity | What happens | Agents |

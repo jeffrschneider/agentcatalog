@@ -15,6 +15,12 @@ deadline with the range, the basis and the conditions, or the firm
 withdraws in writing. The run closes when the bank has the firm's
 indication or its withdrawal.
 
+## The goals
+
+- Decide to engage or decline within [3 days]
+- Win [15%] of the sale processes the firm bids in
+- Keep deal team hours per decline under [10]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

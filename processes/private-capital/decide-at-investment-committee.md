@@ -16,6 +16,12 @@ run closes when the decision is recorded with its conditions and any
 dissent, confirmed by the chair, and either handed to the term sheet or
 recorded as a decline with its reason.
 
+## The goals
+
+- Decide every deal within [7 days] of its memo
+- Hold losses on approved deals under [15%]
+- Keep conflicted votes at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

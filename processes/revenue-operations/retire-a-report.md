@@ -12,6 +12,13 @@ switched off. A retired report is frozen at its last run and stays
 readable, its readers are pointed at what replaces it, and the feeds
 behind it stop running rather than being left to rot.
 
+## The goals
+
+- Cut reports nobody opens by [40%]
+- Close each review within [30 days]
+- Keep retired reports brought back at [zero]
+- Cut report running costs by [25%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

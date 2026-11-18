@@ -12,6 +12,13 @@ every pass and every fail. Certificates carry a date and an expiry,
 because a partner whose certified people have left is a partner who is
 no longer certified.
 
+## The goals
+
+- Certify named partner people within [6 weeks]
+- Pass [85%] of candidates on first attempt
+- Keep deliveries failed by certified staff under [2%]
+- Renew [90%] of certifications before they expire
+
 ## The activities
 
 | # | Activity | What happens | Agents |

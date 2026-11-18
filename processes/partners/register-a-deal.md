@@ -12,6 +12,13 @@ says what it protects, what it does not, and the date the protection
 runs out. The claim is then watched, the partner is warned before it
 lapses, and the run closes when it is converted, extended or expired.
 
+## The goals
+
+- Answer every registration within [2 days]
+- Grow partner-registered pipeline by [20%]
+- Convert [40%] of approved registrations to wins
+- Keep disputes on registered deals under [5%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |
