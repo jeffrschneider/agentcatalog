@@ -10,7 +10,7 @@ lasts longer than a few minutes, and no person touches the ordinary
 case - which makes it the opposite end of the automation range from the
 social campaign, and the reason to read the two side by side.
 
-**delivers:** status board
+**delivers:** status board, routed leads
 
 ## The goals
 

@@ -19,7 +19,7 @@ not. What this process produces is an agreement, so the last activities
 hand the profile to the agents that will qualify accounts against it and
 set the date it comes back up.
 
-**delivers:** document
+**delivers:** document, an ideal customer profile
 
 ## The goals
 

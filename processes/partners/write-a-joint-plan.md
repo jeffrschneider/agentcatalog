@@ -12,7 +12,7 @@ tracked item rather than a sentence in a slide. The run does not close
 until the plan is published where both sides read it and the first
 review is on both calendars.
 
-**delivers:** document
+**delivers:** document, a joint business plan
 
 ## The goals
 

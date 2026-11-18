@@ -14,7 +14,7 @@ about who may be asked and about what may be offered in return, and
 those rules decide most of what this process is allowed to do, so they
 are read and recorded before a word of the ask is written.
 
-**delivers:** campaign
+**delivers:** campaign, customer reviews
 
 ## The goals
 

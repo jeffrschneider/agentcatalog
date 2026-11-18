@@ -15,7 +15,7 @@ bind before closing are recorded with their dates. The run closes when the
 signed term sheet is on the deal's record and has been handed to the
 lawyers for the definitive agreements.
 
-**delivers:** agreement
+**delivers:** agreement, a signed term sheet
 
 ## The goals
 

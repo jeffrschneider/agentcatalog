@@ -12,7 +12,7 @@ summary is read back so the buyer can correct it. The run ends with a
 written account of the problem and a named list of the questions the
 call did not answer. Nothing is proposed, and nothing is priced.
 
-**delivers:** notes
+**delivers:** notes, discovery call notes
 
 ## The goals
 

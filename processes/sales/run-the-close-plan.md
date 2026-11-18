@@ -12,7 +12,7 @@ that slips is chased, re-dated and re-agreed with the buyer rather than
 quietly missed. The run closes when the agreement is signed and the
 plan is closed on the record with what slipped and why.
 
-**delivers:** deal
+**delivers:** deal, a signed deal
 
 ## The goals
 

@@ -12,7 +12,7 @@ are set against the profile and scored, and the questions that came back
 empty are recorded as empty. The run ends when a person says work it,
 nurture it or decline it, tells the buyer, and records the reason.
 
-**delivers:** verdict
+**delivers:** verdict, an opportunity decision
 
 ## The goals
 

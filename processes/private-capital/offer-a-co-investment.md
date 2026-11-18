@@ -17,7 +17,7 @@ less than they asked for are told why. The run closes when each
 allocation is recorded with its reason and each co-investor's documents
 and money are part of the closing.
 
-**delivers:** sheet
+**delivers:** sheet, a co-investment allocation
 
 ## The goals
 

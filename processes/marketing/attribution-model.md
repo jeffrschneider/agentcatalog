@@ -20,7 +20,7 @@ approved periods are reissued as new versions of their reports, and
 every process that reports numbers is told which version produced which
 figure.
 
-**delivers:** sheet
+**delivers:** sheet, an attribution model
 
 ## The goals
 

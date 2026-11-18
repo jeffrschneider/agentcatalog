@@ -12,7 +12,7 @@ check them. The plan commits the account team and asks for whatever it
 needs from elsewhere, but it commits nobody outside the account team and
 puts no money in a forecast.
 
-**delivers:** document
+**delivers:** document, an account plan
 
 ## The goals
 

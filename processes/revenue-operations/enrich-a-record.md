@@ -13,7 +13,7 @@ carries the source, the date and the confidence beside the value. A
 value a person typed is never overwritten, and a fill nobody is
 confident in waits for a person instead of landing quietly.
 
-**delivers:** status board
+**delivers:** status board, enriched records
 
 ## The goals
 

@@ -16,7 +16,7 @@ run closes when the decision is recorded with its conditions and any
 dissent, confirmed by the chair, and either handed to the term sheet or
 recorded as a decline with its reason.
 
-**delivers:** verdict
+**delivers:** verdict, an investment committee decision
 
 ## The goals
 

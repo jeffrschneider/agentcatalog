@@ -11,7 +11,7 @@ it. A campaign or a launch asks for the assets once, and what comes back
 has already been scored against the standards, signed, and cut to the
 sizes the channels need.
 
-**delivers:** creative set
+**delivers:** creative set, approved creative assets
 
 ## The goals
 

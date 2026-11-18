@@ -13,7 +13,7 @@ every post. A post that runs without its disclosure breaks advertising
 law in most markets, and the organization that paid for it is the party
 held responsible.
 
-**delivers:** campaign
+**delivers:** campaign, an influencer campaign
 
 ## The goals
 

@@ -12,7 +12,7 @@ tool still earns its place. The review has three answers, and one of
 them is retirement. A tool nobody reviews is a tool nobody can defend
 at renewal.
 
-**delivers:** status board
+**delivers:** status board, a tool access review
 
 ## The goals
 

@@ -15,7 +15,7 @@ them, and signs the plan with finance. Raising the automation level
 moves none of those six. The run closes when the approved plan is
 published and every agent has heard what it owes against it.
 
-**delivers:** document
+**delivers:** document, an annual marketing plan
 
 ## The goals
 

@@ -12,7 +12,7 @@ is fixed where the deal lives. What stays wrong carries a mark into the
 roll-up, so the arithmetic downstream can say what it could not support.
 Nothing here changes a category or decides what is committed.
 
-**delivers:** status board
+**delivers:** status board, a clean pipeline
 
 ## The goals
 

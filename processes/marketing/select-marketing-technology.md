@@ -14,7 +14,7 @@ finalists on work it actually has. Named people choose the tool and
 sign the agreement, and the run closes once the entry is in the
 register with an owner, a cost, a term and a renewal date against it.
 
-**delivers:** shortlist
+**delivers:** shortlist, a marketing tool choice
 
 ## The goals
 

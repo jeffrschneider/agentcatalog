@@ -15,7 +15,7 @@ than inventing more meeting, what was made goes to whoever asked, and
 the record - who said what, which phases, who moved them - is the
 minutes, because every message in it is already signed and ordered.
 
-**delivers:** notes
+**delivers:** notes, session notes
 
 ## The goals
 

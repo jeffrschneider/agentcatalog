@@ -11,7 +11,7 @@ writes the account of why the numbers moved. The report goes out on the
 date it is due, and a source that did not answer in time appears in it
 as missing.
 
-**delivers:** report
+**delivers:** report, a marketing performance report
 
 ## The goals
 

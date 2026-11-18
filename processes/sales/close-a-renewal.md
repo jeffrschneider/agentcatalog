@@ -12,7 +12,7 @@ repriced and approved again rather than argued about, and it is still a
 completed run. The run closes when the signature is booked and the
 people who run the account have been told what changed.
 
-**delivers:** agreement
+**delivers:** agreement, a signed renewal
 
 ## The goals
 

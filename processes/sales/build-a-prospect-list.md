@@ -12,7 +12,7 @@ consent record and the suppression list decide who may be contacted on
 which channel. The seller keeps, drops or adds accounts, a person signs
 the list, and the list is loaded where the sequences read it.
 
-**delivers:** shortlist
+**delivers:** shortlist, a prospect list
 
 ## The goals
 

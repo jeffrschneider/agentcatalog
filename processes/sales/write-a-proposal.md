@@ -12,7 +12,7 @@ to something the organization has agreed to say. Legal and the deal desk
 sign the version that goes out, and a later change sends it back to them.
 The run closes when the buyer holds the offer and knows the next step.
 
-**delivers:** document
+**delivers:** document, a signed-off proposal
 
 ## The goals
 

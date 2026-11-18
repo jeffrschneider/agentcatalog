@@ -12,7 +12,7 @@ prevent. The requirements and the criteria are fixed and dated first,
 the market is searched with one set of questions, and the security and
 procurement reviews run alongside the scoring rather than after it.
 
-**delivers:** shortlist
+**delivers:** shortlist, a tool choice
 
 ## The goals
 

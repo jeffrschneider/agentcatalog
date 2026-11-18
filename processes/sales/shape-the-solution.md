@@ -12,7 +12,7 @@ what is planned. The shape is cut to what can ship, mapped line by
 line against the requirements, and walked through with the buyer. It
 ends at a shape both sides hold at one version, carrying no price.
 
-**delivers:** document
+**delivers:** document, a solution design
 
 ## The goals
 

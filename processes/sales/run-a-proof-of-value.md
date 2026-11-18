@@ -12,7 +12,7 @@ It is watched while it runs, scored line by line against the criteria,
 and closed with both sides reading the same score. The environment
 comes down and the data goes back. The result corrects the shape.
 
-**delivers:** verdict
+**delivers:** verdict, a proof of value result
 
 ## The goals
 

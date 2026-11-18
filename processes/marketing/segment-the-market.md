@@ -23,7 +23,7 @@ contacts or accounts is built in any platform during this run, because
 building the list is a separate process that reads the segments this
 one records.
 
-**delivers:** document
+**delivers:** document, a market segmentation
 
 ## The goals
 

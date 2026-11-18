@@ -22,7 +22,7 @@ issues it as a numbered version. This process quotes the company-level
 position at its version and stops there. Changing that position is the
 brand positioning process.
 
-**delivers:** document
+**delivers:** document, a product positioning
 
 ## The goals
 

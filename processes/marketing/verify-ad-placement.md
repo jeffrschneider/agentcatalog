@@ -18,7 +18,7 @@ have stopped serving in those places, the wasted spend goes back to
 whoever billed it, and the agreed exclusions are issued as a new version
 of the standing lists so that every future buy reads them.
 
-**delivers:** verdict
+**delivers:** verdict, an ad placement check
 
 ## The goals
 

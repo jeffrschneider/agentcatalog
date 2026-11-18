@@ -19,7 +19,7 @@ Every figure in this process comes from a system the organization
 already has. When a finding needs a customer's reasons, the run writes
 the question down and hands it to the process that asks people.
 
-**delivers:** report
+**delivers:** report, a customer base analysis
 
 ## The goals
 

@@ -15,7 +15,7 @@ answers. Finance decides the lines that never settle and signs the spend
 figure for the period, and no report carries a spend number that finance
 did not sign.
 
-**delivers:** statement
+**delivers:** statement, a media spend reconciliation
 
 ## The goals
 

@@ -16,7 +16,7 @@ numbered version, scoring every lead, and watched through its first
 weeks against what those leads do. Lead routing keeps running on the
 current version the whole time this process is open.
 
-**delivers:** sheet
+**delivers:** sheet, a lead scoring model
 
 ## The goals
 

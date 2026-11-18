@@ -13,7 +13,7 @@ named as such. Coverage is tested against what is still to find. The
 call ends with a category on every deal walked, actions with owners,
 and one number published at a version.
 
-**delivers:** notes
+**delivers:** notes, forecast call notes
 
 ## The goals
 

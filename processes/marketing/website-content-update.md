@@ -35,7 +35,7 @@ to refresh published content. This process also ends without the debrief
 that the larger processes here close with, since a change that takes an
 afternoon does not fill one.
 
-**delivers:** page
+**delivers:** page, an updated web page
 
 ## The goals
 

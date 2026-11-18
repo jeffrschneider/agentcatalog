@@ -12,7 +12,7 @@ marketing agree to the same sentence, the rule is issued at a version,
 every report that reads it is told what changed, and what happens to
 reports already published is decided rather than left to whoever notices.
 
-**delivers:** document
+**delivers:** document, a measure definition
 
 ## The goals
 

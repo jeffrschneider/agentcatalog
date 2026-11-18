@@ -15,7 +15,7 @@ figures and every difference is closed or left open on the record. The
 deal lead partner agrees the numbers the model will use, each one traced
 to its source, and the run closes when they are handed on.
 
-**delivers:** report
+**delivers:** report, a financial diligence report
 
 ## The goals
 

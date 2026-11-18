@@ -17,7 +17,7 @@ finding is rated with an owner, and the deal lead partner decides which
 problems are fixed in the documents, which are priced or covered by a
 promise from the seller, and which stop the deal.
 
-**delivers:** verdict
+**delivers:** verdict, legal diligence findings
 
 ## The goals
 

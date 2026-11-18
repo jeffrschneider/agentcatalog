@@ -24,7 +24,7 @@ scores a single piece before it is published. This process reads a
 sample of everything already published and reports where it has moved
 away from the standard.
 
-**delivers:** verdict
+**delivers:** verdict, a brand audit
 
 ## The goals
 

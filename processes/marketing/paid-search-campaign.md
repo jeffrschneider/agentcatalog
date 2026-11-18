@@ -11,7 +11,7 @@ the ads run, the bids move toward whatever is producing results. The run
 closes once the invoice has been reconciled and the cost per result has
 been reported against the goal the budget was given.
 
-**delivers:** campaign
+**delivers:** campaign, a paid search campaign
 
 ## The goals
 

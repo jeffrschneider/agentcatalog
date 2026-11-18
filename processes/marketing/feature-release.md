@@ -17,7 +17,7 @@ weight to pay for them. A release that changes what a customer is
 charged, or that has a date committed to it, runs as a product launch
 instead.
 
-**delivers:** page
+**delivers:** page, a feature announcement
 
 ## The goals
 

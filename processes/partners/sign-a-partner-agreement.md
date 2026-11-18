@@ -13,7 +13,7 @@ agreed list term by term before anyone signs. What leaves the run is an
 executed agreement, filed, with the people who have to work it holding
 the same version.
 
-**delivers:** agreement
+**delivers:** agreement, a signed partner agreement
 
 ## The goals
 

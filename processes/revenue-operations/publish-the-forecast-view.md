@@ -12,7 +12,7 @@ left to be assumed. The view is then handed to the people who commit a
 number, and the argument about what is committed happens there. This
 process publishes arithmetic and never makes the call.
 
-**delivers:** report
+**delivers:** report, a published forecast
 
 ## The goals
 

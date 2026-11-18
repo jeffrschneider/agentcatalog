@@ -21,7 +21,7 @@ department can carry in a year, and this process sets out the activities
 behind that judgment. It also runs on its own when a gap opens in the
 middle of a year.
 
-**delivers:** sheet
+**delivers:** sheet, a capacity plan
 
 ## The goals
 

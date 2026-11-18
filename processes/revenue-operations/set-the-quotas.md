@@ -12,7 +12,7 @@ add up to more than the number on purpose, and the over-assignment is a
 decision somebody signs rather than a rounding habit. The run ends when
 a named person approves the set and what it rests on is written down.
 
-**delivers:** sheet
+**delivers:** sheet, signed quotas
 
 ## The goals
 

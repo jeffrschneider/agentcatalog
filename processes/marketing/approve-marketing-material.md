@@ -16,7 +16,7 @@ behind each one. The run ends when every named signer has signed one
 version, or when the failures go back to the process that submitted the
 material and that process sends a corrected version.
 
-**delivers:** verdict
+**delivers:** verdict, a material approval
 
 ## The goals
 

@@ -11,7 +11,7 @@ approved to do. The piece can be an article or a longer guide, and the
 activities are the same for both. The run stays open past publication,
 because the manager still owes a report on how the piece performed.
 
-**delivers:** page
+**delivers:** page, a long-form article
 
 ## The goals
 

@@ -12,7 +12,7 @@ switched off. A retired report is frozen at its last run and stays
 readable, its readers are pointed at what replaces it, and the feeds
 behind it stop running rather than being left to rot.
 
-**delivers:** status board
+**delivers:** status board, a retired report list
 
 ## The goals
 

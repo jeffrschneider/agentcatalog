@@ -12,7 +12,7 @@ finding is rated and given an owner. The findings that survive are
 priced into the terms or called a stop, and the sponsor hears one report
 that says go, go with conditions, or stop.
 
-**delivers:** verdict
+**delivers:** verdict, an alliance diligence report
 
 ## The goals
 
