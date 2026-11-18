@@ -1,6 +1,6 @@
 ---
 name: prepare-the-decision-pack
-description: Settles what will be asked of the room and what the department will say, and gets the pack to everyone with time to read it before they walk in. Use it when running `ref/mkt/brief-executive-leadership`.
+description: Settles what will be asked of the room and what the department will say, and gets the pack to everyone with time to read it before they walk in. Use it when running `ref/mkt/brief-executive-leadership` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,15 +16,26 @@ and gets the pack to everyone with time to read it before they walk in.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in five activities across four reference processes.
+Each one names the activity as that process words it.
 
+- **Collect the Members' Questions**
+  - `ref/pc/decide-at-investment-committee`, activity 7 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Send the Committee Pack**
+  - `ref/pc/decide-at-investment-committee`, activity 6 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
 - **Send the Pack Ahead**
   - `ref/mkt/brief-executive-leadership`, activity 14 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+  - `ref/pc/run-the-portfolio-review`, activity 8 -
+    [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
 - **Settle Marketing's Position**
   - `ref/mkt/brief-executive-leadership`, activity 10 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+- **Write the Consent Request**
+  - `ref/pc/seek-an-advisory-committee-consent`, activity 7 -
+    [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
 
 ## What to record
 

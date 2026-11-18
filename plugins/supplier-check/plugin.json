@@ -15,8 +15,8 @@
     "reference",
     "marketing",
     "select-marketing-technology",
+    "run-legal-and-compliance-diligence",
     "engage-marketing-agency",
-    "brand-health",
     "abstract"
   ],
   "extensions": {
@@ -62,6 +62,24 @@
           "role": "scoring-record",
           "access": "write",
           "needs": "Every verdict lands with the requirement it cites and the evidence behind it."
+        },
+        {
+          "name": "the screening service",
+          "role": "screening-service",
+          "access": "read",
+          "needs": "Sanctions, money laundering and adverse records for investors and their owners, target companies and their leaders, and the firm's own people and providers."
+        },
+        {
+          "name": "company registry sources",
+          "role": "company-registry-sources",
+          "access": "read",
+          "needs": "A company's registration, good standing and owners."
+        },
+        {
+          "name": "court and regulator records",
+          "role": "court-and-regulator-records",
+          "access": "read",
+          "needs": "Suits, threats, regulator letters and settlements."
         }
       ],
       "records": [
@@ -77,7 +95,9 @@
         "a requirement it cannot test with the material it was given, said while the selection is still open",
         "a candidate that will not answer a requirement at all",
         "a request to change the requirements after candidates have been seen, because the earlier scores were made against the old list. A person decides, and the decision is recorded with the scores it affects.",
-        "a candidate that would duplicate something the department already buys"
+        "a candidate that would duplicate something the department already buys",
+        "a screening hit on an investor, a company or a person, to the chief compliance officer. The run stops on that party until the officer has read the hit and written down what happens next, and nothing about the hit is said to the investor. This agent never clears a hit itself.",
+        "an event that would disqualify the offering, found against a provider or one of the firm's own people, to the chief compliance officer, and for the firm's own people to the managing partner and fund counsel too. No offering material leaves the firm until they have recorded what happens."
       ],
       "not": [
         "Does not run the search, write to a supplier, or ask a candidate for anything.",
@@ -126,6 +146,36 @@
           "process": "ref/mkt/win-loss-analysis",
           "activities": [
             "Arrange the Outside Interviewer"
+          ]
+        },
+        {
+          "process": "ref/pc/form-the-fund",
+          "activities": [
+            "Set the Criteria for Each Provider",
+            "Score the Candidate Providers",
+            "Check No One Disqualifies the Offering"
+          ]
+        },
+        {
+          "process": "ref/pc/hold-a-fund-close",
+          "activities": [
+            "Screen Each Investor and Its Owners",
+            "Clear the Screening Hits"
+          ]
+        },
+        {
+          "process": "ref/pc/run-legal-and-compliance-diligence",
+          "activities": [
+            "Check the Company Is Real",
+            "Read the Litigation and Claims",
+            "Screen the Company and Its Leaders",
+            "Clear the Screening Hits"
+          ]
+        },
+        {
+          "process": "ref/pc/run-a-sale-process",
+          "activities": [
+            "Choose the Sell-Side Adviser"
           ]
         }
       ]

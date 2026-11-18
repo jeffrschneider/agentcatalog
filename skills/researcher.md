@@ -19,6 +19,8 @@ covers:
 - Gather How the Audience Talks
 - Read the Outside Conditions
 - Check What Is Already Known
+- Research the Market
+- Read the Market for Each Route
 
 ## read-the-competitive-landscape
 
@@ -34,6 +36,7 @@ covers:
 - Name the Competing Choices
 - Read the Naming Landscape
 - Read Where the Analyst Stands
+- Map the Competitors
 
 ## check-claims-against-their-sources
 
@@ -53,6 +56,7 @@ covers:
 - Put a Source Under Every Message
 - Record the Proof Behind Each Claim
 - Record the Proof Behind the Promise
+- Test the Thesis Against the Evidence
 
 ## interview-people
 
@@ -70,6 +74,10 @@ covers:
 - Collect the First-Hand Accounts
 - Collect the Questions
 - Collect the Early Input
+- Read What Investors Will Back
+- Call the Company's Customers
+- Call Lost and Prospective Customers
+- Call Industry Experts
 
 ## record-what-was-said
 
@@ -145,6 +153,8 @@ covers:
 - Size Each Segment
 - Map the Market and Its Segments
 - Settle the Audience to Reach
+- Size the Market
+- Read the Customer Base
 
 ## draft-what-the-evidence-supports
 
@@ -225,6 +235,7 @@ covers:
 - Shape the Talk
 - Update the Response
 - File What the Cycle Requires
+- Write the Investment Thesis
 
 ## take-in-a-call-for-speakers
 
@@ -233,3 +244,34 @@ which is what the event is, who attends, and when it closes.
 
 covers:
 - Take in the Call
+
+## list-and-watch-the-companies
+
+Finds every company that fits a written profile, whether it fits a
+sector thesis or is a buyer that would pay for a holding, and records
+the source each one was found in and the date that source was read. For
+a buyer it says why the buyer would pay and what it has bought before.
+It then watches the listed companies and records each sign that one may
+be ready to talk, with its source and its date.
+
+covers:
+- List the Companies That Fit
+- Watch the Companies
+- List the Likely Buyers
+
+## find-and-check-the-people
+
+Finds candidates for a role at a portfolio company beyond the people
+the firm already knows, and builds one long list with each candidate on
+it once and where each one came from. It takes the references on a
+management team in diligence and on a chosen candidate, runs a
+candidate's background checks only with the candidate's written
+consent, and records where the hire came from and what the search took.
+
+covers:
+- Find Candidates Outside the Network
+- Build the Long List
+- Take the References
+- Run the Background Checks
+- Check the Management Team
+- Record the Search

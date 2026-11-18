@@ -1,6 +1,6 @@
 ---
 name: carry-the-result-into-the-shaping
-description: Hands the diligence result into the run that shapes the arrangement, so the terms are built on what was actually proved. Use it when running `ref/prt/structure-an-alliance`.
+description: Hands the diligence result into the run that shapes the arrangement, so the terms are built on what was actually proved. Use it when running `ref/pc/run-commercial-and-product-diligence` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: diligence-coordinator
@@ -16,9 +16,17 @@ the terms are built on what was actually proved.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across four reference processes.
+Each one names the activity as that process words it.
 
+- **Hand the Findings On**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 17 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
+  - `ref/pc/run-legal-and-compliance-diligence`, activity 19 -
+    [Run Legal and Compliance Diligence](../../../../processes/private-capital/run-legal-and-compliance-diligence.md)
+- **Hand the Numbers On**
+  - `ref/pc/run-financial-diligence`, activity 16 -
+    [Run Financial Diligence](../../../../processes/private-capital/run-financial-diligence.md)
 - **Take in the Diligence Result**
   - `ref/prt/structure-an-alliance`, activity 1 -
     [Structure an Alliance](../../../../processes/partners/structure-an-alliance.md)

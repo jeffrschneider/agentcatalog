@@ -1,6 +1,6 @@
 ---
 name: write-the-account-of-the-numbers
-description: Writes the explanation of why the numbers moved, in plain words, for the people who decide what happens next. Use it when running `ref/mkt/marketing-performance-report`.
+description: Writes the explanation of why the numbers moved, in plain words, for the people who decide what happens next. Use it when running `ref/mkt/marketing-performance-report` and `ref/pc/issue-the-quarterly-report-and-statements`.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -16,12 +16,15 @@ people who decide what happens next.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Write the Account**
   - `ref/mkt/marketing-performance-report`, activity 11 -
     [Report Marketing Performance](../../../../processes/marketing/marketing-performance-report.md)
+- **Write the Quarter's Letter**
+  - `ref/pc/issue-the-quarterly-report-and-statements`, activity 10 -
+    [Issue the Quarterly Report and Statements](../../../../processes/private-capital/issue-the-quarterly-report-and-statements.md)
 
 ## What to record
 

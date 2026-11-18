@@ -1,6 +1,6 @@
 ---
 name: read-the-company-itself
-description: Reads the financial position, naming revenue, runway and how concentrated the revenue is, and establishes who owns anything the company would embed or resell. Use it when running `ref/prt/run-alliance-diligence`.
+description: Reads the financial position, naming revenue, runway and how concentrated the revenue is, and establishes who owns anything the company would embed or resell. Use it when running `ref/pc/run-commercial-and-product-diligence`, `ref/pc/run-legal-and-compliance-diligence` and `ref/prt/run-alliance-diligence`.
 license: CC-BY-4.0
 metadata:
   agent: diligence-coordinator
@@ -17,12 +17,17 @@ company would embed or resell.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Check Who Owns the Technology**
+  - `ref/pc/run-legal-and-compliance-diligence`, activity 10 -
+    [Run Legal and Compliance Diligence](../../../../processes/private-capital/run-legal-and-compliance-diligence.md)
   - `ref/prt/run-alliance-diligence`, activity 12 -
     [Run Alliance Diligence](../../../../processes/partners/run-alliance-diligence.md)
+- **Read the Customer Base**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 7 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
 - **Read the Financial Position**
   - `ref/prt/run-alliance-diligence`, activity 6 -
     [Run Alliance Diligence](../../../../processes/partners/run-alliance-diligence.md)

@@ -1,6 +1,6 @@
 ---
 name: set-the-criteria-before-any-candidate-arrives
-description: The agent writes down how a candidate or a proposal will be judged and fixes that list at a version before the first candidate is seen. Use it when running `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
+description: The agent writes down how a candidate or a proposal will be judged and fixes that list at a version before the first candidate is seen. Use it when running `ref/mkt/engage-marketing-agency`, `ref/mkt/select-marketing-technology` and `ref/pc/form-the-fund`.
 license: CC-BY-4.0
 metadata:
   agent: supplier-check
@@ -18,9 +18,12 @@ whenever it arrived.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
+- **Set the Criteria for Each Provider**
+  - `ref/pc/form-the-fund`, activity 3 -
+    [Form the Fund](../../../../processes/private-capital/form-the-fund.md)
 - **Set the Scoring Criteria**
   - `ref/mkt/select-marketing-technology`, activity 4 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)

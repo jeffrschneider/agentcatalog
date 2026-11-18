@@ -1,6 +1,6 @@
 ---
 name: turn-a-thesis-into-things-to-prove
-description: Takes the thesis in at its version, writes out every claim it assumes as a thing that has to be proved, and says what is in scope and what is cut, naming the cut areas as cut. Use it when running `ref/prt/run-alliance-diligence`.
+description: Takes the thesis in at its version, writes out every claim it assumes as a thing that has to be proved, and says what is in scope and what is cut, naming the cut areas as cut. Use it when running `ref/pc/run-commercial-and-product-diligence` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: diligence-coordinator
@@ -17,12 +17,28 @@ cut, naming the cut areas as cut.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in six activities across four reference processes.
+Each one names the activity as that process words it.
 
+- **Set What Must Be Checked**
+  - `ref/pc/run-legal-and-compliance-diligence`, activity 2 -
+    [Run Legal and Compliance Diligence](../../../../processes/private-capital/run-legal-and-compliance-diligence.md)
 - **Set What Must Be Proved**
   - `ref/prt/run-alliance-diligence`, activity 2 -
     [Run Alliance Diligence](../../../../processes/partners/run-alliance-diligence.md)
+- **Set the Claims to Prove**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 2 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
+- **Set the Numbers to Prove**
+  - `ref/pc/run-financial-diligence`, activity 2 -
+    [Run Financial Diligence](../../../../processes/private-capital/run-financial-diligence.md)
+- **Take in the Opportunity**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 1 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
+  - `ref/pc/run-financial-diligence`, activity 1 -
+    [Run Financial Diligence](../../../../processes/private-capital/run-financial-diligence.md)
+  - `ref/pc/run-legal-and-compliance-diligence`, activity 1 -
+    [Run Legal and Compliance Diligence](../../../../processes/private-capital/run-legal-and-compliance-diligence.md)
 - **Take in the Thesis**
   - `ref/prt/run-alliance-diligence`, activity 1 -
     [Run Alliance Diligence](../../../../processes/partners/run-alliance-diligence.md)

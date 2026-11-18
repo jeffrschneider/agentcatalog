@@ -35,7 +35,8 @@ manifest and in the directory of the same name.
 
 ## Where this abstract agent is used
 
-`ref/sls/answer-an-inbound-inquiry`. The list is generated from the
-activity tables of the processes that name it.
+`ref/sls/answer-an-inbound-inquiry`, `ref/pc/screen-an-inbound-pitch`.
+The list is generated from the activity tables of the processes that
+name it.
 
 https://agentcatalog.com/abstract-agents/inbound-responder

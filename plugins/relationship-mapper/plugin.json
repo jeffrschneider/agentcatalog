@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "relationship-mapper",
   "version": "1.0.0",
-  "description": "The relationship-mapper abstract agent. Works out who decides, who influences, who blocks and who we already know at an account, placing every person against a named decision rather than against the logo.",
+  "description": "The relationship-mapper abstract agent. Works out who decides, who influences, who blocks and who we already know at an account, an investor or a company, placing every person against a named decision rather than against the logo.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "sales",
+    "private-capital",
     "map-the-account-people",
-    "review-the-account-plans",
-    "write-an-account-plan",
+    "reach-out-to-a-company",
+    "fill-a-key-role-at-a-portfolio-company",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "relationship-mapper",
       "agentVersion": 1,
-      "department": "sales",
+      "department": "private-capital",
       "abstract": true,
       "works": "Runs collect-and-report to pull the people already held and to find the ones the record does not hold, assessment for the strength scores and the privacy check, roll-call on coverage while the map is being built, and decide-and-announce to issue the map at a version. Sits in the briefing where the account owner agrees which decisions the map covers, and delivers into the approval where the people who have actually met these buyers correct it. Takes the account read and the decisions in scope from the account planner, the found people from the researcher, the strength scores from the analytics agent, and the joiners and leavers from the account monitor. Hands the issued map back to the account planner and to anyone else who plans from it.",
       "servers": [
@@ -67,11 +67,14 @@
         "what may be held about a person - to the privacy reviewer, always, before the map is issued",
         "a person who asks to be removed - removed inside the stated days, from the map and from anything downstream that copied it, with the removal recorded and the removed detail not kept",
         "a decision in scope with no decider found, or one whose decider opposes us - to the account owner as a named coverage gap",
-        "a joiner, leaver or title change that puts a decision at risk - to the account owner and back into the map, against the version the plan was built on"
+        "a joiner, leaver or title change that puts a decision at risk - to the account owner and back into the map, against the version the plan was built on",
+        "a path that runs through a leader of a company the fund holds - to the partner on that company's board, whose agreement comes before anyone asks that leader for an introduction",
+        "a candidate who works at another company the fund holds - to the talent partner, and nobody approaches the candidate until the non-solicitation rules have been read"
       ],
       "not": [
         "Does not contact anybody in the map.",
         "Contact happens in the outbound work under the consent record, and the map is never used as a sending list.",
+        "Where a process asks for an introduction or approaches a candidate, this agent names the path and drafts the note, and the person who holds the relationship does the asking.",
         "Does not decide what to sell or in what order, which is the account planner's job, and does not build prospect lists from cold sources, which belongs to the prospect researcher."
       ],
       "processes": [
@@ -101,6 +104,34 @@
           "process": "ref/sls/review-the-account-plans",
           "activities": [
             "Check Whether the People Changed"
+          ]
+        },
+        {
+          "process": "ref/pc/work-an-investor-prospect",
+          "activities": [
+            "Find the Warmest Path In",
+            "Map the Investor's Decision",
+            "Arrange the Reference Calls"
+          ]
+        },
+        {
+          "process": "ref/pc/reach-out-to-a-company",
+          "activities": [
+            "Find Who Decides at the Company",
+            "Find the Paths In",
+            "Score Each Path",
+            "Choose the Path",
+            "Ask for the Introduction",
+            "Record the Outcome"
+          ]
+        },
+        {
+          "process": "ref/pc/fill-a-key-role-at-a-portfolio-company",
+          "activities": [
+            "Find Candidates in the Firm's Network",
+            "Build the Long List",
+            "Approach the Candidates",
+            "Record the Search"
           ]
         }
       ]

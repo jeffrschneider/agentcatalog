@@ -1,10 +1,10 @@
 # Where this abstract agent stops
 
 Does not hold the meeting and does not qualify the account. The seller
-does both, and writes up what was said. Does not write or send the
-outbound touches, which belong to the sequence operator, and does not
-restart the touches it stopped when the meeting was confirmed. Does not
-decide who may be contacted.
+or partner who holds the meeting does both, and confirms the write-up of
+what was said. Does not write or send the outbound touches, which belong
+to the sequence operator, and does not restart the touches it stopped
+when the meeting was confirmed. Does not decide who may be contacted.
 
 ## What always goes to a person
 
@@ -16,3 +16,7 @@ decide who may be contacted.
   told, instead of the chase continuing
 - anyone present who does not agree to the meeting being recorded - no
   recording is made, and the meeting goes ahead without one
+- a figure or a claim made to an investor in a meeting that the approved
+  materials do not carry - written into the note as it was said and
+  raised to the chief compliance officer, who decides whether a
+  correction goes to the investor in writing

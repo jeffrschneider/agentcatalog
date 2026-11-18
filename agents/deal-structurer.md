@@ -23,6 +23,17 @@ mandate is refused rather than absorbed.
   the Term and the Exit, Model the Deal Economics, Draft the Term Sheet,
   Negotiate the Term Sheet, Draft the Definitive Agreement, Review the
   Redlines, Hand On the Obligations
+- `ref/pc/issue-a-term-sheet` / Take in the Committee Decision, Draft
+  the Term Sheet, Check the Draft Against the Approval, Review the Draft
+  with Counsel, Send the Term Sheet, Log the Other Side's Asks, Answer
+  Each Ask, Take a Change Past the Limits to Committee, Agree the Final
+  Text, Record the Exclusivity and What Binds, Hand On the Signed Terms,
+  Record the Term Sheet
+- `ref/pc/negotiate-the-definitive-agreements` / Take in the Signed Term
+  Sheet, Instruct Outside Counsel, Prepare the First Draft, Read the
+  Draft Against the Term Sheet, Write the Diligence Findings In, Take a
+  Moved Term Back to Committee, Work the Round Trips, Agree the
+  Disclosure Schedules, Hand the Text to the Closing
 
 ## Patterns
 
@@ -51,6 +62,11 @@ the integration-planner agent's readiness gate.
 - the partner record (write)
 - the pricing policy and the standard partner terms (read) - the terms
   the company already stands behind, so a new one is a deliberate choice
+- the decision record (read) - the investment committee's approval, its
+  conditions and the limits on each term, which every draft is checked
+  against
+- the deal pipeline (write) - the signed term sheet, the exclusivity end
+  date and the terms that bind before closing, on the deal's record
 
 There is deliberately no grant on the signature system. Signing is a
 human gate.
@@ -82,6 +98,10 @@ created has owners before anybody starts it.
   the signer the delegation of authority names
 - an economics model somebody wants taken to a decision without a
   downside case
+- an exclusivity period that will end before the agreements are done -
+  to the deal lead partner ahead of the end date, who agrees an
+  extension in writing or accepts that the company may talk to others,
+  because nobody assumes an extension that was never signed
 
 ## Not
 

@@ -1,6 +1,6 @@
 ---
 name: hold-the-session-and-record-the-answers
-description: Runs the session against the sorted list, and closes each ask with its answer, its reason, its date and the name of the person on each side who agreed to it. Use it when running `ref/sls/negotiate-the-agreement`.
+description: Runs the session against the sorted list, and closes each ask with its answer, its reason, its date and the name of the person on each side who agreed to it. Use it when running `ref/pc/negotiate-the-fund-terms-and-side-letters`, `ref/pc/run-a-sale-process` and `ref/sls/negotiate-the-agreement`.
 license: CC-BY-4.0
 metadata:
   agent: negotiation-coordinator
@@ -13,23 +13,32 @@ metadata:
 
 Runs the session against the sorted list, and closes each ask with its
 answer, its reason, its date and the name of the person on each side who
-agreed to it. A refusal goes back to the buyer in writing rather than
-only in a call.
+agreed to it. A refusal goes back to the other side in writing rather
+than only in a call.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in six activities across three reference processes.
 Each one names the activity as that process words it.
 
+- **Close the Remaining Asks**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 12 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Hold the Negotiation Session**
   - `ref/sls/negotiate-the-agreement`, activity 8 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
+- **Negotiate the Sale Agreement**
+  - `ref/pc/run-a-sale-process`, activity 12 -
+    [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
 - **Record What Was Agreed**
   - `ref/sls/negotiate-the-agreement`, activity 9 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
 - **Refuse in Writing**
   - `ref/sls/negotiate-the-agreement`, activity 10 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
+- **Send the Firm's Position**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 11 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 
 ## What to record
 

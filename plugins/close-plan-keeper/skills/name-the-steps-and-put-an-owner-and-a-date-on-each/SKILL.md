@@ -1,6 +1,6 @@
 ---
 name: name-the-steps-and-put-an-owner-and-a-date-on-each
-description: Lists every step still owed as one set rather than two, walks the buyer's own approval path committee by committee, puts one named owner on each step and counts the dates back from signing. Use it when running `ref/sls/run-the-close-plan`.
+description: Lists every step still owed as one set rather than two, walks the buyer's own approval path committee by committee, puts one named owner on each step and counts the dates back from signing. Use it when running `ref/pc/run-the-closing` and `ref/sls/run-the-close-plan`.
 license: CC-BY-4.0
 metadata:
   agent: close-plan-keeper
@@ -17,7 +17,7 @@ on each step and counts the dates back from signing.
 
 ## Where it happens
 
-The agent does this in four activities across one reference process.
+The agent does this in five activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm the Buyer's Own Process**
@@ -29,6 +29,9 @@ Each one names the activity as that process words it.
 - **Name the Steps Each Side Owes**
   - `ref/sls/run-the-close-plan`, activity 2 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)
+- **Put an Owner and a Date on Each**
+  - `ref/pc/run-the-closing`, activity 2 -
+    [Run the Closing](../../../../processes/private-capital/run-the-closing.md)
 - **Put an Owner on Every Step**
   - `ref/sls/run-the-close-plan`, activity 4 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)

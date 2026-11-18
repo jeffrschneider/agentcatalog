@@ -14,9 +14,9 @@
     "abstract-agent",
     "reference",
     "partners",
+    "issue-a-term-sheet",
     "structure-an-alliance",
-    "explore-an-alliance",
-    "plan-the-integration",
+    "negotiate-the-definitive-agreements",
     "abstract"
   ],
   "extensions": {
@@ -61,6 +61,18 @@
           "role": "pricing-policy-and-the-standard-partner-terms",
           "access": "read",
           "needs": "The terms the company already stands behind, so a new one is a deliberate choice."
+        },
+        {
+          "name": "the decision record",
+          "role": "decision-record",
+          "access": "read",
+          "needs": "The investment committee's approval, its conditions and the limits on each term, which every draft is checked against."
+        },
+        {
+          "name": "the deal pipeline",
+          "role": "deal-pipeline",
+          "access": "write",
+          "needs": "The signed term sheet, the exclusivity end date and the terms that bind before closing, on the deal's record."
         }
       ],
       "records": [
@@ -81,7 +93,8 @@
         "a clause that moves a term, even slightly - to the mandate holder, because absorbing it quietly is a failure of the review, not a concession",
         "a diligence condition that did not make it into the agreement - to the named escalation holder rather than dropped",
         "the signature, always, and an agreement above the threshold goes to the signer the delegation of authority names",
-        "an economics model somebody wants taken to a decision without a downside case"
+        "an economics model somebody wants taken to a decision without a downside case",
+        "an exclusivity period that will end before the agreements are done - to the deal lead partner ahead of the end date, who agrees an extension in writing or accepts that the company may talk to others, because nobody assumes an extension that was never signed"
       ],
       "not": [
         "Does not decide whether to do the deal, which is the executive sponsor (person).",
@@ -123,6 +136,37 @@
             "Draft the Definitive Agreement",
             "Review the Redlines",
             "Hand On the Obligations"
+          ]
+        },
+        {
+          "process": "ref/pc/issue-a-term-sheet",
+          "activities": [
+            "Take in the Committee Decision",
+            "Draft the Term Sheet",
+            "Check the Draft Against the Approval",
+            "Review the Draft with Counsel",
+            "Send the Term Sheet",
+            "Log the Other Side's Asks",
+            "Answer Each Ask",
+            "Take a Change Past the Limits to Committee",
+            "Agree the Final Text",
+            "Record the Exclusivity and What Binds",
+            "Hand On the Signed Terms",
+            "Record the Term Sheet"
+          ]
+        },
+        {
+          "process": "ref/pc/negotiate-the-definitive-agreements",
+          "activities": [
+            "Take in the Signed Term Sheet",
+            "Instruct Outside Counsel",
+            "Prepare the First Draft",
+            "Read the Draft Against the Term Sheet",
+            "Write the Diligence Findings In",
+            "Take a Moved Term Back to Committee",
+            "Work the Round Trips",
+            "Agree the Disclosure Schedules",
+            "Hand the Text to the Closing"
           ]
         }
       ]

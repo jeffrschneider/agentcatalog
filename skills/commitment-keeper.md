@@ -9,6 +9,7 @@ it came from.
 covers:
 - Set the Milestones and the Dates
 - Record the Commitments
+- Load the Plan into the Tracker
 
 ## put-the-reviews-on-the-calendar
 
@@ -29,6 +30,10 @@ silence.
 
 covers:
 - Read the Commitments
+- Read Progress on the Value Creation Plan
+- Read the Open Actions
+- Read Progress Against the Plan
+- Follow Up the Actions
 
 ## close-what-nobody-is-going-to-do
 
@@ -46,3 +51,4 @@ commitment that has slipped twice can be seen to have slipped twice.
 
 covers:
 - Record the Decisions and the Dates
+- Record the Decisions and Actions

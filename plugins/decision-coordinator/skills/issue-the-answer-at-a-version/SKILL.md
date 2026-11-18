@@ -1,6 +1,6 @@
 ---
 name: issue-the-answer-at-a-version
-description: Issues the agreed answer at a numbered version on the date it is due, and tells every reader that the version is out. Use it when running `ref/mkt/annual-marketing-plan`, `ref/mkt/product-positioning` and `ref/mkt/quarterly-business-review`.
+description: Issues the agreed answer at a numbered version on the date it is due, and tells every reader that the version is out. Use it when running `ref/mkt/annual-marketing-plan` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,8 +16,8 @@ and tells every reader that the version is out.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **Issue the Positioning at a Version**
   - `ref/mkt/product-positioning`, activity 15 -
@@ -28,6 +28,9 @@ processes. Each one names the activity as that process words it.
 - **Publish the Reset Commitments**
   - `ref/mkt/quarterly-business-review`, activity 14 -
     [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)
+- **Update the Deal Pipeline**
+  - `ref/pc/decide-at-investment-committee`, activity 17 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
 
 ## What to record
 

@@ -24,3 +24,10 @@ anything into the account it hands over.
   channel they actually use
 - the seller still taking the customer's calls, to the sales leader,
   because it means the introduction did not land
+- a promise to a portfolio company's management, the co-investors or the
+  lenders that no document binds, marked as such and taken to the deal
+  lead partner, who decides whether the firm honors it, so management
+  hears the answer before it finds out by asking
+- a committee condition that nobody on the portfolio team will own, to
+  the deal lead partner, and the deal team does not step back until the
+  condition has an owner and a date

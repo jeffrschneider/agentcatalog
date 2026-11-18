@@ -1,6 +1,6 @@
 ---
 name: read-the-competitive-landscape
-description: Reads what other companies in the market have published about themselves and what an outside firm has published about this one. Use it when running `ref/mkt/brand-health` and 5 other reference processes.
+description: Reads what other companies in the market have published about themselves and what an outside firm has published about this one. Use it when running `ref/mkt/brand-health` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -18,12 +18,15 @@ the category sounds like, and what a buyer would choose instead.
 
 ## Where it happens
 
-The agent does this in six activities across six reference processes.
-Each one names the activity as that process words it.
+The agent does this in seven activities across seven reference
+processes. Each one names the activity as that process words it.
 
 - **Confirm the Move**
   - `ref/mkt/competitive-battlecard`, activity 2 -
     [Refresh Competitive Battlecard](../../../../processes/marketing/competitive-battlecard.md)
+- **Map the Competitors**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 11 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
 - **Name the Competing Choices**
   - `ref/mkt/product-positioning`, activity 7 -
     [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)

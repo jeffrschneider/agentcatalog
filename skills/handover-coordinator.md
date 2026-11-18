@@ -10,6 +10,8 @@ not a shared mailbox.
 covers:
 - Name Who Now Owns the Relationship
 - Take in the Booked Order
+- Take in the Closed Deal
+- Name the Portfolio Team
 
 ## build-the-account-picture
 
@@ -23,6 +25,10 @@ covers:
 - Map Who Is Who at the Customer
 - Record What Was Promised
 - Write the Account Picture
+- Collect What the Deal Team Learned
+- List the Fund's Rights and Duties
+- Write the Company Picture
+- Carry the Committee's Conditions
 
 ## hand-the-account-over-internally
 
@@ -47,6 +53,8 @@ covers:
 - Confirm the Customer Accepted the Handover
 - Introduce the New Owner to the Customer
 - Schedule the Start
+- Introduce the Team to Management
+- Confirm Management Knows Who to Call
 
 ## close-the-sales-side-out
 
@@ -57,3 +65,5 @@ the first time, so the next handover starts from a fuller package.
 covers:
 - Close Out the Sales Side
 - Record What the Sale Did Not Capture
+- Close Out the Deal Side
+- Record What the Handover Missed

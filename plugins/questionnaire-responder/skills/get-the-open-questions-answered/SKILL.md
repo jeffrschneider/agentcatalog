@@ -1,6 +1,6 @@
 ---
 name: get-the-open-questions-answered
-description: Routes every question the source cannot answer to the person who owns that fact, in the buyer's own wording, and drafts what comes back into an answer named people sign. Use it when running `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
+description: Routes every question the source cannot answer to the person who owns that fact, in the requester's own wording, and drafts what comes back into an answer named people sign. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -12,24 +12,29 @@ metadata:
 ## What it does
 
 Routes every question the source cannot answer to the person who owns
-that fact, in the buyer's own wording, and drafts what comes back into
-an answer named people sign. The security and legal parts are answered
-the same way, from a maintained source rather than from memory.
+that fact, in the requester's own wording, and drafts what comes back
+into an answer named people sign. The security and legal parts are
+answered the same way, from a maintained source rather than from memory.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Answer the Security and Legal Parts**
   - `ref/sls/respond-to-an-rfp`, activity 10 -
     [Respond to an RFP](../../../../processes/sales/respond-to-an-rfp.md)
 - **Draft the New Answers**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 8 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
   - `ref/sls/answer-a-security-questionnaire`, activity 7 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
 - **Route What Is Not Answered**
   - `ref/sls/answer-a-security-questionnaire`, activity 6 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
+- **Route the Unanswered Questions**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 7 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
 
 ## What to record
 

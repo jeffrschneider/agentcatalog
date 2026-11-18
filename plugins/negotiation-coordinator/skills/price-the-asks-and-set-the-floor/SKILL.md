@@ -1,6 +1,6 @@
 ---
 name: price-the-asks-and-set-the-floor
-description: Sets the floor on price, term, liability and payment, and names who set it. Use it when running `ref/sls/negotiate-the-agreement`.
+description: Sets the floor on price, term, liability and payment, and names who set it. Use it when running `ref/pc/negotiate-the-fund-terms-and-side-letters` and `ref/sls/negotiate-the-agreement`.
 license: CC-BY-4.0
 metadata:
   agent: negotiation-coordinator
@@ -18,12 +18,24 @@ in return on every trade.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in seven activities across two reference processes.
 Each one names the activity as that process words it.
 
+- **Answer the Asks Inside the Mandate**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 9 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
+- **Decide the Asks Past the Mandate**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 10 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
+- **Price Each Ask**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 8 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Price the Asks**
   - `ref/sls/negotiate-the-agreement`, activity 5 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
+- **Read the Firm's Negotiating Mandate**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 2 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Set the Walk-Away Terms**
   - `ref/sls/negotiate-the-agreement`, activity 4 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)

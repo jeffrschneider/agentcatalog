@@ -1,6 +1,6 @@
 ---
 name: open-an-inquiry-and-start-the-clock
-description: Takes the inquiry in on the channel it arrived on and starts the clock the promised answer time is measured against. Use it when running `ref/sls/answer-an-inbound-inquiry`.
+description: Takes the inquiry in on the channel it arrived on and starts the clock the promised answer time is measured against. Use it when running `ref/pc/screen-an-inbound-pitch` and `ref/sls/answer-an-inbound-inquiry`.
 license: CC-BY-4.0
 metadata:
   agent: inbound-responder
@@ -17,21 +17,32 @@ answered at all, and names who answers it.
 
 ## Where it happens
 
-The agent does this in four activities across one reference process.
+The agent does this in seven activities across two reference processes.
 Each one names the activity as that process words it.
 
+- **Acknowledge the Pitch**
+  - `ref/pc/screen-an-inbound-pitch`, activity 3 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
 - **Check Whether It May Be Answered**
   - `ref/sls/answer-an-inbound-inquiry`, activity 6 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)
 - **Decide Who Answers**
   - `ref/sls/answer-an-inbound-inquiry`, activity 7 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)
+- **Route the Note to a Partner**
+  - `ref/pc/screen-an-inbound-pitch`, activity 11 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
 - **Start the Response Clock**
+  - `ref/pc/screen-an-inbound-pitch`, activity 2 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
   - `ref/sls/answer-an-inbound-inquiry`, activity 2 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)
 - **Take in the Inquiry**
   - `ref/sls/answer-an-inbound-inquiry`, activity 1 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)
+- **Take in the Pitch**
+  - `ref/pc/screen-an-inbound-pitch`, activity 1 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
 
 ## What to record
 

@@ -1,6 +1,6 @@
 ---
 name: make-sure-the-meeting-holds
-description: Briefs everybody who attends, so nobody asks again what the person already answered, and reminds both sides before it. Use it when running `ref/sls/book-the-meeting`.
+description: Briefs everybody who attends, so nobody asks again what the person already answered, and reminds both sides before it. Use it when running `ref/pc/fill-a-key-role-at-a-portfolio-company` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: meeting-scheduler
@@ -17,18 +17,27 @@ nobody attended once and rebooks it once, then lets it go.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in six activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Brief the Attendees**
   - `ref/sls/book-the-meeting`, activity 7 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)
+- **Brief the Partner**
+  - `ref/pc/reach-out-to-a-company`, activity 13 -
+    [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
 - **Handle a No-Show**
   - `ref/sls/book-the-meeting`, activity 10 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)
+- **Hold the Follow-Up Meetings**
+  - `ref/pc/work-an-investor-prospect`, activity 13 -
+    [Work an Investor Prospect](../../../../processes/private-capital/work-an-investor-prospect.md)
 - **Remind Before the Meeting**
   - `ref/sls/book-the-meeting`, activity 8 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)
+- **Run the Interviews**
+  - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 11 -
+    [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
 
 ## What to record
 

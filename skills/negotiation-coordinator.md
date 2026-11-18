@@ -3,14 +3,18 @@
 ## take-in-the-offer-and-list-what-is-asked-for
 
 Reads the offer as it was sent and the reply that came back, and
-gathers every ask into one numbered list in the buyer's own words with
-the person who raised each one. Confirms who actually signs on each
-side and who they need first.
+gathers every ask into one numbered list in the other side's own words
+with the person who raised each one. Confirms who actually signs on
+each side and who they need first.
 
 covers:
 - Take in the Offer and the Reply
 - List What Is Asked For
 - Confirm Who Decides
+- Take in the Investor's Comments
+- Log Every Ask
+- Take in the First Bids
+- Take in the Final Bids and Markups
 
 ## price-the-asks-and-set-the-floor
 
@@ -23,18 +27,25 @@ covers:
 - Set the Walk-Away Terms
 - Price the Asks
 - Sort the Asks
+- Read the Firm's Negotiating Mandate
+- Price Each Ask
+- Answer the Asks Inside the Mandate
+- Decide the Asks Past the Mandate
 
 ## hold-the-session-and-record-the-answers
 
 Runs the session against the sorted list, and closes each ask with its
 answer, its reason, its date and the name of the person on each side
-who agreed to it. A refusal goes back to the buyer in writing rather
+who agreed to it. A refusal goes back to the other side in writing rather
 than only in a call.
 
 covers:
 - Hold the Negotiation Session
 - Record What Was Agreed
 - Refuse in Writing
+- Send the Firm's Position
+- Close the Remaining Asks
+- Negotiate the Sale Agreement
 
 ## rebuild-the-offer-and-confirm-the-position
 
@@ -47,6 +58,18 @@ covers:
 - Re-Price the Deal
 - Confirm the Agreed Position
 - Hand On the Agreed Position
+- Read the Final Text Against the Log
+- Hand On to the Close
+
+## compare-the-final-bids
+
+Sets the final bids in a sale side by side on price, certainty of
+closing, financing, the promises asked of the sellers, escrow and
+timing, and on what each one pays the fund after the debt and the
+preferences, taking that last figure from the cap-table-keeper agent.
+
+covers:
+- Compare the Final Bids
 
 ## answer-the-commercial-terms-in-a-markup
 

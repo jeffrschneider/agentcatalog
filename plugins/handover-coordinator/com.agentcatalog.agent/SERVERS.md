@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Seven systems, named by role rather than by product. The access level is
+Nine systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -13,6 +13,8 @@ more than the job requires.
 | the delivery system | write | What the new owner takes on. |
 | the calendar | write | The first working session in diaries on both sides. |
 | the customer communication channel | write | One introduction, through the channel the customer actually uses. |
+| the deal pipeline | write | The closed deal is taken in from it, and the named portfolio team and the closed-out deal side are recorded against it. |
+| the decision record | read | The investment committee's decision and the conditions it set, at their final version. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

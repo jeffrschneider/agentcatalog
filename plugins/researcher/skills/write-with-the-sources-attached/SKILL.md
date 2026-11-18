@@ -1,6 +1,6 @@
 ---
 name: write-with-the-sources-attached
-description: Writes material whose argument has to hold up under checking, such as an answer to an objection, a change to a published page, a talk, a statement reissued on new facts, or a response in a form somebody else set. Use it when running `ref/mkt/brief-industry-analyst` and 5 other reference processes.
+description: Writes material whose argument has to hold up under checking, such as an answer to an objection, a change to a published page, a talk, a statement reissued on new facts, or a response in a form somebody else set. Use it when running `ref/mkt/brief-industry-analyst` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -18,8 +18,8 @@ set. Every claim in it carries the source underneath.
 
 ## Where it happens
 
-The agent does this in seven activities across six reference processes.
-Each one names the activity as that process words it.
+The agent does this in eight activities across seven reference
+processes. Each one names the activity as that process words it.
 
 - **File What the Cycle Requires**
   - `ref/mkt/brief-industry-analyst`, activity 9 -
@@ -39,6 +39,9 @@ Each one names the activity as that process words it.
 - **Write the Change**
   - `ref/mkt/website-content-update`, activity 4 -
     [Update Website Content](../../../../processes/marketing/website-content-update.md)
+- **Write the Investment Thesis**
+  - `ref/pc/set-the-fund-strategy`, activity 6 -
+    [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)
 - **Write the Objection Answers**
   - `ref/mkt/sales-enablement-kit`, activity 9 -
     [Produce Sales Enablement Kit](../../../../processes/marketing/sales-enablement-kit.md)

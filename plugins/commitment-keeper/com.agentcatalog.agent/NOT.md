@@ -20,3 +20,5 @@ published rules.
   out of habit
 - a signed plan with no review on anybody's calendar - to both sponsors,
   because the run does not close until there is one
+- a board action with no owner - to the firm's board director, and the
+  action stays open on the record with the gap named until it has one

@@ -1,6 +1,6 @@
 ---
 name: score-against-the-requirements
-description: The agent scores every candidate against every requirement and returns a verdict on each one, naming the requirement it was scored against and the evidence behind the verdict. Use it when running `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
+description: The agent scores every candidate against every requirement and returns a verdict on each one, naming the requirement it was scored against and the evidence behind the verdict. Use it when running `ref/mkt/engage-marketing-agency` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: supplier-check
@@ -18,9 +18,15 @@ recorded as not tested, with the reason.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in four activities across four reference processes.
 Each one names the activity as that process words it.
 
+- **Choose the Sell-Side Adviser**
+  - `ref/pc/run-a-sale-process`, activity 2 -
+    [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
+- **Score the Candidate Providers**
+  - `ref/pc/form-the-fund`, activity 4 -
+    [Form the Fund](../../../../processes/private-capital/form-the-fund.md)
 - **Score the Proposals**
   - `ref/mkt/engage-marketing-agency`, activity 10 -
     [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)

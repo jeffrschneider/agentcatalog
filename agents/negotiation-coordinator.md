@@ -3,7 +3,7 @@
 `negotiation-coordinator v1`
 
 **purpose:** Keeps the negotiation straight. Gathers every ask the
-buyer has made into one numbered list in the buyer's own words, prices
+other side has made into one numbered list in its own words, prices
 each one, and holds the record of which were given, which were traded
 and which were refused. Every closed ask carries its answer, the reason
 behind it, the date, and the name of the person on each side who agreed
@@ -23,6 +23,14 @@ memory.
 - `ref/sls/record-a-lost-deal` / Make One Recovery Attempt
 - `ref/sls/review-the-redlines` / Review the Business Terms
 - `ref/sls/run-the-close-plan` / Escalate a Stalled Step
+- `ref/pc/negotiate-the-fund-terms-and-side-letters` / Take in the
+  Investor's Comments, Read the Firm's Negotiating Mandate, Log Every
+  Ask, Price Each Ask, Answer the Asks Inside the Mandate, Decide the
+  Asks Past the Mandate, Send the Firm's Position, Close the Remaining
+  Asks, Read the Final Text Against the Log, Hand On to the Close
+- `ref/pc/run-a-sale-process` / Take in the First Bids, Take in the
+  Final Bids and Markups, Compare the Final Bids, Negotiate the Sale
+  Agreement
 
 ## Patterns
 
@@ -51,6 +59,12 @@ close-plan-keeper agent.
   margin, within a discount cap the adopting process sets
 - the shared workspace with the buyer (write) - the list both sides
   confirm, and the refusals in writing
+- the fund model (read) - what an investor's ask costs in fees and
+  carried interest, read at the size it would reach if every investor
+  with a most favored nation right elected it
+- the deal pipeline (write) - each bid in a sale, logged with its
+  price, how it will be paid for, its conditions and its date, and the
+  comparison of the final bids
 
 ## Records
 
@@ -79,6 +93,18 @@ confirmed, with the open items nobody closed listed beside it.
   are checked again against what the new person wants
 - a deadlock that runs out its clock, to whoever decides between
   refusing on our terms and closing the deal as lost
+- an investor's ask past the firm's negotiating mandate, or one that
+  the firm could give one investor but could not afford once every
+  investor with a most favored nation right elected it, to the
+  managing partner, because only the managing partner gives it or
+  moves the mandate, in writing and with a date
+- two investors asking for terms that cannot both be given, to the
+  managing partner, and the investor that does not get its ask is told
+  in writing
+- a final bid below the floor the committee set, or a buyer's price cut
+  after diligence that takes its bid below it, to the investment
+  committee before anyone answers the buyer, because only the committee
+  moves the floor
 
 ## Not
 

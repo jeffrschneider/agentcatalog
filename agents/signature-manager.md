@@ -23,6 +23,17 @@ anything itself.
 - `ref/sls/review-the-redlines` / Hand the Text to Signature
 - `ref/sls/run-the-close-plan` / Confirm the Signature Path, Execute the
   Signature
+- `ref/pc/form-the-fund` / Choose and Engage the Providers, Open the
+  Fund's Bank Account, Sign the Formation Documents
+- `ref/pc/hold-a-fund-close` / Send the Subscription Documents, Sign the
+  Close, Confirm the Close to Every Investor, File the Close Record
+- `ref/pc/respond-to-a-sale-process` / Read the Confidentiality
+  Agreement, Sign the Confidentiality Agreement, Sign and Send the
+  Indication, Withdraw in Writing
+- `ref/pc/run-the-closing` / Confirm Who Signs and in What Order, Sign
+  the Closing Documents, Collect the Executed Set
+- `ref/pc/run-a-sale-process` / Sign the Adviser's Engagement, Approach
+  the Buyers, Sign the Sale Agreement
 
 ## Patterns
 
@@ -52,6 +63,14 @@ handover-coordinator agent.
   signed for, by whom, against which version
 - the notification channel (write) - the people who act on a booking
   hear the same booking at the same time
+- the document store (write) - the executed set and the close record,
+  filed complete with every signed page and exhibit
+- the investor portal (write) - each investor's close date, its
+  accepted commitment and its signed pages, posted where the investor
+  reads them
+- the deal pipeline (write) - each confidentiality agreement's
+  non-solicit, standstill and term, and the people it lets read the
+  material, recorded where every deal team can read them
 
 ## Records
 
@@ -84,6 +103,14 @@ obliges.
 - a signer who has changed or become unavailable while a document is
   out to sign, to the deal owner, with the path confirmed again before
   it goes out a second time
+- a signer who refuses to sign, to the managing partner or the deal
+  lead partner who owns the document, with the refusal and its reason
+  recorded, because nobody signs around a refusing signer and the terms
+  behind the refusal go back to the people who settled them
+- a confidentiality agreement whose non-solicit would bind every
+  portfolio company, or whose standstill the firm could not keep, to
+  the legal reviewer and the deal lead partner before anyone signs it,
+  because what the firm may promise is theirs to decide
 
 ## Not
 

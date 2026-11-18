@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "redline-reviewer",
   "version": "1.0.0",
-  "description": "The redline-reviewer abstract agent. Reads the buyer's changes against the standard terms clause by clause.",
+  "description": "The redline-reviewer abstract agent. Reads the other side's changes against the standard terms clause by clause.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -15,8 +15,8 @@
     "reference",
     "sales",
     "review-the-redlines",
-    "negotiate-the-agreement",
-    "record-a-lost-deal",
+    "negotiate-the-definitive-agreements",
+    "negotiate-the-fund-terms-and-side-letters",
     "abstract"
   ],
   "extensions": {
@@ -56,6 +56,12 @@
           "role": "shared-workspace-with-the-buyer",
           "access": "write",
           "needs": "The counter-markup and the summary that goes back with it."
+        },
+        {
+          "name": "the document store",
+          "role": "document-store",
+          "access": "write",
+          "needs": "The partnership agreement at its version, each investor's markup of it, and the master agreement as changed once for every investor."
         }
       ],
       "records": [
@@ -73,7 +79,9 @@
         "liability above the threshold the risk policy sets, to whoever must sign it",
         "an untracked change found by comparing the document to the copy we sent, to the buyer by name, because an untracked change is never accepted quietly",
         "a commercial ask arriving dressed as a legal change, back to the negotiation-coordinator agent, since nothing that moves price, term or scope is settled in a redline pass",
-        "round trips that do not converge, and two clean copies that do not match, to the named people on both sides with the open clauses listed"
+        "round trips that do not converge, and two clean copies that do not match, to the named people on both sides with the open clauses listed",
+        "a clause in the final fund documents that matches no closed ask in the log, or says something other than what was agreed, to fund counsel with the clause and the ask it should match, and an ask the text reopens goes back to the negotiation-coordinator agent, because nothing is settled in the margin of a draft",
+        "a change in a deal document's markup that moves a term the investment committee approved, to the deal-structurer agent and the deal lead partner, who take it back to the committee, since an approval is never stretched inside a redline pass"
       ],
       "not": [
         "Does not answer the clauses it routes to legal, and does not give legal advice.",
@@ -117,6 +125,27 @@
           "process": "ref/sls/run-the-close-plan",
           "activities": [
             "Confirm the Close Conditions"
+          ]
+        },
+        {
+          "process": "ref/pc/negotiate-the-fund-terms-and-side-letters",
+          "activities": [
+            "Read the Markup Clause by Clause",
+            "Classify Each Change",
+            "Read the Legal and Tax Asks",
+            "Change the Master Agreement Once",
+            "Read the Final Text Against the Log"
+          ]
+        },
+        {
+          "process": "ref/pc/negotiate-the-definitive-agreements",
+          "activities": [
+            "Fix the Starting Text",
+            "Split the Markup into Clauses",
+            "Classify Each Change",
+            "Send the Counter-Markup",
+            "Work the Round Trips",
+            "Confirm the Agreed Text"
           ]
         }
       ]

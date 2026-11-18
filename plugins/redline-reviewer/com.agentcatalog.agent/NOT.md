@@ -23,3 +23,12 @@ copy is confirmed: a late change reopens the review.
   scope is settled in a redline pass
 - round trips that do not converge, and two clean copies that do not
   match, to the named people on both sides with the open clauses listed
+- a clause in the final fund documents that matches no closed ask in the
+  log, or says something other than what was agreed, to fund counsel
+  with the clause and the ask it should match, and an ask the text
+  reopens goes back to the negotiation-coordinator agent, because
+  nothing is settled in the margin of a draft
+- a change in a deal document's markup that moves a term the investment
+  committee approved, to the deal-structurer agent and the deal lead
+  partner, who take it back to the committee, since an approval is never
+  stretched inside a redline pass

@@ -19,6 +19,11 @@ covers:
 - Take in the Planning Trigger
 - Take in the Question
 - Work out What Has to Be Decided
+- Take in the Decision to Raise
+- Take in the Memo
+- Set What the Committee Must Decide
+- Name the Decision and the Deadline
+- Take in the Matter
 
 ## read-what-is-already-settled
 
@@ -38,6 +43,7 @@ covers:
 - Open the Round
 - Set the Market Boundary
 - Set What the Review Covers
+- Open the Review
 
 ## settle-the-criteria-before-the-work-runs
 
@@ -91,6 +97,9 @@ covers:
 - Draft the Strategic Options
 - Draw the Candidate Divisions
 - Generate the Candidate Names
+- Lay Out the Options
+- Gather the Facts
+- Commission an Independent Opinion
 
 ## narrow-the-candidates-to-a-shortlist
 
@@ -119,10 +128,11 @@ covers:
 - Check the Options against What Is Agreed
 - Reconcile the Methods
 - Test the Asks against the Goals
+- Check Conflicts and Fund Limits
 
 ## fit-the-work-to-the-capacity
 
-Works out what an option would need in money and in people, what the period already owes and how much can be carried, then lays the committed work across the period with an agent, a date and a budget on each item and says what in flight has to stop or wait.
+Works out what an option would need in money and in people, what the period already owes and how much can be carried, then lays the committed work across the period with an owner, a date and a budget on each item and says what in flight has to stop or wait.
 
 covers:
 - Build the Calendar
@@ -131,6 +141,7 @@ covers:
 - List the Committed Work
 - Resource the Commitments
 - Settle What Gets Displaced
+- Name an Owner and a Date for Each Action
 
 ## prepare-the-decision-pack
 
@@ -139,6 +150,24 @@ Settles what will be asked of the room and what the department will say, and get
 covers:
 - Send the Pack Ahead
 - Settle Marketing's Position
+- Send the Committee Pack
+- Collect the Members' Questions
+- Write the Consent Request
+
+## check-who-may-vote
+
+Sets the committee's members against its charter before the pack goes out, naming the quorum, each declared conflict as the chief compliance officer rules on it, and who sits out, so that a vote taken is one the charter counts.
+
+covers:
+- Check Who May Vote
+
+## hear-the-parties-and-write-it-down
+
+Takes down in writing what each party with a stake in the decision says, such as what the other investors and the lenders will and will not do, or each deal lead's account of a company, attributed to the person who said it, so the options are laid out against positions on the record.
+
+covers:
+- Hear the Other Investors and Lenders
+- Hear the Deal Leads
 
 ## convene-the-room-where-it-is-decided
 
@@ -149,6 +178,9 @@ covers:
 - Deliver the Briefing
 - Hold the Review
 - Put the Options to the People Who Decide
+- Put the Options to the Partners
+- Hold the Committee Meeting
+- Decide at the Investment Committee
 
 ## record-the-choice-that-was-made
 
@@ -180,6 +212,10 @@ covers:
 - Settle on the Number
 - Settle the Map
 - Settle the Tiers and the Terms
+- Decide the Strategy
+- Decide the Watch List
+- Decide What Each Watched Company Needs
+- Decide Whether to Ask
 
 ## settle-how-the-money-is-split
 
@@ -206,6 +242,11 @@ covers:
 - Write down the Agreed Segments
 - Write down the Agreed Strategy
 - Write down the Sizing
+- Write the Strategy Down
+- Record the Decision and the Dissent
+- Confirm the Record with the Chair
+- Record a Decline with Its Reason
+- Record the Decision
 
 ## record-what-the-answer-rests-on
 
@@ -236,6 +277,7 @@ covers:
 - Issue the Positioning at a Version
 - Publish the Plan
 - Publish the Reset Commitments
+- Update the Deal Pipeline
 
 ## hand-the-answer-to-the-agents-that-act
 
@@ -256,6 +298,11 @@ covers:
 - Tell Every Function What It Has
 - Tell the Processes that Read It
 - Tell the Requesters
+- Hand On to Formation and Fundraising
+- Tell the Deal Team
+- Hand the Approved Terms On
+- Hand the Course to the Process That Runs It
+- Hand On the Watch List and Reserves
 
 ## write-the-readout
 
@@ -291,3 +338,4 @@ Writes down what is worth repeating next time and what to avoid, so the next run
 
 covers:
 - Record What Was Learned
+- Record What the Request Taught

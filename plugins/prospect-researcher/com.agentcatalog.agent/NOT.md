@@ -19,3 +19,9 @@ does not hold the meeting or qualify the account itself.
 - a seller who drops most of the list - back to the fit rules with the
   reasons attached, because that is a rules problem and not a pull
   problem
+- an investor name the offering rules, the rules on political
+  contributions or the firm's conflicts may bar - to the chief
+  compliance officer, who decides, and the name is struck with the rule
+  that applies or stays off the list until it is cleared
+- signing an investor target list - to the investor relations lead,
+  always, before any name on it is approached

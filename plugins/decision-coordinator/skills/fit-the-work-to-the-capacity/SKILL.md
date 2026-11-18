@@ -1,6 +1,6 @@
 ---
 name: fit-the-work-to-the-capacity
-description: Works out what an option would need in money and in people, what the period already owes and how much can be carried, then lays the committed work across the period with an agent, a date and a budget on each item and says what in flight has to stop or wait. Use it when running `ref/mkt/annual-marketing-plan` and 3 other reference processes.
+description: Works out what an option would need in money and in people, what the period already owes and how much can be carried, then lays the committed work across the period with an owner, a date and a budget on each item and says what in flight has to stop or wait. Use it when running `ref/mkt/annual-marketing-plan` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -13,12 +13,12 @@ metadata:
 
 Works out what an option would need in money and in people, what the
 period already owes and how much can be carried, then lays the committed
-work across the period with an agent, a date and a budget on each item
+work across the period with an owner, a date and a budget on each item
 and says what in flight has to stop or wait.
 
 ## Where it happens
 
-The agent does this in six activities across four reference processes.
+The agent does this in seven activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Build the Calendar**
@@ -33,6 +33,9 @@ Each one names the activity as that process words it.
 - **List the Committed Work**
   - `ref/mkt/plan-marketing-capacity`, activity 2 -
     [Plan Marketing Capacity](../../../../processes/marketing/plan-marketing-capacity.md)
+- **Name an Owner and a Date for Each Action**
+  - `ref/pc/run-the-portfolio-review`, activity 13 -
+    [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
 - **Resource the Commitments**
   - `ref/mkt/prioritize-initiatives`, activity 11 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)

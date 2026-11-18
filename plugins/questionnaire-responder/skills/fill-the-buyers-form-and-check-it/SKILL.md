@@ -1,6 +1,6 @@
 ---
 name: fill-the-buyers-form-and-check-it
-description: Fills the buyer's own format word for word and attaches the evidence at the versions the answers name. Use it when running `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
+description: Fills the requester's own format word for word and attaches the evidence at the versions the answers name. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -11,22 +11,27 @@ metadata:
 
 ## What it does
 
-Fills the buyer's own format word for word and attaches the evidence at
-the versions the answers name. Checks the whole thing before it leaves:
-every question answered, every limit obeyed, with the question or the
-rule behind each failure named.
+Fills the requester's own format word for word and attaches the evidence
+at the versions the answers name. Checks the whole thing before it
+leaves: every question answered, every limit obeyed, with the question
+or the rule behind each failure named.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Attach the Evidence**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 11 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
   - `ref/sls/answer-a-security-questionnaire`, activity 11 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
 - **Check It Against the Rules**
   - `ref/sls/respond-to-an-rfp`, activity 12 -
     [Respond to an RFP](../../../../processes/sales/respond-to-an-rfp.md)
+- **Check the Form Against Its Rules**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 12 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
 - **Check the Form Before It Leaves**
   - `ref/sls/answer-a-security-questionnaire`, activity 12 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)

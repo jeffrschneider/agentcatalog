@@ -11,6 +11,7 @@ covers:
 - Take in the Reply
 - Read What They Asked For
 - Take the Handover
+- Take in the Request
 
 ## get-the-meeting-in-the-diary
 
@@ -24,6 +25,10 @@ covers:
 - Offer Times
 - Confirm the Meeting
 - Book the Conversation
+- Book the First Meeting
+- Book the Specification Meeting
+- Arrange the Reference Calls
+- Confirm the Start
 
 ## make-sure-the-meeting-holds
 
@@ -35,15 +40,20 @@ covers:
 - Brief the Attendees
 - Remind Before the Meeting
 - Handle a No-Show
+- Brief the Partner
+- Hold the Follow-Up Meetings
+- Run the Interviews
 
 ## hand-the-meeting-on
 
 Hands the write-up, the recording where there is one, and the next step
-with a date on it to whoever picks the account up. A meeting with no
-write-up does not count as held.
+with a date on it to whoever picks the relationship up. A meeting with
+no write-up does not count as held.
 
 covers:
 - Hand over to the Next Stage
+- Hold the First Meeting
+- Write Up the Meeting
 
 ## report-what-was-booked-and-held
 

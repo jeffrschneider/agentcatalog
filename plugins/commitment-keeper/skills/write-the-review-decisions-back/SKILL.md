@@ -1,6 +1,6 @@
 ---
 name: write-the-review-decisions-back
-description: Writes the new owners and the new dates back against each item, and keeps every move of a date with the review that moved it, so a commitment that has slipped twice can be seen to have slipped twice. Use it when running `ref/prt/review-a-joint-plan`.
+description: Writes the new owners and the new dates back against each item, and keeps every move of a date with the review that moved it, so a commitment that has slipped twice can be seen to have slipped twice. Use it when running `ref/pc/prepare-and-hold-a-board-meeting` and `ref/prt/review-a-joint-plan`.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,9 +17,12 @@ commitment that has slipped twice can be seen to have slipped twice.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Record the Decisions and Actions**
+  - `ref/pc/prepare-and-hold-a-board-meeting`, activity 14 -
+    [Prepare and Hold a Board Meeting](../../../../processes/private-capital/prepare-and-hold-a-board-meeting.md)
 - **Record the Decisions and the Dates**
   - `ref/prt/review-a-joint-plan`, activity 15 -
     [Review a Joint Plan](../../../../processes/partners/review-a-joint-plan.md)

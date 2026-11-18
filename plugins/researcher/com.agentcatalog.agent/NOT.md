@@ -21,3 +21,16 @@ versioned amendments.
 - a finding that contradicts something the organization has already
   published, because somebody has to decide what happens to the older
   piece
+- material non-public information about a listed company, heard on a
+  call or found in a source, or an expert call that strays into an
+  employer's confidential information - the call stops and what was
+  heard goes to the chief compliance officer the same day, because what
+  the firm may do with it is a compliance decision
+- a reference or a background check that raises a concern about a
+  candidate or a member of a management team - to the person choosing,
+  who is the portfolio company's chief executive for a hire and the deal
+  lead partner in diligence, before any offer is made, because weighing
+  a concern about a person is theirs
+- a candidate who works at another company the fund holds - to the
+  talent partner, and nobody approaches the candidate until the
+  non-solicitation rules have been read

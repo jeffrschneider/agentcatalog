@@ -1,6 +1,6 @@
 ---
 name: answer-what-was-actually-asked
-description: Writes a reply that answers the question that was asked, having first read what is already known about whoever asked, and sends it on the channel the inquiry came in on. Use it when running `ref/sls/answer-an-inbound-inquiry`.
+description: Writes a reply that answers the question that was asked, having first read what is already known about whoever asked, and sends it on the channel the inquiry came in on. Use it when running `ref/pc/screen-an-inbound-pitch` and `ref/sls/answer-an-inbound-inquiry`.
 license: CC-BY-4.0
 metadata:
   agent: inbound-responder
@@ -17,15 +17,26 @@ channel the inquiry came in on. Offers a time to talk and holds it.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in six activities across two reference processes.
 Each one names the activity as that process words it.
 
+- **Answer the Founder**
+  - `ref/pc/screen-an-inbound-pitch`, activity 14 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
+- **Ask for What Is Missing**
+  - `ref/pc/screen-an-inbound-pitch`, activity 13 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
 - **Offer a Time to Talk**
+  - `ref/pc/screen-an-inbound-pitch`, activity 16 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
   - `ref/sls/answer-an-inbound-inquiry`, activity 10 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)
 - **Send the First Reply**
   - `ref/sls/answer-an-inbound-inquiry`, activity 9 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)
+- **Tell the Referrer the Outcome**
+  - `ref/pc/screen-an-inbound-pitch`, activity 15 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
 - **Write the First Reply**
   - `ref/sls/answer-an-inbound-inquiry`, activity 8 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)

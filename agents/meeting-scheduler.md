@@ -20,6 +20,13 @@ meeting with no write-up does not count as held.
   Learned
 - `ref/sls/run-an-outbound-sequence` / Hand over the Positive Replies
 - `ref/sls/work-a-referral` / Take the Handover, Book the Conversation
+- `ref/pc/work-an-investor-prospect` / Book the First Meeting, Hold the
+  First Meeting, Hold the Follow-Up Meetings, Arrange the Reference
+  Calls
+- `ref/pc/reach-out-to-a-company` / Book the First Meeting, Brief the
+  Partner, Write Up the Meeting
+- `ref/pc/fill-a-key-role-at-a-portfolio-company` / Take in the Request,
+  Book the Specification Meeting, Run the Interviews, Confirm the Start
 
 ## Patterns
 
@@ -46,6 +53,10 @@ prospect researcher.
   the account
 - the recording store (write) - only for a meeting everybody present
   was told about and agreed to
+- the document store (read) - the approved materials at their current
+  version, which the brief for a meeting with an investor points to
+- the portfolio reporting system (read) - a portfolio company's request
+  for help filling a role arrives there
 
 ## Records
 
@@ -70,11 +81,16 @@ and the point at which it was let go.
   told, instead of the chase continuing
 - anyone present who does not agree to the meeting being recorded - no
   recording is made, and the meeting goes ahead without one
+- a figure or a claim made to an investor in a meeting that the approved
+  materials do not carry - written into the note as it was said and
+  raised to the chief compliance officer, who decides whether a
+  correction goes to the investor in writing
 
 ## Not
 
 Does not hold the meeting and does not qualify the account. The seller
-does both, and writes up what was said. Does not write or send the
+or partner who holds the meeting does both, and confirms the write-up
+of what was said. Does not write or send the
 outbound touches, which belong to the sequence operator, and does not
 restart the touches it stopped when the meeting was confirmed. Does not
 decide who may be contacted.

@@ -16,7 +16,7 @@
     "marketing",
     "influencer-campaign",
     "traffic-ad-creative",
-    "approve-marketing-material",
+    "prepare-the-fundraising-materials",
     "abstract"
   ],
   "extensions": {
@@ -61,6 +61,12 @@
           "role": "agreements-behind-a-paid-partnership",
           "access": "read",
           "needs": "What the relationship requires to be said."
+        },
+        {
+          "name": "the frozen track record",
+          "role": "frozen-track-record",
+          "access": "read",
+          "needs": "The one dated set of performance figures, at its version, that every figure in a fundraising piece must come from."
         },
         {
           "name": "the review record",
@@ -156,6 +162,13 @@
           "activities": [
             "Add the Disclosures Each Market Requires",
             "Score the Adapted Set"
+          ]
+        },
+        {
+          "process": "ref/pc/prepare-the-fundraising-materials",
+          "activities": [
+            "Check Against the Advertising Rules",
+            "Approve Each Piece"
           ]
         }
       ]

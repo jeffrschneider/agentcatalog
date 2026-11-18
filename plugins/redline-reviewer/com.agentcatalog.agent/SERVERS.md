@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Five systems, named by role rather than by product. The access level is
+Six systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -11,6 +11,7 @@ more than the job requires.
 | the contract system | write | The markup, its version, and the copy it was made from. |
 | the approval system | read | Which off-template term is signed for, and by whom. |
 | the shared workspace with the buyer | write | The counter-markup and the summary that goes back with it. |
+| the document store | write | The partnership agreement at its version, each investor's markup of it, and the master agreement as changed once for every investor. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

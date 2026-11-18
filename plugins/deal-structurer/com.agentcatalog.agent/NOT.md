@@ -24,3 +24,7 @@ commercial machinery sits on, which is the integration-planner agent.
   the signer the delegation of authority names
 - an economics model somebody wants taken to a decision without a
   downside case
+- an exclusivity period that will end before the agreements are done -
+  to the deal lead partner ahead of the end date, who agrees an
+  extension in writing or accepts that the company may talk to others,
+  because nobody assumes an extension that was never signed

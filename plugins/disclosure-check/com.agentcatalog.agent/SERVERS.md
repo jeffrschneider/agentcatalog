@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Seven systems, named by role rather than by product. The access level is
+Eight systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -12,6 +12,7 @@ more than the job requires.
 | the distribution plan for the material | read | Which markets and channels it will run in. |
 | the approved price and offer terms | read | At the version they were approved at. |
 | the agreements behind a paid partnership | read | What the relationship requires to be said. |
+| the frozen track record | read | The one dated set of performance figures, at its version, that every figure in a fundraising piece must come from. |
 | the review record | write | The verdicts land where the signers and the producing agents read them. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that

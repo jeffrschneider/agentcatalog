@@ -1,6 +1,6 @@
 ---
 name: price-what-diligence-found
-description: Takes in the diligence result and prices every finding into a term the agreement has to carry, or calls it a stop. Use it when running `ref/prt/run-alliance-diligence` and `ref/prt/structure-an-alliance`.
+description: Takes in the diligence result and prices every finding into a term the agreement has to carry, or calls it a stop. Use it when running `ref/pc/negotiate-the-definitive-agreements`, `ref/prt/run-alliance-diligence` and `ref/prt/structure-an-alliance`.
 license: CC-BY-4.0
 metadata:
   agent: deal-structurer
@@ -17,15 +17,21 @@ it into the paper is raised rather than dropped.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
+- **Agree the Disclosure Schedules**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 14 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
 - **Decide What Each Finding Costs**
   - `ref/prt/run-alliance-diligence`, activity 16 -
     [Run Alliance Diligence](../../../../processes/partners/run-alliance-diligence.md)
 - **Take in the Diligence Result**
   - `ref/prt/structure-an-alliance`, activity 1 -
     [Structure an Alliance](../../../../processes/partners/structure-an-alliance.md)
+- **Write the Diligence Findings In**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 6 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
 
 ## What to record
 

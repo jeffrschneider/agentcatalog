@@ -13,6 +13,7 @@ covers:
 - Take in the Request
 - Read the Rules It Sets
 - Ask the Buyer's Questions
+- Read the Rules of the Form
 
 ## sort-the-questions
 
@@ -23,6 +24,7 @@ has to come back answered.
 covers:
 - Sort the Questions
 - Split the Requirements
+- Sort and Deduplicate the Questions
 
 ## answer-from-the-library
 
@@ -35,31 +37,48 @@ covers:
 - Match Against the Library
 - Check the Matches Are Still True
 - Answer the Requirements
+- Match the Library Answers
+- Read Each Match Against Its Source
 
 ## get-the-open-questions-answered
 
 Routes every question the source cannot answer to the person who owns
-that fact, in the buyer's own wording, and drafts what comes back into
-an answer named people sign. The security and legal parts are answered
-the same way, from a maintained source rather than from memory.
+that fact, in the requester's own wording, and drafts what comes back
+into an answer named people sign. The security and legal parts are
+answered the same way, from a maintained source rather than from
+memory.
 
 covers:
 - Route What Is Not Answered
 - Draft the New Answers
 - Answer the Security and Legal Parts
+- Route the Unanswered Questions
+
+## check-the-figures-against-the-record
+
+Reads every performance figure in the answers against the frozen track
+record at its version, with the gross figure and the net figure side by
+side, and every claim against the advertising rules, beside the chief
+compliance officer. A figure that does not match goes back to be
+drafted again from the record, because every investor must see the same
+numbers.
+
+covers:
+- Check the Figures and the Claims
 
 ## fill-the-buyers-form-and-check-it
 
-Fills the buyer's own format word for word and attaches the evidence at
-the versions the answers name. Checks the whole thing before it leaves:
-every question answered, every limit obeyed, with the question or the
-rule behind each failure named.
+Fills the requester's own format word for word and attaches the
+evidence at the versions the answers name. Checks the whole thing
+before it leaves: every question answered, every limit obeyed, with the
+question or the rule behind each failure named.
 
 covers:
 - Fill the Buyer's Form
 - Attach the Evidence
 - Check the Form Before It Leaves
 - Check It Against the Rules
+- Check the Form Against Its Rules
 
 ## send-it-and-answer-what-comes-back
 
@@ -72,3 +91,13 @@ covers:
 - Confirm Receipt
 - Answer the Follow-Ups
 - Record the Outcome
+- Answer the Follow-Up Questions
+
+## add-the-new-answers-to-the-library
+
+Adds each answer its owner signed to the library at a version, with the
+owner, the source behind it and the date it must be read again, so the
+next questionnaire draws on it rather than asking the owner twice.
+
+covers:
+- Add the New Answers to the Library

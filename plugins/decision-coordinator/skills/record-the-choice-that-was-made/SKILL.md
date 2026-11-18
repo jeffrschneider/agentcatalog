@@ -1,6 +1,6 @@
 ---
 name: record-the-choice-that-was-made
-description: Takes the answer the named deciders picked and writes it down with the reasons they gave and the names of anyone who disagreed. Use it when running `ref/mkt/annual-marketing-plan` and 21 other reference processes.
+description: Takes the answer the named deciders picked and writes it down with the reasons they gave and the names of anyone who disagreed. Use it when running `ref/mkt/annual-marketing-plan` and 24 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,7 +18,7 @@ later.
 
 ## Where it happens
 
-The agent does this in 25 activities across 22 reference processes. Each
+The agent does this in 29 activities across 25 reference processes. Each
 one names the activity as that process words it.
 
 - **Agree Who the Company Is For**
@@ -64,6 +64,9 @@ one names the activity as that process words it.
 - **Choose the Tool**
   - `ref/mkt/select-marketing-technology`, activity 17 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
+- **Decide What Each Watched Company Needs**
+  - `ref/pc/run-the-portfolio-review`, activity 12 -
+    [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
 - **Decide What Happens to Each Surface**
   - `ref/mkt/brand-refresh`, activity 8 -
     [Roll Out Brand Refresh](../../../../processes/marketing/brand-refresh.md)
@@ -73,9 +76,18 @@ one names the activity as that process words it.
 - **Decide What Is Handed Over**
   - `ref/mkt/engage-marketing-agency`, activity 3 -
     [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+- **Decide Whether to Ask**
+  - `ref/pc/seek-an-advisory-committee-consent`, activity 4 -
+    [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
 - **Decide the Mix**
   - `ref/mkt/plan-marketing-capacity`, activity 11 -
     [Plan Marketing Capacity](../../../../processes/marketing/plan-marketing-capacity.md)
+- **Decide the Strategy**
+  - `ref/pc/set-the-fund-strategy`, activity 15 -
+    [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)
+- **Decide the Watch List**
+  - `ref/pc/run-the-portfolio-review`, activity 10 -
+    [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
 - **Reset the Commitments**
   - `ref/mkt/quarterly-business-review`, activity 11 -
     [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)

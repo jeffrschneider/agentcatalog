@@ -1,6 +1,6 @@
 ---
 name: close-the-text-out
-description: Reads the agreed commercial position against the paper term by term, settles one clean text both sides call the agreement, checks that every condition owed before signature is done, and writes the accepted changes to the record the next deal reads. Use it when running `ref/sls/negotiate-the-agreement`, `ref/sls/review-the-redlines` and `ref/sls/run-the-close-plan`.
+description: Reads the agreed commercial position against the paper term by term, settles one clean text both sides call the agreement, checks that every condition owed before signature is done, and writes the accepted changes to the record the next deal reads. Use it when running `ref/pc/negotiate-the-definitive-agreements` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: redline-reviewer
@@ -18,9 +18,15 @@ to the record the next deal reads.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in seven activities across five reference processes.
 Each one names the activity as that process words it.
 
+- **Change the Master Agreement Once**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 13 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
+- **Confirm the Agreed Text**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 17 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
 - **Confirm the Clean Copy**
   - `ref/sls/review-the-redlines`, activity 14 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
@@ -30,6 +36,9 @@ Each one names the activity as that process words it.
 - **Log the Clause Decisions**
   - `ref/sls/review-the-redlines`, activity 15 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
+- **Read the Final Text Against the Log**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 15 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Reconcile with the Contract Draft**
   - `ref/sls/negotiate-the-agreement`, activity 13 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)

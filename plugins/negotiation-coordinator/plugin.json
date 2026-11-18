@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "negotiation-coordinator",
   "version": "1.0.0",
-  "description": "The negotiation-coordinator abstract agent. Keeps the negotiation straight. Gathers every ask the buyer has made into one numbered list in the buyer's own words, prices each one, and holds the record of which were given, which were traded and which were refused.",
+  "description": "The negotiation-coordinator abstract agent. Keeps the negotiation straight. Gathers every ask the other side has made into one numbered list in its own words, prices each one, and holds the record of which were given, which were traded and which were refused.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -15,8 +15,8 @@
     "reference",
     "sales",
     "negotiate-the-agreement",
-    "record-a-lost-deal",
-    "review-the-redlines",
+    "negotiate-the-fund-terms-and-side-letters",
+    "run-a-sale-process",
     "abstract"
   ],
   "extensions": {
@@ -62,6 +62,18 @@
           "role": "shared-workspace-with-the-buyer",
           "access": "write",
           "needs": "The list both sides confirm, and the refusals in writing."
+        },
+        {
+          "name": "the fund model",
+          "role": "fund-model",
+          "access": "read",
+          "needs": "What an investor's ask costs in fees and carried interest, read at the size it would reach if every investor with a most favored nation right elected it."
+        },
+        {
+          "name": "the deal pipeline",
+          "role": "deal-pipeline",
+          "access": "write",
+          "needs": "Each bid in a sale, logged with its price, how it will be paid for, its conditions and its date, and the comparison of the final bids."
         }
       ],
       "records": [
@@ -79,7 +91,10 @@
         "a concession found offered with no approval behind it, to the approvers, and the buyer is told the term is not confirmed",
         "an ask neither side will move on, to the sales leader and the matching person on the buyer's side, with both positions and what each side says it cannot do",
         "a decider who was never in the room, to the deal owner, and the asks are checked again against what the new person wants",
-        "a deadlock that runs out its clock, to whoever decides between refusing on our terms and closing the deal as lost"
+        "a deadlock that runs out its clock, to whoever decides between refusing on our terms and closing the deal as lost",
+        "an investor's ask past the firm's negotiating mandate, or one that the firm could give one investor but could not afford once every investor with a most favored nation right elected it, to the managing partner, because only the managing partner gives it or moves the mandate, in writing and with a date",
+        "two investors asking for terms that cannot both be given, to the managing partner, and the investor that does not get its ask is told in writing",
+        "a final bid below the floor the committee set, or a buyer's price cut after diligence that takes its bid below it, to the investment committee before anyone answers the buyer, because only the committee moves the floor"
       ],
       "not": [
         "Does not approve a concession or set the floor.",
@@ -122,6 +137,30 @@
           "process": "ref/sls/run-the-close-plan",
           "activities": [
             "Escalate a Stalled Step"
+          ]
+        },
+        {
+          "process": "ref/pc/negotiate-the-fund-terms-and-side-letters",
+          "activities": [
+            "Take in the Investor's Comments",
+            "Read the Firm's Negotiating Mandate",
+            "Log Every Ask",
+            "Price Each Ask",
+            "Answer the Asks Inside the Mandate",
+            "Decide the Asks Past the Mandate",
+            "Send the Firm's Position",
+            "Close the Remaining Asks",
+            "Read the Final Text Against the Log",
+            "Hand On to the Close"
+          ]
+        },
+        {
+          "process": "ref/pc/run-a-sale-process",
+          "activities": [
+            "Take in the First Bids",
+            "Take in the Final Bids and Markups",
+            "Compare the Final Bids",
+            "Negotiate the Sale Agreement"
           ]
         }
       ]

@@ -1,6 +1,6 @@
 ---
 name: turn-a-signed-plan-into-tracked-items
-description: Takes the milestones a signed plan carries and makes each one an item with one owner, one date and a state, traceable to the line of the plan it came from. Use it when running `ref/prt/write-a-joint-plan`.
+description: Takes the milestones a signed plan carries and makes each one an item with one owner, one date and a state, traceable to the line of the plan it came from. Use it when running `ref/pc/write-the-value-creation-plan` and `ref/prt/write-a-joint-plan`.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,9 +17,12 @@ it came from.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Load the Plan into the Tracker**
+  - `ref/pc/write-the-value-creation-plan`, activity 13 -
+    [Write the Value Creation Plan](../../../../processes/private-capital/write-the-value-creation-plan.md)
 - **Record the Commitments**
   - `ref/prt/write-a-joint-plan`, activity 15 -
     [Write a Joint Plan](../../../../processes/partners/write-a-joint-plan.md)

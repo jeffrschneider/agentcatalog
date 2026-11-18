@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "sales",
+    "private-capital",
     "book-the-meeting",
-    "work-a-referral",
-    "run-an-outbound-sequence",
+    "fill-a-key-role-at-a-portfolio-company",
+    "work-an-investor-prospect",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "meeting-scheduler",
       "agentVersion": 1,
-      "department": "sales",
+      "department": "private-capital",
       "abstract": true,
       "works": "Convenes the briefing that puts every attendee in the same picture before the meeting, so nobody asks again what the person already answered. Runs collect-and-report to read the ask and to report what was booked, held and missed, and closes with a debrief on which replies became meetings that held. Sits in the decide-and-announce where the seller says whether the account goes forward. Takes the reply and the thread from the sequence operator, ownership and what is already open from the account monitor, and background on the person and the account from the researcher. Tells the sequence operator to stop the touches as soon as the meeting is confirmed, and hands the outcome back to the prospect researcher.",
       "servers": [
@@ -56,6 +56,18 @@
           "role": "recording-store",
           "access": "write",
           "needs": "Only for a meeting everybody present was told about and agreed to."
+        },
+        {
+          "name": "the document store",
+          "role": "document-store",
+          "access": "read",
+          "needs": "The approved materials at their current version, which the brief for a meeting with an investor points to."
+        },
+        {
+          "name": "the portfolio reporting system",
+          "role": "portfolio-reporting-system",
+          "access": "read",
+          "needs": "A portfolio company's request for help filling a role arrives there."
         }
       ],
       "records": [
@@ -67,11 +79,12 @@
         "an account two sellers both claim - to whoever settles it, before any times are offered",
         "a reply not answered inside the stated hours - recorded as a miss and raised, rather than explained away",
         "a second no-show - the person goes back to the list and the seller is told, instead of the chase continuing",
-        "anyone present who does not agree to the meeting being recorded - no recording is made, and the meeting goes ahead without one"
+        "anyone present who does not agree to the meeting being recorded - no recording is made, and the meeting goes ahead without one",
+        "a figure or a claim made to an investor in a meeting that the approved materials do not carry - written into the note as it was said and raised to the chief compliance officer, who decides whether a correction goes to the investor in writing"
       ],
       "not": [
         "Does not hold the meeting and does not qualify the account.",
-        "The seller does both, and writes up what was said.",
+        "The seller or partner who holds the meeting does both, and confirms the write-up of what was said.",
         "Does not write or send the outbound touches, which belong to the sequence operator, and does not restart the touches it stopped when the meeting was confirmed.",
         "Does not decide who may be contacted."
       ],
@@ -103,6 +116,32 @@
           "activities": [
             "Take the Handover",
             "Book the Conversation"
+          ]
+        },
+        {
+          "process": "ref/pc/work-an-investor-prospect",
+          "activities": [
+            "Book the First Meeting",
+            "Hold the First Meeting",
+            "Hold the Follow-Up Meetings",
+            "Arrange the Reference Calls"
+          ]
+        },
+        {
+          "process": "ref/pc/reach-out-to-a-company",
+          "activities": [
+            "Book the First Meeting",
+            "Brief the Partner",
+            "Write Up the Meeting"
+          ]
+        },
+        {
+          "process": "ref/pc/fill-a-key-role-at-a-portfolio-company",
+          "activities": [
+            "Take in the Request",
+            "Book the Specification Meeting",
+            "Run the Interviews",
+            "Confirm the Start"
           ]
         }
       ]

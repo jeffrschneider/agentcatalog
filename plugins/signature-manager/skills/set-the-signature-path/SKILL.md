@@ -1,6 +1,6 @@
 ---
 name: set-the-signature-path
-description: Takes the agreed text from the people who settled the words and confirms who signs on each side, in what order, on which document and under what authority. Use it when running `ref/sls/review-the-redlines` and `ref/sls/run-the-close-plan`.
+description: Takes the agreed text from the people who settled the words and confirms who signs on each side, in what order, on which document and under what authority. Use it when running `ref/pc/form-the-fund` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: signature-manager
@@ -17,15 +17,21 @@ authority. Nothing goes out to sign until the path is settled.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in four activities across four reference processes.
 Each one names the activity as that process words it.
 
+- **Confirm Who Signs and in What Order**
+  - `ref/pc/run-the-closing`, activity 6 -
+    [Run the Closing](../../../../processes/private-capital/run-the-closing.md)
 - **Confirm the Signature Path**
   - `ref/sls/run-the-close-plan`, activity 9 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)
 - **Hand the Text to Signature**
   - `ref/sls/review-the-redlines`, activity 16 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
+- **Open the Fund's Bank Account**
+  - `ref/pc/form-the-fund`, activity 14 -
+    [Form the Fund](../../../../processes/private-capital/form-the-fund.md)
 
 ## What to record
 

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "performance-calculator",
+  "version": "1.0.0",
+  "description": "The performance-calculator abstract agent. Computes deal and fund performance for the firm's fundraising materials and its quarterly reports: the internal rate of return (IRR), the multiples of invested and paid-in capital, and the distributions set against paid-in capital, each gross and net of fees and carried interest.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/performance-calculator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "private-capital",
+    "prepare-the-fundraising-materials",
+    "issue-the-quarterly-report-and-statements",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "performance-calculator",
+      "agentVersion": 1,
+      "department": "private-capital",
+      "abstract": true,
+      "works": "Sits in the decide-and-announce where the CFO writes down the performance method, and in the assessment where the CFO ties the figures to the audited statements. Runs collect-and-report on the cash flows and values and on the records the rules require, and assessment on the track record, the attribution of each gain and the fund's performance each quarter. Takes the cash flows as the capital-account-keeper agent books them and the approved marks from the valuation-analyst agent, and calculates the quarter's performance only after the capital accounts have been worked out a second time. Hands the frozen set to the investor-relations-manager agent, which writes the deck, the case studies and the offering memorandum from it, and through it to the disclosure-check agent, which checks every figure against the advertising rules. Hands the quarter's performance to the reporting-manager agent for the quarterly letter.",
+      "servers": [
+        {
+          "name": "the fund accounting system",
+          "role": "fund-accounting-system",
+          "access": "read",
+          "needs": "Every deal's dated cash flows, the fees and carried interest charged, and the approved marks as posted."
+        },
+        {
+          "name": "the portfolio reporting system",
+          "role": "portfolio-reporting-system",
+          "access": "read",
+          "needs": "Each company's earnings and debt, which a buyout gain is split by."
+        },
+        {
+          "name": "the valuation files",
+          "role": "valuation-files",
+          "access": "read",
+          "needs": "The approved marks at the record date, with the method behind each one."
+        },
+        {
+          "name": "the document store",
+          "role": "document-store",
+          "access": "write",
+          "needs": "The method, the frozen set and the workpapers, kept for the retention period the rules set."
+        },
+        {
+          "name": "the report store",
+          "role": "report-store",
+          "access": "write",
+          "needs": "The quarter's fund figures at a version, for the letter and the statements."
+        }
+      ],
+      "records": [
+        "Each run starts from the performance method at a version, written and dated before any figure, naming which deals and funds are included, how fees, carried interest and any credit line are treated, and the date the figures are taken at.",
+        "Every deal's dated cash flows and its mark are recorded with their source.",
+        "The track record gives the IRR and each multiple by deal and by fund, gross and net side by side, and the attribution of each deal's gain, with the losses attributed the same way.",
+        "Each figure is traced to the audited statements, or to the books where the audit does not reach, with every difference and its explanation.",
+        "The frozen set carries its date and version, and the run records which documents were told to use it.",
+        "The method, the workpapers, the approvals and every version sent are kept for the retention period.",
+        "Each quarter leaves the IRR and the multiples for the fund and for each holding, gross and net, with the effect of the credit line shown and the method version named.",
+        "Any figure can be recomputed from the recorded cash flows, marks and method."
+      ],
+      "escalates": [
+        "the performance method and any change to it - to the CFO, and the method never changes to improve a figure",
+        "a figure that will not tie to the books - to the CFO, and nothing is frozen while a difference is open, so a figure that still cannot be traced comes out of the materials",
+        "a request to show a gross figure without its net figure beside it, or a figure from outside the frozen set - to the chief compliance officer",
+        "a quarter that closes before the materials are released - to the investor relations lead, because the figures stay at their date and a refresh is a new run",
+        "marks the valuation committee has not yet approved - to the CFO, because the quarter's performance waits for the approved marks"
+      ],
+      "not": [
+        "Does not set or approve a mark, which is the valuation-analyst agent and the valuation committee (people).",
+        "Does not keep the capital accounts or allocate the carried interest, which is the capital-account-keeper agent.",
+        "Does not write the deck, the case studies or the offering memorandum, which is the investor-relations-manager agent, or check them against the advertising rules, which is the disclosure-check agent.",
+        "Does not model the return one investment might make, which is the returns-modeler agent, or the returns the fund's strategy needs, which is the fund-modeler agent.",
+        "Does not write the quarterly letter, which is the reporting-manager agent."
+      ],
+      "processes": [
+        {
+          "process": "ref/pc/prepare-the-fundraising-materials",
+          "activities": [
+            "Write Down the Performance Method",
+            "Gather the Cash Flows and Values",
+            "Calculate the Track Record",
+            "Attribute Each Deal's Gain",
+            "Tie the Figures to the Audited Statements",
+            "Freeze the Figures at a Date",
+            "Keep the Records the Rules Require"
+          ]
+        },
+        {
+          "process": "ref/pc/issue-the-quarterly-report-and-statements",
+          "activities": [
+            "Calculate the Fund's Performance"
+          ]
+        }
+      ]
+    }
+  }
+}

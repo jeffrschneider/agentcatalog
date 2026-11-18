@@ -15,13 +15,30 @@ covers:
 
 ## publish-material-at-a-version
 
-Puts material in front of the partner at a version and republishes it
-rather than editing it in place, so a reader can tell which version they
-were given and on what date.
+Puts material in front of the partner or investor at a version and
+republishes it rather than editing it in place, so a reader can tell
+which version they were given and on what date.
 
 covers:
 - Publish the Materials Set
 - Publish the Course Materials
+- Release the Materials
+- Publish the Notices
+- Publish the Report and Statements
+- Issue the Audited Statements
+- Send Tax Estimates to Investors
+- Issue Each Investor's Tax Documents
+
+## build-and-open-the-data-room
+
+Lays the data room out in folders with every document at a version, and
+opens each folder only to the people a signed confidentiality agreement
+covers, with download and print rights set by the firm's policy.
+
+covers:
+- Build the Data Room
+- Open the Data Room to the Investor
+- Set Who Can Reach What
 
 ## issue-and-publish-certificates
 

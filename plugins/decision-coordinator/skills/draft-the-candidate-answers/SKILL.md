@@ -1,6 +1,6 @@
 ---
 name: draft-the-candidate-answers
-description: Commissions the evidence and writes up two or three candidate answers to the open question, each one carrying the case for it. Use it when running `ref/mkt/brand-positioning` and 6 other reference processes.
+description: Commissions the evidence and writes up two or three candidate answers to the open question, each one carrying the case for it. Use it when running `ref/mkt/brand-positioning` and 8 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,9 +16,12 @@ the open question, each one carrying the case for it.
 
 ## Where it happens
 
-The agent does this in six activities across seven reference processes.
+The agent does this in nine activities across nine reference processes.
 Each one names the activity as that process words it.
 
+- **Commission an Independent Opinion**
+  - `ref/pc/seek-an-advisory-committee-consent`, activity 6 -
+    [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
 - **Draft the Candidate Positions**
   - `ref/mkt/brand-positioning`, activity 6 -
     [Define Brand Positioning](../../../../processes/marketing/brand-positioning.md)
@@ -36,9 +39,15 @@ Each one names the activity as that process words it.
 - **Draw the Candidate Divisions**
   - `ref/mkt/segment-the-market`, activity 7 -
     [Segment the Market](../../../../processes/marketing/segment-the-market.md)
+- **Gather the Facts**
+  - `ref/pc/seek-an-advisory-committee-consent`, activity 5 -
+    [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
 - **Generate the Candidate Names**
   - `ref/mkt/name-product`, activity 4 -
     [Name Product or Company](../../../../processes/marketing/name-product.md)
+- **Lay Out the Options**
+  - `ref/pc/work-a-company-in-trouble`, activity 7 -
+    [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
 
 ## What to record
 

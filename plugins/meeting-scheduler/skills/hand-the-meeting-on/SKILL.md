@@ -1,6 +1,6 @@
 ---
 name: hand-the-meeting-on
-description: Hands the write-up, the recording where there is one, and the next step with a date on it to whoever picks the account up. Use it when running `ref/sls/book-the-meeting`.
+description: Hands the write-up, the recording where there is one, and the next step with a date on it to whoever picks the relationship up. Use it when running `ref/pc/reach-out-to-a-company`, `ref/pc/work-an-investor-prospect` and `ref/sls/book-the-meeting`.
 license: CC-BY-4.0
 metadata:
   agent: meeting-scheduler
@@ -12,17 +12,23 @@ metadata:
 ## What it does
 
 Hands the write-up, the recording where there is one, and the next step
-with a date on it to whoever picks the account up. A meeting with no
-write-up does not count as held.
+with a date on it to whoever picks the relationship up. A meeting with
+no write-up does not count as held.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Hand over to the Next Stage**
   - `ref/sls/book-the-meeting`, activity 13 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)
+- **Hold the First Meeting**
+  - `ref/pc/work-an-investor-prospect`, activity 9 -
+    [Work an Investor Prospect](../../../../processes/private-capital/work-an-investor-prospect.md)
+- **Write Up the Meeting**
+  - `ref/pc/reach-out-to-a-company`, activity 15 -
+    [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
 
 ## What to record
 

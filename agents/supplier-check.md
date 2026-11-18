@@ -10,7 +10,10 @@ at the version it was fixed at, so every candidate is scored against the
 same list in the same order whenever it arrived. Each verdict carries
 the evidence behind it, and a requirement the agent could not test is
 reported as not tested, with the reason it could not be tested, because
-a requirement nobody tested has not passed.
+a requirement nobody tested has not passed. It also checks a company
+against the public record and screens investors, target companies and
+their owners and leaders against registries and sanctions lists,
+returning every hit to the person who decides on it.
 
 ## Processes
 
@@ -22,6 +25,14 @@ a requirement nobody tested has not passed.
   Brief the Selection, Cut to a Shortlist, Score the Shortlist, Compare
   the Finalists
 - `ref/mkt/win-loss-analysis` / Arrange the Outside Interviewer
+- `ref/pc/form-the-fund` / Set the Criteria for Each Provider, Score the
+  Candidate Providers, Check No One Disqualifies the Offering
+- `ref/pc/hold-a-fund-close` / Screen Each Investor and Its Owners,
+  Clear the Screening Hits
+- `ref/pc/run-legal-and-compliance-diligence` / Check the Company Is
+  Real, Read the Litigation and Claims, Screen the Company and Its
+  Leaders, Clear the Screening Hits
+- `ref/pc/run-a-sale-process` / Choose the Sell-Side Adviser
 
 ## Patterns
 
@@ -53,6 +64,13 @@ requirements it has not been able to test, and what it is waiting on.
   than missed
 - the scoring record (write) - every verdict lands with the
   requirement it cites and the evidence behind it
+- the screening service (read) - sanctions, money laundering and
+  adverse records for investors and their owners, target companies and
+  their leaders, and the firm's own people and providers
+- company registry sources (read) - a company's registration, good
+  standing and owners
+- court and regulator records (read) - suits, threats, regulator
+  letters and settlements
 
 ## Records
 
@@ -81,6 +99,16 @@ candidate's material arrived and the date it was scored.
   because the earlier scores were made against the old list. A person
   decides, and the decision is recorded with the scores it affects.
 - a candidate that would duplicate something the department already buys
+- a screening hit on an investor, a company or a person, to the chief
+  compliance officer. The run stops on that party until the officer has
+  read the hit and written down what happens next, and nothing about
+  the hit is said to the investor. This agent never clears a hit
+  itself.
+- an event that would disqualify the offering, found against a provider
+  or one of the firm's own people, to the chief compliance officer, and
+  for the firm's own people to the managing partner and fund counsel
+  too. No offering material leaves the firm until they have recorded
+  what happens.
 
 ## Not
 

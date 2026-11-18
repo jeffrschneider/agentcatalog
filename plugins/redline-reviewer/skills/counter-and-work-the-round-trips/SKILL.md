@@ -1,6 +1,6 @@
 ---
 name: counter-and-work-the-round-trips
-description: Drafts the counter-markup with every off-template term listed separately and every approver named, sends it back with a plain summary, and reads each further markup against the copy we last sent so no untracked change passes quietly. Use it when running `ref/sls/review-the-redlines`.
+description: Drafts the counter-markup with every off-template term listed separately and every approver named, sends it back with a plain summary, and reads each further markup against the copy we last sent so no untracked change passes quietly. Use it when running `ref/pc/negotiate-the-definitive-agreements` and `ref/sls/review-the-redlines`.
 license: CC-BY-4.0
 metadata:
   agent: redline-reviewer
@@ -18,7 +18,7 @@ passes quietly.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in four activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Draft the Counter-Markup**
@@ -27,7 +27,12 @@ Each one names the activity as that process words it.
 - **Send the Counter Back**
   - `ref/sls/review-the-redlines`, activity 12 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
+- **Send the Counter-Markup**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 12 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
 - **Work the Round Trips**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 13 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
   - `ref/sls/review-the-redlines`, activity 13 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
 

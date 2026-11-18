@@ -1,6 +1,6 @@
 ---
 name: answer-from-the-library
-description: Matches each question to an answer the library already holds at that answer's version, and reads every match back against the control, the policy or the report it came from. Use it when running `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
+description: Matches each question to an answer the library already holds at that answer's version, and reads every match back against the control, the policy or the report it came from. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -18,7 +18,7 @@ that is flagged rather than sent.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Answer the Requirements**
@@ -30,6 +30,12 @@ Each one names the activity as that process words it.
 - **Match Against the Library**
   - `ref/sls/answer-a-security-questionnaire`, activity 4 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
+- **Match the Library Answers**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 5 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
+- **Read Each Match Against Its Source**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 6 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
 
 ## What to record
 

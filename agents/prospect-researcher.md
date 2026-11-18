@@ -3,8 +3,8 @@
 `prospect-researcher v1`
 
 **purpose:** Builds and checks the list of people worth approaching,
-from a territory or an approved account plan, and says why each one is
-on it. Writes the fit rules down before pulling anything, finds the
+from a territory, an approved account plan or a fund's investor target,
+and says why each one is on it. Writes the fit rules down before pulling anything, finds the
 roles worth approaching at each account, verifies every contact detail
 against a source, and ranks what gets worked first. Every person on the
 list carries where they came from, when they were pulled, and what the
@@ -21,6 +21,8 @@ list before any of it is worked.
   the Account, Agree What Is Being Asked, Record the Referral
 - `ref/sls/book-the-meeting` / Decide If It Goes Forward, Record What
   Was Learned
+- `ref/pc/work-an-investor-prospect` / Build the Target List, Check Each
+  Name May Be Approached
 
 ## Patterns
 
@@ -45,6 +47,9 @@ each reply turned into.
 - the CRM (write) - the list, and where every person on it sits
 - the sending system (write) - the signed list lands where the
   sequences read it, with its consent finding attached
+- the political contribution records (read) - each investor name is
+  read against the contributions people at the firm have made to
+  officials who oversee a public pension plan
 
 ## Records
 
@@ -72,6 +77,12 @@ earlier.
 - a seller who drops most of the list - back to the fit rules with the
   reasons attached, because that is a rules problem and not a pull
   problem
+- an investor name the offering rules, the rules on political
+  contributions or the firm's conflicts may bar - to the chief
+  compliance officer, who decides, and the name is struck with the rule
+  that applies or stays off the list until it is cleared
+- signing an investor target list - to the investor relations lead,
+  always, before any name on it is approached
 
 ## Not
 

@@ -9,6 +9,8 @@ make it into the paper is raised rather than dropped.
 covers:
 - Decide What Each Finding Costs
 - Take in the Diligence Result
+- Write the Diligence Findings In
+- Agree the Disclosure Schedules
 
 ## settle-what-the-arrangement-has-to-do
 
@@ -55,6 +57,31 @@ covers:
 - Draft the Term Sheet
 - Negotiate the Term Sheet
 - Review the Redlines
+- Review the Draft with Counsel
+- Send the Term Sheet
+- Log the Other Side's Asks
+- Answer Each Ask
+- Agree the Final Text
+- Instruct Outside Counsel
+- Prepare the First Draft
+- Read the Draft Against the Term Sheet
+- Work the Round Trips
+
+## hold-the-terms-to-the-committee-approval
+
+Takes in what the investment committee approved, with its conditions
+and the limits on how far each term may move, and the signed term sheet
+once there is one. It checks every line of a draft against them, and
+takes a change past those limits back to the committee with what it
+does to the return rather than absorbing it, because only the committee
+moves its limits.
+
+covers:
+- Take in the Committee Decision
+- Check the Draft Against the Approval
+- Take a Change Past the Limits to Committee
+- Take in the Signed Term Sheet
+- Take a Moved Term Back to Committee
 
 ## hand-on-the-obligations
 
@@ -64,3 +91,7 @@ anybody starts.
 
 covers:
 - Hand On the Obligations
+- Record the Exclusivity and What Binds
+- Hand On the Signed Terms
+- Record the Term Sheet
+- Hand the Text to the Closing

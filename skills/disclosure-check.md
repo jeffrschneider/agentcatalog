@@ -31,6 +31,7 @@ covers:
 - Score the Adapted Set
 - Review the Drafts
 - Check the Comparisons
+- Check Against the Advertising Rules
 
 ## clear-material-for-sign-off
 
@@ -40,6 +41,7 @@ from.
 
 covers:
 - Get Sign-Offs
+- Approve Each Piece
 
 ## check-what-is-already-published
 
