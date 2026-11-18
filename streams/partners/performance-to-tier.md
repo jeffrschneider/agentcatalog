@@ -3,6 +3,7 @@
 `vs/prt/performance-to-tier v1`
 
 **position:** 5
+**friendly name:** Partner tiers and reviews
 A run starts on the review cadence the program sets. The processes here
 measure what a partner actually delivered against what the plan said, apply
 the tiering rules, set the margins, discounts and support that come with a

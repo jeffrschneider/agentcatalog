@@ -3,6 +3,7 @@
 `vs/pc/commitment-to-statement v1`
 
 **position:** 8
+**friendly name:** Capital calls and investor reporting
 A run starts when the fund needs money from its limited partners (LPs),
 has money to give back to them, owes a fee or an expense, reaches the end
 of a quarter or a year, or wants to do something its partnership agreement

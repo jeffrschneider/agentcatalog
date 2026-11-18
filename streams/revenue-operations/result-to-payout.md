@@ -3,6 +3,7 @@
 `vs/rev/result-to-payout v1`
 
 **position:** 6
+**friendly name:** Commission plans and payouts
 A run starts when a plan period opens and ends when everybody has been paid
 what the plan says. The processes here design the plans against what
 leadership wants to happen, model what they will cost across several

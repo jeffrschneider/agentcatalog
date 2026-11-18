@@ -3,6 +3,7 @@
 `vs/pc/strategy-to-fund v1`
 
 **position:** 1
+**friendly name:** Raising a fund
 A run starts when the partners decide to raise a new fund. The processes
 here write down what the fund will invest in, how large it will be and
 what it will offer investors, set up the fund's entities and draft its

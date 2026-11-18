@@ -3,6 +3,7 @@
 `vs/rev/hire-to-productive v1`
 
 **position:** 9
+**friendly name:** Ramping new sellers
 A run starts when somebody joins a revenue team and ends when they can do
 the job unaided. The processes here run the onboarding, teach the product
 and the market, teach the process the organization actually uses rather than

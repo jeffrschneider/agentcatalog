@@ -3,6 +3,7 @@
 `vs/rev/pipeline-to-forecast v1`
 
 **position:** 7
+**friendly name:** Pipeline and forecast
 A run starts on the reporting cadence and produces the numbers the
 commitment conversation argues over. The processes here enforce the hygiene
 that makes a pipeline readable, roll deals up by whatever dimensions

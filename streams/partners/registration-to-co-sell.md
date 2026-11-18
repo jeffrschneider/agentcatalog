@@ -3,6 +3,7 @@
 `vs/prt/registration-to-co-sell v1`
 
 **position:** 4
+**friendly name:** Deal registration and co-selling
 A run starts when a partner registers a deal or a joint pursuit begins. The
 processes here check and approve the registration, protect it for the period
 the agreement promises, decide who leads and who supports, keep both sides
