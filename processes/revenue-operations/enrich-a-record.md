@@ -13,6 +13,8 @@ carries the source, the date and the confidence beside the value. A
 value a person typed is never overwritten, and a fill nobody is
 confident in waits for a person instead of landing quietly.
 
+**delivers:** status board
+
 ## The goals
 
 - Fill [90%] of required fields from named sources

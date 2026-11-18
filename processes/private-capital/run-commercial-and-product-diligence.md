@@ -16,6 +16,8 @@ finding is rated and given an owner, and the deal lead partner hears one
 report that says which claims are proved, which are weakened and which
 are still unproved.
 
+**delivers:** verdict
+
 ## The goals
 
 - Finish commercial diligence within [4 weeks]

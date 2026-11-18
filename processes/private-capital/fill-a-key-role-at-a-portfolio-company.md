@@ -18,6 +18,8 @@ candidate's consent. The run closes when the chosen candidate has
 accepted, the board has approved the equity grant, a start date is set,
 and the search is recorded for the next one.
 
+**delivers:** shortlist
+
 ## The goals
 
 - Fill each key role within [12 weeks]

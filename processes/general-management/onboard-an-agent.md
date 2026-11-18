@@ -25,6 +25,8 @@ is specified. The process is written from the side of the organization
 bringing the agent in. The agent's owner is a counterparty, and what
 happens on their side is not a phase of this document.
 
+**delivers:** status board
+
 ## The goals
 
 - Put each approved agent to work within [10 days]

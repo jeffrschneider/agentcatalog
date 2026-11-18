@@ -17,6 +17,8 @@ default is decided only by a person. The run closes when the call
 reconciles to the cent and the cash is with the closing or the payment
 it was called for.
 
+**delivers:** statement
+
 ## The goals
 
 - Give investors at least [10 days] notice

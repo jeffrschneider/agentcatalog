@@ -17,6 +17,8 @@ members have heard what happens next. Acting on a theme belongs to
 whatever process owns the work it lands in, and this process is finished
 once each theme has reached the owner who can act on it.
 
+**delivers:** notes
+
 ## The goals
 
 - Bring [80%] of confirmed members to the session

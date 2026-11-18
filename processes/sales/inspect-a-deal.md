@@ -13,6 +13,8 @@ are agreed with dates, and the deal leaves with a category and a
 written reason. Rolling the pipeline up is arithmetic that arrives
 from operations. This process tests one deal inside it.
 
+**delivers:** verdict
+
 ## The goals
 
 - Inspect the deals behind [80%] of the period's number

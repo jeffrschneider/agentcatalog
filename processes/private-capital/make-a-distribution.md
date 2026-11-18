@@ -17,6 +17,8 @@ the bank portal, and every payment is confirmed where it landed. The run
 closes when each capital account shows what was paid and what may be
 called again, and the distribution reconciles to the cent.
 
+**delivers:** statement
+
 ## The goals
 
 - Distribute proceeds within [15 days] of clearing

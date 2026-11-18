@@ -16,6 +16,8 @@ every change as an item with a state and reads progress on the cadence
 the plan sets. The run closes when the plan is agreed, loaded in the
 tracker, and its first progress review has been held.
 
+**delivers:** document
+
 ## The goals
 
 - Agree the plan within [100 days] of closing

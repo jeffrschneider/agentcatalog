@@ -13,6 +13,8 @@ and the new owner meet before the customer hears anything, the customer
 is introduced to the new owner once rather than three times, and the
 first working session is in diaries before the run closes.
 
+**delivers:** status board
+
 ## The goals
 
 - Introduce the new owner within [5 days] of booking

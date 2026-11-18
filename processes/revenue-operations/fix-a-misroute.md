@@ -13,6 +13,8 @@ waiting for each of them to be reported. The case is filed against the
 rule version, so a rule that keeps producing misroutes is visible
 without anybody having to remember.
 
+**delivers:** status board
+
 ## The goals
 
 - Move misrouted work within [2 hours]

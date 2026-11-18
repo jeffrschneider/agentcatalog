@@ -18,6 +18,8 @@ it covers, and the assumptions it rests on. A number that arrives without
 its method cannot be used by anyone downstream, so the method is part of
 what this process delivers.
 
+**delivers:** report
+
 ## The goals
 
 - Deliver an accepted size within [4 weeks]

@@ -12,6 +12,8 @@ person signs what the save is allowed to cost, the work happens, and the
 signal is watched to see whether it turns. A departure that happens
 anyway closes the run with a reason the rest of the organization reads.
 
+**delivers:** status board
+
 ## The goals
 
 - Tell the account owner within [4 hours]

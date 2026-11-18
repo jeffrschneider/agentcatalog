@@ -13,6 +13,8 @@ warned, or referred to tiering, and hears the result in numbers they can
 check for themselves. No tier changes here. The rules decide that
 elsewhere, and this round hands them the evidence.
 
+**delivers:** report
+
 ## The goals
 
 - Review [100%] of partners on the set cadence

@@ -12,6 +12,8 @@ check them. The plan commits the account team and asks for whatever it
 needs from elsewhere, but it commits nobody outside the account team and
 puts no money in a forecast.
 
+**delivers:** document
+
 ## The goals
 
 - Sign the account plan within [2 weeks]

@@ -13,6 +13,8 @@ anything is spent. A person signs anything above the threshold. The run
 closes when the partner has an answer in writing and an approved
 activity has been handed to the marketing process that runs it.
 
+**delivers:** verdict
+
 ## The goals
 
 - Answer every fund request within [5 days]

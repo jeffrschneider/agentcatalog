@@ -12,6 +12,8 @@ the reason and the date cross to nurture together. The run stays open
 until the date arrives or a signal fires, and it ends when somebody has
 said whether the lead comes back.
 
+**delivers:** status board
+
 ## The goals
 
 - Look again at [100%] of returned leads on their date

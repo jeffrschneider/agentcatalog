@@ -13,6 +13,8 @@ run does not end at the announcement: the commitment is watched through
 the period, restated early if it will miss, and accounted for after the
 close against what actually landed.
 
+**delivers:** report
+
 ## The goals
 
 - Land within [5%] of the committed number

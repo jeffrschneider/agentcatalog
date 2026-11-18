@@ -17,6 +17,8 @@ questions the marks and approves them. The run closes when every
 holding carries an approved mark on the fund's books, with its file
 ready for the auditor and the quarterly report.
 
+**delivers:** sheet
+
 ## The goals
 
 - Approve every mark within [30 days] of quarter end

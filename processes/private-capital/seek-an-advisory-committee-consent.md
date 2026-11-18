@@ -19,6 +19,8 @@ vote with the firm out of the room. The run closes when the decision is
 recorded with its conditions and its votes, the investors who must be
 told have been told, and every condition has been met.
 
+**delivers:** verdict
+
 ## The goals
 
 - Decide every consent within [30 days]

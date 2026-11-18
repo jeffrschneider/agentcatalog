@@ -9,6 +9,8 @@ loaded - then fire everything in order on the day, watch the first week,
 and report what happened. This is the process that coordinates the most
 agents, which is why it earns a coordinator of its own.
 
+**delivers:** campaign
+
 ## The goals
 
 - Launch on [the committed date]

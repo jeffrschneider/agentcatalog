@@ -20,6 +20,8 @@ holds a certification, and the check at activity 2 can send the run
 past most of the production so that it covers only what has changed
 since that partner was last checked.
 
+**delivers:** verdict
+
 ## The goals
 
 - Certify named partner sellers within [60 days]

@@ -17,6 +17,8 @@ the cap table record. The run closes when the fund holds only the
 shares it chose to keep, and the proceeds or the shares have gone to
 the fund's distribution.
 
+**delivers:** deal
+
 ## The goals
 
 - Exit the position within [6 months] of the lock-up

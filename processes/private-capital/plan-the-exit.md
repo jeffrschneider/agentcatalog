@@ -17,6 +17,8 @@ closes when an approved exit plan with a route, a timing and a floor
 price has been handed to the process that carries it out, or when the
 decision to hold is on the record.
 
+**delivers:** document
+
 ## The goals
 
 - Approve an exit plan within [8 weeks]

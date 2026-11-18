@@ -13,6 +13,8 @@ loud, is proved on the parts that matter, and then talks to a customer
 with their manager listening. The run closes when that conversation has
 been debriefed and the ramp has been reported.
 
+**delivers:** status board
+
 ## The goals
 
 - Hold a first customer call within [3 weeks]

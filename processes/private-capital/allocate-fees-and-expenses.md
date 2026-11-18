@@ -18,6 +18,8 @@ period's charges. Payments go only to verified accounts, signed by two
 people. The run closes when each capital account carries its share and
 whatever the firm or a company owes the fund has been billed.
 
+**delivers:** statement
+
 ## The goals
 
 - Charge each fee period within [10 days]

@@ -13,6 +13,8 @@ upheld or refused, it is approved by a person when money moves, and the
 cause goes back to the plan or the calculator so the same claim does
 not arrive again next period.
 
+**delivers:** verdict
+
 ## The goals
 
 - Answer every claim within [10 days]

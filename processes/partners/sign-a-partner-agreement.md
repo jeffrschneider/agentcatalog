@@ -13,6 +13,8 @@ agreed list term by term before anyone signs. What leaves the run is an
 executed agreement, filed, with the people who have to work it holding
 the same version.
 
+**delivers:** agreement
+
 ## The goals
 
 - Sign agreements within [30 days] of qualification

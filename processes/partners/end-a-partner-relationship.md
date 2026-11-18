@@ -14,6 +14,8 @@ every customer hears who serves them next before their support changes.
 The run closes when nothing is left open and nobody is left holding a
 contract with nobody behind it.
 
+**delivers:** status board
+
 ## The goals
 
 - Keep [95%] of the partner's customers

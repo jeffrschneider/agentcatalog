@@ -15,6 +15,8 @@ answers. Finance decides the lines that never settle and signs the spend
 figure for the period, and no report carries a spend number that finance
 did not sign.
 
+**delivers:** statement
+
 ## The goals
 
 - Sign the period's spend within [10 days]

@@ -19,6 +19,8 @@ closes when the investor has stated a commitment amount and the close it
 will join, or has declined, and the answer is recorded with the date to
 ask again.
 
+**delivers:** deal
+
 ## The goals
 
 - Approach every approved name within [4 weeks]

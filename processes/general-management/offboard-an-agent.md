@@ -31,6 +31,8 @@ happens on their side is not a phase of this document.
 It is the counterpart of [onboard an agent](./onboard-an-agent.md), and
 it reads that run's access list.
 
+**delivers:** status board
+
 ## The goals
 
 - Withdraw all access within [1 day] of the end date

@@ -35,6 +35,8 @@ process, which reads it too. The annual planning process turns the
 agreed strategy into initiatives, money and a calendar, and activity 15
 hands the strategy to it.
 
+**delivers:** document
+
 ## The goals
 
 - Agree the strategy within [8 weeks]

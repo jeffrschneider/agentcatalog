@@ -19,6 +19,8 @@ the milestones that count as active. One run covers one customer, and
 that is the difference between this process and designing the program
 the customer is being run through.
 
+**delivers:** sequence
+
 ## The goals
 
 - Activate [80%] of new customers by the promised date

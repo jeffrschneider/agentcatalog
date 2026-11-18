@@ -12,6 +12,8 @@ table. The shape is written on a term sheet, negotiated, signed, and
 only then turned into a definitive agreement by legal. What leaves the
 run is a signed agreement and a list of what it obliges each side to do.
 
+**delivers:** agreement
+
 ## The goals
 
 - Sign the alliance within [12 weeks] of diligence

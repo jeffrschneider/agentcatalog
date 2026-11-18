@@ -14,6 +14,8 @@ name and understanding is checked separately, because a full room is not
 evidence. The run closes when the change has been seen in live deals and
 the roll-out has been reported.
 
+**delivers:** event
+
 ## The goals
 
 - Teach [100%] of named sellers before it takes effect

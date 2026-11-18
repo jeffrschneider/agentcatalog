@@ -13,6 +13,8 @@ afterwards under the terms that were agreed. The run stays open past
 the talk, because the manager still owes a report on what the
 engagement was worth.
 
+**delivers:** event
+
 ## The goals
 
 - File [100%] of proposals before the deadline

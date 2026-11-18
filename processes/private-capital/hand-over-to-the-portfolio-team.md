@@ -17,6 +17,8 @@ package before management hears anything. The run closes when the first
 month's report has arrived on the template and management has confirmed
 who it works with at the firm.
 
+**delivers:** status board
+
 ## The goals
 
 - Hand over every deal within [10 days] of closing

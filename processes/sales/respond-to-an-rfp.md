@@ -12,6 +12,8 @@ meant to win costs more than a clean no. A yes splits the requirements
 to owners, uses the question window, prices the bid, and checks the
 response against the rules. The run closes at a receipt or a no bid.
 
+**delivers:** document
+
 ## The goals
 
 - Decide to bid or decline within [3 days]

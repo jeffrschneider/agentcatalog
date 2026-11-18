@@ -12,6 +12,8 @@ says what it protects, what it does not, and the date the protection
 runs out. The claim is then watched, the partner is warned before it
 lapses, and the run closes when it is converted, extended or expired.
 
+**delivers:** verdict
+
 ## The goals
 
 - Answer every registration within [2 days]

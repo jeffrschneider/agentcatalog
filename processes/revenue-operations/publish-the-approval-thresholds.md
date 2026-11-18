@@ -12,6 +12,8 @@ gets a version and an effective date, is published where sellers work,
 and is wired into the routing the desk uses. The run closes when the
 table is in use and a date is set to read it against what got asked.
 
+**delivers:** sheet
+
 ## The goals
 
 - Route [95%] of requests by the table alone

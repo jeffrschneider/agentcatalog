@@ -13,6 +13,8 @@ definition is published, and the rules go into the system so the next
 record is held to them. Records already held that fail the new rule get
 a deadline and a person who owns fixing them.
 
+**delivers:** document
+
 ## The goals
 
 - Put new field rules live within [3 weeks]

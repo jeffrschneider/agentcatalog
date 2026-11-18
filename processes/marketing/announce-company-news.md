@@ -14,6 +14,8 @@ this process for the press half of its work. The run stays open well
 past the day the release goes out, because the coverage arrives
 afterwards and the manager still owes a report on it.
 
+**delivers:** page
+
 ## The goals
 
 - Issue each release within [10 days] of the news

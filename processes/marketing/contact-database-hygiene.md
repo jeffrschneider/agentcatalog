@@ -16,6 +16,8 @@ removing somebody who should have stayed and sending to somebody who
 asked not to be sent to, and most of the checking below is aimed at
 those two.
 
+**delivers:** status board
+
 ## The goals
 
 - Keep duplicate contact records under [2%]

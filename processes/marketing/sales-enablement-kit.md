@@ -17,6 +17,8 @@ kit, and sales starts it on its own when a gap turns up outside a
 launch. The kit is material for reps to use inside a deal, so nothing
 here goes on the public website.
 
+**delivers:** creative set
+
 ## The goals
 
 - Put the kit in reps' hands within [3 weeks]

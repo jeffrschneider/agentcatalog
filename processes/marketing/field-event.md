@@ -13,6 +13,8 @@ roadshow, and the activities are the same for all of them. The run stays
 open past the day of the event, because the manager still owes the
 follow-up and the report.
 
+**delivers:** event
+
 ## The goals
 
 - Fill [90%] of the room the event was sized for

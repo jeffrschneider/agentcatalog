@@ -15,6 +15,8 @@ signs. The run stays open past the first signature, because the program
 still owes a report on how many partners were recruited and what those
 partners produced in their first weeks.
 
+**delivers:** page
+
 ## The goals
 
 - Sign the first partner within [90 days]

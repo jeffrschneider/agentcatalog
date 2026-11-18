@@ -23,6 +23,8 @@ describes. Preparing a keynote speaker runs through the speaking
 engagement process, and this process only makes sure the deck arrives on
 time and clears the checks it has to clear.
 
+**delivers:** event
+
 ## The goals
 
 - Reach [100%] of the attendance target

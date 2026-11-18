@@ -12,6 +12,8 @@ tool still earns its place. The review has three answers, and one of
 them is retirement. A tool nobody reviews is a tool nobody can defend
 at renewal.
 
+**delivers:** status board
+
 ## The goals
 
 - Update access within [1 day] of a joiner or leaver

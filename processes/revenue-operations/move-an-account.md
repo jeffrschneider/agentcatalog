@@ -12,6 +12,8 @@ named, and the systems are changed once. The account is handed over
 with its context rather than as a row that moved, and the run ends when
 the move is recorded against the carve.
 
+**delivers:** status board
+
 ## The goals
 
 - Change the systems within [5 days] of the request

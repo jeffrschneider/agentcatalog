@@ -12,6 +12,8 @@ from when we last spoke and who spoke to them. The map names every
 decision with nobody behind it, which is the part a plan has to answer
 for. It is corrected by the people who have met them, then issued.
 
+**delivers:** shortlist
+
 ## The goals
 
 - Issue each map within [5 days] of the account read

@@ -12,6 +12,8 @@ holds that conversation, and what was said goes down in writing. The run
 ends when the inquiry and everything learned reach qualification, and
 the answer time is recorded against the time that was promised.
 
+**delivers:** sequence
+
 ## The goals
 
 - Answer every inquiry within [15 minutes]

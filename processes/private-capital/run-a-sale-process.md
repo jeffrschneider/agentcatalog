@@ -18,6 +18,8 @@ closes when the fund's money has arrived, any amount held back for
 claims has its release date on the record, and the result is set
 against the plan.
 
+**delivers:** deal
+
 ## The goals
 
 - Sell at or above [the floor price]

@@ -14,6 +14,8 @@ been signed. The run ends with findings that carry the responses behind
 them. This process creates evidence that did not exist before by asking
 people. Reading what customers already did is a separate process.
 
+**delivers:** report
+
 ## The goals
 
 - Deliver [100%] of studies by the promised date

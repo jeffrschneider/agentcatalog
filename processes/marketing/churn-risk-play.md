@@ -14,6 +14,8 @@ owner. The run stays open long enough to see what the account did
 afterwards, and it ends when that outcome is recorded against the
 account.
 
+**delivers:** status board
+
 ## The goals
 
 - Respond to every risk signal within [2 days]

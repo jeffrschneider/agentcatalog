@@ -17,6 +17,8 @@ out. The run closes when the requester has a cleared, willing customer
 to use. It stops before any story, quote or case study is made, because
 producing that material is separate work that reads this list.
 
+**delivers:** agreement
+
 ## The goals
 
 - Fill reference requests within [10 days]

@@ -13,6 +13,8 @@ able to explain the offer. A readiness gate stands in front of launch,
 and what leaves the run is an offer being sold and an alliance somebody
 manages.
 
+**delivers:** document
+
 ## The goals
 
 - Take the first order within [6 months] of signing

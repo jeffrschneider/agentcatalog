@@ -18,6 +18,8 @@ decision. The run closes when one strategy and one fund model, at the
 same version, are handed to the lawyers who form the fund and to the team
 that raises it.
 
+**delivers:** document
+
 ## The goals
 
 - Decide the strategy by [the launch date]

@@ -12,6 +12,8 @@ tracked item rather than a sentence in a slide. The run does not close
 until the plan is published where both sides read it and the first
 review is on both calendars.
 
+**delivers:** document
+
 ## The goals
 
 - Sign the joint plan within [30 days]

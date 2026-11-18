@@ -30,6 +30,8 @@ answers the detail questions, so the agents in this process prepare that
 conversation, sit in it, record what was said, and answer for everything
 around it.
 
+**delivers:** notes
+
 ## The goals
 
 - File [100%] of cycle submissions by the deadline

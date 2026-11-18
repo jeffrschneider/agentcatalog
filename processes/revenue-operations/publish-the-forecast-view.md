@@ -12,6 +12,8 @@ left to be assumed. The view is then handed to the people who commit a
 number, and the argument about what is committed happens there. This
 process publishes arithmetic and never makes the call.
 
+**delivers:** report
+
 ## The goals
 
 - Publish the view within [2 hours] of the freeze

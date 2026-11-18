@@ -12,6 +12,8 @@ scope. Every clause leaves the run accepted, countered or rejected,
 with a reason. The run produces one clean text both sides call the
 agreement, and a record of what we accepted for the next deal to read.
 
+**delivers:** agreement
+
 ## The goals
 
 - Send each counter back within [3 days]

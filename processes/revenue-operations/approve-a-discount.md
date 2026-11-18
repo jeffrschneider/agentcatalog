@@ -12,6 +12,8 @@ this customer and this segment already got. A named signer approves,
 cuts it back, or refuses, and the reason is recorded against the deal.
 An ask that passes its promised time escalates rather than waiting.
 
+**delivers:** verdict
+
 ## The goals
 
 - Answer every discount request within [4 hours]

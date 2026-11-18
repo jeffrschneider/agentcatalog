@@ -16,6 +16,8 @@ because the split rule decides which fields the form has to capture and
 what the page has to tell a reader, and a split rule agreed after the
 leads arrive turns into an argument.
 
+**delivers:** campaign
+
 ## The goals
 
 - Launch within [8 weeks] of the signed agreement

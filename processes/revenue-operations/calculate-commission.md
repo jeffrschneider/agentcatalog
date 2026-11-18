@@ -12,6 +12,8 @@ not yet payable are netted before anybody sees a number. The run closes
 when the statements are published with every line traceable to the
 record it came from, and payroll holds a file a person has signed for.
 
+**delivers:** statement
+
 ## The goals
 
 - Publish statements within [5 days] of period close

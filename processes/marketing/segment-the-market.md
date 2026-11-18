@@ -23,6 +23,8 @@ contacts or accounts is built in any platform during this run, because
 building the list is a separate process that reads the segments this
 one records.
 
+**delivers:** document
+
 ## The goals
 
 - Issue the agreed segments within [6 weeks]

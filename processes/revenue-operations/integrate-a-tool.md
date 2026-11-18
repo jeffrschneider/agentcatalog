@@ -12,6 +12,8 @@ data, moved a known set to prove the counts agree, and switched on with
 a way back. The run closes when the two sides reconcile and the
 administrator has taken the tool on.
 
+**delivers:** status board
+
 ## The goals
 
 - Put the link live within [6 weeks] of handover

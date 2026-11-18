@@ -12,6 +12,8 @@ who can commit the organization have signed it. What the answers must not
 say is checked before the form is filled. Every new answer goes back into
 the library, so the next buyer gets the same answer faster.
 
+**delivers:** document
+
 ## The goals
 
 - Return every questionnaire within [5 days]

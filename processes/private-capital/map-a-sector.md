@@ -16,6 +16,8 @@ to the partner who owns it and on to the outreach process. The run
 closes when the map reaches its review date and the partners keep it,
 refresh it or retire it.
 
+**delivers:** shortlist
+
 ## The goals
 
 - Map a new sector within [6 weeks]

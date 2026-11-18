@@ -15,6 +15,8 @@ while the run is open, and the dates in the run are set against how soon
 that will happen. The run closes when the card is at its new version and
 every rep has been told.
 
+**delivers:** document
+
 ## The goals
 
 - Update affected battlecards within [5 days]

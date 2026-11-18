@@ -12,6 +12,8 @@ useful than a percentage. The report goes out where the people it names
 can read it, each queue hears its own number rather than the average,
 and the work the report calls for gets an owner before the run closes.
 
+**delivers:** report
+
 ## The goals
 
 - Publish the report within [2 days] of period close

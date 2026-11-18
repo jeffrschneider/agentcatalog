@@ -12,6 +12,8 @@ trusts the automatic version. The report publishes at an address with a
 version, and it is born with the condition that would switch it off
 already written down.
 
+**delivers:** report
+
 ## The goals
 
 - Publish a checked report within [2 weeks]
