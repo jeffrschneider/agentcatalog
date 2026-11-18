@@ -112,6 +112,30 @@ itself, which is what makes the record it leaves worth trusting later.
   Conditions, Record What Was Learned
 - `ref/mkt/win-loss-analysis` / Write the Findings, Deliver the Themes
   and Recommendations
+- `ref/pc/set-the-fund-strategy` / Take in the Decision to Raise, Put
+  the Options to the Partners, Decide the Strategy, Write the Strategy
+  Down, Hand On to Formation and Fundraising
+- `ref/pc/decide-at-investment-committee` / Take in the Memo, Set What
+  the Committee Must Decide, Check Who May Vote, Send the Committee
+  Pack, Collect the Members' Questions, Hold the Committee Meeting,
+  Record the Decision and the Dissent, Confirm the Record with the
+  Chair, Tell the Deal Team, Hand the Approved Terms On, Record a
+  Decline with Its Reason, Update the Deal Pipeline
+- `ref/pc/work-a-company-in-trouble` / Name the Decision and the
+  Deadline, Hear the Other Investors and Lenders, Lay Out the Options,
+  Check Conflicts and Fund Limits, Put the Options to the Partners,
+  Record the Decision and the Dissent, Hand the Course to the Process
+  That Runs It, Record What Was Learned
+- `ref/pc/run-the-portfolio-review` / Open the Review, Send the Pack
+  Ahead, Hear the Deal Leads, Decide the Watch List, Decide What Each
+  Watched Company Needs, Name an Owner and a Date for Each Action,
+  Record the Decisions, Hand On the Watch List and Reserves
+- `ref/pc/plan-the-exit` / Decide at the Investment Committee, Record
+  the Decision
+- `ref/pc/seek-an-advisory-committee-consent` / Take in the Matter,
+  Decide Whether to Ask, Gather the Facts, Commission an Independent
+  Opinion, Write the Consent Request, Hold the Committee Meeting, Record
+  the Decision, Record What the Request Taught
 
 ## Patterns
 
@@ -142,6 +166,8 @@ waiting on, and when each one is due.
   acts on it
 - the review schedule (write) - the date each recorded answer comes back
   up
+- the deal pipeline (write) - a deal's stage and the committee's
+  decision on its record, where the next deal team can read it
 
 ## Records
 
@@ -172,6 +198,18 @@ answer is recorded.
   was.
 - a decision made outside the process it belongs to, so a person decides
   whether to record it or run it again
+- a committee that would vote short of its quorum, or a member whose
+  declared conflict has not been ruled on - to the committee chair and
+  the chief compliance officer, because a vote the charter does not
+  count is not a decision and this agent records none
+- a deal or an option that breaks a fund limit, or a matter the
+  partnership agreement sends to the limited partner advisory
+  committee - to the deal lead partner and the chief compliance
+  officer, and it is not put to a vote until it fits the limit or the
+  consent is recorded
+- a matter the firm acted on before the advisory committee's consent
+  was recorded - to the committee as a breach, with what was done and
+  when, because only the committee decides what puts it right
 
 ## Not
 

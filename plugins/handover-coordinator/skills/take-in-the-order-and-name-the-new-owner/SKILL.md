@@ -1,6 +1,6 @@
 ---
 name: take-in-the-order-and-name-the-new-owner
-description: Takes the booked order in with its identifier and the opportunity every note hangs off, and records the person a decision maker names as the new owner of the relationship. Use it when running `ref/sls/hand-over-to-delivery`.
+description: Takes the booked order in with its identifier and the opportunity every note hangs off, and records the person a decision maker names as the new owner of the relationship. Use it when running `ref/pc/hand-over-to-the-portfolio-team` and `ref/sls/hand-over-to-delivery`.
 license: CC-BY-4.0
 metadata:
   agent: handover-coordinator
@@ -18,15 +18,21 @@ shared mailbox.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in four activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Name Who Now Owns the Relationship**
   - `ref/sls/hand-over-to-delivery`, activity 2 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)
+- **Name the Portfolio Team**
+  - `ref/pc/hand-over-to-the-portfolio-team`, activity 2 -
+    [Hand Over to the Portfolio Team](../../../../processes/private-capital/hand-over-to-the-portfolio-team.md)
 - **Take in the Booked Order**
   - `ref/sls/hand-over-to-delivery`, activity 1 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)
+- **Take in the Closed Deal**
+  - `ref/pc/hand-over-to-the-portfolio-team`, activity 1 -
+    [Hand Over to the Portfolio Team](../../../../processes/private-capital/hand-over-to-the-portfolio-team.md)
 
 ## What to record
 

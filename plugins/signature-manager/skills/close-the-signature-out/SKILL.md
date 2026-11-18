@@ -1,6 +1,6 @@
 ---
 name: close-the-signature-out
-description: Puts one booking in front of everybody who acts on it at the same time, so nobody works from an older version of what was signed. Use it when running `ref/sls/book-the-order`.
+description: Puts one record in front of everybody who acts on it at the same time, so nobody works from an older version of what was signed. Use it when running `ref/pc/hold-a-fund-close` and `ref/sls/book-the-order`.
 license: CC-BY-4.0
 metadata:
   agent: signature-manager
@@ -11,16 +11,19 @@ metadata:
 
 ## What it does
 
-Puts one booking in front of everybody who acts on it at the same time,
+Puts one record in front of everybody who acts on it at the same time,
 so nobody works from an older version of what was signed. Writes down
 what had to be corrected between signature and booking, and which of it
 belongs in the next version of the paper.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Confirm the Close to Every Investor**
+  - `ref/pc/hold-a-fund-close`, activity 14 -
+    [Hold a Fund Close](../../../../processes/private-capital/hold-a-fund-close.md)
 - **Record What Had to Be Fixed**
   - `ref/sls/book-the-order`, activity 16 -
     [Book the Order](../../../../processes/sales/book-the-order.md)

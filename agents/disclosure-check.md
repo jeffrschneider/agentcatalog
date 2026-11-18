@@ -25,6 +25,8 @@ was scored against and the market that rule applies in.
 - `ref/mkt/test-ad-creative` / Get Sign-Offs
 - `ref/mkt/traffic-ad-creative` / Add the Disclosures Each Market
   Requires, Score the Adapted Set
+- `ref/pc/prepare-the-fundraising-materials` / Check Against the
+  Advertising Rules, Approve Each Piece
 
 ## Patterns
 
@@ -50,6 +52,9 @@ its report, and this agent scores the fix.
   approved at
 - the agreements behind a paid partnership (read) - what the
   relationship requires to be said
+- the frozen track record (read) - the one dated set of performance
+  figures, at its version, that every figure in a fundraising piece
+  must come from
 - the review record (write) - the verdicts land where the signers and
   the producing agents read them
 

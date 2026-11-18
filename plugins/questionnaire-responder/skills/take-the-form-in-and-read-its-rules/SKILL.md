@@ -1,6 +1,6 @@
 ---
 name: take-the-form-in-and-read-its-rules
-description: "Takes in the form or the request with the buyer it came from, and reads the rules it sets before any answer is drafted: the deadline, the format, the channel, the limits and the window for questions. Use it when running `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`."
+description: "Takes in the form or the request with the buyer it came from, and reads the rules it sets before any answer is drafted: the deadline, the format, the channel, the limits and the window for questions. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`."
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -19,7 +19,7 @@ while it is still open.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Ask the Buyer's Questions**
@@ -30,6 +30,9 @@ Each one names the activity as that process words it.
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
   - `ref/sls/respond-to-an-rfp`, activity 2 -
     [Respond to an RFP](../../../../processes/sales/respond-to-an-rfp.md)
+- **Read the Rules of the Form**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 3 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
 - **Take in the Questionnaire**
   - `ref/sls/answer-a-security-questionnaire`, activity 1 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)

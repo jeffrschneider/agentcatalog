@@ -1,6 +1,6 @@
 ---
 name: take-in-the-offer-and-list-what-is-asked-for
-description: Reads the offer as it was sent and the reply that came back, and gathers every ask into one numbered list in the buyer's own words with the person who raised each one. Use it when running `ref/sls/negotiate-the-agreement`.
+description: Reads the offer as it was sent and the reply that came back, and gathers every ask into one numbered list in the other side's own words with the person who raised each one. Use it when running `ref/pc/negotiate-the-fund-terms-and-side-letters`, `ref/pc/run-a-sale-process` and `ref/sls/negotiate-the-agreement`.
 license: CC-BY-4.0
 metadata:
   agent: negotiation-coordinator
@@ -12,14 +12,14 @@ metadata:
 ## What it does
 
 Reads the offer as it was sent and the reply that came back, and gathers
-every ask into one numbered list in the buyer's own words with the
+every ask into one numbered list in the other side's own words with the
 person who raised each one. Confirms who actually signs on each side and
 who they need first.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
-Each one names the activity as that process words it.
+The agent does this in seven activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Confirm Who Decides**
   - `ref/sls/negotiate-the-agreement`, activity 3 -
@@ -27,6 +27,18 @@ Each one names the activity as that process words it.
 - **List What Is Asked For**
   - `ref/sls/negotiate-the-agreement`, activity 2 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
+- **Log Every Ask**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 3 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
+- **Take in the Final Bids and Markups**
+  - `ref/pc/run-a-sale-process`, activity 10 -
+    [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
+- **Take in the First Bids**
+  - `ref/pc/run-a-sale-process`, activity 7 -
+    [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
+- **Take in the Investor's Comments**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 1 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Take in the Offer and the Reply**
   - `ref/sls/negotiate-the-agreement`, activity 1 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)

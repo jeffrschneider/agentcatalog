@@ -11,6 +11,9 @@ covers:
 - Start the Response Clock
 - Check Whether It May Be Answered
 - Decide Who Answers
+- Take in the Pitch
+- Acknowledge the Pitch
+- Route the Note to a Partner
 
 ## answer-what-was-actually-asked
 
@@ -22,6 +25,9 @@ covers:
 - Write the First Reply
 - Send the First Reply
 - Offer a Time to Talk
+- Ask for What Is Missing
+- Answer the Founder
+- Tell the Referrer the Outcome
 
 ## write-down-what-was-said
 
@@ -40,3 +46,4 @@ recorded as a miss.
 covers:
 - Hand It to Qualification
 - Record the Response Time
+- Record the Decision and the Time

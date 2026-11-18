@@ -1,6 +1,6 @@
 ---
 name: introduce-the-new-owner-to-the-customer
-description: Settles who says what to the customer and through which channel, makes one introduction, puts the first working session in diaries on both sides, and keeps the run open until the customer confirms they know who to call. Use it when running `ref/sls/hand-over-to-delivery`.
+description: Settles who says what to the customer and through which channel, makes one introduction, puts the first working session in diaries on both sides, and keeps the run open until the customer confirms they know who to call. Use it when running `ref/pc/hand-over-to-the-portfolio-team` and `ref/sls/hand-over-to-delivery`.
 license: CC-BY-4.0
 metadata:
   agent: handover-coordinator
@@ -18,18 +18,24 @@ to call.
 
 ## Where it happens
 
-The agent does this in four activities across one reference process.
+The agent does this in six activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Agree Who Says What to the Customer**
   - `ref/sls/hand-over-to-delivery`, activity 11 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)
+- **Confirm Management Knows Who to Call**
+  - `ref/pc/hand-over-to-the-portfolio-team`, activity 14 -
+    [Hand Over to the Portfolio Team](../../../../processes/private-capital/hand-over-to-the-portfolio-team.md)
 - **Confirm the Customer Accepted the Handover**
   - `ref/sls/hand-over-to-delivery`, activity 14 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)
 - **Introduce the New Owner to the Customer**
   - `ref/sls/hand-over-to-delivery`, activity 12 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)
+- **Introduce the Team to Management**
+  - `ref/pc/hand-over-to-the-portfolio-team`, activity 12 -
+    [Hand Over to the Portfolio Team](../../../../processes/private-capital/hand-over-to-the-portfolio-team.md)
 - **Schedule the Start**
   - `ref/sls/hand-over-to-delivery`, activity 13 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)

@@ -1,6 +1,6 @@
 ---
 name: clear-material-for-sign-off
-description: The agent puts its verdicts in front of the approval, so the named signers see what passed, what failed, and which rule each failure came from. Use it when running `ref/mkt/channel-program` and 4 other reference processes.
+description: The agent puts its verdicts in front of the approval, so the named signers see what passed, what failed, and which rule each failure came from. Use it when running `ref/mkt/channel-program` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: disclosure-check
@@ -17,9 +17,12 @@ from.
 
 ## Where it happens
 
-The agent does this in one activity across five reference processes.
+The agent does this in two activities across six reference processes.
 Each one names the activity as that process words it.
 
+- **Approve Each Piece**
+  - `ref/pc/prepare-the-fundraising-materials`, activity 12 -
+    [Prepare the Fundraising Materials](../../../../processes/private-capital/prepare-the-fundraising-materials.md)
 - **Get Sign-Offs**
   - `ref/mkt/channel-program`, activity 10 -
     [Launch Channel Program](../../../../processes/marketing/channel-program.md)

@@ -23,3 +23,11 @@ an agreement would make the record it keeps worthless.
 - a signer who has changed or become unavailable while a document is out
   to sign, to the deal owner, with the path confirmed again before it
   goes out a second time
+- a signer who refuses to sign, to the managing partner or the deal lead
+  partner who owns the document, with the refusal and its reason
+  recorded, because nobody signs around a refusing signer and the terms
+  behind the refusal go back to the people who settled them
+- a confidentiality agreement whose non-solicit would bind every
+  portfolio company, or whose standstill the firm could not keep, to the
+  legal reviewer and the deal lead partner before anyone signs it,
+  because what the firm may promise is theirs to decide

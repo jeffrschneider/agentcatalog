@@ -18,3 +18,9 @@ claim in writing that the claims register does not support.
 - a person who may not be contacted on the channel they used - the run
   stops at the clock record and nobody works around it on another
   channel
+- the decision on a pitch - to the partner the screen note was routed
+  to, always. This agent sends the founder the answer a partner made,
+  and never an answer nobody decided.
+- a pitch whose answer date is about to pass with no decision - to the
+  routed partner and then to the partner on duty, before the date, and
+  the founder gets one honest holding answer with one new date

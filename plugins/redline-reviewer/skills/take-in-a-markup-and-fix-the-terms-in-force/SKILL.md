@@ -1,6 +1,6 @@
 ---
 name: take-in-a-markup-and-fix-the-terms-in-force
-description: Takes in the buyer's markup at its version and the copy it was made from, fixes which template version and which pre-approved fallbacks are in force, and splits the document into one item per changed clause with both texts side by side. Use it when running `ref/sls/review-the-redlines`.
+description: Takes in the other side's markup at its version and the copy it was made from, fixes which template version and which pre-approved fallbacks are in force, and splits the document into one item per changed clause with both texts side by side. Use it when running `ref/pc/negotiate-the-definitive-agreements`, `ref/pc/negotiate-the-fund-terms-and-side-letters` and `ref/sls/review-the-redlines`.
 license: CC-BY-4.0
 metadata:
   agent: redline-reviewer
@@ -11,20 +11,28 @@ metadata:
 
 ## What it does
 
-Takes in the buyer's markup at its version and the copy it was made
+Takes in the other side's markup at its version and the copy it was made
 from, fixes which template version and which pre-approved fallbacks are
 in force, and splits the document into one item per changed clause with
 both texts side by side.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm the Terms in Force**
   - `ref/sls/review-the-redlines`, activity 2 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
+- **Fix the Starting Text**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 3 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
+- **Read the Markup Clause by Clause**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 4 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Split the Markup into Clauses**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 7 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
   - `ref/sls/review-the-redlines`, activity 3 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
 - **Take in the Buyer's Markup**

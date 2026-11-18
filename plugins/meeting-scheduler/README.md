@@ -36,7 +36,9 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/sls/book-the-meeting`, `ref/sls/run-an-outbound-sequence`,
-`ref/sls/work-a-referral`. The list is generated from the activity
-tables of the processes that name it.
+`ref/sls/work-a-referral`, `ref/pc/work-an-investor-prospect`,
+`ref/pc/reach-out-to-a-company`,
+`ref/pc/fill-a-key-role-at-a-portfolio-company`. The list is generated
+from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/meeting-scheduler

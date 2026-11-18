@@ -18,6 +18,11 @@ commitment nobody kept is visible rather than forgotten.
 - `ref/prt/review-a-joint-plan` / Open the Review, Read the
   Commitments, Say Which Commitments Are Dead, Record the Decisions and
   the Dates, Set the Next Review
+- `ref/pc/prepare-and-hold-a-board-meeting` / Read Progress on the Value
+  Creation Plan, Read the Open Actions, Record the Decisions and
+  Actions, Follow Up the Actions
+- `ref/pc/write-the-value-creation-plan` / Load the Plan into the
+  Tracker, Set the Review Cadence, Read Progress Against the Plan
 
 ## Patterns
 
@@ -37,6 +42,8 @@ takes the decisions and the closed lines back from the review.
 - the calendar of every signer (write) - the review dates, so a review
   is on a calendar before the plan closes
 - the partner record (read) - who on each side owns what
+- the portfolio reporting system (read) - each change's measure as the
+  company reports it, read beside the baseline at every review
 
 ## Records
 
@@ -62,6 +69,8 @@ dates set for the year, and whose calendars they landed on.
   out of habit
 - a signed plan with no review on anybody's calendar - to both
   sponsors, because the run does not close until there is one
+- a board action with no owner - to the firm's board director, and the
+  action stays open on the record with the gap named until it has one
 
 ## Not
 

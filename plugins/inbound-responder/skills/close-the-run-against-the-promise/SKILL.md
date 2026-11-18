@@ -1,6 +1,6 @@
 ---
 name: close-the-run-against-the-promise
-description: Hands the inquiry and everything read on the way to qualification, then records how long the answer took against what was promised. Use it when running `ref/sls/answer-an-inbound-inquiry`.
+description: Hands the inquiry and everything read on the way to qualification, then records how long the answer took against what was promised. Use it when running `ref/pc/screen-an-inbound-pitch` and `ref/sls/answer-an-inbound-inquiry`.
 license: CC-BY-4.0
 metadata:
   agent: inbound-responder
@@ -17,12 +17,15 @@ recorded as a miss.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Hand It to Qualification**
   - `ref/sls/answer-an-inbound-inquiry`, activity 13 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)
+- **Record the Decision and the Time**
+  - `ref/pc/screen-an-inbound-pitch`, activity 18 -
+    [Screen an Inbound Pitch](../../../../processes/private-capital/screen-an-inbound-pitch.md)
 - **Record the Response Time**
   - `ref/sls/answer-an-inbound-inquiry`, activity 14 -
     [Answer an Inbound Inquiry](../../../../processes/sales/answer-an-inbound-inquiry.md)

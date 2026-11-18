@@ -22,7 +22,7 @@ decision to hold is on the record.
 | # | Activity | What happens | Agents |
 |---|---|---|---|
 | 1 | Take in the Reason to Exit | the thesis delivered, an offer, or the fund's term | [exit-planner](../../agents/exit-planner.md) · deal lead partner (person) |
-| 2 | Read What the Fund Holds and Can Force | shares, drag and tag rights, board seats, consents | exit-planner |
+| 2 | Read What the Fund Holds and Can Force | shares, drag and tag rights, director rights, consents | exit-planner |
 | 3 | Read the Fund's Term and Timing | the fund's end date, extensions and the hold so far | exit-planner |
 | 4 | List the Routes Open to the Fund | a sale, a listing, a share sale or a refinancing | exit-planner |
 | 5 | List the Likely Buyers | who would pay, why, and what they have bought before | [researcher](../../agents/researcher.md) · exit-planner |
@@ -111,7 +111,7 @@ phases:
                         automation: <level>
   read-rights         - runs assessment: the fund's shares and their
                         preferences, drag-along and tag-along rights,
-                        registration rights, board seats, and every
+                        registration rights, director rights, and every
                         consent a sale would need, read from the
                         shareholders' agreement
                         owner: exit-planner         after: take-in-reason

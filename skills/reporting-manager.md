@@ -9,6 +9,7 @@ the questions the report has to answer.
 covers:
 - Set What the Report Covers
 - Set What the Review Covers
+- Open the Quarter's Report
 
 ## name-the-measures
 
@@ -24,13 +25,15 @@ covers:
 
 ## collect-the-results-from-every-source
 
-Asks every channel and every run for the same things, in the same
+Asks every source and every run for the same things, in the same
 format, by the same date, and pulls together what comes back with a
 source on every line.
 
 covers:
 - Ask Every Source the Same Things
 - Pull the Results for the Period
+- Take in the Approved Marks
+- Collect the Company Updates
 
 ## read-a-closed-period
 
@@ -90,6 +93,16 @@ people who decide what happens next.
 
 covers:
 - Write the Account
+- Write the Quarter's Letter
+
+## clear-the-report-before-it-goes-out
+
+Puts the finished report in front of the people who must clear it
+before it goes out, with every figure tied to its source, makes the
+changes they name, and sends nothing on that they have not cleared.
+
+covers:
+- Check the Report for Compliance
 
 ## publish-the-report
 
@@ -112,6 +125,18 @@ stays where it is.
 covers:
 - Decide What Happens to Published Reports
 - Reissue the Affected Reports
+
+## answer-for-a-published-report
+
+Answers the questions the readers of a published report raise, beside
+the person who holds the relationship with them, and logs each one
+against the version it asks about. Then records what the period's
+report taught: what was late, what was corrected, what was asked, and
+what the next report changes.
+
+covers:
+- Answer the Investors' Questions
+- Record What the Quarter Taught
 
 ## tell-the-agents-what-they-have
 

@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Five systems, named by role rather than by product. The access level is
+Six systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -11,6 +11,7 @@ more than the job requires.
 | the verification source | read | Every address and number is checked before it is used. |
 | the CRM | write | The list, and where every person on it sits. |
 | the sending system | write | The signed list lands where the sequences read it, with its consent finding attached. |
+| the political contribution records | read | Each investor name is read against the contributions people at the firm have made to officials who oversee a public pension plan. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

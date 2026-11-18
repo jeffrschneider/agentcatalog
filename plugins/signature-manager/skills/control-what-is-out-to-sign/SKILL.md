@@ -1,6 +1,6 @@
 ---
 name: control-what-is-out-to-sign
-description: Sends the right version to the named signers in the agreed order, and takes a document back out of signature when it should no longer be out there, such as when the deal is lost. Use it when running `ref/sls/record-a-lost-deal` and `ref/sls/run-the-close-plan`.
+description: Sends the right version to the named signers in the agreed order, and takes a document back out of signature when it should no longer be out there, such as when the deal is lost. Use it when running `ref/pc/form-the-fund` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: signature-manager
@@ -18,12 +18,39 @@ step.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in eleven activities across seven reference
+processes. Each one names the activity as that process words it.
 
+- **Choose and Engage the Providers**
+  - `ref/pc/form-the-fund`, activity 5 -
+    [Form the Fund](../../../../processes/private-capital/form-the-fund.md)
 - **Execute the Signature**
   - `ref/sls/run-the-close-plan`, activity 15 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)
+- **Send the Subscription Documents**
+  - `ref/pc/hold-a-fund-close`, activity 2 -
+    [Hold a Fund Close](../../../../processes/private-capital/hold-a-fund-close.md)
+- **Sign and Send the Indication**
+  - `ref/pc/respond-to-a-sale-process`, activity 16 -
+    [Respond to a Sale Process](../../../../processes/private-capital/respond-to-a-sale-process.md)
+- **Sign the Adviser's Engagement**
+  - `ref/pc/run-a-sale-process`, activity 3 -
+    [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
+- **Sign the Close**
+  - `ref/pc/hold-a-fund-close`, activity 10 -
+    [Hold a Fund Close](../../../../processes/private-capital/hold-a-fund-close.md)
+- **Sign the Closing Documents**
+  - `ref/pc/run-the-closing`, activity 10 -
+    [Run the Closing](../../../../processes/private-capital/run-the-closing.md)
+- **Sign the Confidentiality Agreement**
+  - `ref/pc/respond-to-a-sale-process`, activity 6 -
+    [Respond to a Sale Process](../../../../processes/private-capital/respond-to-a-sale-process.md)
+- **Sign the Formation Documents**
+  - `ref/pc/form-the-fund`, activity 15 -
+    [Form the Fund](../../../../processes/private-capital/form-the-fund.md)
+- **Sign the Sale Agreement**
+  - `ref/pc/run-a-sale-process`, activity 15 -
+    [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
 - **Stop the Open Work**
   - `ref/sls/record-a-lost-deal`, activity 9 -
     [Record a Lost Deal](../../../../processes/sales/record-a-lost-deal.md)

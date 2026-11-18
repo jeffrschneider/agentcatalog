@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "sales",
+    "private-capital",
     "book-the-order",
-    "run-the-close-plan",
-    "hand-over-to-delivery",
+    "hold-a-fund-close",
+    "respond-to-a-sale-process",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "signature-manager",
       "agentVersion": 1,
-      "department": "sales",
+      "department": "private-capital",
       "abstract": true,
       "works": "Runs collect-and-report to establish who signs on each side and what each signer has to see first, and assessment on the executed document: who signed, under what authority, and whether every page and exhibit it refers to is present. Runs a second assessment on the promises the sale made, marking each one carried by the agreement, carried by a side letter, or said and not binding. Convenes the briefing where the seller, the account team, finance and delivery hear one booking, and the debrief on what had to be corrected between signature and booking. Runs roll-call over an agreement waiting to be booked. Takes the agreed text from the redline-reviewer agent, hands the executed agreement to the order-check agent, and hands the marked promise list to the handover-coordinator agent.",
       "servers": [
@@ -56,6 +56,24 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "The people who act on a booking hear the same booking at the same time."
+        },
+        {
+          "name": "the document store",
+          "role": "document-store",
+          "access": "write",
+          "needs": "The executed set and the close record, filed complete with every signed page and exhibit."
+        },
+        {
+          "name": "the investor portal",
+          "role": "investor-portal",
+          "access": "write",
+          "needs": "Each investor's close date, its accepted commitment and its signed pages, posted where the investor reads them."
+        },
+        {
+          "name": "the deal pipeline",
+          "role": "deal-pipeline",
+          "access": "write",
+          "needs": "Each confidentiality agreement's non-solicit, standstill and term, and the people it lets read the material, recorded where every deal team can read them."
         }
       ],
       "records": [
@@ -73,7 +91,9 @@
         "an entity named on the paper that the entity list does not hold, to whoever owns that list, before anything is recorded against it",
         "every term off the standard paper, to the legal reviewer and the finance approver by name, before the booking rather than after it",
         "a promise the agreement does not carry, to the person who decides whether the organization honors it anyway, before the customer hears from anybody",
-        "a signer who has changed or become unavailable while a document is out to sign, to the deal owner, with the path confirmed again before it goes out a second time"
+        "a signer who has changed or become unavailable while a document is out to sign, to the deal owner, with the path confirmed again before it goes out a second time",
+        "a signer who refuses to sign, to the managing partner or the deal lead partner who owns the document, with the refusal and its reason recorded, because nobody signs around a refusing signer and the terms behind the refusal go back to the people who settled them",
+        "a confidentiality agreement whose non-solicit would bind every portfolio company, or whose standstill the firm could not keep, to the legal reviewer and the deal lead partner before anyone signs it, because what the firm may promise is theirs to decide"
       ],
       "not": [
         "Does not negotiate the words.",
@@ -116,6 +136,48 @@
           "activities": [
             "Confirm the Signature Path",
             "Execute the Signature"
+          ]
+        },
+        {
+          "process": "ref/pc/form-the-fund",
+          "activities": [
+            "Choose and Engage the Providers",
+            "Open the Fund's Bank Account",
+            "Sign the Formation Documents"
+          ]
+        },
+        {
+          "process": "ref/pc/hold-a-fund-close",
+          "activities": [
+            "Send the Subscription Documents",
+            "Sign the Close",
+            "Confirm the Close to Every Investor",
+            "File the Close Record"
+          ]
+        },
+        {
+          "process": "ref/pc/respond-to-a-sale-process",
+          "activities": [
+            "Read the Confidentiality Agreement",
+            "Sign the Confidentiality Agreement",
+            "Sign and Send the Indication",
+            "Withdraw in Writing"
+          ]
+        },
+        {
+          "process": "ref/pc/run-the-closing",
+          "activities": [
+            "Confirm Who Signs and in What Order",
+            "Sign the Closing Documents",
+            "Collect the Executed Set"
+          ]
+        },
+        {
+          "process": "ref/pc/run-a-sale-process",
+          "activities": [
+            "Sign the Adviser's Engagement",
+            "Approach the Buyers",
+            "Sign the Sale Agreement"
           ]
         }
       ]

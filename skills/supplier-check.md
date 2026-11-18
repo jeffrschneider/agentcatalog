@@ -19,6 +19,7 @@ whenever it arrived.
 covers:
 - Set the Scoring Criteria
 - Set the Selection Criteria
+- Set the Criteria for Each Provider
 
 ## take-in-the-candidate-material
 
@@ -39,6 +40,8 @@ recorded as not tested, with the reason.
 covers:
 - Score the Proposals
 - Score the Shortlist
+- Score the Candidate Providers
+- Choose the Sell-Side Adviser
 
 ## compare-the-scored-field
 
@@ -59,3 +62,30 @@ and arranges the one that meets them.
 covers:
 - Arrange the Outside Interviewer
 - Arrange the Outside Sample
+
+## check-the-company-on-the-public-record
+
+The agent reads the registries for a company's registration, its good
+standing and who owns it, and reads the court and regulator records for
+suits, threats, regulator letters and settlements beside outside
+counsel. Each result names the record it came from and the date it was
+read.
+
+covers:
+- Check the Company Is Real
+- Read the Litigation and Claims
+
+## screen-against-the-lists
+
+The agent screens investors and their owners, target companies and
+their leaders, and the firm's own people and providers against
+sanctions lists, the anti-money laundering rules, adverse records and
+the events that would disqualify an offering. Every hit goes to the
+chief compliance officer with what was found and where, and the agent
+records the decision it is given without clearing any hit itself.
+
+covers:
+- Screen Each Investor and Its Owners
+- Screen the Company and Its Leaders
+- Check No One Disqualifies the Offering
+- Clear the Screening Hits

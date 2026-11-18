@@ -1,0 +1,155 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "financial-analyst",
+  "version": "1.0.0",
+  "description": "The financial-analyst abstract agent. Rebuilds a company's numbers from its own records and reports revenue quality, margins, cash and the adjustments management proposes, with each figure traced to its source, for the deal lead partner before the fund invests and for the portfolio team afterward.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/financial-analyst",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "private-capital",
+    "run-financial-diligence",
+    "collect-the-portfolio-company-reports",
+    "build-the-investment-model",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "financial-analyst",
+      "agentVersion": 1,
+      "department": "private-capital",
+      "abstract": true,
+      "works": "Runs assessment for each reading of the records, each test of an adjustment, the operating projection, the second reading of the model, the baseline and the sizing, and each period's tie-out, variance, runway and covenant test. Brings the work to the decide-and-announce where the deal lead partner agrees the numbers to model from, and convenes the briefing that hands those numbers and the findings to the model, the memo and the other diligence runs. Answers the roll-call in which the commitment-keeper agent reads each change in the value creation plan out as met, running, late or untouched. Takes the opportunity and the request log from the diligence-coordinator agent, which rates its findings, and works beside the outside accountants and the tax adviser (person). Hands the agreed numbers to the returns-modeler agent, beside the cap-table-keeper agent's capitalization, and the baseline and the sizing to the value-creation-planner agent. Takes each period's packages from the portfolio-monitor agent and hands back the tie-out, the runway and the covenant headroom it raises warnings from.",
+      "servers": [
+        {
+          "name": "the data room",
+          "role": "data-room",
+          "access": "read",
+          "needs": "The company's ledgers, invoices, contracts, bank statements, payroll and tax filings, read only by the people the access agreement names."
+        },
+        {
+          "name": "the request log",
+          "role": "request-log",
+          "access": "write",
+          "needs": "Each record asked for and each gap found, so the company is asked once."
+        },
+        {
+          "name": "the deal pipeline",
+          "role": "deal-pipeline",
+          "access": "write",
+          "needs": "The agreed numbers and the findings filed against the opportunity at their version."
+        },
+        {
+          "name": "the financial model",
+          "role": "financial-model",
+          "access": "write",
+          "needs": "The operating case, the later rounds or the debt, and each error a second reading finds."
+        },
+        {
+          "name": "the company's financial records",
+          "role": "companys-financial-records",
+          "access": "read",
+          "needs": "Today's numbers for the baseline after the close."
+        },
+        {
+          "name": "the portfolio reporting system",
+          "role": "portfolio-reporting-system",
+          "access": "write",
+          "needs": "Each period's tie-out, every untied figure marked, and the runway and the covenant tests."
+        },
+        {
+          "name": "the value creation plan",
+          "role": "value-creation-plan",
+          "access": "read",
+          "needs": "The targets each period's results are read against."
+        },
+        {
+          "name": "the commitment tracker",
+          "role": "commitment-tracker",
+          "access": "read",
+          "needs": "The changes whose progress it reads against the baseline."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "A short runway or a covenant at risk raised the day it is found."
+        }
+      ],
+      "records": [
+        "Per diligence run: every figure with the source document and the period it was read from; the revenue tie-out period by period, with each gap between revenue and cash; recurring and one-off revenue by customer, product and cohort, with concentration, retention and price changes; the margin and each cost line; the cash flow from the bank statements, the burn, the runway and how much of the earnings became cash; each adjustment accepted with the evidence that it will not recur, cut with the years it did recur, or left open with its reason; the normal level of working capital and every item counted as debt or as cash; the forecast beside the company's past accuracy; the tax adviser's view recorded as the adviser's; every difference with the accountants closed or left open with both figures kept; each figure given without a record marked as management's; and the agreed numbers at their version with the deal lead's agreement.",
+        "Per model: the operating case beside management's plan with its assumptions, the rounds or the debt year by year, and the second reading with each error found.",
+        "Per value creation plan: the baseline traced to source, each change sized for its value, cost and time with its assumptions, a guess marked as a guess, and each progress reading.",
+        "Per period: each line tied or marked untied, any restatement with the company's reason, the one list of questions with its date, each variance over the threshold explained, the runway with undrawn facilities and committed funding counted separately, and each covenant calculated as the loan agreement defines it with its headroom and next test date.",
+        "An auditor can pick any number the fund relied on and follow it to the record it came from, or find it marked as management's."
+      ],
+      "escalates": [
+        "the numbers the model will use, and which figure stands when the accountants and this agent disagree - to the deal lead partner in writing, because the price and the debt rest on them",
+        "an adjustment the evidence neither supports nor refutes - to the deal lead partner, so the model cannot quietly assume it",
+        "a runway shorter than the pitch claimed - to the deal lead partner the day it is found, because it changes the deal's timetable as well as its price",
+        "a covenant at risk or a short runway in a holding - to the deal lead partner the same day, because a confirmed warning starts the work on a company in trouble",
+        "a tax exposure - to the deal lead partner with the tax adviser's view, as something to price, cover with a promise from the seller, or treat as a stop",
+        "records the company will not give - to the deal lead partner, with the figures that cannot be rebuilt cut from scope in writing and reported as management's"
+      ],
+      "not": [
+        "Does not run the diligence plan, chase the request log or rate the findings, which is the diligence-coordinator agent.",
+        "Does not set the price, the structure or the exit cases, or compute the fund's return, which is the returns-modeler agent with the deal lead partner (person), and does not model ownership or what each share class takes, which is the cap-table-keeper agent.",
+        "Does not collect or chase the portfolio companies' packages or keep the watch list, which is the portfolio-monitor agent.",
+        "Does not choose the changes a value creation plan carries, which management and the deal lead partner (person) do with the value-creation-planner agent.",
+        "Does not give a view on tax, which is the tax adviser (person), and does not propose a fair value, which is the valuation-analyst agent."
+      ],
+      "processes": [
+        {
+          "process": "ref/pc/build-the-investment-model",
+          "activities": [
+            "Take in the Agreed Numbers",
+            "Project the Operating Case",
+            "Model the Later Rounds or the Debt",
+            "Check the Model"
+          ]
+        },
+        {
+          "process": "ref/pc/run-financial-diligence",
+          "activities": [
+            "Take in the Opportunity",
+            "Rebuild the Revenue",
+            "Test the Quality of Revenue",
+            "Read the Margins and Costs",
+            "Follow the Cash",
+            "Test Management's Adjustments",
+            "Read Working Capital and Net Debt",
+            "Read the Forecast",
+            "Read the Tax Position",
+            "Read the Accountants' Report",
+            "Agree the Numbers to Model From",
+            "Hand the Numbers On"
+          ]
+        },
+        {
+          "process": "ref/pc/write-the-value-creation-plan",
+          "activities": [
+            "Build the Baseline",
+            "Size Each Change",
+            "Read Progress Against the Plan"
+          ]
+        },
+        {
+          "process": "ref/pc/collect-the-portfolio-company-reports",
+          "activities": [
+            "Tie the Numbers to the Accounts",
+            "Ask the Company What Is Missing or Wrong",
+            "Read the Results against Plan",
+            "Work Out the Cash Runway",
+            "Test the Covenants"
+          ]
+        }
+      ]
+    }
+  }
+}

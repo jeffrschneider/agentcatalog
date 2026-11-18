@@ -1,0 +1,144 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "value-creation-planner",
+  "version": "1.0.0",
+  "description": "The value-creation-planner abstract agent. Drafts the value creation plan with a portfolio company's management and the firm's portfolio team, and keeps it current for as long as the fund holds the company.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/value-creation-planner",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "private-capital",
+    "write-the-value-creation-plan",
+    "prepare-and-hold-a-board-meeting",
+    "hand-over-to-the-portfolio-team",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "value-creation-planner",
+      "agentVersion": 1,
+      "department": "private-capital",
+      "abstract": true,
+      "works": "Runs build-by-talent for the starting points, the plan for the first months and the director's brief, drawing in the specialist each part needs. Convenes the briefing where management gives its view, runs collect-and-report on the candidate changes and assessment on what the company can carry, and holds the run-scoped status roll-call while the plan is being written. Runs roll-call on the plan's progress before each board meeting. Sits in the decide-and-announce where the deal lead partner closes or replaces a dead change. Takes the handover package and the committee's conditions from the handover-coordinator agent, and the baseline and each change's size from the financial-analyst agent. Hands the agreed plan to the commitment-keeper agent, which loads it into the tracker and reads progress on the cadence the plan sets, and writes the director's brief with the portfolio-monitor agent, which brings the numbers, the decisions the board is asked for and the fund's consent rights.",
+      "servers": [
+        {
+          "name": "the value creation plan",
+          "role": "value-creation-plan",
+          "access": "write",
+          "needs": "The plan at every version, with what changed and why, and this agent issues it."
+        },
+        {
+          "name": "the commitment tracker",
+          "role": "commitment-tracker",
+          "access": "read",
+          "needs": "Each change's owner, date and state, which progress is read from."
+        },
+        {
+          "name": "the watch list",
+          "role": "watch-list",
+          "access": "write",
+          "needs": "A board decision that moves the company's standing is entered at a new version, beside the portfolio-monitor agent, which keeps the list."
+        },
+        {
+          "name": "the portfolio reporting system",
+          "role": "portfolio-reporting-system",
+          "access": "read",
+          "needs": "The company's reports, which each measure is read from."
+        },
+        {
+          "name": "the company's financial records",
+          "role": "companys-financial-records",
+          "access": "read",
+          "needs": "The people, cash and costs that decide what the company can carry."
+        },
+        {
+          "name": "the data room",
+          "role": "data-room",
+          "access": "read",
+          "needs": "The diligence findings under each starting point."
+        },
+        {
+          "name": "the decision record",
+          "role": "decision-record",
+          "access": "read",
+          "needs": "The committee's conditions the plan has to carry."
+        },
+        {
+          "name": "the board portal",
+          "role": "board-portal",
+          "access": "read",
+          "needs": "The board pack and the papers the director's brief is written from."
+        },
+        {
+          "name": "the calendar",
+          "role": "calendar",
+          "access": "write",
+          "needs": "The sessions where management's view is heard and the plan is shaped."
+        }
+      ],
+      "records": [
+        "The handover leaves the starting points, each with the finding and the line of the thesis it serves, and each committee condition carried with an owner on the portfolio team and a date.",
+        "Writing the plan leaves management's view in its own words, the list of candidate changes with who proposed each one, the capacity read for each change, and the chosen changes each with one owner, one measure and one date, while a change that could not carry all three is named as struck.",
+        "The first months are planned week by week with an owner on every step, and the firm's help is recorded as commitments with an owner at the firm and a date.",
+        "The plan is issued at a version that says what changed since the last one and why, and every earlier version stays on file.",
+        "Each board meeting leaves the progress reading, with every change marked met, running, late or untouched and its measure set beside the baseline, the director's brief keeping what the pack says apart from what the firm thinks, and the plan updated for what the board decided.",
+        "A dead change is closed with its reason and its date, or replaced by one with its own owner.",
+        "Anyone reading the plan can say who owns each change, how it is measured, when it is due and what the firm promised to put in."
+      ],
+      "escalates": [
+        "which few changes the plan carries - to the portfolio company's chief executive and the deal lead partner, because the plan is theirs to choose",
+        "management's agreement to the plan and the board's adoption of it - to the chief executive, the deal lead partner and the company's board, and neither is ever given by an agent",
+        "a change management will not agree to - to the deal lead partner, with management's reasons written down where the next review can read them",
+        "a plan that cannot add up to the value the thesis needs - to the deal lead partner and the operating partner, with the gap and the changes that would close it",
+        "a change nobody is working - to the deal lead partner, who closes it or replaces it, because a dead change is never left open by silence",
+        "help the firm promised that has not arrived - to the operating partner, read out beside management's own misses",
+        "the firm's position on a board decision - to the deal lead partner and the operating partner, and the director's vote stays with the director"
+      ],
+      "not": [
+        "Does not build the baseline or size the changes, which is the financial-analyst agent.",
+        "Does not load the tracker, set the review dates or chase an action, which is the commitment-keeper agent.",
+        "Does not collect the board pack, read the numbers against the covenants, check the fund's consent rights or keep the watch list, which is the portfolio-monitor agent.",
+        "Does not assemble the handover package, which is the handover-coordinator agent.",
+        "Does not find candidates for a key role, which is the relationship-mapper and researcher agents.",
+        "Does not choose the changes, agree the firm's position or vote at the board, which are the chief executive, the deal lead partner, the operating partner and the board director (people)."
+      ],
+      "processes": [
+        {
+          "process": "ref/pc/hand-over-to-the-portfolio-team",
+          "activities": [
+            "Carry the Committee's Conditions",
+            "Draft the Starting Points for the Plan"
+          ]
+        },
+        {
+          "process": "ref/pc/prepare-and-hold-a-board-meeting",
+          "activities": [
+            "Read Progress on the Value Creation Plan",
+            "Write the Director's Brief",
+            "Update the Plan and the Watch List"
+          ]
+        },
+        {
+          "process": "ref/pc/write-the-value-creation-plan",
+          "activities": [
+            "Take in the Starting Points",
+            "Hear Management's View",
+            "List the Candidate Changes",
+            "Check What the Company Can Carry",
+            "Give Each Change an Owner and a Measure",
+            "Plan the First Months",
+            "Set the Firm's Help",
+            "Close or Replace a Dead Change",
+            "Issue the Plan at a Version"
+          ]
+        }
+      ]
+    }
+  }
+}

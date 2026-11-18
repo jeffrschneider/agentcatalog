@@ -33,7 +33,7 @@ ask again.
 | 8 | Book the First Meeting | a time, the attendees and the brief | [meeting-scheduler](../../agents/meeting-scheduler.md) |
 | 9 | Hold the First Meeting | the partners present, and the notes are written | partners (person) · meeting-scheduler |
 | 10 | Record What the Investor Said | interest, questions, size and timing | investor-relations-manager |
-| 11 | Open the Data Room to the Investor | access under a signed confidentiality agreement | investor-relations-manager · investor relations lead (person) |
+| 11 | Open the Data Room to the Investor | access under a signed confidentiality agreement | investor-relations-manager · [portal-keeper](../../agents/portal-keeper.md) · investor relations lead (person) |
 | 12 | Answer the Follow-Up Questions | each question answered, or sent to a questionnaire run | investor-relations-manager · partners (person) |
 | 13 | Hold the Follow-Up Meetings | partner meetings, office visits and on-site reviews | meeting-scheduler · partners (person) |
 | 14 | Arrange the Reference Calls | earlier investors and founders who will speak | relationship-mapper · meeting-scheduler |

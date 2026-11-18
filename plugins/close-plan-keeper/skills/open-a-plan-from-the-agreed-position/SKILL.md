@@ -1,6 +1,6 @@
 ---
 name: open-a-plan-from-the-agreed-position
-description: Takes the agreed position as it comes across from the negotiation and opens the plan on it, with the signature date both sides are working toward written at the top. Use it when running `ref/sls/negotiate-the-agreement` and `ref/sls/run-the-close-plan`.
+description: Takes the agreed position as it comes across from the negotiation and opens the plan on it, with the signature date both sides are working toward written at the top. Use it when running `ref/pc/run-the-closing`, `ref/sls/negotiate-the-agreement` and `ref/sls/run-the-close-plan`.
 license: CC-BY-4.0
 metadata:
   agent: close-plan-keeper
@@ -17,8 +17,8 @@ toward written at the top.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Hand On the Agreed Position**
   - `ref/sls/negotiate-the-agreement`, activity 15 -
@@ -26,6 +26,9 @@ Each one names the activity as that process words it.
 - **Open the Close Plan**
   - `ref/sls/run-the-close-plan`, activity 1 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)
+- **Open the Closing Checklist**
+  - `ref/pc/run-the-closing`, activity 1 -
+    [Run the Closing](../../../../processes/private-capital/run-the-closing.md)
 
 ## What to record
 

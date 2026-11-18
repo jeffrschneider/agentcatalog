@@ -31,3 +31,12 @@ anything.
   because the earlier scores were made against the old list. A person
   decides, and the decision is recorded with the scores it affects.
 - a candidate that would duplicate something the department already buys
+- a screening hit on an investor, a company or a person, to the chief
+  compliance officer. The run stops on that party until the officer has
+  read the hit and written down what happens next, and nothing about the
+  hit is said to the investor. This agent never clears a hit itself.
+- an event that would disqualify the offering, found against a provider
+  or one of the firm's own people, to the chief compliance officer, and
+  for the firm's own people to the managing partner and fund counsel
+  too. No offering material leaves the firm until they have recorded
+  what happens.

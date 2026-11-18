@@ -1,6 +1,6 @@
 ---
 name: read-every-commitment-out-loud
-description: Reads every commitment at review with its owner, its date and its state, marked met, running, late or untouched, so nothing stays open by silence. Use it when running `ref/prt/review-a-joint-plan`.
+description: Reads every commitment at review with its owner, its date and its state, marked met, running, late or untouched, so nothing stays open by silence. Use it when running `ref/pc/prepare-and-hold-a-board-meeting`, `ref/pc/write-the-value-creation-plan` and `ref/prt/review-a-joint-plan`.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,12 +17,24 @@ silence.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in five activities across three reference processes.
+Each one names the activity as that process words it.
 
+- **Follow Up the Actions**
+  - `ref/pc/prepare-and-hold-a-board-meeting`, activity 18 -
+    [Prepare and Hold a Board Meeting](../../../../processes/private-capital/prepare-and-hold-a-board-meeting.md)
+- **Read Progress Against the Plan**
+  - `ref/pc/write-the-value-creation-plan`, activity 15 -
+    [Write the Value Creation Plan](../../../../processes/private-capital/write-the-value-creation-plan.md)
+- **Read Progress on the Value Creation Plan**
+  - `ref/pc/prepare-and-hold-a-board-meeting`, activity 4 -
+    [Prepare and Hold a Board Meeting](../../../../processes/private-capital/prepare-and-hold-a-board-meeting.md)
 - **Read the Commitments**
   - `ref/prt/review-a-joint-plan`, activity 5 -
     [Review a Joint Plan](../../../../processes/partners/review-a-joint-plan.md)
+- **Read the Open Actions**
+  - `ref/pc/prepare-and-hold-a-board-meeting`, activity 5 -
+    [Prepare and Hold a Board Meeting](../../../../processes/private-capital/prepare-and-hold-a-board-meeting.md)
 
 ## What to record
 

@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "reporting-manager",
   "version": "1.0.0",
-  "description": "The reporting-manager abstract agent. Owns the department's report for one reporting period. It says what the report will cover and when it is due, asks every channel and every run for the same things, sets each result beside what that run said it would do, and writes the account of why the numbers moved.",
+  "description": "The reporting-manager abstract agent. Owns one report for one reporting period, such as a department's report to its leaders or a fund's quarterly report to its investors.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -14,9 +14,9 @@
     "abstract-agent",
     "reference",
     "marketing",
+    "issue-the-quarterly-report-and-statements",
     "marketing-performance-report",
     "quarterly-business-review",
-    "set-marketing-budget",
     "abstract"
   ],
   "extensions": {
@@ -25,7 +25,7 @@
       "agentVersion": 1,
       "department": "marketing",
       "abstract": true,
-      "works": "Runs collect-and-report for the period: every contributor is asked the same question, every line keeps the source it came from, the report ships on its date complete or not, and two sources that disagree both appear in the report. Requests an approval before the report leaves the department when the process names a signer, and convenes the meeting where the finished report is read when the department holds one.",
+      "works": "Runs collect-and-report for the period: every contributor is asked the same question, every line keeps the source it came from, the report ships on its date complete or not, and two sources that disagree both appear in the report. Requests an approval before the report goes out when the process names a signer, and convenes the meeting where the finished report is read when one is held.",
       "servers": [
         {
           "name": "analytics platforms",
@@ -49,6 +49,24 @@
           "needs": "What each run said it would do."
         },
         {
+          "name": "the fund's books",
+          "role": "funds-books",
+          "access": "read",
+          "needs": "The approved marks, the performance figures and each investor's capital account, when the report goes to a fund's investors."
+        },
+        {
+          "name": "the portfolio reporting system",
+          "role": "portfolio-reporting-system",
+          "access": "read",
+          "needs": "Each company's quarter as the portfolio review read it, for the letter to the fund's investors."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "The investors hear before the date passes when a late report will arrive."
+        },
+        {
           "name": "the report store",
           "role": "report-store",
           "access": "write",
@@ -63,12 +81,14 @@
       "escalates": [
         "a result far enough off what was committed that waiting for the report date would waste the warning",
         "a source that will not answer in time, raised before the report date instead of explained afterward",
-        "a request to leave a result out of the report or to restate it. This agent never removes a number because somebody asked. A person decides, and the decision is recorded with the report."
+        "a request to leave a result out of the report or to restate it. This agent never removes a number because somebody asked. A person decides, and the decision is recorded with the report.",
+        "a mark that is not approved by the time the report needs it, or one that looks wrong beside the company's quarter - to the valuation committee through the chief financial officer (CFO). The report uses the marks as that committee approved them, and this agent never reports a mark the committee has not approved or changes one itself.",
+        "clearing and signing a fund's quarterly report - to the chief compliance officer, then to the CFO and a partner as named signers, always. Nothing goes out unsigned, a change to any figure after signing goes back to them, and this agent never signs its own report."
       ],
       "not": [
         "Does not replace the analytics agent.",
         "Analytics measures a run and reports the numbers with their sources attached; this agent gathers those reports for a period and sets them against what was committed.",
-        "Does not set the targets it reports against, and does not decide what the department does next - it gives leadership the account they decide from.",
+        "Does not set the targets it reports against, and does not decide what the department or the fund does next - it gives the people who decide the account they decide from.",
         "Does not run a campaign or a published piece.",
         "The campaign-manager and the content-manager answer for those, and this agent reports what they did."
       ],
@@ -173,6 +193,18 @@
             "Phase the Money across the Year",
             "Name What the Budget Is Reported Against",
             "Tell Every Function What It Has"
+          ]
+        },
+        {
+          "process": "ref/pc/issue-the-quarterly-report-and-statements",
+          "activities": [
+            "Open the Quarter's Report",
+            "Take in the Approved Marks",
+            "Collect the Company Updates",
+            "Write the Quarter's Letter",
+            "Check the Report for Compliance",
+            "Answer the Investors' Questions",
+            "Record What the Quarter Taught"
           ]
         }
       ]

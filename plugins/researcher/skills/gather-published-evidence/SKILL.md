@@ -1,6 +1,6 @@
 ---
 name: gather-published-evidence
-description: Pulls together what has already been published on a subject and reads the primary source rather than somebody's write-up of it. Use it when running `ref/mkt/annual-marketing-plan` and 16 other reference processes.
+description: Pulls together what has already been published on a subject and reads the primary source rather than somebody's write-up of it. Use it when running `ref/mkt/annual-marketing-plan` and 19 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -20,7 +20,7 @@ answers the question.
 
 ## Where it happens
 
-The agent does this in nine activities across seventeen reference
+The agent does this in eleven activities across twenty reference
 processes. Each one names the activity as that process words it.
 
 - **Check What Is Already Known**
@@ -51,6 +51,8 @@ processes. Each one names the activity as that process words it.
     [Segment the Market](../../../../processes/marketing/segment-the-market.md)
   - `ref/mkt/size-market-opportunity`, activity 4 -
     [Size Market Opportunity](../../../../processes/marketing/size-market-opportunity.md)
+  - `ref/pc/map-a-sector`, activity 3 -
+    [Map a Sector](../../../../processes/private-capital/map-a-sector.md)
 - **Gather the Outside Picture**
   - `ref/mkt/brief-executive-leadership`, activity 8 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
@@ -63,9 +65,15 @@ processes. Each one names the activity as that process words it.
     [Pitch Earned Media](../../../../processes/marketing/pitch-earned-media.md)
   - `ref/mkt/sales-enablement-kit`, activity 4 -
     [Produce Sales Enablement Kit](../../../../processes/marketing/sales-enablement-kit.md)
+- **Read the Market for Each Route**
+  - `ref/pc/plan-the-exit`, activity 6 -
+    [Plan the Exit](../../../../processes/private-capital/plan-the-exit.md)
 - **Read the Outside Conditions**
   - `ref/mkt/quarterly-business-review`, activity 5 -
     [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)
+- **Research the Market**
+  - `ref/pc/set-the-fund-strategy`, activity 4 -
+    [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)
 
 ## What to record
 

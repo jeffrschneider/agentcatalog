@@ -1,6 +1,6 @@
 ---
 name: check-claims-against-their-sources
-description: Takes a claim somebody wants to publish, finds the source under it, and says whether that source actually carries the claim. Use it when running `ref/mkt/announce-company-news` and 9 other reference processes.
+description: Takes a claim somebody wants to publish, finds the source under it, and says whether that source actually carries the claim. Use it when running `ref/mkt/announce-company-news` and 10 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -19,7 +19,7 @@ next person can check the same thing.
 
 ## Where it happens
 
-The agent does this in nine activities across ten reference processes.
+The agent does this in ten activities across eleven reference processes.
 Each one names the activity as that process words it.
 
 - **Check Whether the Facts Still Hold**
@@ -52,6 +52,9 @@ Each one names the activity as that process words it.
     [Define Brand Positioning](../../../../processes/marketing/brand-positioning.md)
   - `ref/mkt/product-positioning`, activity 9 -
     [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)
+- **Test the Thesis Against the Evidence**
+  - `ref/pc/map-a-sector`, activity 4 -
+    [Map a Sector](../../../../processes/private-capital/map-a-sector.md)
 - **Verify the Customer's Results**
   - `ref/mkt/customer-case-study`, activity 7 -
     [Produce Customer Case Study](../../../../processes/marketing/customer-case-study.md)

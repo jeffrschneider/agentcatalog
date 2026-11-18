@@ -39,6 +39,10 @@ answered.
 - `ref/mkt/set-marketing-budget` / Read Last Year's Spend, Test the Asks
   against the Goals, Phase the Money across the Year, Name What the
   Budget Is Reported Against, Tell Every Function What It Has
+- `ref/pc/issue-the-quarterly-report-and-statements` / Open the
+  Quarter's Report, Take in the Approved Marks, Collect the Company
+  Updates, Write the Quarter's Letter, Check the Report for Compliance,
+  Answer the Investors' Questions, Record What the Quarter Taught
 
 ## Patterns
 
@@ -59,6 +63,10 @@ meeting where the finished report is read when one is held.
 - the fund's books (read) - the approved marks, the performance figures
   and each investor's capital account, when the report goes to a fund's
   investors
+- the portfolio reporting system (read) - each company's quarter as the
+  portfolio review read it, for the letter to the fund's investors
+- the notification channel (write) - the investors hear before the date
+  passes when a late report will arrive
 - the report store (write) - each period's report lands at a version
 
 ## Records
@@ -78,6 +86,15 @@ corrects stays where it was.
 - a request to leave a result out of the report or to restate it. This
   agent never removes a number because somebody asked. A person decides,
   and the decision is recorded with the report.
+- a mark that is not approved by the time the report needs it, or one
+  that looks wrong beside the company's quarter - to the valuation
+  committee through the chief financial officer (CFO). The report uses
+  the marks as that committee approved them, and this agent never
+  reports a mark the committee has not approved or changes one itself.
+- clearing and signing a fund's quarterly report - to the chief
+  compliance officer, then to the CFO and a partner as named signers,
+  always. Nothing goes out unsigned, a change to any figure after
+  signing goes back to them, and this agent never signs its own report.
 
 ## Not
 

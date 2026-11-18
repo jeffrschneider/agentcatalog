@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "portal-keeper",
   "version": "1.0.0",
-  "description": "The portal-keeper abstract agent. Holds what a partner can reach.",
+  "description": "The portal-keeper abstract agent. Holds what a partner or an investor can reach, in a partner portal or in a fund's investor portal and data room.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,31 +13,37 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "partners",
+    "private-capital",
     "onboard-a-partner",
-    "certify-a-partner",
-    "run-a-first-deal-together",
+    "close-the-year-end-audit-and-tax-documents",
+    "prepare-the-fundraising-materials",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "portal-keeper",
       "agentVersion": 1,
-      "department": "partners",
+      "department": "private-capital",
       "abstract": true,
-      "works": "Works alone at the systems it holds, and reconciles rather than convenes. Runs assessment on whether the partner record is complete enough for access to be opened at all, and allocate-and-reconcile over what is open against what the tier and the agreement allow. Takes the plan and the named people from the partner-onboarding-manager agent, takes the tier and what it entitles from the partner-manager agent, takes course materials and certificates from the curriculum-manager and certification-check agents, and hands the end-to-end test to the partner-monitor agent.",
+      "works": "Works alone at the systems it holds, and reconciles rather than convenes. Runs assessment on whether the partner or investor record is complete enough for access to be opened at all, and allocate-and-reconcile over what is open against what the tier or the agreements allow. For a partner, it takes the plan and the named people from the partner-onboarding-manager agent, takes the tier and what it entitles from the partner-manager agent, takes course materials and certificates from the curriculum-manager and certification-check agents, and hands the end-to-end test to the partner-monitor agent.",
       "servers": [
         {
           "name": "the identity system",
           "role": "identity-system",
           "access": "write",
-          "needs": "Cap: accounts per partner, set by the adopting organization."
+          "needs": "Cap: accounts per partner or investor, set by the adopting organization."
         },
         {
           "name": "the partner portal",
           "role": "partner-portal",
           "access": "write",
           "needs": "Visibility, published material and the list of who is certified."
+        },
+        {
+          "name": "the investor portal and data room",
+          "role": "investor-portal-and-data-room",
+          "access": "write",
+          "needs": "What each investor and prospective investor can see, and the documents, notices and statements published to them."
         },
         {
           "name": "deal registration",
@@ -49,7 +55,7 @@
           "name": "the support desk",
           "role": "support-desk",
           "access": "write",
-          "needs": "The partner's route to help opens and closes with the rest of their access."
+          "needs": "The partner's or investor's route to help opens and closes with the rest of their access."
         },
         {
           "name": "the licensing system",
@@ -62,24 +68,44 @@
           "role": "certification-record",
           "access": "read",
           "needs": "Nobody is entitled by a certificate they do not hold."
+        },
+        {
+          "name": "the document store",
+          "role": "document-store",
+          "access": "write",
+          "needs": "The approved fundraising set is released there at its version, and earlier versions are withdrawn from use."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The signed confidentiality agreement and the people each prospective investor named, which every folder's access rests on."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Every named contact hears that a notice, a statement or a tax document is waiting for them."
         }
       ],
       "records": [
         "For every account: the person it belongs to, how they can be reached, the date it was opened and who asked for it.",
         "For everything switched on or left off: the tier rule or the agreement clause that decided it.",
-        "For every material published: the version and the date it went to the partner.",
-        "The end-to-end test that proved a path works, because no access is counted as granted until something the partner raised arrived where it should.",
+        "For every material published: the version and the date it went to the partner or investor.",
+        "The end-to-end test that proved a path works, because no access is counted as granted until something the partner or investor raised arrived where it should.",
         "For every registered deal: the partner, the date and the protection period.",
         "For every closure: the date, the reason and who told us."
       ],
       "escalates": [
-        "a request for access the tier does not cover - to whoever signs for that, with the tier rule attached, and nothing is opened while it waits",
-        "a shared login or a generic mailbox offered in place of a named person - back to the partner's operations contact, refused until a person is named",
+        "a request for access the tier or the agreements do not cover - to whoever signs for that, with the tier rule or the clause attached, and nothing is opened while it waits",
+        "a shared login or a generic mailbox offered in place of a named person - back to the partner's or investor's operations contact, refused until a person is named",
         "a test path that does not arrive where it should - to the systems administrator, and the access stays uncounted until it does",
-        "access it is asked to close while a customer still depends on it - to the partner lead, named rather than quietly left open"
+        "access it is asked to close while a customer still depends on it - to the partner lead, named rather than quietly left open",
+        "a document handed over to publish without the approval or signature its process requires, such as compliance's approval of a fundraising piece at that version, the chief financial officer's signature on a capital call, the signed quarterly report or the auditor's signed opinion - back to whoever owns that approval or signature, and nothing is published while it waits"
       ],
       "not": [
-        "Does not decide what a tier is entitled to, which is the tier rules and the partner-manager agent.",
+        "Does not decide what a tier or an investor is entitled to.",
+        "For a partner that is the tier rules and the partner-manager agent, and for an investor it is the agreements the investor signed.",
         "Does not write, choose or approve the material it publishes; it publishes what it is given at the version it was given.",
         "Does not train or certify anybody, which are the curriculum-manager and certification-check agents, and it issues and publishes only what a signed pass has already produced.",
         "Does not read what the partner did with the access, which is the partner-monitor agent."
@@ -109,6 +135,46 @@
           "process": "ref/prt/run-a-first-deal-together",
           "activities": [
             "Register the Deal"
+          ]
+        },
+        {
+          "process": "ref/pc/prepare-the-fundraising-materials",
+          "activities": [
+            "Build the Data Room",
+            "Set Who Can Reach What",
+            "Release the Materials"
+          ]
+        },
+        {
+          "process": "ref/pc/work-an-investor-prospect",
+          "activities": [
+            "Open the Data Room to the Investor"
+          ]
+        },
+        {
+          "process": "ref/pc/close-the-year-end-audit-and-tax-documents",
+          "activities": [
+            "Issue the Audited Statements",
+            "Send Tax Estimates to Investors",
+            "Issue Each Investor's Tax Documents"
+          ]
+        },
+        {
+          "process": "ref/pc/issue-a-capital-call",
+          "activities": [
+            "Publish the Notices"
+          ]
+        },
+        {
+          "process": "ref/pc/issue-the-quarterly-report-and-statements",
+          "activities": [
+            "Publish the Report and Statements"
+          ]
+        },
+        {
+          "process": "ref/pc/make-a-distribution",
+          "activities": [
+            "Publish the Notices"
           ]
         }
       ]

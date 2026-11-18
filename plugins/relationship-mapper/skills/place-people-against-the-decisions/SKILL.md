@@ -1,6 +1,6 @@
 ---
 name: place-people-against-the-decisions
-description: Places each person against a named decision rather than against the logo, and says whether they decide, influence, block or use. Use it when running `ref/sls/map-the-account-people` and `ref/sls/write-an-account-plan`.
+description: Places each person against a named decision rather than against the logo, and says whether they decide, influence, block or use. Use it when running `ref/pc/reach-out-to-a-company` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: relationship-mapper
@@ -18,9 +18,15 @@ behind an opportunity a plan carries.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
+- **Find Who Decides at the Company**
+  - `ref/pc/reach-out-to-a-company`, activity 4 -
+    [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
+- **Map the Investor's Decision**
+  - `ref/pc/work-an-investor-prospect`, activity 6 -
+    [Work an Investor Prospect](../../../../processes/private-capital/work-an-investor-prospect.md)
 - **Name Who Buys Each One**
   - `ref/sls/write-an-account-plan`, activity 7 -
     [Write an Account Plan](../../../../processes/sales/write-an-account-plan.md)

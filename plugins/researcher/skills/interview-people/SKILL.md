@@ -1,6 +1,6 @@
 ---
 name: interview-people
-description: Sits down with customers, buyers, sellers and the people who build the product, asks them what happened, and takes down what they said in their own words. Use it when running `ref/mkt/advisory-board` and 7 other reference processes.
+description: Sits down with customers, buyers, sellers and the people who build the product, asks them what happened, and takes down what they said in their own words. Use it when running `ref/mkt/advisory-board` and 9 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -18,9 +18,18 @@ who said what.
 
 ## Where it happens
 
-The agent does this in eight activities across eight reference
-processes. Each one names the activity as that process words it.
+The agent does this in twelve activities across ten reference processes.
+Each one names the activity as that process words it.
 
+- **Call Industry Experts**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 10 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
+- **Call Lost and Prospective Customers**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 9 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
+- **Call the Company's Customers**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 8 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
 - **Collect the Early Input**
   - `ref/mkt/advisory-board`, activity 10 -
     [Convene Customer Advisory Board](../../../../processes/marketing/advisory-board.md)
@@ -47,6 +56,9 @@ processes. Each one names the activity as that process words it.
 - **Interview the Makers**
   - `ref/mkt/product-positioning`, activity 6 -
     [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)
+- **Read What Investors Will Back**
+  - `ref/pc/set-the-fund-strategy`, activity 5 -
+    [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)
 
 ## What to record
 

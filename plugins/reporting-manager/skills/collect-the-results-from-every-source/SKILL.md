@@ -1,6 +1,6 @@
 ---
 name: collect-the-results-from-every-source
-description: Asks every channel and every run for the same things, in the same format, by the same date, and pulls together what comes back with a source on every line. Use it when running `ref/mkt/brief-executive-leadership` and `ref/mkt/marketing-performance-report`.
+description: Asks every source and every run for the same things, in the same format, by the same date, and pulls together what comes back with a source on every line. Use it when running `ref/mkt/brief-executive-leadership`, `ref/mkt/marketing-performance-report` and `ref/pc/issue-the-quarterly-report-and-statements`.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -11,21 +11,27 @@ metadata:
 
 ## What it does
 
-Asks every channel and every run for the same things, in the same
-format, by the same date, and pulls together what comes back with a
-source on every line.
+Asks every source and every run for the same things, in the same format,
+by the same date, and pulls together what comes back with a source on
+every line.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Ask Every Source the Same Things**
   - `ref/mkt/marketing-performance-report`, activity 2 -
     [Report Marketing Performance](../../../../processes/marketing/marketing-performance-report.md)
+- **Collect the Company Updates**
+  - `ref/pc/issue-the-quarterly-report-and-statements`, activity 9 -
+    [Issue the Quarterly Report and Statements](../../../../processes/private-capital/issue-the-quarterly-report-and-statements.md)
 - **Pull the Results for the Period**
   - `ref/mkt/brief-executive-leadership`, activity 4 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+- **Take in the Approved Marks**
+  - `ref/pc/issue-the-quarterly-report-and-statements`, activity 3 -
+    [Issue the Quarterly Report and Statements](../../../../processes/private-capital/issue-the-quarterly-report-and-statements.md)
 
 ## What to record
 

@@ -34,7 +34,7 @@ consent the deal would need named.
 | 10 | Check the Investment Period | the fund may still make new investments on this date | mandate-check |
 | 11 | Find Conflicts with Other Funds | another of the firm's funds in the same company or deal | mandate-check |
 | 12 | Find Conflicts with Portfolio Companies | competitors, customers or suppliers of holdings | mandate-check |
-| 13 | Find Interests of the Firm's People | personal holdings, board seats and fees | mandate-check · chief compliance officer (person) |
+| 13 | Find Interests of the Firm's People | personal holdings, directorships and fees | mandate-check · chief compliance officer (person) |
 | 14 | Clear Each Conflict | resolved, managed with a condition, or sent for consent | chief compliance officer (person) · mandate-check |
 | 15 | Name the Consents Needed | advisory committee or investor consents, with the clause | mandate-check · chief compliance officer (person) |
 | 16 | Issue the Result | clear, clear with conditions, or blocked, dated | mandate-check |
@@ -173,7 +173,7 @@ phases:
                          owner: mandate-check     after: read-limits
                          automation: <level>
   people-conflicts     - runs collect-and-report: the personal holdings,
-                         board seats, fees and relationships of the
+                         directorships, fees and relationships of the
                          firm's people that touch the company or the
                          seller, from their declarations
                          owner: mandate-check     after: read-limits

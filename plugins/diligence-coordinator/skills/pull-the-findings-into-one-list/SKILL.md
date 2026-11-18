@@ -1,6 +1,6 @@
 ---
 name: pull-the-findings-into-one-list
-description: Brings every specialist's finding into one rated list with an owner and a date against each, names every claim that stayed unproved as unproved rather than dropping it, and reports go, go with conditions or stop to the sponsor with the cut scope attached. Use it when running `ref/prt/run-alliance-diligence`.
+description: Brings every specialist's finding into one rated list with an owner and a date against each, names every claim that stayed unproved as unproved rather than dropping it, and reports go, go with conditions or stop to the sponsor with the cut scope attached. Use it when running `ref/pc/run-commercial-and-product-diligence` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: diligence-coordinator
@@ -18,12 +18,24 @@ the sponsor with the cut scope attached.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
+- **Decide What Each Finding Needs**
+  - `ref/pc/run-legal-and-compliance-diligence`, activity 18 -
+    [Run Legal and Compliance Diligence](../../../../processes/private-capital/run-legal-and-compliance-diligence.md)
 - **List the Findings**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 15 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
+  - `ref/pc/run-financial-diligence`, activity 14 -
+    [Run Financial Diligence](../../../../processes/private-capital/run-financial-diligence.md)
+  - `ref/pc/run-legal-and-compliance-diligence`, activity 17 -
+    [Run Legal and Compliance Diligence](../../../../processes/private-capital/run-legal-and-compliance-diligence.md)
   - `ref/prt/run-alliance-diligence`, activity 15 -
     [Run Alliance Diligence](../../../../processes/partners/run-alliance-diligence.md)
+- **Report to the Deal Lead**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 16 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
 - **Report to the Sponsor**
   - `ref/prt/run-alliance-diligence`, activity 17 -
     [Run Alliance Diligence](../../../../processes/partners/run-alliance-diligence.md)

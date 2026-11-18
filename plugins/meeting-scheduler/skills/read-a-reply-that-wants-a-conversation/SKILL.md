@@ -1,6 +1,6 @@
 ---
 name: read-a-reply-that-wants-a-conversation
-description: Takes in a reply that wants to talk, with the thread and the touch that caused it, and reads what the person actually asked for and how soon they want it. Use it when running `ref/sls/book-the-meeting`, `ref/sls/run-an-outbound-sequence` and `ref/sls/work-a-referral`.
+description: Takes in a reply that wants to talk, with the thread and the touch that caused it, and reads what the person actually asked for and how soon they want it. Use it when running `ref/pc/fill-a-key-role-at-a-portfolio-company` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: meeting-scheduler
@@ -17,7 +17,7 @@ they want it. An introduction that lands is taken in the same way.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Hand over the Positive Replies**
@@ -29,6 +29,9 @@ Each one names the activity as that process words it.
 - **Take in the Reply**
   - `ref/sls/book-the-meeting`, activity 1 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)
+- **Take in the Request**
+  - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 1 -
+    [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
 - **Take the Handover**
   - `ref/sls/work-a-referral`, activity 11 -
     [Work a Referral](../../../../processes/sales/work-a-referral.md)

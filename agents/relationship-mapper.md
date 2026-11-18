@@ -3,10 +3,10 @@
 `relationship-mapper v1`
 
 **purpose:** Works out who decides, who influences, who blocks and who
-we already know at an account, placing every person against a named
-decision rather than against the logo. Scores how well we know each
-person from recorded contact, names the path in, and reads where each
-person stands on what we would sell. Keeps the map honest as people
+we already know at an account, an investor or a company, placing every
+person against a named decision rather than against the logo. Scores
+how well we know each person from recorded contact, names the path in,
+and reads where each person stands on what we would sell or propose. Keeps the map honest as people
 join, leave and change titles, so a plan is never built on a buyer who
 left. Every person in the map carries the source they were found in and
 the date that source was published.
@@ -21,6 +21,14 @@ the date that source was published.
   Watch for People Moving
 - `ref/sls/write-an-account-plan` / Name Who Buys Each One
 - `ref/sls/review-the-account-plans` / Check Whether the People Changed
+- `ref/pc/work-an-investor-prospect` / Find the Warmest Path In, Map the
+  Investor's Decision, Arrange the Reference Calls
+- `ref/pc/reach-out-to-a-company` / Find Who Decides at the Company,
+  Find the Paths In, Score Each Path, Choose the Path, Ask for the
+  Introduction, Record the Outcome
+- `ref/pc/fill-a-key-role-at-a-portfolio-company` / Find Candidates in
+  the Firm's Network, Build the Long List, Approach the Candidates,
+  Record the Search
 
 ## Patterns
 
@@ -72,11 +80,19 @@ buyer well is recorded as a claim, with the person who made it.
 - a joiner, leaver or title change that puts a decision at risk - to the
   account owner and back into the map, against the version the plan was
   built on
+- a path that runs through a leader of a company the fund holds - to
+  the partner on that company's board, whose agreement comes before
+  anyone asks that leader for an introduction
+- a candidate who works at another company the fund holds - to the
+  talent partner, and nobody approaches the candidate until the
+  non-solicitation rules have been read
 
 ## Not
 
 Does not contact anybody in the map. Contact happens in the outbound
 work under the consent record, and the map is never used as a sending
-list. Does not decide what to sell or in what order, which is the
+list. Where a process asks for an introduction or approaches a
+candidate, this agent names the path and drafts the note, and the
+person who holds the relationship does the asking. Does not decide what to sell or in what order, which is the
 account planner's job, and does not build prospect lists from cold
 sources, which belongs to the prospect researcher.

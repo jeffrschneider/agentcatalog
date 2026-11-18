@@ -23,3 +23,12 @@ does not mark a condition done without the evidence behind it.
   negotiation
 - a deal quiet past the limit the plan sets, to whoever decides whether
   it is still live
+- a payment somebody wants made that the funds flow does not carry, or a
+  payee's account changed close to the closing date, to the chief
+  financial officer and the wire-check agent, and that line waits until
+  the instruction is verified again, because this agent releases no
+  money
+- the fund's cash not in place for the closing date, because the capital
+  call or the credit line will not land in time, to the chief financial
+  officer and the deal lead partner, who decide with the other side
+  whether the date moves

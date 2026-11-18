@@ -15,7 +15,8 @@
     "reference",
     "partners",
     "review-a-joint-plan",
-    "write-a-joint-plan",
+    "prepare-and-hold-a-board-meeting",
+    "write-the-value-creation-plan",
     "abstract"
   ],
   "extensions": {
@@ -49,6 +50,12 @@
           "role": "partner-record",
           "access": "read",
           "needs": "Who on each side owns what."
+        },
+        {
+          "name": "the portfolio reporting system",
+          "role": "portfolio-reporting-system",
+          "access": "read",
+          "needs": "Each change's measure as the company reports it, read beside the baseline at every review."
         }
       ],
       "records": [
@@ -62,7 +69,8 @@
         "a commitment moved twice - to whoever the plan names above the owner, rather than moving it a third time, and the escalation ends with it funded, reassigned or closed as dead",
         "a commitment carrying no owner or no date before signing - to the drafters, and the line is struck from the plan rather than tracked as a sentence",
         "a plan whose commitments are all closed or dead - to whoever decides whether the partnership continues, instead of dating another review out of habit",
-        "a signed plan with no review on anybody's calendar - to both sponsors, because the run does not close until there is one"
+        "a signed plan with no review on anybody's calendar - to both sponsors, because the run does not close until there is one",
+        "a board action with no owner - to the firm's board director, and the action stays open on the record with the gap named until it has one"
       ],
       "not": [
         "Does not decide what changes in the plan or write the amendment, which is the joint-planner agent.",
@@ -86,6 +94,23 @@
             "Say Which Commitments Are Dead",
             "Record the Decisions and the Dates",
             "Set the Next Review"
+          ]
+        },
+        {
+          "process": "ref/pc/prepare-and-hold-a-board-meeting",
+          "activities": [
+            "Read Progress on the Value Creation Plan",
+            "Read the Open Actions",
+            "Record the Decisions and Actions",
+            "Follow Up the Actions"
+          ]
+        },
+        {
+          "process": "ref/pc/write-the-value-creation-plan",
+          "activities": [
+            "Load the Plan into the Tracker",
+            "Set the Review Cadence",
+            "Read Progress Against the Plan"
           ]
         }
       ]

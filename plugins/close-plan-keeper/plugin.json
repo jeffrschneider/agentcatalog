@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "close-plan-keeper",
   "version": "1.0.0",
-  "description": "The close-plan-keeper abstract agent. Holds the close plan. Starting from the agreed position and the signature date both sides are working toward, it lists every step still owed as one set rather than two, puts one named owner and one date on each, and counts the dates back from signing.",
+  "description": "The close-plan-keeper abstract agent. Holds the close plan, or the checklist for forming a fund. Starting from the agreed position and the date the work is aiming at, it lists every step still owed as one set rather than two, puts one named owner and one date on each, and counts the dates back from that date.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -15,8 +15,8 @@
     "reference",
     "sales",
     "run-the-close-plan",
-    "record-a-lost-deal",
-    "negotiate-the-agreement",
+    "form-the-fund",
+    "run-the-closing",
     "abstract"
   ],
   "extensions": {
@@ -62,6 +62,24 @@
           "role": "shared-workspace-with-the-buyer",
           "access": "write",
           "needs": "The plan and the dates both sides hold."
+        },
+        {
+          "name": "the deal pipeline",
+          "role": "deal-pipeline",
+          "access": "write",
+          "needs": "The closing's state against the deal, and the post-closing items with their owners and dates."
+        },
+        {
+          "name": "the cap table record",
+          "role": "cap-table-record",
+          "access": "read",
+          "needs": "The capitalization as it will stand at closing, which the funds flow is built against."
+        },
+        {
+          "name": "the document store",
+          "role": "document-store",
+          "access": "read",
+          "needs": "The formation drafts and filings at the versions counsel released, as the evidence a step is done."
         }
       ],
       "records": [
@@ -79,7 +97,9 @@
         "a step with no owner on the buyer's side, to the buyer's procurement lead, and the step is treated as stalled until it has a name",
         "a close condition still open when the document would go out, to whoever may accept an open condition in writing, and the acceptance is recorded against the agreement",
         "a security question the library cannot answer, to a named person, and if the honest answer is no, the term it affects goes back to the negotiation",
-        "a deal quiet past the limit the plan sets, to whoever decides whether it is still live"
+        "a deal quiet past the limit the plan sets, to whoever decides whether it is still live",
+        "a payment somebody wants made that the funds flow does not carry, or a payee's account changed close to the closing date, to the chief financial officer and the wire-check agent, and that line waits until the instruction is verified again, because this agent releases no money",
+        "the fund's cash not in place for the closing date, because the capital call or the credit line will not land in time, to the chief financial officer and the deal lead partner, who decide with the other side whether the date moves"
       ],
       "not": [
         "Does not execute the signature or confirm who signs, which is the signature-manager agent.",
@@ -115,6 +135,32 @@
             "Re-Plan When a Date Moves",
             "Report the Plan",
             "Confirm the Close Conditions",
+            "Close the Plan on the Record"
+          ]
+        },
+        {
+          "process": "ref/pc/form-the-fund",
+          "activities": [
+            "Take in the Decided Strategy",
+            "Open the Formation Checklist",
+            "Form the Entities",
+            "Draft the Partnership Agreement",
+            "Draft the Subscription Documents",
+            "Make the Regulatory Filings",
+            "Open the Fund's Records",
+            "Close the Formation Checklist"
+          ]
+        },
+        {
+          "process": "ref/pc/run-the-closing",
+          "activities": [
+            "Open the Closing Checklist",
+            "Put an Owner and a Date on Each",
+            "Request the Capital Call",
+            "Work the Closing Conditions",
+            "Build the Funds Flow",
+            "Confirm Every Condition Is Met",
+            "Track the Post-Closing Items",
             "Close the Plan on the Record"
           ]
         }

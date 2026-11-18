@@ -30,7 +30,7 @@ still owe after closing has an owner and a date.
 | 8 | Verify the Payment Instructions | each account confirmed on an independent call | [wire-check](../../agents/wire-check.md) |
 | 9 | Confirm Every Condition Is Met | each condition done with evidence, or waived | close-plan-keeper · outside counsel (person) |
 | 10 | Sign the Closing Documents | each signer signs in the agreed order | fund signatory (person) · signature-manager |
-| 11 | Release the Money | the funds flow wired on the closing date | chief financial officer (person) · wire-check |
+| 11 | Release the Money | the funds flow wired on the closing date | chief financial officer (person) · second signer (person) |
 | 12 | Confirm the Money Arrived | each payee's receipt matched to the funds flow | wire-check |
 | 13 | Collect the Executed Set | every signed document and exhibit, filed | signature-manager |
 | 14 | Record the Fund's Position | shares, class, price and rights on the record | cap-table-keeper |

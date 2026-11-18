@@ -2,7 +2,7 @@
 
 `redline-reviewer v1`
 
-**purpose:** Reads the buyer's changes against the standard terms
+**purpose:** Reads the other side's changes against the standard terms
 clause by clause. Fixes which template version and which pre-approved
 fallbacks are in force, splits the markup into one item per changed
 clause with both texts side by side, and marks each change as standard
@@ -24,6 +24,12 @@ agreement.
   Counter-Markup, Send the Counter Back, Work the Round Trips, Confirm
   the Clean Copy, Log the Clause Decisions
 - `ref/sls/run-the-close-plan` / Confirm the Close Conditions
+- `ref/pc/negotiate-the-fund-terms-and-side-letters` / Read the Markup
+  Clause by Clause, Classify Each Change, Read the Legal and Tax Asks,
+  Change the Master Agreement Once, Read the Final Text Against the Log
+- `ref/pc/negotiate-the-definitive-agreements` / Fix the Starting Text,
+  Split the Markup into Clauses, Classify Each Change, Send the
+  Counter-Markup, Work the Round Trips, Confirm the Agreed Text
 
 ## Patterns
 
@@ -50,6 +56,9 @@ signature-manager agent.
   and by whom
 - the shared workspace with the buyer (write) - the counter-markup and
   the summary that goes back with it
+- the document store (write) - the partnership agreement at its
+  version, each investor's markup of it, and the master agreement as
+  changed once for every investor
 
 ## Records
 
@@ -80,6 +89,15 @@ text, and the accepted changes written to the record other deals read.
 - round trips that do not converge, and two clean copies that do not
   match, to the named people on both sides with the open clauses
   listed
+- a clause in the final fund documents that matches no closed ask in
+  the log, or says something other than what was agreed, to fund
+  counsel with the clause and the ask it should match, and an ask the
+  text reopens goes back to the negotiation-coordinator agent, because
+  nothing is settled in the margin of a draft
+- a change in a deal document's markup that moves a term the
+  investment committee approved, to the deal-structurer agent and the
+  deal lead partner, who take it back to the committee, since an
+  approval is never stretched inside a redline pass
 
 ## Not
 

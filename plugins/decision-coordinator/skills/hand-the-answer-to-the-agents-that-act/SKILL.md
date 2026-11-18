@@ -1,6 +1,6 @@
 ---
 name: hand-the-answer-to-the-agents-that-act
-description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/mkt/annual-marketing-plan` and 15 other reference processes.
+description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/mkt/annual-marketing-plan` and 19 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,7 +18,7 @@ were turned down.
 
 ## Where it happens
 
-The agent does this in fourteen activities across sixteen reference
+The agent does this in nineteen activities across twenty reference
 processes. Each one names the activity as that process words it.
 
 - **Brief the Department**
@@ -37,6 +37,12 @@ processes. Each one names the activity as that process words it.
 - **Deliver the Themes and Recommendations**
   - `ref/mkt/win-loss-analysis`, activity 20 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Hand On the Watch List and Reserves**
+  - `ref/pc/run-the-portfolio-review`, activity 17 -
+    [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
+- **Hand On to Formation and Fundraising**
+  - `ref/pc/set-the-fund-strategy`, activity 17 -
+    [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)
 - **Hand over the Commitments**
   - `ref/mkt/prioritize-initiatives`, activity 15 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)
@@ -52,6 +58,12 @@ processes. Each one names the activity as that process words it.
 - **Hand over the Segments**
   - `ref/mkt/segment-the-market`, activity 16 -
     [Segment the Market](../../../../processes/marketing/segment-the-market.md)
+- **Hand the Approved Terms On**
+  - `ref/pc/decide-at-investment-committee`, activity 15 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Hand the Course to the Process That Runs It**
+  - `ref/pc/work-a-company-in-trouble`, activity 15 -
+    [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
 - **Hand the Decisions On**
   - `ref/mkt/brief-executive-leadership`, activity 19 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
@@ -61,6 +73,9 @@ processes. Each one names the activity as that process words it.
 - **Tell Every Function What It Has**
   - `ref/mkt/set-marketing-budget`, activity 14 -
     [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
+- **Tell the Deal Team**
+  - `ref/pc/decide-at-investment-committee`, activity 14 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
 - **Tell the Processes that Read It**
   - `ref/mkt/brand-positioning`, activity 15 -
     [Define Brand Positioning](../../../../processes/marketing/brand-positioning.md)

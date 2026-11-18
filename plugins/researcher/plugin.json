@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "researcher",
   "version": "1.0.0",
-  "description": "The researcher abstract agent. Finds the evidence a piece rests on.",
+  "description": "The researcher abstract agent. Finds the evidence a piece of work rests on, whether a published piece, a fund's thesis, a diligence finding or a hire.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -14,9 +14,9 @@
     "abstract-agent",
     "reference",
     "marketing",
+    "run-commercial-and-product-diligence",
     "product-positioning",
     "brief-industry-analyst",
-    "ideal-customer-profile",
     "abstract"
   ],
   "extensions": {
@@ -54,6 +54,36 @@
           "name": "the claims register",
           "role": "claims-register",
           "access": "read"
+        },
+        {
+          "name": "the data room",
+          "role": "data-room",
+          "access": "read",
+          "needs": "A company's customer records and the other material diligence is given, read only as the access agreement allows."
+        },
+        {
+          "name": "the expert network",
+          "role": "expert-network",
+          "access": "read",
+          "needs": "Industry experts called under the firm's call rules."
+        },
+        {
+          "name": "the calendar",
+          "role": "calendar",
+          "access": "write",
+          "needs": "The customer and expert calls it arranges."
+        },
+        {
+          "name": "the screening service",
+          "role": "screening-service",
+          "access": "read",
+          "needs": "A chosen candidate's background checks."
+        },
+        {
+          "name": "the consent record",
+          "role": "consent-record",
+          "access": "read",
+          "needs": "The candidate's written consent, read before any background check runs or any reference the candidate did not name is taken."
         }
       ],
       "records": [
@@ -65,7 +95,10 @@
         "a fact it cannot source - it reports the fact as unsourced and never fills the gap with a sentence that merely sounds right",
         "two credible sources that disagree, where the piece has to stand on one of them - a person picks which one",
         "a source whose terms do not let the organization quote or reproduce it",
-        "a finding that contradicts something the organization has already published, because somebody has to decide what happens to the older piece"
+        "a finding that contradicts something the organization has already published, because somebody has to decide what happens to the older piece",
+        "material non-public information about a listed company, heard on a call or found in a source, or an expert call that strays into an employer's confidential information - the call stops and what was heard goes to the chief compliance officer the same day, because what the firm may do with it is a compliance decision",
+        "a reference or a background check that raises a concern about a candidate or a member of a management team - to the person choosing, who is the portfolio company's chief executive for a hire and the deal lead partner in diligence, before any offer is made, because weighing a concern about a person is theirs",
+        "a candidate who works at another company the fund holds - to the talent partner, and nobody approaches the candidate until the non-solicitation rules have been read"
       ],
       "not": [
         "Does not write the piece and does not decide what the piece argues.",
@@ -377,6 +410,52 @@
           "process": "ref/mkt/website-content-update",
           "activities": [
             "Write the Change"
+          ]
+        },
+        {
+          "process": "ref/pc/set-the-fund-strategy",
+          "activities": [
+            "Research the Market",
+            "Read What Investors Will Back",
+            "Write the Investment Thesis"
+          ]
+        },
+        {
+          "process": "ref/pc/map-a-sector",
+          "activities": [
+            "Gather the Outside Evidence",
+            "Test the Thesis Against the Evidence",
+            "List the Companies That Fit",
+            "Watch the Companies"
+          ]
+        },
+        {
+          "process": "ref/pc/run-commercial-and-product-diligence",
+          "activities": [
+            "Size the Market",
+            "Read the Customer Base",
+            "Call the Company's Customers",
+            "Call Lost and Prospective Customers",
+            "Call Industry Experts",
+            "Map the Competitors",
+            "Check the Management Team"
+          ]
+        },
+        {
+          "process": "ref/pc/fill-a-key-role-at-a-portfolio-company",
+          "activities": [
+            "Find Candidates Outside the Network",
+            "Build the Long List",
+            "Take the References",
+            "Run the Background Checks",
+            "Record the Search"
+          ]
+        },
+        {
+          "process": "ref/pc/plan-the-exit",
+          "activities": [
+            "List the Likely Buyers",
+            "Read the Market for Each Route"
           ]
         }
       ]

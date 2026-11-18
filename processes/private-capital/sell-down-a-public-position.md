@@ -281,8 +281,8 @@ policy:
   a distribution in kind is valued as the partnership agreement
     requires, at <the price rule> on the date of distribution
   a partner who sits on the company's board makes the firm an insider,
-    and the firm trades only in the company's windows while the seat is
-    held
+    and the firm trades only in the company's windows while that partner
+    stays on the board
   every filing the fund owes as a holder is made by <the deadline>
   the lock-up is kept to its terms, and an early release is used only
     when the underwriting banks have granted it in writing

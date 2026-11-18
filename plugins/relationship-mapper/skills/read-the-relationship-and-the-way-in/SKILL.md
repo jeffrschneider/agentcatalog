@@ -1,6 +1,6 @@
 ---
 name: read-the-relationship-and-the-way-in
-description: Scores how well we know each person from recorded contact rather than from opinion, names the path in and who at our end holds it, and reads where each person stands on what we would sell. Use it when running `ref/sls/map-the-account-people`.
+description: Scores how well we know each person from recorded contact rather than from opinion, names the path in and who at our end holds it, and reads where each person stands on what we would sell. Use it when running `ref/pc/reach-out-to-a-company`, `ref/pc/work-an-investor-prospect` and `ref/sls/map-the-account-people`.
 license: CC-BY-4.0
 metadata:
   agent: relationship-mapper
@@ -17,15 +17,26 @@ where each person stands on what we would sell.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in six activities across three reference processes.
 Each one names the activity as that process words it.
 
+- **Choose the Path**
+  - `ref/pc/reach-out-to-a-company`, activity 7 -
+    [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
 - **Find the Paths In**
+  - `ref/pc/reach-out-to-a-company`, activity 5 -
+    [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
   - `ref/sls/map-the-account-people`, activity 8 -
     [Map the People at an Account](../../../../processes/sales/map-the-account-people.md)
+- **Find the Warmest Path In**
+  - `ref/pc/work-an-investor-prospect`, activity 5 -
+    [Work an Investor Prospect](../../../../processes/private-capital/work-an-investor-prospect.md)
 - **Read Where Each Person Stands**
   - `ref/sls/map-the-account-people`, activity 9 -
     [Map the People at an Account](../../../../processes/sales/map-the-account-people.md)
+- **Score Each Path**
+  - `ref/pc/reach-out-to-a-company`, activity 6 -
+    [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
 - **Score How Well We Know Each Person**
   - `ref/sls/map-the-account-people`, activity 7 -
     [Map the People at an Account](../../../../processes/sales/map-the-account-people.md)

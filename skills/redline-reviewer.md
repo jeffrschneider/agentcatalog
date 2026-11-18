@@ -2,7 +2,7 @@
 
 ## take-in-a-markup-and-fix-the-terms-in-force
 
-Takes in the buyer's markup at its version and the copy it was made
+Takes in the other side's markup at its version and the copy it was made
 from, fixes which template version and which pre-approved fallbacks are
 in force, and splits the document into one item per changed clause with
 both texts side by side.
@@ -11,6 +11,8 @@ covers:
 - Take in the Buyer's Markup
 - Confirm the Terms in Force
 - Split the Markup into Clauses
+- Read the Markup Clause by Clause
+- Fix the Starting Text
 
 ## classify-every-change
 
@@ -23,6 +25,7 @@ covers:
 - Classify Each Change
 - Check Against Prior Decisions
 - Review the Risk Terms
+- Read the Legal and Tax Asks
 
 ## decide-or-route-each-clause
 
@@ -45,6 +48,7 @@ covers:
 - Draft the Counter-Markup
 - Send the Counter Back
 - Work the Round Trips
+- Send the Counter-Markup
 
 ## close-the-text-out
 
@@ -58,6 +62,9 @@ covers:
 - Confirm the Clean Copy
 - Confirm the Close Conditions
 - Log the Clause Decisions
+- Read the Final Text Against the Log
+- Change the Master Agreement Once
+- Confirm the Agreed Text
 
 ## stop-the-work-when-a-deal-ends
 

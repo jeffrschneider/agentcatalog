@@ -1,6 +1,6 @@
 ---
 name: size-a-market-or-an-audience
-description: Counts how many buyers or accounts of a given shape actually exist and how much money sits with them, and describes how buyers buy in each part. Use it when running `ref/mkt/develop-marketing-strategy` and 4 other reference processes.
+description: Counts how many buyers or accounts of a given shape actually exist and how much money sits with them, and describes how buyers buy in each part. Use it when running `ref/mkt/develop-marketing-strategy` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -18,7 +18,7 @@ somebody else can redo the sum.
 
 ## Where it happens
 
-The agent does this in five activities across five reference processes.
+The agent does this in seven activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Count the Buyers**
@@ -27,6 +27,9 @@ Each one names the activity as that process words it.
 - **Map the Market and Its Segments**
   - `ref/mkt/develop-marketing-strategy`, activity 3 -
     [Develop Marketing Strategy](../../../../processes/marketing/develop-marketing-strategy.md)
+- **Read the Customer Base**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 7 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
 - **Settle the Audience to Reach**
   - `ref/mkt/media-plan`, activity 3 -
     [Develop Media Plan](../../../../processes/marketing/media-plan.md)
@@ -36,6 +39,9 @@ Each one names the activity as that process words it.
 - **Size Each Segment**
   - `ref/mkt/segment-the-market`, activity 9 -
     [Segment the Market](../../../../processes/marketing/segment-the-market.md)
+- **Size the Market**
+  - `ref/pc/run-commercial-and-product-diligence`, activity 6 -
+    [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
 
 ## What to record
 

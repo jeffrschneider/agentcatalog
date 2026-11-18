@@ -1,6 +1,6 @@
 ---
 name: take-in-the-question
-description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/mkt/annual-marketing-plan` and 15 other reference processes.
+description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/mkt/annual-marketing-plan` and 19 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,9 +17,15 @@ decision has to settle and by when.
 
 ## Where it happens
 
-The agent does this in fourteen activities across sixteen reference
+The agent does this in nineteen activities across twenty reference
 processes. Each one names the activity as that process words it.
 
+- **Name the Decision and the Deadline**
+  - `ref/pc/work-a-company-in-trouble`, activity 4 -
+    [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
+- **Set What the Committee Must Decide**
+  - `ref/pc/decide-at-investment-committee`, activity 2 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
 - **Take in the Approved Positioning**
   - `ref/mkt/brand-voice`, activity 1 -
     [Define Brand Voice and Messaging](../../../../processes/marketing/brand-voice.md)
@@ -32,12 +38,21 @@ processes. Each one names the activity as that process words it.
 - **Take in the Cycle**
   - `ref/mkt/brief-executive-leadership`, activity 1 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+- **Take in the Decision to Raise**
+  - `ref/pc/set-the-fund-strategy`, activity 1 -
+    [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)
 - **Take in the Drift or the Signal**
   - `ref/mkt/lead-scoring-model`, activity 1 -
     [Maintain Lead Scoring Model](../../../../processes/marketing/lead-scoring-model.md)
 - **Take in the Gap**
   - `ref/mkt/engage-marketing-agency`, activity 1 -
     [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+- **Take in the Matter**
+  - `ref/pc/seek-an-advisory-committee-consent`, activity 1 -
+    [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
+- **Take in the Memo**
+  - `ref/pc/decide-at-investment-committee`, activity 1 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
 - **Take in the Naming Request**
   - `ref/mkt/name-product`, activity 1 -
     [Name Product or Company](../../../../processes/marketing/name-product.md)

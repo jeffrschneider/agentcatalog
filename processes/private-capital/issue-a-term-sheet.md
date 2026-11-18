@@ -37,7 +37,7 @@ lawyers for the definitive agreements.
 | 16 | Record the Term Sheet | the signed version and its dates on the deal record | deal-structurer |
 
 **Venture and buyout.** In venture, the term sheet sets a priced round of
-preferred shares, with the liquidation preference, the board seats and
+preferred shares, with the liquidation preference, the board representation and
 the pro rata rights. In a buyout, it is a letter of intent that states
 the price, how the purchase is financed, what management rolls over into
 the new company, and an exclusivity period.

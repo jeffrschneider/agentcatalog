@@ -7,8 +7,9 @@ organization promised, having first read what is already known about
 whoever asked. Takes in the question, starts the clock, checks the
 inquiry may be answered at all, writes and sends a reply that answers
 what was actually asked, and offers a time to talk. Holds the run open
-until the inquiry and everything read on the way reach qualification,
-then records how long the answer took against what was promised. The
+until the inquiry and everything read on the way reach whoever decides
+on it next, such as qualification for a sales inquiry or a partner for
+a pitch, then records how long the answer took against what was promised. The
 speed is the point, but a fast answer that skipped the reading is not a
 faster run.
 
@@ -19,6 +20,10 @@ faster run.
   Write the First Reply, Send the First Reply, Offer a Time to Talk,
   Write Down What Was Said, Hand It to Qualification, Record the
   Response Time
+- `ref/pc/screen-an-inbound-pitch` / Take in the Pitch, Start the
+  Response Clock, Acknowledge the Pitch, Route the Note to a Partner,
+  Ask for What Is Missing, Answer the Founder, Tell the Referrer the
+  Outcome, Offer a Time to Talk, Record the Decision and the Time
 
 ## Patterns
 
@@ -39,6 +44,9 @@ lead-scorer agent, and hands the whole package to the qualifier agent.
 - the calendar (write) - a time to talk is proposed and held
 - the consent record and the do-not-contact list (read) - to check the
   reply may be sent at all
+- the notification channel (write) - the screen note reaches the
+  partner who decides, and a pitch whose answer date is close is raised
+  to that partner and then to the partner on duty
 
 ## Records
 
@@ -67,6 +75,12 @@ miss recorded as a miss.
 - a person who may not be contacted on the channel they used - the run
   stops at the clock record and nobody works around it on another
   channel
+- the decision on a pitch - to the partner the screen note was routed
+  to, always. This agent sends the founder the answer a partner made,
+  and never an answer nobody decided.
+- a pitch whose answer date is about to pass with no decision - to the
+  routed partner and then to the partner on duty, before the date, and
+  the founder gets one honest holding answer with one new date
 
 ## Not
 

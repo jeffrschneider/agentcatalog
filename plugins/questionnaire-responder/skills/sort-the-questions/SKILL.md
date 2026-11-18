@@ -1,6 +1,6 @@
 ---
 name: sort-the-questions
-description: Sorts the questions into areas and absorbs the ones that ask the same thing twice, then puts one owner and one date on every requirement that has to come back answered. Use it when running `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
+description: Sorts the questions into areas and absorbs the ones that ask the same thing twice, then puts one owner and one date on every requirement that has to come back answered. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -17,9 +17,12 @@ has to come back answered.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
+- **Sort and Deduplicate the Questions**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 4 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
 - **Sort the Questions**
   - `ref/sls/answer-a-security-questionnaire`, activity 3 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)

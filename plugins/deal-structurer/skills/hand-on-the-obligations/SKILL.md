@@ -1,6 +1,6 @@
 ---
 name: hand-on-the-obligations
-description: Writes what the signed terms owe out as work with owners and dates, so the obligations the agreement created have somebody behind them before anybody starts. Use it when running `ref/prt/structure-an-alliance`.
+description: Writes what the signed terms owe out as work with owners and dates, so the obligations the agreement created have somebody behind them before anybody starts. Use it when running `ref/pc/issue-a-term-sheet`, `ref/pc/negotiate-the-definitive-agreements` and `ref/prt/structure-an-alliance`.
 license: CC-BY-4.0
 metadata:
   agent: deal-structurer
@@ -17,12 +17,24 @@ anybody starts.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in five activities across three reference processes.
+Each one names the activity as that process words it.
 
 - **Hand On the Obligations**
   - `ref/prt/structure-an-alliance`, activity 16 -
     [Structure an Alliance](../../../../processes/partners/structure-an-alliance.md)
+- **Hand On the Signed Terms**
+  - `ref/pc/issue-a-term-sheet`, activity 15 -
+    [Issue a Term Sheet](../../../../processes/private-capital/issue-a-term-sheet.md)
+- **Hand the Text to the Closing**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 18 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
+- **Record the Exclusivity and What Binds**
+  - `ref/pc/issue-a-term-sheet`, activity 14 -
+    [Issue a Term Sheet](../../../../processes/private-capital/issue-a-term-sheet.md)
+- **Record the Term Sheet**
+  - `ref/pc/issue-a-term-sheet`, activity 16 -
+    [Issue a Term Sheet](../../../../processes/private-capital/issue-a-term-sheet.md)
 
 ## What to record
 

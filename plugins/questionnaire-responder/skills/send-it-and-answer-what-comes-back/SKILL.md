@@ -1,6 +1,6 @@
 ---
 name: send-it-and-answer-what-comes-back
-description: Files the response, logs the date it landed, and gets a receipt from the buyer, because without one it is not in. Use it when running `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
+description: Files the response, logs the date it landed, and gets a receipt from the buyer, because without one it is not in. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -17,9 +17,12 @@ afterwards and records how the whole thing ended.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
+- **Answer the Follow-Up Questions**
+  - `ref/pc/answer-a-due-diligence-questionnaire`, activity 16 -
+    [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)
 - **Answer the Follow-Ups**
   - `ref/sls/answer-a-security-questionnaire`, activity 14 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)

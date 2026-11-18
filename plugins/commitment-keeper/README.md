@@ -35,7 +35,9 @@ manifest and in the directory of the same name.
 
 ## Where this abstract agent is used
 
-`ref/prt/write-a-joint-plan`, `ref/prt/review-a-joint-plan`. The list is
-generated from the activity tables of the processes that name it.
+`ref/prt/write-a-joint-plan`, `ref/prt/review-a-joint-plan`,
+`ref/pc/prepare-and-hold-a-board-meeting`,
+`ref/pc/write-the-value-creation-plan`. The list is generated from the
+activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/commitment-keeper

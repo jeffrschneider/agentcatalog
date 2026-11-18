@@ -27,6 +27,17 @@ relationship ends.
   Systems Access, Publish the Materials Set, Walk the Partner Through
   the Portal, Test the Path End to End
 - `ref/prt/run-a-first-deal-together` / Register the Deal
+- `ref/pc/prepare-the-fundraising-materials` / Build the Data Room, Set
+  Who Can Reach What, Release the Materials
+- `ref/pc/work-an-investor-prospect` / Open the Data Room to the
+  Investor
+- `ref/pc/close-the-year-end-audit-and-tax-documents` / Issue the
+  Audited Statements, Send Tax Estimates to Investors, Issue Each
+  Investor's Tax Documents
+- `ref/pc/issue-a-capital-call` / Publish the Notices
+- `ref/pc/issue-the-quarterly-report-and-statements` / Publish the
+  Report and Statements
+- `ref/pc/make-a-distribution` / Publish the Notices
 
 ## Patterns
 
@@ -57,6 +68,12 @@ agents, and hands the end-to-end test to the partner-monitor agent.
   against what the agreement covers
 - the certification record (read) - nobody is entitled by a certificate
   they do not hold
+- the document store (write) - the approved fundraising set is released
+  there at its version, and earlier versions are withdrawn from use
+- the CRM (read) - the signed confidentiality agreement and the people
+  each prospective investor named, which every folder's access rests on
+- the notification channel (write) - every named contact hears that a
+  notice, a statement or a tax document is waiting for them
 
 ## Records
 
@@ -82,6 +99,12 @@ date, the reason and who told us.
   administrator, and the access stays uncounted until it does
 - access it is asked to close while a customer still depends on it - to
   the partner lead, named rather than quietly left open
+- a document handed over to publish without the approval or signature
+  its process requires, such as compliance's approval of a fundraising
+  piece at that version, the chief financial officer's signature on a
+  capital call, the signed quarterly report or the auditor's signed
+  opinion - back to whoever owns that approval or signature, and nothing
+  is published while it waits
 
 ## Not
 

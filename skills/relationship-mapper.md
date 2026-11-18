@@ -21,6 +21,8 @@ covers:
 - Place People Against a Decision
 - Read the Reporting Lines
 - Name Who Buys Each One
+- Map the Investor's Decision
+- Find Who Decides at the Company
 
 ## read-the-relationship-and-the-way-in
 
@@ -32,6 +34,38 @@ covers:
 - Score How Well We Know Each Person
 - Find the Paths In
 - Read Where Each Person Stands
+- Find the Warmest Path In
+- Score Each Path
+- Choose the Path
+
+## work-the-path-in
+
+Prepares the ask that goes along a path: a note a connector can
+forward, an approach to a candidate, or a reference call with an
+earlier investor or founder who has agreed to speak. The person who
+holds the path makes the introduction or the approach. The agent
+records each answer and whether the path landed, and the firm never
+goes round someone who declined.
+
+covers:
+- Ask for the Introduction
+- Approach the Candidates
+- Arrange the Reference Calls
+- Record the Outcome
+
+## find-candidates-for-a-role
+
+Finds the people the firm already knows who fit a role's
+specification, with how well the firm knows each one and the path to
+each, and puts them with the candidates from research into one long
+list where each person appears once with the source they came from.
+Records where the hire came from and what the search took, so the next
+search starts from it.
+
+covers:
+- Find Candidates in the Firm's Network
+- Build the Long List
+- Record the Search
 
 ## issue-the-map-with-its-gaps
 

@@ -10,7 +10,7 @@ nothing is left for the fund, lists what the fund still holds or owes in
 the company, and marks the holding at zero with the valuation
 committee's approval. The date the loss is realized is fixed on an
 event the tax adviser accepts, the fund's shares are surrendered or
-cancelled, any board seat the firm held is resigned, and anything the
+cancelled, any directorship the firm held is resigned, and anything the
 fund guaranteed is released or settled by the chief financial officer
 (CFO). The original investment memo is then read against what happened,
 and its lessons are written where the next memo can find them. The run
@@ -30,7 +30,7 @@ cap table record, with its tax file complete and its lessons recorded.
 | 7 | Fix the Date the Loss Is Realized | the event that fixes the loss, with its evidence | valuation-analyst · tax adviser (person) |
 | 8 | Close the Fund's Position | shares surrendered, cancelled or abandoned, and signed | counsel (person) · cap-table-keeper |
 | 9 | Settle What the Fund Owes | guarantees released, claims filed, payments signed | CFO (person) · counsel (person) |
-| 10 | Resign the Board Seat | the firm's director resigns on the date counsel advises | deal lead partner (person) |
+| 10 | Resign from the Board | the firm's director resigns on the date counsel advises | deal lead partner (person) |
 | 11 | Record the Close in the Cap Table Record | the position closed at zero, with the documents | cap-table-keeper |
 | 12 | Post the Write-Off to the Fund's Books | the loss realized in the fund accounting system | controller (person) · valuation-analyst |
 | 13 | Build the Tax File | the event, the date and the fund's cost in the company | valuation-analyst · tax adviser (person) |
@@ -63,7 +63,7 @@ flowchart LR
   A6 --> A7[7. Fix the Date the Loss Is Realized]
   A6 --> A8[8. Close the Fund's Position]
   A6 --> A9[9. Settle What the Fund Owes]
-  A6 --> A10[10. Resign the Board Seat]
+  A6 --> A10[10. Resign from the Board]
   A6 --> A12[12. Post the Write-Off to the Fund's Books]
   A6 --> A14[14. Read the Memo against What Happened]
   A8 -. no one will take the shares back .-> A7
@@ -155,7 +155,7 @@ phases:
                         every payment signed by <who>
                         owner: <your CFO role>      after: approve-zero
                         by: <days>                  automation: never
-  resign-seat         - human: the firm's director resigns from the
+  resign-board        - human: the firm's director resigns from the
                         company's board on the date counsel advises,
                         with the insurance cover for former directors
                         confirmed
@@ -199,7 +199,7 @@ phases:
                         holding's record
                         owner: valuation-analyst
                         after: build-tax-file + settle-obligations +
-                        resign-seat + write-lessons + hand-to-report,
+                        resign-board + write-lessons + hand-to-report,
                         or decide-write-off when value is left
                         automation: <level>
 run-scoped:
@@ -219,7 +219,7 @@ handoffs:
   propose-zero -> approve-zero [zero-mark]: the mark at zero, the
     evidence for it, and the mark it replaces
   approve-zero -> fix-loss-date / close-position / settle-obligations /
-    resign-seat / post-write-off / read-memo [approved-write-off]: the
+    resign-board / post-write-off / read-memo [approved-write-off]: the
     committee's approval, its date and any condition it set
   fix-loss-date -> build-tax-file [loss-event]: the event that fixes
     the loss, its date and the evidence the tax adviser accepted
@@ -237,7 +237,7 @@ handoffs:
     the next memo's author will read them
   hand-to-report -> file-record [report-entry]: what the quarterly
     report will say about the write-off
-  settle-obligations / resign-seat -> file-record [obligations-closed]:
+  settle-obligations / resign-board -> file-record [obligations-closed]:
     each obligation released or settled, and the director's
     resignation, with dates
 deviations:

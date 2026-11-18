@@ -21,6 +21,19 @@ covers:
 - Pull the Candidate Accounts
 - Find the People
 - Verify the Contact Details
+- Build the Target List
+
+## clear-each-name-for-approach
+
+Reads each name on a list against the rules that decide whether it may
+be approached at all, such as the offering rules, the rules on political
+contributions to officials who oversee a public pension plan, and the
+firm's own conflicts. A name that may not be approached is struck with
+the rule that struck it, and the list is filled from the next names that
+fit.
+
+covers:
+- Check Each Name May Be Approached
 
 ## rank-and-hand-over-the-list
 

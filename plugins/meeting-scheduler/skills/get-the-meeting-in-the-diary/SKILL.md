@@ -1,6 +1,6 @@
 ---
 name: get-the-meeting-in-the-diary
-description: Works out who comes from each side and what each is there for, offers times in the person's own time zone, and gets an invitation accepted with the joining details in it. Use it when running `ref/sls/book-the-meeting` and `ref/sls/work-a-referral`.
+description: Works out who comes from each side and what each is there for, offers times in the person's own time zone, and gets an invitation accepted with the joining details in it. Use it when running `ref/pc/fill-a-key-role-at-a-portfolio-company` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: meeting-scheduler
@@ -18,15 +18,29 @@ note about it.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in eight activities across five reference processes.
 Each one names the activity as that process words it.
 
+- **Arrange the Reference Calls**
+  - `ref/pc/work-an-investor-prospect`, activity 14 -
+    [Work an Investor Prospect](../../../../processes/private-capital/work-an-investor-prospect.md)
 - **Book the Conversation**
   - `ref/sls/work-a-referral`, activity 12 -
     [Work a Referral](../../../../processes/sales/work-a-referral.md)
+- **Book the First Meeting**
+  - `ref/pc/reach-out-to-a-company`, activity 12 -
+    [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
+  - `ref/pc/work-an-investor-prospect`, activity 8 -
+    [Work an Investor Prospect](../../../../processes/private-capital/work-an-investor-prospect.md)
+- **Book the Specification Meeting**
+  - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 2 -
+    [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
 - **Confirm the Meeting**
   - `ref/sls/book-the-meeting`, activity 6 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)
+- **Confirm the Start**
+  - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 17 -
+    [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
 - **Decide Who Should Attend**
   - `ref/sls/book-the-meeting`, activity 3 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)

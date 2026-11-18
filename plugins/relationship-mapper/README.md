@@ -6,7 +6,7 @@ the work is, which systems it needs and at what access, what it must
 leave behind, and where it stops. Any agent that leaves the records can
 implement it.
 
-The plugin carries five skills, no `mcp.json`, and everything the
+The plugin carries seven skills, no `mcp.json`, and everything the
 abstract agent owes under `com.agentcatalog.agent/`.
 
 ## Why there is no mcp.json
@@ -36,7 +36,9 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/sls/map-the-account-people`, `ref/sls/write-an-account-plan`,
-`ref/sls/review-the-account-plans`. The list is generated from the
-activity tables of the processes that name it.
+`ref/sls/review-the-account-plans`, `ref/pc/work-an-investor-prospect`,
+`ref/pc/reach-out-to-a-company`,
+`ref/pc/fill-a-key-role-at-a-portfolio-company`. The list is generated
+from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/relationship-mapper

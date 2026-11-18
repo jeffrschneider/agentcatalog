@@ -1,6 +1,6 @@
 ---
 name: put-the-reviews-on-the-calendar
-description: Sets how often the plan is reviewed, opens each review on that cadence against the calendar of everyone the plan names, and dates the next one before the current one closes. Use it when running `ref/prt/review-a-joint-plan` and `ref/prt/write-a-joint-plan`.
+description: Sets how often the plan is reviewed, opens each review on that cadence against the calendar of everyone the plan names, and dates the next one before the current one closes. Use it when running `ref/pc/write-the-value-creation-plan`, `ref/prt/review-a-joint-plan` and `ref/prt/write-a-joint-plan`.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,8 +17,8 @@ before the current one closes.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Open the Review**
   - `ref/prt/review-a-joint-plan`, activity 1 -
@@ -27,6 +27,8 @@ Each one names the activity as that process words it.
   - `ref/prt/review-a-joint-plan`, activity 17 -
     [Review a Joint Plan](../../../../processes/partners/review-a-joint-plan.md)
 - **Set the Review Cadence**
+  - `ref/pc/write-the-value-creation-plan`, activity 14 -
+    [Write the Value Creation Plan](../../../../processes/private-capital/write-the-value-creation-plan.md)
   - `ref/prt/write-a-joint-plan`, activity 17 -
     [Write a Joint Plan](../../../../processes/partners/write-a-joint-plan.md)
 

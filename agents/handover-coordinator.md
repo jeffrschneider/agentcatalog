@@ -2,8 +2,10 @@
 
 `handover-coordinator v1`
 
-**purpose:** Moves a relationship from the person who sold it to the
-person who will deliver it, so the customer does not repeat themselves.
+**purpose:** Moves a relationship from the people who won it to the
+people who will work it from now on, such as a seller to a delivery
+team or a deal team to a portfolio team, so nobody on the other side
+has to repeat themselves.
 Gathers everything the sale learned into one place, writes the account
 picture, records every commitment made along the way, and maps who
 decides, who pays and who uses it every day. It runs the internal
@@ -21,6 +23,12 @@ handover the customer never acknowledged is not a handover.
   Customer, Schedule the Start, Confirm the Customer Accepted the
   Handover, Close Out the Sales Side, Record What the Sale Did Not
   Capture
+- `ref/pc/hand-over-to-the-portfolio-team` / Take in the Closed Deal,
+  Name the Portfolio Team, Collect What the Deal Team Learned, Record
+  What Was Promised, List the Fund's Rights and Duties, Write the
+  Company Picture, Carry the Committee's Conditions, Introduce the Team
+  to Management, Confirm Management Knows Who to Call, Close Out the
+  Deal Side, Record What the Handover Missed
 
 ## Patterns
 
@@ -49,6 +57,11 @@ account-monitor agent.
   sides
 - the customer communication channel (write) - one introduction,
   through the channel the customer actually uses
+- the deal pipeline (write) - the closed deal is taken in from it, and
+  the named portfolio team and the closed-out deal side are recorded
+  against it
+- the decision record (read) - the investment committee's decision and
+  the conditions it set, at their final version
 
 ## Records
 
@@ -81,6 +94,13 @@ owner now holds.
   channel they actually use
 - the seller still taking the customer's calls, to the sales leader,
   because it means the introduction did not land
+- a promise to a portfolio company's management, the co-investors or
+  the lenders that no document binds, marked as such and taken to the
+  deal lead partner, who decides whether the firm honors it, so
+  management hears the answer before it finds out by asking
+- a committee condition that nobody on the portfolio team will own, to
+  the deal lead partner, and the deal team does not step back until the
+  condition has an owner and a date
 
 ## Not
 

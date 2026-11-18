@@ -1,6 +1,6 @@
 ---
 name: pull-and-verify-the-people
-description: Pulls the accounts that meet the rules, finds the roles worth approaching at each one, and checks every address and number against a source before it is used. Use it when running `ref/sls/build-a-prospect-list`.
+description: Pulls the accounts that meet the rules, finds the roles worth approaching at each one, and checks every address and number against a source before it is used. Use it when running `ref/pc/work-an-investor-prospect` and `ref/sls/build-a-prospect-list`.
 license: CC-BY-4.0
 metadata:
   agent: prospect-researcher
@@ -18,9 +18,12 @@ the date they were pulled.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in four activities across two reference processes.
 Each one names the activity as that process words it.
 
+- **Build the Target List**
+  - `ref/pc/work-an-investor-prospect`, activity 2 -
+    [Work an Investor Prospect](../../../../processes/private-capital/work-an-investor-prospect.md)
 - **Find the People**
   - `ref/sls/build-a-prospect-list`, activity 6 -
     [Build a Prospect List](../../../../processes/sales/build-a-prospect-list.md)

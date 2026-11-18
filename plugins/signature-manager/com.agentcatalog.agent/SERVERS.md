@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Five systems, named by role rather than by product. The access level is
+Eight systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -11,6 +11,9 @@ more than the job requires.
 | the entity list | read | The entity that buys and the one that sells, matched to what the organization holds rather than to the address block on the paper. |
 | the approval record | read | Which term off the standard paper is signed for, by whom, against which version. |
 | the notification channel | write | The people who act on a booking hear the same booking at the same time. |
+| the document store | write | The executed set and the close record, filed complete with every signed page and exhibit. |
+| the investor portal | write | Each investor's close date, its accepted commitment and its signed pages, posted where the investor reads them. |
+| the deal pipeline | write | Each confidentiality agreement's non-solicit, standstill and term, and the people it lets read the material, recorded where every deal team can read them. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

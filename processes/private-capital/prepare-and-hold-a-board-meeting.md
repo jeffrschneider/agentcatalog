@@ -38,9 +38,9 @@ and a date to be followed up before the next pack.
 | 15 | Check the Minutes Against the Record | the company's minutes read against what happened | portfolio-monitor · board director (person) |
 | 16 | Update the Plan and the Watch List | the plan and the watch list moved by the decisions | value-creation-planner · portfolio-monitor |
 | 17 | Report to the Partners | what the board decided and what it means for the fund | portfolio-monitor · board director (person) |
-| 18 | Follow Up the Actions | each action chased to done before the next pack | commitment-keeper |
+| 18 | Follow Up the Actions | each action's state read, and late ones escalated | commitment-keeper |
 
-**Venture and buyout.** In venture, the firm holds one board seat beside
+**Venture and buyout.** In venture, the firm names one director beside
 the other investors and the founders. In a buyout, the firm appoints most
 of the board.
 
@@ -183,9 +183,10 @@ phases:
                           portfolio review or valuation should read
                           owner: <your board director role>
                           after: update-plan-watch   automation: <level>
-  follow-up-actions     - runs roll-call: each action chased with its
-                          owner until it is done, closed with a reason, or
-                          carried to the next pack
+  follow-up-actions     - runs roll-call: each action read out with its
+                          owner as done, running or late, escalated on the
+                          rule when late, closed with a reason, or carried
+                          to the next pack
                           owner: commitment-keeper   after: report-partners
                           every: <cadence>           automation: <level>
 run-scoped:

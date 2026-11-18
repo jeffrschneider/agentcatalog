@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/approve-marketing-material`, `ref/mkt/channel-program`,
 `ref/mkt/competitive-battlecard`, `ref/mkt/display-retargeting`,
-`ref/mkt/enable-channel-partner`, `ref/mkt/influencer-campaign`, and 3
+`ref/mkt/enable-channel-partner`, `ref/mkt/influencer-campaign`, and 4
 more. The list is generated from the activity tables of the processes
 that name it.
 

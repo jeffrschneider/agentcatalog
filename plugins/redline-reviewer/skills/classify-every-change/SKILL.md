@@ -1,6 +1,6 @@
 ---
 name: classify-every-change
-description: Marks each change as standard language, an approved fallback, or new text nobody has agreed to before, and reads it against what was decided the last time the same change came up. Use it when running `ref/sls/review-the-redlines`.
+description: Marks each change as standard language, an approved fallback, or new text nobody has agreed to before, and reads it against what was decided the last time the same change came up. Use it when running `ref/pc/negotiate-the-definitive-agreements`, `ref/pc/negotiate-the-fund-terms-and-side-letters` and `ref/sls/review-the-redlines`.
 license: CC-BY-4.0
 metadata:
   agent: redline-reviewer
@@ -18,15 +18,22 @@ terms are read with a lawyer.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Check Against Prior Decisions**
   - `ref/sls/review-the-redlines`, activity 5 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
 - **Classify Each Change**
+  - `ref/pc/negotiate-the-definitive-agreements`, activity 8 -
+    [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 5 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
   - `ref/sls/review-the-redlines`, activity 4 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
+- **Read the Legal and Tax Asks**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 7 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Review the Risk Terms**
   - `ref/sls/review-the-redlines`, activity 7 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)

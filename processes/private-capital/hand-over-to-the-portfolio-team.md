@@ -25,7 +25,7 @@ who it works with at the firm.
 | 2 | Name the Portfolio Team | the board director, the operating partner, the owner | deal lead partner (person) · handover-coordinator |
 | 3 | Collect What the Deal Team Learned | the findings, the risks and the open questions | handover-coordinator |
 | 4 | Record What Was Promised | to management, the co-investors and the lenders | handover-coordinator |
-| 5 | List the Fund's Rights and Duties | information rights, consents and board seats | handover-coordinator · [portfolio-monitor](../../agents/portfolio-monitor.md) |
+| 5 | List the Fund's Rights and Duties | information rights, consents and director rights | handover-coordinator · [portfolio-monitor](../../agents/portfolio-monitor.md) |
 | 6 | Write the Company Picture | the thesis, the people and the risks in one place | handover-coordinator |
 | 7 | Carry the Committee's Conditions | each condition with an owner and a date | handover-coordinator · [value-creation-planner](../../agents/value-creation-planner.md) |
 | 8 | Draft the Starting Points for the Plan | the changes the thesis rests on | value-creation-planner |
@@ -111,7 +111,7 @@ phases:
                           owner: handover-coordinator   after: name-team
                           automation: <level>
   list-rights           - runs assessment: the fund's information rights,
-                          consent rights, board seats and reporting duties,
+                          consent rights, director rights and reporting duties,
                           read from the executed agreements
                           owner: portfolio-monitor      after: name-team
                           automation: <level>

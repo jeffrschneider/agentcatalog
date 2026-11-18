@@ -1,6 +1,6 @@
 ---
 name: write-down-what-was-agreed
-description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/mkt/brief-executive-leadership` and 6 other reference processes.
+description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/mkt/brief-executive-leadership` and 12 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,12 +16,30 @@ was turned down and why, and who disagreed with it.
 
 ## Where it happens
 
-The agent does this in seven activities across seven reference
+The agent does this in twelve activities across thirteen reference
 processes. Each one names the activity as that process words it.
 
+- **Confirm the Record with the Chair**
+  - `ref/pc/decide-at-investment-committee`, activity 13 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Record a Decline with Its Reason**
+  - `ref/pc/decide-at-investment-committee`, activity 16 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Record the Decision**
+  - `ref/pc/plan-the-exit`, activity 16 -
+    [Plan the Exit](../../../../processes/private-capital/plan-the-exit.md)
+  - `ref/pc/seek-an-advisory-committee-consent`, activity 13 -
+    [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
+- **Record the Decision and the Dissent**
+  - `ref/pc/decide-at-investment-committee`, activity 12 -
+    [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+  - `ref/pc/work-a-company-in-trouble`, activity 12 -
+    [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
 - **Record the Decisions**
   - `ref/mkt/brief-executive-leadership`, activity 17 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+  - `ref/pc/run-the-portfolio-review`, activity 15 -
+    [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
 - **Record the Declines**
   - `ref/mkt/prioritize-initiatives`, activity 13 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)
@@ -40,6 +58,9 @@ processes. Each one names the activity as that process words it.
 - **Write down the Sizing**
   - `ref/mkt/size-market-opportunity`, activity 13 -
     [Size Market Opportunity](../../../../processes/marketing/size-market-opportunity.md)
+- **Write the Strategy Down**
+  - `ref/pc/set-the-fund-strategy`, activity 16 -
+    [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)
 
 ## What to record
 

@@ -1,6 +1,6 @@
 ---
 name: rebuild-the-offer-and-confirm-the-position
-description: Rebuilds the offer from what was actually agreed, with every changed line traced to the ask that changed it, gets both sides to confirm one dated list of agreed terms, and hands that position on to the redline review and the close plan. Use it when running `ref/sls/negotiate-the-agreement`.
+description: Rebuilds the offer from what was actually agreed, with every changed line traced to the ask that changed it, gets both sides to confirm one dated list of agreed terms, and hands that position on to the redline review and the close plan. Use it when running `ref/pc/negotiate-the-fund-terms-and-side-letters` and `ref/sls/negotiate-the-agreement`.
 license: CC-BY-4.0
 metadata:
   agent: negotiation-coordinator
@@ -18,7 +18,7 @@ review and the close plan.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in five activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm the Agreed Position**
@@ -27,9 +27,15 @@ Each one names the activity as that process words it.
 - **Hand On the Agreed Position**
   - `ref/sls/negotiate-the-agreement`, activity 15 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
+- **Hand On to the Close**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 18 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Re-Price the Deal**
   - `ref/sls/negotiate-the-agreement`, activity 12 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
+- **Read the Final Text Against the Log**
+  - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 15 -
+    [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 
 ## What to record
 

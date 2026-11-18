@@ -1,6 +1,6 @@
 ---
 name: score-material-against-the-rules
-description: The agent reads a piece against the rules that apply to it and gives every item a verdict that cites the rule and the market it comes from. Use it when running `ref/mkt/approve-marketing-material` and 3 other reference processes.
+description: The agent reads a piece against the rules that apply to it and gives every item a verdict that cites the rule and the market it comes from. Use it when running `ref/mkt/approve-marketing-material` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: disclosure-check
@@ -18,9 +18,12 @@ versions again.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
+- **Check Against the Advertising Rules**
+  - `ref/pc/prepare-the-fundraising-materials`, activity 11 -
+    [Prepare the Fundraising Materials](../../../../processes/private-capital/prepare-the-fundraising-materials.md)
 - **Check the Comparisons**
   - `ref/mkt/competitive-battlecard`, activity 11 -
     [Refresh Competitive Battlecard](../../../../processes/marketing/competitive-battlecard.md)

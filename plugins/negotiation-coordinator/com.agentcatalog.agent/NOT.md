@@ -22,3 +22,15 @@ closed because a call went well.
   are checked again against what the new person wants
 - a deadlock that runs out its clock, to whoever decides between
   refusing on our terms and closing the deal as lost
+- an investor's ask past the firm's negotiating mandate, or one that the
+  firm could give one investor but could not afford once every investor
+  with a most favored nation right elected it, to the managing partner,
+  because only the managing partner gives it or moves the mandate, in
+  writing and with a date
+- two investors asking for terms that cannot both be given, to the
+  managing partner, and the investor that does not get its ask is told
+  in writing
+- a final bid below the floor the committee set, or a buyer's price cut
+  after diligence that takes its bid below it, to the investment
+  committee before anyone answers the buyer, because only the committee
+  moves the floor

@@ -2,13 +2,14 @@
 
 `close-plan-keeper v1`
 
-**purpose:** Holds the close plan. Starting from the agreed position
-and the signature date both sides are working toward, it lists every
-step still owed as one set rather than two, puts one named owner and
-one date on each, and counts the dates back from signing. The buyer's
-own approval path is inside the plan, committee by committee, not a
-mystery outside it. A step past its date is chased with its owner and
-either re-dated with the buyer or escalated, and when a date moves
+**purpose:** Holds the close plan, or the checklist for forming a
+fund. Starting from the agreed position and the date the work is aiming
+at, it lists every step still owed as one set rather than two, puts one
+named owner and one date on each, and counts the dates back from that
+date. When there is a buyer, its own approval path is inside the plan,
+committee by committee, not a mystery outside it. A step past its date
+is chased with its owner and either re-dated with the other side or
+escalated, and when a date moves
 every step behind it moves too. The plan closes on the record with what
 slipped and why.
 
@@ -23,6 +24,14 @@ slipped and why.
   Procurement Steps, Chase the Slipping Steps, Re-Plan When a Date
   Moves, Report the Plan, Confirm the Close Conditions, Close the Plan
   on the Record
+- `ref/pc/form-the-fund` / Take in the Decided Strategy, Open the
+  Formation Checklist, Form the Entities, Draft the Partnership
+  Agreement, Draft the Subscription Documents, Make the Regulatory
+  Filings, Open the Fund's Records, Close the Formation Checklist
+- `ref/pc/run-the-closing` / Open the Closing Checklist, Put an Owner
+  and a Date on Each, Request the Capital Call, Work the Closing
+  Conditions, Build the Funds Flow, Confirm Every Condition Is Met,
+  Track the Post-Closing Items, Close the Plan on the Record
 
 ## Patterns
 
@@ -51,6 +60,12 @@ takes the close conditions with the redline-reviewer agent.
   tax and banking details, and the order
 - the shared workspace with the buyer (write) - the plan and the dates
   both sides hold
+- the deal pipeline (write) - the closing's state against the deal, and
+  the post-closing items with their owners and dates
+- the cap table record (read) - the capitalization as it will stand at
+  closing, which the funds flow is built against
+- the document store (read) - the formation drafts and filings at the
+  versions counsel released, as the evidence a step is done
 
 ## Records
 
@@ -79,6 +94,15 @@ plan with what slipped, why, and what to plan differently.
   negotiation
 - a deal quiet past the limit the plan sets, to whoever decides
   whether it is still live
+- a payment somebody wants made that the funds flow does not carry, or
+  a payee's account changed close to the closing date, to the chief
+  financial officer and the wire-check agent, and that line waits until
+  the instruction is verified again, because this agent releases no
+  money
+- the fund's cash not in place for the closing date, because the
+  capital call or the credit line will not land in time, to the chief
+  financial officer and the deal lead partner, who decide with the
+  other side whether the date moves
 
 ## Not
 

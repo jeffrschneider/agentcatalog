@@ -140,7 +140,7 @@ phases:
                          owner: returns-modeler     after: outline-case
                          automation: <level>
   write-terms          - human: the price, the amount, the security, the
-                         rights, the board seats and the conditions,
+                         rights, the director rights and the conditions,
                          inside the mandate result
                          owner: memo-writer         after: outline-case
                          automation: <level>
