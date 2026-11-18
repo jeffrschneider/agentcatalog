@@ -12,6 +12,13 @@ the process is. The draft is read back to the people who do the work,
 they sign that it is accurate, and it publishes at a version with a
 fixed address. A process nobody has signed is somebody's intention.
 
+## The goals
+
+- Publish a signed process within [3 weeks]
+- Match [90%] of observed runs to the write-up
+- Keep doers' time per write-up under [4 hours]
+- Cut ramp time for new people by [25%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

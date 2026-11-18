@@ -18,6 +18,13 @@ are disclosed, and the chief financial officer (CFO) and a partner sign
 it. The run closes when each investor holds the letter and its own
 statement on the investor portal by the date it was promised.
 
+## The goals
+
+- Deliver every investor statement within [45 days]
+- Keep restated figures at [zero]
+- Meet [100%] of side letter reporting promises
+- Keep investor questions per report under [10]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ finding is rated and given an owner. The findings that survive are
 priced into the terms or called a stop, and the sponsor hears one report
 that says go, go with conditions, or stop.
 
+## The goals
+
+- Deliver the diligence report within [6 weeks]
+- Settle [90%] of thesis claims with evidence
+- Keep material surprises after signing at [zero]
+- Hold diligence costs within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

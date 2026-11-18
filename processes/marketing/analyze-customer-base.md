@@ -19,6 +19,13 @@ Every figure in this process comes from a system the organization
 already has. When a finding needs a customer's reasons, the run writes
 the question down and hands it to the process that asks people.
 
+## The goals
+
+- Answer customer base questions within [10 days]
+- Use [90%] of the customer record in every read
+- Keep [80%] of figures comparable with the last read
+- Keep findings corrected after issue at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

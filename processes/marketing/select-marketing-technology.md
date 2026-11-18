@@ -14,6 +14,13 @@ finalists on work it actually has. Named people choose the tool and
 sign the agreement, and the run closes once the entry is in the
 register with an owner, a cost, a term and a renewal date against it.
 
+## The goals
+
+- Sign for a tool within [8 weeks] of the gap
+- Meet [90%] of the written requirements
+- Keep the whole cost within [the budget]
+- Have [80%] of intended users working in the tool
+
 ## The activities
 
 | # | Activity | What happens | Agents |

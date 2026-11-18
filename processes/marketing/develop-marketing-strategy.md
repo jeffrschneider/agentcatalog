@@ -35,6 +35,13 @@ process, which reads it too. The annual planning process turns the
 agreed strategy into initiatives, money and a calendar, and activity 15
 hands the strategy to it.
 
+## The goals
+
+- Agree the strategy within [8 weeks]
+- Concentrate [70%] of spend on the chosen segments
+- Align [100%] of planned work to the strategy
+- Hit [90%] of the objectives the strategy serves
+
 ## The activities
 
 | # | Activity | What happens | Agents |

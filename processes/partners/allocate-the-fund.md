@@ -12,6 +12,13 @@ with the amounts. The run stays open through the period, money that will
 not be used is moved before the period closes, and the run ends when
 where the money went has been reported.
 
+## The goals
+
+- Publish allocations [10 days] before the period opens
+- Change [zero] amounts after partners are told
+- Have partners use [90%] of the fund
+- Earn [5x] the fund in partner pipeline
+
 ## The activities
 
 | # | Activity | What happens | Agents |

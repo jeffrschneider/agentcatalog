@@ -13,6 +13,13 @@ definition is published, and the rules go into the system so the next
 record is held to them. Records already held that fail the new rule get
 a deadline and a person who owns fixing them.
 
+## The goals
+
+- Put new field rules live within [3 weeks]
+- Keep invalid values on new records under [1%]
+- Keep required fields per record to [8] or fewer
+- Keep reports broken by a change at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

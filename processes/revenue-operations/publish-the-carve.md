@@ -12,6 +12,13 @@ record and decided in one sitting, the changes are applied as a new
 version, and the final carve is published. The run ends when the window
 is closed and every seller has seen their own.
 
+## The goals
+
+- Release every statement on [the release date]
+- Keep statements that disagree with pay at [zero]
+- Lock the final territories within [15 days] of release
+- Keep upheld appeals under [5%] of sellers
+
 ## The activities
 
 | # | Activity | What happens | Agents |

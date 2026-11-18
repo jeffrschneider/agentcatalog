@@ -11,6 +11,13 @@ writes the account of why the numbers moved. The report goes out on the
 date it is due, and a source that did not answer in time appears in it
 as missing.
 
+## The goals
+
+- Publish the report [5 days] after the period closes
+- Cover [100%] of the period's campaigns and channels
+- Keep figures restated after publishing under [2%]
+- Keep each team's reporting work under [2 hours]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

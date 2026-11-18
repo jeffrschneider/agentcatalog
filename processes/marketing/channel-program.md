@@ -15,6 +15,13 @@ signs. The run stays open past the first signature, because the program
 still owes a report on how many partners were recruited and what those
 partners produced in their first weeks.
 
+## The goals
+
+- Sign the first partner within [90 days]
+- Sign [80%] of the partners the design calls for
+- Get [70%] of new partners to a first sale
+- Hold partner incentives under [20%] of their sales
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -14,6 +14,13 @@ somebody has read the delivered frequency back against that limit,
 checked that nobody on the suppression list was served, and recorded
 the pools, the caps and the exclusions at a version.
 
+## The goals
+
+- Earn [3x] return on retargeting spend
+- Show no one more than [10] ads a week
+- Keep ads served to suppressed people at [zero]
+- Go live within [5 days] of the approved audience
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -13,6 +13,13 @@ because a routing rule nobody can see is indistinguishable from an
 accident. The run closes when the rule is live and its first week has
 been watched.
 
+## The goals
+
+- Put a new rule live within [2 weeks]
+- Route [98%] of work right the first time
+- Keep work sent to the fallback under [5%]
+- Keep every queue under [90%] of its capacity
+
 ## The activities
 
 | # | Activity | What happens | Agents |

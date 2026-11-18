@@ -19,6 +19,13 @@ the milestones that count as active. One run covers one customer, and
 that is the difference between this process and designing the program
 the customer is being run through.
 
+## The goals
+
+- Activate [80%] of new customers by the promised date
+- Bring a person in for under [20%] of customers
+- Keep unsubscribes under [1%] of onboarding sends
+- Keep sends outside consent at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

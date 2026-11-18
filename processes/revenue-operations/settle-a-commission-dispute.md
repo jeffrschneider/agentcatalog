@@ -13,6 +13,13 @@ upheld or refused, it is approved by a person when money moves, and the
 cause goes back to the plan or the calculator so the same claim does
 not arrive again next period.
 
+## The goals
+
+- Answer every claim within [10 days]
+- Keep answers overturned on appeal under [5%]
+- Have [85%] of claimants accept the first answer
+- Cut repeat claims of the same cause by [50%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

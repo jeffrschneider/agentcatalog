@@ -15,6 +15,12 @@ while the run is open, and the dates in the run are set against how soon
 that will happen. The run closes when the card is at its new version and
 every rep has been told.
 
+## The goals
+
+- Update affected battlecards within [5 days]
+- Keep unsourced battlecard claims at [zero]
+- Raise win rate against the competitor by [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

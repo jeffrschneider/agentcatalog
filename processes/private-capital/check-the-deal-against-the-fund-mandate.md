@@ -18,6 +18,12 @@ compliance officer. The run closes with one dated result the memo
 carries, whether clear, clear with conditions, or blocked, with every
 consent the deal would need named.
 
+## The goals
+
+- Return every mandate result within [2 days]
+- Get needed consents within [15 days]
+- Keep limit breaches after closing at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

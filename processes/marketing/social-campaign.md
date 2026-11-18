@@ -7,6 +7,13 @@ A social media manager takes an approved brief, gets creative made and
 signed off, launches it across the chosen channels, tends it while it is
 live, and reports how it did against what the brief asked for.
 
+## The goals
+
+- Launch on every channel by [the brief's date]
+- Reach [80%] of the brief's target audience
+- Hit a [4%] engagement rate across channels
+- Hold cost per result at [the brief's target]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

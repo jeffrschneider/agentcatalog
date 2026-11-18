@@ -16,6 +16,12 @@ director votes on the company's board. The run closes when the course has
 been handed to the process that carries it out and the company is off the
 watch list, sold or written off.
 
+## The goals
+
+- Decide with at least [8 weeks] of cash left
+- Recover [50%] of cost on troubled companies
+- Keep rescue money within [the reserve]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

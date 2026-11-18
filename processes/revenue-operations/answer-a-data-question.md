@@ -12,6 +12,13 @@ was pulled travel with the number, and what the data leaves out is said
 rather than hidden. Then the ask is judged. A question asked once is
 filed. A question asked every week becomes a report.
 
+## The goals
+
+- Answer data questions within [3 days]
+- Keep answers corrected after delivery under [2%]
+- Keep analyst time per answer under [4 hours]
+- Cut repeat one-off questions by [30%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

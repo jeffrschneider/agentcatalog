@@ -12,6 +12,13 @@ person signs what the save is allowed to cost, the work happens, and the
 signal is watched to see whether it turns. A departure that happens
 anyway closes the run with a reason the rest of the organization reads.
 
+## The goals
+
+- Tell the account owner within [4 hours]
+- Keep [60%] of at-risk accounts as customers
+- Keep save costs under [10%] of the account's value
+- Open a risk before [90%] of departures
+
 ## The activities
 
 | # | Activity | What happens | Agents |

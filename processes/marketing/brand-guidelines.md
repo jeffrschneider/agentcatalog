@@ -21,6 +21,13 @@ they have it. What the identity or the voice should say is settled
 elsewhere, and correcting the published material the new version fails
 belongs to the refresh process.
 
+## The goals
+
+- Publish approved guideline changes within [2 weeks]
+- Pass brand review on [90%] of new material
+- Get every reader on the new version in [10 days]
+- Issue [zero] colors that fail the accessibility check
+
 ## The activities
 
 | # | Activity | What happens | Agents |

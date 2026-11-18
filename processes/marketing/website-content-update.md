@@ -35,6 +35,12 @@ to refresh published content. This process also ends without the debrief
 that the larger processes here close with, since a change that takes an
 afternoon does not fill one.
 
+## The goals
+
+- Make requested page changes within [3 days]
+- Get [95%] of changes right the first time
+- Update [100%] of pages carrying the old claim
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -13,6 +13,13 @@ rules are read, and finance accepts a cost before a person signs the
 plan. The run closes when every seller holds a signed plan and can read
 their own quota, their own rates and nobody else's.
 
+## The goals
+
+- Sign [100%] of seller plans before period start
+- Keep the period's pay cost within [3%] of budget
+- Keep [90%] of top sellers through the period
+- Have [85%] of sellers rate the plan clear
+
 ## The activities
 
 | # | Activity | What happens | Agents |

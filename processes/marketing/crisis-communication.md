@@ -15,6 +15,13 @@ that decision is still open. The run stays open past the last statement,
 because the review of what was known and when it was known is part of
 the work.
 
+## The goals
+
+- Issue a holding statement within [1 hour]
+- Issue the full response within [24 hours]
+- Keep statements later shown wrong at [zero]
+- Recover brand sentiment within [30 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

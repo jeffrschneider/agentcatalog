@@ -13,6 +13,13 @@ named as such. Coverage is tested against what is still to find. The
 call ends with a category on every deal walked, actions with owners,
 and one number published at a version.
 
+## The goals
+
+- Publish the call's number within [2 hours]
+- Close within [5%] of the forecast number
+- Walk deals holding [80%] of the committed amount
+- Hold the call to [60 minutes] or less
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ tool still earns its place. The review has three answers, and one of
 them is retirement. A tool nobody reviews is a tool nobody can defend
 at renewal.
 
+## The goals
+
+- Update access within [1 day] of a joiner or leaver
+- Keep unused licenses under [5%]
+- Apply approved changes within [5 days]
+- Keep changes that break live work at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

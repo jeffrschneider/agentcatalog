@@ -13,6 +13,13 @@ every post. A post that runs without its disclosure breaks advertising
 law in most markets, and the organization that paid for it is the party
 held responsible.
 
+## The goals
+
+- Publish [100%] of agreed posts on their date
+- Keep undisclosed sponsored posts at [zero]
+- Hit a [3%] engagement rate on creator posts
+- Keep cost per engagement under [the target]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

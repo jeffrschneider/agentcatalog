@@ -13,6 +13,13 @@ are agreed with dates, and the deal leaves with a category and a
 written reason. Rolling the pipeline up is arithmetic that arrives
 from operations. This process tests one deal inside it.
 
+## The goals
+
+- Inspect the deals behind [80%] of the period's number
+- Finish each inspection within [2 days] of selection
+- Land [90%] of inspected deals in the category given
+- Keep each inspection under [1 hour] of seller time
+
 ## The activities
 
 | # | Activity | What happens | Agents |

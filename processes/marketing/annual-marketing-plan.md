@@ -15,6 +15,13 @@ them, and signs the plan with finance. Raising the automation level
 moves none of those six. The run closes when the approved plan is
 published and every agent has heard what it owes against it.
 
+## The goals
+
+- Get the plan approved within [6 weeks]
+- Tie [100%] of budget to costed initiatives
+- Hit [90%] of the plan's annual goals
+- Keep committed work within [85%] of capacity
+
 ## The activities
 
 | # | Activity | What happens | Agents |

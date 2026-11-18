@@ -19,6 +19,12 @@ checklist with an owner and a date on every step. The run closes when the
 entities exist, the documents are ready to show investors, the providers
 are engaged, and the fund has a bank account in its own name.
 
+## The goals
+
+- Ready the fund to take commitments by [June 30]
+- Hold formation costs under [0.5%] of commitments
+- Keep regulatory filing issues at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ named, and the systems are changed once. The account is handed over
 with its context rather than as a row that moved, and the run ends when
 the move is recorded against the carve.
 
+## The goals
+
+- Change the systems within [5 days] of the request
+- Keep credit disputes under [5%] of moves
+- Renew [95%] of moved accounts on time
+- Keep mid-period moves under [3%] of accounts
+
 ## The activities
 
 | # | Activity | What happens | Agents |

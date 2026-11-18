@@ -19,6 +19,13 @@ resets what each area is held to. This process goes outside the
 department, to a board or an executive team, and it asks those people to
 take the decisions marketing cannot take on its own.
 
+## The goals
+
+- Get a decision on [90%] of requests raised
+- Deliver signed packs [5 days] before meetings
+- Answer every open question within [5 days]
+- Keep each pack under [20 pages]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

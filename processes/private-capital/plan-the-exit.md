@@ -17,6 +17,12 @@ closes when an approved exit plan with a route, a timing and a floor
 price has been handed to the process that carries it out, or when the
 decision to hold is on the record.
 
+## The goals
+
+- Approve an exit plan within [8 weeks]
+- Set the floor price at [2.5x] the fund's cost
+- Exit within [12 months] of the plan
+
 ## The activities
 
 | # | Activity | What happens | Agents |

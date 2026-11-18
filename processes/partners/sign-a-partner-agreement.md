@@ -13,6 +13,13 @@ agreed list term by term before anyone signs. What leaves the run is an
 executed agreement, filed, with the people who have to work it holding
 the same version.
 
+## The goals
+
+- Sign agreements within [30 days] of qualification
+- Sign [90%] of the candidates we qualify
+- Give up under [2 points] of margin in talks
+- Keep unapproved concessions at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

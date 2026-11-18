@@ -17,6 +17,12 @@ decisions and actions are recorded and matched to the company's minutes,
 the plan and the watch list reflect them, and every action has an owner
 and a date to be followed up before the next pack.
 
+## The goals
+
+- Brief the director [3 days] before each meeting
+- Close [90%] of board actions by the next meeting
+- Keep management's board preparation under [3 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

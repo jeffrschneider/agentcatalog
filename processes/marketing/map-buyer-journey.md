@@ -21,6 +21,13 @@ signal that marks each one, the touchpoints placed against a stage with
 the agent that owns each, the questions in the words buyers used, and
 the gaps ranked by how many buyers reach the question.
 
+## The goals
+
+- Issue an agreed journey map within [6 weeks]
+- Mark [100%] of stages with a signal already tracked
+- Answer [80%] of buyer questions with published content
+- Lift stage-to-stage conversion by [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

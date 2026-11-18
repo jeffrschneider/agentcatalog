@@ -21,6 +21,13 @@ department can carry in a year, and this process sets out the activities
 behind that judgment. It also runs on its own when a gap opens in the
 middle of a year.
 
+## The goals
+
+- Assign the period's work within [4 weeks]
+- Give [100%] of committed work a named owner
+- Finish [90%] of runs inside their planned time
+- Hold capacity costs within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

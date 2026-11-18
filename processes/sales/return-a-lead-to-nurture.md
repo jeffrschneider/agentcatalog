@@ -12,6 +12,12 @@ the reason and the date cross to nurture together. The run stays open
 until the date arrives or a signal fires, and it ends when somebody has
 said whether the lead comes back.
 
+## The goals
+
+- Look again at [100%] of returned leads on their date
+- Bring back [20%] of returned leads within a year
+- Keep returned leads that stall again under [30%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

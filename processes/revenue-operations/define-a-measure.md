@@ -12,6 +12,13 @@ marketing agree to the same sentence, the rule is issued at a version,
 every report that reads it is told what changed, and what happens to
 reports already published is decided rather than left to whoever notices.
 
+## The goals
+
+- Issue each definition within [3 weeks] of the ask
+- Get sign-off from [100%] of the teams that count it
+- Restate under [5%] of figures already published
+- Cut disputes over report numbers by [50%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

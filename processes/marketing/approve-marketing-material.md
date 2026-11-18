@@ -16,6 +16,13 @@ behind each one. The run ends when every named signer has signed one
 version, or when the failures go back to the process that submitted the
 material and that process sends a corrected version.
 
+## The goals
+
+- Clear submitted material within [2 days]
+- Clear [85%] of submissions on the first pass
+- Keep compliance issues after publishing at [zero]
+- Keep accepted exceptions under [5%] of releases
+
 ## The activities
 
 | # | Activity | What happens | Agents |

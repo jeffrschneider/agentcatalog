@@ -16,6 +16,13 @@ changed where the numbers argue for it. This run reaches its end when
 the program is live and being measured. The program keeps sending after
 that, and that is the difference between this process and a campaign.
 
+## The goals
+
+- Start the first send within [3 weeks] of the request
+- Turn [10%] of enrolled contacts sales-ready
+- Have sales accept [80%] of handed-over contacts
+- Keep unsubscribes under [0.5%] of each send
+
 ## The activities
 
 | # | Activity | What happens | Agents |

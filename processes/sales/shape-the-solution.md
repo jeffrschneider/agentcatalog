@@ -12,6 +12,13 @@ what is planned. The shape is cut to what can ship, mapped line by
 line against the requirements, and walked through with the buyer. It
 ends at a shape both sides hold at one version, carrying no price.
 
+## The goals
+
+- Agree the solution with the buyer within [2 weeks]
+- Meet [90%] of the buyer's top requirements
+- Keep solutions needing unbuilt features under [10%]
+- Keep scope changes after the sale under [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

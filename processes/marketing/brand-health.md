@@ -17,6 +17,13 @@ and campaign numbers are a different source. They belong to the
 analytics agent, and this run never reports one of them as a perception
 figure.
 
+## The goals
+
+- Report [100%] of tracker waves on time
+- Keep survey margin of error under [3%]
+- Hold each wave's cost within [the budget]
+- Carry [90%] of tracked questions forward unchanged
+
 ## The activities
 
 | # | Activity | What happens | Agents |

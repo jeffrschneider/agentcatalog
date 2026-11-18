@@ -12,6 +12,13 @@ useful than a percentage. The report goes out where the people it names
 can read it, each queue hears its own number rather than the average,
 and the work the report calls for gets an owner before the run closes.
 
+## The goals
+
+- Publish the report within [2 days] of period close
+- Keep figures corrected after publishing at [zero]
+- Keep work excused from the clock under [2%]
+- Meet the response promise on [95%] of work
+
 ## The activities
 
 | # | Activity | What happens | Agents |

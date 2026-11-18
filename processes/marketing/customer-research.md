@@ -14,6 +14,13 @@ been signed. The run ends with findings that carry the responses behind
 them. This process creates evidence that did not exist before by asking
 people. Reading what customers already did is a separate process.
 
+## The goals
+
+- Deliver [100%] of studies by the promised date
+- Reach the planned sample on [95%] of studies
+- Hold each study's cost within [the budget]
+- Act on findings in [80%] of studies
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ scope. Every clause leaves the run accepted, countered or rejected,
 with a reason. The run produces one clean text both sides call the
 agreement, and a record of what we accepted for the next deal to read.
 
+## The goals
+
+- Send each counter back within [3 days]
+- Reach a clean copy in [2] rounds or fewer
+- Settle [80%] of changes inside approved fallbacks
+- Keep unapproved non-standard terms at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

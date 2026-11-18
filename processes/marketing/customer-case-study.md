@@ -11,6 +11,13 @@ words before anything goes live. The run stays open past publication,
 because the agreement has an end date and the customer can withdraw at
 any point.
 
+## The goals
+
+- Publish each case study within [6 weeks]
+- Get customer sign-off on [90%] of first drafts
+- Use each story in [10] live sales deals
+- Keep uses outside agreed terms at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

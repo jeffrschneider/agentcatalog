@@ -20,6 +20,13 @@ holds a certification, and the check at activity 2 can send the run
 past most of the production so that it covers only what has changed
 since that partner was last checked.
 
+## The goals
+
+- Certify named partner sellers within [60 days]
+- Certify [80%] of each partner's named people
+- Keep partner training under [8 hours] a person
+- Grow partner-sourced pipeline by [25%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

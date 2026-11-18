@@ -12,6 +12,13 @@ catch it. At the end a person decides, in writing, whether they can do
 it again without an escort, and the run closes by handing the partner to
 whoever owns the relationship from then on.
 
+## The goals
+
+- Reach the customer's sign-off within [90 days]
+- Have the partner lead [80%] of the steps
+- Deliver as sold on [100%] of first deals
+- Clear [75%] of partners to sell alone
+
 ## The activities
 
 | # | Activity | What happens | Agents |

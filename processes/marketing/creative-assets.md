@@ -11,6 +11,13 @@ it. A campaign or a launch asks for the assets once, and what comes back
 has already been scored against the standards, signed, and cut to the
 sizes the channels need.
 
+## The goals
+
+- Deliver approved assets within [5 days]
+- Approve [90%] of assets on first review
+- Cut cost per finished asset by [30%]
+- Keep rights issues after release at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -12,6 +12,13 @@ It is watched while it runs, scored line by line against the criteria,
 and closed with both sides reading the same score. The environment
 comes down and the data goes back. The result corrects the shape.
 
+## The goals
+
+- Close [100%] of proofs on the agreed date
+- Win [70%] of deals that run a proof
+- Hold each proof's cost within [the budget]
+- Return or delete [100%] of the buyer's data
+
 ## The activities
 
 | # | Activity | What happens | Agents |

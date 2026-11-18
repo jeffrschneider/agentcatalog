@@ -17,6 +17,13 @@ default is decided only by a person. The run closes when the call
 reconciles to the cent and the cash is with the closing or the payment
 it was called for.
 
+## The goals
+
+- Give investors at least [10 days] notice
+- Collect [98%] of called money by the due date
+- Reconcile each call to the cent within [3 days]
+- Repay the credit line within [90 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

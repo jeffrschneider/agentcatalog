@@ -12,6 +12,13 @@ prevent. The requirements and the criteria are fixed and dated first,
 the market is searched with one set of questions, and the security and
 procurement reviews run alongside the scoring rather than after it.
 
+## The goals
+
+- Choose and clear a tool within [8 weeks]
+- Meet [90%] of the ranked requirements
+- Keep the whole cost within [the budget]
+- Keep the chosen tool in use for [3 years]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

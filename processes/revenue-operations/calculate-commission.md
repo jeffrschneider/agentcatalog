@@ -12,6 +12,13 @@ not yet payable are netted before anybody sees a number. The run closes
 when the statements are published with every line traceable to the
 record it came from, and payroll holds a file a person has signed for.
 
+## The goals
+
+- Publish statements within [5 days] of period close
+- Keep [99%] of lines unchanged after the dispute window
+- Recover [95%] of clawbacks owed in the period
+- Keep disputes under [3%] of statements
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -13,6 +13,13 @@ roadshow, and the activities are the same for all of them. The run stays
 open past the day of the event, because the manager still owes the
 follow-up and the report.
 
+## The goals
+
+- Fill [90%] of the room the event was sized for
+- Follow up every attendee within [2 days]
+- Create pipeline from [30%] of attending accounts
+- Hold cost per attendee to [the planned amount]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

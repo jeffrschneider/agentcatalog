@@ -18,6 +18,13 @@ with estimates first for any investor that needs them early. The run
 closes when every investor holds the audited statements and its own tax
 documents by the dates the partnership agreement and the law set.
 
+## The goals
+
+- Issue audited statements within [90 days]
+- Send investor tax documents by [March 15]
+- Close the audit with [zero] material adjustments
+- Hold audit fees within [5%] of last year
+
 ## The activities
 
 | # | Activity | What happens | Agents |

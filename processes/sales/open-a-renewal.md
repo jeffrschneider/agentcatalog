@@ -12,6 +12,13 @@ price to ask for, the least the organization will accept, and the person
 who opens the conversation. Nobody has contacted the customer yet, and
 that is the point of running it this early.
 
+## The goals
+
+- Hold every position [90 days] before the notice date
+- Ask for [5%] more than the current term's value
+- Close [80%] of renewals at the asked price
+- Keep surprise non-renewals at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

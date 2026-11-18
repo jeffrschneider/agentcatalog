@@ -25,6 +25,13 @@ This process quotes the positioning and never reopens it. When the
 identity cannot carry what the positioning claims, the producer sends
 that finding to the positioning process instead of settling it here.
 
+## The goals
+
+- Issue the signed identity within [12 weeks]
+- Keep the project within [5%] of budget
+- Have [60%] of test buyers prefer the chosen look
+- Lose no more than [1] direction to trademark search
+
 ## The activities
 
 | # | Activity | What happens | Agents |

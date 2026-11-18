@@ -13,6 +13,13 @@ difference could be noise, and a named person decides whether the change
 is rolled out or taken back out. The run closes when that decision is
 recorded and the finding is filed with the numbers behind it.
 
+## The goals
+
+- Lift conversion rate by [10%] from winning tests
+- Read each test within [6 weeks] of the hypothesis
+- Keep inconclusive tests under [30%]
+- Stop under [5%] of tests before their read date
+
 ## The activities
 
 | # | Activity | What happens | Agents |

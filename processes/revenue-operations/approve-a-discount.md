@@ -12,6 +12,13 @@ this customer and this segment already got. A named signer approves,
 cuts it back, or refuses, and the reason is recorded against the deal.
 An ask that passes its promised time escalates rather than waiting.
 
+## The goals
+
+- Answer every discount request within [4 hours]
+- Hold the average discount under [15%]
+- Win [50%] of deals given an approved discount
+- Keep discounts signed outside the table at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

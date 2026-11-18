@@ -11,6 +11,13 @@ approved to do. The piece can be an article or a longer guide, and the
 activities are the same for both. The run stays open past publication,
 because the manager still owes a report on how the piece performed.
 
+## The goals
+
+- Publish [90%] of pieces on their planned date
+- Keep claims published without a source at [zero]
+- Turn [2%] of readers into leads
+- Rank on the first page for [50%] of target terms
+
 ## The activities
 
 | # | Activity | What happens | Agents |

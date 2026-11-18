@@ -14,6 +14,13 @@ person signs the pass or the retake. The run closes when the result is
 recorded with the standard version it was scored against and the date it
 lapses.
 
+## The goals
+
+- Sign a result within [2 weeks] of being put forward
+- Pass [80%] of sellers at the first sitting
+- Certify [100%] of sellers before a customer call
+- Lift certified sellers' win rate by [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

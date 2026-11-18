@@ -13,6 +13,13 @@ run does not end at the announcement: the commitment is watched through
 the period, restated early if it will miss, and accounted for after the
 close against what actually landed.
 
+## The goals
+
+- Land within [5%] of the committed number
+- Commit at least [95%] of the period's target
+- Call any miss at least [30 days] before the close
+- Publish the commitment within [24 hours] of the calls
+
 ## The activities
 
 | # | Activity | What happens | Agents |

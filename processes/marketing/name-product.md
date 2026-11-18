@@ -13,6 +13,13 @@ the addresses that go with it, and has issued the name and the rules for
 writing it as a numbered version of the standard. Saying the name in
 public belongs to the announcement and the launch processes.
 
+## The goals
+
+- Issue a cleared name within [10 weeks]
+- Register the name in [100%] of selling markets
+- Have [70%] of tested buyers read the name as meant
+- Hold naming and clearance costs within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

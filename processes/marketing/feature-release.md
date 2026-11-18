@@ -17,6 +17,13 @@ weight to pay for them. A release that changes what a customer is
 charged, or that has a date committed to it, runs as a product launch
 instead.
 
+## The goals
+
+- Announce on every planned channel within [2 days]
+- Get [30%] of eligible customers using the feature
+- Answer [90%] of feature questions on first contact
+- Keep corrections to feature claims at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

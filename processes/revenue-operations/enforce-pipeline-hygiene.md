@@ -12,6 +12,13 @@ is fixed where the deal lives. What stays wrong carries a mark into the
 roll-up, so the arithmetic downstream can say what it could not support.
 Nothing here changes a category or decides what is committed.
 
+## The goals
+
+- Keep [95%] of open deals passing every rule
+- Settle flagged deals within [3 days]
+- Keep seller time on findings under [1 hour] a week
+- Land the forecast within [5%] of what closes
+
 ## The activities
 
 | # | Activity | What happens | Agents |

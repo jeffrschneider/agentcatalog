@@ -19,6 +19,13 @@ move the money. Raising the automation level moves none of those four.
 The run closes when the reset commitments are published and every agent
 has heard what it owes.
 
+## The goals
+
+- Publish the reset [10 days] after quarter close
+- Explain [100%] of misses against the plan
+- Hit [90%] of next quarter's reset targets
+- Move under [10%] of the budget between lines
+
 ## The activities
 
 | # | Activity | What happens | Agents |

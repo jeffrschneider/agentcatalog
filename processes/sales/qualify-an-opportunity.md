@@ -12,6 +12,12 @@ are set against the profile and scored, and the questions that came back
 empty are recorded as empty. The run ends when a person says work it,
 nurture it or decline it, tells the buyer, and records the reason.
 
+## The goals
+
+- Decide every opportunity within [3 days]
+- Find [40%] of answered inquiries worth working
+- Bring [70%] of worked deals to a proposal
+
 ## The activities
 
 | # | Activity | What happens | Agents |

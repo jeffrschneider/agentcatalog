@@ -12,6 +12,13 @@ phone and social. Every reply is read the same day. A reply stops the
 touches for that person, an opt-out suppresses them everywhere, and a
 reply that wants a conversation is handed on.
 
+## The goals
+
+- Answer every reply within [2 hours]
+- Book meetings with [2%] of people contacted
+- Keep opt-outs under [2%] of people contacted
+- Keep touches sent outside consent at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

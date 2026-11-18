@@ -21,6 +21,13 @@ places no orders. The channel processes place them against the plan it
 commits, and moving money once the flights are running is a separate
 process.
 
+## The goals
+
+- Commit the plan within [3 weeks] of the budget
+- Reach [70%] of the target audience
+- Meet the return target on [80%] of channels
+- Land actual results within [15%] of the model
+
 ## The activities
 
 | # | Activity | What happens | Agents |

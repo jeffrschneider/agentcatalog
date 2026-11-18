@@ -20,6 +20,12 @@ confidentiality agreement. The run closes when the response has gone in
 the investor's own format by its deadline and the library carries every
 new answer at a version.
 
+## The goals
+
+- Return every questionnaire within [10 days]
+- Answer [85%] of questions from the library
+- Keep answers corrected after sending at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

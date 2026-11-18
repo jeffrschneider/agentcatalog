@@ -17,6 +17,13 @@ members have heard what happens next. Acting on a theme belongs to
 whatever process owns the work it lands in, and this process is finished
 once each theme has reached the owner who can act on it.
 
+## The goals
+
+- Bring [80%] of confirmed members to the session
+- Give every theme an owner within [10 days]
+- Keep each member's time under [6 hours] a cycle
+- Keep [90%] of members for the next cycle
+
 ## The activities
 
 | # | Activity | What happens | Agents |

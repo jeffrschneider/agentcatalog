@@ -24,6 +24,13 @@ scores a single piece before it is published. This process reads a
 sample of everything already published and reports where it has moved
 away from the standard.
 
+## The goals
+
+- Deliver audit findings within [4 weeks]
+- Draw a sample from [90%] of channels in scope
+- Record a decision on every gap within [30 days]
+- Raise brand consistency across channels to [90%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

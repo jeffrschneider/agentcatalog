@@ -16,6 +16,13 @@ a broken link, a missing disclosure or the wrong creative on the wrong
 line. The run closes once the ads are serving and somebody has written
 down which creative is running where.
 
+## The goals
+
+- Get ads live within [2 days] of approval
+- Rebuild under [5%] of ads after the final check
+- Carry the required disclosure on [100%] of ads
+- Track visits from [100%] of live ads
+
 ## The activities
 
 | # | Activity | What happens | Agents |

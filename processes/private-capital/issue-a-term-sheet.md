@@ -15,6 +15,12 @@ bind before closing are recorded with their dates. The run closes when the
 signed term sheet is on the deal's record and has been handed to the
 lawyers for the definitive agreements.
 
+## The goals
+
+- Sign the term sheet within [10 days] of approval
+- Keep [100%] of terms inside the committee limits
+- Win [60%] of the term sheets offered
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -18,6 +18,13 @@ have stopped serving in those places, the wasted spend goes back to
 whoever billed it, and the agreed exclusions are issued as a new version
 of the standing lists so that every future buy reads them.
 
+## The goals
+
+- Put exclusions in force within [2 days]
+- Keep spend on failing placements under [1%]
+- Recover [100%] of spend on failing placements
+- Keep reach after exclusions at [90%] of plan
+
 ## The activities
 
 | # | Activity | What happens | Agents |

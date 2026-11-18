@@ -23,6 +23,13 @@ contacts or accounts is built in any platform during this run, because
 building the list is a separate process that reads the segments this
 one records.
 
+## The goals
+
+- Issue the agreed segments within [6 weeks]
+- Cover [80%] of last year's revenue in named segments
+- Find [60%] of each segment in our own records
+- Win [70%] of new revenue in the top segments
+
 ## The activities
 
 | # | Activity | What happens | Agents |

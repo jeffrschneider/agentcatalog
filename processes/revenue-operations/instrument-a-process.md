@@ -12,6 +12,13 @@ watched, and the people being measured are told by a person rather than
 by a report. The thresholds are set, the detection is tested against
 runs whose answer is already known, and the numbers go to the review.
 
+## The goals
+
+- Send the first report within [4 weeks]
+- Track [100%] of the steps the owner named
+- Keep false alarms under [10%] of signals raised
+- Add no more than [2] fields sellers must fill
+
 ## The activities
 
 | # | Activity | What happens | Agents |

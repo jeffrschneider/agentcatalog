@@ -12,6 +12,13 @@ tests that sentence with the people who would live with the change
 before anybody approaches whoever signs. A person decides pursue, park
 or drop, and the reason is written down next to the evidence.
 
+## The goals
+
+- Decide every signal within [5 days]
+- Pursue [30%] of the signals that arrive
+- Turn [50%] of pursued openings into deals
+- Grow revenue from existing customers by [15%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

@@ -13,6 +13,13 @@ same rule, signed by a named person, and told to both sides in the same
 words on the same day. The decision becomes precedent, and a rule that
 keeps producing conflicts goes back to be rewritten.
 
+## The goals
+
+- Decide every conflict within [5 days]
+- Keep appealed decisions under [5%]
+- Keep deals lost during a freeze under [10%]
+- Hold partner satisfaction with rulings at [85%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

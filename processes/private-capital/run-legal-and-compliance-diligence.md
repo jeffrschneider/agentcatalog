@@ -17,6 +17,13 @@ finding is rated with an owner, and the deal lead partner decides which
 problems are fixed in the documents, which are priced or covered by a
 promise from the seller, and which stop the deal.
 
+## The goals
+
+- Finish legal diligence within [4 weeks]
+- Have a person decide [100%] of screening hits
+- Keep legal claims after closing at [zero]
+- Hold counsel fees within [the budget]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

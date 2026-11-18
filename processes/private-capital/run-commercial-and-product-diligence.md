@@ -16,6 +16,12 @@ finding is rated and given an owner, and the deal lead partner hears one
 report that says which claims are proved, which are weakened and which
 are still unproved.
 
+## The goals
+
+- Finish commercial diligence within [4 weeks]
+- Rate [100%] of thesis claims proved or not
+- Hold diligence costs under [1%] of the deal value
+
 ## The activities
 
 | # | Activity | What happens | Agents |

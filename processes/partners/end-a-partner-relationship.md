@@ -14,6 +14,13 @@ every customer hears who serves them next before their support changes.
 The run closes when nothing is left open and nobody is left holding a
 contract with nobody behind it.
 
+## The goals
+
+- Keep [95%] of the partner's customers
+- Complete each exit within [90 days] of the decision
+- Close all partner access within [1 day] of the last day
+- Settle money both ways within [30 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

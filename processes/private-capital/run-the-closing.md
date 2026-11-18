@@ -16,6 +16,13 @@ confirmed receipt, the executed set is filed, the fund's position is in
 the cap table record and on the fund's books, and what the agreements
 still owe after closing has an owner and a date.
 
+## The goals
+
+- Close on [the target closing date]
+- Pay [100%] of money to verified accounts
+- Waive no more than [1] closing condition
+- Clear post-closing items within [60 days]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

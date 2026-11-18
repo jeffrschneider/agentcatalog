@@ -18,6 +18,13 @@ closes when the fund's money has arrived, any amount held back for
 claims has its release date on the record, and the result is set
 against the plan.
 
+## The goals
+
+- Sell at or above [the floor price]
+- Close the sale within [9 months] of approval
+- Keep proceeds held back under [10%]
+- Hold sale costs under [2%] of proceeds
+
 ## The activities
 
 | # | Activity | What happens | Agents |

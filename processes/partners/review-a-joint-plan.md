@@ -12,6 +12,13 @@ the gaps out loud, changes the targets or the accounts or the inputs,
 and closes the commitments nobody is going to do. What changed is
 signed, recorded and published, and the next review is dated.
 
+## The goals
+
+- Hold [95%] of joint reviews on their date
+- Settle [100%] of measures before the meeting
+- Meet [85%] of joint plan commitments
+- Keep commitments moved more than once under [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

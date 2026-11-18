@@ -13,6 +13,13 @@ anything is spent. A person signs anything above the threshold. The run
 closes when the partner has an answer in writing and an approved
 activity has been handed to the marketing process that runs it.
 
+## The goals
+
+- Answer every fund request within [5 days]
+- Approve [80%] of requests on first submission
+- Generate [5x] the approved amount in pipeline
+- Keep approvals left unclaimed under [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

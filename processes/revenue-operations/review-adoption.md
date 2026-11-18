@@ -12,6 +12,13 @@ wrong or a process that is ignored, and costed. The review then decides
 one of three things per departure: change the process, change the
 enforcement, or accept the departure and say so out loud.
 
+## The goals
+
+- Decide every departure within [2 weeks] of period end
+- Lift runs that follow the process to [90%]
+- Cut the cost of departures by [30%]
+- Add no more than [2] new hard stops each period
+
 ## The activities
 
 | # | Activity | What happens | Agents |

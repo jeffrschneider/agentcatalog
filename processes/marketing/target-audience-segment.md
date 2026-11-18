@@ -16,6 +16,12 @@ settled before this run started, so nothing here argues about that. The
 run closes when the list has reached every destination and the
 definition has been written down where the next campaign can find it.
 
+## The goals
+
+- Deliver a cleared segment within [3 days]
+- Keep contacts without consent at [zero]
+- Match [80%] of the list on each platform
+
 ## The activities
 
 | # | Activity | What happens | Agents |

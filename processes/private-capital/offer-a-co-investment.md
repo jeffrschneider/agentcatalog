@@ -17,6 +17,12 @@ less than they asked for are told why. The run closes when each
 allocation is recorded with its reason and each co-investor's documents
 and money are part of the closing.
 
+## The goals
+
+- Place the amount within [15 days] of approval
+- Place [100%] of what the fund will not take
+- Keep allocation complaints at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

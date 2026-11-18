@@ -13,6 +13,12 @@ deliver. Every term off the standard paper is settled by name before
 finance approves. The run closes when the order is recorded and the
 people who act on it have been told what they are acting on.
 
+## The goals
+
+- Book every signed order within [2 days]
+- Book [99%] of orders with no later correction
+- Keep orders booked over a credit limit at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

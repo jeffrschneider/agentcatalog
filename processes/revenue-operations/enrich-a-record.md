@@ -13,6 +13,13 @@ carries the source, the date and the confidence beside the value. A
 value a person typed is never overwritten, and a fill nobody is
 confident in waits for a person instead of landing quietly.
 
+## The goals
+
+- Fill [90%] of required fields from named sources
+- Keep filled values that prove wrong under [3%]
+- Keep the data cost per record under [the budget]
+- Overwrite [zero] values a person typed
+
 ## The activities
 
 | # | Activity | What happens | Agents |

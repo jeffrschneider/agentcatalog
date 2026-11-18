@@ -12,6 +12,13 @@ summary is read back so the buyer can correct it. The run ends with a
 written account of the problem and a named list of the questions the
 call did not answer. Nothing is proposed, and nothing is priced.
 
+## The goals
+
+- Hold the call within [5 days] of qualification
+- Have the people with the problem on [80%] of calls
+- Get [90%] of summaries confirmed at first read-back
+- Move [60%] of discovery calls on to a proposal
+
 ## The activities
 
 | # | Activity | What happens | Agents |

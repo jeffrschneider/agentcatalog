@@ -12,6 +12,13 @@ by the seller. The buyer ranks the list, confirms it, and the record
 gets a version and a date. What cannot be met is marked before anything
 is shaped, so the shape is never built on a promise nobody made.
 
+## The goals
+
+- Version the confirmed record within [5 days]
+- Have the buyer confirm [90%] of records first time
+- Mark [100%] of unmeetable needs before shaping
+- Keep requirements added after shaping under [10%]
+
 ## The activities
 
 | # | Activity | What happens | Agents |

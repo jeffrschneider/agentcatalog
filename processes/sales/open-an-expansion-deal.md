@@ -12,6 +12,13 @@ signs off on the ask, the owner makes it, and what the customer said
 comes back in their own words. A deal that opens leaves here for
 discovery, proposal and closing like any other deal.
 
+## The goals
+
+- Reach an answer on every opening within [30 days]
+- Turn [50%] of pursued openings into open deals
+- Keep customers put off by an approach under [5%]
+- Keep deals delivery cannot carry at [zero]
+
 ## The activities
 
 | # | Activity | What happens | Agents |
