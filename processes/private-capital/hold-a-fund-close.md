@@ -21,7 +21,7 @@ close, each investor makes its elections under its most favored nation
 (MFN) clause. The run closes when every investor admitted is on the
 register with its account open and its side letter in force.
 
-**delivers:** sheet
+**delivers:** sheet, an investor register at close
 
 ## The goals
 

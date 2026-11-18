@@ -16,7 +16,7 @@ changed where the numbers argue for it. This run reaches its end when
 the program is live and being measured. The program keeps sending after
 that, and that is the difference between this process and a campaign.
 
-**delivers:** sequence
+**delivers:** sequence, a nurture sequence
 
 ## The goals
 

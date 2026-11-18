@@ -13,7 +13,7 @@ difference could be noise, and a named person decides whether the change
 is rolled out or taken back out. The run closes when that decision is
 recorded and the finding is filed with the numbers behind it.
 
-**delivers:** verdict
+**delivers:** verdict, an experiment result
 
 ## The goals
 

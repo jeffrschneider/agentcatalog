@@ -12,7 +12,7 @@ price to ask for, the least the organization will accept, and the person
 who opens the conversation. Nobody has contacted the customer yet, and
 that is the point of running it this early.
 
-**delivers:** document
+**delivers:** document, a renewal position
 
 ## The goals
 

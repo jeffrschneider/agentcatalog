@@ -16,7 +16,7 @@ a run of long-form content, a refresh cycle, a newsletter issue or a
 landing page starts from. This process publishes nothing of its own.
 What it produces is a set of commitments that other processes work from.
 
-**delivers:** sheet
+**delivers:** sheet, a content calendar
 
 ## The goals
 

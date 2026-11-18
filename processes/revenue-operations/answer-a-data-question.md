@@ -12,7 +12,7 @@ was pulled travel with the number, and what the data leaves out is said
 rather than hidden. Then the ask is judged. A question asked once is
 filed. A question asked every week becomes a report.
 
-**delivers:** report
+**delivers:** report, a data answer
 
 ## The goals
 

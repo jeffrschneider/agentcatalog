@@ -19,7 +19,7 @@ closes when the investor has stated a commitment amount and the close it
 will join, or has declined, and the answer is recorded with the date to
 ask again.
 
-**delivers:** deal
+**delivers:** deal, an investor commitment
 
 ## The goals
 

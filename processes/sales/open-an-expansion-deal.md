@@ -12,7 +12,7 @@ signs off on the ask, the owner makes it, and what the customer said
 comes back in their own words. A deal that opens leaves here for
 discovery, proposal and closing like any other deal.
 
-**delivers:** deal
+**delivers:** deal, an expansion deal
 
 ## The goals
 

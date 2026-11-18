@@ -18,7 +18,7 @@ compliance officer. The run closes with one dated result the memo
 carries, whether clear, clear with conditions, or blocked, with every
 consent the deal would need named.
 
-**delivers:** verdict
+**delivers:** verdict, a mandate check
 
 ## The goals
 

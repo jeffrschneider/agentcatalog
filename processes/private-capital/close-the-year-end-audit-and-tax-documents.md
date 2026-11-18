@@ -18,7 +18,7 @@ with estimates first for any investor that needs them early. The run
 closes when every investor holds the audited statements and its own tax
 documents by the dates the partnership agreement and the law set.
 
-**delivers:** statement
+**delivers:** statement, audited statements and tax documents
 
 ## The goals
 

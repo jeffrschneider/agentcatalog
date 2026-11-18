@@ -19,7 +19,7 @@ letter keeper turns every promise into an obligation with an owner. The
 run closes when the agreement and the side letter are agreed and ready to
 sign at the investor's close.
 
-**delivers:** agreement
+**delivers:** agreement, agreed fund terms and side letters
 
 ## The goals
 

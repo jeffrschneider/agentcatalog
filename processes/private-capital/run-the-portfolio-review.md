@@ -16,7 +16,7 @@ capital the fund can still call. The run closes when the watch list is
 current, every reserve is set with its reason, and every action has one
 owner and one date.
 
-**delivers:** report
+**delivers:** report, a portfolio review
 
 ## The goals
 

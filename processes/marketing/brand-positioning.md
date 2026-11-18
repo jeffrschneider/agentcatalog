@@ -21,7 +21,7 @@ settles the company-level position and stops there. Positioning an
 individual product is a separate process that quotes the version this run
 issued.
 
-**delivers:** document
+**delivers:** document, a brand positioning
 
 ## The goals
 

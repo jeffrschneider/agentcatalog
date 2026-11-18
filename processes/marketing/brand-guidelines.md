@@ -21,7 +21,7 @@ they have it. What the identity or the voice should say is settled
 elsewhere, and correcting the published material the new version fails
 belongs to the refresh process.
 
-**delivers:** creative set
+**delivers:** creative set, brand guidelines
 
 ## The goals
 

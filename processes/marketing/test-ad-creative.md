@@ -32,7 +32,7 @@ leaves the numbers behind the bar blank, because the minimum exposure,
 the minimum run length and the size of the gap are the adopting
 organization's decision.
 
-**delivers:** verdict
+**delivers:** verdict, an ad test result
 
 ## The goals
 

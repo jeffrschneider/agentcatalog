@@ -21,7 +21,7 @@ places no orders. The channel processes place them against the plan it
 commits, and moving money once the flights are running is a separate
 process.
 
-**delivers:** sheet
+**delivers:** sheet, a media plan
 
 ## The goals
 

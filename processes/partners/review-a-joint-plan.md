@@ -12,7 +12,7 @@ the gaps out loud, changes the targets or the accounts or the inputs,
 and closes the commitments nobody is going to do. What changed is
 signed, recorded and published, and the next review is dated.
 
-**delivers:** report
+**delivers:** report, a joint plan review
 
 ## The goals
 

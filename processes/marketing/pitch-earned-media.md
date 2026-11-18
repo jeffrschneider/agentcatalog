@@ -13,7 +13,7 @@ this process is a sequence of offers and follow-ups, and each one waits
 on an answer the organization does not control. The run stays open until
 the coverage has been recorded and the run has been debriefed.
 
-**delivers:** page
+**delivers:** page, earned media coverage
 
 ## The goals
 

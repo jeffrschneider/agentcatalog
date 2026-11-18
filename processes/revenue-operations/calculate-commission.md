@@ -12,7 +12,7 @@ not yet payable are netted before anybody sees a number. The run closes
 when the statements are published with every line traceable to the
 record it came from, and payroll holds a file a person has signed for.
 
-**delivers:** statement
+**delivers:** statement, commission statements
 
 ## The goals
 

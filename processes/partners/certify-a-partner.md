@@ -12,7 +12,7 @@ every pass and every fail. Certificates carry a date and an expiry,
 because a partner whose certified people have left is a partner who is
 no longer certified.
 
-**delivers:** verdict
+**delivers:** verdict, a partner certification
 
 ## The goals
 

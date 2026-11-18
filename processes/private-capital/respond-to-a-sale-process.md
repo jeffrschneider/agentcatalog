@@ -15,7 +15,7 @@ deadline with the range, the basis and the conditions, or the firm
 withdraws in writing. The run closes when the bank has the firm's
 indication or its withdrawal.
 
-**delivers:** document
+**delivers:** document, an indication of interest
 
 ## The goals
 

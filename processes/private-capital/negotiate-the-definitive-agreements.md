@@ -17,7 +17,7 @@ past the committee's approval goes back to the committee. Nothing is
 signed here. The run closes when both sides confirm one clean text and the
 conditions to closing are handed to the closing.
 
-**delivers:** agreement
+**delivers:** agreement, agreed definitive agreements
 
 ## The goals
 

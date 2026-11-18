@@ -21,7 +21,7 @@ total the department has to spend was set somewhere else, and the plan
 this process amends was built somewhere else too. What changes here is
 where committed money sits inside that plan while the flights run.
 
-**delivers:** sheet
+**delivers:** sheet, a media spend reallocation
 
 ## The goals
 

@@ -12,7 +12,7 @@ no account is approached twice in the same week. An account that engages
 is scored and handed to its owner with the evidence attached. The run
 stays open until engagement has been reported account by account.
 
-**delivers:** campaign
+**delivers:** campaign, an account-based play
 
 ## The goals
 

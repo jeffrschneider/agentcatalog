@@ -10,7 +10,7 @@ measurement put on it, gets it signed and published, and then watches
 what the page converts and changes it where the numbers say people are
 leaving.
 
-**delivers:** page
+**delivers:** page, a landing page
 
 ## The goals
 

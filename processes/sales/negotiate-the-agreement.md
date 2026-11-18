@@ -12,7 +12,7 @@ of the person who agreed. What the two sides settled leaves the run as
 one written position, and the redlines and the close plan both work
 from that one document rather than from anybody's memory.
 
-**delivers:** agreement
+**delivers:** agreement, an agreed contract
 
 ## The goals
 

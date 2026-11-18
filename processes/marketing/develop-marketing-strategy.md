@@ -35,7 +35,7 @@ process, which reads it too. The annual planning process turns the
 agreed strategy into initiatives, money and a calendar, and activity 15
 hands the strategy to it.
 
-**delivers:** document
+**delivers:** document, a marketing strategy
 
 ## The goals
 

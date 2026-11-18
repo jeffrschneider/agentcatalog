@@ -18,7 +18,7 @@ are disclosed, and the chief financial officer (CFO) and a partner sign
 it. The run closes when each investor holds the letter and its own
 statement on the investor portal by the date it was promised.
 
-**delivers:** report
+**delivers:** report, a quarterly investor report
 
 ## The goals
 

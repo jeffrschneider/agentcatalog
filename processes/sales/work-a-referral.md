@@ -12,7 +12,7 @@ The introducer gets a note they can send as it stands, and a date. One
 reminder follows, then the referral is let go. The introducer hears how
 it went either way.
 
-**delivers:** sequence
+**delivers:** sequence, a referral introduction
 
 ## The goals
 

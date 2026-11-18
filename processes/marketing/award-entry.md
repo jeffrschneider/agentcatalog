@@ -15,7 +15,7 @@ judges come back with, and records the result. The run stays open long
 past the filing, because the decision arrives weeks or months later and
 somebody still owes the debrief.
 
-**delivers:** document
+**delivers:** document, an award entry
 
 ## The goals
 

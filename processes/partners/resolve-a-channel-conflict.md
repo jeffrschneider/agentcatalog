@@ -13,7 +13,7 @@ same rule, signed by a named person, and told to both sides in the same
 words on the same day. The decision becomes precedent, and a rule that
 keeps producing conflicts goes back to be rewritten.
 
-**delivers:** verdict
+**delivers:** verdict, a channel conflict ruling
 
 ## The goals
 

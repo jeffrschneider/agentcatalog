@@ -16,7 +16,7 @@ removing somebody who should have stayed and sending to somebody who
 asked not to be sent to, and most of the checking below is aimed at
 those two.
 
-**delivers:** status board
+**delivers:** status board, a clean contact base
 
 ## The goals
 

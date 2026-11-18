@@ -17,7 +17,7 @@ and campaign numbers are a different source. They belong to the
 analytics agent, and this run never reports one of them as a perception
 figure.
 
-**delivers:** report
+**delivers:** report, a brand health report
 
 ## The goals
 

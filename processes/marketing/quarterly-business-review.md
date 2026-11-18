@@ -19,7 +19,7 @@ move the money. Raising the automation level moves none of those four.
 The run closes when the reset commitments are published and every agent
 has heard what it owes.
 
-**delivers:** report
+**delivers:** report, a quarterly business review
 
 ## The goals
 

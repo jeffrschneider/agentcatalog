@@ -13,7 +13,7 @@ because a routing rule nobody can see is indistinguishable from an
 accident. The run closes when the rule is live and its first week has
 been watched.
 
-**delivers:** document
+**delivers:** document, a routing rule
 
 ## The goals
 

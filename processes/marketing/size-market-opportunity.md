@@ -18,7 +18,7 @@ it covers, and the assumptions it rests on. A number that arrives without
 its method cannot be used by anyone downstream, so the method is part of
 what this process delivers.
 
-**delivers:** report
+**delivers:** report, a market size estimate
 
 ## The goals
 

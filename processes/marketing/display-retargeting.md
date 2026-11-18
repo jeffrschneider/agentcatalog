@@ -14,7 +14,7 @@ somebody has read the delivered frequency back against that limit,
 checked that nobody on the suppression list was served, and recorded
 the pools, the caps and the exclusions at a version.
 
-**delivers:** campaign
+**delivers:** campaign, a retargeting campaign
 
 ## The goals
 

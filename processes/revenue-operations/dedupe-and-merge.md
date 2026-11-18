@@ -13,7 +13,7 @@ losing record held is kept rather than dropped. The activities, deals
 and files move, the owners are told, and a merge that turns out to be
 wrong can be reversed from what was kept.
 
-**delivers:** status board
+**delivers:** status board, merged duplicate records
 
 ## The goals
 

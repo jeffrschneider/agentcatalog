@@ -12,7 +12,7 @@ wrong or a process that is ignored, and costed. The review then decides
 one of three things per departure: change the process, change the
 enforcement, or accept the departure and say so out loud.
 
-**delivers:** report
+**delivers:** report, an adoption review
 
 ## The goals
 

@@ -14,7 +14,7 @@ promise is confirmed to have people. Each partner is told their tier,
 the reason, and what would move it, and the systems are changed to match
 before the round closes.
 
-**delivers:** sheet
+**delivers:** sheet, partner tiers
 
 ## The goals
 

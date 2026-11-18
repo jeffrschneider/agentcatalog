@@ -12,7 +12,7 @@ carries the evidence behind it. Anything off the standard price or the
 standard paper is approved before the quote exists. The run closes when
 an approved quote is ready to be written into an offer.
 
-**delivers:** document
+**delivers:** document, a priced quote
 
 ## The goals
 

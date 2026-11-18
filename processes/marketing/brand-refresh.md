@@ -21,7 +21,7 @@ sweeps for what the inventory missed. The old logo files and templates
 are taken out of the asset store at the end, so nobody puts the old logo
 on something new six months later.
 
-**delivers:** status board
+**delivers:** status board, a brand refresh rollout
 
 ## The goals
 

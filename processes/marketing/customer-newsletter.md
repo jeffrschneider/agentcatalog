@@ -12,7 +12,7 @@ send, because subscribers reply for days afterwards and the manager
 still owes a report. Every check in this process happens before the
 send, because a sent issue cannot be recalled.
 
-**delivers:** page
+**delivers:** page, a customer newsletter
 
 ## The goals
 

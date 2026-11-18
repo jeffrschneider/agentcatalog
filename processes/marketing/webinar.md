@@ -13,7 +13,7 @@ are the same for all of them. The run stays open past the session,
 because the manager still owes the follow-up, the recording and the
 report.
 
-**delivers:** event
+**delivers:** event, a webinar
 
 ## The goals
 

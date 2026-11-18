@@ -16,7 +16,7 @@ buyers who did not buy are the harder half to reach, and that is the
 half most organizations end up skipping, so the report says how many of
 each half answered.
 
-**delivers:** report
+**delivers:** report, a win-loss analysis
 
 ## The goals
 

@@ -17,7 +17,7 @@ members have heard what happens next. Acting on a theme belongs to
 whatever process owns the work it lands in, and this process is finished
 once each theme has reached the owner who can act on it.
 
-**delivers:** notes
+**delivers:** notes, advisory board notes
 
 ## The goals
 

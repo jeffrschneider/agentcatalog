@@ -24,7 +24,7 @@ together as a numbered version of the brand guidelines. That version is
 what the brand-check agent scores material against, and this process is
 where it comes from. The run does not reopen the position itself.
 
-**delivers:** document
+**delivers:** document, a brand voice guide
 
 ## The goals
 

@@ -21,7 +21,7 @@ day say whether they recognize it. The run ends with the persona
 recorded at a version, handed to every agent that writes to this buyer
 or targets them, and carrying the date it comes back up.
 
-**delivers:** document
+**delivers:** document, a buyer persona
 
 ## The goals
 

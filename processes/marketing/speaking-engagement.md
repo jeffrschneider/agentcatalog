@@ -13,7 +13,7 @@ afterwards under the terms that were agreed. The run stays open past
 the talk, because the manager still owes a report on what the
 engagement was worth.
 
-**delivers:** event
+**delivers:** event, a conference talk
 
 ## The goals
 

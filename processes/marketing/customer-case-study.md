@@ -11,7 +11,7 @@ words before anything goes live. The run stays open past publication,
 because the agreement has an end date and the customer can withdraw at
 any point.
 
-**delivers:** page
+**delivers:** page, a customer case study
 
 ## The goals
 

@@ -12,7 +12,7 @@ being waved through, and a person signs the amount before it leaves.
 The run closes when the partner has been paid or told which lines were
 cut and why, and the money that was not used is back in the fund.
 
-**delivers:** statement
+**delivers:** statement, a paid claim
 
 ## The goals
 

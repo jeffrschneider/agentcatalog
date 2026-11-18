@@ -17,7 +17,7 @@ that does not tie goes to the deal lead the day it is found. The run
 closes when every company's reports are on the record, read, confirmed
 by the deal lead and handed to the quarter's valuation.
 
-**delivers:** report
+**delivers:** report, portfolio company reports
 
 ## The goals
 

@@ -17,7 +17,7 @@ decisions and actions are recorded and matched to the company's minutes,
 the plan and the watch list reflect them, and every action has an owner
 and a date to be followed up before the next pack.
 
-**delivers:** notes
+**delivers:** notes, board meeting minutes
 
 ## The goals
 

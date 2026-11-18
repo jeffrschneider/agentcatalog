@@ -19,7 +19,7 @@ resets what each area is held to. This process goes outside the
 department, to a board or an executive team, and it asks those people to
 take the decisions marketing cannot take on its own.
 
-**delivers:** notes
+**delivers:** notes, an executive briefing
 
 ## The goals
 

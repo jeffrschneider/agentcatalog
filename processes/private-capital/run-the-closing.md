@@ -16,7 +16,7 @@ confirmed receipt, the executed set is filed, the fund's position is in
 the cap table record and on the fund's books, and what the agreements
 still owe after closing has an owner and a date.
 
-**delivers:** deal
+**delivers:** deal, a closed deal
 
 ## The goals
 

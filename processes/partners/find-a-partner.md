@@ -12,7 +12,7 @@ company. Candidates nobody may work with are removed before anyone
 speaks to them. What leaves the run is a short list where every name
 carries the reason it is on the list and the evidence behind it.
 
-**delivers:** shortlist
+**delivers:** shortlist, a partner shortlist
 
 ## The goals
 

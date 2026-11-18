@@ -12,7 +12,7 @@ tests that sentence with the people who would live with the change
 before anybody approaches whoever signs. A person decides pursue, park
 or drop, and the reason is written down next to the evidence.
 
-**delivers:** status board
+**delivers:** status board, expansion openings
 
 ## The goals
 

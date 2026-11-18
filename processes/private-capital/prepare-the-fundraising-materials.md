@@ -19,7 +19,7 @@ signed confidentiality agreement. The run closes when the approved
 materials are released at their version and the records the rules
 require are kept.
 
-**delivers:** creative set
+**delivers:** creative set, fundraising materials
 
 ## The goals
 

@@ -13,7 +13,7 @@ and reports what the show produced against what it was asked to
 produce. The run stays open past the last show day, because the leads
 still have to reach their owners and the show still has to be reported.
 
-**delivers:** event
+**delivers:** event, a trade show stand
 
 ## The goals
 

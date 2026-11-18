@@ -16,7 +16,7 @@ director votes on the company's board. The run closes when the course has
 been handed to the process that carries it out and the company is off the
 watch list, sold or written off.
 
-**delivers:** document
+**delivers:** document, a turnaround decision
 
 ## The goals
 

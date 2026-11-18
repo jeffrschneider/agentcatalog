@@ -12,7 +12,7 @@ table. The shape is written on a term sheet, negotiated, signed, and
 only then turned into a definitive agreement by legal. What leaves the
 run is a signed agreement and a list of what it obliges each side to do.
 
-**delivers:** agreement
+**delivers:** agreement, a signed alliance agreement
 
 ## The goals
 

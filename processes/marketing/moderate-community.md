@@ -13,7 +13,7 @@ ends with a report and a list of the items still open, and the next cycle
 starts by picking those items up. The adopting organization decides how
 long a cycle is, and a shift, a day and a week all work.
 
-**delivers:** status board
+**delivers:** status board, a moderated community
 
 ## The goals
 

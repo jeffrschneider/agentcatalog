@@ -19,7 +19,7 @@ the milestones that count as active. One run covers one customer, and
 that is the difference between this process and designing the program
 the customer is being run through.
 
-**delivers:** sequence
+**delivers:** sequence, an onboarding email program
 
 ## The goals
 

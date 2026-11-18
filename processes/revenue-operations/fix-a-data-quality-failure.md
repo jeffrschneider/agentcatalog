@@ -13,7 +13,7 @@ already wrong corrected, and only after that is the rule run again. The
 run does not close until the rule has passed for a period and whoever
 read the wrong numbers has been told.
 
-**delivers:** status board
+**delivers:** status board, a data quality fix
 
 ## The goals
 

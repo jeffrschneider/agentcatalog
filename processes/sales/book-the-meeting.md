@@ -12,7 +12,7 @@ a meeting nobody attends is chased once and rebooked. What was said is
 written up the same day, the seller decides whether it goes forward,
 and the outbound touches to that account stop.
 
-**delivers:** sheet
+**delivers:** sheet, a held meeting
 
 ## The goals
 

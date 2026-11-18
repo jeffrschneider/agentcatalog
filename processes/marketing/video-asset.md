@@ -15,7 +15,7 @@ signed. A brief that asks for copy, images and video together runs
 `ref/mkt/creative-assets`, and this process is what the video part of
 that work expands into when a video is the whole job.
 
-**delivers:** creative set
+**delivers:** creative set, a finished video
 
 ## The goals
 

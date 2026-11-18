@@ -14,7 +14,7 @@ person signs the pass or the retake. The run closes when the result is
 recorded with the standard version it was scored against and the date it
 lapses.
 
-**delivers:** verdict
+**delivers:** verdict, a seller certification
 
 ## The goals
 

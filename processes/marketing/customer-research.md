@@ -14,7 +14,7 @@ been signed. The run ends with findings that carry the responses behind
 them. This process creates evidence that did not exist before by asking
 people. Reading what customers already did is a separate process.
 
-**delivers:** report
+**delivers:** report, customer research findings
 
 ## The goals
 

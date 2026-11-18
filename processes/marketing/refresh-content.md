@@ -15,7 +15,7 @@ makes the change and sets the redirects, so every address the cycle
 touches still points at a page. The run closes with an account of what
 the cycle changed, what it took down, and what those changes moved.
 
-**delivers:** status board
+**delivers:** status board, refreshed site content
 
 ## The goals
 

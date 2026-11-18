@@ -24,7 +24,7 @@ budget. This run happens on a repeating cadence inside the year, takes
 those goals as already set, and answers the requests that keep arriving
 after the plan was signed.
 
-**delivers:** sheet
+**delivers:** sheet, a ranked initiative list
 
 ## The goals
 

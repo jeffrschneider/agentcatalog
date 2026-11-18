@@ -12,7 +12,7 @@ tested for coverage against the target. Cuts too thin to carry a number
 are said to be thin. The result is frozen at a version with its gaps
 named. It is arithmetic, and it decides nothing.
 
-**delivers:** sheet
+**delivers:** sheet, a forecast roll-up
 
 ## The goals
 

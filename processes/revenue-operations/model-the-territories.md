@@ -12,7 +12,7 @@ closed last year. Leaders pick one map and say why. The run ends with a
 map at a version and the assumption written beside every carrying
 number.
 
-**delivers:** sheet
+**delivers:** sheet, a territory model
 
 ## The goals
 

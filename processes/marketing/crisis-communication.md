@@ -15,7 +15,7 @@ that decision is still open. The run stays open past the last statement,
 because the review of what was known and when it was known is part of
 the work.
 
-**delivers:** page
+**delivers:** page, a crisis response
 
 ## The goals
 
