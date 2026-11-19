@@ -34,3 +34,7 @@ closed because a call went well.
   after diligence that takes its bid below it, to the investment
   committee before anyone answers the buyer, because only the committee
   moves the floor
+- a candidate's ask on an offer, or a leaver's ask on a separation
+  agreement, past the approved limits, to the offer's approvers or to
+  the head of HR, who give, trade or refuse it in writing, and a term
+  given past the standard text is recorded so the next run can see it

@@ -8,6 +8,7 @@ down what each one requires.
 
 covers:
 - Read the Disclosure Rules
+- Read What Each Location Requires
 
 ## state-the-required-wording
 
@@ -32,6 +33,7 @@ covers:
 - Review the Drafts
 - Check the Comparisons
 - Check Against the Advertising Rules
+- Check the Required Statements
 
 ## clear-material-for-sign-off
 

@@ -10,6 +10,7 @@ covers:
 - Set What the Report Covers
 - Set What the Review Covers
 - Open the Quarter's Report
+- Open the Period's Report
 
 ## name-the-measures
 
@@ -94,6 +95,7 @@ people who decide what happens next.
 covers:
 - Write the Account
 - Write the Quarter's Letter
+- Write Why the Numbers Moved
 
 ## clear-the-report-before-it-goes-out
 
@@ -114,6 +116,7 @@ covers:
 - Publish the Report
 - Report Awareness, Perception and Preference
 - Release the Figures
+- Deliver the Report
 
 ## restate-published-reports
 
@@ -137,6 +140,8 @@ what the next report changes.
 covers:
 - Answer the Investors' Questions
 - Record What the Quarter Taught
+- Answer the Leaders' Questions
+- Record What the Period Taught
 
 ## tell-the-agents-what-they-have
 

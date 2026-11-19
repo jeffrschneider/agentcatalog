@@ -3,16 +3,16 @@
 `questionnaire-responder v1`
 
 **purpose:** Answers security, legal, procurement and investor due
-diligence questionnaires from a maintained source of answers rather
-than from memory. Reads the rules the form sets first, sorts and
-deduplicates the questions, matches each one to an answer already in
-the library at that answer's version, and reads every match back
-against the control, policy or report it came from. Every question the
-source cannot answer, and every match whose source no longer says that,
-is flagged and routed to the person who owns the fact. It fills the
-requester's own format word for word, attaches the evidence at the
-versions the answers name, and checks the form against the rules before
-it leaves.
+diligence questionnaires, and an auditor's or an inspector's request
+list, from a maintained source of answers rather than from memory. Reads
+the rules the form sets first, sorts and deduplicates the questions,
+matches each one to an answer already in the library at that answer's
+version, and reads every match back against the control, policy or
+report it came from. Every question the source cannot answer, and every
+match whose source no longer says that, is flagged and routed to the
+person who owns the fact. It fills the requester's own format word for
+word, attaches the evidence at the versions the answers name, and checks
+the form against the rules before it leaves.
 
 ## Processes
 
@@ -32,6 +32,8 @@ it leaves.
   Draft the New Answers, Check the Figures and the Claims, Attach the
   Evidence, Check the Form Against Its Rules, Add the New Answers to the
   Library, Answer the Follow-Up Questions
+- `ref/hr/respond-to-an-employment-audit` / Read What Each Request Asks
+  For, Route What the Records Cannot Answer, Draft the Answers
 
 ## Patterns
 
@@ -64,6 +66,12 @@ contradict.
   the date it must be read again
 - the data room (read) - the frozen track record and the fund documents
   the investor's answers rest on, each at its version
+- the audit records (read) - the HR records an employment audit asks
+  for, only as the employee-record-keeper agent pulled them for each
+  request, from the HR, payroll, timekeeping and benefits systems, with
+  the details of people outside the request's scope removed, and a
+  health, investigation or background check record only where its named
+  holder released it for a request counsel confirmed
 
 ## Records
 
@@ -97,6 +105,13 @@ response was ready next to the date it landed.
   it, to the chief compliance officer, because every investor must see
   the same numbers and choosing which figure stands is never this
   agent's call
+- a request in an employment audit that reaches beyond the scope
+  counsel confirmed, or that asks for a health, investigation or
+  background check record, to counsel before any answer to it is
+  drafted
+- a record found to be wrong while an audit's hold keeps it, to
+  counsel, who decides how the auditor is told, and the record stays as
+  it was under the hold
 
 ## Not
 

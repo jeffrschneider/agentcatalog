@@ -133,6 +133,14 @@
             "Approach the Candidates",
             "Record the Search"
           ]
+        },
+        {
+          "process": "ref/hr/find-candidates",
+          "activities": [
+            "Find Who Knows Each Person",
+            "Ask for the Introduction",
+            "Record What the Search Taught"
+          ]
         }
       ]
     }

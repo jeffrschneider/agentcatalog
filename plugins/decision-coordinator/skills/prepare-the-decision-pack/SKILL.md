@@ -1,6 +1,6 @@
 ---
 name: prepare-the-decision-pack
-description: Settles what will be asked of the room and what the department will say, and gets the pack to everyone with time to read it before they walk in. Use it when running `ref/mkt/brief-executive-leadership` and 3 other reference processes.
+description: Settles what will be asked of the room and what the department will say, and gets the pack to everyone with time to read it before they walk in. Use it when running `ref/hr/decide-promotions` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,7 +16,7 @@ and gets the pack to everyone with time to read it before they walk in.
 
 ## Where it happens
 
-The agent does this in five activities across four reference processes.
+The agent does this in six activities across seven reference processes.
 Each one names the activity as that process words it.
 
 - **Collect the Members' Questions**
@@ -26,10 +26,17 @@ Each one names the activity as that process words it.
   - `ref/pc/decide-at-investment-committee`, activity 6 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
 - **Send the Pack Ahead**
+  - `ref/hr/decide-promotions`, activity 8 -
+    [Decide Promotions](../../../../processes/human-resources/decide-promotions.md)
+  - `ref/hr/plan-succession-for-key-roles`, activity 8 -
+    [Plan Succession for Key Roles](../../../../processes/human-resources/plan-succession-for-key-roles.md)
   - `ref/mkt/brief-executive-leadership`, activity 14 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
   - `ref/pc/run-the-portfolio-review`, activity 8 -
     [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
+- **Send the Packs Ahead**
+  - `ref/hr/run-the-performance-review`, activity 8 -
+    [Run the Performance Review](../../../../processes/human-resources/run-the-performance-review.md)
 - **Settle Marketing's Position**
   - `ref/mkt/brief-executive-leadership`, activity 10 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)

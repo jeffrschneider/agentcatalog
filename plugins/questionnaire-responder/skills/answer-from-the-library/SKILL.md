@@ -1,6 +1,6 @@
 ---
 name: answer-from-the-library
-description: Matches each question to an answer the library already holds at that answer's version, and reads every match back against the control, the policy or the report it came from. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
+description: Matches each question to an answer the library already holds at that answer's version, and reads every match back against the control, the policy or the report it came from. Use it when running `ref/hr/respond-to-an-employment-audit` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -18,7 +18,7 @@ that is flagged rather than sent.
 
 ## Where it happens
 
-The agent does this in five activities across three reference processes.
+The agent does this in six activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Answer the Requirements**
@@ -27,6 +27,9 @@ Each one names the activity as that process words it.
 - **Check the Matches Are Still True**
   - `ref/sls/answer-a-security-questionnaire`, activity 5 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
+- **Draft the Answers**
+  - `ref/hr/respond-to-an-employment-audit`, activity 10 -
+    [Respond to an Employment Audit](../../../../processes/human-resources/respond-to-an-employment-audit.md)
 - **Match Against the Library**
   - `ref/sls/answer-a-security-questionnaire`, activity 4 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)

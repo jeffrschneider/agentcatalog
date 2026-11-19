@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/pc/run-the-closing`, `ref/pc/run-a-sale-process`,
 `ref/pc/allocate-fees-and-expenses`, `ref/pc/issue-a-capital-call`,
-`ref/pc/make-a-distribution`. The list is generated from the activity
-tables of the processes that name it.
+`ref/pc/make-a-distribution`, `ref/hr/run-payroll`, and 1 more. The list
+is generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/wire-check

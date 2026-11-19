@@ -36,6 +36,7 @@ covers:
 - Check the Failure Is Real
 - Measure How Far It Spread
 - Trace It to Its Source
+- Trace Each Failure to Its Source
 
 ## prove-the-fix-held
 
@@ -48,3 +49,14 @@ covers:
 - Run the Rule Again
 - Watch That the Fix Held
 - Tighten the Rule
+
+## check-the-data-before-it-is-used
+
+Runs the rules over the data a filing or a report is built from before
+anyone signs it: every record complete, consistent with the others, and
+agreeing with the system that keeps its own count, such as the headcount
+and pay totals in the payroll system. Each failure is listed with the
+records it failed on.
+
+covers:
+- Check the Data

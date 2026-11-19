@@ -38,7 +38,7 @@ manifest and in the directory of the same name.
 `ref/sls/map-the-account-people`, `ref/sls/write-an-account-plan`,
 `ref/sls/review-the-account-plans`, `ref/pc/work-an-investor-prospect`,
 `ref/pc/reach-out-to-a-company`,
-`ref/pc/fill-a-key-role-at-a-portfolio-company`. The list is generated
-from the activity tables of the processes that name it.
+`ref/pc/fill-a-key-role-at-a-portfolio-company`, and 1 more. The list is
+generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/relationship-mapper

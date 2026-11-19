@@ -49,6 +49,7 @@ audience hears it, and holds that timeline at a version.
 covers:
 - Set the Announcement Date
 - Set the Timing
+- Plan the Announcement
 
 ## keep-every-audience-version-saying-the-same-thing
 
@@ -111,6 +112,8 @@ covers:
 - Say It in Public
 - Notify the Staff
 - Change the Public Price
+- Announce the Change
+- Announce to the Staff
 
 ## log-what-ran
 
@@ -141,3 +144,13 @@ given and the rules that come with it.
 covers:
 - Collect What Each Function Asks For
 - Tell Every Function What It Has
+
+## make-sure-each-affected-person-hears-first
+
+Before anything is announced to the staff, the agent gives each manager
+the message and the list of the people they must tell in person, and
+records who was told, by whom and when, so nobody affected learns of a
+change from the announcement.
+
+covers:
+- Tell Each Affected Person

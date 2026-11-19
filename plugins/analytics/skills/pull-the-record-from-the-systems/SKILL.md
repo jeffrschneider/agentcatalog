@@ -1,6 +1,6 @@
 ---
 name: pull-the-record-from-the-systems
-description: The agent names which systems hold the record for a question, reads them, and returns the figures with the source and the date on every line. Use it when running `ref/mkt/analyze-customer-base` and 15 other reference processes.
+description: The agent names which systems hold the record for a question, reads them, and returns the figures with the source and the date on every line. Use it when running `ref/hr/plan-the-workforce` and 17 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: analytics
@@ -18,7 +18,7 @@ left out.
 
 ## Where it happens
 
-The agent does this in sixteen activities across sixteen reference
+The agent does this in 21 activities across eighteen reference
 processes. Each one names the activity as that process words it.
 
 - **Gather the Channel Evidence**
@@ -70,9 +70,26 @@ processes. Each one names the activity as that process words it.
 - **Read the Exception Queue**
   - `ref/mkt/lead-scoring-model`, activity 3 -
     [Maintain Lead Scoring Model](../../../../processes/marketing/lead-scoring-model.md)
+- **Read the Headcount**
+  - `ref/hr/report-on-the-workforce`, activity 3 -
+    [Report on the Workforce](../../../../processes/human-resources/report-on-the-workforce.md)
+- **Read the Hires and Leavers**
+  - `ref/hr/report-on-the-workforce`, activity 4 -
+    [Report on the Workforce](../../../../processes/human-resources/report-on-the-workforce.md)
+- **Read the Labor Cost**
+  - `ref/hr/plan-the-workforce`, activity 4 -
+    [Plan the Workforce](../../../../processes/human-resources/plan-the-workforce.md)
+  - `ref/hr/report-on-the-workforce`, activity 5 -
+    [Report on the Workforce](../../../../processes/human-resources/report-on-the-workforce.md)
 - **Read the Product's Own Record**
   - `ref/mkt/product-positioning`, activity 4 -
     [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)
+- **Read the Reasons for Leaving**
+  - `ref/hr/report-on-the-workforce`, activity 6 -
+    [Report on the Workforce](../../../../processes/human-resources/report-on-the-workforce.md)
+- **Read the Year's Hiring and Leaving**
+  - `ref/hr/plan-the-workforce`, activity 3 -
+    [Plan the Workforce](../../../../processes/human-resources/plan-the-workforce.md)
 
 ## What to record
 

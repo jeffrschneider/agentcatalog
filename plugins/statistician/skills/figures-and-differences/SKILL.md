@@ -1,6 +1,6 @@
 ---
 name: figures-and-differences
-description: Works out each figure with the range around it, and says whether a difference is larger than the noise in the measurement, whether that difference is between two groups, between this reading and the last one, or between what was expected and what happened. Use it when running `ref/mkt/analyze-customer-base` and 7 other reference processes.
+description: Works out each figure with the range around it, and says whether a difference is larger than the noise in the measurement, whether that difference is between two groups, between this reading and the last one, or between what was expected and what happened. Use it when running `ref/hr/run-the-employee-survey` and 8 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: statistician
@@ -18,8 +18,8 @@ or between what was expected and what happened.
 
 ## Where it happens
 
-The agent does this in seven activities across eight reference
-processes. Each one names the activity as that process words it.
+The agent does this in nine activities across nine reference processes.
+Each one names the activity as that process words it.
 
 - **Compare with the Earlier Waves**
   - `ref/mkt/brand-health`, activity 17 -
@@ -27,6 +27,9 @@ processes. Each one names the activity as that process words it.
 - **Compare with the Last Read**
   - `ref/mkt/analyze-customer-base`, activity 13 -
     [Analyze Customer Base](../../../../processes/marketing/analyze-customer-base.md)
+- **Compare with the Last Survey**
+  - `ref/hr/run-the-employee-survey`, activity 12 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Name the Gaps Worth Acting On**
   - `ref/mkt/quarterly-business-review`, activity 7 -
     [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)
@@ -39,6 +42,9 @@ processes. Each one names the activity as that process words it.
 - **Test that the Groups Hold**
   - `ref/mkt/analyze-customer-base`, activity 9 -
     [Analyze Customer Base](../../../../processes/marketing/analyze-customer-base.md)
+- **Work Out the Figures**
+  - `ref/hr/run-the-employee-survey`, activity 11 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Work out the Figures**
   - `ref/mkt/brand-audit`, activity 12 -
     [Conduct Brand Audit](../../../../processes/marketing/brand-audit.md)

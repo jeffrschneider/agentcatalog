@@ -1,6 +1,6 @@
 ---
 name: check-the-executed-document
-description: Takes the executed copy in with every exhibit it names, and confirms who signed on each side, under what authority, and on what date. Use it when running `ref/pc/hold-a-fund-close`, `ref/pc/run-the-closing` and `ref/sls/book-the-order`.
+description: Takes the executed copy in with every exhibit it names, and confirms who signed on each side, under what authority, and on what date. Use it when running `ref/hr/negotiate-a-separation-agreement` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: signature-manager
@@ -17,7 +17,7 @@ that is not there is named as missing rather than assumed.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Collect the Executed Set**
@@ -29,6 +29,9 @@ Each one names the activity as that process words it.
 - **File the Close Record**
   - `ref/pc/hold-a-fund-close`, activity 17 -
     [Hold a Fund Close](../../../../processes/private-capital/hold-a-fund-close.md)
+- **File the Executed Agreement**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 17 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
 - **Take in the Executed Agreement**
   - `ref/sls/book-the-order`, activity 1 -
     [Book the Order](../../../../processes/sales/book-the-order.md)

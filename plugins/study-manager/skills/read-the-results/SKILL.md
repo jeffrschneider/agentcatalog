@@ -1,6 +1,6 @@
 ---
 name: read-the-results
-description: Reads what the responses say once the field is closed, and sets that reading beside the baseline and the earlier runs in the same series so that a real movement can be told from noise. Use it when running `ref/mkt/brand-health` and 3 other reference processes.
+description: Reads what the responses say once the field is closed, and sets that reading beside the baseline and the earlier runs in the same series so that a real movement can be told from noise. Use it when running `ref/hr/run-the-employee-survey` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
@@ -19,12 +19,15 @@ records say.
 
 ## Where it happens
 
-The agent does this in six activities across four reference processes.
+The agent does this in seven activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Compare with the Earlier Waves**
   - `ref/mkt/brand-health`, activity 17 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
+- **Compare with the Last Survey**
+  - `ref/hr/run-the-employee-survey`, activity 12 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Read What People Recognize Now**
   - `ref/mkt/brand-refresh`, activity 24 -
     [Roll Out Brand Refresh](../../../../processes/marketing/brand-refresh.md)

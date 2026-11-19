@@ -81,7 +81,8 @@
         "a commercial ask arriving dressed as a legal change, back to the negotiation-coordinator agent, since nothing that moves price, term or scope is settled in a redline pass",
         "round trips that do not converge, and two clean copies that do not match, to the named people on both sides with the open clauses listed",
         "a clause in the final fund documents that matches no closed ask in the log, or says something other than what was agreed, to fund counsel with the clause and the ask it should match, and an ask the text reopens goes back to the negotiation-coordinator agent, because nothing is settled in the margin of a draft",
-        "a change in a deal document's markup that moves a term the investment committee approved, to the deal-structurer agent and the deal lead partner, who take it back to the committee, since an approval is never stretched inside a redline pass"
+        "a change in a deal document's markup that moves a term the investment committee approved, to the deal-structurer agent and the deal lead partner, who take it back to the committee, since an approval is never stretched inside a redline pass",
+        "a clause in the final text of a separation agreement that matches no closed ask in the log, to counsel and the head of HR with the clause named, and nobody signs until the text is corrected and sent again"
       ],
       "not": [
         "Does not answer the clauses it routes to legal, and does not give legal advice.",
@@ -146,6 +147,13 @@
             "Send the Counter-Markup",
             "Work the Round Trips",
             "Confirm the Agreed Text"
+          ]
+        },
+        {
+          "process": "ref/hr/negotiate-a-separation-agreement",
+          "activities": [
+            "Read the Changes Clause by Clause",
+            "Read the Final Text Against the Log"
           ]
         }
       ]

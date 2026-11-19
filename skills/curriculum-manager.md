@@ -10,6 +10,7 @@ revenue team and for the people a partner names.
 covers:
 - Check What They Already Know
 - Set What Each Role Must Prove
+- Write the Requirement for Each Course
 
 ## plan-what-is-learned-and-when
 
@@ -40,6 +41,10 @@ address, so the session and the library never differ.
 covers:
 - Build the Teaching
 - Publish the Course Materials
+- Build the Courses Inside
+- Publish the Courses at a Version
+- Update the Material
+- Update the Course
 
 ## teach-a-subject
 
@@ -89,3 +94,41 @@ nothing else.
 covers:
 - Give the Feedback
 - Retrain Whoever Failed
+
+## plan-the-learning-program
+
+Gathers the year's learning needs, including the skills the workforce
+plan calls for, into one list with each need's source, size and date,
+checks each need against the courses the library already holds, and
+drafts the program of courses to build, buy or reuse with their cost for
+the learning lead. It records what the plan rests on and the needs it
+leaves out.
+
+covers:
+- Read the Skills the Workforce Plan Calls For
+- Combine the Needs into One List
+- Check What the Library Already Covers
+- Draft the Candidate Program
+- Record What the Plan Rests On
+
+## check-material-against-what-it-must-cover
+
+Reads material against what it has to cover, such as a bought course
+against its written requirement, orientation material against the
+policies now in force, or a required course against the rule at its
+version beside counsel, and names each gap before anybody is taught from
+it.
+
+covers:
+- Buy the Courses from Outside
+- Check the Material Is Current
+- Check the Course Matches the Rule
+
+## record-what-a-round-taught
+
+After a round of teaching, records the questions the course left open
+and where people stalled, so the next version of the course answers
+them.
+
+covers:
+- Record What the Round Taught

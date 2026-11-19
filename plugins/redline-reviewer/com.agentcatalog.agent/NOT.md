@@ -32,3 +32,6 @@ copy is confirmed: a late change reopens the review.
   committee approved, to the deal-structurer agent and the deal lead
   partner, who take it back to the committee, since an approval is never
   stretched inside a redline pass
+- a clause in the final text of a separation agreement that matches no
+  closed ask in the log, to counsel and the head of HR with the clause
+  named, and nobody signs until the text is corrected and sent again

@@ -10,6 +10,7 @@ covers:
 - Set the Milestones and the Dates
 - Record the Commitments
 - Load the Plan into the Tracker
+- Load the Actions into the Tracker
 
 ## put-the-reviews-on-the-calendar
 
@@ -21,6 +22,7 @@ covers:
 - Set the Review Cadence
 - Open the Review
 - Set the Next Review
+- Set the Check-In Dates
 
 ## read-every-commitment-out-loud
 
@@ -34,6 +36,9 @@ covers:
 - Read the Open Actions
 - Read Progress Against the Plan
 - Follow Up the Actions
+- Record the Check-In
+- Hold Each Check-In
+- Review the Actions
 
 ## close-what-nobody-is-going-to-do
 
@@ -52,3 +57,31 @@ commitment that has slipped twice can be seen to have slipped twice.
 covers:
 - Record the Decisions and the Dates
 - Record the Decisions and Actions
+
+## track-the-support-promised
+
+Tracks the support the company promised in a plan, such as coaching,
+training and time, as items with the manager as their owner, so the
+record shows whether the company kept its side before anyone judges the
+employee's progress.
+
+covers:
+- Give the Agreed Support
+
+## set-out-the-record-for-the-person-deciding
+
+Sets out a plan's whole record for the named person who decides on it,
+such as a manager deciding a probation: each item with its state, every
+check-in and the support given. It recommends no outcome.
+
+covers:
+- Prepare the Probation Review
+
+## close-out-a-plan
+
+At the end of a plan, records the last state of every item: met,
+carried into the next plan with its owner and its date, or closed with
+the reason. The plan closes with nothing left open by silence.
+
+covers:
+- Close the Plan

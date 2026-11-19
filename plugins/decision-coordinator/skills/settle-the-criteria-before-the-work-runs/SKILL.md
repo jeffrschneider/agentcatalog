@@ -1,6 +1,6 @@
 ---
 name: settle-the-criteria-before-the-work-runs
-description: Fixes the rules the work will be held to before any candidate arrives, so that nothing is scored against a standard invented after the fact. Use it when running `ref/mkt/engage-marketing-agency` and 4 other reference processes.
+description: Fixes the rules the work will be held to before any candidate arrives, so that nothing is scored against a standard invented after the fact. Use it when running `ref/hr/run-the-pay-review` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,7 +16,7 @@ so that nothing is scored against a standard invented after the fact.
 
 ## Where it happens
 
-The agent does this in five activities across five reference processes.
+The agent does this in six activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Choose the Dividing Traits**
@@ -28,6 +28,9 @@ Each one names the activity as that process words it.
 - **Name the Qualifying Signals**
   - `ref/mkt/ideal-customer-profile`, activity 7 -
     [Define Ideal Customer Profile](../../../../processes/marketing/ideal-customer-profile.md)
+- **Set the Budget and the Guidelines**
+  - `ref/hr/run-the-pay-review`, activity 6 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Set the Naming Criteria**
   - `ref/mkt/name-product`, activity 2 -
     [Name Product or Company](../../../../processes/marketing/name-product.md)

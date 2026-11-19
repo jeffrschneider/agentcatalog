@@ -1,0 +1,168 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "workforce-planner",
+  "version": "1.0.0",
+  "description": "The workforce-planner abstract agent. Builds and holds the workforce plan for the head of human resources (HR), the finance lead and the executive team: each team's headcount, roles and labor cost for the year, worked from the business plan and the hiring and leaving the company actually had.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/workforce-planner",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "human-resources",
+    "plan-the-workforce",
+    "open-a-position",
+    "change-the-organization-structure",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "workforce-planner",
+      "agentVersion": 1,
+      "department": "human-resources",
+      "abstract": true,
+      "works": "Runs collect-and-report on the business plan, each department head's requests, the structure as it stands, the plan for a reporting period, the key roles, the roles in each selection pool of a layoff and the open positions a selected person could take. Runs assessment on the skills the year calls for, every cost it works out (the plan, a position, each option of a reorganization or a layoff), each position request's completeness and its fit with the plan and the budget line, the effect of each option on each role, and each period's figures against the plan. Holds the run-scoped timeline and plan log of the workforce plan, the clock on each position request and the options log of a reorganization. Convenes the briefing that tells the department heads what each team has, the briefing that hands a signed position to the recruiter and each gap to the plan's owner, and the debrief that closes a plan and a request. Works beside the finance lead when a cost is checked against the budget, and beside the department head who proposes a trade for an unplanned position. Takes the year's movement and labor cost from the analytics agent, each position's level and pay range from the compensation-analyst agent, and the roles with no ready successor from the career-planner agent. Hands the options of a plan or a reorganization to the decision-coordinator agent, which puts them to the executive team or the sponsor, the options of a layoff to the executive sponsor and the head of HR, who decide whether to proceed, each signed position to the recruiter (person) for the recruiting-coordinator agent to plan the hire, and the roles listed for a layoff to the head of HR and counsel, who fix the selection criteria.",
+      "servers": [
+        {
+          "name": "the workforce plan",
+          "role": "workforce-plan",
+          "access": "write",
+          "needs": "Each team's positions, levels, start dates and labor cost at a version, the signed positions with their budget lines, and the hiring needs added from a succession review."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "write",
+          "needs": "The teams, roles, levels and reporting lines it reads, and the approved plan and each signed position written to it, with no right to change an employee's record."
+        },
+        {
+          "name": "the financial planning system",
+          "role": "financial-planning-system",
+          "access": "read",
+          "needs": "The business plan and the labor cost budget each plan, position and option is costed against."
+        },
+        {
+          "name": "the job framework",
+          "role": "job-framework",
+          "access": "read",
+          "needs": "The levels each position is drafted at."
+        },
+        {
+          "name": "the pay range record",
+          "role": "pay-range-record",
+          "access": "read",
+          "needs": "The range for each level and location that every cost is worked from."
+        },
+        {
+          "name": "the applicant tracking system",
+          "role": "applicant-tracking-system",
+          "access": "write",
+          "needs": "Each signed position handed to the recruiter with its job, level and range."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "A request that is incomplete or outside the plan reaches the hiring manager or the department head, and a due date at risk reaches the head of HR."
+        }
+      ],
+      "records": [
+        "A workforce plan leaves the business plan and the budget it was built from at their versions, each department head's requests tied to a target, the skill gaps named by team, each team's positions, levels, start dates and labor cost, the cost set beside the budget with the name of who checked it, the options with what each one gives up, the plan published at a version with the decision and the approval that chose it, and the assumptions the next plan checks first.",
+        "A position request leaves the request as it arrived, each gap sent back, the plan reading, the cost for the rest of the year and a full year, the position marked inside or outside the plan and the budget, any trade the department head proposed, and the signed position on the plan with its level, range, budget line and the names of those who signed.",
+        "A reorganization leaves the structure as it stood, each option with its reporting lines, its cost and its one-time cost, and the effect of each option on every role, all under the access list the head of HR set.",
+        "A layoff leaves the labor cost behind the business reason, each option with its cost, timing and the number of people it affects, the roles in each pool with no names attached, and the open positions offered to each selected person.",
+        "Each period leaves every figure beside the plan with its gap and each gap handed to the plan's owner.",
+        "Nothing in the record shows this agent approving a plan or a position, or deciding about a person."
+      ],
+      "escalates": [
+        "every choice of plan and every approval of its cost - to the executive team, which chooses in a recorded decision, and the finance lead, who approves the labor cost, because this agent never approves a plan",
+        "every position - to the named approvers, who sign it or decline it with a reason before anyone is approached about the job",
+        "a plan or a position that costs more than the budget - to the finance lead and the department heads, and only finance changes the budget",
+        "a position the plan does not hold - to the department head, who proposes a trade or names the extra cost before any approver sees it",
+        "a department's request with no target in the business plan behind it - to the department head, who ties it to a target or withdraws it",
+        "a team that needs fewer people than it has - to the head of HR, through `ref/hr/change-the-organization-structure` or `ref/hr/run-a-layoff`, where named leaders decide about each person",
+        "a position request that names or describes a person the manager hopes to hire - to the HR business partner, and the request goes back to describe the work",
+        "no option that fits the plan and the budget - to the executive sponsor, who asks for a revision of the plan under `ref/hr/plan-the-workforce`",
+        "the options of a reorganization or a layoff seen by anyone outside the access list - to the head of HR the same day"
+      ],
+      "not": [
+        "Does not place a job at a level or set its pay range, which is the compensation-analyst agent.",
+        "Does not read the year's figures from the source systems, which is the analytics agent, or work out any figure by group, which is the statistician agent.",
+        "Does not own the workforce report, which is the reporting-manager agent, or run the decisions on a plan or a reorganization, which is the decision-coordinator agent.",
+        "Does not plan a hire, which is the recruiting-coordinator agent, or record a change to an employee's record, which is the employee-record-keeper agent.",
+        "Does not keep the notice and consultation calendar of a layoff, which is the separation-coordinator agent, or name a successor, which is the career-planner agent with the leaders.",
+        "Does not approve a plan, a position or a cost, choose a structure, decide what happens to a person, or select anyone in a layoff, which are the executive team, the finance lead, the named approvers and the named leaders (people)."
+      ],
+      "processes": [
+        {
+          "process": "ref/hr/plan-the-workforce",
+          "activities": [
+            "Open the Year's Plan",
+            "Take in the Business Plan",
+            "Ask Each Department What It Needs",
+            "Name the Skills the Year Calls For",
+            "Draft the Headcount by Team",
+            "Cost the Plan",
+            "Check the Plan against the Budget",
+            "Build the Options",
+            "Publish the Plan",
+            "Brief the Department Heads",
+            "Record What the Plan Rests On"
+          ]
+        },
+        {
+          "process": "ref/hr/open-a-position",
+          "activities": [
+            "Take in the Request",
+            "Check the Request Is Complete",
+            "Check the Request against the Plan",
+            "Cost the Position",
+            "Check the Budget",
+            "Propose a Trade for an Unplanned Position",
+            "Record the Position on the Plan",
+            "Tell the Hiring Manager",
+            "Hand the Position to Hiring",
+            "Close the Request"
+          ]
+        },
+        {
+          "process": "ref/hr/change-the-organization-structure",
+          "activities": [
+            "Draw the Current Structure",
+            "Draw the Options",
+            "Cost Each Option",
+            "List the Effect on Each Role"
+          ]
+        },
+        {
+          "process": "ref/hr/report-on-the-workforce",
+          "activities": [
+            "Take in the Plan for the Period",
+            "Set the Figures against the Plan",
+            "Hand the Gaps to the Plan"
+          ]
+        },
+        {
+          "process": "ref/hr/plan-succession-for-key-roles",
+          "activities": [
+            "List the Key Roles",
+            "Add Hiring Needs to the Workforce Plan"
+          ]
+        },
+        {
+          "process": "ref/hr/run-a-layoff",
+          "activities": [
+            "Write Down the Business Reason",
+            "Model the Options",
+            "List the Roles Affected",
+            "Look for Other Roles"
+          ]
+        }
+      ]
+    }
+  }
+}

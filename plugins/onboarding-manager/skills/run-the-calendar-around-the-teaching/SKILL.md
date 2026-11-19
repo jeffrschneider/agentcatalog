@@ -1,6 +1,6 @@
 ---
 name: run-the-calendar-around-the-teaching
-description: Holds the plan of what is learned in which week and who teaches it, and books the introductions, the recorded and live calls the joiner listens to, and the sitting itself, in diaries on both sides. Use it when running `ref/rev/certify-a-seller` and `ref/rev/onboard-a-seller`.
+description: Holds the plan of what is learned in which week and who teaches it, and books the introductions, the recorded and live calls the joiner listens to, and the sitting itself, in diaries on both sides. Use it when running `ref/hr/run-new-hire-orientation`, `ref/rev/certify-a-seller` and `ref/rev/onboard-a-seller`.
 license: CC-BY-4.0
 metadata:
   agent: onboarding-manager
@@ -18,9 +18,12 @@ calendar and the checklist rather than doing the teaching.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in seven activities across three reference
+processes. Each one names the activity as that process words it.
 
+- **Book the Session**
+  - `ref/hr/run-new-hire-orientation`, activity 2 -
+    [Run New Hire Orientation](../../../../processes/human-resources/run-new-hire-orientation.md)
 - **Build the Learning Plan**
   - `ref/rev/onboard-a-seller`, activity 6 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
@@ -33,6 +36,12 @@ Each one names the activity as that process words it.
 - **Schedule the Sitting**
   - `ref/rev/certify-a-seller`, activity 8 -
     [Certify a Seller](../../../../processes/revenue-operations/certify-a-seller.md)
+- **Send the Joining Instructions**
+  - `ref/hr/run-new-hire-orientation`, activity 7 -
+    [Run New Hire Orientation](../../../../processes/human-resources/run-new-hire-orientation.md)
+- **Set the Group**
+  - `ref/hr/run-new-hire-orientation`, activity 1 -
+    [Run New Hire Orientation](../../../../processes/human-resources/run-new-hire-orientation.md)
 
 ## What to record
 

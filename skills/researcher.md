@@ -21,6 +21,7 @@ covers:
 - Check What Is Already Known
 - Research the Market
 - Read the Market for Each Route
+- Gather the Market Pay Data
 
 ## read-the-competitive-landscape
 
@@ -275,3 +276,5 @@ covers:
 - Run the Background Checks
 - Check the Management Team
 - Record the Search
+- Collect the Referees
+- Record What the Checks Taught

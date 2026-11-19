@@ -1,0 +1,111 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "leave-coordinator",
+  "version": "1.0.0",
+  "description": "The leave-coordinator abstract agent. Takes each request for a leave of absence and carries it to the return, for the named leave approver who decides it and the employee who asked.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/leave-coordinator",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "human-resources",
+    "manage-a-leave-of-absence",
+    "handle-an-accommodation-request",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "leave-coordinator",
+      "agentVersion": 1,
+      "department": "human-resources",
+      "abstract": true,
+      "works": "Runs assessment on each request and each extension against the policy and the local leave rules, and collect-and-report on the documents a leave needs and on the leave record an accommodation request reads, passing on only the approved outcome. Runs roll-call on the dates of each leave and the documents due during it, and on a change tied to a return from leave. Holds the run-scoped roll-call of the leave's dates from the decision to the planned return, and the roll-call of every access to the restricted file until the run closes. Works beside the leave approver (person), who decides each leave, extension and early return, and the manager (person), who plans the return with it. Takes the request from the employee, and a decision whose change is time away or reduced hours from the accommodation-coordinator agent. Hands the checked request to the payroll-administrator agent, which works out what the leave pays, and to the benefits-administrator agent, which works out how each benefit continues, and hands the manager the dates alone.",
+      "servers": [
+        {
+          "name": "the leave management system",
+          "role": "leave-management-system",
+          "access": "write",
+          "needs": "Each request, its kind and dates, the check against the rules, the approver's decision, the tracking and the balance."
+        },
+        {
+          "name": "the restricted leave file",
+          "role": "restricted-leave-file",
+          "access": "write",
+          "needs": "Every document with health information, open only to the named people who must see it, with every opening logged."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "write",
+          "needs": "The dates taken and the leave balance left at the close, with nothing about the reason for the leave."
+        },
+        {
+          "name": "the accommodation record",
+          "role": "accommodation-record",
+          "access": "read",
+          "needs": "The decision on a request whose change is time away or reduced hours, without the documents behind it."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "The acknowledgment and each request for a document reach the employee, the dates reach the manager, and an opening of the restricted file by anyone outside the named people reaches the person the policy names."
+        }
+      ],
+      "records": [
+        "Each leave leaves the request as it arrived and how the employee asked, the acknowledgment with its date and the rights it set out, the check against the policy and the local rules with the leave already taken and the leave available, each document asked for with its date and what arrived, and the restricted file with its log of every opening.",
+        "Beside them sit the approver's decision and the written notice the employee received, the dates the manager was told and when, each contact during the leave kept to what the employee agreed, each extension or early return checked and decided like the first, the return plan, and the close with the dates taken and the balance left.",
+        "For an accommodation request it leaves the approved outcome it passed on, the time away taken in as a leave request with the decision beside it, and the return date kept.",
+        "Nothing in the record outside the restricted file says why a leave was taken, and nothing shows this agent deciding a leave."
+      ],
+      "escalates": [
+        "every decision to approve, approve in part, decline, extend or end a leave early - to the named leave approver, because this agent never decides a leave",
+        "documents that do not support the leave or arrive late - the employee is asked once more with a date, and the approver decides on what has arrived once that date passes",
+        "an approver who needs more information - asked for with a date, and only where the policy allows it to be asked",
+        "an opening of the restricted file by anyone outside the named people - logged and reported the same day, the access checked at `ref/hr/review-access-to-employee-data`, and the employee told where `<your jurisdiction's rules on personal data>` require it",
+        "an employee who does not return on the planned date - to the leave approver, who contacts the employee through the route the employee agreed, and any decision about the employee's employment runs in another process with counsel",
+        "a manager or any other step that asks the reason for a leave - refused, and the dates alone are given",
+        "an employee who disagrees with a declined leave - to `ref/hr/resolve-an-employee-concern`, which reads only the decision and its reason",
+        "an employee who needs a change to the job or the workplace on return - to `ref/hr/handle-an-accommodation-request`, which reads only the outcome of the leave"
+      ],
+      "not": [
+        "Does not approve, decline, extend or end a leave, which is the leave approver (person).",
+        "Does not work out or set pay during a leave, which is the payroll-administrator agent, or the benefits arrangement, which is the benefits-administrator agent.",
+        "Does not run a request for a change to a job or a workplace, which is the accommodation-coordinator agent, and passes it only the approved outcome of a leave.",
+        "Does not decide anything about a person's employment, which runs in another process with counsel.",
+        "Does not answer employees' general questions about leave, which is the employee-question-responder agent.",
+        "Does not tell the manager or any other step why a leave was taken, and never weighs a leave or its reason in anything else it does."
+      ],
+      "processes": [
+        {
+          "process": "ref/hr/manage-a-leave-of-absence",
+          "activities": [
+            "Take in the Request",
+            "Acknowledge the Request",
+            "Check the Request Against the Rules",
+            "Ask for the Documents the Leave Needs",
+            "Keep Health Information Restricted",
+            "Tell the Manager the Dates",
+            "Track the Leave",
+            "Decide an Extension or an Early Return",
+            "Plan the Return",
+            "Close the Leave on the Record"
+          ]
+        },
+        {
+          "process": "ref/hr/handle-an-accommodation-request",
+          "activities": [
+            "Read the Leave Record",
+            "Hand Time Away to the Leave Process",
+            "Track the Return Date"
+          ]
+        }
+      ]
+    }
+  }
+}

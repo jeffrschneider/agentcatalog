@@ -1,6 +1,6 @@
 ---
 name: set-the-scope-of-the-report
-description: "Writes down what the report covers before anything is gathered: the period, the runs inside it, the channels and conversions in scope, and the questions the report has to answer. Use it when running `ref/mkt/attribution-model`, `ref/mkt/marketing-performance-report` and `ref/pc/issue-the-quarterly-report-and-statements`."
+description: "Writes down what the report covers before anything is gathered: the period, the runs inside it, the channels and conversions in scope, and the questions the report has to answer. Use it when running `ref/hr/report-on-the-workforce` and 3 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -17,9 +17,12 @@ the questions the report has to answer.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
+- **Open the Period's Report**
+  - `ref/hr/report-on-the-workforce`, activity 1 -
+    [Report on the Workforce](../../../../processes/human-resources/report-on-the-workforce.md)
 - **Open the Quarter's Report**
   - `ref/pc/issue-the-quarterly-report-and-statements`, activity 1 -
     [Issue the Quarterly Report and Statements](../../../../processes/private-capital/issue-the-quarterly-report-and-statements.md)

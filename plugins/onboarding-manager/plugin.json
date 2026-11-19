@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "onboarding-manager",
   "version": "1.0.0",
-  "description": "The onboarding-manager abstract agent. Carries somebody who has just joined a revenue team from a confirmed start date to a real customer conversation they can hold unaided.",
+  "description": "The onboarding-manager abstract agent. Carries somebody who has just joined a revenue team from a confirmed start date to a real customer conversation they can hold unaided, and carries any new hire from the signed offer through the first day, orientation and the plan for the first months.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "revenue-operations",
+    "human-resources",
+    "prepare-for-a-new-hire",
     "onboard-a-seller",
-    "certify-a-seller",
-    "roll-out-a-change",
+    "run-a-new-hires-first-months",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "onboarding-manager",
       "agentVersion": 1,
-      "department": "revenue-operations",
+      "department": "human-resources",
       "abstract": true,
       "works": "Convenes the briefing where the manager states the job and the ramp, and the briefing where the joiner meets the people they will have to ask things of. Runs assessment on the access list, because a system is open only when the joiner has signed into it. Runs roll-call as the standing check-in and collect-and-report on access that has not landed and on the ramp at the end. Takes the debrief on the first customer conversation from the manager who listened to it. Hands the learning plan to the curriculum-manager agent and the readiness gate to the certification-check agent, and takes the pass back from it before any customer is booked. Takes the territory and the ramped number from whoever set them, and hands the signed material from a roll-out into the same library a new joiner is taught from.",
       "servers": [
@@ -74,6 +74,36 @@
           "role": "analytics",
           "access": "read",
           "needs": "Where the joiner stands against the ramp plan."
+        },
+        {
+          "name": "the applicant tracking system",
+          "role": "applicant-tracking-system",
+          "access": "read",
+          "needs": "The signed acceptance a new hire's preparation starts from, with the job, the manager, the location, the pay, the start date and any condition still open."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "write",
+          "needs": "The welcome and the forms sent to the new hire's own sign-in, and each completed form filed to the employee record, with no right to fill in a field on the new hire's behalf. It reads each new hire's job, manager, location, language, start date and probation period, and nothing from their forms, to set an orientation group and draft the plan for the first months."
+        },
+        {
+          "name": "the IT service desk",
+          "role": "it-service-desk",
+          "access": "write",
+          "needs": "The accounts on the job's access list, with the approver of any account beyond it, and the laptop, the phone, the badge, the desk or the home delivery the job needs, each ordered with the date it must arrive."
+        },
+        {
+          "name": "the survey tool",
+          "role": "survey-tool",
+          "access": "write",
+          "needs": "The private questions to each new hire about how the start went, read by the HR business partner, and the feedback on each orientation session, read only for the group as a whole."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "The new hire told where to go on the first day, when, and who will meet them, and the manager told when a check-in is booked again."
         }
       ],
       "records": [
@@ -94,12 +124,16 @@
         "no territory assigned, back to the job and the manager, because a joiner taught against a patch they do not have learns the wrong accounts",
         "a session nobody covered, to the sales leader, with the record of what was missed, before the readiness gate is convened",
         "a joiner about to meet a customer without a signed pass, to the sales manager, and the conversation is not booked",
-        "a joiner who leaves during the ramp, to the manager and to sales operations, with access withdrawn the same day, the territory returned unassigned, and every account already contacted listed with what was said to it"
+        "a joiner who leaves during the ramp, to the manager and to sales operations, with access withdrawn the same day, the territory returned unassigned, and every account already contacted listed with what was said to it",
+        "a new hire's form still missing or incomplete close to the first day, to the HR operations specialist, who calls the new hire, because no agent fills in a field on the new hire's behalf",
+        "equipment, a badge or a workspace that will not be ready on the first day, to the HR operations lead and the hiring manager, who decide whether the start moves or the new hire starts with a loan device, and the new hire hears the same day",
+        "a second missed check-in in a new hire's first months, to the HR business partner, and a probation closing date that passes with no decision, to the head of HR",
+        "a concern or a request for an adjustment that a new hire raises, to the named person who handles it in its own process, and nothing about it enters the plan or the probation review"
       ],
       "not": [
         "Does not teach.",
         "The product, the market, the process and the pitch belong to the curriculum-manager agent and the people it books, and this agent holds the calendar and the checklist around them.",
-        "Does not decide whether the joiner is ready, which is the certification-check agent's run and a human signature.",
+        "Does not decide whether the joiner is ready, which is the certification-check agent's run and a human signature, and does not decide a probation, which the manager confirms, extends or ends.",
         "Does not set the territory or the ramped number, does not grant its own access, and does not sit in the first customer conversation or take it over."
       ],
       "processes": [
@@ -128,6 +162,44 @@
           "process": "ref/rev/roll-out-a-change",
           "activities": [
             "Publish to One Address"
+          ]
+        },
+        {
+          "process": "ref/hr/prepare-for-a-new-hire",
+          "activities": [
+            "Take in the Signed Offer",
+            "Confirm the Start with the Manager",
+            "Send the Welcome and the Forms",
+            "Collect the Forms",
+            "Order the Access",
+            "Order the Equipment and the Workspace",
+            "Test the Access on the Device",
+            "Confirm the First Day",
+            "Check In on the First Morning",
+            "Hand the New Hire On",
+            "Record What the Preparation Taught"
+          ]
+        },
+        {
+          "process": "ref/hr/run-new-hire-orientation",
+          "activities": [
+            "Set the Group",
+            "Book the Session",
+            "Send the Joining Instructions",
+            "Gather the Group's Feedback",
+            "Close the Session on the Record"
+          ]
+        },
+        {
+          "process": "ref/hr/run-a-new-hires-first-months",
+          "activities": [
+            "Take in the New Hire",
+            "Draft the Plan for the First Months",
+            "Rebook a Missed Check-In",
+            "Ask the New Hire How the Start Went",
+            "Prepare the Probation Review",
+            "Tell the New Hire the Outcome",
+            "Record What the First Months Taught"
           ]
         }
       ]

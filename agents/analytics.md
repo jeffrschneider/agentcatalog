@@ -4,10 +4,11 @@
 
 **purpose:** Reads the numbers and reports them with their sources
 attached. Tracks a campaign against its brief, pulls the wrap-up numbers
-from every channel, files the weekly status, and audits the scoring
-model behind lead routing. Deliberately read-only: this agent measures
-the work and never touches it, which is what makes its reports worth
-believing.
+from every channel, files the weekly status, audits the scoring model
+behind lead routing, and reads the headcount, hiring, leaving and labor
+cost behind a workforce plan and report. Deliberately read-only: this
+agent measures the work and never touches it, which is what makes its
+reports worth believing.
 
 ## Processes
 
@@ -120,6 +121,11 @@ believing.
   Segment into Treatments, Watch the Response, Report the Win-Back
 - `ref/mkt/win-loss-analysis` / Pull the Closed Deals, Brief the Study,
   Set the Themes against the Record
+- `ref/hr/plan-the-workforce` / Read the Year's Hiring and Leaving, Read
+  the Labor Cost
+- `ref/hr/report-on-the-workforce` / Read the Headcount, Read the Hires
+  and Leavers, Read the Labor Cost, Read the Reasons for Leaving, Check
+  the Sources Agree
 
 ## Patterns
 
@@ -133,6 +139,16 @@ roll-calls.
 - analytics platforms (read)
 - ad platforms (read)
 - the CRM (read)
+- the HR system (read) - the people employed at each period end by
+  team, level and location, the hires, leavers and internal moves, and
+  the reasons leavers gave counted by category, with no protected
+  characteristic and no leaver's own words
+- the applicant tracking system (read) - the time to fill each position
+  closed in the period
+- the payroll system (read) - the people paid in the period and the
+  cost of pay, benefits and the employer's taxes on pay, totaled by team
+- the ledger (read) - the labor cost as the books carry it, which the
+  HR system's and the payroll system's figures are compared against
 
 ## Records
 

@@ -43,6 +43,9 @@ answered.
   Quarter's Report, Take in the Approved Marks, Collect the Company
   Updates, Write the Quarter's Letter, Check the Report for Compliance,
   Answer the Investors' Questions, Record What the Quarter Taught
+- `ref/hr/report-on-the-workforce` / Open the Period's Report, Write Why
+  the Numbers Moved, Deliver the Report, Answer the Leaders' Questions,
+  Record What the Period Taught
 
 ## Patterns
 
@@ -95,6 +98,10 @@ corrects stays where it was.
   compliance officer, then to the CFO and a partner as named signers,
   always. Nothing goes out unsigned, a change to any figure after
   signing goes back to them, and this agent never signs its own report.
+- a leader's question about one person or about a group below the
+  minimum size - the workforce report does not answer it. A question
+  about one person goes to that person's HR business partner, and a
+  group below the minimum size is never shown, whoever asks.
 
 ## Not
 

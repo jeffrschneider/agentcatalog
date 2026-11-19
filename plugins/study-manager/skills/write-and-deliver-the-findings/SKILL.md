@@ -1,6 +1,6 @@
 ---
 name: write-and-deliver-the-findings
-description: Writes each finding with the responses recorded under it, so the finding and its evidence are read in one place, and delivers the report to whoever asked for it and to the people who have to act on it. Use it when running `ref/mkt/brand-audit` and 4 other reference processes.
+description: Writes each finding with the responses recorded under it, so the finding and its evidence are read in one place, and delivers the report to whoever asked for it and to the people who have to act on it. Use it when running `ref/hr/run-the-employee-survey` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
@@ -18,7 +18,7 @@ what worked in the run and what should change next time.
 
 ## Where it happens
 
-The agent does this in five activities across five reference processes.
+The agent does this in seven activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Deliver the Findings**
@@ -38,10 +38,18 @@ Each one names the activity as that process words it.
     [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
   - `ref/mkt/win-loss-analysis`, activity 21 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Record What the Survey Taught**
+  - `ref/hr/run-the-employee-survey`, activity 19 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Report Awareness, Perception and Preference**
   - `ref/mkt/brand-health`, activity 22 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
+- **Share the Results**
+  - `ref/hr/run-the-employee-survey`, activity 14 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Write the Findings**
+  - `ref/hr/run-the-employee-survey`, activity 13 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
   - `ref/mkt/brand-audit`, activity 14 -
     [Conduct Brand Audit](../../../../processes/marketing/brand-audit.md)
   - `ref/mkt/brand-health`, activity 20 -

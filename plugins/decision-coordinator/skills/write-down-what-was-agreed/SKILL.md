@@ -1,6 +1,6 @@
 ---
 name: write-down-what-was-agreed
-description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/mkt/brief-executive-leadership` and 12 other reference processes.
+description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/hr/decide-promotions` and 16 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,7 +16,7 @@ was turned down and why, and who disagreed with it.
 
 ## Where it happens
 
-The agent does this in twelve activities across thirteen reference
+The agent does this in fifteen activities across seventeen reference
 processes. Each one names the activity as that process words it.
 
 - **Confirm the Record with the Chair**
@@ -25,6 +25,9 @@ processes. Each one names the activity as that process words it.
 - **Record a Decline with Its Reason**
   - `ref/pc/decide-at-investment-committee`, activity 16 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Record the Approved Changes**
+  - `ref/hr/run-the-pay-review`, activity 15 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Record the Decision**
   - `ref/pc/plan-the-exit`, activity 16 -
     [Plan the Exit](../../../../processes/private-capital/plan-the-exit.md)
@@ -36,6 +39,8 @@ processes. Each one names the activity as that process words it.
   - `ref/pc/work-a-company-in-trouble`, activity 12 -
     [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
 - **Record the Decisions**
+  - `ref/hr/decide-promotions`, activity 11 -
+    [Decide Promotions](../../../../processes/human-resources/decide-promotions.md)
   - `ref/mkt/brief-executive-leadership`, activity 17 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
   - `ref/pc/run-the-portfolio-review`, activity 15 -
@@ -43,6 +48,12 @@ processes. Each one names the activity as that process words it.
 - **Record the Declines**
   - `ref/mkt/prioritize-initiatives`, activity 13 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)
+- **Record the Final Ratings**
+  - `ref/hr/run-the-performance-review`, activity 10 -
+    [Run the Performance Review](../../../../processes/human-resources/run-the-performance-review.md)
+- **Record the Succession Plan**
+  - `ref/hr/plan-succession-for-key-roles`, activity 10 -
+    [Plan Succession for Key Roles](../../../../processes/human-resources/plan-succession-for-key-roles.md)
 - **Write down the Agreed Map**
   - `ref/mkt/map-buyer-journey`, activity 15 -
     [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)

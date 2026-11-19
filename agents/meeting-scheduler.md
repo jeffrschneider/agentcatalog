@@ -27,6 +27,10 @@ meeting with no write-up does not count as held.
   Partner, Write Up the Meeting
 - `ref/pc/fill-a-key-role-at-a-portfolio-company` / Take in the Request,
   Book the Specification Meeting, Run the Interviews, Confirm the Start
+- `ref/hr/plan-the-hire` / Book the Intake Meeting, Brief the Attendees,
+  Hold the Panel's Dates
+- `ref/hr/run-the-interviews` / Ask for the Candidate's Times, Book Each
+  Interview, Brief the Panel, Brief the Candidate, Book the Debrief
 
 ## Patterns
 
@@ -85,6 +89,10 @@ and the point at which it was let go.
   materials do not carry - written into the note as it was said and
   raised to the chief compliance officer, who decides whether a
   correction goes to the investor in writing
+- an adjustment a candidate asks for to the interviews - to the
+  recruiter, who decides how to meet it, with only the information the
+  adjustment needs held restricted and nothing about it in the panel's
+  packs
 
 ## Not
 

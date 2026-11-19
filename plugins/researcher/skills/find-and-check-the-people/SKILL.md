@@ -1,6 +1,6 @@
 ---
 name: find-and-check-the-people
-description: Finds candidates for a role at a portfolio company beyond the people the firm already knows, and builds one long list with each candidate on it once and where each one came from. Use it when running `ref/pc/fill-a-key-role-at-a-portfolio-company` and `ref/pc/run-commercial-and-product-diligence`.
+description: Finds candidates for a role at a portfolio company beyond the people the firm already knows, and builds one long list with each candidate on it once and where each one came from. Use it when running `ref/hr/check-a-candidates-background`, `ref/pc/fill-a-key-role-at-a-portfolio-company` and `ref/pc/run-commercial-and-product-diligence`.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -20,8 +20,8 @@ and records where the hire came from and what the search took.
 
 ## Where it happens
 
-The agent does this in six activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in eight activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Build the Long List**
   - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 8 -
@@ -29,9 +29,15 @@ Each one names the activity as that process words it.
 - **Check the Management Team**
   - `ref/pc/run-commercial-and-product-diligence`, activity 13 -
     [Run Commercial and Product Diligence](../../../../processes/private-capital/run-commercial-and-product-diligence.md)
+- **Collect the Referees**
+  - `ref/hr/check-a-candidates-background`, activity 5 -
+    [Check a Candidate's Background](../../../../processes/human-resources/check-a-candidates-background.md)
 - **Find Candidates Outside the Network**
   - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 7 -
     [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
+- **Record What the Checks Taught**
+  - `ref/hr/check-a-candidates-background`, activity 17 -
+    [Check a Candidate's Background](../../../../processes/human-resources/check-a-candidates-background.md)
 - **Record the Search**
   - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 18 -
     [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
@@ -39,6 +45,8 @@ Each one names the activity as that process words it.
   - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 14 -
     [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
 - **Take the References**
+  - `ref/hr/check-a-candidates-background`, activity 6 -
+    [Check a Candidate's Background](../../../../processes/human-resources/check-a-candidates-background.md)
   - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 13 -
     [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
 

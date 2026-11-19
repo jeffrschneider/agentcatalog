@@ -76,7 +76,12 @@ covers:
 - Read the Behavioral Record
 - Read the Customer Record
 - Read the Exception Queue
+- Read the Headcount
+- Read the Hires and Leavers
+- Read the Labor Cost
 - Read the Product's Own Record
+- Read the Reasons for Leaving
+- Read the Year's Hiring and Leaving
 
 ## read-the-current-state
 
@@ -364,3 +369,14 @@ questions it still cannot answer.
 
 covers:
 - Answer What Was Left Open
+
+## check-the-sources-agree
+
+When more than one system keeps its own count of the same thing, such as
+the headcount in the HR system, the pay in the payroll system and the
+labor cost in the ledger, the agent sets the counts side by side and
+names every difference and the system it starts in before any figure is
+reported.
+
+covers:
+- Check the Sources Agree

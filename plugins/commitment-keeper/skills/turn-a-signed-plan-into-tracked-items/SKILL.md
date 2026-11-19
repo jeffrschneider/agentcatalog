@@ -1,6 +1,6 @@
 ---
 name: turn-a-signed-plan-into-tracked-items
-description: Takes the milestones a signed plan carries and makes each one an item with one owner, one date and a state, traceable to the line of the plan it came from. Use it when running `ref/pc/write-the-value-creation-plan` and `ref/prt/write-a-joint-plan`.
+description: Takes the milestones a signed plan carries and makes each one an item with one owner, one date and a state, traceable to the line of the plan it came from. Use it when running `ref/hr/run-a-new-hires-first-months` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,10 +17,17 @@ it came from.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across five reference processes.
 Each one names the activity as that process words it.
 
+- **Load the Actions into the Tracker**
+  - `ref/hr/run-the-employee-survey`, activity 16 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Load the Plan into the Tracker**
+  - `ref/hr/run-a-new-hires-first-months`, activity 4 -
+    [Run a New Hire's First Months](../../../../processes/human-resources/run-a-new-hires-first-months.md)
+  - `ref/hr/run-a-performance-improvement-plan`, activity 10 -
+    [Run a Performance Improvement Plan](../../../../processes/human-resources/run-a-performance-improvement-plan.md)
   - `ref/pc/write-the-value-creation-plan`, activity 13 -
     [Write the Value Creation Plan](../../../../processes/private-capital/write-the-value-creation-plan.md)
 - **Record the Commitments**

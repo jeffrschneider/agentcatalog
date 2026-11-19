@@ -46,6 +46,7 @@ is serving and its numbers are coming through.
 covers:
 - Check the Setup
 - Watch Both Halves Fill
+- Watch the Response Rate
 - Watch the Sample Fill
 - Watch the Test Run
 
@@ -82,10 +83,12 @@ or between what was expected and what happened.
 covers:
 - Compare with the Earlier Waves
 - Compare with the Last Read
+- Compare with the Last Survey
 - Name the Gaps Worth Acting On
 - Read the Result
 - Test Whether the Segments Hold Apart
 - Test that the Groups Hold
+- Work Out the Figures
 - Work out the Figures
 
 ## model-validation
@@ -136,3 +139,29 @@ holds.
 
 covers:
 - Record What Was Learned
+
+## group-outcome-check
+
+Compares outcomes across groups, such as pay for like work, the
+selection for a layoff, or representation, hiring and leaving, on data a
+named person released for that check alone, and says which differences
+are larger than the noise. It reports only groups at or above the
+minimum size and never a result about one person, and named people
+decide what follows.
+
+covers:
+- Work Out the Group Figures
+- Check the Selection Across Groups
+- Compare Pay Across Groups
+
+## minimum-group-size
+
+Sets the group size below which no figure or comment is shown, so no
+answer or outcome can be traced to a person, sets the groups a survey or
+a report shows at or above it, and checks every table against it before
+anything goes out.
+
+covers:
+- Set the Minimum Group Size
+- Set the Groups to Report
+- Check the Report for Small Groups

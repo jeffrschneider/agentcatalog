@@ -14,6 +14,7 @@ covers:
 - Read the Rules It Sets
 - Ask the Buyer's Questions
 - Read the Rules of the Form
+- Read What Each Request Asks For
 
 ## sort-the-questions
 
@@ -39,6 +40,7 @@ covers:
 - Answer the Requirements
 - Match the Library Answers
 - Read Each Match Against Its Source
+- Draft the Answers
 
 ## get-the-open-questions-answered
 
@@ -53,6 +55,7 @@ covers:
 - Draft the New Answers
 - Answer the Security and Legal Parts
 - Route the Unanswered Questions
+- Route What the Records Cannot Answer
 
 ## check-the-figures-against-the-record
 

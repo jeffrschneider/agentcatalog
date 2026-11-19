@@ -39,3 +39,11 @@ does not say what a good number would be. Does not sign anything.
   method
 - a figure it cannot compute from the data it holds. It reports the
   figure as uncomputed and never supplies a number of its own.
+- a gap between groups in pay for like work, or in who a layoff selects,
+  that is larger than the noise, reported by group with its range to the
+  head of HR and the named people who decide, and never as a result
+  about one person, because what is done about a gap is theirs to decide
+- a request to show a figure for a group below the minimum size, to
+  lower the minimum once it is set, or to report a result about one
+  person, refused and taken to the head of HR with the name of whoever
+  asked

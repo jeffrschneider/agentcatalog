@@ -21,3 +21,8 @@ not chosen for.
   role it holds
 - somebody still writing to the tool after the read-only date, and the
   records written after it are exported again
+- one person holding two roles that must not be combined, such as the
+  access to change an employee's bank details and the access to approve
+  a payroll, to the access owner, who chooses which role the person
+  keeps, and where the work needs both, to the named person who may
+  approve that in writing with another check in its place

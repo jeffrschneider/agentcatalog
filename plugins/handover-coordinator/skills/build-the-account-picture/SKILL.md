@@ -1,6 +1,6 @@
 ---
 name: build-the-account-picture
-description: Gathers everything the sale produced into one place with a date on each item, writes the account picture with a source behind every claim in it, lists every promise made along the way with who made it and to whom, and maps who decides, who pays and who uses it every day. Use it when running `ref/pc/hand-over-to-the-portfolio-team` and `ref/sls/hand-over-to-delivery`.
+description: Gathers everything the sale produced into one place with a date on each item, writes the account picture with a source behind every claim in it, lists every promise made along the way with who made it and to whom, and maps who decides, who pays and who uses it every day. Use it when running `ref/hr/offboard-a-leaver`, `ref/pc/hand-over-to-the-portfolio-team` and `ref/sls/hand-over-to-delivery`.
 license: CC-BY-4.0
 metadata:
   agent: handover-coordinator
@@ -18,7 +18,7 @@ maps who decides, who pays and who uses it every day.
 
 ## Where it happens
 
-The agent does this in eight activities across two reference processes.
+The agent does this in nine activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Carry the Committee's Conditions**
@@ -36,6 +36,9 @@ Each one names the activity as that process words it.
 - **Map Who Is Who at the Customer**
   - `ref/sls/hand-over-to-delivery`, activity 7 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)
+- **Plan the Handover**
+  - `ref/hr/offboard-a-leaver`, activity 5 -
+    [Offboard a Leaver](../../../../processes/human-resources/offboard-a-leaver.md)
 - **Record What Was Promised**
   - `ref/pc/hand-over-to-the-portfolio-team`, activity 4 -
     [Hand Over to the Portfolio Team](../../../../processes/private-capital/hand-over-to-the-portfolio-team.md)

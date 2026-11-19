@@ -1,6 +1,6 @@
 ---
 name: control-what-is-out-to-sign
-description: Sends the right version to the named signers in the agreed order, and takes a document back out of signature when it should no longer be out there, such as when the deal is lost. Use it when running `ref/pc/form-the-fund` and 6 other reference processes.
+description: Sends the right version to the named signers in the agreed order, and takes a document back out of signature when it should no longer be out there, such as when the deal is lost. Use it when running `ref/hr/make-an-offer` and 8 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: signature-manager
@@ -18,7 +18,7 @@ step.
 
 ## Where it happens
 
-The agent does this in eleven activities across seven reference
+The agent does this in thirteen activities across nine reference
 processes. Each one names the activity as that process words it.
 
 - **Choose and Engage the Providers**
@@ -27,6 +27,9 @@ processes. Each one names the activity as that process words it.
 - **Execute the Signature**
   - `ref/sls/run-the-close-plan`, activity 15 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)
+- **Get the Offer Signed**
+  - `ref/hr/make-an-offer`, activity 14 -
+    [Make an Offer](../../../../processes/human-resources/make-an-offer.md)
 - **Send the Subscription Documents**
   - `ref/pc/hold-a-fund-close`, activity 2 -
     [Hold a Fund Close](../../../../processes/private-capital/hold-a-fund-close.md)
@@ -36,6 +39,9 @@ processes. Each one names the activity as that process words it.
 - **Sign the Adviser's Engagement**
   - `ref/pc/run-a-sale-process`, activity 3 -
     [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
+- **Sign the Agreement**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 15 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
 - **Sign the Close**
   - `ref/pc/hold-a-fund-close`, activity 10 -
     [Hold a Fund Close](../../../../processes/private-capital/hold-a-fund-close.md)

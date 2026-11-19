@@ -6,7 +6,7 @@ the work is, which systems it needs and at what access, what it must
 leave behind, and where it stops. Any agent that leaves the records can
 implement it.
 
-The plugin carries seventeen skills, no `mcp.json`, and everything the
+The plugin carries eighteen skills, no `mcp.json`, and everything the
 abstract agent owes under `com.agentcatalog.agent/`.
 
 ## Why there is no mcp.json
@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/brand-audit`, `ref/mkt/brand-health`, `ref/mkt/brand-refresh`,
 `ref/mkt/brand-voice`, `ref/mkt/buyer-persona`,
-`ref/mkt/conversion-experiment`, and 6 more. The list is generated from
+`ref/mkt/conversion-experiment`, and 7 more. The list is generated from
 the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/study-manager

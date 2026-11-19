@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eight systems, named by role rather than by product. The access level is
+Ten systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -14,6 +14,8 @@ more than the job requires.
 | the document store | write | The executed set and the close record, filed complete with every signed page and exhibit. |
 | the investor portal | write | Each investor's close date, its accepted commitment and its signed pages, posted where the investor reads them. |
 | the deal pipeline | write | Each confidentiality agreement's non-solicit, standstill and term, and the people it lets read the material, recorded where every deal team can read them. |
+| the applicant tracking system | write | Each executed offer filed against the candidate with every document it names, and nothing else in the candidate's record changed. |
+| the restricted records store | write | For separation agreements only, the executed agreement and its negotiation log filed at their executed versions where only the people on the agreement's access list can open them, with no right to open any other record held there. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

@@ -23,3 +23,7 @@ onboarding-manager agent's job.
 - a price, a competitor answer or a process step that has moved since
   the material was signed, to whoever signs the material, with the
   courses that now teach the old version listed
+- a policy or a rule that has changed since the orientation material or
+  a required course was signed, to whoever signs that material, with
+  each part that teaches the old version named, and to counsel where the
+  rule is the law's

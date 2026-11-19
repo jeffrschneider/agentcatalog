@@ -1,6 +1,6 @@
 ---
 name: take-the-form-in-and-read-its-rules
-description: "Takes in the form or the request with the buyer it came from, and reads the rules it sets before any answer is drafted: the deadline, the format, the channel, the limits and the window for questions. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`."
+description: "Takes in the form or the request with the buyer it came from, and reads the rules it sets before any answer is drafted: the deadline, the format, the channel, the limits and the window for questions. Use it when running `ref/hr/respond-to-an-employment-audit` and 3 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -19,12 +19,15 @@ while it is still open.
 
 ## Where it happens
 
-The agent does this in five activities across three reference processes.
+The agent does this in six activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Ask the Buyer's Questions**
   - `ref/sls/respond-to-an-rfp`, activity 6 -
     [Respond to an RFP](../../../../processes/sales/respond-to-an-rfp.md)
+- **Read What Each Request Asks For**
+  - `ref/hr/respond-to-an-employment-audit`, activity 6 -
+    [Respond to an Employment Audit](../../../../processes/human-resources/respond-to-an-employment-audit.md)
 - **Read the Rules It Sets**
   - `ref/sls/answer-a-security-questionnaire`, activity 2 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)

@@ -1,6 +1,6 @@
 ---
 name: watch-the-responses-and-close-the-field
-description: Tracks how many responses have come in against how many the study needs, half by half where the design has more than one half. Use it when running `ref/mkt/brand-health`, `ref/mkt/customer-research` and `ref/mkt/win-loss-analysis`.
+description: Tracks how many responses have come in against how many the study needs, half by half where the design has more than one half. Use it when running `ref/hr/run-the-employee-survey` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
@@ -18,7 +18,7 @@ responses.
 
 ## Where it happens
 
-The agent does this in five activities across three reference processes.
+The agent does this in seven activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Close the Interviews**
@@ -27,12 +27,18 @@ Each one names the activity as that process words it.
 - **Close the Study**
   - `ref/mkt/customer-research`, activity 15 -
     [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+- **Close the Survey**
+  - `ref/hr/run-the-employee-survey`, activity 9 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Close the Wave**
   - `ref/mkt/brand-health`, activity 15 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
 - **Watch Both Halves Fill**
   - `ref/mkt/win-loss-analysis`, activity 13 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Watch the Response Rate**
+  - `ref/hr/run-the-employee-survey`, activity 8 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Watch the Sample Fill**
   - `ref/mkt/brand-health`, activity 14 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)

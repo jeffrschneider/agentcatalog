@@ -1,6 +1,6 @@
 ---
 name: collection-monitoring
-description: Watches the data arrive against what the design asked for and says whether the work is on track, including whether each version of a test is serving and its numbers are coming through. Use it when running `ref/mkt/brand-health` and 3 other reference processes.
+description: Watches the data arrive against what the design asked for and says whether the work is on track, including whether each version of a test is serving and its numbers are coming through. Use it when running `ref/hr/run-the-employee-survey` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: statistician
@@ -17,7 +17,7 @@ is serving and its numbers are coming through.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Check the Setup**
@@ -26,6 +26,9 @@ Each one names the activity as that process words it.
 - **Watch Both Halves Fill**
   - `ref/mkt/win-loss-analysis`, activity 13 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Watch the Response Rate**
+  - `ref/hr/run-the-employee-survey`, activity 8 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Watch the Sample Fill**
   - `ref/mkt/brand-health`, activity 14 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)

@@ -24,6 +24,8 @@ unexplained rather than as fixed.
 - `ref/rev/fix-a-data-quality-failure` / Take in the Failing Rule, Check
   the Failure Is Real, Measure How Far It Spread, Trace It to Its Source,
   Run the Rule Again, Watch That the Fix Held, Tighten the Rule
+- `ref/hr/file-a-required-report` / Check the Data, Trace Each Failure
+  to Its Source
 
 ## Patterns
 
@@ -52,6 +54,11 @@ merge did not carry back to the deduper agent.
   in one queue for the person clearing it
 - the change log (read) - what shipped, changed or was imported the week
   a rule first began to fail
+- the HR system (read) - only the fields a required filing asks for, at
+  the date the filing counts from, and the record, the import or the
+  form that wrote each failing value
+- the payroll system (read) - the headcount and the pay totals a
+  filing's data is agreed to
 
 ## Records
 

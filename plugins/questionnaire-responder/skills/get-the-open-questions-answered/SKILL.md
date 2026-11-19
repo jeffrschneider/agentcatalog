@@ -1,6 +1,6 @@
 ---
 name: get-the-open-questions-answered
-description: Routes every question the source cannot answer to the person who owns that fact, in the requester's own wording, and drafts what comes back into an answer named people sign. Use it when running `ref/pc/answer-a-due-diligence-questionnaire`, `ref/sls/answer-a-security-questionnaire` and `ref/sls/respond-to-an-rfp`.
+description: Routes every question the source cannot answer to the person who owns that fact, in the requester's own wording, and drafts what comes back into an answer named people sign. Use it when running `ref/hr/respond-to-an-employment-audit` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -18,7 +18,7 @@ answered the same way, from a maintained source rather than from memory.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Answer the Security and Legal Parts**
@@ -32,6 +32,9 @@ Each one names the activity as that process words it.
 - **Route What Is Not Answered**
   - `ref/sls/answer-a-security-questionnaire`, activity 6 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
+- **Route What the Records Cannot Answer**
+  - `ref/hr/respond-to-an-employment-audit`, activity 9 -
+    [Respond to an Employment Audit](../../../../processes/human-resources/respond-to-an-employment-audit.md)
 - **Route the Unanswered Questions**
   - `ref/pc/answer-a-due-diligence-questionnaire`, activity 7 -
     [Answer a Due Diligence Questionnaire](../../../../processes/private-capital/answer-a-due-diligence-questionnaire.md)

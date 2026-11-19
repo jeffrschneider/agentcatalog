@@ -32,6 +32,8 @@ covers:
 - Sign the Closing Documents
 - Sign the Adviser's Engagement
 - Sign the Sale Agreement
+- Get the Offer Signed
+- Sign the Agreement
 
 ## check-the-executed-document
 
@@ -44,6 +46,7 @@ covers:
 - Take in the Executed Agreement
 - Collect the Executed Set
 - File the Close Record
+- File the Executed Agreement
 
 ## name-the-parties-and-the-terms-off-the-standard-paper
 

@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eight systems, named by role rather than by product. The access level is
+Nine systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -14,6 +14,7 @@ more than the job requires.
 | the agreements behind a paid partnership | read | What the relationship requires to be said. |
 | the frozen track record | read | The one dated set of performance figures, at its version, that every figure in a fundraising piece must come from. |
 | the review record | write | The verdicts land where the signers and the producing agents read them. |
+| the applicant tracking system | read | The signed position's job, location and pay range, which the pay range in every version of a job posting is checked against. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

@@ -1,6 +1,6 @@
 ---
 name: take-in-a-markup-and-fix-the-terms-in-force
-description: Takes in the other side's markup at its version and the copy it was made from, fixes which template version and which pre-approved fallbacks are in force, and splits the document into one item per changed clause with both texts side by side. Use it when running `ref/pc/negotiate-the-definitive-agreements`, `ref/pc/negotiate-the-fund-terms-and-side-letters` and `ref/sls/review-the-redlines`.
+description: Takes in the other side's markup at its version and the copy it was made from, fixes which template version and which pre-approved fallbacks are in force, and splits the document into one item per changed clause with both texts side by side. Use it when running `ref/hr/negotiate-a-separation-agreement` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: redline-reviewer
@@ -18,7 +18,7 @@ both texts side by side.
 
 ## Where it happens
 
-The agent does this in five activities across three reference processes.
+The agent does this in six activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm the Terms in Force**
@@ -27,6 +27,9 @@ Each one names the activity as that process words it.
 - **Fix the Starting Text**
   - `ref/pc/negotiate-the-definitive-agreements`, activity 3 -
     [Negotiate the Definitive Agreements](../../../../processes/private-capital/negotiate-the-definitive-agreements.md)
+- **Read the Changes Clause by Clause**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 8 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
 - **Read the Markup Clause by Clause**
   - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 4 -
     [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)

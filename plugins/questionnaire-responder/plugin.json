@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "questionnaire-responder",
   "version": "1.0.0",
-  "description": "The questionnaire-responder abstract agent. Answers security, legal, procurement and investor due diligence questionnaires from a maintained source of answers rather than from memory.",
+  "description": "The questionnaire-responder abstract agent. Answers security, legal, procurement and investor due diligence questionnaires, and an auditor's or an inspector's request list, from a maintained source of answers rather than from memory.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -68,6 +68,12 @@
           "role": "data-room",
           "access": "read",
           "needs": "The frozen track record and the fund documents the investor's answers rest on, each at its version."
+        },
+        {
+          "name": "the audit records",
+          "role": "audit-records",
+          "access": "read",
+          "needs": "The HR records an employment audit asks for, only as the employee-record-keeper agent pulled them for each request, from the HR, payroll, timekeeping and benefits systems, with the details of people outside the request's scope removed, and a health, investigation or background check record only where its named holder released it for a request counsel confirmed."
         }
       ],
       "records": [
@@ -84,7 +90,9 @@
         "a matched answer whose source no longer says that, to the owner of the fact, and the stale entry is flagged to the standards-keeper agent in the same run",
         "a deadline shorter than the approvals take, to whoever chooses between asking for more time, filing a partial response with the open questions named, and declining that section",
         "a follow-up answer that contradicts what was already sent, to the owner of the fact, before either version goes to the requester",
-        "a performance figure that does not match the frozen track record, or a request to answer one investor with a newer figure from outside it, to the chief compliance officer, because every investor must see the same numbers and choosing which figure stands is never this agent's call"
+        "a performance figure that does not match the frozen track record, or a request to answer one investor with a newer figure from outside it, to the chief compliance officer, because every investor must see the same numbers and choosing which figure stands is never this agent's call",
+        "a request in an employment audit that reaches beyond the scope counsel confirmed, or that asks for a health, investigation or background check record, to counsel before any answer to it is drafted",
+        "a record found to be wrong while an audit's hold keeps it, to counsel, who decides how the auditor is told, and the record stays as it was under the hold"
       ],
       "not": [
         "Does not approve an answer.",
@@ -141,6 +149,14 @@
             "Check the Form Against Its Rules",
             "Add the New Answers to the Library",
             "Answer the Follow-Up Questions"
+          ]
+        },
+        {
+          "process": "ref/hr/respond-to-an-employment-audit",
+          "activities": [
+            "Read What Each Request Asks For",
+            "Route What the Records Cannot Answer",
+            "Draft the Answers"
           ]
         }
       ]

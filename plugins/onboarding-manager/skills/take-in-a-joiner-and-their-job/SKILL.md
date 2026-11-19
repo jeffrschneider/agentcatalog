@@ -1,6 +1,6 @@
 ---
 name: take-in-a-joiner-and-their-job
-description: Takes in who is joining, into which job and from when, has the manager state the job and the ramp expected in their own words, and takes the patch and the ramped number at the version whoever set them signed. Use it when running `ref/rev/onboard-a-seller`.
+description: Takes in who is joining, into which job and from when, has the manager state the job and the ramp expected in their own words, and takes the patch and the ramped number at the version whoever set them signed. Use it when running `ref/hr/prepare-for-a-new-hire`, `ref/hr/run-a-new-hires-first-months` and `ref/rev/onboard-a-seller`.
 license: CC-BY-4.0
 metadata:
   agent: onboarding-manager
@@ -17,12 +17,21 @@ patch and the ramped number at the version whoever set them signed.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in six activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm the Job and the Manager**
   - `ref/rev/onboard-a-seller`, activity 2 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
+- **Confirm the Start with the Manager**
+  - `ref/hr/prepare-for-a-new-hire`, activity 3 -
+    [Prepare for a New Hire](../../../../processes/human-resources/prepare-for-a-new-hire.md)
+- **Take in the New Hire**
+  - `ref/hr/run-a-new-hires-first-months`, activity 1 -
+    [Run a New Hire's First Months](../../../../processes/human-resources/run-a-new-hires-first-months.md)
+- **Take in the Signed Offer**
+  - `ref/hr/prepare-for-a-new-hire`, activity 1 -
+    [Prepare for a New Hire](../../../../processes/human-resources/prepare-for-a-new-hire.md)
 - **Take in the Start**
   - `ref/rev/onboard-a-seller`, activity 1 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)

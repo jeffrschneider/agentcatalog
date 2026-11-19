@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "wire-check",
   "version": "1.0.0",
-  "description": "The wire-check abstract agent. Confirms every outgoing payment against independently verified instructions and matches every incoming receipt to what was called, for the fund's chief financial officer (CFO) and controller, and releases no money itself.",
+  "description": "The wire-check abstract agent. Confirms every outgoing payment against independently verified instructions and matches every incoming receipt to what was called, for the fund's chief financial officer (CFO) and controller or an employer's payroll manager and payroll approver, and releases no money itself.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -16,7 +16,7 @@
     "private-capital",
     "make-a-distribution",
     "issue-a-capital-call",
-    "run-the-closing",
+    "run-payroll",
     "abstract"
   ],
   "extensions": {
@@ -68,6 +68,18 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "A held payment or a suspected fraud reaches the CFO the same day."
+        },
+        {
+          "name": "the payroll system",
+          "role": "payroll-system",
+          "access": "read",
+          "needs": "The approved register and the payment file built from it, which every payroll payment is checked against, with no right to change a line, approve a register or release a payment."
+        },
+        {
+          "name": "the verified employee bank record",
+          "role": "verified-employee-bank-record",
+          "access": "read",
+          "needs": "Each employee's confirmed account and the contact already on file that a change is confirmed through."
         }
       ],
       "records": [
@@ -87,10 +99,14 @@
         "a payment that does not arrive - to the CFO, traced with the bank, and nothing is ever sent a second time on the hope the first was lost",
         "a payment returned or landed in the wrong account - to the CFO, who asks the bank to recall it the same day",
         "money received that differs from the funds flow - to the controller, traced with the paying agent before the sale is recorded as settled",
-        "whether cash already received may go to a closing while a call's difference is open - to the CFO, who decides it in writing"
+        "whether cash already received may go to a closing while a call's difference is open - to the CFO, who decides it in writing",
+        "every release of payroll money - to the payroll approver and the second signer, who release it in the bank portal under the dual control rule",
+        "a payroll payment that does not match its approved register line, or an account that is not on the verified employee bank record - to the payroll manager, and that payment is held while the file is built again",
+        "a change to an employee's bank account that arrived by email alone, or that the employee does not confirm on a contact already on file - to the payroll manager the same day as an attempted fraud, and pay keeps going to the account already on record",
+        "a payroll payment returned, rejected or landed in the wrong account - to the payroll manager, and the employee is paid off cycle only once a verified account is in hand"
       ],
       "not": [
-        "Does not release, approve or sign a payment, which is the CFO and the second signer (people).",
+        "Does not release, approve or sign a payment, which is the CFO and the second signer, or for payroll the payroll approver and the second signer (people).",
         "Does not work out what each investor is called for or paid, which is the capital-account-keeper agent, and does not build the funds flow, which is the close-plan-keeper agent with the cap-table-keeper agent.",
         "Does not check a payout against the cap table, which is the cap-table-keeper agent.",
         "Does not chase a late payer or decide a default, which is the investor relations lead with the capital-account-keeper agent, and then the managing partner and the CFO (people).",
@@ -131,6 +147,19 @@
             "Verify Each Investor's Payment Instructions",
             "Confirm Each Payment Landed",
             "Reconcile the Distribution"
+          ]
+        },
+        {
+          "process": "ref/hr/run-payroll",
+          "activities": [
+            "Check the Payment File",
+            "Confirm the Payments Landed"
+          ]
+        },
+        {
+          "process": "ref/hr/change-an-employee-record",
+          "activities": [
+            "Confirm a New Bank Account"
           ]
         }
       ]

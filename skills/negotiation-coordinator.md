@@ -15,6 +15,8 @@ covers:
 - Log Every Ask
 - Take in the First Bids
 - Take in the Final Bids and Markups
+- Log the Candidate's Asks
+- Log the Leaver's Asks
 
 ## price-the-asks-and-set-the-floor
 
@@ -31,6 +33,7 @@ covers:
 - Price Each Ask
 - Answer the Asks Inside the Mandate
 - Decide the Asks Past the Mandate
+- Answer the Asks Inside the Policy
 
 ## hold-the-session-and-record-the-answers
 
@@ -46,6 +49,7 @@ covers:
 - Send the Firm's Position
 - Close the Remaining Asks
 - Negotiate the Sale Agreement
+- Send the Company's Answer
 
 ## rebuild-the-offer-and-confirm-the-position
 
@@ -89,3 +93,11 @@ either way.
 covers:
 - Escalate a Stalled Step
 - Make One Recovery Attempt
+
+## record-what-the-negotiation-taught
+
+Records every ask, its answer and why the other side accepted or walked
+away, so the next offer starts from what this one learned.
+
+covers:
+- Record What the Offer Taught

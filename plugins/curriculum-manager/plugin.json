@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "curriculum-manager",
   "version": "1.0.0",
-  "description": "The curriculum-manager abstract agent. Holds the material people are taught and keeps it current as the product, the market and the process move.",
+  "description": "The curriculum-manager abstract agent. Holds the material people are taught, from a seller's courses to the company's learning program, orientation and required training, and keeps it current as the product, the market, the process, the policies and the rules move.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "revenue-operations",
+    "human-resources",
+    "plan-the-learning-program",
     "certify-a-partner",
     "onboard-a-seller",
-    "roll-out-a-change",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "curriculum-manager",
       "agentVersion": 1,
-      "department": "revenue-operations",
+      "department": "human-resources",
       "abstract": true,
       "works": "Runs build-by-talent for the curriculum, the assessment and the teaching, because each of those is a made thing with a version. Runs assessment three ways: on what people already know, on the material handed over from elsewhere, and on whether a change landed. Convenes the briefings that are the sessions themselves, including the retraining that teaches one named gap and nothing else. Runs roll-call on attendance and collect-and-report on the questions the sessions keep raising. Takes the standard from the standards-keeper agent and never writes it, takes the source material from whoever owns the launch or the price, and hands the assessment to the certification-check agent. Takes back from that agent the gaps a sitting found, and from the onboarding-manager agent what a first customer conversation exposed, so the next person is taught it.",
       "servers": [
@@ -62,6 +62,24 @@
           "role": "price-book-and-the-competitor-set",
           "access": "read",
           "needs": "So what is taught is what is currently in force."
+        },
+        {
+          "name": "the course library",
+          "role": "course-library",
+          "access": "write",
+          "needs": "Each course in the company's learning program, each required course and the orientation material, published at a version at one address people can reach."
+        },
+        {
+          "name": "the workforce plan",
+          "role": "workforce-plan",
+          "access": "read",
+          "needs": "The skills the approved plan says the company will need in the year and does not yet have."
+        },
+        {
+          "name": "the policy library",
+          "role": "policy-library",
+          "access": "read",
+          "needs": "Every policy now in force at its version, which the orientation material and each required course are read against."
         }
       ],
       "records": [
@@ -81,7 +99,8 @@
         "a curriculum asked for before anybody wrote down what the role has to prove, to the enablement owner, because that teaches the trainer rather than the job",
         "everybody failing the same question, to the standards-keeper agent as a signal about the course or the question set rather than the people",
         "people named for training who are never released for the sessions, to their sponsor, with the sessions missed listed session by session",
-        "a price, a competitor answer or a process step that has moved since the material was signed, to whoever signs the material, with the courses that now teach the old version listed"
+        "a price, a competitor answer or a process step that has moved since the material was signed, to whoever signs the material, with the courses that now teach the old version listed",
+        "a policy or a rule that has changed since the orientation material or a required course was signed, to whoever signs that material, with each part that teaches the old version named, and to counsel where the rule is the law's"
       ],
       "not": [
         "Does not score anybody and does not decide a pass or a fail, which is the certification-check agent's work and a human signature.",
@@ -134,6 +153,35 @@
             "Build the Teaching",
             "Run the Sessions",
             "Check That It Landed"
+          ]
+        },
+        {
+          "process": "ref/hr/run-new-hire-orientation",
+          "activities": [
+            "Check the Material Is Current",
+            "Update the Material"
+          ]
+        },
+        {
+          "process": "ref/hr/plan-the-learning-program",
+          "activities": [
+            "Read the Skills the Workforce Plan Calls For",
+            "Combine the Needs into One List",
+            "Check What the Library Already Covers",
+            "Draft the Candidate Program",
+            "Write the Requirement for Each Course",
+            "Build the Courses Inside",
+            "Buy the Courses from Outside",
+            "Publish the Courses at a Version",
+            "Record What the Plan Rests On"
+          ]
+        },
+        {
+          "process": "ref/hr/run-required-training",
+          "activities": [
+            "Check the Course Matches the Rule",
+            "Update the Course",
+            "Record What the Round Taught"
           ]
         }
       ]

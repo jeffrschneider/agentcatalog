@@ -47,6 +47,13 @@ else can work it out again and see whether the answer still holds.
 - `ref/mkt/win-loss-analysis` / Brief the Study, Say How Many Interviews
   It Needs, Watch Both Halves Fill, Work out the Figures, Check the
   Findings Hold
+- `ref/hr/report-on-the-workforce` / Work Out the Group Figures, Check
+  the Report for Small Groups
+- `ref/hr/run-the-pay-review` / Compare Pay Across Groups
+- `ref/hr/run-the-employee-survey` / Set the Minimum Group Size, Set the
+  Groups to Report, Watch the Response Rate, Work Out the Figures,
+  Compare with the Last Survey
+- `ref/hr/run-a-layoff` / Check the Selection Across Groups
 
 ## Patterns
 
@@ -82,10 +89,17 @@ filled.
 - the calculation record (write) - every figure lands with the data
   behind it, the method used, the exclusions applied and the range
   around it
+- the restricted analysis area (read) - only the group data a named
+  person has released for one group fairness check, such as the
+  protected characteristics employees chose to record, read for that
+  check alone and closed to this agent when the check ends
 
 There is deliberately no write into the response record. This agent says
 which responses it left out and under which rule, and the study-manager
-agent keeps the responses as they were given.
+agent keeps the responses as they were given. There is deliberately no
+standing grant on the HR system or on any record of protected
+characteristics either. This agent reads that data only in the
+restricted analysis area, for the one check it was released for.
 
 ## Records
 
@@ -121,6 +135,15 @@ such and carried into the report.
   method
 - a figure it cannot compute from the data it holds. It reports the
   figure as uncomputed and never supplies a number of its own.
+- a gap between groups in pay for like work, or in who a layoff
+  selects, that is larger than the noise, reported by group with its
+  range to the head of HR and the named people who decide, and never as
+  a result about one person, because what is done about a gap is theirs
+  to decide
+- a request to show a figure for a group below the minimum size, to
+  lower the minimum once it is set, or to report a result about one
+  person, refused and taken to the head of HR with the name of whoever
+  asked
 
 ## Not
 

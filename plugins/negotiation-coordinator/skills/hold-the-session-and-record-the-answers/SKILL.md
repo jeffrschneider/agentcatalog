@@ -1,6 +1,6 @@
 ---
 name: hold-the-session-and-record-the-answers
-description: Runs the session against the sorted list, and closes each ask with its answer, its reason, its date and the name of the person on each side who agreed to it. Use it when running `ref/pc/negotiate-the-fund-terms-and-side-letters`, `ref/pc/run-a-sale-process` and `ref/sls/negotiate-the-agreement`.
+description: Runs the session against the sorted list, and closes each ask with its answer, its reason, its date and the name of the person on each side who agreed to it. Use it when running `ref/hr/negotiate-a-separation-agreement` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: negotiation-coordinator
@@ -18,7 +18,7 @@ than only in a call.
 
 ## Where it happens
 
-The agent does this in six activities across three reference processes.
+The agent does this in seven activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Close the Remaining Asks**
@@ -36,6 +36,9 @@ Each one names the activity as that process words it.
 - **Refuse in Writing**
   - `ref/sls/negotiate-the-agreement`, activity 10 -
     [Negotiate the Agreement](../../../../processes/sales/negotiate-the-agreement.md)
+- **Send the Company's Answer**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 12 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
 - **Send the Firm's Position**
   - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 11 -
     [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)

@@ -102,6 +102,9 @@ finding that source is a different job from writing the sentence.
   Background Checks, Record the Search
 - `ref/pc/plan-the-exit` / List the Likely Buyers, Read the Market for
   Each Route
+- `ref/hr/check-a-candidates-background` / Collect the Referees, Take
+  the References, Record What the Checks Taught
+- `ref/hr/run-the-pay-review` / Gather the Market Pay Data
 
 ## Patterns
 
@@ -129,6 +132,10 @@ draft claim by claim against the sources the draft cites.
 - the consent record (read) - the candidate's written consent, read
   before any background check runs or any reference the candidate did
   not name is taken
+- the restricted records store (write) - each reference on a
+  candidate for one of the company's own hires, as the referee gave it
+  and attributed to the referee, filed where only the named reviewers
+  can open it, with no right to open a background check result
 
 ## Records
 
@@ -161,6 +168,11 @@ who said it, marked with what that person agreed could be quoted.
 - a candidate who works at another company the fund holds - to the
   talent partner, and nobody approaches the candidate until the
   non-solicitation rules have been read
+- a reference that raises a concern about a candidate for one of the
+  company's own hires - to the hiring manager, who decides on it with
+  the reason written in terms of the must-haves, and any part of a
+  reference about a protected characteristic is struck before anyone
+  reads it
 
 ## Not
 

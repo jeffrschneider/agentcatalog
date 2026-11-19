@@ -1,6 +1,6 @@
 ---
 name: hold-who-may-get-in
-description: Sets the roles and what each one may do, opens an account against a job and closes it against a leaving record, and reads every account again on its cadence. Use it when running `ref/rev/administer-a-tool`.
+description: Sets the roles and what each one may do, opens an account against a job and closes it against a leaving record, and reads every account again on its cadence. Use it when running `ref/hr/offboard-a-leaver` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: tool-administrator
@@ -18,13 +18,21 @@ account for both go to the security reviewer.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
+- **End Access on the Last Day**
+  - `ref/hr/offboard-a-leaver`, activity 13 -
+    [Offboard a Leaver](../../../../processes/human-resources/offboard-a-leaver.md)
 - **Open and Close Accounts**
   - `ref/rev/administer-a-tool`, activity 3 -
     [Administer a Tool](../../../../processes/revenue-operations/administer-a-tool.md)
+- **Open the Accounts**
+  - `ref/hr/prepare-for-a-new-hire`, activity 10 -
+    [Prepare for a New Hire](../../../../processes/human-resources/prepare-for-a-new-hire.md)
 - **Read Every Account Again**
+  - `ref/hr/review-access-to-employee-data`, activity 12 -
+    [Review Access to Employee Data](../../../../processes/human-resources/review-access-to-employee-data.md)
   - `ref/rev/administer-a-tool`, activity 12 -
     [Administer a Tool](../../../../processes/revenue-operations/administer-a-tool.md)
 - **Set the Roles and the Permissions**

@@ -1,6 +1,6 @@
 ---
 name: confirm-a-failure-and-find-what-wrote-it
-description: Takes in a failing rule and re-runs it to see whether the failure is in the data or in the query behind it. Use it when running `ref/rev/fix-a-data-quality-failure`.
+description: Takes in a failing rule and re-runs it to see whether the failure is in the data or in the query behind it. Use it when running `ref/hr/file-a-required-report` and `ref/rev/fix-a-data-quality-failure`.
 license: CC-BY-4.0
 metadata:
   agent: data-quality-check
@@ -18,7 +18,7 @@ the link or the person that wrote the bad values.
 
 ## Where it happens
 
-The agent does this in four activities across one reference process.
+The agent does this in five activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Check the Failure Is Real**
@@ -30,6 +30,9 @@ Each one names the activity as that process words it.
 - **Take in the Failing Rule**
   - `ref/rev/fix-a-data-quality-failure`, activity 1 -
     [Fix a Data Quality Failure](../../../../processes/revenue-operations/fix-a-data-quality-failure.md)
+- **Trace Each Failure to Its Source**
+  - `ref/hr/file-a-required-report`, activity 7 -
+    [File a Required Report](../../../../processes/human-resources/file-a-required-report.md)
 - **Trace It to Its Source**
   - `ref/rev/fix-a-data-quality-failure`, activity 5 -
     [Fix a Data Quality Failure](../../../../processes/revenue-operations/fix-a-data-quality-failure.md)

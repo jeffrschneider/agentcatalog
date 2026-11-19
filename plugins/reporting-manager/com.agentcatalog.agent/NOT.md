@@ -27,3 +27,7 @@ and this agent reports what they did.
   compliance officer, then to the CFO and a partner as named signers,
   always. Nothing goes out unsigned, a change to any figure after
   signing goes back to them, and this agent never signs its own report.
+- a leader's question about one person or about a group below the
+  minimum size - the workforce report does not answer it. A question
+  about one person goes to that person's HR business partner, and a
+  group below the minimum size is never shown, whoever asks.

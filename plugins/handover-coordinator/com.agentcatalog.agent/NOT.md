@@ -31,3 +31,8 @@ anything into the account it hands over.
 - a committee condition that nobody on the portfolio team will own, to
   the deal lead partner, and the deal team does not step back until the
   condition has an owner and a date
+- an item of a leaver's or a mover's work with no successor named, or
+  one the successor will not acknowledge, to the employee's manager, who
+  names another or decides how the work is covered, and any item still
+  open on the last day or the move date passes to that manager and is
+  recorded as a gap with its owner

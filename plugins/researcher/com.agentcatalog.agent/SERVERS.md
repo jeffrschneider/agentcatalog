@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Ten systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Eleven systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -16,6 +16,7 @@ more than the job requires.
 | the calendar | write | The customer and expert calls it arranges. |
 | the screening service | read | A chosen candidate's background checks. |
 | the consent record | read | The candidate's written consent, read before any background check runs or any reference the candidate did not name is taken. |
+| the restricted records store | write | Each reference on a candidate for one of the company's own hires, as the referee gave it and attributed to the referee, filed where only the named reviewers can open it, with no right to open a background check result. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

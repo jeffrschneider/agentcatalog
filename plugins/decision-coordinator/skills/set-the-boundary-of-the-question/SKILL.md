@@ -1,6 +1,6 @@
 ---
 name: set-the-boundary-of-the-question
-description: Says what is inside the question and what sits outside it, which covers where the market ends, what the round or the review takes in, the date it has to decide by, and what a buyer would pick instead. Use it when running `ref/mkt/prioritize-initiatives` and 5 other reference processes.
+description: Says what is inside the question and what sits outside it, which covers where the market ends, what the round or the review takes in, the date it has to decide by, and what a buyer would pick instead. Use it when running `ref/hr/plan-succession-for-key-roles` and 7 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,8 +17,8 @@ it has to decide by, and what a buyer would pick instead.
 
 ## Where it happens
 
-The agent does this in six activities across six reference processes.
-Each one names the activity as that process words it.
+The agent does this in seven activities across eight reference
+processes. Each one names the activity as that process words it.
 
 - **Draw the Market Boundary**
   - `ref/mkt/size-market-opportunity`, activity 2 -
@@ -27,11 +27,16 @@ Each one names the activity as that process words it.
   - `ref/mkt/product-positioning`, activity 7 -
     [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)
 - **Open the Review**
+  - `ref/hr/run-the-pay-review`, activity 1 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
   - `ref/pc/run-the-portfolio-review`, activity 1 -
     [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
 - **Open the Round**
   - `ref/mkt/prioritize-initiatives`, activity 1 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)
+- **Open the Succession Review**
+  - `ref/hr/plan-succession-for-key-roles`, activity 1 -
+    [Plan Succession for Key Roles](../../../../processes/human-resources/plan-succession-for-key-roles.md)
 - **Set What the Review Covers**
   - `ref/mkt/quarterly-business-review`, activity 1 -
     [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)

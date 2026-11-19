@@ -15,8 +15,8 @@
     "reference",
     "marketing",
     "issue-the-quarterly-report-and-statements",
+    "report-on-the-workforce",
     "marketing-performance-report",
-    "quarterly-business-review",
     "abstract"
   ],
   "extensions": {
@@ -83,7 +83,8 @@
         "a source that will not answer in time, raised before the report date instead of explained afterward",
         "a request to leave a result out of the report or to restate it. This agent never removes a number because somebody asked. A person decides, and the decision is recorded with the report.",
         "a mark that is not approved by the time the report needs it, or one that looks wrong beside the company's quarter - to the valuation committee through the chief financial officer (CFO). The report uses the marks as that committee approved them, and this agent never reports a mark the committee has not approved or changes one itself.",
-        "clearing and signing a fund's quarterly report - to the chief compliance officer, then to the CFO and a partner as named signers, always. Nothing goes out unsigned, a change to any figure after signing goes back to them, and this agent never signs its own report."
+        "clearing and signing a fund's quarterly report - to the chief compliance officer, then to the CFO and a partner as named signers, always. Nothing goes out unsigned, a change to any figure after signing goes back to them, and this agent never signs its own report.",
+        "a leader's question about one person or about a group below the minimum size - the workforce report does not answer it. A question about one person goes to that person's HR business partner, and a group below the minimum size is never shown, whoever asks."
       ],
       "not": [
         "Does not replace the analytics agent.",
@@ -205,6 +206,16 @@
             "Check the Report for Compliance",
             "Answer the Investors' Questions",
             "Record What the Quarter Taught"
+          ]
+        },
+        {
+          "process": "ref/hr/report-on-the-workforce",
+          "activities": [
+            "Open the Period's Report",
+            "Write Why the Numbers Moved",
+            "Deliver the Report",
+            "Answer the Leaders' Questions",
+            "Record What the Period Taught"
           ]
         }
       ]

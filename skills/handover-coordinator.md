@@ -29,6 +29,7 @@ covers:
 - List the Fund's Rights and Duties
 - Write the Company Picture
 - Carry the Committee's Conditions
+- Plan the Handover
 
 ## hand-the-account-over-internally
 
@@ -40,6 +41,7 @@ the customer hears anything.
 covers:
 - Check the Package Is Complete
 - Hold the Internal Handover
+- Hand Over the Work
 
 ## introduce-the-new-owner-to-the-customer
 

@@ -84,6 +84,12 @@
           "role": "consent-record",
           "access": "read",
           "needs": "The candidate's written consent, read before any background check runs or any reference the candidate did not name is taken."
+        },
+        {
+          "name": "the restricted records store",
+          "role": "restricted-records-store",
+          "access": "write",
+          "needs": "Each reference on a candidate for one of the company's own hires, as the referee gave it and attributed to the referee, filed where only the named reviewers can open it, with no right to open a background check result."
         }
       ],
       "records": [
@@ -98,7 +104,8 @@
         "a finding that contradicts something the organization has already published, because somebody has to decide what happens to the older piece",
         "material non-public information about a listed company, heard on a call or found in a source, or an expert call that strays into an employer's confidential information - the call stops and what was heard goes to the chief compliance officer the same day, because what the firm may do with it is a compliance decision",
         "a reference or a background check that raises a concern about a candidate or a member of a management team - to the person choosing, who is the portfolio company's chief executive for a hire and the deal lead partner in diligence, before any offer is made, because weighing a concern about a person is theirs",
-        "a candidate who works at another company the fund holds - to the talent partner, and nobody approaches the candidate until the non-solicitation rules have been read"
+        "a candidate who works at another company the fund holds - to the talent partner, and nobody approaches the candidate until the non-solicitation rules have been read",
+        "a reference that raises a concern about a candidate for one of the company's own hires - to the hiring manager, who decides on it with the reason written in terms of the must-haves, and any part of a reference about a protected characteristic is struck before anyone reads it"
       ],
       "not": [
         "Does not write the piece and does not decide what the piece argues.",
@@ -456,6 +463,20 @@
           "activities": [
             "List the Likely Buyers",
             "Read the Market for Each Route"
+          ]
+        },
+        {
+          "process": "ref/hr/check-a-candidates-background",
+          "activities": [
+            "Collect the Referees",
+            "Take the References",
+            "Record What the Checks Taught"
+          ]
+        },
+        {
+          "process": "ref/hr/run-the-pay-review",
+          "activities": [
+            "Gather the Market Pay Data"
           ]
         }
       ]

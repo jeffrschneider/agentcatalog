@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "disclosure-check",
   "version": "1.0.0",
-  "description": "The disclosure-check abstract agent. Scores material against the disclosure rules in force in every market it will run in. That covers the wording a regulator requires beside a claim, the terms that have to appear with a price, the rules a promotion runs under, and what a paid partnership has to say about being paid.",
+  "description": "The disclosure-check abstract agent. Scores material against the disclosure rules in force in every market it will run in.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -15,8 +15,8 @@
     "reference",
     "marketing",
     "influencer-campaign",
+    "post-a-job",
     "traffic-ad-creative",
-    "prepare-the-fundraising-materials",
     "abstract"
   ],
   "extensions": {
@@ -73,6 +73,12 @@
           "role": "review-record",
           "access": "write",
           "needs": "The verdicts land where the signers and the producing agents read them."
+        },
+        {
+          "name": "the applicant tracking system",
+          "role": "applicant-tracking-system",
+          "access": "read",
+          "needs": "The signed position's job, location and pay range, which the pay range in every version of a job posting is checked against."
         }
       ],
       "records": [
@@ -169,6 +175,13 @@
           "activities": [
             "Check Against the Advertising Rules",
             "Approve Each Piece"
+          ]
+        },
+        {
+          "process": "ref/hr/post-a-job",
+          "activities": [
+            "Read What Each Location Requires",
+            "Check the Required Statements"
           ]
         }
       ]

@@ -1,6 +1,6 @@
 ---
 name: work-out-where-the-teaching-starts
-description: Writes down what each role has to prove, as testable lines at a version, and reads what the people already hold so teaching starts from what they can be excused. Use it when running `ref/prt/certify-a-partner`.
+description: Writes down what each role has to prove, as testable lines at a version, and reads what the people already hold so teaching starts from what they can be excused. Use it when running `ref/hr/plan-the-learning-program` and `ref/prt/certify-a-partner`.
 license: CC-BY-4.0
 metadata:
   agent: curriculum-manager
@@ -18,8 +18,8 @@ and for the people a partner names.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Check What They Already Know**
   - `ref/prt/certify-a-partner`, activity 3 -
@@ -27,6 +27,9 @@ one names the activity as that process words it.
 - **Set What Each Role Must Prove**
   - `ref/prt/certify-a-partner`, activity 2 -
     [Certify a Partner](../../../../processes/partners/certify-a-partner.md)
+- **Write the Requirement for Each Course**
+  - `ref/hr/plan-the-learning-program`, activity 10 -
+    [Plan the Learning Program](../../../../processes/human-resources/plan-the-learning-program.md)
 
 ## What to record
 

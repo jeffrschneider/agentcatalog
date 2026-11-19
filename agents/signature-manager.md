@@ -34,6 +34,9 @@ anything itself.
   the Closing Documents, Collect the Executed Set
 - `ref/pc/run-a-sale-process` / Sign the Adviser's Engagement, Approach
   the Buyers, Sign the Sale Agreement
+- `ref/hr/make-an-offer` / Get the Offer Signed
+- `ref/hr/negotiate-a-separation-agreement` / Sign the Agreement, File
+  the Executed Agreement
 
 ## Patterns
 
@@ -71,6 +74,13 @@ handover-coordinator agent.
 - the deal pipeline (write) - each confidentiality agreement's
   non-solicit, standstill and term, and the people it lets read the
   material, recorded where every deal team can read them
+- the applicant tracking system (write) - each executed offer filed
+  against the candidate with every document it names, and nothing else
+  in the candidate's record changed
+- the restricted records store (write) - for separation agreements
+  only, the executed agreement and its negotiation log filed at their
+  executed versions where only the people on the agreement's access
+  list can open them, with no right to open any other record held there
 
 ## Records
 
@@ -111,6 +121,13 @@ obliges.
   portfolio company, or whose standstill the firm could not keep, to
   the legal reviewer and the deal lead partner before anyone signs it,
   because what the firm may promise is theirs to decide
+- an offer the candidate has not signed by its date, to the recruiter,
+  who asks the candidate once, and to the hiring manager, who decides
+  whether to extend the date or move to a reserve
+- a leaver who will not sign a separation agreement, to the head of HR,
+  with the reasons passed to the negotiation-coordinator agent to log
+  as asks, and the departure goes on with everything the leaver is owed
+  anyway
 
 ## Not
 

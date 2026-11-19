@@ -2,14 +2,16 @@
 
 `commitment-keeper v1`
 
-**purpose:** Keeps score against a joint plan. Every commitment in a
-signed plan becomes an item with one owner, one date and a state, and
-at every review it is read out as met, running, late or untouched. It
-opens the review on the cadence the plan set, puts it on the calendar
-of everyone the plan names, closes the commitments nobody is going to
-do with the reason and the date they were given up on, and writes the
-new owners and the new dates back. Nothing stays open by silence, so a
-commitment nobody kept is visible rather than forgotten.
+**purpose:** Keeps score against a joint plan or any other agreed plan,
+and holds a plan about one employee in a restricted record that only the
+people the plan names can open. Every commitment in a signed or agreed
+plan becomes an item with one owner, one date and a state, and at every
+review it is read out as met, running, late or untouched. It opens the
+review on the cadence the plan set, puts it on the calendar of everyone
+the plan names, closes the commitments nobody is going to do with the
+reason and the date they were given up on, and writes the new owners and
+the new dates back. Nothing stays open by silence, so a commitment
+nobody kept is visible rather than forgotten.
 
 ## Processes
 
@@ -23,6 +25,13 @@ commitment nobody kept is visible rather than forgotten.
   Actions, Follow Up the Actions
 - `ref/pc/write-the-value-creation-plan` / Load the Plan into the
   Tracker, Set the Review Cadence, Read Progress Against the Plan
+- `ref/hr/run-a-new-hires-first-months` / Load the Plan into the
+  Tracker, Set the Check-In Dates, Record the Check-In, Prepare the
+  Probation Review, Close the Plan
+- `ref/hr/run-a-performance-improvement-plan` / Load the Plan into the
+  Tracker, Give the Agreed Support, Hold Each Check-In
+- `ref/hr/run-the-employee-survey` / Load the Actions into the Tracker,
+  Review the Actions
 
 ## Patterns
 
@@ -44,6 +53,9 @@ takes the decisions and the closed lines back from the review.
 - the partner record (read) - who on each side owns what
 - the portfolio reporting system (read) - each change's measure as the
   company reports it, read beside the baseline at every review
+- the calendar (write) - each check-in of a plan about one employee, on
+  the calendars of the manager and the employee, with the date a
+  probation closes shown where one applies
 
 ## Records
 
@@ -71,12 +83,17 @@ dates set for the year, and whose calendars they landed on.
   sponsors, because the run does not close until there is one
 - a board action with no owner - to the firm's board director, and the
   action stays open on the record with the gap named until it has one
+- support the company promised in a plan about one employee that is
+  late - read out at the next check-in like any late item and named to
+  the HR business partner, because no outcome is decided while the
+  company still owes its part
 
 ## Not
 
 Does not decide what changes in the plan or write the amendment, which
-is the joint-planner agent. Does not do the work a commitment names, or
-chase an owner into doing it; it holds the state and escalates on the
-rule. Does not settle the numbers the review reads, and does not score
-the partner or move a tier, which happen in a separate round on
-published rules.
+is the joint-planner agent, or the people who agreed the plan where no
+joint-planner agent wrote it, such as a manager and an employee. Does
+not do the work a commitment names, or chase an owner into doing it; it
+holds the state and escalates on the rule. Does not settle the numbers
+the review reads, and does not score the partner or move a tier, which
+happen in a separate round on published rules.

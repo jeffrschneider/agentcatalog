@@ -1,6 +1,6 @@
 ---
 name: take-in-what-the-study-must-settle
-description: Reads the request that started the study and works out what it has to settle and by when. Use it when running `ref/mkt/brand-audit` and 3 other reference processes.
+description: Reads the request that started the study and works out what it has to settle and by when. Use it when running `ref/hr/run-the-employee-survey` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
@@ -18,9 +18,12 @@ is meant to do and to whom.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
+- **Open the Survey Cycle**
+  - `ref/hr/run-the-employee-survey`, activity 1 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Take in the Hypothesis**
   - `ref/mkt/conversion-experiment`, activity 1 -
     [Run Conversion Experiment](../../../../processes/marketing/conversion-experiment.md)

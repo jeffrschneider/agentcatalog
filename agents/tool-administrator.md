@@ -25,6 +25,13 @@ and closes the accounts on the notice the agreement requires.
 - `ref/rev/retire-a-tool` / Tell the People Who Use It, Move the Process
   to Its New Home, Take the Export, Turn Off the Links, Stop New Work
   Going In, Close the Accounts and the Licence, Record What Was Learned
+- `ref/hr/prepare-for-a-new-hire` / Open the Accounts
+- `ref/hr/offboard-a-leaver` / End Access on the Last Day
+- `ref/hr/review-access-to-employee-data` / Open the Review for the
+  Period, List Every Account and Its Role, List the Exports and Links,
+  Match Each Account to a Person, Check Each Role Against the Job, Send
+  Each Owner Their Accounts, Remove the Access Nobody Approved, Read
+  Every Account Again, Record the Review
 
 ## Patterns
 
@@ -58,6 +65,28 @@ tool is switched off.
   process the tool runs
 - the budget record (read) - what the sellers cost, read against what is
   actually used
+- the identity system (write) - a new hire's accounts opened at the
+  job's role and locked until the first day, and a leaver's accounts and
+  remote access closed at the end of the last day, or at the time a
+  named person sets for a dismissal or a layoff
+- the badge system (write) - a leaver's badge closed at the same time
+  as the accounts
+- each HR system (read) - for an access review, the accounts in the HR,
+  payroll, benefits, applicant tracking and learning systems, with each
+  account's role, permissions and last use, and the reports, exports
+  and integrations that carry employee data out, with no right to open
+  an employee's record
+- the HR system (read) - each current employee's job and each leaving
+  record for the period, which every account in an access review is
+  matched against
+- the access system (write) - each access, export and link nobody
+  confirmed in an access review, and each one an owner marked to go,
+  removed on the review's close date
+- the access review record (write) - what each check found, what was
+  removed and what was decided, with the signed review
+- the notification channel (write) - each access owner sent the
+  accesses they answer for, with what each check found and the close
+  date
 
 ## Records
 
@@ -88,6 +117,11 @@ the final invoice.
   role it holds
 - somebody still writing to the tool after the read-only date, and the
   records written after it are exported again
+- one person holding two roles that must not be combined, such as the
+  access to change an employee's bank details and the access to approve
+  a payroll, to the access owner, who chooses which role the person
+  keeps, and where the work needs both, to the named person who may
+  approve that in writing with another check in its place
 
 ## Not
 

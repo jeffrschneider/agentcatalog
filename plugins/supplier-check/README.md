@@ -38,7 +38,7 @@ manifest and in the directory of the same name.
 `ref/mkt/brand-health`, `ref/mkt/customer-research`,
 `ref/mkt/engage-marketing-agency`,
 `ref/mkt/select-marketing-technology`, `ref/mkt/win-loss-analysis`,
-`ref/pc/form-the-fund`, and 3 more. The list is generated from the
+`ref/pc/form-the-fund`, and 4 more. The list is generated from the
 activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/supplier-check

@@ -1,6 +1,6 @@
 ---
 name: put-the-reviews-on-the-calendar
-description: Sets how often the plan is reviewed, opens each review on that cadence against the calendar of everyone the plan names, and dates the next one before the current one closes. Use it when running `ref/pc/write-the-value-creation-plan`, `ref/prt/review-a-joint-plan` and `ref/prt/write-a-joint-plan`.
+description: Sets how often the plan is reviewed, opens each review on that cadence against the calendar of everyone the plan names, and dates the next one before the current one closes. Use it when running `ref/hr/run-a-new-hires-first-months` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,12 +17,15 @@ before the current one closes.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **Open the Review**
   - `ref/prt/review-a-joint-plan`, activity 1 -
     [Review a Joint Plan](../../../../processes/partners/review-a-joint-plan.md)
+- **Set the Check-In Dates**
+  - `ref/hr/run-a-new-hires-first-months`, activity 5 -
+    [Run a New Hire's First Months](../../../../processes/human-resources/run-a-new-hires-first-months.md)
 - **Set the Next Review**
   - `ref/prt/review-a-joint-plan`, activity 17 -
     [Review a Joint Plan](../../../../processes/partners/review-a-joint-plan.md)

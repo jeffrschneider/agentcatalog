@@ -33,6 +33,8 @@ returning every hit to the person who decides on it.
   Real, Read the Litigation and Claims, Screen the Company and Its
   Leaders, Clear the Screening Hits
 - `ref/pc/run-a-sale-process` / Choose the Sell-Side Adviser
+- `ref/hr/run-benefits-open-enrollment` / Write the Renewal Criteria,
+  Score the Proposals
 
 ## Patterns
 

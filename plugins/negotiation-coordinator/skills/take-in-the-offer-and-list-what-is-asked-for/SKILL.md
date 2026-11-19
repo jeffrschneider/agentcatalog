@@ -1,6 +1,6 @@
 ---
 name: take-in-the-offer-and-list-what-is-asked-for
-description: Reads the offer as it was sent and the reply that came back, and gathers every ask into one numbered list in the other side's own words with the person who raised each one. Use it when running `ref/pc/negotiate-the-fund-terms-and-side-letters`, `ref/pc/run-a-sale-process` and `ref/sls/negotiate-the-agreement`.
+description: Reads the offer as it was sent and the reply that came back, and gathers every ask into one numbered list in the other side's own words with the person who raised each one. Use it when running `ref/hr/make-an-offer` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: negotiation-coordinator
@@ -18,8 +18,8 @@ who they need first.
 
 ## Where it happens
 
-The agent does this in seven activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in nine activities across five reference processes.
+Each one names the activity as that process words it.
 
 - **Confirm Who Decides**
   - `ref/sls/negotiate-the-agreement`, activity 3 -
@@ -30,6 +30,12 @@ processes. Each one names the activity as that process words it.
 - **Log Every Ask**
   - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 3 -
     [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
+- **Log the Candidate's Asks**
+  - `ref/hr/make-an-offer`, activity 10 -
+    [Make an Offer](../../../../processes/human-resources/make-an-offer.md)
+- **Log the Leaver's Asks**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 7 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
 - **Take in the Final Bids and Markups**
   - `ref/pc/run-a-sale-process`, activity 10 -
     [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)

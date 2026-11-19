@@ -1,6 +1,6 @@
 ---
 name: find-candidates-for-a-role
-description: Finds the people the firm already knows who fit a role's specification, with how well the firm knows each one and the path to each, and puts them with the candidates from research into one long list where each person appears once with the source they came from. Use it when running `ref/pc/fill-a-key-role-at-a-portfolio-company`.
+description: Finds the people the firm already knows who fit a role's specification, with how well the firm knows each one and the path to each, and puts them with the candidates from research into one long list where each person appears once with the source they came from. Use it when running `ref/hr/find-candidates` and `ref/pc/fill-a-key-role-at-a-portfolio-company`.
 license: CC-BY-4.0
 metadata:
   agent: relationship-mapper
@@ -20,7 +20,7 @@ it.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in four activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Build the Long List**
@@ -29,6 +29,9 @@ Each one names the activity as that process words it.
 - **Find Candidates in the Firm's Network**
   - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 6 -
     [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)
+- **Record What the Search Taught**
+  - `ref/hr/find-candidates`, activity 18 -
+    [Find Candidates](../../../../processes/human-resources/find-candidates.md)
 - **Record the Search**
   - `ref/pc/fill-a-key-role-at-a-portfolio-company`, activity 18 -
     [Fill a Key Role at a Portfolio Company](../../../../processes/private-capital/fill-a-key-role-at-a-portfolio-company.md)

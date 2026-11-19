@@ -1,6 +1,6 @@
 ---
 name: close-the-run-and-report-on-it
-description: When a person says the run is over, the agent writes the account of what happened against what the announcement or the response was meant to do, including what was known at each point and what to do differently. Use it when running `ref/mkt/announce-company-news`, `ref/mkt/crisis-communication` and `ref/mkt/pitch-earned-media`.
+description: When a person says the run is over, the agent writes the account of what happened against what the announcement or the response was meant to do, including what was known at each point and what to do differently. Use it when running `ref/hr/change-the-organization-structure` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: comms-manager
@@ -17,7 +17,7 @@ including what was known at each point and what to do differently.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in four activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Close the Response**
@@ -29,6 +29,8 @@ Each one names the activity as that process words it.
   - `ref/mkt/pitch-earned-media`, activity 15 -
     [Pitch Earned Media](../../../../processes/marketing/pitch-earned-media.md)
 - **Report on the Announcement**
+  - `ref/hr/change-the-organization-structure`, activity 17 -
+    [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
   - `ref/mkt/announce-company-news`, activity 16 -
     [Announce Company News](../../../../processes/marketing/announce-company-news.md)
 - **Review the Response**

@@ -24,6 +24,7 @@ covers:
 - Set What the Committee Must Decide
 - Name the Decision and the Deadline
 - Take in the Matter
+- Take in the Proposal
 
 ## read-what-is-already-settled
 
@@ -44,6 +45,7 @@ covers:
 - Set the Market Boundary
 - Set What the Review Covers
 - Open the Review
+- Open the Succession Review
 
 ## settle-the-criteria-before-the-work-runs
 
@@ -55,6 +57,7 @@ covers:
 - Name the Qualifying Signals
 - Set the Naming Criteria
 - Set the Selection Criteria
+- Set the Budget and the Guidelines
 
 ## name-what-it-will-be-judged-by
 
@@ -100,6 +103,7 @@ covers:
 - Lay Out the Options
 - Gather the Facts
 - Commission an Independent Opinion
+- Lay Out the Choices
 
 ## narrow-the-candidates-to-a-shortlist
 
@@ -129,6 +133,7 @@ covers:
 - Reconcile the Methods
 - Test the Asks against the Goals
 - Check Conflicts and Fund Limits
+- Review the Proposals Across Teams
 
 ## fit-the-work-to-the-capacity
 
@@ -153,6 +158,7 @@ covers:
 - Send the Committee Pack
 - Collect the Members' Questions
 - Write the Consent Request
+- Send the Packs Ahead
 
 ## check-who-may-vote
 
@@ -168,6 +174,7 @@ Takes down in writing what each party with a stake in the decision says, such as
 covers:
 - Hear the Other Investors and Lenders
 - Hear the Deal Leads
+- Consult Where the Rules Require It
 
 ## convene-the-room-where-it-is-decided
 
@@ -181,6 +188,12 @@ covers:
 - Put the Options to the Partners
 - Hold the Committee Meeting
 - Decide at the Investment Committee
+- Put the Options to the Sponsor
+- Review the Structure at Its Date
+- Hold the Promotion Panel
+- Hold the Succession Review
+- Put the Options to the Executive Team
+- Calibrate the Ratings
 
 ## record-the-choice-that-was-made
 
@@ -216,6 +229,10 @@ covers:
 - Decide the Watch List
 - Decide What Each Watched Company Needs
 - Decide Whether to Ask
+- Choose the Structure
+- Decide What Happens to Each Person
+- Decide the Plan
+- Approve the Review
 
 ## settle-how-the-money-is-split
 
@@ -247,6 +264,9 @@ covers:
 - Confirm the Record with the Chair
 - Record a Decline with Its Reason
 - Record the Decision
+- Record the Succession Plan
+- Record the Approved Changes
+- Record the Final Ratings
 
 ## record-what-the-answer-rests-on
 
@@ -259,6 +279,8 @@ covers:
 - Record What the Round Rests On
 - Record Why the Money Moved
 - Set the Review Conditions
+- Set the Next Review
+- Set When the Plan Is Read Again
 
 ## write-the-words-the-company-will-use
 
@@ -303,6 +325,9 @@ covers:
 - Hand the Approved Terms On
 - Hand the Course to the Process That Runs It
 - Hand On the Watch List and Reserves
+- Hand On Pay Changes and Ended Roles
+- Brief the Managers
+- Hand the Changes to the Record and Payroll
 
 ## write-the-readout
 
@@ -339,3 +364,11 @@ Writes down what is worth repeating next time and what to avoid, so the next run
 covers:
 - Record What Was Learned
 - Record What the Request Taught
+- Record What the Review Taught
+
+## name-who-may-see-the-work
+
+Records the named people who may see the options and the evidence before a decision about people is made, such as a reorganization, keeps the work open only to them, and records anyone added with the person who agreed it.
+
+covers:
+- Name Who May See the Work
