@@ -2,7 +2,7 @@
 
 `ref/rev/define-a-record v1`
 
-**value stream:** [Record-to-Truth](../../streams/revenue-operations/record-to-truth.md)
+**value stream:** [Clean customer data](../../streams/revenue-operations/record-to-truth.md)
 Somebody asks for a new field, a new object, or a change to a rule that
 already exists. The run writes down what the object means, which fields
 a record may not be saved without, which values those fields take, and

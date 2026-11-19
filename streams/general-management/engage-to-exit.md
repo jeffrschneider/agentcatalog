@@ -1,4 +1,4 @@
-# Value stream: Engage-to-Exit
+# Value stream: Working with outside agents
 
 `vs/gm/engage-to-exit v1`
 

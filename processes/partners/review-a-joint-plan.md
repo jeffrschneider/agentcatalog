@@ -2,7 +2,7 @@
 
 `ref/prt/review-a-joint-plan v1`
 
-**value stream:** [Plan-to-Commitment](../../streams/partners/plan-to-commitment.md)
+**value stream:** [Joint business plans](../../streams/partners/plan-to-commitment.md)
 The review date arrives and somebody puts the numbers in front of both
 sides. Each measure the plan named is pulled, checked against what the
 partner counts, and settled to one figure before anyone meets. Every

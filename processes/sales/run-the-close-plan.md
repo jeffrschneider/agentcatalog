@@ -2,7 +2,7 @@
 
 `ref/sls/run-the-close-plan v1`
 
-**value stream:** [Proposal-to-Signature](../../streams/sales/proposal-to-signature.md)
+**value stream:** [Negotiation and signature](../../streams/sales/proposal-to-signature.md)
 A deal is agreed in substance and now has to get through both companies
 to a signature. This process writes down every step still owed, on our
 side and the buyer's, puts one name and one date on each of them, and

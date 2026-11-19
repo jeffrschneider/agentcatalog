@@ -2,7 +2,7 @@
 
 `ref/sls/map-the-account-people v1`
 
-**value stream:** [Account-to-Plan](../../streams/sales/account-to-plan.md)
+**value stream:** [Account plans](../../streams/sales/account-to-plan.md)
 An account read says what the account is doing. This run says who
 decides, who influences, who can stop it, and which of those people we
 already know. It starts from the contacts in the record, adds the

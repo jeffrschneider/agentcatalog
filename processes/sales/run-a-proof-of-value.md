@@ -2,7 +2,7 @@
 
 `ref/sls/run-a-proof-of-value v1`
 
-**value stream:** [Discovery-to-Solution](../../streams/sales/discovery-to-solution.md)
+**value stream:** [Discovery and solution design](../../streams/sales/discovery-to-solution.md)
 Sometimes description is not enough and the buyer has to see it work on
 their own data. This process turns that into an evaluation with a
 shape: criteria agreed before anything is built, a start date, an end

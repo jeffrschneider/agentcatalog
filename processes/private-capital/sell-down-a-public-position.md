@@ -2,7 +2,7 @@
 
 `ref/pc/sell-down-a-public-position v1`
 
-**value stream:** [Hold-to-Exit](../../streams/private-capital/hold-to-exit.md)
+**value stream:** [Exits](../../streams/private-capital/hold-to-exit.md)
 A portfolio company has listed its shares, and the fund still holds
 them. This process plans how the fund leaves the position: shares sold
 in the market over time, sold in one block to a bank, or distributed to

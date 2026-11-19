@@ -2,7 +2,7 @@
 
 `ref/sls/qualify-an-opportunity v1`
 
-**value stream:** [Inquiry-to-Qualified](../../streams/sales/inquiry-to-qualified.md)
+**value stream:** [Qualifying inbound interest](../../streams/sales/inquiry-to-qualified.md)
 An inquiry has been answered and somebody has to say whether this is an
 evaluation or a look around. The account and the company are read again
 for what changed, the questions are written down before they are asked,

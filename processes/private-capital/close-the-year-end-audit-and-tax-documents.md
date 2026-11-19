@@ -2,7 +2,7 @@
 
 `ref/pc/close-the-year-end-audit-and-tax-documents v1`
 
-**value stream:** [Commitment-to-Statement](../../streams/private-capital/commitment-to-statement.md)
+**value stream:** [Capital calls and investor reporting](../../streams/private-capital/commitment-to-statement.md)
 The fund's financial year has ended. This process closes the year's
 books, drafts the fund's financial statements, and takes the auditor
 through the year: the valuation behind every mark, the capital accounts,

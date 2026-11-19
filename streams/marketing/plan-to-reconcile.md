@@ -1,9 +1,8 @@
-# Value stream: Plan-to-Reconcile
+# Value stream: Paid media
 
 `vs/mkt/plan-to-reconcile v1`
 
 **position:** 7
-**friendly name:** Paid media
 Money committed to paid media is planned, spent, watched while the flights
 run, and then matched against what actually ran. A run starts when an
 objective arrives with an approved budget behind it, when a targeting need

@@ -2,7 +2,7 @@
 
 `ref/sls/provide-a-reference v1`
 
-**value stream:** [Discovery-to-Solution](../../streams/sales/discovery-to-solution.md)
+**value stream:** [Discovery and solution design](../../streams/sales/discovery-to-solution.md)
 A prospect asks to speak to somebody who already bought. This process
 finds a customer who matches the worry the prospect actually has,
 checks how recently that customer was last asked, and checks the

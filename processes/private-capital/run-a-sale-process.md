@@ -2,7 +2,7 @@
 
 `ref/pc/run-a-sale-process v1`
 
-**value stream:** [Hold-to-Exit](../../streams/private-capital/hold-to-exit.md)
+**value stream:** [Exits](../../streams/private-capital/hold-to-exit.md)
 The investment committee has approved an exit, and the route is a sale.
 This process chooses the adviser who will run it against criteria
 written first, prepares the company's information, and takes it to the

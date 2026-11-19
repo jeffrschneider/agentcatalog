@@ -2,7 +2,7 @@
 
 `ref/sls/configure-and-price v1`
 
-**value stream:** [Solution-to-Proposal](../../streams/sales/solution-to-proposal.md)
+**value stream:** [Quotes and proposals](../../streams/sales/solution-to-proposal.md)
 A solution shape is agreed and somebody has to say what it costs. The
 configuration names the products, the quantities and the term that will
 be sold, and it is checked before anything is priced. What the customer

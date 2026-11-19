@@ -2,7 +2,7 @@
 
 `ref/sls/build-a-prospect-list v1`
 
-**value stream:** [Prospect-to-Meeting](../../streams/sales/prospect-to-meeting.md)
+**value stream:** [Outreach to new prospects](../../streams/sales/prospect-to-meeting.md)
 A seller is given a territory or an account plan and has to turn it
 into a list of people worth approaching. The rules for who counts as a
 prospect are written down first. Accounts are pulled from the sources,

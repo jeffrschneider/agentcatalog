@@ -2,7 +2,7 @@
 
 `ref/pc/hand-over-to-the-portfolio-team v1`
 
-**value stream:** [Close-to-Value](../../streams/private-capital/close-to-value.md)
+**value stream:** [Growing portfolio companies](../../streams/private-capital/close-to-value.md)
 The deal has closed, and the people who will work with the company from
 now on are often different from the people who did the deal. The
 handover-coordinator agent gathers what the deal team learned and promised

@@ -2,7 +2,7 @@
 
 `ref/pc/issue-the-quarterly-report-and-statements v1`
 
-**value stream:** [Commitment-to-Statement](../../streams/private-capital/commitment-to-statement.md)
+**value stream:** [Capital calls and investor reporting](../../streams/private-capital/commitment-to-statement.md)
 The quarter has closed and the valuation committee has approved the
 marks. This process closes the fund's books for the quarter, works out
 the fund's net asset value and each limited partner's (LP's) share of

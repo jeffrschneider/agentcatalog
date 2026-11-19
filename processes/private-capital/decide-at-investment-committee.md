@@ -2,7 +2,7 @@
 
 `ref/pc/decide-at-investment-committee v1`
 
-**value stream:** [Recommendation-to-Close](../../streams/private-capital/recommendation-to-close.md)
+**value stream:** [Committee approval and closing](../../streams/private-capital/recommendation-to-close.md)
 The deal team has finished its investment memo and wants a decision. The
 decision-coordinator agent writes down what the committee has to settle
 and by when, the memo-writer agent confirms that every claim in the memo

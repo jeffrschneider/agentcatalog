@@ -2,7 +2,7 @@
 
 `ref/rev/calculate-commission v1`
 
-**value stream:** [Result-to-Payout](../../streams/revenue-operations/result-to-payout.md)
+**value stream:** [Commission plans and payouts](../../streams/revenue-operations/result-to-payout.md)
 A commission period closes, and the run works out what each closed deal
 earns. Every booking is matched to a seller and to the plan version that
 seller sits on, the credit is split the way the plan says, attainment is

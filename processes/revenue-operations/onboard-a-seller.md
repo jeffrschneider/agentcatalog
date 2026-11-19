@@ -2,7 +2,7 @@
 
 `ref/rev/onboard-a-seller v1`
 
-**value stream:** [Hire-to-Productive](../../streams/revenue-operations/hire-to-productive.md)
+**value stream:** [Ramping new sellers](../../streams/revenue-operations/hire-to-productive.md)
 Somebody joins the revenue team and the run carries them to their first
 real conversation with a customer. Access is ordered before day one and
 tested by the seller rather than assumed. The territory and the ramped

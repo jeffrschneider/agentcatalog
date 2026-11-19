@@ -2,7 +2,7 @@
 
 `ref/sls/open-a-renewal v1`
 
-**value stream:** [Customer-to-Renewal](../../streams/sales/customer-to-renewal.md)
+**value stream:** [Renewals](../../streams/sales/customer-to-renewal.md)
 A renewal starts on a date the agreement already carries, not on the day
 somebody remembers it. This process reads the agreement, sets what was
 sold against what the customer actually used, checks what was promised

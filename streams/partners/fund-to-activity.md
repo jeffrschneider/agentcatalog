@@ -1,9 +1,8 @@
-# Value stream: Fund-to-Activity
+# Value stream: Partner marketing funds
 
 `vs/prt/fund-to-activity v1`
 
 **position:** 6
-**friendly name:** Partner marketing funds
 A run starts when money is set aside for partners to spend on demand
 generation. The processes here decide how the fund is allocated, tell
 partners what it can and cannot be spent on, approve proposed activity

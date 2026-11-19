@@ -2,7 +2,7 @@
 
 `ref/pc/set-the-fund-strategy v1`
 
-**value stream:** [Strategy-to-Fund](../../streams/private-capital/strategy-to-fund.md)
+**value stream:** [Raising a fund](../../streams/private-capital/strategy-to-fund.md)
 The partners have decided to raise a new fund, and before anyone outside
 the firm hears about it they have to agree what the fund is. This process
 first checks that the last fund's agreement allows a new fund to be

@@ -1,9 +1,8 @@
-# Value stream: Rule-to-Route
+# Value stream: Lead routing and response times
 
 `vs/rev/rule-to-route v1`
 
 **position:** 4
-**friendly name:** Lead routing and response times
 A run starts when the organization decides who should get what, and how
 quickly. The processes here write the routing rules, implement them in the
 systems that deliver work, set and publish the response clock, watch what

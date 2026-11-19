@@ -1,9 +1,8 @@
-# Value stream: Proposal-to-Signature
+# Value stream: Negotiation and signature
 
 `vs/sls/proposal-to-signature v1`
 
 **position:** 6
-**friendly name:** Negotiation and signature
 A run starts when an offer is in the buyer's hands and ends at a signature
 or a decided loss. The processes here run the negotiation, carry redlines
 back and forth with legal, keep a close plan naming every step both sides

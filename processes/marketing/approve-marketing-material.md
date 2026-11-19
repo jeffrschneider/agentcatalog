@@ -2,7 +2,7 @@
 
 `ref/mkt/approve-marketing-material v1`
 
-**value stream:** [Idea-to-Asset](../../streams/marketing/idea-to-asset.md)
+**value stream:** [Content and creative](../../streams/marketing/idea-to-asset.md)
 An agent takes in finished marketing material, works out which standards
 apply to it and which people have to sign it, runs the scoring passes,
 puts one list of exceptions in front of the signers, and hands back the

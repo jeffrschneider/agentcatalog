@@ -2,7 +2,7 @@
 
 `ref/sls/book-the-order v1`
 
-**value stream:** [Signature-to-Handover](../../streams/sales/signature-to-handover.md)
+**value stream:** [Handover after the sale](../../streams/sales/signature-to-handover.md)
 An executed agreement arrives, and the run turns it into a booking the
 rest of the company can act on. Somebody confirms who signed and on
 whose authority, names the legal entity that is buying, and lifts the

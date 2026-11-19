@@ -2,7 +2,7 @@
 
 `ref/rev/retire-a-report v1`
 
-**value stream:** [Activity-to-Insight](../../streams/revenue-operations/activity-to-insight.md)
+**value stream:** [Revenue reporting](../../streams/revenue-operations/activity-to-insight.md)
 Reports accumulate. Every one of them was needed once, and a good number
 of them are now refreshing every morning for nobody. This process reads
 who actually opened what, what each report costs to keep running, and

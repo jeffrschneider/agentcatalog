@@ -2,7 +2,7 @@
 
 `ref/rev/certify-a-seller v1`
 
-**value stream:** [Hire-to-Productive](../../streams/revenue-operations/hire-to-productive.md)
+**value stream:** [Ramping new sellers](../../streams/revenue-operations/hire-to-productive.md)
 A seller is put forward and the run proves they can do the parts of the
 job a customer would notice, before a customer is the one finding out.
 What must be proved is named first, the standard for a pass is written

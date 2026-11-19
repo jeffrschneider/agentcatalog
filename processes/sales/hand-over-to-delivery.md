@@ -2,7 +2,7 @@
 
 `ref/sls/hand-over-to-delivery v1`
 
-**value stream:** [Signature-to-Handover](../../streams/sales/signature-to-handover.md)
+**value stream:** [Handover after the sale](../../streams/sales/signature-to-handover.md)
 An order is booked, and the run moves the relationship from the person
 who sold it to the person who will deliver it. Everything the sale
 learned is collected into one account picture: what the customer bought,

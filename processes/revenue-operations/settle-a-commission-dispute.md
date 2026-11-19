@@ -2,7 +2,7 @@
 
 `ref/rev/settle-a-commission-dispute v1`
 
-**value stream:** [Result-to-Payout](../../streams/revenue-operations/result-to-payout.md)
+**value stream:** [Commission plans and payouts](../../streams/revenue-operations/result-to-payout.md)
 Somebody reads their statement and says the number is wrong. The run
 answers them with evidence inside a time the organization promised
 before the claim arrived. The claim is classified, the statement

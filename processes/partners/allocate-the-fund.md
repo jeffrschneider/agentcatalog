@@ -2,7 +2,7 @@
 
 `ref/prt/allocate-the-fund v1`
 
-**value stream:** [Fund-to-Activity](../../streams/partners/fund-to-activity.md)
+**value stream:** [Partner marketing funds](../../streams/partners/fund-to-activity.md)
 Money is approved for partners to spend on demand generation, and this
 run turns it into an amount each partner can see and a rule each partner
 can read. Last period's fund and what each partner delivered set the

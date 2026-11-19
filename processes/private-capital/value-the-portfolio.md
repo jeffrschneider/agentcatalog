@@ -2,7 +2,7 @@
 
 `ref/pc/value-the-portfolio v1`
 
-**value stream:** [Quarter-to-Mark](../../streams/private-capital/quarter-to-mark.md)
+**value stream:** [Quarterly valuations](../../streams/private-capital/quarter-to-mark.md)
 Every quarter, each holding needs a fair value that the fund can report
 to its investors and the auditor can test. This process takes the
 company reports from the quarter's collection, the fund's position in

@@ -2,7 +2,7 @@
 
 `ref/rev/fix-a-misroute v1`
 
-**value stream:** [Rule-to-Route](../../streams/revenue-operations/rule-to-route.md)
+**value stream:** [Lead routing and response times](../../streams/revenue-operations/rule-to-route.md)
 Work reached the wrong person. Two things have to happen and they happen
 in that order: the work moves to whoever should have had it, quickly and
 with its clock still running from when it first arrived, and then the

@@ -2,7 +2,7 @@
 
 `ref/prt/run-alliance-diligence v1`
 
-**value stream:** [Opportunity-to-Alliance](../../streams/partners/opportunity-to-alliance.md)
+**value stream:** [Strategic alliances](../../streams/partners/opportunity-to-alliance.md)
 A thesis says the two companies should work together. This process finds
 out what the other company actually is. It sets what has to be proved,
 agrees access with the other side, and then checks the company, its

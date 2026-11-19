@@ -2,7 +2,7 @@
 
 `ref/prt/review-partner-performance v1`
 
-**value stream:** [Performance-to-Tier](../../streams/partners/performance-to-tier.md)
+**value stream:** [Partner tiers and reviews](../../streams/partners/performance-to-tier.md)
 A partner signed a plan. This run reads what the partner actually did
 against what that plan said, on the cadence the program set, and it
 reads what the company owed the partner in the same round. The numbers

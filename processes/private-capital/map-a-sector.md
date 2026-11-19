@@ -2,7 +2,7 @@
 
 `ref/pc/map-a-sector v1`
 
-**value stream:** [Lead-to-Opportunity](../../streams/private-capital/lead-to-opportunity.md)
+**value stream:** [Finding deals](../../streams/private-capital/lead-to-opportunity.md)
 A partner believes a sector holds companies the fund should own, and
 wants to find them before a banker or a rival firm brings them to
 market. This process writes that belief down as a thesis the firm can

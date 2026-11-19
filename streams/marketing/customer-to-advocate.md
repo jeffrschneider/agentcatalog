@@ -1,9 +1,8 @@
-# Value stream: Customer-to-Advocate
+# Value stream: Customer marketing and references
 
 `vs/mkt/customer-to-advocate v1`
 
 **position:** 9
-**friendly name:** Customer marketing and references
 Customers are brought up to speed, kept in touch with, and some of them
 agree to speak for the organization in public. A run starts when a customer
 begins, when a publishing cycle or a duty period opens, when a churn risk

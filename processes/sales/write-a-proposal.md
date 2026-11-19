@@ -2,7 +2,7 @@
 
 `ref/sls/write-a-proposal v1`
 
-**value stream:** [Solution-to-Proposal](../../streams/sales/solution-to-proposal.md)
+**value stream:** [Quotes and proposals](../../streams/sales/solution-to-proposal.md)
 An approved quote is a price, not an offer. This process turns it into a
 document the buyer can act on: what the customer asked for in their own
 words, what is included line by line, what is deliberately not included,

@@ -1,9 +1,8 @@
-# Value stream: Record-to-Truth
+# Value stream: Clean customer data
 
 `vs/rev/record-to-truth v1`
 
 **position:** 2
-**friendly name:** Clean customer data
 A run starts whenever records arrive from somewhere: a form, an import, an
 enrichment feed, a person typing. The processes here decide what a record
 must contain before it is usable, deduplicate it against what is already

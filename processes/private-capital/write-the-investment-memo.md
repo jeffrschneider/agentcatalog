@@ -2,7 +2,7 @@
 
 `ref/pc/write-the-investment-memo v1`
 
-**value stream:** [Opportunity-to-Recommendation](../../streams/private-capital/opportunity-to-recommendation.md)
+**value stream:** [Due diligence](../../streams/private-capital/opportunity-to-recommendation.md)
 The memo is the case the investment committee votes on, and it is only
 as good as the evidence under each sentence. This process writes it from
 what the deal team found. The memo-writer agent sets out the thesis, the

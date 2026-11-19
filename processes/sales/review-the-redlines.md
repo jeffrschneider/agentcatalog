@@ -2,7 +2,7 @@
 
 `ref/sls/review-the-redlines v1`
 
-**value stream:** [Proposal-to-Signature](../../streams/sales/proposal-to-signature.md)
+**value stream:** [Negotiation and signature](../../streams/sales/proposal-to-signature.md)
 The buyer sends the contract back with changes in it. This process
 takes that markup apart clause by clause, marks each change as standard
 language, an approved fallback or something new, and reads it against

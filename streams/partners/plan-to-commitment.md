@@ -1,9 +1,8 @@
-# Value stream: Plan-to-Commitment
+# Value stream: Joint business plans
 
 `vs/prt/plan-to-commitment v1`
 
 **position:** 3
-**friendly name:** Joint business plans
 A run starts when both sides sit down to agree what the relationship is for
 over the coming year. The processes here set the targets each side is
 working to, name the accounts or segments to go after together, agree what

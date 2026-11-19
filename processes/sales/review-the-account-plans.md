@@ -2,7 +2,7 @@
 
 `ref/sls/review-the-account-plans v1`
 
-**value stream:** [Account-to-Plan](../../streams/sales/account-to-plan.md)
+**value stream:** [Account plans](../../streams/sales/account-to-plan.md)
 Plans go stale quietly. This run reads them together on a cadence and
 sets each one against what actually happened: which moves were made,
 which assumptions held, and who at the account has moved since. Every

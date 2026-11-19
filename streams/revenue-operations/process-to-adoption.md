@@ -1,9 +1,8 @@
-# Value stream: Process-to-Adoption
+# Value stream: Rolling out new ways of working
 
 `vs/rev/process-to-adoption v1`
 
 **position:** 10
-**friendly name:** Rolling out new ways of working
 A run starts when a way of working is written or changed, and ends when it
 is what people actually do. The processes here document it, communicate it
 to the people who have to follow it, instrument the systems so that

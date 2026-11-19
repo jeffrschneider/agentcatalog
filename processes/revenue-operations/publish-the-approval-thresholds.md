@@ -2,7 +2,7 @@
 
 `ref/rev/publish-the-approval-thresholds v1`
 
-**value stream:** [Deal-to-Approval](../../streams/revenue-operations/deal-to-approval.md)
+**value stream:** [Discount and deal approvals](../../streams/revenue-operations/deal-to-approval.md)
 Sellers guess when nobody has written down who may approve what. This
 process reads what actually got asked last period, drafts the bands and
 the signers, sets the time the desk promises at each band, and names a

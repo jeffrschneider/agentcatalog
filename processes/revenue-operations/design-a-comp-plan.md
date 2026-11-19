@@ -2,7 +2,7 @@
 
 `ref/rev/design-a-comp-plan v1`
 
-**value stream:** [Result-to-Payout](../../streams/revenue-operations/result-to-payout.md)
+**value stream:** [Commission plans and payouts](../../streams/revenue-operations/result-to-payout.md)
 A plan period opens, and the run turns what leadership wants to happen
 into a set of instructions people will follow exactly. Somebody names
 the two or three outcomes each role is paid to reach, drafts the

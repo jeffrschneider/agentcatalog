@@ -2,7 +2,7 @@
 
 `ref/pc/reach-out-to-a-company v1`
 
-**value stream:** [Lead-to-Opportunity](../../streams/private-capital/lead-to-opportunity.md)
+**value stream:** [Finding deals](../../streams/private-capital/lead-to-opportunity.md)
 A company on a sector map has shown a sign that it may be ready to talk,
 and the partner who owns it wants a first meeting. This process first
 checks that nobody at the firm is already talking to the company and
@@ -46,8 +46,8 @@ opportunity, chosen to keep watching, or stopped.
 | 17 | Open the Opportunity | an entry in the deal pipeline with a named owner | company-scout |
 | 18 | Record the Outcome | the path used, and whether the approach landed | relationship-mapper · company-scout |
 
-An opportunity opened here goes on to the diligence processes of
-Opportunity-to-Recommendation, starting with
+An opportunity opened here goes on to the processes of the Due
+diligence stream, starting with
 `ref/pc/run-commercial-and-product-diligence`. A company that writes to
 the firm before the firm writes to it is screened in
 `ref/pc/screen-an-inbound-pitch` instead.

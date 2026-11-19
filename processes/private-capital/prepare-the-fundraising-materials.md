@@ -2,7 +2,7 @@
 
 `ref/pc/prepare-the-fundraising-materials v1`
 
-**value stream:** [Strategy-to-Fund](../../streams/private-capital/strategy-to-fund.md)
+**value stream:** [Raising a fund](../../streams/private-capital/strategy-to-fund.md)
 Before a prospective investor sees anything, the firm's track record has
 to be one set of numbers it can defend line by line. This process writes
 down the performance method first, gathers every deal's cash flows and

@@ -2,7 +2,7 @@
 
 `ref/rev/dedupe-and-merge v1`
 
-**value stream:** [Record-to-Truth](../../streams/revenue-operations/record-to-truth.md)
+**value stream:** [Clean customer data](../../streams/revenue-operations/record-to-truth.md)
 Two records turn out to be one company, one person or one deal. A rule
 matched them, a person reported them, or a new record collided with an
 old one at the moment it was created. The run reads what each record

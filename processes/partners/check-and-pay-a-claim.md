@@ -2,7 +2,7 @@
 
 `ref/prt/check-and-pay-a-claim v1`
 
-**value stream:** [Fund-to-Activity](../../streams/partners/fund-to-activity.md)
+**value stream:** [Partner marketing funds](../../streams/partners/fund-to-activity.md)
 The activity has happened and the partner wants the money. The claim is
 matched to the approval it rests on, the evidence is checked against
 the list agreed before anything was spent, the invoices are checked

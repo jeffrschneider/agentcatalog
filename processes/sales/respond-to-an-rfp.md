@@ -2,7 +2,7 @@
 
 `ref/sls/respond-to-an-rfp v1`
 
-**value stream:** [Solution-to-Proposal](../../streams/sales/solution-to-proposal.md)
+**value stream:** [Quotes and proposals](../../streams/sales/solution-to-proposal.md)
 A formal request arrives carrying its own rules: a deadline, a format,
 a channel, page limits, a question window and a list of requirements
 that each have to be answered. This process reads those rules first,

@@ -2,7 +2,7 @@
 
 `ref/pc/run-legal-and-compliance-diligence v1`
 
-**value stream:** [Opportunity-to-Recommendation](../../streams/private-capital/opportunity-to-recommendation.md)
+**value stream:** [Due diligence](../../streams/private-capital/opportunity-to-recommendation.md)
 This process checks that the company the firm would invest in is what
 its documents say it is, and that the firm may lawfully invest in it.
 The cap-table-keeper agent rebuilds the capitalization table (cap table)

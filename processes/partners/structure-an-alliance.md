@@ -2,7 +2,7 @@
 
 `ref/prt/structure-an-alliance v1`
 
-**value stream:** [Opportunity-to-Alliance](../../streams/partners/opportunity-to-alliance.md)
+**value stream:** [Strategic alliances](../../streams/partners/opportunity-to-alliance.md)
 Diligence is done and both companies still want to proceed. This process
 decides what the arrangement actually is: the shape, the money, the
 exclusivity, the term, the exit and who decides what. Finance models the

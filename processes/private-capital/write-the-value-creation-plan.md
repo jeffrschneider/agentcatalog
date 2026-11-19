@@ -2,7 +2,7 @@
 
 `ref/pc/write-the-value-creation-plan v1`
 
-**value stream:** [Close-to-Value](../../streams/private-capital/close-to-value.md)
+**value stream:** [Growing portfolio companies](../../streams/private-capital/close-to-value.md)
 The deal has closed and the handover has passed on the changes the
 investment thesis rests on. The value-creation-planner agent works with
 management to turn them into a short plan, and the financial-analyst agent

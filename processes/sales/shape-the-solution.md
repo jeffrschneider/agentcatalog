@@ -2,7 +2,7 @@
 
 `ref/sls/shape-the-solution v1`
 
-**value stream:** [Discovery-to-Solution](../../streams/sales/discovery-to-solution.md)
+**value stream:** [Discovery and solution design](../../streams/sales/discovery-to-solution.md)
 A versioned requirement record arrives and somebody has to say what
 would actually fix the problem. A first shape is drafted and then put
 in front of the people who would have to build it, run it and support

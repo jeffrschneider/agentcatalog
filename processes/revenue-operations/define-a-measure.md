@@ -2,7 +2,7 @@
 
 `ref/rev/define-a-measure v1`
 
-**value stream:** [Activity-to-Insight](../../streams/revenue-operations/activity-to-insight.md)
+**value stream:** [Revenue reporting](../../streams/revenue-operations/activity-to-insight.md)
 Two reports say "pipeline" and mean different things, so the meeting
 argues about the number instead of the decision. This process settles one
 word at a time. It finds where the word is already used, writes the rule

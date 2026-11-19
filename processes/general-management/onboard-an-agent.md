@@ -2,7 +2,7 @@
 
 `ref/gm/onboard-an-agent v1`
 
-**value stream:** [Engage-to-Exit](../../streams/general-management/engage-to-exit.md)
+**value stream:** [Working with outside agents](../../streams/general-management/engage-to-exit.md)
 An organization has decided it wants an outside agent to take on a
 piece of its work, and this process brings that agent in the way a new
 employee or contractor is brought in. The agent is checked against what

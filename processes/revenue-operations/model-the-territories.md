@@ -2,7 +2,7 @@
 
 `ref/rev/model-the-territories v1`
 
-**value stream:** [Number-to-Territory](../../streams/revenue-operations/number-to-territory.md)
+**value stream:** [Territories and quotas](../../streams/revenue-operations/number-to-territory.md)
 Leadership sets a number, and somebody has to cut the market into
 patches a person can work. This process fixes what a territory is cut
 on, cleans the account base it will be cut from, sizes every account,

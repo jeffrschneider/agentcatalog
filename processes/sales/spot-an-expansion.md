@@ -2,7 +2,7 @@
 
 `ref/sls/spot-an-expansion v1`
 
-**value stream:** [Account-to-Expansion](../../streams/sales/account-to-expansion.md)
+**value stream:** [Growing existing accounts](../../streams/sales/account-to-expansion.md)
 Something says an existing customer should be buying more: usage running
 at a limit, a team that started using what another team bought, or a
 product they do not own. This process turns that signal into a written

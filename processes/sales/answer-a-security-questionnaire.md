@@ -2,7 +2,7 @@
 
 `ref/sls/answer-a-security-questionnaire v1`
 
-**value stream:** [Solution-to-Proposal](../../streams/sales/solution-to-proposal.md)
+**value stream:** [Quotes and proposals](../../streams/sales/solution-to-proposal.md)
 A buyer sends a list of questions about security, privacy, legal terms
 and how the company is run. Most have been answered before. This process
 answers from a maintained source rather than from memory: a matched

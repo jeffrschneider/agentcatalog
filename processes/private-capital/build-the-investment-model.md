@@ -2,7 +2,7 @@
 
 `ref/pc/build-the-investment-model v1`
 
-**value stream:** [Opportunity-to-Recommendation](../../streams/private-capital/opportunity-to-recommendation.md)
+**value stream:** [Due diligence](../../streams/private-capital/opportunity-to-recommendation.md)
 Before the firm offers terms, it needs to know what the fund would earn
 at each outcome, including the bad ones. This process builds that
 answer. The returns-modeler agent starts from the entry price and the

@@ -2,7 +2,7 @@
 
 `ref/mkt/lead-scoring-model v1`
 
-**value stream:** [Inquiry-to-Owner](../../streams/marketing/inquiry-to-owner.md)
+**value stream:** [Inbound leads, scored and routed](../../streams/marketing/inquiry-to-owner.md)
 The scoring model behind inbound lead routing stops matching what leads
 actually do, or a new fact about a lead becomes available that the model
 does not read. This process is how that model changes. An analytics

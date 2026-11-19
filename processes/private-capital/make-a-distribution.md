@@ -2,7 +2,7 @@
 
 `ref/pc/make-a-distribution v1`
 
-**value stream:** [Commitment-to-Statement](../../streams/private-capital/commitment-to-statement.md)
+**value stream:** [Capital calls and investor reporting](../../streams/private-capital/commitment-to-statement.md)
 The fund has cash it may give back: the proceeds of a sale, a dividend or
 interest from a portfolio company, or the cash from shares it has sold
 after a listing. This process confirms the cash has cleared into the

@@ -2,7 +2,7 @@
 
 `ref/prt/set-a-partner-tier v1`
 
-**value stream:** [Performance-to-Tier](../../streams/partners/performance-to-tier.md)
+**value stream:** [Partner tiers and reviews](../../streams/partners/performance-to-tier.md)
 A tier is a promise about how the company will treat somebody, so the
 rules that give it have to be published first and then applied the same
 way to everybody. This run reads the rules at the version in force,

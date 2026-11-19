@@ -2,7 +2,7 @@
 
 `ref/sls/book-the-meeting v1`
 
-**value stream:** [Prospect-to-Meeting](../../streams/sales/prospect-to-meeting.md)
+**value stream:** [Outreach to new prospects](../../streams/sales/prospect-to-meeting.md)
 A reply that wants a conversation has to become a meeting that actually
 happens. What the person asked for is read, the attendees are decided,
 and the account is checked for an owner before any time is offered.

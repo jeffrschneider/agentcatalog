@@ -2,7 +2,7 @@
 
 `ref/pc/plan-the-exit v1`
 
-**value stream:** [Hold-to-Exit](../../streams/private-capital/hold-to-exit.md)
+**value stream:** [Exits](../../streams/private-capital/hold-to-exit.md)
 A holding has done what the fund bought it to do, a buyer has called, or
 the fund is nearing the end of its term, and the partners need a way
 out. This process reads what the fund holds and what it can force,

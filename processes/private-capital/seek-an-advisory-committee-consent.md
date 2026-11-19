@@ -2,7 +2,7 @@
 
 `ref/pc/seek-an-advisory-committee-consent v1`
 
-**value stream:** [Commitment-to-Statement](../../streams/private-capital/commitment-to-statement.md)
+**value stream:** [Capital calls and investor reporting](../../streams/private-capital/commitment-to-statement.md)
 The firm wants to do something its partnership agreement allows only
 with the consent of the advisory committee of its limited partners (LPs):
 buy from or sell to another fund it manages, invest past a concentration

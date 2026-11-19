@@ -2,7 +2,7 @@
 
 `ref/rev/instrument-a-process v1`
 
-**value stream:** [Process-to-Adoption](../../streams/revenue-operations/process-to-adoption.md)
+**value stream:** [Rolling out new ways of working](../../streams/revenue-operations/process-to-adoption.md)
 A process is written down, and the systems are changed so that departing
 from it shows up on its own. The run picks the steps worth watching,
 says what a followed step and a skipped step look like in the data,

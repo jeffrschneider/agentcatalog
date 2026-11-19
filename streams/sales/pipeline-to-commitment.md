@@ -1,9 +1,8 @@
-# Value stream: Pipeline-to-Commitment
+# Value stream: Forecast calls
 
 `vs/sls/pipeline-to-commitment v1`
 
 **position:** 10
-**friendly name:** Forecast calls
 A run starts on the forecast cadence and ends when a leader commits to a
 number. The processes here inspect the deals that matter, test what each one
 is really resting on, agree what is committed, what is best case and what is

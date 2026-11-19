@@ -2,7 +2,7 @@
 
 `ref/rev/publish-the-carve v1`
 
-**value stream:** [Number-to-Territory](../../streams/revenue-operations/number-to-territory.md)
+**value stream:** [Territories and quotas](../../streams/revenue-operations/number-to-territory.md)
 A carve nobody has seen is not a carve. This process takes the approved
 map and quotas, builds one statement per seller, checks each statement
 against the systems that will pay on it, and releases them all on one

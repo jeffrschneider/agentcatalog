@@ -2,7 +2,7 @@
 
 `ref/rev/build-a-report v1`
 
-**value stream:** [Activity-to-Insight](../../streams/revenue-operations/activity-to-insight.md)
+**value stream:** [Revenue reporting](../../streams/revenue-operations/activity-to-insight.md)
 Somebody asks the same question every week, and the answer is assembled
 by hand every week. This process turns that question into something that
 answers itself on a cadence. It names the reader and the decision the

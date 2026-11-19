@@ -2,7 +2,7 @@
 
 `ref/prt/write-a-joint-plan v1`
 
-**value stream:** [Plan-to-Commitment](../../streams/partners/plan-to-commitment.md)
+**value stream:** [Joint business plans](../../streams/partners/plan-to-commitment.md)
 Two organizations sit down and write what the relationship is for over
 the coming year. The plan names the numbers each side works to, the
 accounts and segments both sides will go after together, and what each

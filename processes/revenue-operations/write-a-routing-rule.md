@@ -2,7 +2,7 @@
 
 `ref/rev/write-a-routing-rule v1`
 
-**value stream:** [Rule-to-Route](../../streams/revenue-operations/rule-to-route.md)
+**value stream:** [Lead routing and response times](../../streams/revenue-operations/rule-to-route.md)
 Somebody has to decide who gets what. This process turns that decision
 into a rule that is written in plain words, argued with by the people it
 routes to, tested against work that already happened, and then built

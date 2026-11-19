@@ -1,9 +1,8 @@
-# Value stream: Prospect-to-Meeting
+# Value stream: Outreach to new prospects
 
 `vs/sls/prospect-to-meeting v1`
 
 **position:** 2
-**friendly name:** Outreach to new prospects
 A run starts when somebody decides to reach people who have not asked to
 hear from us: a list built from a territory, the accounts named in a plan,
 or a trigger somebody noticed. The processes here build the list and check

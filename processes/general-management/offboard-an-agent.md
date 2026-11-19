@@ -2,7 +2,7 @@
 
 `ref/gm/offboard-an-agent v1`
 
-**value stream:** [Engage-to-Exit](../../streams/general-management/engage-to-exit.md)
+**value stream:** [Working with outside agents](../../streams/general-management/engage-to-exit.md)
 An engagement with an outside agent is ending, and this process takes
 the agent out of the organization's work the way a departing employee
 or contractor is taken out. Its unfinished work is given a new holder

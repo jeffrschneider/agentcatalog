@@ -2,7 +2,7 @@
 
 `ref/rev/set-the-quotas v1`
 
-**value stream:** [Number-to-Territory](../../streams/revenue-operations/number-to-territory.md)
+**value stream:** [Territories and quotas](../../streams/revenue-operations/number-to-territory.md)
 The map is fixed, and every patch on it now needs a number. This
 process reads what each territory carried before, models the attainment
 the plan is built on, and drafts a quota per patch. Each draft is

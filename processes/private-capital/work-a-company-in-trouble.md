@@ -2,7 +2,7 @@
 
 `ref/pc/work-a-company-in-trouble v1`
 
-**value stream:** [Close-to-Value](../../streams/private-capital/close-to-value.md)
+**value stream:** [Growing portfolio companies](../../streams/private-capital/close-to-value.md)
 A portfolio company is missing its plan, running short of cash or close to
 breaching a covenant with its lenders. The portfolio-monitor agent raises
 the warning, checks the facts with the company's finance lead and works

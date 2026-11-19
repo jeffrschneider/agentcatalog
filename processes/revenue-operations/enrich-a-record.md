@@ -2,7 +2,7 @@
 
 `ref/rev/enrich-a-record v1`
 
-**value stream:** [Record-to-Truth](../../streams/revenue-operations/record-to-truth.md)
+**value stream:** [Clean customer data](../../streams/revenue-operations/record-to-truth.md)
 Records arrive thin. The industry is empty, the employee count is empty,
 the job title says what somebody typed in a hurry. This run reads what
 the definition asks each field to hold, checks which fields may be

@@ -2,7 +2,7 @@
 
 `ref/sls/write-an-account-plan v1`
 
-**value stream:** [Account-to-Plan](../../streams/sales/account-to-plan.md)
+**value stream:** [Account plans](../../streams/sales/account-to-plan.md)
 The read and the map are in. This run turns them into a plan: what to
 sell at this account, to whom, in what order, and what has to be true
 for that order to work. Every opportunity is sized, tested against the

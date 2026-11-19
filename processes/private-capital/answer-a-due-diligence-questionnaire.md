@@ -2,7 +2,7 @@
 
 `ref/pc/answer-a-due-diligence-questionnaire v1`
 
-**value stream:** [Strategy-to-Fund](../../streams/private-capital/strategy-to-fund.md)
+**value stream:** [Raising a fund](../../streams/private-capital/strategy-to-fund.md)
 A prospective limited partner (LP), or the consultant advising it, sends
 a due diligence questionnaire (DDQ), often an industry standard form with
 its own questions added. This process answers it from the firm's library

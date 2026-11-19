@@ -2,7 +2,7 @@
 
 `ref/pc/run-the-closing v1`
 
-**value stream:** [Recommendation-to-Close](../../streams/private-capital/recommendation-to-close.md)
+**value stream:** [Committee approval and closing](../../streams/private-capital/recommendation-to-close.md)
 Both sides have confirmed the agreed text, and the deal now has to close.
 The close-plan-keeper agent lists every condition to closing once, puts
 one owner and one date on each, and chases each one until it is done with

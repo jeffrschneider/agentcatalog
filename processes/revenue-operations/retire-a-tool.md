@@ -2,7 +2,7 @@
 
 `ref/rev/retire-a-tool v1`
 
-**value stream:** [Signal-to-System](../../streams/revenue-operations/signal-to-system.md)
+**value stream:** [Choosing and running revenue tools](../../streams/revenue-operations/signal-to-system.md)
 A decision has been made to switch a tool off, and this process gets it
 off without losing the data it holds or the process that ran inside it.
 Everything that depends on the tool is found first, the process is

@@ -2,7 +2,7 @@
 
 `ref/pc/run-the-portfolio-review v1`
 
-**value stream:** [Quarter-to-Mark](../../streams/private-capital/quarter-to-mark.md)
+**value stream:** [Quarterly valuations](../../streams/private-capital/quarter-to-mark.md)
 The marks are approved, and the partners now go through every company in
 the fund together. This process puts each company's condition in one
 place: its results against plan, its cash, its covenants, its mark and
