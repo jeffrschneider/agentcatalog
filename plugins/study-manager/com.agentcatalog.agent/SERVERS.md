@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Ten systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Eleven systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -16,6 +16,7 @@ more than the job requires.
 | the customer and revenue record | read | The accounts, what they bought, what they renewed, when they left, and the deals a win-loss study reads back over. |
 | analytics platforms | read |  |
 | the meeting calendar | write | Cap: which interviews and sessions it may set without asking, set by the adopting organization. |
+| the HR system | read | The employees an employee survey covers, each with their team, location and level alone, and no other field of their record. |
 
 There is deliberately no grant to send. This agent says who has to be
 sampled, the consent-manager agent says which of those contacts may be

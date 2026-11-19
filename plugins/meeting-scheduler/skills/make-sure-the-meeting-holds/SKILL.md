@@ -1,6 +1,6 @@
 ---
 name: make-sure-the-meeting-holds
-description: Briefs everybody who attends, so nobody asks again what the person already answered, and reminds both sides before it. Use it when running `ref/pc/fill-a-key-role-at-a-portfolio-company` and 3 other reference processes.
+description: Briefs everybody who attends, so nobody asks again what the person already answered, and reminds both sides before it. Use it when running `ref/hr/plan-the-hire` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: meeting-scheduler
@@ -17,12 +17,20 @@ nobody attended once and rebooks it once, then lets it go.
 
 ## Where it happens
 
-The agent does this in six activities across four reference processes.
+The agent does this in eight activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Brief the Attendees**
+  - `ref/hr/plan-the-hire`, activity 5 -
+    [Plan the Hire](../../../../processes/human-resources/plan-the-hire.md)
   - `ref/sls/book-the-meeting`, activity 7 -
     [Book the Meeting](../../../../processes/sales/book-the-meeting.md)
+- **Brief the Candidate**
+  - `ref/hr/run-the-interviews`, activity 7 -
+    [Run the Interviews](../../../../processes/human-resources/run-the-interviews.md)
+- **Brief the Panel**
+  - `ref/hr/run-the-interviews`, activity 6 -
+    [Run the Interviews](../../../../processes/human-resources/run-the-interviews.md)
 - **Brief the Partner**
   - `ref/pc/reach-out-to-a-company`, activity 13 -
     [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)

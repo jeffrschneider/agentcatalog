@@ -41,3 +41,9 @@ anything.
 - a matter the firm acted on before the advisory committee's consent was
   recorded - to the committee as a breach, with what was done and when,
   because only the committee decides what puts it right
+- a promotion, calibration or succession pack that reaches anyone
+  outside the people named to read it - to the head of HR the same day,
+  and that access is removed before the round goes on
+- a panel member who manages a nominee, or who has declared a conflict,
+  about to take part in that decision - to the panel chair, and no
+  decision is recorded with that member's part in it

@@ -72,6 +72,12 @@
           "role": "deal-pipeline",
           "access": "write",
           "needs": "A deal's stage and the committee's decision on its record, where the next deal team can read it."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "write",
+          "needs": "Each change a pay review approved, handed to the employee's record with its approver and its effective date, with no right to change any other field."
         }
       ],
       "records": [
@@ -90,7 +96,9 @@
         "a decision made outside the process it belongs to, so a person decides whether to record it or run it again",
         "a committee that would vote short of its quorum, or a member whose declared conflict has not been ruled on - to the committee chair and the chief compliance officer, because a vote the charter does not count is not a decision and this agent records none",
         "a deal or an option that breaks a fund limit, or a matter the partnership agreement sends to the limited partner advisory committee - to the deal lead partner and the chief compliance officer, and it is not put to a vote until it fits the limit or the consent is recorded",
-        "a matter the firm acted on before the advisory committee's consent was recorded - to the committee as a breach, with what was done and when, because only the committee decides what puts it right"
+        "a matter the firm acted on before the advisory committee's consent was recorded - to the committee as a breach, with what was done and when, because only the committee decides what puts it right",
+        "a promotion, calibration or succession pack that reaches anyone outside the people named to read it - to the head of HR the same day, and that access is removed before the round goes on",
+        "a panel member who manages a nominee, or who has declared a conflict, about to take part in that decision - to the panel chair, and no decision is recorded with that member's part in it"
       ],
       "not": [
         "Does not decide anything.",
@@ -497,6 +505,73 @@
             "Hold the Committee Meeting",
             "Record the Decision",
             "Record What the Request Taught"
+          ]
+        },
+        {
+          "process": "ref/hr/plan-the-workforce",
+          "activities": [
+            "Put the Options to the Executive Team",
+            "Decide the Plan",
+            "Set When the Plan Is Read Again"
+          ]
+        },
+        {
+          "process": "ref/hr/change-the-organization-structure",
+          "activities": [
+            "Take in the Proposal",
+            "Name Who May See the Work",
+            "Put the Options to the Sponsor",
+            "Choose the Structure",
+            "Consult Where the Rules Require It",
+            "Decide What Happens to Each Person",
+            "Hand On Pay Changes and Ended Roles",
+            "Review the Structure at Its Date"
+          ]
+        },
+        {
+          "process": "ref/hr/run-the-pay-review",
+          "activities": [
+            "Open the Review",
+            "Set the Budget and the Guidelines",
+            "Brief the Managers",
+            "Review the Proposals Across Teams",
+            "Approve the Review",
+            "Record the Approved Changes",
+            "Hand the Changes to the Record and Payroll",
+            "Record What the Review Taught"
+          ]
+        },
+        {
+          "process": "ref/hr/run-benefits-open-enrollment",
+          "activities": [
+            "Lay Out the Choices"
+          ]
+        },
+        {
+          "process": "ref/hr/run-the-performance-review",
+          "activities": [
+            "Send the Packs Ahead",
+            "Calibrate the Ratings",
+            "Record the Final Ratings"
+          ]
+        },
+        {
+          "process": "ref/hr/decide-promotions",
+          "activities": [
+            "Send the Pack Ahead",
+            "Hold the Promotion Panel",
+            "Record the Decisions"
+          ]
+        },
+        {
+          "process": "ref/hr/plan-succession-for-key-roles",
+          "activities": [
+            "Open the Succession Review",
+            "Send the Pack Ahead",
+            "Hold the Succession Review",
+            "Record the Succession Plan",
+            "Set the Next Review",
+            "Record What the Review Taught"
           ]
         }
       ]

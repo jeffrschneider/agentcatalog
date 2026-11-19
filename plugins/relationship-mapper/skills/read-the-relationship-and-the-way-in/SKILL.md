@@ -1,6 +1,6 @@
 ---
 name: read-the-relationship-and-the-way-in
-description: Scores how well we know each person from recorded contact rather than from opinion, names the path in and who at our end holds it, and reads where each person stands on what we would sell. Use it when running `ref/pc/reach-out-to-a-company`, `ref/pc/work-an-investor-prospect` and `ref/sls/map-the-account-people`.
+description: Scores how well we know each person from recorded contact rather than from opinion, names the path in and who at our end holds it, and reads where each person stands on what we would sell. Use it when running `ref/hr/find-candidates` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: relationship-mapper
@@ -17,12 +17,15 @@ where each person stands on what we would sell.
 
 ## Where it happens
 
-The agent does this in six activities across three reference processes.
+The agent does this in seven activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Choose the Path**
   - `ref/pc/reach-out-to-a-company`, activity 7 -
     [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)
+- **Find Who Knows Each Person**
+  - `ref/hr/find-candidates`, activity 9 -
+    [Find Candidates](../../../../processes/human-resources/find-candidates.md)
 - **Find the Paths In**
   - `ref/pc/reach-out-to-a-company`, activity 5 -
     [Reach Out to a Company](../../../../processes/private-capital/reach-out-to-a-company.md)

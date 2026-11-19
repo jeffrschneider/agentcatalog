@@ -37,6 +37,7 @@ covers:
 - Find the Warmest Path In
 - Score Each Path
 - Choose the Path
+- Find Who Knows Each Person
 
 ## work-the-path-in
 
@@ -66,6 +67,7 @@ covers:
 - Find Candidates in the Firm's Network
 - Build the Long List
 - Record the Search
+- Record What the Search Taught
 
 ## issue-the-map-with-its-gaps
 

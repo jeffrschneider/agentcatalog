@@ -1,6 +1,6 @@
 ---
 name: record-what-was-learned
-description: Writes down what is worth repeating next time and what to avoid, so the next run starts from it. Use it when running `ref/mkt/brand-identity` and 16 other reference processes.
+description: Writes down what is worth repeating next time and what to avoid, so the next run starts from it. Use it when running `ref/hr/plan-succession-for-key-roles` and 18 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,7 +16,7 @@ next run starts from it.
 
 ## Where it happens
 
-The agent does this in two activities across seventeen reference
+The agent does this in three activities across nineteen reference
 processes. Each one names the activity as that process words it.
 
 - **Record What Was Learned**
@@ -55,6 +55,11 @@ processes. Each one names the activity as that process words it.
 - **Record What the Request Taught**
   - `ref/pc/seek-an-advisory-committee-consent`, activity 16 -
     [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
+- **Record What the Review Taught**
+  - `ref/hr/plan-succession-for-key-roles`, activity 15 -
+    [Plan Succession for Key Roles](../../../../processes/human-resources/plan-succession-for-key-roles.md)
+  - `ref/hr/run-the-pay-review`, activity 19 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 
 ## What to record
 

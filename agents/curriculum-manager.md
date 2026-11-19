@@ -2,15 +2,17 @@
 
 `curriculum-manager v1`
 
-**purpose:** Holds the material people are taught and keeps it current
-as the product, the market and the process move. Builds the plan of what
-is learned in which week and by whom, builds each course against a
-written requirement rather than against what the trainer happens to
-know, books and runs the sessions, and publishes the material at a
-version so the session and the library never differ. When something
-changes, it reads the handover against what a buyer actually asks and
-names the gaps before anybody is taught the old answer. It builds the
-assessment too, but it never scores the person sitting it.
+**purpose:** Holds the material people are taught, from a seller's
+courses to the company's learning program, orientation and required
+training, and keeps it current as the product, the market, the process,
+the policies and the rules move. Builds the plan of what is learned in
+which week and by whom, builds each course against a written requirement
+rather than against what the trainer happens to know, books and runs the
+sessions, and publishes the material at a version so the session and the
+library never differ. When something changes, it reads the handover
+against what a buyer actually asks and names the gaps before anybody is
+taught the old answer. It builds the assessment too, but it never scores
+the person sitting it.
 
 ## Processes
 
@@ -27,6 +29,16 @@ assessment too, but it never scores the person sitting it.
   Practise the Pitch
 - `ref/rev/roll-out-a-change` / Check What Was Handed Over, Build the
   Teaching, Run the Sessions, Check That It Landed
+- `ref/hr/run-new-hire-orientation` / Check the Material Is Current,
+  Update the Material
+- `ref/hr/plan-the-learning-program` / Read the Skills the Workforce
+  Plan Calls For, Combine the Needs into One List, Check What the
+  Library Already Covers, Draft the Candidate Program, Write the
+  Requirement for Each Course, Build the Courses Inside, Buy the Courses
+  from Outside, Publish the Courses at a Version, Record What the Plan
+  Rests On
+- `ref/hr/run-required-training` / Check the Course Matches the Rule,
+  Update the Course, Record What the Round Taught
 
 ## Patterns
 
@@ -58,6 +70,14 @@ the next person is taught it.
   teaching starts from what they can be excused
 - the price book and the competitor set (read) - so what is taught is
   what is currently in force
+- the course library (write) - each course in the company's learning
+  program, each required course and the orientation material, published
+  at a version at one address people can reach
+- the workforce plan (read) - the skills the approved plan says the
+  company will need in the year and does not yet have
+- the policy library (read) - every policy now in force at its version,
+  which the orientation material and each required course are read
+  against
 
 ## Records
 
@@ -91,6 +111,10 @@ why each course exists.
 - a price, a competitor answer or a process step that has moved since
   the material was signed, to whoever signs the material, with the
   courses that now teach the old version listed
+- a policy or a rule that has changed since the orientation material or
+  a required course was signed, to whoever signs that material, with
+  each part that teaches the old version named, and to counsel where
+  the rule is the law's
 
 ## Not
 

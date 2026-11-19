@@ -74,6 +74,18 @@
           "role": "deal-pipeline",
           "access": "write",
           "needs": "Each confidentiality agreement's non-solicit, standstill and term, and the people it lets read the material, recorded where every deal team can read them."
+        },
+        {
+          "name": "the applicant tracking system",
+          "role": "applicant-tracking-system",
+          "access": "write",
+          "needs": "Each executed offer filed against the candidate with every document it names, and nothing else in the candidate's record changed."
+        },
+        {
+          "name": "the restricted records store",
+          "role": "restricted-records-store",
+          "access": "write",
+          "needs": "For separation agreements only, the executed agreement and its negotiation log filed at their executed versions where only the people on the agreement's access list can open them, with no right to open any other record held there."
         }
       ],
       "records": [
@@ -93,7 +105,9 @@
         "a promise the agreement does not carry, to the person who decides whether the organization honors it anyway, before the customer hears from anybody",
         "a signer who has changed or become unavailable while a document is out to sign, to the deal owner, with the path confirmed again before it goes out a second time",
         "a signer who refuses to sign, to the managing partner or the deal lead partner who owns the document, with the refusal and its reason recorded, because nobody signs around a refusing signer and the terms behind the refusal go back to the people who settled them",
-        "a confidentiality agreement whose non-solicit would bind every portfolio company, or whose standstill the firm could not keep, to the legal reviewer and the deal lead partner before anyone signs it, because what the firm may promise is theirs to decide"
+        "a confidentiality agreement whose non-solicit would bind every portfolio company, or whose standstill the firm could not keep, to the legal reviewer and the deal lead partner before anyone signs it, because what the firm may promise is theirs to decide",
+        "an offer the candidate has not signed by its date, to the recruiter, who asks the candidate once, and to the hiring manager, who decides whether to extend the date or move to a reserve",
+        "a leaver who will not sign a separation agreement, to the head of HR, with the reasons passed to the negotiation-coordinator agent to log as asks, and the departure goes on with everything the leaver is owed anyway"
       ],
       "not": [
         "Does not negotiate the words.",
@@ -178,6 +192,19 @@
             "Sign the Adviser's Engagement",
             "Approach the Buyers",
             "Sign the Sale Agreement"
+          ]
+        },
+        {
+          "process": "ref/hr/make-an-offer",
+          "activities": [
+            "Get the Offer Signed"
+          ]
+        },
+        {
+          "process": "ref/hr/negotiate-a-separation-agreement",
+          "activities": [
+            "Sign the Agreement",
+            "File the Executed Agreement"
           ]
         }
       ]

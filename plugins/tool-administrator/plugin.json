@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "revenue-operations",
+    "human-resources",
     "administer-a-tool",
+    "review-access-to-employee-data",
     "retire-a-tool",
-    "integrate-a-tool",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "tool-administrator",
       "agentVersion": 1,
-      "department": "revenue-operations",
+      "department": "human-resources",
       "abstract": true,
       "works": "Runs allocate-and-reconcile on the licence count, setting licences paid for against licences used and naming every licence unused past the limit. Runs roll-call on access for the life of the tool, and sits in the access review a person holds. Takes the standing review's assessment from the stack-planner agent and records the decision that comes out of the decide-and-announce. Takes a live link from the integration-keeper agent with the flow record, the credentials and the date it is next checked, and gives that agent the link check back on its cadence. Reads supplier changes from the supplier-check agent and turns the ones that force work into change requests. Sits in the approval that has to clear before a tool is switched off.",
       "servers": [
@@ -74,6 +74,48 @@
           "role": "budget-record",
           "access": "read",
           "needs": "What the sellers cost, read against what is actually used."
+        },
+        {
+          "name": "the identity system",
+          "role": "identity-system",
+          "access": "write",
+          "needs": "A new hire's accounts opened at the job's role and locked until the first day, and a leaver's accounts and remote access closed at the end of the last day, or at the time a named person sets for a dismissal or a layoff."
+        },
+        {
+          "name": "the badge system",
+          "role": "badge-system",
+          "access": "write",
+          "needs": "A leaver's badge closed at the same time as the accounts."
+        },
+        {
+          "name": "each HR system",
+          "role": "each-hr-system",
+          "access": "read",
+          "needs": "For an access review, the accounts in the HR, payroll, benefits, applicant tracking and learning systems, with each account's role, permissions and last use, and the reports, exports and integrations that carry employee data out, with no right to open an employee's record."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "read",
+          "needs": "Each current employee's job and each leaving record for the period, which every account in an access review is matched against."
+        },
+        {
+          "name": "the access system",
+          "role": "access-system",
+          "access": "write",
+          "needs": "Each access, export and link nobody confirmed in an access review, and each one an owner marked to go, removed on the review's close date."
+        },
+        {
+          "name": "the access review record",
+          "role": "access-review-record",
+          "access": "write",
+          "needs": "What each check found, what was removed and what was decided, with the signed review."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Each access owner sent the accesses they answer for, with what each check found and the close date."
         }
       ],
       "records": [
@@ -90,7 +132,8 @@
         "more licences used than are held, to whoever owns the budget, who says in writing whether licences are bought or accounts are closed",
         "a change that cannot be taken back, which is not applied outside a stated window with the tool's owner watching",
         "an account nobody can account for, to the security reviewer, with the role it holds",
-        "somebody still writing to the tool after the read-only date, and the records written after it are exported again"
+        "somebody still writing to the tool after the read-only date, and the records written after it are exported again",
+        "one person holding two roles that must not be combined, such as the access to change an employee's bank details and the access to approve a payroll, to the access owner, who chooses which role the person keeps, and where the work needs both, to the named person who may approve that in writing with another check in its place"
       ],
       "not": [
         "Does not decide whether the tool stays.",
@@ -136,6 +179,32 @@
             "Stop New Work Going In",
             "Close the Accounts and the Licence",
             "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/hr/prepare-for-a-new-hire",
+          "activities": [
+            "Open the Accounts"
+          ]
+        },
+        {
+          "process": "ref/hr/offboard-a-leaver",
+          "activities": [
+            "End Access on the Last Day"
+          ]
+        },
+        {
+          "process": "ref/hr/review-access-to-employee-data",
+          "activities": [
+            "Open the Review for the Period",
+            "List Every Account and Its Role",
+            "List the Exports and Links",
+            "Match Each Account to a Person",
+            "Check Each Role Against the Job",
+            "Send Each Owner Their Accounts",
+            "Remove the Access Nobody Approved",
+            "Read Every Account Again",
+            "Record the Review"
           ]
         }
       ]

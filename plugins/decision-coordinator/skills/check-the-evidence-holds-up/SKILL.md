@@ -1,6 +1,6 @@
 ---
 name: check-the-evidence-holds-up
-description: Reads what is proposed against the standards and the goals already in force, and where two sets of numbers disagree it sets out the disagreement and what explains it. Use it when running `ref/mkt/develop-marketing-strategy` and 3 other reference processes.
+description: Reads what is proposed against the standards and the goals already in force, and where two sets of numbers disagree it sets out the disagreement and what explains it. Use it when running `ref/hr/run-the-pay-review` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,7 +17,7 @@ disagreement and what explains it.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Check Conflicts and Fund Limits**
@@ -29,6 +29,9 @@ Each one names the activity as that process words it.
 - **Reconcile the Methods**
   - `ref/mkt/size-market-opportunity`, activity 8 -
     [Size Market Opportunity](../../../../processes/marketing/size-market-opportunity.md)
+- **Review the Proposals Across Teams**
+  - `ref/hr/run-the-pay-review`, activity 13 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Test the Asks against the Goals**
   - `ref/mkt/set-marketing-budget`, activity 6 -
     [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)

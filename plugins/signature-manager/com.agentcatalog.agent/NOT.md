@@ -31,3 +31,10 @@ an agreement would make the record it keeps worthless.
   portfolio company, or whose standstill the firm could not keep, to the
   legal reviewer and the deal lead partner before anyone signs it,
   because what the firm may promise is theirs to decide
+- an offer the candidate has not signed by its date, to the recruiter,
+  who asks the candidate once, and to the hiring manager, who decides
+  whether to extend the date or move to a reserve
+- a leaver who will not sign a separation agreement, to the head of HR,
+  with the reasons passed to the negotiation-coordinator agent to log as
+  asks, and the departure goes on with everything the leaver is owed
+  anyway

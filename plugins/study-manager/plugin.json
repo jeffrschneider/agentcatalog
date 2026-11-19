@@ -16,7 +16,7 @@
     "marketing",
     "brand-health",
     "win-loss-analysis",
-    "brand-audit",
+    "run-the-employee-survey",
     "abstract"
   ],
   "extensions": {
@@ -83,6 +83,12 @@
           "role": "meeting-calendar",
           "access": "write",
           "needs": "Cap: which interviews and sessions it may set without asking, set by the adopting organization."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "read",
+          "needs": "The employees an employee survey covers, each with their team, location and level alone, and no other field of their record."
         }
       ],
       "records": [
@@ -256,6 +262,23 @@
             "Write the Findings",
             "Deliver the Themes and Recommendations",
             "Record What Was Learned"
+          ]
+        },
+        {
+          "process": "ref/hr/run-the-employee-survey",
+          "activities": [
+            "Open the Survey Cycle",
+            "Carry the Questions Forward",
+            "Write Any New Questions",
+            "Set the Groups to Report",
+            "Open the Survey",
+            "Watch the Response Rate",
+            "Close the Survey",
+            "Screen the Comments",
+            "Compare with the Last Survey",
+            "Write the Findings",
+            "Share the Results",
+            "Record What the Survey Taught"
           ]
         }
       ]

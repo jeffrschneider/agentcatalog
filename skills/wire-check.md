@@ -2,27 +2,30 @@
 
 ## verify-payment-instructions
 
-Checks each payee's account, each investor's account and the fund's
-own receiving account against the verified record, and confirms any
-change by a call to a contact the firm already held, through a channel
-independent of the one the instruction came in. An account it cannot
-confirm holds that payment.
+Checks each payee's account, each investor's account, each employee's
+account and the fund's own receiving account against the verified
+record, and confirms any change by a call to a contact already on file,
+through a channel independent of the one the instruction came in. An
+account it cannot confirm holds that payment.
 
 covers:
 - Confirm the Fund's Bank Instructions
 - Verify Each Investor's Payment Instructions
 - Verify the Payment Instructions
+- Confirm a New Bank Account
 
 ## follow-each-outgoing-payment
 
-Checks each payment the chief financial officer releases against the
-verified line it pays, then confirms where each one landed and that
-each payee received it. It can see payments and holds no right to
-release one.
+Checks each payment a named person releases, such as the chief
+financial officer or the payroll approver, against the verified line it
+pays, then confirms where each one landed and that each payee received
+it. It can see payments and holds no right to release one.
 
 covers:
 - Confirm Each Payment Landed
 - Confirm the Money Arrived
+- Check the Payment File
+- Confirm the Payments Landed
 
 ## match-incoming-money
 

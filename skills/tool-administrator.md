@@ -21,6 +21,8 @@ covers:
 - Set the Roles and the Permissions
 - Open and Close Accounts
 - Read Every Account Again
+- Open the Accounts
+- End Access on the Last Day
 
 ## give-a-link-its-own-access
 
@@ -81,3 +83,22 @@ covers:
 - Turn Off the Links
 - Close the Accounts and the Licence
 - Record What Was Learned
+
+## review-who-can-see-what
+
+Opens the access review for a period with its systems, its access owners
+and its dates, lists every account with its role, its permissions and
+its last use, and every report, export and link that carries data out,
+and matches each account to a current employee, an approved service or
+nobody. It flags access wider than the job needs and roles that clash,
+sends each owner the accesses they answer for, and on the close date
+removes the access nobody approved.
+
+covers:
+- Open the Review for the Period
+- List Every Account and Its Role
+- List the Exports and Links
+- Match Each Account to a Person
+- Check Each Role Against the Job
+- Send Each Owner Their Accounts
+- Remove the Access Nobody Approved

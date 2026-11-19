@@ -20,6 +20,7 @@ covers:
 - Set the Scoring Criteria
 - Set the Selection Criteria
 - Set the Criteria for Each Provider
+- Write the Renewal Criteria
 
 ## take-in-the-candidate-material
 

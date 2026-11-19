@@ -136,6 +136,25 @@ itself, which is what makes the record it leaves worth trusting later.
   Decide Whether to Ask, Gather the Facts, Commission an Independent
   Opinion, Write the Consent Request, Hold the Committee Meeting, Record
   the Decision, Record What the Request Taught
+- `ref/hr/plan-the-workforce` / Put the Options to the Executive Team,
+  Decide the Plan, Set When the Plan Is Read Again
+- `ref/hr/change-the-organization-structure` / Take in the Proposal,
+  Name Who May See the Work, Put the Options to the Sponsor, Choose the
+  Structure, Consult Where the Rules Require It, Decide What Happens to
+  Each Person, Hand On Pay Changes and Ended Roles, Review the Structure
+  at Its Date
+- `ref/hr/run-the-pay-review` / Open the Review, Set the Budget and the
+  Guidelines, Brief the Managers, Review the Proposals Across Teams,
+  Approve the Review, Record the Approved Changes, Hand the Changes to
+  the Record and Payroll, Record What the Review Taught
+- `ref/hr/run-benefits-open-enrollment` / Lay Out the Choices
+- `ref/hr/run-the-performance-review` / Send the Packs Ahead, Calibrate
+  the Ratings, Record the Final Ratings
+- `ref/hr/decide-promotions` / Send the Pack Ahead, Hold the Promotion
+  Panel, Record the Decisions
+- `ref/hr/plan-succession-for-key-roles` / Open the Succession Review,
+  Send the Pack Ahead, Hold the Succession Review, Record the Succession
+  Plan, Set the Next Review, Record What the Review Taught
 
 ## Patterns
 
@@ -168,6 +187,9 @@ waiting on, and when each one is due.
   up
 - the deal pipeline (write) - a deal's stage and the committee's
   decision on its record, where the next deal team can read it
+- the HR system (write) - each change a pay review approved, handed to
+  the employee's record with its approver and its effective date, with
+  no right to change any other field
 
 ## Records
 
@@ -210,6 +232,12 @@ answer is recorded.
 - a matter the firm acted on before the advisory committee's consent
   was recorded - to the committee as a breach, with what was done and
   when, because only the committee decides what puts it right
+- a promotion, calibration or succession pack that reaches anyone
+  outside the people named to read it - to the head of HR the same day,
+  and that access is removed before the round goes on
+- a panel member who manages a nominee, or who has declared a conflict,
+  about to take part in that decision - to the panel chair, and no
+  decision is recorded with that member's part in it
 
 ## Not
 

@@ -1,6 +1,6 @@
 ---
 name: field-the-study
-description: Puts the study to the sample, which means the invitations going out, the survey opening and the interviews being arranged. Use it when running `ref/mkt/brand-audit` and 4 other reference processes.
+description: Puts the study to the sample, which means the invitations going out, the survey opening and the interviews being arranged. Use it when running `ref/hr/run-the-employee-survey` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
@@ -17,7 +17,7 @@ as it was given, marked with the version of the questions it answered.
 
 ## Where it happens
 
-The agent does this in four activities across five reference processes.
+The agent does this in five activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Ask the Audience**
@@ -34,6 +34,9 @@ Each one names the activity as that process words it.
 - **Invite the Buyers**
   - `ref/mkt/win-loss-analysis`, activity 11 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Open the Survey**
+  - `ref/hr/run-the-employee-survey`, activity 7 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 
 ## What to record
 

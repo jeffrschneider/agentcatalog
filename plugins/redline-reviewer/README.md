@@ -38,7 +38,7 @@ manifest and in the directory of the same name.
 `ref/sls/negotiate-the-agreement`, `ref/sls/record-a-lost-deal`,
 `ref/sls/review-the-redlines`, `ref/sls/run-the-close-plan`,
 `ref/pc/negotiate-the-fund-terms-and-side-letters`,
-`ref/pc/negotiate-the-definitive-agreements`. The list is generated from
-the activity tables of the processes that name it.
+`ref/pc/negotiate-the-definitive-agreements`, and 1 more. The list is
+generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/redline-reviewer

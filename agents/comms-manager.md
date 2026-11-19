@@ -34,6 +34,10 @@ for that run until the report is filed.
   Price
 - `ref/mkt/set-marketing-budget` / Collect What Each Function Asks For,
   Tell Every Function What It Has
+- `ref/hr/change-the-organization-structure` / Plan the Announcement,
+  Tell Each Affected Person, Announce the Change, Report on the
+  Announcement
+- `ref/hr/run-a-layoff` / Plan the Announcement, Announce to the Staff
 
 ## Patterns
 
@@ -61,6 +65,9 @@ that closes the run.
 - the coverage record (read)
 - the staged releases (trigger) - the pieces go out in the planned
   order, after the sign-offs
+- the staff communication channel (write) - the staff announcement of
+  a reorganization or a layoff, sent only once every affected person
+  has been told, and the answers to the questions it raises
 
 ## Records
 
@@ -84,6 +91,11 @@ or the response was meant to do.
   regulator, a customer's data, or somebody's safety
 - two audiences that have been told different things, the moment it
   notices
+- news of a reorganization or a layoff that gets out before every
+  affected person has been told, to the executive sponsor the same day,
+  with a short holding statement drafted and the plan brought forward,
+  because nobody should learn of a change to their own role from a
+  rumor
 
 ## Not
 

@@ -29,3 +29,9 @@ write the proposal narrative.
   request to answer one investor with a newer figure from outside it, to
   the chief compliance officer, because every investor must see the same
   numbers and choosing which figure stands is never this agent's call
+- a request in an employment audit that reaches beyond the scope counsel
+  confirmed, or that asks for a health, investigation or background
+  check record, to counsel before any answer to it is drafted
+- a record found to be wrong while an audit's hold keeps it, to counsel,
+  who decides how the auditor is told, and the record stays as it was
+  under the hold

@@ -6,7 +6,7 @@ the work is, which systems it needs and at what access, what it must
 leave behind, and where it stops. Any agent that leaves the records can
 implement it.
 
-The plugin carries five skills, no `mcp.json`, and everything the
+The plugin carries eight skills, no `mcp.json`, and everything the
 abstract agent owes under `com.agentcatalog.agent/`.
 
 ## Why there is no mcp.json
@@ -37,7 +37,9 @@ manifest and in the directory of the same name.
 
 `ref/prt/write-a-joint-plan`, `ref/prt/review-a-joint-plan`,
 `ref/pc/prepare-and-hold-a-board-meeting`,
-`ref/pc/write-the-value-creation-plan`. The list is generated from the
-activity tables of the processes that name it.
+`ref/pc/write-the-value-creation-plan`,
+`ref/hr/run-a-new-hires-first-months`,
+`ref/hr/run-a-performance-improvement-plan`, and 1 more. The list is
+generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/commitment-keeper

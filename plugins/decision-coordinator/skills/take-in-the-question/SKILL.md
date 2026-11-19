@@ -1,6 +1,6 @@
 ---
 name: take-in-the-question
-description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/mkt/annual-marketing-plan` and 19 other reference processes.
+description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/hr/change-the-organization-structure` and 20 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,8 +17,8 @@ decision has to settle and by when.
 
 ## Where it happens
 
-The agent does this in nineteen activities across twenty reference
-processes. Each one names the activity as that process words it.
+The agent does this in twenty activities across 21 reference processes.
+Each one names the activity as that process words it.
 
 - **Name the Decision and the Deadline**
   - `ref/pc/work-a-company-in-trouble`, activity 4 -
@@ -71,6 +71,9 @@ processes. Each one names the activity as that process words it.
 - **Take in the Planning Trigger**
   - `ref/mkt/plan-marketing-capacity`, activity 1 -
     [Plan Marketing Capacity](../../../../processes/marketing/plan-marketing-capacity.md)
+- **Take in the Proposal**
+  - `ref/hr/change-the-organization-structure`, activity 1 -
+    [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
 - **Take in the Question**
   - `ref/mkt/ideal-customer-profile`, activity 1 -
     [Define Ideal Customer Profile](../../../../processes/marketing/ideal-customer-profile.md)

@@ -1,6 +1,6 @@
 ---
 name: record-the-choice-that-was-made
-description: Takes the answer the named deciders picked and writes it down with the reasons they gave and the names of anyone who disagreed. Use it when running `ref/mkt/annual-marketing-plan` and 24 other reference processes.
+description: Takes the answer the named deciders picked and writes it down with the reasons they gave and the names of anyone who disagreed. Use it when running `ref/hr/change-the-organization-structure` and 27 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,7 +18,7 @@ later.
 
 ## Where it happens
 
-The agent does this in 29 activities across 25 reference processes. Each
+The agent does this in 33 activities across 28 reference processes. Each
 one names the activity as that process words it.
 
 - **Agree Who the Company Is For**
@@ -27,6 +27,9 @@ one names the activity as that process words it.
 - **Agree the Calendar**
   - `ref/mkt/content-calendar`, activity 11 -
     [Plan Content Calendar](../../../../processes/marketing/content-calendar.md)
+- **Approve the Review**
+  - `ref/hr/run-the-pay-review`, activity 14 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Choose What Gets Committed**
   - `ref/mkt/prioritize-initiatives`, activity 10 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)
@@ -61,12 +64,18 @@ one names the activity as that process words it.
 - **Choose the Route**
   - `ref/mkt/engage-marketing-agency`, activity 2 -
     [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+- **Choose the Structure**
+  - `ref/hr/change-the-organization-structure`, activity 9 -
+    [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
 - **Choose the Tool**
   - `ref/mkt/select-marketing-technology`, activity 17 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
 - **Decide What Each Watched Company Needs**
   - `ref/pc/run-the-portfolio-review`, activity 12 -
     [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
+- **Decide What Happens to Each Person**
+  - `ref/hr/change-the-organization-structure`, activity 11 -
+    [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
 - **Decide What Happens to Each Surface**
   - `ref/mkt/brand-refresh`, activity 8 -
     [Roll Out Brand Refresh](../../../../processes/marketing/brand-refresh.md)
@@ -82,6 +91,9 @@ one names the activity as that process words it.
 - **Decide the Mix**
   - `ref/mkt/plan-marketing-capacity`, activity 11 -
     [Plan Marketing Capacity](../../../../processes/marketing/plan-marketing-capacity.md)
+- **Decide the Plan**
+  - `ref/hr/plan-the-workforce`, activity 12 -
+    [Plan the Workforce](../../../../processes/human-resources/plan-the-workforce.md)
 - **Decide the Strategy**
   - `ref/pc/set-the-fund-strategy`, activity 15 -
     [Set the Fund Strategy](../../../../processes/private-capital/set-the-fund-strategy.md)

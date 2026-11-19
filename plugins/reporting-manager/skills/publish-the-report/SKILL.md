@@ -1,6 +1,6 @@
 ---
 name: publish-the-report
-description: Puts the report out on its date at a version, whether or not every source answered, with every line attributed to where it came from and the evidence under it. Use it when running `ref/mkt/brand-health`, `ref/mkt/marketing-performance-report` and `ref/mkt/reconcile-media-spend`.
+description: Puts the report out on its date at a version, whether or not every source answered, with every line attributed to where it came from and the evidence under it. Use it when running `ref/hr/report-on-the-workforce` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -17,9 +17,12 @@ the evidence under it.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
+- **Deliver the Report**
+  - `ref/hr/report-on-the-workforce`, activity 14 -
+    [Report on the Workforce](../../../../processes/human-resources/report-on-the-workforce.md)
 - **Publish the Report**
   - `ref/mkt/marketing-performance-report`, activity 13 -
     [Report Marketing Performance](../../../../processes/marketing/marketing-performance-report.md)

@@ -16,7 +16,7 @@
     "revenue-operations",
     "fix-a-data-quality-failure",
     "define-a-record",
-    "enrich-a-record",
+    "file-a-required-report",
     "abstract"
   ],
   "extensions": {
@@ -62,6 +62,18 @@
           "role": "change-log",
           "access": "read",
           "needs": "What shipped, changed or was imported the week a rule first began to fail."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "read",
+          "needs": "Only the fields a required filing asks for, at the date the filing counts from, and the record, the import or the form that wrote each failing value."
+        },
+        {
+          "name": "the payroll system",
+          "role": "payroll-system",
+          "access": "read",
+          "needs": "The headcount and the pay totals a filing's data is agreed to."
         }
       ],
       "records": [
@@ -117,6 +129,13 @@
             "Run the Rule Again",
             "Watch That the Fix Held",
             "Tighten the Rule"
+          ]
+        },
+        {
+          "process": "ref/hr/file-a-required-report",
+          "activities": [
+            "Check the Data",
+            "Trace Each Failure to Its Source"
           ]
         }
       ]

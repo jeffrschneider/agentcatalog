@@ -1,6 +1,6 @@
 ---
 name: send-it-out-on-the-date
-description: Once the sign-offs are in and a person has said go, the agent releases each version on its channel in the order the timeline set, so staff and customers hear it before the press does. Use it when running `ref/mkt/announce-company-news` and 4 other reference processes.
+description: Once the sign-offs are in and a person has said go, the agent releases each version on its channel in the order the timeline set, so staff and customers hear it before the press does. Use it when running `ref/hr/change-the-organization-structure` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: comms-manager
@@ -17,9 +17,15 @@ customers hear it before the press does.
 
 ## Where it happens
 
-The agent does this in seven activities across five reference processes.
+The agent does this in nine activities across seven reference processes.
 Each one names the activity as that process words it.
 
+- **Announce the Change**
+  - `ref/hr/change-the-organization-structure`, activity 15 -
+    [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
+- **Announce to the Staff**
+  - `ref/hr/run-a-layoff`, activity 18 -
+    [Run a Layoff](../../../../processes/human-resources/run-a-layoff.md)
 - **Change the Public Price**
   - `ref/mkt/pricing-change`, activity 12 -
     [Launch Pricing Change](../../../../processes/marketing/pricing-change.md)

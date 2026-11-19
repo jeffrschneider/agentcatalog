@@ -1,6 +1,6 @@
 ---
 name: hand-the-answer-to-the-agents-that-act
-description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/mkt/annual-marketing-plan` and 19 other reference processes.
+description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/hr/change-the-organization-structure` and 21 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,8 +18,8 @@ were turned down.
 
 ## Where it happens
 
-The agent does this in nineteen activities across twenty reference
-processes. Each one names the activity as that process words it.
+The agent does this in 22 activities across 22 reference processes. Each
+one names the activity as that process words it.
 
 - **Brief the Department**
   - `ref/mkt/annual-marketing-plan`, activity 15 -
@@ -31,12 +31,18 @@ processes. Each one names the activity as that process words it.
 - **Brief the Makers**
   - `ref/mkt/brand-voice`, activity 4 -
     [Define Brand Voice and Messaging](../../../../processes/marketing/brand-voice.md)
+- **Brief the Managers**
+  - `ref/hr/run-the-pay-review`, activity 7 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Deliver the Findings**
   - `ref/mkt/customer-research`, activity 19 -
     [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
 - **Deliver the Themes and Recommendations**
   - `ref/mkt/win-loss-analysis`, activity 20 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Hand On Pay Changes and Ended Roles**
+  - `ref/hr/change-the-organization-structure`, activity 12 -
+    [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
 - **Hand On the Watch List and Reserves**
   - `ref/pc/run-the-portfolio-review`, activity 17 -
     [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
@@ -61,6 +67,9 @@ processes. Each one names the activity as that process words it.
 - **Hand the Approved Terms On**
   - `ref/pc/decide-at-investment-committee`, activity 15 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Hand the Changes to the Record and Payroll**
+  - `ref/hr/run-the-pay-review`, activity 16 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Hand the Course to the Process That Runs It**
   - `ref/pc/work-a-company-in-trouble`, activity 15 -
     [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)

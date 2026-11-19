@@ -34,3 +34,8 @@ versioned amendments.
 - a candidate who works at another company the fund holds - to the
   talent partner, and nobody approaches the candidate until the
   non-solicitation rules have been read
+- a reference that raises a concern about a candidate for one of the
+  company's own hires - to the hiring manager, who decides on it with
+  the reason written in terms of the must-haves, and any part of a
+  reference about a protected characteristic is struck before anyone
+  reads it

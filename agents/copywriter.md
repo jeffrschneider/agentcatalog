@@ -97,6 +97,8 @@ voice, and revises to exactly what a sign-off asked for.
   Registrants
 - `ref/mkt/website-content-update` / Write the Change, Edit the Change
 - `ref/mkt/win-back-campaign` / Brief the Makers, Write the Sequence
+- `ref/hr/post-a-job` / Write the Posting, Write the Version for Each
+  Place, Revise the Posting, Keep the Posting Current
 
 ## Patterns
 
@@ -110,6 +112,8 @@ changes-requested from an approval by reopening only what was named.
 - the asset store (write) - drafts land at versions
 - brand guidelines (read)
 - the claims register (read)
+- the applicant tracking system (read) - the approved job, the
+  must-haves and the pay range a job posting is written from
 
 ## Records
 

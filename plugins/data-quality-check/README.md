@@ -6,7 +6,7 @@ the work is, which systems it needs and at what access, what it must
 leave behind, and where it stops. Any agent that leaves the records can
 implement it.
 
-The plugin carries four skills, no `mcp.json`, and everything the
+The plugin carries five skills, no `mcp.json`, and everything the
 abstract agent owes under `com.agentcatalog.agent/`.
 
 ## Why there is no mcp.json
@@ -36,8 +36,8 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/rev/dedupe-and-merge`, `ref/rev/define-a-record`,
-`ref/rev/enrich-a-record`, `ref/rev/fix-a-data-quality-failure`. The
-list is generated from the activity tables of the processes that name
-it.
+`ref/rev/enrich-a-record`, `ref/rev/fix-a-data-quality-failure`,
+`ref/hr/file-a-required-report`. The list is generated from the activity
+tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/data-quality-check

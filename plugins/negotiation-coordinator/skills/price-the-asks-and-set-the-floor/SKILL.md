@@ -1,6 +1,6 @@
 ---
 name: price-the-asks-and-set-the-floor
-description: Sets the floor on price, term, liability and payment, and names who set it. Use it when running `ref/pc/negotiate-the-fund-terms-and-side-letters` and `ref/sls/negotiate-the-agreement`.
+description: Sets the floor on price, term, liability and payment, and names who set it. Use it when running `ref/hr/negotiate-a-separation-agreement`, `ref/pc/negotiate-the-fund-terms-and-side-letters` and `ref/sls/negotiate-the-agreement`.
 license: CC-BY-4.0
 metadata:
   agent: negotiation-coordinator
@@ -18,16 +18,21 @@ in return on every trade.
 
 ## Where it happens
 
-The agent does this in seven activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in eight activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Answer the Asks Inside the Mandate**
   - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 9 -
     [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
+- **Answer the Asks Inside the Policy**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 10 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
 - **Decide the Asks Past the Mandate**
   - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 10 -
     [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Price Each Ask**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 9 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
   - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 8 -
     [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Price the Asks**

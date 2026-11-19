@@ -1,6 +1,6 @@
 ---
 name: set-the-criteria-before-any-candidate-arrives
-description: The agent writes down how a candidate or a proposal will be judged and fixes that list at a version before the first candidate is seen. Use it when running `ref/mkt/engage-marketing-agency`, `ref/mkt/select-marketing-technology` and `ref/pc/form-the-fund`.
+description: The agent writes down how a candidate or a proposal will be judged and fixes that list at a version before the first candidate is seen. Use it when running `ref/hr/run-benefits-open-enrollment` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: supplier-check
@@ -18,8 +18,8 @@ whenever it arrived.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **Set the Criteria for Each Provider**
   - `ref/pc/form-the-fund`, activity 3 -
@@ -30,6 +30,9 @@ processes. Each one names the activity as that process words it.
 - **Set the Selection Criteria**
   - `ref/mkt/engage-marketing-agency`, activity 6 -
     [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
+- **Write the Renewal Criteria**
+  - `ref/hr/run-benefits-open-enrollment`, activity 2 -
+    [Run Benefits Open Enrollment](../../../../processes/human-resources/run-benefits-open-enrollment.md)
 
 ## What to record
 

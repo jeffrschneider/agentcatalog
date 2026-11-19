@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/account-based-play`, `ref/mkt/advisory-board`,
 `ref/mkt/announce-company-news`, `ref/mkt/annual-marketing-plan`,
-`ref/mkt/award-entry`, `ref/mkt/brand-health`, and 39 more. The list is
+`ref/mkt/award-entry`, `ref/mkt/brand-health`, and 41 more. The list is
 generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/researcher

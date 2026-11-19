@@ -201,6 +201,7 @@ covers:
 - Rewrite What the Words Say
 - Fix What the Numbers Show
 - Write the Change
+- Keep the Posting Current
 
 ## write-ad-copy-inside-each-placement-limit
 
@@ -287,3 +288,24 @@ covers:
 - Settle the Script
 - Write the Captions and Transcript
 - Reuse the Talk
+
+## write-a-job-posting
+
+The agent writes the posting from the approved job: the work, the
+must-haves, the pay range and how to apply, in plain words that do not
+put off qualified people. It then writes the version each channel takes,
+inside that channel's length and fields, with the same must-haves in
+every one.
+
+covers:
+- Write the Posting
+- Write the Version for Each Place
+
+## revise-to-what-the-checks-named
+
+The agent changes exactly what a check or a sign-off named and nothing
+else, and issues the result at a new version, so the checker reads only
+what moved.
+
+covers:
+- Revise the Posting

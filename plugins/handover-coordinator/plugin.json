@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "handover-coordinator",
   "version": "1.0.0",
-  "description": "The handover-coordinator abstract agent. Moves a relationship from the people who won it to the people who will work it from now on, such as a seller to a delivery team or a deal team to a portfolio team, so nobody on the other side has to repeat themselves.",
+  "description": "The handover-coordinator abstract agent. Moves a relationship from the people who won it to the people who will work it from now on, such as a seller to a delivery team or a deal team to a portfolio team, and moves the work, contacts and open commitments of an employee who leaves or changes roles to a named successor, so nobody on the other side has to repeat themselves.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,16 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "private-capital",
+    "human-resources",
     "hand-over-to-delivery",
     "hand-over-to-the-portfolio-team",
+    "offboard-a-leaver",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "handover-coordinator",
       "agentVersion": 1,
-      "department": "private-capital",
+      "department": "human-resources",
       "abstract": true,
       "works": "Runs collect-and-report three times: on the booked order, on everything the sale produced, and on the people at the customer. Runs build-by-talent for the account picture. Convenes decide-and-announce where a person names the new owner, and again where what the customer is told is settled. Convenes the briefing in which the seller walks the new owner through the account and the new owner asks what the package did not answer, and the debrief on what the sale should have captured the first time. Runs allocate-and-reconcile over the open promises and roll-call over the run's own status. Takes the booked order and the package check from the order-check agent, the binding reading from the signature-manager agent, and the account's standing from the account-monitor agent.",
       "servers": [
@@ -79,6 +80,12 @@
           "role": "decision-record",
           "access": "read",
           "needs": "The investment committee's decision and the conditions it set, at their final version."
+        },
+        {
+          "name": "the document store",
+          "role": "document-store",
+          "access": "write",
+          "needs": "The shared files of an employee who leaves or changes roles, moved to the named successor before the last day or the move date."
         }
       ],
       "records": [
@@ -100,7 +107,8 @@
         "a customer who never confirms, to the account owner, recorded as unconfirmed rather than closed, with the reminder sent through the channel they actually use",
         "the seller still taking the customer's calls, to the sales leader, because it means the introduction did not land",
         "a promise to a portfolio company's management, the co-investors or the lenders that no document binds, marked as such and taken to the deal lead partner, who decides whether the firm honors it, so management hears the answer before it finds out by asking",
-        "a committee condition that nobody on the portfolio team will own, to the deal lead partner, and the deal team does not step back until the condition has an owner and a date"
+        "a committee condition that nobody on the portfolio team will own, to the deal lead partner, and the deal team does not step back until the condition has an owner and a date",
+        "an item of a leaver's or a mover's work with no successor named, or one the successor will not acknowledge, to the employee's manager, who names another or decides how the work is covered, and any item still open on the last day or the move date passes to that manager and is recorded as a gap with its owner"
       ],
       "not": [
         "Does not decide who the new owner is.",
@@ -143,6 +151,19 @@
             "Confirm Management Knows Who to Call",
             "Close Out the Deal Side",
             "Record What the Handover Missed"
+          ]
+        },
+        {
+          "process": "ref/hr/move-an-employee-to-a-new-role",
+          "activities": [
+            "Hand Over the Work"
+          ]
+        },
+        {
+          "process": "ref/hr/offboard-a-leaver",
+          "activities": [
+            "Plan the Handover",
+            "Hand Over the Work"
           ]
         }
       ]

@@ -1,6 +1,6 @@
 ---
 name: draft-the-candidate-answers
-description: Commissions the evidence and writes up two or three candidate answers to the open question, each one carrying the case for it. Use it when running `ref/mkt/brand-positioning` and 8 other reference processes.
+description: Commissions the evidence and writes up two or three candidate answers to the open question, each one carrying the case for it. Use it when running `ref/hr/run-benefits-open-enrollment` and 9 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,7 +16,7 @@ the open question, each one carrying the case for it.
 
 ## Where it happens
 
-The agent does this in nine activities across nine reference processes.
+The agent does this in ten activities across ten reference processes.
 Each one names the activity as that process words it.
 
 - **Commission an Independent Opinion**
@@ -45,6 +45,9 @@ Each one names the activity as that process words it.
 - **Generate the Candidate Names**
   - `ref/mkt/name-product`, activity 4 -
     [Name Product or Company](../../../../processes/marketing/name-product.md)
+- **Lay Out the Choices**
+  - `ref/hr/run-benefits-open-enrollment`, activity 6 -
+    [Run Benefits Open Enrollment](../../../../processes/human-resources/run-benefits-open-enrollment.md)
 - **Lay Out the Options**
   - `ref/pc/work-a-company-in-trouble`, activity 7 -
     [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)

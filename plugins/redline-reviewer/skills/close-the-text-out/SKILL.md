@@ -1,6 +1,6 @@
 ---
 name: close-the-text-out
-description: Reads the agreed commercial position against the paper term by term, settles one clean text both sides call the agreement, checks that every condition owed before signature is done, and writes the accepted changes to the record the next deal reads. Use it when running `ref/pc/negotiate-the-definitive-agreements` and 4 other reference processes.
+description: Reads the agreed commercial position against the paper term by term, settles one clean text both sides call the agreement, checks that every condition owed before signature is done, and writes the accepted changes to the record the next deal reads. Use it when running `ref/hr/negotiate-a-separation-agreement` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: redline-reviewer
@@ -18,7 +18,7 @@ to the record the next deal reads.
 
 ## Where it happens
 
-The agent does this in seven activities across five reference processes.
+The agent does this in seven activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Change the Master Agreement Once**
@@ -37,6 +37,8 @@ Each one names the activity as that process words it.
   - `ref/sls/review-the-redlines`, activity 15 -
     [Review the Redlines](../../../../processes/sales/review-the-redlines.md)
 - **Read the Final Text Against the Log**
+  - `ref/hr/negotiate-a-separation-agreement`, activity 13 -
+    [Negotiate a Separation Agreement](../../../../processes/human-resources/negotiate-a-separation-agreement.md)
   - `ref/pc/negotiate-the-fund-terms-and-side-letters`, activity 15 -
     [Negotiate the Fund Terms and Side Letters](../../../../processes/private-capital/negotiate-the-fund-terms-and-side-letters.md)
 - **Reconcile with the Contract Draft**

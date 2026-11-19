@@ -1,6 +1,6 @@
 ---
 name: set-the-date-and-the-order
-description: The agent sets the date, any embargo, and the order in which each audience hears it, and holds that timeline at a version. Use it when running `ref/mkt/announce-company-news` and `ref/mkt/pitch-earned-media`.
+description: The agent sets the date, any embargo, and the order in which each audience hears it, and holds that timeline at a version. Use it when running `ref/hr/change-the-organization-structure` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: comms-manager
@@ -16,9 +16,14 @@ audience hears it, and holds that timeline at a version.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in three activities across four reference processes.
 Each one names the activity as that process words it.
 
+- **Plan the Announcement**
+  - `ref/hr/change-the-organization-structure`, activity 13 -
+    [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
+  - `ref/hr/run-a-layoff`, activity 16 -
+    [Run a Layoff](../../../../processes/human-resources/run-a-layoff.md)
 - **Set the Announcement Date**
   - `ref/mkt/announce-company-news`, activity 2 -
     [Announce Company News](../../../../processes/marketing/announce-company-news.md)

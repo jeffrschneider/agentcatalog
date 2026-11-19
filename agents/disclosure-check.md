@@ -4,12 +4,13 @@
 
 **purpose:** Scores material against the disclosure rules in force in
 every market it will run in. That covers the wording a regulator
-requires beside a claim, the terms that have to appear with a price,
-the rules a promotion runs under, and what a paid partnership has to
-say about being paid. It reads the material together with the list of
-markets and channels the material is going to, because one market can
-require a line that another does not. Every verdict cites the rule it
-was scored against and the market that rule applies in.
+requires beside a claim, the terms that have to appear with a price, the
+rules a promotion runs under, what a paid partnership has to say about
+being paid, and the statements a job posting must carry in each
+location, such as a pay range. It reads the material together with the
+list of markets and channels the material is going to, because one
+market can require a line that another does not. Every verdict cites the
+rule it was scored against and the market that rule applies in.
 
 ## Processes
 
@@ -27,6 +28,8 @@ was scored against and the market that rule applies in.
   Requires, Score the Adapted Set
 - `ref/pc/prepare-the-fundraising-materials` / Check Against the
   Advertising Rules, Approve Each Piece
+- `ref/hr/post-a-job` / Read What Each Location Requires, Check the
+  Required Statements
 
 ## Patterns
 
@@ -57,6 +60,9 @@ its report, and this agent scores the fix.
   must come from
 - the review record (write) - the verdicts land where the signers and
   the producing agents read them
+- the applicant tracking system (read) - the signed position's job,
+  location and pay range, which the pay range in every version of a
+  job posting is checked against
 
 ## Records
 

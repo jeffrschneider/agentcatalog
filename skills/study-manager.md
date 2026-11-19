@@ -12,6 +12,7 @@ covers:
 - Take in the Request
 - Take in the Period
 - Take in the Hypothesis
+- Open the Survey Cycle
 
 ## set-what-the-study-covers
 
@@ -25,6 +26,7 @@ covers:
 - Settle What the Wave Measures
 - Set the Competitor Set
 - Open the Cycle
+- Set the Groups to Report
 
 ## choose-the-method-and-draw-the-sample
 
@@ -55,6 +57,7 @@ covers:
 - Write the Interview Guide
 - Try the Questions on a Few People
 - Carry the Questions Forward
+- Write Any New Questions
 
 ## brief-everyone-on-the-study
 
@@ -79,6 +82,7 @@ covers:
 - Field the Wave
 - Invite the Buyers
 - Ask the Audience
+- Open the Survey
 
 ## watch-the-responses-and-close-the-field
 
@@ -93,6 +97,8 @@ covers:
 - Close the Study
 - Close the Wave
 - Close the Interviews
+- Watch the Response Rate
+- Close the Survey
 
 ## hold-the-interviews
 
@@ -132,6 +138,7 @@ covers:
 - Set the Themes against the Record
 - Read What People Recognize Today
 - Read What People Recognize Now
+- Compare with the Last Survey
 
 ## write-and-deliver-the-findings
 
@@ -146,6 +153,8 @@ covers:
 - Deliver the Themes and Recommendations
 - Report Awareness, Perception and Preference
 - Record What Was Learned
+- Share the Results
+- Record What the Survey Taught
 
 ## run-a-controlled-test
 
@@ -215,3 +224,14 @@ company and reports what they took from it.
 covers:
 - Try the Messages on Buyers
 - Try the Names on Outsiders
+
+## screen-the-comments
+
+Reads every written comment beside the employee relations lead before
+anyone else sees it, holds back any comment that could identify the
+writer or anyone named in it, and passes a safety or conduct matter on
+as an anonymous concern. It records how many comments were held back and
+why.
+
+covers:
+- Screen the Comments

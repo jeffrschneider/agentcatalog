@@ -36,7 +36,8 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/sls/answer-a-security-questionnaire`, `ref/sls/respond-to-an-rfp`,
-`ref/pc/answer-a-due-diligence-questionnaire`. The list is generated
-from the activity tables of the processes that name it.
+`ref/pc/answer-a-due-diligence-questionnaire`,
+`ref/hr/respond-to-an-employment-audit`. The list is generated from the
+activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/questionnaire-responder

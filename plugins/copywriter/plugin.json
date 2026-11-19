@@ -42,6 +42,12 @@
           "name": "the claims register",
           "role": "claims-register",
           "access": "read"
+        },
+        {
+          "name": "the applicant tracking system",
+          "role": "applicant-tracking-system",
+          "access": "read",
+          "needs": "The approved job, the must-haves and the pay range a job posting is written from."
         }
       ],
       "records": [
@@ -429,6 +435,15 @@
           "activities": [
             "Brief the Makers",
             "Write the Sequence"
+          ]
+        },
+        {
+          "process": "ref/hr/post-a-job",
+          "activities": [
+            "Write the Posting",
+            "Write the Version for Each Place",
+            "Revise the Posting",
+            "Keep the Posting Current"
           ]
         }
       ]

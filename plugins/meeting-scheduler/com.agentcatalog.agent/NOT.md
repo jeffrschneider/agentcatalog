@@ -20,3 +20,7 @@ when the meeting was confirmed. Does not decide who may be contacted.
   materials do not carry - written into the note as it was said and
   raised to the chief compliance officer, who decides whether a
   correction goes to the investor in writing
+- an adjustment a candidate asks for to the interviews - to the
+  recruiter, who decides how to meet it, with only the information the
+  adjustment needs held restricted and nothing about it in the panel's
+  packs

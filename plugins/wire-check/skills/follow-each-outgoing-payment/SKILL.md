@@ -1,6 +1,6 @@
 ---
 name: follow-each-outgoing-payment
-description: Checks each payment the chief financial officer releases against the verified line it pays, then confirms where each one landed and that each payee received it. Use it when running `ref/pc/make-a-distribution` and `ref/pc/run-the-closing`.
+description: Checks each payment a named person releases, such as the chief financial officer or the payroll approver, against the verified line it pays, then confirms where each one landed and that each payee received it. Use it when running `ref/hr/run-payroll`, `ref/pc/make-a-distribution` and `ref/pc/run-the-closing`.
 license: CC-BY-4.0
 metadata:
   agent: wire-check
@@ -11,22 +11,28 @@ metadata:
 
 ## What it does
 
-Checks each payment the chief financial officer releases against the
-verified line it pays, then confirms where each one landed and that each
-payee received it. It can see payments and holds no right to release
-one.
+Checks each payment a named person releases, such as the chief financial
+officer or the payroll approver, against the verified line it pays, then
+confirms where each one landed and that each payee received it. It can
+see payments and holds no right to release one.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
+- **Check the Payment File**
+  - `ref/hr/run-payroll`, activity 10 -
+    [Run Payroll](../../../../processes/human-resources/run-payroll.md)
 - **Confirm Each Payment Landed**
   - `ref/pc/make-a-distribution`, activity 15 -
     [Make a Distribution](../../../../processes/private-capital/make-a-distribution.md)
 - **Confirm the Money Arrived**
   - `ref/pc/run-the-closing`, activity 12 -
     [Run the Closing](../../../../processes/private-capital/run-the-closing.md)
+- **Confirm the Payments Landed**
+  - `ref/hr/run-payroll`, activity 12 -
+    [Run Payroll](../../../../processes/human-resources/run-payroll.md)
 
 ## What to record
 

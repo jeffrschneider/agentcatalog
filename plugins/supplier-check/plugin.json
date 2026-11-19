@@ -177,6 +177,13 @@
           "activities": [
             "Choose the Sell-Side Adviser"
           ]
+        },
+        {
+          "process": "ref/hr/run-benefits-open-enrollment",
+          "activities": [
+            "Write the Renewal Criteria",
+            "Score the Proposals"
+          ]
         }
       ]
     }

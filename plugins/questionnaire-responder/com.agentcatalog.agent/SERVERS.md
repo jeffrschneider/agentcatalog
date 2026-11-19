@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Seven systems, named by role rather than by product. The access level is
+Eight systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -13,6 +13,7 @@ more than the job requires.
 | the document store | write | The response as sent, its date and its receipt. |
 | the answer library | write | Each signed new answer to an investor's questionnaire is added at a version, with its owner, its source and the date it must be read again. |
 | the data room | read | The frozen track record and the fund documents the investor's answers rest on, each at its version. |
+| the audit records | read | The HR records an employment audit asks for, only as the employee-record-keeper agent pulled them for each request, from the HR, payroll, timekeeping and benefits systems, with the details of people outside the request's scope removed, and a health, investigation or background check record only where its named holder released it for a request counsel confirmed. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

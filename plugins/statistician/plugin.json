@@ -67,6 +67,12 @@
           "role": "calculation-record",
           "access": "write",
           "needs": "Every figure lands with the data behind it, the method used, the exclusions applied and the range around it."
+        },
+        {
+          "name": "the restricted analysis area",
+          "role": "restricted-analysis-area",
+          "access": "read",
+          "needs": "Only the group data a named person has released for one group fairness check, such as the protected characteristics employees chose to record, read for that check alone and closed to this agent when the check ends."
         }
       ],
       "records": [
@@ -85,7 +91,9 @@
         "data with gaps large enough that the figure would be about the gaps",
         "a study that compares many things at once, where at least one difference will look real by chance alone, because deciding which comparisons the study is actually about is a person's call",
         "a request to report a figure without its range, its exclusions or its method",
-        "a figure it cannot compute from the data it holds. It reports the figure as uncomputed and never supplies a number of its own."
+        "a figure it cannot compute from the data it holds. It reports the figure as uncomputed and never supplies a number of its own.",
+        "a gap between groups in pay for like work, or in who a layoff selects, that is larger than the noise, reported by group with its range to the head of HR and the named people who decide, and never as a result about one person, because what is done about a gap is theirs to decide",
+        "a request to show a figure for a group below the minimum size, to lower the minimum once it is set, or to report a result about one person, refused and taken to the head of HR with the name of whoever asked"
       ],
       "not": [
         "Does not decide what the study asks, who is sampled, what people are shown, or when the study closes, which is the study-manager agent; this agent says what the design has to be able to support and the study-manager settles the design.",
@@ -231,6 +239,35 @@
             "Watch Both Halves Fill",
             "Work out the Figures",
             "Check the Findings Hold"
+          ]
+        },
+        {
+          "process": "ref/hr/report-on-the-workforce",
+          "activities": [
+            "Work Out the Group Figures",
+            "Check the Report for Small Groups"
+          ]
+        },
+        {
+          "process": "ref/hr/run-the-pay-review",
+          "activities": [
+            "Compare Pay Across Groups"
+          ]
+        },
+        {
+          "process": "ref/hr/run-the-employee-survey",
+          "activities": [
+            "Set the Minimum Group Size",
+            "Set the Groups to Report",
+            "Watch the Response Rate",
+            "Work Out the Figures",
+            "Compare with the Last Survey"
+          ]
+        },
+        {
+          "process": "ref/hr/run-a-layoff",
+          "activities": [
+            "Check the Selection Across Groups"
           ]
         }
       ]

@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "analytics",
   "version": "1.0.0",
-  "description": "The analytics abstract agent. Reads the numbers and reports them with their sources attached. Tracks a campaign against its brief, pulls the wrap-up numbers from every channel, files the weekly status, and audits the scoring model behind lead routing.",
+  "description": "The analytics abstract agent. Reads the numbers and reports them with their sources attached.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -41,6 +41,30 @@
           "name": "the CRM",
           "role": "crm",
           "access": "read"
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "read",
+          "needs": "The people employed at each period end by team, level and location, the hires, leavers and internal moves, and the reasons leavers gave counted by category, with no protected characteristic and no leaver's own words."
+        },
+        {
+          "name": "the applicant tracking system",
+          "role": "applicant-tracking-system",
+          "access": "read",
+          "needs": "The time to fill each position closed in the period."
+        },
+        {
+          "name": "the payroll system",
+          "role": "payroll-system",
+          "access": "read",
+          "needs": "The people paid in the period and the cost of pay, benefits and the employer's taxes on pay, totaled by team."
+        },
+        {
+          "name": "the ledger",
+          "role": "ledger",
+          "access": "read",
+          "needs": "The labor cost as the books carry it, which the HR system's and the payroll system's figures are compared against."
         }
       ],
       "records": [
@@ -521,6 +545,23 @@
             "Pull the Closed Deals",
             "Brief the Study",
             "Set the Themes against the Record"
+          ]
+        },
+        {
+          "process": "ref/hr/plan-the-workforce",
+          "activities": [
+            "Read the Year's Hiring and Leaving",
+            "Read the Labor Cost"
+          ]
+        },
+        {
+          "process": "ref/hr/report-on-the-workforce",
+          "activities": [
+            "Read the Headcount",
+            "Read the Hires and Leavers",
+            "Read the Labor Cost",
+            "Read the Reasons for Leaving",
+            "Check the Sources Agree"
           ]
         }
       ]

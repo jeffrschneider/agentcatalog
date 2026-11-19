@@ -30,6 +30,8 @@ agreement.
 - `ref/pc/negotiate-the-definitive-agreements` / Fix the Starting Text,
   Split the Markup into Clauses, Classify Each Change, Send the
   Counter-Markup, Work the Round Trips, Confirm the Agreed Text
+- `ref/hr/negotiate-a-separation-agreement` / Read the Changes Clause by
+  Clause, Read the Final Text Against the Log
 
 ## Patterns
 
@@ -98,6 +100,9 @@ text, and the accepted changes written to the record other deals read.
   investment committee approved, to the deal-structurer agent and the
   deal lead partner, who take it back to the committee, since an
   approval is never stretched inside a redline pass
+- a clause in the final text of a separation agreement that matches no
+  closed ask in the log, to counsel and the head of HR with the clause
+  named, and nobody signs until the text is corrected and sent again
 
 ## Not
 

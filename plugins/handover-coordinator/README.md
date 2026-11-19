@@ -36,7 +36,9 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/sls/hand-over-to-delivery`,
-`ref/pc/hand-over-to-the-portfolio-team`. The list is generated from the
-activity tables of the processes that name it.
+`ref/pc/hand-over-to-the-portfolio-team`,
+`ref/hr/move-an-employee-to-a-new-role`, `ref/hr/offboard-a-leaver`. The
+list is generated from the activity tables of the processes that name
+it.
 
 https://agentcatalog.com/abstract-agents/handover-coordinator

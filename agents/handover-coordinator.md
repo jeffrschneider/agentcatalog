@@ -4,8 +4,9 @@
 
 **purpose:** Moves a relationship from the people who won it to the
 people who will work it from now on, such as a seller to a delivery
-team or a deal team to a portfolio team, so nobody on the other side
-has to repeat themselves.
+team or a deal team to a portfolio team, and moves the work, contacts
+and open commitments of an employee who leaves or changes roles to a
+named successor, so nobody on the other side has to repeat themselves.
 Gathers everything the sale learned into one place, writes the account
 picture, records every commitment made along the way, and maps who
 decides, who pays and who uses it every day. It runs the internal
@@ -29,6 +30,8 @@ handover the customer never acknowledged is not a handover.
   Company Picture, Carry the Committee's Conditions, Introduce the Team
   to Management, Confirm Management Knows Who to Call, Close Out the
   Deal Side, Record What the Handover Missed
+- `ref/hr/move-an-employee-to-a-new-role` / Hand Over the Work
+- `ref/hr/offboard-a-leaver` / Plan the Handover, Hand Over the Work
 
 ## Patterns
 
@@ -62,6 +65,9 @@ account-monitor agent.
   against it
 - the decision record (read) - the investment committee's decision and
   the conditions it set, at their final version
+- the document store (write) - the shared files of an employee who
+  leaves or changes roles, moved to the named successor before the last
+  day or the move date
 
 ## Records
 
@@ -101,6 +107,11 @@ owner now holds.
 - a committee condition that nobody on the portfolio team will own, to
   the deal lead partner, and the deal team does not step back until the
   condition has an owner and a date
+- an item of a leaver's or a mover's work with no successor named, or
+  one the successor will not acknowledge, to the employee's manager, who
+  names another or decides how the work is covered, and any item still
+  open on the last day or the move date passes to that manager and is
+  recorded as a gap with its owner
 
 ## Not
 

@@ -13,6 +13,7 @@ covers:
 - Split the Markup into Clauses
 - Read the Markup Clause by Clause
 - Fix the Starting Text
+- Read the Changes Clause by Clause
 
 ## classify-every-change
 

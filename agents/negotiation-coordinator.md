@@ -31,6 +31,11 @@ memory.
 - `ref/pc/run-a-sale-process` / Take in the First Bids, Take in the
   Final Bids and Markups, Compare the Final Bids, Negotiate the Sale
   Agreement
+- `ref/hr/make-an-offer` / Log the Candidate's Asks, Record What the
+  Offer Taught
+- `ref/hr/negotiate-a-separation-agreement` / Log the Leaver's Asks,
+  Price Each Ask, Answer the Asks Inside the Policy, Send the Company's
+  Answer, Read the Final Text Against the Log
 
 ## Patterns
 
@@ -65,6 +70,17 @@ close-plan-keeper agent.
 - the deal pipeline (write) - each bid in a sale, logged with its
   price, how it will be paid for, its conditions and its date, and the
   comparison of the final bids
+- the applicant tracking system (write) - each ask a candidate makes on
+  an offer, in the candidate's own words, and the answer to each once
+  the approvers give it
+- the document store (write) - each ask on a separation agreement,
+  numbered in the leaver's or the adviser's own words, and each written
+  answer at the version sent, open only to the people on the
+  agreement's access list, with the terms given past the standard text
+  in earlier runs read beside them
+- the payroll system (read) - a leaver's pay and what the leaver is
+  owed anyway, which each ask on a separation agreement is priced
+  against
 
 ## Records
 
@@ -105,6 +121,10 @@ confirmed, with the open items nobody closed listed beside it.
   after diligence that takes its bid below it, to the investment
   committee before anyone answers the buyer, because only the committee
   moves the floor
+- a candidate's ask on an offer, or a leaver's ask on a separation
+  agreement, past the approved limits, to the offer's approvers or to
+  the head of HR, who give, trade or refuse it in writing, and a term
+  given past the standard text is recorded so the next run can see it
 
 ## Not
 

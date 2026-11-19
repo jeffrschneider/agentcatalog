@@ -65,6 +65,12 @@
           "role": "staged-releases",
           "access": "trigger",
           "needs": "The pieces go out in the planned order, after the sign-offs."
+        },
+        {
+          "name": "the staff communication channel",
+          "role": "staff-communication-channel",
+          "access": "write",
+          "needs": "The staff announcement of a reorganization or a layoff, sent only once every affected person has been told, and the answers to the questions it raises."
         }
       ],
       "records": [
@@ -79,7 +85,8 @@
         "a change to the date, and any request to hold or pull something already scheduled",
         "a fact that changes after the wording is signed, because the approval has to run again",
         "anything a sign-off flags as legal, and any incident that reaches a regulator, a customer's data, or somebody's safety",
-        "two audiences that have been told different things, the moment it notices"
+        "two audiences that have been told different things, the moment it notices",
+        "news of a reorganization or a layoff that gets out before every affected person has been told, to the executive sponsor the same day, with a short holding statement drafted and the plan brought forward, because nobody should learn of a change to their own role from a rumor"
       ],
       "not": [
         "Does not write the words, which is the copywriter agent, and does not edit them.",
@@ -169,6 +176,22 @@
           "activities": [
             "Collect What Each Function Asks For",
             "Tell Every Function What It Has"
+          ]
+        },
+        {
+          "process": "ref/hr/change-the-organization-structure",
+          "activities": [
+            "Plan the Announcement",
+            "Tell Each Affected Person",
+            "Announce the Change",
+            "Report on the Announcement"
+          ]
+        },
+        {
+          "process": "ref/hr/run-a-layoff",
+          "activities": [
+            "Plan the Announcement",
+            "Announce to the Staff"
           ]
         }
       ]

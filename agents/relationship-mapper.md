@@ -29,6 +29,8 @@ the date that source was published.
 - `ref/pc/fill-a-key-role-at-a-portfolio-company` / Find Candidates in
   the Firm's Network, Build the Long List, Approach the Candidates,
   Record the Search
+- `ref/hr/find-candidates` / Find Who Knows Each Person, Ask for the
+  Introduction, Record What the Search Taught
 
 ## Patterns
 

@@ -53,6 +53,11 @@ read the evidence for it in the same place.
   the Interviews, Sort What Was Said into Themes, Set the Themes against
   the Record, Write the Findings, Deliver the Themes and
   Recommendations, Record What Was Learned
+- `ref/hr/run-the-employee-survey` / Open the Survey Cycle, Carry the
+  Questions Forward, Write Any New Questions, Set the Groups to Report,
+  Open the Survey, Watch the Response Rate, Close the Survey, Screen the
+  Comments, Compare with the Last Survey, Write the Findings, Share the
+  Results, Record What the Survey Taught
 
 ## Patterns
 
@@ -93,6 +98,9 @@ each one is waiting on.
 - analytics platforms (read)
 - the meeting calendar (write) - cap: which interviews and sessions it
   may set without asking, set by the adopting organization
+- the HR system (read) - the employees an employee survey covers, each
+  with their team, location and level alone, and no other field of
+  their record
 
 There is deliberately no grant to send. This agent says who has to be
 sampled, the consent-manager agent says which of those contacts may be

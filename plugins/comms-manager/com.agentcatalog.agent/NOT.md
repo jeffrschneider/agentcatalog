@@ -28,3 +28,7 @@ tells everyone about it.
   regulator, a customer's data, or somebody's safety
 - two audiences that have been told different things, the moment it
   notices
+- news of a reorganization or a layoff that gets out before every
+  affected person has been told, to the executive sponsor the same day,
+  with a short holding statement drafted and the plan brought forward,
+  because nobody should learn of a change to their own role from a rumor

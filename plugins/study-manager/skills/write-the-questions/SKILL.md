@@ -1,6 +1,6 @@
 ---
 name: write-the-questions
-description: Writes every question that gets asked and every piece of material that gets shown, and holds them at a version before anybody sees them. Use it when running `ref/mkt/brand-health`, `ref/mkt/customer-research` and `ref/mkt/win-loss-analysis`.
+description: Writes every question that gets asked and every piece of material that gets shown, and holds them at a version before anybody sees them. Use it when running `ref/hr/run-the-employee-survey` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
@@ -18,15 +18,20 @@ that has run before word for word so the two readings stay comparable.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Carry the Questions Forward**
+  - `ref/hr/run-the-employee-survey`, activity 2 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
   - `ref/mkt/brand-health`, activity 11 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
 - **Try the Questions on a Few People**
   - `ref/mkt/customer-research`, activity 11 -
     [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+- **Write Any New Questions**
+  - `ref/hr/run-the-employee-survey`, activity 3 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Write the Interview Guide**
   - `ref/mkt/win-loss-analysis`, activity 9 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)

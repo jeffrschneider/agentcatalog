@@ -1,6 +1,6 @@
 ---
 name: gather-published-evidence
-description: Pulls together what has already been published on a subject and reads the primary source rather than somebody's write-up of it. Use it when running `ref/mkt/annual-marketing-plan` and 19 other reference processes.
+description: Pulls together what has already been published on a subject and reads the primary source rather than somebody's write-up of it. Use it when running `ref/hr/run-the-pay-review` and 20 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -20,8 +20,8 @@ answers the question.
 
 ## Where it happens
 
-The agent does this in eleven activities across twenty reference
-processes. Each one names the activity as that process words it.
+The agent does this in twelve activities across 21 reference processes.
+Each one names the activity as that process words it.
 
 - **Check What Is Already Known**
   - `ref/mkt/customer-research`, activity 2 -
@@ -42,6 +42,9 @@ processes. Each one names the activity as that process words it.
 - **Gather the Market Evidence**
   - `ref/mkt/product-positioning`, activity 3 -
     [Develop Product Positioning](../../../../processes/marketing/product-positioning.md)
+- **Gather the Market Pay Data**
+  - `ref/hr/run-the-pay-review`, activity 2 -
+    [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Gather the Outside Evidence**
   - `ref/mkt/annual-marketing-plan`, activity 4 -
     [Build Annual Marketing Plan](../../../../processes/marketing/annual-marketing-plan.md)

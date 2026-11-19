@@ -1,6 +1,6 @@
 ---
 name: rewrite-what-has-to-change
-description: "The agent goes back to wording that is already out and changes what no longer holds: a claim that was corrected, a number that moved, a name that changed, or a page the numbers say is losing people. Use it when running `ref/mkt/brand-refresh` and 3 other reference processes."
+description: "The agent goes back to wording that is already out and changes what no longer holds: a claim that was corrected, a number that moved, a name that changed, or a page the numbers say is losing people. Use it when running `ref/hr/post-a-job` and 4 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: copywriter
@@ -17,12 +17,15 @@ that changed, or a page the numbers say is losing people.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Fix What the Numbers Show**
   - `ref/mkt/landing-page`, activity 14 -
     [Publish Landing Page](../../../../processes/marketing/landing-page.md)
+- **Keep the Posting Current**
+  - `ref/hr/post-a-job`, activity 14 -
+    [Post a Job](../../../../processes/human-resources/post-a-job.md)
 - **Rewrite What Has to Change**
   - `ref/mkt/refresh-content`, activity 12 -
     [Refresh Published Content](../../../../processes/marketing/refresh-content.md)

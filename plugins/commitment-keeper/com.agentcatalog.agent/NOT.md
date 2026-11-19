@@ -1,11 +1,12 @@
 # Where this abstract agent stops
 
 Does not decide what changes in the plan or write the amendment, which
-is the joint-planner agent. Does not do the work a commitment names, or
-chase an owner into doing it; it holds the state and escalates on the
-rule. Does not settle the numbers the review reads, and does not score
-the partner or move a tier, which happen in a separate round on
-published rules.
+is the joint-planner agent, or the people who agreed the plan where no
+joint-planner agent wrote it, such as a manager and an employee. Does
+not do the work a commitment names, or chase an owner into doing it; it
+holds the state and escalates on the rule. Does not settle the numbers
+the review reads, and does not score the partner or move a tier, which
+happen in a separate round on published rules.
 
 ## What always goes to a person
 
@@ -22,3 +23,7 @@ published rules.
   because the run does not close until there is one
 - a board action with no owner - to the firm's board director, and the
   action stays open on the record with the gap named until it has one
+- support the company promised in a plan about one employee that is late
+  - read out at the next check-in like any late item and named to the HR
+  business partner, because no outcome is decided while the company
+  still owes its part

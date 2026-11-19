@@ -1,6 +1,6 @@
 ---
 name: hand-the-account-over-internally
-description: Scores the package against the checklist at a version and holds the session where the seller walks the new owner through the account and the new owner asks what the package did not answer. Use it when running `ref/sls/hand-over-to-delivery`.
+description: Scores the package against the checklist at a version and holds the session where the seller walks the new owner through the account and the new owner asks what the package did not answer. Use it when running `ref/hr/move-an-employee-to-a-new-role`, `ref/hr/offboard-a-leaver` and `ref/sls/hand-over-to-delivery`.
 license: CC-BY-4.0
 metadata:
   agent: handover-coordinator
@@ -18,12 +18,17 @@ customer hears anything.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Check the Package Is Complete**
   - `ref/sls/hand-over-to-delivery`, activity 9 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)
+- **Hand Over the Work**
+  - `ref/hr/move-an-employee-to-a-new-role`, activity 14 -
+    [Move an Employee to a New Role](../../../../processes/human-resources/move-an-employee-to-a-new-role.md)
+  - `ref/hr/offboard-a-leaver`, activity 6 -
+    [Offboard a Leaver](../../../../processes/human-resources/offboard-a-leaver.md)
 - **Hold the Internal Handover**
   - `ref/sls/hand-over-to-delivery`, activity 10 -
     [Hand over to Delivery](../../../../processes/sales/hand-over-to-delivery.md)

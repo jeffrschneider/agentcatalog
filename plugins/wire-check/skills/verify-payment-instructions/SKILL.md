@@ -1,6 +1,6 @@
 ---
 name: verify-payment-instructions
-description: Checks each payee's account, each investor's account and the fund's own receiving account against the verified record, and confirms any change by a call to a contact the firm already held, through a channel independent of the one the instruction came in. Use it when running `ref/pc/allocate-fees-and-expenses` and 3 other reference processes.
+description: Checks each payee's account, each investor's account, each employee's account and the fund's own receiving account against the verified record, and confirms any change by a call to a contact already on file, through a channel independent of the one the instruction came in. Use it when running `ref/hr/change-an-employee-record` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: wire-check
@@ -11,17 +11,20 @@ metadata:
 
 ## What it does
 
-Checks each payee's account, each investor's account and the fund's own
-receiving account against the verified record, and confirms any change
-by a call to a contact the firm already held, through a channel
-independent of the one the instruction came in. An account it cannot
-confirm holds that payment.
+Checks each payee's account, each investor's account, each employee's
+account and the fund's own receiving account against the verified
+record, and confirms any change by a call to a contact already on file,
+through a channel independent of the one the instruction came in. An
+account it cannot confirm holds that payment.
 
 ## Where it happens
 
-The agent does this in three activities across four reference processes.
+The agent does this in four activities across five reference processes.
 Each one names the activity as that process words it.
 
+- **Confirm a New Bank Account**
+  - `ref/hr/change-an-employee-record`, activity 4 -
+    [Change an Employee Record](../../../../processes/human-resources/change-an-employee-record.md)
 - **Confirm the Fund's Bank Instructions**
   - `ref/pc/issue-a-capital-call`, activity 9 -
     [Issue a Capital Call](../../../../processes/private-capital/issue-a-capital-call.md)

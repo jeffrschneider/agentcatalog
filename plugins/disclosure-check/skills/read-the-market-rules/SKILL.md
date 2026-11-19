@@ -1,6 +1,6 @@
 ---
 name: read-the-market-rules
-description: The agent gathers the disclosure rules in force in every market a piece will run in, at the version the organization has adopted, and writes down what each one requires. Use it when running `ref/mkt/influencer-campaign`.
+description: The agent gathers the disclosure rules in force in every market a piece will run in, at the version the organization has adopted, and writes down what each one requires. Use it when running `ref/hr/post-a-job` and `ref/mkt/influencer-campaign`.
 license: CC-BY-4.0
 metadata:
   agent: disclosure-check
@@ -17,9 +17,12 @@ down what each one requires.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Read What Each Location Requires**
+  - `ref/hr/post-a-job`, activity 3 -
+    [Post a Job](../../../../processes/human-resources/post-a-job.md)
 - **Read the Disclosure Rules**
   - `ref/mkt/influencer-campaign`, activity 3 -
     [Run Influencer Campaign](../../../../processes/marketing/influencer-campaign.md)

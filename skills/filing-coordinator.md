@@ -1,0 +1,58 @@
+# filing-coordinator
+
+## keep-the-filing-calendar
+
+Opens each filing and the payroll year end from the calendar with the
+form, the deadline and the signer, asks counsel whether the form or the
+rule has changed, and records what each filing taught with the next
+date and its lead time.
+
+covers:
+- Confirm What the Filing Asks For
+- Open the Filing From the Calendar
+- Open the Year-End Close
+- Record What the Filing Taught
+
+## prepare-from-checked-data
+
+Gathers only the fields a form asks for, prepares each filing and
+annual return from checked or reconciled figures with each figure
+traced, explains each change from the last filing, and checks that the
+year-end statements add up to the returns.
+
+covers:
+- Check the Statements Against the Returns
+- Compare With the Last Filing
+- Gather the Data the Filing Needs
+- Prepare the Annual Returns
+- Prepare the Filing
+
+## file-by-the-deadline
+
+Files each signed filing and return through the authority's route by
+its deadline, keeps the receipt, the filed copy and the data at a
+version, answers the authority's follow-ups from the kept data, and
+files any correction with its own receipt.
+
+covers:
+- Answer the Authority's Follow-Ups
+- File a Corrected Return
+- File by the Deadline
+- File the Returns
+- Keep the Receipt
+
+## keep-the-audit-log
+
+Logs an audit with its authority, scope and dates, logs each request
+with its due date and owner, sends each signed response and logs what
+went, logs each follow-up and finding with its owner and date, and
+closes the audit on the record once counsel lifts the hold.
+
+covers:
+- Answer the Follow-Ups
+- Close the Audit on the Record
+- Confirm Who Is Asking and on What Authority
+- Log Each Finding
+- Log Each Request
+- Log the Audit
+- Send the Response and Log It

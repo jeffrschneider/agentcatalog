@@ -29,6 +29,11 @@ covers:
 - Book the Specification Meeting
 - Arrange the Reference Calls
 - Confirm the Start
+- Book the Intake Meeting
+- Hold the Panel's Dates
+- Ask for the Candidate's Times
+- Book Each Interview
+- Book the Debrief
 
 ## make-sure-the-meeting-holds
 
@@ -43,6 +48,8 @@ covers:
 - Brief the Partner
 - Hold the Follow-Up Meetings
 - Run the Interviews
+- Brief the Panel
+- Brief the Candidate
 
 ## hand-the-meeting-on
 

@@ -1,6 +1,6 @@
 ---
 name: set-what-the-study-covers
-description: Writes down the boundary of the study before anything is asked, which is the channels, markets and periods in scope, the things it will measure, the other organizations asked about beside this one, and the earlier runs this one gets compared to. Use it when running `ref/mkt/brand-audit` and `ref/mkt/brand-health`.
+description: Writes down the boundary of the study before anything is asked, which is the channels, markets and periods in scope, the things it will measure, the other organizations asked about beside this one, and the earlier runs this one gets compared to. Use it when running `ref/hr/run-the-employee-survey`, `ref/mkt/brand-audit` and `ref/mkt/brand-health`.
 license: CC-BY-4.0
 metadata:
   agent: study-manager
@@ -18,7 +18,7 @@ runs this one gets compared to.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Open the Cycle**
@@ -30,6 +30,9 @@ Each one names the activity as that process words it.
 - **Set the Competitor Set**
   - `ref/mkt/brand-health`, activity 4 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
+- **Set the Groups to Report**
+  - `ref/hr/run-the-employee-survey`, activity 5 -
+    [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
 - **Settle What the Wave Measures**
   - `ref/mkt/brand-health`, activity 3 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
