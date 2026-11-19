@@ -2,7 +2,7 @@
 
 `ref/prt/onboard-a-partner v1`
 
-**value stream:** [Partner-to-Productive](../../streams/partners/partner-to-productive.md)
+**value stream:** [Partner onboarding](../../streams/partners/partner-to-productive.md)
 An agreement is signed, and the run turns the signature into working
 access. The people on both sides are named first, so the partner has
 somebody to ask and we have somebody who answers. The portal accounts,

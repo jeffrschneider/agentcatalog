@@ -2,7 +2,7 @@
 
 `ref/sls/run-the-forecast-call v1`
 
-**value stream:** [Pipeline-to-Commitment](../../streams/sales/pipeline-to-commitment.md)
+**value stream:** [Forecast calls](../../streams/sales/pipeline-to-commitment.md)
 The cadence comes round and a room of managers has to agree, out loud,
 what is committed, what is best case and what is neither. The call
 starts from the roll-up operations published, reads what moved since

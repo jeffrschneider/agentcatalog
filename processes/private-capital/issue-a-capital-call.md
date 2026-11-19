@@ -2,7 +2,7 @@
 
 `ref/pc/issue-a-capital-call v1`
 
-**value stream:** [Commitment-to-Statement](../../streams/private-capital/commitment-to-statement.md)
+**value stream:** [Capital calls and investor reporting](../../streams/private-capital/commitment-to-statement.md)
 The fund needs money for an investment, a follow-on, its fees and
 expenses, or a repayment of the credit line it borrowed against its
 investors' commitments. This process works out what each of its limited

@@ -2,7 +2,7 @@
 
 `ref/rev/move-an-account v1`
 
-**value stream:** [Number-to-Territory](../../streams/revenue-operations/number-to-territory.md)
+**value stream:** [Territories and quotas](../../streams/revenue-operations/number-to-territory.md)
 An account changes hands in the middle of a period. This process takes
 the request, finds the rule in the carve that allows it, reads the work
 the current owner has already done, and hears them before anybody

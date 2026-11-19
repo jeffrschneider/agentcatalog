@@ -1,9 +1,8 @@
-# Value stream: Customer-to-Renewal
+# Value stream: Renewals
 
 `vs/sls/customer-to-renewal v1`
 
 **position:** 8
-**friendly name:** Renewals
 A run starts well before an agreement ends, on a clock the agreement itself
 sets. The processes here watch what the customer uses against what they
 bought, surface the risks early enough that somebody can still act on them,

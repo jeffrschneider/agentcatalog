@@ -2,7 +2,7 @@
 
 `ref/rev/roll-out-a-change v1`
 
-**value stream:** [Hire-to-Productive](../../streams/revenue-operations/hire-to-productive.md)
+**value stream:** [Ramping new sellers](../../streams/revenue-operations/hire-to-productive.md)
 Something changed that every seller has to act on at once: a launch, a
 new price, a competitor who has started turning up in deals. Marketing's
 launch, pricing and battlecard work sits upstream and this run does not

@@ -1,9 +1,8 @@
-# Value stream: Number-to-Territory
+# Value stream: Territories and quotas
 
 `vs/rev/number-to-territory v1`
 
 **position:** 3
-**friendly name:** Territories and quotas
 A run starts when leadership sets a number and somebody has to make it
 addressable. The processes here segment the market into territories, model
 what each one can carry, assign accounts, set quotas that add up to more

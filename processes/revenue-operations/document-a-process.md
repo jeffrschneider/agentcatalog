@@ -2,7 +2,7 @@
 
 `ref/rev/document-a-process v1`
 
-**value stream:** [Process-to-Adoption](../../streams/revenue-operations/process-to-adoption.md)
+**value stream:** [Rolling out new ways of working](../../streams/revenue-operations/process-to-adoption.md)
 Somebody says out loud how a piece of work actually gets done, and it
 gets written down. The run reads what already exists, watches the work,
 asks the people who run it what they do when the written version does

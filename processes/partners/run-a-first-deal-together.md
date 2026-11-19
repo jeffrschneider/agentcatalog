@@ -2,7 +2,7 @@
 
 `ref/prt/run-a-first-deal-together v1`
 
-**value stream:** [Partner-to-Productive](../../streams/partners/partner-to-productive.md)
+**value stream:** [Partner onboarding](../../streams/partners/partner-to-productive.md)
 A certified partner brings its first deal or its first delivery, and the
 run walks it alongside them. One deal is chosen because it is the right
 size and the right risk to learn on, a named person from our side goes

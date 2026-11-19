@@ -1,9 +1,8 @@
-# Value stream: Inquiry-to-Owner
+# Value stream: Inbound leads, scored and routed
 
 `vs/mkt/inquiry-to-owner v1`
 
 **position:** 8
-**friendly name:** Inbound leads, scored and routed
 A raw inbound inquiry is scored and put in front of the person who should
 work it. A run of the routing process starts the moment a form is
 submitted, and within minutes the lead has been deduplicated, enriched,

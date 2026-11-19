@@ -2,7 +2,7 @@
 
 `ref/sls/negotiate-the-agreement v1`
 
-**value stream:** [Proposal-to-Signature](../../streams/sales/proposal-to-signature.md)
+**value stream:** [Negotiation and signature](../../streams/sales/proposal-to-signature.md)
 An offer is with the buyer and the buyer has come back with asks. This
 process gathers those asks into one list, prices each of them, and
 decides which are given, which are traded and which are refused. The

@@ -2,7 +2,7 @@
 
 `ref/prt/explore-an-alliance v1`
 
-**value stream:** [Opportunity-to-Alliance](../../streams/partners/opportunity-to-alliance.md)
+**value stream:** [Strategic alliances](../../streams/partners/opportunity-to-alliance.md)
 Something the company wants to offer needs another company to exist.
 This process writes that reason down before it names anybody, tests
 whether a partner is the right answer at all, and then finds the

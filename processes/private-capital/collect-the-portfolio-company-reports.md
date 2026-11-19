@@ -2,7 +2,7 @@
 
 `ref/pc/collect-the-portfolio-company-reports v1`
 
-**value stream:** [Quarter-to-Mark](../../streams/private-capital/quarter-to-mark.md)
+**value stream:** [Quarterly valuations](../../streams/private-capital/quarter-to-mark.md)
 A month or a quarter closes, and every company in the portfolio owes the
 fund its numbers. This process reads what each company is obliged to
 send, sends the firm's reporting template with the date it is due, and

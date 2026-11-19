@@ -2,7 +2,7 @@
 
 `ref/prt/plan-the-integration v1`
 
-**value stream:** [Opportunity-to-Alliance](../../streams/partners/opportunity-to-alliance.md)
+**value stream:** [Strategic alliances](../../streams/partners/opportunity-to-alliance.md)
 An agreement is signed and there is still nothing a customer can buy.
 This process does the work that stands between the two. It names one
 accountable person on each side, decides what the joint offer actually

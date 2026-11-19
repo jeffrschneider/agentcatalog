@@ -2,7 +2,7 @@
 
 `ref/pc/run-commercial-and-product-diligence v1`
 
-**value stream:** [Opportunity-to-Recommendation](../../streams/private-capital/opportunity-to-recommendation.md)
+**value stream:** [Due diligence](../../streams/private-capital/opportunity-to-recommendation.md)
 A partner has taken an opportunity on, and the deal team has a thesis
 about why the company will win. This process tests the commercial half
 of it: how large the market is and how fast it grows, who the customers

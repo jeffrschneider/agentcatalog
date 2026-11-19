@@ -2,7 +2,7 @@
 
 `ref/sls/record-the-requirements v1`
 
-**value stream:** [Discovery-to-Solution](../../streams/sales/discovery-to-solution.md)
+**value stream:** [Discovery and solution design](../../streams/sales/discovery-to-solution.md)
 Discovery produced notes. This process turns them into a list the next
 stage can read without having been in the room. Each requirement is
 written in the buyer's own words, carries the name of the person who

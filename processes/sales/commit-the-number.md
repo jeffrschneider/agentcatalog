@@ -2,7 +2,7 @@
 
 `ref/sls/commit-the-number v1`
 
-**value stream:** [Pipeline-to-Commitment](../../streams/sales/pipeline-to-commitment.md)
+**value stream:** [Forecast calls](../../streams/sales/pipeline-to-commitment.md)
 A leader takes what the forecast calls agreed, reconciles it against
 the published roll-up, and says a figure they will be held to. The
 activities model the range, name the distance to the target, and test

@@ -2,7 +2,7 @@
 
 `ref/sls/run-a-discovery-call v1`
 
-**value stream:** [Discovery-to-Solution](../../streams/sales/discovery-to-solution.md)
+**value stream:** [Discovery and solution design](../../streams/sales/discovery-to-solution.md)
 A qualified opportunity arrives and nobody yet knows what the buyer is
 actually dealing with. Somebody reads the account first, decides which
 people feel the problem, and gets them into a conversation with a

@@ -2,7 +2,7 @@
 
 `ref/prt/certify-a-partner v1`
 
-**value stream:** [Partner-to-Productive](../../streams/partners/partner-to-productive.md)
+**value stream:** [Partner onboarding](../../streams/partners/partner-to-productive.md)
 An onboarded partner names the people who will sell or deliver, and the
 run trains and tests them before any of them is let near a customer
 alone. What each role has to prove is written down before a course is

@@ -2,7 +2,7 @@
 
 `ref/sls/work-a-referral v1`
 
-**value stream:** [Prospect-to-Meeting](../../streams/sales/prospect-to-meeting.md)
+**value stream:** [Outreach to new prospects](../../streams/sales/prospect-to-meeting.md)
 Somebody who is known offers to introduce somebody who is not. The
 offer is answered the same day, the account is checked for an owner,
 and the person is read before anybody writes to them. The seller agrees

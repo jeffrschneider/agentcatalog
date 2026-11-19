@@ -2,7 +2,7 @@
 
 `ref/rev/answer-a-data-question v1`
 
-**value stream:** [Activity-to-Insight](../../streams/revenue-operations/activity-to-insight.md)
+**value stream:** [Revenue reporting](../../streams/revenue-operations/activity-to-insight.md)
 A question arrives that no dashboard answers. Somebody wants to know how
 many deals slipped out of the quarter, or what the win rate looks like
 for one segment, and they want it before Thursday. This process answers

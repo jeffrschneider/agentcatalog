@@ -2,7 +2,7 @@
 
 `ref/pc/run-financial-diligence v1`
 
-**value stream:** [Opportunity-to-Recommendation](../../streams/private-capital/opportunity-to-recommendation.md)
+**value stream:** [Due diligence](../../streams/private-capital/opportunity-to-recommendation.md)
 The price the firm offers will rest on the company's numbers, and the
 numbers in a pitch or an information memorandum are the seller's. This
 process rebuilds them from the company's own records. The

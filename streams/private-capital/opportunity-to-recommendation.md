@@ -1,9 +1,8 @@
-# Value stream: Opportunity-to-Recommendation
+# Value stream: Due diligence
 
 `vs/pc/opportunity-to-recommendation v1`
 
 **position:** 3
-**friendly name:** Due diligence
 A run starts when a partner takes an opportunity on and names the deal
 team. The processes here test the company's market, customers, product,
 numbers, contracts and ownership against evidence, model what the fund

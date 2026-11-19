@@ -2,7 +2,7 @@
 
 `ref/rev/approve-a-discount v1`
 
-**value stream:** [Deal-to-Approval](../../streams/revenue-operations/deal-to-approval.md)
+**value stream:** [Discount and deal approvals](../../streams/revenue-operations/deal-to-approval.md)
 A discount past the threshold cannot be given by the seller who asked
 for it. This process takes the ask, checks it carries its lines and its
 evidence, and starts a clock the seller can see. The published table

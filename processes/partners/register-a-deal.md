@@ -2,7 +2,7 @@
 
 `ref/prt/register-a-deal v1`
 
-**value stream:** [Registration-to-Co-sell](../../streams/partners/registration-to-co-sell.md)
+**value stream:** [Deal registration and co-selling](../../streams/partners/registration-to-co-sell.md)
 A partner names a customer they are working and asks for the deal to be
 held for them. The submission is matched to one account, the partner's
 standing is checked, and the claim is tested against the pipeline and

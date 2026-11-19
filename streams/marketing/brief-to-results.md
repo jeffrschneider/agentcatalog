@@ -1,9 +1,8 @@
-# Value stream: Brief-to-Results
+# Value stream: Campaigns on any channel
 
 `vs/mkt/brief-to-results v1`
 
 **position:** 6
-**friendly name:** Campaigns on any channel
 Campaigns run on any channel, and this stream covers all of them. A run
 starts when somebody approves a brief, commits a budget with a goal
 attached, hands over a segment or a list of target accounts, or signs an

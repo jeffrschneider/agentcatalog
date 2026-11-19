@@ -2,7 +2,7 @@
 
 `ref/rev/watch-the-response-clock v1`
 
-**value stream:** [Rule-to-Route](../../streams/revenue-operations/rule-to-route.md)
+**value stream:** [Lead routing and response times](../../streams/revenue-operations/rule-to-route.md)
 The organization promised to answer certain work within a certain time.
 This process reads what actually happened against that promise and
 publishes both numbers side by side. It says what each clock covers,

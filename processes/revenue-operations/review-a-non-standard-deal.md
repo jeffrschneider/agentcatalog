@@ -2,7 +2,7 @@
 
 `ref/rev/review-a-non-standard-deal v1`
 
-**value stream:** [Deal-to-Approval](../../streams/revenue-operations/deal-to-approval.md)
+**value stream:** [Discount and deal approvals](../../streams/revenue-operations/deal-to-approval.md)
 A seller asks for something the standard paper does not cover. The desk
 takes the request, checks it is complete, and tells the seller the time
 it will answer in. Every non-standard item is named on its own, tested

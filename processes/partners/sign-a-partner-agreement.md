@@ -2,7 +2,7 @@
 
 `ref/prt/sign-a-partner-agreement v1`
 
-**value stream:** [Prospect-to-Partner](../../streams/partners/prospect-to-partner.md)
+**value stream:** [Recruiting partners](../../streams/partners/prospect-to-partner.md)
 A candidate has been qualified and both sides want to work together.
 This process writes the terms that govern that, negotiates them, and
 gets them signed. The conditions the qualification attached to the

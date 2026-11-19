@@ -2,7 +2,7 @@
 
 `ref/pc/negotiate-the-definitive-agreements v1`
 
-**value stream:** [Recommendation-to-Close](../../streams/private-capital/recommendation-to-close.md)
+**value stream:** [Committee approval and closing](../../streams/private-capital/recommendation-to-close.md)
 The term sheet is signed and the lawyers take over the drafting. The
 deal-structurer agent instructs outside counsel with the signed terms and
 the committee's conditions, reads every draft back against the term

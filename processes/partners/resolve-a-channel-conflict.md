@@ -2,7 +2,7 @@
 
 `ref/prt/resolve-a-channel-conflict v1`
 
-**value stream:** [Registration-to-Co-sell](../../streams/partners/registration-to-co-sell.md)
+**value stream:** [Deal registration and co-selling](../../streams/partners/registration-to-co-sell.md)
 A partner's deal and a direct deal turn out to be the same deal. Both
 sides stop approaching the customer while it is settled. The two records
 are matched to one account, the dated evidence on both sides is pulled,

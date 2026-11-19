@@ -2,7 +2,7 @@
 
 `ref/pc/form-the-fund v1`
 
-**value stream:** [Strategy-to-Fund](../../streams/private-capital/strategy-to-fund.md)
+**value stream:** [Raising a fund](../../streams/private-capital/strategy-to-fund.md)
 The partners have decided the strategy, and the fund now has to exist in
 law before it can take a single commitment. This process sets up the
 fund's entities with fund counsel and the tax adviser: the fund

@@ -2,7 +2,7 @@
 
 `ref/pc/issue-a-term-sheet v1`
 
-**value stream:** [Recommendation-to-Close](../../streams/private-capital/recommendation-to-close.md)
+**value stream:** [Committee approval and closing](../../streams/private-capital/recommendation-to-close.md)
 The investment committee has approved a deal on stated terms, with limits
 on how far each term may move. The deal-structurer agent writes those terms
 onto a term sheet and checks every line against the approval before the

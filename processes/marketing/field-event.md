@@ -2,7 +2,7 @@
 
 `ref/mkt/field-event v1`
 
-**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
+**value stream:** [Press, analysts and news](../../streams/marketing/story-to-coverage.md)
 An event manager takes a target audience and a date, settles what kind of
 event it will be and what happens in the room, has the venue and the
 suppliers booked, gets the speakers lined up, fills the room, has the

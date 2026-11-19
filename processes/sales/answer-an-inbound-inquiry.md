@@ -2,7 +2,7 @@
 
 `ref/sls/answer-an-inbound-inquiry v1`
 
-**value stream:** [Inquiry-to-Qualified](../../streams/sales/inquiry-to-qualified.md)
+**value stream:** [Qualifying inbound interest](../../streams/sales/inquiry-to-qualified.md)
 Somebody asked a question and the clock started. The inquiry is matched
 to the records already held, the account is read for what it runs and
 what it has been dealing with, and the company is read for what it is

@@ -2,7 +2,7 @@
 
 `ref/mkt/brief-industry-analyst v1`
 
-**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
+**value stream:** [Press, analysts and news](../../streams/marketing/story-to-coverage.md)
 A press and analyst relations agent takes in what a research firm asked
 for, works out what the organization wants that analyst to understand,
 has the evidence gathered and the material built and signed, puts the

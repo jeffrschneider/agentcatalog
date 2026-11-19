@@ -2,7 +2,7 @@
 
 `ref/rev/choose-a-tool v1`
 
-**value stream:** [Signal-to-System](../../streams/revenue-operations/signal-to-system.md)
+**value stream:** [Choosing and running revenue tools](../../streams/revenue-operations/signal-to-system.md)
 Somebody in the revenue organization reports work the current tools
 cannot carry, and this process ends with one tool chosen and written
 into the stack record. Every run names the process that would run

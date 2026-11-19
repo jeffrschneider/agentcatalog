@@ -2,7 +2,7 @@
 
 `ref/pc/prepare-and-hold-a-board-meeting v1`
 
-**value stream:** [Close-to-Value](../../streams/private-capital/close-to-value.md)
+**value stream:** [Growing portfolio companies](../../streams/private-capital/close-to-value.md)
 A portfolio company's board is about to meet, and the firm's director has
 to walk in having read the pack. The portfolio-monitor agent collects the
 pack and reads the numbers against plan, the prior period and the

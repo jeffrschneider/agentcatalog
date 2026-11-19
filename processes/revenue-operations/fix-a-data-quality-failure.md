@@ -2,7 +2,7 @@
 
 `ref/rev/fix-a-data-quality-failure v1`
 
-**value stream:** [Record-to-Truth](../../streams/revenue-operations/record-to-truth.md)
+**value stream:** [Clean customer data](../../streams/revenue-operations/record-to-truth.md)
 A rule that passed for months starts failing. Required fields are empty
 on new records, a picklist is full of values nobody defined, two systems
 disagree about the same account. The run confirms the failure is real,

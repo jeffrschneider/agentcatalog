@@ -1,9 +1,8 @@
-# Value stream: Objective-to-Commitment
+# Value stream: The marketing plan and budget
 
 `vs/mkt/objective-to-commitment v1`
 
 **position:** 1
-**friendly name:** The marketing plan and budget
 Marketing leadership turns what the business asks of the department into a
 plan that has money, people and owners behind it. A run begins when the
 fiscal planning cycle opens, when the review date on a recorded strategy

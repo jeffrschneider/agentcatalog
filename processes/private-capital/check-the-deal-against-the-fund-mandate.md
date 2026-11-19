@@ -2,7 +2,7 @@
 
 `ref/pc/check-the-deal-against-the-fund-mandate v1`
 
-**value stream:** [Opportunity-to-Recommendation](../../streams/private-capital/opportunity-to-recommendation.md)
+**value stream:** [Due diligence](../../streams/private-capital/opportunity-to-recommendation.md)
 A deal the partners like can still be one the fund may not make. This
 process tests the proposed investment against what the fund promised
 its limited partners (LPs) before the memo goes to the committee. The

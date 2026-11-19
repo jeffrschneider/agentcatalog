@@ -2,7 +2,7 @@
 
 `ref/pc/write-off-a-failed-investment v1`
 
-**value stream:** [Hold-to-Exit](../../streams/private-capital/hold-to-exit.md)
+**value stream:** [Exits](../../streams/private-capital/hold-to-exit.md)
 A portfolio company has failed. It has wound down, been sold for less
 than its debts and the preferences ahead of the fund, or has nothing
 left that the fund's shares can reach. This process confirms that

@@ -2,7 +2,7 @@
 
 `ref/rev/publish-the-forecast-view v1`
 
-**value stream:** [Pipeline-to-Forecast](../../streams/revenue-operations/pipeline-to-forecast.md)
+**value stream:** [Pipeline and forecast](../../streams/revenue-operations/pipeline-to-forecast.md)
 One view, at one version, in front of everybody at the same moment. The
 run takes the frozen roll-up, builds the few figures the view leads
 with, and shows the arithmetic under each one so anybody can reproduce

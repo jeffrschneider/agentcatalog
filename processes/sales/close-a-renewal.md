@@ -2,7 +2,7 @@
 
 `ref/sls/close-a-renewal v1`
 
-**value stream:** [Customer-to-Renewal](../../streams/sales/customer-to-renewal.md)
+**value stream:** [Renewals](../../streams/sales/customer-to-renewal.md)
 An approved position goes to the customer and comes back as a signed
 term. The account owner opens the conversation, hears what the customer
 wants to change, and settles which entitlements carry over. The quote is

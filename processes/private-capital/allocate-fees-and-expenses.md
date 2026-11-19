@@ -2,7 +2,7 @@
 
 `ref/pc/allocate-fees-and-expenses v1`
 
-**value stream:** [Commitment-to-Statement](../../streams/private-capital/commitment-to-statement.md)
+**value stream:** [Capital calls and investor reporting](../../streams/private-capital/commitment-to-statement.md)
 Each fee period the fund owes its management fee and carries its share of
 the costs of running it, and every charge has to land on the party the
 partnership agreement puts it on: the fund, the firm, or a portfolio

@@ -2,7 +2,7 @@
 
 `ref/pc/respond-to-a-sale-process v1`
 
-**value stream:** [Lead-to-Opportunity](../../streams/private-capital/lead-to-opportunity.md)
+**value stream:** [Finding deals](../../streams/private-capital/lead-to-opportunity.md)
 An investment bank sends a teaser for a company it is selling for its
 owner, with a timetable the firm does not set. This process decides
 quickly whether to take part, gets the bank's confidentiality agreement
@@ -52,8 +52,8 @@ be paid for. For a venture fund it is rare, and it is seen mostly in
 late rounds that a banker runs.
 
 An indication the bank accepts takes the firm into the next round of
-the sale. The opportunity then enters diligence in
-Opportunity-to-Recommendation, and the binding offer is built from what
+the sale. The opportunity then enters the Due diligence stream, and
+the binding offer is built from what
 diligence finds and approved in `ref/pc/decide-at-investment-committee`.
 
 ## The graph

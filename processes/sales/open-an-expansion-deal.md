@@ -2,7 +2,7 @@
 
 `ref/sls/open-an-expansion-deal v1`
 
-**value stream:** [Account-to-Expansion](../../streams/sales/account-to-expansion.md)
+**value stream:** [Growing existing accounts](../../streams/sales/account-to-expansion.md)
 An opening has been written down and somebody has said to pursue it.
 This process turns it into a deal, or closes it with a reason. The
 approach is drafted, the timing is set against the contract the customer

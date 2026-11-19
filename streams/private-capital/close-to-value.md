@@ -1,9 +1,8 @@
-# Value stream: Close-to-Value
+# Value stream: Growing portfolio companies
 
 `vs/pc/close-to-value v1`
 
 **position:** 5
-**friendly name:** Growing portfolio companies
 A run starts when a deal closes and the company becomes a holding the firm
 has to help grow. The processes here pass what the deal team learned and
 promised to the people who will work with the company, agree a value creation

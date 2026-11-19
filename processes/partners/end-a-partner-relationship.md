@@ -2,7 +2,7 @@
 
 `ref/prt/end-a-partner-relationship v1`
 
-**value stream:** [Performance-to-Tier](../../streams/partners/performance-to-tier.md)
+**value stream:** [Partner tiers and reviews](../../streams/partners/performance-to-tier.md)
 A partner has stopped performing, or one side has given notice. This run
 ends the relationship without stranding the customers the partner holds.
 It reads the exit terms in the signed agreement first, takes a decision

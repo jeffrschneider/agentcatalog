@@ -2,7 +2,7 @@
 
 `ref/sls/research-an-account v1`
 
-**value stream:** [Account-to-Plan](../../streams/sales/account-to-plan.md)
+**value stream:** [Account plans](../../streams/sales/account-to-plan.md)
 An account is named, and the run answers four questions about it: what
 the account is trying to do, where its money goes, what it already owns
 and from whom, and what has happened between that account and us. It

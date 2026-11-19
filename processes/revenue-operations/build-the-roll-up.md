@@ -2,7 +2,7 @@
 
 `ref/rev/build-the-roll-up v1`
 
-**value stream:** [Pipeline-to-Forecast](../../streams/revenue-operations/pipeline-to-forecast.md)
+**value stream:** [Pipeline and forecast](../../streams/revenue-operations/pipeline-to-forecast.md)
 Open deals become a set of totals leadership can argue over. The run
 fixes a cut-off, takes one extract at that moment, converts it to one
 currency, applies the category definitions as written, and sums the same

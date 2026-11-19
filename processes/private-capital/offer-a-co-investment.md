@@ -2,7 +2,7 @@
 
 `ref/pc/offer-a-co-investment v1`
 
-**value stream:** [Recommendation-to-Close](../../streams/private-capital/recommendation-to-close.md)
+**value stream:** [Committee approval and closing](../../streams/private-capital/recommendation-to-close.md)
 The committee has approved a deal that is larger than the fund will take
 alone, or the firm is leading a round it means to share. The
 investor-relations-manager agent works out what is left to place and who

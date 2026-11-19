@@ -2,7 +2,7 @@
 
 `ref/rev/integrate-a-tool v1`
 
-**value stream:** [Signal-to-System](../../streams/revenue-operations/signal-to-system.md)
+**value stream:** [Choosing and running revenue tools](../../streams/revenue-operations/signal-to-system.md)
 A tool has been chosen, and this process wires it to the systems on
 either side of it and leaves behind a record of what flows where. The
 work is agreed field by field before anything is built: which system

@@ -2,7 +2,7 @@
 
 `ref/sls/return-a-lead-to-nurture v1`
 
-**value stream:** [Inquiry-to-Qualified](../../streams/sales/inquiry-to-qualified.md)
+**value stream:** [Qualifying inbound interest](../../streams/sales/inquiry-to-qualified.md)
 Qualification ended in a no that is not a never, and the lead has to go
 back in a state somebody can pick up. The reason is written in words the
 next run can act on, checked against what was actually asked, and given

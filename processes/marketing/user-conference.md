@@ -2,7 +2,7 @@
 
 `ref/mkt/user-conference v1`
 
-**value stream:** [Story-to-Coverage](../../streams/marketing/story-to-coverage.md)
+**value stream:** [Press, analysts and news](../../streams/marketing/story-to-coverage.md)
 An event manager takes the date the company has committed to and works
 out what this year's conference has to accomplish, settles the theme,
 the format, the attendance target and the budget, and has the venue and

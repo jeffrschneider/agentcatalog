@@ -1,9 +1,8 @@
-# Value stream: Story-to-Coverage
+# Value stream: Press, analysts and news
 
 `vs/mkt/story-to-coverage v1`
 
 **position:** 10
-**friendly name:** Press, analysts and news
 Something the organization wants said in public is put in front of
 reporters, analysts and audiences. A run starts when leadership confirms a
 piece of news and clears it to be said, when somebody judges a story angle

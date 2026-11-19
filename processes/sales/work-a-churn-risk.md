@@ -2,7 +2,7 @@
 
 `ref/sls/work-a-churn-risk v1`
 
-**value stream:** [Customer-to-Renewal](../../streams/sales/customer-to-renewal.md)
+**value stream:** [Renewals](../../streams/sales/customer-to-renewal.md)
 A signal says an account may be leaving. This process confirms the
 signal, reads the usage trend and the account standing behind it, and
 writes one reason somebody can act on. The reason carries a severity and

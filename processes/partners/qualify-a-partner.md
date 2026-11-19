@@ -2,7 +2,7 @@
 
 `ref/prt/qualify-a-partner v1`
 
-**value stream:** [Prospect-to-Partner](../../streams/partners/prospect-to-partner.md)
+**value stream:** [Recruiting partners](../../streams/partners/prospect-to-partner.md)
 A candidate is on the short list and says it can close the gap. This
 process finds out whether that is true. Every claim the candidate makes
 is written down as a statement someone can check, and then it is

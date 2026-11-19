@@ -2,7 +2,7 @@
 
 `ref/pc/fill-a-key-role-at-a-portfolio-company v1`
 
-**value stream:** [Close-to-Value](../../streams/private-capital/close-to-value.md)
+**value stream:** [Growing portfolio companies](../../streams/private-capital/close-to-value.md)
 A portfolio company needs someone in a role its plan depends on, such as a
 chief financial officer, a head of sales or a new chief executive. The
 meeting-scheduler agent books the session where the company's chief

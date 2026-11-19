@@ -2,7 +2,7 @@
 
 `ref/pc/negotiate-the-fund-terms-and-side-letters v1`
 
-**value stream:** [Strategy-to-Fund](../../streams/private-capital/strategy-to-fund.md)
+**value stream:** [Raising a fund](../../streams/private-capital/strategy-to-fund.md)
 An investor that means to commit sends its comments on the limited
 partnership agreement (LPA) and the side letter it wants. This process
 logs every ask in the investor's own words, reads the markup clause by

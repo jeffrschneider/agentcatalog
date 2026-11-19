@@ -2,7 +2,7 @@
 
 `ref/prt/find-a-partner v1`
 
-**value stream:** [Prospect-to-Partner](../../streams/partners/prospect-to-partner.md)
+**value stream:** [Recruiting partners](../../streams/partners/prospect-to-partner.md)
 The company names a gap it cannot close on its own, and this process
 finds the candidates that could close it. The gap is written down
 first, in one line, with the test that says when it is closed. Only

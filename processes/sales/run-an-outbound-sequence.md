@@ -2,7 +2,7 @@
 
 `ref/sls/run-an-outbound-sequence v1`
 
-**value stream:** [Prospect-to-Meeting](../../streams/sales/prospect-to-meeting.md)
+**value stream:** [Outreach to new prospects](../../streams/sales/prospect-to-meeting.md)
 A signed list arrives and becomes a set of touches that actually go
 out. The list is split into groups, the mail, the call notes and the
 social messages are written for each group, and the consent record

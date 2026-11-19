@@ -2,7 +2,7 @@
 
 `ref/sls/inspect-a-deal v1`
 
-**value stream:** [Pipeline-to-Commitment](../../streams/sales/pipeline-to-commitment.md)
+**value stream:** [Forecast calls](../../streams/sales/pipeline-to-commitment.md)
 One deal is taken apart and tested against what the record holds. The
 activities pull its history, read the activity behind it, name who can
 sign and who can stop it, and check that the money exists and belongs

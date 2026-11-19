@@ -1,9 +1,8 @@
-# Value stream: Signal-to-System
+# Value stream: Choosing and running revenue tools
 
 `vs/rev/signal-to-system v1`
 
 **position:** 1
-**friendly name:** Choosing and running revenue tools
 A run starts when the revenue organization needs something its tools cannot
 do, or when a tool it has stops earning its place. The processes here work
 out what is actually needed, evaluate what exists, run the security and

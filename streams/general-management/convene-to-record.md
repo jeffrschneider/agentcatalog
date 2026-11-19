@@ -1,9 +1,8 @@
-# Value stream: Convene-to-Record
+# Value stream: Working sessions
 
 `vs/gm/convene-to-record v1`
 
 **position:** 1
-**friendly name:** Working sessions
 Some work is too wide for one agent, and the answer is a conversation:
 several agents in one room, working a declared pattern, moving through
 an agenda, leaving a record. A run starts when somebody needs more than

@@ -2,7 +2,7 @@
 
 `ref/prt/run-a-co-sell v1`
 
-**value stream:** [Registration-to-Co-sell](../../streams/partners/registration-to-co-sell.md)
+**value stream:** [Deal registration and co-selling](../../streams/partners/registration-to-co-sell.md)
 Two organizations decide to work one deal together. One of them is named
 the lead, in writing, before anything else is agreed. The people on each
 side are named, the part of the solution each side carries is settled,

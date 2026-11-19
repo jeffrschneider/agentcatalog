@@ -2,7 +2,7 @@
 
 `ref/rev/review-adoption v1`
 
-**value stream:** [Process-to-Adoption](../../streams/revenue-operations/process-to-adoption.md)
+**value stream:** [Rolling out new ways of working](../../streams/revenue-operations/process-to-adoption.md)
 The instrumentation has been running for a period, and somebody has to
 read what it says and decide. The run checks the measure before it
 trusts the numbers, ranks the steps people depart from, separates a real

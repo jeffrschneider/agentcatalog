@@ -2,7 +2,7 @@
 
 `ref/prt/approve-a-fund-request v1`
 
-**value stream:** [Fund-to-Activity](../../streams/partners/fund-to-activity.md)
+**value stream:** [Partner marketing funds](../../streams/partners/fund-to-activity.md)
 A partner proposes an activity and needs an answer before the venue,
 the list or the media has to be booked. The request is checked against
 the agreement, the published eligibility rules and the money the

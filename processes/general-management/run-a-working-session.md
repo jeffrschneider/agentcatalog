@@ -2,7 +2,7 @@
 
 `ref/gm/run-a-working-session v1`
 
-**value stream:** [Convene-to-Record](../../streams/general-management/convene-to-record.md)
+**value stream:** [Working sessions](../../streams/general-management/convene-to-record.md)
 A question that needs several agents becomes a session that actually
 produces something. What the session is for is written down first, and
 the collaboration pattern and agenda are chosen to fit it, not the

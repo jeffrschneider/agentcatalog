@@ -1,9 +1,8 @@
-# Value stream: Hold-to-Exit
+# Value stream: Exits
 
 `vs/pc/hold-to-exit v1`
 
 **position:** 7
-**friendly name:** Exits
 A run starts when a holding is ready to be sold, or when there is nothing
 left in it. The processes here work out the route, the timing and the
 likely buyers with the company's management and its board, and take the

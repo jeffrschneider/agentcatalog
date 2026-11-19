@@ -2,7 +2,7 @@
 
 `ref/sls/record-a-lost-deal v1`
 
-**value stream:** [Proposal-to-Signature](../../streams/sales/proposal-to-signature.md)
+**value stream:** [Negotiation and signature](../../streams/sales/proposal-to-signature.md)
 A deal ends without a signature. This process turns that into a decided
 no rather than a deal that quietly stops being worked. Somebody who
 actually decided confirms the decision, one recovery attempt is made

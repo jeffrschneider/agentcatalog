@@ -2,7 +2,7 @@
 
 `ref/pc/work-an-investor-prospect v1`
 
-**value stream:** [Strategy-to-Fund](../../streams/private-capital/strategy-to-fund.md)
+**value stream:** [Raising a fund](../../streams/private-capital/strategy-to-fund.md)
 The fund has its materials, and each prospective limited partner (LP)
 now has to be found and worked until it says what it will commit or
 declines. This process builds the target list from the strategy and

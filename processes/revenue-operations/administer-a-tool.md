@@ -2,7 +2,7 @@
 
 `ref/rev/administer-a-tool v1`
 
-**value stream:** [Signal-to-System](../../streams/revenue-operations/signal-to-system.md)
+**value stream:** [Choosing and running revenue tools](../../streams/revenue-operations/signal-to-system.md)
 A tool is live and somebody has to hold it: who may get in, what the
 configuration says, how many licences are paid for against how many are
 used, and whether the links either side of it still carry. This process

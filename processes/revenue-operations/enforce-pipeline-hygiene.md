@@ -2,7 +2,7 @@
 
 `ref/rev/enforce-pipeline-hygiene v1`
 
-**value stream:** [Pipeline-to-Forecast](../../streams/revenue-operations/pipeline-to-forecast.md)
+**value stream:** [Pipeline and forecast](../../streams/revenue-operations/pipeline-to-forecast.md)
 A pipeline is readable only when the deals inside it say what they mean.
 This process reads the rules as written, pulls every open deal, and
 tests each one against the fields, the dates, the stage, the amount and

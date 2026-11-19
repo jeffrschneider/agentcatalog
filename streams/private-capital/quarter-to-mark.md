@@ -1,9 +1,8 @@
-# Value stream: Quarter-to-Mark
+# Value stream: Quarterly valuations
 
 `vs/pc/quarter-to-mark v1`
 
 **position:** 6
-**friendly name:** Quarterly valuations
 A run starts when a quarter closes and every company in the portfolio owes
 the fund its numbers. The processes here collect each company's reports on
 one template and read them against plan, the prior period and its loan

@@ -2,7 +2,7 @@
 
 `ref/pc/hold-a-fund-close v1`
 
-**value stream:** [Strategy-to-Fund](../../streams/private-capital/strategy-to-fund.md)
+**value stream:** [Raising a fund](../../streams/private-capital/strategy-to-fund.md)
 The investors who have committed are ready to be admitted, and the fund
 holds a close on a set date. This process sends each investor its
 subscription documents, checks that every subscription is complete and

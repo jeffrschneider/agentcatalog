@@ -2,7 +2,7 @@
 
 `ref/pc/screen-an-inbound-pitch v1`
 
-**value stream:** [Lead-to-Opportunity](../../streams/private-capital/lead-to-opportunity.md)
+**value stream:** [Finding deals](../../streams/private-capital/lead-to-opportunity.md)
 A founder sends a deck, a contact forwards a company, or a pitch arrives
 through the firm's website. This process answers every one of them. The
 inbound-responder agent starts the clock the firm promised and tells the
@@ -47,7 +47,7 @@ pursuing has become an opportunity with a named owner.
 | 18 | Record the Decision and the Time | the decision, the reason and how long the answer took | inbound-responder · deal-screener |
 
 The decision here is whether to meet. Testing whether the company is
-what the pitch says it is starts in Opportunity-to-Recommendation, with
+what the pitch says it is starts in the Due diligence stream, with
 `ref/pc/run-commercial-and-product-diligence`. A company a banker offers
 in a sale is answered in `ref/pc/respond-to-a-sale-process`, because the
 bank's timetable and its confidentiality agreement change the work.
