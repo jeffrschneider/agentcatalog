@@ -39,3 +39,8 @@ lead, the named approvers and the named leaders (people).
   `ref/hr/plan-the-workforce`
 - the options of a reorganization or a layoff seen by anyone outside the
   access list - to the head of HR the same day
+- a company budget that opens before the workforce plan is approved, or
+  a department's budget draft whose labor cost does not match the
+  approved plan - to the head of financial planning, and the drafts wait
+  for the approved plan, because a department head who wants more people
+  than the plan holds asks through `ref/hr/plan-the-workforce`

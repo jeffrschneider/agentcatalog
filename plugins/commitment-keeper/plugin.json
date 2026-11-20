@@ -62,6 +62,18 @@
           "role": "calendar",
           "access": "write",
           "needs": "Each check-in of a plan about one employee, on the calendars of the manager and the employee, with the date a probation closes shown where one applies."
+        },
+        {
+          "name": "the issue tracker",
+          "role": "issue-tracker",
+          "access": "write",
+          "needs": "Each fix to a failed control or to a point in the auditor's letter, with its owner, its date, its state and the finding it answers."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "A fix past its date reaches the controller."
         }
       ],
       "records": [
@@ -77,7 +89,9 @@
         "a plan whose commitments are all closed or dead - to whoever decides whether the partnership continues, instead of dating another review out of habit",
         "a signed plan with no review on anybody's calendar - to both sponsors, because the run does not close until there is one",
         "a board action with no owner - to the firm's board director, and the action stays open on the record with the gap named until it has one",
-        "support the company promised in a plan about one employee that is late - read out at the next check-in like any late item and named to the HR business partner, because no outcome is decided while the company still owes its part"
+        "support the company promised in a plan about one employee that is late - read out at the next check-in like any late item and named to the HR business partner, because no outcome is decided while the company still owes its part",
+        "a fix to a failed control or to a point in the auditor's letter that is past its date - to the controller, who agrees a new date or a different fix with its owner, and the miss is recorded while the finding stays open",
+        "a fix with no owner or no date, or one its owner calls done before it has been tested again - to the controller, and the finding stays open on the record until the fix has both and passes its test"
       ],
       "not": [
         "Does not decide what changes in the plan or write the amendment, which is the joint-planner agent, or the people who agreed the plan where no joint-planner agent wrote it, such as a manager and an employee.",
@@ -143,6 +157,19 @@
           "activities": [
             "Load the Actions into the Tracker",
             "Review the Actions"
+          ]
+        },
+        {
+          "process": "ref/fin/test-a-financial-control",
+          "activities": [
+            "Load Each Fix Into the Tracker",
+            "Chase Each Fix to Its Date"
+          ]
+        },
+        {
+          "process": "ref/fin/run-the-external-audit",
+          "activities": [
+            "Load Each Fix Into the Tracker"
           ]
         }
       ]

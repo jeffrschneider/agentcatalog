@@ -16,7 +16,7 @@
     "human-resources",
     "run-payroll",
     "close-the-payroll-year",
-    "manage-a-leave-of-absence",
+    "fund-the-payroll",
     "abstract"
   ],
   "extensions": {
@@ -80,6 +80,12 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "A change held past the cutoff reaches the person who sent it, and a due date at risk reaches the payroll manager."
+        },
+        {
+          "name": "the close records",
+          "role": "close-records",
+          "access": "write",
+          "needs": "The registers approved in the period and the payments and withholding that left, attached to the monthly reconciliation of each payroll account, which only the named payroll and finance people can open, with no right to change or sign off a reconciliation."
         }
       ],
       "records": [
@@ -99,11 +105,13 @@
         "a request to change a bank account that arrives by email alone - to the wire-check agent and the person the payroll policy names, the same day as an attempted fraud",
         "final pay that would be late under `<your jurisdiction's rule on final pay>` while a line is questioned - to the payroll approver and the head of HR, who decide whether the part nobody questions is paid on time",
         "a deduction from final pay for property not returned - only where `<your jurisdiction's rule on deductions>` allows it and the leaver has agreed in writing",
-        "a year-end statement found wrong after the return was filed - to the payroll manager, a correction is filed by the filing-coordinator agent, and a new statement is issued with the person told what changed"
+        "a year-end statement found wrong after the return was filed - to the payroll manager, a correction is filed by the filing-coordinator agent, and a new statement is issued with the person told what changed",
+        "a register total or payday that does not match what the funding of the payroll account was worked out from - to the payroll manager, who names the cause before the register is taken in again, because nothing is funded from a figure that does not trace to the approved register",
+        "money left in the payroll account after payday that the payroll records do not explain, or a payroll account that does not agree with the registers at the monthly reconciliation - to the payroll manager, who traces it in payroll, and finance corrects only the ledger"
       ],
       "not": [
         "Does not approve a register, release a payment or sign a return, which are the payroll approver, the second signer and the filing signer (people).",
-        "Does not check the register for finance or reconcile the payroll accounts each month, which is the finance controller (person).",
+        "Does not check the register for finance, which is the finance controller (person), or reconcile the payroll accounts each month, which the account-reconciler agent prepares from the records this agent supplies for the finance controller to review.",
         "Does not check the payment file against the verified bank record or confirm that each payment landed, which is the wire-check agent.",
         "Does not change an employee's record or bank account, which is the employee-record-keeper agent with the wire-check agent.",
         "Does not decide a pay change, which the named approvers do on the compensation-analyst agent's figure, decide a leave, which is the leave approver (person), or decide what benefits an employee has, which is the benefits-administrator agent with the employee.",
@@ -171,6 +179,20 @@
           "activities": [
             "Work Out the Final Pay",
             "Check the Final Pay"
+          ]
+        },
+        {
+          "process": "ref/fin/fund-the-payroll",
+          "activities": [
+            "Take In the Approved Register",
+            "Confirm the Total and the Payday",
+            "Explain What Is Left in the Account"
+          ]
+        },
+        {
+          "process": "ref/fin/reconcile-a-balance-sheet-account",
+          "activities": [
+            "Supply the Payroll Records"
           ]
         }
       ]

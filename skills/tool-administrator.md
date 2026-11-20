@@ -90,11 +90,16 @@ Opens the access review for a period with its systems, its access owners
 and its dates, lists every account with its role, its permissions and
 its last use, and every report, export and link that carries data out,
 and matches each account to a current employee, an approved service or
-nobody. It flags access wider than the job needs and roles that clash,
-sends each owner the accesses they answer for, and on the close date
-removes the access nobody approved.
+nobody. In the finance systems it also lists who can create, approve or
+release a payment at each bank and up to what amount, and matches each
+of those rights to the releasers the delegation of authority names. It
+flags access wider than the job needs and roles that clash, sends each
+owner the accesses they answer for, and on the close date removes the
+access nobody approved.
 
 covers:
+- List Who Can Move Money at Each Bank
+- Match Each Payment Right to an Approved Releaser
 - Open the Review for the Period
 - List Every Account and Its Role
 - List the Exports and Links

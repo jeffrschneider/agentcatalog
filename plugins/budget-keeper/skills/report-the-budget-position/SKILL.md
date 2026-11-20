@@ -1,6 +1,6 @@
 ---
 name: report-the-budget-position
-description: The agent reports what was allocated, what has been drawn against it and what is left, for a function, a period or a single piece of work. Use it when running `ref/mkt/brand-refresh` and 3 other reference processes.
+description: The agent reports what was allocated, what has been drawn against it and what is left, for a function, a budget owner's line, a period or a single piece of work, with the budget and the latest forecast at their versions. Use it when running `ref/fin/reforecast-the-year` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: budget-keeper
@@ -12,17 +12,24 @@ metadata:
 ## What it does
 
 The agent reports what was allocated, what has been drawn against it and
-what is left, for a function, a period or a single piece of work. It
-also says what can still be spent this year and in the years after.
+what is left, for a function, a budget owner's line, a period or a
+single piece of work, with the budget and the latest forecast at their
+versions. It also says what can still be spent this year and in the
+years after.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in six activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Account for the Money**
   - `ref/mkt/brief-executive-leadership`, activity 6 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+- **Read What Each Owner Has Committed**
+  - `ref/fin/reforecast-the-year`, activity 5 -
+    [Reforecast the Year](../../../../processes/finance/reforecast-the-year.md)
+  - `ref/fin/report-the-monthly-results`, activity 4 -
+    [Report the Monthly Results](../../../../processes/finance/report-the-monthly-results.md)
 - **Read the Budget Position**
   - `ref/mkt/quarterly-business-review`, activity 4 -
     [Conduct Quarterly Business Review](../../../../processes/marketing/quarterly-business-review.md)
@@ -32,6 +39,9 @@ Each one names the activity as that process words it.
 - **Say What Money There Is**
   - `ref/mkt/select-marketing-technology`, activity 7 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
+- **Take in the Budget and the Forecast**
+  - `ref/fin/report-the-monthly-results`, activity 3 -
+    [Report the Monthly Results](../../../../processes/finance/report-the-monthly-results.md)
 
 ## What to record
 

@@ -1,6 +1,6 @@
 ---
 name: file-by-the-deadline
-description: Files each signed filing and return through the authority's route by its deadline, keeps the receipt, the filed copy and the data at a version, answers the authority's follow-ups from the kept data, and files any correction with its own receipt. Use it when running `ref/hr/close-the-payroll-year` and `ref/hr/file-a-required-report`.
+description: Files each signed filing and return through the authority's route by its deadline, keeps the receipt, the filed copy and the data at a version, answers the authority's follow-ups from the kept data, finds the return and the records a tax notice concerns in what was kept, and files any correction with its own receipt. Use it when running `ref/fin/file-an-indirect-tax-return` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: filing-coordinator
@@ -13,12 +13,13 @@ metadata:
 
 Files each signed filing and return through the authority's route by its
 deadline, keeps the receipt, the filed copy and the data at a version,
-answers the authority's follow-ups from the kept data, and files any
+answers the authority's follow-ups from the kept data, finds the return
+and the records a tax notice concerns in what was kept, and files any
 correction with its own receipt.
 
 ## Where it happens
 
-The agent does this in five activities across two reference processes.
+The agent does this in six activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Answer the Authority's Follow-Ups**
@@ -28,12 +29,23 @@ Each one names the activity as that process words it.
   - `ref/hr/close-the-payroll-year`, activity 16 -
     [Close the Payroll Year](../../../../processes/human-resources/close-the-payroll-year.md)
 - **File by the Deadline**
+  - `ref/fin/file-an-indirect-tax-return`, activity 15 -
+    [File an Indirect Tax Return](../../../../processes/finance/file-an-indirect-tax-return.md)
+  - `ref/fin/file-the-income-tax-return`, activity 12 -
+    [File the Income Tax Return](../../../../processes/finance/file-the-income-tax-return.md)
   - `ref/hr/file-a-required-report`, activity 13 -
     [File a Required Report](../../../../processes/human-resources/file-a-required-report.md)
 - **File the Returns**
   - `ref/hr/close-the-payroll-year`, activity 13 -
     [Close the Payroll Year](../../../../processes/human-resources/close-the-payroll-year.md)
+- **Find the Return and the Records**
+  - `ref/fin/respond-to-a-tax-notice`, activity 4 -
+    [Respond to a Tax Notice](../../../../processes/finance/respond-to-a-tax-notice.md)
 - **Keep the Receipt**
+  - `ref/fin/file-an-indirect-tax-return`, activity 19 -
+    [File an Indirect Tax Return](../../../../processes/finance/file-an-indirect-tax-return.md)
+  - `ref/fin/file-the-income-tax-return`, activity 16 -
+    [File the Income Tax Return](../../../../processes/finance/file-the-income-tax-return.md)
   - `ref/hr/file-a-required-report`, activity 14 -
     [File a Required Report](../../../../processes/human-resources/file-a-required-report.md)
 

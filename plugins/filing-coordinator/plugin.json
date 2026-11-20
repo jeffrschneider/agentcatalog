@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "filing-coordinator",
   "version": "1.0.0",
-  "description": "The filing-coordinator abstract agent. Keeps the calendar of every filing, return and notice the company owes about its workforce in each location, for the HR operations lead, the payroll manager and each named signer, and signs nothing itself.",
+  "description": "The filing-coordinator abstract agent. Keeps the calendar of every filing, return and notice the company owes about its workforce in each location, and of every tax return and payment it owes in each jurisdiction, for the HR operations lead, the payroll manager, the head of tax and each named signer, and signs nothing itself.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "human-resources",
+    "finance",
     "file-a-required-report",
     "respond-to-an-employment-audit",
-    "close-the-payroll-year",
+    "respond-to-a-tax-audit",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "filing-coordinator",
       "agentVersion": 1,
-      "department": "human-resources",
+      "department": "finance",
       "abstract": true,
       "works": "Holds the run-scoped deadline roll-call of each filing and of the payroll year end, the data set of each filing at its version, and the due-date roll-call and the request log of each audit. Runs collect-and-report to open the year-end close, to gather a filing's data, to log each audit request and to log each finding, and runs assessment on what a filing asks for, each change from the last filing, and the statements against the returns. Convenes the debrief that ends each filing and each audit. Sits beside counsel in the assessment of who is asking for an audit and on what authority, and beside the HR operations lead and counsel on each follow-up. Takes the reconciled figures and the statements from the payroll-administrator agent and the finance controller, the checked data from the data-quality-check agent, the group figures a named analyst worked out on data the privacy lead released for that filing alone, the drafted answers from the questionnaire-responder agent, and the records from the employee-record-keeper agent. Hands each filing, return and response to the named signer, and sends it only once it is signed.",
       "servers": [
@@ -68,6 +68,36 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "A deadline the timetable shows will be missed reaches the payroll manager, the finance controller or the HR operations lead as soon as it shows."
+        },
+        {
+          "name": "the tax calendar",
+          "role": "tax-calendar",
+          "access": "write",
+          "needs": "Every tax return and payment in each jurisdiction, with its entity, its period, its form, its due date, its signer and its lead time, and each refund until it arrives."
+        },
+        {
+          "name": "the tax notice log",
+          "role": "tax-notice-log",
+          "access": "write",
+          "needs": "Each notice from a tax authority with every date, what was sent and the receipt that closed it."
+        },
+        {
+          "name": "the tax audit log",
+          "role": "tax-audit-log",
+          "access": "write",
+          "needs": "Each tax audit, each request with its due date and owner, each response sent and each proposed adjustment."
+        },
+        {
+          "name": "each authority's correspondence route",
+          "role": "each-authoritys-correspondence-route",
+          "access": "write",
+          "needs": "Sends a response to a notice or an audit once a named person has approved it, with no right to approve one."
+        },
+        {
+          "name": "the bank portal",
+          "role": "bank-portal",
+          "access": "read",
+          "needs": "The bank's confirmation of each tax payment, kept with the receipt and the filed copy, with no right to release a payment."
         }
       ],
       "records": [
@@ -85,14 +115,21 @@
         "who is asking for an audit and on what authority - to counsel, and nothing is given until counsel confirms it",
         "an inspector who arrives without notice - to counsel at once, and the HR operations lead stays with the inspector",
         "the company's position on each finding - to the head of HR and counsel",
-        "a statement found wrong after its return was filed - to the filing signer, who signs the corrected return"
+        "a statement found wrong after its return was filed - to the filing signer, who signs the corrected return",
+        "every tax return, and every response to a tax notice or a tax audit - to the named signer or the named approver, because this agent files and sends only what a named person has signed or approved",
+        "a tax due date or a response date the roll-call shows will be missed - to the head of tax at the warning point the company sets, who asks the authority for more time in writing where the rules allow it",
+        "a notice whose sender or payment details do not match what the authority publishes - to the head of tax, and nothing is answered or paid until it is confirmed, while a notice that asks for payment to an account the authority does not publish is reported the same day as an attempt at fraud",
+        "who is asking for a tax audit and on what authority - to the head of tax, and nothing is given until the authority confirms the person and the mandate",
+        "a tax auditor who arrives without notice - to the head of tax and counsel at once, and every record shown and every question asked is logged",
+        "each adjustment a tax auditor proposes - to the head of tax and the chief financial officer, who agree or contest it"
       ],
       "not": [
-        "Does not sign or review a filing, a return or a response, which is the named signer, the HR operations lead and counsel (people).",
+        "Does not sign or review a filing, a return or a response, which is the named signer, the HR operations lead, the head of tax and counsel (people).",
         "Does not total or reconcile the payroll year, or produce and issue the year-end statements, which is the payroll-administrator agent with the finance controller (person).",
+        "Does not work out a tax, prepare a tax payment or draft a response to a tax authority, which is the tax-analyst agent, and does not take a tax position, which is the head of tax (person).",
         "Does not check the data, which is the data-quality-check agent, or work out figures about groups of employees, which is a named analyst on data the privacy lead releases (people).",
-        "Does not draft an auditor's answers, which is the questionnaire-responder agent, pull the records, which is the employee-record-keeper agent, or set or lift a hold, which is counsel (person).",
-        "Does not decide the company's position on a finding or fix it, which is the head of HR with counsel and each finding's owner (people).",
+        "Does not draft an auditor's answers, which is the questionnaire-responder agent, pull the records, which is the employee-record-keeper agent or for a tax audit the tax-analyst agent, or set or lift a hold, which is counsel (person).",
+        "Does not decide the company's position on a finding or fix it, which is the head of HR with counsel and each finding's owner, or for a tax auditor's proposed adjustment the head of tax and the chief financial officer (people).",
         "Does not file the withholding of each pay period, which runs at `ref/hr/run-payroll`."
       ],
       "processes": [
@@ -129,6 +166,46 @@
             "Send the Response and Log It",
             "Answer the Follow-Ups",
             "Log Each Finding",
+            "Close the Audit on the Record"
+          ]
+        },
+        {
+          "process": "ref/fin/file-an-indirect-tax-return",
+          "activities": [
+            "Open the Return From the Calendar",
+            "File by the Deadline",
+            "Keep the Receipt",
+            "Record What the Return Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/file-the-income-tax-return",
+          "activities": [
+            "Open the Return From the Calendar",
+            "File by the Deadline",
+            "Keep the Receipt",
+            "Record What the Return Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/respond-to-a-tax-notice",
+          "activities": [
+            "Log the Notice",
+            "Confirm the Notice Is Genuine",
+            "Find the Return and the Records",
+            "Send the Response and Log It",
+            "Close the Notice With Its Receipt",
+            "Record What the Notice Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/respond-to-a-tax-audit",
+          "activities": [
+            "Log the Audit",
+            "Confirm Who Is Asking and on What Authority",
+            "Log Each Request",
+            "Send the Response and Log It",
+            "Log Each Proposed Adjustment",
             "Close the Audit on the Record"
           ]
         }

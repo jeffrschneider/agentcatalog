@@ -30,11 +30,14 @@ covers:
 ## answer-from-the-library
 
 Matches each question to an answer the library already holds at that
-answer's version, and reads every match back against the control, the
-policy or the report it came from. A match whose source no longer says
-that is flagged rather than sent.
+answer's version, or drafts it from the records behind it, such as a
+reconciliation, a schedule, a signed approval or a workpaper, and reads
+every match back against the control, the policy, the report or the
+record it came from. A match whose source no longer says that is
+flagged rather than sent.
 
 covers:
+- Draft the Answers From the Records
 - Match Against the Library
 - Check the Matches Are Still True
 - Answer the Requirements

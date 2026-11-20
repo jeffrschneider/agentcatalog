@@ -1,6 +1,6 @@
 ---
 name: hold-who-may-get-in
-description: Sets the roles and what each one may do, opens an account against a job and closes it against a leaving record, and reads every account again on its cadence. Use it when running `ref/hr/offboard-a-leaver` and 3 other reference processes.
+description: Sets the roles and what each one may do, opens an account against a job and closes it against a leaving record, and reads every account again on its cadence. Use it when running `ref/fin/review-access-to-finance-systems` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: tool-administrator
@@ -18,7 +18,7 @@ account for both go to the security reviewer.
 
 ## Where it happens
 
-The agent does this in five activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **End Access on the Last Day**
@@ -31,6 +31,8 @@ Each one names the activity as that process words it.
   - `ref/hr/prepare-for-a-new-hire`, activity 10 -
     [Prepare for a New Hire](../../../../processes/human-resources/prepare-for-a-new-hire.md)
 - **Read Every Account Again**
+  - `ref/fin/review-access-to-finance-systems`, activity 13 -
+    [Review Access to Finance Systems](../../../../processes/finance/review-access-to-finance-systems.md)
   - `ref/hr/review-access-to-employee-data`, activity 12 -
     [Review Access to Employee Data](../../../../processes/human-resources/review-access-to-employee-data.md)
   - `ref/rev/administer-a-tool`, activity 12 -

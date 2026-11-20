@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Nine systems, named by role rather than by product. The access level is
+Ten systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -15,6 +15,7 @@ more than the job requires.
 | the screening service | read | Sanctions, money laundering and adverse records for investors and their owners, target companies and their leaders, and the firm's own people and providers. |
 | company registry sources | read | A company's registration, good standing and owners. |
 | court and regulator records | read | Suits, threats, regulator letters and settlements. |
+| the ERP | read | The legal name, registration, address and owners a new supplier gave, which the public record and the sanctions lists are checked against, with no right to change the supplier record. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

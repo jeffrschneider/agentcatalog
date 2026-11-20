@@ -26,6 +26,8 @@ unexplained rather than as fixed.
   Run the Rule Again, Watch That the Fix Held, Tighten the Rule
 - `ref/hr/file-a-required-report` / Check the Data, Trace Each Failure
   to Its Source
+- `ref/fin/file-an-indirect-tax-return` / Check the Data, Trace Each
+  Failure to Its Source
 
 ## Patterns
 
@@ -59,6 +61,12 @@ merge did not carry back to the deduper agent.
   form that wrote each failing value
 - the payroll system (read) - the headcount and the pay totals a
   filing's data is agreed to
+- the general ledger (read) - the sales and purchase lines an indirect
+  tax return is built from, with the tax code and the amount on each
+- the billing system (read) - each customer invoice a sales line is
+  agreed to, with the address and the tax number it carries
+- the ERP (read) - each supplier invoice a purchase line is agreed to,
+  with the address and the tax number it carries
 
 ## Records
 
@@ -93,6 +101,10 @@ with anything that did not reconcile.
   first
 - a failure that comes back twice from the same source, to whoever owns
   that system, as a system problem rather than a data problem
+- a failure in the lines behind an indirect tax return, to the owner of
+  the system that wrote it with the head of tax told, and the return
+  waits until the lines are gathered again and pass, so the return and
+  the invoices agree
 
 ## Not
 

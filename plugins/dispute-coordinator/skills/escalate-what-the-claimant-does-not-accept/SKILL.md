@@ -1,6 +1,6 @@
 ---
 name: escalate-what-the-claimant-does-not-accept
-description: Takes a claimant who does not accept the answer to the people partner, on the route the answer named and inside the window it gave. Use it when running `ref/rev/settle-a-commission-dispute`.
+description: Takes a claimant who does not accept the answer to the people partner, or a customer to the controller, on the route the answer named and inside the window it gave. Use it when running `ref/fin/resolve-a-billing-dispute` and `ref/rev/settle-a-commission-dispute`.
 license: CC-BY-4.0
 metadata:
   agent: dispute-coordinator
@@ -12,16 +12,19 @@ metadata:
 ## What it does
 
 Takes a claimant who does not accept the answer to the people partner,
-on the route the answer named and inside the window it gave. A refused
-claim is kept with its evidence, because the next claim on the same
-sentence is the one that changes the plan.
+or a customer to the controller, on the route the answer named and
+inside the window it gave. A refused claim is kept with its evidence,
+because the next claim on the same sentence is the one that changes the
+plan.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
+The agent does this in one activity across two reference processes. Each
 one names the activity as that process words it.
 
 - **Escalate What Is Not Accepted**
+  - `ref/fin/resolve-a-billing-dispute`, activity 16 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
   - `ref/rev/settle-a-commission-dispute`, activity 14 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
 

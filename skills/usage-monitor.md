@@ -15,12 +15,24 @@ Sets what the customer actually used against the entitlement on the
 agreement, period by period, and reports the gap in both directions:
 the metered thing running past its limit, and the entitlement nobody is
 touching. The same reading answers what a customer says about their own
-use.
+use, and gives each metered item's usage for a billing period to an
+invoice billed on use.
 
 covers:
 - Check What They Say Against Use
 - Measure What Was Used
 - Read the Usage Against the Limit
+- Read the Metered Usage
+
+## check-a-reading-before-it-is-billed
+
+Checks that a reading covers the whole billing period and reconciles
+with the meter and with what was billed before, and holds a reading that
+is missing, broken or for the wrong period with its reason, so no
+invoice goes out on it.
+
+covers:
+- Check the Usage Reading Is Complete
 
 ## say-which-way-each-line-is-moving
 

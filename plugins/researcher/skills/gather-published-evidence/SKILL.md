@@ -1,6 +1,6 @@
 ---
 name: gather-published-evidence
-description: Pulls together what has already been published on a subject and reads the primary source rather than somebody's write-up of it. Use it when running `ref/hr/run-the-pay-review` and 20 other reference processes.
+description: Pulls together what has already been published on a subject and reads the primary source rather than somebody's write-up of it. Use it when running `ref/fin/set-a-customers-credit-limit` and 21 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -14,14 +14,15 @@ metadata:
 Pulls together what has already been published on a subject and reads
 the primary source rather than somebody's write-up of it. It comes back
 with the market picture, the figures and the quotations that answer the
-question, each carrying the source it came from and the date it was
-pulled. It checks first whether the organization's own record already
-answers the question.
+question, or a customer's filed accounts and credit reports, each
+carrying the source it came from and the date it was pulled. It checks
+first whether the organization's own record already answers the
+question.
 
 ## Where it happens
 
-The agent does this in twelve activities across 21 reference processes.
-Each one names the activity as that process words it.
+The agent does this in thirteen activities across 22 reference
+processes. Each one names the activity as that process words it.
 
 - **Check What Is Already Known**
   - `ref/mkt/customer-research`, activity 2 -
@@ -32,6 +33,9 @@ Each one names the activity as that process words it.
 - **Gather What Is Already Known**
   - `ref/mkt/buyer-persona`, activity 3 -
     [Develop Buyer Persona](../../../../processes/marketing/buyer-persona.md)
+- **Gather the Accounts and Credit Reports**
+  - `ref/fin/set-a-customers-credit-limit`, activity 4 -
+    [Set a Customer's Credit Limit](../../../../processes/finance/set-a-customers-credit-limit.md)
 - **Gather the Evidence**
   - `ref/mkt/award-entry`, activity 6 -
     [Submit Award Entry](../../../../processes/marketing/award-entry.md)

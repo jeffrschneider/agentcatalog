@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Six systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Eleven systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -12,6 +12,11 @@ more than the job requires.
 | the system of record | read | The booking, the dates and the credit rule the number rests on. |
 | the dispute register | write | The claim, its class, its promised date, its evidence, its answer and its cause. |
 | the notification channel | write | The acknowledgement, the answer, and any date that moves before it passes. |
+| the billing system | write | The invoice under dispute frozen at its version, with no right to change a line or to issue a credit note. |
+| the order system | read | The booking at the version the invoice was built from. |
+| the usage record | read | The readings with their dates behind a line billed on use. |
+| the contract repository | read | The agreement and the clause that governs the disputed line. |
+| the CRM | read | The account owner and the delivery lead to be heard on what was promised and delivered. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

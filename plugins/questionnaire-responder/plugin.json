@@ -13,7 +13,7 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "sales",
+    "finance",
     "answer-a-security-questionnaire",
     "answer-a-due-diligence-questionnaire",
     "respond-to-an-rfp",
@@ -23,7 +23,7 @@
     "com.agentcatalog.agent": {
       "agent": "questionnaire-responder",
       "agentVersion": 1,
-      "department": "sales",
+      "department": "finance",
       "abstract": true,
       "works": "Runs assessment three times: on the matches, on the completed form before it is sent, and on the whole response against the rules read at the start. Runs build-by-talent so each open question is answered by the owner of the fact rather than by whoever is closest to the requester, and roll-call on the countdown to the deadline. Convenes the debrief that records the outcome. Works with the standards-keeper agent, which owns the library and issues new answers into it. When a response carries a price and a narrative, it takes the price from the quote-builder agent and hands the answered requirements to the proposal-writer agent so the narrative says nothing the answers contradict.",
       "servers": [
@@ -74,6 +74,30 @@
           "role": "audit-records",
           "access": "read",
           "needs": "The HR records an employment audit asks for, only as the employee-record-keeper agent pulled them for each request, from the HR, payroll, timekeeping and benefits systems, with the details of people outside the request's scope removed, and a health, investigation or background check record only where its named holder released it for a request counsel confirmed."
+        },
+        {
+          "name": "the tax workpapers",
+          "role": "tax-workpapers",
+          "access": "read",
+          "needs": "The returns, workpapers and transactions a tax auditor's request covers, only as the tax-analyst agent pulled them, with any protected advice counsel holds back left out."
+        },
+        {
+          "name": "the general ledger",
+          "role": "general-ledger",
+          "access": "read",
+          "needs": "The figures an answer to a tax auditor or the external auditor traces to."
+        },
+        {
+          "name": "the reconciliation tool",
+          "role": "reconciliation-tool",
+          "access": "read",
+          "needs": "The signed reconciliations and schedules an answer to the external auditor is drafted from."
+        },
+        {
+          "name": "the audit portal",
+          "role": "audit-portal",
+          "access": "read",
+          "needs": "The external auditor's requests as the audit-coordinator agent logged them, with no right to send an answer."
         }
       ],
       "records": [
@@ -92,7 +116,9 @@
         "a follow-up answer that contradicts what was already sent, to the owner of the fact, before either version goes to the requester",
         "a performance figure that does not match the frozen track record, or a request to answer one investor with a newer figure from outside it, to the chief compliance officer, because every investor must see the same numbers and choosing which figure stands is never this agent's call",
         "a request in an employment audit that reaches beyond the scope counsel confirmed, or that asks for a health, investigation or background check record, to counsel before any answer to it is drafted",
-        "a record found to be wrong while an audit's hold keeps it, to counsel, who decides how the auditor is told, and the record stays as it was under the hold"
+        "a record found to be wrong while an audit's hold keeps it, to counsel, who decides how the auditor is told, and the record stays as it was under the hold",
+        "a request in a tax audit or the external audit that reaches beyond the agreed scope, or a record behind an answer that holds protected advice, to the head of tax for a tax audit or the controller for the external audit before any answer to it is drafted, and counsel decides whether protected advice is released",
+        "a figure in a draft answer to an auditor that does not trace to the ledger, a return or a workpaper, to the controller or the head of tax, and the answer is held until it does"
       ],
       "not": [
         "Does not approve an answer.",
@@ -157,6 +183,21 @@
             "Read What Each Request Asks For",
             "Route What the Records Cannot Answer",
             "Draft the Answers"
+          ]
+        },
+        {
+          "process": "ref/fin/respond-to-a-tax-audit",
+          "activities": [
+            "Read What Each Request Asks For",
+            "Route What the Records Cannot Answer",
+            "Draft the Answers"
+          ]
+        },
+        {
+          "process": "ref/fin/run-the-external-audit",
+          "activities": [
+            "Route What the Records Cannot Answer",
+            "Draft the Answers From the Records"
           ]
         }
       ]

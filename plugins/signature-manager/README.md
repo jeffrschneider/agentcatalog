@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/sls/book-the-order`, `ref/sls/hand-over-to-delivery`,
 `ref/sls/record-a-lost-deal`, `ref/sls/review-the-redlines`,
-`ref/sls/run-the-close-plan`, `ref/pc/form-the-fund`, and 6 more. The
+`ref/sls/run-the-close-plan`, `ref/pc/form-the-fund`, and 8 more. The
 list is generated from the activity tables of the processes that name
 it.
 

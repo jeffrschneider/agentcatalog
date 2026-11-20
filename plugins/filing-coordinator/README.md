@@ -36,7 +36,10 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/hr/close-the-payroll-year`, `ref/hr/file-a-required-report`,
-`ref/hr/respond-to-an-employment-audit`. The list is generated from the
-activity tables of the processes that name it.
+`ref/hr/respond-to-an-employment-audit`,
+`ref/fin/file-an-indirect-tax-return`,
+`ref/fin/file-the-income-tax-return`, `ref/fin/respond-to-a-tax-notice`,
+and 1 more. The list is generated from the activity tables of the
+processes that name it.
 
 https://agentcatalog.com/abstract-agents/filing-coordinator

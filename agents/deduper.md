@@ -22,6 +22,7 @@ merge can be reversed at all.
   Records, Report What the Merge Changed, Undo the Merge, Record What Was
   Learned
 - `ref/rev/define-a-record` / Set the Uniqueness Key
+- `ref/fin/set-up-a-supplier` / Look for the Supplier on File
 
 ## Patterns
 
@@ -52,6 +53,9 @@ definition the data-steward agent publishes.
 - the review queue (write) - anything under the bar waits there for a
   person
 - the data warehouse (read) - the counts read before and after
+- the ERP (read) - every supplier record's legal name, trading name, tax
+  number, address and bank account, searched before a second record is
+  made, with no right to change or merge a supplier record
 
 ## Records
 
@@ -81,6 +85,10 @@ stops proposing them.
   before anything of that shape merges again
 - two consent records that disagree, because the stricter position wins
   and the survivor can lose a channel it used to have
+- a new supplier that may already be on file under another name, tax
+  number, address or bank account, with a score under the bar - to a
+  person, who says whether it is the same supplier before the setup goes
+  on, and the requester is then told which record to use
 
 ## Not
 

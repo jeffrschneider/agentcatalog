@@ -38,7 +38,7 @@ manifest and in the directory of the same name.
 `ref/mkt/brand-health`, `ref/mkt/brand-refresh`,
 `ref/mkt/brief-executive-leadership`, `ref/mkt/customer-research`,
 `ref/mkt/develop-marketing-strategy`, `ref/mkt/engage-marketing-agency`,
-and 7 more. The list is generated from the activity tables of the
+and 11 more. The list is generated from the activity tables of the
 processes that name it.
 
 https://agentcatalog.com/abstract-agents/budget-keeper

@@ -35,3 +35,11 @@ write the proposal narrative.
 - a record found to be wrong while an audit's hold keeps it, to counsel,
   who decides how the auditor is told, and the record stays as it was
   under the hold
+- a request in a tax audit or the external audit that reaches beyond the
+  agreed scope, or a record behind an answer that holds protected
+  advice, to the head of tax for a tax audit or the controller for the
+  external audit before any answer to it is drafted, and counsel decides
+  whether protected advice is released
+- a figure in a draft answer to an auditor that does not trace to the
+  ledger, a return or a workpaper, to the controller or the head of tax,
+  and the answer is held until it does

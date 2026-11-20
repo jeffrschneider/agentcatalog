@@ -30,3 +30,9 @@ evidence.
 - a payroll file payroll cannot use - to payroll operations, and the run
   stays open until receipt is confirmed in a form payroll can process,
   with everybody affected told before the payment date passes
+- a period not fully computed by the close cutoff - to the accrual
+  reviewer, with the figures computed so far marked as incomplete, and
+  the difference is set right in the next period once the run is done
+- a request from finance to change a commission figure for the accrual -
+  back to the run's named signers, because the accrual carries only the
+  figures the run computed and finance changes none of them

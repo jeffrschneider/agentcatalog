@@ -1,6 +1,6 @@
 ---
 name: close-the-plan-out
-description: Checks every condition owed before signature as done with the evidence behind it, and closes the plan on the record with what slipped, why, and what to plan differently next time. Use it when running `ref/pc/form-the-fund`, `ref/pc/run-the-closing` and `ref/sls/run-the-close-plan`.
+description: Checks every condition owed before signature as done with the evidence behind it, and closes the plan on the record with what slipped, why, and what to plan differently next time. Use it when running `ref/fin/close-the-month` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: close-plan-keeper
@@ -17,7 +17,7 @@ what to plan differently next time.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Close the Formation Checklist**
@@ -34,6 +34,9 @@ Each one names the activity as that process words it.
 - **Confirm the Close Conditions**
   - `ref/sls/run-the-close-plan`, activity 14 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)
+- **Record What the Close Taught**
+  - `ref/fin/close-the-month`, activity 15 -
+    [Close the Month](../../../../processes/finance/close-the-month.md)
 
 ## What to record
 

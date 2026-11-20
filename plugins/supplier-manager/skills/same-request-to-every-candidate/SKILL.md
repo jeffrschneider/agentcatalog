@@ -1,6 +1,6 @@
 ---
 name: same-request-to-every-candidate
-description: Puts one request in front of everyone at the same time, with the same scope and the same questions, so that what comes back can be compared line for line. Use it when running `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
+description: Puts one request in front of everyone at the same time, with the same scope and the same questions, and shares the answer to any candidate's question with every candidate at once, so that what comes back can be compared line for line. Use it when running `ref/fin/choose-a-supplier`, `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
 license: CC-BY-4.0
 metadata:
   agent: supplier-manager
@@ -12,18 +12,24 @@ metadata:
 ## What it does
 
 Puts one request in front of everyone at the same time, with the same
-scope and the same questions, so that what comes back can be compared
-line for line.
+scope and the same questions, and shares the answer to any candidate's
+question with every candidate at once, so that what comes back can be
+compared line for line.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
+- **Answer the Candidates' Questions**
+  - `ref/fin/choose-a-supplier`, activity 8 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 - **Brief the Selection**
   - `ref/mkt/select-marketing-technology`, activity 5 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
 - **Issue the Request**
+  - `ref/fin/choose-a-supplier`, activity 7 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
   - `ref/mkt/engage-marketing-agency`, activity 8 -
     [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
 

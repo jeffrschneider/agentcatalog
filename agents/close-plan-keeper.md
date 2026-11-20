@@ -2,16 +2,17 @@
 
 `close-plan-keeper v1`
 
-**purpose:** Holds the close plan, or the checklist for forming a
-fund. Starting from the agreed position and the date the work is aiming
+**purpose:** Holds the close plan, the checklist for forming a fund, or
+the calendar for closing the books each period. Starting from the agreed
+position or the period being closed, and the date the work is aiming
 at, it lists every step still owed as one set rather than two, puts one
 named owner and one date on each, and counts the dates back from that
 date. When there is a buyer, its own approval path is inside the plan,
 committee by committee, not a mystery outside it. A step past its date
-is chased with its owner and either re-dated with the other side or
-escalated, and when a date moves
-every step behind it moves too. The plan closes on the record with what
-slipped and why.
+is chased with its owner and either re-dated with the other side, or
+with the controller when the books are closing, or escalated, and when
+a date moves every step behind it moves too. The plan closes on the
+record with what slipped and why.
 
 ## Processes
 
@@ -32,6 +33,9 @@ slipped and why.
   and a Date on Each, Request the Capital Call, Work the Closing
   Conditions, Build the Funds Flow, Confirm Every Condition Is Met,
   Track the Post-Closing Items, Close the Plan on the Record
+- `ref/fin/close-the-month` / Open the Close Calendar, Announce the
+  Cutoffs, Close the Sub-Ledgers, Chase the Late Tasks, Record What the
+  Close Taught
 
 ## Patterns
 
@@ -66,6 +70,13 @@ takes the close conditions with the redline-reviewer agent.
   closing, which the funds flow is built against
 - the document store (read) - the formation drafts and filings at the
   versions counsel released, as the evidence a step is done
+- the close calendar (write) - every task of a month-end close with its
+  owner, its day, its state and every day that moved, at its version
+- the general ledger (read) - whether each sub-ledger has closed to the
+  ledger for the period, as the evidence a close task is done, with no
+  right to post an entry or close a period
+- the notification channel (write) - every task owner told their
+  cutoff and their day, and a task still late reaches the controller
 
 ## Records
 
@@ -103,6 +114,12 @@ plan with what slipped, why, and what to plan differently.
   capital call or the credit line will not land in time, to the chief
   financial officer and the deal lead partner, who decide with the
   other side whether the date moves
+- a close task that cannot be done by its day once it has been chased -
+  to the controller, who re-dates it with the reason, and every task
+  behind it moves too, so the calendar never shows a day it cannot meet
+- a sub-ledger that does not agree to the general ledger at its cutoff -
+  to its owner, with the controller told, and the accruals and journals
+  that depend on it wait on the calendar
 
 ## Not
 

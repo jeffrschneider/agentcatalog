@@ -37,7 +37,8 @@ manifest and in the directory of the same name.
 
 `ref/rev/dedupe-and-merge`, `ref/rev/define-a-record`,
 `ref/rev/enrich-a-record`, `ref/rev/fix-a-data-quality-failure`,
-`ref/hr/file-a-required-report`. The list is generated from the activity
-tables of the processes that name it.
+`ref/hr/file-a-required-report`, `ref/fin/file-an-indirect-tax-return`.
+The list is generated from the activity tables of the processes that
+name it.
 
 https://agentcatalog.com/abstract-agents/data-quality-check

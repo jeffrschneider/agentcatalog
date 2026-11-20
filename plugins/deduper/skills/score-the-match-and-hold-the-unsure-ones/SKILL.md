@@ -1,6 +1,6 @@
 ---
 name: score-the-match-and-hold-the-unsure-ones
-description: Scores how sure the match is, keeping the model version and the inputs beside the score, and sends anything under the bar to a person rather than merging it. Use it when running `ref/rev/dedupe-and-merge`.
+description: Scores how sure the match is, keeping the model version and the inputs beside the score, and sends anything under the bar to a person rather than merging it. Use it when running `ref/fin/set-up-a-supplier` and `ref/rev/dedupe-and-merge`.
 license: CC-BY-4.0
 metadata:
   agent: deduper
@@ -13,14 +13,19 @@ metadata:
 
 Scores how sure the match is, keeping the model version and the inputs
 beside the score, and sends anything under the bar to a person rather
-than merging it. Deciding that two records are one thing is never this
-agent's call.
+than merging it. It searches the records already on file the same way
+before a new one is made, such as a new supplier, and names each
+possible match with the fields it matched on. Deciding that two records
+are one thing is never this agent's call.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Look for the Supplier on File**
+  - `ref/fin/set-up-a-supplier`, activity 2 -
+    [Set Up a Supplier](../../../../processes/finance/set-up-a-supplier.md)
 - **Route the Unsure Ones to a Person**
   - `ref/rev/dedupe-and-merge`, activity 5 -
     [Dedupe and Merge](../../../../processes/revenue-operations/dedupe-and-merge.md)

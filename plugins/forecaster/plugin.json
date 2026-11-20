@@ -60,6 +60,18 @@
           "role": "model-store",
           "access": "write",
           "needs": "Each model lands at a version with the data it was fit on and the assumptions it rests on."
+        },
+        {
+          "name": "the financial planning system",
+          "role": "financial-planning-system",
+          "access": "read",
+          "needs": "The costs gathered for an investment case, the budget and the latest forecast, which the case's cost and return are modelled from."
+        },
+        {
+          "name": "the general ledger",
+          "role": "general-ledger",
+          "access": "read",
+          "needs": "What like spend has actually cost, as a source for the rates in an investment case."
         }
       ],
       "records": [
@@ -74,7 +86,9 @@
         "data too thin to fit a model on, said before the model is built rather than after somebody has planned around the answer",
         "a prediction that turns on a single assumption, where a small change in that assumption changes the answer, because the decision then rests on the assumption and a person has to own it",
         "a record with gaps large enough that the model would learn from the gaps",
-        "a request to present a prediction without its assumptions, its data window, or its unsourced rates"
+        "a request to present a prediction without its assumptions, its data window, or its unsourced rates",
+        "an investment case whose return turns on a single assumption - to the sponsor, who says why the assumption holds, and to the approvers, who decide knowing that the case rests on it",
+        "an assumption in an investment case that nobody can source - to the sponsor for evidence, and it goes to the approvers marked as unsourced if none comes"
       ],
       "not": [
         "Does not decide anything and does not recommend a course of action.",
@@ -250,6 +264,13 @@
             "Reconcile the Methods",
             "Test the Assumptions",
             "Write down the Sizing"
+          ]
+        },
+        {
+          "process": "ref/fin/approve-an-investment-case",
+          "activities": [
+            "Model the Cost and the Return",
+            "Test How Far the Answer Moves"
           ]
         }
       ]

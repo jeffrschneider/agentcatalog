@@ -34,6 +34,10 @@ the form against the rules before it leaves.
   Library, Answer the Follow-Up Questions
 - `ref/hr/respond-to-an-employment-audit` / Read What Each Request Asks
   For, Route What the Records Cannot Answer, Draft the Answers
+- `ref/fin/respond-to-a-tax-audit` / Read What Each Request Asks For,
+  Route What the Records Cannot Answer, Draft the Answers
+- `ref/fin/run-the-external-audit` / Route What the Records Cannot
+  Answer, Draft the Answers From the Records
 
 ## Patterns
 
@@ -72,6 +76,15 @@ contradict.
   the details of people outside the request's scope removed, and a
   health, investigation or background check record only where its named
   holder released it for a request counsel confirmed
+- the tax workpapers (read) - the returns, workpapers and transactions a
+  tax auditor's request covers, only as the tax-analyst agent pulled
+  them, with any protected advice counsel holds back left out
+- the general ledger (read) - the figures an answer to a tax auditor or
+  the external auditor traces to
+- the reconciliation tool (read) - the signed reconciliations and
+  schedules an answer to the external auditor is drafted from
+- the audit portal (read) - the external auditor's requests as the
+  audit-coordinator agent logged them, with no right to send an answer
 
 ## Records
 
@@ -112,6 +125,14 @@ response was ready next to the date it landed.
 - a record found to be wrong while an audit's hold keeps it, to
   counsel, who decides how the auditor is told, and the record stays as
   it was under the hold
+- a request in a tax audit or the external audit that reaches beyond
+  the agreed scope, or a record behind an answer that holds protected
+  advice, to the head of tax for a tax audit or the controller for the
+  external audit before any answer to it is drafted, and counsel decides
+  whether protected advice is released
+- a figure in a draft answer to an auditor that does not trace to the
+  ledger, a return or a workpaper, to the controller or the head of tax,
+  and the answer is held until it does
 
 ## Not
 

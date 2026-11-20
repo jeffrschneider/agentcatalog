@@ -1,6 +1,6 @@
 ---
 name: check-the-data-before-it-is-used
-description: "Runs the rules over the data a filing or a report is built from before anyone signs it: every record complete, consistent with the others, and agreeing with the system that keeps its own count, such as the headcount and pay totals in the payroll system. Use it when running `ref/hr/file-a-required-report`."
+description: "Runs the rules over the data a filing, a tax return or a report is built from before anyone signs it: every record complete, consistent with the others, and agreeing with the system that keeps its own count, such as the headcount and pay totals in the payroll system, or the tax code, address and amount of each invoice behind a tax return. Use it when running `ref/fin/file-an-indirect-tax-return` and `ref/hr/file-a-required-report`."
 license: CC-BY-4.0
 metadata:
   agent: data-quality-check
@@ -11,18 +11,21 @@ metadata:
 
 ## What it does
 
-Runs the rules over the data a filing or a report is built from before
-anyone signs it: every record complete, consistent with the others, and
-agreeing with the system that keeps its own count, such as the headcount
-and pay totals in the payroll system. Each failure is listed with the
-records it failed on.
+Runs the rules over the data a filing, a tax return or a report is built
+from before anyone signs it: every record complete, consistent with the
+others, and agreeing with the system that keeps its own count, such as
+the headcount and pay totals in the payroll system, or the tax code,
+address and amount of each invoice behind a tax return. Each failure is
+listed with the records it failed on.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
+The agent does this in one activity across two reference processes. Each
 one names the activity as that process words it.
 
 - **Check the Data**
+  - `ref/fin/file-an-indirect-tax-return`, activity 4 -
+    [File an Indirect Tax Return](../../../../processes/finance/file-an-indirect-tax-return.md)
   - `ref/hr/file-a-required-report`, activity 6 -
     [File a Required Report](../../../../processes/human-resources/file-a-required-report.md)
 

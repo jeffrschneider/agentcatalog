@@ -38,3 +38,11 @@ an agreement would make the record it keeps worthless.
   with the reasons passed to the negotiation-coordinator agent to log as
   asks, and the departure goes on with everything the leaver is owed
   anyway
+- a bank's account or signer form whose text differs from the approval
+  behind it, or a form the bank rejects - to the treasurer, and the form
+  is filled in and signed again, because nobody signs a blank form or
+  one that differs from what was approved
+- a supplier agreement whose text differs from the agreed version, or a
+  signer the delegation of authority does not name for its amount - to
+  the purchasing lead, and nothing goes out to sign until the text and
+  the signers match

@@ -15,8 +15,8 @@
     "reference",
     "marketing",
     "issue-the-quarterly-report-and-statements",
+    "report-the-monthly-results",
     "report-on-the-workforce",
-    "marketing-performance-report",
     "abstract"
   ],
   "extensions": {
@@ -71,6 +71,30 @@
           "role": "report-store",
           "access": "write",
           "needs": "Each period's report lands at a version."
+        },
+        {
+          "name": "the general ledger",
+          "role": "general-ledger",
+          "access": "read",
+          "needs": "The month's results as the close signed them off, which every figure in the monthly results report ties to."
+        },
+        {
+          "name": "the budget record",
+          "role": "budget-record",
+          "access": "read",
+          "needs": "The budget and the latest approved forecast at their versions, and what each budget owner has committed, spent and has left."
+        },
+        {
+          "name": "the financial planning system",
+          "role": "financial-planning-system",
+          "access": "read",
+          "needs": "Each line compared with the plan and each difference above the threshold, as the planning-analyst agent marked it."
+        },
+        {
+          "name": "the reporting tool",
+          "role": "reporting-tool",
+          "access": "write",
+          "needs": "The monthly results report at a version, delivered to each leader on its date."
         }
       ],
       "records": [
@@ -84,7 +108,9 @@
         "a request to leave a result out of the report or to restate it. This agent never removes a number because somebody asked. A person decides, and the decision is recorded with the report.",
         "a mark that is not approved by the time the report needs it, or one that looks wrong beside the company's quarter - to the valuation committee through the chief financial officer (CFO). The report uses the marks as that committee approved them, and this agent never reports a mark the committee has not approved or changes one itself.",
         "clearing and signing a fund's quarterly report - to the chief compliance officer, then to the CFO and a partner as named signers, always. Nothing goes out unsigned, a change to any figure after signing goes back to them, and this agent never signs its own report.",
-        "a leader's question about one person or about a group below the minimum size - the workforce report does not answer it. A question about one person goes to that person's HR business partner, and a group below the minimum size is never shown, whoever asks."
+        "a leader's question about one person or about a group below the minimum size - the workforce report does not answer it. A question about one person goes to that person's HR business partner, and a group below the minimum size is never shown, whoever asks.",
+        "releasing the monthly results report - to the chief financial officer (CFO), always, and no leader receives it before the CFO has read and released it. A figure the CFO would rather not show stays in the report, and a figure changes only when its source does.",
+        "a figure in the monthly results that does not tie to the ledger as the close signed it off - to the controller, who decides whether the close reopens, and the report never carries a figure that does not tie"
       ],
       "not": [
         "Does not replace the analytics agent.",
@@ -216,6 +242,17 @@
             "Deliver the Report",
             "Answer the Leaders' Questions",
             "Record What the Period Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/report-the-monthly-results",
+          "activities": [
+            "Open the Month's Report",
+            "Ask Each Budget Owner the Same Questions",
+            "Write the Account of the Month",
+            "Deliver the Report",
+            "Answer the Leaders' Questions",
+            "Record What the Month Taught"
           ]
         }
       ]

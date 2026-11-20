@@ -6,7 +6,7 @@ the work is, which systems it needs and at what access, what it must
 leave behind, and where it stops. Any agent that leaves the records can
 implement it.
 
-The plugin carries four skills, no `mcp.json`, and everything the
+The plugin carries five skills, no `mcp.json`, and everything the
 abstract agent owes under `com.agentcatalog.agent/`.
 
 ## Why there is no mcp.json
@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/pc/run-the-closing`, `ref/pc/run-a-sale-process`,
 `ref/pc/allocate-fees-and-expenses`, `ref/pc/issue-a-capital-call`,
-`ref/pc/make-a-distribution`, `ref/hr/run-payroll`, and 1 more. The list
+`ref/pc/make-a-distribution`, `ref/hr/run-payroll`, and 6 more. The list
 is generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/wire-check

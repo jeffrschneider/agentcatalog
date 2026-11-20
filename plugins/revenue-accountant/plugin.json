@@ -1,0 +1,110 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "revenue-accountant",
+  "version": "1.0.0",
+  "description": "The revenue-accountant abstract agent. Works out the revenue each period earns from each customer agreement under `<your accounting framework>`, for the revenue accounting lead and the controller, and decides no judgment itself.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/revenue-accountant",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "finance",
+    "recognize-revenue",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "revenue-accountant",
+      "agentVersion": 1,
+      "department": "finance",
+      "abstract": true,
+      "works": "Runs assessment on each new or changed agreement for what it promised, on each judgment it raises, and on each agreement's revenue for the period. Runs allocate-and-reconcile on the deferred and the unbilled revenue in the ledger against the schedule and the billing. Holds the run-scoped status roll-call of each period from its opening to the revenue accounting lead's review. Convenes the debrief that closes each period. Sits in the decide-and-announce where the revenue accounting lead (person) decides each judgment in writing and the controller (person) decides those above `<your threshold>`, and in the approval where the revenue accounting lead reviews the schedule, the decided judgments and the reconciliation before the close. Works beside each delivery owner (person), who confirms the services, the usage and the milestones delivered in the period with the record that shows each. Takes each booking made or changed in the period, with each field naming the clause it came from, from the order-check agent, and what was billed from the billing-administrator agent. Hands the period's entries to the ledger-accountant agent, which posts them at `ref/fin/post-a-manual-journal-entry` once a named approver who prepared none of them has approved them, and hands the decided judgments to the reporting-accountant agent for the revenue note.",
+      "servers": [
+        {
+          "name": "the revenue schedule",
+          "role": "revenue-schedule",
+          "access": "write",
+          "needs": "Each agreement's schedule at a version that names the decision behind each line, and each period's revenue, deferred and unbilled amounts."
+        },
+        {
+          "name": "the contract repository",
+          "role": "contract-repository",
+          "access": "read",
+          "needs": "Each signed agreement and every amendment behind a booking."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "Each booking made or changed in the period, with each field naming its clause."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "read",
+          "needs": "The invoices and credit notes issued in the period for each agreement."
+        },
+        {
+          "name": "the delivery and usage records",
+          "role": "delivery-and-usage-records",
+          "access": "read",
+          "needs": "The services, the usage and the milestones delivered in the period."
+        },
+        {
+          "name": "the general ledger",
+          "role": "general-ledger",
+          "access": "read",
+          "needs": "The deferred and unbilled revenue balances the reconciliation reads."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Each judgment reaches the revenue accounting lead, each delivery owner is asked to confirm, and a delivery still unconfirmed reaches the lead."
+        }
+      ],
+      "records": [
+        "Each period leaves its dates, its entity and the schedule as it stood at the last close, each new or changed agreement read for each thing promised, its price, its variable parts and when each is delivered, each judgment set out with its options and their effect beside the decision in writing with the reason and the person who made it, and each agreement's schedule at a version naming the decision behind each line.",
+        "Beside the schedule sit what each delivery owner confirmed with the record that shows it, what was billed, each agreement's revenue for the period with the deferred and unbilled amounts that follow, the entries sent for posting with the approval and the posting behind them, and the reconciliation of the deferred and the unbilled revenue with every difference explained.",
+        "The run closes with the revenue accounting lead's review and the handover to the close.",
+        "Nothing in the record shows this agent deciding a judgment, posting an entry, or working out revenue from a term nobody booked."
+      ],
+      "escalates": [
+        "every judgment an agreement raises - to the revenue accounting lead, who decides it in writing with the reason, and to the controller above `<your threshold>`, and revenue for that agreement waits for the decision before it posts",
+        "a promise, a price or a date in the agreement that the booking does not carry - back to `ref/sls/book-the-order` to be booked or corrected, and a promise made outside the signed agreement goes to the controller and the deal desk",
+        "a delivery its owner does not confirm - revenue worked out only for what the records show was delivered, the rest marked as waiting, and the revenue accounting lead told",
+        "a deferred or unbilled balance that does not reconcile - worked out again once the cause is found, and a balance is never forced to agree with an entry that has no cause behind it",
+        "a disputed invoice - a judgment for the revenue accounting lead, with the dispute's record from `ref/fin/resolve-a-billing-dispute`",
+        "a closed period that proves to be wrong - to the controller, who decides whether it is corrected in the current period or the closed period is restated under `<your accounting framework>`"
+      ],
+      "not": [
+        "Does not decide a judgment or review the period's revenue, which are the revenue accounting lead and the controller (people).",
+        "Does not make or change a booking, which is the order-check agent at `ref/sls/book-the-order`, and does not set a price, a discount or a term, which are settled in Sales and at `vs/rev/deal-to-approval`.",
+        "Does not issue an invoice or a credit note, which is the billing-administrator agent, or confirm what was delivered, which is the delivery owner (person).",
+        "Does not approve or post an entry, which are the journal approver (person) and the ledger-accountant agent, and does not draft the revenue note, which is the reporting-accountant agent."
+      ],
+      "processes": [
+        {
+          "process": "ref/fin/recognize-revenue",
+          "activities": [
+            "Open the Period",
+            "Read What Was Promised",
+            "Set Out the Judgments",
+            "Update the Revenue Schedule",
+            "Confirm What Was Delivered",
+            "Work Out the Period's Revenue",
+            "Send the Entries for Posting",
+            "Reconcile the Deferred and Unbilled Revenue",
+            "Hand the Revenue to the Close",
+            "Record What the Period Taught"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 ---
 name: control-what-is-out-to-sign
-description: Sends the right version to the named signers in the agreed order, and takes a document back out of signature when it should no longer be out there, such as when the deal is lost. Use it when running `ref/hr/make-an-offer` and 8 other reference processes.
+description: Sends the right version to the named signers in the agreed order, such as a supplier agreement or a bank's account and signer forms, files the executed copy with what it rests on, and takes a document back out of signature when it should no longer be out there, such as when the deal is lost. Use it when running `ref/fin/change-a-bank-account-or-signer` and 10 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: signature-manager
@@ -11,14 +11,15 @@ metadata:
 
 ## What it does
 
-Sends the right version to the named signers in the agreed order, and
-takes a document back out of signature when it should no longer be out
-there, such as when the deal is lost. The signing itself stays a human
-step.
+Sends the right version to the named signers in the agreed order, such
+as a supplier agreement or a bank's account and signer forms, files the
+executed copy with what it rests on, and takes a document back out of
+signature when it should no longer be out there, such as when the deal
+is lost. The signing itself stays a human step.
 
 ## Where it happens
 
-The agent does this in thirteen activities across nine reference
+The agent does this in fifteen activities across eleven reference
 processes. Each one names the activity as that process words it.
 
 - **Choose and Engage the Providers**
@@ -27,6 +28,12 @@ processes. Each one names the activity as that process words it.
 - **Execute the Signature**
   - `ref/sls/run-the-close-plan`, activity 15 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)
+- **Get the Agreement Signed**
+  - `ref/fin/choose-a-supplier`, activity 14 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
+- **Get the Forms Signed**
+  - `ref/fin/change-a-bank-account-or-signer`, activity 10 -
+    [Change a Bank Account or Signer](../../../../processes/finance/change-a-bank-account-or-signer.md)
 - **Get the Offer Signed**
   - `ref/hr/make-an-offer`, activity 14 -
     [Make an Offer](../../../../processes/human-resources/make-an-offer.md)

@@ -54,6 +54,8 @@ else can work it out again and see whether the answer still holds.
   Groups to Report, Watch the Response Rate, Work Out the Figures,
   Compare with the Last Survey
 - `ref/hr/run-a-layoff` / Check the Selection Across Groups
+- `ref/fin/test-a-financial-control` / Set the Sample Size, Say What the
+  Results Support, Test the Fix Again
 
 ## Patterns
 
@@ -93,6 +95,11 @@ filled.
   person has released for one group fairness check, such as the
   protected characteristics employees chose to record, read for that
   check alone and closed to this agent when the check ends
+- the control list (read) - how often each control runs, how many times
+  it ran in the period and what rests on it, which a control test's
+  sample size is set from
+- the test record (write) - each sample size with the method behind it,
+  set before any item is drawn, and what the results of the test support
 
 There is deliberately no write into the response record. This agent says
 which responses it left out and under which rule, and the study-manager
@@ -144,15 +151,20 @@ such and carried into the report.
   lower the minimum once it is set, or to report a result about one
   person, refused and taken to the head of HR with the name of whoever
   asked
+- a control test whose results do not support a conclusion about the
+  whole period - to the controller, with a larger sample set before any
+  new item is drawn, and the first sample stays in the record
 
 ## Not
 
 Does not decide what the study asks, who is sampled, what people are
-shown, or when the study closes, which is the study-manager agent; this
-agent says what the design has to be able to support and the
-study-manager settles the design. Does not decide what anybody does
-about the number, which is the decision-coordinator agent running the
-decision and named people making it. Does not fit a model or say what a
+shown, or when the study closes, which is the study-manager agent, and
+does not draw the sample for a control test or test its items, which is
+the controls-tester agent; this agent says what the design has to be
+able to support and the study-manager settles the design. Does not
+decide what anybody does about the number, which is the
+decision-coordinator agent running the decision and named people making
+it. Does not fit a model or say what a
 model predicts, which is the forecaster agent; this agent says what the
 data already gathered supports. Does not gather data. The study-manager
 agent fields the study, the researcher agent finds evidence in published

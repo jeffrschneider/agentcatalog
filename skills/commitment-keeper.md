@@ -2,15 +2,17 @@
 
 ## turn-a-signed-plan-into-tracked-items
 
-Takes the milestones a signed plan carries and makes each one an item
-with one owner, one date and a state, traceable to the line of the plan
-it came from.
+Takes the milestones a signed plan carries, or the fixes a failed
+control or an auditor's letter needs, and makes each one an item with
+one owner, one date and a state, traceable to the line of the plan or
+the finding it came from.
 
 covers:
 - Set the Milestones and the Dates
 - Record the Commitments
 - Load the Plan into the Tracker
 - Load the Actions into the Tracker
+- Load Each Fix Into the Tracker
 
 ## put-the-reviews-on-the-calendar
 
@@ -39,6 +41,7 @@ covers:
 - Record the Check-In
 - Hold Each Check-In
 - Review the Actions
+- Chase Each Fix to Its Date
 
 ## close-what-nobody-is-going-to-do
 

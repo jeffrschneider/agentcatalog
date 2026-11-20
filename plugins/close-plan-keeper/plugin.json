@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "close-plan-keeper",
   "version": "1.0.0",
-  "description": "The close-plan-keeper abstract agent. Holds the close plan, or the checklist for forming a fund. Starting from the agreed position and the date the work is aiming at, it lists every step still owed as one set rather than two, puts one named owner and one date on each, and counts the dates back from that date.",
+  "description": "The close-plan-keeper abstract agent. Holds the close plan, the checklist for forming a fund, or the calendar for closing the books each period.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -80,6 +80,24 @@
           "role": "document-store",
           "access": "read",
           "needs": "The formation drafts and filings at the versions counsel released, as the evidence a step is done."
+        },
+        {
+          "name": "the close calendar",
+          "role": "close-calendar",
+          "access": "write",
+          "needs": "Every task of a month-end close with its owner, its day, its state and every day that moved, at its version."
+        },
+        {
+          "name": "the general ledger",
+          "role": "general-ledger",
+          "access": "read",
+          "needs": "Whether each sub-ledger has closed to the ledger for the period, as the evidence a close task is done, with no right to post an entry or close a period."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Every task owner told their cutoff and their day, and a task still late reaches the controller."
         }
       ],
       "records": [
@@ -99,7 +117,9 @@
         "a security question the library cannot answer, to a named person, and if the honest answer is no, the term it affects goes back to the negotiation",
         "a deal quiet past the limit the plan sets, to whoever decides whether it is still live",
         "a payment somebody wants made that the funds flow does not carry, or a payee's account changed close to the closing date, to the chief financial officer and the wire-check agent, and that line waits until the instruction is verified again, because this agent releases no money",
-        "the fund's cash not in place for the closing date, because the capital call or the credit line will not land in time, to the chief financial officer and the deal lead partner, who decide with the other side whether the date moves"
+        "the fund's cash not in place for the closing date, because the capital call or the credit line will not land in time, to the chief financial officer and the deal lead partner, who decide with the other side whether the date moves",
+        "a close task that cannot be done by its day once it has been chased - to the controller, who re-dates it with the reason, and every task behind it moves too, so the calendar never shows a day it cannot meet",
+        "a sub-ledger that does not agree to the general ledger at its cutoff - to its owner, with the controller told, and the accruals and journals that depend on it wait on the calendar"
       ],
       "not": [
         "Does not execute the signature or confirm who signs, which is the signature-manager agent.",
@@ -162,6 +182,16 @@
             "Confirm Every Condition Is Met",
             "Track the Post-Closing Items",
             "Close the Plan on the Record"
+          ]
+        },
+        {
+          "process": "ref/fin/close-the-month",
+          "activities": [
+            "Open the Close Calendar",
+            "Announce the Cutoffs",
+            "Close the Sub-Ledgers",
+            "Chase the Late Tasks",
+            "Record What the Close Taught"
           ]
         }
       ]

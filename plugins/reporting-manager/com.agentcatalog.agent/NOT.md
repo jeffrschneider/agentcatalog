@@ -31,3 +31,10 @@ and this agent reports what they did.
   minimum size - the workforce report does not answer it. A question
   about one person goes to that person's HR business partner, and a
   group below the minimum size is never shown, whoever asks.
+- releasing the monthly results report - to the chief financial officer
+  (CFO), always, and no leader receives it before the CFO has read and
+  released it. A figure the CFO would rather not show stays in the
+  report, and a figure changes only when its source does.
+- a figure in the monthly results that does not tie to the ledger as the
+  close signed it off - to the controller, who decides whether the close
+  reopens, and the report never carries a figure that does not tie

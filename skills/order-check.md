@@ -38,9 +38,13 @@ covers:
 Writes the approved booking into the order system, passes the billing
 schedule, the payment terms and the purchase order reference to
 finance, and closes the opportunity at the amount actually booked
-rather than the amount forecast.
+rather than the amount forecast. Afterwards it supplies each booking at
+its approved version, with each field naming its clause, to the invoice
+built from it and to the period's revenue schedule.
 
 covers:
+- Supply the Booking at Its Version
+- Take In the New and Changed Bookings
 - Close the Opportunity
 - Pass the Billing Terms to Finance
 - Record the Booking

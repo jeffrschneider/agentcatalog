@@ -1,6 +1,6 @@
 ---
 name: turn-a-signed-plan-into-tracked-items
-description: Takes the milestones a signed plan carries and makes each one an item with one owner, one date and a state, traceable to the line of the plan it came from. Use it when running `ref/hr/run-a-new-hires-first-months` and 4 other reference processes.
+description: Takes the milestones a signed plan carries, or the fixes a failed control or an auditor's letter needs, and makes each one an item with one owner, one date and a state, traceable to the line of the plan or the finding it came from. Use it when running `ref/fin/run-the-external-audit` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -11,15 +11,21 @@ metadata:
 
 ## What it does
 
-Takes the milestones a signed plan carries and makes each one an item
-with one owner, one date and a state, traceable to the line of the plan
-it came from.
+Takes the milestones a signed plan carries, or the fixes a failed
+control or an auditor's letter needs, and makes each one an item with
+one owner, one date and a state, traceable to the line of the plan or
+the finding it came from.
 
 ## Where it happens
 
-The agent does this in four activities across five reference processes.
+The agent does this in five activities across seven reference processes.
 Each one names the activity as that process words it.
 
+- **Load Each Fix Into the Tracker**
+  - `ref/fin/run-the-external-audit`, activity 19 -
+    [Run the External Audit](../../../../processes/finance/run-the-external-audit.md)
+  - `ref/fin/test-a-financial-control`, activity 13 -
+    [Test a Financial Control](../../../../processes/finance/test-a-financial-control.md)
 - **Load the Actions into the Tracker**
   - `ref/hr/run-the-employee-survey`, activity 16 -
     [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)

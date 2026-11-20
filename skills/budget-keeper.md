@@ -3,14 +3,18 @@
 ## report-the-budget-position
 
 The agent reports what was allocated, what has been drawn against it and
-what is left, for a function, a period or a single piece of work. It
-also says what can still be spent this year and in the years after.
+what is left, for a function, a budget owner's line, a period or a
+single piece of work, with the budget and the latest forecast at their
+versions. It also says what can still be spent this year and in the
+years after.
 
 covers:
 - Account for the Money
 - Read the Budget Position
 - Report the Transition
 - Say What Money There Is
+- Read What Each Owner Has Committed
+- Take in the Budget and the Forecast
 
 ## keep-the-record-of-commitments
 
@@ -37,9 +41,11 @@ covers:
 
 ## fund-a-piece-of-work
 
-The agent sets money aside for a named piece of work against the
-allocation it comes from, records the cap and the term it runs under,
-and says whether that allocation still holds enough to cover it.
+The agent sets money aside for a named piece of work, such as a
+purchase order, against the allocation it comes from, records the cap
+and the term it runs under, says whether that allocation still holds
+enough to cover it, and releases what is left once the work closes or
+is cancelled.
 
 covers:
 - Commission the New Capacity
@@ -48,15 +54,22 @@ covers:
 - Resource the Commitments
 - Secure the Name
 - Set the Budget and the Term
+- Check the Budget Line Has Room
+- Record the Commitment
+- Close the Order
 
 ## load-the-allocations
 
-The agent records each function's number where spend is tracked and says
-when in the year that money becomes available.
+The agent records each function's or budget owner's number where spend
+is tracked, at a version, with each reforecast beside the budget it
+leaves as it was, and says when in the year that money becomes
+available.
 
 covers:
 - Load the Allocations
 - Phase the Money across the Year
+- Issue the Budget at a Version
+- Issue the Reforecast at a Version
 
 ## record-the-rules-and-the-assumptions
 
@@ -87,8 +100,11 @@ covers:
 
 ## tell-the-agents-what-was-decided
 
-Once a decision is made, the agent tells every agent that has to act
-what was decided about the money and what each one now holds.
+Once a decision is made, the agent tells every agent and budget owner
+that has to act what was decided about the money, what each one now
+holds and what moved since the last version.
 
 covers:
 - Hand the Decisions On
+- Tell Each Budget Owner What They Hold
+- Tell the Budget Owners What Changed

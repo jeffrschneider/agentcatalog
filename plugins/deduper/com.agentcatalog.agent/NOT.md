@@ -22,3 +22,7 @@ merge landed, which is the data-quality-check agent.
   before anything of that shape merges again
 - two consent records that disagree, because the stricter position wins
   and the survivor can lose a channel it used to have
+- a new supplier that may already be on file under another name, tax
+  number, address or bank account, with a score under the bar - to a
+  person, who says whether it is the same supplier before the setup goes
+  on, and the requester is then told which record to use

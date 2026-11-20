@@ -1,6 +1,6 @@
 ---
 name: write-down-what-was-agreed
-description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/hr/decide-promotions` and 16 other reference processes.
+description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/fin/approve-an-investment-case` and 19 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,7 +16,7 @@ was turned down and why, and who disagreed with it.
 
 ## Where it happens
 
-The agent does this in fifteen activities across seventeen reference
+The agent does this in sixteen activities across twenty reference
 processes. Each one names the activity as that process words it.
 
 - **Confirm the Record with the Chair**
@@ -29,15 +29,22 @@ processes. Each one names the activity as that process words it.
   - `ref/hr/run-the-pay-review`, activity 15 -
     [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
 - **Record the Decision**
+  - `ref/fin/write-off-a-bad-debt`, activity 9 -
+    [Write Off a Bad Debt](../../../../processes/finance/write-off-a-bad-debt.md)
   - `ref/pc/plan-the-exit`, activity 16 -
     [Plan the Exit](../../../../processes/private-capital/plan-the-exit.md)
   - `ref/pc/seek-an-advisory-committee-consent`, activity 13 -
     [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
 - **Record the Decision and the Dissent**
+  - `ref/fin/approve-an-investment-case`, activity 15 -
+    [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
   - `ref/pc/decide-at-investment-committee`, activity 12 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
   - `ref/pc/work-a-company-in-trouble`, activity 12 -
     [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
+- **Record the Decision and the Review Date**
+  - `ref/fin/publish-the-delegation-of-authority`, activity 18 -
+    [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
 - **Record the Decisions**
   - `ref/hr/decide-promotions`, activity 11 -
     [Decide Promotions](../../../../processes/human-resources/decide-promotions.md)

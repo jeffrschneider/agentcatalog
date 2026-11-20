@@ -1,6 +1,6 @@
 ---
 name: collect-the-results-from-every-source
-description: Asks every source and every run for the same things, in the same format, by the same date, and pulls together what comes back with a source on every line. Use it when running `ref/mkt/brief-executive-leadership`, `ref/mkt/marketing-performance-report` and `ref/pc/issue-the-quarterly-report-and-statements`.
+description: Asks every source and every run for the same things, in the same format, by the same date, such as each budget owner about each difference above the threshold, and pulls together what comes back with a source on every line. Use it when running `ref/fin/report-the-monthly-results` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -12,14 +12,18 @@ metadata:
 ## What it does
 
 Asks every source and every run for the same things, in the same format,
-by the same date, and pulls together what comes back with a source on
-every line.
+by the same date, such as each budget owner about each difference above
+the threshold, and pulls together what comes back with a source on every
+line.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
+- **Ask Each Budget Owner the Same Questions**
+  - `ref/fin/report-the-monthly-results`, activity 8 -
+    [Report the Monthly Results](../../../../processes/finance/report-the-monthly-results.md)
 - **Ask Every Source the Same Things**
   - `ref/mkt/marketing-performance-report`, activity 2 -
     [Report Marketing Performance](../../../../processes/marketing/marketing-performance-report.md)

@@ -35,7 +35,9 @@ manifest and in the directory of the same name.
 
 ## Where this abstract agent is used
 
-`ref/sls/book-the-order`, `ref/sls/hand-over-to-delivery`. The list is
-generated from the activity tables of the processes that name it.
+`ref/sls/book-the-order`, `ref/sls/hand-over-to-delivery`,
+`ref/fin/issue-a-customer-invoice`, `ref/fin/recognize-revenue`. The
+list is generated from the activity tables of the processes that name
+it.
 
 https://agentcatalog.com/abstract-agents/order-check

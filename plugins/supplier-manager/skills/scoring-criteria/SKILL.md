@@ -1,6 +1,6 @@
 ---
 name: scoring-criteria
-description: Fixes how a candidate or a proposal will be judged, and does it before any of them arrive, so nobody can change the measure once the names are known. Use it when running `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
+description: Fixes how a candidate or a proposal will be judged, and does it before any of them arrive, so nobody can change the measure once the names are known. Use it when running `ref/fin/choose-a-supplier`, `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
 license: CC-BY-4.0
 metadata:
   agent: supplier-manager
@@ -17,10 +17,12 @@ known.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in two activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Set the Scoring Criteria**
+  - `ref/fin/choose-a-supplier`, activity 5 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
   - `ref/mkt/select-marketing-technology`, activity 4 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
 - **Set the Selection Criteria**

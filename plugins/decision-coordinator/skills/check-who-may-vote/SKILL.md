@@ -1,6 +1,6 @@
 ---
 name: check-who-may-vote
-description: Sets the committee's members against its charter before the pack goes out, naming the quorum, each declared conflict as the chief compliance officer rules on it, and who sits out, so that a vote taken is one the charter counts. Use it when running `ref/pc/decide-at-investment-committee`.
+description: Sets the committee's members against its charter before the pack goes out, naming the quorum, each declared conflict as the chief compliance officer rules on it, and who sits out, so that a vote taken is one the charter counts. Use it when running `ref/fin/reforecast-the-year` and `ref/pc/decide-at-investment-committee`.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -14,16 +14,21 @@ metadata:
 Sets the committee's members against its charter before the pack goes
 out, naming the quorum, each declared conflict as the chief compliance
 officer rules on it, and who sits out, so that a vote taken is one the
-charter counts.
+charter counts. Where a delegation of authority decides who approves, it
+names the approvers the version in force sets for the decision, so an
+approval by anyone else is caught before it counts.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Check Who May Vote**
   - `ref/pc/decide-at-investment-committee`, activity 5 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Name the Approvers**
+  - `ref/fin/reforecast-the-year`, activity 11 -
+    [Reforecast the Year](../../../../processes/finance/reforecast-the-year.md)
 
 ## What to record
 

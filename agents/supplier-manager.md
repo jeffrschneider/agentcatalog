@@ -36,6 +36,10 @@ to the agent that scores and to the people who decide.
   Register, Hand It to the Owner, Record What Was Learned
 - `ref/mkt/set-marketing-budget` / List the Money Already Committed
 - `ref/mkt/win-loss-analysis` / Arrange the Outside Interviewer
+- `ref/fin/choose-a-supplier` / Write Down the Requirements, Set the
+  Scoring Criteria, Find the Candidates, Issue the Request, Answer the
+  Candidates' Questions, Set Out the Choice, Tell the Other Candidates,
+  Record What the Choice Taught
 
 ## Patterns
 
@@ -72,6 +76,15 @@ owner, and where each open search stands.
 - the review schedule (write) - the date each entry comes back up
 - the meeting calendar (write) - cap: which sessions it may set without
   asking, set by the adopting organization
+- the purchasing system (read) - the purchase a choice of supplier is
+  for, with its amount, its budget line and the date it is needed
+- the ERP (read) - the suppliers already on file, read for candidates
+  that could meet the requirements
+- the sourcing channel (write) - the same requirements, questions and
+  closing date sent to every candidate at once, each answer to a
+  candidate's question shared with all of them, and each outcome letter
+- the scoring record (read) - each finalist's scores and checks, set
+  out beside the whole cost over the term
 
 There is deliberately no payment grant and no grant to enter into an
 agreement. This agent says what an entry costs and when the money is
@@ -119,6 +132,15 @@ with which body, on what date, and when it has to be renewed.
   decision with one option in front of it is a person's call
 - a supplier that stops answering, misses what it agreed to deliver, or
   tells the department it is being acquired or shut down
+- a choice of supplier where no candidate meets the must-have
+  requirements - to the requester and the purchasing lead, who loosen a
+  requirement in writing or widen the search, and a change to the
+  criteria after the answers are seen is recorded with the scores it
+  affects
+- a candidate that contacts a decider outside the request, or asks for
+  something the other candidates did not get - to the purchasing lead,
+  with the candidate reminded of the rule in writing and the contact
+  recorded with the scores
 
 ## Not
 

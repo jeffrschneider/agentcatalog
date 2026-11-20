@@ -3,12 +3,16 @@
 ## keep-policies-at-versions
 
 Takes in each request with the decision behind it, reads the current
-version and who each variant covers, publishes each variant at its
-version with its effective date, and keeps the old version with the
-dates it applied. It marks every answer, form and page that rests on
-the old version and records the publication.
+version, who each variant covers and the exceptions granted under it,
+publishes each variant at its version with its effective date, files
+the published delegation of authority beside the finance policies, and
+keeps the old version with the dates it applied. It marks every answer,
+form, page, check and system rule that rests on the old version and
+records the publication.
 
 covers:
+- File It With the Finance Policies
+- Read the Exceptions Granted Under It
 - Keep the Old Version With Its Dates
 - Mark What Rests on the Old Version
 - Publish the Policy at a Version
@@ -19,25 +23,30 @@ covers:
 ## draft-from-approved-decisions
 
 Drafts a change on the current version only from an approved decision,
-a rule change counsel confirmed or an audit finding, and writes a
-location's variant only where a local rule needs a different text, with
-every local point left blank for counsel. It drafts the changes a case
-shows are needed once a named person has decided them.
+a rule change counsel or an adviser confirmed, a failed control or an
+audit finding, and writes a location's or an entity's variant only
+where a local rule needs a different text, with every local point left
+blank for counsel and the advisers. It drafts the changes a case shows
+are needed once a named person has decided them.
 
 covers:
 - Act on the Outcome
 - Draft the Change
 - Record What the Case Taught
 - Write the Location Variants
+- Write the Entity Variants
 
 ## collect-acknowledgments
 
-Sends each person the variant for their location and what changed,
-collects each person's own acknowledgment of the version they were
-sent, and chases what is still missing with the person and then the
-manager.
+Sends each person the variant for their location or entity and what
+changed, or each approver and stand-in what they may approve, up to
+what amount and from what date, collects each person's own
+acknowledgment of the version they were sent, and chases what is still
+missing with the person and then the manager or the chief financial
+officer.
 
 covers:
+- Send Each Approver Their Authority
 - Chase What Is Missing
 - Collect the Acknowledgments
 - Collect the Policy Acknowledgments

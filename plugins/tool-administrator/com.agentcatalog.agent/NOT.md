@@ -26,3 +26,14 @@ not chosen for.
   a payroll, to the access owner, who chooses which role the person
   keeps, and where the work needs both, to the named person who may
   approve that in writing with another check in its place
+- a right to approve or release a payment held by someone the delegation
+  of authority does not name - removed on the day it is found under the
+  bank's own rules for changing users, and to the controller with how it
+  came about
+- access in the finance systems that would let one person both prepare
+  and approve the same payment, journal or reconciliation - to the
+  controller, who allows it in writing for a set period with another
+  check in its place or has it removed
+- an access still there after its removal - removed again with the
+  reason traced, such as a second account or a group the person belongs
+  to, and the controller told before the review is signed

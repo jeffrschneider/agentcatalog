@@ -1,6 +1,6 @@
 ---
 name: put-cost-and-return-on-an-option
-description: Works out what an option would cost and what it would return at each level of spend, with every assumption written down beside the number it produced. Use it when running `ref/mkt/annual-marketing-plan` and 11 other reference processes.
+description: Works out what an option would cost and what it would return at each level of spend or each outcome, such as an investment case, with every assumption written down beside the number it produced. Use it when running `ref/fin/approve-an-investment-case` and 12 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: forecaster
@@ -12,13 +12,14 @@ metadata:
 ## What it does
 
 Works out what an option would cost and what it would return at each
-level of spend, with every assumption written down beside the number it
-produced. A rate the agent cannot source is reported as unsourced rather
-than filled in with a figure that looks reasonable.
+level of spend or each outcome, such as an investment case, with every
+assumption written down beside the number it produced. A rate the agent
+cannot source is reported as unsourced rather than filled in with a
+figure that looks reasonable.
 
 ## Where it happens
 
-The agent does this in twelve activities across twelve reference
+The agent does this in thirteen activities across thirteen reference
 processes. Each one names the activity as that process words it.
 
 - **Choose the Route**
@@ -30,6 +31,9 @@ processes. Each one names the activity as that process words it.
 - **Model Each Mix**
   - `ref/mkt/media-plan`, activity 7 -
     [Develop Media Plan](../../../../processes/marketing/media-plan.md)
+- **Model the Cost and the Return**
+  - `ref/fin/approve-an-investment-case`, activity 5 -
+    [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
 - **Price the Incentives**
   - `ref/mkt/channel-program`, activity 3 -
     [Launch Channel Program](../../../../processes/marketing/channel-program.md)

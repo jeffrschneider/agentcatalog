@@ -13,16 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "sales",
+    "finance",
     "book-the-order",
     "hand-over-to-delivery",
+    "issue-a-customer-invoice",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "order-check",
       "agentVersion": 1,
-      "department": "sales",
+      "department": "finance",
       "abstract": true,
       "works": "Runs assessment three times: on every sold line against a catalog item, a delivery date and the capacity to meet it; on the whole booking against the booking rules at a version; and on the handover package against its checklist. Runs collect-and-report over the exceptions it raises for as long as a booking is open. Requests the approval a finance approver signs, and takes the booking back through it when anything changes after. Takes the executed agreement and the settled non-standard terms from the signature-manager agent, waits on the credit reading from the account-monitor agent, and hands the booked order to the handover-coordinator agent.",
       "servers": [
@@ -90,7 +91,9 @@
         "a booking that fails its check, back to the terms with the rule attached to each failure, rather than on to an approver",
         "a booking changed after finance approved it, back through approval, because the approval covered a version",
         "an order system that will not take the booking, to whoever owns that system, with the booking held at its approved version rather than half written",
-        "a handover package missing what its checklist requires, to the handover coordinator, carried forward as a named gap with a date rather than waived quietly"
+        "a handover package missing what its checklist requires, to the handover coordinator, carried forward as a named gap with a date rather than waived quietly",
+        "a booking found wrong or incomplete when it is read for an invoice or for revenue, such as a line that does not trace or a tax number the invoice rules require, back through approval at `ref/sls/book-the-order`, and the billing lead is told that the invoice waits for the corrected version",
+        "a promise in the signed agreement that the booking does not carry, found when revenue is worked out, to the controller and the deal desk, and it goes back to `ref/sls/book-the-order` to be booked or corrected"
       ],
       "not": [
         "Does not sign the booking.",
@@ -119,6 +122,18 @@
           "activities": [
             "Take in the Booked Order",
             "Check the Package Is Complete"
+          ]
+        },
+        {
+          "process": "ref/fin/issue-a-customer-invoice",
+          "activities": [
+            "Supply the Booking at Its Version"
+          ]
+        },
+        {
+          "process": "ref/fin/recognize-revenue",
+          "activities": [
+            "Take In the New and Changed Bookings"
           ]
         }
       ]

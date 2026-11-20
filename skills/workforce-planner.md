@@ -23,9 +23,12 @@ covers:
 
 Works out the labor cost of a plan, a position or an option from the pay
 range for each level, with benefits and the employer's taxes on pay, and
-sets it beside the budget for the finance lead to check.
+sets it beside the budget for the finance lead to check. It supplies
+each team's headcount, start dates and labor cost from the approved
+plan at its version to the company budget.
 
 covers:
+- Take in the Labor Cost
 - Check the Budget
 - Check the Plan against the Budget
 - Cost Each Option

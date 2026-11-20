@@ -1,6 +1,6 @@
 ---
 name: read-every-commitment-out-loud
-description: Reads every commitment at review with its owner, its date and its state, marked met, running, late or untouched, so nothing stays open by silence. Use it when running `ref/hr/run-a-new-hires-first-months` and 5 other reference processes.
+description: Reads every commitment at review with its owner, its date and its state, marked met, running, late or untouched, so nothing stays open by silence. Use it when running `ref/fin/test-a-financial-control` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,9 +17,12 @@ silence.
 
 ## Where it happens
 
-The agent does this in eight activities across six reference processes.
+The agent does this in nine activities across seven reference processes.
 Each one names the activity as that process words it.
 
+- **Chase Each Fix to Its Date**
+  - `ref/fin/test-a-financial-control`, activity 14 -
+    [Test a Financial Control](../../../../processes/finance/test-a-financial-control.md)
 - **Follow Up the Actions**
   - `ref/pc/prepare-and-hold-a-board-meeting`, activity 18 -
     [Prepare and Hold a Board Meeting](../../../../processes/private-capital/prepare-and-hold-a-board-meeting.md)

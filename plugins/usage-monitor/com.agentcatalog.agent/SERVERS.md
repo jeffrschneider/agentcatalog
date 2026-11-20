@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Four systems, named by role rather than by product. The access level is
+Five systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -10,6 +10,7 @@ more than the job requires.
 | the billing system | read | What was invoiced against what was metered. |
 | the agreement store and the entitlement record | read | A use number means nothing without the limit it sits under. |
 | the CRM | write | The reading against the account, dated. |
+| the notification channel | write | A reading held from an invoice reaches the billing lead with its reason the same day. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

@@ -11,6 +11,7 @@ covers:
 - Set What the Review Covers
 - Open the Quarter's Report
 - Open the Period's Report
+- Open the Month's Report
 
 ## name-the-measures
 
@@ -27,11 +28,13 @@ covers:
 ## collect-the-results-from-every-source
 
 Asks every source and every run for the same things, in the same
-format, by the same date, and pulls together what comes back with a
-source on every line.
+format, by the same date, such as each budget owner about each
+difference above the threshold, and pulls together what comes back with
+a source on every line.
 
 covers:
 - Ask Every Source the Same Things
+- Ask Each Budget Owner the Same Questions
 - Pull the Results for the Period
 - Take in the Approved Marks
 - Collect the Company Updates
@@ -96,6 +99,7 @@ covers:
 - Write the Account
 - Write the Quarter's Letter
 - Write Why the Numbers Moved
+- Write the Account of the Month
 
 ## clear-the-report-before-it-goes-out
 
@@ -142,6 +146,7 @@ covers:
 - Record What the Quarter Taught
 - Answer the Leaders' Questions
 - Record What the Period Taught
+- Record What the Month Taught
 
 ## tell-the-agents-what-they-have
 

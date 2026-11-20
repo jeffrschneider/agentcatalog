@@ -1,6 +1,6 @@
 ---
 name: score-material-against-the-rules
-description: The agent reads a piece against the rules that apply to it and gives every item a verdict that cites the rule and the market it comes from. Use it when running `ref/hr/post-a-job` and 5 other reference processes.
+description: The agent reads a piece against the rules that apply to it and gives every item a verdict that cites the rule and the market or the framework it comes from. Use it when running `ref/fin/prepare-the-financial-statements` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: disclosure-check
@@ -12,14 +12,15 @@ metadata:
 ## What it does
 
 The agent reads a piece against the rules that apply to it and gives
-every item a verdict that cites the rule and the market it comes from.
-It scores a draft before it runs and it scores the sized or adapted
-versions again.
+every item a verdict that cites the rule and the market or the framework
+it comes from. It scores a draft before it runs or is signed off, such
+as the draft financial statements and their notes, and it scores the
+sized, adapted or revised versions again.
 
 ## Where it happens
 
-The agent does this in six activities across six reference processes.
-Each one names the activity as that process words it.
+The agent does this in seven activities across seven reference
+processes. Each one names the activity as that process words it.
 
 - **Check Against the Advertising Rules**
   - `ref/pc/prepare-the-fundraising-materials`, activity 11 -
@@ -27,6 +28,9 @@ Each one names the activity as that process words it.
 - **Check the Comparisons**
   - `ref/mkt/competitive-battlecard`, activity 11 -
     [Refresh Competitive Battlecard](../../../../processes/marketing/competitive-battlecard.md)
+- **Check the Disclosures**
+  - `ref/fin/prepare-the-financial-statements`, activity 7 -
+    [Prepare the Financial Statements](../../../../processes/finance/prepare-the-financial-statements.md)
 - **Check the Required Statements**
   - `ref/hr/post-a-job`, activity 8 -
     [Post a Job](../../../../processes/human-resources/post-a-job.md)

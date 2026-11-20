@@ -1,6 +1,6 @@
 ---
 name: take-the-form-in-and-read-its-rules
-description: "Takes in the form or the request with the buyer it came from, and reads the rules it sets before any answer is drafted: the deadline, the format, the channel, the limits and the window for questions. Use it when running `ref/hr/respond-to-an-employment-audit` and 3 other reference processes."
+description: "Takes in the form or the request with the buyer it came from, and reads the rules it sets before any answer is drafted: the deadline, the format, the channel, the limits and the window for questions. Use it when running `ref/fin/respond-to-a-tax-audit` and 4 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -19,13 +19,15 @@ while it is still open.
 
 ## Where it happens
 
-The agent does this in six activities across four reference processes.
+The agent does this in six activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Ask the Buyer's Questions**
   - `ref/sls/respond-to-an-rfp`, activity 6 -
     [Respond to an RFP](../../../../processes/sales/respond-to-an-rfp.md)
 - **Read What Each Request Asks For**
+  - `ref/fin/respond-to-a-tax-audit`, activity 6 -
+    [Respond to a Tax Audit](../../../../processes/finance/respond-to-a-tax-audit.md)
   - `ref/hr/respond-to-an-employment-audit`, activity 6 -
     [Respond to an Employment Audit](../../../../processes/human-resources/respond-to-an-employment-audit.md)
 - **Read the Rules It Sets**

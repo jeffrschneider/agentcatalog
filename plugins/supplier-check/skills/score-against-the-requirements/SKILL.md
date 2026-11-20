@@ -1,6 +1,6 @@
 ---
 name: score-against-the-requirements
-description: The agent scores every candidate against every requirement and returns a verdict on each one, naming the requirement it was scored against and the evidence behind the verdict. Use it when running `ref/hr/run-benefits-open-enrollment` and 4 other reference processes.
+description: The agent scores every candidate against every requirement and returns a verdict on each one, naming the requirement it was scored against and the evidence behind the verdict. Use it when running `ref/fin/choose-a-supplier` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: supplier-check
@@ -18,12 +18,15 @@ recorded as not tested, with the reason.
 
 ## Where it happens
 
-The agent does this in four activities across five reference processes.
+The agent does this in five activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Choose the Sell-Side Adviser**
   - `ref/pc/run-a-sale-process`, activity 2 -
     [Run a Sale Process](../../../../processes/private-capital/run-a-sale-process.md)
+- **Score the Answers**
+  - `ref/fin/choose-a-supplier`, activity 9 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 - **Score the Candidate Providers**
   - `ref/pc/form-the-fund`, activity 4 -
     [Form the Fund](../../../../processes/private-capital/form-the-fund.md)

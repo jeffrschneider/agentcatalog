@@ -1,6 +1,6 @@
 ---
 name: write-the-booking-where-it-is-acted-on
-description: Writes the approved booking into the order system, passes the billing schedule, the payment terms and the purchase order reference to finance, and closes the opportunity at the amount actually booked rather than the amount forecast. Use it when running `ref/sls/book-the-order`.
+description: Writes the approved booking into the order system, passes the billing schedule, the payment terms and the purchase order reference to finance, and closes the opportunity at the amount actually booked rather than the amount forecast. Use it when running `ref/fin/issue-a-customer-invoice`, `ref/fin/recognize-revenue` and `ref/sls/book-the-order`.
 license: CC-BY-4.0
 metadata:
   agent: order-check
@@ -14,11 +14,13 @@ metadata:
 Writes the approved booking into the order system, passes the billing
 schedule, the payment terms and the purchase order reference to finance,
 and closes the opportunity at the amount actually booked rather than the
-amount forecast.
+amount forecast. Afterwards it supplies each booking at its approved
+version, with each field naming its clause, to the invoice built from it
+and to the period's revenue schedule.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Close the Opportunity**
@@ -30,6 +32,12 @@ Each one names the activity as that process words it.
 - **Record the Booking**
   - `ref/sls/book-the-order`, activity 12 -
     [Book the Order](../../../../processes/sales/book-the-order.md)
+- **Supply the Booking at Its Version**
+  - `ref/fin/issue-a-customer-invoice`, activity 2 -
+    [Issue a Customer Invoice](../../../../processes/finance/issue-a-customer-invoice.md)
+- **Take In the New and Changed Bookings**
+  - `ref/fin/recognize-revenue`, activity 2 -
+    [Recognize Revenue](../../../../processes/finance/recognize-revenue.md)
 
 ## What to record
 

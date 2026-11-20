@@ -27,6 +27,7 @@ than paid.
 - `ref/rev/settle-a-commission-dispute` / Freeze the Statement Version,
   Pull the Evidence Behind the Line, Recompute the Line Independently,
   Correct the Statement and the Next Run, Feed the Cause Back
+- `ref/fin/book-the-period-end-accruals` / Take In the Commission Earned
 
 ## Patterns
 
@@ -60,6 +61,8 @@ claim.
   and the signatures attached
 - the notification channel (write) - a seller is told what is held and
   why, and when a date moves
+- the close calendar (read) - the cutoff by which each period's
+  commission earned and not yet paid is due for the period-end accrual
 
 ## Records
 
@@ -98,6 +101,12 @@ the plan sentence or the record that caused it.
 - a payroll file payroll cannot use - to payroll operations, and the
   run stays open until receipt is confirmed in a form payroll can
   process, with everybody affected told before the payment date passes
+- a period not fully computed by the close cutoff - to the accrual
+  reviewer, with the figures computed so far marked as incomplete, and
+  the difference is set right in the next period once the run is done
+- a request from finance to change a commission figure for the accrual -
+  back to the run's named signers, because the accrual carries only the
+  figures the run computed and finance changes none of them
 
 ## Not
 

@@ -1,6 +1,6 @@
 ---
 name: get-the-open-questions-answered
-description: Routes every question the source cannot answer to the person who owns that fact, in the requester's own wording, and drafts what comes back into an answer named people sign. Use it when running `ref/hr/respond-to-an-employment-audit` and 3 other reference processes.
+description: Routes every question the source cannot answer to the person who owns that fact, in the requester's own wording, and drafts what comes back into an answer named people sign. Use it when running `ref/fin/respond-to-a-tax-audit` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -18,7 +18,7 @@ answered the same way, from a maintained source rather than from memory.
 
 ## Where it happens
 
-The agent does this in five activities across four reference processes.
+The agent does this in five activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Answer the Security and Legal Parts**
@@ -33,6 +33,10 @@ Each one names the activity as that process words it.
   - `ref/sls/answer-a-security-questionnaire`, activity 6 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
 - **Route What the Records Cannot Answer**
+  - `ref/fin/respond-to-a-tax-audit`, activity 9 -
+    [Respond to a Tax Audit](../../../../processes/finance/respond-to-a-tax-audit.md)
+  - `ref/fin/run-the-external-audit`, activity 7 -
+    [Run the External Audit](../../../../processes/finance/run-the-external-audit.md)
   - `ref/hr/respond-to-an-employment-audit`, activity 9 -
     [Respond to an Employment Audit](../../../../processes/human-resources/respond-to-an-employment-audit.md)
 - **Route the Unanswered Questions**

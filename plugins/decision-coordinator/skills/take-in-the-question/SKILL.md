@@ -1,6 +1,6 @@
 ---
 name: take-in-the-question
-description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/hr/change-the-organization-structure` and 20 other reference processes.
+description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/fin/approve-an-investment-case` and 23 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,15 +17,24 @@ decision has to settle and by when.
 
 ## Where it happens
 
-The agent does this in twenty activities across 21 reference processes.
-Each one names the activity as that process words it.
+The agent does this in 23 activities across 24 reference processes. Each
+one names the activity as that process words it.
 
+- **Frame the Decision**
+  - `ref/fin/choose-a-supplier`, activity 3 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 - **Name the Decision and the Deadline**
   - `ref/pc/work-a-company-in-trouble`, activity 4 -
     [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
+- **Open the Decision**
+  - `ref/fin/write-off-a-bad-debt`, activity 6 -
+    [Write Off a Bad Debt](../../../../processes/finance/write-off-a-bad-debt.md)
 - **Set What the Committee Must Decide**
   - `ref/pc/decide-at-investment-committee`, activity 2 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Set What the Decision Must Settle**
+  - `ref/fin/approve-an-investment-case`, activity 3 -
+    [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
 - **Take in the Approved Positioning**
   - `ref/mkt/brand-voice`, activity 1 -
     [Define Brand Voice and Messaging](../../../../processes/marketing/brand-voice.md)

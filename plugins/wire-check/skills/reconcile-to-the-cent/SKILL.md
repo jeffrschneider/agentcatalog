@@ -1,6 +1,6 @@
 ---
 name: reconcile-to-the-cent
-description: Compares what was called or approved with what was received or paid and what was booked, investor by investor, with the capital-account-keeper agent, and agrees the bank balance to the books. Use it when running `ref/pc/issue-a-capital-call` and `ref/pc/make-a-distribution`.
+description: Compares what was called or approved with what was received or paid and what was booked, investor by investor, with the capital-account-keeper agent, and agrees the bank balance to the books. Use it when running `ref/fin/fund-the-payroll`, `ref/pc/issue-a-capital-call` and `ref/pc/make-a-distribution`.
 license: CC-BY-4.0
 metadata:
   agent: wire-check
@@ -13,13 +13,18 @@ metadata:
 
 Compares what was called or approved with what was received or paid and
 what was booked, investor by investor, with the capital-account-keeper
-agent, and agrees the bank balance to the books.
+agent, and agrees the bank balance to the books. For a payroll funding
+it sets the funding against every payment that left the payroll account
+on payday.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
+- **Match the Funding to the Payments**
+  - `ref/fin/fund-the-payroll`, activity 12 -
+    [Fund the Payroll](../../../../processes/finance/fund-the-payroll.md)
 - **Reconcile the Call**
   - `ref/pc/issue-a-capital-call`, activity 16 -
     [Issue a Capital Call](../../../../processes/private-capital/issue-a-capital-call.md)

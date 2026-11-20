@@ -15,8 +15,8 @@
     "reference",
     "human-resources",
     "administer-a-tool",
+    "review-access-to-finance-systems",
     "review-access-to-employee-data",
-    "retire-a-tool",
     "abstract"
   ],
   "extensions": {
@@ -116,6 +116,24 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "Each access owner sent the accesses they answer for, with what each check found and the close date."
+        },
+        {
+          "name": "each finance system",
+          "role": "each-finance-system",
+          "access": "read",
+          "needs": "For an access review, the accounts in the general ledger, the ERP and the payment system, with each account's role, permissions, approval limits, who approved it and its last use, with no right to post, approve or pay anything."
+        },
+        {
+          "name": "the bank portal",
+          "role": "bank-portal",
+          "access": "read",
+          "needs": "Only its users and their rights: who may create, approve or release a payment or add a beneficiary, the amount each may release, and the bank's record of who may sign on each account, with no right to make or release a payment."
+        },
+        {
+          "name": "the delegation of authority",
+          "role": "delegation-of-authority",
+          "access": "read",
+          "needs": "The releasers and signers the version in force names, which every right to approve or release a payment is matched against."
         }
       ],
       "records": [
@@ -133,7 +151,10 @@
         "a change that cannot be taken back, which is not applied outside a stated window with the tool's owner watching",
         "an account nobody can account for, to the security reviewer, with the role it holds",
         "somebody still writing to the tool after the read-only date, and the records written after it are exported again",
-        "one person holding two roles that must not be combined, such as the access to change an employee's bank details and the access to approve a payroll, to the access owner, who chooses which role the person keeps, and where the work needs both, to the named person who may approve that in writing with another check in its place"
+        "one person holding two roles that must not be combined, such as the access to change an employee's bank details and the access to approve a payroll, to the access owner, who chooses which role the person keeps, and where the work needs both, to the named person who may approve that in writing with another check in its place",
+        "a right to approve or release a payment held by someone the delegation of authority does not name - removed on the day it is found under the bank's own rules for changing users, and to the controller with how it came about",
+        "access in the finance systems that would let one person both prepare and approve the same payment, journal or reconciliation - to the controller, who allows it in writing for a set period with another check in its place or has it removed",
+        "an access still there after its removal - removed again with the reason traced, such as a second account or a group the person belongs to, and the controller told before the review is signed"
       ],
       "not": [
         "Does not decide whether the tool stays.",
@@ -200,6 +221,21 @@
             "List Every Account and Its Role",
             "List the Exports and Links",
             "Match Each Account to a Person",
+            "Check Each Role Against the Job",
+            "Send Each Owner Their Accounts",
+            "Remove the Access Nobody Approved",
+            "Read Every Account Again",
+            "Record the Review"
+          ]
+        },
+        {
+          "process": "ref/fin/review-access-to-finance-systems",
+          "activities": [
+            "Open the Review for the Period",
+            "List Every Account and Its Role",
+            "List Who Can Move Money at Each Bank",
+            "Match Each Account to a Person",
+            "Match Each Payment Right to an Approved Releaser",
             "Check Each Role Against the Job",
             "Send Each Owner Their Accounts",
             "Remove the Access Nobody Approved",

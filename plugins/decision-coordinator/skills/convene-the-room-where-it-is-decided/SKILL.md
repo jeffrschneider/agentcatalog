@@ -1,6 +1,6 @@
 ---
 name: convene-the-room-where-it-is-decided
-description: Convenes the people who decide, puts each option in front of them with its cost and what it rules out, runs the session, and afterwards goes and gets answers to the questions the room could not settle. Use it when running `ref/hr/change-the-organization-structure` and 12 other reference processes.
+description: Convenes the people who decide, puts each option in front of them with its cost and what it rules out, runs the session, and afterwards goes and gets answers to the questions the room could not settle. Use it when running `ref/fin/publish-the-delegation-of-authority` and 15 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,7 +17,7 @@ and gets answers to the questions the room could not settle.
 
 ## Where it happens
 
-The agent does this in thirteen activities across thirteen reference
+The agent does this in sixteen activities across sixteen reference
 processes. Each one names the activity as that process words it.
 
 - **Answer What Was Left Open**
@@ -46,6 +46,9 @@ processes. Each one names the activity as that process words it.
 - **Hold the Succession Review**
   - `ref/hr/plan-succession-for-key-roles`, activity 9 -
     [Plan Succession for Key Roles](../../../../processes/human-resources/plan-succession-for-key-roles.md)
+- **Put the Draft Before the Approvers**
+  - `ref/fin/publish-the-delegation-of-authority`, activity 9 -
+    [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
 - **Put the Options to the Executive Team**
   - `ref/hr/plan-the-workforce`, activity 11 -
     [Plan the Workforce](../../../../processes/human-resources/plan-the-workforce.md)
@@ -60,6 +63,12 @@ processes. Each one names the activity as that process words it.
 - **Put the Options to the Sponsor**
   - `ref/hr/change-the-organization-structure`, activity 8 -
     [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
+- **Put the Reforecast to the Approvers**
+  - `ref/fin/reforecast-the-year`, activity 12 -
+    [Reforecast the Year](../../../../processes/finance/reforecast-the-year.md)
+- **Put the Trade-Offs to the Executive Team**
+  - `ref/fin/set-the-annual-budget`, activity 13 -
+    [Set the Annual Budget](../../../../processes/finance/set-the-annual-budget.md)
 - **Review the Structure at Its Date**
   - `ref/hr/change-the-organization-structure`, activity 18 -
     [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)

@@ -18,3 +18,9 @@ change what an account is entitled to.
 - a reading it cannot take, because the meter is missing, broken or
   covers the wrong period - said plainly, instead of filled with an
   estimate
+- a reading for an invoice billed on use that is missing, broken, for
+  the wrong period or out of line with the meter or with what was billed
+  before - to the billing lead with the meter and the period named, and
+  the usage is held until it is read again, because a customer is billed
+  on an estimate only where the agreement allows it and the billing lead
+  approves it

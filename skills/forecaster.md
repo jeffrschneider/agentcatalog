@@ -76,7 +76,7 @@ covers:
 
 ## put-cost-and-return-on-an-option
 
-Works out what an option would cost and what it would return at each level of spend, with every assumption written down beside the number it produced. A rate the agent cannot source is reported as unsourced rather than filled in with a figure that looks reasonable.
+Works out what an option would cost and what it would return at each level of spend or each outcome, such as an investment case, with every assumption written down beside the number it produced. A rate the agent cannot source is reported as unsourced rather than filled in with a figure that looks reasonable.
 
 covers:
 - Choose the Route
@@ -91,6 +91,7 @@ covers:
 - Put Numbers on the Proposed Changes
 - Size What Each Move Returns
 - Work out the Whole Cost
+- Model the Cost and the Return
 
 ## size-the-work-and-the-shortfall
 
@@ -115,6 +116,7 @@ Moves each assumption one at a time and records how far the answer swings, so it
 
 covers:
 - Test the Assumptions
+- Test How Far the Answer Moves
 
 ## project-against-the-goal
 

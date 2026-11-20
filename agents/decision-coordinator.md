@@ -155,6 +155,21 @@ itself, which is what makes the record it leaves worth trusting later.
 - `ref/hr/plan-succession-for-key-roles` / Open the Succession Review,
   Send the Pack Ahead, Hold the Succession Review, Record the Succession
   Plan, Set the Next Review, Record What the Review Taught
+- `ref/fin/set-the-annual-budget` / Put the Trade-Offs to the Executive
+  Team, Settle the Trade-Offs, Approve the Budget
+- `ref/fin/reforecast-the-year` / Name the Approvers, Put the Reforecast
+  to the Approvers, Approve the Reforecast, Hand On the Gap the Year
+  Cannot Absorb
+- `ref/fin/approve-an-investment-case` / Set What the Decision Must
+  Settle, Send the Case to the Approvers, Answer the Approvers'
+  Questions, Record the Decision and the Dissent, Hand the Approved Case
+  On, Set When the Case Is Read Again
+- `ref/fin/choose-a-supplier` / Frame the Decision, Set Out the Choice,
+  Choose the Supplier, Record What the Choice Taught
+- `ref/fin/write-off-a-bad-debt` / Open the Decision, Hear the Account
+  Owner, Record the Decision, Announce the Decision
+- `ref/fin/publish-the-delegation-of-authority` / Put the Draft Before
+  the Approvers, Record the Decision and the Review Date
 
 ## Patterns
 
@@ -190,6 +205,12 @@ waiting on, and when each one is due.
 - the HR system (write) - each change a pay review approved, handed to
   the employee's record with its approver and its effective date, with
   no right to change any other field
+- the delegation of authority (read) - the approvers a budget, a
+  reforecast, an investment case, a choice of supplier or a write-off
+  needs at the version in force, which every such decision is put to
+  and checked against
+- the financial planning system (read) - the budget, the reforecast and
+  the investment case at the versions put to the approvers
 
 ## Records
 
@@ -238,6 +259,19 @@ answer is recorded.
 - a panel member who manages a nominee, or who has declared a conflict,
   about to take part in that decision - to the panel chair, and no
   decision is recorded with that member's part in it
+- a money decision that would be approved by anyone the delegation of
+  authority in force does not name, or by the person who prepared or
+  asked for what is approved - to the chief financial officer (CFO), and
+  no approval is recorded until the approvers that version names decide
+- a gap the reforecast shows the year cannot absorb - to the executive
+  team, who decide whether to act on it, accept it or change the budget,
+  because a reforecast never quietly becomes a new budget
+- a supplier's terms that cannot be agreed, or a price past the approved
+  amount - to the budget owner before anyone agrees it, and the choice
+  is set out again with the finalist next in line
+- an investment case the approvers have deferred more than
+  `<your number of rounds>` times - to the CFO, who decides whether it
+  is withdrawn
 
 ## Not
 

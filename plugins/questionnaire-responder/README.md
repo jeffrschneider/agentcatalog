@@ -37,7 +37,9 @@ manifest and in the directory of the same name.
 
 `ref/sls/answer-a-security-questionnaire`, `ref/sls/respond-to-an-rfp`,
 `ref/pc/answer-a-due-diligence-questionnaire`,
-`ref/hr/respond-to-an-employment-audit`. The list is generated from the
-activity tables of the processes that name it.
+`ref/hr/respond-to-an-employment-audit`,
+`ref/fin/respond-to-a-tax-audit`, `ref/fin/run-the-external-audit`. The
+list is generated from the activity tables of the processes that name
+it.
 
 https://agentcatalog.com/abstract-agents/questionnaire-responder

@@ -22,6 +22,8 @@ people who work the account.
 - `ref/sls/close-a-renewal` / Check What They Say Against Use
 - `ref/sls/work-a-churn-risk` / Read the Usage Trend, Watch for the
   Signal to Turn
+- `ref/fin/issue-a-customer-invoice` / Read the Metered Usage, Check the
+  Usage Reading Is Complete
 
 ## Patterns
 
@@ -42,6 +44,8 @@ from the account monitor.
 - the agreement store and the entitlement record (read) - a use number
   means nothing without the limit it sits under
 - the CRM (write) - the reading against the account, dated
+- the notification channel (write) - a reading held from an invoice
+  reaches the billing lead with its reason the same day
 
 ## Records
 
@@ -66,6 +70,12 @@ the reading next to the agreement and get the same answer.
 - a reading it cannot take, because the meter is missing, broken or
   covers the wrong period - said plainly, instead of filled with an
   estimate
+- a reading for an invoice billed on use that is missing, broken, for
+  the wrong period or out of line with the meter or with what was billed
+  before - to the billing lead with the meter and the period named, and
+  the usage is held until it is read again, because a customer is
+  billed on an estimate only where the agreement allows it and the
+  billing lead approves it
 
 ## Not
 

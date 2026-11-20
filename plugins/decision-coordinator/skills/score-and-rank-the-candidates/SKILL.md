@@ -1,6 +1,6 @@
 ---
 name: score-and-rank-the-candidates
-description: Scores each candidate against the criteria already fixed and puts them in one order, with the reason for every place and the evidence it rests on. Use it when running `ref/mkt/content-calendar` and 3 other reference processes.
+description: Scores each candidate against the criteria already fixed and puts them in one order, with the reason for every place and the evidence it rests on. Use it when running `ref/fin/choose-a-supplier` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,7 +17,7 @@ on.
 
 ## Where it happens
 
-The agent does this in five activities across four reference processes.
+The agent does this in six activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Compare the Finalists**
@@ -32,6 +32,9 @@ Each one names the activity as that process words it.
 - **Score the Candidates**
   - `ref/mkt/content-calendar`, activity 8 -
     [Plan Content Calendar](../../../../processes/marketing/content-calendar.md)
+- **Set Out the Choice**
+  - `ref/fin/choose-a-supplier`, activity 11 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 - **Weigh the Requests against the Goals**
   - `ref/mkt/prioritize-initiatives`, activity 6 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)

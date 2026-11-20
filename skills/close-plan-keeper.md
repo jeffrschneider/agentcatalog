@@ -22,6 +22,17 @@ covers:
 - Take in the Decided Strategy
 - Open the Formation Checklist
 
+## open-the-close-calendar
+
+Opens the calendar for closing the books each period at its version,
+with every task, one owner and one day on each and the quarter and year
+tasks where they apply, as the controller confirms it, and announces
+the last day for entries from each sub-ledger and each team.
+
+covers:
+- Open the Close Calendar
+- Announce the Cutoffs
+
 ## name-the-steps-and-put-an-owner-and-a-date-on-each
 
 Lists every step still owed as one set rather than two, walks the
@@ -54,7 +65,9 @@ partnership agreement and subscription documents counsel drafts, the
 filings the compliance officer makes, and the books and portals the
 fund opens. In a closing they are the capital call the fund needs, the
 consents, filings and approvals the closing waits on, and what the
-agreements still owe once the deal has closed.
+agreements still owe once the deal has closed. In closing the books
+they are the payables, receivables, asset, lease, payroll and revenue
+sub-ledgers each owner closes.
 
 covers:
 - Form the Entities
@@ -65,6 +78,7 @@ covers:
 - Request the Capital Call
 - Work the Closing Conditions
 - Track the Post-Closing Items
+- Close the Sub-Ledgers
 
 ## build-the-funds-flow
 
@@ -78,14 +92,16 @@ covers:
 
 ## chase-what-slips-and-re-plan
 
-Chases a step past its date with its owner, re-dates it with the buyer
-or sends it up, and moves every step behind it when a date moves.
-Reports where the deal stands against its own plan.
+Chases a step past its date with its owner, re-dates it with the buyer,
+or with the controller when the books are closing, or sends it up, and
+moves every step behind it when a date moves. Reports where the deal
+stands against its own plan.
 
 covers:
 - Chase the Slipping Steps
 - Re-Plan When a Date Moves
 - Report the Plan
+- Chase the Late Tasks
 
 ## close-the-plan-out
 
@@ -98,6 +114,7 @@ covers:
 - Close the Plan on the Record
 - Confirm Every Condition Is Met
 - Close the Formation Checklist
+- Record What the Close Taught
 
 ## wind-a-dead-deal-down
 

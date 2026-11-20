@@ -50,3 +50,12 @@ Does not sign anything.
   decision with one option in front of it is a person's call
 - a supplier that stops answering, misses what it agreed to deliver, or
   tells the department it is being acquired or shut down
+- a choice of supplier where no candidate meets the must-have
+  requirements - to the requester and the purchasing lead, who loosen a
+  requirement in writing or widen the search, and a change to the
+  criteria after the answers are seen is recorded with the scores it
+  affects
+- a candidate that contacts a decider outside the request, or asks for
+  something the other candidates did not get - to the purchasing lead,
+  with the candidate reminded of the rule in writing and the contact
+  recorded with the scores

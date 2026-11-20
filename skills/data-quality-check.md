@@ -29,7 +29,8 @@ covers:
 Takes in a failing rule and re-runs it to see whether the failure is in
 the data or in the query behind it. Then measures how far it spread,
 finds the day it started, and traces it back to the form, the import,
-the link or the person that wrote the bad values.
+the link, the invoice, the tax code or the person that wrote the bad
+values.
 
 covers:
 - Take in the Failing Rule
@@ -52,11 +53,12 @@ covers:
 
 ## check-the-data-before-it-is-used
 
-Runs the rules over the data a filing or a report is built from before
-anyone signs it: every record complete, consistent with the others, and
-agreeing with the system that keeps its own count, such as the headcount
-and pay totals in the payroll system. Each failure is listed with the
-records it failed on.
+Runs the rules over the data a filing, a tax return or a report is
+built from before anyone signs it: every record complete, consistent
+with the others, and agreeing with the system that keeps its own count,
+such as the headcount and pay totals in the payroll system, or the tax
+code, address and amount of each invoice behind a tax return. Each
+failure is listed with the records it failed on.
 
 covers:
 - Check the Data

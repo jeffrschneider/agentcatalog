@@ -1,6 +1,6 @@
 ---
 name: collect-acknowledgments
-description: Sends each person the variant for their location and what changed, collects each person's own acknowledgment of the version they were sent, and chases what is still missing with the person and then the manager. Use it when running `ref/hr/publish-an-hr-policy` and `ref/hr/run-new-hire-orientation`.
+description: Sends each person the variant for their location or entity and what changed, or each approver and stand-in what they may approve, up to what amount and from what date, collects each person's own acknowledgment of the version they were sent, and chases what is still missing with the person and then the manager or the chief financial officer. Use it when running `ref/fin/publish-a-finance-policy` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: policy-keeper
@@ -11,25 +11,36 @@ metadata:
 
 ## What it does
 
-Sends each person the variant for their location and what changed,
-collects each person's own acknowledgment of the version they were sent,
-and chases what is still missing with the person and then the manager.
+Sends each person the variant for their location or entity and what
+changed, or each approver and stand-in what they may approve, up to what
+amount and from what date, collects each person's own acknowledgment of
+the version they were sent, and chases what is still missing with the
+person and then the manager or the chief financial officer.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Chase What Is Missing**
   - `ref/hr/run-new-hire-orientation`, activity 13 -
     [Run New Hire Orientation](../../../../processes/human-resources/run-new-hire-orientation.md)
 - **Collect the Acknowledgments**
+  - `ref/fin/publish-a-finance-policy`, activity 14 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
+  - `ref/fin/publish-the-delegation-of-authority`, activity 16 -
+    [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
   - `ref/hr/publish-an-hr-policy`, activity 12 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 - **Collect the Policy Acknowledgments**
   - `ref/hr/run-new-hire-orientation`, activity 12 -
     [Run New Hire Orientation](../../../../processes/human-resources/run-new-hire-orientation.md)
+- **Send Each Approver Their Authority**
+  - `ref/fin/publish-the-delegation-of-authority`, activity 15 -
+    [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
 - **Send It to the People It Covers**
+  - `ref/fin/publish-a-finance-policy`, activity 13 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 10 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 

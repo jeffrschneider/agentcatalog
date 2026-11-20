@@ -1,6 +1,6 @@
 ---
 name: hand-the-answer-to-the-agents-that-act
-description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/hr/change-the-organization-structure` and 21 other reference processes.
+description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/fin/approve-an-investment-case` and 24 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,9 +18,12 @@ were turned down.
 
 ## Where it happens
 
-The agent does this in 22 activities across 22 reference processes. Each
+The agent does this in 25 activities across 25 reference processes. Each
 one names the activity as that process words it.
 
+- **Announce the Decision**
+  - `ref/fin/write-off-a-bad-debt`, activity 12 -
+    [Write Off a Bad Debt](../../../../processes/finance/write-off-a-bad-debt.md)
 - **Brief the Department**
   - `ref/mkt/annual-marketing-plan`, activity 15 -
     [Build Annual Marketing Plan](../../../../processes/marketing/annual-marketing-plan.md)
@@ -43,6 +46,9 @@ one names the activity as that process words it.
 - **Hand On Pay Changes and Ended Roles**
   - `ref/hr/change-the-organization-structure`, activity 12 -
     [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
+- **Hand On the Gap the Year Cannot Absorb**
+  - `ref/fin/reforecast-the-year`, activity 16 -
+    [Reforecast the Year](../../../../processes/finance/reforecast-the-year.md)
 - **Hand On the Watch List and Reserves**
   - `ref/pc/run-the-portfolio-review`, activity 17 -
     [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)
@@ -64,6 +70,9 @@ one names the activity as that process words it.
 - **Hand over the Segments**
   - `ref/mkt/segment-the-market`, activity 16 -
     [Segment the Market](../../../../processes/marketing/segment-the-market.md)
+- **Hand the Approved Case On**
+  - `ref/fin/approve-an-investment-case`, activity 16 -
+    [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
 - **Hand the Approved Terms On**
   - `ref/pc/decide-at-investment-committee`, activity 15 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)

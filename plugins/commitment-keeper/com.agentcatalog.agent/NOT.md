@@ -27,3 +27,10 @@ happen in a separate round on published rules.
   - read out at the next check-in like any late item and named to the HR
   business partner, because no outcome is decided while the company
   still owes its part
+- a fix to a failed control or to a point in the auditor's letter that
+  is past its date - to the controller, who agrees a new date or a
+  different fix with its owner, and the miss is recorded while the
+  finding stays open
+- a fix with no owner or no date, or one its owner calls done before it
+  has been tested again - to the controller, and the finding stays open
+  on the record until the fix has both and passes its test

@@ -78,6 +78,18 @@
           "role": "hr-system",
           "access": "write",
           "needs": "Each change a pay review approved, handed to the employee's record with its approver and its effective date, with no right to change any other field."
+        },
+        {
+          "name": "the delegation of authority",
+          "role": "delegation-of-authority",
+          "access": "read",
+          "needs": "The approvers a budget, a reforecast, an investment case, a choice of supplier or a write-off needs at the version in force, which every such decision is put to and checked against."
+        },
+        {
+          "name": "the financial planning system",
+          "role": "financial-planning-system",
+          "access": "read",
+          "needs": "The budget, the reforecast and the investment case at the versions put to the approvers."
         }
       ],
       "records": [
@@ -98,7 +110,11 @@
         "a deal or an option that breaks a fund limit, or a matter the partnership agreement sends to the limited partner advisory committee - to the deal lead partner and the chief compliance officer, and it is not put to a vote until it fits the limit or the consent is recorded",
         "a matter the firm acted on before the advisory committee's consent was recorded - to the committee as a breach, with what was done and when, because only the committee decides what puts it right",
         "a promotion, calibration or succession pack that reaches anyone outside the people named to read it - to the head of HR the same day, and that access is removed before the round goes on",
-        "a panel member who manages a nominee, or who has declared a conflict, about to take part in that decision - to the panel chair, and no decision is recorded with that member's part in it"
+        "a panel member who manages a nominee, or who has declared a conflict, about to take part in that decision - to the panel chair, and no decision is recorded with that member's part in it",
+        "a money decision that would be approved by anyone the delegation of authority in force does not name, or by the person who prepared or asked for what is approved - to the chief financial officer (CFO), and no approval is recorded until the approvers that version names decide",
+        "a gap the reforecast shows the year cannot absorb - to the executive team, who decide whether to act on it, accept it or change the budget, because a reforecast never quietly becomes a new budget",
+        "a supplier's terms that cannot be agreed, or a price past the approved amount - to the budget owner before anyone agrees it, and the choice is set out again with the finalist next in line",
+        "an investment case the approvers have deferred more than `<your number of rounds>` times - to the CFO, who decides whether it is withdrawn"
       ],
       "not": [
         "Does not decide anything.",
@@ -572,6 +588,59 @@
             "Record the Succession Plan",
             "Set the Next Review",
             "Record What the Review Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/set-the-annual-budget",
+          "activities": [
+            "Put the Trade-Offs to the Executive Team",
+            "Settle the Trade-Offs",
+            "Approve the Budget"
+          ]
+        },
+        {
+          "process": "ref/fin/reforecast-the-year",
+          "activities": [
+            "Name the Approvers",
+            "Put the Reforecast to the Approvers",
+            "Approve the Reforecast",
+            "Hand On the Gap the Year Cannot Absorb"
+          ]
+        },
+        {
+          "process": "ref/fin/approve-an-investment-case",
+          "activities": [
+            "Set What the Decision Must Settle",
+            "Send the Case to the Approvers",
+            "Answer the Approvers' Questions",
+            "Record the Decision and the Dissent",
+            "Hand the Approved Case On",
+            "Set When the Case Is Read Again"
+          ]
+        },
+        {
+          "process": "ref/fin/choose-a-supplier",
+          "activities": [
+            "Frame the Decision",
+            "Set Out the Choice",
+            "Choose the Supplier",
+            "Record What the Choice Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/write-off-a-bad-debt",
+          "activities": [
+            "Open the Decision",
+            "Hear the Account Owner",
+            "Record the Decision",
+            "Announce the Decision"
+          ]
+        },
+        {
+          "process": "ref/fin/publish-the-delegation-of-authority",
+          "activities": [
+            "Put the Draft Before the Approvers",
+            "Record the Decision and the Review Date"
           ]
         }
       ]

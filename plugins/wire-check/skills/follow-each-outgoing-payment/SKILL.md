@@ -1,6 +1,6 @@
 ---
 name: follow-each-outgoing-payment
-description: Checks each payment a named person releases, such as the chief financial officer or the payroll approver, against the verified line it pays, then confirms where each one landed and that each payee received it. Use it when running `ref/hr/run-payroll`, `ref/pc/make-a-distribution` and `ref/pc/run-the-closing`.
+description: Checks each payment a named person releases, such as the chief financial officer, the payroll approver or the releasers a company's delegation of authority names, against the verified line it pays, including each transfer between the company's accounts and each payroll funding, then confirms where each one landed and that each payee received it. Use it when running `ref/fin/change-a-suppliers-bank-details` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: wire-check
@@ -12,27 +12,57 @@ metadata:
 ## What it does
 
 Checks each payment a named person releases, such as the chief financial
-officer or the payroll approver, against the verified line it pays, then
-confirms where each one landed and that each payee received it. It can
-see payments and holds no right to release one.
+officer, the payroll approver or the releasers a company's delegation of
+authority names, against the verified line it pays, including each
+transfer between the company's accounts and each payroll funding, then
+confirms where each one landed and that each payee received it. It marks
+the first payment to a changed account for a check, and holds a returned
+or rejected payment with the bank's reason until it can be paid again to
+verified details. It can see payments and holds no right to release one.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
-Each one names the activity as that process words it.
+The agent does this in twelve activities across seven reference
+processes. Each one names the activity as that process words it.
 
+- **Check the Funding Transfer**
+  - `ref/fin/fund-the-payroll`, activity 7 -
+    [Fund the Payroll](../../../../processes/finance/fund-the-payroll.md)
 - **Check the Payment File**
+  - `ref/fin/pay-approved-invoices`, activity 9 -
+    [Pay Approved Invoices](../../../../processes/finance/pay-approved-invoices.md)
   - `ref/hr/run-payroll`, activity 10 -
     [Run Payroll](../../../../processes/human-resources/run-payroll.md)
+- **Check the Transfer**
+  - `ref/fin/move-cash-between-accounts`, activity 6 -
+    [Move Cash Between Accounts](../../../../processes/finance/move-cash-between-accounts.md)
 - **Confirm Each Payment Landed**
   - `ref/pc/make-a-distribution`, activity 15 -
     [Make a Distribution](../../../../processes/private-capital/make-a-distribution.md)
+- **Confirm Where Each Payment Landed**
+  - `ref/fin/pay-approved-invoices`, activity 11 -
+    [Pay Approved Invoices](../../../../processes/finance/pay-approved-invoices.md)
+- **Confirm the First Payment Landed**
+  - `ref/fin/change-a-suppliers-bank-details`, activity 13 -
+    [Change a Supplier's Bank Details](../../../../processes/finance/change-a-suppliers-bank-details.md)
+- **Confirm the Funding Landed**
+  - `ref/fin/fund-the-payroll`, activity 10 -
+    [Fund the Payroll](../../../../processes/finance/fund-the-payroll.md)
 - **Confirm the Money Arrived**
   - `ref/pc/run-the-closing`, activity 12 -
     [Run the Closing](../../../../processes/private-capital/run-the-closing.md)
 - **Confirm the Payments Landed**
   - `ref/hr/run-payroll`, activity 12 -
     [Run Payroll](../../../../processes/human-resources/run-payroll.md)
+- **Confirm the Transfer Landed**
+  - `ref/fin/move-cash-between-accounts`, activity 9 -
+    [Move Cash Between Accounts](../../../../processes/finance/move-cash-between-accounts.md)
+- **Handle a Returned Payment**
+  - `ref/fin/pay-approved-invoices`, activity 12 -
+    [Pay Approved Invoices](../../../../processes/finance/pay-approved-invoices.md)
+- **Mark the First Payment**
+  - `ref/fin/change-a-suppliers-bank-details`, activity 12 -
+    [Change a Supplier's Bank Details](../../../../processes/finance/change-a-suppliers-bank-details.md)
 
 ## What to record
 
