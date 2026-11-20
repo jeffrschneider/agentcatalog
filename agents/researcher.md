@@ -107,6 +107,8 @@ finding that source is a different job from writing the sentence.
 - `ref/hr/run-the-pay-review` / Gather the Market Pay Data
 - `ref/fin/set-a-customers-credit-limit` / Gather the Accounts and
   Credit Reports
+- `ref/sup/write-a-help-article` / Gather How the Feature Works, Check
+  Each Fact Against Its Source
 
 ## Patterns
 
@@ -143,6 +145,10 @@ draft claim by claim against the sources the draft cites.
 - the public register of companies (read) - the accounts a customer has
   filed, and any insolvency, judgment or charge over its assets, in
   each jurisdiction where it is registered
+- the product and the test environment (read) - how a feature behaves
+  today, for each fact in a help article
+- the release notes (read) - what each release changed, as the product
+  team wrote it
 
 ## Records
 
@@ -185,6 +191,10 @@ who said it, marked with what that person agreed could be quoted.
   judgment or a charge over its assets - to the credit and collections
   lead with the source and the date of each, because reading the risk
   and setting a limit are not this agent's
+- a product team that has not said how a feature works by the date a
+  help article needs it - asked once with that date and then raised to
+  the knowledge lead, and the article waits, because the agents answer
+  customers from whatever an article says
 
 ## Not
 

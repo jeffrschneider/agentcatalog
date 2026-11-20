@@ -1,6 +1,6 @@
 ---
 name: get-the-meeting-in-the-diary
-description: Works out who comes from each side and what each is there for, offers times in the person's own time zone, and gets an invitation accepted with the joining details in it. Use it when running `ref/fin/run-the-external-audit` and 7 other reference processes.
+description: Works out who comes from each side and what each is there for, offers times in the person's own time zone, and gets an invitation accepted with the joining details in it. Use it when running `ref/fin/run-the-external-audit` and 8 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: meeting-scheduler
@@ -18,7 +18,7 @@ note about it.
 
 ## Where it happens
 
-The agent does this in fourteen activities across eight reference
+The agent does this in fifteen activities across nine reference
 processes. Each one names the activity as that process words it.
 
 - **Arrange the Reference Calls**
@@ -30,6 +30,9 @@ processes. Each one names the activity as that process words it.
 - **Book Each Interview**
   - `ref/hr/run-the-interviews`, activity 5 -
     [Run the Interviews](../../../../processes/human-resources/run-the-interviews.md)
+- **Book the Call with the Customer**
+  - `ref/sup/escalate-a-case-to-a-specialist`, activity 10 -
+    [Escalate a Case to a Specialist](../../../../processes/customer-support/escalate-a-case-to-a-specialist.md)
 - **Book the Conversation**
   - `ref/sls/work-a-referral`, activity 12 -
     [Work a Referral](../../../../processes/sales/work-a-referral.md)

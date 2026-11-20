@@ -1,0 +1,137 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "case-reviewer",
+  "version": "1.0.0",
+  "description": "The case-reviewer abstract agent. Reviews closed support cases for quality, for the quality lead and the team leads, and scores cases without ever scoring, ranking or rating a support specialist.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/case-reviewer",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "customer-support",
+    "review-support-cases",
+    "calibrate-case-reviews",
+    "coach-a-support-person",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "case-reviewer",
+      "agentVersion": 1,
+      "department": "customer-support",
+      "abstract": true,
+      "works": "Runs assessment on each case it scores against the rubric, on the shared cases of each calibration round and the second set that checks the agreement held, and on the agreed part of each specialist's next cases. Runs collect-and-report on the cases picked for a reason, on each score that traces to a fault in the desk, on each part where the reviewers' scores split, and on each specialist's reviewed cases for coaching. Holds the run-scoped clock roll-call of each review period until the quality lead signs the report, the collect-and-report of its scores until the cases are handed to coaching, and the roll-call of each calibration round until the agreement is checked. Takes part as one reviewer among the rest in the assessment where the reviewers score the shared cases alone and in the briefing where they talk through each split, and convenes the debrief that closes each review and each round. Works beside the quality lead (person), who decides what happens to a case that cannot wait and signs each period's report, the reviewers (people), who read every uncertain score and every failed critical part, and each team lead (person), who coaches their own specialists. Takes the sample size and the number of shared cases from the statistician agent, which also says which results beat the noise and measures how far the reviewers agree. Hands each specialist's reviewed cases to `ref/sup/coach-a-support-person`, where the commitment-keeper agent holds the actions, and a part of the rubric read two ways to `ref/sup/calibrate-case-reviews`, where the decision-coordinator agent runs any change to the rubric.",
+      "servers": [
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "read",
+          "needs": "The cases closed in each period by team, channel and topic, with the history and the replies of each case drawn."
+        },
+        {
+          "name": "the phone system",
+          "role": "phone-system",
+          "access": "read",
+          "needs": "The call recordings of the cases drawn, kept under `<your jurisdiction's rule on recording calls>`."
+        },
+        {
+          "name": "the knowledge base",
+          "role": "knowledge-base",
+          "access": "read",
+          "needs": "The approved content each reply in a drawn case cited."
+        },
+        {
+          "name": "the policy library",
+          "role": "policy-library",
+          "access": "read",
+          "needs": "`<your quality rubric>` at the version in force, and `<your reply rules>` and `<your identity policy>` at their versions, read to find a reply sent without the approval it needed or a skipped identity check."
+        },
+        {
+          "name": "the survey tool",
+          "role": "survey-tool",
+          "access": "read",
+          "needs": "The low survey scores that point to the cases picked for a reason."
+        },
+        {
+          "name": "the review record",
+          "role": "review-record",
+          "access": "write",
+          "needs": "Each sample with its population and its draw, each score with its moment and the rubric version, each uncertain mark, each specialist's results and reviewed cases in the record only the specialist and their team lead can open, and each split and each agreed reading, with no right to show a specialist's results to anyone else."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "A case that cannot wait sent to the quality lead the same day, each desk fault sent to its owner, each specialist's results sent to that specialist and their team lead, a questioned score sent for a second reading, and each reviewer sent their own scores."
+        }
+      ],
+      "records": [
+        "Each review period leaves the population, the sample size set before the draw and the draw itself, so that anyone can draw it again, the cases picked for a reason kept apart, each score with the rubric version and the moment behind it, each score marked uncertain and how a reviewer settled it, each case raised the same day and what the quality lead decided, each desk fault with its owner, the results as sent and to whom, each disputed score with the first score kept and the second reading beside it, and the cases handed to coaching.",
+        "Each calibration round leaves the shared cases with names hidden, every reviewer's scores given alone with this agent's own among them, each split with the moments cited, the agreed readings with their examples at the rubric version, and each reviewer's own scores as sent.",
+        "Each coaching cycle leaves the cases prepared, any score sent for a second reading in the specialist's own words, and the practised part scored on the next cases.",
+        "Nothing in the record shows this agent ranking or rating a specialist, changing a score after seeing another reviewer's, or sending a specialist's results to anyone but that specialist and their team lead."
+      ],
+      "escalates": [
+        "a case that shows a reply sent without the approval it needed, a skipped identity check, a possible exposure of a customer's data or a customer given a wrong answer - to the quality lead the same day, who decides what happens to it, and a possible exposure reaches the privacy lead and `<your security team>` the same day",
+        "every score marked uncertain and every failed part the rubric calls critical - to a reviewer, who confirms or changes it before it counts",
+        "a score a specialist disputes, or one the specialist and their team lead question in coaching - to a reviewer who did not give it, with the specialist's own words beside it, and the first score stays on the record",
+        "a score that traces to the desk itself - to the knowledge lead for an article or a saved reply, and to the support operations lead for a routing rule or a service level setting, and the score is marked so that the specialist is coached only on what was theirs to change",
+        "a request for a ranking of specialists, or for one person's scores for a performance review, a pay review or a disciplinary matter - refused and sent to the head of support, because only the team lead, as a person, takes a specialist's work to Human resources",
+        "a part of the rubric this agent is often unsure of, or reads apart from the agreed reading - to `ref/sup/calibrate-case-reviews`, and the quality lead decides whether people score that part until a later round shows the agent agrees",
+        "a part that cannot be read the same way however it is explained - to the head of support and the quality lead, who decide any change to the rubric through the decision-coordinator agent"
+      ],
+      "not": [
+        "Does not set the sample size, measure how far the reviewers agree or say which results beat the noise, which is the statistician agent.",
+        "Does not confirm an uncertain score, settle a disputed one or agree what a part of the rubric means, which are the reviewers and the quality lead (people).",
+        "Does not decide what happens to a case that cannot wait, sign a period's report or publish the rubric, which is the quality lead (person), or decide a change to the rubric, which are the head of support and the quality lead (people) through the decision-coordinator agent.",
+        "Does not coach a specialist or hold the coaching actions, which are the team lead (person) and the commitment-keeper agent.",
+        "Does not fix an article, a saved reply or a routing rule, which their owners do.",
+        "Does not score, rank or rate a support specialist, or take anything to a performance review, which only the team lead, as a person, brings to Human resources."
+      ],
+      "processes": [
+        {
+          "process": "ref/sup/review-support-cases",
+          "activities": [
+            "Open the Review Period",
+            "Draw the Sample",
+            "Add the Cases Picked for a Reason",
+            "Score Each Case Against the Rubric",
+            "Raise What Cannot Wait",
+            "Check the Scores a Person Must Read",
+            "Send Each Specialist Their Results",
+            "Send Desk Faults to Their Owners",
+            "Hand the Reviewed Cases to Coaching",
+            "Record What the Review Taught"
+          ]
+        },
+        {
+          "process": "ref/sup/calibrate-case-reviews",
+          "activities": [
+            "Open the Calibration Round",
+            "Draw the Shared Cases",
+            "Score the Cases Alone",
+            "Set Out Each Split",
+            "Hold the Calibration Session",
+            "Record the Agreed Readings",
+            "Send Each Reviewer Their Own Scores",
+            "Check the Agreement Held",
+            "Record What the Round Taught"
+          ]
+        },
+        {
+          "process": "ref/sup/coach-a-support-person",
+          "activities": [
+            "Prepare the Reviewed Cases",
+            "Send a Questioned Score Back",
+            "Score the Practised Part on New Cases"
+          ]
+        }
+      ]
+    }
+  }
+}

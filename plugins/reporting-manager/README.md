@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/analyze-customer-base`, `ref/mkt/annual-marketing-plan`,
 `ref/mkt/attribution-model`, `ref/mkt/brand-health`,
-`ref/mkt/brief-executive-leadership`, `ref/mkt/content-calendar`, and 11
+`ref/mkt/brief-executive-leadership`, `ref/mkt/content-calendar`, and 13
 more. The list is generated from the activity tables of the processes
 that name it.
 

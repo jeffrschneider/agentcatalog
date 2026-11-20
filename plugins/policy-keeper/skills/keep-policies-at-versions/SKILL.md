@@ -1,6 +1,6 @@
 ---
 name: keep-policies-at-versions
-description: Takes in each request with the decision behind it, reads the current version, who each variant covers and the exceptions granted under it, publishes each variant at its version with its effective date, files the published delegation of authority beside the finance policies, and keeps the old version with the dates it applied. Use it when running `ref/fin/publish-a-finance-policy`, `ref/fin/publish-the-delegation-of-authority` and `ref/hr/publish-an-hr-policy`.
+description: Takes in each request with the decision behind it, reads the current version, who each variant covers and the exceptions granted under it, publishes each variant at its version with its effective date, files the published delegation of authority beside the finance policies, and keeps the old version with the dates it applied. Use it when running `ref/fin/publish-a-finance-policy` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: policy-keeper
@@ -21,8 +21,8 @@ the publication.
 
 ## Where it happens
 
-The agent does this in eight activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in ten activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **File It With the Finance Policies**
   - `ref/fin/publish-the-delegation-of-authority`, activity 12 -
@@ -34,6 +34,9 @@ processes. Each one names the activity as that process words it.
     [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
   - `ref/hr/publish-an-hr-policy`, activity 14 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
+- **Mark What Rests on the Old Levels**
+  - `ref/sup/set-a-service-level-policy`, activity 14 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Mark What Rests on the Old Version**
   - `ref/fin/publish-a-finance-policy`, activity 15 -
     [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
@@ -46,6 +49,8 @@ processes. Each one names the activity as that process words it.
     [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 9 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
+  - `ref/sup/set-a-service-level-policy`, activity 13 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Read the Current Version**
   - `ref/fin/publish-a-finance-policy`, activity 2 -
     [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
@@ -54,6 +59,9 @@ processes. Each one names the activity as that process words it.
 - **Read the Exceptions Granted Under It**
   - `ref/fin/publish-a-finance-policy`, activity 3 -
     [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
+- **Read the Policy in Force**
+  - `ref/sup/set-a-service-level-policy`, activity 2 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Record the Publication**
   - `ref/fin/publish-a-finance-policy`, activity 17 -
     [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)

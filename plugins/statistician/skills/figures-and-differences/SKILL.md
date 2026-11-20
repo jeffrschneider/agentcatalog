@@ -1,6 +1,6 @@
 ---
 name: figures-and-differences
-description: Works out each figure with the range around it, and says whether a difference is larger than the noise in the measurement, whether that difference is between two groups, between this reading and the last one, or between what was expected and what happened. Use it when running `ref/hr/run-the-employee-survey` and 8 other reference processes.
+description: Works out each figure with the range around it, and says whether a difference is larger than the noise in the measurement, whether that difference is between two groups, between this reading and the last one, or between what was expected and what happened. Use it when running `ref/hr/run-the-employee-survey` and 9 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: statistician
@@ -18,12 +18,15 @@ or between what was expected and what happened.
 
 ## Where it happens
 
-The agent does this in nine activities across nine reference processes.
+The agent does this in eleven activities across ten reference processes.
 Each one names the activity as that process words it.
 
 - **Compare with the Earlier Waves**
   - `ref/mkt/brand-health`, activity 17 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
+- **Compare with the Last Period**
+  - `ref/sup/survey-customers-after-a-case`, activity 14 -
+    [Survey Customers after a Case](../../../../processes/customer-support/survey-customers-after-a-case.md)
 - **Compare with the Last Read**
   - `ref/mkt/analyze-customer-base`, activity 13 -
     [Analyze Customer Base](../../../../processes/marketing/analyze-customer-base.md)
@@ -45,6 +48,9 @@ Each one names the activity as that process words it.
 - **Work Out the Figures**
   - `ref/hr/run-the-employee-survey`, activity 11 -
     [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
+- **Work Out the Scores**
+  - `ref/sup/survey-customers-after-a-case`, activity 13 -
+    [Survey Customers after a Case](../../../../processes/customer-support/survey-customers-after-a-case.md)
 - **Work out the Figures**
   - `ref/mkt/brand-audit`, activity 12 -
     [Conduct Brand Audit](../../../../processes/marketing/brand-audit.md)

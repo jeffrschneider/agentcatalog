@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "revenue-operations",
+    "customer-support",
     "watch-the-response-clock",
-    "fix-a-misroute",
-    "write-a-routing-rule",
+    "report-the-service-levels",
+    "set-a-service-level-policy",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "response-clock-monitor",
       "agentVersion": 1,
-      "department": "revenue-operations",
+      "department": "customer-support",
       "abstract": true,
       "works": "Measures alone and reports in company. Convenes the decide-and-announce that fixes what each clock covers and the clock a new rule promises, and the debrief where each manager reads their own misses and says what they will change. Takes the timestamp check from the data-steward agent, the cuts and the comparison with earlier windows from the analytics agent, writes the report with the reporting-manager agent, and hands the rule changes the report calls for to the routing-keeper agent.",
       "servers": [
@@ -50,6 +50,24 @@
           "role": "reporting-store",
           "access": "write",
           "needs": "The measurements, the queries behind them, and the period as published."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "read",
+          "needs": "Each case's queue, channel, plan and urgency with its start, stop and pause stamps, and the clocks as they are built into it, with no right to change a stamp or a setting."
+        },
+        {
+          "name": "the contract repository",
+          "role": "contract-repository",
+          "access": "read",
+          "needs": "The levels each plan and agreement already promises customers."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "A support queue about to miss its level reaches the team lead on the shift with the cases at risk."
         }
       ],
       "records": [
@@ -65,7 +83,11 @@
         "more runs set aside than missed - to the revenue operations lead, and the report leads with the set-aside count rather than the result",
         "a manager who disputes their number - back to the set-aside step with the runs named, because a published report is corrected by a new run against the same window and never edited in place",
         "a pattern that turns out to be a measurement problem - back to the timestamp check, before staffing work is opened against a queue that was never slow",
-        "a window that missed its number and opened no work - to the revenue operations lead, recorded as a period that opened nothing"
+        "a window that missed its number and opened no work - to the revenue operations lead, recorded as a period that opened nothing",
+        "a support queue about to miss its level - to the team lead on the shift with the cases at risk and the time each has left, who decides whether to move people, call in cover or tell customers to expect a longer wait",
+        "a support clock nothing reliably stamps, more support cases set aside than missed, or a support queue that missed its level and opened no work - to the head of support, with the clock shown as unmeasured, the set-aside count leading the report, or the period recorded as one that opened nothing",
+        "a candidate service level that would serve an account slower than its agreement promises - to the support operations lead, and the candidate is set again or that account keeps its agreed level",
+        "a request to cut the support desk's results by a named support specialist - refused, because the support reports show queues and teams and no named person's results"
       ],
       "not": [
         "Does not route work or change a rule.",
@@ -99,6 +121,45 @@
           "activities": [
             "Set the Clock the Rule Promises",
             "Watch the First Week"
+          ]
+        },
+        {
+          "process": "ref/sup/build-the-support-schedule",
+          "activities": [
+            "Read Where the Last Schedule Missed",
+            "Watch the First Week"
+          ]
+        },
+        {
+          "process": "ref/sup/report-the-service-levels",
+          "activities": [
+            "Name What Each Clock Covers",
+            "Check the Stamps Hold Up",
+            "Measure Each Case Against Its Clock",
+            "Set Aside What the Clock Does Not Cover",
+            "Break the Misses Down",
+            "Find the Cause Behind the Misses",
+            "Write the Report",
+            "Take Each Team Lead Through Their Queues"
+          ]
+        },
+        {
+          "process": "ref/sup/run-the-days-queue",
+          "activities": [
+            "Watch Each Queue Against Its Clock",
+            "Name a Queue About to Miss",
+            "Check the Queue Recovers"
+          ]
+        },
+        {
+          "process": "ref/sup/set-a-service-level-policy",
+          "activities": [
+            "Read What Customers Are Already Promised",
+            "Read the Results Against Today's Levels",
+            "Name What Each Clock Covers",
+            "Check Each Against What Is Promised",
+            "Check the Clocks Against the Policy",
+            "Measure from the Day It Takes Effect"
           ]
         }
       ]

@@ -1,6 +1,6 @@
 ---
 name: make-the-material-at-a-version
-description: Builds the session, the exercise and the short version of a change, and publishes the decks, the labs and the recordings at a version at one address, so the session and the library never differ. Use it when running `ref/hr/plan-the-learning-program` and 4 other reference processes.
+description: Builds the session, the exercise and the short version of a change, and publishes the decks, the labs and the recordings at a version at one address, so the session and the library never differ. Use it when running `ref/hr/plan-the-learning-program` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: curriculum-manager
@@ -17,12 +17,15 @@ address, so the session and the library never differ.
 
 ## Where it happens
 
-The agent does this in six activities across five reference processes.
+The agent does this in seven activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Build the Courses Inside**
   - `ref/hr/plan-the-learning-program`, activity 11 -
     [Plan the Learning Program](../../../../processes/human-resources/plan-the-learning-program.md)
+- **Build the Release Briefing**
+  - `ref/sup/prepare-support-for-a-release`, activity 8 -
+    [Prepare Support for a Release](../../../../processes/customer-support/prepare-support-for-a-release.md)
 - **Build the Teaching**
   - `ref/rev/roll-out-a-change`, activity 9 -
     [Roll Out a Change](../../../../processes/revenue-operations/roll-out-a-change.md)

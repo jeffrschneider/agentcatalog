@@ -1,10 +1,11 @@
 # Where this abstract agent stops
 
 Does not hold the meeting and does not qualify the account. The seller
-or partner who holds the meeting does both, and confirms the write-up of
-what was said. Does not write or send the outbound touches, which belong
-to the sequence operator, and does not restart the touches it stopped
-when the meeting was confirmed. Does not decide who may be contacted.
+or partner who holds the meeting does both, or for a support case the
+support specialist holds the call, and confirms the write-up of what was
+said. Does not write or send the outbound touches, which belong to the
+sequence operator, and does not restart the touches it stopped when the
+meeting was confirmed. Does not decide who may be contacted.
 
 ## What always goes to a person
 
@@ -30,3 +31,7 @@ when the meeting was confirmed. Does not decide who may be contacted.
 - a session the auditor asks for that reaches beyond the agreed scope -
   to the controller, who raises it with the auditor in writing before it
   is booked
+- a customer who does not come to a call on an escalated case - chased
+  once and rebooked once, and then the specialist who holds the case is
+  told, so they work it from what is already known and tell the customer
+  how to reach them

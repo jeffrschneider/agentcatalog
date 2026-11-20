@@ -1,0 +1,215 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "case-manager",
+  "version": "1.0.0",
+  "description": "The case-manager abstract agent. Holds each support case from assignment to close, for the support specialist who owns it and the team lead, and decides no answer and sends no reply itself.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/case-manager",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "customer-support",
+    "resolve-a-case",
+    "answer-a-billing-question",
+    "flag-an-account-signal",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "case-manager",
+      "agentVersion": 1,
+      "department": "customer-support",
+      "abstract": true,
+      "works": "Holds the run-scoped clock roll-call of each case from assignment to close, and through each identity check, routine answer, sensitive reply, escalation, billing question and linked bug, the promises roll-call of each case until it closes, the dispute-date roll-call of each claim with Finance until it is answered, and the status roll-call of each account signal until it reaches Sales. Runs assessment on each identity result against the level the action needs, on each escalated case's promises, on each linked case against the customer's own account after an outage, on each signal's kind with the support specialist confirming it, and on whether Sales already holds a risk or an opening on the account. Runs collect-and-report on the customer's records, the case history and the promises for each specialist, each escalation, each held reply and each complaint, and on what each case taught. Convenes the debrief that closes each billing question and each account signal, and the one where the team lead (person) takes back what Sales decided. Sits in the approval where the complaint handler (person) reads and sends a complaint's answer and the one where a support specialist (person) sends each customer its credit, keeping the case beside them and recording what was sent. Works beside the support specialist (person) who owns each case and sends each reply, the escalation specialist (person) who takes an escalated case, and the team lead (person), who hears each promise that has passed and each signal not taken up. Takes each case from the request-sorter agent, each identity result from the identity-check agent, each draft from the customer-question-responder agent, each escalation summary from the escalation-coordinator agent, and each account's standing from the account-monitor agent. Hands each drafted reply to the reply-check agent, each case the first specialist cannot resolve to the escalation-coordinator agent, each sign of leaving to the risk-watcher agent and each sign of buying more to the expansion-spotter agent, each claim that an invoice is wrong to the dispute-coordinator agent at `ref/fin/resolve-a-billing-dispute`, each request for money back to the refund-coordinator agent at `ref/sup/decide-a-refund-request`, and each closed case to the satisfaction-surveyor agent.",
+      "servers": [
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "write",
+          "needs": "Each case's owner, its state and its clock, each identity result and hold, each promise with its owner and its date, each link to a bug, an incident, a dispute or another process, each approval and each message the customer was sent, and each close and reopen, with no right to send a reply or to change anything in the account."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The account, its plan, its contacts and the account owner each signal and each request to change the plan or the price goes to."
+        },
+        {
+          "name": "the knowledge base",
+          "role": "knowledge-base",
+          "access": "read",
+          "needs": "The approved content each reply on a case cited."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "read",
+          "needs": "The bill a question names, with no right to change a charge, an invoice or a payment."
+        },
+        {
+          "name": "the contract repository",
+          "role": "contract-repository",
+          "access": "read",
+          "needs": "The customer's agreement behind a complaint or a billing question."
+        },
+        {
+          "name": "the phone system",
+          "role": "phone-system",
+          "access": "read",
+          "needs": "The call records behind a complaint."
+        },
+        {
+          "name": "the issue tracker",
+          "role": "issue-tracker",
+          "access": "read",
+          "needs": "The bug each case is linked to and its state."
+        },
+        {
+          "name": "the dispute register",
+          "role": "dispute-register",
+          "access": "write",
+          "needs": "Each claim that an invoice is wrong, logged in the customer's own words with the invoice, the line and the amount, with no right to decide it."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Each promise raised to its specialist before its date and to the team lead once it has passed, each signal not taken up raised with the team lead, and each case handed on told to the process that now holds it."
+        }
+      ],
+      "records": [
+        "Each case leaves its one owner at each point with the date it moved and why, its state and its clock from the customer's first request, the records gathered with where each was read, each identity check asked for with the level it needed, the result and when the pass lapsed, each promise with who made it, its date and whether it was kept or handed on, each reminder sent before a date and each promise that passed, each process it was handed to with the customer's own words and the reference there, each reply's approver and the version sent where a named person approved it, what each customer was told and by whom, and its close, any reopening and the survey started.",
+        "Each billing question leaves how it was sorted, the claim or the request sent on, and the date Finance promised with each time it was raised.",
+        "Each linked bug or incident leaves every case linked to it with its next update, and each case closed or kept open with its reason after an outage.",
+        "Each account signal leaves the customer's own words, the kind it was sorted as and who confirmed it, any risk or opening Sales already held, the reference in Sales and the date, and what Sales decided with any fix a save plan names for support.",
+        "Nothing in the record shows this agent sending a reply, deciding an answer, deciding a refund, a credit or a dispute, making an offer or discussing a price, or scoring a support specialist."
+      ],
+      "escalates": [
+        "a promise about to be missed - raised to the support specialist while there is time to keep it and to the team lead once it has passed, and the customer hears before the date passes with a new date the specialist can keep",
+        "a case that belongs to another process, such as a reproduced fault, a claim that an invoice is wrong, a request for money back, a security or safety report, a formal complaint, a request about a person's own data, a request to close the account or an account signal - opened there with the case and the customer's own words, and the case stays with its specialist until that process answers",
+        "an identity check that does not pass, or a request held as a possible takeover - the case held with nothing in the account read out or changed, for the team lead to decide",
+        "a request to cancel - sent the same day to `ref/sup/close-a-customer-account`, which takes it to the account owner in the customer's own words, and never delayed or made to depend on anything",
+        "a case reopened twice - to the team lead, who decides whether it is escalated",
+        "a support specialist who is away - to the team lead, who gives the case to another named specialist with its history, its promises and what the customer was told",
+        "an account signal the account owner has not taken up within `<hours>` - to the team lead, who takes it to the person `<your account coverage rule>` names in Sales",
+        "a case after an outage that asks for goodwill beyond the agreement, says the customer will leave, claims a loss or threatens legal action - to `ref/sup/offer-a-goodwill-credit`, to `ref/sup/flag-an-account-signal`, or to `<your legal team>` the same day",
+        "Finance's promised date on a disputed invoice about to pass - raised on the case before it passes, and Finance's process tells the customer the new date and the reason"
+      ],
+      "not": [
+        "Does not answer a customer or decide what a reply says, which is the support specialist (person) who holds the case, or the customer-question-responder agent on a routine question.",
+        "Does not check a reply, which is the reply-check agent, or approve or send a sensitive reply, which is the named approver for its category (person).",
+        "Does not run the identity checks, which is the identity-check agent, or decide a held request, which is the team lead (person).",
+        "Does not write the escalation summary, choose the tier or file a bug, which is the escalation-coordinator agent.",
+        "Does not work a churn risk or an expansion, make an offer or discuss a price, which stay with the account owner in Sales through the risk-watcher and expansion-spotter agents.",
+        "Does not decide a billing dispute, which is Finance's dispute process with the billing lead, or a refund or a credit, which is the named person at `ref/sup/decide-a-refund-request` or `ref/sup/offer-a-goodwill-credit`.",
+        "Does not score a case, which is the case-reviewer agent, and rates no support specialist."
+      ],
+      "processes": [
+        {
+          "process": "ref/sup/verify-a-customers-identity",
+          "activities": [
+            "Take In the Action Asked For",
+            "Record the Result on the Case",
+            "Hold a Possible Takeover",
+            "Let the Result Lapse"
+          ]
+        },
+        {
+          "process": "ref/sup/answer-a-routine-question",
+          "activities": [
+            "Start the Identity Check Where Needed",
+            "Hand the Case to a Person",
+            "Close the Run on the Case"
+          ]
+        },
+        {
+          "process": "ref/sup/resolve-a-case",
+          "activities": [
+            "Assign the Case to One Specialist",
+            "Gather the Customer's Records",
+            "Confirm the Person Where the Case Needs It",
+            "Record Each Promise with Its Date",
+            "Raise a Promise Before Its Date",
+            "Hand On What Belongs Elsewhere",
+            "Close the Case",
+            "Reopen a Case That Did Not Work",
+            "Start the Survey",
+            "Record What the Case Taught"
+          ]
+        },
+        {
+          "process": "ref/sup/approve-a-sensitive-reply",
+          "activities": [
+            "Set the Case Beside the Reply",
+            "Record the Approval on the Case",
+            "Record What the Reply Commits To"
+          ]
+        },
+        {
+          "process": "ref/sup/escalate-a-case-to-a-specialist",
+          "activities": [
+            "Gather the Case as It Stands",
+            "Move the Case to Its New Owner",
+            "Tell the Customer Who Holds It"
+          ]
+        },
+        {
+          "process": "ref/sup/report-a-confirmed-bug",
+          "activities": [
+            "Link Each Case to the Bug",
+            "Tell Each Linked Customer What Is Known",
+            "Keep the Linked Customers Updated"
+          ]
+        },
+        {
+          "process": "ref/sup/follow-up-an-outage",
+          "activities": [
+            "Check Each Linked Case",
+            "Close or Keep Open Each Linked Case",
+            "Record the Promises the Summary Makes",
+            "Tell Each Customer Its Credit",
+            "Pass On What the Follow-Up Does Not Cover"
+          ]
+        },
+        {
+          "process": "ref/sup/answer-a-billing-question",
+          "activities": [
+            "Take In the Billing Question",
+            "Confirm the Asker Was Verified",
+            "Hand the Claim to Finance",
+            "Tell the Customer Who Holds It Now",
+            "Send a Refund or Plan Request On",
+            "Keep the Case Open Until Finance Answers",
+            "Close the Question on the Case",
+            "Record What the Question Taught"
+          ]
+        },
+        {
+          "process": "ref/sup/answer-a-formal-complaint",
+          "activities": [
+            "Gather the Case History and the Records",
+            "Send the Answer",
+            "Keep the Promises the Answer Makes"
+          ]
+        },
+        {
+          "process": "ref/sup/flag-an-account-signal",
+          "activities": [
+            "Write Down the Customer's Own Words",
+            "Sort the Signal",
+            "Check Whether Sales Already Holds It",
+            "Confirm the Account Owner Has It",
+            "Record Where the Signal Went",
+            "Take Back What Sales Decided",
+            "Record What the Signal Taught"
+          ]
+        }
+      ]
+    }
+  }
+}

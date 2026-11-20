@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "onboarding-manager",
   "version": "1.0.0",
-  "description": "The onboarding-manager abstract agent. Carries somebody who has just joined a revenue team from a confirmed start date to a real customer conversation they can hold unaided, and carries any new hire from the signed offer through the first day, orientation and the plan for the first months.",
+  "description": "The onboarding-manager abstract agent. Carries somebody who has just joined a revenue team from a confirmed start date to a real customer conversation they can hold unaided, or the support team to cases they answer on their own, and carries any new hire from the signed offer through the first day, orientation and the plan for the first months.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -16,7 +16,7 @@
     "human-resources",
     "prepare-for-a-new-hire",
     "onboard-a-seller",
-    "run-a-new-hires-first-months",
+    "ramp-a-new-support-person",
     "abstract"
   ],
   "extensions": {
@@ -104,6 +104,18 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "The new hire told where to go on the first day, when, and who will meet them, and the manager told when a check-in is booked again."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "read",
+          "needs": "The systems and the reply rights a new support specialist holds, and each reply a mentor reads before it goes, with no right to grant access or widen reply rights itself."
+        },
+        {
+          "name": "the certification record",
+          "role": "certification-record",
+          "access": "read",
+          "needs": "Each topic a new support specialist has passed or must sit again."
         }
       ],
       "records": [
@@ -128,7 +140,9 @@
         "a new hire's form still missing or incomplete close to the first day, to the HR operations specialist, who calls the new hire, because no agent fills in a field on the new hire's behalf",
         "equipment, a badge or a workspace that will not be ready on the first day, to the HR operations lead and the hiring manager, who decide whether the start moves or the new hire starts with a loan device, and the new hire hears the same day",
         "a second missed check-in in a new hire's first months, to the HR business partner, and a probation closing date that passes with no decision, to the head of HR",
-        "a concern or a request for an adjustment that a new hire raises, to the named person who handles it in its own process, and nothing about it enters the plan or the probation review"
+        "a concern or a request for an adjustment that a new hire raises, to the named person who handles it in its own process, and nothing about it enters the plan or the probation review",
+        "a system a new support specialist cannot open - ordered again with the first ticket attached and raised to the support operations lead, and the specialist never answers a customer through a borrowed sign-in",
+        "a new support specialist about to reply to customers on a topic the team lead has not signed - held to the practice area or to replies a mentor reads, because reply rights widen only on that signature"
       ],
       "not": [
         "Does not teach.",
@@ -200,6 +214,21 @@
             "Prepare the Probation Review",
             "Tell the New Hire the Outcome",
             "Record What the First Months Taught"
+          ]
+        },
+        {
+          "process": "ref/sup/ramp-a-new-support-person",
+          "activities": [
+            "Take In the New Specialist",
+            "Confirm the Ramp With the Team Lead",
+            "Order Access to the Desk",
+            "Check the Access Landed",
+            "Build the Ramp Plan",
+            "Sit Beside a Mentor",
+            "Answer Real Cases With Replies Read",
+            "Sign the Step to Replies of Their Own",
+            "Report the Ramp",
+            "Record What the Ramp Taught"
           ]
         }
       ]

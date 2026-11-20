@@ -100,6 +100,8 @@ covers:
 - Write the Quarter's Letter
 - Write Why the Numbers Moved
 - Write the Account of the Month
+- Write the Report
+- Write the Account of the Period
 
 ## clear-the-report-before-it-goes-out
 
@@ -109,18 +111,22 @@ changes they name, and sends nothing on that they have not cleared.
 
 covers:
 - Check the Report for Compliance
+- Have the Figures Checked
 
 ## publish-the-report
 
 Puts the report out on its date at a version, whether or not every
 source answered, with every line attributed to where it came from and
-the evidence under it.
+the evidence under it, and keeps it as sent with the queries behind it
+so the period replays.
 
 covers:
 - Publish the Report
 - Report Awareness, Perception and Preference
 - Release the Figures
 - Deliver the Report
+- Send the Report to the Head of Support
+- Keep the Period
 
 ## restate-published-reports
 
@@ -137,14 +143,17 @@ covers:
 
 Answers the questions the readers of a published report raise, beside
 the person who holds the relationship with them, and logs each one
-against the version it asks about. Then records what the period's
-report taught: what was late, what was corrected, what was asked, and
-what the next report changes.
+against the version it asks about, and records each decision a reader
+takes with its owner and its date for the next report. Then records
+what the period's report taught: what was late, what was corrected,
+what was asked, and what the next report changes.
 
 covers:
 - Answer the Investors' Questions
 - Record What the Quarter Taught
 - Answer the Leaders' Questions
+- Answer the Readers' Questions
+- Record Each Decision
 - Record What the Period Taught
 - Record What the Month Taught
 

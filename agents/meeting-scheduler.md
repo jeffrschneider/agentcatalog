@@ -33,6 +33,8 @@ meeting with no write-up does not count as held.
   Interview, Brief the Panel, Brief the Candidate, Book the Debrief
 - `ref/fin/run-the-external-audit` / Book the Walkthroughs and
   Interviews
+- `ref/sup/escalate-a-case-to-a-specialist` / Book the Call with the
+  Customer, Hold the Call
 
 ## Patterns
 
@@ -66,6 +68,9 @@ prospect researcher.
 - the audit portal (read) - the walkthroughs and interviews the
   external auditor asks for, with the control each one covers and the
   dates the agreed timetable sets
+- the support system (write) - the booking and the notes of a call on
+  an escalated case, put on the case, with no right to answer or close
+  the case
 
 ## Records
 
@@ -104,12 +109,17 @@ and the point at which it was let go.
 - a session the auditor asks for that reaches beyond the agreed scope -
   to the controller, who raises it with the auditor in writing before
   it is booked
+- a customer who does not come to a call on an escalated case - chased
+  once and rebooked once, and then the specialist who holds the case is
+  told, so they work it from what is already known and tell the customer
+  how to reach them
 
 ## Not
 
 Does not hold the meeting and does not qualify the account. The seller
-or partner who holds the meeting does both, and confirms the write-up
-of what was said. Does not write or send the
+or partner who holds the meeting does both, or for a support case the
+support specialist holds the call, and confirms the write-up of what was
+said. Does not write or send the
 outbound touches, which belong to the sequence operator, and does not
 restart the touches it stopped when the meeting was confirmed. Does not
 decide who may be contacted.

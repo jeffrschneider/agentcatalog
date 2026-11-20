@@ -1,6 +1,6 @@
 ---
 name: write-a-routing-rule-in-plain-words
-description: Takes the question of who should get what, reads how the work is routed now, and writes the answer as sentences a seller can read without training. Use it when running `ref/rev/write-a-routing-rule`.
+description: Takes the question of who should get what, reads how the work is routed now, including the cases moved by hand under the rule in force, and writes the answer as sentences a seller or a support specialist can read without training. Use it when running `ref/rev/write-a-routing-rule` and `ref/sup/change-a-routing-rule`.
 license: CC-BY-4.0
 metadata:
   agent: routing-keeper
@@ -12,13 +12,14 @@ metadata:
 ## What it does
 
 Takes the question of who should get what, reads how the work is routed
-now, and writes the answer as sentences a seller can read without
-training. Sets which clause wins where two could match, and names the
-person anything unmatched goes to.
+now, including the cases moved by hand under the rule in force, and
+writes the answer as sentences a seller or a support specialist can read
+without training. Sets which clause wins where two could match, and
+names the person anything unmatched goes to.
 
 ## Where it happens
 
-The agent does this in five activities across one reference process.
+The agent does this in ten activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Name Who Should Get What**
@@ -27,12 +28,29 @@ Each one names the activity as that process words it.
 - **Read How Work Is Routed Now**
   - `ref/rev/write-a-routing-rule`, activity 2 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)
+- **Read the Misroutes Under It**
+  - `ref/sup/change-a-routing-rule`, activity 3 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
+- **Read the Rule in Force**
+  - `ref/sup/change-a-routing-rule`, activity 2 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
+- **Say Who Should Get What**
+  - `ref/sup/change-a-routing-rule`, activity 4 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
 - **Set the Order and the Fallback**
   - `ref/rev/write-a-routing-rule`, activity 7 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)
+  - `ref/sup/change-a-routing-rule`, activity 7 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
+- **Take In the Routing Request**
+  - `ref/sup/change-a-routing-rule`, activity 1 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
 - **Take in the Routing Question**
   - `ref/rev/write-a-routing-rule`, activity 1 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)
+- **Write the Change in Plain Words**
+  - `ref/sup/change-a-routing-rule`, activity 6 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
 - **Write the Rule in Plain Words**
   - `ref/rev/write-a-routing-rule`, activity 6 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)

@@ -43,3 +43,7 @@ credit claim.
 - an invoice and its recompute that disagree from the same records - to
   the billing lead with both set side by side, and to the owner of the
   billing system at the cause step
+- a claim handed over from a support case that cannot be logged with a
+  holder and a date on the day it arrives - to the billing lead, because
+  the customer is told who holds it within the hours the support process
+  sets

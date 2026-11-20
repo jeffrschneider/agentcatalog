@@ -8,8 +8,9 @@ score the piece against the brand guidelines or the claims register,
 because that is the brand-check agent and it runs as a separate pass.
 Does not choose the title, the headings or the links for findability,
 which is the search-optimizer agent. Does not commission the piece or
-set its date, which the content-manager agent does. It is not a signer:
-it says the piece is ready, and named people sign.
+set its date, which the content-manager agent does, or for a help
+article the knowledge-keeper agent. It is not a signer: it says the
+piece is ready, and named people sign.
 
 ## What always goes to a person
 
@@ -21,3 +22,6 @@ it says the piece is ready, and named people sign.
 - a disagreement with the writer that another round will not settle
 - a rewrite that the brief and the style guide would answer in opposite
   ways
+- a help article that still does not answer the question it was planned
+  for after the rewrites - to the knowledge lead, who decides whether it
+  is planned again or stopped

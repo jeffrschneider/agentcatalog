@@ -1,6 +1,6 @@
 ---
 name: score-a-page
-description: Reads a page as it will actually be served and scores it against the standards in force, covering alt text, contrast, heading order, keyboard use, load time, broken links, the title and the tracking on it. Use it when running `ref/mkt/customer-case-study` and 5 other reference processes.
+description: Reads a page as it will actually be served, such as a landing page or a help article, and scores it against the standards in force, covering alt text, contrast, heading order, keyboard use, load time, broken links, the title and the tracking on it. Use it when running `ref/mkt/customer-case-study` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: accessibility-check
@@ -11,16 +11,20 @@ metadata:
 
 ## What it does
 
-Reads a page as it will actually be served and scores it against the
-standards in force, covering alt text, contrast, heading order, keyboard
-use, load time, broken links, the title and the tracking on it. Every
-failure cites the rule it was scored against.
+Reads a page as it will actually be served, such as a landing page or a
+help article, and scores it against the standards in force, covering alt
+text, contrast, heading order, keyboard use, load time, broken links,
+the title and the tracking on it. Every failure cites the rule it was
+scored against.
 
 ## Where it happens
 
-The agent does this in five activities across six reference processes.
+The agent does this in six activities across seven reference processes.
 Each one names the activity as that process words it.
 
+- **Check the Article for Accessibility**
+  - `ref/sup/write-a-help-article`, activity 8 -
+    [Write a Help Article](../../../../processes/customer-support/write-a-help-article.md)
 - **Check the Changed Page**
   - `ref/mkt/website-content-update`, activity 10 -
     [Update Website Content](../../../../processes/marketing/website-content-update.md)

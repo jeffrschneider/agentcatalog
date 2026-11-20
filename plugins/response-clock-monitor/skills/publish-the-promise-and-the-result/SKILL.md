@@ -1,6 +1,6 @@
 ---
 name: publish-the-promise-and-the-result
-description: Writes the promise and what actually happened side by side, whether the number is good or bad, and takes each queue its own number rather than the average. Use it when running `ref/rev/watch-the-response-clock` and `ref/rev/write-a-routing-rule`.
+description: Writes the promise and what actually happened side by side, whether the number is good or bad, and takes each queue its own number rather than the average. Use it when running `ref/rev/watch-the-response-clock` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: response-clock-monitor
@@ -13,22 +13,30 @@ metadata:
 
 Writes the promise and what actually happened side by side, whether the
 number is good or bad, and takes each queue its own number rather than
-the average. A new rule gets the same reading over its first week.
+the average. A new rule or a new schedule gets the same reading over its
+first week, and each team lead is taken through their own queues.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Take Each Queue Its Own Number**
   - `ref/rev/watch-the-response-clock`, activity 14 -
     [Watch the Response Clock](../../../../processes/revenue-operations/watch-the-response-clock.md)
+- **Take Each Team Lead Through Their Queues**
+  - `ref/sup/report-the-service-levels`, activity 13 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 - **Watch the First Week**
   - `ref/rev/write-a-routing-rule`, activity 17 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)
+  - `ref/sup/build-the-support-schedule`, activity 17 -
+    [Build the Support Schedule](../../../../processes/customer-support/build-the-support-schedule.md)
 - **Write the Report**
   - `ref/rev/watch-the-response-clock`, activity 11 -
     [Watch the Response Clock](../../../../processes/revenue-operations/watch-the-response-clock.md)
+  - `ref/sup/report-the-service-levels`, activity 10 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 
 ## What to record
 

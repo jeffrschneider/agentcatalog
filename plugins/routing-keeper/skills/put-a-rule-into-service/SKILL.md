@@ -1,6 +1,6 @@
 ---
 name: put-a-rule-into-service
-description: Builds the signed rule into the system that hands out the work, checks where the first items actually land, publishes the copy people are held to, and tells everyone the change reaches what is different now. Use it when running `ref/rev/write-a-routing-rule`.
+description: Builds the signed rule into the system that hands out the work, with the version before kept ready to switch back to, checks where the first items actually land, publishes the copy people are held to, and tells everyone the change reaches what is different now. Use it when running `ref/rev/write-a-routing-rule` and `ref/sup/change-a-routing-rule`.
 license: CC-BY-4.0
 metadata:
   agent: routing-keeper
@@ -11,24 +11,34 @@ metadata:
 
 ## What it does
 
-Builds the signed rule into the system that hands out the work, checks
-where the first items actually land, publishes the copy people are held
-to, and tells everyone the change reaches what is different now.
+Builds the signed rule into the system that hands out the work, with the
+version before kept ready to switch back to, checks where the first
+items actually land, publishes the copy people are held to, and tells
+everyone the change reaches what is different now.
 
 ## Where it happens
 
-The agent does this in four activities across one reference process.
+The agent does this in seven activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Announce What Changes**
   - `ref/rev/write-a-routing-rule`, activity 16 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)
+- **Check the First Requests Land Right**
+  - `ref/sup/change-a-routing-rule`, activity 14 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
 - **Implement the Rule**
   - `ref/rev/write-a-routing-rule`, activity 13 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)
 - **Publish the Rule Where People Read It**
   - `ref/rev/write-a-routing-rule`, activity 15 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)
+- **Publish the Rule Where the Team Reads It**
+  - `ref/sup/change-a-routing-rule`, activity 15 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
+- **Switch It On with a Way Back**
+  - `ref/sup/change-a-routing-rule`, activity 13 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
 - **Verify It in the Live System**
   - `ref/rev/write-a-routing-rule`, activity 14 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)

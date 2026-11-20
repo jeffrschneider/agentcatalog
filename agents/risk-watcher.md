@@ -19,6 +19,7 @@ same evidence again to see whether the signal turned.
   Signal, Name the Reason, Set the Severity and the Clock, Tell the
   Account Owner, Watch for the Signal to Turn, Close or Escalate the
   Risk, Record the Save or the Departure
+- `ref/sup/flag-an-account-signal` / Hand a Sign of Leaving to Sales
 
 ## Patterns
 
@@ -36,7 +37,9 @@ agent, who convenes the save plan.
 ## Grants
 
 - the usage record (read) - where use fell, when, and for which team
-- the support system (read) - open tickets and anything in dispute
+- the support system (read) - open tickets and anything in dispute, and
+  a support signal is taken in with its case and the customer's own
+  words
 - the billing system (read) - unpaid invoices, and what is in
   collections
 - the CRM (read) - which named contacts are still there and which have
@@ -74,6 +77,13 @@ renewals.
 - a source that keeps raising signals the account record contradicts,
   to whoever owns that model, because a source that cries wolf stops
   being read
+- a sign of leaving that support passes on - to the account owner
+  inside the time the policy sets, with the customer's own words, the
+  case and the standing, and nobody in support makes an offer, discusses
+  a price or delays a cancellation
+- a support signal that does not hold - back to the support specialist
+  and the team lead who raised it with the reason, so the support team's
+  signal rules can change at their next debrief
 
 ## Not
 

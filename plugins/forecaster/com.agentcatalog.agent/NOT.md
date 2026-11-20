@@ -34,3 +34,7 @@ the organization to a number.
 - an assumption in an investment case that nobody can source - to the
   sponsor for evidence, and it goes to the approvers marked as unsourced
   if none comes
+- a forecast of support requests that rests on thin data, such as a
+  channel opened recently or a window full of outages - to the support
+  operations lead, marked as resting on thin data so the schedule is
+  planned with a margin

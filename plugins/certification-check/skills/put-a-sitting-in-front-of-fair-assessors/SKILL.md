@@ -1,6 +1,6 @@
 ---
 name: put-a-sitting-in-front-of-fair-assessors
-description: Picks assessors who are not scoring their own people, briefs all of them on the same standard, the same scoring sheet and the same worked examples at once, and sets the date, the order and what the person may bring in with them. Use it when running `ref/rev/certify-a-seller`.
+description: Picks assessors who are not scoring their own people, briefs all of them on the same standard, the same scoring sheet and the same worked examples at once, and sets the date, the order and what the person may bring in with them. Use it when running `ref/rev/certify-a-seller` and `ref/sup/ramp-a-new-support-person`.
 license: CC-BY-4.0
 metadata:
   agent: certification-check
@@ -18,12 +18,15 @@ bring in with them.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in four activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Brief the Assessors**
   - `ref/rev/certify-a-seller`, activity 7 -
     [Certify a Seller](../../../../processes/revenue-operations/certify-a-seller.md)
+- **Name the Assessor**
+  - `ref/sup/ramp-a-new-support-person`, activity 10 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Name the Assessors**
   - `ref/rev/certify-a-seller`, activity 6 -
     [Certify a Seller](../../../../processes/revenue-operations/certify-a-seller.md)

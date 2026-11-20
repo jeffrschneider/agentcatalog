@@ -1,6 +1,6 @@
 ---
 name: log-what-appears-while-a-run-is-live
-description: Watches the named sources while a run is in flight and records each thing that appears, whether it is an article, a post, an analyst note, a review or a result, keeping the wording and where it ran. Use it when running `ref/mkt/announce-company-news` and 6 other reference processes.
+description: Watches the named sources while a run is in flight and records each thing that appears, whether it is an article, a post, an analyst note, a review, a result or customers saying in public that the product is broken, keeping the wording and where it ran. Use it when running `ref/mkt/announce-company-news` and 7 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: coverage-monitor
@@ -13,16 +13,20 @@ metadata:
 
 Watches the named sources while a run is in flight and records each
 thing that appears, whether it is an article, a post, an analyst note, a
-review or a result, keeping the wording and where it ran.
+review, a result or customers saying in public that the product is
+broken, keeping the wording and where it ran.
 
 ## Where it happens
 
-The agent does this in six activities across seven reference processes.
-Each one names the activity as that process words it.
+The agent does this in seven activities across eight reference
+processes. Each one names the activity as that process words it.
 
 - **Log the Coverage**
   - `ref/mkt/pitch-earned-media`, activity 14 -
     [Pitch Earned Media](../../../../processes/marketing/pitch-earned-media.md)
+- **Notice Customers Saying It in Public**
+  - `ref/sup/raise-a-suspected-outage`, activity 2 -
+    [Raise a Suspected Outage](../../../../processes/customer-support/raise-a-suspected-outage.md)
 - **Record the Live Posts**
   - `ref/mkt/influencer-campaign`, activity 14 -
     [Run Influencer Campaign](../../../../processes/marketing/influencer-campaign.md)

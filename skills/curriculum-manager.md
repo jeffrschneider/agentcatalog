@@ -22,6 +22,7 @@ covers:
 - Book the Sessions
 - Build the Curriculum
 - Build the Learning Plan
+- Build the Ramp Plan
 
 ## read-the-handover-before-anybody-is-taught-from-it
 
@@ -31,6 +32,7 @@ before anybody is taught the old answer.
 
 covers:
 - Check What Was Handed Over
+- Check the Handover Against What Customers Ask
 
 ## make-the-material-at-a-version
 
@@ -45,13 +47,16 @@ covers:
 - Publish the Courses at a Version
 - Update the Material
 - Update the Course
+- Build the Release Briefing
 
 ## teach-a-subject
 
 Runs the session itself: what the product does and what it costs, who
 else the buyer is looking at and why, the stages, the gates and the
 systems of record, the pitch and the objections for the people who
-sell, and the build and the common failures for the people who deliver.
+sell, the build and the common failures for the people who deliver, and
+the desk, the reply rules and each release for the people who answer
+customers.
 
 covers:
 - Run the Delivery Training
@@ -60,6 +65,9 @@ covers:
 - Teach the Market and the Competition
 - Teach the Process
 - Teach the Product
+- Teach the Desk
+- Teach the Reply Rules
+- Brief the Support Specialists
 
 ## run-a-practice
 
@@ -94,6 +102,7 @@ nothing else.
 covers:
 - Give the Feedback
 - Retrain Whoever Failed
+- Teach a Gap Again
 
 ## plan-the-learning-program
 
@@ -132,3 +141,4 @@ them.
 
 covers:
 - Record What the Round Taught
+- Record What the Ramp Taught

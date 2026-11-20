@@ -27,3 +27,10 @@ own authority.
   quietly reused
 - a certificate approaching expiry or a certified person who has left,
   to whoever owns the relationship, before a deal in flight discovers it
+- an assessor for a support specialist's sitting who is the specialist's
+  team lead or mentor - ruled out, and the team lead names another from
+  the assessor pool before the sitting runs
+- a support topic a new specialist has not passed twice - to the team
+  lead with the scores, who decides with the specialist whether the plan
+  for that topic changes, and the specialist does not take that topic
+  alone meanwhile

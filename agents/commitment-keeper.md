@@ -35,6 +35,9 @@ nobody kept is visible rather than forgotten.
 - `ref/fin/test-a-financial-control` / Load Each Fix Into the Tracker,
   Chase Each Fix to Its Date
 - `ref/fin/run-the-external-audit` / Load Each Fix Into the Tracker
+- `ref/sup/coach-a-support-person` / Book the Coaching Session, Read Out
+  Last Time's Actions, Record the Actions, Chase Each Action to Its
+  Date, Close the Coaching Cycle, Record What the Cycle Taught
 
 ## Patterns
 
@@ -58,12 +61,15 @@ takes the decisions and the closed lines back from the review.
   company reports it, read beside the baseline at every review
 - the calendar (write) - each check-in of a plan about one employee, on
   the calendars of the manager and the employee, with the date a
-  probation closes shown where one applies
+  probation closes shown where one applies, and each coaching session on
+  the calendars of a support specialist and their team lead, with time
+  off the queue held for both
 - the issue tracker (write) - each fix to a failed control or to a point
   in the auditor's letter, with its owner, its date, its state and the
   finding it answers
 - the notification channel (write) - a fix past its date reaches the
-  controller
+  controller, and a coaching action past its date reaches the support
+  specialist and their team lead and nobody else
 
 ## Records
 
@@ -102,6 +108,14 @@ dates set for the year, and whose calendars they landed on.
 - a fix with no owner or no date, or one its owner calls done before it
   has been tested again - to the controller, and the finding stays open
   on the record until the fix has both and passes its test
+- a coaching action past its date - raised to the support specialist and
+  their team lead and to nobody else, because the record is theirs alone
+- a coaching session missed twice - to the team lead's own manager as a
+  missed session, with nothing from the record attached
+- anyone else who asks to see a coaching record - refused, and the two
+  of them are told. The record is opened to anyone else only when the
+  specialist agrees or `<your jurisdiction's rules>` require it, and
+  then a named person decides with `<your legal team>`
 
 ## Not
 

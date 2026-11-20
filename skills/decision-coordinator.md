@@ -108,6 +108,8 @@ covers:
 - Gather the Facts
 - Commission an Independent Opinion
 - Lay Out the Choices
+- Frame a Change to the Rubric
+- Set Out the Candidate Levels
 
 ## narrow-the-candidates-to-a-shortlist
 
@@ -187,6 +189,8 @@ covers:
 - Hear the Deal Leads
 - Consult Where the Rules Require It
 - Hear the Account Owner
+- Hear the Team Leads and Specialists
+- Hear the Team Leads
 
 
 ## convene-the-room-where-it-is-decided
@@ -357,6 +361,7 @@ covers:
 - Hand the Approved Case On
 - Hand On the Gap the Year Cannot Absorb
 - Announce the Decision
+- Tell the Reviewers and Team Leads
 
 
 ## write-the-readout

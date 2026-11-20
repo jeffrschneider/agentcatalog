@@ -1,6 +1,6 @@
 ---
 name: set-what-each-clock-covers
-description: Takes the promise and the window being measured, and writes down what starts each clock, what stops it and what pauses it, so that two people read it the same way. Use it when running `ref/rev/watch-the-response-clock` and `ref/rev/write-a-routing-rule`.
+description: Takes the promise and the window being measured, and writes down what starts each clock, what stops it and what pauses it, so that two people read it the same way. Use it when running `ref/rev/watch-the-response-clock` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: response-clock-monitor
@@ -14,16 +14,24 @@ metadata:
 Takes the promise and the window being measured, and writes down what
 starts each clock, what stops it and what pauses it, so that two people
 read it the same way. Where a new rule promises a clock, that promise is
-written the same way before the rule runs.
+written the same way before the rule runs, and once a clock is built
+into a system a sample of cases is checked against what the policy says.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across four reference processes.
 Each one names the activity as that process words it.
 
+- **Check the Clocks Against the Policy**
+  - `ref/sup/set-a-service-level-policy`, activity 16 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Name What Each Clock Covers**
   - `ref/rev/watch-the-response-clock`, activity 2 -
     [Watch the Response Clock](../../../../processes/revenue-operations/watch-the-response-clock.md)
+  - `ref/sup/report-the-service-levels`, activity 2 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
+  - `ref/sup/set-a-service-level-policy`, activity 5 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Set the Clock the Rule Promises**
   - `ref/rev/write-a-routing-rule`, activity 8 -
     [Write a Routing Rule](../../../../processes/revenue-operations/write-a-routing-rule.md)

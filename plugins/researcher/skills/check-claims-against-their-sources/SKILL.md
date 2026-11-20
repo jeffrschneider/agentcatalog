@@ -1,6 +1,6 @@
 ---
 name: check-claims-against-their-sources
-description: Takes a claim somebody wants to publish, finds the source under it, and says whether that source actually carries the claim. Use it when running `ref/mkt/announce-company-news` and 10 other reference processes.
+description: Takes a claim somebody wants to publish, finds the source under it, and says whether that source actually carries the claim. Use it when running `ref/mkt/announce-company-news` and 11 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: researcher
@@ -19,9 +19,12 @@ next person can check the same thing.
 
 ## Where it happens
 
-The agent does this in ten activities across eleven reference processes.
-Each one names the activity as that process words it.
+The agent does this in eleven activities across twelve reference
+processes. Each one names the activity as that process words it.
 
+- **Check Each Fact Against Its Source**
+  - `ref/sup/write-a-help-article`, activity 7 -
+    [Write a Help Article](../../../../processes/customer-support/write-a-help-article.md)
 - **Check Whether the Facts Still Hold**
   - `ref/mkt/refresh-content`, activity 6 -
     [Refresh Published Content](../../../../processes/marketing/refresh-content.md)

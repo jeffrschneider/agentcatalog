@@ -1,6 +1,6 @@
 ---
 name: teach-a-named-gap-again
-description: Reads what a sitting found and says what passed, what did not and what to do next, then runs the session again for that one named gap and nothing else. Use it when running `ref/prt/certify-a-partner` and `ref/rev/certify-a-seller`.
+description: Reads what a sitting found and says what passed, what did not and what to do next, then runs the session again for that one named gap and nothing else. Use it when running `ref/prt/certify-a-partner`, `ref/rev/certify-a-seller` and `ref/sup/ramp-a-new-support-person`.
 license: CC-BY-4.0
 metadata:
   agent: curriculum-manager
@@ -17,8 +17,8 @@ nothing else.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Give the Feedback**
   - `ref/rev/certify-a-seller`, activity 15 -
@@ -26,6 +26,9 @@ Each one names the activity as that process words it.
 - **Retrain Whoever Failed**
   - `ref/prt/certify-a-partner`, activity 13 -
     [Certify a Partner](../../../../processes/partners/certify-a-partner.md)
+- **Teach a Gap Again**
+  - `ref/sup/ramp-a-new-support-person`, activity 14 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 
 ## What to record
 

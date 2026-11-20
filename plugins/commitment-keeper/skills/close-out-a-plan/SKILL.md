@@ -1,6 +1,6 @@
 ---
 name: close-out-a-plan
-description: "At the end of a plan, records the last state of every item: met, carried into the next plan with its owner and its date, or closed with the reason. Use it when running `ref/hr/run-a-new-hires-first-months`."
+description: "At the end of a plan, records the last state of every item: met, carried into the next plan with its owner and its date, or closed with the reason. Use it when running `ref/hr/run-a-new-hires-first-months` and `ref/sup/coach-a-support-person`."
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,9 +17,12 @@ reason. The plan closes with nothing left open by silence.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Close the Coaching Cycle**
+  - `ref/sup/coach-a-support-person`, activity 14 -
+    [Coach a Support Person](../../../../processes/customer-support/coach-a-support-person.md)
 - **Close the Plan**
   - `ref/hr/run-a-new-hires-first-months`, activity 16 -
     [Run a New Hire's First Months](../../../../processes/human-resources/run-a-new-hires-first-months.md)

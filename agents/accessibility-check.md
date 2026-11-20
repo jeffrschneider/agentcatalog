@@ -36,6 +36,7 @@ somebody's preference.
 - `ref/mkt/webinar` / Prepare the Recording for Reuse
 - `ref/mkt/website-content-update` / Check the Changed Page
 - `ref/mkt/win-back-campaign` / Score the Messages
+- `ref/sup/write-a-help-article` / Check the Article for Accessibility
 
 ## Patterns
 
@@ -54,6 +55,8 @@ producing agents fix from this report, and this agent scores the fix.
 - the asset store (read)
 - the review record (write) - the scores land where the signers and the
   producing agents read them
+- the knowledge base (read) - each help article draft at its version,
+  scored as customers will read it once it is published
 
 ## Records
 
@@ -71,13 +74,18 @@ ran again.
   that, and the decision is recorded with the failure attached.
 - two standards it was handed that contradict each other, such as a
   brand color that cannot meet the contrast rule
+- a help article that still fails a rule once the article-writer agent
+  has fixed it - to the article's named owner and the knowledge lead,
+  with the rule attached, because no article is approved or answered
+  from by the agents while a failure is open
 
 ## Not
 
 This agent is not a signer. It produces the score and named people sign.
 It does not fix what it finds: the copywriter writes the alt text, the
 video-editor recuts the captions, the designer changes the color, the
-web-producer changes the page, and this agent scores the result again.
+web-producer changes the page, the article-writer agent changes a help
+article, and this agent scores the result again.
 It does not score claims or brand voice, which is the brand-check
 agent's work. It does not edit the standards it scores against, and it
 does not decide that a failure is small enough to ship with.

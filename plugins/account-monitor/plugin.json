@@ -52,6 +52,24 @@
           "role": "account-standing-record",
           "access": "write",
           "needs": "Each answer lands dated, with the evidence under it."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "read",
+          "needs": "What an account pays and any invoice still open, behind a feature request, a closure and an account signal, with no right to change a charge."
+        },
+        {
+          "name": "the issue tracker",
+          "role": "issue-tracker",
+          "access": "read",
+          "needs": "What engineering can tell about the accounts a confirmed fault reaches."
+        },
+        {
+          "name": "the incident record",
+          "role": "incident-record",
+          "access": "read",
+          "needs": "The features, regions and plans engineering confirmed an incident affects."
         }
       ],
       "records": [
@@ -64,7 +82,9 @@
         "a risk signal severe enough that waiting for the next scheduled check would waste the warning",
         "two systems that disagree about the same account beyond the tolerance the process sets",
         "a question it cannot answer because a system it needs is unavailable or its data is out of date, raised before the answer is due",
-        "a contractual or legal matter it finds while reading, such as a dispute, a breach notice or an account in collections, because whether that account may be approached at all is a person's decision"
+        "a contractual or legal matter it finds while reading, such as a dispute, a breach notice or an account in collections, because whether that account may be approached at all is a person's decision",
+        "an account whose plan or entitlement cannot be read when a support request arrives - to the owner of that record at `ref/rev/fix-a-data-quality-failure`, with the case marked as taking the service level set for a plan that is unknown",
+        "an affected account whose agreement promises a notice of an outage - to the head of support with the deadline, the route and the contact the agreement names, before the deadline passes"
       ],
       "not": [
         "Does not contact the customer and does not send anything to them.",
@@ -176,6 +196,45 @@
           "activities": [
             "Brief the Study",
             "Check Who May Be Approached"
+          ]
+        },
+        {
+          "process": "ref/sup/close-a-customer-account",
+          "activities": [
+            "Read the Account's Standing"
+          ]
+        },
+        {
+          "process": "ref/sup/flag-an-account-signal",
+          "activities": [
+            "Read the Account's Standing",
+            "Check Whether Sales Already Holds It"
+          ]
+        },
+        {
+          "process": "ref/sup/log-a-feature-request",
+          "activities": [
+            "Read the Account Behind It"
+          ]
+        },
+        {
+          "process": "ref/sup/report-a-confirmed-bug",
+          "activities": [
+            "List the Accounts Affected"
+          ]
+        },
+        {
+          "process": "ref/sup/take-in-a-request",
+          "activities": [
+            "Match the Sender to an Account",
+            "Read the Account's Standing"
+          ]
+        },
+        {
+          "process": "ref/sup/tell-affected-customers",
+          "activities": [
+            "List the Affected Accounts",
+            "Read What Each Agreement Promises"
           ]
         }
       ]

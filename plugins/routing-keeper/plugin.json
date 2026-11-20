@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "routing-keeper",
   "version": "1.0.0",
-  "description": "The routing-keeper abstract agent. Holds the routing rules and the systems that enforce them. Writes each rule as plain sentences a seller can read without training, sets which clause wins and the named person anything unmatched goes to, builds it into the system that delivers the work, and publishes it at the version it runs at.",
+  "description": "The routing-keeper abstract agent. Holds the routing rules and the systems that enforce them.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -14,9 +14,9 @@
     "abstract-agent",
     "reference",
     "revenue-operations",
+    "change-a-routing-rule",
     "write-a-routing-rule",
     "fix-a-misroute",
-    "watch-the-response-clock",
     "abstract"
   ],
   "extensions": {
@@ -56,6 +56,12 @@
           "role": "announcement-channel",
           "access": "write",
           "needs": "Who is told what changed."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "write",
+          "needs": "Each routing change built in a copy away from live beside the tool-administrator agent, and each case found in the wrong queue moved with its reason, with no right to switch a rule on in live alone."
         }
       ],
       "records": [
@@ -68,11 +74,14 @@
         "a receiving queue that cannot hold the volume a clause sends - to whoever staffs it, with the count per queue",
         "a case that cannot name one cause - to the revenue operations lead, rather than closed as unexplained",
         "a rule carrying more open cases than the stated limit - to the revenue operations lead, and the rule takes no further change until those cases are read together",
-        "an emergency change to a live rule - written up afterwards as a run of its own, to the rule's owner"
+        "an emergency change to a live rule - written up afterwards as a run of its own, to the rule's owner",
+        "every change to a support routing rule - to the support operations lead, who approves it before it is switched on in live",
+        "work landing in the wrong queue under a new support routing rule more often than the process allows - to the support operations lead, who decides whether the tool-administrator agent switches back to the version before",
+        "a support misroute that cannot name one cause, or a support rule carrying more open cases than the stated limit - to the support operations lead, and the rule takes no further change until those cases are read together"
       ],
       "not": [
         "Does not decide who should get what.",
-        "A sales manager says that out loud in sentences first, and this agent writes it down, tests it and builds it.",
+        "A sales manager, or for the support desk the support operations lead, says that out loud in sentences first, and this agent writes it down, tests it and builds it.",
         "Does not correct the field that sent an item wrong, because a field is corrected in the system that owns it by the data-steward agent.",
         "Does not score or qualify the work it routes, and does not set or report the response clock."
       ],
@@ -115,6 +124,26 @@
             "Verify It in the Live System",
             "Publish the Rule Where People Read It",
             "Announce What Changes"
+          ]
+        },
+        {
+          "process": "ref/sup/change-a-routing-rule",
+          "activities": [
+            "Take In the Routing Request",
+            "Read the Rule in Force",
+            "Read the Misroutes Under It",
+            "Say Who Should Get What",
+            "Check the Fields the Rule Reads",
+            "Write the Change in Plain Words",
+            "Set the Order and the Fallback",
+            "Check the Queues Can Hold It",
+            "Show It to the People It Routes To",
+            "Build It Away from Live",
+            "Switch It On with a Way Back",
+            "Check the First Requests Land Right",
+            "Publish the Rule Where the Team Reads It",
+            "Watch for Work in the Wrong Queue",
+            "Record What the Change Taught"
           ]
         }
       ]

@@ -37,3 +37,9 @@ first customer conversation or take it over.
 - a concern or a request for an adjustment that a new hire raises, to
   the named person who handles it in its own process, and nothing about
   it enters the plan or the probation review
+- a system a new support specialist cannot open - ordered again with the
+  first ticket attached and raised to the support operations lead, and
+  the specialist never answers a customer through a borrowed sign-in
+- a new support specialist about to reply to customers on a topic the
+  team lead has not signed - held to the practice area or to replies a
+  mentor reads, because reply rights widen only on that signature

@@ -1,6 +1,6 @@
 ---
 name: collect-acknowledgments
-description: Sends each person the variant for their location or entity and what changed, or each approver and stand-in what they may approve, up to what amount and from what date, collects each person's own acknowledgment of the version they were sent, and chases what is still missing with the person and then the manager or the chief financial officer. Use it when running `ref/fin/publish-a-finance-policy` and 3 other reference processes.
+description: Sends each person the variant for their location or entity and what changed, or each approver and stand-in what they may approve, up to what amount and from what date, collects each person's own acknowledgment of the version they were sent, and chases what is still missing with the person and then the manager or the chief financial officer. Use it when running `ref/fin/publish-a-finance-policy` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: policy-keeper
@@ -19,7 +19,7 @@ person and then the manager or the chief financial officer.
 
 ## Where it happens
 
-The agent does this in five activities across four reference processes.
+The agent does this in six activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Chase What Is Missing**
@@ -43,6 +43,9 @@ Each one names the activity as that process words it.
     [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 10 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
+- **Tell the People It Covers**
+  - `ref/sup/set-a-service-level-policy`, activity 17 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 
 ## What to record
 

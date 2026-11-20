@@ -64,3 +64,13 @@ outcome sits against what the signal predicted.
 covers:
 - Take in the Recorded Opening
 - Tell the Spotter What Happened
+
+## take-in-a-signal-from-support
+
+Takes a support case's sign that an account may buy more, such as a team
+asking for what a larger plan includes, into the spotting work as a
+support signal with the customer's own words, the case and the account's
+standing, or adds it to the opening already open on the account.
+
+covers:
+- Hand a Sign of Buying More to Sales

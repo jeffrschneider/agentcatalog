@@ -72,6 +72,24 @@
           "role": "general-ledger",
           "access": "read",
           "needs": "What like spend has actually cost, as a source for the rates in an investment case."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "read",
+          "needs": "The requests that arrived on each channel by topic and interval, which a forecast of requests is fit on and set beside."
+        },
+        {
+          "name": "the release calendar",
+          "role": "release-calendar",
+          "access": "read",
+          "needs": "The releases ahead and the dates they reach customers."
+        },
+        {
+          "name": "the marketing calendar",
+          "role": "marketing-calendar",
+          "access": "read",
+          "needs": "The campaigns and price changes ahead that may bring requests."
         }
       ],
       "records": [
@@ -88,7 +106,8 @@
         "a record with gaps large enough that the model would learn from the gaps",
         "a request to present a prediction without its assumptions, its data window, or its unsourced rates",
         "an investment case whose return turns on a single assumption - to the sponsor, who says why the assumption holds, and to the approvers, who decide knowing that the case rests on it",
-        "an assumption in an investment case that nobody can source - to the sponsor for evidence, and it goes to the approvers marked as unsourced if none comes"
+        "an assumption in an investment case that nobody can source - to the sponsor for evidence, and it goes to the approvers marked as unsourced if none comes",
+        "a forecast of support requests that rests on thin data, such as a channel opened recently or a window full of outages - to the support operations lead, marked as resting on thin data so the schedule is planned with a margin"
       ],
       "not": [
         "Does not decide anything and does not recommend a course of action.",
@@ -271,6 +290,16 @@
           "activities": [
             "Model the Cost and the Return",
             "Test How Far the Answer Moves"
+          ]
+        },
+        {
+          "process": "ref/sup/forecast-support-volume",
+          "activities": [
+            "Gather the Events Ahead",
+            "Compare the Last Forecast with What Arrived",
+            "Model the Requests Ahead",
+            "Name the Assumptions That Decide the Answer",
+            "Record What the Forecast Taught"
           ]
         }
       ]

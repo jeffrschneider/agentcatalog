@@ -1,6 +1,6 @@
 ---
 name: draft-from-approved-decisions
-description: Drafts a change on the current version only from an approved decision, a rule change counsel or an adviser confirmed, a failed control or an audit finding, and writes a location's or an entity's variant only where a local rule needs a different text, with every local point left blank for counsel and the advisers. Use it when running `ref/fin/publish-a-finance-policy` and 3 other reference processes.
+description: Drafts a change on the current version only from an approved decision, a rule change counsel or an adviser confirmed, a failed control or an audit finding, and writes a location's or an entity's variant only where a local rule needs a different text, with every local point left blank for counsel and the advisers. Use it when running `ref/fin/publish-a-finance-policy` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: policy-keeper
@@ -20,7 +20,7 @@ needed once a named person has decided them.
 
 ## Where it happens
 
-The agent does this in five activities across four reference processes.
+The agent does this in six activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Act on the Outcome**
@@ -31,6 +31,9 @@ Each one names the activity as that process words it.
     [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 4 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
+- **Draft the Policy**
+  - `ref/sup/set-a-service-level-policy`, activity 11 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Record What the Case Taught**
   - `ref/hr/issue-a-disciplinary-action`, activity 18 -
     [Issue a Disciplinary Action](../../../../processes/human-resources/issue-a-disciplinary-action.md)

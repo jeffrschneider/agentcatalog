@@ -1,6 +1,6 @@
 ---
 name: take-in-a-claim-and-promise-a-date
-description: Takes a claim that a statement or a customer invoice is wrong, acknowledges it, and names who holds it and the date the answer comes, before anybody knows whether the claim is right. Use it when running `ref/fin/resolve-a-billing-dispute` and `ref/rev/settle-a-commission-dispute`.
+description: Takes a claim that a statement or a customer invoice is wrong, acknowledges it, and names who holds it and the date the answer comes, before anybody knows whether the claim is right. Use it when running `ref/fin/resolve-a-billing-dispute`, `ref/rev/settle-a-commission-dispute` and `ref/sup/answer-a-billing-question`.
 license: CC-BY-4.0
 metadata:
   agent: dispute-coordinator
@@ -20,7 +20,7 @@ because the class decides who is heard and what evidence is pulled.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in six activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Acknowledge and Promise a Date**
@@ -36,9 +36,15 @@ Each one names the activity as that process words it.
 - **Take In the Claim**
   - `ref/fin/resolve-a-billing-dispute`, activity 1 -
     [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
+- **Take In the Claim at Finance**
+  - `ref/sup/answer-a-billing-question`, activity 10 -
+    [Answer a Billing Question](../../../../processes/customer-support/answer-a-billing-question.md)
 - **Take in the Claim**
   - `ref/rev/settle-a-commission-dispute`, activity 1 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
+- **Tell the Customer Who Holds It Now**
+  - `ref/sup/answer-a-billing-question`, activity 11 -
+    [Answer a Billing Question](../../../../processes/customer-support/answer-a-billing-question.md)
 
 ## What to record
 

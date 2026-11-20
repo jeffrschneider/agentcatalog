@@ -13,16 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "finance",
+    "customer-support",
     "settle-a-commission-dispute",
     "resolve-a-billing-dispute",
+    "answer-a-billing-question",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "dispute-coordinator",
       "agentVersion": 1,
-      "department": "finance",
+      "department": "customer-support",
       "abstract": true,
       "works": "Convenes rather than computes. Runs collect-and-report to pull the records the disputed number was computed from, convenes the briefing in which the claimant says what they believe happened and the briefing in which the other seller and its manager answer, and convenes decide-and-announce where the answer is upheld, partly upheld or refused. Requests the approval that any decision moving money has to pass, and runs roll-call on the promised date from the acknowledgement until the claimant is told. Takes the frozen statement, the evidence and the independent recompute from the commission-calculator agent, reads the governing sentence with the plan-designer agent, works with the reporting-manager agent on the answer and the period's report, and hands the cause back so the same claim does not arrive next period.",
       "servers": [
@@ -91,6 +92,12 @@
           "role": "crm",
           "access": "read",
           "needs": "The account owner and the delivery lead to be heard on what was promised and delivered."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "write",
+          "needs": "The holder of a claim support handed over, and the date its answer will come, put on the customer's case, with no right to answer or close the case."
         }
       ],
       "records": [
@@ -112,7 +119,8 @@
         "every answer to a customer's claim that an invoice is wrong - to the billing lead, who decides whether it is upheld, partly upheld or refused",
         "a credit note or a replacement invoice the answer needs - to the approver the delegation of authority names for the amount before it is issued, and the customer hears nothing about a credit that has not been approved",
         "a customer who does not accept the answer - to the controller, on the route the answer named and inside the window it gave, and a claim that threatens legal action goes to counsel the same day",
-        "an invoice and its recompute that disagree from the same records - to the billing lead with both set side by side, and to the owner of the billing system at the cause step"
+        "an invoice and its recompute that disagree from the same records - to the billing lead with both set side by side, and to the owner of the billing system at the cause step",
+        "a claim handed over from a support case that cannot be logged with a holder and a date on the day it arrives - to the billing lead, because the customer is told who holds it within the hours the support process sets"
       ],
       "not": [
         "Does not compute or recompute a number.",
@@ -152,6 +160,13 @@
             "Tell the Customer",
             "Escalate What Is Not Accepted",
             "Feed the Cause Back"
+          ]
+        },
+        {
+          "process": "ref/sup/answer-a-billing-question",
+          "activities": [
+            "Take In the Claim at Finance",
+            "Tell the Customer Who Holds It Now"
           ]
         }
       ]

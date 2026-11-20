@@ -13,10 +13,13 @@ covers:
 ## notice-delivery
 
 Works out which accounts should see the notice out of the accounts that
-actually have the feature, switches it on, and keeps the record of who
-was told and when. The same work covers a notice a customer is owed and
-a notice that simply announces something new.
+actually have the feature, or that an incident affects, switches it on,
+takes it down, and keeps the record of who was told and when. The same
+work covers a notice a customer is owed, a notice that simply announces
+something new, and an outage notice while the incident lasts.
 
 covers:
 - Serve the Notice
 - Tell the Customers Who Have It
+- Show the Notice Inside the Product
+- Take Down the In-Product Notice

@@ -61,8 +61,9 @@ The items come from other processes. Supplier invoices are approved at
 `<your jurisdiction's rules>` treat as pay to payroll. Payroll itself is
 paid at `ref/hr/run-payroll` and funded at `ref/fin/fund-the-payroll`,
 and it never runs through this process. A refund to a customer is
-approved at `ref/fin/apply-a-customer-payment` or
-`ref/fin/resolve-a-billing-dispute`, and the company card statement is
+approved at `ref/fin/apply-a-customer-payment`,
+`ref/fin/resolve-a-billing-dispute` or
+`ref/sup/decide-a-refund-request`, and the company card statement is
 checked at `ref/fin/reconcile-company-card-spend`, and each is paid here
 like any other approved item. When the paying account needs
 money moved into it, the treasurer moves it at

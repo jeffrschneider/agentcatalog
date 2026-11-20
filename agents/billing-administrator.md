@@ -23,9 +23,11 @@ disputed invoice it recomputes the lines on its own from the same
 records for the dispute-coordinator agent, drafts the credit note or the
 replacement for exactly what the billing lead decided, issues it once
 the named approver has approved it, and feeds the cause back to whoever
-owns it. The point of the job is that every customer is billed on time
-for exactly what it signed for and used, and an issued invoice is never
-edited.
+owns it. For a refund or a goodwill credit a named person in support
+decided, it drafts the credit note for exactly what was decided and
+issues it once that person has approved it. The point of the job is
+that every customer is billed on time for exactly what it signed for
+and used, and an issued invoice is never edited.
 
 ## Processes
 
@@ -40,6 +42,10 @@ edited.
   Independently, Draft the Credit Note or Replacement, Issue the Credit
   Note and Any Replacement, Feed the Cause Back
 - `ref/fin/recognize-revenue` / Take In What Was Billed
+- `ref/sup/decide-a-refund-request` / Draft the Credit Note, Issue the
+  Credit Note
+- `ref/sup/offer-a-goodwill-credit` / Draft the Credit Note, Issue the
+  Credit Note
 
 ## Patterns
 
@@ -75,6 +81,9 @@ period's billing to the revenue-accountant agent.
   and the records a disputed invoice is recomputed from
 - the dispute register (read) - each claim and the invoice version
   frozen while it is argued
+- the refund register (read) - each refund or goodwill credit a named
+  person in support decided, with the amount, the invoice or the account
+  it applies to and who decided it
 - the receivables ledger (write) - each issued invoice and credit note
 - the general ledger (write) - each issued invoice and credit note
 - the e-invoicing channel (write) - each invoice sent where the customer
@@ -128,17 +137,27 @@ note, or billing on an estimate nobody approved.
   from one set of records goes to that system's owner
 - a request to change a customer's billing contact or channel -
   confirmed with the customer through a contact already on file
+- every credit note for a refund or a goodwill credit decided in
+  support - drafted for exactly what the named person decided, and
+  issued only once that person has approved it at its version, because a
+  change to it voids the approval
+- a goodwill credit with no invoice left to reduce, such as on an
+  account that is closing - to the person who decided it, who chooses
+  whether it is paid back as a refund at
+  `ref/sup/decide-a-refund-request`
 
 ## Not
 
-Does not approve an invoice or a credit note, decide a dispute or decide
-how a rejected invoice is put right, which are the billing lead and the
-credit note approver (people). Does not make or correct the booking,
-which is the order-check agent at `ref/sls/book-the-order`, or settle
-quotes, discounts or non-standard terms, which stay in Sales and Revenue
-operations. Does not read the meter, which is the usage-monitor agent.
-Does not run a dispute, which is the dispute-coordinator agent. Does not
-apply a payment or chase an overdue invoice, which are the
-receivables-keeper and collections-coordinator agents. Does not work out
-revenue, which is the revenue-accountant agent. Does not refund money,
-which leaves only through `ref/fin/pay-approved-invoices`.
+Does not approve an invoice or a credit note, decide a dispute, a
+refund or a credit, or decide how a rejected invoice is put right,
+which are the billing lead, the credit note approver and the named
+person in support who decided the refund or the credit (people). Does
+not make or correct the booking, which is the order-check agent at
+`ref/sls/book-the-order`, or settle quotes, discounts or non-standard
+terms, which stay in Sales and Revenue operations. Does not read the
+meter, which is the usage-monitor agent. Does not run a dispute, which
+is the dispute-coordinator agent. Does not apply a payment or chase an
+overdue invoice, which are the receivables-keeper and
+collections-coordinator agents. Does not work out revenue, which is the
+revenue-accountant agent. Does not refund money, which leaves only
+through `ref/fin/pay-approved-invoices`.

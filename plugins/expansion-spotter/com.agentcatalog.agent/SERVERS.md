@@ -8,7 +8,7 @@ more than the job requires.
 |---|---|---|
 | the CRM | write | The account, its people, and the openings against it. |
 | the usage system | read | How close each metered thing is to what was bought, over a window rather than on one day. |
-| the support system | read | An account in an open crisis is not worked. |
+| the support system | read | An account in an open crisis is not worked, and a support signal is taken in with its case and the customer's own words. |
 | the billing system | read | Collections and anything in dispute. |
 | the contract record | read | The products, licences, limits and dates on the agreement they hold today. |
 | the account plan | read | What the plan already says to sell here. |

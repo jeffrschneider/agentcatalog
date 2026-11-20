@@ -39,7 +39,7 @@ manifest and in the directory of the same name.
 `ref/fin/issue-a-purchase-order`, `ref/fin/process-a-supplier-invoice`,
 `ref/fin/post-a-manual-journal-entry`,
 `ref/fin/approve-an-investment-case`,
-`ref/fin/set-a-customers-credit-limit`, and 5 more. The list is
+`ref/fin/set-a-customers-credit-limit`, and 7 more. The list is
 generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/delegation-keeper

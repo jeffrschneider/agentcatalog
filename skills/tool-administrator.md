@@ -38,15 +38,22 @@ covers:
 ## work-a-change-through-off-live-first
 
 Takes in what people ask for and what the supplier has changed, tries it
-away from live, and applies it with the way back kept. A request that is
-not what the tool is for is refused in writing with the process it
-belongs to named.
+away from live, such as a routing change replayed on past requests in a
+copy of the support system, and applies it with the way back kept,
+restoring the version before when the change sends work wrong. A
+request that is not what the tool is for is refused in writing with the
+process it belongs to named.
 
 covers:
 - Take in Change Requests
 - Take in Supplier Changes
 - Try the Change away from Live
 - Apply the Change
+- Build It Away from Live
+- Replay It on Past Requests
+- Switch It On with a Way Back
+- Switch Back to the Version Before
+- Build the Clocks into the Support System
 
 ## set-the-sellers-paid-for-against-the-sellers-used
 

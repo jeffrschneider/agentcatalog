@@ -19,6 +19,8 @@ covers:
 - Read the Current Version
 - Record the Publication
 - Take in the Policy Request
+- Read the Policy in Force
+- Mark What Rests on the Old Levels
 
 ## draft-from-approved-decisions
 
@@ -35,6 +37,7 @@ covers:
 - Record What the Case Taught
 - Write the Location Variants
 - Write the Entity Variants
+- Draft the Policy
 
 ## collect-acknowledgments
 
@@ -51,6 +54,7 @@ covers:
 - Collect the Acknowledgments
 - Collect the Policy Acknowledgments
 - Send It to the People It Covers
+- Tell the People It Covers
 
 ## say-which-version-applies
 

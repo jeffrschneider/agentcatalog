@@ -23,3 +23,6 @@ organization's own community, which is the moderator agent.
 - coverage volume or tone past the threshold the process sets
 - something published that the organization has not announced yet
 - a piece that names an individual employee or a named customer
+- customers saying in public that something in the product is broken -
+  at once to the outage-coordinator agent, which raises it with the
+  engineer on call, without waiting for the next scheduled summary

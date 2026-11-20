@@ -102,6 +102,18 @@
           "role": "public-register-of-companies",
           "access": "read",
           "needs": "The accounts a customer has filed, and any insolvency, judgment or charge over its assets, in each jurisdiction where it is registered."
+        },
+        {
+          "name": "the product and the test environment",
+          "role": "product-and-the-test-environment",
+          "access": "read",
+          "needs": "How a feature behaves today, for each fact in a help article."
+        },
+        {
+          "name": "the release notes",
+          "role": "release-notes",
+          "access": "read",
+          "needs": "What each release changed, as the product team wrote it."
         }
       ],
       "records": [
@@ -118,7 +130,8 @@
         "a reference or a background check that raises a concern about a candidate or a member of a management team - to the person choosing, who is the portfolio company's chief executive for a hire and the deal lead partner in diligence, before any offer is made, because weighing a concern about a person is theirs",
         "a candidate who works at another company the fund holds - to the talent partner, and nobody approaches the candidate until the non-solicitation rules have been read",
         "a reference that raises a concern about a candidate for one of the company's own hires - to the hiring manager, who decides on it with the reason written in terms of the must-haves, and any part of a reference about a protected characteristic is struck before anyone reads it",
-        "a customer seeking credit whose accounts are missing or cover only part of its group, or whose public filings show an insolvency, a judgment or a charge over its assets - to the credit and collections lead with the source and the date of each, because reading the risk and setting a limit are not this agent's"
+        "a customer seeking credit whose accounts are missing or cover only part of its group, or whose public filings show an insolvency, a judgment or a charge over its assets - to the credit and collections lead with the source and the date of each, because reading the risk and setting a limit are not this agent's",
+        "a product team that has not said how a feature works by the date a help article needs it - asked once with that date and then raised to the knowledge lead, and the article waits, because the agents answer customers from whatever an article says"
       ],
       "not": [
         "Does not write the piece and does not decide what the piece argues.",
@@ -496,6 +509,13 @@
           "process": "ref/fin/set-a-customers-credit-limit",
           "activities": [
             "Gather the Accounts and Credit Reports"
+          ]
+        },
+        {
+          "process": "ref/sup/write-a-help-article",
+          "activities": [
+            "Gather How the Feature Works",
+            "Check Each Fact Against Its Source"
           ]
         }
       ]

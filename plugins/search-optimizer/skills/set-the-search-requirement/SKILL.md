@@ -1,6 +1,6 @@
 ---
 name: set-the-search-requirement
-description: Turns the demand into a short list of terms and questions a page or a piece has to cover if anyone is going to find it, and delivers that list before the writing starts. Use it when running `ref/mkt/landing-page`, `ref/mkt/long-form-content` and `ref/mkt/refresh-content`.
+description: Turns the demand into a short list of terms and questions a page or a piece has to cover if anyone is going to find it, and delivers that list before the writing starts. Use it when running `ref/mkt/landing-page` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: search-optimizer
@@ -17,12 +17,15 @@ before the writing starts.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **Name the Search Terms**
   - `ref/mkt/landing-page`, activity 3 -
     [Publish Landing Page](../../../../processes/marketing/landing-page.md)
+- **Name the Words Customers Use**
+  - `ref/sup/find-gaps-in-the-help-center`, activity 7 -
+    [Find Gaps in the Help Center](../../../../processes/customer-support/find-gaps-in-the-help-center.md)
 - **Set What Each Page Has to Answer**
   - `ref/mkt/refresh-content`, activity 11 -
     [Refresh Published Content](../../../../processes/marketing/refresh-content.md)

@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Four systems, named by role rather than by product. The access level is
+Five systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -10,6 +10,7 @@ more than the job requires.
 | the style guide and the house standard | read |  |
 | the brief and the approved outline | read |  |
 | the source list the draft cites | read |  |
+| the knowledge base | write | The edit lands at a version beside the help article draft it edits, and never on top of it, with no right to publish an article or mark it as content the agents may answer from. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

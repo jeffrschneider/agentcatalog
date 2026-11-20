@@ -1,6 +1,6 @@
 ---
 name: record-what-a-number-rests-on
-description: Writes down what a number rests on, which means the assumptions, the boundary, the method, the window it covers, and what would reopen it. Use it when running `ref/mkt/annual-marketing-plan` and 5 other reference processes.
+description: Writes down what a number rests on, which means the assumptions, the boundary, the method, the window it covers, and what would reopen it, and after a forecast which assumptions missed and what the next one changes. Use it when running `ref/mkt/annual-marketing-plan` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: forecaster
@@ -12,16 +12,21 @@ metadata:
 ## What it does
 
 Writes down what a number rests on, which means the assumptions, the
-boundary, the method, the window it covers, and what would reopen it.
+boundary, the method, the window it covers, and what would reopen it,
+and after a forecast which assumptions missed and what the next one
+changes.
 
 ## Where it happens
 
-The agent does this in five activities across six reference processes.
+The agent does this in six activities across seven reference processes.
 Each one names the activity as that process words it.
 
 - **Record What the Budget Rests On**
   - `ref/mkt/set-marketing-budget`, activity 15 -
     [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
+- **Record What the Forecast Taught**
+  - `ref/sup/forecast-support-volume`, activity 16 -
+    [Forecast Support Volume](../../../../processes/customer-support/forecast-support-volume.md)
 - **Record What the Plan Rests On**
   - `ref/mkt/annual-marketing-plan`, activity 16 -
     [Build Annual Marketing Plan](../../../../processes/marketing/annual-marketing-plan.md)

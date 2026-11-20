@@ -44,3 +44,7 @@ versioned amendments.
   judgment or a charge over its assets - to the credit and collections
   lead with the source and the date of each, because reading the risk
   and setting a limit are not this agent's
+- a product team that has not said how a feature works by the date a
+  help article needs it - asked once with that date and then raised to
+  the knowledge lead, and the article waits, because the agents answer
+  customers from whatever an article says

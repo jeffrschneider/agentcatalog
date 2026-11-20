@@ -42,3 +42,8 @@ the deal desk's table, which is the owner of
 - a finance policy that sets a limit the delegation does not give - the
   line named for the policy owner, and a new limit waits for a change to
   the delegation so the policy never carries a second number
+- a refund or a goodwill credit decided by someone the version does not
+  name for the amount, by a decider past their limit, or by anyone who
+  asked for, proposed or recommended it - held before it counts and
+  decided again by the person the version names, and the customer hears
+  nothing until it counts

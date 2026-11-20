@@ -35,6 +35,7 @@ covers:
 - Book Each Interview
 - Book the Debrief
 - Book the Walkthroughs and Interviews
+- Book the Call with the Customer
 
 ## make-sure-the-meeting-holds
 
@@ -62,6 +63,7 @@ covers:
 - Hand over to the Next Stage
 - Hold the First Meeting
 - Write Up the Meeting
+- Hold the Call
 
 ## report-what-was-booked-and-held
 

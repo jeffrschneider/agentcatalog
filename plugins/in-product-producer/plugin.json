@@ -14,9 +14,9 @@
     "abstract-agent",
     "reference",
     "marketing",
+    "post-a-status-update",
     "account-based-play",
     "feature-release",
-    "pricing-change",
     "abstract"
   ],
   "extensions": {
@@ -71,6 +71,12 @@
           "name": "the suppression lists",
           "role": "suppression-lists",
           "access": "read"
+        },
+        {
+          "name": "the incident record",
+          "role": "incident-record",
+          "access": "read",
+          "needs": "The features, regions and accounts the incident lead confirmed as affected, and each version of the outage notice the named approver approved."
         }
       ],
       "records": [
@@ -89,11 +95,12 @@
         "a notice that would reach accounts the entitlement record says do not have the feature",
         "a notice it could not take down on its end date, on the day the takedown failed",
         "more notices aimed at the same accounts in the same period than the process allows, raised before any of them starts",
-        "a notice still running while customers are in the middle of an incident, because whether it keeps running is a person's call"
+        "a notice still running while customers are in the middle of an incident, because whether it keeps running is a person's call",
+        "an outage notice that would reach accounts the incident lead has not confirmed as affected, or a version the named approver has not approved - held, and raised to that approver before it shows"
       ],
       "not": [
-        "Does not write the copy or make the design, which are the copywriter and designer agents, and it never edits the words or the layout to make them fit.",
-        "Does not decide what the release says or when it is announced, which is the comms-manager agent for one announcement and the launch-coordinator agent for a launch that has several branches.",
+        "Does not write the copy or make the design, which are the copywriter and designer agents, or for an outage notice the outage-coordinator agent, and it never edits the words or the layout to make them fit.",
+        "Does not decide what the release says or when it is announced, which is the comms-manager agent for one announcement and the launch-coordinator agent for a launch that has several branches, or what an outage notice says, which is the named person who approves each status update.",
         "Does not build a page on the website or publish one, which is the web-producer agent, and does not send the email about the same release, which is the email-producer agent.",
         "Does not define segments or change anything in the contact database, which are the audience-manager and audience-operator agents.",
         "This agent picks its audience out of the product's own record of which accounts have the feature.",
@@ -121,6 +128,13 @@
           "process": "ref/mkt/pricing-change",
           "activities": [
             "Serve the Notice"
+          ]
+        },
+        {
+          "process": "ref/sup/post-a-status-update",
+          "activities": [
+            "Show the Notice Inside the Product",
+            "Take Down the In-Product Notice"
           ]
         }
       ]

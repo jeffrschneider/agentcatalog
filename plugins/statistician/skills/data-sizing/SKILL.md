@@ -1,6 +1,6 @@
 ---
 name: data-sizing
-description: Says how much data the work needs before any of it is collected, working from the size of the difference that would matter, the variation the measure already carries and the confidence being run to. Use it when running `ref/fin/test-a-financial-control` and 4 other reference processes.
+description: Says how much data the work needs before any of it is collected, working from the size of the difference that would matter, the variation the measure already carries and the confidence being run to. Use it when running `ref/fin/test-a-financial-control` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: statistician
@@ -20,7 +20,7 @@ again when a fix is tested.
 
 ## Where it happens
 
-The agent does this in five activities across five reference processes.
+The agent does this in six activities across seven reference processes.
 Each one names the activity as that process words it.
 
 - **Say How Many Interviews It Needs**
@@ -31,9 +31,14 @@ Each one names the activity as that process words it.
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
   - `ref/mkt/customer-research`, activity 5 -
     [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+- **Set How Many Shared Cases**
+  - `ref/sup/calibrate-case-reviews`, activity 2 -
+    [Calibrate Case Reviews](../../../../processes/customer-support/calibrate-case-reviews.md)
 - **Set the Sample Size**
   - `ref/fin/test-a-financial-control`, activity 4 -
     [Test a Financial Control](../../../../processes/finance/test-a-financial-control.md)
+  - `ref/sup/review-support-cases`, activity 2 -
+    [Review Support Cases](../../../../processes/customer-support/review-support-cases.md)
 - **Size the Test**
   - `ref/mkt/conversion-experiment`, activity 3 -
     [Run Conversion Experiment](../../../../processes/marketing/conversion-experiment.md)

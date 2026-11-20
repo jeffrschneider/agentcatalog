@@ -7,7 +7,7 @@ more than the job requires.
 | Role | Access | What the access is for |
 |---|---|---|
 | the usage record | read | Where use fell, when, and for which team. |
-| the support system | read | Open tickets and anything in dispute. |
+| the support system | read | Open tickets and anything in dispute, and a support signal is taken in with its case and the customer's own words. |
 | the billing system | read | Unpaid invoices, and what is in collections. |
 | the CRM | read | Which named contacts are still there and which have left. |
 | the agreement store | read | The notice date the clock is set against. |

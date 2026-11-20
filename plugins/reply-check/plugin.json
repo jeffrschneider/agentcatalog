@@ -1,0 +1,156 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "reply-check",
+  "version": "1.0.0",
+  "description": "The reply-check abstract agent. Checks every drafted reply before it reaches a customer, for the support specialists and the named people who approve sensitive replies, and approves and sends nothing in a held category itself.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/reply-check",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "customer-support",
+    "approve-a-sensitive-reply",
+    "publish-a-saved-reply",
+    "escalate-a-security-or-safety-report",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "reply-check",
+      "agentVersion": 1,
+      "department": "customer-support",
+      "abstract": true,
+      "works": "Runs assessment on every drafted reply, every complaint's answer, every outage summary, every reply to a security or safety reporter and every new or changed saved reply, against the content it cites, the facts or the record it rests on and `<your reply rules>` at their version, on the named approver each held reply's category calls for, on what each held reply commits the company to, on whether any money it offers was already decided, and on each reply the approver changes. Runs collect-and-report on the replies held without need, the replies the approvers changed, the matters sent to the legal team and the rules that missed a reply. Delivers each held reply into the approval where the named approver (person) for its category reads it with the case beside it and sends it, changes it or passes it to `<your legal team>`, and takes a changed reply back for a fresh check. Works beside the support specialists (people), who draft and send the replies outside the held categories, the reply approver (person) for each category, the complaint handler (person), the statement approver (person), the security reply approver (person), and the reply owner (person) who approves each saved reply. Takes each draft from the customer-question-responder agent or the support specialist who holds the case, the case beside the reply from the case-manager agent, each outage summary from the outage-coordinator agent, each decided refund or credit from the refund-coordinator agent, and each new saved reply from the article-writer agent. Hands each held reply to `ref/sup/approve-a-sensitive-reply`, each saved reply's mark to the knowledge-keeper agent, and the commitments of each approved reply to the case-manager agent to keep.",
+      "servers": [
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "write",
+          "needs": "Each check's result with the sentence and the rule it found, each hold naming the person who must send the reply, what each held reply commits the company to, and each saved reply's mark for approval, with no right to approve, change or send a reply."
+        },
+        {
+          "name": "the knowledge base",
+          "role": "knowledge-base",
+          "access": "read",
+          "needs": "The approved content each reply cites, at its version."
+        },
+        {
+          "name": "the policy library",
+          "role": "policy-library",
+          "access": "read",
+          "needs": "`<your reply rules>` at their version, with the categories a named person must send and the person each category names."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The facts on the account a reply relies on."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "read",
+          "needs": "The facts of a bill a reply states, with no right to change a charge, an invoice or a payment."
+        },
+        {
+          "name": "the incident record",
+          "role": "incident-record",
+          "access": "read",
+          "needs": "Engineering's review an outage summary is checked against."
+        },
+        {
+          "name": "the restricted record",
+          "role": "restricted-record",
+          "access": "read",
+          "needs": "What the security lead or the safety owner agreed may be said to a reporter."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Each held reply sent to the named person who must send it and the specialist told, a legal matter sent to `<your legal team>` the same day, and a reporter's question sent to Marketing's press work."
+        }
+      ],
+      "records": [
+        "Each check leaves the reply at the version checked, each sentence traced to the content, the fact or the review it rests on, each sentence that rests on none named, the rules read at their version, and whether the reply was cleared or held.",
+        "Each held reply leaves the rule that held it, the named approver for its category and the one behind them, the case set beside it, each commitment it makes with the fact or the decision behind it, the refund or credit decision any money in it was matched to, any legal matter or reporter's question passed on with the time, and each changed version checked again with any new commitment named.",
+        "Each saved reply leaves its checks against its content and the reply rules and, where it falls in a held category, the mark that sends it through Approve a Sensitive Reply each time it is used.",
+        "Each period leaves the replies held without need, the replies changed and why, the matters sent to the legal team, how long each held reply waited, and each rule that missed a reply.",
+        "Nothing in the record shows this agent approving or sending a reply in a held category, rewording or splitting a held reply to bring it out of its category, or offering money no named person had decided."
+      ],
+      "escalates": [
+        "every reply that admits fault, promises a fix or a date, offers money or any change to the contract, or answers a formal complaint, a legal threat, a security or safety report, a regulator, the press or a request about a person's own data - held for the named person `<your reply rules>` give its category, who reads it with the case beside it and sends it, because this agent approves and sends nothing in those categories",
+        "a legal threat, a regulator's letter or a request from a court or the police - to `<your legal team>` the same day, and the reply waits for what they say, and a question from a reporter goes to Marketing's press work, because support sends nothing to the press",
+        "a reply that offers a refund, a credit or a goodwill gesture no named person has decided - held, and the offer goes to `ref/sup/decide-a-refund-request` or `ref/sup/offer-a-goodwill-credit`, where a named person who did not propose it decides",
+        "a sentence that rests on neither approved content nor the facts of the case, or a sentence of an outage summary that does not trace to engineering's review - named, and the reply or the summary is drafted again",
+        "a changed reply that commits the company to something new - back to the approver before it is sent",
+        "a saved reply in a held category, including one written to avoid the mark, such as one that hints at a refund without offering it - marked to go through Approve a Sensitive Reply each time it is used, and never marked as one the agents may send",
+        "an approver who is away - to the person behind them in `<your reply rules>`, because a held reply never falls to an agent when nobody is free",
+        "a sensitive reply that reached a customer without its approver - to the head of support the same day, and the rule or the step that let it through goes to its owner",
+        "a rule that holds replies without need, or that missed one - to the owner of `<your reply rules>` at the period's review"
+      ],
+      "not": [
+        "Does not approve or send a reply, which is the support specialist (person) for a reply outside the held categories and the named approver for each held category (person), such as the complaint handler, the statement approver or the security reply approver.",
+        "Does not draft a reply, which is the support specialist or the customer-question-responder agent, draft an outage summary, which is the outage-coordinator agent, or draft a saved reply, which is the article-writer agent.",
+        "Does not decide a refund or a credit, which is the named person at `ref/sup/decide-a-refund-request` or `ref/sup/offer-a-goodwill-credit`.",
+        "Does not decide what a security or safety reporter may be told, which is the security lead or the safety owner (person) with `<your legal team>`, or answer the press, which is Marketing.",
+        "Does not publish a saved reply or mark who may send it, which is the knowledge-keeper agent.",
+        "Does not change `<your reply rules>`, which only the people they name change."
+      ],
+      "processes": [
+        {
+          "process": "ref/sup/resolve-a-case",
+          "activities": [
+            "Check the Reply Before It Goes",
+            "Hold a Sensitive Reply"
+          ]
+        },
+        {
+          "process": "ref/sup/approve-a-sensitive-reply",
+          "activities": [
+            "Take In the Held Reply",
+            "Name the Approver for Its Category",
+            "Pass What Another Team Must Answer",
+            "Set Out What the Reply Commits To",
+            "Check the Money Was Decided",
+            "Check a Changed Reply Again",
+            "Record What the Holds Taught"
+          ]
+        },
+        {
+          "process": "ref/sup/escalate-a-security-or-safety-report",
+          "activities": [
+            "Check the Reply",
+            "Tell the Reporter the Outcome"
+          ]
+        },
+        {
+          "process": "ref/sup/follow-up-an-outage",
+          "activities": [
+            "Check the Summary",
+            "Tell Each Customer Its Credit"
+          ]
+        },
+        {
+          "process": "ref/sup/answer-a-formal-complaint",
+          "activities": [
+            "Check the Answer"
+          ]
+        },
+        {
+          "process": "ref/sup/publish-a-saved-reply",
+          "activities": [
+            "Check the Reply Against Its Content",
+            "Check the Reply Against the Reply Rules",
+            "Mark It for Approval Each Time It Is Used"
+          ]
+        }
+      ]
+    }
+  }
+}

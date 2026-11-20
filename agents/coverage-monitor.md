@@ -32,6 +32,8 @@ about anything it finds.
 - `ref/mkt/product-positioning` / Gather the Market Evidence
 - `ref/mkt/speaking-engagement` / Report the Result
 - `ref/mkt/user-conference` / Report the Conference
+- `ref/sup/raise-a-suspected-outage` / Notice Customers Saying It in
+  Public
 
 ## Patterns
 
@@ -56,6 +58,9 @@ far, and brings the coverage to the debrief that closes a run.
 - the press and analyst contact record (read)
 - the announcement and incident timelines (read) - what went out, and
   when it went out
+- the notification channel (write) - public posts saying something in
+  the product is broken reach the outage-coordinator agent at once, each
+  quoted with where and when it appeared
 
 ## Records
 
@@ -76,6 +81,9 @@ one. A source it could not reach appears in the summary as unreached.
 - coverage volume or tone past the threshold the process sets
 - something published that the organization has not announced yet
 - a piece that names an individual employee or a named customer
+- customers saying in public that something in the product is broken -
+  at once to the outage-coordinator agent, which raises it with the
+  engineer on call, without waiting for the next scheduled summary
 
 ## Not
 

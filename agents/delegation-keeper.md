@@ -5,7 +5,8 @@
 **purpose:** Holds the company's delegation of authority at its
 versions, for the chief financial officer (CFO), the controller and the
 board or the people it names: who may approve each kind of commitment,
-payment, journal, credit limit and write-off, up to what amount, and who
+payment, journal, credit limit, write-off, and refund or credit to a
+customer, up to what amount, and who
 stands in when they are away. It approves nothing and changes no
 authority on its own. When the board or the people it names decide a
 change, a role or an entity changes, an approver leaves, an audit finds
@@ -53,6 +54,10 @@ approval by the wrong person never counts.
 - `ref/fin/issue-a-company-card` / Look Up the Approver
 - `ref/fin/publish-a-finance-policy` / Read the Approvers the Delegation
   Names, Check Every Limit Against the Delegation
+- `ref/sup/decide-a-refund-request` / Name Who May Decide, Check the
+  Decision Counts
+- `ref/sup/offer-a-goodwill-credit` / Name Who May Decide, Check the
+  Decision Counts
 
 ## Patterns
 
@@ -101,6 +106,10 @@ treasury-analyst agent at `ref/fin/change-a-bank-account-or-signer`.
   answered with the approvers it needs, an approval that does not count
   reaches the controller, and each change reaches the owner of the
   process that carries it out
+- the refund register (read) - each refund or goodwill credit proposed,
+  who asked for, proposed or recommended it, and who decided it
+- the support system (read) - who on the case asked for, proposed or
+  recommended a refund or a credit, so none of them decides it
 
 ## Records
 
@@ -148,6 +157,11 @@ in force does not support.
 - a finance policy that sets a limit the delegation does not give - the
   line named for the policy owner, and a new limit waits for a change to
   the delegation so the policy never carries a second number
+- a refund or a goodwill credit decided by someone the version does not
+  name for the amount, by a decider past their limit, or by anyone who
+  asked for, proposed or recommended it - held before it counts and
+  decided again by the person the version names, and the customer hears
+  nothing until it counts
 
 ## Not
 

@@ -134,6 +134,18 @@
           "role": "delegation-of-authority",
           "access": "read",
           "needs": "The releasers and signers the version in force names, which every right to approve or release a payment is matched against."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "write",
+          "needs": "Each routing change and each service level clock built at a version in a copy away from live, replayed on past requests there, and switched on in live only once it is approved, with the version before kept ready to restore."
+        },
+        {
+          "name": "the policy library",
+          "role": "policy-library",
+          "access": "read",
+          "needs": "The service level policy at the version the clocks are built from."
         }
       ],
       "records": [
@@ -154,7 +166,9 @@
         "one person holding two roles that must not be combined, such as the access to change an employee's bank details and the access to approve a payroll, to the access owner, who chooses which role the person keeps, and where the work needs both, to the named person who may approve that in writing with another check in its place",
         "a right to approve or release a payment held by someone the delegation of authority does not name - removed on the day it is found under the bank's own rules for changing users, and to the controller with how it came about",
         "access in the finance systems that would let one person both prepare and approve the same payment, journal or reconciliation - to the controller, who allows it in writing for a set period with another check in its place or has it removed",
-        "an access still there after its removal - removed again with the reason traced, such as a second account or a group the person belongs to, and the controller told before the review is signed"
+        "an access still there after its removal - removed again with the reason traced, such as a second account or a group the person belongs to, and the controller told before the review is signed",
+        "a support routing change that sends work to the wrong queue once it is live - the version before restored when the condition set at approval is met, the requests sent wrong moved with their clocks still running, and the support operations lead and the team told before anyone is told the change is live",
+        "a service level clock that cannot be built as the policy says by its effective date - to the support operations lead, and the effective date moves for that clock with the people it covers told"
       ],
       "not": [
         "Does not decide whether the tool stays.",
@@ -241,6 +255,21 @@
             "Remove the Access Nobody Approved",
             "Read Every Account Again",
             "Record the Review"
+          ]
+        },
+        {
+          "process": "ref/sup/change-a-routing-rule",
+          "activities": [
+            "Build It Away from Live",
+            "Replay It on Past Requests",
+            "Switch It On with a Way Back",
+            "Switch Back to the Version Before"
+          ]
+        },
+        {
+          "process": "ref/sup/set-a-service-level-policy",
+          "activities": [
+            "Build the Clocks into the Support System"
           ]
         }
       ]

@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eighteen systems, named by role rather than by product. The access level
+Twenty systems, named by role rather than by product. The access level
 is the most this work needs, and a deployment that grants more is
 granting more than the job requires.
 
@@ -24,6 +24,8 @@ granting more than the job requires.
 | each finance system | read | For an access review, the accounts in the general ledger, the ERP and the payment system, with each account's role, permissions, approval limits, who approved it and its last use, with no right to post, approve or pay anything. |
 | the bank portal | read | Only its users and their rights: who may create, approve or release a payment or add a beneficiary, the amount each may release, and the bank's record of who may sign on each account, with no right to make or release a payment. |
 | the delegation of authority | read | The releasers and signers the version in force names, which every right to approve or release a payment is matched against. |
+| the support system | write | Each routing change and each service level clock built at a version in a copy away from live, replayed on past requests there, and switched on in live only once it is approved, with the version before kept ready to restore. |
+| the policy library | read | The service level policy at the version the clocks are built from. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

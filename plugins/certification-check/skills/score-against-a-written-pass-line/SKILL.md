@@ -1,6 +1,6 @@
 ---
 name: score-against-a-written-pass-line
-description: Scores every part against the pass line as it was written before use, and keeps the evidence beside each score with the assessor who gave it, so a disputed score can be reread rather than re-argued. Use it when running `ref/rev/certify-a-seller`.
+description: Scores every part against the pass line as it was written before use, and keeps the evidence beside each score with the assessor who gave it, so a disputed score can be reread rather than re-argued. Use it when running `ref/rev/certify-a-seller` and `ref/sup/ramp-a-new-support-person`.
 license: CC-BY-4.0
 metadata:
   agent: certification-check
@@ -17,12 +17,15 @@ so a disputed score can be reread rather than re-argued.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Score Against the Standard**
   - `ref/rev/certify-a-seller`, activity 13 -
     [Certify a Seller](../../../../processes/revenue-operations/certify-a-seller.md)
+- **Score the Practice Cases**
+  - `ref/sup/ramp-a-new-support-person`, activity 12 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 
 ## What to record
 

@@ -22,3 +22,9 @@ forecast, and it never enters one at this stage. Does not open the deal.
   marked so it does not raise the same opening again
 - an account owner who parks the same signal more than the policy
   allows, to whoever the policy names, rather than into another run
+- a sign of buying more that support passes on - to the account owner
+  with the customer's own words, the case and the standing, and nobody
+  in support makes an offer or discusses a price
+- a support signal that does not hold - back to the support specialist
+  and the team lead who raised it with the reason, so the support team's
+  signal rules can change at their next debrief

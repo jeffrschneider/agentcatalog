@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eleven systems, named by role rather than by product. The access level
+Twelve systems, named by role rather than by product. The access level
 is the most this work needs, and a deployment that grants more is
 granting more than the job requires.
 
@@ -17,6 +17,7 @@ granting more than the job requires.
 | the usage record | read | The readings with their dates behind a line billed on use. |
 | the contract repository | read | The agreement and the clause that governs the disputed line. |
 | the CRM | read | The account owner and the delivery lead to be heard on what was promised and delivered. |
+| the support system | write | The holder of a claim support handed over, and the date its answer will come, put on the customer's case, with no right to answer or close the case. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

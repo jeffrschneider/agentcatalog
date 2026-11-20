@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Thirteen systems, named by role rather than by product. The access level
+Fifteen systems, named by role rather than by product. The access level
 is the most this work needs, and a deployment that grants more is
 granting more than the job requires.
 
@@ -19,6 +19,8 @@ granting more than the job requires.
 | the restricted records store | write | Each reference on a candidate for one of the company's own hires, as the referee gave it and attributed to the referee, filed where only the named reviewers can open it, with no right to open a background check result. |
 | the credit reporting service | read | A customer's credit reports, within the subscription the company holds. |
 | the public register of companies | read | The accounts a customer has filed, and any insolvency, judgment or charge over its assets, in each jurisdiction where it is registered. |
+| the product and the test environment | read | How a feature behaves today, for each fact in a help article. |
+| the release notes | read | What each release changed, as the product team wrote it. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

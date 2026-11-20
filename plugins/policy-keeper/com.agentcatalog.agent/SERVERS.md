@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Eight systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Eleven systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -14,6 +14,9 @@ more than the job requires.
 | the delegation register | read | The delegation of authority at the version in force, filed beside the finance policies, and each approver and stand-in with what they may approve, up to what amount and from what date. |
 | the expense tool | read | The exceptions granted under the expense, travel and company card policies since the version in force was published. |
 | the ERP | read | The exceptions granted under the purchasing and credit policies, and the checks, forms and system rules that rest on a finance policy's old version. |
+| the knowledge base | read | Each help article and saved reply that states a time or a rule under a support policy's old version. |
+| the support system | read | The saved replies and the service level settings that rest on a support policy's old version. |
+| the CRM | read | The account owners to be told what changes in a support policy and from when. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

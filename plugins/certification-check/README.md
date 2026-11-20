@@ -37,7 +37,8 @@ manifest and in the directory of the same name.
 
 `ref/prt/certify-a-partner`, `ref/prt/run-a-first-deal-together`,
 `ref/rev/certify-a-seller`, `ref/rev/onboard-a-seller`,
-`ref/rev/roll-out-a-change`. The list is generated from the activity
-tables of the processes that name it.
+`ref/rev/roll-out-a-change`, `ref/sup/ramp-a-new-support-person`. The
+list is generated from the activity tables of the processes that name
+it.
 
 https://agentcatalog.com/abstract-agents/certification-check

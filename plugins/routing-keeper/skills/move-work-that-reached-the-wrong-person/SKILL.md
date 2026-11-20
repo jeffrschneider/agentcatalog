@@ -1,6 +1,6 @@
 ---
 name: move-work-that-reached-the-wrong-person
-description: Takes a report that work went to the wrong person, confirms it, works out who should have had it, and moves it. Use it when running `ref/rev/fix-a-misroute`.
+description: Takes a report that work went to the wrong person, confirms it, works out who should have had it, and moves it. Use it when running `ref/rev/fix-a-misroute` and `ref/sup/change-a-routing-rule`.
 license: CC-BY-4.0
 metadata:
   agent: routing-keeper
@@ -18,7 +18,7 @@ item the same clause placed the same way is moved with it.
 
 ## Where it happens
 
-The agent does this in seven activities across one reference process.
+The agent does this in eight activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm It Went to the Wrong Person**
@@ -42,6 +42,9 @@ Each one names the activity as that process words it.
 - **Tell Both People**
   - `ref/rev/fix-a-misroute`, activity 6 -
     [Fix a Misroute](../../../../processes/revenue-operations/fix-a-misroute.md)
+- **Watch for Work in the Wrong Queue**
+  - `ref/sup/change-a-routing-rule`, activity 16 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
 
 ## What to record
 

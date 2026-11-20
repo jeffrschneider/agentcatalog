@@ -1,6 +1,6 @@
 ---
 name: publish-the-report
-description: Puts the report out on its date at a version, whether or not every source answered, with every line attributed to where it came from and the evidence under it. Use it when running `ref/fin/report-the-monthly-results` and 4 other reference processes.
+description: Puts the report out on its date at a version, whether or not every source answered, with every line attributed to where it came from and the evidence under it, and keeps it as sent with the queries behind it so the period replays. Use it when running `ref/fin/report-the-monthly-results` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -13,11 +13,12 @@ metadata:
 
 Puts the report out on its date at a version, whether or not every
 source answered, with every line attributed to where it came from and
-the evidence under it.
+the evidence under it, and keeps it as sent with the queries behind it
+so the period replays.
 
 ## Where it happens
 
-The agent does this in four activities across five reference processes.
+The agent does this in six activities across seven reference processes.
 Each one names the activity as that process words it.
 
 - **Deliver the Report**
@@ -25,6 +26,11 @@ Each one names the activity as that process words it.
     [Report the Monthly Results](../../../../processes/finance/report-the-monthly-results.md)
   - `ref/hr/report-on-the-workforce`, activity 14 -
     [Report on the Workforce](../../../../processes/human-resources/report-on-the-workforce.md)
+  - `ref/sup/report-what-customers-say`, activity 12 -
+    [Report What Customers Say](../../../../processes/customer-support/report-what-customers-say.md)
+- **Keep the Period**
+  - `ref/sup/report-the-service-levels`, activity 15 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 - **Publish the Report**
   - `ref/mkt/marketing-performance-report`, activity 13 -
     [Report Marketing Performance](../../../../processes/marketing/marketing-performance-report.md)
@@ -34,6 +40,9 @@ Each one names the activity as that process words it.
 - **Report Awareness, Perception and Preference**
   - `ref/mkt/brand-health`, activity 22 -
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
+- **Send the Report to the Head of Support**
+  - `ref/sup/report-the-service-levels`, activity 12 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 
 ## What to record
 

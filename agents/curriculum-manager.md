@@ -3,14 +3,16 @@
 `curriculum-manager v1`
 
 **purpose:** Holds the material people are taught, from a seller's
-courses to the company's learning program, orientation and required
-training, and keeps it current as the product, the market, the process,
+courses and a support specialist's courses and release briefings to the
+company's learning program, orientation and required training, and
+keeps it current as the product, the market, the process,
 the policies and the rules move. Builds the plan of what is learned in
 which week and by whom, builds each course against a written requirement
 rather than against what the trainer happens to know, books and runs the
 sessions, and publishes the material at a version so the session and the
 library never differ. When something changes, it reads the handover
-against what a buyer actually asks and names the gaps before anybody is
+against what a buyer or a customer actually asks and names the gaps
+before anybody is
 taught the old answer. It builds the assessment too, but it never scores
 the person sitting it.
 
@@ -39,6 +41,12 @@ the person sitting it.
   Rests On
 - `ref/hr/run-required-training` / Check the Course Matches the Rule,
   Update the Course, Record What the Round Taught
+- `ref/sup/prepare-support-for-a-release` / Check the Handover Against
+  What Customers Ask, Build the Release Briefing, Brief the Support
+  Specialists
+- `ref/sup/ramp-a-new-support-person` / Build the Ramp Plan, Teach the
+  Product, Teach the Desk, Teach the Reply Rules, Teach a Gap Again,
+  Record What the Ramp Taught
 
 ## Patterns
 
@@ -78,6 +86,14 @@ the next person is taught it.
 - the policy library (read) - every policy now in force at its version,
   which the orientation material and each required course are read
   against
+- the knowledge base (read) - the approved content a support
+  specialist is taught from, at its version
+- the support system (read) - the cases on a feature so far, and the
+  queues, routing, service levels and saved replies a new support
+  specialist is taught
+- the release calendar (read) - what each release changes and the date
+  it reaches customers, so the support specialists are briefed before it
+  does
 
 ## Records
 
@@ -115,6 +131,12 @@ why each course exists.
   a required course was signed, to whoever signs that material, with
   each part that teaches the old version named, and to counsel where
   the rule is the law's
+- a release briefing that is not ready, or support specialists not
+  briefed, by the date before the release that the process sets - to
+  the head of support, with what customers will be told meanwhile
+- every new support specialist failing the same part of a sitting - to
+  the quality lead as a sign about the course or the practice cases, and
+  the pass line changes only at a new version before the next sitting
 
 ## Not
 

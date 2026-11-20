@@ -1,6 +1,6 @@
 ---
 name: hold-the-suppression-list
-description: Keeps the list of people who must never be reached, with a reason against each entry, and writes it into every list and system that sends. Use it when running `ref/mkt/contact-database-hygiene` and `ref/mkt/display-retargeting`.
+description: Keeps the list of people who must never be reached, with a reason against each entry, and writes it into every list and system that sends. Use it when running `ref/mkt/contact-database-hygiene`, `ref/mkt/display-retargeting` and `ref/sup/survey-customers-after-a-case`.
 license: CC-BY-4.0
 metadata:
   agent: consent-manager
@@ -18,7 +18,7 @@ took out was reached anyway.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Apply the Suppression**
@@ -29,6 +29,9 @@ Each one names the activity as that process words it.
 - **Build the Suppression List**
   - `ref/mkt/display-retargeting`, activity 5 -
     [Run Display Retargeting Campaign](../../../../processes/marketing/display-retargeting.md)
+- **Carry Out an Opt-Out**
+  - `ref/sup/survey-customers-after-a-case`, activity 11 -
+    [Survey Customers after a Case](../../../../processes/customer-support/survey-customers-after-a-case.md)
 - **Check the Suppression Is Holding**
   - `ref/mkt/display-retargeting`, activity 15 -
     [Run Display Retargeting Campaign](../../../../processes/marketing/display-retargeting.md)

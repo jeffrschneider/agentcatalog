@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Thirteen systems, named by role rather than by product. The access level
+Fifteen systems, named by role rather than by product. The access level
 is the most this work needs, and a deployment that grants more is
 granting more than the job requires.
 
@@ -19,6 +19,8 @@ granting more than the job requires.
 | the IT service desk | write | The accounts on the job's access list, with the approver of any account beyond it, and the laptop, the phone, the badge, the desk or the home delivery the job needs, each ordered with the date it must arrive. |
 | the survey tool | write | The private questions to each new hire about how the start went, read by the HR business partner, and the feedback on each orientation session, read only for the group as a whole. |
 | the notification channel | write | The new hire told where to go on the first day, when, and who will meet them, and the manager told when a check-in is booked again. |
+| the support system | read | The systems and the reply rights a new support specialist holds, and each reply a mentor reads before it goes, with no right to grant access or widen reply rights itself. |
+| the certification record | read | Each topic a new support specialist has passed or must sit again. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

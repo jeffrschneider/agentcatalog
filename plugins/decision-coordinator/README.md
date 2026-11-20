@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/annual-marketing-plan`, `ref/mkt/approve-marketing-material`,
 `ref/mkt/attribution-model`, `ref/mkt/brand-health`,
-`ref/mkt/brand-identity`, `ref/mkt/brand-positioning`, and 43 more. The
+`ref/mkt/brand-identity`, `ref/mkt/brand-positioning`, and 45 more. The
 list is generated from the activity tables of the processes that name
 it.
 

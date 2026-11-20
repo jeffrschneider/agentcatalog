@@ -170,6 +170,11 @@ itself, which is what makes the record it leaves worth trusting later.
   Owner, Record the Decision, Announce the Decision
 - `ref/fin/publish-the-delegation-of-authority` / Put the Draft Before
   the Approvers, Record the Decision and the Review Date
+- `ref/sup/calibrate-case-reviews` / Frame a Change to the Rubric, Hear
+  the Team Leads and Specialists, Record the Decision, Tell the
+  Reviewers and Team Leads
+- `ref/sup/set-a-service-level-policy` / Open the Decision, Set Out the
+  Candidate Levels, Hear the Team Leads, Record the Decision
 
 ## Patterns
 
@@ -211,6 +216,9 @@ waiting on, and when each one is due.
   and checked against
 - the financial planning system (read) - the budget, the reforecast and
   the investment case at the versions put to the approvers
+- the review record (read) - the cases the reviewers scored apart and
+  where they differed, which a change to the quality rubric is framed
+  from
 
 ## Records
 
@@ -272,6 +280,13 @@ answer is recorded.
 - an investment case the approvers have deferred more than
   `<your number of rounds>` times - to the CFO, who decides whether it
   is withdrawn
+- the people who decide a support service level policy who cannot agree
+  by its date - to the head of support, who decides or moves the date,
+  and the levels in force stay until a set is decided
+- a part of the quality rubric the reviewers cannot read the same way -
+  framed as a change for the quality lead and the named people who
+  decide the rubric, and until a new version is published the part is
+  marked in each report as read two ways
 
 ## Not
 

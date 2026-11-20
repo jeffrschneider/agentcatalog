@@ -1,0 +1,55 @@
+---
+name: confirm-the-person
+description: Runs each check the level calls for, up to the strongest the identity policy sets, against details the company held before the request arrived and never against details the request supplied. Use it when running `ref/sup/answer-a-data-request`, `ref/sup/recover-access-to-an-account` and `ref/sup/verify-a-customers-identity`.
+license: CC-BY-4.0
+metadata:
+  agent: identity-check
+  agent-version: "1"
+---
+
+# Confirm the person
+
+## What it does
+
+Runs each check the level calls for, up to the strongest the identity
+policy sets, against details the company held before the request arrived
+and never against details the request supplied.
+
+## Where it happens
+
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
+
+- **Check the Person at the Highest Risk**
+  - `ref/sup/recover-access-to-an-account`, activity 6 -
+    [Recover Access to an Account](../../../../processes/customer-support/recover-access-to-an-account.md)
+- **Run the Checks**
+  - `ref/sup/verify-a-customers-identity`, activity 5 -
+    [Verify a Customer's Identity](../../../../processes/customer-support/verify-a-customers-identity.md)
+- **Verify the Person**
+  - `ref/sup/answer-a-data-request`, activity 4 -
+    [Answer a Data Request](../../../../processes/customer-support/answer-a-data-request.md)
+
+## What to record
+
+Each check leaves the action it was for and the account it touched, the
+risk level and the version of `<your identity policy>` it was set under,
+the contacts, sign-in methods and recent changes read from before the
+request arrived with where each was read, each sign of a takeover looked
+for and what was found, each check run with the detail on file it ran
+against and its result, the authority the person claimed and what the
+account, its named contacts or its agreement showed, and the level
+reached with the actions it allows. Each held request leaves what was
+seen, the check that failed or was pushed against, the team lead it went
+to and when, and the account untouched. Each data request made for
+someone else leaves the consent, order or mandate read and the privacy
+lead's word where it was in doubt. Each period leaves the signs of a
+takeover seen, the checks genuine customers failed and why, the time the
+checks took, and any pass later found to be wrong. Nothing in the record
+shows this agent using a detail the request supplied to confirm it,
+clearing a hold, granting access, changing a sign-in detail or handing
+over an account.
+
+That contract covers every activity this abstract agent takes on, and it
+is repeated in `com.agentcatalog.agent/RECORDS.md`. What the abstract
+agent does not do is in `com.agentcatalog.agent/NOT.md`.

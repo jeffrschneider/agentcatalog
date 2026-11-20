@@ -1,6 +1,6 @@
 ---
 name: name-the-approvers
-description: Answers each request for approval in another process with the approvers, the releasers and the stand-ins the version in force names for that kind of decision and that amount, leaving out anyone who prepared or asked for the item. Use it when running `ref/fin/approve-an-investment-case` and 9 other reference processes.
+description: Answers each request for approval in another process with the approvers, the releasers and the stand-ins the version in force names for that kind of decision and that amount, leaving out anyone who prepared or asked for the item. Use it when running `ref/fin/approve-an-investment-case` and 11 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: delegation-keeper
@@ -18,8 +18,8 @@ for the item.
 
 ## Where it happens
 
-The agent does this in six activities across ten reference processes.
-Each one names the activity as that process words it.
+The agent does this in seven activities across twelve reference
+processes. Each one names the activity as that process words it.
 
 - **Find the Approvers**
   - `ref/fin/post-a-manual-journal-entry`, activity 6 -
@@ -29,6 +29,11 @@ Each one names the activity as that process words it.
     [Book Business Travel](../../../../processes/finance/book-business-travel.md)
   - `ref/fin/issue-a-company-card`, activity 3 -
     [Issue a Company Card](../../../../processes/finance/issue-a-company-card.md)
+- **Name Who May Decide**
+  - `ref/sup/decide-a-refund-request`, activity 7 -
+    [Decide a Refund Request](../../../../processes/customer-support/decide-a-refund-request.md)
+  - `ref/sup/offer-a-goodwill-credit`, activity 6 -
+    [Offer a Goodwill Credit](../../../../processes/customer-support/offer-a-goodwill-credit.md)
 - **Name the Approver**
   - `ref/fin/process-a-supplier-invoice`, activity 8 -
     [Process a Supplier Invoice](../../../../processes/finance/process-a-supplier-invoice.md)

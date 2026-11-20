@@ -5,10 +5,11 @@
 Pulls together what has already been published on a subject and reads
 the primary source rather than somebody's write-up of it. It comes back
 with the market picture, the figures and the quotations that answer the
-question, or a customer's filed accounts and credit reports, each
-carrying the source it came from and the date it was pulled. It checks
-first whether the organization's own record already answers the
-question.
+question, a customer's filed accounts and credit reports, or how a
+feature works from the release notes, the product and the people who
+build it, each carrying the source it came from and the date it was
+pulled. It checks first whether the organization's own record already
+answers the question.
 
 covers:
 - Gather the Evidence
@@ -24,6 +25,7 @@ covers:
 - Read the Market for Each Route
 - Gather the Market Pay Data
 - Gather the Accounts and Credit Reports
+- Gather How the Feature Works
 
 ## read-the-competitive-landscape
 
@@ -60,6 +62,7 @@ covers:
 - Record the Proof Behind Each Claim
 - Record the Proof Behind the Promise
 - Test the Thesis Against the Evidence
+- Check Each Fact Against Its Source
 
 ## interview-people
 

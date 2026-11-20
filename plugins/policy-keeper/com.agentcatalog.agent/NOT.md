@@ -55,3 +55,11 @@ policy.
 - an approver who has not acknowledged the delegation of authority after
   the reminders - to the chief financial officer, who decides whether
   that approver's authority waits until the acknowledgment is in
+- a request to change a support policy with no decision by the named
+  people who decide it behind it - to the head of support, who decides
+  whether it becomes a request, and nothing is drafted until it does
+- a saved reply, a help article or a page that still states the old
+  service levels on the day the new ones take effect - to the knowledge
+  lead and the owner of each one, and it is taken out of use until it is
+  changed, because customers would be promised a time the desk no longer
+  keeps

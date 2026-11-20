@@ -2,13 +2,15 @@
 
 ## take-in-a-signal-and-confirm-it
 
-Takes in a signal that a customer may be leaving and tests it against
+Takes in a signal that a customer may be leaving, including one a
+support case raised in the customer's own words, and tests it against
 the account record before anybody is told. A signal the record
 contradicts closes the run there, with the contradiction written down.
 
 covers:
 - Confirm the Signal
 - Take in the Risk Signal
+- Hand a Sign of Leaving to Sales
 
 ## name-one-reason-in-words
 

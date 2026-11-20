@@ -34,3 +34,11 @@ happen in a separate round on published rules.
 - a fix with no owner or no date, or one its owner calls done before it
   has been tested again - to the controller, and the finding stays open
   on the record until the fix has both and passes its test
+- a coaching action past its date - raised to the support specialist and
+  their team lead and to nobody else, because the record is theirs alone
+- a coaching session missed twice - to the team lead's own manager as a
+  missed session, with nothing from the record attached
+- anyone else who asks to see a coaching record - refused, and the two
+  of them are told. The record is opened to anyone else only when the
+  specialist agrees or `<your jurisdiction's rules>` require it, and
+  then a named person decides with `<your legal team>`
