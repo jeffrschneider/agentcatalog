@@ -29,6 +29,8 @@ queues was briefed, and what the release taught is recorded.
 
 **delivers:** status board, support's readiness for a release
 
+**starts:** on an event, a release customers will see has a date
+
 ## The goals
 
 - Have [100%] of the articles a release touches updated on the day it reaches customers

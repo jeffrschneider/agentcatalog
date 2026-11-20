@@ -29,6 +29,8 @@ person.
 
 **delivers:** document, a filed bug report
 
+**starts:** on an event, a support specialist reproduces a fault in a case
+
 ## The goals
 
 - File each reproduced fault within [1 working day]

@@ -31,6 +31,8 @@ the request, the checks, the decision and what was sent.
 
 **delivers:** document, an answer to a data request
 
+**starts:** on an event, a person asks for a copy, a correction or the deletion of their data
+
 ## The goals
 
 - Answer [100%] of requests inside their deadline

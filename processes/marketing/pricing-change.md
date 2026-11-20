@@ -19,6 +19,8 @@ the notice period sitting between them.
 
 **delivers:** page, a published price change
 
+**starts:** on an event, a pricing decision is approved
+
 ## The goals
 
 - Restate [100%] of published prices on the same day

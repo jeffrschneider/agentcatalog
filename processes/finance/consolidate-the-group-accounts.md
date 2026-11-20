@@ -25,6 +25,8 @@ every translation difference explained, and the group figures handed on.
 
 **delivers:** sheet, a consolidated trial balance
 
+**starts:** on an event, every entity in the group has signed off its close for the period
+
 ## The goals
 
 - Consolidate within [3 working days] of the last entity's sign-off

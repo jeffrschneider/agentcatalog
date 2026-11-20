@@ -14,6 +14,8 @@ that says go, go with conditions, or stop.
 
 **delivers:** verdict, an alliance diligence report
 
+**starts:** on an event, a joint thesis is sent to diligence
+
 ## The goals
 
 - Deliver the diligence report within [6 weeks]

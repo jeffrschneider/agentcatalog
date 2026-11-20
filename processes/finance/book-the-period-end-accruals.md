@@ -24,6 +24,8 @@ schedule is with the close.
 
 **delivers:** sheet, the period-end accrual schedule
 
+**starts:** on a schedule, a period of an entity reaches its end on the close calendar
+
 ## The goals
 
 - Post every accrual within [3 working days] of the period end

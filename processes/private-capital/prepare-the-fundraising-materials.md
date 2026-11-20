@@ -21,6 +21,8 @@ require are kept.
 
 **delivers:** creative set, fundraising materials
 
+**starts:** on an event, a decided strategy and the fund's documents are ready for marketing
+
 ## The goals
 
 - Release approved materials by [the launch date]

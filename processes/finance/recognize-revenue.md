@@ -27,6 +27,8 @@ deferred and unbilled revenue reconcile with every difference explained.
 
 **delivers:** sheet, the period's revenue schedule
 
+**starts:** on a schedule, a period of an entity reaches its end
+
 ## The goals
 
 - Close the period's revenue within [3 working days] of the period end

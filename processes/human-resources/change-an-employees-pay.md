@@ -21,6 +21,8 @@ back to the manager with its reason.
 
 **delivers:** verdict, an approved pay change
 
+**starts:** by hand, a manager asks to change an employee's pay outside the pay review
+
 ## The goals
 
 - Decide each request within [5 working days]

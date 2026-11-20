@@ -22,6 +22,8 @@ ends.
 
 **delivers:** verdict, a background check decision
 
+**starts:** on an event, the hiring manager chooses a candidate for a role that requires checks
+
 ## The goals
 
 - Finish the checks within [5 working days] of consent

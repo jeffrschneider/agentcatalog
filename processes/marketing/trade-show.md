@@ -15,6 +15,8 @@ still have to reach their owners and the show still has to be reported.
 
 **delivers:** event, a trade show stand
 
+**starts:** on an event, a show is booked
+
 ## The goals
 
 - Open the stand on time at [100%] of shows

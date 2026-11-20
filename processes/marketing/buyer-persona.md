@@ -23,6 +23,8 @@ or targets them, and carrying the date it comes back up.
 
 **delivers:** document, a buyer persona
 
+**starts:** on an event, a priority segment is named
+
 ## The goals
 
 - Deliver a validated persona within [6 weeks]

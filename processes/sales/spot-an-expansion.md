@@ -14,6 +14,8 @@ or drop, and the reason is written down next to the evidence.
 
 **delivers:** status board, expansion openings
 
+**starts:** on an event, a signal says an account should be buying more
+
 ## The goals
 
 - Decide every signal within [5 days]

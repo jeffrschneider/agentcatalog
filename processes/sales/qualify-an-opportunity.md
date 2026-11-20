@@ -14,6 +14,8 @@ nurture it or decline it, tells the buyer, and records the reason.
 
 **delivers:** verdict, an opportunity decision
 
+**starts:** on an event, an answered inquiry reaches qualification
+
 ## The goals
 
 - Decide every opportunity within [3 days]

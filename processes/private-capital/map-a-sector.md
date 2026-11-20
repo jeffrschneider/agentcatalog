@@ -18,6 +18,8 @@ refresh it or retire it.
 
 **delivers:** shortlist, a sector map
 
+**starts:** by hand, a partner proposes a sector, or a map reaches its review date
+
 ## The goals
 
 - Map a new sector within [6 weeks]

@@ -19,6 +19,8 @@ answered, and any gap the plan cannot absorb is with the plan's owner.
 
 **delivers:** report, a workforce report
 
+**starts:** on a schedule, a reporting period closes
+
 ## The goals
 
 - Deliver the report within [5 working days] of the period end

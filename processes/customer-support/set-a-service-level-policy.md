@@ -33,6 +33,8 @@ recorded with its review date.
 
 **delivers:** document, a service level policy
 
+**starts:** by hand, a service level is proposed or reaches its review date
+
 ## The goals
 
 - Offer a first reply within [1 working hour] on the fastest channel

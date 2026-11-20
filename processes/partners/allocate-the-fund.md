@@ -14,6 +14,8 @@ where the money went has been reported.
 
 **delivers:** sheet, partner fund allocations
 
+**starts:** on an event, a partner marketing budget is approved for a period
+
 ## The goals
 
 - Publish allocations [10 days] before the period opens

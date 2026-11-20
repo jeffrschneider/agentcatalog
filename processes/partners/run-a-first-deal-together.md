@@ -14,6 +14,8 @@ whoever owns the relationship from then on.
 
 **delivers:** deal, a first joint deal
 
+**starts:** on an event, a certified partner brings a first deal or delivery
+
 ## The goals
 
 - Reach the customer's sign-off within [90 days]

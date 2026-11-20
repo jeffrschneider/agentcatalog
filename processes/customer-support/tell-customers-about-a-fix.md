@@ -28,6 +28,8 @@ its reason, and the record shows who was told and when.
 
 **delivers:** statement, a notice that a fix has shipped
 
+**starts:** on an event, a bug is fixed or a requested feature is released
+
 ## The goals
 
 - Tell every linked customer within [2 working days] of the change reaching them

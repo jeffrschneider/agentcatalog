@@ -14,6 +14,8 @@ record it came from, and payroll holds a file a person has signed for.
 
 **delivers:** statement, commission statements
 
+**starts:** on a schedule, a commission period closes
+
 ## The goals
 
 - Publish statements within [5 days] of period close

@@ -29,6 +29,8 @@ rule has gone to its owner.
 
 **delivers:** report, the period's case quality review
 
+**starts:** on a schedule, a review period closes, or the quality lead calls a review
+
 ## The goals
 
 - Sign each period's review within [5 working days] of the period's close

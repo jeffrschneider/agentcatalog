@@ -14,6 +14,8 @@ procurement reviews run alongside the scoring rather than after it.
 
 **delivers:** shortlist, a tool choice
 
+**starts:** by hand, a need the current tools cannot meet is raised
+
 ## The goals
 
 - Choose and clear a tool within [8 weeks]

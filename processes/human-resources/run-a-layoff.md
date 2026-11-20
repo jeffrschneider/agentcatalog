@@ -23,6 +23,8 @@ and what the layoff taught is written down.
 
 **delivers:** verdict, a layoff decision
 
+**starts:** by hand, the executive sponsor opens a proposed reduction in roles
+
 ## The goals
 
 - Reach [100%] of the saving the business reason set

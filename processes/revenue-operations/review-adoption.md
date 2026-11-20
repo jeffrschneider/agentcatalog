@@ -14,6 +14,8 @@ enforcement, or accept the departure and say so out loud.
 
 **delivers:** report, an adoption review
 
+**starts:** on a schedule, an adoption period closes, or a signal crosses its threshold
+
 ## The goals
 
 - Decide every departure within [2 weeks] of period end

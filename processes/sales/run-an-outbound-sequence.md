@@ -14,6 +14,8 @@ reply that wants a conversation is handed on.
 
 **delivers:** sequence, an outbound sequence
 
+**starts:** on an event, a signed prospect list is handed over
+
 ## The goals
 
 - Answer every reply within [2 hours]

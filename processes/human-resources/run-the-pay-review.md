@@ -22,6 +22,8 @@ heard the outcome from the manager and holds it in writing.
 
 **delivers:** sheet, the approved pay review
 
+**starts:** on a schedule, the pay review calendar opens the year's review
+
 ## The goals
 
 - Keep the review within [100%] of its budget

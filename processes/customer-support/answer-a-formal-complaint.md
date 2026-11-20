@@ -27,6 +27,8 @@ the case, and the outcome is recorded, ready for any report
 
 **delivers:** document, a written answer to a complaint
 
+**starts:** on an event, a customer makes a formal complaint on any channel
+
 ## The goals
 
 - Send each answer within [10 working days]

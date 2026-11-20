@@ -18,6 +18,8 @@ down which creative is running where.
 
 **delivers:** campaign, trafficked ad creative
 
+**starts:** on an event, approved creative and a media plan arrive
+
 ## The goals
 
 - Get ads live within [2 days] of approval

@@ -21,6 +21,8 @@ date it stops counting are on the record, and the case is closed.
 
 **delivers:** verdict, a disciplinary outcome
 
+**starts:** by hand, a manager reports a conduct matter, or signed findings are referred for discipline
+
 ## The goals
 
 - Deliver the outcome within [15 working days] of the report

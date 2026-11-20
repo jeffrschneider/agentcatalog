@@ -14,6 +14,8 @@ the library, so the next buyer gets the same answer faster.
 
 **delivers:** document, a security questionnaire
 
+**starts:** on an event, a questionnaire arrives with a deal
+
 ## The goals
 
 - Return every questionnaire within [5 days]

@@ -17,6 +17,8 @@ lawyers for the definitive agreements.
 
 **delivers:** agreement, a signed term sheet
 
+**starts:** on an event, the committee approves a deal on stated terms
+
 ## The goals
 
 - Sign the term sheet within [10 days] of approval

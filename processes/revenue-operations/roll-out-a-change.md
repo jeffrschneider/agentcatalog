@@ -16,6 +16,8 @@ the roll-out has been reported.
 
 **delivers:** event, a sales team training
 
+**starts:** on an event, marketing hands over a launch, a price change or a competitor brief
+
 ## The goals
 
 - Teach [100%] of named sellers before it takes effect

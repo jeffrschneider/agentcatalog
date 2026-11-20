@@ -19,6 +19,8 @@ figure.
 
 **delivers:** report, a brand health report
 
+**starts:** on a schedule, a tracking cycle comes round
+
 ## The goals
 
 - Report [100%] of tracker waves on time

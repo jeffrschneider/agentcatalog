@@ -25,6 +25,8 @@ the reconciliation kept with its evidence.
 
 **delivers:** sheet, a signed-off account reconciliation
 
+**starts:** on a schedule, a period ends and an account on the list reaches its due day
+
 ## The goals
 
 - Sign off every reconciliation within [5 working days] of the period end

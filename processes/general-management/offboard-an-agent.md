@@ -33,6 +33,8 @@ it reads that run's access list.
 
 **delivers:** status board, an agent offboarded
 
+**starts:** on an event, an engagement with an outside agent ends
+
 ## The goals
 
 - Withdraw all access within [1 day] of the end date

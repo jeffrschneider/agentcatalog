@@ -17,6 +17,8 @@ pursuing has become an opportunity with a named owner.
 
 **delivers:** verdict, a pitch screening decision
 
+**starts:** on an event, a pitch arrives from a founder, a referrer or the firm's website
+
 ## The goals
 
 - Answer every founder within [5 days]

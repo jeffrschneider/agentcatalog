@@ -14,6 +14,8 @@ behind it stop running rather than being left to rot.
 
 **delivers:** status board, a retired report list
 
+**starts:** on a schedule, the review cadence comes round, or a report trips its condition
+
 ## The goals
 
 - Cut reports nobody opens by [40%]

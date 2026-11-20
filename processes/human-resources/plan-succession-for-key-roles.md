@@ -22,6 +22,8 @@ action, an owner and a date, and the next review is set.
 
 **delivers:** shortlist, successors for each key role
 
+**starts:** on a schedule, the yearly review falls due, or the holder of a key role gives notice
+
 ## The goals
 
 - Name a ready-now successor for [60%] of key roles

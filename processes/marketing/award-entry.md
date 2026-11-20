@@ -17,6 +17,8 @@ somebody still owes the debrief.
 
 **delivers:** document, an award entry
 
+**starts:** on an event, an award opens for entries
+
 ## The goals
 
 - File [100%] of entries before the deadline

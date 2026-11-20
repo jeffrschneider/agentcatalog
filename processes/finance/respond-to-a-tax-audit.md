@@ -30,6 +30,8 @@ agreed and paid or contested on the record, and counsel lifts the hold.
 
 **delivers:** document, a tax audit response
 
+**starts:** on an event, a tax authority gives notice of an audit, or its auditor arrives
+
 ## The goals
 
 - Answer [100%] of requests by their due date

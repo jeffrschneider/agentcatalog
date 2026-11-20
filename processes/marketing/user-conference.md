@@ -25,6 +25,8 @@ time and clears the checks it has to clear.
 
 **delivers:** event, a user conference
 
+**starts:** on an event, the annual date is set
+
 ## The goals
 
 - Reach [100%] of the attendance target

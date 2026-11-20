@@ -25,6 +25,8 @@ and the receipts are kept for the period
 
 **delivers:** statement, a paid expense claim
 
+**starts:** by hand, an employee submits an expense claim
+
 ## The goals
 
 - Pay [95%] of approved claims in the first payment run after approval

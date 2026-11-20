@@ -23,6 +23,8 @@ deleted under `<your data retention rule>`.
 
 **delivers:** document, a booked itinerary
 
+**starts:** by hand, an employee asks for a business trip
+
 ## The goals
 
 - Book [95%] of trips inside the travel policy

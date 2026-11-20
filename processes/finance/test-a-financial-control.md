@@ -25,6 +25,8 @@ finding it raised on the strength of a passed test.
 
 **delivers:** verdict, a control test result
 
+**starts:** on a schedule, a control reaches its test date, or the controller calls a test out of cycle
+
 ## The goals
 
 - Test [100%] of key controls by their test date

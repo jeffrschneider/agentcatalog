@@ -29,6 +29,8 @@ ready for the financial statements.
 
 **delivers:** report, the period's tax provision
 
+**starts:** on a schedule, the results before tax for a quarter or a year are final at the close
+
 ## The goals
 
 - Deliver the provision within [4 working days] of the results before tax

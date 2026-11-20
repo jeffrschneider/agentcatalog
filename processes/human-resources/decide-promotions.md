@@ -23,6 +23,8 @@ still needs.
 
 **delivers:** verdict, promotion decisions
 
+**starts:** on a schedule, the head of HR opens the promotion round on its date
+
 ## The goals
 
 - Decide every nomination within [6 weeks] of the round opening

@@ -31,6 +31,8 @@ checked and who closed the account.
 
 **delivers:** status board, a closed customer account
 
+**starts:** on an event, a customer asks to close its account
+
 ## The goals
 
 - Close [100%] of accounts on the date asked for or the earliest date the agreement allows

@@ -22,6 +22,8 @@ been told, and the account's follow-up level is set for collections.
 
 **delivers:** verdict, a credit limit decision
 
+**starts:** on an event, a customer needs credit, or its limit comes due for review
+
 ## The goals
 
 - Decide each credit request within [2 working days]

@@ -21,6 +21,8 @@ acknowledgment is in or being chased.
 
 **delivers:** document, a published HR policy
 
+**starts:** by hand, a decision, a rule change, an audit finding or a review date calls for a policy change
+
 ## The goals
 
 - Publish each change within [30 days] of the decision behind it

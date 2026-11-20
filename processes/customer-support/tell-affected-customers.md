@@ -33,6 +33,8 @@ gone to Follow Up an Outage.
 
 **delivers:** status board, the customers told about an incident
 
+**starts:** on an event, an incident customers can see is confirmed
+
 ## The goals
 
 - Send each approved update to every open linked case within [15 minutes] of its approval

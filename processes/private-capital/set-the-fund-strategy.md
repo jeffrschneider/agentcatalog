@@ -20,6 +20,8 @@ that raises it.
 
 **delivers:** document, a fund strategy
 
+**starts:** by hand, the partners decide to raise a new fund
+
 ## The goals
 
 - Decide the strategy by [the launch date]

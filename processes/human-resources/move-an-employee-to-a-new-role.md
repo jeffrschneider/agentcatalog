@@ -25,6 +25,8 @@ been answered and the opening has gone to outside hiring.
 
 **delivers:** agreement, an accepted internal offer
 
+**starts:** on an event, an internal opening is approved, or a manager proposes to offer an employee a role
+
 ## The goals
 
 - Fill [40%] of open roles with internal candidates

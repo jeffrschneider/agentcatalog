@@ -25,6 +25,8 @@ consolidation and to the monthly results.
 
 **delivers:** status board, a signed-off month-end close
 
+**starts:** on a schedule, a month ends on the close calendar
+
 ## The goals
 
 - Close each month within [5 working days] of its end

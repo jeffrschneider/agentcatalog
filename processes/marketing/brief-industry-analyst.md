@@ -32,6 +32,8 @@ around it.
 
 **delivers:** notes, an analyst briefing
 
+**starts:** on an event, an analyst cycle opens or an inquiry arrives
+
 ## The goals
 
 - File [100%] of cycle submissions by the deadline

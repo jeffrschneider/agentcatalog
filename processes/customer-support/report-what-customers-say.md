@@ -25,6 +25,8 @@ date.
 
 **delivers:** report, a report of what customers say
 
+**starts:** on a schedule, a reporting period ends
+
 ## The goals
 
 - Deliver the report within [5 working days] of the period's end

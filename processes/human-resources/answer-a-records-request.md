@@ -26,6 +26,8 @@ decision and what was sent.
 
 **delivers:** document, an answer to a records request
 
+**starts:** by hand, someone asks to see, correct, confirm or delete employee data
+
 ## The goals
 
 - Answer [100%] of requests inside their deadline

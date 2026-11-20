@@ -19,6 +19,8 @@ producing that material is separate work that reads this list.
 
 **delivers:** agreement, a signed customer reference
 
+**starts:** on an event, a reference is needed
+
 ## The goals
 
 - Fill reference requests within [10 days]

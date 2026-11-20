@@ -14,6 +14,8 @@ lapses, and the run closes when it is converted, extended or expired.
 
 **delivers:** verdict, a deal registration decision
 
+**starts:** on an event, a partner submits a deal registration
+
 ## The goals
 
 - Answer every registration within [2 days]

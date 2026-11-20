@@ -14,6 +14,8 @@ reference customer willing to be asked the next time.
 
 **delivers:** shortlist, a matched customer reference
 
+**starts:** on an event, a prospect asks to speak to a customer
+
 ## The goals
 
 - Hold the reference call within [5 days] of the ask

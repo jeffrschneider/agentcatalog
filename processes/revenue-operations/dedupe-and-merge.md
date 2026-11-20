@@ -15,6 +15,8 @@ wrong can be reversed from what was kept.
 
 **delivers:** status board, merged duplicate records
 
+**starts:** on an event, records are proposed as one thing
+
 ## The goals
 
 - Merge confirmed duplicates within [2 days]

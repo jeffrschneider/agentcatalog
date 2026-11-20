@@ -18,6 +18,8 @@ definition has been written down where the next campaign can find it.
 
 **delivers:** sheet, a target audience segment
 
+**starts:** by hand, a targeting need is raised
+
 ## The goals
 
 - Deliver a cleared segment within [3 days]

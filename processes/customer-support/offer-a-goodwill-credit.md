@@ -32,6 +32,8 @@ proposed and who decided.
 
 **delivers:** statement, a goodwill credit note
 
+**starts:** by hand, someone asks for a goodwill credit after a failure the customer bore
+
 ## The goals
 
 - Offer each credit within [2 working days] of the failure being known

@@ -29,6 +29,8 @@ given while the team was away.
 
 **delivers:** status board, the after-hours queue handed to the morning team
 
+**starts:** on a schedule, the support team's hours end on a channel
+
 ## The goals
 
 - Page the person on call within [15 minutes] for every urgent case

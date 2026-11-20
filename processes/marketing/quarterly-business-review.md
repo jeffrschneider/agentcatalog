@@ -21,6 +21,8 @@ has heard what it owes.
 
 **delivers:** report, a quarterly business review
 
+**starts:** on a schedule, a quarter closes
+
 ## The goals
 
 - Publish the reset [10 days] after quarter close

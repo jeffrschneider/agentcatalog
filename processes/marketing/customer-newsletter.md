@@ -14,6 +14,8 @@ send, because a sent issue cannot be recalled.
 
 **delivers:** page, a customer newsletter
 
+**starts:** on a schedule, a publishing cycle opens
+
 ## The goals
 
 - Send [100%] of issues on their scheduled date

@@ -21,6 +21,8 @@ has been reviewed on its date.
 
 **delivers:** verdict, an accommodation decision
 
+**starts:** by hand, an employee asks for a change to a job or a workplace, or a manager sees one may be needed
+
 ## The goals
 
 - Decide within [15 working days] of the request

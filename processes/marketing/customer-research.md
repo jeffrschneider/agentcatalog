@@ -16,6 +16,8 @@ people. Reading what customers already did is a separate process.
 
 **delivers:** report, customer research findings
 
+**starts:** by hand, a knowledge gap is raised
+
 ## The goals
 
 - Deliver [100%] of studies by the promised date

@@ -26,6 +26,8 @@ who confirmed and who approved.
 
 **delivers:** status board, a confirmed change of bank details
 
+**starts:** on an event, someone asks to change where a supplier is paid
+
 ## The goals
 
 - Confirm [100%] of changes by a call to a contact already on file

@@ -30,6 +30,8 @@ chased.
 
 **delivers:** document, a published finance policy
 
+**starts:** by hand, a decision, a rule change, a failed control, an audit finding or a review date calls for a policy change
+
 ## The goals
 
 - Publish each change within [30 days] of the decision behind it

@@ -25,6 +25,8 @@ whatever is still owed, and the cause has gone back to whoever owns it.
 
 **delivers:** verdict, a billing dispute ruling
 
+**starts:** on an event, a customer says an invoice is wrong
+
 ## The goals
 
 - Answer each dispute within [10 working days]

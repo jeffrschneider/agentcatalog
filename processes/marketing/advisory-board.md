@@ -19,6 +19,8 @@ once each theme has reached the owner who can act on it.
 
 **delivers:** notes, advisory board notes
 
+**starts:** on a schedule, a board cycle opens
+
 ## The goals
 
 - Bring [80%] of confirmed members to the session

@@ -21,6 +21,8 @@ and to the plan for the first months.
 
 **delivers:** status board, a first day readiness board
 
+**starts:** on an event, a candidate signs the offer and the hire is passed to onboarding
+
 ## The goals
 
 - Finish the forms and the right to work check [3 days] before the start

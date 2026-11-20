@@ -9,6 +9,8 @@ live, and reports how it did against what the brief asked for.
 
 **delivers:** campaign, a social campaign
 
+**starts:** on an event, a campaign brief arrives
+
 ## The goals
 
 - Launch on every channel by [the brief's date]

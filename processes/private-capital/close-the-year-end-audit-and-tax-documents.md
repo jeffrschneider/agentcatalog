@@ -20,6 +20,8 @@ documents by the dates the partnership agreement and the law set.
 
 **delivers:** statement, audited statements and tax documents
 
+**starts:** on a schedule, the fund's financial year ends
+
 ## The goals
 
 - Issue audited statements within [90 days]

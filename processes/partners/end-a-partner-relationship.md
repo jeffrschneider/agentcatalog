@@ -16,6 +16,8 @@ contract with nobody behind it.
 
 **delivers:** status board, a partner exit
 
+**starts:** on an event, a partner has stopped performing, or either side gives notice
+
 ## The goals
 
 - Keep [95%] of the partner's customers

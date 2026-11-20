@@ -14,6 +14,8 @@ filed. A question asked every week becomes a report.
 
 **delivers:** report, a data answer
 
+**starts:** by hand, a question arrives that no dashboard answers
+
 ## The goals
 
 - Answer data questions within [3 days]

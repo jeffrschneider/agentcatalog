@@ -20,6 +20,8 @@ of the standing lists so that every future buy reads them.
 
 **delivers:** verdict, an ad placement check
 
+**starts:** by hand, a brand safety or viewability concern
+
 ## The goals
 
 - Put exclusions in force within [2 days]

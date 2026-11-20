@@ -21,6 +21,8 @@ the question down and hands it to the process that asks people.
 
 **delivers:** report, a customer base analysis
 
+**starts:** on a schedule, a read date arrives or a question is asked
+
 ## The goals
 
 - Answer customer base questions within [10 days]

@@ -14,6 +14,8 @@ ends at a shape both sides hold at one version, carrying no price.
 
 **delivers:** document, a solution design
 
+**starts:** on an event, a versioned requirement record arrives
+
 ## The goals
 
 - Agree the solution with the buyer within [2 weeks]

@@ -25,6 +25,8 @@ one records.
 
 **delivers:** document, a market segmentation
 
+**starts:** by hand, a question about how the market divides is asked
+
 ## The goals
 
 - Issue the agreed segments within [6 weeks]

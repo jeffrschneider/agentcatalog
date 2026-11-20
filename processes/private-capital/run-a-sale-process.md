@@ -20,6 +20,8 @@ against the plan.
 
 **delivers:** deal, a completed sale
 
+**starts:** on an event, the committee approves a sale as the exit route
+
 ## The goals
 
 - Sell at or above [the floor price]

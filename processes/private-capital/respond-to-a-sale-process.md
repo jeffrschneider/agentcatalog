@@ -17,6 +17,8 @@ indication or its withdrawal.
 
 **delivers:** document, an indication of interest
 
+**starts:** on an event, a bank sends a teaser for a company it is selling
+
 ## The goals
 
 - Decide to engage or decline within [3 days]

@@ -15,6 +15,8 @@ report.
 
 **delivers:** event, a webinar
 
+**starts:** on an event, a topic and a date are set
+
 ## The goals
 
 - Reach [100%] of the registration target

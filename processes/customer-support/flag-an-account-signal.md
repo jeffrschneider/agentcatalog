@@ -23,6 +23,8 @@ the case for the next person who handles the account.
 
 **delivers:** document, an account signal with its evidence
 
+**starts:** on an event, a case shows an account may leave or buy more
+
 ## The goals
 
 - Pass each signal to the account owner within [1 working day]

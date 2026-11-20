@@ -24,6 +24,8 @@ hire is with onboarding.
 
 **delivers:** agreement, a signed offer letter
 
+**starts:** on an event, the hiring manager has chosen a candidate
+
 ## The goals
 
 - Send the written offer within [3 working days] of the decision

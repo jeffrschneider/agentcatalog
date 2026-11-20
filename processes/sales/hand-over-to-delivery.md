@@ -15,6 +15,8 @@ first working session is in diaries before the run closes.
 
 **delivers:** status board, a delivery handover
 
+**starts:** on an event, an order is booked
+
 ## The goals
 
 - Introduce the new owner within [5 days] of booking

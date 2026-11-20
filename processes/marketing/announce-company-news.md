@@ -16,6 +16,8 @@ afterwards and the manager still owes a report on it.
 
 **delivers:** page, a news release
 
+**starts:** by hand, a newsworthy event is confirmed
+
 ## The goals
 
 - Issue each release within [10 days] of the news

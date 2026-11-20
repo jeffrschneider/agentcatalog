@@ -17,6 +17,8 @@ opportunity, chosen to keep watching, or stopped.
 
 **delivers:** sequence, a company outreach
 
+**starts:** on an event, a company on a sector map is passed on as ready to talk
+
 ## The goals
 
 - Approach each ready company within [5 days]

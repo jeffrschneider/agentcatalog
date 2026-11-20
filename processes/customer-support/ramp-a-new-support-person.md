@@ -29,6 +29,8 @@ been reported to the specialist and their team lead.
 
 **delivers:** status board, a ramped support specialist
 
+**starts:** on an event, a new support specialist is handed on from Human resources after the first day
+
 ## The goals
 
 - Answer the first topic alone within [3 weeks] of the first day

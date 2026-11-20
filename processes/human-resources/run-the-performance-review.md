@@ -23,6 +23,8 @@ promotion round.
 
 **delivers:** document, performance reviews
 
+**starts:** on a schedule, the head of HR opens the review cycle on its date
+
 ## The goals
 
 - Hold [95%] of review conversations by the cycle's close date

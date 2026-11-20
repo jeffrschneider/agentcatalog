@@ -14,6 +14,8 @@ Nothing here changes a category or decides what is committed.
 
 **delivers:** status board, a clean pipeline
 
+**starts:** on a schedule, the hygiene cadence comes round
+
 ## The goals
 
 - Keep [95%] of open deals passing every rule

@@ -17,6 +17,8 @@ the cycle changed, what it took down, and what those changes moved.
 
 **delivers:** status board, refreshed site content
 
+**starts:** on a schedule, an audit comes due or a page decays
+
 ## The goals
 
 - Finish each refresh cycle within [6 weeks]

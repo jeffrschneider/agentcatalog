@@ -20,6 +20,8 @@ have passed to the performance review.
 
 **delivers:** document, a plan for the first months
 
+**starts:** on an event, the new hire's first day is confirmed and the hire is handed on
+
 ## The goals
 
 - Agree the plan within [10 working days] of the start

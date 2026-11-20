@@ -29,6 +29,8 @@ approved it and what it commits the company to.
 
 **delivers:** verdict, a sensitive reply approved to send
 
+**starts:** on an event, the reply-check agent holds a reply in a category a person must send
+
 ## The goals
 
 - Send each held reply within [4 working hours] of its draft

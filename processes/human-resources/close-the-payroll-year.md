@@ -22,6 +22,8 @@ what was filed.
 
 **delivers:** statement, year-end pay and tax statements
 
+**starts:** on a schedule, the last payday of the tax year has been paid
+
 ## The goals
 
 - Send every year-end statement [10 days] before its deadline

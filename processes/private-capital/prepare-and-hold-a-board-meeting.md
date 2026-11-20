@@ -19,6 +19,8 @@ and a date to be followed up before the next pack.
 
 **delivers:** notes, board meeting minutes
 
+**starts:** on an event, a portfolio company board meeting is set
+
 ## The goals
 
 - Brief the director [3 days] before each meeting

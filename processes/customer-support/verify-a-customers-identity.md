@@ -29,6 +29,8 @@ decided what happens to it.
 
 **delivers:** verdict, an identity check result
 
+**starts:** on an event, someone is about to read out, change or act on something in an account
+
 ## The goals
 
 - Complete the checks within [3 minutes] for a routine action

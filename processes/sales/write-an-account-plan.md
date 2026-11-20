@@ -14,6 +14,8 @@ puts no money in a forecast.
 
 **delivers:** document, an account plan
 
+**starts:** on an event, an account read and a people map are issued
+
 ## The goals
 
 - Sign the account plan within [2 weeks]

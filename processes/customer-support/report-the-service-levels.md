@@ -30,6 +30,8 @@ is opened with its owners, and the period is kept so its figures replay.
 
 **delivers:** report, a service level report
 
+**starts:** on a schedule, the reporting period closes
+
 ## The goals
 
 - Send the report within [2 working days] of the period's close

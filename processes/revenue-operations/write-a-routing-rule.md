@@ -15,6 +15,8 @@ been watched.
 
 **delivers:** document, a routing rule
 
+**starts:** by hand, somebody asks who should get this work
+
 ## The goals
 
 - Put a new rule live within [2 weeks]

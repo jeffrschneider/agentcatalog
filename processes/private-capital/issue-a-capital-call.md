@@ -19,6 +19,8 @@ it was called for.
 
 **delivers:** statement, a capital call notice
 
+**starts:** by hand, the fund needs money from its investors, and the CFO opens a call
+
 ## The goals
 
 - Give investors at least [10 days] notice

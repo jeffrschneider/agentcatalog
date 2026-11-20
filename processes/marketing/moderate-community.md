@@ -15,6 +15,8 @@ long a cycle is, and a shift, a day and a week all work.
 
 **delivers:** status board, a moderated community
 
+**starts:** on a schedule, a moderation cycle opens
+
 ## The goals
 
 - Reply to every question within [4 hours]

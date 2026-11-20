@@ -24,6 +24,8 @@ record with its restricted file kept apart.
 
 **delivers:** verdict, a leave of absence decision
 
+**starts:** by hand, an employee asks for a leave, or an absence reaches the point the policy sets
+
 ## The goals
 
 - Decide each request within [5 working days]

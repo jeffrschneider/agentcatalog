@@ -23,6 +23,8 @@ issued.
 
 **delivers:** document, a brand positioning
 
+**starts:** on an event, a strategy change or a market shift
+
 ## The goals
 
 - Agree the new positioning within [8 weeks]

@@ -15,6 +15,8 @@ keeps producing conflicts goes back to be rewritten.
 
 **delivers:** verdict, a channel conflict ruling
 
+**starts:** on an event, one side says a deal is being worked twice
+
 ## The goals
 
 - Decide every conflict within [5 days]

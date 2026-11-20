@@ -22,6 +22,8 @@ filed by its due date, and the period's journal is posted to the ledger.
 
 **delivers:** statement, the payslips for a pay period
 
+**starts:** on a schedule, the pay period reaches its cutoff for changes
+
 ## The goals
 
 - Pay [99.9%] of employees the right amount on payday

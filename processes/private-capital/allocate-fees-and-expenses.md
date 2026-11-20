@@ -20,6 +20,8 @@ whatever the firm or a company owes the fund has been billed.
 
 **delivers:** statement, fee and expense charges
 
+**starts:** on a schedule, a fee period opens on the fee calendar
+
 ## The goals
 
 - Charge each fee period within [10 days]

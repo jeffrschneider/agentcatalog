@@ -18,6 +18,8 @@ What it produces is a set of commitments that other processes work from.
 
 **delivers:** sheet, a content calendar
 
+**starts:** on a schedule, a planning period opens
+
 ## The goals
 
 - Agree the content plan within [2 weeks]

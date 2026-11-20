@@ -15,6 +15,8 @@ not arrive again next period.
 
 **delivers:** verdict, a commission dispute ruling
 
+**starts:** by hand, somebody says their statement is wrong
+
 ## The goals
 
 - Answer every claim within [10 days]

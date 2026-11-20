@@ -17,6 +17,8 @@ partners produced in their first weeks.
 
 **delivers:** page, a channel program
 
+**starts:** on an event, a program design is approved
+
 ## The goals
 
 - Sign the first partner within [90 days]

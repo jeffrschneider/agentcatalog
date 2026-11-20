@@ -26,6 +26,8 @@ supplier and the agreement are with the purchase order.
 
 **delivers:** agreement, a signed supplier agreement
 
+**starts:** on an event, a purchase above the threshold needs a supplier chosen
+
 ## The goals
 
 - Choose the supplier and sign within [8 weeks] of the request

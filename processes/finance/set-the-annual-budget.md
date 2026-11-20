@@ -26,6 +26,8 @@ budget rests on is written down.
 
 **delivers:** sheet, an approved company budget for the year
 
+**starts:** on a schedule, the executive team sets the targets for the next financial year, and the CFO opens the budget
+
 ## The goals
 
 - Approve the budget by [the first day of the financial year]

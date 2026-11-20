@@ -18,6 +18,8 @@ recorded as a decline with its reason.
 
 **delivers:** verdict, an investment committee decision
 
+**starts:** by hand, a deal team marks its investment memo final and asks for a decision
+
 ## The goals
 
 - Decide every deal within [7 days] of its memo

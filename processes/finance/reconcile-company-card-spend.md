@@ -25,6 +25,8 @@ or held open with its reason, and the reconciliation is signed off.
 
 **delivers:** statement, a reconciled card account
 
+**starts:** on a schedule, a card statement period closes
+
 ## The goals
 
 - Sign off each card reconciliation within [5 working days] of the statement date

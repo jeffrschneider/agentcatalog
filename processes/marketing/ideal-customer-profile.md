@@ -21,6 +21,8 @@ set the date it comes back up.
 
 **delivers:** document, an ideal customer profile
 
+**starts:** by hand, a go-to-market question is asked
+
 ## The goals
 
 - Agree the profile within [6 weeks]

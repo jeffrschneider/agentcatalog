@@ -27,6 +27,8 @@ that a later release reaches the customer.
 
 **delivers:** document, a logged feature request
 
+**starts:** on an event, a customer asks for something the product does not do
+
 ## The goals
 
 - Log each request within [2 working days] of the customer asking

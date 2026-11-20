@@ -18,6 +18,8 @@ are still unproved.
 
 **delivers:** verdict, commercial diligence findings
 
+**starts:** by hand, a partner takes an opportunity on and names the deal team
+
 ## The goals
 
 - Finish commercial diligence within [4 weeks]

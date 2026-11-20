@@ -22,6 +22,8 @@ new answer at a version.
 
 **delivers:** document, a due diligence questionnaire
 
+**starts:** on an event, an investor or its consultant sends a due diligence questionnaire
+
 ## The goals
 
 - Return every questionnaire within [10 days]

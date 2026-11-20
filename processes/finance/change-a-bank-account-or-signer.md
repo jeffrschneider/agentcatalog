@@ -31,6 +31,8 @@ and users matches the record.
 
 **delivers:** status board, an updated bank account record
 
+**starts:** on an event, a request to open or close an account or change a signer, or a leaver or mover holds bank authority
+
 ## The goals
 
 - Complete each approved change with the bank within [10 working days]

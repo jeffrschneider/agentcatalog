@@ -15,6 +15,8 @@ elsewhere, and this round hands them the evidence.
 
 **delivers:** report, a partner scorecard
 
+**starts:** on a schedule, the review cadence comes round, or a tripwire fires
+
 ## The goals
 
 - Review [100%] of partners on the set cadence

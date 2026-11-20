@@ -17,6 +17,8 @@ the work.
 
 **delivers:** page, a crisis response
 
+**starts:** on an event, an incident that will become public is reported
+
 ## The goals
 
 - Issue a holding statement within [1 hour]

@@ -12,6 +12,8 @@ leaving.
 
 **delivers:** page, a landing page
 
+**starts:** on an event, a campaign needs a page
+
 ## The goals
 
 - Put the page live within [5 days] of the request

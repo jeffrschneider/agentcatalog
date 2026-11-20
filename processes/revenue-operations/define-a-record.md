@@ -15,6 +15,8 @@ a deadline and a person who owns fixing them.
 
 **delivers:** document, a record definition
 
+**starts:** by hand, somebody proposes a new object, field or rule
+
 ## The goals
 
 - Put new field rules live within [3 weeks]

@@ -23,6 +23,8 @@ has been told what changed.
 
 **delivers:** status board, an updated employee record
 
+**starts:** by hand, a change to an employee's record is asked for or handed over
+
 ## The goals
 
 - Apply [98%] of changes by their effective date

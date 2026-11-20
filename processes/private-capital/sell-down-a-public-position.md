@@ -19,6 +19,8 @@ the fund's distribution.
 
 **delivers:** deal, a sold-down position
 
+**starts:** on an event, a portfolio company lists and the fund holds its shares
+
 ## The goals
 
 - Exit the position within [6 months] of the lock-up

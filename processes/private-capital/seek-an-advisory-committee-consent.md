@@ -21,6 +21,8 @@ told have been told, and every condition has been met.
 
 **delivers:** verdict, an advisory committee consent
 
+**starts:** by hand, a matter arises that the partnership agreement sends to the LP advisory committee
+
 ## The goals
 
 - Decide every consent within [30 days]

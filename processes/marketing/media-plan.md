@@ -23,6 +23,8 @@ process.
 
 **delivers:** sheet, a media plan
 
+**starts:** on an event, an objective and a budget arrive
+
 ## The goals
 
 - Commit the plan within [3 weeks] of the budget

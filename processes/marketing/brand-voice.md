@@ -26,6 +26,8 @@ where it comes from. The run does not reopen the position itself.
 
 **delivers:** document, a brand voice guide
 
+**starts:** on an event, a positioning is approved and issued
+
 ## The goals
 
 - Issue the signed voice guide within [8 weeks]

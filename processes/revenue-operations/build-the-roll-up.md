@@ -14,6 +14,8 @@ named. It is arithmetic, and it decides nothing.
 
 **delivers:** sheet, a forecast roll-up
 
+**starts:** on a schedule, the reporting cadence comes round
+
 ## The goals
 
 - Freeze the roll-up within [1 day] of cut-off

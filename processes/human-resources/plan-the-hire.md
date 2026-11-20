@@ -20,6 +20,8 @@ same must-haves.
 
 **delivers:** document, a hiring plan
 
+**starts:** by hand, a position is approved and its hiring manager asks for it to be filled
+
 ## The goals
 
 - Sign the plan within [5 working days] of the approved position

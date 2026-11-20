@@ -29,6 +29,8 @@ send it, and the old version is kept with the dates it was in use.
 
 **delivers:** document, a saved reply
 
+**starts:** by hand, someone asks for a new or changed saved reply
+
 ## The goals
 
 - Publish each approved reply within [3 working days] of the request

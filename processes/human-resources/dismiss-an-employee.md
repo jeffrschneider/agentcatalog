@@ -21,6 +21,8 @@ has started.
 
 **delivers:** verdict, a dismissal decision
 
+**starts:** by hand, a manager proposes a dismissal for performance or conduct
+
 ## The goals
 
 - Decide within [15 working days] of the proposal

@@ -19,6 +19,8 @@ promise from the seller, and which stop the deal.
 
 **delivers:** verdict, legal diligence findings
 
+**starts:** by hand, a partner takes an opportunity on and names the deal team
+
 ## The goals
 
 - Finish legal diligence within [4 weeks]

@@ -16,6 +16,8 @@ before the round closes.
 
 **delivers:** sheet, partner tiers
 
+**starts:** on a schedule, the tiering cadence comes round, or a review refers a partner
+
 ## The goals
 
 - Tell every partner their tier within [5 days]

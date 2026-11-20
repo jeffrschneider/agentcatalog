@@ -26,6 +26,8 @@ lead, and the period's scores are with Report What Customers Say.
 
 **delivers:** report, the after-case survey results for a period
 
+**starts:** on a schedule, a survey period opens on the support team's calendar
+
 ## The goals
 
 - Hear back from [25%] of the customers asked

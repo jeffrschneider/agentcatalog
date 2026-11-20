@@ -27,6 +27,8 @@ return's own process, and the receipt is kept with the notice.
 
 **delivers:** document, a response to a tax notice
 
+**starts:** on an event, a letter, a notice or an assessment arrives from a tax authority
+
 ## The goals
 
 - Answer [100%] of notices by their response date

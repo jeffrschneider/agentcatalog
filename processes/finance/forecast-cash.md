@@ -27,6 +27,8 @@ published and every shortfall has a decision from a named person.
 
 **delivers:** report, a weekly cash forecast
 
+**starts:** on a schedule, the week's forecast falls due on the treasury calendar
+
 ## The goals
 
 - Publish the forecast by [noon on the second working day] of each week

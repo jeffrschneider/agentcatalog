@@ -14,6 +14,8 @@ is shaped, so the shape is never built on a promise nobody made.
 
 **delivers:** document, a requirements record
 
+**starts:** on an event, a confirmed discovery summary arrives
+
 ## The goals
 
 - Version the confirmed record within [5 days]

@@ -18,6 +18,8 @@ owner and one date.
 
 **delivers:** report, a portfolio review
 
+**starts:** on an event, the quarter's marks are approved
+
 ## The goals
 
 - Review every company within [15 days] of the marks

@@ -14,6 +14,8 @@ cut and why, and the money that was not used is back in the fund.
 
 **delivers:** statement, a paid claim
 
+**starts:** on an event, a partner submits a claim against an approved activity
+
 ## The goals
 
 - Pay every valid claim within [10 days]

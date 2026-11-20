@@ -15,6 +15,8 @@ the coverage has been recorded and the run has been debriefed.
 
 **delivers:** page, earned media coverage
 
+**starts:** by hand, a story angle is worth telling
+
 ## The goals
 
 - Place the first story within [4 weeks] of the angle

@@ -23,6 +23,8 @@ the gaps ranked by how many buyers reach the question.
 
 **delivers:** document, a buyer journey map
 
+**starts:** on an event, a persona is agreed
+
 ## The goals
 
 - Issue an agreed journey map within [6 weeks]

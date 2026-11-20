@@ -13,6 +13,8 @@ been reported against the goal the budget was given.
 
 **delivers:** campaign, a paid search campaign
 
+**starts:** on an event, a budget and a goal are committed
+
 ## The goals
 
 - Go live within [2 weeks] of the budget

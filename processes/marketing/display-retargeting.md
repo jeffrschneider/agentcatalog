@@ -16,6 +16,8 @@ the pools, the caps and the exclusions at a version.
 
 **delivers:** campaign, a retargeting campaign
 
+**starts:** on an event, an audience of known visitors is approved
+
 ## The goals
 
 - Earn [3x] return on retargeting spend

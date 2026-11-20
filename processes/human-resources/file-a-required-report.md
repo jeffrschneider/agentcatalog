@@ -23,6 +23,8 @@ calendar shows the next date.
 
 **delivers:** statement, a required filing
 
+**starts:** on a schedule, a filing, a return or a notice comes due on the compliance calendar
+
 ## The goals
 
 - File [100%] of filings by their deadline

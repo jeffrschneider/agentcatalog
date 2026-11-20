@@ -14,6 +14,8 @@ plan is closed on the record with what slipped and why.
 
 **delivers:** deal, a signed deal
 
+**starts:** by hand, a deal is agreed in substance and needs a signature date
+
 ## The goals
 
 - Sign [80%] of deals by the first agreed date

@@ -18,6 +18,8 @@ tracker, and its first progress review has been held.
 
 **delivers:** document, a value creation plan
 
+**starts:** on an event, a closed deal's starting points arrive, or the plan is reopened
+
 ## The goals
 
 - Agree the plan within [100 days] of closing

@@ -23,6 +23,8 @@ deductions before the plan year starts, and the first bills match.
 
 **delivers:** sheet, the plan year's benefit elections
 
+**starts:** on a schedule, the benefit plans near the end of their plan year
+
 ## The goals
 
 - Hold the rise in the company's benefit cost under [5%]

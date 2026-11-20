@@ -20,6 +20,8 @@ a quarter later.
 
 **delivers:** sequence, a win-back campaign
 
+**starts:** on an event, a lapsed segment is identified
+
 ## The goals
 
 - Win back [15%] of lapsed customers

@@ -14,6 +14,8 @@ at renewal.
 
 **delivers:** status board, a tool access review
 
+**starts:** on an event, a tool goes live under an owner
+
 ## The goals
 
 - Update access within [1 day] of a joiner or leaver

@@ -23,6 +23,8 @@ must-haves.
 
 **delivers:** verdict, a hiring decision
 
+**starts:** on an event, the screen hands on the candidates going forward
+
 ## The goals
 
 - Reach a decision within [10 working days] of the first interview

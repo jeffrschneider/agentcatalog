@@ -29,6 +29,8 @@ leads, and every gap has a decision from a named person.
 
 **delivers:** report, a support volume forecast
 
+**starts:** on a schedule, the period's forecast falls due on the planning calendar
+
 ## The goals
 
 - Keep each week's forecast within [10%] of the requests that arrived

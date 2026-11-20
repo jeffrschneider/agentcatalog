@@ -14,6 +14,8 @@ stays open until engagement has been reported account by account.
 
 **delivers:** campaign, an account-based play
 
+**starts:** on an event, a list of target accounts arrives
+
 ## The goals
 
 - Start touches within [3 weeks] of the approved list

@@ -14,6 +14,8 @@ read before it is issued at a version.
 
 **delivers:** report, an account brief
 
+**starts:** on an event, an account is named as one worth a plan
+
 ## The goals
 
 - Issue each account read within [2 days]

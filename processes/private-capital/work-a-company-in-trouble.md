@@ -18,6 +18,8 @@ watch list, sold or written off.
 
 **delivers:** document, a turnaround decision
 
+**starts:** on an event, a portfolio company misses its plan, runs short of cash or nears a covenant breach
+
 ## The goals
 
 - Decide with at least [8 weeks] of cash left

@@ -23,6 +23,8 @@ or proposed for write-off, and the reminders have stopped.
 
 **delivers:** status board, an overdue account worked to a close
 
+**starts:** on an event, an invoice passes its due date unpaid
+
 ## The goals
 
 - Collect [85%] of overdue invoices within 30 days of their due date

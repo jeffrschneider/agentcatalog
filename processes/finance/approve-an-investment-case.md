@@ -28,6 +28,8 @@ read against what it delivered is set.
 
 **delivers:** verdict, an investment case decision
 
+**starts:** by hand, a sponsor proposes to spend above the threshold or outside the budget
+
 ## The goals
 
 - Decide each case within [15 working days] of its submission

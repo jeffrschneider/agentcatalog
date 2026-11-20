@@ -24,6 +24,8 @@ the source behind every answer.
 
 **delivers:** document, an answer to an employee's question
 
+**starts:** by hand, an employee asks HR a question about pay, benefits, leave or a policy
+
 ## The goals
 
 - Answer [90%] of questions inside the promised time

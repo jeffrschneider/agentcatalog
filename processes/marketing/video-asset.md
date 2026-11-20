@@ -17,6 +17,8 @@ that work expands into when a video is the whole job.
 
 **delivers:** creative set, a finished video
 
+**starts:** on an event, a script or a brief arrives
+
 ## The goals
 
 - File the signed video within [3 weeks]

@@ -14,6 +14,8 @@ in writing, and the stack record says the tool is gone.
 
 **delivers:** status board, a retired tool
 
+**starts:** on an event, a decision to retire a tool is recorded
+
 ## The goals
 
 - Stop paying for the tool by [the renewal date]

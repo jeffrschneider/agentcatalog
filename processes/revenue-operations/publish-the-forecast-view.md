@@ -14,6 +14,8 @@ process publishes arithmetic and never makes the call.
 
 **delivers:** report, a published forecast
 
+**starts:** on an event, a roll-up is frozen for the cycle
+
 ## The goals
 
 - Publish the view within [2 hours] of the freeze

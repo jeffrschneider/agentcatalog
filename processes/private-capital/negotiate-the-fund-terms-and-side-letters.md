@@ -21,6 +21,8 @@ sign at the investor's close.
 
 **delivers:** agreement, agreed fund terms and side letters
 
+**starts:** on an event, an investor that means to commit sends its comments and side letter asks
+
 ## The goals
 
 - Settle every side letter [5 days] before its close

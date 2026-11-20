@@ -31,6 +31,8 @@ the record shows who asked, how each check was made and who handed over.
 
 **delivers:** status board, an account back with its rightful holder
 
+**starts:** on an event, a customer cannot sign in, or someone asks for control of a business account
+
 ## The goals
 
 - Give a genuine holder access back within [1 working day] of the request

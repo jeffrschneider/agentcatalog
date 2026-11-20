@@ -19,6 +19,8 @@ declined.
 
 **delivers:** document, an approved position
 
+**starts:** by hand, a manager asks for a new or replacement position, or hiring sends a signed position back
+
 ## The goals
 
 - Decide each request within [5 working days]

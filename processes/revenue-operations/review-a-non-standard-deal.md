@@ -13,6 +13,8 @@ would change it. An item that outruns the promised time escalates.
 
 **delivers:** verdict, a non-standard deal decision
 
+**starts:** on an event, a deal asks for terms the standard ones do not cover
+
 ## The goals
 
 - Answer every complete request within [2 days]

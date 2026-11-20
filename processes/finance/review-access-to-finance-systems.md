@@ -28,6 +28,8 @@ and the controller has signed the review.
 
 **delivers:** status board, a finance systems access review
 
+**starts:** on a schedule, the period for checking access to the finance systems ends
+
 ## The goals
 
 - Finish each review within [15 days] of the period's end

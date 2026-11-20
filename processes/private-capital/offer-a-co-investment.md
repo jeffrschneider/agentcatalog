@@ -19,6 +19,8 @@ and money are part of the closing.
 
 **delivers:** sheet, a co-investment allocation
 
+**starts:** on an event, an approved deal is larger than the fund will take alone
+
 ## The goals
 
 - Place the amount within [15 days] of approval
