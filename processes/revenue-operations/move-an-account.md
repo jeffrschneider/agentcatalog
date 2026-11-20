@@ -14,6 +14,8 @@ the move is recorded against the carve.
 
 **delivers:** status board, an account move
 
+**starts:** by hand, somebody asks for an account to change hands
+
 ## The goals
 
 - Change the systems within [5 days] of the request

@@ -18,6 +18,8 @@ each half answered.
 
 **delivers:** report, a win-loss analysis
 
+**starts:** on a schedule, a period of deals closes
+
 ## The goals
 
 - Deliver the themes within [6 weeks] of period close

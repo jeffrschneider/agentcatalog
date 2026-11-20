@@ -19,6 +19,8 @@ instead.
 
 **delivers:** page, a feature announcement
 
+**starts:** on an event, a feature ships
+
 ## The goals
 
 - Announce on every planned channel within [2 days]

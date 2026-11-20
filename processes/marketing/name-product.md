@@ -15,6 +15,8 @@ public belongs to the announcement and the launch processes.
 
 **delivers:** creative set, a product name
 
+**starts:** by hand, something needs a name
+
 ## The goals
 
 - Issue a cleared name within [10 weeks]

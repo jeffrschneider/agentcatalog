@@ -37,6 +37,8 @@ learned is recorded.
 
 **delivers:** document, an outage summary for customers
 
+**starts:** on an event, an incident customers could see is closed
+
 ## The goals
 
 - Send the approved summary to affected customers within [5 working days] of the incident closing

@@ -14,6 +14,8 @@ reports already published is decided rather than left to whoever notices.
 
 **delivers:** document, a measure definition
 
+**starts:** on an event, two reports disagree about the same word
+
 ## The goals
 
 - Issue each definition within [3 weeks] of the ask

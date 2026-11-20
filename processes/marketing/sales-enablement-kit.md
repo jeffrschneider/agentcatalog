@@ -19,6 +19,8 @@ here goes on the public website.
 
 **delivers:** creative set, a sales enablement kit
 
+**starts:** by hand, sales asks for a gap to be closed
+
 ## The goals
 
 - Put the kit in reps' hands within [3 weeks]

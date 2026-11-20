@@ -18,6 +18,8 @@ material and that process sends a corrected version.
 
 **delivers:** verdict, a material approval
 
+**starts:** on an event, finished material is submitted
+
 ## The goals
 
 - Clear submitted material within [2 days]

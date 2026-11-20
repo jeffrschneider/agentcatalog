@@ -21,6 +21,8 @@ ask again.
 
 **delivers:** deal, an investor commitment
 
+**starts:** on an event, a fund opens for fundraising, or a new investor is added to the target
+
 ## The goals
 
 - Approach every approved name within [4 weeks]

@@ -20,6 +20,8 @@ consent the deal would need named.
 
 **delivers:** verdict, a mandate check
 
+**starts:** by hand, a deal team asks for a mandate check before the memo goes to committee
+
 ## The goals
 
 - Return every mandate result within [2 days]

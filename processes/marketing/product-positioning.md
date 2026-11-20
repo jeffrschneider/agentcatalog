@@ -24,6 +24,8 @@ brand positioning process.
 
 **delivers:** document, a product positioning
 
+**starts:** by hand, a market question about one product
+
 ## The goals
 
 - Issue the positioning within [6 weeks]

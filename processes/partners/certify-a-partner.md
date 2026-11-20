@@ -14,6 +14,8 @@ no longer certified.
 
 **delivers:** verdict, a partner certification
 
+**starts:** on an event, an onboarded partner names who will sell or deliver
+
 ## The goals
 
 - Certify named partner people within [6 weeks]

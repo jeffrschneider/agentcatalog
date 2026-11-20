@@ -25,6 +25,8 @@ and whatever is left on it is released from the budget line.
 
 **delivers:** document, an approved purchase order
 
+**starts:** by hand, someone submits a request to buy
+
 ## The goals
 
 - Send each approved order within [2 working days] of a complete request

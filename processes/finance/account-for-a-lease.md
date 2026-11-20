@@ -25,6 +25,8 @@ register.
 
 **delivers:** sheet, a lease schedule
 
+**starts:** on an event, a lease is signed or changed
+
 ## The goals
 
 - Enter each lease within [10 working days] of its signature

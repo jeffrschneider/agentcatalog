@@ -14,6 +14,8 @@ the risks the company is knowingly taking on.
 
 **delivers:** verdict, a partner qualification
 
+**starts:** on an event, a short-listed candidate agrees to be qualified
+
 ## The goals
 
 - Decide on each candidate within [3 weeks]

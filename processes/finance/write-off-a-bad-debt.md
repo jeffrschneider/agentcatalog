@@ -24,6 +24,8 @@ decision, and the period's write-offs have reached the controller.
 
 **delivers:** statement, a bad debt write-off
 
+**starts:** on an event, collection has ended without recovering a debt
+
 ## The goals
 
 - Decide each write-off proposal within [10 working days]

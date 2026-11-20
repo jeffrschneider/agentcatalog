@@ -16,6 +16,8 @@ are read and recorded before a word of the ask is written.
 
 **delivers:** campaign, customer reviews
 
+**starts:** on an event, a review goal is set
+
 ## The goals
 
 - Turn [20%] of review asks into published reviews

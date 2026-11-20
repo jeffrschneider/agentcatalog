@@ -22,6 +22,8 @@ entry is filed for the period the local rule on record retention sets.
 
 **delivers:** statement, a posted journal entry
 
+**starts:** by hand, an entry is needed that no system feed produces
+
 ## The goals
 
 - Post each approved entry within [1 working day] of its request

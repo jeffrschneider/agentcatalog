@@ -14,6 +14,8 @@ comes down and the data goes back. The result corrects the shape.
 
 **delivers:** verdict, a proof of value result
 
+**starts:** on an event, the buyer cannot decide from description alone
+
 ## The goals
 
 - Close [100%] of proofs on the agreed date

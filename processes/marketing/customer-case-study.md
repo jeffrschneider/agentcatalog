@@ -13,6 +13,8 @@ any point.
 
 **delivers:** page, a customer case study
 
+**starts:** on an event, a customer is willing to be named
+
 ## The goals
 
 - Publish each case study within [6 weeks]

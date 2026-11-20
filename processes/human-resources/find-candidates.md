@@ -20,6 +20,8 @@ require, and the search is recorded for the next hire.
 
 **delivers:** shortlist, a sourced candidate list
 
+**starts:** on an event, the hiring plan is signed and names the sources the search may use
+
 ## The goals
 
 - Find [8] interested candidates for each opening

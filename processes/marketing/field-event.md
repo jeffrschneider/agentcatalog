@@ -15,6 +15,8 @@ follow-up and the report.
 
 **delivers:** event, a field event
 
+**starts:** on an event, a target audience and a date are set
+
 ## The goals
 
 - Fill [90%] of the room the event was sized for

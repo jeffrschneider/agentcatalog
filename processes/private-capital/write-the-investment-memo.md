@@ -18,6 +18,8 @@ committee, or when the deal team records a pass with its reason.
 
 **delivers:** document, an investment memo
 
+**starts:** on an event, diligence findings, the issued model and the mandate result are ready
+
 ## The goals
 
 - Send the memo [5 days] before the committee

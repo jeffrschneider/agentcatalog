@@ -28,6 +28,8 @@ lenders' acknowledgment are recorded.
 
 **delivers:** document, a signed compliance certificate
 
+**starts:** on a schedule, a facility reaches a testing date, or a new or amended facility is signed
+
 ## The goals
 
 - Deliver [100%] of compliance certificates by the date the agreement sets

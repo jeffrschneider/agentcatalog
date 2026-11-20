@@ -15,6 +15,8 @@ confident in waits for a person instead of landing quietly.
 
 **delivers:** status board, enriched records
 
+**starts:** on an event, records fall short of what their definition asks for
+
 ## The goals
 
 - Fill [90%] of required fields from named sources

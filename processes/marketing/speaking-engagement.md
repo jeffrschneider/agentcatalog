@@ -15,6 +15,8 @@ engagement was worth.
 
 **delivers:** event, a conference talk
 
+**starts:** on an event, a call for papers opens or an invitation arrives
+
 ## The goals
 
 - File [100%] of proposals before the deadline

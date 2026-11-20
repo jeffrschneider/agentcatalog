@@ -11,6 +11,8 @@ agents, which is why it earns a coordinator of its own.
 
 **delivers:** campaign, a product launch
 
+**starts:** on an event, a launch date is committed
+
 ## The goals
 
 - Launch on [the committed date]

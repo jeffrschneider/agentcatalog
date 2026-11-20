@@ -23,6 +23,8 @@ on something new six months later.
 
 **delivers:** status board, a brand refresh rollout
 
+**starts:** on an event, a new identity is approved
+
 ## The goals
 
 - Move [95%] of surfaces to the new identity

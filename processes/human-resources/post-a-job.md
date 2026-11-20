@@ -22,6 +22,8 @@ everywhere, and what each place drew is recorded.
 
 **delivers:** page, a job posting
 
+**starts:** on an event, the hiring plan is signed and names where the opening will be posted
+
 ## The goals
 
 - Publish within [3 working days] of the signed hiring plan

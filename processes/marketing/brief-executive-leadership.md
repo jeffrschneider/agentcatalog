@@ -21,6 +21,8 @@ take the decisions marketing cannot take on its own.
 
 **delivers:** notes, an executive briefing
 
+**starts:** on a schedule, a board or executive cycle opens
+
 ## The goals
 
 - Get a decision on [90%] of requests raised

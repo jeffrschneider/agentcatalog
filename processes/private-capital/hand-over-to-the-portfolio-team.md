@@ -19,6 +19,8 @@ who it works with at the firm.
 
 **delivers:** status board, a deal handover
 
+**starts:** on an event, a deal closes and the fund holds the company
+
 ## The goals
 
 - Hand over every deal within [10 days] of closing

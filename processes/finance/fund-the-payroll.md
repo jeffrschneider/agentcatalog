@@ -28,6 +28,8 @@ recorded.
 
 **delivers:** status board, a funded payroll account
 
+**starts:** on an event, the payroll approver approves a pay register at ref/hr/run-payroll
+
 ## The goals
 
 - Have the payroll account funded [1 working day] before payday

@@ -32,6 +32,8 @@ delegation.
 
 **delivers:** verdict, a refund decision
 
+**starts:** on an event, a customer asks for money back
+
 ## The goals
 
 - Decide each refund request within [2 working days]

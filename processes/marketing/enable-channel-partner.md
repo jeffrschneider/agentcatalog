@@ -22,6 +22,8 @@ since that partner was last checked.
 
 **delivers:** verdict, a certified partner team
 
+**starts:** on an event, a partner agreement is signed or renewed
+
 ## The goals
 
 - Certify named partner sellers within [60 days]

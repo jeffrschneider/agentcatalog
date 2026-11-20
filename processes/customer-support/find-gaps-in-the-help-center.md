@@ -25,6 +25,8 @@ support and the report of what customers say.
 
 **delivers:** shortlist, the help center gaps to write next
 
+**starts:** on a schedule, a reporting period ends
+
 ## The goals
 
 - Publish the ranked gaps within [5 working days] of each period's end

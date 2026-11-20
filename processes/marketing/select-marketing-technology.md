@@ -16,6 +16,8 @@ register with an owner, a cost, a term and a renewal date against it.
 
 **delivers:** shortlist, a marketing tool choice
 
+**starts:** by hand, a capability gap is identified
+
 ## The goals
 
 - Sign for a tool within [8 weeks] of the gap

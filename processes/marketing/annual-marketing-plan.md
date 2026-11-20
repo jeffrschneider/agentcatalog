@@ -17,6 +17,8 @@ published and every agent has heard what it owes against it.
 
 **delivers:** document, an annual marketing plan
 
+**starts:** on a schedule, the fiscal planning cycle opens
+
 ## The goals
 
 - Get the plan approved within [6 weeks]

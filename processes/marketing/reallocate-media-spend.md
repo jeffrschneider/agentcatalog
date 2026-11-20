@@ -23,6 +23,8 @@ where committed money sits inside that plan while the flights run.
 
 **delivers:** sheet, a media spend reallocation
 
+**starts:** on an event, a live plan line is off its pacing or its cost
+
 ## The goals
 
 - Move the money within [5 days] of the signal

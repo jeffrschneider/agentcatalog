@@ -29,6 +29,8 @@ held by the process that answers it and the customer knows who holds it.
 
 **delivers:** document, an answer to a billing question
 
+**starts:** on an event, a customer asks about a charge, an invoice or a payment
+
 ## The goals
 
 - Answer [90%] of billing questions inside the service level

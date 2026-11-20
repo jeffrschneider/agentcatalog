@@ -18,6 +18,8 @@ leads arrive turns into an argument.
 
 **delivers:** campaign, a co-marketing campaign
 
+**starts:** on an event, a partner agreement is signed
+
 ## The goals
 
 - Launch within [8 weeks] of the signed agreement

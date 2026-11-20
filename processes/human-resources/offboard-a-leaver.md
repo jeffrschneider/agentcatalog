@@ -22,6 +22,8 @@ issued, and the leaving record is closed.
 
 **delivers:** status board, a leaving checklist
 
+**starts:** on an event, a resignation, a retirement, or a dismissal or layoff decision is recorded
+
 ## The goals
 
 - Close every account within [1 hour] of the end of the last day

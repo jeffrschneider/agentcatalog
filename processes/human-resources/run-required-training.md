@@ -22,6 +22,8 @@ an auditor, and anyone still overdue is with a named person.
 
 **delivers:** report, a training completion record
 
+**starts:** on a schedule, a required course falls due for the people it covers
+
 ## The goals
 
 - Complete [98%] of required training by its due date

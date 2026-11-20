@@ -19,6 +19,8 @@ cap table record, with its tax file complete and its lessons recorded.
 
 **delivers:** statement, a write-off
 
+**starts:** on an event, a portfolio company fails and the fund expects nothing back
+
 ## The goals
 
 - Approve the zero mark within [30 days]

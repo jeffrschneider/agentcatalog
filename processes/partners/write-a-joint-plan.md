@@ -14,6 +14,8 @@ review is on both calendars.
 
 **delivers:** document, a joint business plan
 
+**starts:** on a schedule, both sides agree to plan the coming year
+
 ## The goals
 
 - Sign the joint plan within [30 days]

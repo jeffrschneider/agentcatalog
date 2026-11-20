@@ -14,6 +14,8 @@ table is in use and a date is set to read it against what got asked.
 
 **delivers:** sheet, an approval threshold table
 
+**starts:** on an event, the approval thresholds need publishing or reviewing
+
 ## The goals
 
 - Route [95%] of requests by the table alone

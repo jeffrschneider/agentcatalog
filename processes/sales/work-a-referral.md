@@ -14,6 +14,8 @@ it went either way.
 
 **delivers:** sequence, a referral introduction
 
+**starts:** on an event, somebody offers to introduce somebody else
+
 ## The goals
 
 - Answer every introducer within [4 hours]

@@ -15,6 +15,8 @@ manages.
 
 **delivers:** document, a joint offer plan
 
+**starts:** on an event, an alliance agreement is signed
+
 ## The goals
 
 - Take the first order within [6 months] of signing

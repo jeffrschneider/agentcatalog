@@ -13,6 +13,8 @@ because the manager still owes a report on how the piece performed.
 
 **delivers:** page, a long-form article
 
+**starts:** on an event, a topic is approved
+
 ## The goals
 
 - Publish [90%] of pieces on their planned date

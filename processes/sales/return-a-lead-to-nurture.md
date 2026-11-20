@@ -14,6 +14,8 @@ said whether the lead comes back.
 
 **delivers:** status board, a lead returned to nurture
 
+**starts:** on an event, a qualification ends in nurture
+
 ## The goals
 
 - Look again at [100%] of returned leads on their date

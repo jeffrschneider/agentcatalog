@@ -14,6 +14,8 @@ from that one document rather than from anybody's memory.
 
 **delivers:** agreement, an agreed contract
 
+**starts:** on an event, the buyer comes back with asks on the offer
+
 ## The goals
 
 - Confirm the agreed position within [3 weeks]

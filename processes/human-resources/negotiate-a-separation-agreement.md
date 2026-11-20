@@ -23,6 +23,8 @@ leaver's offboarding.
 
 **delivers:** agreement, a signed separation agreement
 
+**starts:** by hand, named people decide to offer separation terms to a leaver
+
 ## The goals
 
 - Reach a signed agreement in [85%] of offers

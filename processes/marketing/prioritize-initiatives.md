@@ -26,6 +26,8 @@ after the plan was signed.
 
 **delivers:** sheet, a ranked initiative list
 
+**starts:** on a schedule, more requests arrive than capacity allows
+
 ## The goals
 
 - Answer every requester within [10 days]

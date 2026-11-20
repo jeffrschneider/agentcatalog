@@ -26,6 +26,8 @@ accounting.
 
 **delivers:** statement, a customer invoice
 
+**starts:** on an event, a booking reaches a billing date, or a usage period closes
+
 ## The goals
 
 - Send [98%] of invoices on their billing date

@@ -17,6 +17,8 @@ to its source, and the run closes when they are handed on.
 
 **delivers:** report, a financial diligence report
 
+**starts:** by hand, a partner takes an opportunity on and names the deal team
+
 ## The goals
 
 - Rebuild the numbers within [3 weeks]

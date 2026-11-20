@@ -24,6 +24,8 @@ closed with its reason.
 
 **delivers:** status board, a company card at its approved limit
 
+**starts:** by hand, a card or a limit change is asked for, a holder's last day is recorded, or a breach is recorded
+
 ## The goals
 
 - Issue each approved card within [5 working days] of the request

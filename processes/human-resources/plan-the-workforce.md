@@ -21,6 +21,8 @@ again are set.
 
 **delivers:** document, a workforce plan for the year
 
+**starts:** by hand, the business plan for the year is approved, and the head of HR opens the workforce plan
+
 ## The goals
 
 - Approve the plan by [the first day of the financial year]

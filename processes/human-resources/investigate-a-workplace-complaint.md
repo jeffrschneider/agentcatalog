@@ -22,6 +22,8 @@ access.
 
 **delivers:** verdict, signed investigation findings
 
+**starts:** on an event, a concern or a report is sent for investigation
+
 ## The goals
 
 - Sign the findings within [30 working days] of the referral

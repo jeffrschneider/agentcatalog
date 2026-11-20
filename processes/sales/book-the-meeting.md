@@ -14,6 +14,8 @@ and the outbound touches to that account stop.
 
 **delivers:** sheet, a held meeting
 
+**starts:** on an event, a reply asks for a conversation
+
 ## The goals
 
 - Offer meeting times within [1 hour] of the reply

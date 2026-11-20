@@ -17,6 +17,8 @@ minutes, because every message in it is already signed and ordered.
 
 **delivers:** notes, session notes
 
+**starts:** by hand, somebody needs more than one agent on a question
+
 ## The goals
 
 - Deliver the intended outcome in [90%] of sessions

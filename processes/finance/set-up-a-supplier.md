@@ -26,6 +26,8 @@ supplier have been told.
 
 **delivers:** status board, an approved supplier record
 
+**starts:** on an event, a new supplier is requested
+
 ## The goals
 
 - Open each supplier record within [5 working days] of the request

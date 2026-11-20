@@ -15,6 +15,8 @@ without anybody having to remember.
 
 **delivers:** status board, a corrected route
 
+**starts:** by hand, somebody says work reached the wrong person
+
 ## The goals
 
 - Move misrouted work within [2 hours]

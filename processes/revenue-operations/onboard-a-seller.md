@@ -15,6 +15,8 @@ been debriefed and the ramp has been reported.
 
 **delivers:** status board, an onboarded seller
 
+**starts:** on an event, a start date is confirmed
+
 ## The goals
 
 - Hold a first customer call within [3 weeks]

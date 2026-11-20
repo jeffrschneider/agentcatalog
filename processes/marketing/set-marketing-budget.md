@@ -25,6 +25,8 @@ budget rests on and what would reopen it.
 
 **delivers:** sheet, an annual marketing budget
 
+**starts:** on a schedule, the planning cycle opens
+
 ## The goals
 
 - Sign the budget within [4 weeks] of the cycle opening

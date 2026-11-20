@@ -14,6 +14,8 @@ the list, and the list is loaded where the sequences read it.
 
 **delivers:** shortlist, a prospect list
 
+**starts:** on an event, a territory is assigned or an account plan is approved
+
 ## The goals
 
 - Load the signed list within [3 days]

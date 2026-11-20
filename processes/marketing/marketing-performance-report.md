@@ -13,6 +13,8 @@ as missing.
 
 **delivers:** report, a marketing performance report
 
+**starts:** on a schedule, a reporting period closes
+
 ## The goals
 
 - Publish the report [5 days] after the period closes

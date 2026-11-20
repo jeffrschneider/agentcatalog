@@ -18,6 +18,8 @@ those two.
 
 **delivers:** status board, a clean contact base
 
+**starts:** on a schedule, a hygiene cycle opens
+
 ## The goals
 
 - Keep duplicate contact records under [2%]

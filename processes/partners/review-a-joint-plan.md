@@ -14,6 +14,8 @@ signed, recorded and published, and the next review is dated.
 
 **delivers:** report, a joint plan review
 
+**starts:** on a schedule, the review date named in the plan arrives
+
 ## The goals
 
 - Hold [95%] of joint reviews on their date

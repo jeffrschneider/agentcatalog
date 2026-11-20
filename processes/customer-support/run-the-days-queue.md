@@ -32,6 +32,8 @@ lead, and every case still waiting is with the after-hours cover.
 
 **delivers:** status board, the day's queue board
 
+**starts:** on a schedule, the support team's day opens
+
 ## The goals
 
 - Answer [90%] of requests inside their service level

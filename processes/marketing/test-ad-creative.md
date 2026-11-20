@@ -34,6 +34,8 @@ organization's decision.
 
 **delivers:** verdict, an ad test result
 
+**starts:** by hand, a performance question about the running creative
+
 ## The goals
 
 - Call each test within [3 weeks]

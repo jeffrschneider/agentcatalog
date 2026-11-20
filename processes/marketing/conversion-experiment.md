@@ -15,6 +15,8 @@ recorded and the finding is filed with the numbers behind it.
 
 **delivers:** verdict, an experiment result
 
+**starts:** on an event, a hypothesis is accepted for testing
+
 ## The goals
 
 - Lift conversion rate by [10%] from winning tests

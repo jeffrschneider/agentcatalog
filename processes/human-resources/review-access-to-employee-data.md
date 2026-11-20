@@ -23,6 +23,8 @@ gone, and the privacy lead has signed the review.
 
 **delivers:** status board, an employee data access review
 
+**starts:** on a schedule, the period for checking access to employee data ends
+
 ## The goals
 
 - Finish each review within [15 days] of the period's end

@@ -25,6 +25,8 @@ the position is recorded at its version.
 
 **delivers:** report, a daily cash position
 
+**starts:** on a schedule, a working morning begins and the banks send their reports
+
 ## The goals
 
 - Send the position to the treasurer by [9:00] each working day

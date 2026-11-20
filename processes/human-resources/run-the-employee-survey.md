@@ -22,6 +22,8 @@ closed or carried into the next survey.
 
 **delivers:** report, employee survey results
 
+**starts:** on a schedule, the employee survey comes due on the company's cycle
+
 ## The goals
 
 - Hear from [75%] of employees

@@ -22,6 +22,8 @@ figure.
 
 **delivers:** sheet, an attribution model
 
+**starts:** on an event, the model drifts, or a new channel starts sending traffic
+
 ## The goals
 
 - Keep model forecast error under [10%]

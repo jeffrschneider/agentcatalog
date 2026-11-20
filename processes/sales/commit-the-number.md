@@ -15,6 +15,8 @@ close against what actually landed.
 
 **delivers:** report, a committed forecast
 
+**starts:** on a schedule, the period's commitment falls due
+
 ## The goals
 
 - Land within [5%] of the committed number

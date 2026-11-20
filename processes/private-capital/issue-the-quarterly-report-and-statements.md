@@ -20,6 +20,8 @@ statement on the investor portal by the date it was promised.
 
 **delivers:** report, a quarterly investor report
 
+**starts:** on a schedule, the quarter closes, and the valuation committee approves the marks
+
 ## The goals
 
 - Deliver every investor statement within [45 days]

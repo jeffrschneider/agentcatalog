@@ -14,6 +14,8 @@ The run closes when the buyer holds the offer and knows the next step.
 
 **delivers:** document, a signed-off proposal
 
+**starts:** on an event, an approved quote has to become an offer
+
 ## The goals
 
 - Deliver the signed-off proposal within [3 days]

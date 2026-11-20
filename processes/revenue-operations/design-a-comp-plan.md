@@ -15,6 +15,8 @@ their own quota, their own rates and nobody else's.
 
 **delivers:** sheet, a compensation plan
 
+**starts:** on a schedule, a plan period opens
+
 ## The goals
 
 - Sign [100%] of seller plans before period start

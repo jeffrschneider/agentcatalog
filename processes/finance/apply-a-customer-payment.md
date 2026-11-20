@@ -23,6 +23,8 @@ payments announced but not yet landed have passed to treasury.
 
 **delivers:** status board, a day's receipts applied to customer accounts
 
+**starts:** on an event, the day's bank report for an account is in
+
 ## The goals
 
 - Apply [95%] of receipts on the day they land

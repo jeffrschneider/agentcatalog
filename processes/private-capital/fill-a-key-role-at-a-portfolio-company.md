@@ -20,6 +20,8 @@ and the search is recorded for the next one.
 
 **delivers:** shortlist, a candidate shortlist
 
+**starts:** on an event, a portfolio company asks the firm for help filling a role
+
 ## The goals
 
 - Fill each key role within [12 weeks]

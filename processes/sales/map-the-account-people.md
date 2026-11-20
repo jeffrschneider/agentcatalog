@@ -14,6 +14,8 @@ for. It is corrected by the people who have met them, then issued.
 
 **delivers:** shortlist, an account people map
 
+**starts:** on an event, an account read is issued and a plan is due
+
 ## The goals
 
 - Issue each map within [5 days] of the account read

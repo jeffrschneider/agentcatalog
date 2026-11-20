@@ -29,6 +29,8 @@ restricted record shows who knew what and when.
 
 **delivers:** document, a security or safety report
 
+**starts:** on an event, a customer reports a security weakness, a data exposure or a risk of harm
+
 ## The goals
 
 - Put each report in the hands of a named person in the security team within [1 hour]

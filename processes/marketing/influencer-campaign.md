@@ -15,6 +15,8 @@ held responsible.
 
 **delivers:** campaign, an influencer campaign
 
+**starts:** on an event, a target audience is handed to the campaign
+
 ## The goals
 
 - Publish [100%] of agreed posts on their date

@@ -15,6 +15,8 @@ read the wrong numbers has been told.
 
 **delivers:** status board, a data quality fix
 
+**starts:** on an event, a data quality rule crosses its threshold
+
 ## The goals
 
 - Fix the source within [5 days] of a rule failing

@@ -14,6 +14,8 @@ runs whose answer is already known, and the numbers go to the review.
 
 **delivers:** status board, an instrumented process
 
+**starts:** on an event, a process publishes at a version, or its measure is asked for
+
 ## The goals
 
 - Send the first report within [4 weeks]

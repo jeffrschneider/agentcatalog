@@ -17,6 +17,8 @@ did not sign.
 
 **delivers:** statement, a media spend reconciliation
 
+**starts:** on a schedule, a media period closes
+
 ## The goals
 
 - Sign the period's spend within [10 days]

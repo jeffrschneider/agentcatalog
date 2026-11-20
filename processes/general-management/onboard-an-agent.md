@@ -27,6 +27,8 @@ happens on their side is not a phase of this document.
 
 **delivers:** status board, an agent onboarded
 
+**starts:** on an event, a request to bring an outside agent into the work
+
 ## The goals
 
 - Put each approved agent to work within [10 days]

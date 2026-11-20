@@ -33,6 +33,8 @@ went up.
 
 **delivers:** page, the status updates for an incident
 
+**starts:** on an event, an incident customers can see is confirmed
+
 ## The goals
 
 - Post the first approved update within [20 minutes] of the incident being confirmed

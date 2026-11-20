@@ -14,6 +14,8 @@ already written down.
 
 **delivers:** report, a recurring report
 
+**starts:** by hand, a question is asked often enough to be worth automating
+
 ## The goals
 
 - Publish a checked report within [2 weeks]

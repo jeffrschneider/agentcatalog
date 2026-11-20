@@ -14,6 +14,8 @@ standing call is in diaries on both sides.
 
 **delivers:** status board, an onboarded partner
 
+**starts:** on an event, a partner agreement is signed
+
 ## The goals
 
 - Confirm working access within [10 days] of signing

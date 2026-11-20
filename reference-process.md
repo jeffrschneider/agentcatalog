@@ -47,6 +47,25 @@ generic like a pattern, and it never claims to be running anywhere.
   uses them to picture the process as the thing it produces. A proposal is a document and a calendar is a sheet. A
   process whose run leaves a system changed, such as merging duplicate
   records, delivers a status board.
+- **How it starts**, on a `**starts:**` line of its own after the
+  delivers line: one of three ways a run begins, then a comma and the
+  process's own words for what begins it, taken from the trigger node of
+  its graph, such as `**starts:** on a schedule, a reporting period
+  ends`. The three ways are:
+  - **on a schedule**: a date or a period on your own calendar comes
+    round, such as a month closing or a review falling due;
+  - **on an event**: something happens that a system records, such as a
+    record changing, a message or a document arriving from outside the
+    company, or another process handing its work on;
+  - **by hand**: a person in the company asks for the work, proposes it
+    or decides on it.
+
+  A process names one way, the one its `trigger:` line names first. It
+  is read from that line: a `watch: every=` or a date on your calendar
+  is a schedule, a person here asking is by hand, and anything else is
+  an event. Whatever the line says, a person can always run the process
+  now, so a trigger whose second way in is someone asking still names
+  its timer or its watch.
 
 ## What stays blank
 

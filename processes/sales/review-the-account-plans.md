@@ -14,6 +14,8 @@ the next round starts from a better draft.
 
 **delivers:** verdict, an account plan review
 
+**starts:** on a schedule, the review cadence comes round, or a tripwire fires
+
 ## The goals
 
 - Decide every plan in scope within [3 weeks]

@@ -28,6 +28,8 @@ reason.
 
 **delivers:** document, a coaching plan
 
+**starts:** on a schedule, a specialist's coaching session comes due, or either of the two asks for one
+
 ## The goals
 
 - Hold [95%] of coaching sessions on their dates

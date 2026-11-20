@@ -26,6 +26,8 @@ replaced is still served.
 
 **delivers:** page, a help article
 
+**starts:** on an event, an article is requested for a question customers ask
+
 ## The goals
 
 - Publish each chosen article within [10 working days]

@@ -21,6 +21,8 @@ has an owner and a date, and the case is closed on the record.
 
 **delivers:** document, a written answer to a concern
 
+**starts:** by hand, an employee raises a concern in any channel
+
 ## The goals
 
 - Send a written answer within [20 working days]

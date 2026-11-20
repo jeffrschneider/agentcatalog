@@ -21,6 +21,8 @@ applicants going forward are with the interviews.
 
 **delivers:** verdict, a screening decision on each application
 
+**starts:** on an event, an application arrives from the posting or the search
+
 ## The goals
 
 - Answer every applicant within [10 working days]

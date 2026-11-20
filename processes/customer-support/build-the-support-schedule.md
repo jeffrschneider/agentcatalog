@@ -29,6 +29,8 @@ next one.
 
 **delivers:** sheet, the support schedule
 
+**starts:** on a schedule, the next schedule period comes due
+
 ## The goals
 
 - Publish each schedule at least [2 weeks] before it starts

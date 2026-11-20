@@ -14,6 +14,8 @@ date and a reason the next deal can read.
 
 **delivers:** status board, a closed-lost record
 
+**starts:** on an event, the buyer says no, or the deal stops moving
+
 ## The goals
 
 - Close every lost deal within [10 days] of the loss

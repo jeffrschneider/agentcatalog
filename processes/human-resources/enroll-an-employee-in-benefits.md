@@ -22,6 +22,8 @@ for and what it costs.
 
 **delivers:** statement, a confirmation of benefits coverage
 
+**starts:** on an event, a new hire becomes eligible, or an employee reports a life event
+
 ## The goals
 
 - Cover [100%] of new hires from their first eligible day

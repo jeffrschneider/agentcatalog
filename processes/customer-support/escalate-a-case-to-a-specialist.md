@@ -28,6 +28,8 @@ it, and the reason for the escalation is recorded.
 
 **delivers:** document, an escalation summary
 
+**starts:** on an event, a support specialist cannot resolve a case
+
 ## The goals
 
 - Have each escalated case accepted by a named specialist within [2 working hours]

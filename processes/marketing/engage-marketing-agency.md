@@ -16,6 +16,8 @@ agency's work afterwards belongs to the agents that own each run.
 
 **delivers:** shortlist, an agency shortlist
 
+**starts:** by hand, a capability or capacity gap is raised
+
 ## The goals
 
 - Have the agency working within [8 weeks]

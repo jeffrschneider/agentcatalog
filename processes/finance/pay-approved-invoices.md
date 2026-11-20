@@ -27,6 +27,8 @@ remittance advice, and the ledger shows each item paid.
 
 **delivers:** statement, the remittance advice for a payment run
 
+**starts:** on a schedule, the payment calendar reaches a payment date
+
 ## The goals
 
 - Pay [98%] of approved invoices on or before their due date

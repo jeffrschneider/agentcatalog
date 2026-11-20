@@ -23,6 +23,8 @@ that will last is with the next reforecast.
 
 **delivers:** report, a monthly results report
 
+**starts:** on an event, the controller signs off the month's close
+
 ## The goals
 
 - Deliver the report within [5 working days] of the close

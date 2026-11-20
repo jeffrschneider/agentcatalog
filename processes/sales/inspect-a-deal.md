@@ -15,6 +15,8 @@ from operations. This process tests one deal inside it.
 
 **delivers:** verdict, a deal inspection
 
+**starts:** on an event, a deal is selected for inspection
+
 ## The goals
 
 - Inspect the deals behind [80%] of the period's number

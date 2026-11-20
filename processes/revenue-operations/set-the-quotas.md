@@ -14,6 +14,8 @@ a named person approves the set and what it rests on is written down.
 
 **delivers:** sheet, signed quotas
 
+**starts:** on an event, the territory map is fixed for the period
+
 ## The goals
 
 - Sign every quota before [the period start]

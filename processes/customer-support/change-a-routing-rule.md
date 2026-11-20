@@ -31,6 +31,8 @@ been switched back with the reason recorded.
 
 **delivers:** document, a routing rule change
 
+**starts:** by hand, someone asks to change how a kind of request is routed
+
 ## The goals
 
 - Put an approved change live within [5 working days]

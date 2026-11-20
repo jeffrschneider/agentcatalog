@@ -25,6 +25,8 @@ help center serves, and the knowledge lead has the review's report.
 
 **delivers:** status board, a reviewed help center
 
+**starts:** on a schedule, articles reach their review date or a product change touches them
+
 ## The goals
 
 - Review [95%] of articles by their review date

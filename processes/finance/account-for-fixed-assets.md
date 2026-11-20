@@ -25,6 +25,8 @@ is with the close.
 
 **delivers:** sheet, the fixed asset register for the period
 
+**starts:** on a schedule, a period of an entity reaches its end
+
 ## The goals
 
 - Post the period's depreciation within [2 working days] of the period end

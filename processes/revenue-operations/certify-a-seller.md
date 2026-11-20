@@ -16,6 +16,8 @@ lapses.
 
 **delivers:** verdict, a seller certification
 
+**starts:** on an event, a seller is put forward for certification
+
 ## The goals
 
 - Sign a result within [2 weeks] of being put forward

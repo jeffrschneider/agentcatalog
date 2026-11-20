@@ -15,6 +15,8 @@ the same version.
 
 **delivers:** agreement, a signed partner agreement
 
+**starts:** on an event, a qualified candidate and the company agree to paper the deal
+
 ## The goals
 
 - Sign agreements within [30 days] of qualification

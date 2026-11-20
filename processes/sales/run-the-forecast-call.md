@@ -15,6 +15,8 @@ and one number published at a version.
 
 **delivers:** notes, forecast call notes
 
+**starts:** on a schedule, the forecast cadence comes round
+
 ## The goals
 
 - Publish the call's number within [2 hours]

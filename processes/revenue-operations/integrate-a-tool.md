@@ -14,6 +14,8 @@ administrator has taken the tool on.
 
 **delivers:** status board, a connected tool
 
+**starts:** on an event, a chosen tool is handed over to be wired in
+
 ## The goals
 
 - Put the link live within [6 weeks] of handover

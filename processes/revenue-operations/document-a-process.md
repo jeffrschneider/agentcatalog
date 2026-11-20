@@ -14,6 +14,8 @@ fixed address. A process nobody has signed is somebody's intention.
 
 **delivers:** document, a process write-up
 
+**starts:** by hand, a way of working needs writing down, or has changed
+
 ## The goals
 
 - Publish a signed process within [3 weeks]

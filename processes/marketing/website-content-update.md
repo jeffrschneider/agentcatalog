@@ -37,6 +37,8 @@ afternoon does not fill one.
 
 **delivers:** page, an updated web page
 
+**starts:** by hand, a content request arrives
+
 ## The goals
 
 - Make requested page changes within [3 days]

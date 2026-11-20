@@ -16,6 +16,8 @@ account.
 
 **delivers:** status board, churn risks answered
 
+**starts:** on an event, a churn risk signal fires
+
 ## The goals
 
 - Respond to every risk signal within [2 days]

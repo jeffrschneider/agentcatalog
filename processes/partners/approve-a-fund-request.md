@@ -15,6 +15,8 @@ activity has been handed to the marketing process that runs it.
 
 **delivers:** verdict, a fund request decision
 
+**starts:** on an event, a partner proposes an activity to spend fund money on
+
 ## The goals
 
 - Answer every fund request within [5 days]

@@ -20,6 +20,8 @@ what this process delivers.
 
 **delivers:** report, a market size estimate
 
+**starts:** by hand, a segment or category question is asked
+
 ## The goals
 
 - Deliver an accepted size within [4 weeks]

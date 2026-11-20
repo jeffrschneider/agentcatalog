@@ -26,6 +26,8 @@ away from the standard.
 
 **delivers:** verdict, a brand audit
 
+**starts:** on a schedule, a cadence or a concern
+
 ## The goals
 
 - Deliver audit findings within [4 weeks]

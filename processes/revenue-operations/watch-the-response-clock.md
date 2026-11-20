@@ -14,6 +14,8 @@ and the work the report calls for gets an owner before the run closes.
 
 **delivers:** report, a response time report
 
+**starts:** on a schedule, the reporting period closes
+
 ## The goals
 
 - Publish the report within [2 days] of period close

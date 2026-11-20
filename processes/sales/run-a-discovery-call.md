@@ -14,6 +14,8 @@ call did not answer. Nothing is proposed, and nothing is priced.
 
 **delivers:** notes, discovery call notes
 
+**starts:** on an event, a qualified opportunity has to be understood
+
 ## The goals
 
 - Hold the call within [5 days] of qualification

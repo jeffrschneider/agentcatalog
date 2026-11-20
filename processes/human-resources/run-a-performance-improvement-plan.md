@@ -22,6 +22,8 @@ who decided and every check-in on the record.
 
 **delivers:** document, a performance improvement plan
 
+**starts:** by hand, a manager raises a lasting gap in an employee's work with HR
+
 ## The goals
 
 - Bring [60%] of employees on a plan back to meeting expectations

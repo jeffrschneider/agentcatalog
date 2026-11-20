@@ -13,6 +13,8 @@ sizes the channels need.
 
 **delivers:** creative set, approved creative assets
 
+**starts:** on an event, a creative brief arrives
+
 ## The goals
 
 - Deliver approved assets within [5 days]

@@ -14,6 +14,8 @@ discovery, proposal and closing like any other deal.
 
 **delivers:** deal, an expansion deal
 
+**starts:** on an event, an opening is marked pursue
+
 ## The goals
 
 - Reach an answer on every opening within [30 days]

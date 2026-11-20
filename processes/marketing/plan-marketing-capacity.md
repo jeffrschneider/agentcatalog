@@ -23,6 +23,8 @@ middle of a year.
 
 **delivers:** sheet, a capacity plan
 
+**starts:** on a schedule, a planning cycle opens or a capacity gap is raised
+
 ## The goals
 
 - Assign the period's work within [4 weeks]

@@ -32,6 +32,8 @@ recorded.
 
 **delivers:** verdict, a suspected outage confirmed or ruled out
 
+**starts:** on an event, requests on one symptom pass the threshold, or customers say in public that something is broken
+
 ## The goals
 
 - Page the engineer on call within [10 minutes] of a symptom passing the threshold

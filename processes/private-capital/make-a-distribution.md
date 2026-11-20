@@ -19,6 +19,8 @@ called again, and the distribution reconciles to the cent.
 
 **delivers:** statement, a distribution notice
 
+**starts:** on an event, cash the fund may distribute arrives, or the partners decide to distribute
+
 ## The goals
 
 - Distribute proceeds within [15 days] of clearing

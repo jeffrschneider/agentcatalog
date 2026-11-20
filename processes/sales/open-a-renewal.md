@@ -14,6 +14,8 @@ that is the point of running it this early.
 
 **delivers:** document, a renewal position
 
+**starts:** on an event, an agreement's renewal date comes into range
+
 ## The goals
 
 - Hold every position [90 days] before the notice date

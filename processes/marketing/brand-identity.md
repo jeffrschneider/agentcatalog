@@ -27,6 +27,8 @@ that finding to the positioning process instead of settling it here.
 
 **delivers:** creative set, a brand identity
 
+**starts:** on an event, a brand positioning is signed and issued
+
 ## The goals
 
 - Issue the signed identity within [12 weeks]

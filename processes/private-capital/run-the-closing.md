@@ -18,6 +18,8 @@ still owe after closing has an owner and a date.
 
 **delivers:** deal, a closed deal
 
+**starts:** on an event, both sides confirm the agreed text
+
 ## The goals
 
 - Close on [the target closing date]

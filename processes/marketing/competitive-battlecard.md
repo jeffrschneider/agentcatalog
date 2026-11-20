@@ -17,6 +17,8 @@ every rep has been told.
 
 **delivers:** document, a competitive battlecard
 
+**starts:** on an event, a competitor moves
+
 ## The goals
 
 - Update affected battlecards within [5 days]

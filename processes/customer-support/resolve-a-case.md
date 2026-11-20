@@ -29,6 +29,8 @@ each reply, each promise and who sent each one.
 
 **delivers:** status board, a support case worked to a close
 
+**starts:** on an event, a case needs a person
+
 ## The goals
 
 - Resolve [90%] of cases inside the service level their plan sets

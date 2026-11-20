@@ -18,6 +18,8 @@ that, and that is the difference between this process and a campaign.
 
 **delivers:** sequence, a nurture sequence
 
+**starts:** on an event, a segment and a goal arrive
+
 ## The goals
 
 - Start the first send within [3 weeks] of the request

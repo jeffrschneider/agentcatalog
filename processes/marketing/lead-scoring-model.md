@@ -18,6 +18,8 @@ current version the whole time this process is open.
 
 **delivers:** sheet, a lead scoring model
 
+**starts:** on an event, scores stop predicting, or a new signal appears
+
 ## The goals
 
 - Have the new version scoring within [30 days]

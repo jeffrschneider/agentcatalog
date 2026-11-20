@@ -27,6 +27,8 @@ confirmed where it landed and recorded.
 
 **delivers:** status board, a confirmed cash transfer
 
+**starts:** on an event, an account needs cash, holds more than it needs, or cash is surplus to the forecast
+
 ## The goals
 
 - Fund [100%] of paying accounts before the payments due from them

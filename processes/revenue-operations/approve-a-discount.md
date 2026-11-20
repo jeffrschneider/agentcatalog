@@ -14,6 +14,8 @@ An ask that passes its promised time escalates rather than waiting.
 
 **delivers:** verdict, a discount decision
 
+**starts:** on an event, a discount past the threshold is asked for
+
 ## The goals
 
 - Answer every discount request within [4 hours]

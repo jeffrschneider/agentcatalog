@@ -23,6 +23,8 @@ and counsel lifts the hold.
 
 **delivers:** document, an employment audit response
 
+**starts:** on an event, an auditor or an inspector gives notice of an audit, or arrives
+
 ## The goals
 
 - Answer [100%] of requests by their due date

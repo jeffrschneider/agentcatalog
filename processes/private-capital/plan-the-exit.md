@@ -19,6 +19,8 @@ decision to hold is on the record.
 
 **delivers:** document, an exit plan
 
+**starts:** by hand, a reason to exit a holding is raised
+
 ## The goals
 
 - Approve an exit plan within [8 weeks]

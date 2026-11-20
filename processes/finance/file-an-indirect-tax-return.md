@@ -27,6 +27,8 @@ a version, and the calendar shows the next date.
 
 **delivers:** statement, an indirect tax return
 
+**starts:** on a schedule, an indirect tax period ends and its return comes due on the tax calendar
+
 ## The goals
 
 - File and pay [100%] of indirect tax returns by their due date

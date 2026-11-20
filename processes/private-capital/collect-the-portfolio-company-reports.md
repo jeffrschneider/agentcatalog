@@ -19,6 +19,8 @@ by the deal lead and handed to the quarter's valuation.
 
 **delivers:** report, portfolio company reports
 
+**starts:** on a schedule, a reporting period closes for the portfolio
+
 ## The goals
 
 - Receive every company package within [20 days]

@@ -14,6 +14,8 @@ carries the reason it is on the list and the evidence behind it.
 
 **delivers:** shortlist, a partner shortlist
 
+**starts:** on an event, the company names a gap it cannot close alone
+
 ## The goals
 
 - Deliver a scored shortlist within [4 weeks]

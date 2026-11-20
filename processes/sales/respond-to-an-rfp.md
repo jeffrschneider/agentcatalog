@@ -14,6 +14,8 @@ response against the rules. The run closes at a receipt or a no bid.
 
 **delivers:** document, an RFP response
 
+**starts:** on an event, a formal request arrives
+
 ## The goals
 
 - Decide to bid or decline within [3 days]

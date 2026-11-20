@@ -14,6 +14,8 @@ the answer time is recorded against the time that was promised.
 
 **delivers:** sequence, an inquiry reply
 
+**starts:** on an event, an inquiry lands with an owner
+
 ## The goals
 
 - Answer every inquiry within [15 minutes]

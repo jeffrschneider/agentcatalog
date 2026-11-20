@@ -19,6 +19,8 @@ with a named owner, and the material carries what this session taught.
 
 **delivers:** event, a new hire orientation session
 
+**starts:** on a schedule, a session on the orientation calendar is near, with new hires booked into it
+
 ## The goals
 
 - Bring each new hire to orientation within [5 working days] of the start

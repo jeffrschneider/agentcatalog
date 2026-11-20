@@ -27,6 +27,8 @@ provision is posted and carried into the next provision.
 
 **delivers:** statement, an income tax return
 
+**starts:** on a schedule, an entity's accounts for the year are signed and its income tax return comes due
+
 ## The goals
 
 - File [95%] of returns by the original due date without an extension

@@ -19,6 +19,8 @@ ready for the auditor and the quarterly report.
 
 **delivers:** sheet, portfolio valuations
 
+**starts:** on an event, the quarter's company reports are confirmed
+
 ## The goals
 
 - Approve every mark within [30 days] of quarter end

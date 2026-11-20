@@ -29,6 +29,8 @@ their own scores beside the agreed reading.
 
 **delivers:** notes, calibration notes for the quality rubric
 
+**starts:** on a schedule, the calibration date arrives, or the quality lead calls a round
+
 ## The goals
 
 - Bring reviewers to [85%] agreement on each part of the rubric

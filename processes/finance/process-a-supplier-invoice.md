@@ -26,6 +26,8 @@ reason, and it is kept for the period
 
 **delivers:** verdict, an invoice approved for payment
 
+**starts:** on an event, a supplier invoice arrives
+
 ## The goals
 
 - Have each invoice ready to pay within [5 working days] of its arrival

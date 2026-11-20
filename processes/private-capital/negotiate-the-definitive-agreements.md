@@ -19,6 +19,8 @@ conditions to closing are handed to the closing.
 
 **delivers:** agreement, agreed definitive agreements
 
+**starts:** on an event, a term sheet is signed
+
 ## The goals
 
 - Agree the final text within [6 weeks]

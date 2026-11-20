@@ -14,6 +14,8 @@ agreement, and a record of what we accepted for the next deal to read.
 
 **delivers:** agreement, a clean contract draft
 
+**starts:** on an event, the buyer returns a marked-up contract
+
 ## The goals
 
 - Send each counter back within [3 days]

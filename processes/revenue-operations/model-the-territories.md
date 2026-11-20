@@ -14,6 +14,8 @@ number.
 
 **delivers:** sheet, a territory model
 
+**starts:** on a schedule, leadership sets the number for the period
+
 ## The goals
 
 - Set the territory map within [6 weeks] of the target

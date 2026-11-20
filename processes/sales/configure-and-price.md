@@ -14,6 +14,8 @@ an approved quote is ready to be written into an offer.
 
 **delivers:** document, a priced quote
 
+**starts:** by hand, a solution shape is agreed and needs a price
+
 ## The goals
 
 - Deliver an approved quote within [1 day]

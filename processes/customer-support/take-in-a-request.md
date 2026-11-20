@@ -26,6 +26,8 @@ case already open, and the record shows the rule behind each choice.
 
 **delivers:** status board, a sorted case in its queue
 
+**starts:** on an event, a request arrives on any channel
+
 ## The goals
 
 - Place each request in its queue within [5 minutes] of its arrival

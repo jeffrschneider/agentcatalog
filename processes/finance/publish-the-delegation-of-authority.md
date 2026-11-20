@@ -29,6 +29,8 @@ every approver it names has acknowledged it.
 
 **delivers:** sheet, a delegation of authority
 
+**starts:** by hand, the board decides a change to who may approve what, an approver leaves, or the review date arrives
+
 ## The goals
 
 - Publish each change within [10 working days] of the decision behind it

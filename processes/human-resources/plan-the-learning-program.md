@@ -24,6 +24,8 @@ every need left out is on the record with the reason.
 
 **delivers:** document, a learning program for the year
 
+**starts:** on a schedule, the planning round for the coming year opens
+
 ## The goals
 
 - Spend no more than [the approved learning budget]

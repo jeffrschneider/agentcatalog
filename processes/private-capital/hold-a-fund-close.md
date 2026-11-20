@@ -23,6 +23,8 @@ register with its account open and its side letter in force.
 
 **delivers:** sheet, an investor register at close
 
+**starts:** on an event, a close date is set and committed investors are ready to subscribe
+
 ## The goals
 
 - Hold each close on [the set date]

@@ -37,6 +37,8 @@ hands the strategy to it.
 
 **delivers:** document, a marketing strategy
 
+**starts:** by hand, the business sets its objectives for the period
+
 ## The goals
 
 - Agree the strategy within [8 weeks]

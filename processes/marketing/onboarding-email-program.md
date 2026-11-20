@@ -21,6 +21,8 @@ the customer is being run through.
 
 **delivers:** sequence, an onboarding email program
 
+**starts:** on an event, a customer starts
+
 ## The goals
 
 - Activate [80%] of new customers by the promised date

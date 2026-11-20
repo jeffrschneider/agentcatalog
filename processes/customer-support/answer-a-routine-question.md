@@ -29,6 +29,8 @@ the case.
 
 **delivers:** document, an answer from approved content
 
+**starts:** on an event, a routine question is placed in the queue the agents answer
+
 ## The goals
 
 - Send the answer within [2 minutes] of the question

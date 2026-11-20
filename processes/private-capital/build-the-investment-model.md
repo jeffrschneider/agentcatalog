@@ -19,6 +19,8 @@ version for the mandate check, the memo and the term sheet.
 
 **delivers:** sheet, an investment model
 
+**starts:** on an event, financial diligence agrees the numbers, or a term the model rests on changes
+
 ## The goals
 
 - Issue the model within [5 days] of the numbers

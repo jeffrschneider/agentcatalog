@@ -30,6 +30,8 @@ tracker with its owner and its date.
 
 **delivers:** verdict, the auditor's signed opinion
 
+**starts:** on an event, the engagement letter for the year's audit is signed
+
 ## The goals
 
 - Answer [95%] of the auditor's requests by their due date

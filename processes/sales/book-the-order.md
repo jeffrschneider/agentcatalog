@@ -15,6 +15,8 @@ people who act on it have been told what they are acting on.
 
 **delivers:** statement, a booked order
 
+**starts:** on an event, an agreement comes back executed
+
 ## The goals
 
 - Book every signed order within [2 days]

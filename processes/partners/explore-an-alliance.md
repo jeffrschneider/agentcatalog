@@ -14,6 +14,8 @@ diligence or stops it, and what was learned is kept either way.
 
 **delivers:** document, an alliance thesis
 
+**starts:** by hand, a capability the company cannot offer alone is written down
+
 ## The goals
 
 - Decide go or stop within [8 weeks]

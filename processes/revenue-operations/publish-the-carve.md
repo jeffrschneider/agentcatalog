@@ -14,6 +14,8 @@ is closed and every seller has seen their own.
 
 **delivers:** sheet, a territory and quota carve
 
+**starts:** on an event, the quotas are approved
+
 ## The goals
 
 - Release every statement on [the release date]

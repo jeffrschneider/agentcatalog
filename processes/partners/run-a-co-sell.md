@@ -15,6 +15,8 @@ meets one deal rather than two.
 
 **delivers:** deal, a co-sold deal
 
+**starts:** on an event, two organizations agree to work one deal
+
 ## The goals
 
 - Win [35%] of co-sold deals

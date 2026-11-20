@@ -27,6 +27,8 @@ outside the company is recorded with who approved it.
 
 **delivers:** statement, signed financial statements
 
+**starts:** on an event, a quarter or a year has ended and the group is consolidated
+
 ## The goals
 
 - Sign off the statements within [15 working days] of the period end

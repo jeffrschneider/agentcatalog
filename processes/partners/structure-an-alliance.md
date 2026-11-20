@@ -14,6 +14,8 @@ run is a signed agreement and a list of what it obliges each side to do.
 
 **delivers:** agreement, a signed alliance agreement
 
+**starts:** on an event, diligence reports go, or go with conditions
+
 ## The goals
 
 - Sign the alliance within [12 weeks] of diligence

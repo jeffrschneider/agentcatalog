@@ -23,6 +23,8 @@ belongs to the refresh process.
 
 **delivers:** creative set, brand guidelines
 
+**starts:** on an event, an identity or voice change is agreed
+
 ## The goals
 
 - Publish approved guideline changes within [2 weeks]

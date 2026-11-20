@@ -14,6 +14,8 @@ anyway closes the run with a reason the rest of the organization reads.
 
 **delivers:** status board, a churn risk plan
 
+**starts:** on an event, a signal says an account may be leaving
+
 ## The goals
 
 - Tell the account owner within [4 hours]

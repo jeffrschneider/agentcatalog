@@ -12,6 +12,8 @@ social campaign, and the reason to read the two side by side.
 
 **delivers:** status board, routed leads
 
+**starts:** on an event, a form is submitted
+
 ## The goals
 
 - Put every lead in an owner's queue within [2 minutes]

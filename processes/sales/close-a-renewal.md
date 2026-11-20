@@ -14,6 +14,8 @@ people who run the account have been told what changed.
 
 **delivers:** agreement, a signed renewal
 
+**starts:** on an event, an approved renewal position arrives
+
 ## The goals
 
 - Sign [90%] of renewals before the notice date

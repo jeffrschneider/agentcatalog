@@ -21,6 +21,8 @@ are engaged, and the fund has a bank account in its own name.
 
 **delivers:** agreement, fund formation documents
 
+**starts:** on an event, the partners hand on a decided fund strategy
+
 ## The goals
 
 - Ready the fund to take commitments by [June 30]

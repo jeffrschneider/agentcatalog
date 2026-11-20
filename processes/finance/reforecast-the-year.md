@@ -25,6 +25,8 @@ and any gap the year cannot absorb is with the executive team.
 
 **delivers:** sheet, an approved reforecast of the year
 
+**starts:** on a schedule, a month on the reforecast cadence closes, or the CFO calls a reforecast
+
 ## The goals
 
 - Approve each reforecast within [10 working days] of the month's close

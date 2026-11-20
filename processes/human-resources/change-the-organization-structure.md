@@ -20,6 +20,8 @@ record and in the chart read from it, and the date to review it is set.
 
 **delivers:** status board, a new organization structure
 
+**starts:** by hand, a leader proposes a change to how one or more teams are organized
+
 ## The goals
 
 - Tell [100%] of affected people before the announcement
