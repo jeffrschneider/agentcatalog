@@ -105,6 +105,8 @@ finding that source is a different job from writing the sentence.
 - `ref/hr/check-a-candidates-background` / Collect the Referees, Take
   the References, Record What the Checks Taught
 - `ref/hr/run-the-pay-review` / Gather the Market Pay Data
+- `ref/fin/set-a-customers-credit-limit` / Gather the Accounts and
+  Credit Reports
 
 ## Patterns
 
@@ -136,6 +138,11 @@ draft claim by claim against the sources the draft cites.
   candidate for one of the company's own hires, as the referee gave it
   and attributed to the referee, filed where only the named reviewers
   can open it, with no right to open a background check result
+- the credit reporting service (read) - a customer's credit reports,
+  within the subscription the company holds
+- the public register of companies (read) - the accounts a customer has
+  filed, and any insolvency, judgment or charge over its assets, in
+  each jurisdiction where it is registered
 
 ## Records
 
@@ -173,6 +180,11 @@ who said it, marked with what that person agreed could be quoted.
   the reason written in terms of the must-haves, and any part of a
   reference about a protected characteristic is struck before anyone
   reads it
+- a customer seeking credit whose accounts are missing or cover only
+  part of its group, or whose public filings show an insolvency, a
+  judgment or a charge over its assets - to the credit and collections
+  lead with the source and the date of each, because reading the risk
+  and setting a limit are not this agent's
 
 ## Not
 

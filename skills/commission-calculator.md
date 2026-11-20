@@ -51,6 +51,16 @@ covers:
 - Record the Corrections
 - Show the Working, Line by Line
 
+## supply-what-is-earned-and-not-yet-paid
+
+Gives the accountants the commission earned in a period and not yet
+paid, line by line from the run at its version, each line naming the
+deal and the plan behind it, and marks the figures incomplete when the
+run has not computed the whole period by the cutoff.
+
+covers:
+- Take In the Commission Earned
+
 ## price-a-draft-plan-on-paper
 
 Runs a draft plan over the awkward deals the business really sells and

@@ -15,8 +15,8 @@
     "reference",
     "sales",
     "spot-an-expansion",
+    "issue-a-customer-invoice",
     "open-a-renewal",
-    "work-a-churn-risk",
     "abstract"
   ],
   "extensions": {
@@ -50,6 +50,12 @@
           "role": "crm",
           "access": "write",
           "needs": "The reading against the account, dated."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "A reading held from an invoice reaches the billing lead with its reason the same day."
         }
       ],
       "records": [
@@ -62,7 +68,8 @@
         "use past a limit that was bought - to the account owner, with the periods and the entitlement attached, before anybody prices anything",
         "use falling away on a line the customer is paying for - to the risk watcher and the account owner, inside the hours the process sets",
         "a usage record that does not reconcile with what was billed - to whoever owns the billing record, left unresolved rather than smoothed over",
-        "a reading it cannot take, because the meter is missing, broken or covers the wrong period - said plainly, instead of filled with an estimate"
+        "a reading it cannot take, because the meter is missing, broken or covers the wrong period - said plainly, instead of filled with an estimate",
+        "a reading for an invoice billed on use that is missing, broken, for the wrong period or out of line with the meter or with what was billed before - to the billing lead with the meter and the period named, and the usage is held until it is read again, because a customer is billed on an estimate only where the agreement allows it and the billing lead approves it"
       ],
       "not": [
         "Does not decide what the gap means.",
@@ -102,6 +109,13 @@
           "activities": [
             "Read the Usage Trend",
             "Watch for the Signal to Turn"
+          ]
+        },
+        {
+          "process": "ref/fin/issue-a-customer-invoice",
+          "activities": [
+            "Read the Metered Usage",
+            "Check the Usage Reading Is Complete"
           ]
         }
       ]

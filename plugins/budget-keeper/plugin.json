@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "budget-keeper",
   "version": "1.0.0",
-  "description": "The budget-keeper abstract agent. Holds the department's record of money for the year, saying what each function was allocated, what was already committed before the money was divided, what has been drawn since, and what is left.",
+  "description": "The budget-keeper abstract agent. Holds the department's record of money for the year, or the company's budget and each reforecast with each department's share inside them, saying what each function or budget owner was allocated, what was already committed before the money was divided, what has been drawn since, and what is left.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -16,7 +16,7 @@
     "marketing",
     "set-marketing-budget",
     "select-marketing-technology",
-    "brand-refresh",
+    "issue-a-purchase-order",
     "abstract"
   ],
   "extensions": {
@@ -68,6 +68,18 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "Every function is told what it holds and from when."
+        },
+        {
+          "name": "the financial planning system",
+          "role": "financial-planning-system",
+          "access": "read",
+          "needs": "The company budget and each reforecast as the named approvers approved them, which this agent issues at a version."
+        },
+        {
+          "name": "the purchasing system",
+          "role": "purchasing-system",
+          "access": "read",
+          "needs": "Each approved purchase order with its amount and its budget line, and what is left on it when it closes."
         }
       ],
       "records": [
@@ -84,13 +96,15 @@
         "a commitment the record did not know about, such as a renewal that fires against a line nobody allocated for it",
         "a draw with no allocation named",
         "a request to change a closed period's figures",
-        "a function holding money it has neither drawn nor committed with the period nearly over, because giving it up or keeping it is a person's call"
+        "a function holding money it has neither drawn nor committed with the period nearly over, because giving it up or keeping it is a person's call",
+        "a purchase request larger than what its budget line has left - to the budget owner, who finds room under the rules the budget sets, waits for the reforecast or refuses the request, because no agent moves money between lines",
+        "a budget or a reforecast to be issued that differs from the version the named approvers approved, or a request to change an issued budget outside a new approval - to the head of financial planning, and the version in force stays as it was"
       ],
       "not": [
         "Does not spend money.",
         "It places no order, signs no agreement, and releases no payment.",
         "The media-buyer agent places media spend under its own cap, the supplier-manager agent holds what the department buys, and finance (person) pays.",
-        "Does not check an invoice against what was ordered and what ran, which is the spend-reconciler agent; this agent takes that agent's checked figure and records it against the allocation it came from.",
+        "Does not check an invoice against what was ordered and what ran, which is the spend-reconciler agent, or for a supplier invoice the payables-processor agent; this agent takes that checked figure and records it against the allocation it came from.",
         "Does not decide how the money is divided.",
         "Named people decide that, the decision-coordinator agent runs the decision, and this agent issues the agreed answer as a version and reports what is left against it.",
         "Does not say what an initiative would cost or return, which is the forecaster agent.",
@@ -188,6 +202,37 @@
           "process": "ref/mkt/win-loss-analysis",
           "activities": [
             "Cover What It Costs"
+          ]
+        },
+        {
+          "process": "ref/fin/set-the-annual-budget",
+          "activities": [
+            "List the Money Already Committed",
+            "Issue the Budget at a Version",
+            "Tell Each Budget Owner What They Hold"
+          ]
+        },
+        {
+          "process": "ref/fin/reforecast-the-year",
+          "activities": [
+            "Read What Each Owner Has Committed",
+            "Issue the Reforecast at a Version",
+            "Tell the Budget Owners What Changed"
+          ]
+        },
+        {
+          "process": "ref/fin/report-the-monthly-results",
+          "activities": [
+            "Take in the Budget and the Forecast",
+            "Read What Each Owner Has Committed"
+          ]
+        },
+        {
+          "process": "ref/fin/issue-a-purchase-order",
+          "activities": [
+            "Check the Budget Line Has Room",
+            "Record the Commitment",
+            "Close the Order"
           ]
         }
       ]

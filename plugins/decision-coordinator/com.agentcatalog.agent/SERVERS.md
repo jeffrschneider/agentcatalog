@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Nine systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Eleven systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -15,6 +15,8 @@ more than the job requires.
 | the review schedule | write | The date each recorded answer comes back up. |
 | the deal pipeline | write | A deal's stage and the committee's decision on its record, where the next deal team can read it. |
 | the HR system | write | Each change a pay review approved, handed to the employee's record with its approver and its effective date, with no right to change any other field. |
+| the delegation of authority | read | The approvers a budget, a reforecast, an investment case, a choice of supplier or a write-off needs at the version in force, which every such decision is put to and checked against. |
+| the financial planning system | read | The budget, the reforecast and the investment case at the versions put to the approvers. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

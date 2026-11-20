@@ -1,6 +1,6 @@
 ---
 name: take-in-a-claim-and-promise-a-date
-description: Takes a claim that a statement is wrong, acknowledges it, and names who holds it and the date the answer comes, before anybody knows whether the claim is right. Use it when running `ref/rev/settle-a-commission-dispute`.
+description: Takes a claim that a statement or a customer invoice is wrong, acknowledges it, and names who holds it and the date the answer comes, before anybody knows whether the claim is right. Use it when running `ref/fin/resolve-a-billing-dispute` and `ref/rev/settle-a-commission-dispute`.
 license: CC-BY-4.0
 metadata:
   agent: dispute-coordinator
@@ -11,23 +11,31 @@ metadata:
 
 ## What it does
 
-Takes a claim that a statement is wrong, acknowledges it, and names who
-holds it and the date the answer comes, before anybody knows whether the
-claim is right. Puts the claim in a class, arithmetic, credit, plan
-wording or bad data, because the class decides who is heard and what
-evidence is pulled.
+Takes a claim that a statement or a customer invoice is wrong,
+acknowledges it, and names who holds it and the date the answer comes,
+before anybody knows whether the claim is right. Puts the claim in a
+class, arithmetic, credit, plan wording or bad data, or for an invoice a
+price, a quantity or usage, the tax, the terms or work not received,
+because the class decides who is heard and what evidence is pulled.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in four activities across two reference processes.
 Each one names the activity as that process words it.
 
 - **Acknowledge and Promise a Date**
+  - `ref/fin/resolve-a-billing-dispute`, activity 2 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
   - `ref/rev/settle-a-commission-dispute`, activity 2 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
 - **Classify the Claim**
+  - `ref/fin/resolve-a-billing-dispute`, activity 3 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
   - `ref/rev/settle-a-commission-dispute`, activity 3 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
+- **Take In the Claim**
+  - `ref/fin/resolve-a-billing-dispute`, activity 1 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
 - **Take in the Claim**
   - `ref/rev/settle-a-commission-dispute`, activity 1 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)

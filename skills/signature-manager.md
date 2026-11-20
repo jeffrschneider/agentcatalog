@@ -15,10 +15,11 @@ covers:
 
 ## control-what-is-out-to-sign
 
-Sends the right version to the named signers in the agreed order, and
-takes a document back out of signature when it should no longer be out
-there, such as when the deal is lost. The signing itself stays a human
-step.
+Sends the right version to the named signers in the agreed order, such
+as a supplier agreement or a bank's account and signer forms, files the
+executed copy with what it rests on, and takes a document back out of
+signature when it should no longer be out there, such as when the deal
+is lost. The signing itself stays a human step.
 
 covers:
 - Execute the Signature
@@ -34,6 +35,8 @@ covers:
 - Sign the Sale Agreement
 - Get the Offer Signed
 - Sign the Agreement
+- Get the Agreement Signed
+- Get the Forms Signed
 
 ## check-the-executed-document
 

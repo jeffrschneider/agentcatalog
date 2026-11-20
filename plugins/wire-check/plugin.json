@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "wire-check",
   "version": "1.0.0",
-  "description": "The wire-check abstract agent. Confirms every outgoing payment against independently verified instructions and matches every incoming receipt to what was called, for the fund's chief financial officer (CFO) and controller or an employer's payroll manager and payroll approver, and releases no money itself.",
+  "description": "The wire-check abstract agent. Confirms every outgoing payment against independently verified instructions and matches every incoming receipt to what was called, for the fund's chief financial officer (CFO) and controller, an employer's payroll manager and payroll approver, or a company's controller, payables lead and treasurer, and releases no money itself.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,17 +13,17 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "private-capital",
+    "finance",
+    "change-a-suppliers-bank-details",
     "make-a-distribution",
-    "issue-a-capital-call",
-    "run-payroll",
+    "fund-the-payroll",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "wire-check",
       "agentVersion": 1,
-      "department": "private-capital",
+      "department": "finance",
       "abstract": true,
       "works": "Runs assessment on every payment instruction, the fund's own bank instructions and the cash that has cleared, and allocate-and-reconcile on each receipt it matches and each payment it confirms. Holds the run-scoped funds reconciliation of a closing from the funds flow to the last confirmed receipt, and the roll-call on a capital call's due date and a distribution's pay date. Sits in the approval where the CFO releases the money, checking each payment against the verified sheet, and in the reconciliation of each call and distribution, which the capital-account-keeper agent leads. Takes the funds flow from the close-plan-keeper agent and the cap-table-keeper agent, the notices and the approved amounts from the capital-account-keeper agent, and the signed charges of each fee period. Hands each verified account to the people who release the money, each matched receipt and confirmed payment to the capital-account-keeper agent to post, the fund's proceeds from a sale to the exit-planner agent as received, and every payment it holds to the CFO with the reason.",
       "servers": [
@@ -67,7 +67,7 @@
           "name": "the notification channel",
           "role": "notification-channel",
           "access": "write",
-          "needs": "A held payment or a suspected fraud reaches the CFO the same day."
+          "needs": "A held payment or a suspected fraud reaches the CFO the same day, or for a company's own payments the controller, the payables lead or the treasurer."
         },
         {
           "name": "the payroll system",
@@ -80,6 +80,54 @@
           "role": "verified-employee-bank-record",
           "access": "read",
           "needs": "Each employee's confirmed account and the contact already on file that a change is confirmed through."
+        },
+        {
+          "name": "the verified supplier bank record",
+          "role": "verified-supplier-bank-record",
+          "access": "read",
+          "needs": "Each supplier's confirmed account, the date it was confirmed and the contact on file it was confirmed through, which every supplier payment is checked against."
+        },
+        {
+          "name": "the bank account record",
+          "role": "bank-account-record",
+          "access": "read",
+          "needs": "The company's own accounts that a transfer or a payroll funding may move between."
+        },
+        {
+          "name": "the treasury system",
+          "role": "treasury-system",
+          "access": "read",
+          "needs": "Each transfer and each payroll funding as prepared, with its accounts, its amount, its value date and the need or the register it meets."
+        },
+        {
+          "name": "the ERP",
+          "role": "erp",
+          "access": "write",
+          "needs": "The first payment to a supplier's new account flagged for a check, and each payment in a supplier run marked checked or held, with no right to change bank details, approve an invoice or release a payment."
+        },
+        {
+          "name": "the payables inbox",
+          "role": "payables-inbox",
+          "access": "read",
+          "needs": "The message that asked for a bank change, with its sender, its headers and its attachments, which is kept as evidence and never answered with the confirmation."
+        },
+        {
+          "name": "the supplier portal",
+          "role": "supplier-portal",
+          "access": "read",
+          "needs": "A bank change request that arrives there, with its sender and its date."
+        },
+        {
+          "name": "the signed agreements",
+          "role": "signed-agreements",
+          "access": "read",
+          "needs": "A supplier's contact found apart from the request, in the agreement it signed."
+        },
+        {
+          "name": "company registry sources",
+          "role": "company-registry-sources",
+          "access": "read",
+          "needs": "A supplier's contact found apart from the request, on the public record."
         }
       ],
       "records": [
@@ -103,10 +151,19 @@
         "every release of payroll money - to the payroll approver and the second signer, who release it in the bank portal under the dual control rule",
         "a payroll payment that does not match its approved register line, or an account that is not on the verified employee bank record - to the payroll manager, and that payment is held while the file is built again",
         "a change to an employee's bank account that arrived by email alone, or that the employee does not confirm on a contact already on file - to the payroll manager the same day as an attempted fraud, and pay keeps going to the account already on record",
-        "a payroll payment returned, rejected or landed in the wrong account - to the payroll manager, and the employee is paid off cycle only once a verified account is in hand"
+        "a payroll payment returned, rejected or landed in the wrong account - to the payroll manager, and the employee is paid off cycle only once a verified account is in hand",
+        "every release of a supplier payment run, a transfer between the company's accounts or a payroll funding - to the approver and the two releasers the delegation of authority names, who release it in the bank portal under the dual control rule, because this agent never releases or approves a payment",
+        "a request to change a supplier's bank details that arrives by email alone, comes from an address not on the supplier's record, comes close to a payment date or presses to pay quickly - recorded as an attempted fraud until a person confirms it through the contact on file, and the request itself is never used to confirm it",
+        "a change the supplier does not confirm, or a new supplier whose bank details cannot be confirmed - to the controller the same day as a suspected fraud, and payments keep going to the account already on record, or the new record does not open with those details",
+        "a supplier with no contact on file from before the request - to the controller, who approves in writing the use of a contact from the signed agreement or the public record before the call",
+        "a payment in a supplier run that does not match an approved item or the verified record, or that goes to an account changed without an approval - to the payables lead, and that payment is held while the file is built again",
+        "a supplier payment returned, rejected or landed in the wrong account - to the payables lead the same day, who asks the bank to recall one that landed in the wrong account, and the first payment to a new account that does not land makes that account false until the controller decides",
+        "a transfer or a payroll funding whose account is not on the bank account record, or whose amount does not match the need or the register - to the treasurer, and it is held and prepared again, because an account given in an email or a call is never used until it is on the record",
+        "a transfer or a payroll funding returned or not arrived - traced with the bank and to the treasurer, with the payroll manager told the same hour for a funding, and a new transfer is prepared only once the first is known to have failed"
       ],
       "not": [
-        "Does not release, approve or sign a payment, which is the CFO and the second signer, or for payroll the payroll approver and the second signer (people).",
+        "Does not release, approve or sign a payment, which is the CFO and the second signer, for payroll the payroll approver and the second signer, or for a company's own payments the approver and the releasers the delegation of authority names (people).",
+        "Does not make the call that confirms a supplier's bank details or approve the change, which are the payables lead and the named approver (people).",
         "Does not work out what each investor is called for or paid, which is the capital-account-keeper agent, and does not build the funds flow, which is the close-plan-keeper agent with the cap-table-keeper agent.",
         "Does not check a payout against the cap table, which is the cap-table-keeper agent.",
         "Does not chase a late payer or decide a default, which is the investor relations lead with the capital-account-keeper agent, and then the managing partner and the CFO (people).",
@@ -160,6 +217,48 @@
           "process": "ref/hr/change-an-employee-record",
           "activities": [
             "Confirm a New Bank Account"
+          ]
+        },
+        {
+          "process": "ref/fin/set-up-a-supplier",
+          "activities": [
+            "Check the Bank Details",
+            "Find a Contact Apart from the Request"
+          ]
+        },
+        {
+          "process": "ref/fin/change-a-suppliers-bank-details",
+          "activities": [
+            "Check the Request",
+            "Check the New Account",
+            "Find the Contact on File",
+            "Report a Suspected Fraud",
+            "Mark the First Payment",
+            "Confirm the First Payment Landed",
+            "Record What the Change Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/pay-approved-invoices",
+          "activities": [
+            "Check the Payment File",
+            "Confirm Where Each Payment Landed",
+            "Handle a Returned Payment"
+          ]
+        },
+        {
+          "process": "ref/fin/move-cash-between-accounts",
+          "activities": [
+            "Check the Transfer",
+            "Confirm the Transfer Landed"
+          ]
+        },
+        {
+          "process": "ref/fin/fund-the-payroll",
+          "activities": [
+            "Check the Funding Transfer",
+            "Confirm the Funding Landed",
+            "Match the Funding to the Payments"
           ]
         }
       ]

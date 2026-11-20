@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Nine systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Eleven systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -15,6 +15,8 @@ more than the job requires.
 | the frozen track record | read | The one dated set of performance figures, at its version, that every figure in a fundraising piece must come from. |
 | the review record | write | The verdicts land where the signers and the producing agents read them. |
 | the applicant tracking system | read | The signed position's job, location and pay range, which the pay range in every version of a job posting is checked against. |
+| the disclosure checklist | read | The disclosures `<your accounting framework>` requires, at the version the process names, which every draft of the financial statements is scored against. |
+| the reporting system | read | The draft statements and notes at the version under check, with no right to change them. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

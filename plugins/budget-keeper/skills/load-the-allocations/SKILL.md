@@ -1,6 +1,6 @@
 ---
 name: load-the-allocations
-description: The agent records each function's number where spend is tracked and says when in the year that money becomes available. Use it when running `ref/mkt/set-marketing-budget`.
+description: The agent records each function's or budget owner's number where spend is tracked, at a version, with each reforecast beside the budget it leaves as it was, and says when in the year that money becomes available. Use it when running `ref/fin/reforecast-the-year`, `ref/fin/set-the-annual-budget` and `ref/mkt/set-marketing-budget`.
 license: CC-BY-4.0
 metadata:
   agent: budget-keeper
@@ -11,14 +11,22 @@ metadata:
 
 ## What it does
 
-The agent records each function's number where spend is tracked and says
-when in the year that money becomes available.
+The agent records each function's or budget owner's number where spend
+is tracked, at a version, with each reforecast beside the budget it
+leaves as it was, and says when in the year that money becomes
+available.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in four activities across three reference processes.
+Each one names the activity as that process words it.
 
+- **Issue the Budget at a Version**
+  - `ref/fin/set-the-annual-budget`, activity 16 -
+    [Set the Annual Budget](../../../../processes/finance/set-the-annual-budget.md)
+- **Issue the Reforecast at a Version**
+  - `ref/fin/reforecast-the-year`, activity 14 -
+    [Reforecast the Year](../../../../processes/finance/reforecast-the-year.md)
 - **Load the Allocations**
   - `ref/mkt/set-marketing-budget`, activity 13 -
     [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)

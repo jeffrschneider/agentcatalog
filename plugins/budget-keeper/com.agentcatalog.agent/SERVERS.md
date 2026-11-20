@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Seven systems, named by role rather than by product. The access level is
+Nine systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -13,6 +13,8 @@ more than the job requires.
 | the reconciliation record | read | The checked spend figure for a closed period. |
 | the supplier record | read | The term and the renewal date on every entry the department pays for. |
 | the notification channel | write | Every function is told what it holds and from when. |
+| the financial planning system | read | The company budget and each reforecast as the named approvers approved them, which this agent issues at a version. |
+| the purchasing system | read | Each approved purchase order with its amount and its budget line, and what is left on it when it closes. |
 
 There is deliberately no payment grant and no ordering grant. This agent
 records money and moves none of it, which is what makes its figures

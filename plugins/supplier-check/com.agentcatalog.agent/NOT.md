@@ -40,3 +40,11 @@ anything.
   for the firm's own people to the managing partner and fund counsel
   too. No offering material leaves the firm until they have recorded
   what happens.
+- a screening hit on a supplier or one of its owners, in a choice of
+  supplier or a supplier's setup - to the compliance lead, and the
+  supplier stays out of the choice or its setup stops until the
+  compliance lead has decided in writing, with nothing about the hit
+  said to the supplier
+- a supplier that is not on the public record as it was given - to the
+  purchasing lead once the details have been asked for again, and no
+  record opens until the supplier can show it exists

@@ -1,6 +1,6 @@
 ---
 name: draft-from-approved-decisions
-description: Drafts a change on the current version only from an approved decision, a rule change counsel confirmed or an audit finding, and writes a location's variant only where a local rule needs a different text, with every local point left blank for counsel. Use it when running `ref/hr/issue-a-disciplinary-action`, `ref/hr/publish-an-hr-policy` and `ref/hr/resolve-an-employee-concern`.
+description: Drafts a change on the current version only from an approved decision, a rule change counsel or an adviser confirmed, a failed control or an audit finding, and writes a location's or an entity's variant only where a local rule needs a different text, with every local point left blank for counsel and the advisers. Use it when running `ref/fin/publish-a-finance-policy` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: policy-keeper
@@ -12,25 +12,31 @@ metadata:
 ## What it does
 
 Drafts a change on the current version only from an approved decision, a
-rule change counsel confirmed or an audit finding, and writes a
-location's variant only where a local rule needs a different text, with
-every local point left blank for counsel. It drafts the changes a case
-shows are needed once a named person has decided them.
+rule change counsel or an adviser confirmed, a failed control or an
+audit finding, and writes a location's or an entity's variant only where
+a local rule needs a different text, with every local point left blank
+for counsel and the advisers. It drafts the changes a case shows are
+needed once a named person has decided them.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Act on the Outcome**
   - `ref/hr/resolve-an-employee-concern`, activity 14 -
     [Resolve an Employee Concern](../../../../processes/human-resources/resolve-an-employee-concern.md)
 - **Draft the Change**
+  - `ref/fin/publish-a-finance-policy`, activity 6 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 4 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 - **Record What the Case Taught**
   - `ref/hr/issue-a-disciplinary-action`, activity 18 -
     [Issue a Disciplinary Action](../../../../processes/human-resources/issue-a-disciplinary-action.md)
+- **Write the Entity Variants**
+  - `ref/fin/publish-a-finance-policy`, activity 8 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
 - **Write the Location Variants**
   - `ref/hr/publish-an-hr-policy`, activity 5 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)

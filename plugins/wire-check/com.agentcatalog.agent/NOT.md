@@ -1,17 +1,20 @@
 # Where this abstract agent stops
 
 Does not release, approve or sign a payment, which is the CFO and the
-second signer, or for payroll the payroll approver and the second signer
-(people). Does not work out what each investor is called for or paid,
-which is the capital-account-keeper agent, and does not build the funds
-flow, which is the close-plan-keeper agent with the cap-table-keeper
-agent. Does not check a payout against the cap table, which is the
-cap-table-keeper agent. Does not chase a late payer or decide a default,
-which is the investor relations lead with the capital-account-keeper
-agent, and then the managing partner and the CFO (people). Does not
-clear a payment from an unknown account, which is the person the
-anti-money laundering procedure names, or screen an investor, which is
-the supplier-check agent.
+second signer, for payroll the payroll approver and the second signer,
+or for a company's own payments the approver and the releasers the
+delegation of authority names (people). Does not make the call that
+confirms a supplier's bank details or approve the change, which are the
+payables lead and the named approver (people). Does not work out what
+each investor is called for or paid, which is the capital-account-keeper
+agent, and does not build the funds flow, which is the close-plan-keeper
+agent with the cap-table-keeper agent. Does not check a payout against
+the cap table, which is the cap-table-keeper agent. Does not chase a
+late payer or decide a default, which is the investor relations lead
+with the capital-account-keeper agent, and then the managing partner and
+the CFO (people). Does not clear a payment from an unknown account,
+which is the person the anti-money laundering procedure names, or screen
+an investor, which is the supplier-check agent.
 
 ## What always goes to a person
 
@@ -48,3 +51,38 @@ the supplier-check agent.
 - a payroll payment returned, rejected or landed in the wrong account -
   to the payroll manager, and the employee is paid off cycle only once a
   verified account is in hand
+- every release of a supplier payment run, a transfer between the
+  company's accounts or a payroll funding - to the approver and the two
+  releasers the delegation of authority names, who release it in the
+  bank portal under the dual control rule, because this agent never
+  releases or approves a payment
+- a request to change a supplier's bank details that arrives by email
+  alone, comes from an address not on the supplier's record, comes close
+  to a payment date or presses to pay quickly - recorded as an attempted
+  fraud until a person confirms it through the contact on file, and the
+  request itself is never used to confirm it
+- a change the supplier does not confirm, or a new supplier whose bank
+  details cannot be confirmed - to the controller the same day as a
+  suspected fraud, and payments keep going to the account already on
+  record, or the new record does not open with those details
+- a supplier with no contact on file from before the request - to the
+  controller, who approves in writing the use of a contact from the
+  signed agreement or the public record before the call
+- a payment in a supplier run that does not match an approved item or
+  the verified record, or that goes to an account changed without an
+  approval - to the payables lead, and that payment is held while the
+  file is built again
+- a supplier payment returned, rejected or landed in the wrong account -
+  to the payables lead the same day, who asks the bank to recall one
+  that landed in the wrong account, and the first payment to a new
+  account that does not land makes that account false until the
+  controller decides
+- a transfer or a payroll funding whose account is not on the bank
+  account record, or whose amount does not match the need or the
+  register - to the treasurer, and it is held and prepared again,
+  because an account given in an email or a call is never used until it
+  is on the record
+- a transfer or a payroll funding returned or not arrived - traced with
+  the bank and to the treasurer, with the payroll manager told the same
+  hour for a funding, and a new transfer is prepared only once the first
+  is known to have failed

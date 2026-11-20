@@ -32,6 +32,9 @@ nobody kept is visible rather than forgotten.
   Tracker, Give the Agreed Support, Hold Each Check-In
 - `ref/hr/run-the-employee-survey` / Load the Actions into the Tracker,
   Review the Actions
+- `ref/fin/test-a-financial-control` / Load Each Fix Into the Tracker,
+  Chase Each Fix to Its Date
+- `ref/fin/run-the-external-audit` / Load Each Fix Into the Tracker
 
 ## Patterns
 
@@ -56,6 +59,11 @@ takes the decisions and the closed lines back from the review.
 - the calendar (write) - each check-in of a plan about one employee, on
   the calendars of the manager and the employee, with the date a
   probation closes shown where one applies
+- the issue tracker (write) - each fix to a failed control or to a point
+  in the auditor's letter, with its owner, its date, its state and the
+  finding it answers
+- the notification channel (write) - a fix past its date reaches the
+  controller
 
 ## Records
 
@@ -87,6 +95,13 @@ dates set for the year, and whose calendars they landed on.
   late - read out at the next check-in like any late item and named to
   the HR business partner, because no outcome is decided while the
   company still owes its part
+- a fix to a failed control or to a point in the auditor's letter that
+  is past its date - to the controller, who agrees a new date or a
+  different fix with its owner, and the miss is recorded while the
+  finding stays open
+- a fix with no owner or no date, or one its owner calls done before it
+  has been tested again - to the controller, and the finding stays open
+  on the record until the fix has both and passes its test
 
 ## Not
 

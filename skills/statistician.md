@@ -30,12 +30,17 @@ covers:
 
 Says how much data the work needs before any of it is collected, working
 from the size of the difference that would matter, the variation the
-measure already carries and the confidence being run to.
+measure already carries and the confidence being run to. For a control
+test it sets how many items are sampled, from how often the control
+runs and what rests on it, before any item is drawn, and sizes the new
+sample again when a fix is tested.
 
 covers:
 - Say How Many Interviews It Needs
 - Say How Much Data It Needs
 - Size the Test
+- Set the Sample Size
+- Test the Fix Again
 
 ## collection-monitoring
 
@@ -54,12 +59,14 @@ covers:
 
 Says which of the data that arrived can be relied on and how far the
 figures from it can be read, covering the coverage, the duplicates, the
-gaps and the period the data actually spans.
+gaps and the period the data actually spans, and what the items a
+control test passed and failed support about the whole period.
 
 covers:
 - Say What the Data Supports
 - Say What the Numbers Carry
 - Say What the Responses Support
+- Say What the Results Support
 
 ## fieldwork
 

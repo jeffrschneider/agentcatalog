@@ -37,8 +37,8 @@ manifest and in the directory of the same name.
 
 `ref/rev/administer-a-tool`, `ref/rev/integrate-a-tool`,
 `ref/rev/retire-a-tool`, `ref/hr/prepare-for-a-new-hire`,
-`ref/hr/offboard-a-leaver`, `ref/hr/review-access-to-employee-data`. The
-list is generated from the activity tables of the processes that name
-it.
+`ref/hr/offboard-a-leaver`, `ref/hr/review-access-to-employee-data`, and
+1 more. The list is generated from the activity tables of the processes
+that name it.
 
 https://agentcatalog.com/abstract-agents/tool-administrator

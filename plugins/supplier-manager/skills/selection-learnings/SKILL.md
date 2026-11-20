@@ -1,6 +1,6 @@
 ---
 name: selection-learnings
-description: Files what the selection or the engagement taught, which means what to repeat and what to avoid the next time the department buys something like it. Use it when running `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
+description: Files what the selection or the engagement taught, which means what to repeat and what to avoid the next time the department buys something like it. Use it when running `ref/fin/choose-a-supplier`, `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
 license: CC-BY-4.0
 metadata:
   agent: supplier-manager
@@ -17,14 +17,17 @@ like it.
 
 ## Where it happens
 
-The agent does this in one activity across two reference processes. Each
-one names the activity as that process words it.
+The agent does this in two activities across three reference processes.
+Each one names the activity as that process words it.
 
 - **Record What Was Learned**
   - `ref/mkt/engage-marketing-agency`, activity 16 -
     [Engage Marketing Agency](../../../../processes/marketing/engage-marketing-agency.md)
   - `ref/mkt/select-marketing-technology`, activity 21 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
+- **Record What the Choice Taught**
+  - `ref/fin/choose-a-supplier`, activity 17 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 
 ## What to record
 

@@ -1,0 +1,179 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "payables-processor",
+  "version": "1.0.0",
+  "description": "The payables-processor abstract agent. Carries each supplier invoice and each approved expense claim from arrival to payment, for the payables lead and the named approvers, and releases no money itself.",
+  "author": {
+    "name": "AgentCatalog",
+    "url": "https://agentcatalog.com"
+  },
+  "homepage": "https://agentcatalog.com/abstract-agents/payables-processor",
+  "repository": "https://github.com/jeffrschneider/agentcatalog",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "abstract-agent",
+    "reference",
+    "finance",
+    "process-a-supplier-invoice",
+    "pay-approved-invoices",
+    "reimburse-an-expense-claim",
+    "abstract"
+  ],
+  "extensions": {
+    "com.agentcatalog.agent": {
+      "agent": "payables-processor",
+      "agentVersion": 1,
+      "department": "finance",
+      "abstract": true,
+      "works": "Runs assessment on each invoice for its supplier record, a duplicate, what the local rules require, its purchase order and its match to the order and the receipt, and on each item due for anything that keeps it out of a run. Runs collect-and-report on the items due on each payment date, on what the company owes for the cash forecast and the payments due out each day, and on each employee's payment as the bank reports it. Holds the run-scoped status roll-call of each invoice until it is ready to pay and of each payment run until its release, and the collect-and-report of each claim's payment until it is confirmed. Convenes the debrief that closes each invoice and each payment run. Works beside the invoice approver (person), who decides each exception, the payment approver (person), who approves each run having prepared none of it, and the two releasers (people), who release the payments under `<your dual control rule>`. Takes each receipt from the purchasing-coordinator agent, the approver for each exception from the delegation-keeper agent, each claim once the expense-check agent has checked it and the manager has approved it, the checked card statement from the card-administrator agent, and each approved refund from `ref/fin/apply-a-customer-payment` or `ref/fin/resolve-a-billing-dispute`. Hands each payment file to the wire-check agent, which checks every payment against the approved items and the verified bank record before the releasers release it and confirms where each landed, tells the treasury-analyst agent what each run needs, and passes any part of a claim treated as pay to the payroll-administrator agent at `ref/hr/run-payroll`.",
+      "servers": [
+        {
+          "name": "the ERP",
+          "role": "erp",
+          "access": "write",
+          "needs": "Each invoice as captured, coded and marked ready to pay, each payment run as proposed, the payment file built from the approved run, and each item marked paid, with no right to approve an exception or a run, or to release a payment."
+        },
+        {
+          "name": "the invoice inbox",
+          "role": "invoice-inbox",
+          "access": "read",
+          "needs": "Each invoice and credit note as it arrives."
+        },
+        {
+          "name": "the supplier portal",
+          "role": "supplier-portal",
+          "access": "read",
+          "needs": "Each invoice a supplier sends through the portal."
+        },
+        {
+          "name": "the purchasing system",
+          "role": "purchasing-system",
+          "access": "read",
+          "needs": "Each order and the receipts recorded against it."
+        },
+        {
+          "name": "the verified bank record",
+          "role": "verified-bank-record",
+          "access": "read",
+          "needs": "The bank details each payee's payment is built to."
+        },
+        {
+          "name": "the bank portal",
+          "role": "bank-portal",
+          "access": "read",
+          "needs": "The bank's report each employee's payment is matched to, with no right to move or release money."
+        },
+        {
+          "name": "the general ledger",
+          "role": "general-ledger",
+          "access": "write",
+          "needs": "Each invoice, each claim and each run posted in its period, with the totals agreed to the approved run."
+        },
+        {
+          "name": "the expense tool",
+          "role": "expense-tool",
+          "access": "write",
+          "needs": "Each claim's payment shown to the employee, and each receipt and approval kept."
+        },
+        {
+          "name": "the payroll system",
+          "role": "payroll-system",
+          "access": "write",
+          "needs": "The part of a claim treated as pay, passed before the cutoff of its pay period."
+        },
+        {
+          "name": "the document archive",
+          "role": "document-archive",
+          "access": "write",
+          "needs": "Each invoice and its evidence, kept for the retention period."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "A supplier is told what to correct through the contact on its record, each payee is sent its remittance advice, and the person who can clear a held item is told why it waits."
+        }
+      ],
+      "records": [
+        "Each invoice leaves every field as captured beside the image, the supplier record and the bank details it was checked against, the duplicate check, the reading against the local invoice rules, the order and the receipt it was matched to with each difference, any exception with the approver's decision, any correction asked of the supplier, the coding, the due date with the approval behind it, the posting and where the invoice is kept.",
+        "Each payment run leaves its date and its paying account, every item gathered, every item held with its reason and the person told, the run at the version the approver approved, the payment file with each payment traced to an approved item and a verified record, the release by two named people, the remittance advice sent, and the ledger agreed to the approved run.",
+        "Each claim leaves its coding, the run it was proposed in, any part passed to payroll with the approval behind it, the payment as the bank reported it, and its receipts kept.",
+        "Nothing in the record shows this agent approving an exception or a run, releasing money, or changing an amount a supplier billed."
+      ],
+      "escalates": [
+        "every payment run - to a named approver who prepared none of it, and then to two named people who release the payments under `<your dual control rule>`, because this agent never releases money or holds the access to do so",
+        "an invoice that does not match its order and receipt, has no order, or comes from a supplier with no approved record - to the approver the delegation of authority names, who is neither the requester nor whoever confirmed the receipt, and an invoice with no approved record waits for `ref/fin/set-up-a-supplier`",
+        "a possible duplicate - held beside the invoice it may repeat for the payables lead to decide, and a pattern of them from one supplier is raised with that supplier",
+        "bank details on an invoice that differ from the supplier's record - paid only to the record, and the difference starts `ref/fin/change-a-suppliers-bank-details`",
+        "a pattern of invoices with no order from one department - to the purchasing lead, because the order is the first control on what the company spends",
+        "a run the cash will not cover - to the treasurer, who funds the paying account or chooses which items wait, and no agent decides which supplier waits",
+        "an early-payment discount whose date falls before the payment date - proposed in the last run before it, and the treasurer decides whether the discount is worth the cash leaving early",
+        "an urgent payment outside the payment calendar - a run of its own with the same checks, the same approval and the same releasers, and a pattern of them goes to the payables lead, because urgency is a common cover for fraud",
+        "a payment returned or rejected - held aside and paid again only to verified details in a run a named approver has approved, and an employee's account changed by email alone is treated as an attempt at fraud until `ref/hr/change-an-employee-record` confirms it"
+      ],
+      "not": [
+        "Does not approve an invoice exception or a payment run, or release a payment, which are the invoice approver, the payment approver and the two releasers (people).",
+        "Does not check the payment file against the verified bank record or confirm where each payment landed, which is the wire-check agent.",
+        "Does not name the approver for an exception, which is the delegation-keeper agent, or confirm what was received, which is the purchasing-coordinator agent with the requester.",
+        "Does not change a supplier's bank details, which is `ref/fin/change-a-suppliers-bank-details`, or an employee's, which is `ref/hr/change-an-employee-record`.",
+        "Does not check an expense claim against the policy, which is the expense-check agent, or decide what waits when cash is short, which is the treasurer (person).",
+        "Does not run payroll, which is the payroll-administrator agent.",
+        "Does not change an amount a supplier billed."
+      ],
+      "processes": [
+        {
+          "process": "ref/fin/process-a-supplier-invoice",
+          "activities": [
+            "Capture the Invoice",
+            "Check the Supplier Record",
+            "Check for a Duplicate",
+            "Check What the Invoice Must Show",
+            "Find the Purchase Order",
+            "Match the Invoice",
+            "Ask the Supplier for a Correction",
+            "Code the Invoice",
+            "Mark the Invoice Ready to Pay",
+            "Post the Invoice to the Ledger",
+            "Keep the Invoice",
+            "Record What the Invoice Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/pay-approved-invoices",
+          "activities": [
+            "Open the Payment Run",
+            "Gather the Items Due",
+            "Hold What Cannot Be Paid",
+            "Propose the Run",
+            "Build the Payment File",
+            "Send the Remittance Advice",
+            "Record the Payments in the Ledger",
+            "Record What the Run Taught"
+          ]
+        },
+        {
+          "process": "ref/fin/reimburse-an-expense-claim",
+          "activities": [
+            "Code the Claim to the Ledger",
+            "Propose the Claim for Payment",
+            "Pass the Part Treated as Pay to Payroll",
+            "Confirm the Employee Was Paid",
+            "Keep the Receipts"
+          ]
+        },
+        {
+          "process": "ref/fin/forecast-cash",
+          "activities": [
+            "Gather What the Company Owes"
+          ]
+        },
+        {
+          "process": "ref/fin/report-the-daily-cash-position",
+          "activities": [
+            "List the Payments Due Today"
+          ]
+        }
+      ]
+    }
+  }
+}

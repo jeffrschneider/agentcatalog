@@ -32,6 +32,12 @@ and closes the accounts on the notice the agreement requires.
   Match Each Account to a Person, Check Each Role Against the Job, Send
   Each Owner Their Accounts, Remove the Access Nobody Approved, Read
   Every Account Again, Record the Review
+- `ref/fin/review-access-to-finance-systems` / Open the Review for the
+  Period, List Every Account and Its Role, List Who Can Move Money at
+  Each Bank, Match Each Account to a Person, Match Each Payment Right to
+  an Approved Releaser, Check Each Role Against the Job, Send Each Owner
+  Their Accounts, Remove the Access Nobody Approved, Read Every Account
+  Again, Record the Review
 
 ## Patterns
 
@@ -87,6 +93,17 @@ tool is switched off.
 - the notification channel (write) - each access owner sent the
   accesses they answer for, with what each check found and the close
   date
+- each finance system (read) - for an access review, the accounts in
+  the general ledger, the ERP and the payment system, with each
+  account's role, permissions, approval limits, who approved it and its
+  last use, with no right to post, approve or pay anything
+- the bank portal (read) - only its users and their rights: who may
+  create, approve or release a payment or add a beneficiary, the amount
+  each may release, and the bank's record of who may sign on each
+  account, with no right to make or release a payment
+- the delegation of authority (read) - the releasers and signers the
+  version in force names, which every right to approve or release a
+  payment is matched against
 
 ## Records
 
@@ -122,6 +139,17 @@ the final invoice.
   a payroll, to the access owner, who chooses which role the person
   keeps, and where the work needs both, to the named person who may
   approve that in writing with another check in its place
+- a right to approve or release a payment held by someone the
+  delegation of authority does not name - removed on the day it is
+  found under the bank's own rules for changing users, and to the
+  controller with how it came about
+- access in the finance systems that would let one person both prepare
+  and approve the same payment, journal or reconciliation - to the
+  controller, who allows it in writing for a set period with another
+  check in its place or has it removed
+- an access still there after its removal - removed again with the
+  reason traced, such as a second account or a group the person belongs
+  to, and the controller told before the review is signed
 
 ## Not
 

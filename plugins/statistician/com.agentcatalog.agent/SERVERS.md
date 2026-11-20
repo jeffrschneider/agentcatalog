@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eight systems, named by role rather than by product. The access level is
+Ten systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -14,6 +14,8 @@ more than the job requires.
 | licensed market data | read | Within the subscriptions the organization actually holds. |
 | the calculation record | write | Every figure lands with the data behind it, the method used, the exclusions applied and the range around it. |
 | the restricted analysis area | read | Only the group data a named person has released for one group fairness check, such as the protected characteristics employees chose to record, read for that check alone and closed to this agent when the check ends. |
+| the control list | read | How often each control runs, how many times it ran in the period and what rests on it, which a control test's sample size is set from. |
+| the test record | write | Each sample size with the method behind it, set before any item is drawn, and what the results of the test support. |
 
 There is deliberately no write into the response record. This agent says
 which responses it left out and under which rule, and the study-manager

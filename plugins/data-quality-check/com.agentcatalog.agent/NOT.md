@@ -25,3 +25,7 @@ not switch a rule off quietly.
   first
 - a failure that comes back twice from the same source, to whoever owns
   that system, as a system problem rather than a data problem
+- a failure in the lines behind an indirect tax return, to the owner of
+  the system that wrote it with the head of tax told, and the return
+  waits until the lines are gathered again and pass, so the return and
+  the invoices agree

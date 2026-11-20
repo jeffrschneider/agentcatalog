@@ -24,3 +24,9 @@ when the meeting was confirmed. Does not decide who may be contacted.
   recruiter, who decides how to meet it, with only the information the
   adjustment needs held restricted and nothing about it in the panel's
   packs
+- a walkthrough or an interview the auditor asks for that cannot be held
+  by the date the audit timetable sets - to the controller, who agrees a
+  new date with the auditor in writing before the date passes
+- a session the auditor asks for that reaches beyond the agreed scope -
+  to the controller, who raises it with the auditor in writing before it
+  is booked

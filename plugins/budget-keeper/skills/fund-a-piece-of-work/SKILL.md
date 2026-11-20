@@ -1,6 +1,6 @@
 ---
 name: fund-a-piece-of-work
-description: The agent sets money aside for a named piece of work against the allocation it comes from, records the cap and the term it runs under, and says whether that allocation still holds enough to cover it. Use it when running `ref/mkt/brand-health` and 6 other reference processes.
+description: The agent sets money aside for a named piece of work, such as a purchase order, against the allocation it comes from, records the cap and the term it runs under, says whether that allocation still holds enough to cover it, and releases what is left once the work closes or is cancelled. Use it when running `ref/fin/issue-a-purchase-order` and 7 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: budget-keeper
@@ -11,15 +11,23 @@ metadata:
 
 ## What it does
 
-The agent sets money aside for a named piece of work against the
-allocation it comes from, records the cap and the term it runs under,
-and says whether that allocation still holds enough to cover it.
+The agent sets money aside for a named piece of work, such as a purchase
+order, against the allocation it comes from, records the cap and the
+term it runs under, says whether that allocation still holds enough to
+cover it, and releases what is left once the work closes or is
+cancelled.
 
 ## Where it happens
 
-The agent does this in six activities across seven reference processes.
+The agent does this in nine activities across eight reference processes.
 Each one names the activity as that process words it.
 
+- **Check the Budget Line Has Room**
+  - `ref/fin/issue-a-purchase-order`, activity 3 -
+    [Issue a Purchase Order](../../../../processes/finance/issue-a-purchase-order.md)
+- **Close the Order**
+  - `ref/fin/issue-a-purchase-order`, activity 15 -
+    [Issue a Purchase Order](../../../../processes/finance/issue-a-purchase-order.md)
 - **Commission the New Capacity**
   - `ref/mkt/plan-marketing-capacity`, activity 14 -
     [Plan Marketing Capacity](../../../../processes/marketing/plan-marketing-capacity.md)
@@ -31,6 +39,9 @@ Each one names the activity as that process words it.
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
   - `ref/mkt/customer-research`, activity 9 -
     [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+- **Record the Commitment**
+  - `ref/fin/issue-a-purchase-order`, activity 10 -
+    [Issue a Purchase Order](../../../../processes/finance/issue-a-purchase-order.md)
 - **Resource the Commitments**
   - `ref/mkt/prioritize-initiatives`, activity 11 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)

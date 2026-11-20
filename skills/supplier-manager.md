@@ -11,6 +11,7 @@ covers:
 - Take in the Gap
 - Write down the Requirements
 - Write the Scope
+- Write Down the Requirements
 
 ## scoring-criteria
 
@@ -43,6 +44,7 @@ covers:
 - Build the Candidate List
 - Cut to a Shortlist
 - Search the Market
+- Find the Candidates
 
 ## name-and-mark-clearance
 
@@ -71,12 +73,32 @@ covers:
 ## same-request-to-every-candidate
 
 Puts one request in front of everyone at the same time, with the same
-scope and the same questions, so that what comes back can be compared
-line for line.
+scope and the same questions, and shares the answer to any candidate's
+question with every candidate at once, so that what comes back can be
+compared line for line.
 
 covers:
 - Brief the Selection
 - Issue the Request
+- Answer the Candidates' Questions
+
+## lay-the-finalists-side-by-side
+
+Sets each finalist's scores, its checks and its whole cost over the term
+side by side for the people who choose, with any interest a decider has
+declared, so the choice is made from one sheet.
+
+covers:
+- Set Out the Choice
+
+## tell-every-candidate-the-outcome
+
+Tells each candidate that was not chosen the outcome in writing once the
+agreement is signed, with its own scores where the purchasing policy
+allows.
+
+covers:
+- Tell the Other Candidates
 
 ## candidate-evidence
 
@@ -148,3 +170,4 @@ like it.
 
 covers:
 - Record What Was Learned
+- Record What the Choice Taught

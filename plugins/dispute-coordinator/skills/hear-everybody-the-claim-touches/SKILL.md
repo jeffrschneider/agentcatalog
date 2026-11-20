@@ -1,6 +1,6 @@
 ---
 name: hear-everybody-the-claim-touches
-description: Hears the claimant say what they believe happened in their own words, and hears the other seller and its manager whenever credit would move away from somebody. Use it when running `ref/rev/settle-a-commission-dispute`.
+description: Hears the claimant say what they believe happened in their own words, and hears the other seller and its manager whenever credit would move away from somebody, or for an invoice the account owner on what was promised and the delivery lead on what was delivered. Use it when running `ref/fin/resolve-a-billing-dispute` and `ref/rev/settle-a-commission-dispute`.
 license: CC-BY-4.0
 metadata:
   agent: dispute-coordinator
@@ -13,16 +13,24 @@ metadata:
 
 Hears the claimant say what they believe happened in their own words,
 and hears the other seller and its manager whenever credit would move
-away from somebody. Nobody's statement is shown to anybody else.
+away from somebody, or for an invoice the account owner on what was
+promised and the delivery lead on what was delivered. Nobody's statement
+is shown to anybody else.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in four activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Hear the Account Owner and Delivery**
+  - `ref/fin/resolve-a-billing-dispute`, activity 9 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
 - **Hear the Claimant**
   - `ref/rev/settle-a-commission-dispute`, activity 8 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
+- **Hear the Customer**
+  - `ref/fin/resolve-a-billing-dispute`, activity 8 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
 - **Hear the Other Seller**
   - `ref/rev/settle-a-commission-dispute`, activity 9 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)

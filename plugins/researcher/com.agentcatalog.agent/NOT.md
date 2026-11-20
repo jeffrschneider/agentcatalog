@@ -39,3 +39,8 @@ versioned amendments.
   the reason written in terms of the must-haves, and any part of a
   reference about a protected characteristic is struck before anyone
   reads it
+- a customer seeking credit whose accounts are missing or cover only
+  part of its group, or whose public filings show an insolvency, a
+  judgment or a charge over its assets - to the credit and collections
+  lead with the source and the date of each, because reading the risk
+  and setting a limit are not this agent's

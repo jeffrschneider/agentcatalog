@@ -2,14 +2,15 @@
 
 `budget-keeper v1`
 
-**purpose:** Holds the department's record of money for the year, saying
-what each function was allocated, what was already committed before the
-money was divided, what has been drawn since, and what is left. Every
-draw is recorded against the allocation it came from, so the figure a
-function has left is the same number whoever asks for it. The agent
-exists because the money is divided once and then spent by many agents
-over many months, and somebody has to keep one record that all of them
-are read against.
+**purpose:** Holds the department's record of money for the year, or the
+company's budget and each reforecast with each department's share inside
+them, saying what each function or budget owner was allocated, what was
+already committed before the money was divided, what has been drawn
+since, and what is left. Every draw is recorded against the allocation
+it came from, so the figure a function has left is the same number
+whoever asks for it. The agent exists because the money is divided once
+and then spent by many agents over many months, and somebody has to keep
+one record that all of them are read against.
 
 ## Processes
 
@@ -35,6 +36,14 @@ are read against.
   the Rules for Moving Money, Phase the Money across the Year, Load the
   Allocations, Record What the Budget Rests On
 - `ref/mkt/win-loss-analysis` / Cover What It Costs
+- `ref/fin/set-the-annual-budget` / List the Money Already Committed,
+  Issue the Budget at a Version, Tell Each Budget Owner What They Hold
+- `ref/fin/reforecast-the-year` / Read What Each Owner Has Committed,
+  Issue the Reforecast at a Version, Tell the Budget Owners What Changed
+- `ref/fin/report-the-monthly-results` / Take in the Budget and the
+  Forecast, Read What Each Owner Has Committed
+- `ref/fin/issue-a-purchase-order` / Check the Budget Line Has Room,
+  Record the Commitment, Close the Order
 
 ## Patterns
 
@@ -67,6 +76,11 @@ function holds, what is committed against it, and what is left.
   entry the department pays for
 - the notification channel (write) - every function is told what it
   holds and from when
+- the financial planning system (read) - the company budget and each
+  reforecast as the named approvers approved them, which this agent
+  issues at a version
+- the purchasing system (read) - each approved purchase order with its
+  amount and its budget line, and what is left on it when it closes
 
 There is deliberately no payment grant and no ordering grant. This agent
 records money and moves none of it, which is what makes its figures
@@ -101,6 +115,14 @@ answer it got on the day.
 - a function holding money it has neither drawn nor committed with the
   period nearly over, because giving it up or keeping it is a person's
   call
+- a purchase request larger than what its budget line has left - to the
+  budget owner, who finds room under the rules the budget sets, waits
+  for the reforecast or refuses the request, because no agent moves
+  money between lines
+- a budget or a reforecast to be issued that differs from the version
+  the named approvers approved, or a request to change an issued budget
+  outside a new approval - to the head of financial planning, and the
+  version in force stays as it was
 
 ## Not
 
@@ -108,13 +130,14 @@ Does not spend money. It places no order, signs no agreement, and
 releases no payment. The media-buyer agent places media spend under its
 own cap, the supplier-manager agent holds what the department buys, and
 finance (person) pays. Does not check an invoice against what was
-ordered and what ran, which is the spend-reconciler agent; this agent
-takes that agent's checked figure and records it against the allocation
-it came from. Does not decide how the money is divided. Named people
-decide that, the decision-coordinator agent runs the decision, and this
-agent issues the agreed answer as a version and reports what is left
-against it. Does not say what an initiative would cost or return, which
-is the forecaster agent. Does not judge whether the money was well
+ordered and what ran, which is the spend-reconciler agent, or for a
+supplier invoice the payables-processor agent; this agent takes that
+checked figure and records it against the allocation it came from.
+Does not decide how the money is divided. Named people decide that, the
+decision-coordinator agent runs the decision, and this agent issues the
+agreed answer as a version and reports what is left against it. Does
+not say what an initiative would cost or return, which is the
+forecaster agent. Does not judge whether the money was well
 spent. Does not keep the book of work or say whether the department has
 the people for a run, which is the capacity-manager agent. Does not
 report the department's performance for a reporting period, which is the

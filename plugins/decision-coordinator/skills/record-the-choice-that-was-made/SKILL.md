@@ -1,6 +1,6 @@
 ---
 name: record-the-choice-that-was-made
-description: Takes the answer the named deciders picked and writes it down with the reasons they gave and the names of anyone who disagreed. Use it when running `ref/hr/change-the-organization-structure` and 27 other reference processes.
+description: Takes the answer the named deciders picked and writes it down with the reasons they gave and the names of anyone who disagreed. Use it when running `ref/fin/choose-a-supplier` and 30 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,7 +18,7 @@ later.
 
 ## Where it happens
 
-The agent does this in 33 activities across 28 reference processes. Each
+The agent does this in 37 activities across 31 reference processes. Each
 one names the activity as that process words it.
 
 - **Agree Who the Company Is For**
@@ -27,6 +27,12 @@ one names the activity as that process words it.
 - **Agree the Calendar**
   - `ref/mkt/content-calendar`, activity 11 -
     [Plan Content Calendar](../../../../processes/marketing/content-calendar.md)
+- **Approve the Budget**
+  - `ref/fin/set-the-annual-budget`, activity 15 -
+    [Set the Annual Budget](../../../../processes/finance/set-the-annual-budget.md)
+- **Approve the Reforecast**
+  - `ref/fin/reforecast-the-year`, activity 13 -
+    [Reforecast the Year](../../../../processes/finance/reforecast-the-year.md)
 - **Approve the Review**
   - `ref/hr/run-the-pay-review`, activity 14 -
     [Run the Pay Review](../../../../processes/human-resources/run-the-pay-review.md)
@@ -67,6 +73,9 @@ one names the activity as that process words it.
 - **Choose the Structure**
   - `ref/hr/change-the-organization-structure`, activity 9 -
     [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
+- **Choose the Supplier**
+  - `ref/fin/choose-a-supplier`, activity 12 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 - **Choose the Tool**
   - `ref/mkt/select-marketing-technology`, activity 17 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
@@ -124,6 +133,9 @@ one names the activity as that process words it.
 - **Settle the Tiers and the Terms**
   - `ref/mkt/channel-program`, activity 2 -
     [Launch Channel Program](../../../../processes/marketing/channel-program.md)
+- **Settle the Trade-Offs**
+  - `ref/fin/set-the-annual-budget`, activity 14 -
+    [Set the Annual Budget](../../../../processes/finance/set-the-annual-budget.md)
 
 ## What to record
 

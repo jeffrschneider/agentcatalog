@@ -15,12 +15,15 @@ covers:
 
 Scores how sure the match is, keeping the model version and the inputs
 beside the score, and sends anything under the bar to a person rather
-than merging it. Deciding that two records are one thing is never this
-agent's call.
+than merging it. It searches the records already on file the same way
+before a new one is made, such as a new supplier, and names each
+possible match with the fields it matched on. Deciding that two records
+are one thing is never this agent's call.
 
 covers:
 - Score the Match
 - Route the Unsure Ones to a Person
+- Look for the Supplier on File
 
 ## merge-two-records-into-one
 

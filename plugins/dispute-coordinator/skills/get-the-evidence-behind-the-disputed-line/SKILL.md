@@ -1,6 +1,6 @@
 ---
 name: get-the-evidence-behind-the-disputed-line
-description: Freezes the statement version so the argument is about one document, has the records the number rests on pulled, and reads out the plan sentence that governs the line at the version the claimant signed rather than the current one. Use it when running `ref/rev/settle-a-commission-dispute`.
+description: Freezes the statement or the invoice at its version so the argument is about one document, has the records the number rests on pulled, such as the booking, the usage readings and the agreement behind an invoice, and reads out the plan sentence or the clause that governs the line at the version the claimant signed rather than the current one. Use it when running `ref/fin/resolve-a-billing-dispute` and `ref/rev/settle-a-commission-dispute`.
 license: CC-BY-4.0
 metadata:
   agent: dispute-coordinator
@@ -11,22 +11,29 @@ metadata:
 
 ## What it does
 
-Freezes the statement version so the argument is about one document, has
-the records the number rests on pulled, and reads out the plan sentence
-that governs the line at the version the claimant signed rather than the
-current one.
+Freezes the statement or the invoice at its version so the argument is
+about one document, has the records the number rests on pulled, such as
+the booking, the usage readings and the agreement behind an invoice, and
+reads out the plan sentence or the clause that governs the line at the
+version the claimant signed rather than the current one.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in five activities across two reference processes.
 Each one names the activity as that process words it.
 
+- **Freeze the Invoice Version**
+  - `ref/fin/resolve-a-billing-dispute`, activity 4 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
 - **Freeze the Statement Version**
   - `ref/rev/settle-a-commission-dispute`, activity 4 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
 - **Pull the Evidence Behind the Line**
   - `ref/rev/settle-a-commission-dispute`, activity 5 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
+- **Pull the Records Behind the Invoice**
+  - `ref/fin/resolve-a-billing-dispute`, activity 6 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
 - **Read the Plan Sentence That Governs It**
   - `ref/rev/settle-a-commission-dispute`, activity 7 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)

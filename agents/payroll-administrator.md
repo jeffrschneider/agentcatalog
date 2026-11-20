@@ -48,6 +48,10 @@ a payslip, a return or a statement traces to an approved change.
   Set the Leave Pay in Payroll, Restore Normal Pay
 - `ref/hr/offboard-a-leaver` / Work Out the Final Pay, Check the
   Final Pay
+- `ref/fin/fund-the-payroll` / Take In the Approved Register, Confirm
+  the Total and the Payday, Explain What Is Left in the Account
+- `ref/fin/reconcile-a-balance-sheet-account` / Supply the Payroll
+  Records
 
 ## Patterns
 
@@ -98,6 +102,11 @@ returns.
 - the notification channel (write) - a change held past the cutoff
   reaches the person who sent it, and a due date at risk reaches the
   payroll manager
+- the close records (write) - the registers approved in the period and
+  the payments and withholding that left, attached to the monthly
+  reconciliation of each payroll account, which only the named payroll
+  and finance people can open, with no right to change or sign off a
+  reconciliation
 
 ## Records
 
@@ -156,13 +165,23 @@ money.
 - a year-end statement found wrong after the return was filed - to the
   payroll manager, a correction is filed by the filing-coordinator
   agent, and a new statement is issued with the person told what changed
+- a register total or payday that does not match what the funding of
+  the payroll account was worked out from - to the payroll manager, who
+  names the cause before the register is taken in again, because nothing
+  is funded from a figure that does not trace to the approved register
+- money left in the payroll account after payday that the payroll
+  records do not explain, or a payroll account that does not agree with
+  the registers at the monthly reconciliation - to the payroll manager,
+  who traces it in payroll, and finance corrects only the ledger
 
 ## Not
 
 Does not approve a register, release a payment or sign a return, which
 are the payroll approver, the second signer and the filing signer
-(people). Does not check the register for finance or reconcile the
-payroll accounts each month, which is the finance controller (person).
+(people). Does not check the register for finance, which is the finance
+controller (person), or reconcile the payroll accounts each month, which
+the account-reconciler agent prepares from the records this agent
+supplies for the finance controller to review.
 Does not check the payment file against the verified bank record or
 confirm that each payment landed, which is the wire-check agent. Does
 not change an employee's record or bank account, which is the

@@ -1,6 +1,6 @@
 ---
 name: requirement-definition
-description: Writes down what is needed before any candidate has been looked at, starting from the gap the department cannot cover today and ending with requirements that are ranked and testable or a scope of work with its deliverables and dates. Use it when running `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
+description: Writes down what is needed before any candidate has been looked at, starting from the gap the department cannot cover today and ending with requirements that are ranked and testable or a scope of work with its deliverables and dates. Use it when running `ref/fin/choose-a-supplier`, `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
 license: CC-BY-4.0
 metadata:
   agent: supplier-manager
@@ -18,12 +18,15 @@ deliverables and dates.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Take in the Gap**
   - `ref/mkt/select-marketing-technology`, activity 1 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
+- **Write Down the Requirements**
+  - `ref/fin/choose-a-supplier`, activity 4 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 - **Write down the Requirements**
   - `ref/mkt/select-marketing-technology`, activity 3 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)

@@ -15,6 +15,7 @@
     "reference",
     "revenue-operations",
     "dedupe-and-merge",
+    "set-up-a-supplier",
     "define-a-record",
     "abstract"
   ],
@@ -67,6 +68,12 @@
           "role": "data-warehouse",
           "access": "read",
           "needs": "The counts read before and after."
+        },
+        {
+          "name": "the ERP",
+          "role": "erp",
+          "access": "read",
+          "needs": "Every supplier record's legal name, trading name, tax number, address and bank account, searched before a second record is made, with no right to change or merge a supplier record."
         }
       ],
       "records": [
@@ -84,7 +91,8 @@
         "an owner who objects after being told, and the merge holds while what that owner knows and the rule did not is written down",
         "a set waiting in the review queue longer than the limit, rather than being merged automatically because nobody cleared it",
         "a merge that lost a value, to the data-steward agent for reversal, before anything of that shape merges again",
-        "two consent records that disagree, because the stricter position wins and the survivor can lose a channel it used to have"
+        "two consent records that disagree, because the stricter position wins and the survivor can lose a channel it used to have",
+        "a new supplier that may already be on file under another name, tax number, address or bank account, with a score under the bar - to a person, who says whether it is the same supplier before the setup goes on, and the requester is then told which record to use"
       ],
       "not": [
         "Does not decide that two records are one thing when the score is under the bar.",
@@ -116,6 +124,12 @@
           "process": "ref/rev/define-a-record",
           "activities": [
             "Set the Uniqueness Key"
+          ]
+        },
+        {
+          "process": "ref/fin/set-up-a-supplier",
+          "activities": [
+            "Look for the Supplier on File"
           ]
         }
       ]

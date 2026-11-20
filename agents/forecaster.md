@@ -56,6 +56,8 @@ filled in with a figure that merely looks reasonable.
 - `ref/mkt/size-market-opportunity` / Choose the Sizing Method, Count
   the Buyers, Set the Rate Assumptions, Compute the Size Each Way,
   Reconcile the Methods, Test the Assumptions, Write down the Sizing
+- `ref/fin/approve-an-investment-case` / Model the Cost and the Return,
+  Test How Far the Answer Moves
 
 ## Patterns
 
@@ -82,6 +84,11 @@ waiting on.
   organization actually holds
 - the model store (write) - each model lands at a version with the data
   it was fit on and the assumptions it rests on
+- the financial planning system (read) - the costs gathered for an
+  investment case, the budget and the latest forecast, which the case's
+  cost and return are modelled from
+- the general ledger (read) - what like spend has actually cost, as a
+  source for the rates in an investment case
 
 ## Records
 
@@ -109,6 +116,12 @@ could not source, marked unsourced, carried into the report.
   gaps
 - a request to present a prediction without its assumptions, its data
   window, or its unsourced rates
+- an investment case whose return turns on a single assumption - to the
+  sponsor, who says why the assumption holds, and to the approvers, who
+  decide knowing that the case rests on it
+- an assumption in an investment case that nobody can source - to the
+  sponsor for evidence, and it goes to the approvers marked as
+  unsourced if none comes
 
 ## Not
 

@@ -38,7 +38,8 @@ manifest and in the directory of the same name.
 `ref/hr/plan-the-workforce`, `ref/hr/open-a-position`,
 `ref/hr/change-the-organization-structure`,
 `ref/hr/report-on-the-workforce`,
-`ref/hr/plan-succession-for-key-roles`, `ref/hr/run-a-layoff`. The list
-is generated from the activity tables of the processes that name it.
+`ref/hr/plan-succession-for-key-roles`, `ref/hr/run-a-layoff`, and 1
+more. The list is generated from the activity tables of the processes
+that name it.
 
 https://agentcatalog.com/abstract-agents/workforce-planner

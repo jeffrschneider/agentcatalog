@@ -1,6 +1,6 @@
 ---
 name: bring-the-tool-to-its-standing-review
-description: Brings the use, the cost, the findings and the supplier changes to the review that asks whether the tool still earns its place, and records the decision with its date, its evidence and the date the next review falls. Use it when running `ref/hr/review-access-to-employee-data` and `ref/rev/administer-a-tool`.
+description: Brings the use, the cost, the findings and the supplier changes to the review that asks whether the tool still earns its place, and records the decision with its date, its evidence and the date the next review falls. Use it when running `ref/fin/review-access-to-finance-systems`, `ref/hr/review-access-to-employee-data` and `ref/rev/administer-a-tool`.
 license: CC-BY-4.0
 metadata:
   agent: tool-administrator
@@ -17,10 +17,12 @@ decision with its date, its evidence and the date the next review falls.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
+The agent does this in two activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Record the Review**
+  - `ref/fin/review-access-to-finance-systems`, activity 16 -
+    [Review Access to Finance Systems](../../../../processes/finance/review-access-to-finance-systems.md)
   - `ref/hr/review-access-to-employee-data`, activity 15 -
     [Review Access to Employee Data](../../../../processes/human-resources/review-access-to-employee-data.md)
   - `ref/rev/administer-a-tool`, activity 15 -

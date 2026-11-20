@@ -37,6 +37,8 @@ anything itself.
 - `ref/hr/make-an-offer` / Get the Offer Signed
 - `ref/hr/negotiate-a-separation-agreement` / Sign the Agreement, File
   the Executed Agreement
+- `ref/fin/choose-a-supplier` / Get the Agreement Signed
+- `ref/fin/change-a-bank-account-or-signer` / Get the Forms Signed
 
 ## Patterns
 
@@ -81,6 +83,12 @@ handover-coordinator agent.
   only, the executed agreement and its negotiation log filed at their
   executed versions where only the people on the agreement's access
   list can open them, with no right to open any other record held there
+- the delegation of authority (read) - who signs a supplier agreement
+  or a bank's forms for the company, up to what amount and in what
+  order, at the version in force
+- the bank account record (write) - each bank's executed account and
+  signer forms filed with the approval and the resolution they rest on,
+  with no right to change an account, a signer or a mandate
 
 ## Records
 
@@ -128,6 +136,14 @@ obliges.
   with the reasons passed to the negotiation-coordinator agent to log
   as asks, and the departure goes on with everything the leaver is owed
   anyway
+- a bank's account or signer form whose text differs from the approval
+  behind it, or a form the bank rejects - to the treasurer, and the form
+  is filled in and signed again, because nobody signs a blank form or
+  one that differs from what was approved
+- a supplier agreement whose text differs from the agreed version, or a
+  signer the delegation of authority does not name for its amount - to
+  the purchasing lead, and nothing goes out to sign until the text and
+  the signers match
 
 ## Not
 

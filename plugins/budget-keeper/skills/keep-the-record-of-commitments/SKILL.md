@@ -1,6 +1,6 @@
 ---
 name: keep-the-record-of-commitments
-description: The agent records every contract, licence and renewal with its owner, cost, term and renewal date, and totals up what is already committed against a period before any new money is divided. Use it when running `ref/mkt/prioritize-initiatives`, `ref/mkt/select-marketing-technology` and `ref/mkt/set-marketing-budget`.
+description: The agent records every contract, licence and renewal with its owner, cost, term and renewal date, and totals up what is already committed against a period before any new money is divided. Use it when running `ref/fin/set-the-annual-budget` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: budget-keeper
@@ -17,10 +17,12 @@ against a period before any new money is divided.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in three activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **List the Money Already Committed**
+  - `ref/fin/set-the-annual-budget`, activity 5 -
+    [Set the Annual Budget](../../../../processes/finance/set-the-annual-budget.md)
   - `ref/mkt/set-marketing-budget`, activity 3 -
     [Set Marketing Budget](../../../../processes/marketing/set-marketing-budget.md)
 - **Read What Is Already Committed**

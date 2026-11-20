@@ -20,6 +20,8 @@ company promising what it cannot deliver.
   Pass the Billing Terms to Finance, Close the Opportunity
 - `ref/sls/hand-over-to-delivery` / Take in the Booked Order, Check the
   Package Is Complete
+- `ref/fin/issue-a-customer-invoice` / Supply the Booking at Its Version
+- `ref/fin/recognize-revenue` / Take In the New and Changed Bookings
 
 ## Patterns
 
@@ -82,6 +84,14 @@ than what is present.
 - a handover package missing what its checklist requires, to the
   handover coordinator, carried forward as a named gap with a date
   rather than waived quietly
+- a booking found wrong or incomplete when it is read for an invoice or
+  for revenue, such as a line that does not trace or a tax number the
+  invoice rules require, back through approval at
+  `ref/sls/book-the-order`, and the billing lead is told that the
+  invoice waits for the corrected version
+- a promise in the signed agreement that the booking does not carry,
+  found when revenue is worked out, to the controller and the deal desk,
+  and it goes back to `ref/sls/book-the-order` to be booked or corrected
 
 ## Not
 

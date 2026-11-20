@@ -28,3 +28,9 @@ the organization to a number.
   gaps
 - a request to present a prediction without its assumptions, its data
   window, or its unsourced rates
+- an investment case whose return turns on a single assumption - to the
+  sponsor, who says why the assumption holds, and to the approvers, who
+  decide knowing that the case rests on it
+- an assumption in an investment case that nobody can source - to the
+  sponsor for evidence, and it goes to the approvers marked as unsourced
+  if none comes

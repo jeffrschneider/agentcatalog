@@ -31,6 +31,8 @@ meeting with no write-up does not count as held.
   Hold the Panel's Dates
 - `ref/hr/run-the-interviews` / Ask for the Candidate's Times, Book Each
   Interview, Brief the Panel, Brief the Candidate, Book the Debrief
+- `ref/fin/run-the-external-audit` / Book the Walkthroughs and
+  Interviews
 
 ## Patterns
 
@@ -61,6 +63,9 @@ prospect researcher.
   version, which the brief for a meeting with an investor points to
 - the portfolio reporting system (read) - a portfolio company's request
   for help filling a role arrives there
+- the audit portal (read) - the walkthroughs and interviews the
+  external auditor asks for, with the control each one covers and the
+  dates the agreed timetable sets
 
 ## Records
 
@@ -93,6 +98,12 @@ and the point at which it was let go.
   recruiter, who decides how to meet it, with only the information the
   adjustment needs held restricted and nothing about it in the panel's
   packs
+- a walkthrough or an interview the auditor asks for that cannot be held
+  by the date the audit timetable sets - to the controller, who agrees a
+  new date with the auditor in writing before the date passes
+- a session the auditor asks for that reaches beyond the agreed scope -
+  to the controller, who raises it with the auditor in writing before
+  it is booked
 
 ## Not
 

@@ -35,7 +35,8 @@ manifest and in the directory of the same name.
 
 ## Where this abstract agent is used
 
-`ref/rev/dedupe-and-merge`, `ref/rev/define-a-record`. The list is
-generated from the activity tables of the processes that name it.
+`ref/rev/dedupe-and-merge`, `ref/rev/define-a-record`,
+`ref/fin/set-up-a-supplier`. The list is generated from the activity
+tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/deduper

@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "policy-keeper",
   "version": "1.0.0",
-  "description": "The policy-keeper abstract agent. Holds every HR policy and the handbook at versions, with the variant that applies in each location, for the head of HR, each policy owner, counsel and every process that cites a policy, and makes no policy itself.",
+  "description": "The policy-keeper abstract agent. Holds every HR policy and the handbook, and every finance policy and the published delegation of authority, at versions, with the variant that applies in each location or entity, for the head of HR, the controller, each policy owner, counsel and every process that cites a policy, and makes no policy itself.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -14,9 +14,9 @@
     "abstract-agent",
     "reference",
     "human-resources",
+    "publish-a-finance-policy",
     "publish-an-hr-policy",
-    "run-new-hire-orientation",
-    "answer-an-employees-question",
+    "publish-the-delegation-of-authority",
     "abstract"
   ],
   "extensions": {
@@ -56,6 +56,24 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "Each person covered hears what changed and the date to acknowledge it by, and a manager hears of an acknowledgment still open after the days the company sets."
+        },
+        {
+          "name": "the delegation register",
+          "role": "delegation-register",
+          "access": "read",
+          "needs": "The delegation of authority at the version in force, filed beside the finance policies, and each approver and stand-in with what they may approve, up to what amount and from what date."
+        },
+        {
+          "name": "the expense tool",
+          "role": "expense-tool",
+          "access": "read",
+          "needs": "The exceptions granted under the expense, travel and company card policies since the version in force was published."
+        },
+        {
+          "name": "the ERP",
+          "role": "erp",
+          "access": "read",
+          "needs": "The exceptions granted under the purchasing and credit policies, and the checks, forms and system rules that rest on a finance policy's old version."
         }
       ],
       "records": [
@@ -73,10 +91,15 @@
         "an error in a published policy - to the policy owner, and a corrected version is reviewed, signed and published as a new version",
         "a person who has not acknowledged after the reminders - to their manager, and whether the policy applies to them all the same follows `<your jurisdiction's rules>`",
         "a new hire who questions a policy or will not acknowledge it - to the HR business partner and then the HR operations lead, and this agent never treats it as a conduct matter",
-        "a policy a case showed to be unclear, or outcomes for like conduct drifting apart - to the employee relations lead, who decides any change before it is drafted"
+        "a policy a case showed to be unclear, or outcomes for like conduct drifting apart - to the employee relations lead, who decides any change before it is drafted",
+        "a request to change a finance policy with no approved decision, no rule change an adviser confirmed, no failed control and no audit finding behind it - to the controller, who decides whether it becomes a request, and nothing is drafted until it does",
+        "a finance policy text that sets an amount or an approver the delegation of authority does not give - to the policy owner, and the text is drafted again to read the delegation, because a new limit waits for `ref/fin/publish-the-delegation-of-authority`",
+        "exceptions that keep breaking the same rule of a finance policy - to the policy owner, who decides whether the rule is wrong or the people applying it need help, and an exception is never treated as a change",
+        "an approver who has not acknowledged the delegation of authority after the reminders - to the chief financial officer, who decides whether that approver's authority waits until the acknowledgment is in"
       ],
       "not": [
-        "Does not decide or approve a policy, which is the policy owner and the named approvers (people), and does not review a variant against a local rule or fill its blanks, which is counsel (person).",
+        "Does not decide or approve a policy, which is the policy owner and the named approvers (people), and does not review a variant against a local rule or fill its blanks, which is counsel, or for a finance policy counsel and the tax adviser (people).",
+        "Does not draft the delegation of authority or check the limits a finance policy names against it, which is the delegation-keeper agent.",
         "Does not consult the employee representatives, which is the policy owner (person).",
         "Does not check or change the orientation material, which is the curriculum-manager agent, teach a policy or give guidance on one, which is the HR business partner (person), or assign the training a change calls for, which is the training-coordinator agent.",
         "Does not answer an employee's question, which is the employee-question-responder agent, or write or approve a new answer, which is the subject owner and the policy owner (people).",
@@ -130,6 +153,32 @@
             "Mark What Rests on the Old Version",
             "Keep the Old Version With Its Dates",
             "Record the Publication"
+          ]
+        },
+        {
+          "process": "ref/fin/publish-a-finance-policy",
+          "activities": [
+            "Take in the Policy Request",
+            "Read the Current Version",
+            "Read the Exceptions Granted Under It",
+            "Draft the Change",
+            "Write the Entity Variants",
+            "Publish the Policy at a Version",
+            "Send It to the People It Covers",
+            "Collect the Acknowledgments",
+            "Mark What Rests on the Old Version",
+            "Keep the Old Version With Its Dates",
+            "Record the Publication"
+          ]
+        },
+        {
+          "process": "ref/fin/publish-the-delegation-of-authority",
+          "activities": [
+            "File It With the Finance Policies",
+            "Mark What Rests on the Old Version",
+            "Send Each Approver Their Authority",
+            "Collect the Acknowledgments",
+            "Keep the Old Version With Its Dates"
           ]
         }
       ]

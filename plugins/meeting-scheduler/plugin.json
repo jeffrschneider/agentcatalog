@@ -68,6 +68,12 @@
           "role": "portfolio-reporting-system",
           "access": "read",
           "needs": "A portfolio company's request for help filling a role arrives there."
+        },
+        {
+          "name": "the audit portal",
+          "role": "audit-portal",
+          "access": "read",
+          "needs": "The walkthroughs and interviews the external auditor asks for, with the control each one covers and the dates the agreed timetable sets."
         }
       ],
       "records": [
@@ -81,7 +87,9 @@
         "a second no-show - the person goes back to the list and the seller is told, instead of the chase continuing",
         "anyone present who does not agree to the meeting being recorded - no recording is made, and the meeting goes ahead without one",
         "a figure or a claim made to an investor in a meeting that the approved materials do not carry - written into the note as it was said and raised to the chief compliance officer, who decides whether a correction goes to the investor in writing",
-        "an adjustment a candidate asks for to the interviews - to the recruiter, who decides how to meet it, with only the information the adjustment needs held restricted and nothing about it in the panel's packs"
+        "an adjustment a candidate asks for to the interviews - to the recruiter, who decides how to meet it, with only the information the adjustment needs held restricted and nothing about it in the panel's packs",
+        "a walkthrough or an interview the auditor asks for that cannot be held by the date the audit timetable sets - to the controller, who agrees a new date with the auditor in writing before the date passes",
+        "a session the auditor asks for that reaches beyond the agreed scope - to the controller, who raises it with the auditor in writing before it is booked"
       ],
       "not": [
         "Does not hold the meeting and does not qualify the account.",
@@ -161,6 +169,12 @@
             "Brief the Panel",
             "Brief the Candidate",
             "Book the Debrief"
+          ]
+        },
+        {
+          "process": "ref/fin/run-the-external-audit",
+          "activities": [
+            "Book the Walkthroughs and Interviews"
           ]
         }
       ]

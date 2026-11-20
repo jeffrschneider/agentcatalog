@@ -58,6 +58,21 @@ covers:
 - Post the Payroll to the Ledger
 - Record What the Run Taught
 
+## give-finance-the-payroll-figures
+
+Gives finance the figures that fund the payroll account and reconcile
+it: each approved register's total, payday and pay group with the
+approval behind it, the net pay and withholding the account pays, the
+payments returned or not yet presented after payday, and each period's
+approved registers and payments for the monthly reconciliation. It
+changes nothing in finance's records and moves no money.
+
+covers:
+- Confirm the Total and the Payday
+- Explain What Is Left in the Account
+- Supply the Payroll Records
+- Take In the Approved Register
+
 ## close-the-payroll-year
 
 Takes in the last adjustments, sets up the new year's rates for the

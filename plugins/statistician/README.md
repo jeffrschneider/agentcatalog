@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/analyze-customer-base`, `ref/mkt/attribution-model`,
 `ref/mkt/brand-audit`, `ref/mkt/brand-health`, `ref/mkt/brand-refresh`,
-`ref/mkt/brief-executive-leadership`, and 15 more. The list is generated
+`ref/mkt/brief-executive-leadership`, and 16 more. The list is generated
 from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/statistician

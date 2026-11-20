@@ -86,6 +86,18 @@
           "role": "restricted-records-store",
           "access": "write",
           "needs": "For separation agreements only, the executed agreement and its negotiation log filed at their executed versions where only the people on the agreement's access list can open them, with no right to open any other record held there."
+        },
+        {
+          "name": "the delegation of authority",
+          "role": "delegation-of-authority",
+          "access": "read",
+          "needs": "Who signs a supplier agreement or a bank's forms for the company, up to what amount and in what order, at the version in force."
+        },
+        {
+          "name": "the bank account record",
+          "role": "bank-account-record",
+          "access": "write",
+          "needs": "Each bank's executed account and signer forms filed with the approval and the resolution they rest on, with no right to change an account, a signer or a mandate."
         }
       ],
       "records": [
@@ -107,7 +119,9 @@
         "a signer who refuses to sign, to the managing partner or the deal lead partner who owns the document, with the refusal and its reason recorded, because nobody signs around a refusing signer and the terms behind the refusal go back to the people who settled them",
         "a confidentiality agreement whose non-solicit would bind every portfolio company, or whose standstill the firm could not keep, to the legal reviewer and the deal lead partner before anyone signs it, because what the firm may promise is theirs to decide",
         "an offer the candidate has not signed by its date, to the recruiter, who asks the candidate once, and to the hiring manager, who decides whether to extend the date or move to a reserve",
-        "a leaver who will not sign a separation agreement, to the head of HR, with the reasons passed to the negotiation-coordinator agent to log as asks, and the departure goes on with everything the leaver is owed anyway"
+        "a leaver who will not sign a separation agreement, to the head of HR, with the reasons passed to the negotiation-coordinator agent to log as asks, and the departure goes on with everything the leaver is owed anyway",
+        "a bank's account or signer form whose text differs from the approval behind it, or a form the bank rejects - to the treasurer, and the form is filled in and signed again, because nobody signs a blank form or one that differs from what was approved",
+        "a supplier agreement whose text differs from the agreed version, or a signer the delegation of authority does not name for its amount - to the purchasing lead, and nothing goes out to sign until the text and the signers match"
       ],
       "not": [
         "Does not negotiate the words.",
@@ -205,6 +219,18 @@
           "activities": [
             "Sign the Agreement",
             "File the Executed Agreement"
+          ]
+        },
+        {
+          "process": "ref/fin/choose-a-supplier",
+          "activities": [
+            "Get the Agreement Signed"
+          ]
+        },
+        {
+          "process": "ref/fin/change-a-bank-account-or-signer",
+          "activities": [
+            "Get the Forms Signed"
           ]
         }
       ]

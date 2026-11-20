@@ -1,6 +1,6 @@
 ---
 name: hear-the-parties-and-write-it-down
-description: Takes down in writing what each party with a stake in the decision says, such as what the other investors and the lenders will and will not do, or each deal lead's account of a company, attributed to the person who said it, so the options are laid out against positions on the record. Use it when running `ref/hr/change-the-organization-structure`, `ref/pc/run-the-portfolio-review` and `ref/pc/work-a-company-in-trouble`.
+description: Takes down in writing what each party with a stake in the decision says, such as what the other investors and the lenders will and will not do, or each deal lead's account of a company, attributed to the person who said it, so the options are laid out against positions on the record. Use it when running `ref/fin/write-off-a-bad-debt` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,12 +18,15 @@ said it, so the options are laid out against positions on the record.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **Consult Where the Rules Require It**
   - `ref/hr/change-the-organization-structure`, activity 10 -
     [Change the Organization Structure](../../../../processes/human-resources/change-the-organization-structure.md)
+- **Hear the Account Owner**
+  - `ref/fin/write-off-a-bad-debt`, activity 7 -
+    [Write Off a Bad Debt](../../../../processes/finance/write-off-a-bad-debt.md)
 - **Hear the Deal Leads**
   - `ref/pc/run-the-portfolio-review`, activity 9 -
     [Run the Portfolio Review](../../../../processes/private-capital/run-the-portfolio-review.md)

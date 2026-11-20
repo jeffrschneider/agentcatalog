@@ -80,6 +80,12 @@
           "role": "court-and-regulator-records",
           "access": "read",
           "needs": "Suits, threats, regulator letters and settlements."
+        },
+        {
+          "name": "the ERP",
+          "role": "erp",
+          "access": "read",
+          "needs": "The legal name, registration, address and owners a new supplier gave, which the public record and the sanctions lists are checked against, with no right to change the supplier record."
         }
       ],
       "records": [
@@ -97,7 +103,9 @@
         "a request to change the requirements after candidates have been seen, because the earlier scores were made against the old list. A person decides, and the decision is recorded with the scores it affects.",
         "a candidate that would duplicate something the department already buys",
         "a screening hit on an investor, a company or a person, to the chief compliance officer. The run stops on that party until the officer has read the hit and written down what happens next, and nothing about the hit is said to the investor. This agent never clears a hit itself.",
-        "an event that would disqualify the offering, found against a provider or one of the firm's own people, to the chief compliance officer, and for the firm's own people to the managing partner and fund counsel too. No offering material leaves the firm until they have recorded what happens."
+        "an event that would disqualify the offering, found against a provider or one of the firm's own people, to the chief compliance officer, and for the firm's own people to the managing partner and fund counsel too. No offering material leaves the firm until they have recorded what happens.",
+        "a screening hit on a supplier or one of its owners, in a choice of supplier or a supplier's setup - to the compliance lead, and the supplier stays out of the choice or its setup stops until the compliance lead has decided in writing, with nothing about the hit said to the supplier",
+        "a supplier that is not on the public record as it was given - to the purchasing lead once the details have been asked for again, and no record opens until the supplier can show it exists"
       ],
       "not": [
         "Does not run the search, write to a supplier, or ask a candidate for anything.",
@@ -183,6 +191,20 @@
           "activities": [
             "Write the Renewal Criteria",
             "Score the Proposals"
+          ]
+        },
+        {
+          "process": "ref/fin/choose-a-supplier",
+          "activities": [
+            "Score the Answers",
+            "Check the Finalists"
+          ]
+        },
+        {
+          "process": "ref/fin/set-up-a-supplier",
+          "activities": [
+            "Check the Supplier Is Real",
+            "Screen the Supplier"
           ]
         }
       ]

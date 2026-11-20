@@ -25,6 +25,10 @@ covers:
 - Name the Decision and the Deadline
 - Take in the Matter
 - Take in the Proposal
+- Set What the Decision Must Settle
+- Frame the Decision
+- Open the Decision
+
 
 ## read-what-is-already-settled
 
@@ -123,6 +127,8 @@ covers:
 - Rank the Segments
 - Score the Candidates
 - Weigh the Requests against the Goals
+- Set Out the Choice
+
 
 ## check-the-evidence-holds-up
 
@@ -159,13 +165,18 @@ covers:
 - Collect the Members' Questions
 - Write the Consent Request
 - Send the Packs Ahead
+- Send the Case to the Approvers
+- Answer the Approvers' Questions
+
 
 ## check-who-may-vote
 
-Sets the committee's members against its charter before the pack goes out, naming the quorum, each declared conflict as the chief compliance officer rules on it, and who sits out, so that a vote taken is one the charter counts.
+Sets the committee's members against its charter before the pack goes out, naming the quorum, each declared conflict as the chief compliance officer rules on it, and who sits out, so that a vote taken is one the charter counts. Where a delegation of authority decides who approves, it names the approvers the version in force sets for the decision, so an approval by anyone else is caught before it counts.
 
 covers:
 - Check Who May Vote
+- Name the Approvers
+
 
 ## hear-the-parties-and-write-it-down
 
@@ -175,6 +186,8 @@ covers:
 - Hear the Other Investors and Lenders
 - Hear the Deal Leads
 - Consult Where the Rules Require It
+- Hear the Account Owner
+
 
 ## convene-the-room-where-it-is-decided
 
@@ -194,6 +207,10 @@ covers:
 - Hold the Succession Review
 - Put the Options to the Executive Team
 - Calibrate the Ratings
+- Put the Trade-Offs to the Executive Team
+- Put the Reforecast to the Approvers
+- Put the Draft Before the Approvers
+
 
 ## record-the-choice-that-was-made
 
@@ -233,6 +250,11 @@ covers:
 - Decide What Happens to Each Person
 - Decide the Plan
 - Approve the Review
+- Settle the Trade-Offs
+- Approve the Budget
+- Approve the Reforecast
+- Choose the Supplier
+
 
 ## settle-how-the-money-is-split
 
@@ -267,6 +289,8 @@ covers:
 - Record the Succession Plan
 - Record the Approved Changes
 - Record the Final Ratings
+- Record the Decision and the Review Date
+
 
 ## record-what-the-answer-rests-on
 
@@ -281,6 +305,8 @@ covers:
 - Set the Review Conditions
 - Set the Next Review
 - Set When the Plan Is Read Again
+- Set When the Case Is Read Again
+
 
 ## write-the-words-the-company-will-use
 
@@ -328,6 +354,10 @@ covers:
 - Hand On Pay Changes and Ended Roles
 - Brief the Managers
 - Hand the Changes to the Record and Payroll
+- Hand the Approved Case On
+- Hand On the Gap the Year Cannot Absorb
+- Announce the Decision
+
 
 ## write-the-readout
 
@@ -365,6 +395,8 @@ covers:
 - Record What Was Learned
 - Record What the Request Taught
 - Record What the Review Taught
+- Record What the Choice Taught
+
 
 ## name-who-may-see-the-work
 

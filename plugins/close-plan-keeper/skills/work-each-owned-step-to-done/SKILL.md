@@ -1,6 +1,6 @@
 ---
 name: work-each-owned-step-to-done
-description: Holds each step that somebody else owns as a dated step inside the checklist, and works it with its owner until it is done with its evidence. Use it when running `ref/pc/form-the-fund` and `ref/pc/run-the-closing`.
+description: Holds each step that somebody else owns as a dated step inside the checklist, and works it with its owner until it is done with its evidence. Use it when running `ref/fin/close-the-month`, `ref/pc/form-the-fund` and `ref/pc/run-the-closing`.
 license: CC-BY-4.0
 metadata:
   agent: close-plan-keeper
@@ -18,13 +18,18 @@ partnership agreement and subscription documents counsel drafts, the
 filings the compliance officer makes, and the books and portals the fund
 opens. In a closing they are the capital call the fund needs, the
 consents, filings and approvals the closing waits on, and what the
-agreements still owe once the deal has closed.
+agreements still owe once the deal has closed. In closing the books they
+are the payables, receivables, asset, lease, payroll and revenue
+sub-ledgers each owner closes.
 
 ## Where it happens
 
-The agent does this in eight activities across two reference processes.
+The agent does this in nine activities across three reference processes.
 Each one names the activity as that process words it.
 
+- **Close the Sub-Ledgers**
+  - `ref/fin/close-the-month`, activity 3 -
+    [Close the Month](../../../../processes/finance/close-the-month.md)
 - **Draft the Partnership Agreement**
   - `ref/pc/form-the-fund`, activity 9 -
     [Form the Fund](../../../../processes/private-capital/form-the-fund.md)

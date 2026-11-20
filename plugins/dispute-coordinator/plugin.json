@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "dispute-coordinator",
   "version": "1.0.0",
-  "description": "The dispute-coordinator abstract agent. Runs a claim that a statement is wrong to an answer with evidence, inside a time promised before anybody knows whether the claim is right.",
+  "description": "The dispute-coordinator abstract agent. Runs a claim that a statement or a customer invoice is wrong to an answer with evidence, inside a time promised before anybody knows whether the claim is right.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -13,15 +13,16 @@
   "keywords": [
     "abstract-agent",
     "reference",
-    "revenue-operations",
+    "finance",
     "settle-a-commission-dispute",
+    "resolve-a-billing-dispute",
     "abstract"
   ],
   "extensions": {
     "com.agentcatalog.agent": {
       "agent": "dispute-coordinator",
       "agentVersion": 1,
-      "department": "revenue-operations",
+      "department": "finance",
       "abstract": true,
       "works": "Convenes rather than computes. Runs collect-and-report to pull the records the disputed number was computed from, convenes the briefing in which the claimant says what they believe happened and the briefing in which the other seller and its manager answer, and convenes decide-and-announce where the answer is upheld, partly upheld or refused. Requests the approval that any decision moving money has to pass, and runs roll-call on the promised date from the acknowledgement until the claimant is told. Takes the frozen statement, the evidence and the independent recompute from the commission-calculator agent, reads the governing sentence with the plan-designer agent, works with the reporting-manager agent on the answer and the period's report, and hands the cause back so the same claim does not arrive next period.",
       "servers": [
@@ -60,6 +61,36 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "The acknowledgement, the answer, and any date that moves before it passes."
+        },
+        {
+          "name": "the billing system",
+          "role": "billing-system",
+          "access": "write",
+          "needs": "The invoice under dispute frozen at its version, with no right to change a line or to issue a credit note."
+        },
+        {
+          "name": "the order system",
+          "role": "order-system",
+          "access": "read",
+          "needs": "The booking at the version the invoice was built from."
+        },
+        {
+          "name": "the usage record",
+          "role": "usage-record",
+          "access": "read",
+          "needs": "The readings with their dates behind a line billed on use."
+        },
+        {
+          "name": "the contract repository",
+          "role": "contract-repository",
+          "access": "read",
+          "needs": "The agreement and the clause that governs the disputed line."
+        },
+        {
+          "name": "the CRM",
+          "role": "crm",
+          "access": "read",
+          "needs": "The account owner and the delivery lead to be heard on what was promised and delivered."
         }
       ],
       "records": [
@@ -77,13 +108,17 @@
         "a promised date that is going to be missed - to the claimant before the date passes, with a new date and the reason, because a missed date nobody mentioned is what turns a claim into a grievance",
         "a claim that would take credit off another seller - to that seller and its manager before anything is decided, and they are told the outcome whether or not the credit moved",
         "two computations that disagree from one record - to the debrief and to the plan-designer agent, because a calculator that can produce two answers from one record is the real finding",
-        "a plan sentence that turns out to be ambiguous - to the plan-designer agent for the next period, while this claim is settled on the reading that applies to the version the claimant signed"
+        "a plan sentence that turns out to be ambiguous - to the plan-designer agent for the next period, while this claim is settled on the reading that applies to the version the claimant signed",
+        "every answer to a customer's claim that an invoice is wrong - to the billing lead, who decides whether it is upheld, partly upheld or refused",
+        "a credit note or a replacement invoice the answer needs - to the approver the delegation of authority names for the amount before it is issued, and the customer hears nothing about a credit that has not been approved",
+        "a customer who does not accept the answer - to the controller, on the route the answer named and inside the window it gave, and a claim that threatens legal action goes to counsel the same day",
+        "an invoice and its recompute that disagree from the same records - to the billing lead with both set side by side, and to the owner of the billing system at the cause step"
       ],
       "not": [
         "Does not compute or recompute a number.",
-        "The independent recompute is the commission-calculator agent's, and this agent's work is to see that it was done from the same records and to show both answers to the claimant.",
+        "The independent recompute is the commission-calculator agent's, or for an invoice the billing-administrator agent's, and this agent's work is to see that it was done from the same records and to show both answers to the claimant.",
         "Does not decide the answer alone: it convenes the decision and records it with the sentence and the record behind it.",
-        "Does not sign a decision that moves money, and does not correct the statement or the next run itself.",
+        "Does not sign a decision that moves money, and does not correct the statement, the next run or an invoice itself.",
         "Does not change the plan or reinterpret a sentence mid-period, which is the plan-designer agent's next version.",
         "Does not show anybody's statement to anybody else, including inside a contested credit claim."
       ],
@@ -102,6 +137,21 @@
             "Decide the Answer",
             "Tell the Claimant",
             "Escalate What Is Not Accepted"
+          ]
+        },
+        {
+          "process": "ref/fin/resolve-a-billing-dispute",
+          "activities": [
+            "Take In the Claim",
+            "Acknowledge and Promise a Date",
+            "Classify the Claim",
+            "Freeze the Invoice Version",
+            "Pull the Records Behind the Invoice",
+            "Hear the Customer",
+            "Hear the Account Owner and Delivery",
+            "Tell the Customer",
+            "Escalate What Is Not Accepted",
+            "Feed the Cause Back"
           ]
         }
       ]

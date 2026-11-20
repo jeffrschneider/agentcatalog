@@ -1,6 +1,6 @@
 ---
 name: keep-policies-at-versions
-description: Takes in each request with the decision behind it, reads the current version and who each variant covers, publishes each variant at its version with its effective date, and keeps the old version with the dates it applied. Use it when running `ref/hr/publish-an-hr-policy`.
+description: Takes in each request with the decision behind it, reads the current version, who each variant covers and the exceptions granted under it, publishes each variant at its version with its effective date, files the published delegation of authority beside the finance policies, and keeps the old version with the dates it applied. Use it when running `ref/fin/publish-a-finance-policy`, `ref/fin/publish-the-delegation-of-authority` and `ref/hr/publish-an-hr-policy`.
 license: CC-BY-4.0
 metadata:
   agent: policy-keeper
@@ -12,32 +12,56 @@ metadata:
 ## What it does
 
 Takes in each request with the decision behind it, reads the current
-version and who each variant covers, publishes each variant at its
-version with its effective date, and keeps the old version with the
-dates it applied. It marks every answer, form and page that rests on the
-old version and records the publication.
+version, who each variant covers and the exceptions granted under it,
+publishes each variant at its version with its effective date, files the
+published delegation of authority beside the finance policies, and keeps
+the old version with the dates it applied. It marks every answer, form,
+page, check and system rule that rests on the old version and records
+the publication.
 
 ## Where it happens
 
-The agent does this in six activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in eight activities across three reference
+processes. Each one names the activity as that process words it.
 
+- **File It With the Finance Policies**
+  - `ref/fin/publish-the-delegation-of-authority`, activity 12 -
+    [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
 - **Keep the Old Version With Its Dates**
+  - `ref/fin/publish-a-finance-policy`, activity 16 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
+  - `ref/fin/publish-the-delegation-of-authority`, activity 17 -
+    [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
   - `ref/hr/publish-an-hr-policy`, activity 14 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 - **Mark What Rests on the Old Version**
+  - `ref/fin/publish-a-finance-policy`, activity 15 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
+  - `ref/fin/publish-the-delegation-of-authority`, activity 13 -
+    [Publish the Delegation of Authority](../../../../processes/finance/publish-the-delegation-of-authority.md)
   - `ref/hr/publish-an-hr-policy`, activity 13 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 - **Publish the Policy at a Version**
+  - `ref/fin/publish-a-finance-policy`, activity 12 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 9 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 - **Read the Current Version**
+  - `ref/fin/publish-a-finance-policy`, activity 2 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 2 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
+- **Read the Exceptions Granted Under It**
+  - `ref/fin/publish-a-finance-policy`, activity 3 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
 - **Record the Publication**
+  - `ref/fin/publish-a-finance-policy`, activity 17 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 15 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 - **Take in the Policy Request**
+  - `ref/fin/publish-a-finance-policy`, activity 1 -
+    [Publish a Finance Policy](../../../../processes/finance/publish-a-finance-policy.md)
   - `ref/hr/publish-an-hr-policy`, activity 1 -
     [Publish an HR Policy](../../../../processes/human-resources/publish-an-hr-policy.md)
 

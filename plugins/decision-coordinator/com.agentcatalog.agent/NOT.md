@@ -47,3 +47,15 @@ anything.
 - a panel member who manages a nominee, or who has declared a conflict,
   about to take part in that decision - to the panel chair, and no
   decision is recorded with that member's part in it
+- a money decision that would be approved by anyone the delegation of
+  authority in force does not name, or by the person who prepared or
+  asked for what is approved - to the chief financial officer (CFO), and
+  no approval is recorded until the approvers that version names decide
+- a gap the reforecast shows the year cannot absorb - to the executive
+  team, who decide whether to act on it, accept it or change the budget,
+  because a reforecast never quietly becomes a new budget
+- a supplier's terms that cannot be agreed, or a price past the approved
+  amount - to the budget owner before anyone agrees it, and the choice
+  is set out again with the finalist next in line
+- an investment case the approvers have deferred more than `<your number
+  of rounds>` times - to the CFO, who decides whether it is withdrawn

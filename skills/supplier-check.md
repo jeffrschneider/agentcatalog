@@ -43,6 +43,7 @@ covers:
 - Score the Shortlist
 - Score the Candidate Providers
 - Choose the Sell-Side Adviser
+- Score the Answers
 
 ## compare-the-scored-field
 
@@ -75,17 +76,23 @@ read.
 covers:
 - Check the Company Is Real
 - Read the Litigation and Claims
+- Check the Supplier Is Real
 
 ## screen-against-the-lists
 
 The agent screens investors and their owners, target companies and
-their leaders, and the firm's own people and providers against
-sanctions lists, the anti-money laundering rules, adverse records and
-the events that would disqualify an offering. Every hit goes to the
-chief compliance officer with what was found and where, and the agent
-records the decision it is given without clearing any hit itself.
+their leaders, suppliers and their owners, and the firm's own people
+and providers against sanctions lists, the anti-money laundering rules,
+adverse records and the events that would disqualify an offering, and
+reads each finalist supplier's registration and standing on the public
+record as it does. Every hit goes to the chief compliance officer, or
+to the compliance lead for a supplier, with what was found and where,
+and the agent records the decision it is given without clearing any hit
+itself.
 
 covers:
+- Check the Finalists
+- Screen the Supplier
 - Screen Each Investor and Its Owners
 - Screen the Company and Its Leaders
 - Check No One Disqualifies the Offering

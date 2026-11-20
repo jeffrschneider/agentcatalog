@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Fifteen systems, named by role rather than by product. The access level
+Eighteen systems, named by role rather than by product. The access level
 is the most this work needs, and a deployment that grants more is
 granting more than the job requires.
 
@@ -21,6 +21,9 @@ granting more than the job requires.
 | the access system | write | Each access, export and link nobody confirmed in an access review, and each one an owner marked to go, removed on the review's close date. |
 | the access review record | write | What each check found, what was removed and what was decided, with the signed review. |
 | the notification channel | write | Each access owner sent the accesses they answer for, with what each check found and the close date. |
+| each finance system | read | For an access review, the accounts in the general ledger, the ERP and the payment system, with each account's role, permissions, approval limits, who approved it and its last use, with no right to post, approve or pay anything. |
+| the bank portal | read | Only its users and their rights: who may create, approve or release a payment or add a beneficiary, the amount each may release, and the bank's record of who may sign on each account, with no right to make or release a payment. |
+| the delegation of authority | read | The releasers and signers the version in force names, which every right to approve or release a payment is matched against. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

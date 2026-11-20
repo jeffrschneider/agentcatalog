@@ -1,6 +1,6 @@
 ---
 name: data-sizing
-description: Says how much data the work needs before any of it is collected, working from the size of the difference that would matter, the variation the measure already carries and the confidence being run to. Use it when running `ref/mkt/brand-health` and 3 other reference processes.
+description: Says how much data the work needs before any of it is collected, working from the size of the difference that would matter, the variation the measure already carries and the confidence being run to. Use it when running `ref/fin/test-a-financial-control` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: statistician
@@ -13,11 +13,14 @@ metadata:
 
 Says how much data the work needs before any of it is collected, working
 from the size of the difference that would matter, the variation the
-measure already carries and the confidence being run to.
+measure already carries and the confidence being run to. For a control
+test it sets how many items are sampled, from how often the control runs
+and what rests on it, before any item is drawn, and sizes the new sample
+again when a fix is tested.
 
 ## Where it happens
 
-The agent does this in three activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Say How Many Interviews It Needs**
@@ -28,9 +31,15 @@ Each one names the activity as that process words it.
     [Measure Brand Health](../../../../processes/marketing/brand-health.md)
   - `ref/mkt/customer-research`, activity 5 -
     [Conduct Customer Research](../../../../processes/marketing/customer-research.md)
+- **Set the Sample Size**
+  - `ref/fin/test-a-financial-control`, activity 4 -
+    [Test a Financial Control](../../../../processes/finance/test-a-financial-control.md)
 - **Size the Test**
   - `ref/mkt/conversion-experiment`, activity 3 -
     [Run Conversion Experiment](../../../../processes/marketing/conversion-experiment.md)
+- **Test the Fix Again**
+  - `ref/fin/test-a-financial-control`, activity 15 -
+    [Test a Financial Control](../../../../processes/finance/test-a-financial-control.md)
 
 ## What to record
 

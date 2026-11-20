@@ -11,9 +11,9 @@ same list in the same order whenever it arrived. Each verdict carries
 the evidence behind it, and a requirement the agent could not test is
 reported as not tested, with the reason it could not be tested, because
 a requirement nobody tested has not passed. It also checks a company
-against the public record and screens investors, target companies and
-their owners and leaders against registries and sanctions lists,
-returning every hit to the person who decides on it.
+against the public record and screens investors, target companies,
+suppliers and their owners and leaders against registries and
+sanctions lists, returning every hit to the person who decides on it.
 
 ## Processes
 
@@ -35,6 +35,9 @@ returning every hit to the person who decides on it.
 - `ref/pc/run-a-sale-process` / Choose the Sell-Side Adviser
 - `ref/hr/run-benefits-open-enrollment` / Write the Renewal Criteria,
   Score the Proposals
+- `ref/fin/choose-a-supplier` / Score the Answers, Check the Finalists
+- `ref/fin/set-up-a-supplier` / Check the Supplier Is Real, Screen the
+  Supplier
 
 ## Patterns
 
@@ -73,6 +76,9 @@ requirements it has not been able to test, and what it is waiting on.
   standing and owners
 - court and regulator records (read) - suits, threats, regulator
   letters and settlements
+- the ERP (read) - the legal name, registration, address and owners a
+  new supplier gave, which the public record and the sanctions lists
+  are checked against, with no right to change the supplier record
 
 ## Records
 
@@ -111,6 +117,14 @@ candidate's material arrived and the date it was scored.
   for the firm's own people to the managing partner and fund counsel
   too. No offering material leaves the firm until they have recorded
   what happens.
+- a screening hit on a supplier or one of its owners, in a choice of
+  supplier or a supplier's setup - to the compliance lead, and the
+  supplier stays out of the choice or its setup stops until the
+  compliance lead has decided in writing, with nothing about the hit
+  said to the supplier
+- a supplier that is not on the public record as it was given - to the
+  purchasing lead once the details have been asked for again, and no
+  record opens until the supplier can show it exists
 
 ## Not
 

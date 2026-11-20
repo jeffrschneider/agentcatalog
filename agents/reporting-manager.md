@@ -46,6 +46,10 @@ answered.
 - `ref/hr/report-on-the-workforce` / Open the Period's Report, Write Why
   the Numbers Moved, Deliver the Report, Answer the Leaders' Questions,
   Record What the Period Taught
+- `ref/fin/report-the-monthly-results` / Open the Month's Report, Ask
+  Each Budget Owner the Same Questions, Write the Account of the Month,
+  Deliver the Report, Answer the Leaders' Questions, Record What the
+  Month Taught
 
 ## Patterns
 
@@ -71,6 +75,16 @@ meeting where the finished report is read when one is held.
 - the notification channel (write) - the investors hear before the date
   passes when a late report will arrive
 - the report store (write) - each period's report lands at a version
+- the general ledger (read) - the month's results as the close signed
+  them off, which every figure in the monthly results report ties to
+- the budget record (read) - the budget and the latest approved forecast
+  at their versions, and what each budget owner has committed, spent
+  and has left
+- the financial planning system (read) - each line compared with the
+  plan and each difference above the threshold, as the planning-analyst
+  agent marked it
+- the reporting tool (write) - the monthly results report at a version,
+  delivered to each leader on its date
 
 ## Records
 
@@ -102,6 +116,13 @@ corrects stays where it was.
   minimum size - the workforce report does not answer it. A question
   about one person goes to that person's HR business partner, and a
   group below the minimum size is never shown, whoever asks.
+- releasing the monthly results report - to the chief financial officer
+  (CFO), always, and no leader receives it before the CFO has read and
+  released it. A figure the CFO would rather not show stays in the
+  report, and a figure changes only when its source does.
+- a figure in the monthly results that does not tie to the ledger as the
+  close signed it off - to the controller, who decides whether the close
+  reopens, and the report never carries a figure that does not tie
 
 ## Not
 

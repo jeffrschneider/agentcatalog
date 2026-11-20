@@ -37,8 +37,8 @@ manifest and in the directory of the same name.
 
 `ref/hr/run-new-hire-orientation`, `ref/hr/resolve-an-employee-concern`,
 `ref/hr/issue-a-disciplinary-action`,
-`ref/hr/answer-an-employees-question`, `ref/hr/publish-an-hr-policy`.
-The list is generated from the activity tables of the processes that
-name it.
+`ref/hr/answer-an-employees-question`, `ref/hr/publish-an-hr-policy`,
+`ref/fin/publish-a-finance-policy`, and 1 more. The list is generated
+from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/policy-keeper

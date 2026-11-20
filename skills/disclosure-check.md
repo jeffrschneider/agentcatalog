@@ -23,9 +23,10 @@ covers:
 ## score-material-against-the-rules
 
 The agent reads a piece against the rules that apply to it and gives
-every item a verdict that cites the rule and the market it comes from.
-It scores a draft before it runs and it scores the sized or adapted
-versions again.
+every item a verdict that cites the rule and the market or the
+framework it comes from. It scores a draft before it runs or is signed
+off, such as the draft financial statements and their notes, and it
+scores the sized, adapted or revised versions again.
 
 covers:
 - Score against the Disclosure Rules
@@ -34,6 +35,7 @@ covers:
 - Check the Comparisons
 - Check Against the Advertising Rules
 - Check the Required Statements
+- Check the Disclosures
 
 ## clear-material-for-sign-off
 

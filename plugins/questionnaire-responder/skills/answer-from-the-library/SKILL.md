@@ -1,6 +1,6 @@
 ---
 name: answer-from-the-library
-description: Matches each question to an answer the library already holds at that answer's version, and reads every match back against the control, the policy or the report it came from. Use it when running `ref/hr/respond-to-an-employment-audit` and 3 other reference processes.
+description: Matches each question to an answer the library already holds at that answer's version, or drafts it from the records behind it, such as a reconciliation, a schedule, a signed approval or a workpaper, and reads every match back against the control, the policy, the report or the record it came from. Use it when running `ref/fin/respond-to-a-tax-audit` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: questionnaire-responder
@@ -12,13 +12,15 @@ metadata:
 ## What it does
 
 Matches each question to an answer the library already holds at that
-answer's version, and reads every match back against the control, the
-policy or the report it came from. A match whose source no longer says
-that is flagged rather than sent.
+answer's version, or drafts it from the records behind it, such as a
+reconciliation, a schedule, a signed approval or a workpaper, and reads
+every match back against the control, the policy, the report or the
+record it came from. A match whose source no longer says that is flagged
+rather than sent.
 
 ## Where it happens
 
-The agent does this in six activities across four reference processes.
+The agent does this in seven activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Answer the Requirements**
@@ -28,8 +30,13 @@ Each one names the activity as that process words it.
   - `ref/sls/answer-a-security-questionnaire`, activity 5 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)
 - **Draft the Answers**
+  - `ref/fin/respond-to-a-tax-audit`, activity 10 -
+    [Respond to a Tax Audit](../../../../processes/finance/respond-to-a-tax-audit.md)
   - `ref/hr/respond-to-an-employment-audit`, activity 10 -
     [Respond to an Employment Audit](../../../../processes/human-resources/respond-to-an-employment-audit.md)
+- **Draft the Answers From the Records**
+  - `ref/fin/run-the-external-audit`, activity 8 -
+    [Run the External Audit](../../../../processes/finance/run-the-external-audit.md)
 - **Match Against the Library**
   - `ref/sls/answer-a-security-questionnaire`, activity 4 -
     [Answer a Security Questionnaire](../../../../processes/sales/answer-a-security-questionnaire.md)

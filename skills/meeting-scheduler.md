@@ -34,6 +34,7 @@ covers:
 - Ask for the Candidate's Times
 - Book Each Interview
 - Book the Debrief
+- Book the Walkthroughs and Interviews
 
 ## make-sure-the-meeting-holds
 

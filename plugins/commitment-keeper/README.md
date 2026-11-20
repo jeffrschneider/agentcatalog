@@ -39,7 +39,7 @@ manifest and in the directory of the same name.
 `ref/pc/prepare-and-hold-a-board-meeting`,
 `ref/pc/write-the-value-creation-plan`,
 `ref/hr/run-a-new-hires-first-months`,
-`ref/hr/run-a-performance-improvement-plan`, and 1 more. The list is
+`ref/hr/run-a-performance-improvement-plan`, and 3 more. The list is
 generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/commitment-keeper

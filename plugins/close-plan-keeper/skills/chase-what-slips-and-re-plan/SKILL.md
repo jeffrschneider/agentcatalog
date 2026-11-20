@@ -1,6 +1,6 @@
 ---
 name: chase-what-slips-and-re-plan
-description: Chases a step past its date with its owner, re-dates it with the buyer or sends it up, and moves every step behind it when a date moves. Use it when running `ref/sls/run-the-close-plan`.
+description: Chases a step past its date with its owner, re-dates it with the buyer, or with the controller when the books are closing, or sends it up, and moves every step behind it when a date moves. Use it when running `ref/fin/close-the-month` and `ref/sls/run-the-close-plan`.
 license: CC-BY-4.0
 metadata:
   agent: close-plan-keeper
@@ -11,15 +11,19 @@ metadata:
 
 ## What it does
 
-Chases a step past its date with its owner, re-dates it with the buyer
-or sends it up, and moves every step behind it when a date moves.
-Reports where the deal stands against its own plan.
+Chases a step past its date with its owner, re-dates it with the buyer,
+or with the controller when the books are closing, or sends it up, and
+moves every step behind it when a date moves. Reports where the deal
+stands against its own plan.
 
 ## Where it happens
 
-The agent does this in three activities across one reference process.
+The agent does this in four activities across two reference processes.
 Each one names the activity as that process words it.
 
+- **Chase the Late Tasks**
+  - `ref/fin/close-the-month`, activity 7 -
+    [Close the Month](../../../../processes/finance/close-the-month.md)
 - **Chase the Slipping Steps**
   - `ref/sls/run-the-close-plan`, activity 10 -
     [Run the Close Plan](../../../../processes/sales/run-the-close-plan.md)

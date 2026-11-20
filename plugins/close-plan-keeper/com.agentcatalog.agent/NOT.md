@@ -32,3 +32,9 @@ does not mark a condition done without the evidence behind it.
   call or the credit line will not land in time, to the chief financial
   officer and the deal lead partner, who decide with the other side
   whether the date moves
+- a close task that cannot be done by its day once it has been chased -
+  to the controller, who re-dates it with the reason, and every task
+  behind it moves too, so the calendar never shows a day it cannot meet
+- a sub-ledger that does not agree to the general ledger at its cutoff -
+  to its owner, with the controller told, and the accruals and journals
+  that depend on it wait on the calendar

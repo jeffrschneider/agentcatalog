@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Nine systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Thirteen systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -15,6 +15,10 @@ more than the job requires.
 | the notification channel | write | The owner of an entry is told before its renewal date with the notice period named. |
 | the review schedule | write | The date each entry comes back up. |
 | the meeting calendar | write | Cap: which sessions it may set without asking, set by the adopting organization. |
+| the purchasing system | read | The purchase a choice of supplier is for, with its amount, its budget line and the date it is needed. |
+| the ERP | read | The suppliers already on file, read for candidates that could meet the requirements. |
+| the sourcing channel | write | The same requirements, questions and closing date sent to every candidate at once, each answer to a candidate's question shared with all of them, and each outcome letter. |
+| the scoring record | read | Each finalist's scores and checks, set out beside the whole cost over the term. |
 
 There is deliberately no payment grant and no grant to enter into an
 agreement. This agent says what an entry costs and when the money is

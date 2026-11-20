@@ -43,6 +43,7 @@ planned and paid for, and every figure in the plan traces to its source.
   Hiring Needs to the Workforce Plan
 - `ref/hr/run-a-layoff` / Write Down the Business Reason, Model the
   Options, List the Roles Affected, Look for Other Roles
+- `ref/fin/set-the-annual-budget` / Take in the Labor Cost
 
 ## Patterns
 
@@ -139,6 +140,11 @@ approving a plan or a position, or deciding about a person.
   `ref/hr/plan-the-workforce`
 - the options of a reorganization or a layoff seen by anyone outside the
   access list - to the head of HR the same day
+- a company budget that opens before the workforce plan is approved, or
+  a department's budget draft whose labor cost does not match the
+  approved plan - to the head of financial planning, and the drafts
+  wait for the approved plan, because a department head who wants more
+  people than the plan holds asks through `ref/hr/plan-the-workforce`
 
 ## Not
 

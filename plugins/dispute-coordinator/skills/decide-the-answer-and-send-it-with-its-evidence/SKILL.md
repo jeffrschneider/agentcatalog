@@ -1,6 +1,6 @@
 ---
 name: decide-the-answer-and-send-it-with-its-evidence
-description: Convenes the decision that upholds a claim, upholds part of it, or refuses it, with the sentence and the record behind it. Use it when running `ref/rev/settle-a-commission-dispute`.
+description: Convenes the decision that upholds a claim, upholds part of it, or refuses it, with the sentence and the record behind it. Use it when running `ref/fin/resolve-a-billing-dispute` and `ref/rev/settle-a-commission-dispute`.
 license: CC-BY-4.0
 metadata:
   agent: dispute-coordinator
@@ -18,8 +18,8 @@ same message.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Decide the Answer**
   - `ref/rev/settle-a-commission-dispute`, activity 10 -
@@ -27,6 +27,9 @@ one names the activity as that process words it.
 - **Tell the Claimant**
   - `ref/rev/settle-a-commission-dispute`, activity 12 -
     [Settle a Commission Dispute](../../../../processes/revenue-operations/settle-a-commission-dispute.md)
+- **Tell the Customer**
+  - `ref/fin/resolve-a-billing-dispute`, activity 14 -
+    [Resolve a Billing Dispute](../../../../processes/finance/resolve-a-billing-dispute.md)
 
 ## What to record
 

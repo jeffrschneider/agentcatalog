@@ -1,6 +1,6 @@
 ---
 name: keep-the-filing-calendar
-description: Opens each filing and the payroll year end from the calendar with the form, the deadline and the signer, asks counsel whether the form or the rule has changed, and records what each filing taught with the next date and its lead time. Use it when running `ref/hr/close-the-payroll-year` and `ref/hr/file-a-required-report`.
+description: Opens each filing, each tax return and the payroll year end from the calendar with the form, the deadline and the signer, asks counsel whether the form or the rule has changed, and records what each filing, return or notice taught with the next date and its lead time. Use it when running `ref/fin/file-an-indirect-tax-return` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: filing-coordinator
@@ -11,14 +11,14 @@ metadata:
 
 ## What it does
 
-Opens each filing and the payroll year end from the calendar with the
-form, the deadline and the signer, asks counsel whether the form or the
-rule has changed, and records what each filing taught with the next date
-and its lead time.
+Opens each filing, each tax return and the payroll year end from the
+calendar with the form, the deadline and the signer, asks counsel
+whether the form or the rule has changed, and records what each filing,
+return or notice taught with the next date and its lead time.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in seven activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm What the Filing Asks For**
@@ -27,12 +27,25 @@ Each one names the activity as that process words it.
 - **Open the Filing From the Calendar**
   - `ref/hr/file-a-required-report`, activity 1 -
     [File a Required Report](../../../../processes/human-resources/file-a-required-report.md)
+- **Open the Return From the Calendar**
+  - `ref/fin/file-an-indirect-tax-return`, activity 1 -
+    [File an Indirect Tax Return](../../../../processes/finance/file-an-indirect-tax-return.md)
+  - `ref/fin/file-the-income-tax-return`, activity 1 -
+    [File the Income Tax Return](../../../../processes/finance/file-the-income-tax-return.md)
 - **Open the Year-End Close**
   - `ref/hr/close-the-payroll-year`, activity 1 -
     [Close the Payroll Year](../../../../processes/human-resources/close-the-payroll-year.md)
 - **Record What the Filing Taught**
   - `ref/hr/file-a-required-report`, activity 16 -
     [File a Required Report](../../../../processes/human-resources/file-a-required-report.md)
+- **Record What the Notice Taught**
+  - `ref/fin/respond-to-a-tax-notice`, activity 16 -
+    [Respond to a Tax Notice](../../../../processes/finance/respond-to-a-tax-notice.md)
+- **Record What the Return Taught**
+  - `ref/fin/file-an-indirect-tax-return`, activity 20 -
+    [File an Indirect Tax Return](../../../../processes/finance/file-an-indirect-tax-return.md)
+  - `ref/fin/file-the-income-tax-return`, activity 18 -
+    [File the Income Tax Return](../../../../processes/finance/file-the-income-tax-return.md)
 
 ## What to record
 

@@ -1,6 +1,6 @@
 ---
 name: read-use-against-what-was-bought
-description: "Sets what the customer actually used against the entitlement on the agreement, period by period, and reports the gap in both directions: the metered thing running past its limit, and the entitlement nobody is touching. Use it when running `ref/sls/close-a-renewal`, `ref/sls/open-a-renewal` and `ref/sls/spot-an-expansion`."
+description: "Sets what the customer actually used against the entitlement on the agreement, period by period, and reports the gap in both directions: the metered thing running past its limit, and the entitlement nobody is touching. Use it when running `ref/fin/issue-a-customer-invoice` and 3 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: usage-monitor
@@ -15,12 +15,13 @@ Sets what the customer actually used against the entitlement on the
 agreement, period by period, and reports the gap in both directions: the
 metered thing running past its limit, and the entitlement nobody is
 touching. The same reading answers what a customer says about their own
-use.
+use, and gives each metered item's usage for a billing period to an
+invoice billed on use.
 
 ## Where it happens
 
-The agent does this in three activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in four activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **Check What They Say Against Use**
   - `ref/sls/close-a-renewal`, activity 4 -
@@ -28,6 +29,9 @@ processes. Each one names the activity as that process words it.
 - **Measure What Was Used**
   - `ref/sls/open-a-renewal`, activity 4 -
     [Open a Renewal](../../../../processes/sales/open-a-renewal.md)
+- **Read the Metered Usage**
+  - `ref/fin/issue-a-customer-invoice`, activity 3 -
+    [Issue a Customer Invoice](../../../../processes/finance/issue-a-customer-invoice.md)
 - **Read the Usage Against the Limit**
   - `ref/sls/spot-an-expansion`, activity 4 -
     [Spot an Expansion](../../../../processes/sales/spot-an-expansion.md)

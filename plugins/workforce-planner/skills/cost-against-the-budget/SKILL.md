@@ -1,6 +1,6 @@
 ---
 name: cost-against-the-budget
-description: Works out the labor cost of a plan, a position or an option from the pay range for each level, with benefits and the employer's taxes on pay, and sets it beside the budget for the finance lead to check. Use it when running `ref/hr/change-the-organization-structure` and 3 other reference processes.
+description: Works out the labor cost of a plan, a position or an option from the pay range for each level, with benefits and the employer's taxes on pay, and sets it beside the budget for the finance lead to check. Use it when running `ref/fin/set-the-annual-budget` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: workforce-planner
@@ -13,11 +13,13 @@ metadata:
 
 Works out the labor cost of a plan, a position or an option from the pay
 range for each level, with benefits and the employer's taxes on pay, and
-sets it beside the budget for the finance lead to check.
+sets it beside the budget for the finance lead to check. It supplies
+each team's headcount, start dates and labor cost from the approved plan
+at its version to the company budget.
 
 ## Where it happens
 
-The agent does this in seven activities across four reference processes.
+The agent does this in eight activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Check the Budget**
@@ -38,6 +40,9 @@ Each one names the activity as that process words it.
 - **Model the Options**
   - `ref/hr/run-a-layoff`, activity 2 -
     [Run a Layoff](../../../../processes/human-resources/run-a-layoff.md)
+- **Take in the Labor Cost**
+  - `ref/fin/set-the-annual-budget`, activity 7 -
+    [Set the Annual Budget](../../../../processes/finance/set-the-annual-budget.md)
 - **Write Down the Business Reason**
   - `ref/hr/run-a-layoff`, activity 1 -
     [Run a Layoff](../../../../processes/human-resources/run-a-layoff.md)

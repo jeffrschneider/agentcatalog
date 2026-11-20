@@ -1,6 +1,6 @@
 ---
 name: candidate-search
-description: Finds every candidate worth looking at against the requirements, then narrows the list by dropping the ones that miss a requirement, so what is left can be looked at properly. Use it when running `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
+description: Finds every candidate worth looking at against the requirements, then narrows the list by dropping the ones that miss a requirement, so what is left can be looked at properly. Use it when running `ref/fin/choose-a-supplier`, `ref/mkt/engage-marketing-agency` and `ref/mkt/select-marketing-technology`.
 license: CC-BY-4.0
 metadata:
   agent: supplier-manager
@@ -17,7 +17,7 @@ is left can be looked at properly.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Build the Candidate List**
@@ -26,6 +26,9 @@ Each one names the activity as that process words it.
 - **Cut to a Shortlist**
   - `ref/mkt/select-marketing-technology`, activity 9 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)
+- **Find the Candidates**
+  - `ref/fin/choose-a-supplier`, activity 6 -
+    [Choose a Supplier](../../../../processes/finance/choose-a-supplier.md)
 - **Search the Market**
   - `ref/mkt/select-marketing-technology`, activity 8 -
     [Select Marketing Technology](../../../../processes/marketing/select-marketing-technology.md)

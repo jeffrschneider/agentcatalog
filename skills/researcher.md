@@ -5,9 +5,10 @@
 Pulls together what has already been published on a subject and reads
 the primary source rather than somebody's write-up of it. It comes back
 with the market picture, the figures and the quotations that answer the
-question, each carrying the source it came from and the date it was
-pulled. It checks first whether the organization's own record already
-answers the question.
+question, or a customer's filed accounts and credit reports, each
+carrying the source it came from and the date it was pulled. It checks
+first whether the organization's own record already answers the
+question.
 
 covers:
 - Gather the Evidence
@@ -22,6 +23,7 @@ covers:
 - Research the Market
 - Read the Market for Each Route
 - Gather the Market Pay Data
+- Gather the Accounts and Credit Reports
 
 ## read-the-competitive-landscape
 

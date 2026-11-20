@@ -1,6 +1,6 @@
 ---
 name: tell-the-agents-what-was-decided
-description: Once a decision is made, the agent tells every agent that has to act what was decided about the money and what each one now holds. Use it when running `ref/mkt/brief-executive-leadership`.
+description: Once a decision is made, the agent tells every agent and budget owner that has to act what was decided about the money, what each one now holds and what moved since the last version. Use it when running `ref/fin/reforecast-the-year`, `ref/fin/set-the-annual-budget` and `ref/mkt/brief-executive-leadership`.
 license: CC-BY-4.0
 metadata:
   agent: budget-keeper
@@ -11,17 +11,24 @@ metadata:
 
 ## What it does
 
-Once a decision is made, the agent tells every agent that has to act
-what was decided about the money and what each one now holds.
+Once a decision is made, the agent tells every agent and budget owner
+that has to act what was decided about the money, what each one now
+holds and what moved since the last version.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
 - **Hand the Decisions On**
   - `ref/mkt/brief-executive-leadership`, activity 19 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+- **Tell Each Budget Owner What They Hold**
+  - `ref/fin/set-the-annual-budget`, activity 17 -
+    [Set the Annual Budget](../../../../processes/finance/set-the-annual-budget.md)
+- **Tell the Budget Owners What Changed**
+  - `ref/fin/reforecast-the-year`, activity 15 -
+    [Reforecast the Year](../../../../processes/finance/reforecast-the-year.md)
 
 ## What to record
 

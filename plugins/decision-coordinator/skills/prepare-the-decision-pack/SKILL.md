@@ -1,6 +1,6 @@
 ---
 name: prepare-the-decision-pack
-description: Settles what will be asked of the room and what the department will say, and gets the pack to everyone with time to read it before they walk in. Use it when running `ref/hr/decide-promotions` and 6 other reference processes.
+description: Settles what will be asked of the room and what the department will say, and gets the pack to everyone with time to read it before they walk in. Use it when running `ref/fin/approve-an-investment-case` and 7 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,12 +16,18 @@ and gets the pack to everyone with time to read it before they walk in.
 
 ## Where it happens
 
-The agent does this in six activities across seven reference processes.
-Each one names the activity as that process words it.
+The agent does this in eight activities across eight reference
+processes. Each one names the activity as that process words it.
 
+- **Answer the Approvers' Questions**
+  - `ref/fin/approve-an-investment-case`, activity 12 -
+    [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
 - **Collect the Members' Questions**
   - `ref/pc/decide-at-investment-committee`, activity 7 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)
+- **Send the Case to the Approvers**
+  - `ref/fin/approve-an-investment-case`, activity 11 -
+    [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
 - **Send the Committee Pack**
   - `ref/pc/decide-at-investment-committee`, activity 6 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)

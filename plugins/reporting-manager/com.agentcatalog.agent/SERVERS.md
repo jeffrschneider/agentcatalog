@@ -1,8 +1,8 @@
 # The systems this abstract agent needs
 
-Eight systems, named by role rather than by product. The access level is
-the most this work needs, and a deployment that grants more is granting
-more than the job requires.
+Twelve systems, named by role rather than by product. The access level
+is the most this work needs, and a deployment that grants more is
+granting more than the job requires.
 
 | Role | Access | What the access is for |
 |---|---|---|
@@ -14,6 +14,10 @@ more than the job requires.
 | the portfolio reporting system | read | Each company's quarter as the portfolio review read it, for the letter to the fund's investors. |
 | the notification channel | write | The investors hear before the date passes when a late report will arrive. |
 | the report store | write | Each period's report lands at a version. |
+| the general ledger | read | The month's results as the close signed them off, which every figure in the monthly results report ties to. |
+| the budget record | read | The budget and the latest approved forecast at their versions, and what each budget owner has committed, spent and has left. |
+| the financial planning system | read | Each line compared with the plan and each difference above the threshold, as the planning-analyst agent marked it. |
+| the reporting tool | write | The monthly results report at a version, delivered to each leader on its date. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

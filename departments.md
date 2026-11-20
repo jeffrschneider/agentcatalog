@@ -19,4 +19,5 @@ shown as a department, and the loader warns about it.
 | revenue-operations | Revenue operations | Department |
 | partners | Partners | Department |
 | human-resources | Human resources | Department |
+| finance | Finance | Department |
 | private-capital | Private capital | Line of business |

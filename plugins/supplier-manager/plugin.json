@@ -16,7 +16,7 @@
     "marketing",
     "select-marketing-technology",
     "engage-marketing-agency",
-    "brand-refresh",
+    "choose-a-supplier",
     "abstract"
   ],
   "extensions": {
@@ -80,6 +80,30 @@
           "role": "meeting-calendar",
           "access": "write",
           "needs": "Cap: which sessions it may set without asking, set by the adopting organization."
+        },
+        {
+          "name": "the purchasing system",
+          "role": "purchasing-system",
+          "access": "read",
+          "needs": "The purchase a choice of supplier is for, with its amount, its budget line and the date it is needed."
+        },
+        {
+          "name": "the ERP",
+          "role": "erp",
+          "access": "read",
+          "needs": "The suppliers already on file, read for candidates that could meet the requirements."
+        },
+        {
+          "name": "the sourcing channel",
+          "role": "sourcing-channel",
+          "access": "write",
+          "needs": "The same requirements, questions and closing date sent to every candidate at once, each answer to a candidate's question shared with all of them, and each outcome letter."
+        },
+        {
+          "name": "the scoring record",
+          "role": "scoring-record",
+          "access": "read",
+          "needs": "Each finalist's scores and checks, set out beside the whole cost over the term."
         }
       ],
       "records": [
@@ -101,7 +125,9 @@
         "a name, a domain or a mark that another party already holds, or that is close enough to another party's to be contested, sent to the rights approver",
         "a candidate that already has a relationship with the organization or with one of the people deciding, said before scoring starts",
         "a search where only one candidate meets the requirements, because a decision with one option in front of it is a person's call",
-        "a supplier that stops answering, misses what it agreed to deliver, or tells the department it is being acquired or shut down"
+        "a supplier that stops answering, misses what it agreed to deliver, or tells the department it is being acquired or shut down",
+        "a choice of supplier where no candidate meets the must-have requirements - to the requester and the purchasing lead, who loosen a requirement in writing or widen the search, and a change to the criteria after the answers are seen is recorded with the scores it affects",
+        "a candidate that contacts a decider outside the request, or asks for something the other candidates did not get - to the purchasing lead, with the candidate reminded of the rule in writing and the contact recorded with the scores"
       ],
       "not": [
         "Does not score the candidates.",
@@ -199,6 +225,19 @@
           "process": "ref/mkt/win-loss-analysis",
           "activities": [
             "Arrange the Outside Interviewer"
+          ]
+        },
+        {
+          "process": "ref/fin/choose-a-supplier",
+          "activities": [
+            "Write Down the Requirements",
+            "Set the Scoring Criteria",
+            "Find the Candidates",
+            "Issue the Request",
+            "Answer the Candidates' Questions",
+            "Set Out the Choice",
+            "Tell the Other Candidates",
+            "Record What the Choice Taught"
           ]
         }
       ]

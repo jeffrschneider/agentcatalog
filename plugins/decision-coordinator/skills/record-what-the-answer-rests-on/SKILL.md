@@ -1,6 +1,6 @@
 ---
 name: record-what-the-answer-rests-on
-description: Writes down what the answer rests on and what would reopen it, including the assumptions, the figures behind a change, and the date the answer gets looked at again. Use it when running `ref/hr/plan-succession-for-key-roles` and 15 other reference processes.
+description: Writes down what the answer rests on and what would reopen it, including the assumptions, the figures behind a change, and the date the answer gets looked at again. Use it when running `ref/fin/approve-an-investment-case` and 16 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,7 +17,7 @@ gets looked at again.
 
 ## Where it happens
 
-The agent does this in eight activities across sixteen reference
+The agent does this in nine activities across seventeen reference
 processes. Each one names the activity as that process words it.
 
 - **Record What the Budget Rests On**
@@ -37,6 +37,9 @@ processes. Each one names the activity as that process words it.
 - **Record Why the Money Moved**
   - `ref/mkt/reallocate-media-spend`, activity 14 -
     [Reallocate Media Spend](../../../../processes/marketing/reallocate-media-spend.md)
+- **Set When the Case Is Read Again**
+  - `ref/fin/approve-an-investment-case`, activity 17 -
+    [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
 - **Set When the Plan Is Read Again**
   - `ref/hr/plan-the-workforce`, activity 16 -
     [Plan the Workforce](../../../../processes/human-resources/plan-the-workforce.md)

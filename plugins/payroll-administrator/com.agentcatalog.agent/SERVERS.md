@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Nine systems, named by role rather than by product. The access level is
+Ten systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -15,6 +15,7 @@ more than the job requires.
 | the employee portal | write | Each payslip on payday and each year-end statement by its deadline. |
 | each tax authority's filing channel | write | Each period's withholding paid and filed by its date with the payroll manager. |
 | the notification channel | write | A change held past the cutoff reaches the person who sent it, and a due date at risk reaches the payroll manager. |
+| the close records | write | The registers approved in the period and the payments and withholding that left, attached to the monthly reconciliation of each payroll account, which only the named payroll and finance people can open, with no right to change or sign off a reconciliation. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,
