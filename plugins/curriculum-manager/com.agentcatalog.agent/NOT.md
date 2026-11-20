@@ -27,3 +27,9 @@ onboarding-manager agent's job.
   a required course was signed, to whoever signs that material, with
   each part that teaches the old version named, and to counsel where the
   rule is the law's
+- a release briefing that is not ready, or support specialists not
+  briefed, by the date before the release that the process sets - to the
+  head of support, with what customers will be told meanwhile
+- every new support specialist failing the same part of a sitting - to
+  the quality lead as a sign about the course or the practice cases, and
+  the pass line changes only at a new version before the next sitting

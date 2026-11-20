@@ -1,6 +1,6 @@
 ---
 name: measure-every-run-against-its-clock
-description: Marks every run in the window met, missed, or still open past its due time, with its start, its stop, its queue and its owner. Use it when running `ref/rev/watch-the-response-clock`.
+description: Checks first that the stamps hold up, such as missing stops and back-dated stamps, then marks every run or case in the window met, missed, or still open past its due time, with its start, its stop, its queue and its owner. Use it when running `ref/rev/watch-the-response-clock`, `ref/sup/report-the-service-levels` and `ref/sup/set-a-service-level-policy`.
 license: CC-BY-4.0
 metadata:
   agent: response-clock-monitor
@@ -11,23 +11,40 @@ metadata:
 
 ## What it does
 
-Marks every run in the window met, missed, or still open past its due
-time, with its start, its stop, its queue and its owner. Runs the clock
-never fitted are set aside with a written reason and the name of the
-person who agreed, and the set-aside count is published beside the
-result.
+Checks first that the stamps hold up, such as missing stops and
+back-dated stamps, then marks every run or case in the window met,
+missed, or still open past its due time, with its start, its stop, its
+queue and its owner. Runs the clock never fitted are set aside with a
+written reason and the name of the person who agreed, and the set-aside
+count is published beside the result. The same reading runs over the
+last periods against the levels in force, and from the day new levels
+take effect.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in six activities across three reference processes.
+Each one names the activity as that process words it.
 
+- **Check the Stamps Hold Up**
+  - `ref/sup/report-the-service-levels`, activity 3 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
+- **Measure Each Case Against Its Clock**
+  - `ref/sup/report-the-service-levels`, activity 5 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 - **Measure Each Run Against Its Clock**
   - `ref/rev/watch-the-response-clock`, activity 6 -
     [Watch the Response Clock](../../../../processes/revenue-operations/watch-the-response-clock.md)
+- **Measure from the Day It Takes Effect**
+  - `ref/sup/set-a-service-level-policy`, activity 18 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
+- **Read the Results Against Today's Levels**
+  - `ref/sup/set-a-service-level-policy`, activity 4 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Set Aside What the Clock Does Not Cover**
   - `ref/rev/watch-the-response-clock`, activity 7 -
     [Watch the Response Clock](../../../../processes/revenue-operations/watch-the-response-clock.md)
+  - `ref/sup/report-the-service-levels`, activity 6 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 
 ## What to record
 

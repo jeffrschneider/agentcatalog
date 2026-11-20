@@ -1,6 +1,6 @@
 ---
 name: write-down-what-was-agreed
-description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/fin/approve-an-investment-case` and 19 other reference processes.
+description: Writes the settled answer down in full, holding what was decided, what was turned down and why, and who disagreed with it. Use it when running `ref/fin/approve-an-investment-case` and 21 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,8 +16,8 @@ was turned down and why, and who disagreed with it.
 
 ## Where it happens
 
-The agent does this in sixteen activities across twenty reference
-processes. Each one names the activity as that process words it.
+The agent does this in sixteen activities across 22 reference processes.
+Each one names the activity as that process words it.
 
 - **Confirm the Record with the Chair**
   - `ref/pc/decide-at-investment-committee`, activity 13 -
@@ -35,6 +35,10 @@ processes. Each one names the activity as that process words it.
     [Plan the Exit](../../../../processes/private-capital/plan-the-exit.md)
   - `ref/pc/seek-an-advisory-committee-consent`, activity 13 -
     [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
+  - `ref/sup/calibrate-case-reviews`, activity 13 -
+    [Calibrate Case Reviews](../../../../processes/customer-support/calibrate-case-reviews.md)
+  - `ref/sup/set-a-service-level-policy`, activity 19 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Record the Decision and the Dissent**
   - `ref/fin/approve-an-investment-case`, activity 15 -
     [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)

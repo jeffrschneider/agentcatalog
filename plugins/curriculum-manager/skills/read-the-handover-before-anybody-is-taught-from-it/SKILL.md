@@ -1,6 +1,6 @@
 ---
 name: read-the-handover-before-anybody-is-taught-from-it
-description: Reads material handed over from a launch, a price change or a process change against the questions a buyer actually asks, and names the gaps before anybody is taught the old answer. Use it when running `ref/rev/roll-out-a-change`.
+description: Reads material handed over from a launch, a price change or a process change against the questions a buyer actually asks, and names the gaps before anybody is taught the old answer. Use it when running `ref/rev/roll-out-a-change` and `ref/sup/prepare-support-for-a-release`.
 license: CC-BY-4.0
 metadata:
   agent: curriculum-manager
@@ -17,12 +17,15 @@ before anybody is taught the old answer.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Check What Was Handed Over**
   - `ref/rev/roll-out-a-change`, activity 5 -
     [Roll Out a Change](../../../../processes/revenue-operations/roll-out-a-change.md)
+- **Check the Handover Against What Customers Ask**
+  - `ref/sup/prepare-support-for-a-release`, activity 7 -
+    [Prepare Support for a Release](../../../../processes/customer-support/prepare-support-for-a-release.md)
 
 ## What to record
 

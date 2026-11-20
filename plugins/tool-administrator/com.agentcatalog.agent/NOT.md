@@ -37,3 +37,11 @@ not chosen for.
 - an access still there after its removal - removed again with the
   reason traced, such as a second account or a group the person belongs
   to, and the controller told before the review is signed
+- a support routing change that sends work to the wrong queue once it is
+  live - the version before restored when the condition set at approval
+  is met, the requests sent wrong moved with their clocks still running,
+  and the support operations lead and the team told before anyone is
+  told the change is live
+- a service level clock that cannot be built as the policy says by its
+  effective date - to the support operations lead, and the effective
+  date moves for that clock with the people it covers told

@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eight systems, named by role rather than by product. The access level is
+Nine systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -14,6 +14,7 @@ more than the job requires.
 | the document store | read | The approved materials at their current version, which the brief for a meeting with an investor points to. |
 | the portfolio reporting system | read | A portfolio company's request for help filling a role arrives there. |
 | the audit portal | read | The walkthroughs and interviews the external auditor asks for, with the control each one covers and the dates the agreed timetable sets. |
+| the support system | write | The booking and the notes of a call on an escalated case, put on the case, with no right to answer or close the case. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

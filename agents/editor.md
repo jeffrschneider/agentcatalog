@@ -48,6 +48,7 @@ meets it.
   Reuse the Talk
 - `ref/mkt/video-asset` / Settle the Script, Review the Cut
 - `ref/mkt/website-content-update` / Edit the Change
+- `ref/sup/write-a-help-article` / Edit the Draft
 
 ## Patterns
 
@@ -66,6 +67,9 @@ against what was asked for rather than against the editor's own taste.
 - the style guide and the house standard (read)
 - the brief and the approved outline (read)
 - the source list the draft cites (read)
+- the knowledge base (write) - the edit lands at a version beside the
+  help article draft it edits, and never on top of it, with no right to
+  publish an article or mark it as content the agents may answer from
 
 ## Records
 
@@ -85,6 +89,9 @@ or the revision request it gave in every round, each with its reason.
 - a disagreement with the writer that another round will not settle
 - a rewrite that the brief and the style guide would answer in opposite
   ways
+- a help article that still does not answer the question it was planned
+  for after the rewrites - to the knowledge lead, who decides whether it
+  is planned again or stopped
 
 ## Not
 
@@ -96,5 +103,6 @@ score the piece against the brand guidelines or the claims register,
 because that is the brand-check agent and it runs as a separate pass.
 Does not choose the title, the headings or the links for findability,
 which is the search-optimizer agent. Does not commission the piece or
-set its date, which the content-manager agent does. It is not a signer:
+set its date, which the content-manager agent does, or for a help
+article the knowledge-keeper agent. It is not a signer:
 it says the piece is ready, and named people sign.

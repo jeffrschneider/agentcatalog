@@ -1,6 +1,6 @@
 ---
 name: report-against-what-was-promised
-description: When a run, a period or a campaign is over, the agent sets what happened beside what was promised and reports the difference, with the source on every line. Use it when running `ref/mkt/account-based-play` and 28 other reference processes.
+description: When a run, a period or a campaign is over, the agent sets what happened beside what was promised and reports the difference, with the source on every line. Use it when running `ref/mkt/account-based-play` and 29 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: analytics
@@ -18,7 +18,7 @@ one set of figures.
 
 ## Where it happens
 
-The agent does this in 24 activities across 29 reference processes. Each
+The agent does this in 25 activities across 30 reference processes. Each
 one names the activity as that process words it.
 
 - **Agree the Joint Numbers**
@@ -86,6 +86,9 @@ one names the activity as that process words it.
 - **Report the Results**
   - `ref/mkt/customer-newsletter`, activity 16 -
     [Publish Customer Newsletter](../../../../processes/marketing/customer-newsletter.md)
+- **Report the Review**
+  - `ref/sup/review-the-help-center`, activity 12 -
+    [Review the Help Center](../../../../processes/customer-support/review-the-help-center.md)
 - **Report the Show**
   - `ref/mkt/trade-show`, activity 15 -
     [Exhibit at Trade Show](../../../../processes/marketing/trade-show.md)

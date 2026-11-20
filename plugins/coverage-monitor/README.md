@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/announce-company-news`, `ref/mkt/award-entry`,
 `ref/mkt/brand-audit`, `ref/mkt/brand-health`, `ref/mkt/brand-refresh`,
-`ref/mkt/brief-industry-analyst`, and 9 more. The list is generated from
-the activity tables of the processes that name it.
+`ref/mkt/brief-industry-analyst`, and 10 more. The list is generated
+from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/coverage-monitor

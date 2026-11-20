@@ -1,6 +1,6 @@
 ---
 name: take-in-the-question
-description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/fin/approve-an-investment-case` and 23 other reference processes.
+description: Takes in whatever opened the decision, whether that is a change, a target, a gap, a request or a scheduled cycle, and works out what the decision has to settle and by when. Use it when running `ref/fin/approve-an-investment-case` and 24 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -17,7 +17,7 @@ decision has to settle and by when.
 
 ## Where it happens
 
-The agent does this in 23 activities across 24 reference processes. Each
+The agent does this in 23 activities across 25 reference processes. Each
 one names the activity as that process words it.
 
 - **Frame the Decision**
@@ -29,6 +29,8 @@ one names the activity as that process words it.
 - **Open the Decision**
   - `ref/fin/write-off-a-bad-debt`, activity 6 -
     [Write Off a Bad Debt](../../../../processes/finance/write-off-a-bad-debt.md)
+  - `ref/sup/set-a-service-level-policy`, activity 1 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 - **Set What the Committee Must Decide**
   - `ref/pc/decide-at-investment-committee`, activity 2 -
     [Decide at Investment Committee](../../../../processes/private-capital/decide-at-investment-committee.md)

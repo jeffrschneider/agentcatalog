@@ -1,6 +1,6 @@
 ---
 name: read-every-commitment-out-loud
-description: Reads every commitment at review with its owner, its date and its state, marked met, running, late or untouched, so nothing stays open by silence. Use it when running `ref/fin/test-a-financial-control` and 6 other reference processes.
+description: Reads every commitment at review with its owner, its date and its state, marked met, running, late or untouched, so nothing stays open by silence. Use it when running `ref/fin/test-a-financial-control` and 7 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -17,9 +17,12 @@ silence.
 
 ## Where it happens
 
-The agent does this in nine activities across seven reference processes.
-Each one names the activity as that process words it.
+The agent does this in eleven activities across eight reference
+processes. Each one names the activity as that process words it.
 
+- **Chase Each Action to Its Date**
+  - `ref/sup/coach-a-support-person`, activity 11 -
+    [Coach a Support Person](../../../../processes/customer-support/coach-a-support-person.md)
 - **Chase Each Fix to Its Date**
   - `ref/fin/test-a-financial-control`, activity 14 -
     [Test a Financial Control](../../../../processes/finance/test-a-financial-control.md)
@@ -29,6 +32,9 @@ Each one names the activity as that process words it.
 - **Hold Each Check-In**
   - `ref/hr/run-a-performance-improvement-plan`, activity 12 -
     [Run a Performance Improvement Plan](../../../../processes/human-resources/run-a-performance-improvement-plan.md)
+- **Read Out Last Time's Actions**
+  - `ref/sup/coach-a-support-person`, activity 4 -
+    [Coach a Support Person](../../../../processes/customer-support/coach-a-support-person.md)
 - **Read Progress Against the Plan**
   - `ref/pc/write-the-value-creation-plan`, activity 15 -
     [Write the Value Creation Plan](../../../../processes/private-capital/write-the-value-creation-plan.md)

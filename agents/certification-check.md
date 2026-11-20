@@ -25,6 +25,8 @@ people who cannot sell is not a gate.
   Certification, Report What Certification Predicted
 - `ref/rev/onboard-a-seller` / Prove the Parts that Matter
 - `ref/rev/roll-out-a-change` / Check Who Attended, Check That It Landed
+- `ref/sup/ramp-a-new-support-person` / Name the Assessor, Run the Topic
+  Sitting, Score the Practice Cases
 
 ## Patterns
 
@@ -57,6 +59,13 @@ conversation is booked.
 - the partner portal (write) - certificates issued with a date and an
   expiry, and the certified list visible to both sides
 - analytics (read) - what the people who passed went on to do
+- the support system (write) - on a practice case in the practice area
+  only, so a support specialist's sitting never touches a live
+  customer's case
+- the knowledge base (read) - the articles a support specialist may use
+  during a sitting, set out beforehand
+- the HR system (read) - who manages and who mentors the person sitting,
+  so no assessor scores their own people
 
 ## Records
 
@@ -93,6 +102,13 @@ told. The later report setting scores against what those people did.
   quietly reused
 - a certificate approaching expiry or a certified person who has left,
   to whoever owns the relationship, before a deal in flight discovers it
+- an assessor for a support specialist's sitting who is the specialist's
+  team lead or mentor - ruled out, and the team lead names another from
+  the assessor pool before the sitting runs
+- a support topic a new specialist has not passed twice - to the team
+  lead with the scores, who decides with the specialist whether the plan
+  for that topic changes, and the specialist does not take that topic
+  alone meanwhile
 
 ## Not
 

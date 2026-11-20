@@ -38,6 +38,11 @@ and closes the accounts on the notice the agreement requires.
   an Approved Releaser, Check Each Role Against the Job, Send Each Owner
   Their Accounts, Remove the Access Nobody Approved, Read Every Account
   Again, Record the Review
+- `ref/sup/change-a-routing-rule` / Build It Away from Live, Replay It
+  on Past Requests, Switch It On with a Way Back, Switch Back to the
+  Version Before
+- `ref/sup/set-a-service-level-policy` / Build the Clocks into the
+  Support System
 
 ## Patterns
 
@@ -104,6 +109,12 @@ tool is switched off.
 - the delegation of authority (read) - the releasers and signers the
   version in force names, which every right to approve or release a
   payment is matched against
+- the support system (write) - each routing change and each service
+  level clock built at a version in a copy away from live, replayed on
+  past requests there, and switched on in live only once it is approved,
+  with the version before kept ready to restore
+- the policy library (read) - the service level policy at the version
+  the clocks are built from
 
 ## Records
 
@@ -150,6 +161,14 @@ the final invoice.
 - an access still there after its removal - removed again with the
   reason traced, such as a second account or a group the person belongs
   to, and the controller told before the review is signed
+- a support routing change that sends work to the wrong queue once it is
+  live - the version before restored when the condition set at approval
+  is met, the requests sent wrong moved with their clocks still running,
+  and the support operations lead and the team told before anyone is
+  told the change is live
+- a service level clock that cannot be built as the policy says by its
+  effective date - to the support operations lead, and the effective
+  date moves for that clock with the people it covers told
 
 ## Not
 

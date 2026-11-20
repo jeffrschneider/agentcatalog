@@ -22,6 +22,19 @@ whose stamps cannot be trusted is reported as unmeasured, never as met.
   Each Queue Its Own Number
 - `ref/rev/write-a-routing-rule` / Set the Clock the Rule Promises,
   Watch the First Week
+- `ref/sup/build-the-support-schedule` / Read Where the Last Schedule
+  Missed, Watch the First Week
+- `ref/sup/report-the-service-levels` / Name What Each Clock Covers,
+  Check the Stamps Hold Up, Measure Each Case Against Its Clock, Set
+  Aside What the Clock Does Not Cover, Break the Misses Down, Find the
+  Cause Behind the Misses, Write the Report, Take Each Team Lead Through
+  Their Queues
+- `ref/sup/run-the-days-queue` / Watch Each Queue Against Its Clock,
+  Name a Queue About to Miss, Check the Queue Recovers
+- `ref/sup/set-a-service-level-policy` / Read What Customers Are Already
+  Promised, Read the Results Against Today's Levels, Name What Each
+  Clock Covers, Check Each Against What Is Promised, Check the Clocks
+  Against the Policy, Measure from the Day It Takes Effect
 
 ## Patterns
 
@@ -41,6 +54,13 @@ agent.
 - the inbox and the form store (read) - when the work first arrived
 - the reporting store (write) - the measurements, the queries behind
   them, and the period as published
+- the support system (read) - each case's queue, channel, plan and
+  urgency with its start, stop and pause stamps, and the clocks as they
+  are built into it, with no right to change a stamp or a setting
+- the contract repository (read) - the levels each plan and agreement
+  already promises customers
+- the notification channel (write) - a support queue about to miss its
+  level reaches the team lead on the shift with the cases at risk
 
 ## Records
 
@@ -73,6 +93,21 @@ arrival with the misroute as its reason.
   was never slow
 - a window that missed its number and opened no work - to the revenue
   operations lead, recorded as a period that opened nothing
+- a support queue about to miss its level - to the team lead on the
+  shift with the cases at risk and the time each has left, who decides
+  whether to move people, call in cover or tell customers to expect a
+  longer wait
+- a support clock nothing reliably stamps, more support cases set aside
+  than missed, or a support queue that missed its level and opened no
+  work - to the head of support, with the clock shown as unmeasured, the
+  set-aside count leading the report, or the period recorded as one that
+  opened nothing
+- a candidate service level that would serve an account slower than its
+  agreement promises - to the support operations lead, and the candidate
+  is set again or that account keeps its agreed level
+- a request to cut the support desk's results by a named support
+  specialist - refused, because the support reports show queues and
+  teams and no named person's results
 
 ## Not
 

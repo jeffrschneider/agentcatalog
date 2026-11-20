@@ -1,6 +1,6 @@
 ---
 name: teach-a-subject
-description: "Runs the session itself: what the product does and what it costs, who else the buyer is looking at and why, the stages, the gates and the systems of record, the pitch and the objections for the people who sell, and the build and the common failures for the people who deliver. Use it when running `ref/prt/certify-a-partner`, `ref/rev/onboard-a-seller` and `ref/rev/roll-out-a-change`."
+description: "Runs the session itself: what the product does and what it costs, who else the buyer is looking at and why, the stages, the gates and the systems of record, the pitch and the objections for the people who sell, the build and the common failures for the people who deliver, and the desk, the reply rules and each release for the people who answer customers. Use it when running `ref/prt/certify-a-partner` and 4 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: curriculum-manager
@@ -14,13 +14,18 @@ metadata:
 Runs the session itself: what the product does and what it costs, who
 else the buyer is looking at and why, the stages, the gates and the
 systems of record, the pitch and the objections for the people who sell,
-and the build and the common failures for the people who deliver.
+the build and the common failures for the people who deliver, and the
+desk, the reply rules and each release for the people who answer
+customers.
 
 ## Where it happens
 
-The agent does this in six activities across three reference processes.
+The agent does this in nine activities across five reference processes.
 Each one names the activity as that process words it.
 
+- **Brief the Support Specialists**
+  - `ref/sup/prepare-support-for-a-release`, activity 9 -
+    [Prepare Support for a Release](../../../../processes/customer-support/prepare-support-for-a-release.md)
 - **Run the Delivery Training**
   - `ref/prt/certify-a-partner`, activity 8 -
     [Certify a Partner](../../../../processes/partners/certify-a-partner.md)
@@ -30,6 +35,9 @@ Each one names the activity as that process words it.
 - **Run the Sessions**
   - `ref/rev/roll-out-a-change`, activity 12 -
     [Roll Out a Change](../../../../processes/revenue-operations/roll-out-a-change.md)
+- **Teach the Desk**
+  - `ref/sup/ramp-a-new-support-person`, activity 7 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Teach the Market and the Competition**
   - `ref/rev/onboard-a-seller`, activity 9 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
@@ -39,6 +47,11 @@ Each one names the activity as that process words it.
 - **Teach the Product**
   - `ref/rev/onboard-a-seller`, activity 8 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
+  - `ref/sup/ramp-a-new-support-person`, activity 6 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
+- **Teach the Reply Rules**
+  - `ref/sup/ramp-a-new-support-person`, activity 8 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 
 ## What to record
 

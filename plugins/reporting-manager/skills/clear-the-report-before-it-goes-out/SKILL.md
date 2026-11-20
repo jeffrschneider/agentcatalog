@@ -1,6 +1,6 @@
 ---
 name: clear-the-report-before-it-goes-out
-description: Puts the finished report in front of the people who must clear it before it goes out, with every figure tied to its source, makes the changes they name, and sends nothing on that they have not cleared. Use it when running `ref/pc/issue-the-quarterly-report-and-statements`.
+description: Puts the finished report in front of the people who must clear it before it goes out, with every figure tied to its source, makes the changes they name, and sends nothing on that they have not cleared. Use it when running `ref/pc/issue-the-quarterly-report-and-statements` and `ref/sup/report-the-service-levels`.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -17,12 +17,15 @@ they name, and sends nothing on that they have not cleared.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Check the Report for Compliance**
   - `ref/pc/issue-the-quarterly-report-and-statements`, activity 13 -
     [Issue the Quarterly Report and Statements](../../../../processes/private-capital/issue-the-quarterly-report-and-statements.md)
+- **Have the Figures Checked**
+  - `ref/sup/report-the-service-levels`, activity 11 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 
 ## What to record
 

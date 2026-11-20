@@ -1,6 +1,6 @@
 ---
 name: draft-the-candidate-answers
-description: Commissions the evidence and writes up two or three candidate answers to the open question, each one carrying the case for it. Use it when running `ref/hr/run-benefits-open-enrollment` and 9 other reference processes.
+description: Commissions the evidence and writes up two or three candidate answers to the open question, each one carrying the case for it. Use it when running `ref/hr/run-benefits-open-enrollment` and 11 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -16,8 +16,8 @@ the open question, each one carrying the case for it.
 
 ## Where it happens
 
-The agent does this in ten activities across ten reference processes.
-Each one names the activity as that process words it.
+The agent does this in twelve activities across twelve reference
+processes. Each one names the activity as that process words it.
 
 - **Commission an Independent Opinion**
   - `ref/pc/seek-an-advisory-committee-consent`, activity 6 -
@@ -39,6 +39,9 @@ Each one names the activity as that process words it.
 - **Draw the Candidate Divisions**
   - `ref/mkt/segment-the-market`, activity 7 -
     [Segment the Market](../../../../processes/marketing/segment-the-market.md)
+- **Frame a Change to the Rubric**
+  - `ref/sup/calibrate-case-reviews`, activity 10 -
+    [Calibrate Case Reviews](../../../../processes/customer-support/calibrate-case-reviews.md)
 - **Gather the Facts**
   - `ref/pc/seek-an-advisory-committee-consent`, activity 5 -
     [Seek an Advisory Committee Consent](../../../../processes/private-capital/seek-an-advisory-committee-consent.md)
@@ -51,6 +54,9 @@ Each one names the activity as that process words it.
 - **Lay Out the Options**
   - `ref/pc/work-a-company-in-trouble`, activity 7 -
     [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
+- **Set Out the Candidate Levels**
+  - `ref/sup/set-a-service-level-policy`, activity 6 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
 
 ## What to record
 

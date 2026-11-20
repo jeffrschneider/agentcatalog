@@ -13,6 +13,8 @@ covers:
 - Take in the Signed Offer
 - Confirm the Start with the Manager
 - Take in the New Hire
+- Take In the New Specialist
+- Confirm the Ramp With the Team Lead
 
 ## get-the-access-open-before-day-one
 
@@ -25,6 +27,7 @@ covers:
 - Order the Access
 - Test the Access on the Device
 - Check In on the First Morning
+- Order Access to the Desk
 
 ## run-the-calendar-around-the-teaching
 
@@ -41,6 +44,19 @@ covers:
 - Set the Group
 - Book the Session
 - Send the Joining Instructions
+- Build the Ramp Plan
+- Sit Beside a Mentor
+
+## widen-reply-rights-step-by-step
+
+Holds a new support specialist's real cases to replies a mentor reads
+before each one goes, and once the team lead signs a topic, orders the
+reply rights for that topic from the support operations lead, so the
+specialist answers customers alone only where a signature says so.
+
+covers:
+- Answer Real Cases With Replies Read
+- Sign the Step to Replies of Their Own
 
 ## hold-one-address-for-the-material
 
@@ -122,3 +138,4 @@ covers:
 - Close the Session on the Record
 - Record What the Preparation Taught
 - Record What the First Months Taught
+- Record What the Ramp Taught

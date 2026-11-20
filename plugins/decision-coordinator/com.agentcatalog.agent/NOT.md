@@ -59,3 +59,10 @@ anything.
   is set out again with the finalist next in line
 - an investment case the approvers have deferred more than `<your number
   of rounds>` times - to the CFO, who decides whether it is withdrawn
+- the people who decide a support service level policy who cannot agree
+  by its date - to the head of support, who decides or moves the date,
+  and the levels in force stay until a set is decided
+- a part of the quality rubric the reviewers cannot read the same way -
+  framed as a change for the quality lead and the named people who
+  decide the rubric, and until a new version is published the part is
+  marked in each report as read two ways

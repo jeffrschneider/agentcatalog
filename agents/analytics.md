@@ -5,10 +5,12 @@
 **purpose:** Reads the numbers and reports them with their sources
 attached. Tracks a campaign against its brief, pulls the wrap-up numbers
 from every channel, files the weekly status, audits the scoring model
-behind lead routing, and reads the headcount, hiring, leaving and labor
-cost behind a workforce plan and report. Deliberately read-only: this
-agent measures the work and never touches it, which is what makes its
-reports worth believing.
+behind lead routing, reads the headcount, hiring, leaving and labor
+cost behind a workforce plan and report, and reads the cases, the
+complaints and the help center's searches and reads behind the support
+desk's reports and its forecast of requests. Deliberately read-only:
+this agent measures the work and never touches it, which is what makes
+its reports worth believing.
 
 ## Processes
 
@@ -126,6 +128,20 @@ reports worth believing.
 - `ref/hr/report-on-the-workforce` / Read the Headcount, Read the Hires
   and Leavers, Read the Labor Cost, Read the Reasons for Leaving, Check
   the Sources Agree
+- `ref/sup/find-gaps-in-the-help-center` / Count the Cases With No
+  Article, Read What Customers Read Before a Case, Count the Customers
+  Each Gap Touches, Check the Gaps Chosen Last Period
+- `ref/sup/forecast-support-volume` / Read the History of Requests, Mark
+  the Unusual Days, Read the Time Each Case Takes
+- `ref/sup/report-the-service-levels` / Check the Stamps Hold Up, Pull
+  the Cases in the Period, Break the Misses Down, Find the Cause Behind
+  the Misses, Compare with the Period Before
+- `ref/sup/report-what-customers-say` / Read the Cases by Topic, Read
+  the Trends, Count the Complaints and Their Outcomes, Put the Evidence
+  under Each Finding, Check Every Figure against Its Source, Answer the
+  Readers' Questions
+- `ref/sup/review-the-help-center` / Read How Each Article Is Used,
+  Report the Review
 
 ## Patterns
 
@@ -149,6 +165,19 @@ roll-calls.
   cost of pay, benefits and the employer's taxes on pay, totaled by team
 - the ledger (read) - the labor cost as the books carry it, which the
   HR system's and the payroll system's figures are compared against
+- the support system (read) - each case with its queue, channel, topic,
+  plan, clock stamps and the articles it cites, with no right to change
+  a case
+- the phone system (read) - the calls that arrived in each interval and
+  how long each was handled
+- the chat tool (read) - the chats that arrived in each interval and how
+  long each was handled
+- the knowledge base (read) - the articles live in the help center at
+  their versions
+- the help center's search and reading record (read) - what customers
+  searched for and read, with any personal data removed
+- the complaints register (read) - the formal complaints by class,
+  outcome and time to answer
 
 ## Records
 
@@ -162,6 +191,12 @@ missing.
   would waste the warning
 - numbers from two sources that contradict each other beyond the
   process's tolerance
+- a support system that gives two counts for the same cases - to the
+  support operations lead as a finding of its own, and the figure is
+  read again before any report uses it
+- a request to cut the support desk's results by a named support
+  specialist - to the head of support, because no figure this agent
+  reports on the support desk names a person
 
 ## Not
 

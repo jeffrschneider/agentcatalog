@@ -5,11 +5,12 @@
 **purpose:** Builds a model from the organization's own record and says
 what that model predicts. It works out which account traits separate the
 customers that stayed from the ones that left, tests whether a proposed
-customer profile would have picked the customers that worked out, and
-says what a proposed initiative would cost and return at each level of
-spend. Every assumption is written down beside the number it produced,
-and any rate the agent cannot source is reported as unsourced instead of
-filled in with a figure that merely looks reasonable.
+customer profile would have picked the customers that worked out, says
+what a proposed initiative would cost and return at each level of spend,
+and forecasts how many requests each support channel will receive in
+each interval. Every assumption is written down beside the number it
+produced, and any rate the agent cannot source is reported as unsourced
+instead of filled in with a figure that merely looks reasonable.
 
 ## Processes
 
@@ -58,6 +59,10 @@ filled in with a figure that merely looks reasonable.
   Reconcile the Methods, Test the Assumptions, Write down the Sizing
 - `ref/fin/approve-an-investment-case` / Model the Cost and the Return,
   Test How Far the Answer Moves
+- `ref/sup/forecast-support-volume` / Gather the Events Ahead, Compare
+  the Last Forecast with What Arrived, Model the Requests Ahead, Name
+  the Assumptions That Decide the Answer, Record What the Forecast
+  Taught
 
 ## Patterns
 
@@ -89,6 +94,13 @@ waiting on.
   cost and return are modelled from
 - the general ledger (read) - what like spend has actually cost, as a
   source for the rates in an investment case
+- the support system (read) - the requests that arrived on each channel
+  by topic and interval, which a forecast of requests is fit on and set
+  beside
+- the release calendar (read) - the releases ahead and the dates they
+  reach customers
+- the marketing calendar (read) - the campaigns and price changes ahead
+  that may bring requests
 
 ## Records
 
@@ -122,6 +134,10 @@ could not source, marked unsourced, carried into the report.
 - an assumption in an investment case that nobody can source - to the
   sponsor for evidence, and it goes to the approvers marked as
   unsourced if none comes
+- a forecast of support requests that rests on thin data, such as a
+  channel opened recently or a window full of outages - to the support
+  operations lead, marked as resting on thin data so the schedule is
+  planned with a margin
 
 ## Not
 

@@ -64,6 +64,12 @@
           "role": "announcement-and-incident-timelines",
           "access": "read",
           "needs": "What went out, and when it went out."
+        },
+        {
+          "name": "the notification channel",
+          "role": "notification-channel",
+          "access": "write",
+          "needs": "Public posts saying something in the product is broken reach the outage-coordinator agent at once, each quoted with where and when it appeared."
         }
       ],
       "records": [
@@ -77,7 +83,8 @@
         "a published fact that is wrong, with the wrong sentence quoted and the correct source set beside it",
         "coverage volume or tone past the threshold the process sets",
         "something published that the organization has not announced yet",
-        "a piece that names an individual employee or a named customer"
+        "a piece that names an individual employee or a named customer",
+        "customers saying in public that something in the product is broken - at once to the outage-coordinator agent, which raises it with the engineer on call, without waiting for the next scheduled summary"
       ],
       "not": [
         "Does not reply to anything it finds and does not contact any author.",
@@ -186,6 +193,12 @@
           "process": "ref/mkt/user-conference",
           "activities": [
             "Report the Conference"
+          ]
+        },
+        {
+          "process": "ref/sup/raise-a-suspected-outage",
+          "activities": [
+            "Notice Customers Saying It in Public"
           ]
         }
       ]

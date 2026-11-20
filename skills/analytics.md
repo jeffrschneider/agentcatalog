@@ -82,6 +82,15 @@ covers:
 - Read the Product's Own Record
 - Read the Reasons for Leaving
 - Read the Year's Hiring and Leaving
+- Count the Cases With No Article
+- Read What Customers Read Before a Case
+- Count the Customers Each Gap Touches
+- Read the History of Requests
+- Read the Time Each Case Takes
+- Pull the Cases in the Period
+- Read the Cases by Topic
+- Count the Complaints and Their Outcomes
+- Read How Each Article Is Used
 
 ## read-the-current-state
 
@@ -288,6 +297,7 @@ covers:
 - Watch the Results
 - Watch the Reviews Land
 - Watch the Transition
+- Check the Gaps Chosen Last Period
 
 ## report-against-what-was-promised
 
@@ -321,6 +331,7 @@ covers:
 - Report the Win-Back
 - Set the Quarter against the Annual Goals
 - Wrap Up
+- Report the Review
 
 ## score-proposals-against-the-goals
 
@@ -340,6 +351,7 @@ set at a numbered version that says what changed since the last one.
 covers:
 - Issue the Findings as a Version
 - Write the Findings
+- Put the Evidence under Each Finding
 
 ## hand-the-findings-to-the-agents-that-act
 
@@ -369,6 +381,7 @@ questions it still cannot answer.
 
 covers:
 - Answer What Was Left Open
+- Answer the Readers' Questions
 
 ## check-the-sources-agree
 
@@ -380,3 +393,30 @@ reported.
 
 covers:
 - Check the Sources Agree
+
+## check-the-record-holds-up
+
+Before a figure is counted or reported, the agent checks that the record
+under it holds up: stamps that are missing or back-dated, gaps in the
+history, and days such as an outage or a holiday that have to be read
+with care, each marked with its reason. Every figure in a finding is
+traced to the system and the date it was read from, and a figure that
+does not trace is read again.
+
+covers:
+- Check the Stamps Hold Up
+- Mark the Unusual Days
+- Check Every Figure against Its Source
+
+## break-the-results-down
+
+The agent cuts a period's results by channel, topic, plan and hour of
+arrival until the cuts show a cause, sets each result beside the periods
+before it with the direction and the size of the change, and names no
+person in any cut.
+
+covers:
+- Break the Misses Down
+- Find the Cause Behind the Misses
+- Compare with the Period Before
+- Read the Trends

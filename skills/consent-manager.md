@@ -23,6 +23,7 @@ involved, what may be asked of them.
 covers:
 - Check Who May Be Approached
 - Check Who May Be Contacted
+- Check Who May Be Asked
 - Check Who May Be Retargeted
 - Clear the Sample and the Questions
 
@@ -51,6 +52,7 @@ covers:
 - Apply the Suppression
 - Build the Suppression List
 - Check the Suppression Is Holding
+- Carry Out an Opt-Out
 
 ## say-what-a-data-source-may-be-used-for
 
@@ -65,6 +67,19 @@ covers:
 - Clear the Data for Use
 - Clear the New Signals
 - Clear the Targeting and the Data
+
+## carry-a-deletion-to-every-copy
+
+For a person's data request, finds the consent record and every system
+that keeps its own copy of their contact details, with what each copy
+holds, and once the privacy lead has granted a deletion carries it to
+the owner of each system and confirms that each one took it, keeping
+only what stops the person being contacted again where the local rules
+allow.
+
+covers:
+- Find Every Copy of the Contact Details
+- Carry the Deletion to Every Copy
 
 ## keep-one-record-per-person
 

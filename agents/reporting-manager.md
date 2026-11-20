@@ -50,6 +50,12 @@ answered.
   Each Budget Owner the Same Questions, Write the Account of the Month,
   Deliver the Report, Answer the Leaders' Questions, Record What the
   Month Taught
+- `ref/sup/report-the-service-levels` / Open the Period's Report, Write
+  the Report, Have the Figures Checked, Send the Report to the Head of
+  Support, Keep the Period
+- `ref/sup/report-what-customers-say` / Open the Period's Report, Write
+  the Account of the Period, Deliver the Report, Answer the Readers'
+  Questions, Record Each Decision, Record What the Period Taught
 
 ## Patterns
 
@@ -73,7 +79,8 @@ meeting where the finished report is read when one is held.
 - the portfolio reporting system (read) - each company's quarter as the
   portfolio review read it, for the letter to the fund's investors
 - the notification channel (write) - the investors hear before the date
-  passes when a late report will arrive
+  passes when a late report will arrive, and each reader of a support
+  report receives it on its date with their own part first
 - the report store (write) - each period's report lands at a version
 - the general ledger (read) - the month's results as the close signed
   them off, which every figure in the monthly results report ties to
@@ -85,6 +92,11 @@ meeting where the finished report is read when one is held.
   agent marked it
 - the reporting tool (write) - the monthly results report at a version,
   delivered to each leader on its date
+- the support system (read) - the cases and the query behind each
+  figure in a support report, kept so the period replays
+- the issue tracker (write) - each decision a reader took on a feature
+  request recorded against it, with no right to change what is built or
+  when
 
 ## Records
 
@@ -123,6 +135,15 @@ corrects stays where it was.
 - a figure in the monthly results that does not tie to the ledger as the
   close signed it off - to the controller, who decides whether the close
   reopens, and the report never carries a figure that does not tie
+- releasing the report of what customers say, and any correction to
+  it - to the head of support, always, and no reader receives it before
+  the head of support has released it
+- a figure in a support report whose query does not reproduce it - to
+  the support operations lead, and the figure is taken out with the
+  report saying it was withdrawn
+- a request for a named support specialist's results - refused, because
+  the support reports show queues and teams, and a specialist's work is
+  read only by that specialist and their team lead
 
 ## Not
 

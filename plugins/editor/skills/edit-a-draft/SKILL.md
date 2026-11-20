@@ -1,6 +1,6 @@
 ---
 name: edit-a-draft
-description: The agent reads a draft against what was asked for and says item by item what has to be rewritten, in terms the writer can work through without coming back to ask what was meant. Use it when running `ref/mkt/announce-company-news` and 10 other reference processes.
+description: The agent reads a draft against what was asked for and says item by item what has to be rewritten, in terms the writer can work through without coming back to ask what was meant. Use it when running `ref/mkt/announce-company-news` and 11 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: editor
@@ -18,7 +18,7 @@ for as many rounds as it takes.
 
 ## Where it happens
 
-The agent does this in eight activities across eleven reference
+The agent does this in eight activities across twelve reference
 processes. Each one names the activity as that process words it.
 
 - **Check It Once**
@@ -39,6 +39,8 @@ processes. Each one names the activity as that process words it.
     [Publish Landing Page](../../../../processes/marketing/landing-page.md)
   - `ref/mkt/long-form-content`, activity 7 -
     [Produce Long-Form Content](../../../../processes/marketing/long-form-content.md)
+  - `ref/sup/write-a-help-article`, activity 6 -
+    [Write a Help Article](../../../../processes/customer-support/write-a-help-article.md)
 - **Edit the Entry**
   - `ref/mkt/award-entry`, activity 9 -
     [Submit Award Entry](../../../../processes/marketing/award-entry.md)

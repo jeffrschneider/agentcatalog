@@ -14,6 +14,8 @@ covers:
 - Classify the Claim
 - Take in the Claim
 - Take In the Claim
+- Take In the Claim at Finance
+- Tell the Customer Who Holds It Now
 
 ## get-the-evidence-behind-the-disputed-line
 

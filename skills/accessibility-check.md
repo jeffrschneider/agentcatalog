@@ -2,10 +2,11 @@
 
 ## score-a-page
 
-Reads a page as it will actually be served and scores it against the
-standards in force, covering alt text, contrast, heading order, keyboard
-use, load time, broken links, the title and the tracking on it. Every
-failure cites the rule it was scored against.
+Reads a page as it will actually be served, such as a landing page or a
+help article, and scores it against the standards in force, covering alt
+text, contrast, heading order, keyboard use, load time, broken links,
+the title and the tracking on it. Every failure cites the rule it was
+scored against.
 
 covers:
 - Check the Changed Page
@@ -13,6 +14,7 @@ covers:
 - Check the Finished Page
 - Score the Page
 - Open Registration
+- Check the Article for Accessibility
 
 ## score-an-email
 

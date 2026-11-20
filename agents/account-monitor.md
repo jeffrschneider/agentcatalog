@@ -36,6 +36,15 @@ when the reading was current.
 - `ref/mkt/win-back-campaign` / Read the Named Accounts
 - `ref/mkt/win-loss-analysis` / Brief the Study, Check Who May Be
   Approached
+- `ref/sup/close-a-customer-account` / Read the Account's Standing
+- `ref/sup/flag-an-account-signal` / Read the Account's Standing, Check
+  Whether Sales Already Holds It
+- `ref/sup/log-a-feature-request` / Read the Account Behind It
+- `ref/sup/report-a-confirmed-bug` / List the Accounts Affected
+- `ref/sup/take-in-a-request` / Match the Sender to an Account, Read the
+  Account's Standing
+- `ref/sup/tell-affected-customers` / List the Affected Accounts, Read
+  What Each Agreement Promises
 
 ## Patterns
 
@@ -57,6 +66,13 @@ answer.
 - contract and renewal records (read)
 - the account standing record (write) - each answer lands dated, with
   the evidence under it
+- the billing system (read) - what an account pays and any invoice still
+  open, behind a feature request, a closure and an account signal, with
+  no right to change a charge
+- the issue tracker (read) - what engineering can tell about the
+  accounts a confirmed fault reaches
+- the incident record (read) - the features, regions and plans
+  engineering confirmed an incident affects
 
 ## Records
 
@@ -80,6 +96,13 @@ out of the answer.
 - a contractual or legal matter it finds while reading, such as a
   dispute, a breach notice or an account in collections, because whether
   that account may be approached at all is a person's decision
+- an account whose plan or entitlement cannot be read when a support
+  request arrives - to the owner of that record at
+  `ref/rev/fix-a-data-quality-failure`, with the case marked as taking
+  the service level set for a plan that is unknown
+- an affected account whose agreement promises a notice of an outage -
+  to the head of support with the deadline, the route and the contact
+  the agreement names, before the deadline passes
 
 ## Not
 

@@ -1,6 +1,6 @@
 ---
 name: run-the-sitting
-description: "Runs the sitting itself: the written exam against the question set at its version, the product, pricing and market questions answered cold, and the practical watched while it is done, so somebody is checked before a customer is the one finding out. Use it when running `ref/prt/certify-a-partner`, `ref/rev/certify-a-seller` and `ref/rev/onboard-a-seller`."
+description: "Runs the sitting itself: the written exam against the question set at its version, the product, pricing and market questions answered cold, and the practical watched while it is done, so somebody is checked before a customer is the one finding out. Use it when running `ref/prt/certify-a-partner` and 3 other reference processes."
 license: CC-BY-4.0
 metadata:
   agent: certification-check
@@ -18,7 +18,7 @@ before a customer is the one finding out.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Assess the Practical**
@@ -30,6 +30,9 @@ Each one names the activity as that process words it.
 - **Run the Knowledge Check**
   - `ref/rev/certify-a-seller`, activity 9 -
     [Certify a Seller](../../../../processes/revenue-operations/certify-a-seller.md)
+- **Run the Topic Sitting**
+  - `ref/sup/ramp-a-new-support-person`, activity 11 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Sit the Written Exam**
   - `ref/prt/certify-a-partner`, activity 10 -
     [Certify a Partner](../../../../processes/partners/certify-a-partner.md)

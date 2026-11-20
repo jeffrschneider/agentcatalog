@@ -38,3 +38,12 @@ and this agent reports what they did.
 - a figure in the monthly results that does not tie to the ledger as the
   close signed it off - to the controller, who decides whether the close
   reopens, and the report never carries a figure that does not tie
+- releasing the report of what customers say, and any correction to it -
+  to the head of support, always, and no reader receives it before the
+  head of support has released it
+- a figure in a support report whose query does not reproduce it - to
+  the support operations lead, and the figure is taken out with the
+  report saying it was withdrawn
+- a request for a named support specialist's results - refused, because
+  the support reports show queues and teams, and a specialist's work is
+  read only by that specialist and their team lead

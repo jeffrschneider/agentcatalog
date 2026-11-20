@@ -14,9 +14,9 @@
     "abstract-agent",
     "reference",
     "human-resources",
+    "coach-a-support-person",
     "run-a-new-hires-first-months",
     "review-a-joint-plan",
-    "prepare-and-hold-a-board-meeting",
     "abstract"
   ],
   "extensions": {
@@ -61,7 +61,7 @@
           "name": "the calendar",
           "role": "calendar",
           "access": "write",
-          "needs": "Each check-in of a plan about one employee, on the calendars of the manager and the employee, with the date a probation closes shown where one applies."
+          "needs": "Each check-in of a plan about one employee, on the calendars of the manager and the employee, with the date a probation closes shown where one applies, and each coaching session on the calendars of a support specialist and their team lead, with time off the queue held for both."
         },
         {
           "name": "the issue tracker",
@@ -73,7 +73,7 @@
           "name": "the notification channel",
           "role": "notification-channel",
           "access": "write",
-          "needs": "A fix past its date reaches the controller."
+          "needs": "A fix past its date reaches the controller, and a coaching action past its date reaches the support specialist and their team lead and nobody else."
         }
       ],
       "records": [
@@ -91,7 +91,10 @@
         "a board action with no owner - to the firm's board director, and the action stays open on the record with the gap named until it has one",
         "support the company promised in a plan about one employee that is late - read out at the next check-in like any late item and named to the HR business partner, because no outcome is decided while the company still owes its part",
         "a fix to a failed control or to a point in the auditor's letter that is past its date - to the controller, who agrees a new date or a different fix with its owner, and the miss is recorded while the finding stays open",
-        "a fix with no owner or no date, or one its owner calls done before it has been tested again - to the controller, and the finding stays open on the record until the fix has both and passes its test"
+        "a fix with no owner or no date, or one its owner calls done before it has been tested again - to the controller, and the finding stays open on the record until the fix has both and passes its test",
+        "a coaching action past its date - raised to the support specialist and their team lead and to nobody else, because the record is theirs alone",
+        "a coaching session missed twice - to the team lead's own manager as a missed session, with nothing from the record attached",
+        "anyone else who asks to see a coaching record - refused, and the two of them are told. The record is opened to anyone else only when the specialist agrees or `<your jurisdiction's rules>` require it, and then a named person decides with `<your legal team>`"
       ],
       "not": [
         "Does not decide what changes in the plan or write the amendment, which is the joint-planner agent, or the people who agreed the plan where no joint-planner agent wrote it, such as a manager and an employee.",
@@ -170,6 +173,17 @@
           "process": "ref/fin/run-the-external-audit",
           "activities": [
             "Load Each Fix Into the Tracker"
+          ]
+        },
+        {
+          "process": "ref/sup/coach-a-support-person",
+          "activities": [
+            "Book the Coaching Session",
+            "Read Out Last Time's Actions",
+            "Record the Actions",
+            "Chase Each Action to Its Date",
+            "Close the Coaching Cycle",
+            "Record What the Cycle Taught"
           ]
         }
       ]

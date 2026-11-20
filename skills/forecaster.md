@@ -117,6 +117,7 @@ Moves each assumption one at a time and records how far the answer swings, so it
 covers:
 - Test the Assumptions
 - Test How Far the Answer Moves
+- Name the Assumptions That Decide the Answer
 
 ## project-against-the-goal
 
@@ -136,7 +137,7 @@ covers:
 
 ## record-what-a-number-rests-on
 
-Writes down what a number rests on, which means the assumptions, the boundary, the method, the window it covers, and what would reopen it.
+Writes down what a number rests on, which means the assumptions, the boundary, the method, the window it covers, and what would reopen it, and after a forecast which assumptions missed and what the next one changes.
 
 covers:
 - Record What the Budget Rests On
@@ -144,6 +145,20 @@ covers:
 - Record What the Review Rests On
 - Record What the Round Rests On
 - Write down the Sizing
+- Record What the Forecast Taught
+
+## forecast-the-requests-ahead
+
+Models the requests each support channel will receive in each interval
+from the history, the season and the events already known, such as
+releases, campaigns and price changes, with each assumption written
+beside the number it produced, and sets last period's forecast beside
+what arrived with the reason for each miss.
+
+covers:
+- Gather the Events Ahead
+- Compare the Last Forecast with What Arrived
+- Model the Requests Ahead
 
 ## put-the-work-in-front-of-the-people-who-act
 

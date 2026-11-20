@@ -1,6 +1,6 @@
 ---
 name: watch-it-after-it-goes-live
-description: Once something is live, the agent keeps reading what people do with it against the goal it was given, and reports what is happening while there is still time to act on it. Use it when running `ref/mkt/account-based-play` and 23 other reference processes.
+description: Once something is live, the agent keeps reading what people do with it against the goal it was given, and reports what is happening while there is still time to act on it. Use it when running `ref/mkt/account-based-play` and 24 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: analytics
@@ -17,9 +17,12 @@ is still time to act on it.
 
 ## Where it happens
 
-The agent does this in 21 activities across 24 reference processes. Each
+The agent does this in 22 activities across 25 reference processes. Each
 one names the activity as that process words it.
 
+- **Check the Gaps Chosen Last Period**
+  - `ref/sup/find-gaps-in-the-help-center`, activity 9 -
+    [Find Gaps in the Help Center](../../../../processes/customer-support/find-gaps-in-the-help-center.md)
 - **Track the Coverage**
   - `ref/mkt/announce-company-news`, activity 15 -
     [Announce Company News](../../../../processes/marketing/announce-company-news.md)

@@ -3,9 +3,10 @@
 ## read-an-accounts-standing
 
 The agent reads one named account across the systems that hold it,
-covering product usage, support history, contract terms and where the
-account sits in the renewal cycle. Every answer comes back with what
-each system said and when that reading was current.
+covering product usage, support history, contract terms, what the
+account pays and where the account sits in the renewal cycle, and any
+churn risk or opening Sales already holds on it. Every answer comes back
+with what each system said and when that reading was current.
 
 covers:
 - Check Each Account's Standing
@@ -15,6 +16,32 @@ covers:
 - Read the Account
 - Read the Accounts
 - Read the Product's Own Record
+- Read the Account's Standing
+- Read the Account Behind It
+- Check Whether Sales Already Holds It
+
+## match-a-request-to-its-account
+
+The agent matches the sender of a support request to one customer and
+one account from the details already on file, and records the match as
+saying which account the request is about and proving nothing about who
+sent it. A sender who matches no account or more than one is reported
+as unmatched.
+
+covers:
+- Match the Sender to an Account
+
+## list-the-accounts-a-fault-reaches
+
+The agent lists every account a confirmed bug or an incident affects,
+from the cases on it and what engineering confirmed, each with its plan,
+its entitlement and its owner, and reads each affected account's
+agreement for any notice it promises on an outage.
+
+covers:
+- List the Accounts Affected
+- List the Affected Accounts
+- Read What Each Agreement Promises
 
 ## say-who-may-be-approached
 

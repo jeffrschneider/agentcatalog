@@ -16,7 +16,7 @@
     "finance",
     "issue-a-customer-invoice",
     "resolve-a-billing-dispute",
-    "recognize-revenue",
+    "decide-a-refund-request",
     "abstract"
   ],
   "extensions": {
@@ -56,6 +56,12 @@
           "role": "dispute-register",
           "access": "read",
           "needs": "Each claim and the invoice version frozen while it is argued."
+        },
+        {
+          "name": "the refund register",
+          "role": "refund-register",
+          "access": "read",
+          "needs": "Each refund or goodwill credit a named person in support decided, with the amount, the invoice or the account it applies to and who decided it."
         },
         {
           "name": "the receivables ledger",
@@ -108,10 +114,12 @@
         "a billing date missed - to the billing lead the same day",
         "every credit note and replacement - drafted for exactly what the billing lead decided, and issued only once the approver the delegation of authority names for its amount, who had no part in preparing it, has approved it",
         "a recompute that disagrees with the invoice - both are shown side by side to the billing lead, and a billing system that gives two answers from one set of records goes to that system's owner",
-        "a request to change a customer's billing contact or channel - confirmed with the customer through a contact already on file"
+        "a request to change a customer's billing contact or channel - confirmed with the customer through a contact already on file",
+        "every credit note for a refund or a goodwill credit decided in support - drafted for exactly what the named person decided, and issued only once that person has approved it at its version, because a change to it voids the approval",
+        "a goodwill credit with no invoice left to reduce, such as on an account that is closing - to the person who decided it, who chooses whether it is paid back as a refund at `ref/sup/decide-a-refund-request`"
       ],
       "not": [
-        "Does not approve an invoice or a credit note, decide a dispute or decide how a rejected invoice is put right, which are the billing lead and the credit note approver (people).",
+        "Does not approve an invoice or a credit note, decide a dispute, a refund or a credit, or decide how a rejected invoice is put right, which are the billing lead, the credit note approver and the named person in support who decided the refund or the credit (people).",
         "Does not make or correct the booking, which is the order-check agent at `ref/sls/book-the-order`, or settle quotes, discounts or non-standard terms, which stay in Sales and Revenue operations.",
         "Does not read the meter, which is the usage-monitor agent.",
         "Does not run a dispute, which is the dispute-coordinator agent.",
@@ -151,6 +159,20 @@
           "process": "ref/fin/recognize-revenue",
           "activities": [
             "Take In What Was Billed"
+          ]
+        },
+        {
+          "process": "ref/sup/decide-a-refund-request",
+          "activities": [
+            "Draft the Credit Note",
+            "Issue the Credit Note"
+          ]
+        },
+        {
+          "process": "ref/sup/offer-a-goodwill-credit",
+          "activities": [
+            "Draft the Credit Note",
+            "Issue the Credit Note"
           ]
         }
       ]

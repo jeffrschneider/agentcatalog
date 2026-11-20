@@ -36,7 +36,8 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/rev/settle-a-commission-dispute`,
-`ref/fin/resolve-a-billing-dispute`. The list is generated from the
+`ref/fin/resolve-a-billing-dispute`,
+`ref/sup/answer-a-billing-question`. The list is generated from the
 activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/dispute-coordinator

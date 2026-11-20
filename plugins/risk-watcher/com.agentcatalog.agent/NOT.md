@@ -22,3 +22,10 @@ between this job and a churn model.
 - a source that keeps raising signals the account record contradicts, to
   whoever owns that model, because a source that cries wolf stops being
   read
+- a sign of leaving that support passes on - to the account owner inside
+  the time the policy sets, with the customer's own words, the case and
+  the standing, and nobody in support makes an offer, discusses a price
+  or delays a cancellation
+- a support signal that does not hold - back to the support specialist
+  and the team lead who raised it with the reason, so the support team's
+  signal rules can change at their next debrief

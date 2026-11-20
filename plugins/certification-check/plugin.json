@@ -16,7 +16,7 @@
     "revenue-operations",
     "certify-a-seller",
     "certify-a-partner",
-    "roll-out-a-change",
+    "ramp-a-new-support-person",
     "abstract"
   ],
   "extensions": {
@@ -68,6 +68,24 @@
           "role": "analytics",
           "access": "read",
           "needs": "What the people who passed went on to do."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "write",
+          "needs": "On a practice case in the practice area only, so a support specialist's sitting never touches a live customer's case."
+        },
+        {
+          "name": "the knowledge base",
+          "role": "knowledge-base",
+          "access": "read",
+          "needs": "The articles a support specialist may use during a sitting, set out beforehand."
+        },
+        {
+          "name": "the HR system",
+          "role": "hr-system",
+          "access": "read",
+          "needs": "Who manages and who mentors the person sitting, so no assessor scores their own people."
         }
       ],
       "records": [
@@ -90,7 +108,9 @@
         "assessors who cannot agree after rereading the evidence, to the named decider, and the disagreement onward to the standards-keeper agent as a case the standard did not cover",
         "a certificate asked for on a practical nobody watched, refused, and the request goes to whoever asked for it. Speed is not a reason recorded anywhere",
         "a standard that did not predict results, to whoever owns the standard, with the report attached, so it is amended at a version rather than quietly reused",
-        "a certificate approaching expiry or a certified person who has left, to whoever owns the relationship, before a deal in flight discovers it"
+        "a certificate approaching expiry or a certified person who has left, to whoever owns the relationship, before a deal in flight discovers it",
+        "an assessor for a support specialist's sitting who is the specialist's team lead or mentor - ruled out, and the team lead names another from the assessor pool before the sitting runs",
+        "a support topic a new specialist has not passed twice - to the team lead with the scores, who decides with the specialist whether the plan for that topic changes, and the specialist does not take that topic alone meanwhile"
       ],
       "not": [
         "Does not teach, and does not write the courses or the questions, which is the curriculum-manager agent's work.",
@@ -141,6 +161,14 @@
           "activities": [
             "Check Who Attended",
             "Check That It Landed"
+          ]
+        },
+        {
+          "process": "ref/sup/ramp-a-new-support-person",
+          "activities": [
+            "Name the Assessor",
+            "Run the Topic Sitting",
+            "Score the Practice Cases"
           ]
         }
       ]

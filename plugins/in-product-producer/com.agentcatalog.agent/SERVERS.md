@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eight systems, named by role rather than by product. The access level is
+Nine systems, named by role rather than by product. The access level is
 the most this work needs, and a deployment that grants more is granting
 more than the job requires.
 
@@ -14,6 +14,7 @@ more than the job requires.
 | the notice record store | write | Each notice lands with its audience, its dates and what came back. |
 | analytics platforms | read |  |
 | the suppression lists | read |  |
+| the incident record | read | The features, regions and accounts the incident lead confirmed as affected, and each version of the outage notice the named approver approved. |
 
 Whoever builds an agent from this plugin writes the `mcp.json` that
 points these roles at their own systems. Nothing here names a product,

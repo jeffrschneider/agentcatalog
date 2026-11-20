@@ -4,7 +4,8 @@
 
 **purpose:** Carries somebody who has just joined a revenue team from a
 confirmed start date to a real customer conversation they can hold
-unaided, and carries any new hire from the signed offer through the
+unaided, or the support team to cases they answer on their own, and
+carries any new hire from the signed offer through the
 first day, orientation and the plan for the first months. Takes in who
 is joining and into which job, orders the access before the first day
 and makes the joiner test it rather than trusting the ticket, takes in
@@ -37,6 +38,11 @@ debriefed and the ramp has been reported.
   the Plan for the First Months, Rebook a Missed Check-In, Ask the New
   Hire How the Start Went, Prepare the Probation Review, Tell the New
   Hire the Outcome, Record What the First Months Taught
+- `ref/sup/ramp-a-new-support-person` / Take In the New Specialist,
+  Confirm the Ramp With the Team Lead, Order Access to the Desk, Check
+  the Access Landed, Build the Ramp Plan, Sit Beside a Mentor, Answer
+  Real Cases With Replies Read, Sign the Step to Replies of Their Own,
+  Report the Ramp, Record What the Ramp Taught
 
 ## Patterns
 
@@ -90,6 +96,11 @@ the same library a new joiner is taught from.
 - the notification channel (write) - the new hire told where to go on
   the first day, when, and who will meet them, and the manager told
   when a check-in is booked again
+- the support system (read) - the systems and the reply rights a new
+  support specialist holds, and each reply a mentor reads before it
+  goes, with no right to grant access or widen reply rights itself
+- the certification record (read) - each topic a new support specialist
+  has passed or must sit again
 
 ## Records
 
@@ -137,6 +148,12 @@ taught, what was open, and what the joiner was never given.
 - a concern or a request for an adjustment that a new hire raises, to
   the named person who handles it in its own process, and nothing about
   it enters the plan or the probation review
+- a system a new support specialist cannot open - ordered again with the
+  first ticket attached and raised to the support operations lead, and
+  the specialist never answers a customer through a borrowed sign-in
+- a new support specialist about to reply to customers on a topic the
+  team lead has not signed - held to the practice area or to replies a
+  mentor reads, because reply rights widen only on that signature
 
 ## Not
 

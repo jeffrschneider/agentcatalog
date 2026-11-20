@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "search-optimizer",
   "version": "1.0.0",
-  "description": "The search-optimizer abstract agent. Works out what people are actually searching for on the subject of a piece, and turns that into a short list of terms and questions the piece has to cover if anyone is going to find it.",
+  "description": "The search-optimizer abstract agent. Works out what people are actually searching for on the subject of a piece, or in the help center's own search, and turns that into a short list of terms and questions the piece has to cover if anyone is going to find it.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -54,6 +54,18 @@
           "role": "websites-content-system",
           "access": "read",
           "needs": "Titles, headings, addresses and internal links as they actually stand."
+        },
+        {
+          "name": "the help center's search and reading record",
+          "role": "help-centers-search-and-reading-record",
+          "access": "read",
+          "needs": "What customers typed into the help center's search and what each search found, with any personal data removed before anything is shown."
+        },
+        {
+          "name": "the knowledge base",
+          "role": "knowledge-base",
+          "access": "read",
+          "needs": "The articles a search could have found."
         }
       ],
       "records": [
@@ -64,13 +76,14 @@
       "escalates": [
         "a term worth ranking for that the piece could only cover by making a claim the claims register does not support",
         "a search requirement and an editorial argument that pull in opposite directions, because what the piece is for is a person's call",
-        "a demand figure it cannot source - it never estimates one and presents it as measured"
+        "a demand figure it cannot source - it never estimates one and presents it as measured",
+        "a help center search whose words carry personal data that cannot be removed - left out of what is shown and named to the knowledge lead"
       ],
       "not": [
         "Does not write the copy or the headings it asks for, which is the copywriter agent.",
         "Does not edit the structure or the argument of a piece, which belongs to the editor agent.",
         "Does not find or verify the evidence the piece rests on, which is the researcher's work.",
-        "Does not decide which pieces get made or when they publish - the content-manager agent owns that.",
+        "Does not decide which pieces get made or when they publish - the content-manager agent owns that, or for the help center the knowledge-keeper agent and the knowledge lead.",
         "Does not change the page itself; it names the element and what it should say, and the web-producer agent makes the change.",
         "Does not bid on search terms or build search ads, which is the media-buyer agent.",
         "Does not report on traffic after publication.",
@@ -204,6 +217,13 @@
           "process": "ref/mkt/website-content-update",
           "activities": [
             "Check the Changed Page"
+          ]
+        },
+        {
+          "process": "ref/sup/find-gaps-in-the-help-center",
+          "activities": [
+            "Read the Searches That Found Nothing",
+            "Name the Words Customers Use"
           ]
         }
       ]

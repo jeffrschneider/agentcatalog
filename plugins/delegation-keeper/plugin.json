@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "delegation-keeper",
   "version": "1.0.0",
-  "description": "The delegation-keeper abstract agent. Holds the company's delegation of authority at its versions, for the chief financial officer (CFO), the controller and the board or the people it names: who may approve each kind of commitment, payment, journal, credit limit and write-off, up to what amount, and who stands in when they are away.",
+  "description": "The delegation-keeper abstract agent. Holds the company's delegation of authority at its versions, for the chief financial officer (CFO), the controller and the board or the people it names: who may approve each kind of commitment, payment, journal, credit limit, write-off, and refund or credit to a customer, up to what amount, and who stands in when they are away.",
   "author": {
     "name": "AgentCatalog",
     "url": "https://agentcatalog.com"
@@ -68,6 +68,18 @@
           "role": "notification-channel",
           "access": "write",
           "needs": "Each request for approval is answered with the approvers it needs, an approval that does not count reaches the controller, and each change reaches the owner of the process that carries it out."
+        },
+        {
+          "name": "the refund register",
+          "role": "refund-register",
+          "access": "read",
+          "needs": "Each refund or goodwill credit proposed, who asked for, proposed or recommended it, and who decided it."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "read",
+          "needs": "Who on the case asked for, proposed or recommended a refund or a credit, so none of them decides it."
         }
       ],
       "records": [
@@ -82,7 +94,8 @@
         "a line that conflicts with an entity's law or constitution - to counsel, the line is drafted again on counsel's points, and it takes effect in that entity only once that entity's own approval is minuted",
         "an approval by someone the version does not name, by an approver past their limit, or by the person who prepared or asked for the item - held before it counts, the item waits for an approver the version names, the controller is told, and a pattern of such approvals is read at the next change",
         "an approver who is away - the stand-in the version names, and where nobody stands in for a journal near the period end, to the controller, who decides whether the entry waits for the next period, and no step is skipped because a deadline or a bank's cutoff is close",
-        "a finance policy that sets a limit the delegation does not give - the line named for the policy owner, and a new limit waits for a change to the delegation so the policy never carries a second number"
+        "a finance policy that sets a limit the delegation does not give - the line named for the policy owner, and a new limit waits for a change to the delegation so the policy never carries a second number",
+        "a refund or a goodwill credit decided by someone the version does not name for the amount, by a decider past their limit, or by anyone who asked for, proposed or recommended it - held before it counts and decided again by the person the version names, and the customer hears nothing until it counts"
       ],
       "not": [
         "Does not approve any commitment, payment, journal, credit limit, write-off or change, which are the approvers the version names (people).",
@@ -168,6 +181,20 @@
           "activities": [
             "Read the Approvers the Delegation Names",
             "Check Every Limit Against the Delegation"
+          ]
+        },
+        {
+          "process": "ref/sup/decide-a-refund-request",
+          "activities": [
+            "Name Who May Decide",
+            "Check the Decision Counts"
+          ]
+        },
+        {
+          "process": "ref/sup/offer-a-goodwill-credit",
+          "activities": [
+            "Name Who May Decide",
+            "Check the Decision Counts"
           ]
         }
       ]

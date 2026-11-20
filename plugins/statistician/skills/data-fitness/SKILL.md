@@ -1,6 +1,6 @@
 ---
 name: data-fitness
-description: Says which of the data that arrived can be relied on and how far the figures from it can be read, covering the coverage, the duplicates, the gaps and the period the data actually spans, and what the items a control test passed and failed support about the whole period. Use it when running `ref/fin/test-a-financial-control` and 3 other reference processes.
+description: Says which of the data that arrived can be relied on and how far the figures from it can be read, covering the coverage, the duplicates, the gaps and the period the data actually spans, and what the items a control test passed and failed support about the whole period. Use it when running `ref/fin/test-a-financial-control` and 4 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: statistician
@@ -18,7 +18,7 @@ control test passed and failed support about the whole period.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in five activities across five reference processes.
 Each one names the activity as that process words it.
 
 - **Say What the Data Supports**
@@ -33,6 +33,9 @@ Each one names the activity as that process words it.
 - **Say What the Results Support**
   - `ref/fin/test-a-financial-control`, activity 8 -
     [Test a Financial Control](../../../../processes/finance/test-a-financial-control.md)
+- **Say What the Sample Supports**
+  - `ref/sup/review-support-cases`, activity 10 -
+    [Review Support Cases](../../../../processes/customer-support/review-support-cases.md)
 
 ## What to record
 

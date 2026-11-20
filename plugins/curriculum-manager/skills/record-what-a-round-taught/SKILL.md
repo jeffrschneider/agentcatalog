@@ -1,6 +1,6 @@
 ---
 name: record-what-a-round-taught
-description: After a round of teaching, records the questions the course left open and where people stalled, so the next version of the course answers them. Use it when running `ref/hr/run-required-training`.
+description: After a round of teaching, records the questions the course left open and where people stalled, so the next version of the course answers them. Use it when running `ref/hr/run-required-training` and `ref/sup/ramp-a-new-support-person`.
 license: CC-BY-4.0
 metadata:
   agent: curriculum-manager
@@ -17,9 +17,12 @@ them.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
+- **Record What the Ramp Taught**
+  - `ref/sup/ramp-a-new-support-person`, activity 18 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Record What the Round Taught**
   - `ref/hr/run-required-training`, activity 15 -
     [Run Required Training](../../../../processes/human-resources/run-required-training.md)

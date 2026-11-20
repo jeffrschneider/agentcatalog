@@ -1,6 +1,6 @@
 ---
 name: test-the-assumptions
-description: Moves each assumption one at a time and records how far the answer swings, so it is clear which assumptions the number actually depends on. Use it when running `ref/fin/approve-an-investment-case` and `ref/mkt/size-market-opportunity`.
+description: Moves each assumption one at a time and records how far the answer swings, so it is clear which assumptions the number actually depends on. Use it when running `ref/fin/approve-an-investment-case`, `ref/mkt/size-market-opportunity` and `ref/sup/forecast-support-volume`.
 license: CC-BY-4.0
 metadata:
   agent: forecaster
@@ -16,9 +16,12 @@ swings, so it is clear which assumptions the number actually depends on.
 
 ## Where it happens
 
-The agent does this in two activities across two reference processes.
-Each one names the activity as that process words it.
+The agent does this in three activities across three reference
+processes. Each one names the activity as that process words it.
 
+- **Name the Assumptions That Decide the Answer**
+  - `ref/sup/forecast-support-volume`, activity 7 -
+    [Forecast Support Volume](../../../../processes/customer-support/forecast-support-volume.md)
 - **Test How Far the Answer Moves**
   - `ref/fin/approve-an-investment-case`, activity 7 -
     [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)

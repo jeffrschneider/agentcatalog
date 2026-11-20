@@ -1,6 +1,6 @@
 ---
 name: check-each-approval
-description: Checks each approval against the version in force before it counts, and holds any approval by someone the version does not name, by an approver past their limit, or by the person who prepared or asked for the item, and reads each limit a finance policy names against the delegation. Use it when running `ref/fin/approve-an-investment-case` and 4 other reference processes.
+description: Checks each approval against the version in force before it counts, and holds any approval by someone the version does not name, by an approver past their limit, or by the person who prepared or asked for the item, and reads each limit a finance policy names against the delegation. Use it when running `ref/fin/approve-an-investment-case` and 6 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: delegation-keeper
@@ -18,7 +18,7 @@ and reads each limit a finance policy names against the delegation.
 
 ## Where it happens
 
-The agent does this in five activities across five reference processes.
+The agent does this in six activities across seven reference processes.
 Each one names the activity as that process words it.
 
 - **Check Each Approval Counts**
@@ -33,6 +33,11 @@ Each one names the activity as that process words it.
 - **Check the Approval against the Delegation**
   - `ref/fin/approve-an-investment-case`, activity 14 -
     [Approve an Investment Case](../../../../processes/finance/approve-an-investment-case.md)
+- **Check the Decision Counts**
+  - `ref/sup/decide-a-refund-request`, activity 9 -
+    [Decide a Refund Request](../../../../processes/customer-support/decide-a-refund-request.md)
+  - `ref/sup/offer-a-goodwill-credit`, activity 8 -
+    [Offer a Goodwill Credit](../../../../processes/customer-support/offer-a-goodwill-credit.md)
 - **Confirm Each Approval Counts**
   - `ref/fin/post-a-manual-journal-entry`, activity 9 -
     [Post a Manual Journal Entry](../../../../processes/finance/post-a-manual-journal-entry.md)

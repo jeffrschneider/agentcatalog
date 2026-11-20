@@ -1,6 +1,6 @@
 ---
 name: turn-a-signed-plan-into-tracked-items
-description: Takes the milestones a signed plan carries, or the fixes a failed control or an auditor's letter needs, and makes each one an item with one owner, one date and a state, traceable to the line of the plan or the finding it came from. Use it when running `ref/fin/run-the-external-audit` and 6 other reference processes.
+description: Takes the milestones a signed plan carries, or the fixes a failed control or an auditor's letter needs, and makes each one an item with one owner, one date and a state, traceable to the line of the plan or the finding it came from. Use it when running `ref/fin/run-the-external-audit` and 7 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: commitment-keeper
@@ -18,7 +18,7 @@ the finding it came from.
 
 ## Where it happens
 
-The agent does this in five activities across seven reference processes.
+The agent does this in six activities across eight reference processes.
 Each one names the activity as that process words it.
 
 - **Load Each Fix Into the Tracker**
@@ -36,6 +36,9 @@ Each one names the activity as that process words it.
     [Run a Performance Improvement Plan](../../../../processes/human-resources/run-a-performance-improvement-plan.md)
   - `ref/pc/write-the-value-creation-plan`, activity 13 -
     [Write the Value Creation Plan](../../../../processes/private-capital/write-the-value-creation-plan.md)
+- **Record the Actions**
+  - `ref/sup/coach-a-support-person`, activity 9 -
+    [Coach a Support Person](../../../../processes/customer-support/coach-a-support-person.md)
 - **Record the Commitments**
   - `ref/prt/write-a-joint-plan`, activity 15 -
     [Write a Joint Plan](../../../../processes/partners/write-a-joint-plan.md)

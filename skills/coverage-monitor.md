@@ -34,8 +34,9 @@ covers:
 ## log-what-appears-while-a-run-is-live
 
 Watches the named sources while a run is in flight and records each thing
-that appears, whether it is an article, a post, an analyst note, a review
-or a result, keeping the wording and where it ran.
+that appears, whether it is an article, a post, an analyst note, a
+review, a result or customers saying in public that the product is
+broken, keeping the wording and where it ran.
 
 covers:
 - Log the Coverage
@@ -44,6 +45,7 @@ covers:
 - Track the Result
 - Watch What Gets Published
 - Watch the Reviews Land
+- Notice Customers Saying It in Public
 
 ## report-what-was-collected-against-the-goal
 

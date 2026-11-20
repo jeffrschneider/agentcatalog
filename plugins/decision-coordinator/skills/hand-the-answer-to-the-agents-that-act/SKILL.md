@@ -1,6 +1,6 @@
 ---
 name: hand-the-answer-to-the-agents-that-act
-description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/fin/approve-an-investment-case` and 24 other reference processes.
+description: Gives every agent and function that has to act the same account of what was decided, and takes back from each one what it is going to change. Use it when running `ref/fin/approve-an-investment-case` and 25 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,7 +18,7 @@ were turned down.
 
 ## Where it happens
 
-The agent does this in 25 activities across 25 reference processes. Each
+The agent does this in 26 activities across 26 reference processes. Each
 one names the activity as that process words it.
 
 - **Announce the Decision**
@@ -104,6 +104,9 @@ one names the activity as that process words it.
 - **Tell the Requesters**
   - `ref/mkt/prioritize-initiatives`, activity 14 -
     [Prioritize Marketing Initiatives](../../../../processes/marketing/prioritize-initiatives.md)
+- **Tell the Reviewers and Team Leads**
+  - `ref/sup/calibrate-case-reviews`, activity 15 -
+    [Calibrate Case Reviews](../../../../processes/customer-support/calibrate-case-reviews.md)
 
 ## What to record
 

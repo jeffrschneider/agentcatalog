@@ -25,6 +25,7 @@ covers:
 - Name the Search Terms
 - Set the Search Terms
 - Set What Each Page Has to Answer
+- Name the Words Customers Use
 
 ## brief-the-makers-on-the-requirement
 
@@ -68,12 +69,14 @@ covers:
 ## find-what-is-worth-making
 
 Collects what people ask at each stage, finds the questions with nothing
-published behind them, gathers the topics other agents want made, and
+published behind them, such as the help center searches that found
+nothing, gathers the topics other agents want made, and
 scores each candidate against the goals and the evidence.
 
 covers:
 - Collect the Questions
 - Find the Gaps
+- Read the Searches That Found Nothing
 - Collect the Topic Candidates
 - Score the Candidates
 

@@ -40,6 +40,7 @@ covers:
 - Say How Much Data It Needs
 - Size the Test
 - Set the Sample Size
+- Set How Many Shared Cases
 - Test the Fix Again
 
 ## collection-monitoring
@@ -67,6 +68,7 @@ covers:
 - Say What the Numbers Carry
 - Say What the Responses Support
 - Say What the Results Support
+- Say What the Sample Supports
 
 ## fieldwork
 
@@ -97,6 +99,8 @@ covers:
 - Test that the Groups Hold
 - Work Out the Figures
 - Work out the Figures
+- Work Out the Scores
+- Compare with the Last Period
 
 ## model-validation
 
@@ -172,3 +176,15 @@ covers:
 - Set the Minimum Group Size
 - Set the Groups to Report
 - Check the Report for Small Groups
+- Set the Minimum Count to Show
+
+## reviewer-agreement
+
+Measures how far reviewers who scored the same cases alone agree on each
+part of a rubric, beyond what chance would give, and how far each
+reviewer sits from the others, then measures it again on a short second
+set once the reviewers have agreed what each part means.
+
+covers:
+- Measure Where Reviewers Differ
+- Check the Agreement Held

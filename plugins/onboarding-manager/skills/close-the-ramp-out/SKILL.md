@@ -1,6 +1,6 @@
 ---
 name: close-the-ramp-out
-description: Keeps the run open until the first customer conversation has been debriefed, naming what the customer asked that the joiner could not answer and the date each gap is fixed by, and reports where the joiner stands against the ramp plan. Use it when running `ref/rev/onboard-a-seller`.
+description: Keeps the run open until the first customer conversation has been debriefed, naming what the customer asked that the joiner could not answer and the date each gap is fixed by, and reports where the joiner stands against the ramp plan. Use it when running `ref/rev/onboard-a-seller` and `ref/sup/ramp-a-new-support-person`.
 license: CC-BY-4.0
 metadata:
   agent: onboarding-manager
@@ -18,8 +18,8 @@ stands against the ramp plan.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Debrief the First Conversation**
   - `ref/rev/onboard-a-seller`, activity 16 -
@@ -27,6 +27,8 @@ one names the activity as that process words it.
 - **Report the Ramp**
   - `ref/rev/onboard-a-seller`, activity 17 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
+  - `ref/sup/ramp-a-new-support-person`, activity 17 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 
 ## What to record
 

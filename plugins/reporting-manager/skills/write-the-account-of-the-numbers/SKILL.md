@@ -1,6 +1,6 @@
 ---
 name: write-the-account-of-the-numbers
-description: Writes the explanation of why the numbers moved, in plain words, for the people who decide what happens next. Use it when running `ref/fin/report-the-monthly-results` and 3 other reference processes.
+description: Writes the explanation of why the numbers moved, in plain words, for the people who decide what happens next. Use it when running `ref/fin/report-the-monthly-results` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: reporting-manager
@@ -16,7 +16,7 @@ people who decide what happens next.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in six activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Write Why the Numbers Moved**
@@ -28,9 +28,15 @@ Each one names the activity as that process words it.
 - **Write the Account of the Month**
   - `ref/fin/report-the-monthly-results`, activity 11 -
     [Report the Monthly Results](../../../../processes/finance/report-the-monthly-results.md)
+- **Write the Account of the Period**
+  - `ref/sup/report-what-customers-say`, activity 10 -
+    [Report What Customers Say](../../../../processes/customer-support/report-what-customers-say.md)
 - **Write the Quarter's Letter**
   - `ref/pc/issue-the-quarterly-report-and-statements`, activity 10 -
     [Issue the Quarterly Report and Statements](../../../../processes/private-capital/issue-the-quarterly-report-and-statements.md)
+- **Write the Report**
+  - `ref/sup/report-the-service-levels`, activity 10 -
+    [Report the Service Levels](../../../../processes/customer-support/report-the-service-levels.md)
 
 ## What to record
 

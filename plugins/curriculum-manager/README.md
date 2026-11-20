@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/prt/certify-a-partner`, `ref/prt/run-a-first-deal-together`,
 `ref/rev/certify-a-seller`, `ref/rev/onboard-a-seller`,
-`ref/rev/roll-out-a-change`, `ref/hr/run-new-hire-orientation`, and 2
+`ref/rev/roll-out-a-change`, `ref/hr/run-new-hire-orientation`, and 4
 more. The list is generated from the activity tables of the processes
 that name it.
 

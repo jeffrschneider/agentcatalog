@@ -36,7 +36,7 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/mkt/account-based-play`, `ref/mkt/feature-release`,
-`ref/mkt/pricing-change`. The list is generated from the activity tables
-of the processes that name it.
+`ref/mkt/pricing-change`, `ref/sup/post-a-status-update`. The list is
+generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/in-product-producer

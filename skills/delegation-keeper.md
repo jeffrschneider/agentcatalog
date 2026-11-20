@@ -40,6 +40,7 @@ covers:
 - Name the Approver and the Releasers
 - Name the Approvers
 - Read the Approvers the Delegation Names
+- Name Who May Decide
 
 ## check-each-approval
 
@@ -54,3 +55,4 @@ covers:
 - Check the Approval Counts
 - Check the Approval against the Delegation
 - Confirm Each Approval Counts
+- Check the Decision Counts

@@ -1,6 +1,6 @@
 ---
 name: answer-a-question-left-open
-description: When a session ends with questions nobody could settle, the agent goes back to the systems, answers them with the figures, and says which questions it still cannot answer. Use it when running `ref/mkt/brief-executive-leadership`.
+description: When a session ends with questions nobody could settle, the agent goes back to the systems, answers them with the figures, and says which questions it still cannot answer. Use it when running `ref/mkt/brief-executive-leadership` and `ref/sup/report-what-customers-say`.
 license: CC-BY-4.0
 metadata:
   agent: analytics
@@ -17,12 +17,15 @@ questions it still cannot answer.
 
 ## Where it happens
 
-The agent does this in one activity across one reference process. Each
-one names the activity as that process words it.
+The agent does this in two activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Answer What Was Left Open**
   - `ref/mkt/brief-executive-leadership`, activity 18 -
     [Brief Executive Leadership](../../../../processes/marketing/brief-executive-leadership.md)
+- **Answer the Readers' Questions**
+  - `ref/sup/report-what-customers-say`, activity 13 -
+    [Report What Customers Say](../../../../processes/customer-support/report-what-customers-say.md)
 
 ## What to record
 

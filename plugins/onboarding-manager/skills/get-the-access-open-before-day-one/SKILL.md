@@ -1,6 +1,6 @@
 ---
 name: get-the-access-open-before-day-one
-description: Orders the accounts, licences and systems the job's own list calls for before the first day, then has the joiner sign into each one. Use it when running `ref/hr/prepare-for-a-new-hire` and `ref/rev/onboard-a-seller`.
+description: Orders the accounts, licences and systems the job's own list calls for before the first day, then has the joiner sign into each one. Use it when running `ref/hr/prepare-for-a-new-hire`, `ref/rev/onboard-a-seller` and `ref/sup/ramp-a-new-support-person`.
 license: CC-BY-4.0
 metadata:
   agent: onboarding-manager
@@ -17,7 +17,7 @@ is open when the joiner has used it, not when the ticket closed.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Check In on the First Morning**
@@ -26,6 +26,11 @@ Each one names the activity as that process words it.
 - **Check the Access Landed**
   - `ref/rev/onboard-a-seller`, activity 5 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
+  - `ref/sup/ramp-a-new-support-person`, activity 4 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
+- **Order Access to the Desk**
+  - `ref/sup/ramp-a-new-support-person`, activity 3 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Order the Access**
   - `ref/hr/prepare-for-a-new-hire`, activity 9 -
     [Prepare for a New Hire](../../../../processes/human-resources/prepare-for-a-new-hire.md)

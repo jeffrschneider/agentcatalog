@@ -49,12 +49,16 @@ covers:
 
 Recomputes the disputed lines on their own from the same records, drafts
 the credit note or the replacement for exactly what was decided, and
-issues it once the named approver has approved it.
+issues it once the named approver has approved it. The same work issues
+the credit note for a refund or a goodwill credit a named person in
+support decided, once that person has approved it.
 
 covers:
 - Draft the Credit Note or Replacement
 - Issue the Credit Note and Any Replacement
 - Recompute the Invoice Independently
+- Draft the Credit Note
+- Issue the Credit Note
 
 ## learn-from-each-invoice
 

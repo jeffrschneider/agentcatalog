@@ -22,6 +22,7 @@ signal with a reason, and that is the job working.
   Live With It, Test It With Those People, Ask the Delivery Side What
   They See, Score the Opening, Decide: Pursue, Park or Drop, Record the
   Finding and Hand It On
+- `ref/sup/flag-an-account-signal` / Hand a Sign of Buying More to Sales
 
 ## Patterns
 
@@ -45,7 +46,8 @@ upsell-planner agent in a debrief.
 - the usage system (read) - how close each metered thing is to what was
   bought, over a window rather than on one day
 - the support system (read) - an account in an open crisis is not
-  worked
+  worked, and a support signal is taken in with its case and the
+  customer's own words
 - the billing system (read) - collections and anything in dispute
 - the contract record (read) - the products, licences, limits and dates on
   the agreement they hold today
@@ -83,6 +85,12 @@ reading does not raise the same opening next month.
   signal marked so it does not raise the same opening again
 - an account owner who parks the same signal more than the policy
   allows, to whoever the policy names, rather than into another run
+- a sign of buying more that support passes on - to the account owner
+  with the customer's own words, the case and the standing, and nobody
+  in support makes an offer or discusses a price
+- a support signal that does not hold - back to the support specialist
+  and the team lead who raised it with the reason, so the support team's
+  signal rules can change at their next debrief
 
 ## Not
 

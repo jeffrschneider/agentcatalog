@@ -13,6 +13,7 @@ covers:
 - Load the Plan into the Tracker
 - Load the Actions into the Tracker
 - Load Each Fix Into the Tracker
+- Record the Actions
 
 ## put-the-reviews-on-the-calendar
 
@@ -25,6 +26,7 @@ covers:
 - Open the Review
 - Set the Next Review
 - Set the Check-In Dates
+- Book the Coaching Session
 
 ## read-every-commitment-out-loud
 
@@ -42,6 +44,8 @@ covers:
 - Hold Each Check-In
 - Review the Actions
 - Chase Each Fix to Its Date
+- Read Out Last Time's Actions
+- Chase Each Action to Its Date
 
 ## close-what-nobody-is-going-to-do
 
@@ -88,3 +92,15 @@ the reason. The plan closes with nothing left open by silence.
 
 covers:
 - Close the Plan
+- Close the Coaching Cycle
+
+## learn-from-a-coaching-cycle
+
+Convenes the debrief at the end of a coaching cycle on which actions
+held and which slipped, whether the support the team lead promised
+arrived on its date, and what the next session changes, and counts for
+the head of support how many specialists said coaching helped, with no
+names attached.
+
+covers:
+- Record What the Cycle Taught

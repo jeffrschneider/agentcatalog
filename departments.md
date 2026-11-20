@@ -20,4 +20,5 @@ shown as a department, and the loader warns about it.
 | partners | Partners | Department |
 | human-resources | Human resources | Department |
 | finance | Finance | Department |
+| customer-support | Customer support | Department |
 | private-capital | Private capital | Line of business |

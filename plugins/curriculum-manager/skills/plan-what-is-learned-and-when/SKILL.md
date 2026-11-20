@@ -1,6 +1,6 @@
 ---
 name: plan-what-is-learned-and-when
-description: Builds the plan of which courses each role takes, in what order and in which week, and books the dates, the trainers and the rooms in diaries on both sides. Use it when running `ref/prt/certify-a-partner` and `ref/rev/onboard-a-seller`.
+description: Builds the plan of which courses each role takes, in what order and in which week, and books the dates, the trainers and the rooms in diaries on both sides. Use it when running `ref/prt/certify-a-partner`, `ref/rev/onboard-a-seller` and `ref/sup/ramp-a-new-support-person`.
 license: CC-BY-4.0
 metadata:
   agent: curriculum-manager
@@ -17,7 +17,7 @@ on both sides.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Book the Sessions**
@@ -29,6 +29,9 @@ Each one names the activity as that process words it.
 - **Build the Learning Plan**
   - `ref/rev/onboard-a-seller`, activity 6 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
+- **Build the Ramp Plan**
+  - `ref/sup/ramp-a-new-support-person`, activity 5 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 
 ## What to record
 

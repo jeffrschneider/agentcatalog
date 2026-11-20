@@ -36,7 +36,7 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/sls/close-a-renewal`, `ref/sls/open-a-renewal`,
-`ref/sls/work-a-churn-risk`. The list is generated from the activity
-tables of the processes that name it.
+`ref/sls/work-a-churn-risk`, `ref/sup/flag-an-account-signal`. The list
+is generated from the activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/risk-watcher

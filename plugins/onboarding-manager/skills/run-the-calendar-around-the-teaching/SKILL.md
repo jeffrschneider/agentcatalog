@@ -1,6 +1,6 @@
 ---
 name: run-the-calendar-around-the-teaching
-description: Holds the plan of what is learned in which week and who teaches it, and books the introductions, the recorded and live calls the joiner listens to, and the sitting itself, in diaries on both sides. Use it when running `ref/hr/run-new-hire-orientation`, `ref/rev/certify-a-seller` and `ref/rev/onboard-a-seller`.
+description: Holds the plan of what is learned in which week and who teaches it, and books the introductions, the recorded and live calls the joiner listens to, and the sitting itself, in diaries on both sides. Use it when running `ref/hr/run-new-hire-orientation` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: onboarding-manager
@@ -18,8 +18,8 @@ calendar and the checklist rather than doing the teaching.
 
 ## Where it happens
 
-The agent does this in seven activities across three reference
-processes. Each one names the activity as that process words it.
+The agent does this in nine activities across four reference processes.
+Each one names the activity as that process words it.
 
 - **Book the Session**
   - `ref/hr/run-new-hire-orientation`, activity 2 -
@@ -27,6 +27,9 @@ processes. Each one names the activity as that process words it.
 - **Build the Learning Plan**
   - `ref/rev/onboard-a-seller`, activity 6 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
+- **Build the Ramp Plan**
+  - `ref/sup/ramp-a-new-support-person`, activity 5 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Listen to Real Conversations**
   - `ref/rev/onboard-a-seller`, activity 12 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
@@ -42,6 +45,9 @@ processes. Each one names the activity as that process words it.
 - **Set the Group**
   - `ref/hr/run-new-hire-orientation`, activity 1 -
     [Run New Hire Orientation](../../../../processes/human-resources/run-new-hire-orientation.md)
+- **Sit Beside a Mentor**
+  - `ref/sup/ramp-a-new-support-person`, activity 9 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 
 ## What to record
 

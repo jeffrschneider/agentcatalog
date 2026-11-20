@@ -3,9 +3,10 @@
 ## write-a-routing-rule-in-plain-words
 
 Takes the question of who should get what, reads how the work is routed
-now, and writes the answer as sentences a seller can read without
-training. Sets which clause wins where two could match, and names the
-person anything unmatched goes to.
+now, including the cases moved by hand under the rule in force, and
+writes the answer as sentences a seller or a support specialist can read
+without training. Sets which clause wins where two could match, and
+names the person anything unmatched goes to.
 
 covers:
 - Name Who Should Get What
@@ -13,29 +14,43 @@ covers:
 - Set the Order and the Fallback
 - Take in the Routing Question
 - Write the Rule in Plain Words
+- Take In the Routing Request
+- Read the Rule in Force
+- Read the Misroutes Under It
+- Say Who Should Get What
+- Write the Change in Plain Words
 
 ## test-a-rule-before-it-runs
 
-Sets the volume each clause would send against what each receiving queue
-can hold, reads the rule to the people it routes to and answers what
-they say is wrong, and takes it to be signed at a version.
+Checks how often each field the rule reads is filled and who writes it,
+sets the volume each clause would send against what each receiving queue
+can hold, builds the rule in a copy away from live, reads the rule to
+the people it routes to and answers what they say is wrong, and takes
+it to be signed at a version.
 
 covers:
 - Check It Against Capacity
 - Get the Rule Approved
 - Show It to the People It Routes To
+- Check the Fields the Rule Reads
+- Check the Queues Can Hold It
+- Build It Away from Live
 
 ## put-a-rule-into-service
 
-Builds the signed rule into the system that hands out the work, checks
-where the first items actually land, publishes the copy people are held
-to, and tells everyone the change reaches what is different now.
+Builds the signed rule into the system that hands out the work, with the
+version before kept ready to switch back to, checks where the first
+items actually land, publishes the copy people are held to, and tells
+everyone the change reaches what is different now.
 
 covers:
 - Announce What Changes
 - Implement the Rule
 - Publish the Rule Where People Read It
 - Verify It in the Live System
+- Switch It On with a Way Back
+- Check the First Requests Land Right
+- Publish the Rule Where the Team Reads It
 
 ## move-work-that-reached-the-wrong-person
 
@@ -52,6 +67,7 @@ covers:
 - Record What Already Happened
 - Take in the Report of a Misroute
 - Tell Both People
+- Watch for Work in the Wrong Queue
 
 ## find-why-a-rule-sent-work-wrong
 
@@ -64,6 +80,14 @@ covers:
 - Find Why the Rule Sent It Wrong
 - Raise the Rule Change
 - Say Whether It Is the Data or the Rule
+
+## record-what-a-change-taught
+
+Records after a routing change the work that landed in the wrong queue,
+what fell to the fallback, and what the next change does differently.
+
+covers:
+- Record What the Change Taught
 
 ## act-on-what-the-clock-report-finds
 

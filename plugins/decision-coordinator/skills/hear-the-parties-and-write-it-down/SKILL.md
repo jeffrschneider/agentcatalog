@@ -1,6 +1,6 @@
 ---
 name: hear-the-parties-and-write-it-down
-description: Takes down in writing what each party with a stake in the decision says, such as what the other investors and the lenders will and will not do, or each deal lead's account of a company, attributed to the person who said it, so the options are laid out against positions on the record. Use it when running `ref/fin/write-off-a-bad-debt` and 3 other reference processes.
+description: Takes down in writing what each party with a stake in the decision says, such as what the other investors and the lenders will and will not do, or each deal lead's account of a company, attributed to the person who said it, so the options are laid out against positions on the record. Use it when running `ref/fin/write-off-a-bad-debt` and 5 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: decision-coordinator
@@ -18,7 +18,7 @@ said it, so the options are laid out against positions on the record.
 
 ## Where it happens
 
-The agent does this in four activities across four reference processes.
+The agent does this in six activities across six reference processes.
 Each one names the activity as that process words it.
 
 - **Consult Where the Rules Require It**
@@ -33,6 +33,12 @@ Each one names the activity as that process words it.
 - **Hear the Other Investors and Lenders**
   - `ref/pc/work-a-company-in-trouble`, activity 6 -
     [Work a Company in Trouble](../../../../processes/private-capital/work-a-company-in-trouble.md)
+- **Hear the Team Leads**
+  - `ref/sup/set-a-service-level-policy`, activity 9 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
+- **Hear the Team Leads and Specialists**
+  - `ref/sup/calibrate-case-reviews`, activity 11 -
+    [Calibrate Case Reviews](../../../../processes/customer-support/calibrate-case-reviews.md)
 
 ## What to record
 

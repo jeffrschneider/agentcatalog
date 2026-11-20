@@ -1,6 +1,6 @@
 ---
 name: take-in-a-joiner-and-their-job
-description: Takes in who is joining, into which job and from when, has the manager state the job and the ramp expected in their own words, and takes the patch and the ramped number at the version whoever set them signed. Use it when running `ref/hr/prepare-for-a-new-hire`, `ref/hr/run-a-new-hires-first-months` and `ref/rev/onboard-a-seller`.
+description: Takes in who is joining, into which job and from when, has the manager state the job and the ramp expected in their own words, and takes the patch and the ramped number at the version whoever set them signed. Use it when running `ref/hr/prepare-for-a-new-hire` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: onboarding-manager
@@ -17,15 +17,21 @@ patch and the ramped number at the version whoever set them signed.
 
 ## Where it happens
 
-The agent does this in six activities across three reference processes.
+The agent does this in eight activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Confirm the Job and the Manager**
   - `ref/rev/onboard-a-seller`, activity 2 -
     [Onboard a Seller](../../../../processes/revenue-operations/onboard-a-seller.md)
+- **Confirm the Ramp With the Team Lead**
+  - `ref/sup/ramp-a-new-support-person`, activity 2 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Confirm the Start with the Manager**
   - `ref/hr/prepare-for-a-new-hire`, activity 3 -
     [Prepare for a New Hire](../../../../processes/human-resources/prepare-for-a-new-hire.md)
+- **Take In the New Specialist**
+  - `ref/sup/ramp-a-new-support-person`, activity 1 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 - **Take in the New Hire**
   - `ref/hr/run-a-new-hires-first-months`, activity 1 -
     [Run a New Hire's First Months](../../../../processes/human-resources/run-a-new-hires-first-months.md)

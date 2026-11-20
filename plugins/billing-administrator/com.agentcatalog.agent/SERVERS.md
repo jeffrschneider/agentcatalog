@@ -1,6 +1,6 @@
 # The systems this abstract agent needs
 
-Eleven systems, named by role rather than by product. The access level
+Twelve systems, named by role rather than by product. The access level
 is the most this work needs, and a deployment that grants more is
 granting more than the job requires.
 
@@ -11,6 +11,7 @@ granting more than the job requires.
 | the usage record | read | Each period's metered usage against the entitlement. |
 | the contract repository | read | The billing terms of each agreement, and the records a disputed invoice is recomputed from. |
 | the dispute register | read | Each claim and the invoice version frozen while it is argued. |
+| the refund register | read | Each refund or goodwill credit a named person in support decided, with the amount, the invoice or the account it applies to and who decided it. |
 | the receivables ledger | write | Each issued invoice and credit note. |
 | the general ledger | write | Each issued invoice and credit note. |
 | the e-invoicing channel | write | Each invoice sent where the customer receives it that way. |

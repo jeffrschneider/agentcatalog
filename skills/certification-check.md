@@ -22,6 +22,7 @@ bring in with them.
 covers:
 - Brief the Assessors
 - Name the Assessors
+- Name the Assessor
 - Schedule the Sitting
 
 ## run-the-sitting
@@ -33,6 +34,7 @@ before a customer is the one finding out.
 
 covers:
 - Assess the Practical
+- Run the Topic Sitting
 - Prove the Parts that Matter
 - Run the Knowledge Check
 - Sit the Written Exam
@@ -45,6 +47,7 @@ so a disputed score can be reread rather than re-argued.
 
 covers:
 - Score Against the Standard
+- Score the Practice Cases
 
 ## carry-the-result-to-a-person-who-signs-it
 

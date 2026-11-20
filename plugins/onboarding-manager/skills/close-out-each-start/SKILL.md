@@ -1,6 +1,6 @@
 ---
 name: close-out-each-start
-description: Gathers what a group of new hires found unclear, missing or too long, read for the group and never for one person, closes each orientation session on the record with its attendance, acknowledgments and training, and records what each preparation and each new hire's first months taught, so the next one changes. Use it when running `ref/hr/prepare-for-a-new-hire`, `ref/hr/run-a-new-hires-first-months` and `ref/hr/run-new-hire-orientation`.
+description: Gathers what a group of new hires found unclear, missing or too long, read for the group and never for one person, closes each orientation session on the record with its attendance, acknowledgments and training, and records what each preparation and each new hire's first months taught, so the next one changes. Use it when running `ref/hr/prepare-for-a-new-hire` and 3 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: onboarding-manager
@@ -19,7 +19,7 @@ taught, so the next one changes.
 
 ## Where it happens
 
-The agent does this in four activities across three reference processes.
+The agent does this in five activities across four reference processes.
 Each one names the activity as that process words it.
 
 - **Close the Session on the Record**
@@ -34,6 +34,9 @@ Each one names the activity as that process words it.
 - **Record What the Preparation Taught**
   - `ref/hr/prepare-for-a-new-hire`, activity 17 -
     [Prepare for a New Hire](../../../../processes/human-resources/prepare-for-a-new-hire.md)
+- **Record What the Ramp Taught**
+  - `ref/sup/ramp-a-new-support-person`, activity 18 -
+    [Ramp a New Support Person](../../../../processes/customer-support/ramp-a-new-support-person.md)
 
 ## What to record
 

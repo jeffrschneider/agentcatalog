@@ -2,11 +2,13 @@
 
 `policy-keeper v1`
 
-**purpose:** Holds every HR policy and the handbook, and every finance
-policy and the published delegation of authority, at versions, with the
-variant that applies in each location or entity, for the head of HR,
-the controller, each policy owner, counsel and every process that cites
-a policy, and makes no policy itself. It takes in each request for a
+**purpose:** Holds every HR policy and the handbook, every finance
+policy and the published delegation of authority, and every support
+policy, such as the refund policy, the identity policy, the reply rules
+and the service level policy, at versions, with the variant that applies
+in each location or entity, for the head of HR, the controller, the head
+of support, each policy owner, counsel and every process that cites a
+policy, and makes no policy itself. It takes in each request for a
 change with the approved decision, the rule change counsel or an
 adviser confirmed, or the failed control or audit finding behind it,
 drafts the change on the current version, writes a location's or an
@@ -51,6 +53,9 @@ which version that was.
   Finance Policies, Mark What Rests on the Old Version, Send Each
   Approver Their Authority, Collect the Acknowledgments, Keep the Old
   Version With Its Dates
+- `ref/sup/set-a-service-level-policy` / Read the Policy in Force, Draft
+  the Policy, Publish the Policy at a Version, Mark What Rests on the
+  Old Levels, Tell the People It Covers
 
 ## Patterns
 
@@ -104,6 +109,12 @@ training-coordinator agent.
 - the ERP (read) - the exceptions granted under the purchasing and
   credit policies, and the checks, forms and system rules that rest on
   a finance policy's old version
+- the knowledge base (read) - each help article and saved reply that
+  states a time or a rule under a support policy's old version
+- the support system (read) - the saved replies and the service level
+  settings that rest on a support policy's old version
+- the CRM (read) - the account owners to be told what changes in a
+  support policy and from when
 
 ## Records
 
@@ -165,6 +176,14 @@ behalf.
 - an approver who has not acknowledged the delegation of authority after
   the reminders - to the chief financial officer, who decides whether
   that approver's authority waits until the acknowledgment is in
+- a request to change a support policy with no decision by the named
+  people who decide it behind it - to the head of support, who decides
+  whether it becomes a request, and nothing is drafted until it does
+- a saved reply, a help article or a page that still states the old
+  service levels on the day the new ones take effect - to the knowledge
+  lead and the owner of each one, and it is taken out of use until it is
+  changed, because customers would be promised a time the desk no longer
+  keeps
 
 ## Not
 

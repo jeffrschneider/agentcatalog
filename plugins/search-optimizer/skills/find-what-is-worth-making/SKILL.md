@@ -1,6 +1,6 @@
 ---
 name: find-what-is-worth-making
-description: Collects what people ask at each stage, finds the questions with nothing published behind them, gathers the topics other agents want made, and scores each candidate against the goals and the evidence. Use it when running `ref/mkt/content-calendar` and `ref/mkt/map-buyer-journey`.
+description: Collects what people ask at each stage, finds the questions with nothing published behind them, such as the help center searches that found nothing, gathers the topics other agents want made, and scores each candidate against the goals and the evidence. Use it when running `ref/mkt/content-calendar`, `ref/mkt/map-buyer-journey` and `ref/sup/find-gaps-in-the-help-center`.
 license: CC-BY-4.0
 metadata:
   agent: search-optimizer
@@ -12,12 +12,13 @@ metadata:
 ## What it does
 
 Collects what people ask at each stage, finds the questions with nothing
-published behind them, gathers the topics other agents want made, and
-scores each candidate against the goals and the evidence.
+published behind them, such as the help center searches that found
+nothing, gathers the topics other agents want made, and scores each
+candidate against the goals and the evidence.
 
 ## Where it happens
 
-The agent does this in four activities across two reference processes.
+The agent does this in five activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Collect the Questions**
@@ -29,6 +30,9 @@ Each one names the activity as that process words it.
 - **Find the Gaps**
   - `ref/mkt/map-buyer-journey`, activity 13 -
     [Map Buyer Journey](../../../../processes/marketing/map-buyer-journey.md)
+- **Read the Searches That Found Nothing**
+  - `ref/sup/find-gaps-in-the-help-center`, activity 3 -
+    [Find Gaps in the Help Center](../../../../processes/customer-support/find-gaps-in-the-help-center.md)
 - **Score the Candidates**
   - `ref/mkt/content-calendar`, activity 8 -
     [Plan Content Calendar](../../../../processes/marketing/content-calendar.md)

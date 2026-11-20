@@ -1,6 +1,6 @@
 ---
 name: take-in-a-signal-and-confirm-it
-description: Takes in a signal that a customer may be leaving and tests it against the account record before anybody is told. Use it when running `ref/sls/work-a-churn-risk`.
+description: Takes in a signal that a customer may be leaving, including one a support case raised in the customer's own words, and tests it against the account record before anybody is told. Use it when running `ref/sls/work-a-churn-risk` and `ref/sup/flag-an-account-signal`.
 license: CC-BY-4.0
 metadata:
   agent: risk-watcher
@@ -11,18 +11,22 @@ metadata:
 
 ## What it does
 
-Takes in a signal that a customer may be leaving and tests it against
+Takes in a signal that a customer may be leaving, including one a
+support case raised in the customer's own words, and tests it against
 the account record before anybody is told. A signal the record
 contradicts closes the run there, with the contradiction written down.
 
 ## Where it happens
 
-The agent does this in two activities across one reference process. Each
-one names the activity as that process words it.
+The agent does this in three activities across two reference processes.
+Each one names the activity as that process words it.
 
 - **Confirm the Signal**
   - `ref/sls/work-a-churn-risk`, activity 2 -
     [Work a Churn Risk](../../../../processes/sales/work-a-churn-risk.md)
+- **Hand a Sign of Leaving to Sales**
+  - `ref/sup/flag-an-account-signal`, activity 6 -
+    [Flag an Account Signal](../../../../processes/customer-support/flag-an-account-signal.md)
 - **Take in the Risk Signal**
   - `ref/sls/work-a-churn-risk`, activity 1 -
     [Work a Churn Risk](../../../../processes/sales/work-a-churn-risk.md)

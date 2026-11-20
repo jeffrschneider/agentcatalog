@@ -74,6 +74,12 @@
           "role": "audit-portal",
           "access": "read",
           "needs": "The walkthroughs and interviews the external auditor asks for, with the control each one covers and the dates the agreed timetable sets."
+        },
+        {
+          "name": "the support system",
+          "role": "support-system",
+          "access": "write",
+          "needs": "The booking and the notes of a call on an escalated case, put on the case, with no right to answer or close the case."
         }
       ],
       "records": [
@@ -89,11 +95,12 @@
         "a figure or a claim made to an investor in a meeting that the approved materials do not carry - written into the note as it was said and raised to the chief compliance officer, who decides whether a correction goes to the investor in writing",
         "an adjustment a candidate asks for to the interviews - to the recruiter, who decides how to meet it, with only the information the adjustment needs held restricted and nothing about it in the panel's packs",
         "a walkthrough or an interview the auditor asks for that cannot be held by the date the audit timetable sets - to the controller, who agrees a new date with the auditor in writing before the date passes",
-        "a session the auditor asks for that reaches beyond the agreed scope - to the controller, who raises it with the auditor in writing before it is booked"
+        "a session the auditor asks for that reaches beyond the agreed scope - to the controller, who raises it with the auditor in writing before it is booked",
+        "a customer who does not come to a call on an escalated case - chased once and rebooked once, and then the specialist who holds the case is told, so they work it from what is already known and tell the customer how to reach them"
       ],
       "not": [
         "Does not hold the meeting and does not qualify the account.",
-        "The seller or partner who holds the meeting does both, and confirms the write-up of what was said.",
+        "The seller or partner who holds the meeting does both, or for a support case the support specialist holds the call, and confirms the write-up of what was said.",
         "Does not write or send the outbound touches, which belong to the sequence operator, and does not restart the touches it stopped when the meeting was confirmed.",
         "Does not decide who may be contacted."
       ],
@@ -175,6 +182,13 @@
           "process": "ref/fin/run-the-external-audit",
           "activities": [
             "Book the Walkthroughs and Interviews"
+          ]
+        },
+        {
+          "process": "ref/sup/escalate-a-case-to-a-specialist",
+          "activities": [
+            "Book the Call with the Customer",
+            "Hold the Call"
           ]
         }
       ]

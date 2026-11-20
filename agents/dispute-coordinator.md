@@ -30,6 +30,8 @@ escalate in the same message.
   Pull the Records Behind the Invoice, Hear the Customer, Hear the
   Account Owner and Delivery, Tell the Customer, Escalate What Is Not
   Accepted, Feed the Cause Back
+- `ref/sup/answer-a-billing-question` / Take In the Claim at Finance,
+  Tell the Customer Who Holds It Now
 
 ## Patterns
 
@@ -69,6 +71,9 @@ hands the cause back so the same claim does not arrive next period.
   governs the disputed line
 - the CRM (read) - the account owner and the delivery lead to be heard
   on what was promised and delivered
+- the support system (write) - the holder of a claim support handed
+  over, and the date its answer will come, put on the customer's case,
+  with no right to answer or close the case
 
 ## Records
 
@@ -120,6 +125,10 @@ the same sentence is the one that changes the plan.
 - an invoice and its recompute that disagree from the same records - to
   the billing lead with both set side by side, and to the owner of the
   billing system at the cause step
+- a claim handed over from a support case that cannot be logged with a
+  holder and a date on the day it arrives - to the billing lead, because
+  the customer is told who holds it within the hours the support process
+  sets
 
 ## Not
 

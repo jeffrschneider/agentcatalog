@@ -36,7 +36,8 @@ manifest and in the directory of the same name.
 ## Where this abstract agent is used
 
 `ref/fin/issue-a-customer-invoice`, `ref/fin/resolve-a-billing-dispute`,
-`ref/fin/recognize-revenue`. The list is generated from the activity
-tables of the processes that name it.
+`ref/fin/recognize-revenue`, `ref/sup/decide-a-refund-request`,
+`ref/sup/offer-a-goodwill-credit`. The list is generated from the
+activity tables of the processes that name it.
 
 https://agentcatalog.com/abstract-agents/billing-administrator

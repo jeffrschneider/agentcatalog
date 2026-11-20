@@ -1,6 +1,6 @@
 ---
 name: minimum-group-size
-description: Sets the group size below which no figure or comment is shown, so no answer or outcome can be traced to a person, sets the groups a survey or a report shows at or above it, and checks every table against it before anything goes out. Use it when running `ref/hr/report-on-the-workforce` and `ref/hr/run-the-employee-survey`.
+description: Sets the group size below which no figure or comment is shown, so no answer or outcome can be traced to a person, sets the groups a survey or a report shows at or above it, and checks every table against it before anything goes out. Use it when running `ref/hr/report-on-the-workforce`, `ref/hr/run-the-employee-survey` and `ref/sup/survey-customers-after-a-case`.
 license: CC-BY-4.0
 metadata:
   agent: statistician
@@ -18,7 +18,7 @@ anything goes out.
 
 ## Where it happens
 
-The agent does this in three activities across two reference processes.
+The agent does this in four activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Check the Report for Small Groups**
@@ -27,6 +27,9 @@ Each one names the activity as that process words it.
 - **Set the Groups to Report**
   - `ref/hr/run-the-employee-survey`, activity 5 -
     [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)
+- **Set the Minimum Count to Show**
+  - `ref/sup/survey-customers-after-a-case`, activity 3 -
+    [Survey Customers after a Case](../../../../processes/customer-support/survey-customers-after-a-case.md)
 - **Set the Minimum Group Size**
   - `ref/hr/run-the-employee-survey`, activity 4 -
     [Run the Employee Survey](../../../../processes/human-resources/run-the-employee-survey.md)

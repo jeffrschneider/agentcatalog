@@ -1,6 +1,6 @@
 ---
 name: work-a-change-through-off-live-first
-description: Takes in what people ask for and what the supplier has changed, tries it away from live, and applies it with the way back kept. Use it when running `ref/rev/administer-a-tool`.
+description: Takes in what people ask for and what the supplier has changed, tries it away from live, such as a routing change replayed on past requests in a copy of the support system, and applies it with the way back kept, restoring the version before when the change sends work wrong. Use it when running `ref/rev/administer-a-tool`, `ref/sup/change-a-routing-rule` and `ref/sup/set-a-service-level-policy`.
 license: CC-BY-4.0
 metadata:
   agent: tool-administrator
@@ -12,18 +12,35 @@ metadata:
 ## What it does
 
 Takes in what people ask for and what the supplier has changed, tries it
-away from live, and applies it with the way back kept. A request that is
-not what the tool is for is refused in writing with the process it
-belongs to named.
+away from live, such as a routing change replayed on past requests in a
+copy of the support system, and applies it with the way back kept,
+restoring the version before when the change sends work wrong. A request
+that is not what the tool is for is refused in writing with the process
+it belongs to named.
 
 ## Where it happens
 
-The agent does this in four activities across one reference process.
+The agent does this in nine activities across three reference processes.
 Each one names the activity as that process words it.
 
 - **Apply the Change**
   - `ref/rev/administer-a-tool`, activity 7 -
     [Administer a Tool](../../../../processes/revenue-operations/administer-a-tool.md)
+- **Build It Away from Live**
+  - `ref/sup/change-a-routing-rule`, activity 10 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
+- **Build the Clocks into the Support System**
+  - `ref/sup/set-a-service-level-policy`, activity 15 -
+    [Set a Service Level Policy](../../../../processes/customer-support/set-a-service-level-policy.md)
+- **Replay It on Past Requests**
+  - `ref/sup/change-a-routing-rule`, activity 11 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
+- **Switch Back to the Version Before**
+  - `ref/sup/change-a-routing-rule`, activity 17 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
+- **Switch It On with a Way Back**
+  - `ref/sup/change-a-routing-rule`, activity 13 -
+    [Change a Routing Rule](../../../../processes/customer-support/change-a-routing-rule.md)
 - **Take in Change Requests**
   - `ref/rev/administer-a-tool`, activity 5 -
     [Administer a Tool](../../../../processes/revenue-operations/administer-a-tool.md)

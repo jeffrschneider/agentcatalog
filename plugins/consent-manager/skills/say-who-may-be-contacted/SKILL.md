@@ -1,6 +1,6 @@
 ---
 name: say-who-may-be-contacted
-description: Applies the consent record to a named set of people or accounts and says which of them may be approached, on which channel, and where a study is involved, what may be asked of them. Use it when running `ref/mkt/account-based-play` and 7 other reference processes.
+description: Applies the consent record to a named set of people or accounts and says which of them may be approached, on which channel, and where a study is involved, what may be asked of them. Use it when running `ref/mkt/account-based-play` and 8 other reference processes.
 license: CC-BY-4.0
 metadata:
   agent: consent-manager
@@ -17,12 +17,15 @@ involved, what may be asked of them.
 
 ## Where it happens
 
-The agent does this in four activities across eight reference processes.
+The agent does this in five activities across nine reference processes.
 Each one names the activity as that process words it.
 
 - **Check Who May Be Approached**
   - `ref/mkt/win-loss-analysis`, activity 6 -
     [Conduct Win/Loss Analysis](../../../../processes/marketing/win-loss-analysis.md)
+- **Check Who May Be Asked**
+  - `ref/sup/survey-customers-after-a-case`, activity 5 -
+    [Survey Customers after a Case](../../../../processes/customer-support/survey-customers-after-a-case.md)
 - **Check Who May Be Contacted**
   - `ref/mkt/account-based-play`, activity 6 -
     [Run Account-Based Play](../../../../processes/marketing/account-based-play.md)

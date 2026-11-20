@@ -37,7 +37,7 @@ manifest and in the directory of the same name.
 
 `ref/mkt/advisory-board`, `ref/mkt/announce-company-news`,
 `ref/mkt/award-entry`, `ref/mkt/brand-audit`,
-`ref/mkt/brand-guidelines`, `ref/mkt/brand-positioning`, and 18 more.
+`ref/mkt/brand-guidelines`, `ref/mkt/brand-positioning`, and 19 more.
 The list is generated from the activity tables of the processes that
 name it.
 

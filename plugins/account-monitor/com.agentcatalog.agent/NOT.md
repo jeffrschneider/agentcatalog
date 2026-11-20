@@ -26,3 +26,10 @@ people who own the account.
 - a contractual or legal matter it finds while reading, such as a
   dispute, a breach notice or an account in collections, because whether
   that account may be approached at all is a person's decision
+- an account whose plan or entitlement cannot be read when a support
+  request arrives - to the owner of that record at
+  `ref/rev/fix-a-data-quality-failure`, with the case marked as taking
+  the service level set for a plan that is unknown
+- an affected account whose agreement promises a notice of an outage -
+  to the head of support with the deadline, the route and the contact
+  the agreement names, before the deadline passes

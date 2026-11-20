@@ -49,6 +49,12 @@
           "role": "review-record",
           "access": "write",
           "needs": "The scores land where the signers and the producing agents read them."
+        },
+        {
+          "name": "the knowledge base",
+          "role": "knowledge-base",
+          "access": "read",
+          "needs": "Each help article draft at its version, scored as customers will read it once it is published."
         }
       ],
       "records": [
@@ -59,12 +65,13 @@
       "escalates": [
         "every failure, with the rule attached. This agent does not waive its own findings.",
         "a request to publish something with a known failure. A person decides that, and the decision is recorded with the failure attached.",
-        "two standards it was handed that contradict each other, such as a brand color that cannot meet the contrast rule"
+        "two standards it was handed that contradict each other, such as a brand color that cannot meet the contrast rule",
+        "a help article that still fails a rule once the article-writer agent has fixed it - to the article's named owner and the knowledge lead, with the rule attached, because no article is approved or answered from by the agents while a failure is open"
       ],
       "not": [
         "This agent is not a signer.",
         "It produces the score and named people sign.",
-        "It does not fix what it finds: the copywriter writes the alt text, the video-editor recuts the captions, the designer changes the color, the web-producer changes the page, and this agent scores the result again.",
+        "It does not fix what it finds: the copywriter writes the alt text, the video-editor recuts the captions, the designer changes the color, the web-producer changes the page, the article-writer agent changes a help article, and this agent scores the result again.",
         "It does not score claims or brand voice, which is the brand-check agent's work.",
         "It does not edit the standards it scores against, and it does not decide that a failure is small enough to ship with."
       ],
@@ -188,6 +195,12 @@
           "process": "ref/mkt/win-back-campaign",
           "activities": [
             "Score the Messages"
+          ]
+        },
+        {
+          "process": "ref/sup/write-a-help-article",
+          "activities": [
+            "Check the Article for Accessibility"
           ]
         }
       ]
